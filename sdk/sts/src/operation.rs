@@ -2,7 +2,7 @@
 /// Operation shape for `AssumeRole`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`assume_role`](crate::client::Client::assume_role).
+            /// [`assume_role`](crate::client::fluent_builders::AssumeRole).
             ///
             /// `ParseStrictResponse` impl for `AssumeRole`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRole {
 /// Operation shape for `AssumeRoleWithSAML`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`assume_role_with_saml`](crate::client::Client::assume_role_with_saml).
+            /// [`assume_role_with_saml`](crate::client::fluent_builders::AssumeRoleWithSAML).
             ///
             /// `ParseStrictResponse` impl for `AssumeRoleWithSAML`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRoleWithSAML {
 /// Operation shape for `AssumeRoleWithWebIdentity`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`assume_role_with_web_identity`](crate::client::Client::assume_role_with_web_identity).
+            /// [`assume_role_with_web_identity`](crate::client::fluent_builders::AssumeRoleWithWebIdentity).
             ///
             /// `ParseStrictResponse` impl for `AssumeRoleWithWebIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRoleWithWebIdentit
 /// Operation shape for `DecodeAuthorizationMessage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`decode_authorization_message`](crate::client::Client::decode_authorization_message).
+            /// [`decode_authorization_message`](crate::client::fluent_builders::DecodeAuthorizationMessage).
             ///
             /// `ParseStrictResponse` impl for `DecodeAuthorizationMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DecodeAuthorizationMessa
 /// Operation shape for `GetAccessKeyInfo`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_access_key_info`](crate::client::Client::get_access_key_info).
+            /// [`get_access_key_info`](crate::client::fluent_builders::GetAccessKeyInfo).
             ///
             /// `ParseStrictResponse` impl for `GetAccessKeyInfo`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessKeyInfo {
 /// Operation shape for `GetCallerIdentity`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_caller_identity`](crate::client::Client::get_caller_identity).
+            /// [`get_caller_identity`](crate::client::fluent_builders::GetCallerIdentity).
             ///
             /// `ParseStrictResponse` impl for `GetCallerIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallerIdentity {
 /// Operation shape for `GetFederationToken`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_federation_token`](crate::client::Client::get_federation_token).
+            /// [`get_federation_token`](crate::client::fluent_builders::GetFederationToken).
             ///
             /// `ParseStrictResponse` impl for `GetFederationToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFederationToken {
 /// Operation shape for `GetSessionToken`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_session_token`](crate::client::Client::get_session_token).
+            /// [`get_session_token`](crate::client::fluent_builders::GetSessionToken).
             ///
             /// `ParseStrictResponse` impl for `GetSessionToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

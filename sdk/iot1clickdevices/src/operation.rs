@@ -2,7 +2,7 @@
 /// Operation shape for `ClaimDevicesByClaimCode`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`claim_devices_by_claim_code`](crate::client::Client::claim_devices_by_claim_code).
+            /// [`claim_devices_by_claim_code`](crate::client::fluent_builders::ClaimDevicesByClaimCode).
             ///
             /// `ParseStrictResponse` impl for `ClaimDevicesByClaimCode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ClaimDevicesByClaimCode 
 /// Operation shape for `DescribeDevice`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_device`](crate::client::Client::describe_device).
+            /// [`describe_device`](crate::client::fluent_builders::DescribeDevice).
             ///
             /// `ParseStrictResponse` impl for `DescribeDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDevice {
 /// Operation shape for `FinalizeDeviceClaim`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`finalize_device_claim`](crate::client::Client::finalize_device_claim).
+            /// [`finalize_device_claim`](crate::client::fluent_builders::FinalizeDeviceClaim).
             ///
             /// `ParseStrictResponse` impl for `FinalizeDeviceClaim`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for FinalizeDeviceClaim {
 /// Operation shape for `GetDeviceMethods`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_device_methods`](crate::client::Client::get_device_methods).
+            /// [`get_device_methods`](crate::client::fluent_builders::GetDeviceMethods).
             ///
             /// `ParseStrictResponse` impl for `GetDeviceMethods`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceMethods {
 /// Operation shape for `InitiateDeviceClaim`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`initiate_device_claim`](crate::client::Client::initiate_device_claim).
+            /// [`initiate_device_claim`](crate::client::fluent_builders::InitiateDeviceClaim).
             ///
             /// `ParseStrictResponse` impl for `InitiateDeviceClaim`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitiateDeviceClaim {
 /// Operation shape for `InvokeDeviceMethod`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`invoke_device_method`](crate::client::Client::invoke_device_method).
+            /// [`invoke_device_method`](crate::client::fluent_builders::InvokeDeviceMethod).
             ///
             /// `ParseStrictResponse` impl for `InvokeDeviceMethod`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeDeviceMethod {
 /// Operation shape for `ListDeviceEvents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_device_events`](crate::client::Client::list_device_events).
+            /// [`list_device_events`](crate::client::fluent_builders::ListDeviceEvents).
             ///
             /// `ParseStrictResponse` impl for `ListDeviceEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeviceEvents {
 /// Operation shape for `ListDevices`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_devices`](crate::client::Client::list_devices).
+            /// [`list_devices`](crate::client::fluent_builders::ListDevices).
             ///
             /// `ParseStrictResponse` impl for `ListDevices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevices {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UnclaimDevice`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`unclaim_device`](crate::client::Client::unclaim_device).
+            /// [`unclaim_device`](crate::client::fluent_builders::UnclaimDevice).
             ///
             /// `ParseStrictResponse` impl for `UnclaimDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnclaimDevice {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateDeviceState`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_device_state`](crate::client::Client::update_device_state).
+            /// [`update_device_state`](crate::client::fluent_builders::UpdateDeviceState).
             ///
             /// `ParseStrictResponse` impl for `UpdateDeviceState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

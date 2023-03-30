@@ -2,7 +2,7 @@
 /// Operation shape for `CreateConnector`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_connector`](crate::client::Client::create_connector).
+            /// [`create_connector`](crate::client::fluent_builders::CreateConnector).
             ///
             /// `ParseStrictResponse` impl for `CreateConnector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnector {
 /// Operation shape for `CreateCustomPlugin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_custom_plugin`](crate::client::Client::create_custom_plugin).
+            /// [`create_custom_plugin`](crate::client::fluent_builders::CreateCustomPlugin).
             ///
             /// `ParseStrictResponse` impl for `CreateCustomPlugin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomPlugin {
 /// Operation shape for `CreateWorkerConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_worker_configuration`](crate::client::Client::create_worker_configuration).
+            /// [`create_worker_configuration`](crate::client::fluent_builders::CreateWorkerConfiguration).
             ///
             /// `ParseStrictResponse` impl for `CreateWorkerConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkerConfiguratio
 /// Operation shape for `DeleteConnector`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_connector`](crate::client::Client::delete_connector).
+            /// [`delete_connector`](crate::client::fluent_builders::DeleteConnector).
             ///
             /// `ParseStrictResponse` impl for `DeleteConnector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnector {
 /// Operation shape for `DeleteCustomPlugin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_custom_plugin`](crate::client::Client::delete_custom_plugin).
+            /// [`delete_custom_plugin`](crate::client::fluent_builders::DeleteCustomPlugin).
             ///
             /// `ParseStrictResponse` impl for `DeleteCustomPlugin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomPlugin {
 /// Operation shape for `DescribeConnector`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_connector`](crate::client::Client::describe_connector).
+            /// [`describe_connector`](crate::client::fluent_builders::DescribeConnector).
             ///
             /// `ParseStrictResponse` impl for `DescribeConnector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnector {
 /// Operation shape for `DescribeCustomPlugin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_custom_plugin`](crate::client::Client::describe_custom_plugin).
+            /// [`describe_custom_plugin`](crate::client::fluent_builders::DescribeCustomPlugin).
             ///
             /// `ParseStrictResponse` impl for `DescribeCustomPlugin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomPlugin {
 /// Operation shape for `DescribeWorkerConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_worker_configuration`](crate::client::Client::describe_worker_configuration).
+            /// [`describe_worker_configuration`](crate::client::fluent_builders::DescribeWorkerConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DescribeWorkerConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkerConfigurat
 /// Operation shape for `ListConnectors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_connectors`](crate::client::Client::list_connectors).
+            /// [`list_connectors`](crate::client::fluent_builders::ListConnectors).
             ///
             /// `ParseStrictResponse` impl for `ListConnectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnectors {
 /// Operation shape for `ListCustomPlugins`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_custom_plugins`](crate::client::Client::list_custom_plugins).
+            /// [`list_custom_plugins`](crate::client::fluent_builders::ListCustomPlugins).
             ///
             /// `ParseStrictResponse` impl for `ListCustomPlugins`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomPlugins {
 /// Operation shape for `ListWorkerConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_worker_configurations`](crate::client::Client::list_worker_configurations).
+            /// [`list_worker_configurations`](crate::client::fluent_builders::ListWorkerConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListWorkerConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkerConfigurations
 /// Operation shape for `UpdateConnector`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_connector`](crate::client::Client::update_connector).
+            /// [`update_connector`](crate::client::fluent_builders::UpdateConnector).
             ///
             /// `ParseStrictResponse` impl for `UpdateConnector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

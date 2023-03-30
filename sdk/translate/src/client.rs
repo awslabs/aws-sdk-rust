@@ -83,8 +83,8 @@ impl Client  {
                         ///   - [`name(Option<String>)`](crate::output::CreateParallelDataOutput::name): <p>The custom name that you assigned to the parallel data resource.</p>
     ///   - [`status(Option<ParallelDataStatus>)`](crate::output::CreateParallelDataOutput::status): <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
                         /// - On failure, responds with [`SdkError<CreateParallelDataError>`](crate::error::CreateParallelDataError)
-    pub fn create_parallel_data(&self) -> fluent_builders::CreateParallelData {
-                            fluent_builders::CreateParallelData::new(self.handle.clone())
+    pub fn create_parallel_data(&self) -> crate::client::fluent_builders::CreateParallelData {
+                            crate::client::fluent_builders::CreateParallelData::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteParallelData`](crate::client::fluent_builders::DeleteParallelData) operation.
                         ///
@@ -94,8 +94,8 @@ impl Client  {
                         ///   - [`name(Option<String>)`](crate::output::DeleteParallelDataOutput::name): <p>The name of the parallel data resource that is being deleted.</p>
     ///   - [`status(Option<ParallelDataStatus>)`](crate::output::DeleteParallelDataOutput::status): <p>The status of the parallel data deletion.</p>
                         /// - On failure, responds with [`SdkError<DeleteParallelDataError>`](crate::error::DeleteParallelDataError)
-    pub fn delete_parallel_data(&self) -> fluent_builders::DeleteParallelData {
-                            fluent_builders::DeleteParallelData::new(self.handle.clone())
+    pub fn delete_parallel_data(&self) -> crate::client::fluent_builders::DeleteParallelData {
+                            crate::client::fluent_builders::DeleteParallelData::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteTerminology`](crate::client::fluent_builders::DeleteTerminology) operation.
                         ///
@@ -104,8 +104,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteTerminologyError>`](crate::error::DeleteTerminologyError)
-    pub fn delete_terminology(&self) -> fluent_builders::DeleteTerminology {
-                            fluent_builders::DeleteTerminology::new(self.handle.clone())
+    pub fn delete_terminology(&self) -> crate::client::fluent_builders::DeleteTerminology {
+                            crate::client::fluent_builders::DeleteTerminology::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeTextTranslationJob`](crate::client::fluent_builders::DescribeTextTranslationJob) operation.
                         ///
@@ -114,8 +114,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput) with field(s):
                         ///   - [`text_translation_job_properties(Option<TextTranslationJobProperties>)`](crate::output::DescribeTextTranslationJobOutput::text_translation_job_properties): <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
                         /// - On failure, responds with [`SdkError<DescribeTextTranslationJobError>`](crate::error::DescribeTextTranslationJobError)
-    pub fn describe_text_translation_job(&self) -> fluent_builders::DescribeTextTranslationJob {
-                            fluent_builders::DescribeTextTranslationJob::new(self.handle.clone())
+    pub fn describe_text_translation_job(&self) -> crate::client::fluent_builders::DescribeTextTranslationJob {
+                            crate::client::fluent_builders::DescribeTextTranslationJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetParallelData`](crate::client::fluent_builders::GetParallelData) operation.
                         ///
@@ -127,8 +127,8 @@ impl Client  {
     ///   - [`auxiliary_data_location(Option<ParallelDataDataLocation>)`](crate::output::GetParallelDataOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     ///   - [`latest_update_attempt_auxiliary_data_location(Option<ParallelDataDataLocation>)`](crate::output::GetParallelDataOutput::latest_update_attempt_auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
                         /// - On failure, responds with [`SdkError<GetParallelDataError>`](crate::error::GetParallelDataError)
-    pub fn get_parallel_data(&self) -> fluent_builders::GetParallelData {
-                            fluent_builders::GetParallelData::new(self.handle.clone())
+    pub fn get_parallel_data(&self) -> crate::client::fluent_builders::GetParallelData {
+                            crate::client::fluent_builders::GetParallelData::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetTerminology`](crate::client::fluent_builders::GetTerminology) operation.
                         ///
@@ -140,8 +140,8 @@ impl Client  {
     ///   - [`terminology_data_location(Option<TerminologyDataLocation>)`](crate::output::GetTerminologyOutput::terminology_data_location): <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>   <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>   <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>   <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>  </important>
     ///   - [`auxiliary_data_location(Option<TerminologyDataLocation>)`](crate::output::GetTerminologyOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
                         /// - On failure, responds with [`SdkError<GetTerminologyError>`](crate::error::GetTerminologyError)
-    pub fn get_terminology(&self) -> fluent_builders::GetTerminology {
-                            fluent_builders::GetTerminology::new(self.handle.clone())
+    pub fn get_terminology(&self) -> crate::client::fluent_builders::GetTerminology {
+                            crate::client::fluent_builders::GetTerminology::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ImportTerminology`](crate::client::fluent_builders::ImportTerminology) operation.
                         ///
@@ -156,8 +156,8 @@ impl Client  {
                         ///   - [`terminology_properties(Option<TerminologyProperties>)`](crate::output::ImportTerminologyOutput::terminology_properties): <p>The properties of the custom terminology being imported.</p>
     ///   - [`auxiliary_data_location(Option<TerminologyDataLocation>)`](crate::output::ImportTerminologyOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
                         /// - On failure, responds with [`SdkError<ImportTerminologyError>`](crate::error::ImportTerminologyError)
-    pub fn import_terminology(&self) -> fluent_builders::ImportTerminology {
-                            fluent_builders::ImportTerminology::new(self.handle.clone())
+    pub fn import_terminology(&self) -> crate::client::fluent_builders::ImportTerminology {
+                            crate::client::fluent_builders::ImportTerminology::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListLanguages`](crate::client::fluent_builders::ListLanguages) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLanguages::into_paginator).
@@ -171,8 +171,8 @@ impl Client  {
     ///   - [`display_language_code(Option<DisplayLanguageCode>)`](crate::output::ListLanguagesOutput::display_language_code): <p>The language code passed in with the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLanguagesOutput::next_token): <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
                         /// - On failure, responds with [`SdkError<ListLanguagesError>`](crate::error::ListLanguagesError)
-    pub fn list_languages(&self) -> fluent_builders::ListLanguages {
-                            fluent_builders::ListLanguages::new(self.handle.clone())
+    pub fn list_languages(&self) -> crate::client::fluent_builders::ListLanguages {
+                            crate::client::fluent_builders::ListLanguages::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListParallelData`](crate::client::fluent_builders::ListParallelData) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListParallelData::into_paginator).
@@ -184,8 +184,8 @@ impl Client  {
                         ///   - [`parallel_data_properties_list(Option<Vec<ParallelDataProperties>>)`](crate::output::ListParallelDataOutput::parallel_data_properties_list): <p>The properties of the parallel data resources returned by this request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListParallelDataOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
                         /// - On failure, responds with [`SdkError<ListParallelDataError>`](crate::error::ListParallelDataError)
-    pub fn list_parallel_data(&self) -> fluent_builders::ListParallelData {
-                            fluent_builders::ListParallelData::new(self.handle.clone())
+    pub fn list_parallel_data(&self) -> crate::client::fluent_builders::ListParallelData {
+                            crate::client::fluent_builders::ListParallelData::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -194,8 +194,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTerminologies`](crate::client::fluent_builders::ListTerminologies) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTerminologies::into_paginator).
@@ -207,8 +207,8 @@ impl Client  {
                         ///   - [`terminology_properties_list(Option<Vec<TerminologyProperties>>)`](crate::output::ListTerminologiesOutput::terminology_properties_list): <p>The properties list of the custom terminologies returned on the list request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTerminologiesOutput::next_token): <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
                         /// - On failure, responds with [`SdkError<ListTerminologiesError>`](crate::error::ListTerminologiesError)
-    pub fn list_terminologies(&self) -> fluent_builders::ListTerminologies {
-                            fluent_builders::ListTerminologies::new(self.handle.clone())
+    pub fn list_terminologies(&self) -> crate::client::fluent_builders::ListTerminologies {
+                            crate::client::fluent_builders::ListTerminologies::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTextTranslationJobs`](crate::client::fluent_builders::ListTextTranslationJobs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTextTranslationJobs::into_paginator).
@@ -221,8 +221,8 @@ impl Client  {
                         ///   - [`text_translation_job_properties_list(Option<Vec<TextTranslationJobProperties>>)`](crate::output::ListTextTranslationJobsOutput::text_translation_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTextTranslationJobsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
                         /// - On failure, responds with [`SdkError<ListTextTranslationJobsError>`](crate::error::ListTextTranslationJobsError)
-    pub fn list_text_translation_jobs(&self) -> fluent_builders::ListTextTranslationJobs {
-                            fluent_builders::ListTextTranslationJobs::new(self.handle.clone())
+    pub fn list_text_translation_jobs(&self) -> crate::client::fluent_builders::ListTextTranslationJobs {
+                            crate::client::fluent_builders::ListTextTranslationJobs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartTextTranslationJob`](crate::client::fluent_builders::StartTextTranslationJob) operation.
                         ///
@@ -241,8 +241,8 @@ impl Client  {
                         ///   - [`job_id(Option<String>)`](crate::output::StartTextTranslationJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::output::StartTextTranslationJobOutput::job_status): <p>The status of the job. Possible values include:</p>  <ul>   <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>   <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li>   <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li>   <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li>   <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li>   <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>   <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>  </ul>
                         /// - On failure, responds with [`SdkError<StartTextTranslationJobError>`](crate::error::StartTextTranslationJobError)
-    pub fn start_text_translation_job(&self) -> fluent_builders::StartTextTranslationJob {
-                            fluent_builders::StartTextTranslationJob::new(self.handle.clone())
+    pub fn start_text_translation_job(&self) -> crate::client::fluent_builders::StartTextTranslationJob {
+                            crate::client::fluent_builders::StartTextTranslationJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopTextTranslationJob`](crate::client::fluent_builders::StopTextTranslationJob) operation.
                         ///
@@ -252,8 +252,8 @@ impl Client  {
                         ///   - [`job_id(Option<String>)`](crate::output::StopTextTranslationJobOutput::job_id): <p>The job ID of the stopped batch translation job.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::output::StopTextTranslationJobOutput::job_status): <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
                         /// - On failure, responds with [`SdkError<StopTextTranslationJobError>`](crate::error::StopTextTranslationJobError)
-    pub fn stop_text_translation_job(&self) -> fluent_builders::StopTextTranslationJob {
-                            fluent_builders::StopTextTranslationJob::new(self.handle.clone())
+    pub fn stop_text_translation_job(&self) -> crate::client::fluent_builders::StopTextTranslationJob {
+                            crate::client::fluent_builders::StopTextTranslationJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -263,8 +263,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TranslateText`](crate::client::fluent_builders::TranslateText) operation.
                         ///
@@ -281,8 +281,8 @@ impl Client  {
     ///   - [`applied_terminologies(Option<Vec<AppliedTerminology>>)`](crate::output::TranslateTextOutput::applied_terminologies): <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
     ///   - [`applied_settings(Option<TranslationSettings>)`](crate::output::TranslateTextOutput::applied_settings): <p>Settings that configure the translation output.</p>
                         /// - On failure, responds with [`SdkError<TranslateTextError>`](crate::error::TranslateTextError)
-    pub fn translate_text(&self) -> fluent_builders::TranslateText {
-                            fluent_builders::TranslateText::new(self.handle.clone())
+    pub fn translate_text(&self) -> crate::client::fluent_builders::TranslateText {
+                            crate::client::fluent_builders::TranslateText::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -292,8 +292,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateParallelData`](crate::client::fluent_builders::UpdateParallelData) operation.
                         ///
@@ -308,1451 +308,9 @@ impl Client  {
     ///   - [`latest_update_attempt_status(Option<ParallelDataStatus>)`](crate::output::UpdateParallelDataOutput::latest_update_attempt_status): <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
     ///   - [`latest_update_attempt_at(Option<DateTime>)`](crate::output::UpdateParallelDataOutput::latest_update_attempt_at): <p>The time that the most recent update was attempted.</p>
                         /// - On failure, responds with [`SdkError<UpdateParallelDataError>`](crate::error::UpdateParallelDataError)
-    pub fn update_parallel_data(&self) -> fluent_builders::UpdateParallelData {
-                            fluent_builders::UpdateParallelData::new(self.handle.clone())
+    pub fn update_parallel_data(&self) -> crate::client::fluent_builders::UpdateParallelData {
+                            crate::client::fluent_builders::UpdateParallelData::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateParallelData`.
-                        ///
-    /// <p>Creates a parallel data resource in Amazon Translate by importing an input file from Amazon S3. Parallel data files contain examples that show how you want segments of text to be translated. By adding parallel data, you can influence the style, tone, and word choice in your translation output.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateParallelData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_parallel_data_input::Builder
-                        }
-    impl CreateParallelData  {
-        /// Creates a new `CreateParallelData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateParallelData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateParallelDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateParallelDataOutput, aws_smithy_http::result::SdkError<crate::error::CreateParallelDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-        pub fn parallel_data_config(mut self, input: crate::model::ParallelDataConfig) -> Self {
-            self.inner = self.inner.parallel_data_config(input);
-            self
-        }
-        /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-        pub fn set_parallel_data_config(mut self, input: std::option::Option<crate::model::ParallelDataConfig>) -> Self {
-            self.inner = self.inner.set_parallel_data_config(input);
-            self
-        }
-        /// <p>The encryption key used to encrypt this object.</p>
-        pub fn encryption_key(mut self, input: crate::model::EncryptionKey) -> Self {
-            self.inner = self.inner.encryption_key(input);
-            self
-        }
-        /// <p>The encryption key used to encrypt this object.</p>
-        pub fn set_encryption_key(mut self, input: std::option::Option<crate::model::EncryptionKey>) -> Self {
-            self.inner = self.inner.set_encryption_key(input);
-            self
-        }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteParallelData`.
-                        ///
-    /// <p>Deletes a parallel data resource in Amazon Translate.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteParallelData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_parallel_data_input::Builder
-                        }
-    impl DeleteParallelData  {
-        /// Creates a new `DeleteParallelData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteParallelData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteParallelDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteParallelDataOutput, aws_smithy_http::result::SdkError<crate::error::DeleteParallelDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the parallel data resource that is being deleted.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the parallel data resource that is being deleted.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteTerminology`.
-                        ///
-    /// <p>A synchronous action that deletes a custom terminology.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteTerminology {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_terminology_input::Builder
-                        }
-    impl DeleteTerminology  {
-        /// Creates a new `DeleteTerminology`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteTerminology, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteTerminologyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteTerminologyOutput, aws_smithy_http::result::SdkError<crate::error::DeleteTerminologyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the custom terminology being deleted. </p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the custom terminology being deleted. </p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeTextTranslationJob`.
-                        ///
-    /// <p>Gets the properties associated with an asynchronous batch translation job including name, ID, status, source and target languages, input/output S3 buckets, and so on.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeTextTranslationJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_text_translation_job_input::Builder
-                        }
-    impl DescribeTextTranslationJob  {
-        /// Creates a new `DescribeTextTranslationJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeTextTranslationJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeTextTranslationJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeTextTranslationJobOutput, aws_smithy_http::result::SdkError<crate::error::DescribeTextTranslationJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetParallelData`.
-                        ///
-    /// <p>Provides information about a parallel data resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetParallelData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_parallel_data_input::Builder
-                        }
-    impl GetParallelData  {
-        /// Creates a new `GetParallelData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetParallelData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetParallelDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetParallelDataOutput, aws_smithy_http::result::SdkError<crate::error::GetParallelDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the parallel data resource that is being retrieved.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the parallel data resource that is being retrieved.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetTerminology`.
-                        ///
-    /// <p>Retrieves a custom terminology.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetTerminology {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_terminology_input::Builder
-                        }
-    impl GetTerminology  {
-        /// Creates a new `GetTerminology`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetTerminology, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetTerminologyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetTerminologyOutput, aws_smithy_http::result::SdkError<crate::error::GetTerminologyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the custom terminology being retrieved.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the custom terminology being retrieved.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The data format of the custom terminology being retrieved.</p> 
-        /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p> 
-        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
-        pub fn terminology_data_format(mut self, input: crate::model::TerminologyDataFormat) -> Self {
-            self.inner = self.inner.terminology_data_format(input);
-            self
-        }
-        /// <p>The data format of the custom terminology being retrieved.</p> 
-        /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p> 
-        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
-        pub fn set_terminology_data_format(mut self, input: std::option::Option<crate::model::TerminologyDataFormat>) -> Self {
-            self.inner = self.inner.set_terminology_data_format(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ImportTerminology`.
-                        ///
-    /// <p>Creates or updates a custom terminology, depending on whether one already exists for the given terminology name. Importing a terminology with the same name as an existing one will merge the terminologies based on the chosen merge strategy. The only supported merge strategy is OVERWRITE, where the imported terminology overwrites the existing terminology of the same name.</p> 
-    /// <p>If you import a terminology that overwrites an existing one, the new terminology takes up to 10 minutes to fully propagate. After that, translations have access to the new terminology.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ImportTerminology {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::import_terminology_input::Builder
-                        }
-    impl ImportTerminology  {
-        /// Creates a new `ImportTerminology`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ImportTerminology, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ImportTerminologyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ImportTerminologyOutput, aws_smithy_http::result::SdkError<crate::error::ImportTerminologyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the custom terminology being imported.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the custom terminology being imported.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
-        pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
-            self.inner = self.inner.merge_strategy(input);
-            self
-        }
-        /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
-        pub fn set_merge_strategy(mut self, input: std::option::Option<crate::model::MergeStrategy>) -> Self {
-            self.inner = self.inner.set_merge_strategy(input);
-            self
-        }
-        /// <p>The description of the custom terminology being imported.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description of the custom terminology being imported.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The terminology data for the custom terminology being imported.</p>
-        pub fn terminology_data(mut self, input: crate::model::TerminologyData) -> Self {
-            self.inner = self.inner.terminology_data(input);
-            self
-        }
-        /// <p>The terminology data for the custom terminology being imported.</p>
-        pub fn set_terminology_data(mut self, input: std::option::Option<crate::model::TerminologyData>) -> Self {
-            self.inner = self.inner.set_terminology_data(input);
-            self
-        }
-        /// <p>The encryption key for the custom terminology being imported.</p>
-        pub fn encryption_key(mut self, input: crate::model::EncryptionKey) -> Self {
-            self.inner = self.inner.encryption_key(input);
-            self
-        }
-        /// <p>The encryption key for the custom terminology being imported.</p>
-        pub fn set_encryption_key(mut self, input: std::option::Option<crate::model::EncryptionKey>) -> Self {
-            self.inner = self.inner.set_encryption_key(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListLanguages`.
-                        ///
-    /// <p>Provides a list of languages (RFC-5646 codes and names) that Amazon Translate supports.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListLanguages {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_languages_input::Builder
-                        }
-    impl ListLanguages  {
-        /// Creates a new `ListLanguages`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListLanguages, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListLanguagesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListLanguagesOutput, aws_smithy_http::result::SdkError<crate::error::ListLanguagesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListLanguagesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListLanguagesPaginator {
-                                        crate::paginator::ListLanguagesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
-        pub fn display_language_code(mut self, input: crate::model::DisplayLanguageCode) -> Self {
-            self.inner = self.inner.display_language_code(input);
-            self
-        }
-        /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
-        pub fn set_display_language_code(mut self, input: std::option::Option<crate::model::DisplayLanguageCode>) -> Self {
-            self.inner = self.inner.set_display_language_code(input);
-            self
-        }
-        /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return in each response.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return in each response.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListParallelData`.
-                        ///
-    /// <p>Provides a list of your parallel data resources in Amazon Translate.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListParallelData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_parallel_data_input::Builder
-                        }
-    impl ListParallelData  {
-        /// Creates a new `ListParallelData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListParallelData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListParallelDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListParallelDataOutput, aws_smithy_http::result::SdkError<crate::error::ListParallelDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListParallelDataPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListParallelDataPaginator {
-                                        crate::paginator::ListParallelDataPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>A string that specifies the next page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>A string that specifies the next page of results to return in a paginated response.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of parallel data resources returned for each request.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of parallel data resources returned for each request.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// <p>Lists all tags associated with a given Amazon Translate resource. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Translate resource you are querying. </p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Translate resource you are querying. </p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTerminologies`.
-                        ///
-    /// <p>Provides a list of custom terminologies associated with your account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTerminologies {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_terminologies_input::Builder
-                        }
-    impl ListTerminologies  {
-        /// Creates a new `ListTerminologies`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTerminologies, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTerminologiesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTerminologiesOutput, aws_smithy_http::result::SdkError<crate::error::ListTerminologiesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListTerminologiesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListTerminologiesPaginator {
-                                        crate::paginator::ListTerminologiesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of custom terminologies returned per list request.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of custom terminologies returned per list request.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTextTranslationJobs`.
-                        ///
-    /// <p>Gets a list of the batch translation jobs that you have submitted.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTextTranslationJobs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_text_translation_jobs_input::Builder
-                        }
-    impl ListTextTranslationJobs  {
-        /// Creates a new `ListTextTranslationJobs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTextTranslationJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTextTranslationJobsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTextTranslationJobsOutput, aws_smithy_http::result::SdkError<crate::error::ListTextTranslationJobsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListTextTranslationJobsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListTextTranslationJobsPaginator {
-                                        crate::paginator::ListTextTranslationJobsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
-        pub fn filter(mut self, input: crate::model::TextTranslationJobFilter) -> Self {
-            self.inner = self.inner.filter(input);
-            self
-        }
-        /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
-        pub fn set_filter(mut self, input: std::option::Option<crate::model::TextTranslationJobFilter>) -> Self {
-            self.inner = self.inner.set_filter(input);
-            self
-        }
-        /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token to request the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return in each page. The default value is 100.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return in each page. The default value is 100.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartTextTranslationJob`.
-                        ///
-    /// <p>Starts an asynchronous batch translation job. Use batch translation jobs to translate large volumes of text across multiple documents at once. For batch translation, you can input documents with different source languages (specify <code>auto</code> as the source language). You can specify one or more target languages. Batch translation translates each input document into each of the target languages. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>.</p> 
-    /// <p>Batch translation jobs can be described with the <code>DescribeTextTranslationJob</code> operation, listed with the <code>ListTextTranslationJobs</code> operation, and stopped with the <code>StopTextTranslationJob</code> operation.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartTextTranslationJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_text_translation_job_input::Builder
-                        }
-    impl StartTextTranslationJob  {
-        /// Creates a new `StartTextTranslationJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartTextTranslationJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartTextTranslationJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartTextTranslationJobOutput, aws_smithy_http::result::SdkError<crate::error::StartTextTranslationJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the batch translation job to be performed.</p>
-        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(input.into());
-            self
-        }
-        /// <p>The name of the batch translation job to be performed.</p>
-        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_name(input);
-            self
-        }
-        /// <p>Specifies the format and location of the input documents for the translation job.</p>
-        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(input);
-            self
-        }
-        /// <p>Specifies the format and location of the input documents for the translation job.</p>
-        pub fn set_input_data_config(mut self, input: std::option::Option<crate::model::InputDataConfig>) -> Self {
-            self.inner = self.inner.set_input_data_config(input);
-            self
-        }
-        /// <p>Specifies the S3 folder to which your job output will be saved. </p>
-        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(input);
-            self
-        }
-        /// <p>Specifies the S3 folder to which your job output will be saved. </p>
-        pub fn set_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
-            self.inner = self.inner.set_output_data_config(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access management </a>.</p>
-        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access management </a>.</p>
-        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_data_access_role_arn(input);
-            self
-        }
-        /// <p>The language code of the input language. Specify the language if all input documents share the same language. If you don't know the language of the source files, or your input documents contains different source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-        pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_language_code(input.into());
-            self
-        }
-        /// <p>The language code of the input language. Specify the language if all input documents share the same language. If you don't know the language of the source files, or your input documents contains different source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-        pub fn set_source_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_language_code(input);
-            self
-        }
-        /// Appends an item to `TargetLanguageCodes`.
-        ///
-        /// To override the contents of this collection use [`set_target_language_codes`](Self::set_target_language_codes).
-        ///
-        /// <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p> 
-        /// <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-        pub fn target_language_codes(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_language_codes(input.into());
-            self
-        }
-        /// <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p> 
-        /// <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-        pub fn set_target_language_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_target_language_codes(input);
-            self
-        }
-        /// Appends an item to `TerminologyNames`.
-        ///
-        /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
-        ///
-        /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p> 
-        /// <p>This parameter accepts only one custom terminology resource.</p> 
-        /// <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p> 
-        /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p> 
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-        pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.terminology_names(input.into());
-            self
-        }
-        /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p> 
-        /// <p>This parameter accepts only one custom terminology resource.</p> 
-        /// <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p> 
-        /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p> 
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-        pub fn set_terminology_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_terminology_names(input);
-            self
-        }
-        /// Appends an item to `ParallelDataNames`.
-        ///
-        /// To override the contents of this collection use [`set_parallel_data_names`](Self::set_parallel_data_names).
-        ///
-        /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p> 
-        /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p> 
-        /// <p>This parameter accepts only one parallel data resource.</p> <note> 
-        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p> 
-        /// </note> 
-        /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p> 
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
-        pub fn parallel_data_names(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parallel_data_names(input.into());
-            self
-        }
-        /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p> 
-        /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p> 
-        /// <p>This parameter accepts only one parallel data resource.</p> <note> 
-        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p> 
-        /// </note> 
-        /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p> 
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
-        pub fn set_parallel_data_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_parallel_data_names(input);
-            self
-        }
-        /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-        pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
-            self.inner = self.inner.settings(input);
-            self
-        }
-        /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-        pub fn set_settings(mut self, input: std::option::Option<crate::model::TranslationSettings>) -> Self {
-            self.inner = self.inner.set_settings(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopTextTranslationJob`.
-                        ///
-    /// <p>Stops an asynchronous batch translation job that is in progress.</p> 
-    /// <p>If the job's state is <code>IN_PROGRESS</code>, the job will be marked for termination and put into the <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the <code>COMPLETED</code> state. Otherwise, the job is put into the <code>STOPPED</code> state.</p> 
-    /// <p>Asynchronous batch translation jobs are started with the <code>StartTextTranslationJob</code> operation. You can use the <code>DescribeTextTranslationJob</code> or <code>ListTextTranslationJobs</code> operations to get a batch translation job's <code>JobId</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopTextTranslationJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_text_translation_job_input::Builder
-                        }
-    impl StopTextTranslationJob  {
-        /// Creates a new `StopTextTranslationJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopTextTranslationJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopTextTranslationJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopTextTranslationJobOutput, aws_smithy_http::result::SdkError<crate::error::StopTextTranslationJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The job ID of the job to be stopped.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The job ID of the job to be stopped.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>Associates a specific tag with a resource. A tag is a key-value pair that adds as a metadata to a resource. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags. </p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags. </p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TranslateText`.
-                        ///
-    /// <p>Translates input text from the source language to the target language. For a list of available languages and language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TranslateText {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::translate_text_input::Builder
-                        }
-    impl TranslateText  {
-        /// Creates a new `TranslateText`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TranslateText, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TranslateTextError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TranslateTextOutput, aws_smithy_http::result::SdkError<crate::error::TranslateTextError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
-        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(input.into());
-            self
-        }
-        /// <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
-        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_text(input);
-            self
-        }
-        /// Appends an item to `TerminologyNames`.
-        ///
-        /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
-        ///
-        /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
-        pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.terminology_names(input.into());
-            self
-        }
-        /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
-        pub fn set_terminology_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_terminology_names(input);
-            self
-        }
-        /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p> 
-        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note> 
-        /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p> 
-        /// </note>
-        pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_language_code(input.into());
-            self
-        }
-        /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p> 
-        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note> 
-        /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p> 
-        /// </note>
-        pub fn set_source_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_language_code(input);
-            self
-        }
-        /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
-        pub fn target_language_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_language_code(input.into());
-            self
-        }
-        /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
-        pub fn set_target_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target_language_code(input);
-            self
-        }
-        /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-        pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
-            self.inner = self.inner.settings(input);
-            self
-        }
-        /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-        pub fn set_settings(mut self, input: std::option::Option<crate::model::TranslationSettings>) -> Self {
-            self.inner = self.inner.set_settings(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>Removes a specific tag associated with an Amazon Translate resource. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p> The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags. </p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p> The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags. </p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique and cannot be duplicated for a particular resource. </p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique and cannot be duplicated for a particular resource. </p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateParallelData`.
-                        ///
-    /// <p>Updates a previously created parallel data resource by importing a new input file from Amazon S3.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateParallelData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_parallel_data_input::Builder
-                        }
-    impl UpdateParallelData  {
-        /// Creates a new `UpdateParallelData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateParallelData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateParallelDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateParallelDataOutput, aws_smithy_http::result::SdkError<crate::error::UpdateParallelDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the parallel data resource being updated.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the parallel data resource being updated.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-        pub fn parallel_data_config(mut self, input: crate::model::ParallelDataConfig) -> Self {
-            self.inner = self.inner.parallel_data_config(input);
-            self
-        }
-        /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-        pub fn set_parallel_data_config(mut self, input: std::option::Option<crate::model::ParallelDataConfig>) -> Self {
-            self.inner = self.inner.set_parallel_data_config(input);
-            self
-        }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -1823,4 +381,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

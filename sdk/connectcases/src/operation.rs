@@ -2,7 +2,7 @@
 /// Operation shape for `BatchGetField`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_get_field`](crate::client::Client::batch_get_field).
+            /// [`batch_get_field`](crate::client::fluent_builders::BatchGetField).
             ///
             /// `ParseStrictResponse` impl for `BatchGetField`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetField {
 /// Operation shape for `BatchPutFieldOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_put_field_options`](crate::client::Client::batch_put_field_options).
+            /// [`batch_put_field_options`](crate::client::fluent_builders::BatchPutFieldOptions).
             ///
             /// `ParseStrictResponse` impl for `BatchPutFieldOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutFieldOptions {
 /// Operation shape for `CreateCase`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_case`](crate::client::Client::create_case).
+            /// [`create_case`](crate::client::fluent_builders::CreateCase).
             ///
             /// `ParseStrictResponse` impl for `CreateCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCase {
 /// Operation shape for `CreateDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_domain`](crate::client::Client::create_domain).
+            /// [`create_domain`](crate::client::fluent_builders::CreateDomain).
             ///
             /// `ParseStrictResponse` impl for `CreateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomain {
 /// Operation shape for `CreateField`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_field`](crate::client::Client::create_field).
+            /// [`create_field`](crate::client::fluent_builders::CreateField).
             ///
             /// `ParseStrictResponse` impl for `CreateField`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateField {
 /// Operation shape for `CreateLayout`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_layout`](crate::client::Client::create_layout).
+            /// [`create_layout`](crate::client::fluent_builders::CreateLayout).
             ///
             /// `ParseStrictResponse` impl for `CreateLayout`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLayout {
 /// Operation shape for `CreateRelatedItem`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_related_item`](crate::client::Client::create_related_item).
+            /// [`create_related_item`](crate::client::fluent_builders::CreateRelatedItem).
             ///
             /// `ParseStrictResponse` impl for `CreateRelatedItem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRelatedItem {
 /// Operation shape for `CreateTemplate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_template`](crate::client::Client::create_template).
+            /// [`create_template`](crate::client::fluent_builders::CreateTemplate).
             ///
             /// `ParseStrictResponse` impl for `CreateTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTemplate {
 /// Operation shape for `GetCase`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_case`](crate::client::Client::get_case).
+            /// [`get_case`](crate::client::fluent_builders::GetCase).
             ///
             /// `ParseStrictResponse` impl for `GetCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCase {
 /// Operation shape for `GetCaseEventConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_case_event_configuration`](crate::client::Client::get_case_event_configuration).
+            /// [`get_case_event_configuration`](crate::client::fluent_builders::GetCaseEventConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetCaseEventConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCaseEventConfiguratio
 /// Operation shape for `GetDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_domain`](crate::client::Client::get_domain).
+            /// [`get_domain`](crate::client::fluent_builders::GetDomain).
             ///
             /// `ParseStrictResponse` impl for `GetDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomain {
 /// Operation shape for `GetLayout`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_layout`](crate::client::Client::get_layout).
+            /// [`get_layout`](crate::client::fluent_builders::GetLayout).
             ///
             /// `ParseStrictResponse` impl for `GetLayout`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLayout {
 /// Operation shape for `GetTemplate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_template`](crate::client::Client::get_template).
+            /// [`get_template`](crate::client::fluent_builders::GetTemplate).
             ///
             /// `ParseStrictResponse` impl for `GetTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplate {
 /// Operation shape for `ListCasesForContact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_cases_for_contact`](crate::client::Client::list_cases_for_contact).
+            /// [`list_cases_for_contact`](crate::client::fluent_builders::ListCasesForContact).
             ///
             /// `ParseStrictResponse` impl for `ListCasesForContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCasesForContact {
 /// Operation shape for `ListDomains`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_domains`](crate::client::Client::list_domains).
+            /// [`list_domains`](crate::client::fluent_builders::ListDomains).
             ///
             /// `ParseStrictResponse` impl for `ListDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// Operation shape for `ListFieldOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_field_options`](crate::client::Client::list_field_options).
+            /// [`list_field_options`](crate::client::fluent_builders::ListFieldOptions).
             ///
             /// `ParseStrictResponse` impl for `ListFieldOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFieldOptions {
 /// Operation shape for `ListFields`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_fields`](crate::client::Client::list_fields).
+            /// [`list_fields`](crate::client::fluent_builders::ListFields).
             ///
             /// `ParseStrictResponse` impl for `ListFields`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFields {
 /// Operation shape for `ListLayouts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_layouts`](crate::client::Client::list_layouts).
+            /// [`list_layouts`](crate::client::fluent_builders::ListLayouts).
             ///
             /// `ParseStrictResponse` impl for `ListLayouts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLayouts {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTemplates`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_templates`](crate::client::Client::list_templates).
+            /// [`list_templates`](crate::client::fluent_builders::ListTemplates).
             ///
             /// `ParseStrictResponse` impl for `ListTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplates {
 /// Operation shape for `PutCaseEventConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_case_event_configuration`](crate::client::Client::put_case_event_configuration).
+            /// [`put_case_event_configuration`](crate::client::fluent_builders::PutCaseEventConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutCaseEventConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCaseEventConfiguratio
 /// Operation shape for `SearchCases`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_cases`](crate::client::Client::search_cases).
+            /// [`search_cases`](crate::client::fluent_builders::SearchCases).
             ///
             /// `ParseStrictResponse` impl for `SearchCases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchCases {
 /// Operation shape for `SearchRelatedItems`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_related_items`](crate::client::Client::search_related_items).
+            /// [`search_related_items`](crate::client::fluent_builders::SearchRelatedItems).
             ///
             /// `ParseStrictResponse` impl for `SearchRelatedItems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchRelatedItems {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateCase`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_case`](crate::client::Client::update_case).
+            /// [`update_case`](crate::client::fluent_builders::UpdateCase).
             ///
             /// `ParseStrictResponse` impl for `UpdateCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCase {
 /// Operation shape for `UpdateField`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_field`](crate::client::Client::update_field).
+            /// [`update_field`](crate::client::fluent_builders::UpdateField).
             ///
             /// `ParseStrictResponse` impl for `UpdateField`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateField {
 /// Operation shape for `UpdateLayout`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_layout`](crate::client::Client::update_layout).
+            /// [`update_layout`](crate::client::fluent_builders::UpdateLayout).
             ///
             /// `ParseStrictResponse` impl for `UpdateLayout`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLayout {
 /// Operation shape for `UpdateTemplate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_template`](crate::client::Client::update_template).
+            /// [`update_template`](crate::client::fluent_builders::UpdateTemplate).
             ///
             /// `ParseStrictResponse` impl for `UpdateTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

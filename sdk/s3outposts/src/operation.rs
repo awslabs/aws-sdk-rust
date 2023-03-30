@@ -2,7 +2,7 @@
 /// Operation shape for `CreateEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_endpoint`](crate::client::Client::create_endpoint).
+            /// [`create_endpoint`](crate::client::fluent_builders::CreateEndpoint).
             ///
             /// `ParseStrictResponse` impl for `CreateEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEndpoint {
 /// Operation shape for `DeleteEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_endpoint`](crate::client::Client::delete_endpoint).
+            /// [`delete_endpoint`](crate::client::fluent_builders::DeleteEndpoint).
             ///
             /// `ParseStrictResponse` impl for `DeleteEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpoint {
 /// Operation shape for `ListEndpoints`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_endpoints`](crate::client::Client::list_endpoints).
+            /// [`list_endpoints`](crate::client::fluent_builders::ListEndpoints).
             ///
             /// `ParseStrictResponse` impl for `ListEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpoints {
 /// Operation shape for `ListSharedEndpoints`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_shared_endpoints`](crate::client::Client::list_shared_endpoints).
+            /// [`list_shared_endpoints`](crate::client::fluent_builders::ListSharedEndpoints).
             ///
             /// `ParseStrictResponse` impl for `ListSharedEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

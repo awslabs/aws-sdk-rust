@@ -2,7 +2,7 @@
 /// Operation shape for `CreateCallAnalyticsCategory`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_call_analytics_category`](crate::client::Client::create_call_analytics_category).
+            /// [`create_call_analytics_category`](crate::client::fluent_builders::CreateCallAnalyticsCategory).
             ///
             /// `ParseStrictResponse` impl for `CreateCallAnalyticsCategory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCallAnalyticsCateg
 /// Operation shape for `CreateLanguageModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_language_model`](crate::client::Client::create_language_model).
+            /// [`create_language_model`](crate::client::fluent_builders::CreateLanguageModel).
             ///
             /// `ParseStrictResponse` impl for `CreateLanguageModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLanguageModel {
 /// Operation shape for `CreateMedicalVocabulary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_medical_vocabulary`](crate::client::Client::create_medical_vocabulary).
+            /// [`create_medical_vocabulary`](crate::client::fluent_builders::CreateMedicalVocabulary).
             ///
             /// `ParseStrictResponse` impl for `CreateMedicalVocabulary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMedicalVocabulary 
 /// Operation shape for `CreateVocabulary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vocabulary`](crate::client::Client::create_vocabulary).
+            /// [`create_vocabulary`](crate::client::fluent_builders::CreateVocabulary).
             ///
             /// `ParseStrictResponse` impl for `CreateVocabulary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVocabulary {
 /// Operation shape for `CreateVocabularyFilter`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vocabulary_filter`](crate::client::Client::create_vocabulary_filter).
+            /// [`create_vocabulary_filter`](crate::client::fluent_builders::CreateVocabularyFilter).
             ///
             /// `ParseStrictResponse` impl for `CreateVocabularyFilter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVocabularyFilter {
 /// Operation shape for `DeleteCallAnalyticsCategory`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_call_analytics_category`](crate::client::Client::delete_call_analytics_category).
+            /// [`delete_call_analytics_category`](crate::client::fluent_builders::DeleteCallAnalyticsCategory).
             ///
             /// `ParseStrictResponse` impl for `DeleteCallAnalyticsCategory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsCateg
 /// Operation shape for `DeleteCallAnalyticsJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_call_analytics_job`](crate::client::Client::delete_call_analytics_job).
+            /// [`delete_call_analytics_job`](crate::client::fluent_builders::DeleteCallAnalyticsJob).
             ///
             /// `ParseStrictResponse` impl for `DeleteCallAnalyticsJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsJob {
 /// Operation shape for `DeleteLanguageModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_language_model`](crate::client::Client::delete_language_model).
+            /// [`delete_language_model`](crate::client::fluent_builders::DeleteLanguageModel).
             ///
             /// `ParseStrictResponse` impl for `DeleteLanguageModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLanguageModel {
 /// Operation shape for `DeleteMedicalTranscriptionJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_medical_transcription_job`](crate::client::Client::delete_medical_transcription_job).
+            /// [`delete_medical_transcription_job`](crate::client::fluent_builders::DeleteMedicalTranscriptionJob).
             ///
             /// `ParseStrictResponse` impl for `DeleteMedicalTranscriptionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMedicalTranscripti
 /// Operation shape for `DeleteMedicalVocabulary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_medical_vocabulary`](crate::client::Client::delete_medical_vocabulary).
+            /// [`delete_medical_vocabulary`](crate::client::fluent_builders::DeleteMedicalVocabulary).
             ///
             /// `ParseStrictResponse` impl for `DeleteMedicalVocabulary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMedicalVocabulary 
 /// Operation shape for `DeleteTranscriptionJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transcription_job`](crate::client::Client::delete_transcription_job).
+            /// [`delete_transcription_job`](crate::client::fluent_builders::DeleteTranscriptionJob).
             ///
             /// `ParseStrictResponse` impl for `DeleteTranscriptionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTranscriptionJob {
 /// Operation shape for `DeleteVocabulary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vocabulary`](crate::client::Client::delete_vocabulary).
+            /// [`delete_vocabulary`](crate::client::fluent_builders::DeleteVocabulary).
             ///
             /// `ParseStrictResponse` impl for `DeleteVocabulary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVocabulary {
 /// Operation shape for `DeleteVocabularyFilter`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vocabulary_filter`](crate::client::Client::delete_vocabulary_filter).
+            /// [`delete_vocabulary_filter`](crate::client::fluent_builders::DeleteVocabularyFilter).
             ///
             /// `ParseStrictResponse` impl for `DeleteVocabularyFilter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVocabularyFilter {
 /// Operation shape for `DescribeLanguageModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_language_model`](crate::client::Client::describe_language_model).
+            /// [`describe_language_model`](crate::client::fluent_builders::DescribeLanguageModel).
             ///
             /// `ParseStrictResponse` impl for `DescribeLanguageModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLanguageModel {
 /// Operation shape for `GetCallAnalyticsCategory`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_call_analytics_category`](crate::client::Client::get_call_analytics_category).
+            /// [`get_call_analytics_category`](crate::client::fluent_builders::GetCallAnalyticsCategory).
             ///
             /// `ParseStrictResponse` impl for `GetCallAnalyticsCategory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallAnalyticsCategory
 /// Operation shape for `GetCallAnalyticsJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_call_analytics_job`](crate::client::Client::get_call_analytics_job).
+            /// [`get_call_analytics_job`](crate::client::fluent_builders::GetCallAnalyticsJob).
             ///
             /// `ParseStrictResponse` impl for `GetCallAnalyticsJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallAnalyticsJob {
 /// Operation shape for `GetMedicalTranscriptionJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_medical_transcription_job`](crate::client::Client::get_medical_transcription_job).
+            /// [`get_medical_transcription_job`](crate::client::fluent_builders::GetMedicalTranscriptionJob).
             ///
             /// `ParseStrictResponse` impl for `GetMedicalTranscriptionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMedicalTranscriptionJ
 /// Operation shape for `GetMedicalVocabulary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_medical_vocabulary`](crate::client::Client::get_medical_vocabulary).
+            /// [`get_medical_vocabulary`](crate::client::fluent_builders::GetMedicalVocabulary).
             ///
             /// `ParseStrictResponse` impl for `GetMedicalVocabulary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMedicalVocabulary {
 /// Operation shape for `GetTranscriptionJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_transcription_job`](crate::client::Client::get_transcription_job).
+            /// [`get_transcription_job`](crate::client::fluent_builders::GetTranscriptionJob).
             ///
             /// `ParseStrictResponse` impl for `GetTranscriptionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTranscriptionJob {
 /// Operation shape for `GetVocabulary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_vocabulary`](crate::client::Client::get_vocabulary).
+            /// [`get_vocabulary`](crate::client::fluent_builders::GetVocabulary).
             ///
             /// `ParseStrictResponse` impl for `GetVocabulary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVocabulary {
 /// Operation shape for `GetVocabularyFilter`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_vocabulary_filter`](crate::client::Client::get_vocabulary_filter).
+            /// [`get_vocabulary_filter`](crate::client::fluent_builders::GetVocabularyFilter).
             ///
             /// `ParseStrictResponse` impl for `GetVocabularyFilter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVocabularyFilter {
 /// Operation shape for `ListCallAnalyticsCategories`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_call_analytics_categories`](crate::client::Client::list_call_analytics_categories).
+            /// [`list_call_analytics_categories`](crate::client::fluent_builders::ListCallAnalyticsCategories).
             ///
             /// `ParseStrictResponse` impl for `ListCallAnalyticsCategories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCallAnalyticsCategor
 /// Operation shape for `ListCallAnalyticsJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_call_analytics_jobs`](crate::client::Client::list_call_analytics_jobs).
+            /// [`list_call_analytics_jobs`](crate::client::fluent_builders::ListCallAnalyticsJobs).
             ///
             /// `ParseStrictResponse` impl for `ListCallAnalyticsJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCallAnalyticsJobs {
 /// Operation shape for `ListLanguageModels`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_language_models`](crate::client::Client::list_language_models).
+            /// [`list_language_models`](crate::client::fluent_builders::ListLanguageModels).
             ///
             /// `ParseStrictResponse` impl for `ListLanguageModels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLanguageModels {
 /// Operation shape for `ListMedicalTranscriptionJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_medical_transcription_jobs`](crate::client::Client::list_medical_transcription_jobs).
+            /// [`list_medical_transcription_jobs`](crate::client::fluent_builders::ListMedicalTranscriptionJobs).
             ///
             /// `ParseStrictResponse` impl for `ListMedicalTranscriptionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMedicalTranscription
 /// Operation shape for `ListMedicalVocabularies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_medical_vocabularies`](crate::client::Client::list_medical_vocabularies).
+            /// [`list_medical_vocabularies`](crate::client::fluent_builders::ListMedicalVocabularies).
             ///
             /// `ParseStrictResponse` impl for `ListMedicalVocabularies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMedicalVocabularies 
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTranscriptionJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_transcription_jobs`](crate::client::Client::list_transcription_jobs).
+            /// [`list_transcription_jobs`](crate::client::fluent_builders::ListTranscriptionJobs).
             ///
             /// `ParseStrictResponse` impl for `ListTranscriptionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTranscriptionJobs {
 /// Operation shape for `ListVocabularies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_vocabularies`](crate::client::Client::list_vocabularies).
+            /// [`list_vocabularies`](crate::client::fluent_builders::ListVocabularies).
             ///
             /// `ParseStrictResponse` impl for `ListVocabularies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVocabularies {
 /// Operation shape for `ListVocabularyFilters`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_vocabulary_filters`](crate::client::Client::list_vocabulary_filters).
+            /// [`list_vocabulary_filters`](crate::client::fluent_builders::ListVocabularyFilters).
             ///
             /// `ParseStrictResponse` impl for `ListVocabularyFilters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVocabularyFilters {
 /// Operation shape for `StartCallAnalyticsJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_call_analytics_job`](crate::client::Client::start_call_analytics_job).
+            /// [`start_call_analytics_job`](crate::client::fluent_builders::StartCallAnalyticsJob).
             ///
             /// `ParseStrictResponse` impl for `StartCallAnalyticsJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCallAnalyticsJob {
 /// Operation shape for `StartMedicalTranscriptionJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_medical_transcription_job`](crate::client::Client::start_medical_transcription_job).
+            /// [`start_medical_transcription_job`](crate::client::fluent_builders::StartMedicalTranscriptionJob).
             ///
             /// `ParseStrictResponse` impl for `StartMedicalTranscriptionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMedicalTranscriptio
 /// Operation shape for `StartTranscriptionJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_transcription_job`](crate::client::Client::start_transcription_job).
+            /// [`start_transcription_job`](crate::client::fluent_builders::StartTranscriptionJob).
             ///
             /// `ParseStrictResponse` impl for `StartTranscriptionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTranscriptionJob {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateCallAnalyticsCategory`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_call_analytics_category`](crate::client::Client::update_call_analytics_category).
+            /// [`update_call_analytics_category`](crate::client::fluent_builders::UpdateCallAnalyticsCategory).
             ///
             /// `ParseStrictResponse` impl for `UpdateCallAnalyticsCategory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCallAnalyticsCateg
 /// Operation shape for `UpdateMedicalVocabulary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_medical_vocabulary`](crate::client::Client::update_medical_vocabulary).
+            /// [`update_medical_vocabulary`](crate::client::fluent_builders::UpdateMedicalVocabulary).
             ///
             /// `ParseStrictResponse` impl for `UpdateMedicalVocabulary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMedicalVocabulary 
 /// Operation shape for `UpdateVocabulary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_vocabulary`](crate::client::Client::update_vocabulary).
+            /// [`update_vocabulary`](crate::client::fluent_builders::UpdateVocabulary).
             ///
             /// `ParseStrictResponse` impl for `UpdateVocabulary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVocabulary {
 /// Operation shape for `UpdateVocabularyFilter`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_vocabulary_filter`](crate::client::Client::update_vocabulary_filter).
+            /// [`update_vocabulary_filter`](crate::client::fluent_builders::UpdateVocabularyFilter).
             ///
             /// `ParseStrictResponse` impl for `UpdateVocabularyFilter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

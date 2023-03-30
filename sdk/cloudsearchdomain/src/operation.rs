@@ -2,7 +2,7 @@
 /// Operation shape for `Search`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search`](crate::client::Client::search).
+            /// [`search`](crate::client::fluent_builders::Search).
             ///
             /// `ParseStrictResponse` impl for `Search`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Search {
 /// Operation shape for `Suggest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`suggest`](crate::client::Client::suggest).
+            /// [`suggest`](crate::client::fluent_builders::Suggest).
             ///
             /// `ParseStrictResponse` impl for `Suggest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Suggest {
 /// Operation shape for `UploadDocuments`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`upload_documents`](crate::client::Client::upload_documents).
+            /// [`upload_documents`](crate::client::fluent_builders::UploadDocuments).
             ///
             /// `ParseStrictResponse` impl for `UploadDocuments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

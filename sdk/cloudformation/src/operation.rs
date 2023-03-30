@@ -2,7 +2,7 @@
 /// Operation shape for `ActivateType`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`activate_type`](crate::client::Client::activate_type).
+            /// [`activate_type`](crate::client::fluent_builders::ActivateType).
             ///
             /// `ParseStrictResponse` impl for `ActivateType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateType {
 /// Operation shape for `BatchDescribeTypeConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_describe_type_configurations`](crate::client::Client::batch_describe_type_configurations).
+            /// [`batch_describe_type_configurations`](crate::client::fluent_builders::BatchDescribeTypeConfigurations).
             ///
             /// `ParseStrictResponse` impl for `BatchDescribeTypeConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDescribeTypeConfigu
 /// Operation shape for `CancelUpdateStack`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_update_stack`](crate::client::Client::cancel_update_stack).
+            /// [`cancel_update_stack`](crate::client::fluent_builders::CancelUpdateStack).
             ///
             /// `ParseStrictResponse` impl for `CancelUpdateStack`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelUpdateStack {
 /// Operation shape for `ContinueUpdateRollback`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`continue_update_rollback`](crate::client::Client::continue_update_rollback).
+            /// [`continue_update_rollback`](crate::client::fluent_builders::ContinueUpdateRollback).
             ///
             /// `ParseStrictResponse` impl for `ContinueUpdateRollback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ContinueUpdateRollback {
 /// Operation shape for `CreateChangeSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_change_set`](crate::client::Client::create_change_set).
+            /// [`create_change_set`](crate::client::fluent_builders::CreateChangeSet).
             ///
             /// `ParseStrictResponse` impl for `CreateChangeSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChangeSet {
 /// Operation shape for `CreateStack`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_stack`](crate::client::Client::create_stack).
+            /// [`create_stack`](crate::client::fluent_builders::CreateStack).
             ///
             /// `ParseStrictResponse` impl for `CreateStack`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStack {
 /// Operation shape for `CreateStackInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_stack_instances`](crate::client::Client::create_stack_instances).
+            /// [`create_stack_instances`](crate::client::fluent_builders::CreateStackInstances).
             ///
             /// `ParseStrictResponse` impl for `CreateStackInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStackInstances {
 /// Operation shape for `CreateStackSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_stack_set`](crate::client::Client::create_stack_set).
+            /// [`create_stack_set`](crate::client::fluent_builders::CreateStackSet).
             ///
             /// `ParseStrictResponse` impl for `CreateStackSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStackSet {
 /// Operation shape for `DeactivateType`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deactivate_type`](crate::client::Client::deactivate_type).
+            /// [`deactivate_type`](crate::client::fluent_builders::DeactivateType).
             ///
             /// `ParseStrictResponse` impl for `DeactivateType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeactivateType {
 /// Operation shape for `DeleteChangeSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_change_set`](crate::client::Client::delete_change_set).
+            /// [`delete_change_set`](crate::client::fluent_builders::DeleteChangeSet).
             ///
             /// `ParseStrictResponse` impl for `DeleteChangeSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChangeSet {
 /// Operation shape for `DeleteStack`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_stack`](crate::client::Client::delete_stack).
+            /// [`delete_stack`](crate::client::fluent_builders::DeleteStack).
             ///
             /// `ParseStrictResponse` impl for `DeleteStack`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStack {
 /// Operation shape for `DeleteStackInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_stack_instances`](crate::client::Client::delete_stack_instances).
+            /// [`delete_stack_instances`](crate::client::fluent_builders::DeleteStackInstances).
             ///
             /// `ParseStrictResponse` impl for `DeleteStackInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStackInstances {
 /// Operation shape for `DeleteStackSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_stack_set`](crate::client::Client::delete_stack_set).
+            /// [`delete_stack_set`](crate::client::fluent_builders::DeleteStackSet).
             ///
             /// `ParseStrictResponse` impl for `DeleteStackSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStackSet {
 /// Operation shape for `DeregisterType`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deregister_type`](crate::client::Client::deregister_type).
+            /// [`deregister_type`](crate::client::fluent_builders::DeregisterType).
             ///
             /// `ParseStrictResponse` impl for `DeregisterType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterType {
 /// Operation shape for `DescribeAccountLimits`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_account_limits`](crate::client::Client::describe_account_limits).
+            /// [`describe_account_limits`](crate::client::fluent_builders::DescribeAccountLimits).
             ///
             /// `ParseStrictResponse` impl for `DescribeAccountLimits`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountLimits {
 /// Operation shape for `DescribeChangeSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_change_set`](crate::client::Client::describe_change_set).
+            /// [`describe_change_set`](crate::client::fluent_builders::DescribeChangeSet).
             ///
             /// `ParseStrictResponse` impl for `DescribeChangeSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChangeSet {
 /// Operation shape for `DescribeChangeSetHooks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_change_set_hooks`](crate::client::Client::describe_change_set_hooks).
+            /// [`describe_change_set_hooks`](crate::client::fluent_builders::DescribeChangeSetHooks).
             ///
             /// `ParseStrictResponse` impl for `DescribeChangeSetHooks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChangeSetHooks {
 /// Operation shape for `DescribePublisher`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_publisher`](crate::client::Client::describe_publisher).
+            /// [`describe_publisher`](crate::client::fluent_builders::DescribePublisher).
             ///
             /// `ParseStrictResponse` impl for `DescribePublisher`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePublisher {
 /// Operation shape for `DescribeStackDriftDetectionStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_stack_drift_detection_status`](crate::client::Client::describe_stack_drift_detection_status).
+            /// [`describe_stack_drift_detection_status`](crate::client::fluent_builders::DescribeStackDriftDetectionStatus).
             ///
             /// `ParseStrictResponse` impl for `DescribeStackDriftDetectionStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStackDriftDetect
 /// Operation shape for `DescribeStackEvents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_stack_events`](crate::client::Client::describe_stack_events).
+            /// [`describe_stack_events`](crate::client::fluent_builders::DescribeStackEvents).
             ///
             /// `ParseStrictResponse` impl for `DescribeStackEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStackEvents {
 /// Operation shape for `DescribeStackInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_stack_instance`](crate::client::Client::describe_stack_instance).
+            /// [`describe_stack_instance`](crate::client::fluent_builders::DescribeStackInstance).
             ///
             /// `ParseStrictResponse` impl for `DescribeStackInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStackInstance {
 /// Operation shape for `DescribeStackResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_stack_resource`](crate::client::Client::describe_stack_resource).
+            /// [`describe_stack_resource`](crate::client::fluent_builders::DescribeStackResource).
             ///
             /// `ParseStrictResponse` impl for `DescribeStackResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStackResource {
 /// Operation shape for `DescribeStackResourceDrifts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_stack_resource_drifts`](crate::client::Client::describe_stack_resource_drifts).
+            /// [`describe_stack_resource_drifts`](crate::client::fluent_builders::DescribeStackResourceDrifts).
             ///
             /// `ParseStrictResponse` impl for `DescribeStackResourceDrifts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStackResourceDri
 /// Operation shape for `DescribeStackResources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_stack_resources`](crate::client::Client::describe_stack_resources).
+            /// [`describe_stack_resources`](crate::client::fluent_builders::DescribeStackResources).
             ///
             /// `ParseStrictResponse` impl for `DescribeStackResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStackResources {
 /// Operation shape for `DescribeStacks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_stacks`](crate::client::Client::describe_stacks).
+            /// [`describe_stacks`](crate::client::fluent_builders::DescribeStacks).
             ///
             /// `ParseStrictResponse` impl for `DescribeStacks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStacks {
 /// Operation shape for `DescribeStackSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_stack_set`](crate::client::Client::describe_stack_set).
+            /// [`describe_stack_set`](crate::client::fluent_builders::DescribeStackSet).
             ///
             /// `ParseStrictResponse` impl for `DescribeStackSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStackSet {
 /// Operation shape for `DescribeStackSetOperation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_stack_set_operation`](crate::client::Client::describe_stack_set_operation).
+            /// [`describe_stack_set_operation`](crate::client::fluent_builders::DescribeStackSetOperation).
             ///
             /// `ParseStrictResponse` impl for `DescribeStackSetOperation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStackSetOperatio
 /// Operation shape for `DescribeType`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_type`](crate::client::Client::describe_type).
+            /// [`describe_type`](crate::client::fluent_builders::DescribeType).
             ///
             /// `ParseStrictResponse` impl for `DescribeType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeType {
 /// Operation shape for `DescribeTypeRegistration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_type_registration`](crate::client::Client::describe_type_registration).
+            /// [`describe_type_registration`](crate::client::fluent_builders::DescribeTypeRegistration).
             ///
             /// `ParseStrictResponse` impl for `DescribeTypeRegistration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTypeRegistration
 /// Operation shape for `DetectStackDrift`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`detect_stack_drift`](crate::client::Client::detect_stack_drift).
+            /// [`detect_stack_drift`](crate::client::fluent_builders::DetectStackDrift).
             ///
             /// `ParseStrictResponse` impl for `DetectStackDrift`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectStackDrift {
 /// Operation shape for `DetectStackResourceDrift`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`detect_stack_resource_drift`](crate::client::Client::detect_stack_resource_drift).
+            /// [`detect_stack_resource_drift`](crate::client::fluent_builders::DetectStackResourceDrift).
             ///
             /// `ParseStrictResponse` impl for `DetectStackResourceDrift`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectStackResourceDrift
 /// Operation shape for `DetectStackSetDrift`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`detect_stack_set_drift`](crate::client::Client::detect_stack_set_drift).
+            /// [`detect_stack_set_drift`](crate::client::fluent_builders::DetectStackSetDrift).
             ///
             /// `ParseStrictResponse` impl for `DetectStackSetDrift`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectStackSetDrift {
 /// Operation shape for `EstimateTemplateCost`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`estimate_template_cost`](crate::client::Client::estimate_template_cost).
+            /// [`estimate_template_cost`](crate::client::fluent_builders::EstimateTemplateCost).
             ///
             /// `ParseStrictResponse` impl for `EstimateTemplateCost`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EstimateTemplateCost {
 /// Operation shape for `ExecuteChangeSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`execute_change_set`](crate::client::Client::execute_change_set).
+            /// [`execute_change_set`](crate::client::fluent_builders::ExecuteChangeSet).
             ///
             /// `ParseStrictResponse` impl for `ExecuteChangeSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteChangeSet {
 /// Operation shape for `GetStackPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_stack_policy`](crate::client::Client::get_stack_policy).
+            /// [`get_stack_policy`](crate::client::fluent_builders::GetStackPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetStackPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStackPolicy {
 /// Operation shape for `GetTemplate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_template`](crate::client::Client::get_template).
+            /// [`get_template`](crate::client::fluent_builders::GetTemplate).
             ///
             /// `ParseStrictResponse` impl for `GetTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplate {
 /// Operation shape for `GetTemplateSummary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_template_summary`](crate::client::Client::get_template_summary).
+            /// [`get_template_summary`](crate::client::fluent_builders::GetTemplateSummary).
             ///
             /// `ParseStrictResponse` impl for `GetTemplateSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplateSummary {
 /// Operation shape for `ImportStacksToStackSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_stacks_to_stack_set`](crate::client::Client::import_stacks_to_stack_set).
+            /// [`import_stacks_to_stack_set`](crate::client::fluent_builders::ImportStacksToStackSet).
             ///
             /// `ParseStrictResponse` impl for `ImportStacksToStackSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportStacksToStackSet {
 /// Operation shape for `ListChangeSets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_change_sets`](crate::client::Client::list_change_sets).
+            /// [`list_change_sets`](crate::client::fluent_builders::ListChangeSets).
             ///
             /// `ParseStrictResponse` impl for `ListChangeSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChangeSets {
 /// Operation shape for `ListExports`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_exports`](crate::client::Client::list_exports).
+            /// [`list_exports`](crate::client::fluent_builders::ListExports).
             ///
             /// `ParseStrictResponse` impl for `ListExports`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExports {
 /// Operation shape for `ListImports`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_imports`](crate::client::Client::list_imports).
+            /// [`list_imports`](crate::client::fluent_builders::ListImports).
             ///
             /// `ParseStrictResponse` impl for `ListImports`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImports {
 /// Operation shape for `ListStackInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_stack_instances`](crate::client::Client::list_stack_instances).
+            /// [`list_stack_instances`](crate::client::fluent_builders::ListStackInstances).
             ///
             /// `ParseStrictResponse` impl for `ListStackInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStackInstances {
 /// Operation shape for `ListStackResources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_stack_resources`](crate::client::Client::list_stack_resources).
+            /// [`list_stack_resources`](crate::client::fluent_builders::ListStackResources).
             ///
             /// `ParseStrictResponse` impl for `ListStackResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStackResources {
 /// Operation shape for `ListStacks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_stacks`](crate::client::Client::list_stacks).
+            /// [`list_stacks`](crate::client::fluent_builders::ListStacks).
             ///
             /// `ParseStrictResponse` impl for `ListStacks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStacks {
 /// Operation shape for `ListStackSetOperationResults`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_stack_set_operation_results`](crate::client::Client::list_stack_set_operation_results).
+            /// [`list_stack_set_operation_results`](crate::client::fluent_builders::ListStackSetOperationResults).
             ///
             /// `ParseStrictResponse` impl for `ListStackSetOperationResults`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1442,7 +1442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStackSetOperationRes
 /// Operation shape for `ListStackSetOperations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_stack_set_operations`](crate::client::Client::list_stack_set_operations).
+            /// [`list_stack_set_operations`](crate::client::fluent_builders::ListStackSetOperations).
             ///
             /// `ParseStrictResponse` impl for `ListStackSetOperations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStackSetOperations {
 /// Operation shape for `ListStackSets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_stack_sets`](crate::client::Client::list_stack_sets).
+            /// [`list_stack_sets`](crate::client::fluent_builders::ListStackSets).
             ///
             /// `ParseStrictResponse` impl for `ListStackSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1506,7 +1506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStackSets {
 /// Operation shape for `ListTypeRegistrations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_type_registrations`](crate::client::Client::list_type_registrations).
+            /// [`list_type_registrations`](crate::client::fluent_builders::ListTypeRegistrations).
             ///
             /// `ParseStrictResponse` impl for `ListTypeRegistrations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTypeRegistrations {
 /// Operation shape for `ListTypes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_types`](crate::client::Client::list_types).
+            /// [`list_types`](crate::client::fluent_builders::ListTypes).
             ///
             /// `ParseStrictResponse` impl for `ListTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1570,7 +1570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTypes {
 /// Operation shape for `ListTypeVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_type_versions`](crate::client::Client::list_type_versions).
+            /// [`list_type_versions`](crate::client::fluent_builders::ListTypeVersions).
             ///
             /// `ParseStrictResponse` impl for `ListTypeVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1602,7 +1602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTypeVersions {
 /// Operation shape for `PublishType`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`publish_type`](crate::client::Client::publish_type).
+            /// [`publish_type`](crate::client::fluent_builders::PublishType).
             ///
             /// `ParseStrictResponse` impl for `PublishType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1634,7 +1634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishType {
 /// Operation shape for `RecordHandlerProgress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`record_handler_progress`](crate::client::Client::record_handler_progress).
+            /// [`record_handler_progress`](crate::client::fluent_builders::RecordHandlerProgress).
             ///
             /// `ParseStrictResponse` impl for `RecordHandlerProgress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1666,7 +1666,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecordHandlerProgress {
 /// Operation shape for `RegisterPublisher`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_publisher`](crate::client::Client::register_publisher).
+            /// [`register_publisher`](crate::client::fluent_builders::RegisterPublisher).
             ///
             /// `ParseStrictResponse` impl for `RegisterPublisher`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1698,7 +1698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterPublisher {
 /// Operation shape for `RegisterType`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_type`](crate::client::Client::register_type).
+            /// [`register_type`](crate::client::fluent_builders::RegisterType).
             ///
             /// `ParseStrictResponse` impl for `RegisterType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1730,7 +1730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterType {
 /// Operation shape for `RollbackStack`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`rollback_stack`](crate::client::Client::rollback_stack).
+            /// [`rollback_stack`](crate::client::fluent_builders::RollbackStack).
             ///
             /// `ParseStrictResponse` impl for `RollbackStack`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1762,7 +1762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RollbackStack {
 /// Operation shape for `SetStackPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_stack_policy`](crate::client::Client::set_stack_policy).
+            /// [`set_stack_policy`](crate::client::fluent_builders::SetStackPolicy).
             ///
             /// `ParseStrictResponse` impl for `SetStackPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1794,7 +1794,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetStackPolicy {
 /// Operation shape for `SetTypeConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_type_configuration`](crate::client::Client::set_type_configuration).
+            /// [`set_type_configuration`](crate::client::fluent_builders::SetTypeConfiguration).
             ///
             /// `ParseStrictResponse` impl for `SetTypeConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1826,7 +1826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetTypeConfiguration {
 /// Operation shape for `SetTypeDefaultVersion`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_type_default_version`](crate::client::Client::set_type_default_version).
+            /// [`set_type_default_version`](crate::client::fluent_builders::SetTypeDefaultVersion).
             ///
             /// `ParseStrictResponse` impl for `SetTypeDefaultVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1858,7 +1858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetTypeDefaultVersion {
 /// Operation shape for `SignalResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`signal_resource`](crate::client::Client::signal_resource).
+            /// [`signal_resource`](crate::client::fluent_builders::SignalResource).
             ///
             /// `ParseStrictResponse` impl for `SignalResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1890,7 +1890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SignalResource {
 /// Operation shape for `StopStackSetOperation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_stack_set_operation`](crate::client::Client::stop_stack_set_operation).
+            /// [`stop_stack_set_operation`](crate::client::fluent_builders::StopStackSetOperation).
             ///
             /// `ParseStrictResponse` impl for `StopStackSetOperation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1922,7 +1922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopStackSetOperation {
 /// Operation shape for `TestType`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`test_type`](crate::client::Client::test_type).
+            /// [`test_type`](crate::client::fluent_builders::TestType).
             ///
             /// `ParseStrictResponse` impl for `TestType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1954,7 +1954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestType {
 /// Operation shape for `UpdateStack`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_stack`](crate::client::Client::update_stack).
+            /// [`update_stack`](crate::client::fluent_builders::UpdateStack).
             ///
             /// `ParseStrictResponse` impl for `UpdateStack`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1986,7 +1986,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStack {
 /// Operation shape for `UpdateStackInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_stack_instances`](crate::client::Client::update_stack_instances).
+            /// [`update_stack_instances`](crate::client::fluent_builders::UpdateStackInstances).
             ///
             /// `ParseStrictResponse` impl for `UpdateStackInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2018,7 +2018,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStackInstances {
 /// Operation shape for `UpdateStackSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_stack_set`](crate::client::Client::update_stack_set).
+            /// [`update_stack_set`](crate::client::fluent_builders::UpdateStackSet).
             ///
             /// `ParseStrictResponse` impl for `UpdateStackSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2050,7 +2050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStackSet {
 /// Operation shape for `UpdateTerminationProtection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_termination_protection`](crate::client::Client::update_termination_protection).
+            /// [`update_termination_protection`](crate::client::fluent_builders::UpdateTerminationProtection).
             ///
             /// `ParseStrictResponse` impl for `UpdateTerminationProtection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2082,7 +2082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTerminationProtect
 /// Operation shape for `ValidateTemplate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`validate_template`](crate::client::Client::validate_template).
+            /// [`validate_template`](crate::client::fluent_builders::ValidateTemplate).
             ///
             /// `ParseStrictResponse` impl for `ValidateTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

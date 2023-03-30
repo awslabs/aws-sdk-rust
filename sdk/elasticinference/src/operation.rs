@@ -2,7 +2,7 @@
 /// Operation shape for `DescribeAcceleratorOfferings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_accelerator_offerings`](crate::client::Client::describe_accelerator_offerings).
+            /// [`describe_accelerator_offerings`](crate::client::fluent_builders::DescribeAcceleratorOfferings).
             ///
             /// `ParseStrictResponse` impl for `DescribeAcceleratorOfferings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAcceleratorOffer
 /// Operation shape for `DescribeAccelerators`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_accelerators`](crate::client::Client::describe_accelerators).
+            /// [`describe_accelerators`](crate::client::fluent_builders::DescribeAccelerators).
             ///
             /// `ParseStrictResponse` impl for `DescribeAccelerators`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccelerators {
 /// Operation shape for `DescribeAcceleratorTypes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_accelerator_types`](crate::client::Client::describe_accelerator_types).
+            /// [`describe_accelerator_types`](crate::client::fluent_builders::DescribeAcceleratorTypes).
             ///
             /// `ParseStrictResponse` impl for `DescribeAcceleratorTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAcceleratorTypes
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

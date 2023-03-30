@@ -2,7 +2,7 @@
 /// Operation shape for `CreateAlertManagerDefinition`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_alert_manager_definition`](crate::client::Client::create_alert_manager_definition).
+            /// [`create_alert_manager_definition`](crate::client::fluent_builders::CreateAlertManagerDefinition).
             ///
             /// `ParseStrictResponse` impl for `CreateAlertManagerDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlertManagerDefini
 /// Operation shape for `CreateLoggingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_logging_configuration`](crate::client::Client::create_logging_configuration).
+            /// [`create_logging_configuration`](crate::client::fluent_builders::CreateLoggingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `CreateLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoggingConfigurati
 /// Operation shape for `CreateRuleGroupsNamespace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_rule_groups_namespace`](crate::client::Client::create_rule_groups_namespace).
+            /// [`create_rule_groups_namespace`](crate::client::fluent_builders::CreateRuleGroupsNamespace).
             ///
             /// `ParseStrictResponse` impl for `CreateRuleGroupsNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRuleGroupsNamespac
 /// Operation shape for `CreateWorkspace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_workspace`](crate::client::Client::create_workspace).
+            /// [`create_workspace`](crate::client::fluent_builders::CreateWorkspace).
             ///
             /// `ParseStrictResponse` impl for `CreateWorkspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspace {
 /// Operation shape for `DeleteAlertManagerDefinition`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_alert_manager_definition`](crate::client::Client::delete_alert_manager_definition).
+            /// [`delete_alert_manager_definition`](crate::client::fluent_builders::DeleteAlertManagerDefinition).
             ///
             /// `ParseStrictResponse` impl for `DeleteAlertManagerDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlertManagerDefini
 /// Operation shape for `DeleteLoggingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_logging_configuration`](crate::client::Client::delete_logging_configuration).
+            /// [`delete_logging_configuration`](crate::client::fluent_builders::DeleteLoggingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoggingConfigurati
 /// Operation shape for `DeleteRuleGroupsNamespace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_rule_groups_namespace`](crate::client::Client::delete_rule_groups_namespace).
+            /// [`delete_rule_groups_namespace`](crate::client::fluent_builders::DeleteRuleGroupsNamespace).
             ///
             /// `ParseStrictResponse` impl for `DeleteRuleGroupsNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRuleGroupsNamespac
 /// Operation shape for `DeleteWorkspace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_workspace`](crate::client::Client::delete_workspace).
+            /// [`delete_workspace`](crate::client::fluent_builders::DeleteWorkspace).
             ///
             /// `ParseStrictResponse` impl for `DeleteWorkspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkspace {
 /// Operation shape for `DescribeAlertManagerDefinition`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_alert_manager_definition`](crate::client::Client::describe_alert_manager_definition).
+            /// [`describe_alert_manager_definition`](crate::client::fluent_builders::DescribeAlertManagerDefinition).
             ///
             /// `ParseStrictResponse` impl for `DescribeAlertManagerDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlertManagerDefi
 /// Operation shape for `DescribeLoggingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_logging_configuration`](crate::client::Client::describe_logging_configuration).
+            /// [`describe_logging_configuration`](crate::client::fluent_builders::DescribeLoggingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DescribeLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoggingConfigura
 /// Operation shape for `DescribeRuleGroupsNamespace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_rule_groups_namespace`](crate::client::Client::describe_rule_groups_namespace).
+            /// [`describe_rule_groups_namespace`](crate::client::fluent_builders::DescribeRuleGroupsNamespace).
             ///
             /// `ParseStrictResponse` impl for `DescribeRuleGroupsNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroupsNamesp
 /// Operation shape for `DescribeWorkspace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_workspace`](crate::client::Client::describe_workspace).
+            /// [`describe_workspace`](crate::client::fluent_builders::DescribeWorkspace).
             ///
             /// `ParseStrictResponse` impl for `DescribeWorkspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspace {
 /// Operation shape for `ListRuleGroupsNamespaces`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_rule_groups_namespaces`](crate::client::Client::list_rule_groups_namespaces).
+            /// [`list_rule_groups_namespaces`](crate::client::fluent_builders::ListRuleGroupsNamespaces).
             ///
             /// `ParseStrictResponse` impl for `ListRuleGroupsNamespaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuleGroupsNamespaces
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListWorkspaces`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_workspaces`](crate::client::Client::list_workspaces).
+            /// [`list_workspaces`](crate::client::fluent_builders::ListWorkspaces).
             ///
             /// `ParseStrictResponse` impl for `ListWorkspaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkspaces {
 /// Operation shape for `PutAlertManagerDefinition`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_alert_manager_definition`](crate::client::Client::put_alert_manager_definition).
+            /// [`put_alert_manager_definition`](crate::client::fluent_builders::PutAlertManagerDefinition).
             ///
             /// `ParseStrictResponse` impl for `PutAlertManagerDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAlertManagerDefinitio
 /// Operation shape for `PutRuleGroupsNamespace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_rule_groups_namespace`](crate::client::Client::put_rule_groups_namespace).
+            /// [`put_rule_groups_namespace`](crate::client::fluent_builders::PutRuleGroupsNamespace).
             ///
             /// `ParseStrictResponse` impl for `PutRuleGroupsNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRuleGroupsNamespace {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateLoggingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_logging_configuration`](crate::client::Client::update_logging_configuration).
+            /// [`update_logging_configuration`](crate::client::fluent_builders::UpdateLoggingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `UpdateLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLoggingConfigurati
 /// Operation shape for `UpdateWorkspaceAlias`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_workspace_alias`](crate::client::Client::update_workspace_alias).
+            /// [`update_workspace_alias`](crate::client::fluent_builders::UpdateWorkspaceAlias).
             ///
             /// `ParseStrictResponse` impl for `UpdateWorkspaceAlias`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

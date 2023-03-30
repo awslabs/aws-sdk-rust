@@ -2,7 +2,7 @@
 /// Operation shape for `DisableControl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_control`](crate::client::Client::disable_control).
+            /// [`disable_control`](crate::client::fluent_builders::DisableControl).
             ///
             /// `ParseStrictResponse` impl for `DisableControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableControl {
 /// Operation shape for `EnableControl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_control`](crate::client::Client::enable_control).
+            /// [`enable_control`](crate::client::fluent_builders::EnableControl).
             ///
             /// `ParseStrictResponse` impl for `EnableControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableControl {
 /// Operation shape for `GetControlOperation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_control_operation`](crate::client::Client::get_control_operation).
+            /// [`get_control_operation`](crate::client::fluent_builders::GetControlOperation).
             ///
             /// `ParseStrictResponse` impl for `GetControlOperation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetControlOperation {
 /// Operation shape for `ListEnabledControls`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_enabled_controls`](crate::client::Client::list_enabled_controls).
+            /// [`list_enabled_controls`](crate::client::fluent_builders::ListEnabledControls).
             ///
             /// `ParseStrictResponse` impl for `ListEnabledControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

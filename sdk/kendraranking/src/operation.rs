@@ -2,7 +2,7 @@
 /// Operation shape for `CreateRescoreExecutionPlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_rescore_execution_plan`](crate::client::Client::create_rescore_execution_plan).
+            /// [`create_rescore_execution_plan`](crate::client::fluent_builders::CreateRescoreExecutionPlan).
             ///
             /// `ParseStrictResponse` impl for `CreateRescoreExecutionPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRescoreExecutionPl
 /// Operation shape for `DeleteRescoreExecutionPlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_rescore_execution_plan`](crate::client::Client::delete_rescore_execution_plan).
+            /// [`delete_rescore_execution_plan`](crate::client::fluent_builders::DeleteRescoreExecutionPlan).
             ///
             /// `ParseStrictResponse` impl for `DeleteRescoreExecutionPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRescoreExecutionPl
 /// Operation shape for `DescribeRescoreExecutionPlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_rescore_execution_plan`](crate::client::Client::describe_rescore_execution_plan).
+            /// [`describe_rescore_execution_plan`](crate::client::fluent_builders::DescribeRescoreExecutionPlan).
             ///
             /// `ParseStrictResponse` impl for `DescribeRescoreExecutionPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRescoreExecution
 /// Operation shape for `ListRescoreExecutionPlans`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_rescore_execution_plans`](crate::client::Client::list_rescore_execution_plans).
+            /// [`list_rescore_execution_plans`](crate::client::fluent_builders::ListRescoreExecutionPlans).
             ///
             /// `ParseStrictResponse` impl for `ListRescoreExecutionPlans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRescoreExecutionPlan
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `Rescore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`rescore`](crate::client::Client::rescore).
+            /// [`rescore`](crate::client::fluent_builders::Rescore).
             ///
             /// `ParseStrictResponse` impl for `Rescore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Rescore {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateRescoreExecutionPlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_rescore_execution_plan`](crate::client::Client::update_rescore_execution_plan).
+            /// [`update_rescore_execution_plan`](crate::client::fluent_builders::UpdateRescoreExecutionPlan).
             ///
             /// `ParseStrictResponse` impl for `UpdateRescoreExecutionPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

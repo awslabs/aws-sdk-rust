@@ -2,7 +2,7 @@
 /// Operation shape for `CreateCluster`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_cluster`](crate::client::Client::create_cluster).
+            /// [`create_cluster`](crate::client::fluent_builders::CreateCluster).
             ///
             /// `ParseStrictResponse` impl for `CreateCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
 /// Operation shape for `CreateControlPanel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_control_panel`](crate::client::Client::create_control_panel).
+            /// [`create_control_panel`](crate::client::fluent_builders::CreateControlPanel).
             ///
             /// `ParseStrictResponse` impl for `CreateControlPanel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateControlPanel {
 /// Operation shape for `CreateRoutingControl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_routing_control`](crate::client::Client::create_routing_control).
+            /// [`create_routing_control`](crate::client::fluent_builders::CreateRoutingControl).
             ///
             /// `ParseStrictResponse` impl for `CreateRoutingControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoutingControl {
 /// Operation shape for `CreateSafetyRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_safety_rule`](crate::client::Client::create_safety_rule).
+            /// [`create_safety_rule`](crate::client::fluent_builders::CreateSafetyRule).
             ///
             /// `ParseStrictResponse` impl for `CreateSafetyRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSafetyRule {
 /// Operation shape for `DeleteCluster`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_cluster`](crate::client::Client::delete_cluster).
+            /// [`delete_cluster`](crate::client::fluent_builders::DeleteCluster).
             ///
             /// `ParseStrictResponse` impl for `DeleteCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCluster {
 /// Operation shape for `DeleteControlPanel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_control_panel`](crate::client::Client::delete_control_panel).
+            /// [`delete_control_panel`](crate::client::fluent_builders::DeleteControlPanel).
             ///
             /// `ParseStrictResponse` impl for `DeleteControlPanel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteControlPanel {
 /// Operation shape for `DeleteRoutingControl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_routing_control`](crate::client::Client::delete_routing_control).
+            /// [`delete_routing_control`](crate::client::fluent_builders::DeleteRoutingControl).
             ///
             /// `ParseStrictResponse` impl for `DeleteRoutingControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoutingControl {
 /// Operation shape for `DeleteSafetyRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_safety_rule`](crate::client::Client::delete_safety_rule).
+            /// [`delete_safety_rule`](crate::client::fluent_builders::DeleteSafetyRule).
             ///
             /// `ParseStrictResponse` impl for `DeleteSafetyRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSafetyRule {
 /// Operation shape for `DescribeCluster`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_cluster`](crate::client::Client::describe_cluster).
+            /// [`describe_cluster`](crate::client::fluent_builders::DescribeCluster).
             ///
             /// `ParseStrictResponse` impl for `DescribeCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCluster {
 /// Operation shape for `DescribeControlPanel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_control_panel`](crate::client::Client::describe_control_panel).
+            /// [`describe_control_panel`](crate::client::fluent_builders::DescribeControlPanel).
             ///
             /// `ParseStrictResponse` impl for `DescribeControlPanel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeControlPanel {
 /// Operation shape for `DescribeRoutingControl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_routing_control`](crate::client::Client::describe_routing_control).
+            /// [`describe_routing_control`](crate::client::fluent_builders::DescribeRoutingControl).
             ///
             /// `ParseStrictResponse` impl for `DescribeRoutingControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRoutingControl {
 /// Operation shape for `DescribeSafetyRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_safety_rule`](crate::client::Client::describe_safety_rule).
+            /// [`describe_safety_rule`](crate::client::fluent_builders::DescribeSafetyRule).
             ///
             /// `ParseStrictResponse` impl for `DescribeSafetyRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSafetyRule {
 /// Operation shape for `ListAssociatedRoute53HealthChecks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_associated_route53_health_checks`](crate::client::Client::list_associated_route53_health_checks).
+            /// [`list_associated_route53_health_checks`](crate::client::fluent_builders::ListAssociatedRoute53HealthChecks).
             ///
             /// `ParseStrictResponse` impl for `ListAssociatedRoute53HealthChecks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedRoute53Hea
 /// Operation shape for `ListClusters`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_clusters`](crate::client::Client::list_clusters).
+            /// [`list_clusters`](crate::client::fluent_builders::ListClusters).
             ///
             /// `ParseStrictResponse` impl for `ListClusters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusters {
 /// Operation shape for `ListControlPanels`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_control_panels`](crate::client::Client::list_control_panels).
+            /// [`list_control_panels`](crate::client::fluent_builders::ListControlPanels).
             ///
             /// `ParseStrictResponse` impl for `ListControlPanels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListControlPanels {
 /// Operation shape for `ListRoutingControls`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_routing_controls`](crate::client::Client::list_routing_controls).
+            /// [`list_routing_controls`](crate::client::fluent_builders::ListRoutingControls).
             ///
             /// `ParseStrictResponse` impl for `ListRoutingControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutingControls {
 /// Operation shape for `ListSafetyRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_safety_rules`](crate::client::Client::list_safety_rules).
+            /// [`list_safety_rules`](crate::client::fluent_builders::ListSafetyRules).
             ///
             /// `ParseStrictResponse` impl for `ListSafetyRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSafetyRules {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateControlPanel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_control_panel`](crate::client::Client::update_control_panel).
+            /// [`update_control_panel`](crate::client::fluent_builders::UpdateControlPanel).
             ///
             /// `ParseStrictResponse` impl for `UpdateControlPanel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateControlPanel {
 /// Operation shape for `UpdateRoutingControl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_routing_control`](crate::client::Client::update_routing_control).
+            /// [`update_routing_control`](crate::client::fluent_builders::UpdateRoutingControl).
             ///
             /// `ParseStrictResponse` impl for `UpdateRoutingControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingControl {
 /// Operation shape for `UpdateSafetyRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_safety_rule`](crate::client::Client::update_safety_rule).
+            /// [`update_safety_rule`](crate::client::fluent_builders::UpdateSafetyRule).
             ///
             /// `ParseStrictResponse` impl for `UpdateSafetyRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

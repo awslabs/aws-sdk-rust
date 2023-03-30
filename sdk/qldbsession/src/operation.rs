@@ -2,7 +2,7 @@
 /// Operation shape for `SendCommand`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`send_command`](crate::client::Client::send_command).
+            /// [`send_command`](crate::client::fluent_builders::SendCommand).
             ///
             /// `ParseStrictResponse` impl for `SendCommand`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

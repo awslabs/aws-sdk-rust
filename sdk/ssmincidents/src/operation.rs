@@ -2,7 +2,7 @@
 /// Operation shape for `CreateReplicationSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_replication_set`](crate::client::Client::create_replication_set).
+            /// [`create_replication_set`](crate::client::fluent_builders::CreateReplicationSet).
             ///
             /// `ParseStrictResponse` impl for `CreateReplicationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationSet {
 /// Operation shape for `CreateResponsePlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_response_plan`](crate::client::Client::create_response_plan).
+            /// [`create_response_plan`](crate::client::fluent_builders::CreateResponsePlan).
             ///
             /// `ParseStrictResponse` impl for `CreateResponsePlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResponsePlan {
 /// Operation shape for `CreateTimelineEvent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_timeline_event`](crate::client::Client::create_timeline_event).
+            /// [`create_timeline_event`](crate::client::fluent_builders::CreateTimelineEvent).
             ///
             /// `ParseStrictResponse` impl for `CreateTimelineEvent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTimelineEvent {
 /// Operation shape for `DeleteIncidentRecord`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_incident_record`](crate::client::Client::delete_incident_record).
+            /// [`delete_incident_record`](crate::client::fluent_builders::DeleteIncidentRecord).
             ///
             /// `ParseStrictResponse` impl for `DeleteIncidentRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIncidentRecord {
 /// Operation shape for `DeleteReplicationSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_replication_set`](crate::client::Client::delete_replication_set).
+            /// [`delete_replication_set`](crate::client::fluent_builders::DeleteReplicationSet).
             ///
             /// `ParseStrictResponse` impl for `DeleteReplicationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReplicationSet {
 /// Operation shape for `DeleteResourcePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
+            /// [`delete_resource_policy`](crate::client::fluent_builders::DeleteResourcePolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// Operation shape for `DeleteResponsePlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_response_plan`](crate::client::Client::delete_response_plan).
+            /// [`delete_response_plan`](crate::client::fluent_builders::DeleteResponsePlan).
             ///
             /// `ParseStrictResponse` impl for `DeleteResponsePlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResponsePlan {
 /// Operation shape for `DeleteTimelineEvent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_timeline_event`](crate::client::Client::delete_timeline_event).
+            /// [`delete_timeline_event`](crate::client::fluent_builders::DeleteTimelineEvent).
             ///
             /// `ParseStrictResponse` impl for `DeleteTimelineEvent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTimelineEvent {
 /// Operation shape for `GetIncidentRecord`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_incident_record`](crate::client::Client::get_incident_record).
+            /// [`get_incident_record`](crate::client::fluent_builders::GetIncidentRecord).
             ///
             /// `ParseStrictResponse` impl for `GetIncidentRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIncidentRecord {
 /// Operation shape for `GetReplicationSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_replication_set`](crate::client::Client::get_replication_set).
+            /// [`get_replication_set`](crate::client::fluent_builders::GetReplicationSet).
             ///
             /// `ParseStrictResponse` impl for `GetReplicationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReplicationSet {
 /// Operation shape for `GetResourcePolicies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_resource_policies`](crate::client::Client::get_resource_policies).
+            /// [`get_resource_policies`](crate::client::fluent_builders::GetResourcePolicies).
             ///
             /// `ParseStrictResponse` impl for `GetResourcePolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourcePolicies {
 /// Operation shape for `GetResponsePlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_response_plan`](crate::client::Client::get_response_plan).
+            /// [`get_response_plan`](crate::client::fluent_builders::GetResponsePlan).
             ///
             /// `ParseStrictResponse` impl for `GetResponsePlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResponsePlan {
 /// Operation shape for `GetTimelineEvent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_timeline_event`](crate::client::Client::get_timeline_event).
+            /// [`get_timeline_event`](crate::client::fluent_builders::GetTimelineEvent).
             ///
             /// `ParseStrictResponse` impl for `GetTimelineEvent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTimelineEvent {
 /// Operation shape for `ListIncidentRecords`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_incident_records`](crate::client::Client::list_incident_records).
+            /// [`list_incident_records`](crate::client::fluent_builders::ListIncidentRecords).
             ///
             /// `ParseStrictResponse` impl for `ListIncidentRecords`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIncidentRecords {
 /// Operation shape for `ListRelatedItems`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_related_items`](crate::client::Client::list_related_items).
+            /// [`list_related_items`](crate::client::fluent_builders::ListRelatedItems).
             ///
             /// `ParseStrictResponse` impl for `ListRelatedItems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRelatedItems {
 /// Operation shape for `ListReplicationSets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_replication_sets`](crate::client::Client::list_replication_sets).
+            /// [`list_replication_sets`](crate::client::fluent_builders::ListReplicationSets).
             ///
             /// `ParseStrictResponse` impl for `ListReplicationSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReplicationSets {
 /// Operation shape for `ListResponsePlans`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_response_plans`](crate::client::Client::list_response_plans).
+            /// [`list_response_plans`](crate::client::fluent_builders::ListResponsePlans).
             ///
             /// `ParseStrictResponse` impl for `ListResponsePlans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResponsePlans {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTimelineEvents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_timeline_events`](crate::client::Client::list_timeline_events).
+            /// [`list_timeline_events`](crate::client::fluent_builders::ListTimelineEvents).
             ///
             /// `ParseStrictResponse` impl for `ListTimelineEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTimelineEvents {
 /// Operation shape for `PutResourcePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_resource_policy`](crate::client::Client::put_resource_policy).
+            /// [`put_resource_policy`](crate::client::fluent_builders::PutResourcePolicy).
             ///
             /// `ParseStrictResponse` impl for `PutResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// Operation shape for `StartIncident`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_incident`](crate::client::Client::start_incident).
+            /// [`start_incident`](crate::client::fluent_builders::StartIncident).
             ///
             /// `ParseStrictResponse` impl for `StartIncident`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartIncident {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateDeletionProtection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_deletion_protection`](crate::client::Client::update_deletion_protection).
+            /// [`update_deletion_protection`](crate::client::fluent_builders::UpdateDeletionProtection).
             ///
             /// `ParseStrictResponse` impl for `UpdateDeletionProtection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDeletionProtection
 /// Operation shape for `UpdateIncidentRecord`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_incident_record`](crate::client::Client::update_incident_record).
+            /// [`update_incident_record`](crate::client::fluent_builders::UpdateIncidentRecord).
             ///
             /// `ParseStrictResponse` impl for `UpdateIncidentRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIncidentRecord {
 /// Operation shape for `UpdateRelatedItems`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_related_items`](crate::client::Client::update_related_items).
+            /// [`update_related_items`](crate::client::fluent_builders::UpdateRelatedItems).
             ///
             /// `ParseStrictResponse` impl for `UpdateRelatedItems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRelatedItems {
 /// Operation shape for `UpdateReplicationSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_replication_set`](crate::client::Client::update_replication_set).
+            /// [`update_replication_set`](crate::client::fluent_builders::UpdateReplicationSet).
             ///
             /// `ParseStrictResponse` impl for `UpdateReplicationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateReplicationSet {
 /// Operation shape for `UpdateResponsePlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_response_plan`](crate::client::Client::update_response_plan).
+            /// [`update_response_plan`](crate::client::fluent_builders::UpdateResponsePlan).
             ///
             /// `ParseStrictResponse` impl for `UpdateResponsePlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResponsePlan {
 /// Operation shape for `UpdateTimelineEvent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_timeline_event`](crate::client::Client::update_timeline_event).
+            /// [`update_timeline_event`](crate::client::fluent_builders::UpdateTimelineEvent).
             ///
             /// `ParseStrictResponse` impl for `UpdateTimelineEvent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

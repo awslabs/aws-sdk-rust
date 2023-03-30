@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateFirewallPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_firewall_policy`](crate::client::Client::associate_firewall_policy).
+            /// [`associate_firewall_policy`](crate::client::fluent_builders::AssociateFirewallPolicy).
             ///
             /// `ParseStrictResponse` impl for `AssociateFirewallPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateFirewallPolicy 
 /// Operation shape for `AssociateSubnets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_subnets`](crate::client::Client::associate_subnets).
+            /// [`associate_subnets`](crate::client::fluent_builders::AssociateSubnets).
             ///
             /// `ParseStrictResponse` impl for `AssociateSubnets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateSubnets {
 /// Operation shape for `CreateFirewall`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_firewall`](crate::client::Client::create_firewall).
+            /// [`create_firewall`](crate::client::fluent_builders::CreateFirewall).
             ///
             /// `ParseStrictResponse` impl for `CreateFirewall`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewall {
 /// Operation shape for `CreateFirewallPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_firewall_policy`](crate::client::Client::create_firewall_policy).
+            /// [`create_firewall_policy`](crate::client::fluent_builders::CreateFirewallPolicy).
             ///
             /// `ParseStrictResponse` impl for `CreateFirewallPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewallPolicy {
 /// Operation shape for `CreateRuleGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_rule_group`](crate::client::Client::create_rule_group).
+            /// [`create_rule_group`](crate::client::fluent_builders::CreateRuleGroup).
             ///
             /// `ParseStrictResponse` impl for `CreateRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRuleGroup {
 /// Operation shape for `DeleteFirewall`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_firewall`](crate::client::Client::delete_firewall).
+            /// [`delete_firewall`](crate::client::fluent_builders::DeleteFirewall).
             ///
             /// `ParseStrictResponse` impl for `DeleteFirewall`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewall {
 /// Operation shape for `DeleteFirewallPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_firewall_policy`](crate::client::Client::delete_firewall_policy).
+            /// [`delete_firewall_policy`](crate::client::fluent_builders::DeleteFirewallPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteFirewallPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallPolicy {
 /// Operation shape for `DeleteResourcePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
+            /// [`delete_resource_policy`](crate::client::fluent_builders::DeleteResourcePolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// Operation shape for `DeleteRuleGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_rule_group`](crate::client::Client::delete_rule_group).
+            /// [`delete_rule_group`](crate::client::fluent_builders::DeleteRuleGroup).
             ///
             /// `ParseStrictResponse` impl for `DeleteRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRuleGroup {
 /// Operation shape for `DescribeFirewall`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_firewall`](crate::client::Client::describe_firewall).
+            /// [`describe_firewall`](crate::client::fluent_builders::DescribeFirewall).
             ///
             /// `ParseStrictResponse` impl for `DescribeFirewall`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFirewall {
 /// Operation shape for `DescribeFirewallPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_firewall_policy`](crate::client::Client::describe_firewall_policy).
+            /// [`describe_firewall_policy`](crate::client::fluent_builders::DescribeFirewallPolicy).
             ///
             /// `ParseStrictResponse` impl for `DescribeFirewallPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFirewallPolicy {
 /// Operation shape for `DescribeLoggingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_logging_configuration`](crate::client::Client::describe_logging_configuration).
+            /// [`describe_logging_configuration`](crate::client::fluent_builders::DescribeLoggingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DescribeLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoggingConfigura
 /// Operation shape for `DescribeResourcePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_resource_policy`](crate::client::Client::describe_resource_policy).
+            /// [`describe_resource_policy`](crate::client::fluent_builders::DescribeResourcePolicy).
             ///
             /// `ParseStrictResponse` impl for `DescribeResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeResourcePolicy {
 /// Operation shape for `DescribeRuleGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_rule_group`](crate::client::Client::describe_rule_group).
+            /// [`describe_rule_group`](crate::client::fluent_builders::DescribeRuleGroup).
             ///
             /// `ParseStrictResponse` impl for `DescribeRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroup {
 /// Operation shape for `DescribeRuleGroupMetadata`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_rule_group_metadata`](crate::client::Client::describe_rule_group_metadata).
+            /// [`describe_rule_group_metadata`](crate::client::fluent_builders::DescribeRuleGroupMetadata).
             ///
             /// `ParseStrictResponse` impl for `DescribeRuleGroupMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroupMetadat
 /// Operation shape for `DisassociateSubnets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_subnets`](crate::client::Client::disassociate_subnets).
+            /// [`disassociate_subnets`](crate::client::fluent_builders::DisassociateSubnets).
             ///
             /// `ParseStrictResponse` impl for `DisassociateSubnets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateSubnets {
 /// Operation shape for `ListFirewallPolicies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_firewall_policies`](crate::client::Client::list_firewall_policies).
+            /// [`list_firewall_policies`](crate::client::fluent_builders::ListFirewallPolicies).
             ///
             /// `ParseStrictResponse` impl for `ListFirewallPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallPolicies {
 /// Operation shape for `ListFirewalls`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_firewalls`](crate::client::Client::list_firewalls).
+            /// [`list_firewalls`](crate::client::fluent_builders::ListFirewalls).
             ///
             /// `ParseStrictResponse` impl for `ListFirewalls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewalls {
 /// Operation shape for `ListRuleGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_rule_groups`](crate::client::Client::list_rule_groups).
+            /// [`list_rule_groups`](crate::client::fluent_builders::ListRuleGroups).
             ///
             /// `ParseStrictResponse` impl for `ListRuleGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuleGroups {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutResourcePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_resource_policy`](crate::client::Client::put_resource_policy).
+            /// [`put_resource_policy`](crate::client::fluent_builders::PutResourcePolicy).
             ///
             /// `ParseStrictResponse` impl for `PutResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateFirewallDeleteProtection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_firewall_delete_protection`](crate::client::Client::update_firewall_delete_protection).
+            /// [`update_firewall_delete_protection`](crate::client::fluent_builders::UpdateFirewallDeleteProtection).
             ///
             /// `ParseStrictResponse` impl for `UpdateFirewallDeleteProtection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallDeleteProt
 /// Operation shape for `UpdateFirewallDescription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_firewall_description`](crate::client::Client::update_firewall_description).
+            /// [`update_firewall_description`](crate::client::fluent_builders::UpdateFirewallDescription).
             ///
             /// `ParseStrictResponse` impl for `UpdateFirewallDescription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallDescriptio
 /// Operation shape for `UpdateFirewallEncryptionConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_firewall_encryption_configuration`](crate::client::Client::update_firewall_encryption_configuration).
+            /// [`update_firewall_encryption_configuration`](crate::client::fluent_builders::UpdateFirewallEncryptionConfiguration).
             ///
             /// `ParseStrictResponse` impl for `UpdateFirewallEncryptionConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallEncryption
 /// Operation shape for `UpdateFirewallPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_firewall_policy`](crate::client::Client::update_firewall_policy).
+            /// [`update_firewall_policy`](crate::client::fluent_builders::UpdateFirewallPolicy).
             ///
             /// `ParseStrictResponse` impl for `UpdateFirewallPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallPolicy {
 /// Operation shape for `UpdateFirewallPolicyChangeProtection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_firewall_policy_change_protection`](crate::client::Client::update_firewall_policy_change_protection).
+            /// [`update_firewall_policy_change_protection`](crate::client::fluent_builders::UpdateFirewallPolicyChangeProtection).
             ///
             /// `ParseStrictResponse` impl for `UpdateFirewallPolicyChangeProtection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallPolicyChan
 /// Operation shape for `UpdateLoggingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_logging_configuration`](crate::client::Client::update_logging_configuration).
+            /// [`update_logging_configuration`](crate::client::fluent_builders::UpdateLoggingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `UpdateLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLoggingConfigurati
 /// Operation shape for `UpdateRuleGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_rule_group`](crate::client::Client::update_rule_group).
+            /// [`update_rule_group`](crate::client::fluent_builders::UpdateRuleGroup).
             ///
             /// `ParseStrictResponse` impl for `UpdateRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRuleGroup {
 /// Operation shape for `UpdateSubnetChangeProtection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_subnet_change_protection`](crate::client::Client::update_subnet_change_protection).
+            /// [`update_subnet_change_protection`](crate::client::fluent_builders::UpdateSubnetChangeProtection).
             ///
             /// `ParseStrictResponse` impl for `UpdateSubnetChangeProtection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateGatewayToServer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_gateway_to_server`](crate::client::Client::associate_gateway_to_server).
+            /// [`associate_gateway_to_server`](crate::client::fluent_builders::AssociateGatewayToServer).
             ///
             /// `ParseStrictResponse` impl for `AssociateGatewayToServer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateGatewayToServer
 /// Operation shape for `CreateGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_gateway`](crate::client::Client::create_gateway).
+            /// [`create_gateway`](crate::client::fluent_builders::CreateGateway).
             ///
             /// `ParseStrictResponse` impl for `CreateGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGateway {
 /// Operation shape for `DeleteGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_gateway`](crate::client::Client::delete_gateway).
+            /// [`delete_gateway`](crate::client::fluent_builders::DeleteGateway).
             ///
             /// `ParseStrictResponse` impl for `DeleteGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGateway {
 /// Operation shape for `DeleteHypervisor`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_hypervisor`](crate::client::Client::delete_hypervisor).
+            /// [`delete_hypervisor`](crate::client::fluent_builders::DeleteHypervisor).
             ///
             /// `ParseStrictResponse` impl for `DeleteHypervisor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHypervisor {
 /// Operation shape for `DisassociateGatewayFromServer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_gateway_from_server`](crate::client::Client::disassociate_gateway_from_server).
+            /// [`disassociate_gateway_from_server`](crate::client::fluent_builders::DisassociateGatewayFromServer).
             ///
             /// `ParseStrictResponse` impl for `DisassociateGatewayFromServer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateGatewayFromS
 /// Operation shape for `GetBandwidthRateLimitSchedule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bandwidth_rate_limit_schedule`](crate::client::Client::get_bandwidth_rate_limit_schedule).
+            /// [`get_bandwidth_rate_limit_schedule`](crate::client::fluent_builders::GetBandwidthRateLimitSchedule).
             ///
             /// `ParseStrictResponse` impl for `GetBandwidthRateLimitSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBandwidthRateLimitSch
 /// Operation shape for `GetGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_gateway`](crate::client::Client::get_gateway).
+            /// [`get_gateway`](crate::client::fluent_builders::GetGateway).
             ///
             /// `ParseStrictResponse` impl for `GetGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGateway {
 /// Operation shape for `GetHypervisor`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_hypervisor`](crate::client::Client::get_hypervisor).
+            /// [`get_hypervisor`](crate::client::fluent_builders::GetHypervisor).
             ///
             /// `ParseStrictResponse` impl for `GetHypervisor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHypervisor {
 /// Operation shape for `GetHypervisorPropertyMappings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_hypervisor_property_mappings`](crate::client::Client::get_hypervisor_property_mappings).
+            /// [`get_hypervisor_property_mappings`](crate::client::fluent_builders::GetHypervisorPropertyMappings).
             ///
             /// `ParseStrictResponse` impl for `GetHypervisorPropertyMappings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHypervisorPropertyMap
 /// Operation shape for `GetVirtualMachine`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_virtual_machine`](crate::client::Client::get_virtual_machine).
+            /// [`get_virtual_machine`](crate::client::fluent_builders::GetVirtualMachine).
             ///
             /// `ParseStrictResponse` impl for `GetVirtualMachine`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVirtualMachine {
 /// Operation shape for `ImportHypervisorConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_hypervisor_configuration`](crate::client::Client::import_hypervisor_configuration).
+            /// [`import_hypervisor_configuration`](crate::client::fluent_builders::ImportHypervisorConfiguration).
             ///
             /// `ParseStrictResponse` impl for `ImportHypervisorConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportHypervisorConfigur
 /// Operation shape for `ListGateways`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_gateways`](crate::client::Client::list_gateways).
+            /// [`list_gateways`](crate::client::fluent_builders::ListGateways).
             ///
             /// `ParseStrictResponse` impl for `ListGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGateways {
 /// Operation shape for `ListHypervisors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_hypervisors`](crate::client::Client::list_hypervisors).
+            /// [`list_hypervisors`](crate::client::fluent_builders::ListHypervisors).
             ///
             /// `ParseStrictResponse` impl for `ListHypervisors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHypervisors {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListVirtualMachines`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_virtual_machines`](crate::client::Client::list_virtual_machines).
+            /// [`list_virtual_machines`](crate::client::fluent_builders::ListVirtualMachines).
             ///
             /// `ParseStrictResponse` impl for `ListVirtualMachines`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualMachines {
 /// Operation shape for `PutBandwidthRateLimitSchedule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bandwidth_rate_limit_schedule`](crate::client::Client::put_bandwidth_rate_limit_schedule).
+            /// [`put_bandwidth_rate_limit_schedule`](crate::client::fluent_builders::PutBandwidthRateLimitSchedule).
             ///
             /// `ParseStrictResponse` impl for `PutBandwidthRateLimitSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBandwidthRateLimitSch
 /// Operation shape for `PutHypervisorPropertyMappings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_hypervisor_property_mappings`](crate::client::Client::put_hypervisor_property_mappings).
+            /// [`put_hypervisor_property_mappings`](crate::client::fluent_builders::PutHypervisorPropertyMappings).
             ///
             /// `ParseStrictResponse` impl for `PutHypervisorPropertyMappings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutHypervisorPropertyMap
 /// Operation shape for `PutMaintenanceStartTime`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_maintenance_start_time`](crate::client::Client::put_maintenance_start_time).
+            /// [`put_maintenance_start_time`](crate::client::fluent_builders::PutMaintenanceStartTime).
             ///
             /// `ParseStrictResponse` impl for `PutMaintenanceStartTime`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMaintenanceStartTime 
 /// Operation shape for `StartVirtualMachinesMetadataSync`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_virtual_machines_metadata_sync`](crate::client::Client::start_virtual_machines_metadata_sync).
+            /// [`start_virtual_machines_metadata_sync`](crate::client::fluent_builders::StartVirtualMachinesMetadataSync).
             ///
             /// `ParseStrictResponse` impl for `StartVirtualMachinesMetadataSync`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartVirtualMachinesMeta
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `TestHypervisorConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`test_hypervisor_configuration`](crate::client::Client::test_hypervisor_configuration).
+            /// [`test_hypervisor_configuration`](crate::client::fluent_builders::TestHypervisorConfiguration).
             ///
             /// `ParseStrictResponse` impl for `TestHypervisorConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestHypervisorConfigurat
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateGatewayInformation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_gateway_information`](crate::client::Client::update_gateway_information).
+            /// [`update_gateway_information`](crate::client::fluent_builders::UpdateGatewayInformation).
             ///
             /// `ParseStrictResponse` impl for `UpdateGatewayInformation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayInformation
 /// Operation shape for `UpdateGatewaySoftwareNow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_gateway_software_now`](crate::client::Client::update_gateway_software_now).
+            /// [`update_gateway_software_now`](crate::client::fluent_builders::UpdateGatewaySoftwareNow).
             ///
             /// `ParseStrictResponse` impl for `UpdateGatewaySoftwareNow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewaySoftwareNow
 /// Operation shape for `UpdateHypervisor`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_hypervisor`](crate::client::Client::update_hypervisor).
+            /// [`update_hypervisor`](crate::client::fluent_builders::UpdateHypervisor).
             ///
             /// `ParseStrictResponse` impl for `UpdateHypervisor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `BatchExecuteStatement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_execute_statement`](crate::client::Client::batch_execute_statement).
+            /// [`batch_execute_statement`](crate::client::fluent_builders::BatchExecuteStatement).
             ///
             /// `ParseStrictResponse` impl for `BatchExecuteStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchExecuteStatement {
 /// Operation shape for `BeginTransaction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`begin_transaction`](crate::client::Client::begin_transaction).
+            /// [`begin_transaction`](crate::client::fluent_builders::BeginTransaction).
             ///
             /// `ParseStrictResponse` impl for `BeginTransaction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BeginTransaction {
 /// Operation shape for `CommitTransaction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`commit_transaction`](crate::client::Client::commit_transaction).
+            /// [`commit_transaction`](crate::client::fluent_builders::CommitTransaction).
             ///
             /// `ParseStrictResponse` impl for `CommitTransaction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CommitTransaction {
 /// Operation shape for `ExecuteSql`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`execute_sql`](crate::client::Client::execute_sql).
+            /// [`execute_sql`](crate::client::fluent_builders::ExecuteSql).
             ///
             /// `ParseStrictResponse` impl for `ExecuteSql`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteSql {
 /// Operation shape for `ExecuteStatement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`execute_statement`](crate::client::Client::execute_statement).
+            /// [`execute_statement`](crate::client::fluent_builders::ExecuteStatement).
             ///
             /// `ParseStrictResponse` impl for `ExecuteStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteStatement {
 /// Operation shape for `RollbackTransaction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`rollback_transaction`](crate::client::Client::rollback_transaction).
+            /// [`rollback_transaction`](crate::client::fluent_builders::RollbackTransaction).
             ///
             /// `ParseStrictResponse` impl for `RollbackTransaction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

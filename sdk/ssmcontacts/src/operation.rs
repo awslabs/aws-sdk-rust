@@ -2,7 +2,7 @@
 /// Operation shape for `AcceptPage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`accept_page`](crate::client::Client::accept_page).
+            /// [`accept_page`](crate::client::fluent_builders::AcceptPage).
             ///
             /// `ParseStrictResponse` impl for `AcceptPage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptPage {
 /// Operation shape for `ActivateContactChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`activate_contact_channel`](crate::client::Client::activate_contact_channel).
+            /// [`activate_contact_channel`](crate::client::fluent_builders::ActivateContactChannel).
             ///
             /// `ParseStrictResponse` impl for `ActivateContactChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateContactChannel {
 /// Operation shape for `CreateContact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_contact`](crate::client::Client::create_contact).
+            /// [`create_contact`](crate::client::fluent_builders::CreateContact).
             ///
             /// `ParseStrictResponse` impl for `CreateContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContact {
 /// Operation shape for `CreateContactChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_contact_channel`](crate::client::Client::create_contact_channel).
+            /// [`create_contact_channel`](crate::client::fluent_builders::CreateContactChannel).
             ///
             /// `ParseStrictResponse` impl for `CreateContactChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContactChannel {
 /// Operation shape for `DeactivateContactChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deactivate_contact_channel`](crate::client::Client::deactivate_contact_channel).
+            /// [`deactivate_contact_channel`](crate::client::fluent_builders::DeactivateContactChannel).
             ///
             /// `ParseStrictResponse` impl for `DeactivateContactChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeactivateContactChannel
 /// Operation shape for `DeleteContact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_contact`](crate::client::Client::delete_contact).
+            /// [`delete_contact`](crate::client::fluent_builders::DeleteContact).
             ///
             /// `ParseStrictResponse` impl for `DeleteContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContact {
 /// Operation shape for `DeleteContactChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_contact_channel`](crate::client::Client::delete_contact_channel).
+            /// [`delete_contact_channel`](crate::client::fluent_builders::DeleteContactChannel).
             ///
             /// `ParseStrictResponse` impl for `DeleteContactChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContactChannel {
 /// Operation shape for `DescribeEngagement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_engagement`](crate::client::Client::describe_engagement).
+            /// [`describe_engagement`](crate::client::fluent_builders::DescribeEngagement).
             ///
             /// `ParseStrictResponse` impl for `DescribeEngagement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEngagement {
 /// Operation shape for `DescribePage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_page`](crate::client::Client::describe_page).
+            /// [`describe_page`](crate::client::fluent_builders::DescribePage).
             ///
             /// `ParseStrictResponse` impl for `DescribePage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePage {
 /// Operation shape for `GetContact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_contact`](crate::client::Client::get_contact).
+            /// [`get_contact`](crate::client::fluent_builders::GetContact).
             ///
             /// `ParseStrictResponse` impl for `GetContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContact {
 /// Operation shape for `GetContactChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_contact_channel`](crate::client::Client::get_contact_channel).
+            /// [`get_contact_channel`](crate::client::fluent_builders::GetContactChannel).
             ///
             /// `ParseStrictResponse` impl for `GetContactChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactChannel {
 /// Operation shape for `GetContactPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_contact_policy`](crate::client::Client::get_contact_policy).
+            /// [`get_contact_policy`](crate::client::fluent_builders::GetContactPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetContactPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactPolicy {
 /// Operation shape for `ListContactChannels`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_contact_channels`](crate::client::Client::list_contact_channels).
+            /// [`list_contact_channels`](crate::client::fluent_builders::ListContactChannels).
             ///
             /// `ParseStrictResponse` impl for `ListContactChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactChannels {
 /// Operation shape for `ListContacts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_contacts`](crate::client::Client::list_contacts).
+            /// [`list_contacts`](crate::client::fluent_builders::ListContacts).
             ///
             /// `ParseStrictResponse` impl for `ListContacts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContacts {
 /// Operation shape for `ListEngagements`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_engagements`](crate::client::Client::list_engagements).
+            /// [`list_engagements`](crate::client::fluent_builders::ListEngagements).
             ///
             /// `ParseStrictResponse` impl for `ListEngagements`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEngagements {
 /// Operation shape for `ListPageReceipts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_page_receipts`](crate::client::Client::list_page_receipts).
+            /// [`list_page_receipts`](crate::client::fluent_builders::ListPageReceipts).
             ///
             /// `ParseStrictResponse` impl for `ListPageReceipts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPageReceipts {
 /// Operation shape for `ListPagesByContact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_pages_by_contact`](crate::client::Client::list_pages_by_contact).
+            /// [`list_pages_by_contact`](crate::client::fluent_builders::ListPagesByContact).
             ///
             /// `ParseStrictResponse` impl for `ListPagesByContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPagesByContact {
 /// Operation shape for `ListPagesByEngagement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_pages_by_engagement`](crate::client::Client::list_pages_by_engagement).
+            /// [`list_pages_by_engagement`](crate::client::fluent_builders::ListPagesByEngagement).
             ///
             /// `ParseStrictResponse` impl for `ListPagesByEngagement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPagesByEngagement {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutContactPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_contact_policy`](crate::client::Client::put_contact_policy).
+            /// [`put_contact_policy`](crate::client::fluent_builders::PutContactPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutContactPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutContactPolicy {
 /// Operation shape for `SendActivationCode`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`send_activation_code`](crate::client::Client::send_activation_code).
+            /// [`send_activation_code`](crate::client::fluent_builders::SendActivationCode).
             ///
             /// `ParseStrictResponse` impl for `SendActivationCode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendActivationCode {
 /// Operation shape for `StartEngagement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_engagement`](crate::client::Client::start_engagement).
+            /// [`start_engagement`](crate::client::fluent_builders::StartEngagement).
             ///
             /// `ParseStrictResponse` impl for `StartEngagement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEngagement {
 /// Operation shape for `StopEngagement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_engagement`](crate::client::Client::stop_engagement).
+            /// [`stop_engagement`](crate::client::fluent_builders::StopEngagement).
             ///
             /// `ParseStrictResponse` impl for `StopEngagement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEngagement {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateContact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_contact`](crate::client::Client::update_contact).
+            /// [`update_contact`](crate::client::fluent_builders::UpdateContact).
             ///
             /// `ParseStrictResponse` impl for `UpdateContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContact {
 /// Operation shape for `UpdateContactChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_contact_channel`](crate::client::Client::update_contact_channel).
+            /// [`update_contact_channel`](crate::client::fluent_builders::UpdateContactChannel).
             ///
             /// `ParseStrictResponse` impl for `UpdateContactChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

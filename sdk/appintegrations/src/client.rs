@@ -91,8 +91,8 @@ impl Client  {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateDataIntegrationOutput::tags): <p>One or more tags.</p>
     ///   - [`client_token(Option<String>)`](crate::output::CreateDataIntegrationOutput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
                         /// - On failure, responds with [`SdkError<CreateDataIntegrationError>`](crate::error::CreateDataIntegrationError)
-    pub fn create_data_integration(&self) -> fluent_builders::CreateDataIntegration {
-                            fluent_builders::CreateDataIntegration::new(self.handle.clone())
+    pub fn create_data_integration(&self) -> crate::client::fluent_builders::CreateDataIntegration {
+                            crate::client::fluent_builders::CreateDataIntegration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateEventIntegration`](crate::client::fluent_builders::CreateEventIntegration) operation.
                         ///
@@ -106,8 +106,8 @@ impl Client  {
                         /// - On success, responds with [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput) with field(s):
                         ///   - [`event_integration_arn(Option<String>)`](crate::output::CreateEventIntegrationOutput::event_integration_arn): <p>The Amazon Resource Name (ARN) of the event integration. </p>
                         /// - On failure, responds with [`SdkError<CreateEventIntegrationError>`](crate::error::CreateEventIntegrationError)
-    pub fn create_event_integration(&self) -> fluent_builders::CreateEventIntegration {
-                            fluent_builders::CreateEventIntegration::new(self.handle.clone())
+    pub fn create_event_integration(&self) -> crate::client::fluent_builders::CreateEventIntegration {
+                            crate::client::fluent_builders::CreateEventIntegration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteDataIntegration`](crate::client::fluent_builders::DeleteDataIntegration) operation.
                         ///
@@ -116,8 +116,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteDataIntegrationError>`](crate::error::DeleteDataIntegrationError)
-    pub fn delete_data_integration(&self) -> fluent_builders::DeleteDataIntegration {
-                            fluent_builders::DeleteDataIntegration::new(self.handle.clone())
+    pub fn delete_data_integration(&self) -> crate::client::fluent_builders::DeleteDataIntegration {
+                            crate::client::fluent_builders::DeleteDataIntegration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteEventIntegration`](crate::client::fluent_builders::DeleteEventIntegration) operation.
                         ///
@@ -126,8 +126,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteEventIntegrationError>`](crate::error::DeleteEventIntegrationError)
-    pub fn delete_event_integration(&self) -> fluent_builders::DeleteEventIntegration {
-                            fluent_builders::DeleteEventIntegration::new(self.handle.clone())
+    pub fn delete_event_integration(&self) -> crate::client::fluent_builders::DeleteEventIntegration {
+                            crate::client::fluent_builders::DeleteEventIntegration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetDataIntegration`](crate::client::fluent_builders::GetDataIntegration) operation.
                         ///
@@ -143,8 +143,8 @@ impl Client  {
     ///   - [`schedule_configuration(Option<ScheduleConfiguration>)`](crate::output::GetDataIntegrationOutput::schedule_configuration): <p>The name of the data and how often it should be pulled from the source.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetDataIntegrationOutput::tags): <p>One or more tags.</p>
                         /// - On failure, responds with [`SdkError<GetDataIntegrationError>`](crate::error::GetDataIntegrationError)
-    pub fn get_data_integration(&self) -> fluent_builders::GetDataIntegration {
-                            fluent_builders::GetDataIntegration::new(self.handle.clone())
+    pub fn get_data_integration(&self) -> crate::client::fluent_builders::GetDataIntegration {
+                            crate::client::fluent_builders::GetDataIntegration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetEventIntegration`](crate::client::fluent_builders::GetEventIntegration) operation.
                         ///
@@ -158,8 +158,8 @@ impl Client  {
     ///   - [`event_filter(Option<EventFilter>)`](crate::output::GetEventIntegrationOutput::event_filter): <p>The event filter.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetEventIntegrationOutput::tags): <p>One or more tags.</p>
                         /// - On failure, responds with [`SdkError<GetEventIntegrationError>`](crate::error::GetEventIntegrationError)
-    pub fn get_event_integration(&self) -> fluent_builders::GetEventIntegration {
-                            fluent_builders::GetEventIntegration::new(self.handle.clone())
+    pub fn get_event_integration(&self) -> crate::client::fluent_builders::GetEventIntegration {
+                            crate::client::fluent_builders::GetEventIntegration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDataIntegrationAssociations`](crate::client::fluent_builders::ListDataIntegrationAssociations) operation.
                         ///
@@ -171,8 +171,8 @@ impl Client  {
                         ///   - [`data_integration_associations(Option<Vec<DataIntegrationAssociationSummary>>)`](crate::output::ListDataIntegrationAssociationsOutput::data_integration_associations): <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDataIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
                         /// - On failure, responds with [`SdkError<ListDataIntegrationAssociationsError>`](crate::error::ListDataIntegrationAssociationsError)
-    pub fn list_data_integration_associations(&self) -> fluent_builders::ListDataIntegrationAssociations {
-                            fluent_builders::ListDataIntegrationAssociations::new(self.handle.clone())
+    pub fn list_data_integration_associations(&self) -> crate::client::fluent_builders::ListDataIntegrationAssociations {
+                            crate::client::fluent_builders::ListDataIntegrationAssociations::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDataIntegrations`](crate::client::fluent_builders::ListDataIntegrations) operation.
                         ///
@@ -183,8 +183,8 @@ impl Client  {
                         ///   - [`data_integrations(Option<Vec<DataIntegrationSummary>>)`](crate::output::ListDataIntegrationsOutput::data_integrations): <p>The DataIntegrations associated with this account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDataIntegrationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
                         /// - On failure, responds with [`SdkError<ListDataIntegrationsError>`](crate::error::ListDataIntegrationsError)
-    pub fn list_data_integrations(&self) -> fluent_builders::ListDataIntegrations {
-                            fluent_builders::ListDataIntegrations::new(self.handle.clone())
+    pub fn list_data_integrations(&self) -> crate::client::fluent_builders::ListDataIntegrations {
+                            crate::client::fluent_builders::ListDataIntegrations::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListEventIntegrationAssociations`](crate::client::fluent_builders::ListEventIntegrationAssociations) operation.
                         ///
@@ -196,8 +196,8 @@ impl Client  {
                         ///   - [`event_integration_associations(Option<Vec<EventIntegrationAssociation>>)`](crate::output::ListEventIntegrationAssociationsOutput::event_integration_associations): <p>The event integration associations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEventIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
                         /// - On failure, responds with [`SdkError<ListEventIntegrationAssociationsError>`](crate::error::ListEventIntegrationAssociationsError)
-    pub fn list_event_integration_associations(&self) -> fluent_builders::ListEventIntegrationAssociations {
-                            fluent_builders::ListEventIntegrationAssociations::new(self.handle.clone())
+    pub fn list_event_integration_associations(&self) -> crate::client::fluent_builders::ListEventIntegrationAssociations {
+                            crate::client::fluent_builders::ListEventIntegrationAssociations::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListEventIntegrations`](crate::client::fluent_builders::ListEventIntegrations) operation.
                         ///
@@ -208,8 +208,8 @@ impl Client  {
                         ///   - [`event_integrations(Option<Vec<EventIntegration>>)`](crate::output::ListEventIntegrationsOutput::event_integrations): <p>The event integrations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEventIntegrationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
                         /// - On failure, responds with [`SdkError<ListEventIntegrationsError>`](crate::error::ListEventIntegrationsError)
-    pub fn list_event_integrations(&self) -> fluent_builders::ListEventIntegrations {
-                            fluent_builders::ListEventIntegrations::new(self.handle.clone())
+    pub fn list_event_integrations(&self) -> crate::client::fluent_builders::ListEventIntegrations {
+                            crate::client::fluent_builders::ListEventIntegrations::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -218,8 +218,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Information about the tags.</p>
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -229,8 +229,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -240,8 +240,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateDataIntegration`](crate::client::fluent_builders::UpdateDataIntegration) operation.
                         ///
@@ -252,8 +252,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateDataIntegrationError>`](crate::error::UpdateDataIntegrationError)
-    pub fn update_data_integration(&self) -> fluent_builders::UpdateDataIntegration {
-                            fluent_builders::UpdateDataIntegration::new(self.handle.clone())
+    pub fn update_data_integration(&self) -> crate::client::fluent_builders::UpdateDataIntegration {
+                            crate::client::fluent_builders::UpdateDataIntegration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateEventIntegration`](crate::client::fluent_builders::UpdateEventIntegration) operation.
                         ///
@@ -263,1092 +263,9 @@ impl Client  {
                         /// - On success, responds with [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateEventIntegrationError>`](crate::error::UpdateEventIntegrationError)
-    pub fn update_event_integration(&self) -> fluent_builders::UpdateEventIntegration {
-                            fluent_builders::UpdateEventIntegration::new(self.handle.clone())
+    pub fn update_event_integration(&self) -> crate::client::fluent_builders::UpdateEventIntegration {
+                            crate::client::fluent_builders::UpdateEventIntegration::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateDataIntegration`.
-                        ///
-    /// <p>Creates and persists a DataIntegration resource.</p> <note> 
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <code>CreateDataIntegration</code> API.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateDataIntegration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_data_integration_input::Builder
-                        }
-    impl CreateDataIntegration  {
-        /// Creates a new `CreateDataIntegration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateDataIntegration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateDataIntegrationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateDataIntegrationOutput, aws_smithy_http::result::SdkError<crate::error::CreateDataIntegrationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the DataIntegration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the DataIntegration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>A description of the DataIntegration.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A description of the DataIntegration.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The KMS key for the DataIntegration.</p>
-        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(input.into());
-            self
-        }
-        /// <p>The KMS key for the DataIntegration.</p>
-        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key(input);
-            self
-        }
-        /// <p>The URI of the data source.</p>
-        pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_uri(input.into());
-            self
-        }
-        /// <p>The URI of the data source.</p>
-        pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_uri(input);
-            self
-        }
-        /// <p>The name of the data and how often it should be pulled from the source.</p>
-        pub fn schedule_config(mut self, input: crate::model::ScheduleConfiguration) -> Self {
-            self.inner = self.inner.schedule_config(input);
-            self
-        }
-        /// <p>The name of the data and how often it should be pulled from the source.</p>
-        pub fn set_schedule_config(mut self, input: std::option::Option<crate::model::ScheduleConfiguration>) -> Self {
-            self.inner = self.inner.set_schedule_config(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>One or more tags.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>One or more tags.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateEventIntegration`.
-                        ///
-    /// <p>Creates an EventIntegration, given a specified name, description, and a reference to an Amazon EventBridge bus in your account and a partner event source that pushes events to that bus. No objects are created in the your account, only metadata that is persisted on the EventIntegration control plane.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateEventIntegration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_event_integration_input::Builder
-                        }
-    impl CreateEventIntegration  {
-        /// Creates a new `CreateEventIntegration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateEventIntegration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateEventIntegrationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateEventIntegrationOutput, aws_smithy_http::result::SdkError<crate::error::CreateEventIntegrationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the event integration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the event integration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The description of the event integration.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description of the event integration.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The event filter.</p>
-        pub fn event_filter(mut self, input: crate::model::EventFilter) -> Self {
-            self.inner = self.inner.event_filter(input);
-            self
-        }
-        /// <p>The event filter.</p>
-        pub fn set_event_filter(mut self, input: std::option::Option<crate::model::EventFilter>) -> Self {
-            self.inner = self.inner.set_event_filter(input);
-            self
-        }
-        /// <p>The EventBridge bus.</p>
-        pub fn event_bridge_bus(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bridge_bus(input.into());
-            self
-        }
-        /// <p>The EventBridge bus.</p>
-        pub fn set_event_bridge_bus(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_event_bridge_bus(input);
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>One or more tags.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>One or more tags.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteDataIntegration`.
-                        ///
-    /// <p>Deletes the DataIntegration. Only DataIntegrations that don't have any DataIntegrationAssociations can be deleted. Deleting a DataIntegration also deletes the underlying Amazon AppFlow flow and service linked role. </p> <note> 
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteDataIntegration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_data_integration_input::Builder
-                        }
-    impl DeleteDataIntegration  {
-        /// Creates a new `DeleteDataIntegration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteDataIntegration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteDataIntegrationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteDataIntegrationOutput, aws_smithy_http::result::SdkError<crate::error::DeleteDataIntegrationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn data_integration_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_integration_identifier(input.into());
-            self
-        }
-        /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn set_data_integration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_data_integration_identifier(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteEventIntegration`.
-                        ///
-    /// <p>Deletes the specified existing event integration. If the event integration is associated with clients, the request is rejected.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteEventIntegration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_event_integration_input::Builder
-                        }
-    impl DeleteEventIntegration  {
-        /// Creates a new `DeleteEventIntegration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteEventIntegration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteEventIntegrationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteEventIntegrationOutput, aws_smithy_http::result::SdkError<crate::error::DeleteEventIntegrationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the event integration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the event integration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetDataIntegration`.
-                        ///
-    /// <p>Returns information about the DataIntegration.</p> <note> 
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDataIntegration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_data_integration_input::Builder
-                        }
-    impl GetDataIntegration  {
-        /// Creates a new `GetDataIntegration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetDataIntegration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetDataIntegrationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetDataIntegrationOutput, aws_smithy_http::result::SdkError<crate::error::GetDataIntegrationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A unique identifier.</p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>A unique identifier.</p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetEventIntegration`.
-                        ///
-    /// <p>Returns information about the event integration.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetEventIntegration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_event_integration_input::Builder
-                        }
-    impl GetEventIntegration  {
-        /// Creates a new `GetEventIntegration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetEventIntegration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetEventIntegrationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetEventIntegrationOutput, aws_smithy_http::result::SdkError<crate::error::GetEventIntegrationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the event integration. </p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the event integration. </p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDataIntegrationAssociations`.
-                        ///
-    /// <p>Returns a paginated list of DataIntegration associations in the account.</p> <note> 
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDataIntegrationAssociations {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_data_integration_associations_input::Builder
-                        }
-    impl ListDataIntegrationAssociations  {
-        /// Creates a new `ListDataIntegrationAssociations`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDataIntegrationAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDataIntegrationAssociationsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDataIntegrationAssociationsOutput, aws_smithy_http::result::SdkError<crate::error::ListDataIntegrationAssociationsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn data_integration_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_integration_identifier(input.into());
-            self
-        }
-        /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn set_data_integration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_data_integration_identifier(input);
-            self
-        }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return per page.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDataIntegrations`.
-                        ///
-    /// <p>Returns a paginated list of DataIntegrations in the account.</p> <note> 
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDataIntegrations {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_data_integrations_input::Builder
-                        }
-    impl ListDataIntegrations  {
-        /// Creates a new `ListDataIntegrations`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDataIntegrations, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDataIntegrationsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDataIntegrationsOutput, aws_smithy_http::result::SdkError<crate::error::ListDataIntegrationsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return per page.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListEventIntegrationAssociations`.
-                        ///
-    /// <p>Returns a paginated list of event integration associations in the account. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListEventIntegrationAssociations {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_event_integration_associations_input::Builder
-                        }
-    impl ListEventIntegrationAssociations  {
-        /// Creates a new `ListEventIntegrationAssociations`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListEventIntegrationAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListEventIntegrationAssociationsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListEventIntegrationAssociationsOutput, aws_smithy_http::result::SdkError<crate::error::ListEventIntegrationAssociationsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the event integration. </p>
-        pub fn event_integration_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_integration_name(input.into());
-            self
-        }
-        /// <p>The name of the event integration. </p>
-        pub fn set_event_integration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_event_integration_name(input);
-            self
-        }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return per page.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListEventIntegrations`.
-                        ///
-    /// <p>Returns a paginated list of event integrations in the account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListEventIntegrations {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_event_integrations_input::Builder
-                        }
-    impl ListEventIntegrations  {
-        /// Creates a new `ListEventIntegrations`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListEventIntegrations, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListEventIntegrationsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListEventIntegrationsOutput, aws_smithy_http::result::SdkError<crate::error::ListEventIntegrationsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return per page.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// <p>Lists the tags for the specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>Adds the specified tags to the specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>One or more tags. </p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>One or more tags. </p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>Removes the specified tags from the specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `tagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The tag keys.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateDataIntegration`.
-                        ///
-    /// <p>Updates the description of a DataIntegration.</p> <note> 
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateDataIntegration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_data_integration_input::Builder
-                        }
-    impl UpdateDataIntegration  {
-        /// Creates a new `UpdateDataIntegration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateDataIntegration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateDataIntegrationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateDataIntegrationOutput, aws_smithy_http::result::SdkError<crate::error::UpdateDataIntegrationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(input.into());
-            self
-        }
-        /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identifier(input);
-            self
-        }
-        /// <p>The name of the DataIntegration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the DataIntegration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>A description of the DataIntegration.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A description of the DataIntegration.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateEventIntegration`.
-                        ///
-    /// <p>Updates the description of an event integration.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateEventIntegration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_event_integration_input::Builder
-                        }
-    impl UpdateEventIntegration  {
-        /// Creates a new `UpdateEventIntegration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateEventIntegration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateEventIntegrationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateEventIntegrationOutput, aws_smithy_http::result::SdkError<crate::error::UpdateEventIntegrationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the event integration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the event integration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The description of the event inegration.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description of the event inegration.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -1419,4 +336,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

@@ -79,8 +79,8 @@ impl Client  {
                         /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
                         ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>The cluster that was created.</p>
                         /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
-    pub fn create_cluster(&self) -> fluent_builders::CreateCluster {
-                            fluent_builders::CreateCluster::new(self.handle.clone())
+    pub fn create_cluster(&self) -> crate::client::fluent_builders::CreateCluster {
+                            crate::client::fluent_builders::CreateCluster::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateControlPanel`](crate::client::fluent_builders::CreateControlPanel) operation.
                         ///
@@ -92,8 +92,8 @@ impl Client  {
                         /// - On success, responds with [`CreateControlPanelOutput`](crate::output::CreateControlPanelOutput) with field(s):
                         ///   - [`control_panel(Option<ControlPanel>)`](crate::output::CreateControlPanelOutput::control_panel): <p>Information about a control panel.</p>
                         /// - On failure, responds with [`SdkError<CreateControlPanelError>`](crate::error::CreateControlPanelError)
-    pub fn create_control_panel(&self) -> fluent_builders::CreateControlPanel {
-                            fluent_builders::CreateControlPanel::new(self.handle.clone())
+    pub fn create_control_panel(&self) -> crate::client::fluent_builders::CreateControlPanel {
+                            crate::client::fluent_builders::CreateControlPanel::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateRoutingControl`](crate::client::fluent_builders::CreateRoutingControl) operation.
                         ///
@@ -105,8 +105,8 @@ impl Client  {
                         /// - On success, responds with [`CreateRoutingControlOutput`](crate::output::CreateRoutingControlOutput) with field(s):
                         ///   - [`routing_control(Option<RoutingControl>)`](crate::output::CreateRoutingControlOutput::routing_control): <p>The routing control that is created.</p>
                         /// - On failure, responds with [`SdkError<CreateRoutingControlError>`](crate::error::CreateRoutingControlError)
-    pub fn create_routing_control(&self) -> fluent_builders::CreateRoutingControl {
-                            fluent_builders::CreateRoutingControl::new(self.handle.clone())
+    pub fn create_routing_control(&self) -> crate::client::fluent_builders::CreateRoutingControl {
+                            crate::client::fluent_builders::CreateRoutingControl::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateSafetyRule`](crate::client::fluent_builders::CreateSafetyRule) operation.
                         ///
@@ -119,8 +119,8 @@ impl Client  {
                         ///   - [`assertion_rule(Option<AssertionRule>)`](crate::output::CreateSafetyRuleOutput::assertion_rule): <p>The assertion rule created.</p>
     ///   - [`gating_rule(Option<GatingRule>)`](crate::output::CreateSafetyRuleOutput::gating_rule): <p>The gating rule created.</p>
                         /// - On failure, responds with [`SdkError<CreateSafetyRuleError>`](crate::error::CreateSafetyRuleError)
-    pub fn create_safety_rule(&self) -> fluent_builders::CreateSafetyRule {
-                            fluent_builders::CreateSafetyRule::new(self.handle.clone())
+    pub fn create_safety_rule(&self) -> crate::client::fluent_builders::CreateSafetyRule {
+                            crate::client::fluent_builders::CreateSafetyRule::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) operation.
                         ///
@@ -129,8 +129,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteClusterOutput`](crate::output::DeleteClusterOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::error::DeleteClusterError)
-    pub fn delete_cluster(&self) -> fluent_builders::DeleteCluster {
-                            fluent_builders::DeleteCluster::new(self.handle.clone())
+    pub fn delete_cluster(&self) -> crate::client::fluent_builders::DeleteCluster {
+                            crate::client::fluent_builders::DeleteCluster::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteControlPanel`](crate::client::fluent_builders::DeleteControlPanel) operation.
                         ///
@@ -139,8 +139,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteControlPanelOutput`](crate::output::DeleteControlPanelOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteControlPanelError>`](crate::error::DeleteControlPanelError)
-    pub fn delete_control_panel(&self) -> fluent_builders::DeleteControlPanel {
-                            fluent_builders::DeleteControlPanel::new(self.handle.clone())
+    pub fn delete_control_panel(&self) -> crate::client::fluent_builders::DeleteControlPanel {
+                            crate::client::fluent_builders::DeleteControlPanel::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteRoutingControl`](crate::client::fluent_builders::DeleteRoutingControl) operation.
                         ///
@@ -149,8 +149,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteRoutingControlOutput`](crate::output::DeleteRoutingControlOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteRoutingControlError>`](crate::error::DeleteRoutingControlError)
-    pub fn delete_routing_control(&self) -> fluent_builders::DeleteRoutingControl {
-                            fluent_builders::DeleteRoutingControl::new(self.handle.clone())
+    pub fn delete_routing_control(&self) -> crate::client::fluent_builders::DeleteRoutingControl {
+                            crate::client::fluent_builders::DeleteRoutingControl::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteSafetyRule`](crate::client::fluent_builders::DeleteSafetyRule) operation.
                         ///
@@ -159,8 +159,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteSafetyRuleOutput`](crate::output::DeleteSafetyRuleOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteSafetyRuleError>`](crate::error::DeleteSafetyRuleError)
-    pub fn delete_safety_rule(&self) -> fluent_builders::DeleteSafetyRule {
-                            fluent_builders::DeleteSafetyRule::new(self.handle.clone())
+    pub fn delete_safety_rule(&self) -> crate::client::fluent_builders::DeleteSafetyRule {
+                            crate::client::fluent_builders::DeleteSafetyRule::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeCluster`](crate::client::fluent_builders::DescribeCluster) operation.
                         ///
@@ -169,8 +169,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeClusterOutput`](crate::output::DescribeClusterOutput) with field(s):
                         ///   - [`cluster(Option<Cluster>)`](crate::output::DescribeClusterOutput::cluster): <p>The cluster for the DescribeCluster request.</p>
                         /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::error::DescribeClusterError)
-    pub fn describe_cluster(&self) -> fluent_builders::DescribeCluster {
-                            fluent_builders::DescribeCluster::new(self.handle.clone())
+    pub fn describe_cluster(&self) -> crate::client::fluent_builders::DescribeCluster {
+                            crate::client::fluent_builders::DescribeCluster::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeControlPanel`](crate::client::fluent_builders::DescribeControlPanel) operation.
                         ///
@@ -179,8 +179,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeControlPanelOutput`](crate::output::DescribeControlPanelOutput) with field(s):
                         ///   - [`control_panel(Option<ControlPanel>)`](crate::output::DescribeControlPanelOutput::control_panel): <p>Information about the control panel.</p>
                         /// - On failure, responds with [`SdkError<DescribeControlPanelError>`](crate::error::DescribeControlPanelError)
-    pub fn describe_control_panel(&self) -> fluent_builders::DescribeControlPanel {
-                            fluent_builders::DescribeControlPanel::new(self.handle.clone())
+    pub fn describe_control_panel(&self) -> crate::client::fluent_builders::DescribeControlPanel {
+                            crate::client::fluent_builders::DescribeControlPanel::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeRoutingControl`](crate::client::fluent_builders::DescribeRoutingControl) operation.
                         ///
@@ -189,8 +189,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeRoutingControlOutput`](crate::output::DescribeRoutingControlOutput) with field(s):
                         ///   - [`routing_control(Option<RoutingControl>)`](crate::output::DescribeRoutingControlOutput::routing_control): <p>Information about the routing control.</p>
                         /// - On failure, responds with [`SdkError<DescribeRoutingControlError>`](crate::error::DescribeRoutingControlError)
-    pub fn describe_routing_control(&self) -> fluent_builders::DescribeRoutingControl {
-                            fluent_builders::DescribeRoutingControl::new(self.handle.clone())
+    pub fn describe_routing_control(&self) -> crate::client::fluent_builders::DescribeRoutingControl {
+                            crate::client::fluent_builders::DescribeRoutingControl::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeSafetyRule`](crate::client::fluent_builders::DescribeSafetyRule) operation.
                         ///
@@ -200,8 +200,8 @@ impl Client  {
                         ///   - [`assertion_rule(Option<AssertionRule>)`](crate::output::DescribeSafetyRuleOutput::assertion_rule): <p>The assertion rule in the response.</p>
     ///   - [`gating_rule(Option<GatingRule>)`](crate::output::DescribeSafetyRuleOutput::gating_rule): <p>The gating rule in the response.</p>
                         /// - On failure, responds with [`SdkError<DescribeSafetyRuleError>`](crate::error::DescribeSafetyRuleError)
-    pub fn describe_safety_rule(&self) -> fluent_builders::DescribeSafetyRule {
-                            fluent_builders::DescribeSafetyRule::new(self.handle.clone())
+    pub fn describe_safety_rule(&self) -> crate::client::fluent_builders::DescribeSafetyRule {
+                            crate::client::fluent_builders::DescribeSafetyRule::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListAssociatedRoute53HealthChecks`](crate::client::fluent_builders::ListAssociatedRoute53HealthChecks) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedRoute53HealthChecks::into_paginator).
@@ -214,8 +214,8 @@ impl Client  {
                         ///   - [`health_check_ids(Option<Vec<String>>)`](crate::output::ListAssociatedRoute53HealthChecksOutput::health_check_ids): <p>Identifiers for the health checks.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssociatedRoute53HealthChecksOutput::next_token): <p>Next token for listing health checks.</p>
                         /// - On failure, responds with [`SdkError<ListAssociatedRoute53HealthChecksError>`](crate::error::ListAssociatedRoute53HealthChecksError)
-    pub fn list_associated_route53_health_checks(&self) -> fluent_builders::ListAssociatedRoute53HealthChecks {
-                            fluent_builders::ListAssociatedRoute53HealthChecks::new(self.handle.clone())
+    pub fn list_associated_route53_health_checks(&self) -> crate::client::fluent_builders::ListAssociatedRoute53HealthChecks {
+                            crate::client::fluent_builders::ListAssociatedRoute53HealthChecks::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListClusters`](crate::client::fluent_builders::ListClusters) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
@@ -227,8 +227,8 @@ impl Client  {
                         ///   - [`clusters(Option<Vec<Cluster>>)`](crate::output::ListClustersOutput::clusters): <p>An array of the clusters in an account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListClustersOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
                         /// - On failure, responds with [`SdkError<ListClustersError>`](crate::error::ListClustersError)
-    pub fn list_clusters(&self) -> fluent_builders::ListClusters {
-                            fluent_builders::ListClusters::new(self.handle.clone())
+    pub fn list_clusters(&self) -> crate::client::fluent_builders::ListClusters {
+                            crate::client::fluent_builders::ListClusters::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListControlPanels`](crate::client::fluent_builders::ListControlPanels) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListControlPanels::into_paginator).
@@ -241,8 +241,8 @@ impl Client  {
                         ///   - [`control_panels(Option<Vec<ControlPanel>>)`](crate::output::ListControlPanelsOutput::control_panels): <p>The result of a successful ListControlPanel request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListControlPanelsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
                         /// - On failure, responds with [`SdkError<ListControlPanelsError>`](crate::error::ListControlPanelsError)
-    pub fn list_control_panels(&self) -> fluent_builders::ListControlPanels {
-                            fluent_builders::ListControlPanels::new(self.handle.clone())
+    pub fn list_control_panels(&self) -> crate::client::fluent_builders::ListControlPanels {
+                            crate::client::fluent_builders::ListControlPanels::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListRoutingControls`](crate::client::fluent_builders::ListRoutingControls) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoutingControls::into_paginator).
@@ -255,8 +255,8 @@ impl Client  {
                         ///   - [`next_token(Option<String>)`](crate::output::ListRoutingControlsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`routing_controls(Option<Vec<RoutingControl>>)`](crate::output::ListRoutingControlsOutput::routing_controls): <p>An array of routing controls.</p>
                         /// - On failure, responds with [`SdkError<ListRoutingControlsError>`](crate::error::ListRoutingControlsError)
-    pub fn list_routing_controls(&self) -> fluent_builders::ListRoutingControls {
-                            fluent_builders::ListRoutingControls::new(self.handle.clone())
+    pub fn list_routing_controls(&self) -> crate::client::fluent_builders::ListRoutingControls {
+                            crate::client::fluent_builders::ListRoutingControls::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListSafetyRules`](crate::client::fluent_builders::ListSafetyRules) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSafetyRules::into_paginator).
@@ -269,8 +269,8 @@ impl Client  {
                         ///   - [`next_token(Option<String>)`](crate::output::ListSafetyRulesOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`safety_rules(Option<Vec<Rule>>)`](crate::output::ListSafetyRulesOutput::safety_rules): <p>The list of safety rules in a control panel.</p>
                         /// - On failure, responds with [`SdkError<ListSafetyRulesError>`](crate::error::ListSafetyRulesError)
-    pub fn list_safety_rules(&self) -> fluent_builders::ListSafetyRules {
-                            fluent_builders::ListSafetyRules::new(self.handle.clone())
+    pub fn list_safety_rules(&self) -> crate::client::fluent_builders::ListSafetyRules {
+                            crate::client::fluent_builders::ListSafetyRules::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -279,8 +279,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with the resource.</p>
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -290,8 +290,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -301,8 +301,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateControlPanel`](crate::client::fluent_builders::UpdateControlPanel) operation.
                         ///
@@ -312,8 +312,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateControlPanelOutput`](crate::output::UpdateControlPanelOutput) with field(s):
                         ///   - [`control_panel(Option<ControlPanel>)`](crate::output::UpdateControlPanelOutput::control_panel): <p>The control panel to update.</p>
                         /// - On failure, responds with [`SdkError<UpdateControlPanelError>`](crate::error::UpdateControlPanelError)
-    pub fn update_control_panel(&self) -> fluent_builders::UpdateControlPanel {
-                            fluent_builders::UpdateControlPanel::new(self.handle.clone())
+    pub fn update_control_panel(&self) -> crate::client::fluent_builders::UpdateControlPanel {
+                            crate::client::fluent_builders::UpdateControlPanel::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateRoutingControl`](crate::client::fluent_builders::UpdateRoutingControl) operation.
                         ///
@@ -323,8 +323,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateRoutingControlOutput`](crate::output::UpdateRoutingControlOutput) with field(s):
                         ///   - [`routing_control(Option<RoutingControl>)`](crate::output::UpdateRoutingControlOutput::routing_control): <p>The routing control that was updated.</p>
                         /// - On failure, responds with [`SdkError<UpdateRoutingControlError>`](crate::error::UpdateRoutingControlError)
-    pub fn update_routing_control(&self) -> fluent_builders::UpdateRoutingControl {
-                            fluent_builders::UpdateRoutingControl::new(self.handle.clone())
+    pub fn update_routing_control(&self) -> crate::client::fluent_builders::UpdateRoutingControl {
+                            crate::client::fluent_builders::UpdateRoutingControl::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateSafetyRule`](crate::client::fluent_builders::UpdateSafetyRule) operation.
                         ///
@@ -335,1591 +335,9 @@ impl Client  {
                         ///   - [`assertion_rule(Option<AssertionRule>)`](crate::output::UpdateSafetyRuleOutput::assertion_rule): <p>The assertion rule updated.</p>
     ///   - [`gating_rule(Option<GatingRule>)`](crate::output::UpdateSafetyRuleOutput::gating_rule): <p>The gating rule updated.</p>
                         /// - On failure, responds with [`SdkError<UpdateSafetyRuleError>`](crate::error::UpdateSafetyRuleError)
-    pub fn update_safety_rule(&self) -> fluent_builders::UpdateSafetyRule {
-                            fluent_builders::UpdateSafetyRule::new(self.handle.clone())
+    pub fn update_safety_rule(&self) -> crate::client::fluent_builders::UpdateSafetyRule {
+                            crate::client::fluent_builders::UpdateSafetyRule::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateCluster`.
-                        ///
-    /// <p>Create a new cluster. A cluster is a set of redundant Regional endpoints against which you can run API calls to update or get the state of one or more routing controls. Each cluster has a name, status, Amazon Resource Name (ARN), and an array of the five cluster endpoints (one for each supported Amazon Web Services Region) that you can use with API calls to the cluster data plane.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateCluster {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_cluster_input::Builder
-                        }
-    impl CreateCluster  {
-        /// Creates a new `CreateCluster`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateCluster, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateClusterError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateClusterOutput, aws_smithy_http::result::SdkError<crate::error::CreateClusterError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The name of the cluster.</p>
-        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(input.into());
-            self
-        }
-        /// <p>The name of the cluster.</p>
-        pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cluster_name(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags associated with the cluster.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The tags associated with the cluster.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateControlPanel`.
-                        ///
-    /// <p>Creates a new control panel. A control panel represents a group of routing controls that can be changed together in a single transaction. You can use a control panel to centrally view the operational status of applications across your organization, and trigger multi-app failovers in a single transaction, for example, to fail over an Availability Zone or Amazon Web Services Region.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateControlPanel {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_control_panel_input::Builder
-                        }
-    impl CreateControlPanel  {
-        /// Creates a new `CreateControlPanel`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateControlPanel, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateControlPanelError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateControlPanelOutput, aws_smithy_http::result::SdkError<crate::error::CreateControlPanelError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
-        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
-        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cluster_arn(input);
-            self
-        }
-        /// <p>The name of the control panel.</p>
-        pub fn control_panel_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_name(input.into());
-            self
-        }
-        /// <p>The name of the control panel.</p>
-        pub fn set_control_panel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_control_panel_name(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags associated with the control panel.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The tags associated with the control panel.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateRoutingControl`.
-                        ///
-    /// <p>Creates a new routing control.</p> 
-    /// <p>A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control traffic routing.</p> 
-    /// <p>To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateRoutingControl {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_routing_control_input::Builder
-                        }
-    impl CreateRoutingControl  {
-        /// Creates a new `CreateRoutingControl`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateRoutingControl, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateRoutingControlError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateRoutingControlOutput, aws_smithy_http::result::SdkError<crate::error::CreateRoutingControlError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
-        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
-        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cluster_arn(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-        pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_control_panel_arn(input);
-            self
-        }
-        /// <p>The name of the routing control.</p>
-        pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_name(input.into());
-            self
-        }
-        /// <p>The name of the routing control.</p>
-        pub fn set_routing_control_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_routing_control_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateSafetyRule`.
-                        ///
-    /// <p>Creates a safety rule in a control panel. Safety rules let you add safeguards around changing routing control states, and for enabling and disabling routing controls, to help prevent unexpected outcomes.</p> 
-    /// <p>There are two types of safety rules: assertion rules and gating rules.</p> 
-    /// <p>Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria is met. For example, the criteria might be that at least one routing control state is On after the transaction so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p> 
-    /// <p>Gating rule: A gating rule lets you configure a gating routing control as an overall "on/off" switch for a group of routing controls. Or, you can configure more complex gating scenarios, for example by configuring multiple gating routing controls.</p> 
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html">Safety rules</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateSafetyRule {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_safety_rule_input::Builder
-                        }
-    impl CreateSafetyRule  {
-        /// Creates a new `CreateSafetyRule`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateSafetyRule, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateSafetyRuleError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateSafetyRuleOutput, aws_smithy_http::result::SdkError<crate::error::CreateSafetyRuleError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The assertion rule requested.</p>
-        pub fn assertion_rule(mut self, input: crate::model::NewAssertionRule) -> Self {
-            self.inner = self.inner.assertion_rule(input);
-            self
-        }
-        /// <p>The assertion rule requested.</p>
-        pub fn set_assertion_rule(mut self, input: std::option::Option<crate::model::NewAssertionRule>) -> Self {
-            self.inner = self.inner.set_assertion_rule(input);
-            self
-        }
-        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The gating rule requested.</p>
-        pub fn gating_rule(mut self, input: crate::model::NewGatingRule) -> Self {
-            self.inner = self.inner.gating_rule(input);
-            self
-        }
-        /// <p>The gating rule requested.</p>
-        pub fn set_gating_rule(mut self, input: std::option::Option<crate::model::NewGatingRule>) -> Self {
-            self.inner = self.inner.set_gating_rule(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags associated with the safety rule.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The tags associated with the safety rule.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteCluster`.
-                        ///
-    /// <p>Delete a cluster.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteCluster {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_cluster_input::Builder
-                        }
-    impl DeleteCluster  {
-        /// Creates a new `DeleteCluster`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteCluster, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteClusterError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteClusterOutput, aws_smithy_http::result::SdkError<crate::error::DeleteClusterError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
-        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
-        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cluster_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteControlPanel`.
-                        ///
-    /// <p>Deletes a control panel.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteControlPanel {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_control_panel_input::Builder
-                        }
-    impl DeleteControlPanel  {
-        /// Creates a new `DeleteControlPanel`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteControlPanel, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteControlPanelError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteControlPanelOutput, aws_smithy_http::result::SdkError<crate::error::DeleteControlPanelError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_control_panel_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteRoutingControl`.
-                        ///
-    /// <p>Deletes a routing control.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteRoutingControl {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_routing_control_input::Builder
-                        }
-    impl DeleteRoutingControl  {
-        /// Creates a new `DeleteRoutingControl`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteRoutingControl, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteRoutingControlError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteRoutingControlOutput, aws_smithy_http::result::SdkError<crate::error::DeleteRoutingControlError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-        pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_routing_control_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteSafetyRule`.
-                        ///
-    /// <p>Deletes a safety rule.</p>/&gt;
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteSafetyRule {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_safety_rule_input::Builder
-                        }
-    impl DeleteSafetyRule  {
-        /// Creates a new `DeleteSafetyRule`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteSafetyRule, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteSafetyRuleError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteSafetyRuleOutput, aws_smithy_http::result::SdkError<crate::error::DeleteSafetyRuleError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the safety rule.</p>
-        pub fn safety_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.safety_rule_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the safety rule.</p>
-        pub fn set_safety_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_safety_rule_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeCluster`.
-                        ///
-    /// <p>Display the details about a cluster. The response includes the cluster name, endpoints, status, and Amazon Resource Name (ARN).</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeCluster {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_cluster_input::Builder
-                        }
-    impl DescribeCluster  {
-        /// Creates a new `DescribeCluster`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeCluster, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeClusterError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeClusterOutput, aws_smithy_http::result::SdkError<crate::error::DescribeClusterError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cluster_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeControlPanel`.
-                        ///
-    /// <p>Displays details about a control panel.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeControlPanel {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_control_panel_input::Builder
-                        }
-    impl DescribeControlPanel  {
-        /// Creates a new `DescribeControlPanel`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeControlPanel, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeControlPanelError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeControlPanelOutput, aws_smithy_http::result::SdkError<crate::error::DescribeControlPanelError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_control_panel_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeRoutingControl`.
-                        ///
-    /// <p>Displays details about a routing control. A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.</p> 
-    /// <p>To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeRoutingControl {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_routing_control_input::Builder
-                        }
-    impl DescribeRoutingControl  {
-        /// Creates a new `DescribeRoutingControl`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeRoutingControl, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeRoutingControlError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeRoutingControlOutput, aws_smithy_http::result::SdkError<crate::error::DescribeRoutingControlError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-        pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_routing_control_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeSafetyRule`.
-                        ///
-    /// <p>Returns information about a safety rule.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeSafetyRule {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_safety_rule_input::Builder
-                        }
-    impl DescribeSafetyRule  {
-        /// Creates a new `DescribeSafetyRule`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeSafetyRule, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeSafetyRuleError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeSafetyRuleOutput, aws_smithy_http::result::SdkError<crate::error::DescribeSafetyRuleError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the safety rule.</p>
-        pub fn safety_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.safety_rule_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the safety rule.</p>
-        pub fn set_safety_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_safety_rule_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAssociatedRoute53HealthChecks`.
-                        ///
-    /// <p>Returns an array of all Amazon Route 53 health checks associated with a specific routing control.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAssociatedRoute53HealthChecks {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_associated_route53_health_checks_input::Builder
-                        }
-    impl ListAssociatedRoute53HealthChecks  {
-        /// Creates a new `ListAssociatedRoute53HealthChecks`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListAssociatedRoute53HealthChecks, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListAssociatedRoute53HealthChecksError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListAssociatedRoute53HealthChecksOutput, aws_smithy_http::result::SdkError<crate::error::ListAssociatedRoute53HealthChecksError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAssociatedRoute53HealthChecksPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListAssociatedRoute53HealthChecksPaginator {
-                                        crate::paginator::ListAssociatedRoute53HealthChecksPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-        pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_routing_control_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListClusters`.
-                        ///
-    /// <p>Returns an array of all the clusters in an account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListClusters {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_clusters_input::Builder
-                        }
-    impl ListClusters  {
-        /// Creates a new `ListClusters`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListClusters, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListClustersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListClustersOutput, aws_smithy_http::result::SdkError<crate::error::ListClustersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListClustersPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListClustersPaginator {
-                                        crate::paginator::ListClustersPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListControlPanels`.
-                        ///
-    /// <p>Returns an array of control panels in an account or in a cluster.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListControlPanels {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_control_panels_input::Builder
-                        }
-    impl ListControlPanels  {
-        /// Creates a new `ListControlPanels`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListControlPanels, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListControlPanelsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListControlPanelsOutput, aws_smithy_http::result::SdkError<crate::error::ListControlPanelsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListControlPanelsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListControlPanelsPaginator {
-                                        crate::paginator::ListControlPanelsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Resource Name (ARN) of a cluster.</p>
-        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of a cluster.</p>
-        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cluster_arn(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListRoutingControls`.
-                        ///
-    /// <p>Returns an array of routing controls for a control panel. A routing control is an Amazon Route 53 Application Recovery Controller construct that has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListRoutingControls {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_routing_controls_input::Builder
-                        }
-    impl ListRoutingControls  {
-        /// Creates a new `ListRoutingControls`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListRoutingControls, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListRoutingControlsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListRoutingControlsOutput, aws_smithy_http::result::SdkError<crate::error::ListRoutingControlsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListRoutingControlsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListRoutingControlsPaginator {
-                                        crate::paginator::ListRoutingControlsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_control_panel_arn(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListSafetyRules`.
-                        ///
-    /// <p>List the safety rules (the assertion rules and gating rules) that you've defined for the routing controls in a control panel.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListSafetyRules {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_safety_rules_input::Builder
-                        }
-    impl ListSafetyRules  {
-        /// Creates a new `ListSafetyRules`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListSafetyRules, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListSafetyRulesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListSafetyRulesOutput, aws_smithy_http::result::SdkError<crate::error::ListSafetyRulesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListSafetyRulesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListSafetyRulesPaginator {
-                                        crate::paginator::ListSafetyRulesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_control_panel_arn(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// <p>Lists the tags for a resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>Adds a tag to a resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags associated with the resource.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The tags associated with the resource.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>Removes a tag from a resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>Keys for the tags to be removed.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>Keys for the tags to be removed.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateControlPanel`.
-                        ///
-    /// <p>Updates a control panel. The only update you can make to a control panel is to change the name of the control panel.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateControlPanel {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_control_panel_input::Builder
-                        }
-    impl UpdateControlPanel  {
-        /// Creates a new `UpdateControlPanel`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateControlPanel, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateControlPanelError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateControlPanelOutput, aws_smithy_http::result::SdkError<crate::error::UpdateControlPanelError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_control_panel_arn(input);
-            self
-        }
-        /// <p>The name of the control panel.</p>
-        pub fn control_panel_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_name(input.into());
-            self
-        }
-        /// <p>The name of the control panel.</p>
-        pub fn set_control_panel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_control_panel_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateRoutingControl`.
-                        ///
-    /// <p>Updates a routing control. You can only update the name of the routing control. To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateRoutingControl {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_routing_control_input::Builder
-                        }
-    impl UpdateRoutingControl  {
-        /// Creates a new `UpdateRoutingControl`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateRoutingControl, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateRoutingControlError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateRoutingControlOutput, aws_smithy_http::result::SdkError<crate::error::UpdateRoutingControlError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-        pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_routing_control_arn(input);
-            self
-        }
-        /// <p>The name of the routing control.</p>
-        pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_name(input.into());
-            self
-        }
-        /// <p>The name of the routing control.</p>
-        pub fn set_routing_control_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_routing_control_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateSafetyRule`.
-                        ///
-    /// <p>Update a safety rule (an assertion rule or gating rule). You can only update the name and the waiting period for a safety rule. To make other updates, delete the safety rule and create a new one.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateSafetyRule {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_safety_rule_input::Builder
-                        }
-    impl UpdateSafetyRule  {
-        /// Creates a new `UpdateSafetyRule`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateSafetyRule, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateSafetyRuleError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateSafetyRuleOutput, aws_smithy_http::result::SdkError<crate::error::UpdateSafetyRuleError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The assertion rule to update.</p>
-        pub fn assertion_rule_update(mut self, input: crate::model::AssertionRuleUpdate) -> Self {
-            self.inner = self.inner.assertion_rule_update(input);
-            self
-        }
-        /// <p>The assertion rule to update.</p>
-        pub fn set_assertion_rule_update(mut self, input: std::option::Option<crate::model::AssertionRuleUpdate>) -> Self {
-            self.inner = self.inner.set_assertion_rule_update(input);
-            self
-        }
-        /// <p>The gating rule to update.</p>
-        pub fn gating_rule_update(mut self, input: crate::model::GatingRuleUpdate) -> Self {
-            self.inner = self.inner.gating_rule_update(input);
-            self
-        }
-        /// <p>The gating rule to update.</p>
-        pub fn set_gating_rule_update(mut self, input: std::option::Option<crate::model::GatingRuleUpdate>) -> Self {
-            self.inner = self.inner.set_gating_rule_update(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -1990,4 +408,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

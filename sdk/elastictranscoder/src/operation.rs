@@ -2,7 +2,7 @@
 /// Operation shape for `CancelJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_job`](crate::client::Client::cancel_job).
+            /// [`cancel_job`](crate::client::fluent_builders::CancelJob).
             ///
             /// `ParseStrictResponse` impl for `CancelJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
 /// Operation shape for `CreateJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_job`](crate::client::Client::create_job).
+            /// [`create_job`](crate::client::fluent_builders::CreateJob).
             ///
             /// `ParseStrictResponse` impl for `CreateJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
 /// Operation shape for `CreatePipeline`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_pipeline`](crate::client::Client::create_pipeline).
+            /// [`create_pipeline`](crate::client::fluent_builders::CreatePipeline).
             ///
             /// `ParseStrictResponse` impl for `CreatePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePipeline {
 /// Operation shape for `CreatePreset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_preset`](crate::client::Client::create_preset).
+            /// [`create_preset`](crate::client::fluent_builders::CreatePreset).
             ///
             /// `ParseStrictResponse` impl for `CreatePreset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePreset {
 /// Operation shape for `DeletePipeline`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_pipeline`](crate::client::Client::delete_pipeline).
+            /// [`delete_pipeline`](crate::client::fluent_builders::DeletePipeline).
             ///
             /// `ParseStrictResponse` impl for `DeletePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePipeline {
 /// Operation shape for `DeletePreset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_preset`](crate::client::Client::delete_preset).
+            /// [`delete_preset`](crate::client::fluent_builders::DeletePreset).
             ///
             /// `ParseStrictResponse` impl for `DeletePreset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePreset {
 /// Operation shape for `ListJobsByPipeline`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_jobs_by_pipeline`](crate::client::Client::list_jobs_by_pipeline).
+            /// [`list_jobs_by_pipeline`](crate::client::fluent_builders::ListJobsByPipeline).
             ///
             /// `ParseStrictResponse` impl for `ListJobsByPipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobsByPipeline {
 /// Operation shape for `ListJobsByStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_jobs_by_status`](crate::client::Client::list_jobs_by_status).
+            /// [`list_jobs_by_status`](crate::client::fluent_builders::ListJobsByStatus).
             ///
             /// `ParseStrictResponse` impl for `ListJobsByStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobsByStatus {
 /// Operation shape for `ListPipelines`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_pipelines`](crate::client::Client::list_pipelines).
+            /// [`list_pipelines`](crate::client::fluent_builders::ListPipelines).
             ///
             /// `ParseStrictResponse` impl for `ListPipelines`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPipelines {
 /// Operation shape for `ListPresets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_presets`](crate::client::Client::list_presets).
+            /// [`list_presets`](crate::client::fluent_builders::ListPresets).
             ///
             /// `ParseStrictResponse` impl for `ListPresets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPresets {
 /// Operation shape for `ReadJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`read_job`](crate::client::Client::read_job).
+            /// [`read_job`](crate::client::fluent_builders::ReadJob).
             ///
             /// `ParseStrictResponse` impl for `ReadJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReadJob {
 /// Operation shape for `ReadPipeline`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`read_pipeline`](crate::client::Client::read_pipeline).
+            /// [`read_pipeline`](crate::client::fluent_builders::ReadPipeline).
             ///
             /// `ParseStrictResponse` impl for `ReadPipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReadPipeline {
 /// Operation shape for `ReadPreset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`read_preset`](crate::client::Client::read_preset).
+            /// [`read_preset`](crate::client::fluent_builders::ReadPreset).
             ///
             /// `ParseStrictResponse` impl for `ReadPreset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReadPreset {
 /// Operation shape for `TestRole`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`test_role`](crate::client::Client::test_role).
+            /// [`test_role`](crate::client::fluent_builders::TestRole).
             ///
             /// `ParseStrictResponse` impl for `TestRole`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestRole {
 /// Operation shape for `UpdatePipeline`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_pipeline`](crate::client::Client::update_pipeline).
+            /// [`update_pipeline`](crate::client::fluent_builders::UpdatePipeline).
             ///
             /// `ParseStrictResponse` impl for `UpdatePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePipeline {
 /// Operation shape for `UpdatePipelineNotifications`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_pipeline_notifications`](crate::client::Client::update_pipeline_notifications).
+            /// [`update_pipeline_notifications`](crate::client::fluent_builders::UpdatePipelineNotifications).
             ///
             /// `ParseStrictResponse` impl for `UpdatePipelineNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePipelineNotificati
 /// Operation shape for `UpdatePipelineStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_pipeline_status`](crate::client::Client::update_pipeline_status).
+            /// [`update_pipeline_status`](crate::client::fluent_builders::UpdatePipelineStatus).
             ///
             /// `ParseStrictResponse` impl for `UpdatePipelineStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

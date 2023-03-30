@@ -2,7 +2,7 @@
 /// Operation shape for `CreateAppInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_app_instance`](crate::client::Client::create_app_instance).
+            /// [`create_app_instance`](crate::client::fluent_builders::CreateAppInstance).
             ///
             /// `ParseStrictResponse` impl for `CreateAppInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstance {
 /// Operation shape for `CreateAppInstanceAdmin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_app_instance_admin`](crate::client::Client::create_app_instance_admin).
+            /// [`create_app_instance_admin`](crate::client::fluent_builders::CreateAppInstanceAdmin).
             ///
             /// `ParseStrictResponse` impl for `CreateAppInstanceAdmin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstanceAdmin {
 /// Operation shape for `CreateAppInstanceUser`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_app_instance_user`](crate::client::Client::create_app_instance_user).
+            /// [`create_app_instance_user`](crate::client::fluent_builders::CreateAppInstanceUser).
             ///
             /// `ParseStrictResponse` impl for `CreateAppInstanceUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstanceUser {
 /// Operation shape for `DeleteAppInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_app_instance`](crate::client::Client::delete_app_instance).
+            /// [`delete_app_instance`](crate::client::fluent_builders::DeleteAppInstance).
             ///
             /// `ParseStrictResponse` impl for `DeleteAppInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstance {
 /// Operation shape for `DeleteAppInstanceAdmin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_app_instance_admin`](crate::client::Client::delete_app_instance_admin).
+            /// [`delete_app_instance_admin`](crate::client::fluent_builders::DeleteAppInstanceAdmin).
             ///
             /// `ParseStrictResponse` impl for `DeleteAppInstanceAdmin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstanceAdmin {
 /// Operation shape for `DeleteAppInstanceUser`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_app_instance_user`](crate::client::Client::delete_app_instance_user).
+            /// [`delete_app_instance_user`](crate::client::fluent_builders::DeleteAppInstanceUser).
             ///
             /// `ParseStrictResponse` impl for `DeleteAppInstanceUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstanceUser {
 /// Operation shape for `DeregisterAppInstanceUserEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deregister_app_instance_user_endpoint`](crate::client::Client::deregister_app_instance_user_endpoint).
+            /// [`deregister_app_instance_user_endpoint`](crate::client::fluent_builders::DeregisterAppInstanceUserEndpoint).
             ///
             /// `ParseStrictResponse` impl for `DeregisterAppInstanceUserEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterAppInstanceUse
 /// Operation shape for `DescribeAppInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_app_instance`](crate::client::Client::describe_app_instance).
+            /// [`describe_app_instance`](crate::client::fluent_builders::DescribeAppInstance).
             ///
             /// `ParseStrictResponse` impl for `DescribeAppInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstance {
 /// Operation shape for `DescribeAppInstanceAdmin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_app_instance_admin`](crate::client::Client::describe_app_instance_admin).
+            /// [`describe_app_instance_admin`](crate::client::fluent_builders::DescribeAppInstanceAdmin).
             ///
             /// `ParseStrictResponse` impl for `DescribeAppInstanceAdmin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceAdmin
 /// Operation shape for `DescribeAppInstanceUser`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_app_instance_user`](crate::client::Client::describe_app_instance_user).
+            /// [`describe_app_instance_user`](crate::client::fluent_builders::DescribeAppInstanceUser).
             ///
             /// `ParseStrictResponse` impl for `DescribeAppInstanceUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceUser 
 /// Operation shape for `DescribeAppInstanceUserEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_app_instance_user_endpoint`](crate::client::Client::describe_app_instance_user_endpoint).
+            /// [`describe_app_instance_user_endpoint`](crate::client::fluent_builders::DescribeAppInstanceUserEndpoint).
             ///
             /// `ParseStrictResponse` impl for `DescribeAppInstanceUserEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceUserE
 /// Operation shape for `GetAppInstanceRetentionSettings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_app_instance_retention_settings`](crate::client::Client::get_app_instance_retention_settings).
+            /// [`get_app_instance_retention_settings`](crate::client::fluent_builders::GetAppInstanceRetentionSettings).
             ///
             /// `ParseStrictResponse` impl for `GetAppInstanceRetentionSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppInstanceRetentionS
 /// Operation shape for `ListAppInstanceAdmins`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_app_instance_admins`](crate::client::Client::list_app_instance_admins).
+            /// [`list_app_instance_admins`](crate::client::fluent_builders::ListAppInstanceAdmins).
             ///
             /// `ParseStrictResponse` impl for `ListAppInstanceAdmins`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceAdmins {
 /// Operation shape for `ListAppInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_app_instances`](crate::client::Client::list_app_instances).
+            /// [`list_app_instances`](crate::client::fluent_builders::ListAppInstances).
             ///
             /// `ParseStrictResponse` impl for `ListAppInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstances {
 /// Operation shape for `ListAppInstanceUserEndpoints`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_app_instance_user_endpoints`](crate::client::Client::list_app_instance_user_endpoints).
+            /// [`list_app_instance_user_endpoints`](crate::client::fluent_builders::ListAppInstanceUserEndpoints).
             ///
             /// `ParseStrictResponse` impl for `ListAppInstanceUserEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceUserEndpo
 /// Operation shape for `ListAppInstanceUsers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_app_instance_users`](crate::client::Client::list_app_instance_users).
+            /// [`list_app_instance_users`](crate::client::fluent_builders::ListAppInstanceUsers).
             ///
             /// `ParseStrictResponse` impl for `ListAppInstanceUsers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceUsers {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutAppInstanceRetentionSettings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_app_instance_retention_settings`](crate::client::Client::put_app_instance_retention_settings).
+            /// [`put_app_instance_retention_settings`](crate::client::fluent_builders::PutAppInstanceRetentionSettings).
             ///
             /// `ParseStrictResponse` impl for `PutAppInstanceRetentionSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppInstanceRetentionS
 /// Operation shape for `RegisterAppInstanceUserEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_app_instance_user_endpoint`](crate::client::Client::register_app_instance_user_endpoint).
+            /// [`register_app_instance_user_endpoint`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint).
             ///
             /// `ParseStrictResponse` impl for `RegisterAppInstanceUserEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterAppInstanceUserE
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateAppInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_app_instance`](crate::client::Client::update_app_instance).
+            /// [`update_app_instance`](crate::client::fluent_builders::UpdateAppInstance).
             ///
             /// `ParseStrictResponse` impl for `UpdateAppInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppInstance {
 /// Operation shape for `UpdateAppInstanceUser`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_app_instance_user`](crate::client::Client::update_app_instance_user).
+            /// [`update_app_instance_user`](crate::client::fluent_builders::UpdateAppInstanceUser).
             ///
             /// `ParseStrictResponse` impl for `UpdateAppInstanceUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppInstanceUser {
 /// Operation shape for `UpdateAppInstanceUserEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_app_instance_user_endpoint`](crate::client::Client::update_app_instance_user_endpoint).
+            /// [`update_app_instance_user_endpoint`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint).
             ///
             /// `ParseStrictResponse` impl for `UpdateAppInstanceUserEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

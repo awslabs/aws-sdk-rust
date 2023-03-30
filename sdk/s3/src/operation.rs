@@ -2,7 +2,7 @@
 /// Operation shape for `AbortMultipartUpload`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`abort_multipart_upload`](crate::client::Client::abort_multipart_upload).
+            /// [`abort_multipart_upload`](crate::client::fluent_builders::AbortMultipartUpload).
             ///
             /// `ParseStrictResponse` impl for `AbortMultipartUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `CompleteMultipartUpload`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`complete_multipart_upload`](crate::client::Client::complete_multipart_upload).
+            /// [`complete_multipart_upload`](crate::client::fluent_builders::CompleteMultipartUpload).
             ///
             /// `ParseStrictResponse` impl for `CompleteMultipartUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -68,7 +68,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `CopyObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`copy_object`](crate::client::Client::copy_object).
+            /// [`copy_object`](crate::client::fluent_builders::CopyObject).
             ///
             /// `ParseStrictResponse` impl for `CopyObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -101,7 +101,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `CreateBucket`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_bucket`](crate::client::Client::create_bucket).
+            /// [`create_bucket`](crate::client::fluent_builders::CreateBucket).
             ///
             /// `ParseStrictResponse` impl for `CreateBucket`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -134,7 +134,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `CreateMultipartUpload`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_multipart_upload`](crate::client::Client::create_multipart_upload).
+            /// [`create_multipart_upload`](crate::client::fluent_builders::CreateMultipartUpload).
             ///
             /// `ParseStrictResponse` impl for `CreateMultipartUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -206,7 +206,7 @@ mod create_multipart_upload_request_test {
 /// Operation shape for `DeleteBucket`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket`](crate::client::Client::delete_bucket).
+            /// [`delete_bucket`](crate::client::fluent_builders::DeleteBucket).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucket`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -239,7 +239,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketAnalyticsConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_analytics_configuration`](crate::client::Client::delete_bucket_analytics_configuration).
+            /// [`delete_bucket_analytics_configuration`](crate::client::fluent_builders::DeleteBucketAnalyticsConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketAnalyticsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -272,7 +272,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketCors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_cors`](crate::client::Client::delete_bucket_cors).
+            /// [`delete_bucket_cors`](crate::client::fluent_builders::DeleteBucketCors).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketCors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -305,7 +305,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketEncryption`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_encryption`](crate::client::Client::delete_bucket_encryption).
+            /// [`delete_bucket_encryption`](crate::client::fluent_builders::DeleteBucketEncryption).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketEncryption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -338,7 +338,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketIntelligentTieringConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_intelligent_tiering_configuration`](crate::client::Client::delete_bucket_intelligent_tiering_configuration).
+            /// [`delete_bucket_intelligent_tiering_configuration`](crate::client::fluent_builders::DeleteBucketIntelligentTieringConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketIntelligentTieringConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -371,7 +371,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketInventoryConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_inventory_configuration`](crate::client::Client::delete_bucket_inventory_configuration).
+            /// [`delete_bucket_inventory_configuration`](crate::client::fluent_builders::DeleteBucketInventoryConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketInventoryConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -404,7 +404,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketLifecycle`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_lifecycle`](crate::client::Client::delete_bucket_lifecycle).
+            /// [`delete_bucket_lifecycle`](crate::client::fluent_builders::DeleteBucketLifecycle).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketLifecycle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -437,7 +437,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketMetricsConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_metrics_configuration`](crate::client::Client::delete_bucket_metrics_configuration).
+            /// [`delete_bucket_metrics_configuration`](crate::client::fluent_builders::DeleteBucketMetricsConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketMetricsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -470,7 +470,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketOwnershipControls`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_ownership_controls`](crate::client::Client::delete_bucket_ownership_controls).
+            /// [`delete_bucket_ownership_controls`](crate::client::fluent_builders::DeleteBucketOwnershipControls).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketOwnershipControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -503,7 +503,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_policy`](crate::client::Client::delete_bucket_policy).
+            /// [`delete_bucket_policy`](crate::client::fluent_builders::DeleteBucketPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -536,7 +536,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketReplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_replication`](crate::client::Client::delete_bucket_replication).
+            /// [`delete_bucket_replication`](crate::client::fluent_builders::DeleteBucketReplication).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -569,7 +569,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_tagging`](crate::client::Client::delete_bucket_tagging).
+            /// [`delete_bucket_tagging`](crate::client::fluent_builders::DeleteBucketTagging).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -602,7 +602,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteBucketWebsite`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_website`](crate::client::Client::delete_bucket_website).
+            /// [`delete_bucket_website`](crate::client::fluent_builders::DeleteBucketWebsite).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketWebsite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -635,7 +635,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_object`](crate::client::Client::delete_object).
+            /// [`delete_object`](crate::client::fluent_builders::DeleteObject).
             ///
             /// `ParseStrictResponse` impl for `DeleteObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -668,7 +668,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteObjects`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_objects`](crate::client::Client::delete_objects).
+            /// [`delete_objects`](crate::client::fluent_builders::DeleteObjects).
             ///
             /// `ParseStrictResponse` impl for `DeleteObjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -701,7 +701,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeleteObjectTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_object_tagging`](crate::client::Client::delete_object_tagging).
+            /// [`delete_object_tagging`](crate::client::fluent_builders::DeleteObjectTagging).
             ///
             /// `ParseStrictResponse` impl for `DeleteObjectTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -734,7 +734,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `DeletePublicAccessBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_public_access_block`](crate::client::Client::delete_public_access_block).
+            /// [`delete_public_access_block`](crate::client::fluent_builders::DeletePublicAccessBlock).
             ///
             /// `ParseStrictResponse` impl for `DeletePublicAccessBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -767,7 +767,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketAccelerateConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_accelerate_configuration`](crate::client::Client::get_bucket_accelerate_configuration).
+            /// [`get_bucket_accelerate_configuration`](crate::client::fluent_builders::GetBucketAccelerateConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetBucketAccelerateConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -800,7 +800,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketAcl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_acl`](crate::client::Client::get_bucket_acl).
+            /// [`get_bucket_acl`](crate::client::fluent_builders::GetBucketAcl).
             ///
             /// `ParseStrictResponse` impl for `GetBucketAcl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -833,7 +833,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketAnalyticsConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_analytics_configuration`](crate::client::Client::get_bucket_analytics_configuration).
+            /// [`get_bucket_analytics_configuration`](crate::client::fluent_builders::GetBucketAnalyticsConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetBucketAnalyticsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketCors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_cors`](crate::client::Client::get_bucket_cors).
+            /// [`get_bucket_cors`](crate::client::fluent_builders::GetBucketCors).
             ///
             /// `ParseStrictResponse` impl for `GetBucketCors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -899,7 +899,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketEncryption`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_encryption`](crate::client::Client::get_bucket_encryption).
+            /// [`get_bucket_encryption`](crate::client::fluent_builders::GetBucketEncryption).
             ///
             /// `ParseStrictResponse` impl for `GetBucketEncryption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -932,7 +932,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketIntelligentTieringConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_intelligent_tiering_configuration`](crate::client::Client::get_bucket_intelligent_tiering_configuration).
+            /// [`get_bucket_intelligent_tiering_configuration`](crate::client::fluent_builders::GetBucketIntelligentTieringConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetBucketIntelligentTieringConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -965,7 +965,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketInventoryConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_inventory_configuration`](crate::client::Client::get_bucket_inventory_configuration).
+            /// [`get_bucket_inventory_configuration`](crate::client::fluent_builders::GetBucketInventoryConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetBucketInventoryConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -998,7 +998,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketLifecycleConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_lifecycle_configuration`](crate::client::Client::get_bucket_lifecycle_configuration).
+            /// [`get_bucket_lifecycle_configuration`](crate::client::fluent_builders::GetBucketLifecycleConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetBucketLifecycleConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1031,7 +1031,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketLocation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_location`](crate::client::Client::get_bucket_location).
+            /// [`get_bucket_location`](crate::client::fluent_builders::GetBucketLocation).
             ///
             /// `ParseStrictResponse` impl for `GetBucketLocation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1098,7 +1098,7 @@ mod get_bucket_location_request_test {
 /// Operation shape for `GetBucketLogging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_logging`](crate::client::Client::get_bucket_logging).
+            /// [`get_bucket_logging`](crate::client::fluent_builders::GetBucketLogging).
             ///
             /// `ParseStrictResponse` impl for `GetBucketLogging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1131,7 +1131,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketMetricsConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_metrics_configuration`](crate::client::Client::get_bucket_metrics_configuration).
+            /// [`get_bucket_metrics_configuration`](crate::client::fluent_builders::GetBucketMetricsConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetBucketMetricsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1164,7 +1164,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketNotificationConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_notification_configuration`](crate::client::Client::get_bucket_notification_configuration).
+            /// [`get_bucket_notification_configuration`](crate::client::fluent_builders::GetBucketNotificationConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetBucketNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1197,7 +1197,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketOwnershipControls`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_ownership_controls`](crate::client::Client::get_bucket_ownership_controls).
+            /// [`get_bucket_ownership_controls`](crate::client::fluent_builders::GetBucketOwnershipControls).
             ///
             /// `ParseStrictResponse` impl for `GetBucketOwnershipControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1230,7 +1230,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_policy`](crate::client::Client::get_bucket_policy).
+            /// [`get_bucket_policy`](crate::client::fluent_builders::GetBucketPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetBucketPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1263,7 +1263,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketPolicyStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_policy_status`](crate::client::Client::get_bucket_policy_status).
+            /// [`get_bucket_policy_status`](crate::client::fluent_builders::GetBucketPolicyStatus).
             ///
             /// `ParseStrictResponse` impl for `GetBucketPolicyStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1296,7 +1296,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketReplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_replication`](crate::client::Client::get_bucket_replication).
+            /// [`get_bucket_replication`](crate::client::fluent_builders::GetBucketReplication).
             ///
             /// `ParseStrictResponse` impl for `GetBucketReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1329,7 +1329,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketRequestPayment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_request_payment`](crate::client::Client::get_bucket_request_payment).
+            /// [`get_bucket_request_payment`](crate::client::fluent_builders::GetBucketRequestPayment).
             ///
             /// `ParseStrictResponse` impl for `GetBucketRequestPayment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1362,7 +1362,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_tagging`](crate::client::Client::get_bucket_tagging).
+            /// [`get_bucket_tagging`](crate::client::fluent_builders::GetBucketTagging).
             ///
             /// `ParseStrictResponse` impl for `GetBucketTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1395,7 +1395,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketVersioning`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_versioning`](crate::client::Client::get_bucket_versioning).
+            /// [`get_bucket_versioning`](crate::client::fluent_builders::GetBucketVersioning).
             ///
             /// `ParseStrictResponse` impl for `GetBucketVersioning`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1428,7 +1428,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetBucketWebsite`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_website`](crate::client::Client::get_bucket_website).
+            /// [`get_bucket_website`](crate::client::fluent_builders::GetBucketWebsite).
             ///
             /// `ParseStrictResponse` impl for `GetBucketWebsite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1461,7 +1461,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_object`](crate::client::Client::get_object).
+            /// [`get_object`](crate::client::fluent_builders::GetObject).
             ///
             /// `ParseStrictResponse` impl for `GetObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1496,7 +1496,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObject {
 /// Operation shape for `GetObjectAcl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_object_acl`](crate::client::Client::get_object_acl).
+            /// [`get_object_acl`](crate::client::fluent_builders::GetObjectAcl).
             ///
             /// `ParseStrictResponse` impl for `GetObjectAcl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1529,7 +1529,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetObjectAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_object_attributes`](crate::client::Client::get_object_attributes).
+            /// [`get_object_attributes`](crate::client::fluent_builders::GetObjectAttributes).
             ///
             /// `ParseStrictResponse` impl for `GetObjectAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1562,7 +1562,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetObjectLegalHold`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_object_legal_hold`](crate::client::Client::get_object_legal_hold).
+            /// [`get_object_legal_hold`](crate::client::fluent_builders::GetObjectLegalHold).
             ///
             /// `ParseStrictResponse` impl for `GetObjectLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1595,7 +1595,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetObjectLockConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_object_lock_configuration`](crate::client::Client::get_object_lock_configuration).
+            /// [`get_object_lock_configuration`](crate::client::fluent_builders::GetObjectLockConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetObjectLockConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1628,7 +1628,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetObjectRetention`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_object_retention`](crate::client::Client::get_object_retention).
+            /// [`get_object_retention`](crate::client::fluent_builders::GetObjectRetention).
             ///
             /// `ParseStrictResponse` impl for `GetObjectRetention`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1661,7 +1661,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetObjectTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_object_tagging`](crate::client::Client::get_object_tagging).
+            /// [`get_object_tagging`](crate::client::fluent_builders::GetObjectTagging).
             ///
             /// `ParseStrictResponse` impl for `GetObjectTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1694,7 +1694,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `GetObjectTorrent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_object_torrent`](crate::client::Client::get_object_torrent).
+            /// [`get_object_torrent`](crate::client::fluent_builders::GetObjectTorrent).
             ///
             /// `ParseStrictResponse` impl for `GetObjectTorrent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1729,7 +1729,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObjectTorrent {
 /// Operation shape for `GetPublicAccessBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_public_access_block`](crate::client::Client::get_public_access_block).
+            /// [`get_public_access_block`](crate::client::fluent_builders::GetPublicAccessBlock).
             ///
             /// `ParseStrictResponse` impl for `GetPublicAccessBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1762,7 +1762,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `HeadBucket`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`head_bucket`](crate::client::Client::head_bucket).
+            /// [`head_bucket`](crate::client::fluent_builders::HeadBucket).
             ///
             /// `ParseStrictResponse` impl for `HeadBucket`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1834,7 +1834,7 @@ mod head_bucket_request_test {
 /// Operation shape for `HeadObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`head_object`](crate::client::Client::head_object).
+            /// [`head_object`](crate::client::fluent_builders::HeadObject).
             ///
             /// `ParseStrictResponse` impl for `HeadObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1931,7 +1931,7 @@ mod head_object_request_test {
 /// Operation shape for `ListBucketAnalyticsConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_bucket_analytics_configurations`](crate::client::Client::list_bucket_analytics_configurations).
+            /// [`list_bucket_analytics_configurations`](crate::client::fluent_builders::ListBucketAnalyticsConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListBucketAnalyticsConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1964,7 +1964,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `ListBucketIntelligentTieringConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_bucket_intelligent_tiering_configurations`](crate::client::Client::list_bucket_intelligent_tiering_configurations).
+            /// [`list_bucket_intelligent_tiering_configurations`](crate::client::fluent_builders::ListBucketIntelligentTieringConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListBucketIntelligentTieringConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1997,7 +1997,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `ListBucketInventoryConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_bucket_inventory_configurations`](crate::client::Client::list_bucket_inventory_configurations).
+            /// [`list_bucket_inventory_configurations`](crate::client::fluent_builders::ListBucketInventoryConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListBucketInventoryConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2030,7 +2030,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `ListBucketMetricsConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_bucket_metrics_configurations`](crate::client::Client::list_bucket_metrics_configurations).
+            /// [`list_bucket_metrics_configurations`](crate::client::fluent_builders::ListBucketMetricsConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListBucketMetricsConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2063,7 +2063,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `ListBuckets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_buckets`](crate::client::Client::list_buckets).
+            /// [`list_buckets`](crate::client::fluent_builders::ListBuckets).
             ///
             /// `ParseStrictResponse` impl for `ListBuckets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2096,7 +2096,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `ListMultipartUploads`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_multipart_uploads`](crate::client::Client::list_multipart_uploads).
+            /// [`list_multipart_uploads`](crate::client::fluent_builders::ListMultipartUploads).
             ///
             /// `ParseStrictResponse` impl for `ListMultipartUploads`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2129,7 +2129,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `ListObjects`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_objects`](crate::client::Client::list_objects).
+            /// [`list_objects`](crate::client::fluent_builders::ListObjects).
             ///
             /// `ParseStrictResponse` impl for `ListObjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2309,7 +2309,7 @@ mod list_objects_request_test {
 /// Operation shape for `ListObjectsV2`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_objects_v2`](crate::client::Client::list_objects_v2).
+            /// [`list_objects_v2`](crate::client::fluent_builders::ListObjectsV2).
             ///
             /// `ParseStrictResponse` impl for `ListObjectsV2`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2342,7 +2342,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `ListObjectVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_object_versions`](crate::client::Client::list_object_versions).
+            /// [`list_object_versions`](crate::client::fluent_builders::ListObjectVersions).
             ///
             /// `ParseStrictResponse` impl for `ListObjectVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2375,7 +2375,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `ListParts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_parts`](crate::client::Client::list_parts).
+            /// [`list_parts`](crate::client::fluent_builders::ListParts).
             ///
             /// `ParseStrictResponse` impl for `ListParts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2408,7 +2408,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketAccelerateConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_accelerate_configuration`](crate::client::Client::put_bucket_accelerate_configuration).
+            /// [`put_bucket_accelerate_configuration`](crate::client::fluent_builders::PutBucketAccelerateConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutBucketAccelerateConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2441,7 +2441,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketAcl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_acl`](crate::client::Client::put_bucket_acl).
+            /// [`put_bucket_acl`](crate::client::fluent_builders::PutBucketAcl).
             ///
             /// `ParseStrictResponse` impl for `PutBucketAcl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2474,7 +2474,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketAnalyticsConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_analytics_configuration`](crate::client::Client::put_bucket_analytics_configuration).
+            /// [`put_bucket_analytics_configuration`](crate::client::fluent_builders::PutBucketAnalyticsConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutBucketAnalyticsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2507,7 +2507,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketCors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_cors`](crate::client::Client::put_bucket_cors).
+            /// [`put_bucket_cors`](crate::client::fluent_builders::PutBucketCors).
             ///
             /// `ParseStrictResponse` impl for `PutBucketCors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2540,7 +2540,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketEncryption`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_encryption`](crate::client::Client::put_bucket_encryption).
+            /// [`put_bucket_encryption`](crate::client::fluent_builders::PutBucketEncryption).
             ///
             /// `ParseStrictResponse` impl for `PutBucketEncryption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2573,7 +2573,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketIntelligentTieringConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_intelligent_tiering_configuration`](crate::client::Client::put_bucket_intelligent_tiering_configuration).
+            /// [`put_bucket_intelligent_tiering_configuration`](crate::client::fluent_builders::PutBucketIntelligentTieringConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutBucketIntelligentTieringConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2606,7 +2606,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketInventoryConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_inventory_configuration`](crate::client::Client::put_bucket_inventory_configuration).
+            /// [`put_bucket_inventory_configuration`](crate::client::fluent_builders::PutBucketInventoryConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutBucketInventoryConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2639,7 +2639,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketLifecycleConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_lifecycle_configuration`](crate::client::Client::put_bucket_lifecycle_configuration).
+            /// [`put_bucket_lifecycle_configuration`](crate::client::fluent_builders::PutBucketLifecycleConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutBucketLifecycleConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2744,7 +2744,7 @@ mod put_bucket_lifecycle_configuration_request_test {
 /// Operation shape for `PutBucketLogging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_logging`](crate::client::Client::put_bucket_logging).
+            /// [`put_bucket_logging`](crate::client::fluent_builders::PutBucketLogging).
             ///
             /// `ParseStrictResponse` impl for `PutBucketLogging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2777,7 +2777,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketMetricsConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_metrics_configuration`](crate::client::Client::put_bucket_metrics_configuration).
+            /// [`put_bucket_metrics_configuration`](crate::client::fluent_builders::PutBucketMetricsConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutBucketMetricsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2810,7 +2810,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketNotificationConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_notification_configuration`](crate::client::Client::put_bucket_notification_configuration).
+            /// [`put_bucket_notification_configuration`](crate::client::fluent_builders::PutBucketNotificationConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutBucketNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2843,7 +2843,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketOwnershipControls`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_ownership_controls`](crate::client::Client::put_bucket_ownership_controls).
+            /// [`put_bucket_ownership_controls`](crate::client::fluent_builders::PutBucketOwnershipControls).
             ///
             /// `ParseStrictResponse` impl for `PutBucketOwnershipControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2876,7 +2876,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_policy`](crate::client::Client::put_bucket_policy).
+            /// [`put_bucket_policy`](crate::client::fluent_builders::PutBucketPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutBucketPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2909,7 +2909,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketReplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_replication`](crate::client::Client::put_bucket_replication).
+            /// [`put_bucket_replication`](crate::client::fluent_builders::PutBucketReplication).
             ///
             /// `ParseStrictResponse` impl for `PutBucketReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2942,7 +2942,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketRequestPayment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_request_payment`](crate::client::Client::put_bucket_request_payment).
+            /// [`put_bucket_request_payment`](crate::client::fluent_builders::PutBucketRequestPayment).
             ///
             /// `ParseStrictResponse` impl for `PutBucketRequestPayment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2975,7 +2975,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_tagging`](crate::client::Client::put_bucket_tagging).
+            /// [`put_bucket_tagging`](crate::client::fluent_builders::PutBucketTagging).
             ///
             /// `ParseStrictResponse` impl for `PutBucketTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3008,7 +3008,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketVersioning`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_versioning`](crate::client::Client::put_bucket_versioning).
+            /// [`put_bucket_versioning`](crate::client::fluent_builders::PutBucketVersioning).
             ///
             /// `ParseStrictResponse` impl for `PutBucketVersioning`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3041,7 +3041,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutBucketWebsite`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_website`](crate::client::Client::put_bucket_website).
+            /// [`put_bucket_website`](crate::client::fluent_builders::PutBucketWebsite).
             ///
             /// `ParseStrictResponse` impl for `PutBucketWebsite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3074,7 +3074,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_object`](crate::client::Client::put_object).
+            /// [`put_object`](crate::client::fluent_builders::PutObject).
             ///
             /// `ParseStrictResponse` impl for `PutObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3190,7 +3190,7 @@ mod put_object_request_test {
 /// Operation shape for `PutObjectAcl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_object_acl`](crate::client::Client::put_object_acl).
+            /// [`put_object_acl`](crate::client::fluent_builders::PutObjectAcl).
             ///
             /// `ParseStrictResponse` impl for `PutObjectAcl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3223,7 +3223,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutObjectLegalHold`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_object_legal_hold`](crate::client::Client::put_object_legal_hold).
+            /// [`put_object_legal_hold`](crate::client::fluent_builders::PutObjectLegalHold).
             ///
             /// `ParseStrictResponse` impl for `PutObjectLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3256,7 +3256,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutObjectLockConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_object_lock_configuration`](crate::client::Client::put_object_lock_configuration).
+            /// [`put_object_lock_configuration`](crate::client::fluent_builders::PutObjectLockConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutObjectLockConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3289,7 +3289,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutObjectRetention`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_object_retention`](crate::client::Client::put_object_retention).
+            /// [`put_object_retention`](crate::client::fluent_builders::PutObjectRetention).
             ///
             /// `ParseStrictResponse` impl for `PutObjectRetention`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3322,7 +3322,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutObjectTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_object_tagging`](crate::client::Client::put_object_tagging).
+            /// [`put_object_tagging`](crate::client::fluent_builders::PutObjectTagging).
             ///
             /// `ParseStrictResponse` impl for `PutObjectTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3355,7 +3355,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `PutPublicAccessBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_public_access_block`](crate::client::Client::put_public_access_block).
+            /// [`put_public_access_block`](crate::client::fluent_builders::PutPublicAccessBlock).
             ///
             /// `ParseStrictResponse` impl for `PutPublicAccessBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3388,7 +3388,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `RestoreObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`restore_object`](crate::client::Client::restore_object).
+            /// [`restore_object`](crate::client::fluent_builders::RestoreObject).
             ///
             /// `ParseStrictResponse` impl for `RestoreObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3421,7 +3421,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `SelectObjectContent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`select_object_content`](crate::client::Client::select_object_content).
+            /// [`select_object_content`](crate::client::fluent_builders::SelectObjectContent).
             ///
             /// `ParseStrictResponse` impl for `SelectObjectContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3456,7 +3456,7 @@ impl aws_smithy_http::response::ParseHttpResponse for SelectObjectContent {
 /// Operation shape for `UploadPart`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`upload_part`](crate::client::Client::upload_part).
+            /// [`upload_part`](crate::client::fluent_builders::UploadPart).
             ///
             /// `ParseStrictResponse` impl for `UploadPart`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3489,7 +3489,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `UploadPartCopy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`upload_part_copy`](crate::client::Client::upload_part_copy).
+            /// [`upload_part_copy`](crate::client::fluent_builders::UploadPartCopy).
             ///
             /// `ParseStrictResponse` impl for `UploadPartCopy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3522,7 +3522,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
 /// Operation shape for `WriteGetObjectResponse`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`write_get_object_response`](crate::client::Client::write_get_object_response).
+            /// [`write_get_object_response`](crate::client::fluent_builders::WriteGetObjectResponse).
             ///
             /// `ParseStrictResponse` impl for `WriteGetObjectResponse`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

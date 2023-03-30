@@ -2,7 +2,7 @@
 /// Operation shape for `ConfigureLogs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`configure_logs`](crate::client::Client::configure_logs).
+            /// [`configure_logs`](crate::client::fluent_builders::ConfigureLogs).
             ///
             /// `ParseStrictResponse` impl for `ConfigureLogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogs {
 /// Operation shape for `CreateAsset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_asset`](crate::client::Client::create_asset).
+            /// [`create_asset`](crate::client::fluent_builders::CreateAsset).
             ///
             /// `ParseStrictResponse` impl for `CreateAsset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAsset {
 /// Operation shape for `CreatePackagingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_packaging_configuration`](crate::client::Client::create_packaging_configuration).
+            /// [`create_packaging_configuration`](crate::client::fluent_builders::CreatePackagingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `CreatePackagingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePackagingConfigura
 /// Operation shape for `CreatePackagingGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_packaging_group`](crate::client::Client::create_packaging_group).
+            /// [`create_packaging_group`](crate::client::fluent_builders::CreatePackagingGroup).
             ///
             /// `ParseStrictResponse` impl for `CreatePackagingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePackagingGroup {
 /// Operation shape for `DeleteAsset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_asset`](crate::client::Client::delete_asset).
+            /// [`delete_asset`](crate::client::fluent_builders::DeleteAsset).
             ///
             /// `ParseStrictResponse` impl for `DeleteAsset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAsset {
 /// Operation shape for `DeletePackagingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_packaging_configuration`](crate::client::Client::delete_packaging_configuration).
+            /// [`delete_packaging_configuration`](crate::client::fluent_builders::DeletePackagingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeletePackagingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackagingConfigura
 /// Operation shape for `DeletePackagingGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_packaging_group`](crate::client::Client::delete_packaging_group).
+            /// [`delete_packaging_group`](crate::client::fluent_builders::DeletePackagingGroup).
             ///
             /// `ParseStrictResponse` impl for `DeletePackagingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackagingGroup {
 /// Operation shape for `DescribeAsset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_asset`](crate::client::Client::describe_asset).
+            /// [`describe_asset`](crate::client::fluent_builders::DescribeAsset).
             ///
             /// `ParseStrictResponse` impl for `DescribeAsset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAsset {
 /// Operation shape for `DescribePackagingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_packaging_configuration`](crate::client::Client::describe_packaging_configuration).
+            /// [`describe_packaging_configuration`](crate::client::fluent_builders::DescribePackagingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DescribePackagingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackagingConfigu
 /// Operation shape for `DescribePackagingGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_packaging_group`](crate::client::Client::describe_packaging_group).
+            /// [`describe_packaging_group`](crate::client::fluent_builders::DescribePackagingGroup).
             ///
             /// `ParseStrictResponse` impl for `DescribePackagingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackagingGroup {
 /// Operation shape for `ListAssets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_assets`](crate::client::Client::list_assets).
+            /// [`list_assets`](crate::client::fluent_builders::ListAssets).
             ///
             /// `ParseStrictResponse` impl for `ListAssets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssets {
 /// Operation shape for `ListPackagingConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_packaging_configurations`](crate::client::Client::list_packaging_configurations).
+            /// [`list_packaging_configurations`](crate::client::fluent_builders::ListPackagingConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListPackagingConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackagingConfigurati
 /// Operation shape for `ListPackagingGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_packaging_groups`](crate::client::Client::list_packaging_groups).
+            /// [`list_packaging_groups`](crate::client::fluent_builders::ListPackagingGroups).
             ///
             /// `ParseStrictResponse` impl for `ListPackagingGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackagingGroups {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdatePackagingGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_packaging_group`](crate::client::Client::update_packaging_group).
+            /// [`update_packaging_group`](crate::client::fluent_builders::UpdatePackagingGroup).
             ///
             /// `ParseStrictResponse` impl for `UpdatePackagingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

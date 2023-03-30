@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateUser`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_user`](crate::client::Client::associate_user).
+            /// [`associate_user`](crate::client::fluent_builders::AssociateUser).
             ///
             /// `ParseStrictResponse` impl for `AssociateUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateUser {
 /// Operation shape for `DeregisterIdentityProvider`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deregister_identity_provider`](crate::client::Client::deregister_identity_provider).
+            /// [`deregister_identity_provider`](crate::client::fluent_builders::DeregisterIdentityProvider).
             ///
             /// `ParseStrictResponse` impl for `DeregisterIdentityProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterIdentityProvid
 /// Operation shape for `DisassociateUser`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_user`](crate::client::Client::disassociate_user).
+            /// [`disassociate_user`](crate::client::fluent_builders::DisassociateUser).
             ///
             /// `ParseStrictResponse` impl for `DisassociateUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateUser {
 /// Operation shape for `ListIdentityProviders`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_identity_providers`](crate::client::Client::list_identity_providers).
+            /// [`list_identity_providers`](crate::client::fluent_builders::ListIdentityProviders).
             ///
             /// `ParseStrictResponse` impl for `ListIdentityProviders`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityProviders {
 /// Operation shape for `ListInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_instances`](crate::client::Client::list_instances).
+            /// [`list_instances`](crate::client::fluent_builders::ListInstances).
             ///
             /// `ParseStrictResponse` impl for `ListInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstances {
 /// Operation shape for `ListProductSubscriptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_product_subscriptions`](crate::client::Client::list_product_subscriptions).
+            /// [`list_product_subscriptions`](crate::client::fluent_builders::ListProductSubscriptions).
             ///
             /// `ParseStrictResponse` impl for `ListProductSubscriptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProductSubscriptions
 /// Operation shape for `ListUserAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_user_associations`](crate::client::Client::list_user_associations).
+            /// [`list_user_associations`](crate::client::fluent_builders::ListUserAssociations).
             ///
             /// `ParseStrictResponse` impl for `ListUserAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserAssociations {
 /// Operation shape for `RegisterIdentityProvider`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_identity_provider`](crate::client::Client::register_identity_provider).
+            /// [`register_identity_provider`](crate::client::fluent_builders::RegisterIdentityProvider).
             ///
             /// `ParseStrictResponse` impl for `RegisterIdentityProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterIdentityProvider
 /// Operation shape for `StartProductSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_product_subscription`](crate::client::Client::start_product_subscription).
+            /// [`start_product_subscription`](crate::client::fluent_builders::StartProductSubscription).
             ///
             /// `ParseStrictResponse` impl for `StartProductSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartProductSubscription
 /// Operation shape for `StopProductSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_product_subscription`](crate::client::Client::stop_product_subscription).
+            /// [`stop_product_subscription`](crate::client::fluent_builders::StopProductSubscription).
             ///
             /// `ParseStrictResponse` impl for `StopProductSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopProductSubscription 
 /// Operation shape for `UpdateIdentityProviderSettings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_identity_provider_settings`](crate::client::Client::update_identity_provider_settings).
+            /// [`update_identity_provider_settings`](crate::client::fluent_builders::UpdateIdentityProviderSettings).
             ///
             /// `ParseStrictResponse` impl for `UpdateIdentityProviderSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

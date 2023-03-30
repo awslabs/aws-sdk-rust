@@ -2,7 +2,7 @@
 /// Operation shape for `GetApplicationComponentDetails`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_application_component_details`](crate::client::Client::get_application_component_details).
+            /// [`get_application_component_details`](crate::client::fluent_builders::GetApplicationComponentDetails).
             ///
             /// `ParseStrictResponse` impl for `GetApplicationComponentDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApplicationComponentD
 /// Operation shape for `GetApplicationComponentStrategies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_application_component_strategies`](crate::client::Client::get_application_component_strategies).
+            /// [`get_application_component_strategies`](crate::client::fluent_builders::GetApplicationComponentStrategies).
             ///
             /// `ParseStrictResponse` impl for `GetApplicationComponentStrategies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApplicationComponentS
 /// Operation shape for `GetAssessment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_assessment`](crate::client::Client::get_assessment).
+            /// [`get_assessment`](crate::client::fluent_builders::GetAssessment).
             ///
             /// `ParseStrictResponse` impl for `GetAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssessment {
 /// Operation shape for `GetImportFileTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_import_file_task`](crate::client::Client::get_import_file_task).
+            /// [`get_import_file_task`](crate::client::fluent_builders::GetImportFileTask).
             ///
             /// `ParseStrictResponse` impl for `GetImportFileTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImportFileTask {
 /// Operation shape for `GetLatestAssessmentId`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_latest_assessment_id`](crate::client::Client::get_latest_assessment_id).
+            /// [`get_latest_assessment_id`](crate::client::fluent_builders::GetLatestAssessmentId).
             ///
             /// `ParseStrictResponse` impl for `GetLatestAssessmentId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLatestAssessmentId {
 /// Operation shape for `GetPortfolioPreferences`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_portfolio_preferences`](crate::client::Client::get_portfolio_preferences).
+            /// [`get_portfolio_preferences`](crate::client::fluent_builders::GetPortfolioPreferences).
             ///
             /// `ParseStrictResponse` impl for `GetPortfolioPreferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPortfolioPreferences 
 /// Operation shape for `GetPortfolioSummary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_portfolio_summary`](crate::client::Client::get_portfolio_summary).
+            /// [`get_portfolio_summary`](crate::client::fluent_builders::GetPortfolioSummary).
             ///
             /// `ParseStrictResponse` impl for `GetPortfolioSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPortfolioSummary {
 /// Operation shape for `GetRecommendationReportDetails`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_recommendation_report_details`](crate::client::Client::get_recommendation_report_details).
+            /// [`get_recommendation_report_details`](crate::client::fluent_builders::GetRecommendationReportDetails).
             ///
             /// `ParseStrictResponse` impl for `GetRecommendationReportDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendationReportD
 /// Operation shape for `GetServerDetails`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_server_details`](crate::client::Client::get_server_details).
+            /// [`get_server_details`](crate::client::fluent_builders::GetServerDetails).
             ///
             /// `ParseStrictResponse` impl for `GetServerDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServerDetails {
 /// Operation shape for `GetServerStrategies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_server_strategies`](crate::client::Client::get_server_strategies).
+            /// [`get_server_strategies`](crate::client::fluent_builders::GetServerStrategies).
             ///
             /// `ParseStrictResponse` impl for `GetServerStrategies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServerStrategies {
 /// Operation shape for `ListApplicationComponents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_application_components`](crate::client::Client::list_application_components).
+            /// [`list_application_components`](crate::client::fluent_builders::ListApplicationComponents).
             ///
             /// `ParseStrictResponse` impl for `ListApplicationComponents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationComponent
 /// Operation shape for `ListCollectors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_collectors`](crate::client::Client::list_collectors).
+            /// [`list_collectors`](crate::client::fluent_builders::ListCollectors).
             ///
             /// `ParseStrictResponse` impl for `ListCollectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCollectors {
 /// Operation shape for `ListImportFileTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_import_file_task`](crate::client::Client::list_import_file_task).
+            /// [`list_import_file_task`](crate::client::fluent_builders::ListImportFileTask).
             ///
             /// `ParseStrictResponse` impl for `ListImportFileTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImportFileTask {
 /// Operation shape for `ListServers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_servers`](crate::client::Client::list_servers).
+            /// [`list_servers`](crate::client::fluent_builders::ListServers).
             ///
             /// `ParseStrictResponse` impl for `ListServers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServers {
 /// Operation shape for `PutPortfolioPreferences`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_portfolio_preferences`](crate::client::Client::put_portfolio_preferences).
+            /// [`put_portfolio_preferences`](crate::client::fluent_builders::PutPortfolioPreferences).
             ///
             /// `ParseStrictResponse` impl for `PutPortfolioPreferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPortfolioPreferences 
 /// Operation shape for `StartAssessment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_assessment`](crate::client::Client::start_assessment).
+            /// [`start_assessment`](crate::client::fluent_builders::StartAssessment).
             ///
             /// `ParseStrictResponse` impl for `StartAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAssessment {
 /// Operation shape for `StartImportFileTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_import_file_task`](crate::client::Client::start_import_file_task).
+            /// [`start_import_file_task`](crate::client::fluent_builders::StartImportFileTask).
             ///
             /// `ParseStrictResponse` impl for `StartImportFileTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartImportFileTask {
 /// Operation shape for `StartRecommendationReportGeneration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_recommendation_report_generation`](crate::client::Client::start_recommendation_report_generation).
+            /// [`start_recommendation_report_generation`](crate::client::fluent_builders::StartRecommendationReportGeneration).
             ///
             /// `ParseStrictResponse` impl for `StartRecommendationReportGeneration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRecommendationRepor
 /// Operation shape for `StopAssessment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_assessment`](crate::client::Client::stop_assessment).
+            /// [`stop_assessment`](crate::client::fluent_builders::StopAssessment).
             ///
             /// `ParseStrictResponse` impl for `StopAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopAssessment {
 /// Operation shape for `UpdateApplicationComponentConfig`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_application_component_config`](crate::client::Client::update_application_component_config).
+            /// [`update_application_component_config`](crate::client::fluent_builders::UpdateApplicationComponentConfig).
             ///
             /// `ParseStrictResponse` impl for `UpdateApplicationComponentConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApplicationCompone
 /// Operation shape for `UpdateServerConfig`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_server_config`](crate::client::Client::update_server_config).
+            /// [`update_server_config`](crate::client::fluent_builders::UpdateServerConfig).
             ///
             /// `ParseStrictResponse` impl for `UpdateServerConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

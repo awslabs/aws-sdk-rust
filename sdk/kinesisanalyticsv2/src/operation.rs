@@ -2,7 +2,7 @@
 /// Operation shape for `AddApplicationCloudWatchLoggingOption`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_application_cloud_watch_logging_option`](crate::client::Client::add_application_cloud_watch_logging_option).
+            /// [`add_application_cloud_watch_logging_option`](crate::client::fluent_builders::AddApplicationCloudWatchLoggingOption).
             ///
             /// `ParseStrictResponse` impl for `AddApplicationCloudWatchLoggingOption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationCloudWatch
 /// Operation shape for `AddApplicationInput`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_application_input`](crate::client::Client::add_application_input).
+            /// [`add_application_input`](crate::client::fluent_builders::AddApplicationInput).
             ///
             /// `ParseStrictResponse` impl for `AddApplicationInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationInput {
 /// Operation shape for `AddApplicationInputProcessingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_application_input_processing_configuration`](crate::client::Client::add_application_input_processing_configuration).
+            /// [`add_application_input_processing_configuration`](crate::client::fluent_builders::AddApplicationInputProcessingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `AddApplicationInputProcessingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationInputProce
 /// Operation shape for `AddApplicationOutput`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_application_output`](crate::client::Client::add_application_output).
+            /// [`add_application_output`](crate::client::fluent_builders::AddApplicationOutput).
             ///
             /// `ParseStrictResponse` impl for `AddApplicationOutput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationOutput {
 /// Operation shape for `AddApplicationReferenceDataSource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_application_reference_data_source`](crate::client::Client::add_application_reference_data_source).
+            /// [`add_application_reference_data_source`](crate::client::fluent_builders::AddApplicationReferenceDataSource).
             ///
             /// `ParseStrictResponse` impl for `AddApplicationReferenceDataSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationReferenceD
 /// Operation shape for `AddApplicationVpcConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_application_vpc_configuration`](crate::client::Client::add_application_vpc_configuration).
+            /// [`add_application_vpc_configuration`](crate::client::fluent_builders::AddApplicationVpcConfiguration).
             ///
             /// `ParseStrictResponse` impl for `AddApplicationVpcConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationVpcConfigu
 /// Operation shape for `CreateApplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_application`](crate::client::Client::create_application).
+            /// [`create_application`](crate::client::fluent_builders::CreateApplication).
             ///
             /// `ParseStrictResponse` impl for `CreateApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApplication {
 /// Operation shape for `CreateApplicationPresignedUrl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_application_presigned_url`](crate::client::Client::create_application_presigned_url).
+            /// [`create_application_presigned_url`](crate::client::fluent_builders::CreateApplicationPresignedUrl).
             ///
             /// `ParseStrictResponse` impl for `CreateApplicationPresignedUrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApplicationPresign
 /// Operation shape for `CreateApplicationSnapshot`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_application_snapshot`](crate::client::Client::create_application_snapshot).
+            /// [`create_application_snapshot`](crate::client::fluent_builders::CreateApplicationSnapshot).
             ///
             /// `ParseStrictResponse` impl for `CreateApplicationSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApplicationSnapsho
 /// Operation shape for `DeleteApplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_application`](crate::client::Client::delete_application).
+            /// [`delete_application`](crate::client::fluent_builders::DeleteApplication).
             ///
             /// `ParseStrictResponse` impl for `DeleteApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplication {
 /// Operation shape for `DeleteApplicationCloudWatchLoggingOption`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_application_cloud_watch_logging_option`](crate::client::Client::delete_application_cloud_watch_logging_option).
+            /// [`delete_application_cloud_watch_logging_option`](crate::client::fluent_builders::DeleteApplicationCloudWatchLoggingOption).
             ///
             /// `ParseStrictResponse` impl for `DeleteApplicationCloudWatchLoggingOption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplicationCloudWa
 /// Operation shape for `DeleteApplicationInputProcessingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_application_input_processing_configuration`](crate::client::Client::delete_application_input_processing_configuration).
+            /// [`delete_application_input_processing_configuration`](crate::client::fluent_builders::DeleteApplicationInputProcessingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteApplicationInputProcessingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplicationInputPr
 /// Operation shape for `DeleteApplicationOutput`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_application_output`](crate::client::Client::delete_application_output).
+            /// [`delete_application_output`](crate::client::fluent_builders::DeleteApplicationOutput).
             ///
             /// `ParseStrictResponse` impl for `DeleteApplicationOutput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplicationOutput 
 /// Operation shape for `DeleteApplicationReferenceDataSource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_application_reference_data_source`](crate::client::Client::delete_application_reference_data_source).
+            /// [`delete_application_reference_data_source`](crate::client::fluent_builders::DeleteApplicationReferenceDataSource).
             ///
             /// `ParseStrictResponse` impl for `DeleteApplicationReferenceDataSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplicationReferen
 /// Operation shape for `DeleteApplicationSnapshot`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_application_snapshot`](crate::client::Client::delete_application_snapshot).
+            /// [`delete_application_snapshot`](crate::client::fluent_builders::DeleteApplicationSnapshot).
             ///
             /// `ParseStrictResponse` impl for `DeleteApplicationSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplicationSnapsho
 /// Operation shape for `DeleteApplicationVpcConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_application_vpc_configuration`](crate::client::Client::delete_application_vpc_configuration).
+            /// [`delete_application_vpc_configuration`](crate::client::fluent_builders::DeleteApplicationVpcConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteApplicationVpcConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplicationVpcConf
 /// Operation shape for `DescribeApplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_application`](crate::client::Client::describe_application).
+            /// [`describe_application`](crate::client::fluent_builders::DescribeApplication).
             ///
             /// `ParseStrictResponse` impl for `DescribeApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApplication {
 /// Operation shape for `DescribeApplicationSnapshot`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_application_snapshot`](crate::client::Client::describe_application_snapshot).
+            /// [`describe_application_snapshot`](crate::client::fluent_builders::DescribeApplicationSnapshot).
             ///
             /// `ParseStrictResponse` impl for `DescribeApplicationSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApplicationSnaps
 /// Operation shape for `DescribeApplicationVersion`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_application_version`](crate::client::Client::describe_application_version).
+            /// [`describe_application_version`](crate::client::fluent_builders::DescribeApplicationVersion).
             ///
             /// `ParseStrictResponse` impl for `DescribeApplicationVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApplicationVersi
 /// Operation shape for `DiscoverInputSchema`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`discover_input_schema`](crate::client::Client::discover_input_schema).
+            /// [`discover_input_schema`](crate::client::fluent_builders::DiscoverInputSchema).
             ///
             /// `ParseStrictResponse` impl for `DiscoverInputSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DiscoverInputSchema {
 /// Operation shape for `ListApplications`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_applications`](crate::client::Client::list_applications).
+            /// [`list_applications`](crate::client::fluent_builders::ListApplications).
             ///
             /// `ParseStrictResponse` impl for `ListApplications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplications {
 /// Operation shape for `ListApplicationSnapshots`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_application_snapshots`](crate::client::Client::list_application_snapshots).
+            /// [`list_application_snapshots`](crate::client::fluent_builders::ListApplicationSnapshots).
             ///
             /// `ParseStrictResponse` impl for `ListApplicationSnapshots`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationSnapshots
 /// Operation shape for `ListApplicationVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_application_versions`](crate::client::Client::list_application_versions).
+            /// [`list_application_versions`](crate::client::fluent_builders::ListApplicationVersions).
             ///
             /// `ParseStrictResponse` impl for `ListApplicationVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationVersions 
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `RollbackApplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`rollback_application`](crate::client::Client::rollback_application).
+            /// [`rollback_application`](crate::client::fluent_builders::RollbackApplication).
             ///
             /// `ParseStrictResponse` impl for `RollbackApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RollbackApplication {
 /// Operation shape for `StartApplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_application`](crate::client::Client::start_application).
+            /// [`start_application`](crate::client::fluent_builders::StartApplication).
             ///
             /// `ParseStrictResponse` impl for `StartApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartApplication {
 /// Operation shape for `StopApplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_application`](crate::client::Client::stop_application).
+            /// [`stop_application`](crate::client::fluent_builders::StopApplication).
             ///
             /// `ParseStrictResponse` impl for `StopApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopApplication {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateApplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_application`](crate::client::Client::update_application).
+            /// [`update_application`](crate::client::fluent_builders::UpdateApplication).
             ///
             /// `ParseStrictResponse` impl for `UpdateApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApplication {
 /// Operation shape for `UpdateApplicationMaintenanceConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_application_maintenance_configuration`](crate::client::Client::update_application_maintenance_configuration).
+            /// [`update_application_maintenance_configuration`](crate::client::fluent_builders::UpdateApplicationMaintenanceConfiguration).
             ///
             /// `ParseStrictResponse` impl for `UpdateApplicationMaintenanceConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

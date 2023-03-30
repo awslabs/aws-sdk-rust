@@ -2,7 +2,7 @@
 /// Operation shape for `AddPermission`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_permission`](crate::client::Client::add_permission).
+            /// [`add_permission`](crate::client::fluent_builders::AddPermission).
             ///
             /// `ParseStrictResponse` impl for `AddPermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddPermission {
 /// Operation shape for `ChangeMessageVisibility`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`change_message_visibility`](crate::client::Client::change_message_visibility).
+            /// [`change_message_visibility`](crate::client::fluent_builders::ChangeMessageVisibility).
             ///
             /// `ParseStrictResponse` impl for `ChangeMessageVisibility`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -106,7 +106,7 @@ mod change_message_visibility_request_test {
 /// Operation shape for `ChangeMessageVisibilityBatch`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`change_message_visibility_batch`](crate::client::Client::change_message_visibility_batch).
+            /// [`change_message_visibility_batch`](crate::client::fluent_builders::ChangeMessageVisibilityBatch).
             ///
             /// `ParseStrictResponse` impl for `ChangeMessageVisibilityBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangeMessageVisibilityB
 /// Operation shape for `CreateQueue`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_queue`](crate::client::Client::create_queue).
+            /// [`create_queue`](crate::client::fluent_builders::CreateQueue).
             ///
             /// `ParseStrictResponse` impl for `CreateQueue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQueue {
 /// Operation shape for `DeleteMessage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_message`](crate::client::Client::delete_message).
+            /// [`delete_message`](crate::client::fluent_builders::DeleteMessage).
             ///
             /// `ParseStrictResponse` impl for `DeleteMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -202,7 +202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMessage {
 /// Operation shape for `DeleteMessageBatch`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_message_batch`](crate::client::Client::delete_message_batch).
+            /// [`delete_message_batch`](crate::client::fluent_builders::DeleteMessageBatch).
             ///
             /// `ParseStrictResponse` impl for `DeleteMessageBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -234,7 +234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMessageBatch {
 /// Operation shape for `DeleteQueue`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_queue`](crate::client::Client::delete_queue).
+            /// [`delete_queue`](crate::client::fluent_builders::DeleteQueue).
             ///
             /// `ParseStrictResponse` impl for `DeleteQueue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -266,7 +266,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQueue {
 /// Operation shape for `GetQueueAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_queue_attributes`](crate::client::Client::get_queue_attributes).
+            /// [`get_queue_attributes`](crate::client::fluent_builders::GetQueueAttributes).
             ///
             /// `ParseStrictResponse` impl for `GetQueueAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -298,7 +298,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueueAttributes {
 /// Operation shape for `GetQueueUrl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_queue_url`](crate::client::Client::get_queue_url).
+            /// [`get_queue_url`](crate::client::fluent_builders::GetQueueUrl).
             ///
             /// `ParseStrictResponse` impl for `GetQueueUrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -330,7 +330,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueueUrl {
 /// Operation shape for `ListDeadLetterSourceQueues`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_dead_letter_source_queues`](crate::client::Client::list_dead_letter_source_queues).
+            /// [`list_dead_letter_source_queues`](crate::client::fluent_builders::ListDeadLetterSourceQueues).
             ///
             /// `ParseStrictResponse` impl for `ListDeadLetterSourceQueues`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -362,7 +362,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeadLetterSourceQueu
 /// Operation shape for `ListQueues`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_queues`](crate::client::Client::list_queues).
+            /// [`list_queues`](crate::client::fluent_builders::ListQueues).
             ///
             /// `ParseStrictResponse` impl for `ListQueues`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -394,7 +394,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueues {
 /// Operation shape for `ListQueueTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_queue_tags`](crate::client::Client::list_queue_tags).
+            /// [`list_queue_tags`](crate::client::fluent_builders::ListQueueTags).
             ///
             /// `ParseStrictResponse` impl for `ListQueueTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -426,7 +426,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueueTags {
 /// Operation shape for `PurgeQueue`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`purge_queue`](crate::client::Client::purge_queue).
+            /// [`purge_queue`](crate::client::fluent_builders::PurgeQueue).
             ///
             /// `ParseStrictResponse` impl for `PurgeQueue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -458,7 +458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurgeQueue {
 /// Operation shape for `ReceiveMessage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`receive_message`](crate::client::Client::receive_message).
+            /// [`receive_message`](crate::client::fluent_builders::ReceiveMessage).
             ///
             /// `ParseStrictResponse` impl for `ReceiveMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -490,7 +490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReceiveMessage {
 /// Operation shape for `RemovePermission`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`remove_permission`](crate::client::Client::remove_permission).
+            /// [`remove_permission`](crate::client::fluent_builders::RemovePermission).
             ///
             /// `ParseStrictResponse` impl for `RemovePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -522,7 +522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemovePermission {
 /// Operation shape for `SendMessage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`send_message`](crate::client::Client::send_message).
+            /// [`send_message`](crate::client::fluent_builders::SendMessage).
             ///
             /// `ParseStrictResponse` impl for `SendMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -554,7 +554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendMessage {
 /// Operation shape for `SendMessageBatch`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`send_message_batch`](crate::client::Client::send_message_batch).
+            /// [`send_message_batch`](crate::client::fluent_builders::SendMessageBatch).
             ///
             /// `ParseStrictResponse` impl for `SendMessageBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -586,7 +586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendMessageBatch {
 /// Operation shape for `SetQueueAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_queue_attributes`](crate::client::Client::set_queue_attributes).
+            /// [`set_queue_attributes`](crate::client::fluent_builders::SetQueueAttributes).
             ///
             /// `ParseStrictResponse` impl for `SetQueueAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -618,7 +618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetQueueAttributes {
 /// Operation shape for `TagQueue`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_queue`](crate::client::Client::tag_queue).
+            /// [`tag_queue`](crate::client::fluent_builders::TagQueue).
             ///
             /// `ParseStrictResponse` impl for `TagQueue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -650,7 +650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagQueue {
 /// Operation shape for `UntagQueue`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_queue`](crate::client::Client::untag_queue).
+            /// [`untag_queue`](crate::client::fluent_builders::UntagQueue).
             ///
             /// `ParseStrictResponse` impl for `UntagQueue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

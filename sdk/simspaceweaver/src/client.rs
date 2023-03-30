@@ -79,8 +79,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteAppOutput`](crate::output::DeleteAppOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteAppError>`](crate::error::DeleteAppError)
-    pub fn delete_app(&self) -> fluent_builders::DeleteApp {
-                            fluent_builders::DeleteApp::new(self.handle.clone())
+    pub fn delete_app(&self) -> crate::client::fluent_builders::DeleteApp {
+                            crate::client::fluent_builders::DeleteApp::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteSimulation`](crate::client::fluent_builders::DeleteSimulation) operation.
                         ///
@@ -89,8 +89,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteSimulationOutput`](crate::output::DeleteSimulationOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteSimulationError>`](crate::error::DeleteSimulationError)
-    pub fn delete_simulation(&self) -> fluent_builders::DeleteSimulation {
-                            fluent_builders::DeleteSimulation::new(self.handle.clone())
+    pub fn delete_simulation(&self) -> crate::client::fluent_builders::DeleteSimulation {
+                            crate::client::fluent_builders::DeleteSimulation::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeApp`](crate::client::fluent_builders::DescribeApp) operation.
                         ///
@@ -108,8 +108,8 @@ impl Client  {
     ///   - [`description(Option<String>)`](crate::output::DescribeAppOutput::description): <p>The description of the app.</p>
     ///   - [`endpoint_info(Option<SimulationAppEndpointInfo>)`](crate::output::DescribeAppOutput::endpoint_info): <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
                         /// - On failure, responds with [`SdkError<DescribeAppError>`](crate::error::DescribeAppError)
-    pub fn describe_app(&self) -> fluent_builders::DescribeApp {
-                            fluent_builders::DescribeApp::new(self.handle.clone())
+    pub fn describe_app(&self) -> crate::client::fluent_builders::DescribeApp {
+                            crate::client::fluent_builders::DescribeApp::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeSimulation`](crate::client::fluent_builders::DescribeSimulation) operation.
                         ///
@@ -130,8 +130,8 @@ impl Client  {
     ///   - [`live_simulation_state(Option<LiveSimulationState>)`](crate::output::DescribeSimulationOutput::live_simulation_state): <p>A collection of additional state information, such as domain and clock configuration.</p>
     ///   - [`maximum_duration(Option<String>)`](crate::output::DescribeSimulationOutput::maximum_duration): <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
                         /// - On failure, responds with [`SdkError<DescribeSimulationError>`](crate::error::DescribeSimulationError)
-    pub fn describe_simulation(&self) -> fluent_builders::DescribeSimulation {
-                            fluent_builders::DescribeSimulation::new(self.handle.clone())
+    pub fn describe_simulation(&self) -> crate::client::fluent_builders::DescribeSimulation {
+                            crate::client::fluent_builders::DescribeSimulation::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListApps`](crate::client::fluent_builders::ListApps) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApps::into_paginator).
@@ -145,8 +145,8 @@ impl Client  {
                         ///   - [`apps(Option<Vec<SimulationAppMetadata>>)`](crate::output::ListAppsOutput::apps): <p>The list of apps for the given simulation and domain.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAppsOutput::next_token): <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
                         /// - On failure, responds with [`SdkError<ListAppsError>`](crate::error::ListAppsError)
-    pub fn list_apps(&self) -> fluent_builders::ListApps {
-                            fluent_builders::ListApps::new(self.handle.clone())
+    pub fn list_apps(&self) -> crate::client::fluent_builders::ListApps {
+                            crate::client::fluent_builders::ListApps::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListSimulations`](crate::client::fluent_builders::ListSimulations) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSimulations::into_paginator).
@@ -158,8 +158,8 @@ impl Client  {
                         ///   - [`simulations(Option<Vec<SimulationMetadata>>)`](crate::output::ListSimulationsOutput::simulations): <p>The list of simulations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSimulationsOutput::next_token): <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
                         /// - On failure, responds with [`SdkError<ListSimulationsError>`](crate::error::ListSimulationsError)
-    pub fn list_simulations(&self) -> fluent_builders::ListSimulations {
-                            fluent_builders::ListSimulations::new(self.handle.clone())
+    pub fn list_simulations(&self) -> crate::client::fluent_builders::ListSimulations {
+                            crate::client::fluent_builders::ListSimulations::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -168,8 +168,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags for the resource.</p>
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartApp`](crate::client::fluent_builders::StartApp) operation.
                         ///
@@ -185,8 +185,8 @@ impl Client  {
     ///   - [`domain(Option<String>)`](crate::output::StartAppOutput::domain): <p>The name of the domain of the app.</p>
     ///   - [`simulation(Option<String>)`](crate::output::StartAppOutput::simulation): <p>The name of the simulation of the app.</p>
                         /// - On failure, responds with [`SdkError<StartAppError>`](crate::error::StartAppError)
-    pub fn start_app(&self) -> fluent_builders::StartApp {
-                            fluent_builders::StartApp::new(self.handle.clone())
+    pub fn start_app(&self) -> crate::client::fluent_builders::StartApp {
+                            crate::client::fluent_builders::StartApp::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartClock`](crate::client::fluent_builders::StartClock) operation.
                         ///
@@ -195,8 +195,8 @@ impl Client  {
                         /// - On success, responds with [`StartClockOutput`](crate::output::StartClockOutput)
                         
                         /// - On failure, responds with [`SdkError<StartClockError>`](crate::error::StartClockError)
-    pub fn start_clock(&self) -> fluent_builders::StartClock {
-                            fluent_builders::StartClock::new(self.handle.clone())
+    pub fn start_clock(&self) -> crate::client::fluent_builders::StartClock {
+                            crate::client::fluent_builders::StartClock::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartSimulation`](crate::client::fluent_builders::StartSimulation) operation.
                         ///
@@ -213,8 +213,8 @@ impl Client  {
     ///   - [`execution_id(Option<String>)`](crate::output::StartSimulationOutput::execution_id): <p>A universally unique identifier (UUID) for this simulation.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::StartSimulationOutput::creation_time): <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
                         /// - On failure, responds with [`SdkError<StartSimulationError>`](crate::error::StartSimulationError)
-    pub fn start_simulation(&self) -> fluent_builders::StartSimulation {
-                            fluent_builders::StartSimulation::new(self.handle.clone())
+    pub fn start_simulation(&self) -> crate::client::fluent_builders::StartSimulation {
+                            crate::client::fluent_builders::StartSimulation::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopApp`](crate::client::fluent_builders::StopApp) operation.
                         ///
@@ -225,8 +225,8 @@ impl Client  {
                         /// - On success, responds with [`StopAppOutput`](crate::output::StopAppOutput)
                         
                         /// - On failure, responds with [`SdkError<StopAppError>`](crate::error::StopAppError)
-    pub fn stop_app(&self) -> fluent_builders::StopApp {
-                            fluent_builders::StopApp::new(self.handle.clone())
+    pub fn stop_app(&self) -> crate::client::fluent_builders::StopApp {
+                            crate::client::fluent_builders::StopApp::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopClock`](crate::client::fluent_builders::StopClock) operation.
                         ///
@@ -235,8 +235,8 @@ impl Client  {
                         /// - On success, responds with [`StopClockOutput`](crate::output::StopClockOutput)
                         
                         /// - On failure, responds with [`SdkError<StopClockError>`](crate::error::StopClockError)
-    pub fn stop_clock(&self) -> fluent_builders::StopClock {
-                            fluent_builders::StopClock::new(self.handle.clone())
+    pub fn stop_clock(&self) -> crate::client::fluent_builders::StopClock {
+                            crate::client::fluent_builders::StopClock::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopSimulation`](crate::client::fluent_builders::StopSimulation) operation.
                         ///
@@ -245,8 +245,8 @@ impl Client  {
                         /// - On success, responds with [`StopSimulationOutput`](crate::output::StopSimulationOutput)
                         
                         /// - On failure, responds with [`SdkError<StopSimulationError>`](crate::error::StopSimulationError)
-    pub fn stop_simulation(&self) -> fluent_builders::StopSimulation {
-                            fluent_builders::StopSimulation::new(self.handle.clone())
+    pub fn stop_simulation(&self) -> crate::client::fluent_builders::StopSimulation {
+                            crate::client::fluent_builders::StopSimulation::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -256,8 +256,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -267,1102 +267,9 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `DeleteApp`.
-                        ///
-    /// <p>Deletes the instance of the given custom app.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteApp {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_app_input::Builder
-                        }
-    impl DeleteApp  {
-        /// Creates a new `DeleteApp`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteApp, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteAppError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteAppOutput, aws_smithy_http::result::SdkError<crate::error::DeleteAppError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the simulation of the app.</p>
-        pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simulation(input.into());
-            self
-        }
-        /// <p>The name of the simulation of the app.</p>
-        pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_simulation(input);
-            self
-        }
-        /// <p>The name of the domain of the app.</p>
-        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(input.into());
-            self
-        }
-        /// <p>The name of the domain of the app.</p>
-        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(input);
-            self
-        }
-        /// <p>The name of the app.</p>
-        pub fn app(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app(input.into());
-            self
-        }
-        /// <p>The name of the app.</p>
-        pub fn set_app(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteSimulation`.
-                        ///
-    /// <p>Deletes all SimSpace Weaver resources assigned to the given simulation.</p> <note> 
-    /// <p>Your simulation uses resources in other Amazon Web Services services. This API operation doesn't delete resources in other Amazon Web Services services.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteSimulation {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_simulation_input::Builder
-                        }
-    impl DeleteSimulation  {
-        /// Creates a new `DeleteSimulation`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteSimulation, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteSimulationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteSimulationOutput, aws_smithy_http::result::SdkError<crate::error::DeleteSimulationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the simulation.</p>
-        pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simulation(input.into());
-            self
-        }
-        /// <p>The name of the simulation.</p>
-        pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_simulation(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeApp`.
-                        ///
-    /// <p>Returns the state of the given custom app.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeApp {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_app_input::Builder
-                        }
-    impl DescribeApp  {
-        /// Creates a new `DescribeApp`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeApp, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeAppError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeAppOutput, aws_smithy_http::result::SdkError<crate::error::DescribeAppError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the simulation of the app.</p>
-        pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simulation(input.into());
-            self
-        }
-        /// <p>The name of the simulation of the app.</p>
-        pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_simulation(input);
-            self
-        }
-        /// <p>The name of the domain of the app.</p>
-        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(input.into());
-            self
-        }
-        /// <p>The name of the domain of the app.</p>
-        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(input);
-            self
-        }
-        /// <p>The name of the app.</p>
-        pub fn app(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app(input.into());
-            self
-        }
-        /// <p>The name of the app.</p>
-        pub fn set_app(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeSimulation`.
-                        ///
-    /// <p>Returns the current state of the given simulation.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeSimulation {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_simulation_input::Builder
-                        }
-    impl DescribeSimulation  {
-        /// Creates a new `DescribeSimulation`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeSimulation, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeSimulationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeSimulationOutput, aws_smithy_http::result::SdkError<crate::error::DescribeSimulationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the simulation.</p>
-        pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simulation(input.into());
-            self
-        }
-        /// <p>The name of the simulation.</p>
-        pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_simulation(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListApps`.
-                        ///
-    /// <p>Lists all custom apps or service apps for the given simulation and domain.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListApps {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_apps_input::Builder
-                        }
-    impl ListApps  {
-        /// Creates a new `ListApps`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListApps, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListAppsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListAppsOutput, aws_smithy_http::result::SdkError<crate::error::ListAppsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAppsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListAppsPaginator {
-                                        crate::paginator::ListAppsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The name of the simulation that you want to list apps for.</p>
-        pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simulation(input.into());
-            self
-        }
-        /// <p>The name of the simulation that you want to list apps for.</p>
-        pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_simulation(input);
-            self
-        }
-        /// <p>The name of the domain that you want to list apps for.</p>
-        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(input.into());
-            self
-        }
-        /// <p>The name of the domain that you want to list apps for.</p>
-        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(input);
-            self
-        }
-        /// <p>The maximum number of apps to list.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of apps to list.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListSimulations`.
-                        ///
-    /// <p>Lists the SimSpace Weaver simulations in the Amazon Web Services account used to make the API call.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListSimulations {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_simulations_input::Builder
-                        }
-    impl ListSimulations  {
-        /// Creates a new `ListSimulations`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListSimulations, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListSimulationsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListSimulationsOutput, aws_smithy_http::result::SdkError<crate::error::ListSimulationsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListSimulationsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListSimulationsPaginator {
-                                        crate::paginator::ListSimulationsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The maximum number of simulations to list.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of simulations to list.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// <p>Lists all tags on a SimSpace Weaver resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartApp`.
-                        ///
-    /// <p>Starts a custom app with the configuration specified in the simulation schema.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartApp {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_app_input::Builder
-                        }
-    impl StartApp  {
-        /// Creates a new `StartApp`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartApp, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartAppError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartAppOutput, aws_smithy_http::result::SdkError<crate::error::StartAppError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The name of the simulation of the app.</p>
-        pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simulation(input.into());
-            self
-        }
-        /// <p>The name of the simulation of the app.</p>
-        pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_simulation(input);
-            self
-        }
-        /// <p>The name of the domain of the app.</p>
-        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(input.into());
-            self
-        }
-        /// <p>The name of the domain of the app.</p>
-        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(input);
-            self
-        }
-        /// <p>The name of the app.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the app.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The description of the app.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description of the app.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
-        pub fn launch_overrides(mut self, input: crate::model::LaunchOverrides) -> Self {
-            self.inner = self.inner.launch_overrides(input);
-            self
-        }
-        /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
-        pub fn set_launch_overrides(mut self, input: std::option::Option<crate::model::LaunchOverrides>) -> Self {
-            self.inner = self.inner.set_launch_overrides(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartClock`.
-                        ///
-    /// <p>Starts the simulation clock.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartClock {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_clock_input::Builder
-                        }
-    impl StartClock  {
-        /// Creates a new `StartClock`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartClock, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartClockError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartClockOutput, aws_smithy_http::result::SdkError<crate::error::StartClockError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the simulation.</p>
-        pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simulation(input.into());
-            self
-        }
-        /// <p>The name of the simulation.</p>
-        pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_simulation(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartSimulation`.
-                        ///
-    /// <p>Starts a simulation with the given name and schema.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartSimulation {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_simulation_input::Builder
-                        }
-    impl StartSimulation  {
-        /// Creates a new `StartSimulation`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartSimulation, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartSimulationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartSimulationOutput, aws_smithy_http::result::SdkError<crate::error::StartSimulationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The name of the simulation.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the simulation.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The description of the simulation.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description of the simulation.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(input);
-            self
-        }
-        /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-        pub fn schema_s3_location(mut self, input: crate::model::S3Location) -> Self {
-            self.inner = self.inner.schema_s3_location(input);
-            self
-        }
-        /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-        pub fn set_schema_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
-            self.inner = self.inner.set_schema_s3_location(input);
-            self
-        }
-        /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
-        pub fn maximum_duration(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maximum_duration(input.into());
-            self
-        }
-        /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
-        pub fn set_maximum_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_maximum_duration(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A list of tags for the simulation. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>A list of tags for the simulation. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopApp`.
-                        ///
-    /// <p>Stops the given custom app and shuts down all of its allocated compute resources.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopApp {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_app_input::Builder
-                        }
-    impl StopApp  {
-        /// Creates a new `StopApp`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopApp, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopAppError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopAppOutput, aws_smithy_http::result::SdkError<crate::error::StopAppError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the simulation of the app.</p>
-        pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simulation(input.into());
-            self
-        }
-        /// <p>The name of the simulation of the app.</p>
-        pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_simulation(input);
-            self
-        }
-        /// <p>The name of the domain of the app.</p>
-        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(input.into());
-            self
-        }
-        /// <p>The name of the domain of the app.</p>
-        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain(input);
-            self
-        }
-        /// <p>The name of the app.</p>
-        pub fn app(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app(input.into());
-            self
-        }
-        /// <p>The name of the app.</p>
-        pub fn set_app(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopClock`.
-                        ///
-    /// <p>Stops the simulation clock.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopClock {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_clock_input::Builder
-                        }
-    impl StopClock  {
-        /// Creates a new `StopClock`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopClock, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopClockError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopClockOutput, aws_smithy_http::result::SdkError<crate::error::StopClockError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the simulation.</p>
-        pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simulation(input.into());
-            self
-        }
-        /// <p>The name of the simulation.</p>
-        pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_simulation(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopSimulation`.
-                        ///
-    /// <p>Stops the given simulation.</p> <important> 
-    /// <p>You can't restart a simulation after you stop it. If you need to restart a simulation, you must stop it, delete it, and start a new instance of it.</p> 
-    /// </important>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopSimulation {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_simulation_input::Builder
-                        }
-    impl StopSimulation  {
-        /// Creates a new `StopSimulation`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopSimulation, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopSimulationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopSimulationOutput, aws_smithy_http::result::SdkError<crate::error::StopSimulationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the simulation.</p>
-        pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simulation(input.into());
-            self
-        }
-        /// <p>The name of the simulation.</p>
-        pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_simulation(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>Adds tags to a SimSpace Weaver resource. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add tags to. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add tags to. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A list of tags to apply to the resource.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>A list of tags to apply to the resource.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>Removes tags from a SimSpace Weaver resource. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>A list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>A list of tag keys to remove from the resource.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -1433,4 +340,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

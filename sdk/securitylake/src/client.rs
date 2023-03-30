@@ -81,8 +81,8 @@ impl Client  {
                         ///   - [`processing(Option<Vec<String>>)`](crate::output::CreateAwsLogSourceOutput::processing): <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
     ///   - [`failed(Option<Vec<String>>)`](crate::output::CreateAwsLogSourceOutput::failed): <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
                         /// - On failure, responds with [`SdkError<CreateAwsLogSourceError>`](crate::error::CreateAwsLogSourceError)
-    pub fn create_aws_log_source(&self) -> fluent_builders::CreateAwsLogSource {
-                            fluent_builders::CreateAwsLogSource::new(self.handle.clone())
+    pub fn create_aws_log_source(&self) -> crate::client::fluent_builders::CreateAwsLogSource {
+                            crate::client::fluent_builders::CreateAwsLogSource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateCustomLogSource`](crate::client::fluent_builders::CreateCustomLogSource) operation.
                         ///
@@ -98,8 +98,8 @@ impl Client  {
     ///   - [`glue_database_name(Option<String>)`](crate::output::CreateCustomLogSourceOutput::glue_database_name): <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
     ///   - [`log_provider_access_role_arn(Option<String>)`](crate::output::CreateCustomLogSourceOutput::log_provider_access_role_arn): <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
                         /// - On failure, responds with [`SdkError<CreateCustomLogSourceError>`](crate::error::CreateCustomLogSourceError)
-    pub fn create_custom_log_source(&self) -> fluent_builders::CreateCustomLogSource {
-                            fluent_builders::CreateCustomLogSource::new(self.handle.clone())
+    pub fn create_custom_log_source(&self) -> crate::client::fluent_builders::CreateCustomLogSource {
+                            crate::client::fluent_builders::CreateCustomLogSource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateDatalake`](crate::client::fluent_builders::CreateDatalake) operation.
                         ///
@@ -111,8 +111,8 @@ impl Client  {
                         /// - On success, responds with [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput)
                         
                         /// - On failure, responds with [`SdkError<CreateDatalakeError>`](crate::error::CreateDatalakeError)
-    pub fn create_datalake(&self) -> fluent_builders::CreateDatalake {
-                            fluent_builders::CreateDatalake::new(self.handle.clone())
+    pub fn create_datalake(&self) -> crate::client::fluent_builders::CreateDatalake {
+                            crate::client::fluent_builders::CreateDatalake::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateDatalakeAutoEnable`](crate::client::fluent_builders::CreateDatalakeAutoEnable) operation.
                         ///
@@ -121,8 +121,8 @@ impl Client  {
                         /// - On success, responds with [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput)
                         
                         /// - On failure, responds with [`SdkError<CreateDatalakeAutoEnableError>`](crate::error::CreateDatalakeAutoEnableError)
-    pub fn create_datalake_auto_enable(&self) -> fluent_builders::CreateDatalakeAutoEnable {
-                            fluent_builders::CreateDatalakeAutoEnable::new(self.handle.clone())
+    pub fn create_datalake_auto_enable(&self) -> crate::client::fluent_builders::CreateDatalakeAutoEnable {
+                            crate::client::fluent_builders::CreateDatalakeAutoEnable::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateDatalakeDelegatedAdmin`](crate::client::fluent_builders::CreateDatalakeDelegatedAdmin) operation.
                         ///
@@ -131,8 +131,8 @@ impl Client  {
                         /// - On success, responds with [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput)
                         
                         /// - On failure, responds with [`SdkError<CreateDatalakeDelegatedAdminError>`](crate::error::CreateDatalakeDelegatedAdminError)
-    pub fn create_datalake_delegated_admin(&self) -> fluent_builders::CreateDatalakeDelegatedAdmin {
-                            fluent_builders::CreateDatalakeDelegatedAdmin::new(self.handle.clone())
+    pub fn create_datalake_delegated_admin(&self) -> crate::client::fluent_builders::CreateDatalakeDelegatedAdmin {
+                            crate::client::fluent_builders::CreateDatalakeDelegatedAdmin::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateDatalakeExceptionsSubscription`](crate::client::fluent_builders::CreateDatalakeExceptionsSubscription) operation.
                         ///
@@ -142,8 +142,8 @@ impl Client  {
                         /// - On success, responds with [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput)
                         
                         /// - On failure, responds with [`SdkError<CreateDatalakeExceptionsSubscriptionError>`](crate::error::CreateDatalakeExceptionsSubscriptionError)
-    pub fn create_datalake_exceptions_subscription(&self) -> fluent_builders::CreateDatalakeExceptionsSubscription {
-                            fluent_builders::CreateDatalakeExceptionsSubscription::new(self.handle.clone())
+    pub fn create_datalake_exceptions_subscription(&self) -> crate::client::fluent_builders::CreateDatalakeExceptionsSubscription {
+                            crate::client::fluent_builders::CreateDatalakeExceptionsSubscription::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateSubscriber`](crate::client::fluent_builders::CreateSubscriber) operation.
                         ///
@@ -160,8 +160,8 @@ impl Client  {
     ///   - [`sns_arn(Option<String>)`](crate::output::CreateSubscriberOutput::sns_arn): <p>The ARN for the Amazon Simple Notification Service.</p>
     ///   - [`s3_bucket_arn(Option<String>)`](crate::output::CreateSubscriberOutput::s3_bucket_arn): <p>The ARN for the Amazon S3 bucket. </p>
                         /// - On failure, responds with [`SdkError<CreateSubscriberError>`](crate::error::CreateSubscriberError)
-    pub fn create_subscriber(&self) -> fluent_builders::CreateSubscriber {
-                            fluent_builders::CreateSubscriber::new(self.handle.clone())
+    pub fn create_subscriber(&self) -> crate::client::fluent_builders::CreateSubscriber {
+                            crate::client::fluent_builders::CreateSubscriber::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateSubscriptionNotificationConfiguration`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration) operation.
                         ///
@@ -176,8 +176,8 @@ impl Client  {
                         /// - On success, responds with [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput) with field(s):
                         ///   - [`queue_arn(Option<String>)`](crate::output::CreateSubscriptionNotificationConfigurationOutput::queue_arn): <p>Returns the Amazon Resource Name (ARN) of the queue.</p>
                         /// - On failure, responds with [`SdkError<CreateSubscriptionNotificationConfigurationError>`](crate::error::CreateSubscriptionNotificationConfigurationError)
-    pub fn create_subscription_notification_configuration(&self) -> fluent_builders::CreateSubscriptionNotificationConfiguration {
-                            fluent_builders::CreateSubscriptionNotificationConfiguration::new(self.handle.clone())
+    pub fn create_subscription_notification_configuration(&self) -> crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration {
+                            crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteAwsLogSource`](crate::client::fluent_builders::DeleteAwsLogSource) operation.
                         ///
@@ -190,8 +190,8 @@ impl Client  {
                         ///   - [`processing(Option<Vec<String>>)`](crate::output::DeleteAwsLogSourceOutput::processing): <p>Deletion of the Amazon Web Services sources is in progress.</p>
     ///   - [`failed(Option<Vec<String>>)`](crate::output::DeleteAwsLogSourceOutput::failed): <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
                         /// - On failure, responds with [`SdkError<DeleteAwsLogSourceError>`](crate::error::DeleteAwsLogSourceError)
-    pub fn delete_aws_log_source(&self) -> fluent_builders::DeleteAwsLogSource {
-                            fluent_builders::DeleteAwsLogSource::new(self.handle.clone())
+    pub fn delete_aws_log_source(&self) -> crate::client::fluent_builders::DeleteAwsLogSource {
+                            crate::client::fluent_builders::DeleteAwsLogSource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteCustomLogSource`](crate::client::fluent_builders::DeleteCustomLogSource) operation.
                         ///
@@ -200,8 +200,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput) with field(s):
                         ///   - [`custom_data_location(Option<String>)`](crate::output::DeleteCustomLogSourceOutput::custom_data_location): <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
                         /// - On failure, responds with [`SdkError<DeleteCustomLogSourceError>`](crate::error::DeleteCustomLogSourceError)
-    pub fn delete_custom_log_source(&self) -> fluent_builders::DeleteCustomLogSource {
-                            fluent_builders::DeleteCustomLogSource::new(self.handle.clone())
+    pub fn delete_custom_log_source(&self) -> crate::client::fluent_builders::DeleteCustomLogSource {
+                            crate::client::fluent_builders::DeleteCustomLogSource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteDatalake`](crate::client::fluent_builders::DeleteDatalake) operation.
                         ///
@@ -210,8 +210,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteDatalakeError>`](crate::error::DeleteDatalakeError)
-    pub fn delete_datalake(&self) -> fluent_builders::DeleteDatalake {
-                            fluent_builders::DeleteDatalake::new(self.handle.clone())
+    pub fn delete_datalake(&self) -> crate::client::fluent_builders::DeleteDatalake {
+                            crate::client::fluent_builders::DeleteDatalake::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteDatalakeAutoEnable`](crate::client::fluent_builders::DeleteDatalakeAutoEnable) operation.
                         ///
@@ -220,8 +220,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteDatalakeAutoEnableError>`](crate::error::DeleteDatalakeAutoEnableError)
-    pub fn delete_datalake_auto_enable(&self) -> fluent_builders::DeleteDatalakeAutoEnable {
-                            fluent_builders::DeleteDatalakeAutoEnable::new(self.handle.clone())
+    pub fn delete_datalake_auto_enable(&self) -> crate::client::fluent_builders::DeleteDatalakeAutoEnable {
+                            crate::client::fluent_builders::DeleteDatalakeAutoEnable::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteDatalakeDelegatedAdmin`](crate::client::fluent_builders::DeleteDatalakeDelegatedAdmin) operation.
                         ///
@@ -230,8 +230,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteDatalakeDelegatedAdminError>`](crate::error::DeleteDatalakeDelegatedAdminError)
-    pub fn delete_datalake_delegated_admin(&self) -> fluent_builders::DeleteDatalakeDelegatedAdmin {
-                            fluent_builders::DeleteDatalakeDelegatedAdmin::new(self.handle.clone())
+    pub fn delete_datalake_delegated_admin(&self) -> crate::client::fluent_builders::DeleteDatalakeDelegatedAdmin {
+                            crate::client::fluent_builders::DeleteDatalakeDelegatedAdmin::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteDatalakeExceptionsSubscription`](crate::client::fluent_builders::DeleteDatalakeExceptionsSubscription) operation.
                         ///
@@ -240,8 +240,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput) with field(s):
                         ///   - [`status(Option<String>)`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput::status): <p>Retrieves the status of the delete Security Lake operation for an account. </p>
                         /// - On failure, responds with [`SdkError<DeleteDatalakeExceptionsSubscriptionError>`](crate::error::DeleteDatalakeExceptionsSubscriptionError)
-    pub fn delete_datalake_exceptions_subscription(&self) -> fluent_builders::DeleteDatalakeExceptionsSubscription {
-                            fluent_builders::DeleteDatalakeExceptionsSubscription::new(self.handle.clone())
+    pub fn delete_datalake_exceptions_subscription(&self) -> crate::client::fluent_builders::DeleteDatalakeExceptionsSubscription {
+                            crate::client::fluent_builders::DeleteDatalakeExceptionsSubscription::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteSubscriber`](crate::client::fluent_builders::DeleteSubscriber) operation.
                         ///
@@ -250,8 +250,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteSubscriberError>`](crate::error::DeleteSubscriberError)
-    pub fn delete_subscriber(&self) -> fluent_builders::DeleteSubscriber {
-                            fluent_builders::DeleteSubscriber::new(self.handle.clone())
+    pub fn delete_subscriber(&self) -> crate::client::fluent_builders::DeleteSubscriber {
+                            crate::client::fluent_builders::DeleteSubscriber::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteSubscriptionNotificationConfiguration`](crate::client::fluent_builders::DeleteSubscriptionNotificationConfiguration) operation.
                         ///
@@ -260,8 +260,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteSubscriptionNotificationConfigurationError>`](crate::error::DeleteSubscriptionNotificationConfigurationError)
-    pub fn delete_subscription_notification_configuration(&self) -> fluent_builders::DeleteSubscriptionNotificationConfiguration {
-                            fluent_builders::DeleteSubscriptionNotificationConfiguration::new(self.handle.clone())
+    pub fn delete_subscription_notification_configuration(&self) -> crate::client::fluent_builders::DeleteSubscriptionNotificationConfiguration {
+                            crate::client::fluent_builders::DeleteSubscriptionNotificationConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetDatalake`](crate::client::fluent_builders::GetDatalake) operation.
                         ///
@@ -270,8 +270,8 @@ impl Client  {
                         /// - On success, responds with [`GetDatalakeOutput`](crate::output::GetDatalakeOutput) with field(s):
                         ///   - [`configurations(Option<HashMap<Region, LakeConfigurationResponse>>)`](crate::output::GetDatalakeOutput::configurations): <p>Retrieves the Security Lake configuration object. </p>
                         /// - On failure, responds with [`SdkError<GetDatalakeError>`](crate::error::GetDatalakeError)
-    pub fn get_datalake(&self) -> fluent_builders::GetDatalake {
-                            fluent_builders::GetDatalake::new(self.handle.clone())
+    pub fn get_datalake(&self) -> crate::client::fluent_builders::GetDatalake {
+                            crate::client::fluent_builders::GetDatalake::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetDatalakeAutoEnable`](crate::client::fluent_builders::GetDatalakeAutoEnable) operation.
                         ///
@@ -280,8 +280,8 @@ impl Client  {
                         /// - On success, responds with [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput) with field(s):
                         ///   - [`auto_enable_new_accounts(Option<Vec<AutoEnableNewRegionConfiguration>>)`](crate::output::GetDatalakeAutoEnableOutput::auto_enable_new_accounts): <p>The configuration for new accounts.</p>
                         /// - On failure, responds with [`SdkError<GetDatalakeAutoEnableError>`](crate::error::GetDatalakeAutoEnableError)
-    pub fn get_datalake_auto_enable(&self) -> fluent_builders::GetDatalakeAutoEnable {
-                            fluent_builders::GetDatalakeAutoEnable::new(self.handle.clone())
+    pub fn get_datalake_auto_enable(&self) -> crate::client::fluent_builders::GetDatalakeAutoEnable {
+                            crate::client::fluent_builders::GetDatalakeAutoEnable::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetDatalakeExceptionsExpiry`](crate::client::fluent_builders::GetDatalakeExceptionsExpiry) operation.
                         ///
@@ -290,8 +290,8 @@ impl Client  {
                         /// - On success, responds with [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput) with field(s):
                         ///   - [`exception_message_expiry(Option<i64>)`](crate::output::GetDatalakeExceptionsExpiryOutput::exception_message_expiry): <p>The expiration period and time-to-live (TTL).</p>
                         /// - On failure, responds with [`SdkError<GetDatalakeExceptionsExpiryError>`](crate::error::GetDatalakeExceptionsExpiryError)
-    pub fn get_datalake_exceptions_expiry(&self) -> fluent_builders::GetDatalakeExceptionsExpiry {
-                            fluent_builders::GetDatalakeExceptionsExpiry::new(self.handle.clone())
+    pub fn get_datalake_exceptions_expiry(&self) -> crate::client::fluent_builders::GetDatalakeExceptionsExpiry {
+                            crate::client::fluent_builders::GetDatalakeExceptionsExpiry::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetDatalakeExceptionsSubscription`](crate::client::fluent_builders::GetDatalakeExceptionsSubscription) operation.
                         ///
@@ -300,8 +300,8 @@ impl Client  {
                         /// - On success, responds with [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput) with field(s):
                         ///   - [`protocol_and_notification_endpoint(Option<ProtocolAndNotificationEndpoint>)`](crate::output::GetDatalakeExceptionsSubscriptionOutput::protocol_and_notification_endpoint): <p>Retrieves the exception notification subscription information.</p>
                         /// - On failure, responds with [`SdkError<GetDatalakeExceptionsSubscriptionError>`](crate::error::GetDatalakeExceptionsSubscriptionError)
-    pub fn get_datalake_exceptions_subscription(&self) -> fluent_builders::GetDatalakeExceptionsSubscription {
-                            fluent_builders::GetDatalakeExceptionsSubscription::new(self.handle.clone())
+    pub fn get_datalake_exceptions_subscription(&self) -> crate::client::fluent_builders::GetDatalakeExceptionsSubscription {
+                            crate::client::fluent_builders::GetDatalakeExceptionsSubscription::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetDatalakeStatus`](crate::client::fluent_builders::GetDatalakeStatus) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetDatalakeStatus::into_paginator).
@@ -314,8 +314,8 @@ impl Client  {
                         ///   - [`account_sources_list(Option<Vec<AccountSources>>)`](crate::output::GetDatalakeStatusOutput::account_sources_list): <p>The list of enabled accounts and enabled sources.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetDatalakeStatusOutput::next_token): <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>  <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
                         /// - On failure, responds with [`SdkError<GetDatalakeStatusError>`](crate::error::GetDatalakeStatusError)
-    pub fn get_datalake_status(&self) -> fluent_builders::GetDatalakeStatus {
-                            fluent_builders::GetDatalakeStatus::new(self.handle.clone())
+    pub fn get_datalake_status(&self) -> crate::client::fluent_builders::GetDatalakeStatus {
+                            crate::client::fluent_builders::GetDatalakeStatus::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetSubscriber`](crate::client::fluent_builders::GetSubscriber) operation.
                         ///
@@ -324,8 +324,8 @@ impl Client  {
                         /// - On success, responds with [`GetSubscriberOutput`](crate::output::GetSubscriberOutput) with field(s):
                         ///   - [`subscriber(Option<SubscriberResource>)`](crate::output::GetSubscriberOutput::subscriber): <p>The subscription information for the specified subscription ID.</p>
                         /// - On failure, responds with [`SdkError<GetSubscriberError>`](crate::error::GetSubscriberError)
-    pub fn get_subscriber(&self) -> fluent_builders::GetSubscriber {
-                            fluent_builders::GetSubscriber::new(self.handle.clone())
+    pub fn get_subscriber(&self) -> crate::client::fluent_builders::GetSubscriber {
+                            crate::client::fluent_builders::GetSubscriber::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDatalakeExceptions`](crate::client::fluent_builders::ListDatalakeExceptions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatalakeExceptions::into_paginator).
@@ -338,8 +338,8 @@ impl Client  {
                         ///   - [`non_retryable_failures(Option<Vec<FailuresResponse>>)`](crate::output::ListDatalakeExceptionsOutput::non_retryable_failures): <p>Lists the failures that cannot be retried in the current Region.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDatalakeExceptionsOutput::next_token): <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>  <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
                         /// - On failure, responds with [`SdkError<ListDatalakeExceptionsError>`](crate::error::ListDatalakeExceptionsError)
-    pub fn list_datalake_exceptions(&self) -> fluent_builders::ListDatalakeExceptions {
-                            fluent_builders::ListDatalakeExceptions::new(self.handle.clone())
+    pub fn list_datalake_exceptions(&self) -> crate::client::fluent_builders::ListDatalakeExceptions {
+                            crate::client::fluent_builders::ListDatalakeExceptions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListLogSources`](crate::client::fluent_builders::ListLogSources) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLogSources::into_paginator).
@@ -355,8 +355,8 @@ impl Client  {
                         ///   - [`region_source_types_accounts_list(Option<Vec<HashMap<String, HashMap<String, Vec<String>>>>>)`](crate::output::ListLogSourcesOutput::region_source_types_accounts_list): <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLogSourcesOutput::next_token): <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
                         /// - On failure, responds with [`SdkError<ListLogSourcesError>`](crate::error::ListLogSourcesError)
-    pub fn list_log_sources(&self) -> fluent_builders::ListLogSources {
-                            fluent_builders::ListLogSources::new(self.handle.clone())
+    pub fn list_log_sources(&self) -> crate::client::fluent_builders::ListLogSources {
+                            crate::client::fluent_builders::ListLogSources::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListSubscribers`](crate::client::fluent_builders::ListSubscribers) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSubscribers::into_paginator).
@@ -368,8 +368,8 @@ impl Client  {
                         ///   - [`subscribers(Option<Vec<SubscriberResource>>)`](crate::output::ListSubscribersOutput::subscribers): <p>The subscribers available for the specified Security Lake account ID.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSubscribersOutput::next_token): <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
                         /// - On failure, responds with [`SdkError<ListSubscribersError>`](crate::error::ListSubscribersError)
-    pub fn list_subscribers(&self) -> fluent_builders::ListSubscribers {
-                            fluent_builders::ListSubscribers::new(self.handle.clone())
+    pub fn list_subscribers(&self) -> crate::client::fluent_builders::ListSubscribers {
+                            crate::client::fluent_builders::ListSubscribers::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateDatalake`](crate::client::fluent_builders::UpdateDatalake) operation.
                         ///
@@ -378,8 +378,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateDatalakeError>`](crate::error::UpdateDatalakeError)
-    pub fn update_datalake(&self) -> fluent_builders::UpdateDatalake {
-                            fluent_builders::UpdateDatalake::new(self.handle.clone())
+    pub fn update_datalake(&self) -> crate::client::fluent_builders::UpdateDatalake {
+                            crate::client::fluent_builders::UpdateDatalake::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateDatalakeExceptionsExpiry`](crate::client::fluent_builders::UpdateDatalakeExceptionsExpiry) operation.
                         ///
@@ -388,8 +388,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateDatalakeExceptionsExpiryError>`](crate::error::UpdateDatalakeExceptionsExpiryError)
-    pub fn update_datalake_exceptions_expiry(&self) -> fluent_builders::UpdateDatalakeExceptionsExpiry {
-                            fluent_builders::UpdateDatalakeExceptionsExpiry::new(self.handle.clone())
+    pub fn update_datalake_exceptions_expiry(&self) -> crate::client::fluent_builders::UpdateDatalakeExceptionsExpiry {
+                            crate::client::fluent_builders::UpdateDatalakeExceptionsExpiry::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateDatalakeExceptionsSubscription`](crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription) operation.
                         ///
@@ -399,8 +399,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateDatalakeExceptionsSubscriptionError>`](crate::error::UpdateDatalakeExceptionsSubscriptionError)
-    pub fn update_datalake_exceptions_subscription(&self) -> fluent_builders::UpdateDatalakeExceptionsSubscription {
-                            fluent_builders::UpdateDatalakeExceptionsSubscription::new(self.handle.clone())
+    pub fn update_datalake_exceptions_subscription(&self) -> crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription {
+                            crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateSubscriber`](crate::client::fluent_builders::UpdateSubscriber) operation.
                         ///
@@ -413,8 +413,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput) with field(s):
                         ///   - [`subscriber(Option<SubscriberResource>)`](crate::output::UpdateSubscriberOutput::subscriber): <p>The account of the subscriber.</p>
                         /// - On failure, responds with [`SdkError<UpdateSubscriberError>`](crate::error::UpdateSubscriberError)
-    pub fn update_subscriber(&self) -> fluent_builders::UpdateSubscriber {
-                            fluent_builders::UpdateSubscriber::new(self.handle.clone())
+    pub fn update_subscriber(&self) -> crate::client::fluent_builders::UpdateSubscriber {
+                            crate::client::fluent_builders::UpdateSubscriber::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateSubscriptionNotificationConfiguration`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration) operation.
                         ///
@@ -429,2191 +429,9 @@ impl Client  {
                         /// - On success, responds with [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput) with field(s):
                         ///   - [`queue_arn(Option<String>)`](crate::output::UpdateSubscriptionNotificationConfigurationOutput::queue_arn): <p>Returns the ARN of the queue.</p>
                         /// - On failure, responds with [`SdkError<UpdateSubscriptionNotificationConfigurationError>`](crate::error::UpdateSubscriptionNotificationConfigurationError)
-    pub fn update_subscription_notification_configuration(&self) -> fluent_builders::UpdateSubscriptionNotificationConfiguration {
-                            fluent_builders::UpdateSubscriptionNotificationConfiguration::new(self.handle.clone())
+    pub fn update_subscription_notification_configuration(&self) -> crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration {
+                            crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateAwsLogSource`.
-                        ///
-    /// <p>Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables source types for member accounts in required Amazon Web Services Regions, based on the parameters you specify. You can choose any source type in any Region for either accounts that are part of a trusted organization or standalone accounts. At least one of the three dimensions is a mandatory input to this API. However, you can supply any combination of the three dimensions to this API. </p> 
-    /// <p>By default, a dimension refers to the entire set. When you don't provide a dimension, Security Lake assumes that the missing dimension refers to the entire set. This is overridden when you supply any one of the inputs. For instance, when you do not specify members, the API enables all Security Lake member accounts for all sources. Similarly, when you do not specify Regions, Security Lake is enabled for all the Regions where Security Lake is available as a service.</p> 
-    /// <p>You can use this API only to enable natively supported Amazon Web Services as a source. Use <code>CreateCustomLogSource</code> to enable data collection from a custom source. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateAwsLogSource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_aws_log_source_input::Builder
-                        }
-    impl CreateAwsLogSource  {
-        /// Creates a new `CreateAwsLogSource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateAwsLogSource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateAwsLogSourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateAwsLogSourceOutput, aws_smithy_http::result::SdkError<crate::error::CreateAwsLogSourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `inputOrder`.
-        ///
-        /// To override the contents of this collection use [`set_input_order`](Self::set_input_order).
-        ///
-        /// <p>Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.</p>
-        pub fn input_order(mut self, input: crate::model::Dimension) -> Self {
-            self.inner = self.inner.input_order(input);
-            self
-        }
-        /// <p>Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.</p>
-        pub fn set_input_order(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dimension>>) -> Self {
-            self.inner = self.inner.set_input_order(input);
-            self
-        }
-        /// Adds a key-value pair to `enableAllDimensions`.
-        ///
-        /// To override the contents of this collection use [`set_enable_all_dimensions`](Self::set_enable_all_dimensions).
-        ///
-        /// <p>Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.</p>
-        pub fn enable_all_dimensions(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.enable_all_dimensions(k.into(), v);
-            self
-        }
-        /// <p>Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.</p>
-        pub fn set_enable_all_dimensions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>>) -> Self {
-            self.inner = self.inner.set_enable_all_dimensions(input);
-            self
-        }
-        /// Adds a key-value pair to `enableTwoDimensions`.
-        ///
-        /// To override the contents of this collection use [`set_enable_two_dimensions`](Self::set_enable_two_dimensions).
-        ///
-        /// <p>Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.</p>
-        pub fn enable_two_dimensions(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.enable_two_dimensions(k.into(), v);
-            self
-        }
-        /// <p>Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.</p>
-        pub fn set_enable_two_dimensions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
-            self.inner = self.inner.set_enable_two_dimensions(input);
-            self
-        }
-        /// Appends an item to `enableSingleDimension`.
-        ///
-        /// To override the contents of this collection use [`set_enable_single_dimension`](Self::set_enable_single_dimension).
-        ///
-        /// <p>Enables data collection from all Amazon Web Services sources in specific accounts or Regions.</p>
-        pub fn enable_single_dimension(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.enable_single_dimension(input.into());
-            self
-        }
-        /// <p>Enables data collection from all Amazon Web Services sources in specific accounts or Regions.</p>
-        pub fn set_enable_single_dimension(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_enable_single_dimension(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateCustomLogSource`.
-                        ///
-    /// <p>Adds a third-party custom source in Amazon Security Lake, from the Amazon Web Services Region where you want to create a custom source. Security Lake can collect logs and events from third-party custom sources. After creating the appropriate IAM role to invoke Glue crawler, use this API to add a custom source name in Security Lake. This operation creates a partition in the Amazon S3 bucket for Security Lake as the target location for log files from the custom source in addition to an associated Glue table and an Glue crawler.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateCustomLogSource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_custom_log_source_input::Builder
-                        }
-    impl CreateCustomLogSource  {
-        /// Creates a new `CreateCustomLogSource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateCustomLogSource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateCustomLogSourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateCustomLogSourceOutput, aws_smithy_http::result::SdkError<crate::error::CreateCustomLogSourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
-        pub fn custom_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_source_name(input.into());
-            self
-        }
-        /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
-        pub fn set_custom_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_custom_source_name(input);
-            self
-        }
-        /// <p>The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom source will send to Security Lake.</p>
-        pub fn event_class(mut self, input: crate::model::OcsfEventClass) -> Self {
-            self.inner = self.inner.event_class(input);
-            self
-        }
-        /// <p>The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom source will send to Security Lake.</p>
-        pub fn set_event_class(mut self, input: std::option::Option<crate::model::OcsfEventClass>) -> Self {
-            self.inner = self.inner.set_event_class(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p> 
-        /// <ul> 
-        /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> 
-        /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li> 
-        /// </ul>
-        pub fn glue_invocation_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.glue_invocation_role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p> 
-        /// <ul> 
-        /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> 
-        /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li> 
-        /// </ul>
-        pub fn set_glue_invocation_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_glue_invocation_role_arn(input);
-            self
-        }
-        /// <p>The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data Lake.</p>
-        pub fn log_provider_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_provider_account_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data Lake.</p>
-        pub fn set_log_provider_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_log_provider_account_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateDatalake`.
-                        ///
-    /// <p>Initializes an Amazon Security Lake instance with the provided (or default) configuration. You can enable Security Lake in Amazon Web Services Regions with customized settings before enabling log collection in Regions. You can either use the <code>enableAll</code> parameter to specify all Regions or specify the Regions where you want to enable Security Lake. To specify particular Regions, use the <code>Regions</code> parameter and then configure these Regions using the <code>configurations</code> parameter. If you have already enabled Security Lake in a Region when you call this command, the command will update the Region if you provide new configuration parameters. If you have not already enabled Security Lake in the Region when you call this API, it will set up the data lake in the Region with the specified configurations.</p> 
-    /// <p>When you enable Security Lake, it starts ingesting security data after the <code>CreateAwsLogSource</code> call. This includes ingesting security data from sources, storing data, and making data accessible to subscribers. Security Lake also enables all the existing settings and resources that it stores or maintains for your Amazon Web Services account in the current Region, including security log and event data. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html">Amazon Security Lake User Guide</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateDatalake {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_datalake_input::Builder
-                        }
-    impl CreateDatalake  {
-        /// Creates a new `CreateDatalake`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateDatalake, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateDatalakeError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateDatalakeOutput, aws_smithy_http::result::SdkError<crate::error::CreateDatalakeError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `regions`.
-        ///
-        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
-        ///
-        /// <p>Enable Security Lake in the specified Regions. To enable Security Lake in specific Amazon Web Services Regions, such as us-east-1 or ap-northeast-3, provide the Region codes. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/securitylake.html">Amazon Security Lake endpoints</a> in the Amazon Web Services General Reference.</p>
-        pub fn regions(mut self, input: crate::model::Region) -> Self {
-            self.inner = self.inner.regions(input);
-            self
-        }
-        /// <p>Enable Security Lake in the specified Regions. To enable Security Lake in specific Amazon Web Services Regions, such as us-east-1 or ap-northeast-3, provide the Region codes. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/securitylake.html">Amazon Security Lake endpoints</a> in the Amazon Web Services General Reference.</p>
-        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Region>>) -> Self {
-            self.inner = self.inner.set_regions(input);
-            self
-        }
-        /// Adds a key-value pair to `configurations`.
-        ///
-        /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
-        ///
-        /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-        pub fn configurations(mut self, k: crate::model::Region, v: crate::model::LakeConfigurationRequest) -> Self {
-            self.inner = self.inner.configurations(k, v);
-            self
-        }
-        /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-        pub fn set_configurations(mut self, input: std::option::Option<std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationRequest>>) -> Self {
-            self.inner = self.inner.set_configurations(input);
-            self
-        }
-        /// <p>Enable Security Lake in all Regions.</p>
-        pub fn enable_all(mut self, input: bool) -> Self {
-            self.inner = self.inner.enable_all(input);
-            self
-        }
-        /// <p>Enable Security Lake in all Regions.</p>
-        pub fn set_enable_all(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_all(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) used to create and update the Glue table. This table contains partitions generated by the ingestion and normalization of Amazon Web Services log sources and custom sources.</p>
-        pub fn meta_store_manager_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meta_store_manager_role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) used to create and update the Glue table. This table contains partitions generated by the ingestion and normalization of Amazon Web Services log sources and custom sources.</p>
-        pub fn set_meta_store_manager_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meta_store_manager_role_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateDatalakeAutoEnable`.
-                        ///
-    /// <p>Automatically enables Amazon Security Lake for new member accounts in your organization. Security Lake is not automatically enabled for any existing member accounts in your organization.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateDatalakeAutoEnable {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_datalake_auto_enable_input::Builder
-                        }
-    impl CreateDatalakeAutoEnable  {
-        /// Creates a new `CreateDatalakeAutoEnable`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateDatalakeAutoEnable, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateDatalakeAutoEnableError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateDatalakeAutoEnableOutput, aws_smithy_http::result::SdkError<crate::error::CreateDatalakeAutoEnableError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `configurationForNewAccounts`.
-        ///
-        /// To override the contents of this collection use [`set_configuration_for_new_accounts`](Self::set_configuration_for_new_accounts).
-        ///
-        /// <p>Enable Security Lake with the specified configuration settings to begin collecting security data for new accounts in your organization. </p>
-        pub fn configuration_for_new_accounts(mut self, input: crate::model::AutoEnableNewRegionConfiguration) -> Self {
-            self.inner = self.inner.configuration_for_new_accounts(input);
-            self
-        }
-        /// <p>Enable Security Lake with the specified configuration settings to begin collecting security data for new accounts in your organization. </p>
-        pub fn set_configuration_for_new_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>) -> Self {
-            self.inner = self.inner.set_configuration_for_new_accounts(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateDatalakeDelegatedAdmin`.
-                        ///
-    /// <p>Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be called by the organization management account. The organization management account cannot be the delegated administrator account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateDatalakeDelegatedAdmin {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_datalake_delegated_admin_input::Builder
-                        }
-    impl CreateDatalakeDelegatedAdmin  {
-        /// Creates a new `CreateDatalakeDelegatedAdmin`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateDatalakeDelegatedAdmin, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateDatalakeDelegatedAdminError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateDatalakeDelegatedAdminOutput, aws_smithy_http::result::SdkError<crate::error::CreateDatalakeDelegatedAdminError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
-        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
-        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_account(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateDatalakeExceptionsSubscription`.
-                        ///
-    /// <p>Creates the specified notification subscription in Amazon Security Lake for the organization you specify.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateDatalakeExceptionsSubscription {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_datalake_exceptions_subscription_input::Builder
-                        }
-    impl CreateDatalakeExceptionsSubscription  {
-        /// Creates a new `CreateDatalakeExceptionsSubscription`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateDatalakeExceptionsSubscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateDatalakeExceptionsSubscriptionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateDatalakeExceptionsSubscriptionOutput, aws_smithy_http::result::SdkError<crate::error::CreateDatalakeExceptionsSubscriptionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The subscription protocol to which exception notifications are posted. </p>
-        pub fn subscription_protocol(mut self, input: crate::model::SubscriptionProtocolType) -> Self {
-            self.inner = self.inner.subscription_protocol(input);
-            self
-        }
-        /// <p>The subscription protocol to which exception notifications are posted. </p>
-        pub fn set_subscription_protocol(mut self, input: std::option::Option<crate::model::SubscriptionProtocolType>) -> Self {
-            self.inner = self.inner.set_subscription_protocol(input);
-            self
-        }
-        /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
-        pub fn notification_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_endpoint(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
-        pub fn set_notification_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_notification_endpoint(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateSubscriber`.
-                        ///
-    /// <p>Creates a subscription permission for accounts that are already enabled in Amazon Security Lake. You can create a subscriber with access to data in the current Amazon Web Services Region.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateSubscriber {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_subscriber_input::Builder
-                        }
-    impl CreateSubscriber  {
-        /// Creates a new `CreateSubscriber`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateSubscriber, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateSubscriberError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateSubscriberOutput, aws_smithy_http::result::SdkError<crate::error::CreateSubscriberError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `sourceTypes`.
-        ///
-        /// To override the contents of this collection use [`set_source_types`](Self::set_source_types).
-        ///
-        /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-        pub fn source_types(mut self, input: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_types(input);
-            self
-        }
-        /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-        pub fn set_source_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceType>>) -> Self {
-            self.inner = self.inner.set_source_types(input);
-            self
-        }
-        /// <p>The Amazon Web Services account ID used to access your data.</p>
-        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID used to access your data.</p>
-        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_account_id(input);
-            self
-        }
-        /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(input.into());
-            self
-        }
-        /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-        pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_external_id(input);
-            self
-        }
-        /// Appends an item to `accessTypes`.
-        ///
-        /// To override the contents of this collection use [`set_access_types`](Self::set_access_types).
-        ///
-        /// <p>The Amazon S3 or Lake Formation access type.</p>
-        pub fn access_types(mut self, input: crate::model::AccessType) -> Self {
-            self.inner = self.inner.access_types(input);
-            self
-        }
-        /// <p>The Amazon S3 or Lake Formation access type.</p>
-        pub fn set_access_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessType>>) -> Self {
-            self.inner = self.inner.set_access_types(input);
-            self
-        }
-        /// <p>The name of your Security Lake subscriber account.</p>
-        pub fn subscriber_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscriber_name(input.into());
-            self
-        }
-        /// <p>The name of your Security Lake subscriber account.</p>
-        pub fn set_subscriber_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subscriber_name(input);
-            self
-        }
-        /// <p>The description for your subscriber account in Security Lake. </p>
-        pub fn subscriber_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscriber_description(input.into());
-            self
-        }
-        /// <p>The description for your subscriber account in Security Lake. </p>
-        pub fn set_subscriber_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subscriber_description(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateSubscriptionNotificationConfiguration`.
-                        ///
-    /// <p>Notifies the subscriber when new data is written to the data lake for the sources that the subscriber consumes in Security Lake.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateSubscriptionNotificationConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_subscription_notification_configuration_input::Builder
-                        }
-    impl CreateSubscriptionNotificationConfiguration  {
-        /// Creates a new `CreateSubscriptionNotificationConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateSubscriptionNotificationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateSubscriptionNotificationConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateSubscriptionNotificationConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::CreateSubscriptionNotificationConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The subscription ID for the notification subscription/</p>
-        pub fn subscription_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_id(input.into());
-            self
-        }
-        /// <p>The subscription ID for the notification subscription/</p>
-        pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subscription_id(input);
-            self
-        }
-        /// <p>The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this field.</p>
-        pub fn subscription_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_endpoint(input.into());
-            self
-        }
-        /// <p>The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this field.</p>
-        pub fn set_subscription_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subscription_endpoint(input);
-            self
-        }
-        /// <p>The key name for the notification subscription.</p>
-        pub fn https_api_key_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.https_api_key_name(input.into());
-            self
-        }
-        /// <p>The key name for the notification subscription.</p>
-        pub fn set_https_api_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_https_api_key_name(input);
-            self
-        }
-        /// <p>The key value for the notification subscription.</p>
-        pub fn https_api_key_value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.https_api_key_value(input.into());
-            self
-        }
-        /// <p>The key value for the notification subscription.</p>
-        pub fn set_https_api_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_https_api_key_value(input);
-            self
-        }
-        /// <p>The HTTPS method used for the notification subscription. </p>
-        pub fn https_method(mut self, input: crate::model::HttpsMethod) -> Self {
-            self.inner = self.inner.https_method(input);
-            self
-        }
-        /// <p>The HTTPS method used for the notification subscription. </p>
-        pub fn set_https_method(mut self, input: std::option::Option<crate::model::HttpsMethod>) -> Self {
-            self.inner = self.inner.set_https_method(input);
-            self
-        }
-        /// <p>Create an Amazon Simple Queue Service queue.</p>
-        pub fn create_sqs(mut self, input: bool) -> Self {
-            self.inner = self.inner.create_sqs(input);
-            self
-        }
-        /// <p>Create an Amazon Simple Queue Service queue.</p>
-        pub fn set_create_sqs(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_create_sqs(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteAwsLogSource`.
-                        ///
-    /// <p>Removes a natively supported Amazon Web Service as an Amazon Security Lake source. When you remove the source, Security Lake stops collecting data from that source, and subscribers can no longer consume new data from the source. Subscribers can still consume data that Security Lake collected from the source before disablement.</p> 
-    /// <p>You can choose any source type in any Amazon Web Services Region for either accounts that are part of a trusted organization or standalone accounts. At least one of the three dimensions is a mandatory input to this API. However, you can supply any combination of the three dimensions to this API. </p> 
-    /// <p>By default, a dimension refers to the entire set. This is overridden when you supply any one of the inputs. For instance, when you do not specify members, the API disables all Security Lake member accounts for sources. Similarly, when you do not specify Regions, Security Lake is disabled for all the Regions where Security Lake is available as a service.</p> 
-    /// <p>When you don't provide a dimension, Security Lake assumes that the missing dimension refers to the entire set. For example, if you don't provide specific accounts, the API applies to the entire set of accounts in your organization.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteAwsLogSource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_aws_log_source_input::Builder
-                        }
-    impl DeleteAwsLogSource  {
-        /// Creates a new `DeleteAwsLogSource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteAwsLogSource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteAwsLogSourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteAwsLogSourceOutput, aws_smithy_http::result::SdkError<crate::error::DeleteAwsLogSourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `inputOrder`.
-        ///
-        /// To override the contents of this collection use [`set_input_order`](Self::set_input_order).
-        ///
-        /// <p>This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account). </p>
-        pub fn input_order(mut self, input: crate::model::Dimension) -> Self {
-            self.inner = self.inner.input_order(input);
-            self
-        }
-        /// <p>This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account). </p>
-        pub fn set_input_order(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dimension>>) -> Self {
-            self.inner = self.inner.set_input_order(input);
-            self
-        }
-        /// Adds a key-value pair to `disableAllDimensions`.
-        ///
-        /// To override the contents of this collection use [`set_disable_all_dimensions`](Self::set_disable_all_dimensions).
-        ///
-        /// <p>Removes the specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-        pub fn disable_all_dimensions(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.disable_all_dimensions(k.into(), v);
-            self
-        }
-        /// <p>Removes the specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-        pub fn set_disable_all_dimensions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>>) -> Self {
-            self.inner = self.inner.set_disable_all_dimensions(input);
-            self
-        }
-        /// Adds a key-value pair to `disableTwoDimensions`.
-        ///
-        /// To override the contents of this collection use [`set_disable_two_dimensions`](Self::set_disable_two_dimensions).
-        ///
-        /// <p>Remove a specific Amazon Web Services source from specific accounts or Regions.</p>
-        pub fn disable_two_dimensions(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.disable_two_dimensions(k.into(), v);
-            self
-        }
-        /// <p>Remove a specific Amazon Web Services source from specific accounts or Regions.</p>
-        pub fn set_disable_two_dimensions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
-            self.inner = self.inner.set_disable_two_dimensions(input);
-            self
-        }
-        /// Appends an item to `disableSingleDimension`.
-        ///
-        /// To override the contents of this collection use [`set_disable_single_dimension`](Self::set_disable_single_dimension).
-        ///
-        /// <p>Removes all Amazon Web Services sources from specific accounts or Regions.</p>
-        pub fn disable_single_dimension(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disable_single_dimension(input.into());
-            self
-        }
-        /// <p>Removes all Amazon Web Services sources from specific accounts or Regions.</p>
-        pub fn set_disable_single_dimension(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_disable_single_dimension(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteCustomLogSource`.
-                        ///
-    /// <p>Removes a custom log source from Amazon Security Lake.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteCustomLogSource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_custom_log_source_input::Builder
-                        }
-    impl DeleteCustomLogSource  {
-        /// Creates a new `DeleteCustomLogSource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteCustomLogSource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteCustomLogSourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteCustomLogSourceOutput, aws_smithy_http::result::SdkError<crate::error::DeleteCustomLogSourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The custom source name for the custom log source.</p>
-        pub fn custom_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_source_name(input.into());
-            self
-        }
-        /// <p>The custom source name for the custom log source.</p>
-        pub fn set_custom_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_custom_source_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteDatalake`.
-                        ///
-    /// <p>When you delete Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services Regions. Also, this API automatically takes steps to remove the account from Security Lake . </p> 
-    /// <p>This operation disables security data collection from sources, deletes data stored, and stops making data accessible to subscribers. Security Lake also deletes all the existing settings and resources that it stores or maintains for your Amazon Web Services account in the current Region, including security log and event data. The <code>DeleteDatalake</code> operation does not delete the Amazon S3 bucket, which is owned by your Amazon Web Services account. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon Security Lake User Guide</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteDatalake {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_datalake_input::Builder
-                        }
-    impl DeleteDatalake  {
-        /// Creates a new `DeleteDatalake`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteDatalake, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteDatalakeOutput, aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `DeleteDatalakeAutoEnable`.
-                        ///
-    /// <p>Automatically deletes Amazon Security Lake to stop collecting security data. When you delete Amazon Security Lake from your account, Security Lake is disabled in all Regions. Also, this API automatically takes steps to remove the account from Security Lake . </p> 
-    /// <p>This operation disables security data collection from sources, deletes data stored, and stops making data accessible to subscribers. Security Lake also deletes all the existing settings and resources that it stores or maintains for your Amazon Web Services account in the current Region, including security log and event data. The <code>DeleteDatalake</code> operation does not delete the Amazon S3 bucket, which is owned by your Amazon Web Services account. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon Security Lake User Guide</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteDatalakeAutoEnable {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_datalake_auto_enable_input::Builder
-                        }
-    impl DeleteDatalakeAutoEnable  {
-        /// Creates a new `DeleteDatalakeAutoEnable`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteDatalakeAutoEnable, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeAutoEnableError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteDatalakeAutoEnableOutput, aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeAutoEnableError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `removeFromConfigurationForNewAccounts`.
-        ///
-        /// To override the contents of this collection use [`set_remove_from_configuration_for_new_accounts`](Self::set_remove_from_configuration_for_new_accounts).
-        ///
-        /// <p>Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new accounts in Security Lake. </p>
-        pub fn remove_from_configuration_for_new_accounts(mut self, input: crate::model::AutoEnableNewRegionConfiguration) -> Self {
-            self.inner = self.inner.remove_from_configuration_for_new_accounts(input);
-            self
-        }
-        /// <p>Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new accounts in Security Lake. </p>
-        pub fn set_remove_from_configuration_for_new_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>) -> Self {
-            self.inner = self.inner.set_remove_from_configuration_for_new_accounts(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteDatalakeDelegatedAdmin`.
-                        ///
-    /// <p>Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be called by the organization management account. The organization management account cannot be the delegated administrator account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteDatalakeDelegatedAdmin {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_datalake_delegated_admin_input::Builder
-                        }
-    impl DeleteDatalakeDelegatedAdmin  {
-        /// Creates a new `DeleteDatalakeDelegatedAdmin`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteDatalakeDelegatedAdmin, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeDelegatedAdminError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteDatalakeDelegatedAdminOutput, aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeDelegatedAdminError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The account ID the Security Lake delegated administrator.</p>
-        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account(input.into());
-            self
-        }
-        /// <p>The account ID the Security Lake delegated administrator.</p>
-        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_account(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteDatalakeExceptionsSubscription`.
-                        ///
-    /// <p>Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteDatalakeExceptionsSubscription {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_datalake_exceptions_subscription_input::Builder
-                        }
-    impl DeleteDatalakeExceptionsSubscription  {
-        /// Creates a new `DeleteDatalakeExceptionsSubscription`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteDatalakeExceptionsSubscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeExceptionsSubscriptionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteDatalakeExceptionsSubscriptionOutput, aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeExceptionsSubscriptionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `DeleteSubscriber`.
-                        ///
-    /// <p>Deletes the subscription permission for accounts that are already enabled in Amazon Security Lake. You can delete a subscriber and remove access to data in the current Amazon Web Services Region.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteSubscriber {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_subscriber_input::Builder
-                        }
-    impl DeleteSubscriber  {
-        /// Creates a new `DeleteSubscriber`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteSubscriber, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteSubscriberError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteSubscriberOutput, aws_smithy_http::result::SdkError<crate::error::DeleteSubscriberError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteSubscriptionNotificationConfiguration`.
-                        ///
-    /// <p>Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteSubscriptionNotificationConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_subscription_notification_configuration_input::Builder
-                        }
-    impl DeleteSubscriptionNotificationConfiguration  {
-        /// Creates a new `DeleteSubscriptionNotificationConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteSubscriptionNotificationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteSubscriptionNotificationConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteSubscriptionNotificationConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::DeleteSubscriptionNotificationConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Security Lake subscriber account.</p>
-        pub fn subscription_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_id(input.into());
-            self
-        }
-        /// <p>The ID of the Security Lake subscriber account.</p>
-        pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subscription_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetDatalake`.
-                        ///
-    /// <p>Retrieves the Amazon Security Lake configuration object for the specified Amazon Web Services account ID. You can use the <code>GetDatalake</code> API to know whether Security Lake is enabled for the current Region. This API does not take input parameters. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDatalake {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_datalake_input::Builder
-                        }
-    impl GetDatalake  {
-        /// Creates a new `GetDatalake`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetDatalake, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetDatalakeError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetDatalakeOutput, aws_smithy_http::result::SdkError<crate::error::GetDatalakeError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `GetDatalakeAutoEnable`.
-                        ///
-    /// <p>Retrieves the configuration that will be automatically set up for accounts added to the organization after the organization has onboarded to Amazon Security Lake. This API does not take input parameters.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDatalakeAutoEnable {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_datalake_auto_enable_input::Builder
-                        }
-    impl GetDatalakeAutoEnable  {
-        /// Creates a new `GetDatalakeAutoEnable`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetDatalakeAutoEnable, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetDatalakeAutoEnableError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetDatalakeAutoEnableOutput, aws_smithy_http::result::SdkError<crate::error::GetDatalakeAutoEnableError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `GetDatalakeExceptionsExpiry`.
-                        ///
-    /// <p>Retrieves the expiration period and time-to-live (TTL) for which the exception message will remain. Exceptions are stored by default, for 2 weeks from when a record was created in Amazon Security Lake. This API does not take input parameters.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDatalakeExceptionsExpiry {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_datalake_exceptions_expiry_input::Builder
-                        }
-    impl GetDatalakeExceptionsExpiry  {
-        /// Creates a new `GetDatalakeExceptionsExpiry`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetDatalakeExceptionsExpiry, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetDatalakeExceptionsExpiryError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetDatalakeExceptionsExpiryOutput, aws_smithy_http::result::SdkError<crate::error::GetDatalakeExceptionsExpiryError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `GetDatalakeExceptionsSubscription`.
-                        ///
-    /// <p>Retrieves the details of exception notifications for the account in Amazon Security Lake.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDatalakeExceptionsSubscription {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_datalake_exceptions_subscription_input::Builder
-                        }
-    impl GetDatalakeExceptionsSubscription  {
-        /// Creates a new `GetDatalakeExceptionsSubscription`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetDatalakeExceptionsSubscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetDatalakeExceptionsSubscriptionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetDatalakeExceptionsSubscriptionOutput, aws_smithy_http::result::SdkError<crate::error::GetDatalakeExceptionsSubscriptionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `GetDatalakeStatus`.
-                        ///
-    /// <p>Retrieves a snapshot of the current Region, including whether Amazon Security Lake is enabled for those accounts and which sources Security Lake is collecting data from. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDatalakeStatus {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_datalake_status_input::Builder
-                        }
-    impl GetDatalakeStatus  {
-        /// Creates a new `GetDatalakeStatus`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetDatalakeStatus, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetDatalakeStatusError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetDatalakeStatusOutput, aws_smithy_http::result::SdkError<crate::error::GetDatalakeStatusError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::GetDatalakeStatusPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::GetDatalakeStatusPaginator {
-                                        crate::paginator::GetDatalakeStatusPaginator::new(self.handle, self.inner)
-                                    }
-        /// Appends an item to `accountSet`.
-        ///
-        /// To override the contents of this collection use [`set_account_set`](Self::set_account_set).
-        ///
-        /// <p>The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved.</p>
-        pub fn account_set(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_set(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved.</p>
-        pub fn set_account_set(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_account_set(input);
-            self
-        }
-        /// <p>The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and log sources, is retrieved.</p>
-        pub fn max_account_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_account_results(input);
-            self
-        }
-        /// <p>The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and log sources, is retrieved.</p>
-        pub fn set_max_account_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_account_results(input);
-            self
-        }
-        /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
-        /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
-        /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetSubscriber`.
-                        ///
-    /// <p>Retrieves the subscription information for the specified subscription ID. You can get information about a specific subscriber.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetSubscriber {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_subscriber_input::Builder
-                        }
-    impl GetSubscriber  {
-        /// Creates a new `GetSubscriber`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetSubscriber, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetSubscriberError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetSubscriberOutput, aws_smithy_http::result::SdkError<crate::error::GetSubscriberError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDatalakeExceptions`.
-                        ///
-    /// <p>Lists the Amazon Security Lake exceptions that you can use to find the source of problems and fix them.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDatalakeExceptions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_datalake_exceptions_input::Builder
-                        }
-    impl ListDatalakeExceptions  {
-        /// Creates a new `ListDatalakeExceptions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDatalakeExceptions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDatalakeExceptionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDatalakeExceptionsOutput, aws_smithy_http::result::SdkError<crate::error::ListDatalakeExceptionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListDatalakeExceptionsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListDatalakeExceptionsPaginator {
-                                        crate::paginator::ListDatalakeExceptionsPaginator::new(self.handle, self.inner)
-                                    }
-        /// Appends an item to `regionSet`.
-        ///
-        /// To override the contents of this collection use [`set_region_set`](Self::set_region_set).
-        ///
-        /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
-        pub fn region_set(mut self, input: crate::model::Region) -> Self {
-            self.inner = self.inner.region_set(input);
-            self
-        }
-        /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
-        pub fn set_region_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::Region>>) -> Self {
-            self.inner = self.inner.set_region_set(input);
-            self
-        }
-        /// <p>List the maximum number of failures in Security Lake.</p>
-        pub fn max_failures(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_failures(input);
-            self
-        }
-        /// <p>List the maximum number of failures in Security Lake.</p>
-        pub fn set_max_failures(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_failures(input);
-            self
-        }
-        /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
-        /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
-        /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListLogSources`.
-                        ///
-    /// <p>Retrieves the log sources in the current Amazon Web Services Region. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListLogSources {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_log_sources_input::Builder
-                        }
-    impl ListLogSources  {
-        /// Creates a new `ListLogSources`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListLogSources, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListLogSourcesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListLogSourcesOutput, aws_smithy_http::result::SdkError<crate::error::ListLogSourcesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListLogSourcesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListLogSourcesPaginator {
-                                        crate::paginator::ListLogSourcesPaginator::new(self.handle, self.inner)
-                                    }
-        /// Appends an item to `inputOrder`.
-        ///
-        /// To override the contents of this collection use [`set_input_order`](Self::set_input_order).
-        ///
-        /// <p>Lists the log sources in input order, namely Region, source type, and member account.</p>
-        pub fn input_order(mut self, input: crate::model::Dimension) -> Self {
-            self.inner = self.inner.input_order(input);
-            self
-        }
-        /// <p>Lists the log sources in input order, namely Region, source type, and member account.</p>
-        pub fn set_input_order(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dimension>>) -> Self {
-            self.inner = self.inner.set_input_order(input);
-            self
-        }
-        /// Adds a key-value pair to `listAllDimensions`.
-        ///
-        /// To override the contents of this collection use [`set_list_all_dimensions`](Self::set_list_all_dimensions).
-        ///
-        /// <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-        pub fn list_all_dimensions(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.list_all_dimensions(k.into(), v);
-            self
-        }
-        /// <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-        pub fn set_list_all_dimensions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>>) -> Self {
-            self.inner = self.inner.set_list_all_dimensions(input);
-            self
-        }
-        /// Adds a key-value pair to `listTwoDimensions`.
-        ///
-        /// To override the contents of this collection use [`set_list_two_dimensions`](Self::set_list_two_dimensions).
-        ///
-        /// <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
-        pub fn list_two_dimensions(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.list_two_dimensions(k.into(), v);
-            self
-        }
-        /// <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
-        pub fn set_list_two_dimensions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
-            self.inner = self.inner.set_list_two_dimensions(input);
-            self
-        }
-        /// Appends an item to `listSingleDimension`.
-        ///
-        /// To override the contents of this collection use [`set_list_single_dimension`](Self::set_list_single_dimension).
-        ///
-        /// <p>List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific accounts or specific Regions.</p>
-        pub fn list_single_dimension(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.list_single_dimension(input.into());
-            self
-        }
-        /// <p>List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific accounts or specific Regions.</p>
-        pub fn set_list_single_dimension(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_list_single_dimension(input);
-            self
-        }
-        /// <p>The maximum number of accounts for which the log sources are displayed.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of accounts for which the log sources are displayed.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListSubscribers`.
-                        ///
-    /// <p>List all subscribers for the specific Amazon Security Lake account ID. You can retrieve a list of subscriptions associated with a specific organization or Amazon Web Services account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListSubscribers {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_subscribers_input::Builder
-                        }
-    impl ListSubscribers  {
-        /// Creates a new `ListSubscribers`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListSubscribers, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListSubscribersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListSubscribersOutput, aws_smithy_http::result::SdkError<crate::error::ListSubscribersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListSubscribersPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListSubscribersPaginator {
-                                        crate::paginator::ListSubscribersPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of accounts for which the configuration is displayed.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of accounts for which the configuration is displayed.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateDatalake`.
-                        ///
-    /// <p>Specifies where to store your security data and for how long. You can add a rollup Region to consolidate data from multiple Amazon Web Services Regions. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateDatalake {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_datalake_input::Builder
-                        }
-    impl UpdateDatalake  {
-        /// Creates a new `UpdateDatalake`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateDatalake, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateDatalakeError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateDatalakeOutput, aws_smithy_http::result::SdkError<crate::error::UpdateDatalakeError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Adds a key-value pair to `configurations`.
-        ///
-        /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
-        ///
-        /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-        pub fn configurations(mut self, k: crate::model::Region, v: crate::model::LakeConfigurationRequest) -> Self {
-            self.inner = self.inner.configurations(k, v);
-            self
-        }
-        /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-        pub fn set_configurations(mut self, input: std::option::Option<std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationRequest>>) -> Self {
-            self.inner = self.inner.set_configurations(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateDatalakeExceptionsExpiry`.
-                        ///
-    /// <p>Update the expiration period for the exception message to your preferred time, and control the time-to-live (TTL) for the exception message to remain. Exceptions are stored by default for 2 weeks from when a record was created in Amazon Security Lake. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateDatalakeExceptionsExpiry {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_datalake_exceptions_expiry_input::Builder
-                        }
-    impl UpdateDatalakeExceptionsExpiry  {
-        /// Creates a new `UpdateDatalakeExceptionsExpiry`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateDatalakeExceptionsExpiry, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateDatalakeExceptionsExpiryError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateDatalakeExceptionsExpiryOutput, aws_smithy_http::result::SdkError<crate::error::UpdateDatalakeExceptionsExpiryError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The time-to-live (TTL) for the exception message to remain.</p>
-        pub fn exception_message_expiry(mut self, input: i64) -> Self {
-            self.inner = self.inner.exception_message_expiry(input);
-            self
-        }
-        /// <p>The time-to-live (TTL) for the exception message to remain.</p>
-        pub fn set_exception_message_expiry(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_exception_message_expiry(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateDatalakeExceptionsSubscription`.
-                        ///
-    /// <p>Updates the specified notification subscription in Amazon Security Lake for the organization you specify.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateDatalakeExceptionsSubscription {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_datalake_exceptions_subscription_input::Builder
-                        }
-    impl UpdateDatalakeExceptionsSubscription  {
-        /// Creates a new `UpdateDatalakeExceptionsSubscription`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateDatalakeExceptionsSubscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateDatalakeExceptionsSubscriptionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateDatalakeExceptionsSubscriptionOutput, aws_smithy_http::result::SdkError<crate::error::UpdateDatalakeExceptionsSubscriptionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The subscription protocol to which exception messages are posted. </p>
-        pub fn subscription_protocol(mut self, input: crate::model::SubscriptionProtocolType) -> Self {
-            self.inner = self.inner.subscription_protocol(input);
-            self
-        }
-        /// <p>The subscription protocol to which exception messages are posted. </p>
-        pub fn set_subscription_protocol(mut self, input: std::option::Option<crate::model::SubscriptionProtocolType>) -> Self {
-            self.inner = self.inner.set_subscription_protocol(input);
-            self
-        }
-        /// <p>The account that is subscribed to receive exception notifications.</p>
-        pub fn notification_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_endpoint(input.into());
-            self
-        }
-        /// <p>The account that is subscribed to receive exception notifications.</p>
-        pub fn set_notification_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_notification_endpoint(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateSubscriber`.
-                        ///
-    /// <p>Updates an existing subscription for the given Amazon Security Lake account ID. You can update a subscriber by changing the sources that the subscriber consumes data from. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateSubscriber {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_subscriber_input::Builder
-                        }
-    impl UpdateSubscriber  {
-        /// Creates a new `UpdateSubscriber`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateSubscriber, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateSubscriberError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateSubscriberOutput, aws_smithy_http::result::SdkError<crate::error::UpdateSubscriberError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A value created by Security Lake that uniquely identifies your subscription. </p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>A value created by Security Lake that uniquely identifies your subscription. </p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// Appends an item to `sourceTypes`.
-        ///
-        /// To override the contents of this collection use [`set_source_types`](Self::set_source_types).
-        ///
-        /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-        pub fn source_types(mut self, input: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_types(input);
-            self
-        }
-        /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-        pub fn set_source_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceType>>) -> Self {
-            self.inner = self.inner.set_source_types(input);
-            self
-        }
-        /// <p>The external ID of the Security Lake account.</p>
-        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(input.into());
-            self
-        }
-        /// <p>The external ID of the Security Lake account.</p>
-        pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_external_id(input);
-            self
-        }
-        /// <p>The name of the Security Lake account subscriber. </p>
-        pub fn subscriber_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscriber_name(input.into());
-            self
-        }
-        /// <p>The name of the Security Lake account subscriber. </p>
-        pub fn set_subscriber_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subscriber_name(input);
-            self
-        }
-        /// <p>The description of the Security Lake account subscriber.</p>
-        pub fn subscriber_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscriber_description(input.into());
-            self
-        }
-        /// <p>The description of the Security Lake account subscriber.</p>
-        pub fn set_subscriber_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subscriber_description(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateSubscriptionNotificationConfiguration`.
-                        ///
-    /// <p>Creates a new subscription notification or adds the existing subscription notification setting for the specified subscription ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateSubscriptionNotificationConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_subscription_notification_configuration_input::Builder
-                        }
-    impl UpdateSubscriptionNotificationConfiguration  {
-        /// Creates a new `UpdateSubscriptionNotificationConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateSubscriptionNotificationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateSubscriptionNotificationConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateSubscriptionNotificationConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::UpdateSubscriptionNotificationConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The subscription ID for which the subscription notification is specified. </p>
-        pub fn subscription_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_id(input.into());
-            self
-        }
-        /// <p>The subscription ID for which the subscription notification is specified. </p>
-        pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subscription_id(input);
-            self
-        }
-        /// <p>The subscription endpoint in Security Lake.</p>
-        pub fn subscription_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_endpoint(input.into());
-            self
-        }
-        /// <p>The subscription endpoint in Security Lake.</p>
-        pub fn set_subscription_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subscription_endpoint(input);
-            self
-        }
-        /// <p>The key name for the subscription notification.</p>
-        pub fn https_api_key_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.https_api_key_name(input.into());
-            self
-        }
-        /// <p>The key name for the subscription notification.</p>
-        pub fn set_https_api_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_https_api_key_name(input);
-            self
-        }
-        /// <p>The key value for the subscription notification.</p>
-        pub fn https_api_key_value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.https_api_key_value(input.into());
-            self
-        }
-        /// <p>The key value for the subscription notification.</p>
-        pub fn set_https_api_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_https_api_key_value(input);
-            self
-        }
-        /// <p>The HTTPS method used for the subscription notification. </p>
-        pub fn https_method(mut self, input: crate::model::HttpsMethod) -> Self {
-            self.inner = self.inner.https_method(input);
-            self
-        }
-        /// <p>The HTTPS method used for the subscription notification. </p>
-        pub fn set_https_method(mut self, input: std::option::Option<crate::model::HttpsMethod>) -> Self {
-            self.inner = self.inner.set_https_method(input);
-            self
-        }
-        /// <p>Create a new subscription notification for the specified subscription ID in Amazon Security Lake.</p>
-        pub fn create_sqs(mut self, input: bool) -> Self {
-            self.inner = self.inner.create_sqs(input);
-            self
-        }
-        /// <p>Create a new subscription notification for the specified subscription ID in Amazon Security Lake.</p>
-        pub fn set_create_sqs(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_create_sqs(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -2684,4 +502,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

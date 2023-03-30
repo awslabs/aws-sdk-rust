@@ -2,7 +2,7 @@
 /// Operation shape for `CreateNotificationRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_notification_rule`](crate::client::Client::create_notification_rule).
+            /// [`create_notification_rule`](crate::client::fluent_builders::CreateNotificationRule).
             ///
             /// `ParseStrictResponse` impl for `CreateNotificationRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNotificationRule {
 /// Operation shape for `DeleteNotificationRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_notification_rule`](crate::client::Client::delete_notification_rule).
+            /// [`delete_notification_rule`](crate::client::fluent_builders::DeleteNotificationRule).
             ///
             /// `ParseStrictResponse` impl for `DeleteNotificationRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNotificationRule {
 /// Operation shape for `DeleteTarget`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_target`](crate::client::Client::delete_target).
+            /// [`delete_target`](crate::client::fluent_builders::DeleteTarget).
             ///
             /// `ParseStrictResponse` impl for `DeleteTarget`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTarget {
 /// Operation shape for `DescribeNotificationRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_notification_rule`](crate::client::Client::describe_notification_rule).
+            /// [`describe_notification_rule`](crate::client::fluent_builders::DescribeNotificationRule).
             ///
             /// `ParseStrictResponse` impl for `DescribeNotificationRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationRule
 /// Operation shape for `ListEventTypes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_event_types`](crate::client::Client::list_event_types).
+            /// [`list_event_types`](crate::client::fluent_builders::ListEventTypes).
             ///
             /// `ParseStrictResponse` impl for `ListEventTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventTypes {
 /// Operation shape for `ListNotificationRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_notification_rules`](crate::client::Client::list_notification_rules).
+            /// [`list_notification_rules`](crate::client::fluent_builders::ListNotificationRules).
             ///
             /// `ParseStrictResponse` impl for `ListNotificationRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNotificationRules {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTargets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_targets`](crate::client::Client::list_targets).
+            /// [`list_targets`](crate::client::fluent_builders::ListTargets).
             ///
             /// `ParseStrictResponse` impl for `ListTargets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTargets {
 /// Operation shape for `Subscribe`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`subscribe`](crate::client::Client::subscribe).
+            /// [`subscribe`](crate::client::fluent_builders::Subscribe).
             ///
             /// `ParseStrictResponse` impl for `Subscribe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Subscribe {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `Unsubscribe`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`unsubscribe`](crate::client::Client::unsubscribe).
+            /// [`unsubscribe`](crate::client::fluent_builders::Unsubscribe).
             ///
             /// `ParseStrictResponse` impl for `Unsubscribe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Unsubscribe {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateNotificationRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_notification_rule`](crate::client::Client::update_notification_rule).
+            /// [`update_notification_rule`](crate::client::fluent_builders::UpdateNotificationRule).
             ///
             /// `ParseStrictResponse` impl for `UpdateNotificationRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

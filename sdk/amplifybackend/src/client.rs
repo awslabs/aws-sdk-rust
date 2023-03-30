@@ -84,8 +84,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::CloneBackendOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::CloneBackendOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<CloneBackendError>`](crate::error::CloneBackendError)
-    pub fn clone_backend(&self) -> fluent_builders::CloneBackend {
-                            fluent_builders::CloneBackend::new(self.handle.clone())
+    pub fn clone_backend(&self) -> crate::client::fluent_builders::CloneBackend {
+                            crate::client::fluent_builders::CloneBackend::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateBackend`](crate::client::fluent_builders::CreateBackend) operation.
                         ///
@@ -103,8 +103,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::CreateBackendOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::CreateBackendOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<CreateBackendError>`](crate::error::CreateBackendError)
-    pub fn create_backend(&self) -> fluent_builders::CreateBackend {
-                            fluent_builders::CreateBackend::new(self.handle.clone())
+    pub fn create_backend(&self) -> crate::client::fluent_builders::CreateBackend {
+                            crate::client::fluent_builders::CreateBackend::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateBackendAPI`](crate::client::fluent_builders::CreateBackendAPI) operation.
                         ///
@@ -121,8 +121,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::CreateBackendApiOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::CreateBackendApiOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<CreateBackendAPIError>`](crate::error::CreateBackendAPIError)
-    pub fn create_backend_api(&self) -> fluent_builders::CreateBackendAPI {
-                            fluent_builders::CreateBackendAPI::new(self.handle.clone())
+    pub fn create_backend_api(&self) -> crate::client::fluent_builders::CreateBackendAPI {
+                            crate::client::fluent_builders::CreateBackendAPI::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateBackendAuth`](crate::client::fluent_builders::CreateBackendAuth) operation.
                         ///
@@ -139,8 +139,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::CreateBackendAuthOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::CreateBackendAuthOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<CreateBackendAuthError>`](crate::error::CreateBackendAuthError)
-    pub fn create_backend_auth(&self) -> fluent_builders::CreateBackendAuth {
-                            fluent_builders::CreateBackendAuth::new(self.handle.clone())
+    pub fn create_backend_auth(&self) -> crate::client::fluent_builders::CreateBackendAuth {
+                            crate::client::fluent_builders::CreateBackendAuth::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateBackendConfig`](crate::client::fluent_builders::CreateBackendConfig) operation.
                         ///
@@ -153,8 +153,8 @@ impl Client  {
     ///   - [`job_id(Option<String>)`](crate::output::CreateBackendConfigOutput::job_id): <p>The ID for the job.</p>
     ///   - [`status(Option<String>)`](crate::output::CreateBackendConfigOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<CreateBackendConfigError>`](crate::error::CreateBackendConfigError)
-    pub fn create_backend_config(&self) -> fluent_builders::CreateBackendConfig {
-                            fluent_builders::CreateBackendConfig::new(self.handle.clone())
+    pub fn create_backend_config(&self) -> crate::client::fluent_builders::CreateBackendConfig {
+                            crate::client::fluent_builders::CreateBackendConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateBackendStorage`](crate::client::fluent_builders::CreateBackendStorage) operation.
                         ///
@@ -169,8 +169,8 @@ impl Client  {
     ///   - [`job_id(Option<String>)`](crate::output::CreateBackendStorageOutput::job_id): <p>The ID for the job.</p>
     ///   - [`status(Option<String>)`](crate::output::CreateBackendStorageOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<CreateBackendStorageError>`](crate::error::CreateBackendStorageError)
-    pub fn create_backend_storage(&self) -> fluent_builders::CreateBackendStorage {
-                            fluent_builders::CreateBackendStorage::new(self.handle.clone())
+    pub fn create_backend_storage(&self) -> crate::client::fluent_builders::CreateBackendStorage {
+                            crate::client::fluent_builders::CreateBackendStorage::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateToken`](crate::client::fluent_builders::CreateToken) operation.
                         ///
@@ -182,8 +182,8 @@ impl Client  {
     ///   - [`session_id(Option<String>)`](crate::output::CreateTokenOutput::session_id): <p>A unique ID provided when creating a new challenge token.</p>
     ///   - [`ttl(Option<String>)`](crate::output::CreateTokenOutput::ttl): <p>The expiry time for the one-time generated token code.</p>
                         /// - On failure, responds with [`SdkError<CreateTokenError>`](crate::error::CreateTokenError)
-    pub fn create_token(&self) -> fluent_builders::CreateToken {
-                            fluent_builders::CreateToken::new(self.handle.clone())
+    pub fn create_token(&self) -> crate::client::fluent_builders::CreateToken {
+                            crate::client::fluent_builders::CreateToken::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteBackend`](crate::client::fluent_builders::DeleteBackend) operation.
                         ///
@@ -198,8 +198,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::DeleteBackendOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::DeleteBackendOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<DeleteBackendError>`](crate::error::DeleteBackendError)
-    pub fn delete_backend(&self) -> fluent_builders::DeleteBackend {
-                            fluent_builders::DeleteBackend::new(self.handle.clone())
+    pub fn delete_backend(&self) -> crate::client::fluent_builders::DeleteBackend {
+                            crate::client::fluent_builders::DeleteBackend::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteBackendAPI`](crate::client::fluent_builders::DeleteBackendAPI) operation.
                         ///
@@ -216,8 +216,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::DeleteBackendApiOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::DeleteBackendApiOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<DeleteBackendAPIError>`](crate::error::DeleteBackendAPIError)
-    pub fn delete_backend_api(&self) -> fluent_builders::DeleteBackendAPI {
-                            fluent_builders::DeleteBackendAPI::new(self.handle.clone())
+    pub fn delete_backend_api(&self) -> crate::client::fluent_builders::DeleteBackendAPI {
+                            crate::client::fluent_builders::DeleteBackendAPI::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteBackendAuth`](crate::client::fluent_builders::DeleteBackendAuth) operation.
                         ///
@@ -233,8 +233,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::DeleteBackendAuthOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::DeleteBackendAuthOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<DeleteBackendAuthError>`](crate::error::DeleteBackendAuthError)
-    pub fn delete_backend_auth(&self) -> fluent_builders::DeleteBackendAuth {
-                            fluent_builders::DeleteBackendAuth::new(self.handle.clone())
+    pub fn delete_backend_auth(&self) -> crate::client::fluent_builders::DeleteBackendAuth {
+                            crate::client::fluent_builders::DeleteBackendAuth::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteBackendStorage`](crate::client::fluent_builders::DeleteBackendStorage) operation.
                         ///
@@ -249,8 +249,8 @@ impl Client  {
     ///   - [`job_id(Option<String>)`](crate::output::DeleteBackendStorageOutput::job_id): <p>The ID for the job.</p>
     ///   - [`status(Option<String>)`](crate::output::DeleteBackendStorageOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<DeleteBackendStorageError>`](crate::error::DeleteBackendStorageError)
-    pub fn delete_backend_storage(&self) -> fluent_builders::DeleteBackendStorage {
-                            fluent_builders::DeleteBackendStorage::new(self.handle.clone())
+    pub fn delete_backend_storage(&self) -> crate::client::fluent_builders::DeleteBackendStorage {
+                            crate::client::fluent_builders::DeleteBackendStorage::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteToken`](crate::client::fluent_builders::DeleteToken) operation.
                         ///
@@ -260,8 +260,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteTokenOutput`](crate::output::DeleteTokenOutput) with field(s):
                         ///   - [`is_success(bool)`](crate::output::DeleteTokenOutput::is_success): <p>Indicates whether the request succeeded or failed.</p>
                         /// - On failure, responds with [`SdkError<DeleteTokenError>`](crate::error::DeleteTokenError)
-    pub fn delete_token(&self) -> fluent_builders::DeleteToken {
-                            fluent_builders::DeleteToken::new(self.handle.clone())
+    pub fn delete_token(&self) -> crate::client::fluent_builders::DeleteToken {
+                            crate::client::fluent_builders::DeleteToken::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GenerateBackendAPIModels`](crate::client::fluent_builders::GenerateBackendAPIModels) operation.
                         ///
@@ -277,8 +277,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::GenerateBackendApiModelsOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::GenerateBackendApiModelsOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<GenerateBackendAPIModelsError>`](crate::error::GenerateBackendAPIModelsError)
-    pub fn generate_backend_api_models(&self) -> fluent_builders::GenerateBackendAPIModels {
-                            fluent_builders::GenerateBackendAPIModels::new(self.handle.clone())
+    pub fn generate_backend_api_models(&self) -> crate::client::fluent_builders::GenerateBackendAPIModels {
+                            crate::client::fluent_builders::GenerateBackendAPIModels::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetBackend`](crate::client::fluent_builders::GetBackend) operation.
                         ///
@@ -294,8 +294,8 @@ impl Client  {
     ///   - [`backend_environment_name(Option<String>)`](crate::output::GetBackendOutput::backend_environment_name): <p>The name of the backend environment.</p>
     ///   - [`error(Option<String>)`](crate::output::GetBackendOutput::error): <p>If the request failed, this is the returned error.</p>
                         /// - On failure, responds with [`SdkError<GetBackendError>`](crate::error::GetBackendError)
-    pub fn get_backend(&self) -> fluent_builders::GetBackend {
-                            fluent_builders::GetBackend::new(self.handle.clone())
+    pub fn get_backend(&self) -> crate::client::fluent_builders::GetBackend {
+                            crate::client::fluent_builders::GetBackend::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetBackendAPI`](crate::client::fluent_builders::GetBackendAPI) operation.
                         ///
@@ -311,8 +311,8 @@ impl Client  {
     ///   - [`resource_config(Option<BackendApiResourceConfig>)`](crate::output::GetBackendApiOutput::resource_config): <p>The resource configuration for this response object.</p>
     ///   - [`resource_name(Option<String>)`](crate::output::GetBackendApiOutput::resource_name): <p>The name of this resource.</p>
                         /// - On failure, responds with [`SdkError<GetBackendAPIError>`](crate::error::GetBackendAPIError)
-    pub fn get_backend_api(&self) -> fluent_builders::GetBackendAPI {
-                            fluent_builders::GetBackendAPI::new(self.handle.clone())
+    pub fn get_backend_api(&self) -> crate::client::fluent_builders::GetBackendAPI {
+                            crate::client::fluent_builders::GetBackendAPI::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetBackendAPIModels`](crate::client::fluent_builders::GetBackendAPIModels) operation.
                         ///
@@ -325,8 +325,8 @@ impl Client  {
     ///   - [`status(Option<Status>)`](crate::output::GetBackendApiModelsOutput::status): <p>The current status of the request.</p>
     ///   - [`model_introspection_schema(Option<String>)`](crate::output::GetBackendApiModelsOutput::model_introspection_schema): <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
                         /// - On failure, responds with [`SdkError<GetBackendAPIModelsError>`](crate::error::GetBackendAPIModelsError)
-    pub fn get_backend_api_models(&self) -> fluent_builders::GetBackendAPIModels {
-                            fluent_builders::GetBackendAPIModels::new(self.handle.clone())
+    pub fn get_backend_api_models(&self) -> crate::client::fluent_builders::GetBackendAPIModels {
+                            crate::client::fluent_builders::GetBackendAPIModels::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetBackendAuth`](crate::client::fluent_builders::GetBackendAuth) operation.
                         ///
@@ -341,8 +341,8 @@ impl Client  {
     ///   - [`resource_config(Option<CreateBackendAuthResourceConfig>)`](crate::output::GetBackendAuthOutput::resource_config): <p>The resource configuration for authorization requests to the backend of your Amplify project.</p>
     ///   - [`resource_name(Option<String>)`](crate::output::GetBackendAuthOutput::resource_name): <p>The name of this resource.</p>
                         /// - On failure, responds with [`SdkError<GetBackendAuthError>`](crate::error::GetBackendAuthError)
-    pub fn get_backend_auth(&self) -> fluent_builders::GetBackendAuth {
-                            fluent_builders::GetBackendAuth::new(self.handle.clone())
+    pub fn get_backend_auth(&self) -> crate::client::fluent_builders::GetBackendAuth {
+                            crate::client::fluent_builders::GetBackendAuth::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetBackendJob`](crate::client::fluent_builders::GetBackendJob) operation.
                         ///
@@ -360,8 +360,8 @@ impl Client  {
     ///   - [`status(Option<String>)`](crate::output::GetBackendJobOutput::status): <p>The current status of the request.</p>
     ///   - [`update_time(Option<String>)`](crate::output::GetBackendJobOutput::update_time): <p>The time when the job was last updated.</p>
                         /// - On failure, responds with [`SdkError<GetBackendJobError>`](crate::error::GetBackendJobError)
-    pub fn get_backend_job(&self) -> fluent_builders::GetBackendJob {
-                            fluent_builders::GetBackendJob::new(self.handle.clone())
+    pub fn get_backend_job(&self) -> crate::client::fluent_builders::GetBackendJob {
+                            crate::client::fluent_builders::GetBackendJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetBackendStorage`](crate::client::fluent_builders::GetBackendStorage) operation.
                         ///
@@ -375,8 +375,8 @@ impl Client  {
     ///   - [`resource_config(Option<GetBackendStorageResourceConfig>)`](crate::output::GetBackendStorageOutput::resource_config): <p>The resource configuration for the backend storage resource.</p>
     ///   - [`resource_name(Option<String>)`](crate::output::GetBackendStorageOutput::resource_name): <p>The name of the storage resource.</p>
                         /// - On failure, responds with [`SdkError<GetBackendStorageError>`](crate::error::GetBackendStorageError)
-    pub fn get_backend_storage(&self) -> fluent_builders::GetBackendStorage {
-                            fluent_builders::GetBackendStorage::new(self.handle.clone())
+    pub fn get_backend_storage(&self) -> crate::client::fluent_builders::GetBackendStorage {
+                            crate::client::fluent_builders::GetBackendStorage::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetToken`](crate::client::fluent_builders::GetToken) operation.
                         ///
@@ -389,8 +389,8 @@ impl Client  {
     ///   - [`session_id(Option<String>)`](crate::output::GetTokenOutput::session_id): <p>A unique ID provided when creating a new challenge token.</p>
     ///   - [`ttl(Option<String>)`](crate::output::GetTokenOutput::ttl): <p>The expiry time for the one-time generated token code.</p>
                         /// - On failure, responds with [`SdkError<GetTokenError>`](crate::error::GetTokenError)
-    pub fn get_token(&self) -> fluent_builders::GetToken {
-                            fluent_builders::GetToken::new(self.handle.clone())
+    pub fn get_token(&self) -> crate::client::fluent_builders::GetToken {
+                            crate::client::fluent_builders::GetToken::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ImportBackendAuth`](crate::client::fluent_builders::ImportBackendAuth) operation.
                         ///
@@ -409,8 +409,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::ImportBackendAuthOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::ImportBackendAuthOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<ImportBackendAuthError>`](crate::error::ImportBackendAuthError)
-    pub fn import_backend_auth(&self) -> fluent_builders::ImportBackendAuth {
-                            fluent_builders::ImportBackendAuth::new(self.handle.clone())
+    pub fn import_backend_auth(&self) -> crate::client::fluent_builders::ImportBackendAuth {
+                            crate::client::fluent_builders::ImportBackendAuth::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ImportBackendStorage`](crate::client::fluent_builders::ImportBackendStorage) operation.
                         ///
@@ -425,8 +425,8 @@ impl Client  {
     ///   - [`job_id(Option<String>)`](crate::output::ImportBackendStorageOutput::job_id): <p>The ID for the job.</p>
     ///   - [`status(Option<String>)`](crate::output::ImportBackendStorageOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<ImportBackendStorageError>`](crate::error::ImportBackendStorageError)
-    pub fn import_backend_storage(&self) -> fluent_builders::ImportBackendStorage {
-                            fluent_builders::ImportBackendStorage::new(self.handle.clone())
+    pub fn import_backend_storage(&self) -> crate::client::fluent_builders::ImportBackendStorage {
+                            crate::client::fluent_builders::ImportBackendStorage::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListBackendJobs`](crate::client::fluent_builders::ListBackendJobs) operation.
                         ///
@@ -442,8 +442,8 @@ impl Client  {
                         ///   - [`jobs(Option<Vec<BackendJobRespObj>>)`](crate::output::ListBackendJobsOutput::jobs): <p>An array of jobs and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBackendJobsOutput::next_token): <p>The token for the next set of results.</p>
                         /// - On failure, responds with [`SdkError<ListBackendJobsError>`](crate::error::ListBackendJobsError)
-    pub fn list_backend_jobs(&self) -> fluent_builders::ListBackendJobs {
-                            fluent_builders::ListBackendJobs::new(self.handle.clone())
+    pub fn list_backend_jobs(&self) -> crate::client::fluent_builders::ListBackendJobs {
+                            crate::client::fluent_builders::ListBackendJobs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListS3Buckets`](crate::client::fluent_builders::ListS3Buckets) operation.
                         ///
@@ -453,8 +453,8 @@ impl Client  {
                         ///   - [`buckets(Option<Vec<S3BucketInfo>>)`](crate::output::ListS3BucketsOutput::buckets): <p>The list of S3 buckets.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListS3BucketsOutput::next_token): <p>Reserved for future use.</p>
                         /// - On failure, responds with [`SdkError<ListS3BucketsError>`](crate::error::ListS3BucketsError)
-    pub fn list_s3_buckets(&self) -> fluent_builders::ListS3Buckets {
-                            fluent_builders::ListS3Buckets::new(self.handle.clone())
+    pub fn list_s3_buckets(&self) -> crate::client::fluent_builders::ListS3Buckets {
+                            crate::client::fluent_builders::ListS3Buckets::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`RemoveAllBackends`](crate::client::fluent_builders::RemoveAllBackends) operation.
                         ///
@@ -468,8 +468,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::RemoveAllBackendsOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::RemoveAllBackendsOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<RemoveAllBackendsError>`](crate::error::RemoveAllBackendsError)
-    pub fn remove_all_backends(&self) -> fluent_builders::RemoveAllBackends {
-                            fluent_builders::RemoveAllBackends::new(self.handle.clone())
+    pub fn remove_all_backends(&self) -> crate::client::fluent_builders::RemoveAllBackends {
+                            crate::client::fluent_builders::RemoveAllBackends::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`RemoveBackendConfig`](crate::client::fluent_builders::RemoveBackendConfig) operation.
                         ///
@@ -478,8 +478,8 @@ impl Client  {
                         /// - On success, responds with [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput) with field(s):
                         ///   - [`error(Option<String>)`](crate::output::RemoveBackendConfigOutput::error): <p>If the request fails, this error is returned.</p>
                         /// - On failure, responds with [`SdkError<RemoveBackendConfigError>`](crate::error::RemoveBackendConfigError)
-    pub fn remove_backend_config(&self) -> fluent_builders::RemoveBackendConfig {
-                            fluent_builders::RemoveBackendConfig::new(self.handle.clone())
+    pub fn remove_backend_config(&self) -> crate::client::fluent_builders::RemoveBackendConfig {
+                            crate::client::fluent_builders::RemoveBackendConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateBackendAPI`](crate::client::fluent_builders::UpdateBackendAPI) operation.
                         ///
@@ -496,8 +496,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::UpdateBackendApiOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::UpdateBackendApiOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<UpdateBackendAPIError>`](crate::error::UpdateBackendAPIError)
-    pub fn update_backend_api(&self) -> fluent_builders::UpdateBackendAPI {
-                            fluent_builders::UpdateBackendAPI::new(self.handle.clone())
+    pub fn update_backend_api(&self) -> crate::client::fluent_builders::UpdateBackendAPI {
+                            crate::client::fluent_builders::UpdateBackendAPI::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateBackendAuth`](crate::client::fluent_builders::UpdateBackendAuth) operation.
                         ///
@@ -514,8 +514,8 @@ impl Client  {
     ///   - [`operation(Option<String>)`](crate::output::UpdateBackendAuthOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::output::UpdateBackendAuthOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<UpdateBackendAuthError>`](crate::error::UpdateBackendAuthError)
-    pub fn update_backend_auth(&self) -> fluent_builders::UpdateBackendAuth {
-                            fluent_builders::UpdateBackendAuth::new(self.handle.clone())
+    pub fn update_backend_auth(&self) -> crate::client::fluent_builders::UpdateBackendAuth {
+                            crate::client::fluent_builders::UpdateBackendAuth::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateBackendConfig`](crate::client::fluent_builders::UpdateBackendConfig) operation.
                         ///
@@ -528,8 +528,8 @@ impl Client  {
     ///   - [`error(Option<String>)`](crate::output::UpdateBackendConfigOutput::error): <p>If the request fails, this error is returned.</p>
     ///   - [`login_auth_config(Option<LoginAuthConfigReqObj>)`](crate::output::UpdateBackendConfigOutput::login_auth_config): <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
                         /// - On failure, responds with [`SdkError<UpdateBackendConfigError>`](crate::error::UpdateBackendConfigError)
-    pub fn update_backend_config(&self) -> fluent_builders::UpdateBackendConfig {
-                            fluent_builders::UpdateBackendConfig::new(self.handle.clone())
+    pub fn update_backend_config(&self) -> crate::client::fluent_builders::UpdateBackendConfig {
+                            crate::client::fluent_builders::UpdateBackendConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateBackendJob`](crate::client::fluent_builders::UpdateBackendJob) operation.
                         ///
@@ -549,8 +549,8 @@ impl Client  {
     ///   - [`status(Option<String>)`](crate::output::UpdateBackendJobOutput::status): <p>The current status of the request.</p>
     ///   - [`update_time(Option<String>)`](crate::output::UpdateBackendJobOutput::update_time): <p>The time when the job was last updated.</p>
                         /// - On failure, responds with [`SdkError<UpdateBackendJobError>`](crate::error::UpdateBackendJobError)
-    pub fn update_backend_job(&self) -> fluent_builders::UpdateBackendJob {
-                            fluent_builders::UpdateBackendJob::new(self.handle.clone())
+    pub fn update_backend_job(&self) -> crate::client::fluent_builders::UpdateBackendJob {
+                            crate::client::fluent_builders::UpdateBackendJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateBackendStorage`](crate::client::fluent_builders::UpdateBackendStorage) operation.
                         ///
@@ -565,2424 +565,9 @@ impl Client  {
     ///   - [`job_id(Option<String>)`](crate::output::UpdateBackendStorageOutput::job_id): <p>The ID for the job.</p>
     ///   - [`status(Option<String>)`](crate::output::UpdateBackendStorageOutput::status): <p>The current status of the request.</p>
                         /// - On failure, responds with [`SdkError<UpdateBackendStorageError>`](crate::error::UpdateBackendStorageError)
-    pub fn update_backend_storage(&self) -> fluent_builders::UpdateBackendStorage {
-                            fluent_builders::UpdateBackendStorage::new(self.handle.clone())
+    pub fn update_backend_storage(&self) -> crate::client::fluent_builders::UpdateBackendStorage {
+                            crate::client::fluent_builders::UpdateBackendStorage::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CloneBackend`.
-                        ///
-    /// <p>This operation clones an existing backend.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CloneBackend {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::clone_backend_input::Builder
-                        }
-    impl CloneBackend  {
-        /// Creates a new `CloneBackend`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CloneBackend, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CloneBackendError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CloneBackendOutput, aws_smithy_http::result::SdkError<crate::error::CloneBackendError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The name of the destination backend environment to be created.</p>
-        pub fn target_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the destination backend environment to be created.</p>
-        pub fn set_target_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target_environment_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateBackend`.
-                        ///
-    /// <p>This operation creates a backend for an Amplify app. Backends are automatically created at the time of app creation.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateBackend {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_backend_input::Builder
-                        }
-    impl CreateBackend  {
-        /// Creates a new `CreateBackend`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateBackend, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateBackendError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateBackendOutput, aws_smithy_http::result::SdkError<crate::error::CreateBackendError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the app.</p>
-        pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_name(input.into());
-            self
-        }
-        /// <p>The name of the app.</p>
-        pub fn set_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_name(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The resource configuration for creating a backend.</p>
-        pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(input);
-            self
-        }
-        /// <p>The resource configuration for creating a backend.</p>
-        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::ResourceConfig>) -> Self {
-            self.inner = self.inner.set_resource_config(input);
-            self
-        }
-        /// <p>The name of the resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of the resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateBackendAPI`.
-                        ///
-    /// <p>Creates a new backend API resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateBackendAPI {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_backend_api_input::Builder
-                        }
-    impl CreateBackendAPI  {
-        /// Creates a new `CreateBackendAPI`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateBackendAPI, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateBackendAPIError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateBackendApiOutput, aws_smithy_http::result::SdkError<crate::error::CreateBackendAPIError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The resource configuration for this request.</p>
-        pub fn resource_config(mut self, input: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(input);
-            self
-        }
-        /// <p>The resource configuration for this request.</p>
-        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::BackendApiResourceConfig>) -> Self {
-            self.inner = self.inner.set_resource_config(input);
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateBackendAuth`.
-                        ///
-    /// <p>Creates a new backend authentication resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateBackendAuth {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_backend_auth_input::Builder
-                        }
-    impl CreateBackendAuth  {
-        /// Creates a new `CreateBackendAuth`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateBackendAuth, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateBackendAuthError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateBackendAuthOutput, aws_smithy_http::result::SdkError<crate::error::CreateBackendAuthError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The resource configuration for this request object.</p>
-        pub fn resource_config(mut self, input: crate::model::CreateBackendAuthResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(input);
-            self
-        }
-        /// <p>The resource configuration for this request object.</p>
-        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::CreateBackendAuthResourceConfig>) -> Self {
-            self.inner = self.inner.set_resource_config(input);
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateBackendConfig`.
-                        ///
-    /// <p>Creates a config object for a backend.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateBackendConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_backend_config_input::Builder
-                        }
-    impl CreateBackendConfig  {
-        /// Creates a new `CreateBackendConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateBackendConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateBackendConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateBackendConfigOutput, aws_smithy_http::result::SdkError<crate::error::CreateBackendConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The app ID for the backend manager.</p>
-        pub fn backend_manager_app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_manager_app_id(input.into());
-            self
-        }
-        /// <p>The app ID for the backend manager.</p>
-        pub fn set_backend_manager_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_manager_app_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateBackendStorage`.
-                        ///
-    /// <p>Creates a backend storage resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateBackendStorage {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_backend_storage_input::Builder
-                        }
-    impl CreateBackendStorage  {
-        /// Creates a new `CreateBackendStorage`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateBackendStorage, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateBackendStorageError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateBackendStorageOutput, aws_smithy_http::result::SdkError<crate::error::CreateBackendStorageError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The resource configuration for creating backend storage.</p>
-        pub fn resource_config(mut self, input: crate::model::CreateBackendStorageResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(input);
-            self
-        }
-        /// <p>The resource configuration for creating backend storage.</p>
-        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::CreateBackendStorageResourceConfig>) -> Self {
-            self.inner = self.inner.set_resource_config(input);
-            self
-        }
-        /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of the storage resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateToken`.
-                        ///
-    /// <p>Generates a one-time challenge code to authenticate a user into your Amplify Admin UI.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateToken {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_token_input::Builder
-                        }
-    impl CreateToken  {
-        /// Creates a new `CreateToken`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateToken, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateTokenError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateTokenOutput, aws_smithy_http::result::SdkError<crate::error::CreateTokenError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteBackend`.
-                        ///
-    /// <p>Removes an existing environment from your Amplify project.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteBackend {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_backend_input::Builder
-                        }
-    impl DeleteBackend  {
-        /// Creates a new `DeleteBackend`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteBackend, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteBackendError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteBackendOutput, aws_smithy_http::result::SdkError<crate::error::DeleteBackendError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteBackendAPI`.
-                        ///
-    /// <p>Deletes an existing backend API resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteBackendAPI {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_backend_api_input::Builder
-                        }
-    impl DeleteBackendAPI  {
-        /// Creates a new `DeleteBackendAPI`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteBackendAPI, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteBackendAPIError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteBackendApiOutput, aws_smithy_http::result::SdkError<crate::error::DeleteBackendAPIError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn resource_config(mut self, input: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(input);
-            self
-        }
-        /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::BackendApiResourceConfig>) -> Self {
-            self.inner = self.inner.set_resource_config(input);
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteBackendAuth`.
-                        ///
-    /// <p>Deletes an existing backend authentication resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteBackendAuth {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_backend_auth_input::Builder
-                        }
-    impl DeleteBackendAuth  {
-        /// Creates a new `DeleteBackendAuth`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteBackendAuth, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteBackendAuthError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteBackendAuthOutput, aws_smithy_http::result::SdkError<crate::error::DeleteBackendAuthError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteBackendStorage`.
-                        ///
-    /// <p>Removes the specified backend storage resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteBackendStorage {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_backend_storage_input::Builder
-                        }
-    impl DeleteBackendStorage  {
-        /// Creates a new `DeleteBackendStorage`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteBackendStorage, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteBackendStorageError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteBackendStorageOutput, aws_smithy_http::result::SdkError<crate::error::DeleteBackendStorageError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of the storage resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-        /// <p>The name of the storage service.</p>
-        pub fn service_name(mut self, input: crate::model::ServiceName) -> Self {
-            self.inner = self.inner.service_name(input);
-            self
-        }
-        /// <p>The name of the storage service.</p>
-        pub fn set_service_name(mut self, input: std::option::Option<crate::model::ServiceName>) -> Self {
-            self.inner = self.inner.set_service_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteToken`.
-                        ///
-    /// <p>Deletes the challenge token based on the given appId and sessionId.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteToken {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_token_input::Builder
-                        }
-    impl DeleteToken  {
-        /// Creates a new `DeleteToken`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteToken, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteTokenError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteTokenOutput, aws_smithy_http::result::SdkError<crate::error::DeleteTokenError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The session ID.</p>
-        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(input.into());
-            self
-        }
-        /// <p>The session ID.</p>
-        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_session_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GenerateBackendAPIModels`.
-                        ///
-    /// <p>Generates a model schema for an existing backend API resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GenerateBackendAPIModels {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::generate_backend_api_models_input::Builder
-                        }
-    impl GenerateBackendAPIModels  {
-        /// Creates a new `GenerateBackendAPIModels`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GenerateBackendAPIModels, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GenerateBackendAPIModelsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GenerateBackendApiModelsOutput, aws_smithy_http::result::SdkError<crate::error::GenerateBackendAPIModelsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetBackend`.
-                        ///
-    /// <p>Provides project-level details for your Amplify UI project.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetBackend {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_backend_input::Builder
-                        }
-    impl GetBackend  {
-        /// Creates a new `GetBackend`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetBackend, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetBackendError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetBackendOutput, aws_smithy_http::result::SdkError<crate::error::GetBackendError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetBackendAPI`.
-                        ///
-    /// <p>Gets the details for a backend API.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetBackendAPI {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_backend_api_input::Builder
-                        }
-    impl GetBackendAPI  {
-        /// Creates a new `GetBackendAPI`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetBackendAPI, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetBackendAPIError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetBackendApiOutput, aws_smithy_http::result::SdkError<crate::error::GetBackendAPIError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn resource_config(mut self, input: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(input);
-            self
-        }
-        /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::BackendApiResourceConfig>) -> Self {
-            self.inner = self.inner.set_resource_config(input);
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetBackendAPIModels`.
-                        ///
-    /// <p>Gets a model introspection schema for an existing backend API resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetBackendAPIModels {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_backend_api_models_input::Builder
-                        }
-    impl GetBackendAPIModels  {
-        /// Creates a new `GetBackendAPIModels`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetBackendAPIModels, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetBackendAPIModelsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetBackendApiModelsOutput, aws_smithy_http::result::SdkError<crate::error::GetBackendAPIModelsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetBackendAuth`.
-                        ///
-    /// <p>Gets a backend auth details.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetBackendAuth {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_backend_auth_input::Builder
-                        }
-    impl GetBackendAuth  {
-        /// Creates a new `GetBackendAuth`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetBackendAuth, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetBackendAuthError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetBackendAuthOutput, aws_smithy_http::result::SdkError<crate::error::GetBackendAuthError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetBackendJob`.
-                        ///
-    /// <p>Returns information about a specific job.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetBackendJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_backend_job_input::Builder
-                        }
-    impl GetBackendJob  {
-        /// Creates a new `GetBackendJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetBackendJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetBackendJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetBackendJobOutput, aws_smithy_http::result::SdkError<crate::error::GetBackendJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The ID for the job.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The ID for the job.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetBackendStorage`.
-                        ///
-    /// <p>Gets details for a backend storage resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetBackendStorage {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_backend_storage_input::Builder
-                        }
-    impl GetBackendStorage  {
-        /// Creates a new `GetBackendStorage`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetBackendStorage, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetBackendStorageError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetBackendStorageOutput, aws_smithy_http::result::SdkError<crate::error::GetBackendStorageError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of the storage resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetToken`.
-                        ///
-    /// <p>Gets the challenge token based on the given appId and sessionId.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetToken {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_token_input::Builder
-                        }
-    impl GetToken  {
-        /// Creates a new `GetToken`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetToken, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetTokenError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetTokenOutput, aws_smithy_http::result::SdkError<crate::error::GetTokenError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The session ID.</p>
-        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(input.into());
-            self
-        }
-        /// <p>The session ID.</p>
-        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_session_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ImportBackendAuth`.
-                        ///
-    /// <p>Imports an existing backend authentication resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ImportBackendAuth {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::import_backend_auth_input::Builder
-                        }
-    impl ImportBackendAuth  {
-        /// Creates a new `ImportBackendAuth`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ImportBackendAuth, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ImportBackendAuthError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ImportBackendAuthOutput, aws_smithy_http::result::SdkError<crate::error::ImportBackendAuthError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The ID of the Amazon Cognito identity pool.</p>
-        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(input.into());
-            self
-        }
-        /// <p>The ID of the Amazon Cognito identity pool.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_identity_pool_id(input);
-            self
-        }
-        /// <p>The ID of the Amazon Cognito native client.</p>
-        pub fn native_client_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.native_client_id(input.into());
-            self
-        }
-        /// <p>The ID of the Amazon Cognito native client.</p>
-        pub fn set_native_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_native_client_id(input);
-            self
-        }
-        /// <p>The ID of the Amazon Cognito user pool.</p>
-        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(input.into());
-            self
-        }
-        /// <p>The ID of the Amazon Cognito user pool.</p>
-        pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_pool_id(input);
-            self
-        }
-        /// <p>The ID of the Amazon Cognito web client.</p>
-        pub fn web_client_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_client_id(input.into());
-            self
-        }
-        /// <p>The ID of the Amazon Cognito web client.</p>
-        pub fn set_web_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_web_client_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ImportBackendStorage`.
-                        ///
-    /// <p>Imports an existing backend storage resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ImportBackendStorage {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::import_backend_storage_input::Builder
-                        }
-    impl ImportBackendStorage  {
-        /// Creates a new `ImportBackendStorage`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ImportBackendStorage, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ImportBackendStorageError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ImportBackendStorageOutput, aws_smithy_http::result::SdkError<crate::error::ImportBackendStorageError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The name of the S3 bucket.</p>
-        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(input.into());
-            self
-        }
-        /// <p>The name of the S3 bucket.</p>
-        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bucket_name(input);
-            self
-        }
-        /// <p>The name of the storage service.</p>
-        pub fn service_name(mut self, input: crate::model::ServiceName) -> Self {
-            self.inner = self.inner.service_name(input);
-            self
-        }
-        /// <p>The name of the storage service.</p>
-        pub fn set_service_name(mut self, input: std::option::Option<crate::model::ServiceName>) -> Self {
-            self.inner = self.inner.set_service_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListBackendJobs`.
-                        ///
-    /// <p>Lists the jobs for the backend of an Amplify app.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListBackendJobs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_backend_jobs_input::Builder
-                        }
-    impl ListBackendJobs  {
-        /// Creates a new `ListBackendJobs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListBackendJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListBackendJobsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListBackendJobsOutput, aws_smithy_http::result::SdkError<crate::error::ListBackendJobsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The ID for the job.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The ID for the job.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-        /// <p>The maximum number of results that you want in the response.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results that you want in the response.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-        pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation(input.into());
-            self
-        }
-        /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-        pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation(input);
-            self
-        }
-        /// <p>Filters the list of response objects to include only those with the specified status.</p>
-        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(input.into());
-            self
-        }
-        /// <p>Filters the list of response objects to include only those with the specified status.</p>
-        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_status(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListS3Buckets`.
-                        ///
-    /// <p>The list of S3 buckets in your account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListS3Buckets {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_s3_buckets_input::Builder
-                        }
-    impl ListS3Buckets  {
-        /// Creates a new `ListS3Buckets`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListS3Buckets, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListS3BucketsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListS3BucketsOutput, aws_smithy_http::result::SdkError<crate::error::ListS3BucketsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Reserved for future use.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Reserved for future use.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `RemoveAllBackends`.
-                        ///
-    /// <p>Removes all backend environments from your Amplify project.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct RemoveAllBackends {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::remove_all_backends_input::Builder
-                        }
-    impl RemoveAllBackends  {
-        /// Creates a new `RemoveAllBackends`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::RemoveAllBackends, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::RemoveAllBackendsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::RemoveAllBackendsOutput, aws_smithy_http::result::SdkError<crate::error::RemoveAllBackendsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
-        pub fn clean_amplify_app(mut self, input: bool) -> Self {
-            self.inner = self.inner.clean_amplify_app(input);
-            self
-        }
-        /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
-        pub fn set_clean_amplify_app(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_clean_amplify_app(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `RemoveBackendConfig`.
-                        ///
-    /// <p>Removes the AWS resources required to access the Amplify Admin UI.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct RemoveBackendConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::remove_backend_config_input::Builder
-                        }
-    impl RemoveBackendConfig  {
-        /// Creates a new `RemoveBackendConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::RemoveBackendConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::RemoveBackendConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::RemoveBackendConfigOutput, aws_smithy_http::result::SdkError<crate::error::RemoveBackendConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateBackendAPI`.
-                        ///
-    /// <p>Updates an existing backend API resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateBackendAPI {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_backend_api_input::Builder
-                        }
-    impl UpdateBackendAPI  {
-        /// Creates a new `UpdateBackendAPI`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateBackendAPI, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateBackendAPIError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateBackendApiOutput, aws_smithy_http::result::SdkError<crate::error::UpdateBackendAPIError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn resource_config(mut self, input: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(input);
-            self
-        }
-        /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::BackendApiResourceConfig>) -> Self {
-            self.inner = self.inner.set_resource_config(input);
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateBackendAuth`.
-                        ///
-    /// <p>Updates an existing backend authentication resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateBackendAuth {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_backend_auth_input::Builder
-                        }
-    impl UpdateBackendAuth  {
-        /// Creates a new `UpdateBackendAuth`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateBackendAuth, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateBackendAuthError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateBackendAuthOutput, aws_smithy_http::result::SdkError<crate::error::UpdateBackendAuthError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The resource configuration for this request object.</p>
-        pub fn resource_config(mut self, input: crate::model::UpdateBackendAuthResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(input);
-            self
-        }
-        /// <p>The resource configuration for this request object.</p>
-        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::UpdateBackendAuthResourceConfig>) -> Self {
-            self.inner = self.inner.set_resource_config(input);
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of this resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateBackendConfig`.
-                        ///
-    /// <p>Updates the AWS resources required to access the Amplify Admin UI.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateBackendConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_backend_config_input::Builder
-                        }
-    impl UpdateBackendConfig  {
-        /// Creates a new `UpdateBackendConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateBackendConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateBackendConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateBackendConfigOutput, aws_smithy_http::result::SdkError<crate::error::UpdateBackendConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-        pub fn login_auth_config(mut self, input: crate::model::LoginAuthConfigReqObj) -> Self {
-            self.inner = self.inner.login_auth_config(input);
-            self
-        }
-        /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-        pub fn set_login_auth_config(mut self, input: std::option::Option<crate::model::LoginAuthConfigReqObj>) -> Self {
-            self.inner = self.inner.set_login_auth_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateBackendJob`.
-                        ///
-    /// <p>Updates a specific job.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateBackendJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_backend_job_input::Builder
-                        }
-    impl UpdateBackendJob  {
-        /// Creates a new `UpdateBackendJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateBackendJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateBackendJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateBackendJobOutput, aws_smithy_http::result::SdkError<crate::error::UpdateBackendJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The ID for the job.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The ID for the job.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-        /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-        pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation(input.into());
-            self
-        }
-        /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-        pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation(input);
-            self
-        }
-        /// <p>Filters the list of response objects to include only those with the specified status.</p>
-        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(input.into());
-            self
-        }
-        /// <p>Filters the list of response objects to include only those with the specified status.</p>
-        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_status(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateBackendStorage`.
-                        ///
-    /// <p>Updates an existing backend storage resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateBackendStorage {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_backend_storage_input::Builder
-                        }
-    impl UpdateBackendStorage  {
-        /// Creates a new `UpdateBackendStorage`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateBackendStorage, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateBackendStorageError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateBackendStorageOutput, aws_smithy_http::result::SdkError<crate::error::UpdateBackendStorageError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The app ID.</p>
-        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(input.into());
-            self
-        }
-        /// <p>The app ID.</p>
-        pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_app_id(input);
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(input.into());
-            self
-        }
-        /// <p>The name of the backend environment.</p>
-        pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_backend_environment_name(input);
-            self
-        }
-        /// <p>The resource configuration for updating backend storage.</p>
-        pub fn resource_config(mut self, input: crate::model::UpdateBackendStorageResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(input);
-            self
-        }
-        /// <p>The resource configuration for updating backend storage.</p>
-        pub fn set_resource_config(mut self, input: std::option::Option<crate::model::UpdateBackendStorageResourceConfig>) -> Self {
-            self.inner = self.inner.set_resource_config(input);
-            self
-        }
-        /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(input.into());
-            self
-        }
-        /// <p>The name of the storage resource.</p>
-        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_name(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -3053,4 +638,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

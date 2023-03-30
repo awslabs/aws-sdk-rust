@@ -2,7 +2,7 @@
 /// Operation shape for `InvokeEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`invoke_endpoint`](crate::client::Client::invoke_endpoint).
+            /// [`invoke_endpoint`](crate::client::fluent_builders::InvokeEndpoint).
             ///
             /// `ParseStrictResponse` impl for `InvokeEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeEndpoint {
 /// Operation shape for `InvokeEndpointAsync`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`invoke_endpoint_async`](crate::client::Client::invoke_endpoint_async).
+            /// [`invoke_endpoint_async`](crate::client::fluent_builders::InvokeEndpointAsync).
             ///
             /// `ParseStrictResponse` impl for `InvokeEndpointAsync`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `AddTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_tags`](crate::client::Client::add_tags).
+            /// [`add_tags`](crate::client::fluent_builders::AddTags).
             ///
             /// `ParseStrictResponse` impl for `AddTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
 /// Operation shape for `CreateBatchPrediction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_batch_prediction`](crate::client::Client::create_batch_prediction).
+            /// [`create_batch_prediction`](crate::client::fluent_builders::CreateBatchPrediction).
             ///
             /// `ParseStrictResponse` impl for `CreateBatchPrediction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBatchPrediction {
 /// Operation shape for `CreateDataSourceFromRDS`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_data_source_from_rds`](crate::client::Client::create_data_source_from_rds).
+            /// [`create_data_source_from_rds`](crate::client::fluent_builders::CreateDataSourceFromRDS).
             ///
             /// `ParseStrictResponse` impl for `CreateDataSourceFromRDS`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataSourceFromRDS 
 /// Operation shape for `CreateDataSourceFromRedshift`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_data_source_from_redshift`](crate::client::Client::create_data_source_from_redshift).
+            /// [`create_data_source_from_redshift`](crate::client::fluent_builders::CreateDataSourceFromRedshift).
             ///
             /// `ParseStrictResponse` impl for `CreateDataSourceFromRedshift`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataSourceFromReds
 /// Operation shape for `CreateDataSourceFromS3`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_data_source_from_s3`](crate::client::Client::create_data_source_from_s3).
+            /// [`create_data_source_from_s3`](crate::client::fluent_builders::CreateDataSourceFromS3).
             ///
             /// `ParseStrictResponse` impl for `CreateDataSourceFromS3`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataSourceFromS3 {
 /// Operation shape for `CreateEvaluation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_evaluation`](crate::client::Client::create_evaluation).
+            /// [`create_evaluation`](crate::client::fluent_builders::CreateEvaluation).
             ///
             /// `ParseStrictResponse` impl for `CreateEvaluation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEvaluation {
 /// Operation shape for `CreateMLModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_ml_model`](crate::client::Client::create_ml_model).
+            /// [`create_ml_model`](crate::client::fluent_builders::CreateMLModel).
             ///
             /// `ParseStrictResponse` impl for `CreateMLModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMLModel {
 /// Operation shape for `CreateRealtimeEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_realtime_endpoint`](crate::client::Client::create_realtime_endpoint).
+            /// [`create_realtime_endpoint`](crate::client::fluent_builders::CreateRealtimeEndpoint).
             ///
             /// `ParseStrictResponse` impl for `CreateRealtimeEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRealtimeEndpoint {
 /// Operation shape for `DeleteBatchPrediction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_batch_prediction`](crate::client::Client::delete_batch_prediction).
+            /// [`delete_batch_prediction`](crate::client::fluent_builders::DeleteBatchPrediction).
             ///
             /// `ParseStrictResponse` impl for `DeleteBatchPrediction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBatchPrediction {
 /// Operation shape for `DeleteDataSource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_data_source`](crate::client::Client::delete_data_source).
+            /// [`delete_data_source`](crate::client::fluent_builders::DeleteDataSource).
             ///
             /// `ParseStrictResponse` impl for `DeleteDataSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataSource {
 /// Operation shape for `DeleteEvaluation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_evaluation`](crate::client::Client::delete_evaluation).
+            /// [`delete_evaluation`](crate::client::fluent_builders::DeleteEvaluation).
             ///
             /// `ParseStrictResponse` impl for `DeleteEvaluation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEvaluation {
 /// Operation shape for `DeleteMLModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_ml_model`](crate::client::Client::delete_ml_model).
+            /// [`delete_ml_model`](crate::client::fluent_builders::DeleteMLModel).
             ///
             /// `ParseStrictResponse` impl for `DeleteMLModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMLModel {
 /// Operation shape for `DeleteRealtimeEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_realtime_endpoint`](crate::client::Client::delete_realtime_endpoint).
+            /// [`delete_realtime_endpoint`](crate::client::fluent_builders::DeleteRealtimeEndpoint).
             ///
             /// `ParseStrictResponse` impl for `DeleteRealtimeEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRealtimeEndpoint {
 /// Operation shape for `DeleteTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_tags`](crate::client::Client::delete_tags).
+            /// [`delete_tags`](crate::client::fluent_builders::DeleteTags).
             ///
             /// `ParseStrictResponse` impl for `DeleteTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTags {
 /// Operation shape for `DescribeBatchPredictions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_batch_predictions`](crate::client::Client::describe_batch_predictions).
+            /// [`describe_batch_predictions`](crate::client::fluent_builders::DescribeBatchPredictions).
             ///
             /// `ParseStrictResponse` impl for `DescribeBatchPredictions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBatchPredictions
 /// Operation shape for `DescribeDataSources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_data_sources`](crate::client::Client::describe_data_sources).
+            /// [`describe_data_sources`](crate::client::fluent_builders::DescribeDataSources).
             ///
             /// `ParseStrictResponse` impl for `DescribeDataSources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataSources {
 /// Operation shape for `DescribeEvaluations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_evaluations`](crate::client::Client::describe_evaluations).
+            /// [`describe_evaluations`](crate::client::fluent_builders::DescribeEvaluations).
             ///
             /// `ParseStrictResponse` impl for `DescribeEvaluations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEvaluations {
 /// Operation shape for `DescribeMLModels`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_ml_models`](crate::client::Client::describe_ml_models).
+            /// [`describe_ml_models`](crate::client::fluent_builders::DescribeMLModels).
             ///
             /// `ParseStrictResponse` impl for `DescribeMLModels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMLModels {
 /// Operation shape for `DescribeTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_tags`](crate::client::Client::describe_tags).
+            /// [`describe_tags`](crate::client::fluent_builders::DescribeTags).
             ///
             /// `ParseStrictResponse` impl for `DescribeTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
 /// Operation shape for `GetBatchPrediction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_batch_prediction`](crate::client::Client::get_batch_prediction).
+            /// [`get_batch_prediction`](crate::client::fluent_builders::GetBatchPrediction).
             ///
             /// `ParseStrictResponse` impl for `GetBatchPrediction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBatchPrediction {
 /// Operation shape for `GetDataSource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_data_source`](crate::client::Client::get_data_source).
+            /// [`get_data_source`](crate::client::fluent_builders::GetDataSource).
             ///
             /// `ParseStrictResponse` impl for `GetDataSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataSource {
 /// Operation shape for `GetEvaluation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_evaluation`](crate::client::Client::get_evaluation).
+            /// [`get_evaluation`](crate::client::fluent_builders::GetEvaluation).
             ///
             /// `ParseStrictResponse` impl for `GetEvaluation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEvaluation {
 /// Operation shape for `GetMLModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ml_model`](crate::client::Client::get_ml_model).
+            /// [`get_ml_model`](crate::client::fluent_builders::GetMLModel).
             ///
             /// `ParseStrictResponse` impl for `GetMLModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMLModel {
 /// Operation shape for `Predict`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`predict`](crate::client::Client::predict).
+            /// [`predict`](crate::client::fluent_builders::Predict).
             ///
             /// `ParseStrictResponse` impl for `Predict`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Predict {
 /// Operation shape for `UpdateBatchPrediction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_batch_prediction`](crate::client::Client::update_batch_prediction).
+            /// [`update_batch_prediction`](crate::client::fluent_builders::UpdateBatchPrediction).
             ///
             /// `ParseStrictResponse` impl for `UpdateBatchPrediction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBatchPrediction {
 /// Operation shape for `UpdateDataSource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_data_source`](crate::client::Client::update_data_source).
+            /// [`update_data_source`](crate::client::fluent_builders::UpdateDataSource).
             ///
             /// `ParseStrictResponse` impl for `UpdateDataSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataSource {
 /// Operation shape for `UpdateEvaluation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_evaluation`](crate::client::Client::update_evaluation).
+            /// [`update_evaluation`](crate::client::fluent_builders::UpdateEvaluation).
             ///
             /// `ParseStrictResponse` impl for `UpdateEvaluation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEvaluation {
 /// Operation shape for `UpdateMLModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_ml_model`](crate::client::Client::update_ml_model).
+            /// [`update_ml_model`](crate::client::fluent_builders::UpdateMLModel).
             ///
             /// `ParseStrictResponse` impl for `UpdateMLModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

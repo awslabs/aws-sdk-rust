@@ -2,7 +2,7 @@
 /// Operation shape for `BatchMeterUsage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_meter_usage`](crate::client::Client::batch_meter_usage).
+            /// [`batch_meter_usage`](crate::client::fluent_builders::BatchMeterUsage).
             ///
             /// `ParseStrictResponse` impl for `BatchMeterUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchMeterUsage {
 /// Operation shape for `MeterUsage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`meter_usage`](crate::client::Client::meter_usage).
+            /// [`meter_usage`](crate::client::fluent_builders::MeterUsage).
             ///
             /// `ParseStrictResponse` impl for `MeterUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MeterUsage {
 /// Operation shape for `RegisterUsage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_usage`](crate::client::Client::register_usage).
+            /// [`register_usage`](crate::client::fluent_builders::RegisterUsage).
             ///
             /// `ParseStrictResponse` impl for `RegisterUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterUsage {
 /// Operation shape for `ResolveCustomer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`resolve_customer`](crate::client::Client::resolve_customer).
+            /// [`resolve_customer`](crate::client::fluent_builders::ResolveCustomer).
             ///
             /// `ParseStrictResponse` impl for `ResolveCustomer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

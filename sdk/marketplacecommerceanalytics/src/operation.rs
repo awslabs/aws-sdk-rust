@@ -2,7 +2,7 @@
 /// Operation shape for `GenerateDataSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`generate_data_set`](crate::client::Client::generate_data_set).
+            /// [`generate_data_set`](crate::client::fluent_builders::GenerateDataSet).
             ///
             /// `ParseStrictResponse` impl for `GenerateDataSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataSet {
 /// Operation shape for `StartSupportDataExport`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_support_data_export`](crate::client::Client::start_support_data_export).
+            /// [`start_support_data_export`](crate::client::fluent_builders::StartSupportDataExport).
             ///
             /// `ParseStrictResponse` impl for `StartSupportDataExport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

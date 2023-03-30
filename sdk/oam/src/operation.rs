@@ -2,7 +2,7 @@
 /// Operation shape for `CreateLink`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_link`](crate::client::Client::create_link).
+            /// [`create_link`](crate::client::fluent_builders::CreateLink).
             ///
             /// `ParseStrictResponse` impl for `CreateLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLink {
 /// Operation shape for `CreateSink`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_sink`](crate::client::Client::create_sink).
+            /// [`create_sink`](crate::client::fluent_builders::CreateSink).
             ///
             /// `ParseStrictResponse` impl for `CreateSink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSink {
 /// Operation shape for `DeleteLink`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_link`](crate::client::Client::delete_link).
+            /// [`delete_link`](crate::client::fluent_builders::DeleteLink).
             ///
             /// `ParseStrictResponse` impl for `DeleteLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLink {
 /// Operation shape for `DeleteSink`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_sink`](crate::client::Client::delete_sink).
+            /// [`delete_sink`](crate::client::fluent_builders::DeleteSink).
             ///
             /// `ParseStrictResponse` impl for `DeleteSink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSink {
 /// Operation shape for `GetLink`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_link`](crate::client::Client::get_link).
+            /// [`get_link`](crate::client::fluent_builders::GetLink).
             ///
             /// `ParseStrictResponse` impl for `GetLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLink {
 /// Operation shape for `GetSink`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_sink`](crate::client::Client::get_sink).
+            /// [`get_sink`](crate::client::fluent_builders::GetSink).
             ///
             /// `ParseStrictResponse` impl for `GetSink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSink {
 /// Operation shape for `GetSinkPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_sink_policy`](crate::client::Client::get_sink_policy).
+            /// [`get_sink_policy`](crate::client::fluent_builders::GetSinkPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetSinkPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSinkPolicy {
 /// Operation shape for `ListAttachedLinks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_attached_links`](crate::client::Client::list_attached_links).
+            /// [`list_attached_links`](crate::client::fluent_builders::ListAttachedLinks).
             ///
             /// `ParseStrictResponse` impl for `ListAttachedLinks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttachedLinks {
 /// Operation shape for `ListLinks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_links`](crate::client::Client::list_links).
+            /// [`list_links`](crate::client::fluent_builders::ListLinks).
             ///
             /// `ParseStrictResponse` impl for `ListLinks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLinks {
 /// Operation shape for `ListSinks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_sinks`](crate::client::Client::list_sinks).
+            /// [`list_sinks`](crate::client::fluent_builders::ListSinks).
             ///
             /// `ParseStrictResponse` impl for `ListSinks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSinks {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutSinkPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_sink_policy`](crate::client::Client::put_sink_policy).
+            /// [`put_sink_policy`](crate::client::fluent_builders::PutSinkPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutSinkPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSinkPolicy {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateLink`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_link`](crate::client::Client::update_link).
+            /// [`update_link`](crate::client::fluent_builders::UpdateLink).
             ///
             /// `ParseStrictResponse` impl for `UpdateLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

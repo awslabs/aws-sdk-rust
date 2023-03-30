@@ -2,7 +2,7 @@
 /// Operation shape for `GetDeployments`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_deployments`](crate::client::Client::get_deployments).
+            /// [`get_deployments`](crate::client::fluent_builders::GetDeployments).
             ///
             /// `ParseStrictResponse` impl for `GetDeployments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeployments {
 /// Operation shape for `GetDeviceRegistration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_device_registration`](crate::client::Client::get_device_registration).
+            /// [`get_device_registration`](crate::client::fluent_builders::GetDeviceRegistration).
             ///
             /// `ParseStrictResponse` impl for `GetDeviceRegistration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceRegistration {
 /// Operation shape for `SendHeartbeat`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`send_heartbeat`](crate::client::Client::send_heartbeat).
+            /// [`send_heartbeat`](crate::client::fluent_builders::SendHeartbeat).
             ///
             /// `ParseStrictResponse` impl for `SendHeartbeat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

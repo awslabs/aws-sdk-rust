@@ -2,7 +2,7 @@
 /// Operation shape for `CreateContainer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_container`](crate::client::Client::create_container).
+            /// [`create_container`](crate::client::fluent_builders::CreateContainer).
             ///
             /// `ParseStrictResponse` impl for `CreateContainer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContainer {
 /// Operation shape for `DeleteContainer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_container`](crate::client::Client::delete_container).
+            /// [`delete_container`](crate::client::fluent_builders::DeleteContainer).
             ///
             /// `ParseStrictResponse` impl for `DeleteContainer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContainer {
 /// Operation shape for `DeleteContainerPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_container_policy`](crate::client::Client::delete_container_policy).
+            /// [`delete_container_policy`](crate::client::fluent_builders::DeleteContainerPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteContainerPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContainerPolicy {
 /// Operation shape for `DeleteCorsPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_cors_policy`](crate::client::Client::delete_cors_policy).
+            /// [`delete_cors_policy`](crate::client::fluent_builders::DeleteCorsPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteCorsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCorsPolicy {
 /// Operation shape for `DeleteLifecyclePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_lifecycle_policy`](crate::client::Client::delete_lifecycle_policy).
+            /// [`delete_lifecycle_policy`](crate::client::fluent_builders::DeleteLifecyclePolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLifecyclePolicy {
 /// Operation shape for `DeleteMetricPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_metric_policy`](crate::client::Client::delete_metric_policy).
+            /// [`delete_metric_policy`](crate::client::fluent_builders::DeleteMetricPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteMetricPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMetricPolicy {
 /// Operation shape for `DescribeContainer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_container`](crate::client::Client::describe_container).
+            /// [`describe_container`](crate::client::fluent_builders::DescribeContainer).
             ///
             /// `ParseStrictResponse` impl for `DescribeContainer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContainer {
 /// Operation shape for `GetContainerPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_container_policy`](crate::client::Client::get_container_policy).
+            /// [`get_container_policy`](crate::client::fluent_builders::GetContainerPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetContainerPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContainerPolicy {
 /// Operation shape for `GetCorsPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_cors_policy`](crate::client::Client::get_cors_policy).
+            /// [`get_cors_policy`](crate::client::fluent_builders::GetCorsPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetCorsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCorsPolicy {
 /// Operation shape for `GetLifecyclePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_lifecycle_policy`](crate::client::Client::get_lifecycle_policy).
+            /// [`get_lifecycle_policy`](crate::client::fluent_builders::GetLifecyclePolicy).
             ///
             /// `ParseStrictResponse` impl for `GetLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicy {
 /// Operation shape for `GetMetricPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_metric_policy`](crate::client::Client::get_metric_policy).
+            /// [`get_metric_policy`](crate::client::fluent_builders::GetMetricPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetMetricPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetricPolicy {
 /// Operation shape for `ListContainers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_containers`](crate::client::Client::list_containers).
+            /// [`list_containers`](crate::client::fluent_builders::ListContainers).
             ///
             /// `ParseStrictResponse` impl for `ListContainers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContainers {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutContainerPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_container_policy`](crate::client::Client::put_container_policy).
+            /// [`put_container_policy`](crate::client::fluent_builders::PutContainerPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutContainerPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutContainerPolicy {
 /// Operation shape for `PutCorsPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_cors_policy`](crate::client::Client::put_cors_policy).
+            /// [`put_cors_policy`](crate::client::fluent_builders::PutCorsPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutCorsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCorsPolicy {
 /// Operation shape for `PutLifecyclePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_lifecycle_policy`](crate::client::Client::put_lifecycle_policy).
+            /// [`put_lifecycle_policy`](crate::client::fluent_builders::PutLifecyclePolicy).
             ///
             /// `ParseStrictResponse` impl for `PutLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLifecyclePolicy {
 /// Operation shape for `PutMetricPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_metric_policy`](crate::client::Client::put_metric_policy).
+            /// [`put_metric_policy`](crate::client::fluent_builders::PutMetricPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutMetricPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetricPolicy {
 /// Operation shape for `StartAccessLogging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_access_logging`](crate::client::Client::start_access_logging).
+            /// [`start_access_logging`](crate::client::fluent_builders::StartAccessLogging).
             ///
             /// `ParseStrictResponse` impl for `StartAccessLogging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAccessLogging {
 /// Operation shape for `StopAccessLogging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_access_logging`](crate::client::Client::stop_access_logging).
+            /// [`stop_access_logging`](crate::client::fluent_builders::StopAccessLogging).
             ///
             /// `ParseStrictResponse` impl for `StopAccessLogging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopAccessLogging {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `CreateComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_component`](crate::client::Client::create_component).
+            /// [`create_component`](crate::client::fluent_builders::CreateComponent).
             ///
             /// `ParseStrictResponse` impl for `CreateComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComponent {
 /// Operation shape for `CreateForm`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_form`](crate::client::Client::create_form).
+            /// [`create_form`](crate::client::fluent_builders::CreateForm).
             ///
             /// `ParseStrictResponse` impl for `CreateForm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateForm {
 /// Operation shape for `CreateTheme`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_theme`](crate::client::Client::create_theme).
+            /// [`create_theme`](crate::client::fluent_builders::CreateTheme).
             ///
             /// `ParseStrictResponse` impl for `CreateTheme`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTheme {
 /// Operation shape for `DeleteComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_component`](crate::client::Client::delete_component).
+            /// [`delete_component`](crate::client::fluent_builders::DeleteComponent).
             ///
             /// `ParseStrictResponse` impl for `DeleteComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteComponent {
 /// Operation shape for `DeleteForm`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_form`](crate::client::Client::delete_form).
+            /// [`delete_form`](crate::client::fluent_builders::DeleteForm).
             ///
             /// `ParseStrictResponse` impl for `DeleteForm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteForm {
 /// Operation shape for `DeleteTheme`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_theme`](crate::client::Client::delete_theme).
+            /// [`delete_theme`](crate::client::fluent_builders::DeleteTheme).
             ///
             /// `ParseStrictResponse` impl for `DeleteTheme`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTheme {
 /// Operation shape for `ExchangeCodeForToken`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`exchange_code_for_token`](crate::client::Client::exchange_code_for_token).
+            /// [`exchange_code_for_token`](crate::client::fluent_builders::ExchangeCodeForToken).
             ///
             /// `ParseStrictResponse` impl for `ExchangeCodeForToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExchangeCodeForToken {
 /// Operation shape for `ExportComponents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_components`](crate::client::Client::export_components).
+            /// [`export_components`](crate::client::fluent_builders::ExportComponents).
             ///
             /// `ParseStrictResponse` impl for `ExportComponents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportComponents {
 /// Operation shape for `ExportForms`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_forms`](crate::client::Client::export_forms).
+            /// [`export_forms`](crate::client::fluent_builders::ExportForms).
             ///
             /// `ParseStrictResponse` impl for `ExportForms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportForms {
 /// Operation shape for `ExportThemes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_themes`](crate::client::Client::export_themes).
+            /// [`export_themes`](crate::client::fluent_builders::ExportThemes).
             ///
             /// `ParseStrictResponse` impl for `ExportThemes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportThemes {
 /// Operation shape for `GetComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_component`](crate::client::Client::get_component).
+            /// [`get_component`](crate::client::fluent_builders::GetComponent).
             ///
             /// `ParseStrictResponse` impl for `GetComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
 /// Operation shape for `GetForm`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_form`](crate::client::Client::get_form).
+            /// [`get_form`](crate::client::fluent_builders::GetForm).
             ///
             /// `ParseStrictResponse` impl for `GetForm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetForm {
 /// Operation shape for `GetMetadata`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_metadata`](crate::client::Client::get_metadata).
+            /// [`get_metadata`](crate::client::fluent_builders::GetMetadata).
             ///
             /// `ParseStrictResponse` impl for `GetMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetadata {
 /// Operation shape for `GetTheme`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_theme`](crate::client::Client::get_theme).
+            /// [`get_theme`](crate::client::fluent_builders::GetTheme).
             ///
             /// `ParseStrictResponse` impl for `GetTheme`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTheme {
 /// Operation shape for `ListComponents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_components`](crate::client::Client::list_components).
+            /// [`list_components`](crate::client::fluent_builders::ListComponents).
             ///
             /// `ParseStrictResponse` impl for `ListComponents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
 /// Operation shape for `ListForms`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_forms`](crate::client::Client::list_forms).
+            /// [`list_forms`](crate::client::fluent_builders::ListForms).
             ///
             /// `ParseStrictResponse` impl for `ListForms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListForms {
 /// Operation shape for `ListThemes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_themes`](crate::client::Client::list_themes).
+            /// [`list_themes`](crate::client::fluent_builders::ListThemes).
             ///
             /// `ParseStrictResponse` impl for `ListThemes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThemes {
 /// Operation shape for `PutMetadataFlag`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_metadata_flag`](crate::client::Client::put_metadata_flag).
+            /// [`put_metadata_flag`](crate::client::fluent_builders::PutMetadataFlag).
             ///
             /// `ParseStrictResponse` impl for `PutMetadataFlag`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetadataFlag {
 /// Operation shape for `RefreshToken`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`refresh_token`](crate::client::Client::refresh_token).
+            /// [`refresh_token`](crate::client::fluent_builders::RefreshToken).
             ///
             /// `ParseStrictResponse` impl for `RefreshToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RefreshToken {
 /// Operation shape for `UpdateComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_component`](crate::client::Client::update_component).
+            /// [`update_component`](crate::client::fluent_builders::UpdateComponent).
             ///
             /// `ParseStrictResponse` impl for `UpdateComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComponent {
 /// Operation shape for `UpdateForm`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_form`](crate::client::Client::update_form).
+            /// [`update_form`](crate::client::fluent_builders::UpdateForm).
             ///
             /// `ParseStrictResponse` impl for `UpdateForm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateForm {
 /// Operation shape for `UpdateTheme`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_theme`](crate::client::Client::update_theme).
+            /// [`update_theme`](crate::client::fluent_builders::UpdateTheme).
             ///
             /// `ParseStrictResponse` impl for `UpdateTheme`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

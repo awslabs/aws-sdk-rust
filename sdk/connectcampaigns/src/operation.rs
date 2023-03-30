@@ -2,7 +2,7 @@
 /// Operation shape for `CreateCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_campaign`](crate::client::Client::create_campaign).
+            /// [`create_campaign`](crate::client::fluent_builders::CreateCampaign).
             ///
             /// `ParseStrictResponse` impl for `CreateCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCampaign {
 /// Operation shape for `DeleteCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_campaign`](crate::client::Client::delete_campaign).
+            /// [`delete_campaign`](crate::client::fluent_builders::DeleteCampaign).
             ///
             /// `ParseStrictResponse` impl for `DeleteCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCampaign {
 /// Operation shape for `DeleteConnectInstanceConfig`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_connect_instance_config`](crate::client::Client::delete_connect_instance_config).
+            /// [`delete_connect_instance_config`](crate::client::fluent_builders::DeleteConnectInstanceConfig).
             ///
             /// `ParseStrictResponse` impl for `DeleteConnectInstanceConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnectInstanceCon
 /// Operation shape for `DeleteInstanceOnboardingJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_instance_onboarding_job`](crate::client::Client::delete_instance_onboarding_job).
+            /// [`delete_instance_onboarding_job`](crate::client::fluent_builders::DeleteInstanceOnboardingJob).
             ///
             /// `ParseStrictResponse` impl for `DeleteInstanceOnboardingJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInstanceOnboarding
 /// Operation shape for `DescribeCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_campaign`](crate::client::Client::describe_campaign).
+            /// [`describe_campaign`](crate::client::fluent_builders::DescribeCampaign).
             ///
             /// `ParseStrictResponse` impl for `DescribeCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCampaign {
 /// Operation shape for `GetCampaignState`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_campaign_state`](crate::client::Client::get_campaign_state).
+            /// [`get_campaign_state`](crate::client::fluent_builders::GetCampaignState).
             ///
             /// `ParseStrictResponse` impl for `GetCampaignState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCampaignState {
 /// Operation shape for `GetCampaignStateBatch`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_campaign_state_batch`](crate::client::Client::get_campaign_state_batch).
+            /// [`get_campaign_state_batch`](crate::client::fluent_builders::GetCampaignStateBatch).
             ///
             /// `ParseStrictResponse` impl for `GetCampaignStateBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCampaignStateBatch {
 /// Operation shape for `GetConnectInstanceConfig`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_connect_instance_config`](crate::client::Client::get_connect_instance_config).
+            /// [`get_connect_instance_config`](crate::client::fluent_builders::GetConnectInstanceConfig).
             ///
             /// `ParseStrictResponse` impl for `GetConnectInstanceConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectInstanceConfig
 /// Operation shape for `GetInstanceOnboardingJobStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_instance_onboarding_job_status`](crate::client::Client::get_instance_onboarding_job_status).
+            /// [`get_instance_onboarding_job_status`](crate::client::fluent_builders::GetInstanceOnboardingJobStatus).
             ///
             /// `ParseStrictResponse` impl for `GetInstanceOnboardingJobStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceOnboardingJob
 /// Operation shape for `ListCampaigns`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_campaigns`](crate::client::Client::list_campaigns).
+            /// [`list_campaigns`](crate::client::fluent_builders::ListCampaigns).
             ///
             /// `ParseStrictResponse` impl for `ListCampaigns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCampaigns {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PauseCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`pause_campaign`](crate::client::Client::pause_campaign).
+            /// [`pause_campaign`](crate::client::fluent_builders::PauseCampaign).
             ///
             /// `ParseStrictResponse` impl for `PauseCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PauseCampaign {
 /// Operation shape for `PutDialRequestBatch`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_dial_request_batch`](crate::client::Client::put_dial_request_batch).
+            /// [`put_dial_request_batch`](crate::client::fluent_builders::PutDialRequestBatch).
             ///
             /// `ParseStrictResponse` impl for `PutDialRequestBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDialRequestBatch {
 /// Operation shape for `ResumeCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`resume_campaign`](crate::client::Client::resume_campaign).
+            /// [`resume_campaign`](crate::client::fluent_builders::ResumeCampaign).
             ///
             /// `ParseStrictResponse` impl for `ResumeCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeCampaign {
 /// Operation shape for `StartCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_campaign`](crate::client::Client::start_campaign).
+            /// [`start_campaign`](crate::client::fluent_builders::StartCampaign).
             ///
             /// `ParseStrictResponse` impl for `StartCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCampaign {
 /// Operation shape for `StartInstanceOnboardingJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_instance_onboarding_job`](crate::client::Client::start_instance_onboarding_job).
+            /// [`start_instance_onboarding_job`](crate::client::fluent_builders::StartInstanceOnboardingJob).
             ///
             /// `ParseStrictResponse` impl for `StartInstanceOnboardingJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartInstanceOnboardingJ
 /// Operation shape for `StopCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_campaign`](crate::client::Client::stop_campaign).
+            /// [`stop_campaign`](crate::client::fluent_builders::StopCampaign).
             ///
             /// `ParseStrictResponse` impl for `StopCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopCampaign {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateCampaignDialerConfig`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_campaign_dialer_config`](crate::client::Client::update_campaign_dialer_config).
+            /// [`update_campaign_dialer_config`](crate::client::fluent_builders::UpdateCampaignDialerConfig).
             ///
             /// `ParseStrictResponse` impl for `UpdateCampaignDialerConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaignDialerConf
 /// Operation shape for `UpdateCampaignName`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_campaign_name`](crate::client::Client::update_campaign_name).
+            /// [`update_campaign_name`](crate::client::fluent_builders::UpdateCampaignName).
             ///
             /// `ParseStrictResponse` impl for `UpdateCampaignName`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaignName {
 /// Operation shape for `UpdateCampaignOutboundCallConfig`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_campaign_outbound_call_config`](crate::client::Client::update_campaign_outbound_call_config).
+            /// [`update_campaign_outbound_call_config`](crate::client::fluent_builders::UpdateCampaignOutboundCallConfig).
             ///
             /// `ParseStrictResponse` impl for `UpdateCampaignOutboundCallConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

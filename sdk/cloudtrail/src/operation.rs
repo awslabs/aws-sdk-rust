@@ -2,7 +2,7 @@
 /// Operation shape for `AddTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_tags`](crate::client::Client::add_tags).
+            /// [`add_tags`](crate::client::fluent_builders::AddTags).
             ///
             /// `ParseStrictResponse` impl for `AddTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
 /// Operation shape for `CancelQuery`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_query`](crate::client::Client::cancel_query).
+            /// [`cancel_query`](crate::client::fluent_builders::CancelQuery).
             ///
             /// `ParseStrictResponse` impl for `CancelQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelQuery {
 /// Operation shape for `CreateEventDataStore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_event_data_store`](crate::client::Client::create_event_data_store).
+            /// [`create_event_data_store`](crate::client::fluent_builders::CreateEventDataStore).
             ///
             /// `ParseStrictResponse` impl for `CreateEventDataStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventDataStore {
 /// Operation shape for `CreateTrail`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_trail`](crate::client::Client::create_trail).
+            /// [`create_trail`](crate::client::fluent_builders::CreateTrail).
             ///
             /// `ParseStrictResponse` impl for `CreateTrail`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrail {
 /// Operation shape for `DeleteEventDataStore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_event_data_store`](crate::client::Client::delete_event_data_store).
+            /// [`delete_event_data_store`](crate::client::fluent_builders::DeleteEventDataStore).
             ///
             /// `ParseStrictResponse` impl for `DeleteEventDataStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventDataStore {
 /// Operation shape for `DeleteTrail`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_trail`](crate::client::Client::delete_trail).
+            /// [`delete_trail`](crate::client::fluent_builders::DeleteTrail).
             ///
             /// `ParseStrictResponse` impl for `DeleteTrail`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrail {
 /// Operation shape for `DeregisterOrganizationDelegatedAdmin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deregister_organization_delegated_admin`](crate::client::Client::deregister_organization_delegated_admin).
+            /// [`deregister_organization_delegated_admin`](crate::client::fluent_builders::DeregisterOrganizationDelegatedAdmin).
             ///
             /// `ParseStrictResponse` impl for `DeregisterOrganizationDelegatedAdmin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterOrganizationDe
 /// Operation shape for `DescribeQuery`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_query`](crate::client::Client::describe_query).
+            /// [`describe_query`](crate::client::fluent_builders::DescribeQuery).
             ///
             /// `ParseStrictResponse` impl for `DescribeQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeQuery {
 /// Operation shape for `DescribeTrails`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_trails`](crate::client::Client::describe_trails).
+            /// [`describe_trails`](crate::client::fluent_builders::DescribeTrails).
             ///
             /// `ParseStrictResponse` impl for `DescribeTrails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrails {
 /// Operation shape for `GetChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_channel`](crate::client::Client::get_channel).
+            /// [`get_channel`](crate::client::fluent_builders::GetChannel).
             ///
             /// `ParseStrictResponse` impl for `GetChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannel {
 /// Operation shape for `GetEventDataStore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_event_data_store`](crate::client::Client::get_event_data_store).
+            /// [`get_event_data_store`](crate::client::fluent_builders::GetEventDataStore).
             ///
             /// `ParseStrictResponse` impl for `GetEventDataStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventDataStore {
 /// Operation shape for `GetEventSelectors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_event_selectors`](crate::client::Client::get_event_selectors).
+            /// [`get_event_selectors`](crate::client::fluent_builders::GetEventSelectors).
             ///
             /// `ParseStrictResponse` impl for `GetEventSelectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventSelectors {
 /// Operation shape for `GetImport`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_import`](crate::client::Client::get_import).
+            /// [`get_import`](crate::client::fluent_builders::GetImport).
             ///
             /// `ParseStrictResponse` impl for `GetImport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImport {
 /// Operation shape for `GetInsightSelectors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_insight_selectors`](crate::client::Client::get_insight_selectors).
+            /// [`get_insight_selectors`](crate::client::fluent_builders::GetInsightSelectors).
             ///
             /// `ParseStrictResponse` impl for `GetInsightSelectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightSelectors {
 /// Operation shape for `GetQueryResults`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_query_results`](crate::client::Client::get_query_results).
+            /// [`get_query_results`](crate::client::fluent_builders::GetQueryResults).
             ///
             /// `ParseStrictResponse` impl for `GetQueryResults`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueryResults {
 /// Operation shape for `GetTrail`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_trail`](crate::client::Client::get_trail).
+            /// [`get_trail`](crate::client::fluent_builders::GetTrail).
             ///
             /// `ParseStrictResponse` impl for `GetTrail`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrail {
 /// Operation shape for `GetTrailStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_trail_status`](crate::client::Client::get_trail_status).
+            /// [`get_trail_status`](crate::client::fluent_builders::GetTrailStatus).
             ///
             /// `ParseStrictResponse` impl for `GetTrailStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrailStatus {
 /// Operation shape for `ListChannels`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_channels`](crate::client::Client::list_channels).
+            /// [`list_channels`](crate::client::fluent_builders::ListChannels).
             ///
             /// `ParseStrictResponse` impl for `ListChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
 /// Operation shape for `ListEventDataStores`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_event_data_stores`](crate::client::Client::list_event_data_stores).
+            /// [`list_event_data_stores`](crate::client::fluent_builders::ListEventDataStores).
             ///
             /// `ParseStrictResponse` impl for `ListEventDataStores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventDataStores {
 /// Operation shape for `ListImportFailures`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_import_failures`](crate::client::Client::list_import_failures).
+            /// [`list_import_failures`](crate::client::fluent_builders::ListImportFailures).
             ///
             /// `ParseStrictResponse` impl for `ListImportFailures`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImportFailures {
 /// Operation shape for `ListImports`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_imports`](crate::client::Client::list_imports).
+            /// [`list_imports`](crate::client::fluent_builders::ListImports).
             ///
             /// `ParseStrictResponse` impl for `ListImports`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImports {
 /// Operation shape for `ListPublicKeys`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_public_keys`](crate::client::Client::list_public_keys).
+            /// [`list_public_keys`](crate::client::fluent_builders::ListPublicKeys).
             ///
             /// `ParseStrictResponse` impl for `ListPublicKeys`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPublicKeys {
 /// Operation shape for `ListQueries`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_queries`](crate::client::Client::list_queries).
+            /// [`list_queries`](crate::client::fluent_builders::ListQueries).
             ///
             /// `ParseStrictResponse` impl for `ListQueries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueries {
 /// Operation shape for `ListTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags`](crate::client::Client::list_tags).
+            /// [`list_tags`](crate::client::fluent_builders::ListTags).
             ///
             /// `ParseStrictResponse` impl for `ListTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// Operation shape for `ListTrails`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_trails`](crate::client::Client::list_trails).
+            /// [`list_trails`](crate::client::fluent_builders::ListTrails).
             ///
             /// `ParseStrictResponse` impl for `ListTrails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrails {
 /// Operation shape for `LookupEvents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`lookup_events`](crate::client::Client::lookup_events).
+            /// [`lookup_events`](crate::client::fluent_builders::LookupEvents).
             ///
             /// `ParseStrictResponse` impl for `LookupEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LookupEvents {
 /// Operation shape for `PutEventSelectors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_event_selectors`](crate::client::Client::put_event_selectors).
+            /// [`put_event_selectors`](crate::client::fluent_builders::PutEventSelectors).
             ///
             /// `ParseStrictResponse` impl for `PutEventSelectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEventSelectors {
 /// Operation shape for `PutInsightSelectors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_insight_selectors`](crate::client::Client::put_insight_selectors).
+            /// [`put_insight_selectors`](crate::client::fluent_builders::PutInsightSelectors).
             ///
             /// `ParseStrictResponse` impl for `PutInsightSelectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutInsightSelectors {
 /// Operation shape for `RegisterOrganizationDelegatedAdmin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_organization_delegated_admin`](crate::client::Client::register_organization_delegated_admin).
+            /// [`register_organization_delegated_admin`](crate::client::fluent_builders::RegisterOrganizationDelegatedAdmin).
             ///
             /// `ParseStrictResponse` impl for `RegisterOrganizationDelegatedAdmin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterOrganizationDele
 /// Operation shape for `RemoveTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`remove_tags`](crate::client::Client::remove_tags).
+            /// [`remove_tags`](crate::client::fluent_builders::RemoveTags).
             ///
             /// `ParseStrictResponse` impl for `RemoveTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
 /// Operation shape for `RestoreEventDataStore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`restore_event_data_store`](crate::client::Client::restore_event_data_store).
+            /// [`restore_event_data_store`](crate::client::fluent_builders::RestoreEventDataStore).
             ///
             /// `ParseStrictResponse` impl for `RestoreEventDataStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreEventDataStore {
 /// Operation shape for `StartImport`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_import`](crate::client::Client::start_import).
+            /// [`start_import`](crate::client::fluent_builders::StartImport).
             ///
             /// `ParseStrictResponse` impl for `StartImport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartImport {
 /// Operation shape for `StartLogging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_logging`](crate::client::Client::start_logging).
+            /// [`start_logging`](crate::client::fluent_builders::StartLogging).
             ///
             /// `ParseStrictResponse` impl for `StartLogging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartLogging {
 /// Operation shape for `StartQuery`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_query`](crate::client::Client::start_query).
+            /// [`start_query`](crate::client::fluent_builders::StartQuery).
             ///
             /// `ParseStrictResponse` impl for `StartQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartQuery {
 /// Operation shape for `StopImport`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_import`](crate::client::Client::stop_import).
+            /// [`stop_import`](crate::client::fluent_builders::StopImport).
             ///
             /// `ParseStrictResponse` impl for `StopImport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopImport {
 /// Operation shape for `StopLogging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_logging`](crate::client::Client::stop_logging).
+            /// [`stop_logging`](crate::client::fluent_builders::StopLogging).
             ///
             /// `ParseStrictResponse` impl for `StopLogging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopLogging {
 /// Operation shape for `UpdateEventDataStore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_event_data_store`](crate::client::Client::update_event_data_store).
+            /// [`update_event_data_store`](crate::client::fluent_builders::UpdateEventDataStore).
             ///
             /// `ParseStrictResponse` impl for `UpdateEventDataStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEventDataStore {
 /// Operation shape for `UpdateTrail`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_trail`](crate::client::Client::update_trail).
+            /// [`update_trail`](crate::client::fluent_builders::UpdateTrail).
             ///
             /// `ParseStrictResponse` impl for `UpdateTrail`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

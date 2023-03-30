@@ -2,7 +2,7 @@
 /// Operation shape for `GetPersonalizedRanking`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_personalized_ranking`](crate::client::Client::get_personalized_ranking).
+            /// [`get_personalized_ranking`](crate::client::fluent_builders::GetPersonalizedRanking).
             ///
             /// `ParseStrictResponse` impl for `GetPersonalizedRanking`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPersonalizedRanking {
 /// Operation shape for `GetRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_recommendations`](crate::client::Client::get_recommendations).
+            /// [`get_recommendations`](crate::client::fluent_builders::GetRecommendations).
             ///
             /// `ParseStrictResponse` impl for `GetRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

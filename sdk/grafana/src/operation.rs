@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateLicense`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_license`](crate::client::Client::associate_license).
+            /// [`associate_license`](crate::client::fluent_builders::AssociateLicense).
             ///
             /// `ParseStrictResponse` impl for `AssociateLicense`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLicense {
 /// Operation shape for `CreateWorkspace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_workspace`](crate::client::Client::create_workspace).
+            /// [`create_workspace`](crate::client::fluent_builders::CreateWorkspace).
             ///
             /// `ParseStrictResponse` impl for `CreateWorkspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspace {
 /// Operation shape for `CreateWorkspaceApiKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_workspace_api_key`](crate::client::Client::create_workspace_api_key).
+            /// [`create_workspace_api_key`](crate::client::fluent_builders::CreateWorkspaceApiKey).
             ///
             /// `ParseStrictResponse` impl for `CreateWorkspaceApiKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspaceApiKey {
 /// Operation shape for `DeleteWorkspace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_workspace`](crate::client::Client::delete_workspace).
+            /// [`delete_workspace`](crate::client::fluent_builders::DeleteWorkspace).
             ///
             /// `ParseStrictResponse` impl for `DeleteWorkspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkspace {
 /// Operation shape for `DeleteWorkspaceApiKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_workspace_api_key`](crate::client::Client::delete_workspace_api_key).
+            /// [`delete_workspace_api_key`](crate::client::fluent_builders::DeleteWorkspaceApiKey).
             ///
             /// `ParseStrictResponse` impl for `DeleteWorkspaceApiKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkspaceApiKey {
 /// Operation shape for `DescribeWorkspace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_workspace`](crate::client::Client::describe_workspace).
+            /// [`describe_workspace`](crate::client::fluent_builders::DescribeWorkspace).
             ///
             /// `ParseStrictResponse` impl for `DescribeWorkspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspace {
 /// Operation shape for `DescribeWorkspaceAuthentication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_workspace_authentication`](crate::client::Client::describe_workspace_authentication).
+            /// [`describe_workspace_authentication`](crate::client::fluent_builders::DescribeWorkspaceAuthentication).
             ///
             /// `ParseStrictResponse` impl for `DescribeWorkspaceAuthentication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspaceAuthent
 /// Operation shape for `DescribeWorkspaceConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_workspace_configuration`](crate::client::Client::describe_workspace_configuration).
+            /// [`describe_workspace_configuration`](crate::client::fluent_builders::DescribeWorkspaceConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DescribeWorkspaceConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspaceConfigu
 /// Operation shape for `DisassociateLicense`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_license`](crate::client::Client::disassociate_license).
+            /// [`disassociate_license`](crate::client::fluent_builders::DisassociateLicense).
             ///
             /// `ParseStrictResponse` impl for `DisassociateLicense`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateLicense {
 /// Operation shape for `ListPermissions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_permissions`](crate::client::Client::list_permissions).
+            /// [`list_permissions`](crate::client::fluent_builders::ListPermissions).
             ///
             /// `ParseStrictResponse` impl for `ListPermissions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissions {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListWorkspaces`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_workspaces`](crate::client::Client::list_workspaces).
+            /// [`list_workspaces`](crate::client::fluent_builders::ListWorkspaces).
             ///
             /// `ParseStrictResponse` impl for `ListWorkspaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkspaces {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdatePermissions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_permissions`](crate::client::Client::update_permissions).
+            /// [`update_permissions`](crate::client::fluent_builders::UpdatePermissions).
             ///
             /// `ParseStrictResponse` impl for `UpdatePermissions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePermissions {
 /// Operation shape for `UpdateWorkspace`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_workspace`](crate::client::Client::update_workspace).
+            /// [`update_workspace`](crate::client::fluent_builders::UpdateWorkspace).
             ///
             /// `ParseStrictResponse` impl for `UpdateWorkspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkspace {
 /// Operation shape for `UpdateWorkspaceAuthentication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_workspace_authentication`](crate::client::Client::update_workspace_authentication).
+            /// [`update_workspace_authentication`](crate::client::fluent_builders::UpdateWorkspaceAuthentication).
             ///
             /// `ParseStrictResponse` impl for `UpdateWorkspaceAuthentication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkspaceAuthentic
 /// Operation shape for `UpdateWorkspaceConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_workspace_configuration`](crate::client::Client::update_workspace_configuration).
+            /// [`update_workspace_configuration`](crate::client::fluent_builders::UpdateWorkspaceConfiguration).
             ///
             /// `ParseStrictResponse` impl for `UpdateWorkspaceConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

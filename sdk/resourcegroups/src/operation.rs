@@ -2,7 +2,7 @@
 /// Operation shape for `CreateGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_group`](crate::client::Client::create_group).
+            /// [`create_group`](crate::client::fluent_builders::CreateGroup).
             ///
             /// `ParseStrictResponse` impl for `CreateGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroup {
 /// Operation shape for `DeleteGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_group`](crate::client::Client::delete_group).
+            /// [`delete_group`](crate::client::fluent_builders::DeleteGroup).
             ///
             /// `ParseStrictResponse` impl for `DeleteGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
 /// Operation shape for `GetAccountSettings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_account_settings`](crate::client::Client::get_account_settings).
+            /// [`get_account_settings`](crate::client::fluent_builders::GetAccountSettings).
             ///
             /// `ParseStrictResponse` impl for `GetAccountSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountSettings {
 /// Operation shape for `GetGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_group`](crate::client::Client::get_group).
+            /// [`get_group`](crate::client::fluent_builders::GetGroup).
             ///
             /// `ParseStrictResponse` impl for `GetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroup {
 /// Operation shape for `GetGroupConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_group_configuration`](crate::client::Client::get_group_configuration).
+            /// [`get_group_configuration`](crate::client::fluent_builders::GetGroupConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetGroupConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroupConfiguration {
 /// Operation shape for `GetGroupQuery`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_group_query`](crate::client::Client::get_group_query).
+            /// [`get_group_query`](crate::client::fluent_builders::GetGroupQuery).
             ///
             /// `ParseStrictResponse` impl for `GetGroupQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroupQuery {
 /// Operation shape for `GetTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_tags`](crate::client::Client::get_tags).
+            /// [`get_tags`](crate::client::fluent_builders::GetTags).
             ///
             /// `ParseStrictResponse` impl for `GetTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTags {
 /// Operation shape for `GroupResources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`group_resources`](crate::client::Client::group_resources).
+            /// [`group_resources`](crate::client::fluent_builders::GroupResources).
             ///
             /// `ParseStrictResponse` impl for `GroupResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GroupResources {
 /// Operation shape for `ListGroupResources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_group_resources`](crate::client::Client::list_group_resources).
+            /// [`list_group_resources`](crate::client::fluent_builders::ListGroupResources).
             ///
             /// `ParseStrictResponse` impl for `ListGroupResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupResources {
 /// Operation shape for `ListGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_groups`](crate::client::Client::list_groups).
+            /// [`list_groups`](crate::client::fluent_builders::ListGroups).
             ///
             /// `ParseStrictResponse` impl for `ListGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroups {
 /// Operation shape for `PutGroupConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_group_configuration`](crate::client::Client::put_group_configuration).
+            /// [`put_group_configuration`](crate::client::fluent_builders::PutGroupConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutGroupConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutGroupConfiguration {
 /// Operation shape for `SearchResources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_resources`](crate::client::Client::search_resources).
+            /// [`search_resources`](crate::client::fluent_builders::SearchResources).
             ///
             /// `ParseStrictResponse` impl for `SearchResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchResources {
 /// Operation shape for `Tag`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag`](crate::client::Client::tag).
+            /// [`tag`](crate::client::fluent_builders::Tag).
             ///
             /// `ParseStrictResponse` impl for `Tag`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Tag {
 /// Operation shape for `UngroupResources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`ungroup_resources`](crate::client::Client::ungroup_resources).
+            /// [`ungroup_resources`](crate::client::fluent_builders::UngroupResources).
             ///
             /// `ParseStrictResponse` impl for `UngroupResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UngroupResources {
 /// Operation shape for `Untag`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag`](crate::client::Client::untag).
+            /// [`untag`](crate::client::fluent_builders::Untag).
             ///
             /// `ParseStrictResponse` impl for `Untag`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Untag {
 /// Operation shape for `UpdateAccountSettings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_account_settings`](crate::client::Client::update_account_settings).
+            /// [`update_account_settings`](crate::client::fluent_builders::UpdateAccountSettings).
             ///
             /// `ParseStrictResponse` impl for `UpdateAccountSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccountSettings {
 /// Operation shape for `UpdateGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_group`](crate::client::Client::update_group).
+            /// [`update_group`](crate::client::fluent_builders::UpdateGroup).
             ///
             /// `ParseStrictResponse` impl for `UpdateGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGroup {
 /// Operation shape for `UpdateGroupQuery`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_group_query`](crate::client::Client::update_group_query).
+            /// [`update_group_query`](crate::client::fluent_builders::UpdateGroupQuery).
             ///
             /// `ParseStrictResponse` impl for `UpdateGroupQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -77,8 +77,8 @@ impl Client  {
                         /// - On success, responds with [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput) with field(s):
                         ///   - [`field_names(Option<Vec<String>>)`](crate::output::BuildSuggestersOutput::field_names): <p>A list of field names.</p>
                         /// - On failure, responds with [`SdkError<BuildSuggestersError>`](crate::error::BuildSuggestersError)
-    pub fn build_suggesters(&self) -> fluent_builders::BuildSuggesters {
-                            fluent_builders::BuildSuggesters::new(self.handle.clone())
+    pub fn build_suggesters(&self) -> crate::client::fluent_builders::BuildSuggesters {
+                            crate::client::fluent_builders::BuildSuggesters::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateDomain`](crate::client::fluent_builders::CreateDomain) operation.
                         ///
@@ -87,8 +87,8 @@ impl Client  {
                         /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
                         ///   - [`domain_status(Option<DomainStatus>)`](crate::output::CreateDomainOutput::domain_status): <p>The current status of the search domain.</p>
                         /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::error::CreateDomainError)
-    pub fn create_domain(&self) -> fluent_builders::CreateDomain {
-                            fluent_builders::CreateDomain::new(self.handle.clone())
+    pub fn create_domain(&self) -> crate::client::fluent_builders::CreateDomain {
+                            crate::client::fluent_builders::CreateDomain::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DefineAnalysisScheme`](crate::client::fluent_builders::DefineAnalysisScheme) operation.
                         ///
@@ -98,8 +98,8 @@ impl Client  {
                         /// - On success, responds with [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput) with field(s):
                         ///   - [`analysis_scheme(Option<AnalysisSchemeStatus>)`](crate::output::DefineAnalysisSchemeOutput::analysis_scheme): <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
                         /// - On failure, responds with [`SdkError<DefineAnalysisSchemeError>`](crate::error::DefineAnalysisSchemeError)
-    pub fn define_analysis_scheme(&self) -> fluent_builders::DefineAnalysisScheme {
-                            fluent_builders::DefineAnalysisScheme::new(self.handle.clone())
+    pub fn define_analysis_scheme(&self) -> crate::client::fluent_builders::DefineAnalysisScheme {
+                            crate::client::fluent_builders::DefineAnalysisScheme::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DefineExpression`](crate::client::fluent_builders::DefineExpression) operation.
                         ///
@@ -109,8 +109,8 @@ impl Client  {
                         /// - On success, responds with [`DefineExpressionOutput`](crate::output::DefineExpressionOutput) with field(s):
                         ///   - [`expression(Option<ExpressionStatus>)`](crate::output::DefineExpressionOutput::expression): <p>The value of an <code>Expression</code> and its current status.</p>
                         /// - On failure, responds with [`SdkError<DefineExpressionError>`](crate::error::DefineExpressionError)
-    pub fn define_expression(&self) -> fluent_builders::DefineExpression {
-                            fluent_builders::DefineExpression::new(self.handle.clone())
+    pub fn define_expression(&self) -> crate::client::fluent_builders::DefineExpression {
+                            crate::client::fluent_builders::DefineExpression::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DefineIndexField`](crate::client::fluent_builders::DefineIndexField) operation.
                         ///
@@ -120,8 +120,8 @@ impl Client  {
                         /// - On success, responds with [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput) with field(s):
                         ///   - [`index_field(Option<IndexFieldStatus>)`](crate::output::DefineIndexFieldOutput::index_field): <p>The value of an <code>IndexField</code> and its current status.</p>
                         /// - On failure, responds with [`SdkError<DefineIndexFieldError>`](crate::error::DefineIndexFieldError)
-    pub fn define_index_field(&self) -> fluent_builders::DefineIndexField {
-                            fluent_builders::DefineIndexField::new(self.handle.clone())
+    pub fn define_index_field(&self) -> crate::client::fluent_builders::DefineIndexField {
+                            crate::client::fluent_builders::DefineIndexField::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DefineSuggester`](crate::client::fluent_builders::DefineSuggester) operation.
                         ///
@@ -131,8 +131,8 @@ impl Client  {
                         /// - On success, responds with [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput) with field(s):
                         ///   - [`suggester(Option<SuggesterStatus>)`](crate::output::DefineSuggesterOutput::suggester): <p>The value of a <code>Suggester</code> and its current status.</p>
                         /// - On failure, responds with [`SdkError<DefineSuggesterError>`](crate::error::DefineSuggesterError)
-    pub fn define_suggester(&self) -> fluent_builders::DefineSuggester {
-                            fluent_builders::DefineSuggester::new(self.handle.clone())
+    pub fn define_suggester(&self) -> crate::client::fluent_builders::DefineSuggester {
+                            crate::client::fluent_builders::DefineSuggester::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteAnalysisScheme`](crate::client::fluent_builders::DeleteAnalysisScheme) operation.
                         ///
@@ -142,8 +142,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput) with field(s):
                         ///   - [`analysis_scheme(Option<AnalysisSchemeStatus>)`](crate::output::DeleteAnalysisSchemeOutput::analysis_scheme): <p>The status of the analysis scheme being deleted.</p>
                         /// - On failure, responds with [`SdkError<DeleteAnalysisSchemeError>`](crate::error::DeleteAnalysisSchemeError)
-    pub fn delete_analysis_scheme(&self) -> fluent_builders::DeleteAnalysisScheme {
-                            fluent_builders::DeleteAnalysisScheme::new(self.handle.clone())
+    pub fn delete_analysis_scheme(&self) -> crate::client::fluent_builders::DeleteAnalysisScheme {
+                            crate::client::fluent_builders::DeleteAnalysisScheme::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) operation.
                         ///
@@ -152,8 +152,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteDomainOutput`](crate::output::DeleteDomainOutput) with field(s):
                         ///   - [`domain_status(Option<DomainStatus>)`](crate::output::DeleteDomainOutput::domain_status): <p>The current status of the search domain.</p>
                         /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::error::DeleteDomainError)
-    pub fn delete_domain(&self) -> fluent_builders::DeleteDomain {
-                            fluent_builders::DeleteDomain::new(self.handle.clone())
+    pub fn delete_domain(&self) -> crate::client::fluent_builders::DeleteDomain {
+                            crate::client::fluent_builders::DeleteDomain::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteExpression`](crate::client::fluent_builders::DeleteExpression) operation.
                         ///
@@ -163,8 +163,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput) with field(s):
                         ///   - [`expression(Option<ExpressionStatus>)`](crate::output::DeleteExpressionOutput::expression): <p>The status of the expression being deleted.</p>
                         /// - On failure, responds with [`SdkError<DeleteExpressionError>`](crate::error::DeleteExpressionError)
-    pub fn delete_expression(&self) -> fluent_builders::DeleteExpression {
-                            fluent_builders::DeleteExpression::new(self.handle.clone())
+    pub fn delete_expression(&self) -> crate::client::fluent_builders::DeleteExpression {
+                            crate::client::fluent_builders::DeleteExpression::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteIndexField`](crate::client::fluent_builders::DeleteIndexField) operation.
                         ///
@@ -174,8 +174,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput) with field(s):
                         ///   - [`index_field(Option<IndexFieldStatus>)`](crate::output::DeleteIndexFieldOutput::index_field): <p>The status of the index field being deleted.</p>
                         /// - On failure, responds with [`SdkError<DeleteIndexFieldError>`](crate::error::DeleteIndexFieldError)
-    pub fn delete_index_field(&self) -> fluent_builders::DeleteIndexField {
-                            fluent_builders::DeleteIndexField::new(self.handle.clone())
+    pub fn delete_index_field(&self) -> crate::client::fluent_builders::DeleteIndexField {
+                            crate::client::fluent_builders::DeleteIndexField::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteSuggester`](crate::client::fluent_builders::DeleteSuggester) operation.
                         ///
@@ -185,8 +185,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput) with field(s):
                         ///   - [`suggester(Option<SuggesterStatus>)`](crate::output::DeleteSuggesterOutput::suggester): <p>The status of the suggester being deleted.</p>
                         /// - On failure, responds with [`SdkError<DeleteSuggesterError>`](crate::error::DeleteSuggesterError)
-    pub fn delete_suggester(&self) -> fluent_builders::DeleteSuggester {
-                            fluent_builders::DeleteSuggester::new(self.handle.clone())
+    pub fn delete_suggester(&self) -> crate::client::fluent_builders::DeleteSuggester {
+                            crate::client::fluent_builders::DeleteSuggester::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeAnalysisSchemes`](crate::client::fluent_builders::DescribeAnalysisSchemes) operation.
                         ///
@@ -197,8 +197,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput) with field(s):
                         ///   - [`analysis_schemes(Option<Vec<AnalysisSchemeStatus>>)`](crate::output::DescribeAnalysisSchemesOutput::analysis_schemes): <p>The analysis scheme descriptions.</p>
                         /// - On failure, responds with [`SdkError<DescribeAnalysisSchemesError>`](crate::error::DescribeAnalysisSchemesError)
-    pub fn describe_analysis_schemes(&self) -> fluent_builders::DescribeAnalysisSchemes {
-                            fluent_builders::DescribeAnalysisSchemes::new(self.handle.clone())
+    pub fn describe_analysis_schemes(&self) -> crate::client::fluent_builders::DescribeAnalysisSchemes {
+                            crate::client::fluent_builders::DescribeAnalysisSchemes::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeAvailabilityOptions`](crate::client::fluent_builders::DescribeAvailabilityOptions) operation.
                         ///
@@ -208,8 +208,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput) with field(s):
                         ///   - [`availability_options(Option<AvailabilityOptionsStatus>)`](crate::output::DescribeAvailabilityOptionsOutput::availability_options): <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
                         /// - On failure, responds with [`SdkError<DescribeAvailabilityOptionsError>`](crate::error::DescribeAvailabilityOptionsError)
-    pub fn describe_availability_options(&self) -> fluent_builders::DescribeAvailabilityOptions {
-                            fluent_builders::DescribeAvailabilityOptions::new(self.handle.clone())
+    pub fn describe_availability_options(&self) -> crate::client::fluent_builders::DescribeAvailabilityOptions {
+                            crate::client::fluent_builders::DescribeAvailabilityOptions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeDomainEndpointOptions`](crate::client::fluent_builders::DescribeDomainEndpointOptions) operation.
                         ///
@@ -219,8 +219,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput) with field(s):
                         ///   - [`domain_endpoint_options(Option<DomainEndpointOptionsStatus>)`](crate::output::DescribeDomainEndpointOptionsOutput::domain_endpoint_options): <p>The status and configuration of a search domain's endpoint options.</p>
                         /// - On failure, responds with [`SdkError<DescribeDomainEndpointOptionsError>`](crate::error::DescribeDomainEndpointOptionsError)
-    pub fn describe_domain_endpoint_options(&self) -> fluent_builders::DescribeDomainEndpointOptions {
-                            fluent_builders::DescribeDomainEndpointOptions::new(self.handle.clone())
+    pub fn describe_domain_endpoint_options(&self) -> crate::client::fluent_builders::DescribeDomainEndpointOptions {
+                            crate::client::fluent_builders::DescribeDomainEndpointOptions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeDomains`](crate::client::fluent_builders::DescribeDomains) operation.
                         ///
@@ -229,8 +229,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput) with field(s):
                         ///   - [`domain_status_list(Option<Vec<DomainStatus>>)`](crate::output::DescribeDomainsOutput::domain_status_list): <p>A list that contains the status of each requested domain.</p>
                         /// - On failure, responds with [`SdkError<DescribeDomainsError>`](crate::error::DescribeDomainsError)
-    pub fn describe_domains(&self) -> fluent_builders::DescribeDomains {
-                            fluent_builders::DescribeDomains::new(self.handle.clone())
+    pub fn describe_domains(&self) -> crate::client::fluent_builders::DescribeDomains {
+                            crate::client::fluent_builders::DescribeDomains::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeExpressions`](crate::client::fluent_builders::DescribeExpressions) operation.
                         ///
@@ -241,8 +241,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput) with field(s):
                         ///   - [`expressions(Option<Vec<ExpressionStatus>>)`](crate::output::DescribeExpressionsOutput::expressions): <p>The expressions configured for the domain.</p>
                         /// - On failure, responds with [`SdkError<DescribeExpressionsError>`](crate::error::DescribeExpressionsError)
-    pub fn describe_expressions(&self) -> fluent_builders::DescribeExpressions {
-                            fluent_builders::DescribeExpressions::new(self.handle.clone())
+    pub fn describe_expressions(&self) -> crate::client::fluent_builders::DescribeExpressions {
+                            crate::client::fluent_builders::DescribeExpressions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeIndexFields`](crate::client::fluent_builders::DescribeIndexFields) operation.
                         ///
@@ -253,8 +253,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput) with field(s):
                         ///   - [`index_fields(Option<Vec<IndexFieldStatus>>)`](crate::output::DescribeIndexFieldsOutput::index_fields): <p>The index fields configured for the domain.</p>
                         /// - On failure, responds with [`SdkError<DescribeIndexFieldsError>`](crate::error::DescribeIndexFieldsError)
-    pub fn describe_index_fields(&self) -> fluent_builders::DescribeIndexFields {
-                            fluent_builders::DescribeIndexFields::new(self.handle.clone())
+    pub fn describe_index_fields(&self) -> crate::client::fluent_builders::DescribeIndexFields {
+                            crate::client::fluent_builders::DescribeIndexFields::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeScalingParameters`](crate::client::fluent_builders::DescribeScalingParameters) operation.
                         ///
@@ -263,8 +263,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput) with field(s):
                         ///   - [`scaling_parameters(Option<ScalingParametersStatus>)`](crate::output::DescribeScalingParametersOutput::scaling_parameters): <p>The status and configuration of a search domain's scaling parameters. </p>
                         /// - On failure, responds with [`SdkError<DescribeScalingParametersError>`](crate::error::DescribeScalingParametersError)
-    pub fn describe_scaling_parameters(&self) -> fluent_builders::DescribeScalingParameters {
-                            fluent_builders::DescribeScalingParameters::new(self.handle.clone())
+    pub fn describe_scaling_parameters(&self) -> crate::client::fluent_builders::DescribeScalingParameters {
+                            crate::client::fluent_builders::DescribeScalingParameters::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeServiceAccessPolicies`](crate::client::fluent_builders::DescribeServiceAccessPolicies) operation.
                         ///
@@ -274,8 +274,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput) with field(s):
                         ///   - [`access_policies(Option<AccessPoliciesStatus>)`](crate::output::DescribeServiceAccessPoliciesOutput::access_policies): <p>The access rules configured for the domain specified in the request.</p>
                         /// - On failure, responds with [`SdkError<DescribeServiceAccessPoliciesError>`](crate::error::DescribeServiceAccessPoliciesError)
-    pub fn describe_service_access_policies(&self) -> fluent_builders::DescribeServiceAccessPolicies {
-                            fluent_builders::DescribeServiceAccessPolicies::new(self.handle.clone())
+    pub fn describe_service_access_policies(&self) -> crate::client::fluent_builders::DescribeServiceAccessPolicies {
+                            crate::client::fluent_builders::DescribeServiceAccessPolicies::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeSuggesters`](crate::client::fluent_builders::DescribeSuggesters) operation.
                         ///
@@ -286,8 +286,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput) with field(s):
                         ///   - [`suggesters(Option<Vec<SuggesterStatus>>)`](crate::output::DescribeSuggestersOutput::suggesters): <p>The suggesters configured for the domain specified in the request.</p>
                         /// - On failure, responds with [`SdkError<DescribeSuggestersError>`](crate::error::DescribeSuggestersError)
-    pub fn describe_suggesters(&self) -> fluent_builders::DescribeSuggesters {
-                            fluent_builders::DescribeSuggesters::new(self.handle.clone())
+    pub fn describe_suggesters(&self) -> crate::client::fluent_builders::DescribeSuggesters {
+                            crate::client::fluent_builders::DescribeSuggesters::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`IndexDocuments`](crate::client::fluent_builders::IndexDocuments) operation.
                         ///
@@ -296,8 +296,8 @@ impl Client  {
                         /// - On success, responds with [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput) with field(s):
                         ///   - [`field_names(Option<Vec<String>>)`](crate::output::IndexDocumentsOutput::field_names): <p>The names of the fields that are currently being indexed.</p>
                         /// - On failure, responds with [`SdkError<IndexDocumentsError>`](crate::error::IndexDocumentsError)
-    pub fn index_documents(&self) -> fluent_builders::IndexDocuments {
-                            fluent_builders::IndexDocuments::new(self.handle.clone())
+    pub fn index_documents(&self) -> crate::client::fluent_builders::IndexDocuments {
+                            crate::client::fluent_builders::IndexDocuments::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDomainNames`](crate::client::fluent_builders::ListDomainNames) operation.
                         ///
@@ -306,8 +306,8 @@ impl Client  {
                         /// - On success, responds with [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput) with field(s):
                         ///   - [`domain_names(Option<HashMap<String, String>>)`](crate::output::ListDomainNamesOutput::domain_names): <p>The names of the search domains owned by an account.</p>
                         /// - On failure, responds with [`SdkError<ListDomainNamesError>`](crate::error::ListDomainNamesError)
-    pub fn list_domain_names(&self) -> fluent_builders::ListDomainNames {
-                            fluent_builders::ListDomainNames::new(self.handle.clone())
+    pub fn list_domain_names(&self) -> crate::client::fluent_builders::ListDomainNames {
+                            crate::client::fluent_builders::ListDomainNames::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateAvailabilityOptions`](crate::client::fluent_builders::UpdateAvailabilityOptions) operation.
                         ///
@@ -317,8 +317,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput) with field(s):
                         ///   - [`availability_options(Option<AvailabilityOptionsStatus>)`](crate::output::UpdateAvailabilityOptionsOutput::availability_options): <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
                         /// - On failure, responds with [`SdkError<UpdateAvailabilityOptionsError>`](crate::error::UpdateAvailabilityOptionsError)
-    pub fn update_availability_options(&self) -> fluent_builders::UpdateAvailabilityOptions {
-                            fluent_builders::UpdateAvailabilityOptions::new(self.handle.clone())
+    pub fn update_availability_options(&self) -> crate::client::fluent_builders::UpdateAvailabilityOptions {
+                            crate::client::fluent_builders::UpdateAvailabilityOptions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateDomainEndpointOptions`](crate::client::fluent_builders::UpdateDomainEndpointOptions) operation.
                         ///
@@ -328,8 +328,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput) with field(s):
                         ///   - [`domain_endpoint_options(Option<DomainEndpointOptionsStatus>)`](crate::output::UpdateDomainEndpointOptionsOutput::domain_endpoint_options): <p>The newly-configured domain endpoint options.</p>
                         /// - On failure, responds with [`SdkError<UpdateDomainEndpointOptionsError>`](crate::error::UpdateDomainEndpointOptionsError)
-    pub fn update_domain_endpoint_options(&self) -> fluent_builders::UpdateDomainEndpointOptions {
-                            fluent_builders::UpdateDomainEndpointOptions::new(self.handle.clone())
+    pub fn update_domain_endpoint_options(&self) -> crate::client::fluent_builders::UpdateDomainEndpointOptions {
+                            crate::client::fluent_builders::UpdateDomainEndpointOptions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateScalingParameters`](crate::client::fluent_builders::UpdateScalingParameters) operation.
                         ///
@@ -339,8 +339,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput) with field(s):
                         ///   - [`scaling_parameters(Option<ScalingParametersStatus>)`](crate::output::UpdateScalingParametersOutput::scaling_parameters): <p>The status and configuration of a search domain's scaling parameters. </p>
                         /// - On failure, responds with [`SdkError<UpdateScalingParametersError>`](crate::error::UpdateScalingParametersError)
-    pub fn update_scaling_parameters(&self) -> fluent_builders::UpdateScalingParameters {
-                            fluent_builders::UpdateScalingParameters::new(self.handle.clone())
+    pub fn update_scaling_parameters(&self) -> crate::client::fluent_builders::UpdateScalingParameters {
+                            crate::client::fluent_builders::UpdateScalingParameters::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateServiceAccessPolicies`](crate::client::fluent_builders::UpdateServiceAccessPolicies) operation.
                         ///
@@ -350,1689 +350,9 @@ impl Client  {
                         /// - On success, responds with [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput) with field(s):
                         ///   - [`access_policies(Option<AccessPoliciesStatus>)`](crate::output::UpdateServiceAccessPoliciesOutput::access_policies): <p>The access rules configured for the domain.</p>
                         /// - On failure, responds with [`SdkError<UpdateServiceAccessPoliciesError>`](crate::error::UpdateServiceAccessPoliciesError)
-    pub fn update_service_access_policies(&self) -> fluent_builders::UpdateServiceAccessPolicies {
-                            fluent_builders::UpdateServiceAccessPolicies::new(self.handle.clone())
+    pub fn update_service_access_policies(&self) -> crate::client::fluent_builders::UpdateServiceAccessPolicies {
+                            crate::client::fluent_builders::UpdateServiceAccessPolicies::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `BuildSuggesters`.
-                        ///
-    /// <p>Indexes the search suggestions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BuildSuggesters {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::build_suggesters_input::Builder
-                        }
-    impl BuildSuggesters  {
-        /// Creates a new `BuildSuggesters`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::BuildSuggesters, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::BuildSuggestersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::BuildSuggestersOutput, aws_smithy_http::result::SdkError<crate::error::BuildSuggestersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateDomain`.
-                        ///
-    /// <p>Creates a new search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html" target="_blank">Creating a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateDomain {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_domain_input::Builder
-                        }
-    impl CreateDomain  {
-        /// Creates a new `CreateDomain`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateDomain, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateDomainError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateDomainOutput, aws_smithy_http::result::SdkError<crate::error::CreateDomainError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DefineAnalysisScheme`.
-                        ///
-    /// <p>Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code> field to define language-specific text processing options. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DefineAnalysisScheme {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::define_analysis_scheme_input::Builder
-                        }
-    impl DefineAnalysisScheme  {
-        /// Creates a new `DefineAnalysisScheme`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DefineAnalysisScheme, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DefineAnalysisSchemeError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DefineAnalysisSchemeOutput, aws_smithy_http::result::SdkError<crate::error::DefineAnalysisSchemeError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-        pub fn analysis_scheme(mut self, input: crate::model::AnalysisScheme) -> Self {
-            self.inner = self.inner.analysis_scheme(input);
-            self
-        }
-        /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-        pub fn set_analysis_scheme(mut self, input: std::option::Option<crate::model::AnalysisScheme>) -> Self {
-            self.inner = self.inner.set_analysis_scheme(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DefineExpression`.
-                        ///
-    /// <p>Configures an <code><code>Expression</code></code> for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DefineExpression {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::define_expression_input::Builder
-                        }
-    impl DefineExpression  {
-        /// Creates a new `DefineExpression`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DefineExpression, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DefineExpressionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DefineExpressionOutput, aws_smithy_http::result::SdkError<crate::error::DefineExpressionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
-        pub fn expression(mut self, input: crate::model::Expression) -> Self {
-            self.inner = self.inner.expression(input);
-            self
-        }
-        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
-        pub fn set_expression(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
-            self.inner = self.inner.set_expression(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DefineIndexField`.
-                        ///
-    /// <p>Configures an <code><code>IndexField</code></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><code>IndexFieldType</code></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DefineIndexField {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::define_index_field_input::Builder
-                        }
-    impl DefineIndexField  {
-        /// Creates a new `DefineIndexField`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DefineIndexField, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DefineIndexFieldError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DefineIndexFieldOutput, aws_smithy_http::result::SdkError<crate::error::DefineIndexFieldError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>The index field and field options you want to configure. </p>
-        pub fn index_field(mut self, input: crate::model::IndexField) -> Self {
-            self.inner = self.inner.index_field(input);
-            self
-        }
-        /// <p>The index field and field options you want to configure. </p>
-        pub fn set_index_field(mut self, input: std::option::Option<crate::model::IndexField>) -> Self {
-            self.inner = self.inner.set_index_field(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DefineSuggester`.
-                        ///
-    /// <p>Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DefineSuggester {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::define_suggester_input::Builder
-                        }
-    impl DefineSuggester  {
-        /// Creates a new `DefineSuggester`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DefineSuggester, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DefineSuggesterError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DefineSuggesterOutput, aws_smithy_http::result::SdkError<crate::error::DefineSuggesterError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
-        pub fn suggester(mut self, input: crate::model::Suggester) -> Self {
-            self.inner = self.inner.suggester(input);
-            self
-        }
-        /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
-        pub fn set_suggester(mut self, input: std::option::Option<crate::model::Suggester>) -> Self {
-            self.inner = self.inner.set_suggester(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteAnalysisScheme`.
-                        ///
-    /// <p>Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteAnalysisScheme {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_analysis_scheme_input::Builder
-                        }
-    impl DeleteAnalysisScheme  {
-        /// Creates a new `DeleteAnalysisScheme`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteAnalysisScheme, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteAnalysisSchemeError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteAnalysisSchemeOutput, aws_smithy_http::result::SdkError<crate::error::DeleteAnalysisSchemeError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>The name of the analysis scheme you want to delete.</p>
-        pub fn analysis_scheme_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_scheme_name(input.into());
-            self
-        }
-        /// <p>The name of the analysis scheme you want to delete.</p>
-        pub fn set_analysis_scheme_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_analysis_scheme_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteDomain`.
-                        ///
-    /// <p>Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html" target="_blank">Deleting a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteDomain {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_domain_input::Builder
-                        }
-    impl DeleteDomain  {
-        /// Creates a new `DeleteDomain`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteDomain, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteDomainError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteDomainOutput, aws_smithy_http::result::SdkError<crate::error::DeleteDomainError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the domain you want to permanently delete.</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>The name of the domain you want to permanently delete.</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteExpression`.
-                        ///
-    /// <p>Removes an <code><code>Expression</code></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteExpression {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_expression_input::Builder
-                        }
-    impl DeleteExpression  {
-        /// Creates a new `DeleteExpression`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteExpression, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteExpressionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteExpressionOutput, aws_smithy_http::result::SdkError<crate::error::DeleteExpressionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
-        pub fn expression_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression_name(input.into());
-            self
-        }
-        /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
-        pub fn set_expression_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_expression_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteIndexField`.
-                        ///
-    /// <p>Removes an <code><code>IndexField</code></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteIndexField {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_index_field_input::Builder
-                        }
-    impl DeleteIndexField  {
-        /// Creates a new `DeleteIndexField`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteIndexField, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteIndexFieldError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteIndexFieldOutput, aws_smithy_http::result::SdkError<crate::error::DeleteIndexFieldError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
-        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_field_name(input.into());
-            self
-        }
-        /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
-        pub fn set_index_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_index_field_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteSuggester`.
-                        ///
-    /// <p>Deletes a suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteSuggester {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_suggester_input::Builder
-                        }
-    impl DeleteSuggester  {
-        /// Creates a new `DeleteSuggester`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteSuggester, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteSuggesterError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteSuggesterOutput, aws_smithy_http::result::SdkError<crate::error::DeleteSuggesterError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>Specifies the name of the suggester you want to delete.</p>
-        pub fn suggester_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suggester_name(input.into());
-            self
-        }
-        /// <p>Specifies the name of the suggester you want to delete.</p>
-        pub fn set_suggester_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_suggester_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeAnalysisSchemes`.
-                        ///
-    /// <p>Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a <code>text</code> field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeAnalysisSchemes {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_analysis_schemes_input::Builder
-                        }
-    impl DescribeAnalysisSchemes  {
-        /// Creates a new `DescribeAnalysisSchemes`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeAnalysisSchemes, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeAnalysisSchemesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeAnalysisSchemesOutput, aws_smithy_http::result::SdkError<crate::error::DescribeAnalysisSchemesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// Appends an item to `AnalysisSchemeNames`.
-        ///
-        /// To override the contents of this collection use [`set_analysis_scheme_names`](Self::set_analysis_scheme_names).
-        ///
-        /// <p>The analysis schemes you want to describe.</p>
-        pub fn analysis_scheme_names(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_scheme_names(input.into());
-            self
-        }
-        /// <p>The analysis schemes you want to describe.</p>
-        pub fn set_analysis_scheme_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_analysis_scheme_names(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, input: bool) -> Self {
-            self.inner = self.inner.deployed(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn set_deployed(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deployed(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeAvailabilityOptions`.
-                        ///
-    /// <p>Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeAvailabilityOptions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_availability_options_input::Builder
-                        }
-    impl DescribeAvailabilityOptions  {
-        /// Creates a new `DescribeAvailabilityOptions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeAvailabilityOptions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeAvailabilityOptionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeAvailabilityOptionsOutput, aws_smithy_http::result::SdkError<crate::error::DescribeAvailabilityOptionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, input: bool) -> Self {
-            self.inner = self.inner.deployed(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn set_deployed(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deployed(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeDomainEndpointOptions`.
-                        ///
-    /// <p>Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeDomainEndpointOptions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_domain_endpoint_options_input::Builder
-                        }
-    impl DescribeDomainEndpointOptions  {
-        /// Creates a new `DescribeDomainEndpointOptions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeDomainEndpointOptions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeDomainEndpointOptionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeDomainEndpointOptionsOutput, aws_smithy_http::result::SdkError<crate::error::DescribeDomainEndpointOptionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain.</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain.</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, input: bool) -> Self {
-            self.inner = self.inner.deployed(input);
-            self
-        }
-        /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
-        pub fn set_deployed(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deployed(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeDomains`.
-                        ///
-    /// <p>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. To get the number of searchable documents in a domain, use the console or submit a <code>matchall</code> request to your domain's search endpoint: <code>q=matchall&amp;q.parser=structured&amp;size=0</code>. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeDomains {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_domains_input::Builder
-                        }
-    impl DescribeDomains  {
-        /// Creates a new `DescribeDomains`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeDomains, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeDomainsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeDomainsOutput, aws_smithy_http::result::SdkError<crate::error::DescribeDomainsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `DomainNames`.
-        ///
-        /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
-        ///
-        /// <p>The names of the domains you want to include in the response.</p>
-        pub fn domain_names(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_names(input.into());
-            self
-        }
-        /// <p>The names of the domains you want to include in the response.</p>
-        pub fn set_domain_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_domain_names(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeExpressions`.
-                        ///
-    /// <p>Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeExpressions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_expressions_input::Builder
-                        }
-    impl DescribeExpressions  {
-        /// Creates a new `DescribeExpressions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeExpressions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeExpressionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeExpressionsOutput, aws_smithy_http::result::SdkError<crate::error::DescribeExpressionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// Appends an item to `ExpressionNames`.
-        ///
-        /// To override the contents of this collection use [`set_expression_names`](Self::set_expression_names).
-        ///
-        /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-        pub fn expression_names(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression_names(input.into());
-            self
-        }
-        /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-        pub fn set_expression_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_expression_names(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, input: bool) -> Self {
-            self.inner = self.inner.deployed(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn set_deployed(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deployed(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeIndexFields`.
-                        ///
-    /// <p>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeIndexFields {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_index_fields_input::Builder
-                        }
-    impl DescribeIndexFields  {
-        /// Creates a new `DescribeIndexFields`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeIndexFields, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeIndexFieldsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeIndexFieldsOutput, aws_smithy_http::result::SdkError<crate::error::DescribeIndexFieldsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// Appends an item to `FieldNames`.
-        ///
-        /// To override the contents of this collection use [`set_field_names`](Self::set_field_names).
-        ///
-        /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-        pub fn field_names(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.field_names(input.into());
-            self
-        }
-        /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-        pub fn set_field_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_field_names(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, input: bool) -> Self {
-            self.inner = self.inner.deployed(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn set_deployed(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deployed(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeScalingParameters`.
-                        ///
-    /// <p>Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeScalingParameters {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_scaling_parameters_input::Builder
-                        }
-    impl DescribeScalingParameters  {
-        /// Creates a new `DescribeScalingParameters`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeScalingParameters, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeScalingParametersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeScalingParametersOutput, aws_smithy_http::result::SdkError<crate::error::DescribeScalingParametersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeServiceAccessPolicies`.
-                        ///
-    /// <p>Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeServiceAccessPolicies {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_service_access_policies_input::Builder
-                        }
-    impl DescribeServiceAccessPolicies  {
-        /// Creates a new `DescribeServiceAccessPolicies`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeServiceAccessPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeServiceAccessPoliciesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeServiceAccessPoliciesOutput, aws_smithy_http::result::SdkError<crate::error::DescribeServiceAccessPoliciesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, input: bool) -> Self {
-            self.inner = self.inner.deployed(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn set_deployed(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deployed(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeSuggesters`.
-                        ///
-    /// <p>Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeSuggesters {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_suggesters_input::Builder
-                        }
-    impl DescribeSuggesters  {
-        /// Creates a new `DescribeSuggesters`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeSuggesters, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeSuggestersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeSuggestersOutput, aws_smithy_http::result::SdkError<crate::error::DescribeSuggestersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>The name of the domain you want to describe.</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// Appends an item to `SuggesterNames`.
-        ///
-        /// To override the contents of this collection use [`set_suggester_names`](Self::set_suggester_names).
-        ///
-        /// <p>The suggesters you want to describe.</p>
-        pub fn suggester_names(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suggester_names(input.into());
-            self
-        }
-        /// <p>The suggesters you want to describe.</p>
-        pub fn set_suggester_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_suggester_names(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, input: bool) -> Self {
-            self.inner = self.inner.deployed(input);
-            self
-        }
-        /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn set_deployed(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deployed(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `IndexDocuments`.
-                        ///
-    /// <p>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <code>OptionStatus</code> is <code>RequiresIndexDocuments</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct IndexDocuments {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::index_documents_input::Builder
-                        }
-    impl IndexDocuments  {
-        /// Creates a new `IndexDocuments`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::IndexDocuments, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::IndexDocumentsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::IndexDocumentsOutput, aws_smithy_http::result::SdkError<crate::error::IndexDocumentsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDomainNames`.
-                        ///
-    /// <p>Lists all search domains owned by an account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDomainNames {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_domain_names_input::Builder
-                        }
-    impl ListDomainNames  {
-        /// Creates a new `ListDomainNames`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDomainNames, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDomainNamesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDomainNamesOutput, aws_smithy_http::result::SdkError<crate::error::ListDomainNamesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `UpdateAvailabilityOptions`.
-                        ///
-    /// <p>Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateAvailabilityOptions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_availability_options_input::Builder
-                        }
-    impl UpdateAvailabilityOptions  {
-        /// Creates a new `UpdateAvailabilityOptions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateAvailabilityOptions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateAvailabilityOptionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateAvailabilityOptionsOutput, aws_smithy_http::result::SdkError<crate::error::UpdateAvailabilityOptionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
-        pub fn multi_az(mut self, input: bool) -> Self {
-            self.inner = self.inner.multi_az(input);
-            self
-        }
-        /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
-        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_multi_az(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateDomainEndpointOptions`.
-                        ///
-    /// <p>Updates the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateDomainEndpointOptions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_domain_endpoint_options_input::Builder
-                        }
-    impl UpdateDomainEndpointOptions  {
-        /// Creates a new `UpdateDomainEndpointOptions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateDomainEndpointOptions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateDomainEndpointOptionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateDomainEndpointOptionsOutput, aws_smithy_http::result::SdkError<crate::error::UpdateDomainEndpointOptionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain.</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain.</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-        pub fn domain_endpoint_options(mut self, input: crate::model::DomainEndpointOptions) -> Self {
-            self.inner = self.inner.domain_endpoint_options(input);
-            self
-        }
-        /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-        pub fn set_domain_endpoint_options(mut self, input: std::option::Option<crate::model::DomainEndpointOptions>) -> Self {
-            self.inner = self.inner.set_domain_endpoint_options(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateScalingParameters`.
-                        ///
-    /// <p>Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateScalingParameters {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_scaling_parameters_input::Builder
-                        }
-    impl UpdateScalingParameters  {
-        /// Creates a new `UpdateScalingParameters`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateScalingParameters, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateScalingParametersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateScalingParametersOutput, aws_smithy_http::result::SdkError<crate::error::UpdateScalingParametersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-        pub fn scaling_parameters(mut self, input: crate::model::ScalingParameters) -> Self {
-            self.inner = self.inner.scaling_parameters(input);
-            self
-        }
-        /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-        pub fn set_scaling_parameters(mut self, input: std::option::Option<crate::model::ScalingParameters>) -> Self {
-            self.inner = self.inner.set_scaling_parameters(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateServiceAccessPolicies`.
-                        ///
-    /// <p>Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateServiceAccessPolicies {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_service_access_policies_input::Builder
-                        }
-    impl UpdateServiceAccessPolicies  {
-        /// Creates a new `UpdateServiceAccessPolicies`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateServiceAccessPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateServiceAccessPoliciesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateServiceAccessPoliciesOutput, aws_smithy_http::result::SdkError<crate::error::UpdateServiceAccessPoliciesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(input.into());
-            self
-        }
-        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_domain_name(input);
-            self
-        }
-        /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
-        pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policies(input.into());
-            self
-        }
-        /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
-        pub fn set_access_policies(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_access_policies(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -2103,4 +423,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

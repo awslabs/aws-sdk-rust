@@ -77,8 +77,8 @@ impl Client  {
                         /// - On success, responds with [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput) with field(s):
                         ///   - [`message_content(ByteStream)`](crate::output::GetRawMessageContentOutput::message_content): <p>The raw content of the email message, in MIME format.</p>
                         /// - On failure, responds with [`SdkError<GetRawMessageContentError>`](crate::error::GetRawMessageContentError)
-    pub fn get_raw_message_content(&self) -> fluent_builders::GetRawMessageContent {
-                            fluent_builders::GetRawMessageContent::new(self.handle.clone())
+    pub fn get_raw_message_content(&self) -> crate::client::fluent_builders::GetRawMessageContent {
+                            crate::client::fluent_builders::GetRawMessageContent::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`PutRawMessageContent`](crate::client::fluent_builders::PutRawMessageContent) operation.
                         ///
@@ -88,142 +88,9 @@ impl Client  {
                         /// - On success, responds with [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput)
                         
                         /// - On failure, responds with [`SdkError<PutRawMessageContentError>`](crate::error::PutRawMessageContentError)
-    pub fn put_raw_message_content(&self) -> fluent_builders::PutRawMessageContent {
-                            fluent_builders::PutRawMessageContent::new(self.handle.clone())
+    pub fn put_raw_message_content(&self) -> crate::client::fluent_builders::PutRawMessageContent {
+                            crate::client::fluent_builders::PutRawMessageContent::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `GetRawMessageContent`.
-                        ///
-    /// <p>Retrieves the raw content of an in-transit email message, in MIME format.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetRawMessageContent {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_raw_message_content_input::Builder
-                        }
-    impl GetRawMessageContent  {
-        /// Creates a new `GetRawMessageContent`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetRawMessageContent, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetRawMessageContentError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetRawMessageContentOutput, aws_smithy_http::result::SdkError<crate::error::GetRawMessageContentError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the email message to retrieve.</p>
-        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(input.into());
-            self
-        }
-        /// <p>The identifier of the email message to retrieve.</p>
-        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_message_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutRawMessageContent`.
-                        ///
-    /// <p>Updates the raw content of an in-transit email message, in MIME format.</p> 
-    /// <p>This example describes how to update in-transit email message. For more information and examples for using this API, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating message content with AWS Lambda</a>.</p> <note> 
-    /// <p>Updates to an in-transit message only appear when you call <code>PutRawMessageContent</code> from an AWS Lambda function configured with a synchronous <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules"> Run Lambda</a> rule. If you call <code>PutRawMessageContent</code> on a delivered or sent message, the message remains unchanged, even though <a href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html">GetRawMessageContent</a> returns an updated message. </p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutRawMessageContent {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::put_raw_message_content_input::Builder
-                        }
-    impl PutRawMessageContent  {
-        /// Creates a new `PutRawMessageContent`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::PutRawMessageContent, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::PutRawMessageContentError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::PutRawMessageContentOutput, aws_smithy_http::result::SdkError<crate::error::PutRawMessageContentError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the email message being updated.</p>
-        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(input.into());
-            self
-        }
-        /// <p>The identifier of the email message being updated.</p>
-        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_message_id(input);
-            self
-        }
-        /// <p>Describes the raw message content of the updated email message.</p>
-        pub fn content(mut self, input: crate::model::RawMessageContent) -> Self {
-            self.inner = self.inner.content(input);
-            self
-        }
-        /// <p>Describes the raw message content of the updated email message.</p>
-        pub fn set_content(mut self, input: std::option::Option<crate::model::RawMessageContent>) -> Self {
-            self.inner = self.inner.set_content(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -294,4 +161,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

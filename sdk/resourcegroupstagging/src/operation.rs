@@ -2,7 +2,7 @@
 /// Operation shape for `DescribeReportCreation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_report_creation`](crate::client::Client::describe_report_creation).
+            /// [`describe_report_creation`](crate::client::fluent_builders::DescribeReportCreation).
             ///
             /// `ParseStrictResponse` impl for `DescribeReportCreation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReportCreation {
 /// Operation shape for `GetComplianceSummary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_compliance_summary`](crate::client::Client::get_compliance_summary).
+            /// [`get_compliance_summary`](crate::client::fluent_builders::GetComplianceSummary).
             ///
             /// `ParseStrictResponse` impl for `GetComplianceSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComplianceSummary {
 /// Operation shape for `GetResources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_resources`](crate::client::Client::get_resources).
+            /// [`get_resources`](crate::client::fluent_builders::GetResources).
             ///
             /// `ParseStrictResponse` impl for `GetResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResources {
 /// Operation shape for `GetTagKeys`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_tag_keys`](crate::client::Client::get_tag_keys).
+            /// [`get_tag_keys`](crate::client::fluent_builders::GetTagKeys).
             ///
             /// `ParseStrictResponse` impl for `GetTagKeys`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTagKeys {
 /// Operation shape for `GetTagValues`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_tag_values`](crate::client::Client::get_tag_values).
+            /// [`get_tag_values`](crate::client::fluent_builders::GetTagValues).
             ///
             /// `ParseStrictResponse` impl for `GetTagValues`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTagValues {
 /// Operation shape for `StartReportCreation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_report_creation`](crate::client::Client::start_report_creation).
+            /// [`start_report_creation`](crate::client::fluent_builders::StartReportCreation).
             ///
             /// `ParseStrictResponse` impl for `StartReportCreation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReportCreation {
 /// Operation shape for `TagResources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resources`](crate::client::Client::tag_resources).
+            /// [`tag_resources`](crate::client::fluent_builders::TagResources).
             ///
             /// `ParseStrictResponse` impl for `TagResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResources {
 /// Operation shape for `UntagResources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resources`](crate::client::Client::untag_resources).
+            /// [`untag_resources`](crate::client::fluent_builders::UntagResources).
             ///
             /// `ParseStrictResponse` impl for `UntagResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

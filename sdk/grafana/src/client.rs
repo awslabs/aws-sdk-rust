@@ -78,8 +78,8 @@ impl Client  {
                         /// - On success, responds with [`AssociateLicenseOutput`](crate::output::AssociateLicenseOutput) with field(s):
                         ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::AssociateLicenseOutput::workspace): <p>A structure containing data about the workspace.</p>
                         /// - On failure, responds with [`SdkError<AssociateLicenseError>`](crate::error::AssociateLicenseError)
-    pub fn associate_license(&self) -> fluent_builders::AssociateLicense {
-                            fluent_builders::AssociateLicense::new(self.handle.clone())
+    pub fn associate_license(&self) -> crate::client::fluent_builders::AssociateLicense {
+                            crate::client::fluent_builders::AssociateLicense::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateWorkspace`](crate::client::fluent_builders::CreateWorkspace) operation.
                         ///
@@ -102,8 +102,8 @@ impl Client  {
                         /// - On success, responds with [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput) with field(s):
                         ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::CreateWorkspaceOutput::workspace): <p>A structure containing data about the workspace that was created.</p>
                         /// - On failure, responds with [`SdkError<CreateWorkspaceError>`](crate::error::CreateWorkspaceError)
-    pub fn create_workspace(&self) -> fluent_builders::CreateWorkspace {
-                            fluent_builders::CreateWorkspace::new(self.handle.clone())
+    pub fn create_workspace(&self) -> crate::client::fluent_builders::CreateWorkspace {
+                            crate::client::fluent_builders::CreateWorkspace::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateWorkspaceApiKey`](crate::client::fluent_builders::CreateWorkspaceApiKey) operation.
                         ///
@@ -117,8 +117,8 @@ impl Client  {
     ///   - [`key(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::key): <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
     ///   - [`workspace_id(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace that the key is valid for.</p>
                         /// - On failure, responds with [`SdkError<CreateWorkspaceApiKeyError>`](crate::error::CreateWorkspaceApiKeyError)
-    pub fn create_workspace_api_key(&self) -> fluent_builders::CreateWorkspaceApiKey {
-                            fluent_builders::CreateWorkspaceApiKey::new(self.handle.clone())
+    pub fn create_workspace_api_key(&self) -> crate::client::fluent_builders::CreateWorkspaceApiKey {
+                            crate::client::fluent_builders::CreateWorkspaceApiKey::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteWorkspace`](crate::client::fluent_builders::DeleteWorkspace) operation.
                         ///
@@ -127,8 +127,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput) with field(s):
                         ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::DeleteWorkspaceOutput::workspace): <p>A structure containing information about the workspace that was deleted.</p>
                         /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::error::DeleteWorkspaceError)
-    pub fn delete_workspace(&self) -> fluent_builders::DeleteWorkspace {
-                            fluent_builders::DeleteWorkspace::new(self.handle.clone())
+    pub fn delete_workspace(&self) -> crate::client::fluent_builders::DeleteWorkspace {
+                            crate::client::fluent_builders::DeleteWorkspace::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteWorkspaceApiKey`](crate::client::fluent_builders::DeleteWorkspaceApiKey) operation.
                         ///
@@ -139,8 +139,8 @@ impl Client  {
                         ///   - [`key_name(Option<String>)`](crate::output::DeleteWorkspaceApiKeyOutput::key_name): <p>The name of the key that was deleted.</p>
     ///   - [`workspace_id(Option<String>)`](crate::output::DeleteWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace where the key was deleted.</p>
                         /// - On failure, responds with [`SdkError<DeleteWorkspaceApiKeyError>`](crate::error::DeleteWorkspaceApiKeyError)
-    pub fn delete_workspace_api_key(&self) -> fluent_builders::DeleteWorkspaceApiKey {
-                            fluent_builders::DeleteWorkspaceApiKey::new(self.handle.clone())
+    pub fn delete_workspace_api_key(&self) -> crate::client::fluent_builders::DeleteWorkspaceApiKey {
+                            crate::client::fluent_builders::DeleteWorkspaceApiKey::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeWorkspace`](crate::client::fluent_builders::DescribeWorkspace) operation.
                         ///
@@ -149,8 +149,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput) with field(s):
                         ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::DescribeWorkspaceOutput::workspace): <p>A structure containing information about the workspace.</p>
                         /// - On failure, responds with [`SdkError<DescribeWorkspaceError>`](crate::error::DescribeWorkspaceError)
-    pub fn describe_workspace(&self) -> fluent_builders::DescribeWorkspace {
-                            fluent_builders::DescribeWorkspace::new(self.handle.clone())
+    pub fn describe_workspace(&self) -> crate::client::fluent_builders::DescribeWorkspace {
+                            crate::client::fluent_builders::DescribeWorkspace::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeWorkspaceAuthentication`](crate::client::fluent_builders::DescribeWorkspaceAuthentication) operation.
                         ///
@@ -159,8 +159,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeWorkspaceAuthenticationOutput`](crate::output::DescribeWorkspaceAuthenticationOutput) with field(s):
                         ///   - [`authentication(Option<AuthenticationDescription>)`](crate::output::DescribeWorkspaceAuthenticationOutput::authentication): <p>A structure containing information about the authentication methods used in the workspace.</p>
                         /// - On failure, responds with [`SdkError<DescribeWorkspaceAuthenticationError>`](crate::error::DescribeWorkspaceAuthenticationError)
-    pub fn describe_workspace_authentication(&self) -> fluent_builders::DescribeWorkspaceAuthentication {
-                            fluent_builders::DescribeWorkspaceAuthentication::new(self.handle.clone())
+    pub fn describe_workspace_authentication(&self) -> crate::client::fluent_builders::DescribeWorkspaceAuthentication {
+                            crate::client::fluent_builders::DescribeWorkspaceAuthentication::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeWorkspaceConfiguration`](crate::client::fluent_builders::DescribeWorkspaceConfiguration) operation.
                         ///
@@ -169,8 +169,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput) with field(s):
                         ///   - [`configuration(Option<String>)`](crate::output::DescribeWorkspaceConfigurationOutput::configuration): <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
                         /// - On failure, responds with [`SdkError<DescribeWorkspaceConfigurationError>`](crate::error::DescribeWorkspaceConfigurationError)
-    pub fn describe_workspace_configuration(&self) -> fluent_builders::DescribeWorkspaceConfiguration {
-                            fluent_builders::DescribeWorkspaceConfiguration::new(self.handle.clone())
+    pub fn describe_workspace_configuration(&self) -> crate::client::fluent_builders::DescribeWorkspaceConfiguration {
+                            crate::client::fluent_builders::DescribeWorkspaceConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DisassociateLicense`](crate::client::fluent_builders::DisassociateLicense) operation.
                         ///
@@ -180,8 +180,8 @@ impl Client  {
                         /// - On success, responds with [`DisassociateLicenseOutput`](crate::output::DisassociateLicenseOutput) with field(s):
                         ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::DisassociateLicenseOutput::workspace): <p>A structure containing information about the workspace.</p>
                         /// - On failure, responds with [`SdkError<DisassociateLicenseError>`](crate::error::DisassociateLicenseError)
-    pub fn disassociate_license(&self) -> fluent_builders::DisassociateLicense {
-                            fluent_builders::DisassociateLicense::new(self.handle.clone())
+    pub fn disassociate_license(&self) -> crate::client::fluent_builders::DisassociateLicense {
+                            crate::client::fluent_builders::DisassociateLicense::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListPermissions`](crate::client::fluent_builders::ListPermissions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPermissions::into_paginator).
@@ -197,8 +197,8 @@ impl Client  {
                         ///   - [`next_token(Option<String>)`](crate::output::ListPermissionsOutput::next_token): <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
     ///   - [`permissions(Option<Vec<PermissionEntry>>)`](crate::output::ListPermissionsOutput::permissions): <p>The permissions returned by the operation.</p>
                         /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::error::ListPermissionsError)
-    pub fn list_permissions(&self) -> fluent_builders::ListPermissions {
-                            fluent_builders::ListPermissions::new(self.handle.clone())
+    pub fn list_permissions(&self) -> crate::client::fluent_builders::ListPermissions {
+                            crate::client::fluent_builders::ListPermissions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -207,8 +207,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags that are associated with the resource.</p>
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListWorkspaces`](crate::client::fluent_builders::ListWorkspaces) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkspaces::into_paginator).
@@ -220,8 +220,8 @@ impl Client  {
                         ///   - [`workspaces(Option<Vec<WorkspaceSummary>>)`](crate::output::ListWorkspacesOutput::workspaces): <p>An array of structures that contain some information about the workspaces in the account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListWorkspacesOutput::next_token): <p>The token to use when requesting the next set of workspaces.</p>
                         /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::error::ListWorkspacesError)
-    pub fn list_workspaces(&self) -> fluent_builders::ListWorkspaces {
-                            fluent_builders::ListWorkspaces::new(self.handle.clone())
+    pub fn list_workspaces(&self) -> crate::client::fluent_builders::ListWorkspaces {
+                            crate::client::fluent_builders::ListWorkspaces::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -231,8 +231,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -242,8 +242,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdatePermissions`](crate::client::fluent_builders::UpdatePermissions) operation.
                         ///
@@ -253,8 +253,8 @@ impl Client  {
                         /// - On success, responds with [`UpdatePermissionsOutput`](crate::output::UpdatePermissionsOutput) with field(s):
                         ///   - [`errors(Option<Vec<UpdateError>>)`](crate::output::UpdatePermissionsOutput::errors): <p>An array of structures that contain the errors from the operation, if any.</p>
                         /// - On failure, responds with [`SdkError<UpdatePermissionsError>`](crate::error::UpdatePermissionsError)
-    pub fn update_permissions(&self) -> fluent_builders::UpdatePermissions {
-                            fluent_builders::UpdatePermissions::new(self.handle.clone())
+    pub fn update_permissions(&self) -> crate::client::fluent_builders::UpdatePermissions {
+                            crate::client::fluent_builders::UpdatePermissions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateWorkspace`](crate::client::fluent_builders::UpdateWorkspace) operation.
                         ///
@@ -275,8 +275,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput) with field(s):
                         ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::UpdateWorkspaceOutput::workspace): <p>A structure containing data about the workspace that was created.</p>
                         /// - On failure, responds with [`SdkError<UpdateWorkspaceError>`](crate::error::UpdateWorkspaceError)
-    pub fn update_workspace(&self) -> fluent_builders::UpdateWorkspace {
-                            fluent_builders::UpdateWorkspace::new(self.handle.clone())
+    pub fn update_workspace(&self) -> crate::client::fluent_builders::UpdateWorkspace {
+                            crate::client::fluent_builders::UpdateWorkspace::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateWorkspaceAuthentication`](crate::client::fluent_builders::UpdateWorkspaceAuthentication) operation.
                         ///
@@ -287,8 +287,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateWorkspaceAuthenticationOutput`](crate::output::UpdateWorkspaceAuthenticationOutput) with field(s):
                         ///   - [`authentication(Option<AuthenticationDescription>)`](crate::output::UpdateWorkspaceAuthenticationOutput::authentication): <p>A structure that describes the user authentication for this workspace after the update is made.</p>
                         /// - On failure, responds with [`SdkError<UpdateWorkspaceAuthenticationError>`](crate::error::UpdateWorkspaceAuthenticationError)
-    pub fn update_workspace_authentication(&self) -> fluent_builders::UpdateWorkspaceAuthentication {
-                            fluent_builders::UpdateWorkspaceAuthentication::new(self.handle.clone())
+    pub fn update_workspace_authentication(&self) -> crate::client::fluent_builders::UpdateWorkspaceAuthentication {
+                            crate::client::fluent_builders::UpdateWorkspaceAuthentication::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateWorkspaceConfiguration`](crate::client::fluent_builders::UpdateWorkspaceConfiguration) operation.
                         ///
@@ -298,1531 +298,9 @@ impl Client  {
                         /// - On success, responds with [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateWorkspaceConfigurationError>`](crate::error::UpdateWorkspaceConfigurationError)
-    pub fn update_workspace_configuration(&self) -> fluent_builders::UpdateWorkspaceConfiguration {
-                            fluent_builders::UpdateWorkspaceConfiguration::new(self.handle.clone())
+    pub fn update_workspace_configuration(&self) -> crate::client::fluent_builders::UpdateWorkspaceConfiguration {
+                            crate::client::fluent_builders::UpdateWorkspaceConfiguration::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `AssociateLicense`.
-                        ///
-    /// <p>Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana Enterprise incurs additional fees. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade a workspace to Grafana Enterprise</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateLicense {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::associate_license_input::Builder
-                        }
-    impl AssociateLicense  {
-        /// Creates a new `AssociateLicense`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::AssociateLicense, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::AssociateLicenseError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::AssociateLicenseOutput, aws_smithy_http::result::SdkError<crate::error::AssociateLicenseError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the workspace to associate the license with.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to associate the license with.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// <p>The type of license to associate with the workspace.</p>
-        pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
-            self.inner = self.inner.license_type(input);
-            self
-        }
-        /// <p>The type of license to associate with the workspace.</p>
-        pub fn set_license_type(mut self, input: std::option::Option<crate::model::LicenseType>) -> Self {
-            self.inner = self.inner.set_license_type(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateWorkspace`.
-                        ///
-    /// <p>Creates a <i>workspace</i>. In a workspace, you can create Grafana dashboards and visualizations to analyze your metrics, logs, and traces. You don't have to build, package, or deploy any hardware to run the Grafana server.</p> 
-    /// <p>Don't use <code>CreateWorkspace</code> to modify an existing workspace. Instead, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateWorkspace {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_workspace_input::Builder
-                        }
-    impl CreateWorkspace  {
-        /// Creates a new `CreateWorkspace`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateWorkspace, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateWorkspaceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateWorkspaceOutput, aws_smithy_http::result::SdkError<crate::error::CreateWorkspaceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-        pub fn account_access_type(mut self, input: crate::model::AccountAccessType) -> Self {
-            self.inner = self.inner.account_access_type(input);
-            self
-        }
-        /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-        pub fn set_account_access_type(mut self, input: std::option::Option<crate::model::AccountAccessType>) -> Self {
-            self.inner = self.inner.set_account_access_type(input);
-            self
-        }
-        /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
-        pub fn organization_role_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_role_name(input.into());
-            self
-        }
-        /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
-        pub fn set_organization_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_organization_role_name(input);
-            self
-        }
-        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p> 
-        /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> 
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
-        pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
-            self.inner = self.inner.permission_type(input);
-            self
-        }
-        /// <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p> 
-        /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> 
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
-        pub fn set_permission_type(mut self, input: std::option::Option<crate::model::PermissionType>) -> Self {
-            self.inner = self.inner.set_permission_type(input);
-            self
-        }
-        /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
-        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(input.into());
-            self
-        }
-        /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
-        pub fn set_stack_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(input);
-            self
-        }
-        /// Appends an item to `workspaceDataSources`.
-        ///
-        /// To override the contents of this collection use [`set_workspace_data_sources`](Self::set_workspace_data_sources).
-        ///
-        /// <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p> 
-        /// <p>If you don't specify a data source here, you can still add it as a data source in the workspace console later. However, you will then have to manually configure permissions for it.</p>
-        pub fn workspace_data_sources(mut self, input: crate::model::DataSourceType) -> Self {
-            self.inner = self.inner.workspace_data_sources(input);
-            self
-        }
-        /// <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p> 
-        /// <p>If you don't specify a data source here, you can still add it as a data source in the workspace console later. However, you will then have to manually configure permissions for it.</p>
-        pub fn set_workspace_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSourceType>>) -> Self {
-            self.inner = self.inner.set_workspace_data_sources(input);
-            self
-        }
-        /// <p>A description for the workspace. This is used only to help you identify this workspace.</p> 
-        /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
-        pub fn workspace_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_description(input.into());
-            self
-        }
-        /// <p>A description for the workspace. This is used only to help you identify this workspace.</p> 
-        /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
-        pub fn set_workspace_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_description(input);
-            self
-        }
-        /// <p>The name for the workspace. It does not have to be unique.</p>
-        pub fn workspace_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_name(input.into());
-            self
-        }
-        /// <p>The name for the workspace. It does not have to be unique.</p>
-        pub fn set_workspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_name(input);
-            self
-        }
-        /// Appends an item to `workspaceNotificationDestinations`.
-        ///
-        /// To override the contents of this collection use [`set_workspace_notification_destinations`](Self::set_workspace_notification_destinations).
-        ///
-        /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-        pub fn workspace_notification_destinations(mut self, input: crate::model::NotificationDestinationType) -> Self {
-            self.inner = self.inner.workspace_notification_destinations(input);
-            self
-        }
-        /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-        pub fn set_workspace_notification_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>) -> Self {
-            self.inner = self.inner.set_workspace_notification_destinations(input);
-            self
-        }
-        /// Appends an item to `workspaceOrganizationalUnits`.
-        ///
-        /// To override the contents of this collection use [`set_workspace_organizational_units`](Self::set_workspace_organizational_units).
-        ///
-        /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-        pub fn workspace_organizational_units(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_organizational_units(input.into());
-            self
-        }
-        /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-        pub fn set_workspace_organizational_units(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_workspace_organizational_units(input);
-            self
-        }
-        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
-        pub fn workspace_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_role_arn(input.into());
-            self
-        }
-        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
-        pub fn set_workspace_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_role_arn(input);
-            self
-        }
-        /// Appends an item to `authenticationProviders`.
-        ///
-        /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
-        ///
-        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-        pub fn authentication_providers(mut self, input: crate::model::AuthenticationProviderTypes) -> Self {
-            self.inner = self.inner.authentication_providers(input);
-            self
-        }
-        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-        pub fn set_authentication_providers(mut self, input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>) -> Self {
-            self.inner = self.inner.set_authentication_providers(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The list of tags associated with the workspace.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The list of tags associated with the workspace.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
-        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
-            self.inner = self.inner.vpc_configuration(input);
-            self
-        }
-        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
-        pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::model::VpcConfiguration>) -> Self {
-            self.inner = self.inner.set_vpc_configuration(input);
-            self
-        }
-        /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration(input.into());
-            self
-        }
-        /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-        pub fn set_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_configuration(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateWorkspaceApiKey`.
-                        ///
-    /// <p>Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example requests.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateWorkspaceApiKey {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_workspace_api_key_input::Builder
-                        }
-    impl CreateWorkspaceApiKey  {
-        /// Creates a new `CreateWorkspaceApiKey`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateWorkspaceApiKey, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateWorkspaceApiKeyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateWorkspaceApiKeyOutput, aws_smithy_http::result::SdkError<crate::error::CreateWorkspaceApiKeyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
-        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_name(input.into());
-            self
-        }
-        /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
-        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_name(input);
-            self
-        }
-        /// <p>Specifies the permission level of the key.</p> 
-        /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
-        pub fn key_role(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_role(input.into());
-            self
-        }
-        /// <p>Specifies the permission level of the key.</p> 
-        /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
-        pub fn set_key_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_role(input);
-            self
-        }
-        /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
-        pub fn seconds_to_live(mut self, input: i32) -> Self {
-            self.inner = self.inner.seconds_to_live(input);
-            self
-        }
-        /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
-        pub fn set_seconds_to_live(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_seconds_to_live(input);
-            self
-        }
-        /// <p>The ID of the workspace to create an API key.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to create an API key.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteWorkspace`.
-                        ///
-    /// <p>Deletes an Amazon Managed Grafana workspace.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteWorkspace {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_workspace_input::Builder
-                        }
-    impl DeleteWorkspace  {
-        /// Creates a new `DeleteWorkspace`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteWorkspace, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteWorkspaceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteWorkspaceOutput, aws_smithy_http::result::SdkError<crate::error::DeleteWorkspaceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the workspace to delete.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to delete.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteWorkspaceApiKey`.
-                        ///
-    /// <p>Deletes a Grafana API key for the workspace.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteWorkspaceApiKey {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_workspace_api_key_input::Builder
-                        }
-    impl DeleteWorkspaceApiKey  {
-        /// Creates a new `DeleteWorkspaceApiKey`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteWorkspaceApiKey, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteWorkspaceApiKeyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteWorkspaceApiKeyOutput, aws_smithy_http::result::SdkError<crate::error::DeleteWorkspaceApiKeyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the API key to delete.</p>
-        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_name(input.into());
-            self
-        }
-        /// <p>The name of the API key to delete.</p>
-        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_name(input);
-            self
-        }
-        /// <p>The ID of the workspace to delete.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to delete.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeWorkspace`.
-                        ///
-    /// <p>Displays information about one Amazon Managed Grafana workspace.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeWorkspace {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_workspace_input::Builder
-                        }
-    impl DescribeWorkspace  {
-        /// Creates a new `DescribeWorkspace`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeWorkspace, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeWorkspaceOutput, aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the workspace to display information about.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to display information about.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeWorkspaceAuthentication`.
-                        ///
-    /// <p>Displays information about the authentication methods used in one Amazon Managed Grafana workspace.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeWorkspaceAuthentication {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_workspace_authentication_input::Builder
-                        }
-    impl DescribeWorkspaceAuthentication  {
-        /// Creates a new `DescribeWorkspaceAuthentication`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeWorkspaceAuthentication, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceAuthenticationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeWorkspaceAuthenticationOutput, aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceAuthenticationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the workspace to return authentication information about.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to return authentication information about.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeWorkspaceConfiguration`.
-                        ///
-    /// <p>Gets the current configuration string for the given workspace.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeWorkspaceConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_workspace_configuration_input::Builder
-                        }
-    impl DescribeWorkspaceConfiguration  {
-        /// Creates a new `DescribeWorkspaceConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeWorkspaceConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeWorkspaceConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the workspace to get configuration information for.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to get configuration information for.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisassociateLicense`.
-                        ///
-    /// <p>Removes the Grafana Enterprise license from a workspace.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisassociateLicense {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::disassociate_license_input::Builder
-                        }
-    impl DisassociateLicense  {
-        /// Creates a new `DisassociateLicense`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DisassociateLicense, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DisassociateLicenseError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DisassociateLicenseOutput, aws_smithy_http::result::SdkError<crate::error::DisassociateLicenseError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// <p>The type of license to remove from the workspace.</p>
-        pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
-            self.inner = self.inner.license_type(input);
-            self
-        }
-        /// <p>The type of license to remove from the workspace.</p>
-        pub fn set_license_type(mut self, input: std::option::Option<crate::model::LicenseType>) -> Self {
-            self.inner = self.inner.set_license_type(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListPermissions`.
-                        ///
-    /// <p>Lists the users and groups who have the Grafana <code>Admin</code> and <code>Editor</code> roles in this workspace. If you use this operation without specifying <code>userId</code> or <code>groupId</code>, the operation returns the roles of all users and groups. If you specify a <code>userId</code> or a <code>groupId</code>, only the roles for that user or group are returned. If you do this, you can specify only one <code>userId</code> or one <code>groupId</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListPermissions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_permissions_input::Builder
-                        }
-    impl ListPermissions  {
-        /// Creates a new `ListPermissions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListPermissions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListPermissionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListPermissionsOutput, aws_smithy_http::result::SdkError<crate::error::ListPermissionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListPermissionsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListPermissionsPaginator {
-                                        crate::paginator::ListPermissionsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The maximum number of results to include in the response.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
-        pub fn user_type(mut self, input: crate::model::UserType) -> Self {
-            self.inner = self.inner.user_type(input);
-            self
-        }
-        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
-        pub fn set_user_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
-            self.inner = self.inner.set_user_type(input);
-            self
-        }
-        /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
-        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(input.into());
-            self
-        }
-        /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
-        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_id(input);
-            self
-        }
-        /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
-        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(input.into());
-            self
-        }
-        /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
-        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_group_id(input);
-            self
-        }
-        /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// <p>The <code>ListTagsForResource</code> operation returns the tags that are associated with the Amazon Managed Service for Grafana resource specified by the <code>resourceArn</code>. Currently, the only resource that can be tagged is a workspace. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the resource the list of tags are associated with.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource the list of tags are associated with.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListWorkspaces`.
-                        ///
-    /// <p>Returns a list of Amazon Managed Grafana workspaces in the account, with some information about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListWorkspaces {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_workspaces_input::Builder
-                        }
-    impl ListWorkspaces  {
-        /// Creates a new `ListWorkspaces`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListWorkspaces, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListWorkspacesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListWorkspacesOutput, aws_smithy_http::result::SdkError<crate::error::ListWorkspacesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkspacesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListWorkspacesPaginator {
-                                        crate::paginator::ListWorkspacesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The maximum number of workspaces to include in the results.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of workspaces to include in the results.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token for the next set of workspaces to return. (You receive this token from a previous <code>ListWorkspaces</code> operation.)</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next set of workspaces to return. (You receive this token from a previous <code>ListWorkspaces</code> operation.)</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>The <code>TagResource</code> operation associates tags with an Amazon Managed Grafana resource. Currently, the only resource that can be tagged is workspaces. </p> 
-    /// <p>If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the resource the tag is associated with.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource the tag is associated with.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>The <code>UntagResource</code> operation removes the association of the tag with the Amazon Managed Grafana resource. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the resource the tag association is removed from. </p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource the tag association is removed from. </p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `tagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The key values of the tag to be removed from the resource.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The key values of the tag to be removed from the resource.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdatePermissions`.
-                        ///
-    /// <p>Updates which users in a workspace have the Grafana <code>Admin</code> or <code>Editor</code> roles.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdatePermissions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_permissions_input::Builder
-                        }
-    impl UpdatePermissions  {
-        /// Creates a new `UpdatePermissions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdatePermissions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdatePermissionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdatePermissionsOutput, aws_smithy_http::result::SdkError<crate::error::UpdatePermissionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `updateInstructionBatch`.
-        ///
-        /// To override the contents of this collection use [`set_update_instruction_batch`](Self::set_update_instruction_batch).
-        ///
-        /// <p>An array of structures that contain the permission updates to make.</p>
-        pub fn update_instruction_batch(mut self, input: crate::model::UpdateInstruction) -> Self {
-            self.inner = self.inner.update_instruction_batch(input);
-            self
-        }
-        /// <p>An array of structures that contain the permission updates to make.</p>
-        pub fn set_update_instruction_batch(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpdateInstruction>>) -> Self {
-            self.inner = self.inner.set_update_instruction_batch(input);
-            self
-        }
-        /// <p>The ID of the workspace to update.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to update.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateWorkspace`.
-                        ///
-    /// <p>Modifies an existing Amazon Managed Grafana workspace. If you use this operation and omit any optional parameters, the existing values of those parameters are not changed.</p> 
-    /// <p>To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.</p> 
-    /// <p>To modify which users in the workspace have the <code>Admin</code> and <code>Editor</code> Grafana roles, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateWorkspace {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_workspace_input::Builder
-                        }
-    impl UpdateWorkspace  {
-        /// Creates a new `UpdateWorkspace`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateWorkspace, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateWorkspaceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateWorkspaceOutput, aws_smithy_http::result::SdkError<crate::error::UpdateWorkspaceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-        pub fn account_access_type(mut self, input: crate::model::AccountAccessType) -> Self {
-            self.inner = self.inner.account_access_type(input);
-            self
-        }
-        /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-        pub fn set_account_access_type(mut self, input: std::option::Option<crate::model::AccountAccessType>) -> Self {
-            self.inner = self.inner.set_account_access_type(input);
-            self
-        }
-        /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
-        pub fn organization_role_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_role_name(input.into());
-            self
-        }
-        /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
-        pub fn set_organization_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_organization_role_name(input);
-            self
-        }
-        /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p> 
-        /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> 
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
-        pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
-            self.inner = self.inner.permission_type(input);
-            self
-        }
-        /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p> 
-        /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> 
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
-        pub fn set_permission_type(mut self, input: std::option::Option<crate::model::PermissionType>) -> Self {
-            self.inner = self.inner.set_permission_type(input);
-            self
-        }
-        /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
-        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(input.into());
-            self
-        }
-        /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
-        pub fn set_stack_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(input);
-            self
-        }
-        /// Appends an item to `workspaceDataSources`.
-        ///
-        /// To override the contents of this collection use [`set_workspace_data_sources`](Self::set_workspace_data_sources).
-        ///
-        /// <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p> 
-        /// <p>If you don't specify a data source here, you can still add it as a data source later in the workspace console. However, you will then have to manually configure permissions for it.</p>
-        pub fn workspace_data_sources(mut self, input: crate::model::DataSourceType) -> Self {
-            self.inner = self.inner.workspace_data_sources(input);
-            self
-        }
-        /// <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p> 
-        /// <p>If you don't specify a data source here, you can still add it as a data source later in the workspace console. However, you will then have to manually configure permissions for it.</p>
-        pub fn set_workspace_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSourceType>>) -> Self {
-            self.inner = self.inner.set_workspace_data_sources(input);
-            self
-        }
-        /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-        pub fn workspace_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_description(input.into());
-            self
-        }
-        /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-        pub fn set_workspace_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_description(input);
-            self
-        }
-        /// <p>The ID of the workspace to update.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to update.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// <p>A new name for the workspace to update.</p>
-        pub fn workspace_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_name(input.into());
-            self
-        }
-        /// <p>A new name for the workspace to update.</p>
-        pub fn set_workspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_name(input);
-            self
-        }
-        /// Appends an item to `workspaceNotificationDestinations`.
-        ///
-        /// To override the contents of this collection use [`set_workspace_notification_destinations`](Self::set_workspace_notification_destinations).
-        ///
-        /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-        pub fn workspace_notification_destinations(mut self, input: crate::model::NotificationDestinationType) -> Self {
-            self.inner = self.inner.workspace_notification_destinations(input);
-            self
-        }
-        /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-        pub fn set_workspace_notification_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>) -> Self {
-            self.inner = self.inner.set_workspace_notification_destinations(input);
-            self
-        }
-        /// Appends an item to `workspaceOrganizationalUnits`.
-        ///
-        /// To override the contents of this collection use [`set_workspace_organizational_units`](Self::set_workspace_organizational_units).
-        ///
-        /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-        pub fn workspace_organizational_units(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_organizational_units(input.into());
-            self
-        }
-        /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-        pub fn set_workspace_organizational_units(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_workspace_organizational_units(input);
-            self
-        }
-        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
-        pub fn workspace_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_role_arn(input.into());
-            self
-        }
-        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
-        pub fn set_workspace_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_role_arn(input);
-            self
-        }
-        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
-        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
-            self.inner = self.inner.vpc_configuration(input);
-            self
-        }
-        /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
-        pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::model::VpcConfiguration>) -> Self {
-            self.inner = self.inner.set_vpc_configuration(input);
-            self
-        }
-        /// <p>Whether to remove the VPC configuration from the workspace.</p> 
-        /// <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
-        pub fn remove_vpc_configuration(mut self, input: bool) -> Self {
-            self.inner = self.inner.remove_vpc_configuration(input);
-            self
-        }
-        /// <p>Whether to remove the VPC configuration from the workspace.</p> 
-        /// <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
-        pub fn set_remove_vpc_configuration(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_remove_vpc_configuration(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateWorkspaceAuthentication`.
-                        ///
-    /// <p>Use this operation to define the identity provider (IdP) that this workspace authenticates users from, using SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateWorkspaceAuthentication {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_workspace_authentication_input::Builder
-                        }
-    impl UpdateWorkspaceAuthentication  {
-        /// Creates a new `UpdateWorkspaceAuthentication`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateWorkspaceAuthentication, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateWorkspaceAuthenticationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateWorkspaceAuthenticationOutput, aws_smithy_http::result::SdkError<crate::error::UpdateWorkspaceAuthenticationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the workspace to update the authentication for.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to update the authentication for.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// Appends an item to `authenticationProviders`.
-        ///
-        /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
-        ///
-        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-        pub fn authentication_providers(mut self, input: crate::model::AuthenticationProviderTypes) -> Self {
-            self.inner = self.inner.authentication_providers(input);
-            self
-        }
-        /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-        pub fn set_authentication_providers(mut self, input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>) -> Self {
-            self.inner = self.inner.set_authentication_providers(input);
-            self
-        }
-        /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-        pub fn saml_configuration(mut self, input: crate::model::SamlConfiguration) -> Self {
-            self.inner = self.inner.saml_configuration(input);
-            self
-        }
-        /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-        pub fn set_saml_configuration(mut self, input: std::option::Option<crate::model::SamlConfiguration>) -> Self {
-            self.inner = self.inner.set_saml_configuration(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateWorkspaceConfiguration`.
-                        ///
-    /// <p>Updates the configuration string for the given workspace</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateWorkspaceConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_workspace_configuration_input::Builder
-                        }
-    impl UpdateWorkspaceConfiguration  {
-        /// Creates a new `UpdateWorkspaceConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateWorkspaceConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateWorkspaceConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateWorkspaceConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::UpdateWorkspaceConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration(input.into());
-            self
-        }
-        /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-        pub fn set_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_configuration(input);
-            self
-        }
-        /// <p>The ID of the workspace to update.</p>
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// <p>The ID of the workspace to update.</p>
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -1893,4 +371,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

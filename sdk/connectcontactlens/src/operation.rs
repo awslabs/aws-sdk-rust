@@ -2,7 +2,7 @@
 /// Operation shape for `ListRealtimeContactAnalysisSegments`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_realtime_contact_analysis_segments`](crate::client::Client::list_realtime_contact_analysis_segments).
+            /// [`list_realtime_contact_analysis_segments`](crate::client::fluent_builders::ListRealtimeContactAnalysisSegments).
             ///
             /// `ParseStrictResponse` impl for `ListRealtimeContactAnalysisSegments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -81,8 +81,8 @@ impl Client  {
                         /// - On success, responds with [`CreateEndpointOutput`](crate::output::CreateEndpointOutput) with field(s):
                         ///   - [`endpoint_arn(Option<String>)`](crate::output::CreateEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>
                         /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::error::CreateEndpointError)
-    pub fn create_endpoint(&self) -> fluent_builders::CreateEndpoint {
-                            fluent_builders::CreateEndpoint::new(self.handle.clone())
+    pub fn create_endpoint(&self) -> crate::client::fluent_builders::CreateEndpoint {
+                            crate::client::fluent_builders::CreateEndpoint::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) operation.
                         ///
@@ -92,8 +92,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::error::DeleteEndpointError)
-    pub fn delete_endpoint(&self) -> fluent_builders::DeleteEndpoint {
-                            fluent_builders::DeleteEndpoint::new(self.handle.clone())
+    pub fn delete_endpoint(&self) -> crate::client::fluent_builders::DeleteEndpoint {
+                            crate::client::fluent_builders::DeleteEndpoint::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEndpoints::into_paginator).
@@ -105,8 +105,8 @@ impl Client  {
                         ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListEndpointsOutput::endpoints): <p>The list of endpoints associated with the specified Outpost.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsOutput::next_token): <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
                         /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::error::ListEndpointsError)
-    pub fn list_endpoints(&self) -> fluent_builders::ListEndpoints {
-                            fluent_builders::ListEndpoints::new(self.handle.clone())
+    pub fn list_endpoints(&self) -> crate::client::fluent_builders::ListEndpoints {
+                            crate::client::fluent_builders::ListEndpoints::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListSharedEndpoints`](crate::client::fluent_builders::ListSharedEndpoints) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSharedEndpoints::into_paginator).
@@ -119,361 +119,9 @@ impl Client  {
                         ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListSharedEndpointsOutput::endpoints): <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSharedEndpointsOutput::next_token): <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
                         /// - On failure, responds with [`SdkError<ListSharedEndpointsError>`](crate::error::ListSharedEndpointsError)
-    pub fn list_shared_endpoints(&self) -> fluent_builders::ListSharedEndpoints {
-                            fluent_builders::ListSharedEndpoints::new(self.handle.clone())
+    pub fn list_shared_endpoints(&self) -> crate::client::fluent_builders::ListSharedEndpoints {
+                            crate::client::fluent_builders::ListSharedEndpoints::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateEndpoint`.
-                        ///
-    /// <p>Creates an endpoint and associates it with the specified Outpost.</p> <note> 
-    /// <p>It can take up to 5 minutes for this action to finish.</p> 
-    /// </note> 
-    /// <p></p> 
-    /// <p>Related actions include:</p> 
-    /// <ul> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a> </p> </li> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a> </p> </li> 
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateEndpoint {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_endpoint_input::Builder
-                        }
-    impl CreateEndpoint  {
-        /// Creates a new `CreateEndpoint`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateEndpointError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateEndpointOutput, aws_smithy_http::result::SdkError<crate::error::CreateEndpointError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Outposts. </p>
-        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(input.into());
-            self
-        }
-        /// <p>The ID of the Outposts. </p>
-        pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_outpost_id(input);
-            self
-        }
-        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
-        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(input.into());
-            self
-        }
-        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
-        pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_subnet_id(input);
-            self
-        }
-        /// <p>The ID of the security group to use with the endpoint.</p>
-        pub fn security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_id(input.into());
-            self
-        }
-        /// <p>The ID of the security group to use with the endpoint.</p>
-        pub fn set_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_security_group_id(input);
-            self
-        }
-        /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note> 
-        /// <p> <code>Private</code> is the default access type value.</p> 
-        /// </note>
-        pub fn access_type(mut self, input: crate::model::EndpointAccessType) -> Self {
-            self.inner = self.inner.access_type(input);
-            self
-        }
-        /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note> 
-        /// <p> <code>Private</code> is the default access type value.</p> 
-        /// </note>
-        pub fn set_access_type(mut self, input: std::option::Option<crate::model::EndpointAccessType>) -> Self {
-            self.inner = self.inner.set_access_type(input);
-            self
-        }
-        /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
-        pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_owned_ipv4_pool(input.into());
-            self
-        }
-        /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
-        pub fn set_customer_owned_ipv4_pool(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_customer_owned_ipv4_pool(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteEndpoint`.
-                        ///
-    /// <p>Deletes an endpoint.</p> <note> 
-    /// <p>It can take up to 5 minutes for this action to finish.</p> 
-    /// </note> 
-    /// <p></p> 
-    /// <p>Related actions include:</p> 
-    /// <ul> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a> </p> </li> 
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteEndpoint {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_endpoint_input::Builder
-                        }
-    impl DeleteEndpoint  {
-        /// Creates a new `DeleteEndpoint`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteEndpointError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteEndpointOutput, aws_smithy_http::result::SdkError<crate::error::DeleteEndpointError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the endpoint.</p>
-        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(input.into());
-            self
-        }
-        /// <p>The ID of the endpoint.</p>
-        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_endpoint_id(input);
-            self
-        }
-        /// <p>The ID of the Outposts. </p>
-        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(input.into());
-            self
-        }
-        /// <p>The ID of the Outposts. </p>
-        pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_outpost_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListEndpoints`.
-                        ///
-    /// <p>Lists endpoints associated with the specified Outpost. </p> 
-    /// <p>Related actions include:</p> 
-    /// <ul> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a> </p> </li> 
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListEndpoints {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_endpoints_input::Builder
-                        }
-    impl ListEndpoints  {
-        /// Creates a new `ListEndpoints`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListEndpointsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListEndpointsOutput, aws_smithy_http::result::SdkError<crate::error::ListEndpointsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListEndpointsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListEndpointsPaginator {
-                                        crate::paginator::ListEndpointsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of endpoints that will be returned in the response.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of endpoints that will be returned in the response.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListSharedEndpoints`.
-                        ///
-    /// <p>Lists all endpoints associated with an Outpost that has been shared by Amazon Web Services Resource Access Manager (RAM).</p> 
-    /// <p>Related actions include:</p> 
-    /// <ul> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a> </p> </li> 
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListSharedEndpoints {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_shared_endpoints_input::Builder
-                        }
-    impl ListSharedEndpoints  {
-        /// Creates a new `ListSharedEndpoints`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListSharedEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListSharedEndpointsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListSharedEndpointsOutput, aws_smithy_http::result::SdkError<crate::error::ListSharedEndpointsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListSharedEndpointsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListSharedEndpointsPaginator {
-                                        crate::paginator::ListSharedEndpointsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of endpoints that will be returned in the response.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of endpoints that will be returned in the response.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The ID of the Amazon Web Services Outpost.</p>
-        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(input.into());
-            self
-        }
-        /// <p>The ID of the Amazon Web Services Outpost.</p>
-        pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_outpost_id(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -544,4 +192,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

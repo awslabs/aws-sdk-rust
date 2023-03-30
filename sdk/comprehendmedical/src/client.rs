@@ -77,8 +77,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput) with field(s):
                         ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::output::DescribeEntitiesDetectionV2JobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
                         /// - On failure, responds with [`SdkError<DescribeEntitiesDetectionV2JobError>`](crate::error::DescribeEntitiesDetectionV2JobError)
-    pub fn describe_entities_detection_v2_job(&self) -> fluent_builders::DescribeEntitiesDetectionV2Job {
-                            fluent_builders::DescribeEntitiesDetectionV2Job::new(self.handle.clone())
+    pub fn describe_entities_detection_v2_job(&self) -> crate::client::fluent_builders::DescribeEntitiesDetectionV2Job {
+                            crate::client::fluent_builders::DescribeEntitiesDetectionV2Job::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeICD10CMInferenceJob`](crate::client::fluent_builders::DescribeICD10CMInferenceJob) operation.
                         ///
@@ -87,8 +87,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput) with field(s):
                         ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::output::DescribeIcd10CmInferenceJobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
                         /// - On failure, responds with [`SdkError<DescribeICD10CMInferenceJobError>`](crate::error::DescribeICD10CMInferenceJobError)
-    pub fn describe_icd10_cm_inference_job(&self) -> fluent_builders::DescribeICD10CMInferenceJob {
-                            fluent_builders::DescribeICD10CMInferenceJob::new(self.handle.clone())
+    pub fn describe_icd10_cm_inference_job(&self) -> crate::client::fluent_builders::DescribeICD10CMInferenceJob {
+                            crate::client::fluent_builders::DescribeICD10CMInferenceJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribePHIDetectionJob`](crate::client::fluent_builders::DescribePHIDetectionJob) operation.
                         ///
@@ -97,8 +97,8 @@ impl Client  {
                         /// - On success, responds with [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput) with field(s):
                         ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::output::DescribePhiDetectionJobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
                         /// - On failure, responds with [`SdkError<DescribePHIDetectionJobError>`](crate::error::DescribePHIDetectionJobError)
-    pub fn describe_phi_detection_job(&self) -> fluent_builders::DescribePHIDetectionJob {
-                            fluent_builders::DescribePHIDetectionJob::new(self.handle.clone())
+    pub fn describe_phi_detection_job(&self) -> crate::client::fluent_builders::DescribePHIDetectionJob {
+                            crate::client::fluent_builders::DescribePHIDetectionJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeRxNormInferenceJob`](crate::client::fluent_builders::DescribeRxNormInferenceJob) operation.
                         ///
@@ -107,8 +107,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput) with field(s):
                         ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::output::DescribeRxNormInferenceJobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
                         /// - On failure, responds with [`SdkError<DescribeRxNormInferenceJobError>`](crate::error::DescribeRxNormInferenceJobError)
-    pub fn describe_rx_norm_inference_job(&self) -> fluent_builders::DescribeRxNormInferenceJob {
-                            fluent_builders::DescribeRxNormInferenceJob::new(self.handle.clone())
+    pub fn describe_rx_norm_inference_job(&self) -> crate::client::fluent_builders::DescribeRxNormInferenceJob {
+                            crate::client::fluent_builders::DescribeRxNormInferenceJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeSNOMEDCTInferenceJob`](crate::client::fluent_builders::DescribeSNOMEDCTInferenceJob) operation.
                         ///
@@ -117,8 +117,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput) with field(s):
                         ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::output::DescribeSnomedctInferenceJobOutput::comprehend_medical_async_job_properties): <p>Provides information about a detection job.</p>
                         /// - On failure, responds with [`SdkError<DescribeSNOMEDCTInferenceJobError>`](crate::error::DescribeSNOMEDCTInferenceJobError)
-    pub fn describe_snomedct_inference_job(&self) -> fluent_builders::DescribeSNOMEDCTInferenceJob {
-                            fluent_builders::DescribeSNOMEDCTInferenceJob::new(self.handle.clone())
+    pub fn describe_snomedct_inference_job(&self) -> crate::client::fluent_builders::DescribeSNOMEDCTInferenceJob {
+                            crate::client::fluent_builders::DescribeSNOMEDCTInferenceJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DetectEntities`](crate::client::fluent_builders::DetectEntities) operation.
                         ///
@@ -131,8 +131,8 @@ impl Client  {
     ///   - [`model_version(Option<String>)`](crate::output::DetectEntitiesOutput::model_version): <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
                         /// - On failure, responds with [`SdkError<DetectEntitiesError>`](crate::error::DetectEntitiesError)
     #[deprecated(note = "This operation is deprecated, use DetectEntitiesV2 instead.")]
-    pub fn detect_entities(&self) -> fluent_builders::DetectEntities {
-                            fluent_builders::DetectEntities::new(self.handle.clone())
+    pub fn detect_entities(&self) -> crate::client::fluent_builders::DetectEntities {
+                            crate::client::fluent_builders::DetectEntities::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DetectEntitiesV2`](crate::client::fluent_builders::DetectEntitiesV2) operation.
                         ///
@@ -144,8 +144,8 @@ impl Client  {
     ///   - [`pagination_token(Option<String>)`](crate::output::DetectEntitiesV2Output::pagination_token): <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
     ///   - [`model_version(Option<String>)`](crate::output::DetectEntitiesV2Output::model_version): <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
                         /// - On failure, responds with [`SdkError<DetectEntitiesV2Error>`](crate::error::DetectEntitiesV2Error)
-    pub fn detect_entities_v2(&self) -> fluent_builders::DetectEntitiesV2 {
-                            fluent_builders::DetectEntitiesV2::new(self.handle.clone())
+    pub fn detect_entities_v2(&self) -> crate::client::fluent_builders::DetectEntitiesV2 {
+                            crate::client::fluent_builders::DetectEntitiesV2::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DetectPHI`](crate::client::fluent_builders::DetectPHI) operation.
                         ///
@@ -156,8 +156,8 @@ impl Client  {
     ///   - [`pagination_token(Option<String>)`](crate::output::DetectPhiOutput::pagination_token): <p> If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
     ///   - [`model_version(Option<String>)`](crate::output::DetectPhiOutput::model_version): <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
                         /// - On failure, responds with [`SdkError<DetectPHIError>`](crate::error::DetectPHIError)
-    pub fn detect_phi(&self) -> fluent_builders::DetectPHI {
-                            fluent_builders::DetectPHI::new(self.handle.clone())
+    pub fn detect_phi(&self) -> crate::client::fluent_builders::DetectPHI {
+                            crate::client::fluent_builders::DetectPHI::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`InferICD10CM`](crate::client::fluent_builders::InferICD10CM) operation.
                         ///
@@ -168,8 +168,8 @@ impl Client  {
     ///   - [`pagination_token(Option<String>)`](crate::output::InferIcd10CmOutput::pagination_token): <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
     ///   - [`model_version(Option<String>)`](crate::output::InferIcd10CmOutput::model_version): <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
                         /// - On failure, responds with [`SdkError<InferICD10CMError>`](crate::error::InferICD10CMError)
-    pub fn infer_icd10_cm(&self) -> fluent_builders::InferICD10CM {
-                            fluent_builders::InferICD10CM::new(self.handle.clone())
+    pub fn infer_icd10_cm(&self) -> crate::client::fluent_builders::InferICD10CM {
+                            crate::client::fluent_builders::InferICD10CM::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`InferRxNorm`](crate::client::fluent_builders::InferRxNorm) operation.
                         ///
@@ -180,8 +180,8 @@ impl Client  {
     ///   - [`pagination_token(Option<String>)`](crate::output::InferRxNormOutput::pagination_token): <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
     ///   - [`model_version(Option<String>)`](crate::output::InferRxNormOutput::model_version): <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
                         /// - On failure, responds with [`SdkError<InferRxNormError>`](crate::error::InferRxNormError)
-    pub fn infer_rx_norm(&self) -> fluent_builders::InferRxNorm {
-                            fluent_builders::InferRxNorm::new(self.handle.clone())
+    pub fn infer_rx_norm(&self) -> crate::client::fluent_builders::InferRxNorm {
+                            crate::client::fluent_builders::InferRxNorm::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`InferSNOMEDCT`](crate::client::fluent_builders::InferSNOMEDCT) operation.
                         ///
@@ -194,8 +194,8 @@ impl Client  {
     ///   - [`snomedct_details(Option<SnomedctDetails>)`](crate::output::InferSnomedctOutput::snomedct_details): <p> The details of the SNOMED-CT revision, including the edition, language, and version date. </p>
     ///   - [`characters(Option<Characters>)`](crate::output::InferSnomedctOutput::characters): <p> The number of characters in the input request documentation. </p>
                         /// - On failure, responds with [`SdkError<InferSNOMEDCTError>`](crate::error::InferSNOMEDCTError)
-    pub fn infer_snomedct(&self) -> fluent_builders::InferSNOMEDCT {
-                            fluent_builders::InferSNOMEDCT::new(self.handle.clone())
+    pub fn infer_snomedct(&self) -> crate::client::fluent_builders::InferSNOMEDCT {
+                            crate::client::fluent_builders::InferSNOMEDCT::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListEntitiesDetectionV2Jobs`](crate::client::fluent_builders::ListEntitiesDetectionV2Jobs) operation.
                         ///
@@ -207,8 +207,8 @@ impl Client  {
                         ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::output::ListEntitiesDetectionV2JobsOutput::comprehend_medical_async_job_properties_list): <p>A list containing the properties of each job returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEntitiesDetectionV2JobsOutput::next_token): <p>Identifies the next page of results to return.</p>
                         /// - On failure, responds with [`SdkError<ListEntitiesDetectionV2JobsError>`](crate::error::ListEntitiesDetectionV2JobsError)
-    pub fn list_entities_detection_v2_jobs(&self) -> fluent_builders::ListEntitiesDetectionV2Jobs {
-                            fluent_builders::ListEntitiesDetectionV2Jobs::new(self.handle.clone())
+    pub fn list_entities_detection_v2_jobs(&self) -> crate::client::fluent_builders::ListEntitiesDetectionV2Jobs {
+                            crate::client::fluent_builders::ListEntitiesDetectionV2Jobs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListICD10CMInferenceJobs`](crate::client::fluent_builders::ListICD10CMInferenceJobs) operation.
                         ///
@@ -220,8 +220,8 @@ impl Client  {
                         ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::output::ListIcd10CmInferenceJobsOutput::comprehend_medical_async_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIcd10CmInferenceJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
                         /// - On failure, responds with [`SdkError<ListICD10CMInferenceJobsError>`](crate::error::ListICD10CMInferenceJobsError)
-    pub fn list_icd10_cm_inference_jobs(&self) -> fluent_builders::ListICD10CMInferenceJobs {
-                            fluent_builders::ListICD10CMInferenceJobs::new(self.handle.clone())
+    pub fn list_icd10_cm_inference_jobs(&self) -> crate::client::fluent_builders::ListICD10CMInferenceJobs {
+                            crate::client::fluent_builders::ListICD10CMInferenceJobs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListPHIDetectionJobs`](crate::client::fluent_builders::ListPHIDetectionJobs) operation.
                         ///
@@ -233,8 +233,8 @@ impl Client  {
                         ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::output::ListPhiDetectionJobsOutput::comprehend_medical_async_job_properties_list): <p>A list containing the properties of each job returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPhiDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
                         /// - On failure, responds with [`SdkError<ListPHIDetectionJobsError>`](crate::error::ListPHIDetectionJobsError)
-    pub fn list_phi_detection_jobs(&self) -> fluent_builders::ListPHIDetectionJobs {
-                            fluent_builders::ListPHIDetectionJobs::new(self.handle.clone())
+    pub fn list_phi_detection_jobs(&self) -> crate::client::fluent_builders::ListPHIDetectionJobs {
+                            crate::client::fluent_builders::ListPHIDetectionJobs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListRxNormInferenceJobs`](crate::client::fluent_builders::ListRxNormInferenceJobs) operation.
                         ///
@@ -246,8 +246,8 @@ impl Client  {
                         ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::output::ListRxNormInferenceJobsOutput::comprehend_medical_async_job_properties_list): <p>The maximum number of results to return in each page. The default is 100.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRxNormInferenceJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
                         /// - On failure, responds with [`SdkError<ListRxNormInferenceJobsError>`](crate::error::ListRxNormInferenceJobsError)
-    pub fn list_rx_norm_inference_jobs(&self) -> fluent_builders::ListRxNormInferenceJobs {
-                            fluent_builders::ListRxNormInferenceJobs::new(self.handle.clone())
+    pub fn list_rx_norm_inference_jobs(&self) -> crate::client::fluent_builders::ListRxNormInferenceJobs {
+                            crate::client::fluent_builders::ListRxNormInferenceJobs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListSNOMEDCTInferenceJobs`](crate::client::fluent_builders::ListSNOMEDCTInferenceJobs) operation.
                         ///
@@ -259,8 +259,8 @@ impl Client  {
                         ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::output::ListSnomedctInferenceJobsOutput::comprehend_medical_async_job_properties_list): <p> A list containing the properties of each job that is returned. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSnomedctInferenceJobsOutput::next_token): <p> Identifies the next page of results to return. </p>
                         /// - On failure, responds with [`SdkError<ListSNOMEDCTInferenceJobsError>`](crate::error::ListSNOMEDCTInferenceJobsError)
-    pub fn list_snomedct_inference_jobs(&self) -> fluent_builders::ListSNOMEDCTInferenceJobs {
-                            fluent_builders::ListSNOMEDCTInferenceJobs::new(self.handle.clone())
+    pub fn list_snomedct_inference_jobs(&self) -> crate::client::fluent_builders::ListSNOMEDCTInferenceJobs {
+                            crate::client::fluent_builders::ListSNOMEDCTInferenceJobs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartEntitiesDetectionV2Job`](crate::client::fluent_builders::StartEntitiesDetectionV2Job) operation.
                         ///
@@ -275,8 +275,8 @@ impl Client  {
                         /// - On success, responds with [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput) with field(s):
                         ///   - [`job_id(Option<String>)`](crate::output::StartEntitiesDetectionV2JobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
                         /// - On failure, responds with [`SdkError<StartEntitiesDetectionV2JobError>`](crate::error::StartEntitiesDetectionV2JobError)
-    pub fn start_entities_detection_v2_job(&self) -> fluent_builders::StartEntitiesDetectionV2Job {
-                            fluent_builders::StartEntitiesDetectionV2Job::new(self.handle.clone())
+    pub fn start_entities_detection_v2_job(&self) -> crate::client::fluent_builders::StartEntitiesDetectionV2Job {
+                            crate::client::fluent_builders::StartEntitiesDetectionV2Job::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartICD10CMInferenceJob`](crate::client::fluent_builders::StartICD10CMInferenceJob) operation.
                         ///
@@ -291,8 +291,8 @@ impl Client  {
                         /// - On success, responds with [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput) with field(s):
                         ///   - [`job_id(Option<String>)`](crate::output::StartIcd10CmInferenceJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
                         /// - On failure, responds with [`SdkError<StartICD10CMInferenceJobError>`](crate::error::StartICD10CMInferenceJobError)
-    pub fn start_icd10_cm_inference_job(&self) -> fluent_builders::StartICD10CMInferenceJob {
-                            fluent_builders::StartICD10CMInferenceJob::new(self.handle.clone())
+    pub fn start_icd10_cm_inference_job(&self) -> crate::client::fluent_builders::StartICD10CMInferenceJob {
+                            crate::client::fluent_builders::StartICD10CMInferenceJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartPHIDetectionJob`](crate::client::fluent_builders::StartPHIDetectionJob) operation.
                         ///
@@ -307,8 +307,8 @@ impl Client  {
                         /// - On success, responds with [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput) with field(s):
                         ///   - [`job_id(Option<String>)`](crate::output::StartPhiDetectionJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribePHIDetectionJob</code> operation.</p>
                         /// - On failure, responds with [`SdkError<StartPHIDetectionJobError>`](crate::error::StartPHIDetectionJobError)
-    pub fn start_phi_detection_job(&self) -> fluent_builders::StartPHIDetectionJob {
-                            fluent_builders::StartPHIDetectionJob::new(self.handle.clone())
+    pub fn start_phi_detection_job(&self) -> crate::client::fluent_builders::StartPHIDetectionJob {
+                            crate::client::fluent_builders::StartPHIDetectionJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartRxNormInferenceJob`](crate::client::fluent_builders::StartRxNormInferenceJob) operation.
                         ///
@@ -323,8 +323,8 @@ impl Client  {
                         /// - On success, responds with [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput) with field(s):
                         ///   - [`job_id(Option<String>)`](crate::output::StartRxNormInferenceJobOutput::job_id): <p>The identifier of the job.</p>
                         /// - On failure, responds with [`SdkError<StartRxNormInferenceJobError>`](crate::error::StartRxNormInferenceJobError)
-    pub fn start_rx_norm_inference_job(&self) -> fluent_builders::StartRxNormInferenceJob {
-                            fluent_builders::StartRxNormInferenceJob::new(self.handle.clone())
+    pub fn start_rx_norm_inference_job(&self) -> crate::client::fluent_builders::StartRxNormInferenceJob {
+                            crate::client::fluent_builders::StartRxNormInferenceJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartSNOMEDCTInferenceJob`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob) operation.
                         ///
@@ -339,8 +339,8 @@ impl Client  {
                         /// - On success, responds with [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput) with field(s):
                         ///   - [`job_id(Option<String>)`](crate::output::StartSnomedctInferenceJobOutput::job_id): <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
                         /// - On failure, responds with [`SdkError<StartSNOMEDCTInferenceJobError>`](crate::error::StartSNOMEDCTInferenceJobError)
-    pub fn start_snomedct_inference_job(&self) -> fluent_builders::StartSNOMEDCTInferenceJob {
-                            fluent_builders::StartSNOMEDCTInferenceJob::new(self.handle.clone())
+    pub fn start_snomedct_inference_job(&self) -> crate::client::fluent_builders::StartSNOMEDCTInferenceJob {
+                            crate::client::fluent_builders::StartSNOMEDCTInferenceJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopEntitiesDetectionV2Job`](crate::client::fluent_builders::StopEntitiesDetectionV2Job) operation.
                         ///
@@ -349,8 +349,8 @@ impl Client  {
                         /// - On success, responds with [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput) with field(s):
                         ///   - [`job_id(Option<String>)`](crate::output::StopEntitiesDetectionV2JobOutput::job_id): <p>The identifier of the medical entities detection job that was stopped.</p>
                         /// - On failure, responds with [`SdkError<StopEntitiesDetectionV2JobError>`](crate::error::StopEntitiesDetectionV2JobError)
-    pub fn stop_entities_detection_v2_job(&self) -> fluent_builders::StopEntitiesDetectionV2Job {
-                            fluent_builders::StopEntitiesDetectionV2Job::new(self.handle.clone())
+    pub fn stop_entities_detection_v2_job(&self) -> crate::client::fluent_builders::StopEntitiesDetectionV2Job {
+                            crate::client::fluent_builders::StopEntitiesDetectionV2Job::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopICD10CMInferenceJob`](crate::client::fluent_builders::StopICD10CMInferenceJob) operation.
                         ///
@@ -359,8 +359,8 @@ impl Client  {
                         /// - On success, responds with [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput) with field(s):
                         ///   - [`job_id(Option<String>)`](crate::output::StopIcd10CmInferenceJobOutput::job_id): <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeICD10CMInferenceJob</code> operation.</p>
                         /// - On failure, responds with [`SdkError<StopICD10CMInferenceJobError>`](crate::error::StopICD10CMInferenceJobError)
-    pub fn stop_icd10_cm_inference_job(&self) -> fluent_builders::StopICD10CMInferenceJob {
-                            fluent_builders::StopICD10CMInferenceJob::new(self.handle.clone())
+    pub fn stop_icd10_cm_inference_job(&self) -> crate::client::fluent_builders::StopICD10CMInferenceJob {
+                            crate::client::fluent_builders::StopICD10CMInferenceJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopPHIDetectionJob`](crate::client::fluent_builders::StopPHIDetectionJob) operation.
                         ///
@@ -369,8 +369,8 @@ impl Client  {
                         /// - On success, responds with [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput) with field(s):
                         ///   - [`job_id(Option<String>)`](crate::output::StopPhiDetectionJobOutput::job_id): <p>The identifier of the PHI detection job that was stopped.</p>
                         /// - On failure, responds with [`SdkError<StopPHIDetectionJobError>`](crate::error::StopPHIDetectionJobError)
-    pub fn stop_phi_detection_job(&self) -> fluent_builders::StopPHIDetectionJob {
-                            fluent_builders::StopPHIDetectionJob::new(self.handle.clone())
+    pub fn stop_phi_detection_job(&self) -> crate::client::fluent_builders::StopPHIDetectionJob {
+                            crate::client::fluent_builders::StopPHIDetectionJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopRxNormInferenceJob`](crate::client::fluent_builders::StopRxNormInferenceJob) operation.
                         ///
@@ -379,8 +379,8 @@ impl Client  {
                         /// - On success, responds with [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput) with field(s):
                         ///   - [`job_id(Option<String>)`](crate::output::StopRxNormInferenceJobOutput::job_id): <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
                         /// - On failure, responds with [`SdkError<StopRxNormInferenceJobError>`](crate::error::StopRxNormInferenceJobError)
-    pub fn stop_rx_norm_inference_job(&self) -> fluent_builders::StopRxNormInferenceJob {
-                            fluent_builders::StopRxNormInferenceJob::new(self.handle.clone())
+    pub fn stop_rx_norm_inference_job(&self) -> crate::client::fluent_builders::StopRxNormInferenceJob {
+                            crate::client::fluent_builders::StopRxNormInferenceJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopSNOMEDCTInferenceJob`](crate::client::fluent_builders::StopSNOMEDCTInferenceJob) operation.
                         ///
@@ -389,1853 +389,9 @@ impl Client  {
                         /// - On success, responds with [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput) with field(s):
                         ///   - [`job_id(Option<String>)`](crate::output::StopSnomedctInferenceJobOutput::job_id): <p> The identifier generated for the job. To get the status of job, use this identifier with the DescribeSNOMEDCTInferenceJob operation. </p>
                         /// - On failure, responds with [`SdkError<StopSNOMEDCTInferenceJobError>`](crate::error::StopSNOMEDCTInferenceJobError)
-    pub fn stop_snomedct_inference_job(&self) -> fluent_builders::StopSNOMEDCTInferenceJob {
-                            fluent_builders::StopSNOMEDCTInferenceJob::new(self.handle.clone())
+    pub fn stop_snomedct_inference_job(&self) -> crate::client::fluent_builders::StopSNOMEDCTInferenceJob {
+                            crate::client::fluent_builders::StopSNOMEDCTInferenceJob::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `DescribeEntitiesDetectionV2Job`.
-                        ///
-    /// <p>Gets the properties associated with a medical entities detection job. Use this operation to get the status of a detection job.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeEntitiesDetectionV2Job {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_entities_detection_v2_job_input::Builder
-                        }
-    impl DescribeEntitiesDetectionV2Job  {
-        /// Creates a new `DescribeEntitiesDetectionV2Job`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeEntitiesDetectionV2Job, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeEntitiesDetectionV2JobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeEntitiesDetectionV2JobOutput, aws_smithy_http::result::SdkError<crate::error::DescribeEntitiesDetectionV2JobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeICD10CMInferenceJob`.
-                        ///
-    /// <p>Gets the properties associated with an InferICD10CM job. Use this operation to get the status of an inference job.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeICD10CMInferenceJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_icd10_cm_inference_job_input::Builder
-                        }
-    impl DescribeICD10CMInferenceJob  {
-        /// Creates a new `DescribeICD10CMInferenceJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeICD10CMInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeICD10CMInferenceJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeIcd10CmInferenceJobOutput, aws_smithy_http::result::SdkError<crate::error::DescribeICD10CMInferenceJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribePHIDetectionJob`.
-                        ///
-    /// <p>Gets the properties associated with a protected health information (PHI) detection job. Use this operation to get the status of a detection job.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribePHIDetectionJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_phi_detection_job_input::Builder
-                        }
-    impl DescribePHIDetectionJob  {
-        /// Creates a new `DescribePHIDetectionJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribePHIDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribePHIDetectionJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribePhiDetectionJobOutput, aws_smithy_http::result::SdkError<crate::error::DescribePHIDetectionJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeRxNormInferenceJob`.
-                        ///
-    /// <p>Gets the properties associated with an InferRxNorm job. Use this operation to get the status of an inference job.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeRxNormInferenceJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_rx_norm_inference_job_input::Builder
-                        }
-    impl DescribeRxNormInferenceJob  {
-        /// Creates a new `DescribeRxNormInferenceJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeRxNormInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeRxNormInferenceJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeRxNormInferenceJobOutput, aws_smithy_http::result::SdkError<crate::error::DescribeRxNormInferenceJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeSNOMEDCTInferenceJob`.
-                        ///
-    /// <p> Gets the properties associated with an InferSNOMEDCT job. Use this operation to get the status of an inference job. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeSNOMEDCTInferenceJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_snomedct_inference_job_input::Builder
-                        }
-    impl DescribeSNOMEDCTInferenceJob  {
-        /// Creates a new `DescribeSNOMEDCTInferenceJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeSNOMEDCTInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeSNOMEDCTInferenceJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeSnomedctInferenceJobOutput, aws_smithy_http::result::SdkError<crate::error::DescribeSNOMEDCTInferenceJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DetectEntities`.
-                        ///
-    /// <p>The <code>DetectEntities</code> operation is deprecated. You should use the <code>DetectEntitiesV2</code> operation instead.</p> 
-    /// <p> Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information .</p>
-    #[deprecated(note = "This operation is deprecated, use DetectEntitiesV2 instead.")]
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DetectEntities {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::detect_entities_input::Builder
-                        }
-    impl DetectEntities  {
-        /// Creates a new `DetectEntities`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DetectEntities, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DetectEntitiesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DetectEntitiesOutput, aws_smithy_http::result::SdkError<crate::error::DetectEntitiesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
-        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(input.into());
-            self
-        }
-        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
-        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_text(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DetectEntitiesV2`.
-                        ///
-    /// <p>Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information. Amazon Comprehend Medical only detects medical entities in English language texts.</p> 
-    /// <p>The <code>DetectEntitiesV2</code> operation replaces the <code>DetectEntities</code> operation. This new action uses a different model for determining the entities in your medical text and changes the way that some entities are returned in the output. You should use the <code>DetectEntitiesV2</code> operation in all new applications.</p> 
-    /// <p>The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code> entities as attributes instead of types. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DetectEntitiesV2 {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::detect_entities_v2_input::Builder
-                        }
-    impl DetectEntitiesV2  {
-        /// Creates a new `DetectEntitiesV2`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DetectEntitiesV2, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DetectEntitiesV2Error>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DetectEntitiesV2Output, aws_smithy_http::result::SdkError<crate::error::DetectEntitiesV2Error>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
-        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(input.into());
-            self
-        }
-        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
-        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_text(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DetectPHI`.
-                        ///
-    /// <p> Inspects the clinical text for protected health information (PHI) entities and returns the entity category, location, and confidence score for each entity. Amazon Comprehend Medical only detects entities in English language texts.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DetectPHI {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::detect_phi_input::Builder
-                        }
-    impl DetectPHI  {
-        /// Creates a new `DetectPHI`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DetectPHI, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DetectPHIError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DetectPhiOutput, aws_smithy_http::result::SdkError<crate::error::DetectPHIError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
-        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(input.into());
-            self
-        }
-        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
-        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_text(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `InferICD10CM`.
-                        ///
-    /// <p>InferICD10CM detects medical conditions as entities listed in a patient record and links those entities to normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend Medical only detects medical entities in English language texts. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct InferICD10CM {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::infer_icd10_cm_input::Builder
-                        }
-    impl InferICD10CM  {
-        /// Creates a new `InferICD10CM`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::InferICD10CM, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::InferICD10CMError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::InferIcd10CmOutput, aws_smithy_http::result::SdkError<crate::error::InferICD10CMError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
-        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(input.into());
-            self
-        }
-        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
-        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_text(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `InferRxNorm`.
-                        ///
-    /// <p>InferRxNorm detects medications as entities listed in a patient record and links to the normalized concept identifiers in the RxNorm database from the National Library of Medicine. Amazon Comprehend Medical only detects medical entities in English language texts. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct InferRxNorm {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::infer_rx_norm_input::Builder
-                        }
-    impl InferRxNorm  {
-        /// Creates a new `InferRxNorm`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::InferRxNorm, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::InferRxNormError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::InferRxNormOutput, aws_smithy_http::result::SdkError<crate::error::InferRxNormError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
-        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(input.into());
-            self
-        }
-        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
-        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_text(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `InferSNOMEDCT`.
-                        ///
-    /// <p> InferSNOMEDCT detects possible medical concepts as entities and links them to codes from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct InferSNOMEDCT {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::infer_snomedct_input::Builder
-                        }
-    impl InferSNOMEDCT  {
-        /// Creates a new `InferSNOMEDCT`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::InferSNOMEDCT, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::InferSNOMEDCTError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::InferSnomedctOutput, aws_smithy_http::result::SdkError<crate::error::InferSNOMEDCTError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
-        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(input.into());
-            self
-        }
-        /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
-        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_text(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListEntitiesDetectionV2Jobs`.
-                        ///
-    /// <p>Gets a list of medical entity detection jobs that you have submitted.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListEntitiesDetectionV2Jobs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_entities_detection_v2_jobs_input::Builder
-                        }
-    impl ListEntitiesDetectionV2Jobs  {
-        /// Creates a new `ListEntitiesDetectionV2Jobs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListEntitiesDetectionV2Jobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2JobsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListEntitiesDetectionV2JobsOutput, aws_smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2JobsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
-            self.inner = self.inner.filter(input);
-            self
-        }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn set_filter(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>) -> Self {
-            self.inner = self.inner.set_filter(input);
-            self
-        }
-        /// <p>Identifies the next page of results to return.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Identifies the next page of results to return.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListICD10CMInferenceJobs`.
-                        ///
-    /// <p>Gets a list of InferICD10CM jobs that you have submitted.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListICD10CMInferenceJobs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_icd10_cm_inference_jobs_input::Builder
-                        }
-    impl ListICD10CMInferenceJobs  {
-        /// Creates a new `ListICD10CMInferenceJobs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListICD10CMInferenceJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListICD10CMInferenceJobsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListIcd10CmInferenceJobsOutput, aws_smithy_http::result::SdkError<crate::error::ListICD10CMInferenceJobsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
-            self.inner = self.inner.filter(input);
-            self
-        }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn set_filter(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>) -> Self {
-            self.inner = self.inner.set_filter(input);
-            self
-        }
-        /// <p>Identifies the next page of results to return.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Identifies the next page of results to return.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListPHIDetectionJobs`.
-                        ///
-    /// <p>Gets a list of protected health information (PHI) detection jobs that you have submitted.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListPHIDetectionJobs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_phi_detection_jobs_input::Builder
-                        }
-    impl ListPHIDetectionJobs  {
-        /// Creates a new `ListPHIDetectionJobs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListPHIDetectionJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListPHIDetectionJobsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListPhiDetectionJobsOutput, aws_smithy_http::result::SdkError<crate::error::ListPHIDetectionJobsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
-            self.inner = self.inner.filter(input);
-            self
-        }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn set_filter(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>) -> Self {
-            self.inner = self.inner.set_filter(input);
-            self
-        }
-        /// <p>Identifies the next page of results to return.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Identifies the next page of results to return.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListRxNormInferenceJobs`.
-                        ///
-    /// <p>Gets a list of InferRxNorm jobs that you have submitted.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListRxNormInferenceJobs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_rx_norm_inference_jobs_input::Builder
-                        }
-    impl ListRxNormInferenceJobs  {
-        /// Creates a new `ListRxNormInferenceJobs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListRxNormInferenceJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListRxNormInferenceJobsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListRxNormInferenceJobsOutput, aws_smithy_http::result::SdkError<crate::error::ListRxNormInferenceJobsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
-            self.inner = self.inner.filter(input);
-            self
-        }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn set_filter(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>) -> Self {
-            self.inner = self.inner.set_filter(input);
-            self
-        }
-        /// <p>Identifies the next page of results to return.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Identifies the next page of results to return.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>Identifies the next page of results to return.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Identifies the next page of results to return.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListSNOMEDCTInferenceJobs`.
-                        ///
-    /// <p> Gets a list of InferSNOMEDCT jobs a user has submitted. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListSNOMEDCTInferenceJobs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_snomedct_inference_jobs_input::Builder
-                        }
-    impl ListSNOMEDCTInferenceJobs  {
-        /// Creates a new `ListSNOMEDCTInferenceJobs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListSNOMEDCTInferenceJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListSNOMEDCTInferenceJobsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListSnomedctInferenceJobsOutput, aws_smithy_http::result::SdkError<crate::error::ListSNOMEDCTInferenceJobsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Provides information for filtering a list of detection jobs.</p>
-        pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
-            self.inner = self.inner.filter(input);
-            self
-        }
-        /// <p>Provides information for filtering a list of detection jobs.</p>
-        pub fn set_filter(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>) -> Self {
-            self.inner = self.inner.set_filter(input);
-            self
-        }
-        /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p> The maximum number of results to return in each page. The default is 100. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p> The maximum number of results to return in each page. The default is 100. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartEntitiesDetectionV2Job`.
-                        ///
-    /// <p>Starts an asynchronous medical entity detection job for a collection of documents. Use the <code>DescribeEntitiesDetectionV2Job</code> operation to track the status of a job.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartEntitiesDetectionV2Job {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_entities_detection_v2_job_input::Builder
-                        }
-    impl StartEntitiesDetectionV2Job  {
-        /// Creates a new `StartEntitiesDetectionV2Job`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartEntitiesDetectionV2Job, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartEntitiesDetectionV2JobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartEntitiesDetectionV2JobOutput, aws_smithy_http::result::SdkError<crate::error::StartEntitiesDetectionV2JobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The input configuration that specifies the format and location of the input data for the job.</p>
-        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(input);
-            self
-        }
-        /// <p>The input configuration that specifies the format and location of the input data for the job.</p>
-        pub fn set_input_data_config(mut self, input: std::option::Option<crate::model::InputDataConfig>) -> Self {
-            self.inner = self.inner.set_input_data_config(input);
-            self
-        }
-        /// <p>The output configuration that specifies where to send the output files.</p>
-        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(input);
-            self
-        }
-        /// <p>The output configuration that specifies where to send the output files.</p>
-        pub fn set_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
-            self.inner = self.inner.set_output_data_config(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_data_access_role_arn(input);
-            self
-        }
-        /// <p>The identifier of the job.</p>
-        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(input.into());
-            self
-        }
-        /// <p>The identifier of the job.</p>
-        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_name(input);
-            self
-        }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one for you.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one for you.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(input.into());
-            self
-        }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key(input);
-            self
-        }
-        /// <p>The language of the input documents. All documents must be in the same language. Comprehend Medical; processes files in US English (en).</p>
-        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(input);
-            self
-        }
-        /// <p>The language of the input documents. All documents must be in the same language. Comprehend Medical; processes files in US English (en).</p>
-        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
-            self.inner = self.inner.set_language_code(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartICD10CMInferenceJob`.
-                        ///
-    /// <p>Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology. Use the <code>DescribeICD10CMInferenceJob</code> operation to track the status of a job.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartICD10CMInferenceJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_icd10_cm_inference_job_input::Builder
-                        }
-    impl StartICD10CMInferenceJob  {
-        /// Creates a new `StartICD10CMInferenceJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartICD10CMInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartICD10CMInferenceJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartIcd10CmInferenceJobOutput, aws_smithy_http::result::SdkError<crate::error::StartICD10CMInferenceJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Specifies the format and location of the input data for the job.</p>
-        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(input);
-            self
-        }
-        /// <p>Specifies the format and location of the input data for the job.</p>
-        pub fn set_input_data_config(mut self, input: std::option::Option<crate::model::InputDataConfig>) -> Self {
-            self.inner = self.inner.set_input_data_config(input);
-            self
-        }
-        /// <p>Specifies where to send the output files.</p>
-        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(input);
-            self
-        }
-        /// <p>Specifies where to send the output files.</p>
-        pub fn set_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
-            self.inner = self.inner.set_output_data_config(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_data_access_role_arn(input);
-            self
-        }
-        /// <p>The identifier of the job.</p>
-        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(input.into());
-            self
-        }
-        /// <p>The identifier of the job.</p>
-        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_name(input);
-            self
-        }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(input.into());
-            self
-        }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key(input);
-            self
-        }
-        /// <p>The language of the input documents. All documents must be in the same language.</p>
-        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(input);
-            self
-        }
-        /// <p>The language of the input documents. All documents must be in the same language.</p>
-        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
-            self.inner = self.inner.set_language_code(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartPHIDetectionJob`.
-                        ///
-    /// <p>Starts an asynchronous job to detect protected health information (PHI). Use the <code>DescribePHIDetectionJob</code> operation to track the status of a job.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartPHIDetectionJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_phi_detection_job_input::Builder
-                        }
-    impl StartPHIDetectionJob  {
-        /// Creates a new `StartPHIDetectionJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartPHIDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartPHIDetectionJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartPhiDetectionJobOutput, aws_smithy_http::result::SdkError<crate::error::StartPHIDetectionJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Specifies the format and location of the input data for the job.</p>
-        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(input);
-            self
-        }
-        /// <p>Specifies the format and location of the input data for the job.</p>
-        pub fn set_input_data_config(mut self, input: std::option::Option<crate::model::InputDataConfig>) -> Self {
-            self.inner = self.inner.set_input_data_config(input);
-            self
-        }
-        /// <p>Specifies where to send the output files.</p>
-        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(input);
-            self
-        }
-        /// <p>Specifies where to send the output files.</p>
-        pub fn set_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
-            self.inner = self.inner.set_output_data_config(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_data_access_role_arn(input);
-            self
-        }
-        /// <p>The identifier of the job.</p>
-        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(input.into());
-            self
-        }
-        /// <p>The identifier of the job.</p>
-        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_name(input);
-            self
-        }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(input.into());
-            self
-        }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key(input);
-            self
-        }
-        /// <p>The language of the input documents. All documents must be in the same language.</p>
-        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(input);
-            self
-        }
-        /// <p>The language of the input documents. All documents must be in the same language.</p>
-        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
-            self.inner = self.inner.set_language_code(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartRxNormInferenceJob`.
-                        ///
-    /// <p>Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology. Use the <code>DescribeRxNormInferenceJob</code> operation to track the status of a job.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartRxNormInferenceJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_rx_norm_inference_job_input::Builder
-                        }
-    impl StartRxNormInferenceJob  {
-        /// Creates a new `StartRxNormInferenceJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartRxNormInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartRxNormInferenceJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartRxNormInferenceJobOutput, aws_smithy_http::result::SdkError<crate::error::StartRxNormInferenceJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Specifies the format and location of the input data for the job.</p>
-        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(input);
-            self
-        }
-        /// <p>Specifies the format and location of the input data for the job.</p>
-        pub fn set_input_data_config(mut self, input: std::option::Option<crate::model::InputDataConfig>) -> Self {
-            self.inner = self.inner.set_input_data_config(input);
-            self
-        }
-        /// <p>Specifies where to send the output files.</p>
-        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(input);
-            self
-        }
-        /// <p>Specifies where to send the output files.</p>
-        pub fn set_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
-            self.inner = self.inner.set_output_data_config(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_data_access_role_arn(input);
-            self
-        }
-        /// <p>The identifier of the job.</p>
-        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(input.into());
-            self
-        }
-        /// <p>The identifier of the job.</p>
-        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_name(input);
-            self
-        }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(input.into());
-            self
-        }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key(input);
-            self
-        }
-        /// <p>The language of the input documents. All documents must be in the same language.</p>
-        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(input);
-            self
-        }
-        /// <p>The language of the input documents. All documents must be in the same language.</p>
-        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
-            self.inner = self.inner.set_language_code(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartSNOMEDCTInferenceJob`.
-                        ///
-    /// <p> Starts an asynchronous job to detect medical concepts and link them to the SNOMED-CT ontology. Use the DescribeSNOMEDCTInferenceJob operation to track the status of a job. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartSNOMEDCTInferenceJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_snomedct_inference_job_input::Builder
-                        }
-    impl StartSNOMEDCTInferenceJob  {
-        /// Creates a new `StartSNOMEDCTInferenceJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartSNOMEDCTInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartSNOMEDCTInferenceJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartSnomedctInferenceJobOutput, aws_smithy_http::result::SdkError<crate::error::StartSNOMEDCTInferenceJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
-        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(input);
-            self
-        }
-        /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
-        pub fn set_input_data_config(mut self, input: std::option::Option<crate::model::InputDataConfig>) -> Self {
-            self.inner = self.inner.set_input_data_config(input);
-            self
-        }
-        /// <p>The output properties for a detection job.</p>
-        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(input);
-            self
-        }
-        /// <p>The output properties for a detection job.</p>
-        pub fn set_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
-            self.inner = self.inner.set_output_data_config(input);
-            self
-        }
-        /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
-        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(input.into());
-            self
-        }
-        /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
-        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_data_access_role_arn(input);
-            self
-        }
-        /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
-        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(input.into());
-            self
-        }
-        /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
-        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_name(input);
-            self
-        }
-        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
-        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(input.into());
-            self
-        }
-        /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
-        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key(input);
-            self
-        }
-        /// <p> The language of the input documents. All documents must be in the same language. </p>
-        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(input);
-            self
-        }
-        /// <p> The language of the input documents. All documents must be in the same language. </p>
-        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
-            self.inner = self.inner.set_language_code(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopEntitiesDetectionV2Job`.
-                        ///
-    /// <p>Stops a medical entities detection job in progress.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopEntitiesDetectionV2Job {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_entities_detection_v2_job_input::Builder
-                        }
-    impl StopEntitiesDetectionV2Job  {
-        /// Creates a new `StopEntitiesDetectionV2Job`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopEntitiesDetectionV2Job, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2JobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopEntitiesDetectionV2JobOutput, aws_smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2JobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the medical entities job to stop.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The identifier of the medical entities job to stop.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopICD10CMInferenceJob`.
-                        ///
-    /// <p>Stops an InferICD10CM inference job in progress.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopICD10CMInferenceJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_icd10_cm_inference_job_input::Builder
-                        }
-    impl StopICD10CMInferenceJob  {
-        /// Creates a new `StopICD10CMInferenceJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopICD10CMInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopICD10CMInferenceJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopIcd10CmInferenceJobOutput, aws_smithy_http::result::SdkError<crate::error::StopICD10CMInferenceJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the job.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The identifier of the job.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopPHIDetectionJob`.
-                        ///
-    /// <p>Stops a protected health information (PHI) detection job in progress.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopPHIDetectionJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_phi_detection_job_input::Builder
-                        }
-    impl StopPHIDetectionJob  {
-        /// Creates a new `StopPHIDetectionJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopPHIDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopPHIDetectionJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopPhiDetectionJobOutput, aws_smithy_http::result::SdkError<crate::error::StopPHIDetectionJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the PHI detection job to stop.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The identifier of the PHI detection job to stop.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopRxNormInferenceJob`.
-                        ///
-    /// <p>Stops an InferRxNorm inference job in progress.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopRxNormInferenceJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_rx_norm_inference_job_input::Builder
-                        }
-    impl StopRxNormInferenceJob  {
-        /// Creates a new `StopRxNormInferenceJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopRxNormInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopRxNormInferenceJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopRxNormInferenceJobOutput, aws_smithy_http::result::SdkError<crate::error::StopRxNormInferenceJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the job.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The identifier of the job.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopSNOMEDCTInferenceJob`.
-                        ///
-    /// <p> Stops an InferSNOMEDCT inference job in progress. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopSNOMEDCTInferenceJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_snomedct_inference_job_input::Builder
-                        }
-    impl StopSNOMEDCTInferenceJob  {
-        /// Creates a new `StopSNOMEDCTInferenceJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopSNOMEDCTInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopSNOMEDCTInferenceJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopSnomedctInferenceJobOutput, aws_smithy_http::result::SdkError<crate::error::StopSNOMEDCTInferenceJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -2306,4 +462,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

@@ -2,7 +2,7 @@
 /// Operation shape for `AddTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_tags`](crate::client::Client::add_tags).
+            /// [`add_tags`](crate::client::fluent_builders::AddTags).
             ///
             /// `ParseStrictResponse` impl for `AddTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
 /// Operation shape for `ApplySecurityGroupsToLoadBalancer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`apply_security_groups_to_load_balancer`](crate::client::Client::apply_security_groups_to_load_balancer).
+            /// [`apply_security_groups_to_load_balancer`](crate::client::fluent_builders::ApplySecurityGroupsToLoadBalancer).
             ///
             /// `ParseStrictResponse` impl for `ApplySecurityGroupsToLoadBalancer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplySecurityGroupsToLoa
 /// Operation shape for `AttachLoadBalancerToSubnets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`attach_load_balancer_to_subnets`](crate::client::Client::attach_load_balancer_to_subnets).
+            /// [`attach_load_balancer_to_subnets`](crate::client::fluent_builders::AttachLoadBalancerToSubnets).
             ///
             /// `ParseStrictResponse` impl for `AttachLoadBalancerToSubnets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachLoadBalancerToSubn
 /// Operation shape for `ConfigureHealthCheck`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`configure_health_check`](crate::client::Client::configure_health_check).
+            /// [`configure_health_check`](crate::client::fluent_builders::ConfigureHealthCheck).
             ///
             /// `ParseStrictResponse` impl for `ConfigureHealthCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureHealthCheck {
 /// Operation shape for `CreateAppCookieStickinessPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_app_cookie_stickiness_policy`](crate::client::Client::create_app_cookie_stickiness_policy).
+            /// [`create_app_cookie_stickiness_policy`](crate::client::fluent_builders::CreateAppCookieStickinessPolicy).
             ///
             /// `ParseStrictResponse` impl for `CreateAppCookieStickinessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppCookieStickines
 /// Operation shape for `CreateLBCookieStickinessPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_lb_cookie_stickiness_policy`](crate::client::Client::create_lb_cookie_stickiness_policy).
+            /// [`create_lb_cookie_stickiness_policy`](crate::client::fluent_builders::CreateLBCookieStickinessPolicy).
             ///
             /// `ParseStrictResponse` impl for `CreateLBCookieStickinessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLBCookieStickiness
 /// Operation shape for `CreateLoadBalancer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_load_balancer`](crate::client::Client::create_load_balancer).
+            /// [`create_load_balancer`](crate::client::fluent_builders::CreateLoadBalancer).
             ///
             /// `ParseStrictResponse` impl for `CreateLoadBalancer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoadBalancer {
 /// Operation shape for `CreateLoadBalancerListeners`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_load_balancer_listeners`](crate::client::Client::create_load_balancer_listeners).
+            /// [`create_load_balancer_listeners`](crate::client::fluent_builders::CreateLoadBalancerListeners).
             ///
             /// `ParseStrictResponse` impl for `CreateLoadBalancerListeners`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoadBalancerListen
 /// Operation shape for `CreateLoadBalancerPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_load_balancer_policy`](crate::client::Client::create_load_balancer_policy).
+            /// [`create_load_balancer_policy`](crate::client::fluent_builders::CreateLoadBalancerPolicy).
             ///
             /// `ParseStrictResponse` impl for `CreateLoadBalancerPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoadBalancerPolicy
 /// Operation shape for `DeleteLoadBalancer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_load_balancer`](crate::client::Client::delete_load_balancer).
+            /// [`delete_load_balancer`](crate::client::fluent_builders::DeleteLoadBalancer).
             ///
             /// `ParseStrictResponse` impl for `DeleteLoadBalancer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancer {
 /// Operation shape for `DeleteLoadBalancerListeners`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_load_balancer_listeners`](crate::client::Client::delete_load_balancer_listeners).
+            /// [`delete_load_balancer_listeners`](crate::client::fluent_builders::DeleteLoadBalancerListeners).
             ///
             /// `ParseStrictResponse` impl for `DeleteLoadBalancerListeners`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancerListen
 /// Operation shape for `DeleteLoadBalancerPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_load_balancer_policy`](crate::client::Client::delete_load_balancer_policy).
+            /// [`delete_load_balancer_policy`](crate::client::fluent_builders::DeleteLoadBalancerPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteLoadBalancerPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancerPolicy
 /// Operation shape for `DeregisterInstancesFromLoadBalancer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deregister_instances_from_load_balancer`](crate::client::Client::deregister_instances_from_load_balancer).
+            /// [`deregister_instances_from_load_balancer`](crate::client::fluent_builders::DeregisterInstancesFromLoadBalancer).
             ///
             /// `ParseStrictResponse` impl for `DeregisterInstancesFromLoadBalancer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterInstancesFromL
 /// Operation shape for `DescribeAccountLimits`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_account_limits`](crate::client::Client::describe_account_limits).
+            /// [`describe_account_limits`](crate::client::fluent_builders::DescribeAccountLimits).
             ///
             /// `ParseStrictResponse` impl for `DescribeAccountLimits`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountLimits {
 /// Operation shape for `DescribeInstanceHealth`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_instance_health`](crate::client::Client::describe_instance_health).
+            /// [`describe_instance_health`](crate::client::fluent_builders::DescribeInstanceHealth).
             ///
             /// `ParseStrictResponse` impl for `DescribeInstanceHealth`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceHealth {
 /// Operation shape for `DescribeLoadBalancerAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_load_balancer_attributes`](crate::client::Client::describe_load_balancer_attributes).
+            /// [`describe_load_balancer_attributes`](crate::client::fluent_builders::DescribeLoadBalancerAttributes).
             ///
             /// `ParseStrictResponse` impl for `DescribeLoadBalancerAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerAttr
 /// Operation shape for `DescribeLoadBalancerPolicies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_load_balancer_policies`](crate::client::Client::describe_load_balancer_policies).
+            /// [`describe_load_balancer_policies`](crate::client::fluent_builders::DescribeLoadBalancerPolicies).
             ///
             /// `ParseStrictResponse` impl for `DescribeLoadBalancerPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerPoli
 /// Operation shape for `DescribeLoadBalancerPolicyTypes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_load_balancer_policy_types`](crate::client::Client::describe_load_balancer_policy_types).
+            /// [`describe_load_balancer_policy_types`](crate::client::fluent_builders::DescribeLoadBalancerPolicyTypes).
             ///
             /// `ParseStrictResponse` impl for `DescribeLoadBalancerPolicyTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerPoli
 /// Operation shape for `DescribeLoadBalancers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_load_balancers`](crate::client::Client::describe_load_balancers).
+            /// [`describe_load_balancers`](crate::client::fluent_builders::DescribeLoadBalancers).
             ///
             /// `ParseStrictResponse` impl for `DescribeLoadBalancers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancers {
 /// Operation shape for `DescribeTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_tags`](crate::client::Client::describe_tags).
+            /// [`describe_tags`](crate::client::fluent_builders::DescribeTags).
             ///
             /// `ParseStrictResponse` impl for `DescribeTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
 /// Operation shape for `DetachLoadBalancerFromSubnets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`detach_load_balancer_from_subnets`](crate::client::Client::detach_load_balancer_from_subnets).
+            /// [`detach_load_balancer_from_subnets`](crate::client::fluent_builders::DetachLoadBalancerFromSubnets).
             ///
             /// `ParseStrictResponse` impl for `DetachLoadBalancerFromSubnets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachLoadBalancerFromSu
 /// Operation shape for `DisableAvailabilityZonesForLoadBalancer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_availability_zones_for_load_balancer`](crate::client::Client::disable_availability_zones_for_load_balancer).
+            /// [`disable_availability_zones_for_load_balancer`](crate::client::fluent_builders::DisableAvailabilityZonesForLoadBalancer).
             ///
             /// `ParseStrictResponse` impl for `DisableAvailabilityZonesForLoadBalancer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAvailabilityZones
 /// Operation shape for `EnableAvailabilityZonesForLoadBalancer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_availability_zones_for_load_balancer`](crate::client::Client::enable_availability_zones_for_load_balancer).
+            /// [`enable_availability_zones_for_load_balancer`](crate::client::fluent_builders::EnableAvailabilityZonesForLoadBalancer).
             ///
             /// `ParseStrictResponse` impl for `EnableAvailabilityZonesForLoadBalancer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAvailabilityZonesF
 /// Operation shape for `ModifyLoadBalancerAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_load_balancer_attributes`](crate::client::Client::modify_load_balancer_attributes).
+            /// [`modify_load_balancer_attributes`](crate::client::fluent_builders::ModifyLoadBalancerAttributes).
             ///
             /// `ParseStrictResponse` impl for `ModifyLoadBalancerAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLoadBalancerAttrib
 /// Operation shape for `RegisterInstancesWithLoadBalancer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_instances_with_load_balancer`](crate::client::Client::register_instances_with_load_balancer).
+            /// [`register_instances_with_load_balancer`](crate::client::fluent_builders::RegisterInstancesWithLoadBalancer).
             ///
             /// `ParseStrictResponse` impl for `RegisterInstancesWithLoadBalancer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterInstancesWithLoa
 /// Operation shape for `RemoveTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`remove_tags`](crate::client::Client::remove_tags).
+            /// [`remove_tags`](crate::client::fluent_builders::RemoveTags).
             ///
             /// `ParseStrictResponse` impl for `RemoveTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
 /// Operation shape for `SetLoadBalancerListenerSSLCertificate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_load_balancer_listener_ssl_certificate`](crate::client::Client::set_load_balancer_listener_ssl_certificate).
+            /// [`set_load_balancer_listener_ssl_certificate`](crate::client::fluent_builders::SetLoadBalancerListenerSSLCertificate).
             ///
             /// `ParseStrictResponse` impl for `SetLoadBalancerListenerSSLCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetLoadBalancerListenerS
 /// Operation shape for `SetLoadBalancerPoliciesForBackendServer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_load_balancer_policies_for_backend_server`](crate::client::Client::set_load_balancer_policies_for_backend_server).
+            /// [`set_load_balancer_policies_for_backend_server`](crate::client::fluent_builders::SetLoadBalancerPoliciesForBackendServer).
             ///
             /// `ParseStrictResponse` impl for `SetLoadBalancerPoliciesForBackendServer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetLoadBalancerPoliciesF
 /// Operation shape for `SetLoadBalancerPoliciesOfListener`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_load_balancer_policies_of_listener`](crate::client::Client::set_load_balancer_policies_of_listener).
+            /// [`set_load_balancer_policies_of_listener`](crate::client::fluent_builders::SetLoadBalancerPoliciesOfListener).
             ///
             /// `ParseStrictResponse` impl for `SetLoadBalancerPoliciesOfListener`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

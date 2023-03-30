@@ -2,7 +2,7 @@
 /// Operation shape for `CancelJournalKinesisStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_journal_kinesis_stream`](crate::client::Client::cancel_journal_kinesis_stream).
+            /// [`cancel_journal_kinesis_stream`](crate::client::fluent_builders::CancelJournalKinesisStream).
             ///
             /// `ParseStrictResponse` impl for `CancelJournalKinesisStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJournalKinesisStre
 /// Operation shape for `CreateLedger`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_ledger`](crate::client::Client::create_ledger).
+            /// [`create_ledger`](crate::client::fluent_builders::CreateLedger).
             ///
             /// `ParseStrictResponse` impl for `CreateLedger`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLedger {
 /// Operation shape for `DeleteLedger`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_ledger`](crate::client::Client::delete_ledger).
+            /// [`delete_ledger`](crate::client::fluent_builders::DeleteLedger).
             ///
             /// `ParseStrictResponse` impl for `DeleteLedger`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLedger {
 /// Operation shape for `DescribeJournalKinesisStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_journal_kinesis_stream`](crate::client::Client::describe_journal_kinesis_stream).
+            /// [`describe_journal_kinesis_stream`](crate::client::fluent_builders::DescribeJournalKinesisStream).
             ///
             /// `ParseStrictResponse` impl for `DescribeJournalKinesisStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJournalKinesisSt
 /// Operation shape for `DescribeJournalS3Export`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_journal_s3_export`](crate::client::Client::describe_journal_s3_export).
+            /// [`describe_journal_s3_export`](crate::client::fluent_builders::DescribeJournalS3Export).
             ///
             /// `ParseStrictResponse` impl for `DescribeJournalS3Export`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJournalS3Export 
 /// Operation shape for `DescribeLedger`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_ledger`](crate::client::Client::describe_ledger).
+            /// [`describe_ledger`](crate::client::fluent_builders::DescribeLedger).
             ///
             /// `ParseStrictResponse` impl for `DescribeLedger`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLedger {
 /// Operation shape for `ExportJournalToS3`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_journal_to_s3`](crate::client::Client::export_journal_to_s3).
+            /// [`export_journal_to_s3`](crate::client::fluent_builders::ExportJournalToS3).
             ///
             /// `ParseStrictResponse` impl for `ExportJournalToS3`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportJournalToS3 {
 /// Operation shape for `GetBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_block`](crate::client::Client::get_block).
+            /// [`get_block`](crate::client::fluent_builders::GetBlock).
             ///
             /// `ParseStrictResponse` impl for `GetBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBlock {
 /// Operation shape for `GetDigest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_digest`](crate::client::Client::get_digest).
+            /// [`get_digest`](crate::client::fluent_builders::GetDigest).
             ///
             /// `ParseStrictResponse` impl for `GetDigest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDigest {
 /// Operation shape for `GetRevision`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_revision`](crate::client::Client::get_revision).
+            /// [`get_revision`](crate::client::fluent_builders::GetRevision).
             ///
             /// `ParseStrictResponse` impl for `GetRevision`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRevision {
 /// Operation shape for `ListJournalKinesisStreamsForLedger`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_journal_kinesis_streams_for_ledger`](crate::client::Client::list_journal_kinesis_streams_for_ledger).
+            /// [`list_journal_kinesis_streams_for_ledger`](crate::client::fluent_builders::ListJournalKinesisStreamsForLedger).
             ///
             /// `ParseStrictResponse` impl for `ListJournalKinesisStreamsForLedger`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJournalKinesisStream
 /// Operation shape for `ListJournalS3Exports`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_journal_s3_exports`](crate::client::Client::list_journal_s3_exports).
+            /// [`list_journal_s3_exports`](crate::client::fluent_builders::ListJournalS3Exports).
             ///
             /// `ParseStrictResponse` impl for `ListJournalS3Exports`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJournalS3Exports {
 /// Operation shape for `ListJournalS3ExportsForLedger`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_journal_s3_exports_for_ledger`](crate::client::Client::list_journal_s3_exports_for_ledger).
+            /// [`list_journal_s3_exports_for_ledger`](crate::client::fluent_builders::ListJournalS3ExportsForLedger).
             ///
             /// `ParseStrictResponse` impl for `ListJournalS3ExportsForLedger`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJournalS3ExportsForL
 /// Operation shape for `ListLedgers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_ledgers`](crate::client::Client::list_ledgers).
+            /// [`list_ledgers`](crate::client::fluent_builders::ListLedgers).
             ///
             /// `ParseStrictResponse` impl for `ListLedgers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLedgers {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `StreamJournalToKinesis`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stream_journal_to_kinesis`](crate::client::Client::stream_journal_to_kinesis).
+            /// [`stream_journal_to_kinesis`](crate::client::fluent_builders::StreamJournalToKinesis).
             ///
             /// `ParseStrictResponse` impl for `StreamJournalToKinesis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StreamJournalToKinesis {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateLedger`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_ledger`](crate::client::Client::update_ledger).
+            /// [`update_ledger`](crate::client::fluent_builders::UpdateLedger).
             ///
             /// `ParseStrictResponse` impl for `UpdateLedger`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLedger {
 /// Operation shape for `UpdateLedgerPermissionsMode`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_ledger_permissions_mode`](crate::client::Client::update_ledger_permissions_mode).
+            /// [`update_ledger_permissions_mode`](crate::client::fluent_builders::UpdateLedgerPermissionsMode).
             ///
             /// `ParseStrictResponse` impl for `UpdateLedgerPermissionsMode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

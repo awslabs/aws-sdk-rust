@@ -2,7 +2,7 @@
 /// Operation shape for `AddAttachmentsToSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_attachments_to_set`](crate::client::Client::add_attachments_to_set).
+            /// [`add_attachments_to_set`](crate::client::fluent_builders::AddAttachmentsToSet).
             ///
             /// `ParseStrictResponse` impl for `AddAttachmentsToSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddAttachmentsToSet {
 /// Operation shape for `AddCommunicationToCase`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_communication_to_case`](crate::client::Client::add_communication_to_case).
+            /// [`add_communication_to_case`](crate::client::fluent_builders::AddCommunicationToCase).
             ///
             /// `ParseStrictResponse` impl for `AddCommunicationToCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddCommunicationToCase {
 /// Operation shape for `CreateCase`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_case`](crate::client::Client::create_case).
+            /// [`create_case`](crate::client::fluent_builders::CreateCase).
             ///
             /// `ParseStrictResponse` impl for `CreateCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCase {
 /// Operation shape for `DescribeAttachment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_attachment`](crate::client::Client::describe_attachment).
+            /// [`describe_attachment`](crate::client::fluent_builders::DescribeAttachment).
             ///
             /// `ParseStrictResponse` impl for `DescribeAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAttachment {
 /// Operation shape for `DescribeCases`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_cases`](crate::client::Client::describe_cases).
+            /// [`describe_cases`](crate::client::fluent_builders::DescribeCases).
             ///
             /// `ParseStrictResponse` impl for `DescribeCases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCases {
 /// Operation shape for `DescribeCommunications`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_communications`](crate::client::Client::describe_communications).
+            /// [`describe_communications`](crate::client::fluent_builders::DescribeCommunications).
             ///
             /// `ParseStrictResponse` impl for `DescribeCommunications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCommunications {
 /// Operation shape for `DescribeServices`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_services`](crate::client::Client::describe_services).
+            /// [`describe_services`](crate::client::fluent_builders::DescribeServices).
             ///
             /// `ParseStrictResponse` impl for `DescribeServices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeServices {
 /// Operation shape for `DescribeSeverityLevels`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_severity_levels`](crate::client::Client::describe_severity_levels).
+            /// [`describe_severity_levels`](crate::client::fluent_builders::DescribeSeverityLevels).
             ///
             /// `ParseStrictResponse` impl for `DescribeSeverityLevels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSeverityLevels {
 /// Operation shape for `DescribeTrustedAdvisorCheckRefreshStatuses`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_trusted_advisor_check_refresh_statuses`](crate::client::Client::describe_trusted_advisor_check_refresh_statuses).
+            /// [`describe_trusted_advisor_check_refresh_statuses`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckRefreshStatuses).
             ///
             /// `ParseStrictResponse` impl for `DescribeTrustedAdvisorCheckRefreshStatuses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCh
 /// Operation shape for `DescribeTrustedAdvisorCheckResult`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_trusted_advisor_check_result`](crate::client::Client::describe_trusted_advisor_check_result).
+            /// [`describe_trusted_advisor_check_result`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult).
             ///
             /// `ParseStrictResponse` impl for `DescribeTrustedAdvisorCheckResult`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCh
 /// Operation shape for `DescribeTrustedAdvisorChecks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_trusted_advisor_checks`](crate::client::Client::describe_trusted_advisor_checks).
+            /// [`describe_trusted_advisor_checks`](crate::client::fluent_builders::DescribeTrustedAdvisorChecks).
             ///
             /// `ParseStrictResponse` impl for `DescribeTrustedAdvisorChecks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCh
 /// Operation shape for `DescribeTrustedAdvisorCheckSummaries`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_trusted_advisor_check_summaries`](crate::client::Client::describe_trusted_advisor_check_summaries).
+            /// [`describe_trusted_advisor_check_summaries`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckSummaries).
             ///
             /// `ParseStrictResponse` impl for `DescribeTrustedAdvisorCheckSummaries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCh
 /// Operation shape for `RefreshTrustedAdvisorCheck`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`refresh_trusted_advisor_check`](crate::client::Client::refresh_trusted_advisor_check).
+            /// [`refresh_trusted_advisor_check`](crate::client::fluent_builders::RefreshTrustedAdvisorCheck).
             ///
             /// `ParseStrictResponse` impl for `RefreshTrustedAdvisorCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RefreshTrustedAdvisorChe
 /// Operation shape for `ResolveCase`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`resolve_case`](crate::client::Client::resolve_case).
+            /// [`resolve_case`](crate::client::fluent_builders::ResolveCase).
             ///
             /// `ParseStrictResponse` impl for `ResolveCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateWebACL`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_web_acl`](crate::client::Client::associate_web_acl).
+            /// [`associate_web_acl`](crate::client::fluent_builders::AssociateWebACL).
             ///
             /// `ParseStrictResponse` impl for `AssociateWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWebACL {
 /// Operation shape for `CheckCapacity`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`check_capacity`](crate::client::Client::check_capacity).
+            /// [`check_capacity`](crate::client::fluent_builders::CheckCapacity).
             ///
             /// `ParseStrictResponse` impl for `CheckCapacity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckCapacity {
 /// Operation shape for `CreateIPSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_ip_set`](crate::client::Client::create_ip_set).
+            /// [`create_ip_set`](crate::client::fluent_builders::CreateIPSet).
             ///
             /// `ParseStrictResponse` impl for `CreateIPSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIPSet {
 /// Operation shape for `CreateRegexPatternSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_regex_pattern_set`](crate::client::Client::create_regex_pattern_set).
+            /// [`create_regex_pattern_set`](crate::client::fluent_builders::CreateRegexPatternSet).
             ///
             /// `ParseStrictResponse` impl for `CreateRegexPatternSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRegexPatternSet {
 /// Operation shape for `CreateRuleGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_rule_group`](crate::client::Client::create_rule_group).
+            /// [`create_rule_group`](crate::client::fluent_builders::CreateRuleGroup).
             ///
             /// `ParseStrictResponse` impl for `CreateRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRuleGroup {
 /// Operation shape for `CreateWebACL`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_web_acl`](crate::client::Client::create_web_acl).
+            /// [`create_web_acl`](crate::client::fluent_builders::CreateWebACL).
             ///
             /// `ParseStrictResponse` impl for `CreateWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWebACL {
 /// Operation shape for `DeleteFirewallManagerRuleGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_firewall_manager_rule_groups`](crate::client::Client::delete_firewall_manager_rule_groups).
+            /// [`delete_firewall_manager_rule_groups`](crate::client::fluent_builders::DeleteFirewallManagerRuleGroups).
             ///
             /// `ParseStrictResponse` impl for `DeleteFirewallManagerRuleGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallManagerRul
 /// Operation shape for `DeleteIPSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_ip_set`](crate::client::Client::delete_ip_set).
+            /// [`delete_ip_set`](crate::client::fluent_builders::DeleteIPSet).
             ///
             /// `ParseStrictResponse` impl for `DeleteIPSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIPSet {
 /// Operation shape for `DeleteLoggingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_logging_configuration`](crate::client::Client::delete_logging_configuration).
+            /// [`delete_logging_configuration`](crate::client::fluent_builders::DeleteLoggingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoggingConfigurati
 /// Operation shape for `DeletePermissionPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_permission_policy`](crate::client::Client::delete_permission_policy).
+            /// [`delete_permission_policy`](crate::client::fluent_builders::DeletePermissionPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeletePermissionPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionPolicy {
 /// Operation shape for `DeleteRegexPatternSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_regex_pattern_set`](crate::client::Client::delete_regex_pattern_set).
+            /// [`delete_regex_pattern_set`](crate::client::fluent_builders::DeleteRegexPatternSet).
             ///
             /// `ParseStrictResponse` impl for `DeleteRegexPatternSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRegexPatternSet {
 /// Operation shape for `DeleteRuleGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_rule_group`](crate::client::Client::delete_rule_group).
+            /// [`delete_rule_group`](crate::client::fluent_builders::DeleteRuleGroup).
             ///
             /// `ParseStrictResponse` impl for `DeleteRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRuleGroup {
 /// Operation shape for `DeleteWebACL`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_web_acl`](crate::client::Client::delete_web_acl).
+            /// [`delete_web_acl`](crate::client::fluent_builders::DeleteWebACL).
             ///
             /// `ParseStrictResponse` impl for `DeleteWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWebACL {
 /// Operation shape for `DescribeManagedRuleGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_managed_rule_group`](crate::client::Client::describe_managed_rule_group).
+            /// [`describe_managed_rule_group`](crate::client::fluent_builders::DescribeManagedRuleGroup).
             ///
             /// `ParseStrictResponse` impl for `DescribeManagedRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeManagedRuleGroup
 /// Operation shape for `DisassociateWebACL`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_web_acl`](crate::client::Client::disassociate_web_acl).
+            /// [`disassociate_web_acl`](crate::client::fluent_builders::DisassociateWebACL).
             ///
             /// `ParseStrictResponse` impl for `DisassociateWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateWebACL {
 /// Operation shape for `GenerateMobileSdkReleaseUrl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`generate_mobile_sdk_release_url`](crate::client::Client::generate_mobile_sdk_release_url).
+            /// [`generate_mobile_sdk_release_url`](crate::client::fluent_builders::GenerateMobileSdkReleaseUrl).
             ///
             /// `ParseStrictResponse` impl for `GenerateMobileSdkReleaseUrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateMobileSdkRelease
 /// Operation shape for `GetIPSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ip_set`](crate::client::Client::get_ip_set).
+            /// [`get_ip_set`](crate::client::fluent_builders::GetIPSet).
             ///
             /// `ParseStrictResponse` impl for `GetIPSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIPSet {
 /// Operation shape for `GetLoggingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_logging_configuration`](crate::client::Client::get_logging_configuration).
+            /// [`get_logging_configuration`](crate::client::fluent_builders::GetLoggingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLoggingConfiguration 
 /// Operation shape for `GetManagedRuleSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_managed_rule_set`](crate::client::Client::get_managed_rule_set).
+            /// [`get_managed_rule_set`](crate::client::fluent_builders::GetManagedRuleSet).
             ///
             /// `ParseStrictResponse` impl for `GetManagedRuleSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedRuleSet {
 /// Operation shape for `GetMobileSdkRelease`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_mobile_sdk_release`](crate::client::Client::get_mobile_sdk_release).
+            /// [`get_mobile_sdk_release`](crate::client::fluent_builders::GetMobileSdkRelease).
             ///
             /// `ParseStrictResponse` impl for `GetMobileSdkRelease`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMobileSdkRelease {
 /// Operation shape for `GetPermissionPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_permission_policy`](crate::client::Client::get_permission_policy).
+            /// [`get_permission_policy`](crate::client::fluent_builders::GetPermissionPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetPermissionPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPermissionPolicy {
 /// Operation shape for `GetRateBasedStatementManagedKeys`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_rate_based_statement_managed_keys`](crate::client::Client::get_rate_based_statement_managed_keys).
+            /// [`get_rate_based_statement_managed_keys`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys).
             ///
             /// `ParseStrictResponse` impl for `GetRateBasedStatementManagedKeys`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRateBasedStatementMan
 /// Operation shape for `GetRegexPatternSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_regex_pattern_set`](crate::client::Client::get_regex_pattern_set).
+            /// [`get_regex_pattern_set`](crate::client::fluent_builders::GetRegexPatternSet).
             ///
             /// `ParseStrictResponse` impl for `GetRegexPatternSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegexPatternSet {
 /// Operation shape for `GetRuleGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_rule_group`](crate::client::Client::get_rule_group).
+            /// [`get_rule_group`](crate::client::fluent_builders::GetRuleGroup).
             ///
             /// `ParseStrictResponse` impl for `GetRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRuleGroup {
 /// Operation shape for `GetSampledRequests`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_sampled_requests`](crate::client::Client::get_sampled_requests).
+            /// [`get_sampled_requests`](crate::client::fluent_builders::GetSampledRequests).
             ///
             /// `ParseStrictResponse` impl for `GetSampledRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSampledRequests {
 /// Operation shape for `GetWebACL`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_web_acl`](crate::client::Client::get_web_acl).
+            /// [`get_web_acl`](crate::client::fluent_builders::GetWebACL).
             ///
             /// `ParseStrictResponse` impl for `GetWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWebACL {
 /// Operation shape for `GetWebACLForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_web_acl_for_resource`](crate::client::Client::get_web_acl_for_resource).
+            /// [`get_web_acl_for_resource`](crate::client::fluent_builders::GetWebACLForResource).
             ///
             /// `ParseStrictResponse` impl for `GetWebACLForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWebACLForResource {
 /// Operation shape for `ListAvailableManagedRuleGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_available_managed_rule_groups`](crate::client::Client::list_available_managed_rule_groups).
+            /// [`list_available_managed_rule_groups`](crate::client::fluent_builders::ListAvailableManagedRuleGroups).
             ///
             /// `ParseStrictResponse` impl for `ListAvailableManagedRuleGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableManagedRule
 /// Operation shape for `ListAvailableManagedRuleGroupVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_available_managed_rule_group_versions`](crate::client::Client::list_available_managed_rule_group_versions).
+            /// [`list_available_managed_rule_group_versions`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions).
             ///
             /// `ParseStrictResponse` impl for `ListAvailableManagedRuleGroupVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableManagedRule
 /// Operation shape for `ListIPSets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_ip_sets`](crate::client::Client::list_ip_sets).
+            /// [`list_ip_sets`](crate::client::fluent_builders::ListIPSets).
             ///
             /// `ParseStrictResponse` impl for `ListIPSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIPSets {
 /// Operation shape for `ListLoggingConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_logging_configurations`](crate::client::Client::list_logging_configurations).
+            /// [`list_logging_configurations`](crate::client::fluent_builders::ListLoggingConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListLoggingConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLoggingConfiguration
 /// Operation shape for `ListManagedRuleSets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_managed_rule_sets`](crate::client::Client::list_managed_rule_sets).
+            /// [`list_managed_rule_sets`](crate::client::fluent_builders::ListManagedRuleSets).
             ///
             /// `ParseStrictResponse` impl for `ListManagedRuleSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedRuleSets {
 /// Operation shape for `ListMobileSdkReleases`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_mobile_sdk_releases`](crate::client::Client::list_mobile_sdk_releases).
+            /// [`list_mobile_sdk_releases`](crate::client::fluent_builders::ListMobileSdkReleases).
             ///
             /// `ParseStrictResponse` impl for `ListMobileSdkReleases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMobileSdkReleases {
 /// Operation shape for `ListRegexPatternSets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_regex_pattern_sets`](crate::client::Client::list_regex_pattern_sets).
+            /// [`list_regex_pattern_sets`](crate::client::fluent_builders::ListRegexPatternSets).
             ///
             /// `ParseStrictResponse` impl for `ListRegexPatternSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRegexPatternSets {
 /// Operation shape for `ListResourcesForWebACL`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_resources_for_web_acl`](crate::client::Client::list_resources_for_web_acl).
+            /// [`list_resources_for_web_acl`](crate::client::fluent_builders::ListResourcesForWebACL).
             ///
             /// `ParseStrictResponse` impl for `ListResourcesForWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourcesForWebACL {
 /// Operation shape for `ListRuleGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_rule_groups`](crate::client::Client::list_rule_groups).
+            /// [`list_rule_groups`](crate::client::fluent_builders::ListRuleGroups).
             ///
             /// `ParseStrictResponse` impl for `ListRuleGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuleGroups {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListWebACLs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_web_ac_ls`](crate::client::Client::list_web_ac_ls).
+            /// [`list_web_ac_ls`](crate::client::fluent_builders::ListWebACLs).
             ///
             /// `ParseStrictResponse` impl for `ListWebACLs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWebACLs {
 /// Operation shape for `PutLoggingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_logging_configuration`](crate::client::Client::put_logging_configuration).
+            /// [`put_logging_configuration`](crate::client::fluent_builders::PutLoggingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLoggingConfiguration 
 /// Operation shape for `PutManagedRuleSetVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_managed_rule_set_versions`](crate::client::Client::put_managed_rule_set_versions).
+            /// [`put_managed_rule_set_versions`](crate::client::fluent_builders::PutManagedRuleSetVersions).
             ///
             /// `ParseStrictResponse` impl for `PutManagedRuleSetVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutManagedRuleSetVersion
 /// Operation shape for `PutPermissionPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_permission_policy`](crate::client::Client::put_permission_policy).
+            /// [`put_permission_policy`](crate::client::fluent_builders::PutPermissionPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutPermissionPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPermissionPolicy {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateIPSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_ip_set`](crate::client::Client::update_ip_set).
+            /// [`update_ip_set`](crate::client::fluent_builders::UpdateIPSet).
             ///
             /// `ParseStrictResponse` impl for `UpdateIPSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIPSet {
 /// Operation shape for `UpdateManagedRuleSetVersionExpiryDate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_managed_rule_set_version_expiry_date`](crate::client::Client::update_managed_rule_set_version_expiry_date).
+            /// [`update_managed_rule_set_version_expiry_date`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate).
             ///
             /// `ParseStrictResponse` impl for `UpdateManagedRuleSetVersionExpiryDate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1442,7 +1442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateManagedRuleSetVers
 /// Operation shape for `UpdateRegexPatternSet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_regex_pattern_set`](crate::client::Client::update_regex_pattern_set).
+            /// [`update_regex_pattern_set`](crate::client::fluent_builders::UpdateRegexPatternSet).
             ///
             /// `ParseStrictResponse` impl for `UpdateRegexPatternSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRegexPatternSet {
 /// Operation shape for `UpdateRuleGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_rule_group`](crate::client::Client::update_rule_group).
+            /// [`update_rule_group`](crate::client::fluent_builders::UpdateRuleGroup).
             ///
             /// `ParseStrictResponse` impl for `UpdateRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1506,7 +1506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRuleGroup {
 /// Operation shape for `UpdateWebACL`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_web_acl`](crate::client::Client::update_web_acl).
+            /// [`update_web_acl`](crate::client::fluent_builders::UpdateWebACL).
             ///
             /// `ParseStrictResponse` impl for `UpdateWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

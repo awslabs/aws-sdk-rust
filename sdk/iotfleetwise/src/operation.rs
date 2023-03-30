@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateVehicleFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_vehicle_fleet`](crate::client::Client::associate_vehicle_fleet).
+            /// [`associate_vehicle_fleet`](crate::client::fluent_builders::AssociateVehicleFleet).
             ///
             /// `ParseStrictResponse` impl for `AssociateVehicleFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateVehicleFleet {
 /// Operation shape for `BatchCreateVehicle`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_create_vehicle`](crate::client::Client::batch_create_vehicle).
+            /// [`batch_create_vehicle`](crate::client::fluent_builders::BatchCreateVehicle).
             ///
             /// `ParseStrictResponse` impl for `BatchCreateVehicle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateVehicle {
 /// Operation shape for `BatchUpdateVehicle`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_update_vehicle`](crate::client::Client::batch_update_vehicle).
+            /// [`batch_update_vehicle`](crate::client::fluent_builders::BatchUpdateVehicle).
             ///
             /// `ParseStrictResponse` impl for `BatchUpdateVehicle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateVehicle {
 /// Operation shape for `CreateCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_campaign`](crate::client::Client::create_campaign).
+            /// [`create_campaign`](crate::client::fluent_builders::CreateCampaign).
             ///
             /// `ParseStrictResponse` impl for `CreateCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCampaign {
 /// Operation shape for `CreateDecoderManifest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_decoder_manifest`](crate::client::Client::create_decoder_manifest).
+            /// [`create_decoder_manifest`](crate::client::fluent_builders::CreateDecoderManifest).
             ///
             /// `ParseStrictResponse` impl for `CreateDecoderManifest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDecoderManifest {
 /// Operation shape for `CreateFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_fleet`](crate::client::Client::create_fleet).
+            /// [`create_fleet`](crate::client::fluent_builders::CreateFleet).
             ///
             /// `ParseStrictResponse` impl for `CreateFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFleet {
 /// Operation shape for `CreateModelManifest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_model_manifest`](crate::client::Client::create_model_manifest).
+            /// [`create_model_manifest`](crate::client::fluent_builders::CreateModelManifest).
             ///
             /// `ParseStrictResponse` impl for `CreateModelManifest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateModelManifest {
 /// Operation shape for `CreateSignalCatalog`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_signal_catalog`](crate::client::Client::create_signal_catalog).
+            /// [`create_signal_catalog`](crate::client::fluent_builders::CreateSignalCatalog).
             ///
             /// `ParseStrictResponse` impl for `CreateSignalCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSignalCatalog {
 /// Operation shape for `CreateVehicle`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vehicle`](crate::client::Client::create_vehicle).
+            /// [`create_vehicle`](crate::client::fluent_builders::CreateVehicle).
             ///
             /// `ParseStrictResponse` impl for `CreateVehicle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVehicle {
 /// Operation shape for `DeleteCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_campaign`](crate::client::Client::delete_campaign).
+            /// [`delete_campaign`](crate::client::fluent_builders::DeleteCampaign).
             ///
             /// `ParseStrictResponse` impl for `DeleteCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCampaign {
 /// Operation shape for `DeleteDecoderManifest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_decoder_manifest`](crate::client::Client::delete_decoder_manifest).
+            /// [`delete_decoder_manifest`](crate::client::fluent_builders::DeleteDecoderManifest).
             ///
             /// `ParseStrictResponse` impl for `DeleteDecoderManifest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDecoderManifest {
 /// Operation shape for `DeleteFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_fleet`](crate::client::Client::delete_fleet).
+            /// [`delete_fleet`](crate::client::fluent_builders::DeleteFleet).
             ///
             /// `ParseStrictResponse` impl for `DeleteFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFleet {
 /// Operation shape for `DeleteModelManifest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_model_manifest`](crate::client::Client::delete_model_manifest).
+            /// [`delete_model_manifest`](crate::client::fluent_builders::DeleteModelManifest).
             ///
             /// `ParseStrictResponse` impl for `DeleteModelManifest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteModelManifest {
 /// Operation shape for `DeleteSignalCatalog`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_signal_catalog`](crate::client::Client::delete_signal_catalog).
+            /// [`delete_signal_catalog`](crate::client::fluent_builders::DeleteSignalCatalog).
             ///
             /// `ParseStrictResponse` impl for `DeleteSignalCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSignalCatalog {
 /// Operation shape for `DeleteVehicle`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vehicle`](crate::client::Client::delete_vehicle).
+            /// [`delete_vehicle`](crate::client::fluent_builders::DeleteVehicle).
             ///
             /// `ParseStrictResponse` impl for `DeleteVehicle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVehicle {
 /// Operation shape for `DisassociateVehicleFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_vehicle_fleet`](crate::client::Client::disassociate_vehicle_fleet).
+            /// [`disassociate_vehicle_fleet`](crate::client::fluent_builders::DisassociateVehicleFleet).
             ///
             /// `ParseStrictResponse` impl for `DisassociateVehicleFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateVehicleFleet
 /// Operation shape for `GetCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_campaign`](crate::client::Client::get_campaign).
+            /// [`get_campaign`](crate::client::fluent_builders::GetCampaign).
             ///
             /// `ParseStrictResponse` impl for `GetCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCampaign {
 /// Operation shape for `GetDecoderManifest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_decoder_manifest`](crate::client::Client::get_decoder_manifest).
+            /// [`get_decoder_manifest`](crate::client::fluent_builders::GetDecoderManifest).
             ///
             /// `ParseStrictResponse` impl for `GetDecoderManifest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDecoderManifest {
 /// Operation shape for `GetFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_fleet`](crate::client::Client::get_fleet).
+            /// [`get_fleet`](crate::client::fluent_builders::GetFleet).
             ///
             /// `ParseStrictResponse` impl for `GetFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFleet {
 /// Operation shape for `GetLoggingOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_logging_options`](crate::client::Client::get_logging_options).
+            /// [`get_logging_options`](crate::client::fluent_builders::GetLoggingOptions).
             ///
             /// `ParseStrictResponse` impl for `GetLoggingOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLoggingOptions {
 /// Operation shape for `GetModelManifest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_model_manifest`](crate::client::Client::get_model_manifest).
+            /// [`get_model_manifest`](crate::client::fluent_builders::GetModelManifest).
             ///
             /// `ParseStrictResponse` impl for `GetModelManifest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetModelManifest {
 /// Operation shape for `GetRegisterAccountStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_register_account_status`](crate::client::Client::get_register_account_status).
+            /// [`get_register_account_status`](crate::client::fluent_builders::GetRegisterAccountStatus).
             ///
             /// `ParseStrictResponse` impl for `GetRegisterAccountStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegisterAccountStatus
 /// Operation shape for `GetSignalCatalog`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_signal_catalog`](crate::client::Client::get_signal_catalog).
+            /// [`get_signal_catalog`](crate::client::fluent_builders::GetSignalCatalog).
             ///
             /// `ParseStrictResponse` impl for `GetSignalCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSignalCatalog {
 /// Operation shape for `GetVehicle`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_vehicle`](crate::client::Client::get_vehicle).
+            /// [`get_vehicle`](crate::client::fluent_builders::GetVehicle).
             ///
             /// `ParseStrictResponse` impl for `GetVehicle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVehicle {
 /// Operation shape for `GetVehicleStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_vehicle_status`](crate::client::Client::get_vehicle_status).
+            /// [`get_vehicle_status`](crate::client::fluent_builders::GetVehicleStatus).
             ///
             /// `ParseStrictResponse` impl for `GetVehicleStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVehicleStatus {
 /// Operation shape for `ImportDecoderManifest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_decoder_manifest`](crate::client::Client::import_decoder_manifest).
+            /// [`import_decoder_manifest`](crate::client::fluent_builders::ImportDecoderManifest).
             ///
             /// `ParseStrictResponse` impl for `ImportDecoderManifest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportDecoderManifest {
 /// Operation shape for `ImportSignalCatalog`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_signal_catalog`](crate::client::Client::import_signal_catalog).
+            /// [`import_signal_catalog`](crate::client::fluent_builders::ImportSignalCatalog).
             ///
             /// `ParseStrictResponse` impl for `ImportSignalCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportSignalCatalog {
 /// Operation shape for `ListCampaigns`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_campaigns`](crate::client::Client::list_campaigns).
+            /// [`list_campaigns`](crate::client::fluent_builders::ListCampaigns).
             ///
             /// `ParseStrictResponse` impl for `ListCampaigns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCampaigns {
 /// Operation shape for `ListDecoderManifestNetworkInterfaces`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_decoder_manifest_network_interfaces`](crate::client::Client::list_decoder_manifest_network_interfaces).
+            /// [`list_decoder_manifest_network_interfaces`](crate::client::fluent_builders::ListDecoderManifestNetworkInterfaces).
             ///
             /// `ParseStrictResponse` impl for `ListDecoderManifestNetworkInterfaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDecoderManifestNetwo
 /// Operation shape for `ListDecoderManifests`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_decoder_manifests`](crate::client::Client::list_decoder_manifests).
+            /// [`list_decoder_manifests`](crate::client::fluent_builders::ListDecoderManifests).
             ///
             /// `ParseStrictResponse` impl for `ListDecoderManifests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDecoderManifests {
 /// Operation shape for `ListDecoderManifestSignals`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_decoder_manifest_signals`](crate::client::Client::list_decoder_manifest_signals).
+            /// [`list_decoder_manifest_signals`](crate::client::fluent_builders::ListDecoderManifestSignals).
             ///
             /// `ParseStrictResponse` impl for `ListDecoderManifestSignals`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDecoderManifestSigna
 /// Operation shape for `ListFleets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_fleets`](crate::client::Client::list_fleets).
+            /// [`list_fleets`](crate::client::fluent_builders::ListFleets).
             ///
             /// `ParseStrictResponse` impl for `ListFleets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFleets {
 /// Operation shape for `ListFleetsForVehicle`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_fleets_for_vehicle`](crate::client::Client::list_fleets_for_vehicle).
+            /// [`list_fleets_for_vehicle`](crate::client::fluent_builders::ListFleetsForVehicle).
             ///
             /// `ParseStrictResponse` impl for `ListFleetsForVehicle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFleetsForVehicle {
 /// Operation shape for `ListModelManifestNodes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_model_manifest_nodes`](crate::client::Client::list_model_manifest_nodes).
+            /// [`list_model_manifest_nodes`](crate::client::fluent_builders::ListModelManifestNodes).
             ///
             /// `ParseStrictResponse` impl for `ListModelManifestNodes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModelManifestNodes {
 /// Operation shape for `ListModelManifests`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_model_manifests`](crate::client::Client::list_model_manifests).
+            /// [`list_model_manifests`](crate::client::fluent_builders::ListModelManifests).
             ///
             /// `ParseStrictResponse` impl for `ListModelManifests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModelManifests {
 /// Operation shape for `ListSignalCatalogNodes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_signal_catalog_nodes`](crate::client::Client::list_signal_catalog_nodes).
+            /// [`list_signal_catalog_nodes`](crate::client::fluent_builders::ListSignalCatalogNodes).
             ///
             /// `ParseStrictResponse` impl for `ListSignalCatalogNodes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSignalCatalogNodes {
 /// Operation shape for `ListSignalCatalogs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_signal_catalogs`](crate::client::Client::list_signal_catalogs).
+            /// [`list_signal_catalogs`](crate::client::fluent_builders::ListSignalCatalogs).
             ///
             /// `ParseStrictResponse` impl for `ListSignalCatalogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSignalCatalogs {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListVehicles`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_vehicles`](crate::client::Client::list_vehicles).
+            /// [`list_vehicles`](crate::client::fluent_builders::ListVehicles).
             ///
             /// `ParseStrictResponse` impl for `ListVehicles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVehicles {
 /// Operation shape for `ListVehiclesInFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_vehicles_in_fleet`](crate::client::Client::list_vehicles_in_fleet).
+            /// [`list_vehicles_in_fleet`](crate::client::fluent_builders::ListVehiclesInFleet).
             ///
             /// `ParseStrictResponse` impl for `ListVehiclesInFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVehiclesInFleet {
 /// Operation shape for `PutLoggingOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_logging_options`](crate::client::Client::put_logging_options).
+            /// [`put_logging_options`](crate::client::fluent_builders::PutLoggingOptions).
             ///
             /// `ParseStrictResponse` impl for `PutLoggingOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLoggingOptions {
 /// Operation shape for `RegisterAccount`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_account`](crate::client::Client::register_account).
+            /// [`register_account`](crate::client::fluent_builders::RegisterAccount).
             ///
             /// `ParseStrictResponse` impl for `RegisterAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterAccount {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateCampaign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_campaign`](crate::client::Client::update_campaign).
+            /// [`update_campaign`](crate::client::fluent_builders::UpdateCampaign).
             ///
             /// `ParseStrictResponse` impl for `UpdateCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1442,7 +1442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaign {
 /// Operation shape for `UpdateDecoderManifest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_decoder_manifest`](crate::client::Client::update_decoder_manifest).
+            /// [`update_decoder_manifest`](crate::client::fluent_builders::UpdateDecoderManifest).
             ///
             /// `ParseStrictResponse` impl for `UpdateDecoderManifest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDecoderManifest {
 /// Operation shape for `UpdateFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_fleet`](crate::client::Client::update_fleet).
+            /// [`update_fleet`](crate::client::fluent_builders::UpdateFleet).
             ///
             /// `ParseStrictResponse` impl for `UpdateFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1506,7 +1506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFleet {
 /// Operation shape for `UpdateModelManifest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_model_manifest`](crate::client::Client::update_model_manifest).
+            /// [`update_model_manifest`](crate::client::fluent_builders::UpdateModelManifest).
             ///
             /// `ParseStrictResponse` impl for `UpdateModelManifest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateModelManifest {
 /// Operation shape for `UpdateSignalCatalog`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_signal_catalog`](crate::client::Client::update_signal_catalog).
+            /// [`update_signal_catalog`](crate::client::fluent_builders::UpdateSignalCatalog).
             ///
             /// `ParseStrictResponse` impl for `UpdateSignalCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1570,7 +1570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSignalCatalog {
 /// Operation shape for `UpdateVehicle`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_vehicle`](crate::client::Client::update_vehicle).
+            /// [`update_vehicle`](crate::client::fluent_builders::UpdateVehicle).
             ///
             /// `ParseStrictResponse` impl for `UpdateVehicle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

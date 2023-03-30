@@ -2,7 +2,7 @@
 /// Operation shape for `CreateDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_domain`](crate::client::Client::create_domain).
+            /// [`create_domain`](crate::client::fluent_builders::CreateDomain).
             ///
             /// `ParseStrictResponse` impl for `CreateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomain {
 /// Operation shape for `DeleteDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_domain`](crate::client::Client::delete_domain).
+            /// [`delete_domain`](crate::client::fluent_builders::DeleteDomain).
             ///
             /// `ParseStrictResponse` impl for `DeleteDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomain {
 /// Operation shape for `DeleteFraudster`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_fraudster`](crate::client::Client::delete_fraudster).
+            /// [`delete_fraudster`](crate::client::fluent_builders::DeleteFraudster).
             ///
             /// `ParseStrictResponse` impl for `DeleteFraudster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFraudster {
 /// Operation shape for `DeleteSpeaker`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_speaker`](crate::client::Client::delete_speaker).
+            /// [`delete_speaker`](crate::client::fluent_builders::DeleteSpeaker).
             ///
             /// `ParseStrictResponse` impl for `DeleteSpeaker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSpeaker {
 /// Operation shape for `DescribeDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_domain`](crate::client::Client::describe_domain).
+            /// [`describe_domain`](crate::client::fluent_builders::DescribeDomain).
             ///
             /// `ParseStrictResponse` impl for `DescribeDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
 /// Operation shape for `DescribeFraudster`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fraudster`](crate::client::Client::describe_fraudster).
+            /// [`describe_fraudster`](crate::client::fluent_builders::DescribeFraudster).
             ///
             /// `ParseStrictResponse` impl for `DescribeFraudster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFraudster {
 /// Operation shape for `DescribeFraudsterRegistrationJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fraudster_registration_job`](crate::client::Client::describe_fraudster_registration_job).
+            /// [`describe_fraudster_registration_job`](crate::client::fluent_builders::DescribeFraudsterRegistrationJob).
             ///
             /// `ParseStrictResponse` impl for `DescribeFraudsterRegistrationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFraudsterRegistr
 /// Operation shape for `DescribeSpeaker`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_speaker`](crate::client::Client::describe_speaker).
+            /// [`describe_speaker`](crate::client::fluent_builders::DescribeSpeaker).
             ///
             /// `ParseStrictResponse` impl for `DescribeSpeaker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpeaker {
 /// Operation shape for `DescribeSpeakerEnrollmentJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_speaker_enrollment_job`](crate::client::Client::describe_speaker_enrollment_job).
+            /// [`describe_speaker_enrollment_job`](crate::client::fluent_builders::DescribeSpeakerEnrollmentJob).
             ///
             /// `ParseStrictResponse` impl for `DescribeSpeakerEnrollmentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpeakerEnrollmen
 /// Operation shape for `EvaluateSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`evaluate_session`](crate::client::Client::evaluate_session).
+            /// [`evaluate_session`](crate::client::fluent_builders::EvaluateSession).
             ///
             /// `ParseStrictResponse` impl for `EvaluateSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluateSession {
 /// Operation shape for `ListDomains`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_domains`](crate::client::Client::list_domains).
+            /// [`list_domains`](crate::client::fluent_builders::ListDomains).
             ///
             /// `ParseStrictResponse` impl for `ListDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// Operation shape for `ListFraudsterRegistrationJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_fraudster_registration_jobs`](crate::client::Client::list_fraudster_registration_jobs).
+            /// [`list_fraudster_registration_jobs`](crate::client::fluent_builders::ListFraudsterRegistrationJobs).
             ///
             /// `ParseStrictResponse` impl for `ListFraudsterRegistrationJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFraudsterRegistratio
 /// Operation shape for `ListSpeakerEnrollmentJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_speaker_enrollment_jobs`](crate::client::Client::list_speaker_enrollment_jobs).
+            /// [`list_speaker_enrollment_jobs`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs).
             ///
             /// `ParseStrictResponse` impl for `ListSpeakerEnrollmentJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpeakerEnrollmentJob
 /// Operation shape for `ListSpeakers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_speakers`](crate::client::Client::list_speakers).
+            /// [`list_speakers`](crate::client::fluent_builders::ListSpeakers).
             ///
             /// `ParseStrictResponse` impl for `ListSpeakers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpeakers {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `OptOutSpeaker`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`opt_out_speaker`](crate::client::Client::opt_out_speaker).
+            /// [`opt_out_speaker`](crate::client::fluent_builders::OptOutSpeaker).
             ///
             /// `ParseStrictResponse` impl for `OptOutSpeaker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OptOutSpeaker {
 /// Operation shape for `StartFraudsterRegistrationJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_fraudster_registration_job`](crate::client::Client::start_fraudster_registration_job).
+            /// [`start_fraudster_registration_job`](crate::client::fluent_builders::StartFraudsterRegistrationJob).
             ///
             /// `ParseStrictResponse` impl for `StartFraudsterRegistrationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFraudsterRegistrati
 /// Operation shape for `StartSpeakerEnrollmentJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_speaker_enrollment_job`](crate::client::Client::start_speaker_enrollment_job).
+            /// [`start_speaker_enrollment_job`](crate::client::fluent_builders::StartSpeakerEnrollmentJob).
             ///
             /// `ParseStrictResponse` impl for `StartSpeakerEnrollmentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSpeakerEnrollmentJo
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_domain`](crate::client::Client::update_domain).
+            /// [`update_domain`](crate::client::fluent_builders::UpdateDomain).
             ///
             /// `ParseStrictResponse` impl for `UpdateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

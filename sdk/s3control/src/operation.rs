@@ -2,7 +2,7 @@
 /// Operation shape for `CreateAccessPoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_access_point`](crate::client::Client::create_access_point).
+            /// [`create_access_point`](crate::client::fluent_builders::CreateAccessPoint).
             ///
             /// `ParseStrictResponse` impl for `CreateAccessPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPoint {
 /// Operation shape for `CreateAccessPointForObjectLambda`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_access_point_for_object_lambda`](crate::client::Client::create_access_point_for_object_lambda).
+            /// [`create_access_point_for_object_lambda`](crate::client::fluent_builders::CreateAccessPointForObjectLambda).
             ///
             /// `ParseStrictResponse` impl for `CreateAccessPointForObjectLambda`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPointForObje
 /// Operation shape for `CreateBucket`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_bucket`](crate::client::Client::create_bucket).
+            /// [`create_bucket`](crate::client::fluent_builders::CreateBucket).
             ///
             /// `ParseStrictResponse` impl for `CreateBucket`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBucket {
 /// Operation shape for `CreateJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_job`](crate::client::Client::create_job).
+            /// [`create_job`](crate::client::fluent_builders::CreateJob).
             ///
             /// `ParseStrictResponse` impl for `CreateJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
 /// Operation shape for `CreateMultiRegionAccessPoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_multi_region_access_point`](crate::client::Client::create_multi_region_access_point).
+            /// [`create_multi_region_access_point`](crate::client::fluent_builders::CreateMultiRegionAccessPoint).
             ///
             /// `ParseStrictResponse` impl for `CreateMultiRegionAccessPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultiRegionAccessP
 /// Operation shape for `DeleteAccessPoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_access_point`](crate::client::Client::delete_access_point).
+            /// [`delete_access_point`](crate::client::fluent_builders::DeleteAccessPoint).
             ///
             /// `ParseStrictResponse` impl for `DeleteAccessPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPoint {
 /// Operation shape for `DeleteAccessPointForObjectLambda`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_access_point_for_object_lambda`](crate::client::Client::delete_access_point_for_object_lambda).
+            /// [`delete_access_point_for_object_lambda`](crate::client::fluent_builders::DeleteAccessPointForObjectLambda).
             ///
             /// `ParseStrictResponse` impl for `DeleteAccessPointForObjectLambda`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPointForObje
 /// Operation shape for `DeleteAccessPointPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_access_point_policy`](crate::client::Client::delete_access_point_policy).
+            /// [`delete_access_point_policy`](crate::client::fluent_builders::DeleteAccessPointPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteAccessPointPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPointPolicy 
 /// Operation shape for `DeleteAccessPointPolicyForObjectLambda`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_access_point_policy_for_object_lambda`](crate::client::Client::delete_access_point_policy_for_object_lambda).
+            /// [`delete_access_point_policy_for_object_lambda`](crate::client::fluent_builders::DeleteAccessPointPolicyForObjectLambda).
             ///
             /// `ParseStrictResponse` impl for `DeleteAccessPointPolicyForObjectLambda`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPointPolicyF
 /// Operation shape for `DeleteBucket`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket`](crate::client::Client::delete_bucket).
+            /// [`delete_bucket`](crate::client::fluent_builders::DeleteBucket).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucket`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucket {
 /// Operation shape for `DeleteBucketLifecycleConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_lifecycle_configuration`](crate::client::Client::delete_bucket_lifecycle_configuration).
+            /// [`delete_bucket_lifecycle_configuration`](crate::client::fluent_builders::DeleteBucketLifecycleConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketLifecycleConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketLifecycleCon
 /// Operation shape for `DeleteBucketPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_policy`](crate::client::Client::delete_bucket_policy).
+            /// [`delete_bucket_policy`](crate::client::fluent_builders::DeleteBucketPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
 /// Operation shape for `DeleteBucketTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_bucket_tagging`](crate::client::Client::delete_bucket_tagging).
+            /// [`delete_bucket_tagging`](crate::client::fluent_builders::DeleteBucketTagging).
             ///
             /// `ParseStrictResponse` impl for `DeleteBucketTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
 /// Operation shape for `DeleteJobTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_job_tagging`](crate::client::Client::delete_job_tagging).
+            /// [`delete_job_tagging`](crate::client::fluent_builders::DeleteJobTagging).
             ///
             /// `ParseStrictResponse` impl for `DeleteJobTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJobTagging {
 /// Operation shape for `DeleteMultiRegionAccessPoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_multi_region_access_point`](crate::client::Client::delete_multi_region_access_point).
+            /// [`delete_multi_region_access_point`](crate::client::fluent_builders::DeleteMultiRegionAccessPoint).
             ///
             /// `ParseStrictResponse` impl for `DeleteMultiRegionAccessPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiRegionAccessP
 /// Operation shape for `DeletePublicAccessBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_public_access_block`](crate::client::Client::delete_public_access_block).
+            /// [`delete_public_access_block`](crate::client::fluent_builders::DeletePublicAccessBlock).
             ///
             /// `ParseStrictResponse` impl for `DeletePublicAccessBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock 
 /// Operation shape for `DeleteStorageLensConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_storage_lens_configuration`](crate::client::Client::delete_storage_lens_configuration).
+            /// [`delete_storage_lens_configuration`](crate::client::fluent_builders::DeleteStorageLensConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteStorageLensConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStorageLensConfigu
 /// Operation shape for `DeleteStorageLensConfigurationTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_storage_lens_configuration_tagging`](crate::client::Client::delete_storage_lens_configuration_tagging).
+            /// [`delete_storage_lens_configuration_tagging`](crate::client::fluent_builders::DeleteStorageLensConfigurationTagging).
             ///
             /// `ParseStrictResponse` impl for `DeleteStorageLensConfigurationTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStorageLensConfigu
 /// Operation shape for `DescribeJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_job`](crate::client::Client::describe_job).
+            /// [`describe_job`](crate::client::fluent_builders::DescribeJob).
             ///
             /// `ParseStrictResponse` impl for `DescribeJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJob {
 /// Operation shape for `DescribeMultiRegionAccessPointOperation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_multi_region_access_point_operation`](crate::client::Client::describe_multi_region_access_point_operation).
+            /// [`describe_multi_region_access_point_operation`](crate::client::fluent_builders::DescribeMultiRegionAccessPointOperation).
             ///
             /// `ParseStrictResponse` impl for `DescribeMultiRegionAccessPointOperation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMultiRegionAcces
 /// Operation shape for `GetAccessPoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_access_point`](crate::client::Client::get_access_point).
+            /// [`get_access_point`](crate::client::fluent_builders::GetAccessPoint).
             ///
             /// `ParseStrictResponse` impl for `GetAccessPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPoint {
 /// Operation shape for `GetAccessPointConfigurationForObjectLambda`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_access_point_configuration_for_object_lambda`](crate::client::Client::get_access_point_configuration_for_object_lambda).
+            /// [`get_access_point_configuration_for_object_lambda`](crate::client::fluent_builders::GetAccessPointConfigurationForObjectLambda).
             ///
             /// `ParseStrictResponse` impl for `GetAccessPointConfigurationForObjectLambda`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointConfigurat
 /// Operation shape for `GetAccessPointForObjectLambda`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_access_point_for_object_lambda`](crate::client::Client::get_access_point_for_object_lambda).
+            /// [`get_access_point_for_object_lambda`](crate::client::fluent_builders::GetAccessPointForObjectLambda).
             ///
             /// `ParseStrictResponse` impl for `GetAccessPointForObjectLambda`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointForObjectL
 /// Operation shape for `GetAccessPointPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_access_point_policy`](crate::client::Client::get_access_point_policy).
+            /// [`get_access_point_policy`](crate::client::fluent_builders::GetAccessPointPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetAccessPointPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicy {
 /// Operation shape for `GetAccessPointPolicyForObjectLambda`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_access_point_policy_for_object_lambda`](crate::client::Client::get_access_point_policy_for_object_lambda).
+            /// [`get_access_point_policy_for_object_lambda`](crate::client::fluent_builders::GetAccessPointPolicyForObjectLambda).
             ///
             /// `ParseStrictResponse` impl for `GetAccessPointPolicyForObjectLambda`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicyForO
 /// Operation shape for `GetAccessPointPolicyStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_access_point_policy_status`](crate::client::Client::get_access_point_policy_status).
+            /// [`get_access_point_policy_status`](crate::client::fluent_builders::GetAccessPointPolicyStatus).
             ///
             /// `ParseStrictResponse` impl for `GetAccessPointPolicyStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicyStat
 /// Operation shape for `GetAccessPointPolicyStatusForObjectLambda`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_access_point_policy_status_for_object_lambda`](crate::client::Client::get_access_point_policy_status_for_object_lambda).
+            /// [`get_access_point_policy_status_for_object_lambda`](crate::client::fluent_builders::GetAccessPointPolicyStatusForObjectLambda).
             ///
             /// `ParseStrictResponse` impl for `GetAccessPointPolicyStatusForObjectLambda`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicyStat
 /// Operation shape for `GetBucket`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket`](crate::client::Client::get_bucket).
+            /// [`get_bucket`](crate::client::fluent_builders::GetBucket).
             ///
             /// `ParseStrictResponse` impl for `GetBucket`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucket {
 /// Operation shape for `GetBucketLifecycleConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_lifecycle_configuration`](crate::client::Client::get_bucket_lifecycle_configuration).
+            /// [`get_bucket_lifecycle_configuration`](crate::client::fluent_builders::GetBucketLifecycleConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetBucketLifecycleConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfig
 /// Operation shape for `GetBucketPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_policy`](crate::client::Client::get_bucket_policy).
+            /// [`get_bucket_policy`](crate::client::fluent_builders::GetBucketPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetBucketPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketPolicy {
 /// Operation shape for `GetBucketTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_tagging`](crate::client::Client::get_bucket_tagging).
+            /// [`get_bucket_tagging`](crate::client::fluent_builders::GetBucketTagging).
             ///
             /// `ParseStrictResponse` impl for `GetBucketTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketTagging {
 /// Operation shape for `GetBucketVersioning`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bucket_versioning`](crate::client::Client::get_bucket_versioning).
+            /// [`get_bucket_versioning`](crate::client::fluent_builders::GetBucketVersioning).
             ///
             /// `ParseStrictResponse` impl for `GetBucketVersioning`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketVersioning {
 /// Operation shape for `GetJobTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_job_tagging`](crate::client::Client::get_job_tagging).
+            /// [`get_job_tagging`](crate::client::fluent_builders::GetJobTagging).
             ///
             /// `ParseStrictResponse` impl for `GetJobTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobTagging {
 /// Operation shape for `GetMultiRegionAccessPoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_multi_region_access_point`](crate::client::Client::get_multi_region_access_point).
+            /// [`get_multi_region_access_point`](crate::client::fluent_builders::GetMultiRegionAccessPoint).
             ///
             /// `ParseStrictResponse` impl for `GetMultiRegionAccessPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
 /// Operation shape for `GetMultiRegionAccessPointPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_multi_region_access_point_policy`](crate::client::Client::get_multi_region_access_point_policy).
+            /// [`get_multi_region_access_point_policy`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetMultiRegionAccessPointPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
 /// Operation shape for `GetMultiRegionAccessPointPolicyStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_multi_region_access_point_policy_status`](crate::client::Client::get_multi_region_access_point_policy_status).
+            /// [`get_multi_region_access_point_policy_status`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicyStatus).
             ///
             /// `ParseStrictResponse` impl for `GetMultiRegionAccessPointPolicyStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
 /// Operation shape for `GetMultiRegionAccessPointRoutes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_multi_region_access_point_routes`](crate::client::Client::get_multi_region_access_point_routes).
+            /// [`get_multi_region_access_point_routes`](crate::client::fluent_builders::GetMultiRegionAccessPointRoutes).
             ///
             /// `ParseStrictResponse` impl for `GetMultiRegionAccessPointRoutes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
 /// Operation shape for `GetPublicAccessBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_public_access_block`](crate::client::Client::get_public_access_block).
+            /// [`get_public_access_block`](crate::client::fluent_builders::GetPublicAccessBlock).
             ///
             /// `ParseStrictResponse` impl for `GetPublicAccessBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
 /// Operation shape for `GetStorageLensConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_storage_lens_configuration`](crate::client::Client::get_storage_lens_configuration).
+            /// [`get_storage_lens_configuration`](crate::client::fluent_builders::GetStorageLensConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetStorageLensConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStorageLensConfigurat
 /// Operation shape for `GetStorageLensConfigurationTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_storage_lens_configuration_tagging`](crate::client::Client::get_storage_lens_configuration_tagging).
+            /// [`get_storage_lens_configuration_tagging`](crate::client::fluent_builders::GetStorageLensConfigurationTagging).
             ///
             /// `ParseStrictResponse` impl for `GetStorageLensConfigurationTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStorageLensConfigurat
 /// Operation shape for `ListAccessPoints`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_access_points`](crate::client::Client::list_access_points).
+            /// [`list_access_points`](crate::client::fluent_builders::ListAccessPoints).
             ///
             /// `ParseStrictResponse` impl for `ListAccessPoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPoints {
 /// Operation shape for `ListAccessPointsForObjectLambda`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_access_points_for_object_lambda`](crate::client::Client::list_access_points_for_object_lambda).
+            /// [`list_access_points_for_object_lambda`](crate::client::fluent_builders::ListAccessPointsForObjectLambda).
             ///
             /// `ParseStrictResponse` impl for `ListAccessPointsForObjectLambda`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPointsForObjec
 /// Operation shape for `ListJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_jobs`](crate::client::Client::list_jobs).
+            /// [`list_jobs`](crate::client::fluent_builders::ListJobs).
             ///
             /// `ParseStrictResponse` impl for `ListJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
 /// Operation shape for `ListMultiRegionAccessPoints`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_multi_region_access_points`](crate::client::Client::list_multi_region_access_points).
+            /// [`list_multi_region_access_points`](crate::client::fluent_builders::ListMultiRegionAccessPoints).
             ///
             /// `ParseStrictResponse` impl for `ListMultiRegionAccessPoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultiRegionAccessPoi
 /// Operation shape for `ListRegionalBuckets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_regional_buckets`](crate::client::Client::list_regional_buckets).
+            /// [`list_regional_buckets`](crate::client::fluent_builders::ListRegionalBuckets).
             ///
             /// `ParseStrictResponse` impl for `ListRegionalBuckets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1442,7 +1442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRegionalBuckets {
 /// Operation shape for `ListStorageLensConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_storage_lens_configurations`](crate::client::Client::list_storage_lens_configurations).
+            /// [`list_storage_lens_configurations`](crate::client::fluent_builders::ListStorageLensConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListStorageLensConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStorageLensConfigura
 /// Operation shape for `PutAccessPointConfigurationForObjectLambda`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_access_point_configuration_for_object_lambda`](crate::client::Client::put_access_point_configuration_for_object_lambda).
+            /// [`put_access_point_configuration_for_object_lambda`](crate::client::fluent_builders::PutAccessPointConfigurationForObjectLambda).
             ///
             /// `ParseStrictResponse` impl for `PutAccessPointConfigurationForObjectLambda`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1506,7 +1506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessPointConfigurat
 /// Operation shape for `PutAccessPointPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_access_point_policy`](crate::client::Client::put_access_point_policy).
+            /// [`put_access_point_policy`](crate::client::fluent_builders::PutAccessPointPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutAccessPointPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessPointPolicy {
 /// Operation shape for `PutAccessPointPolicyForObjectLambda`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_access_point_policy_for_object_lambda`](crate::client::Client::put_access_point_policy_for_object_lambda).
+            /// [`put_access_point_policy_for_object_lambda`](crate::client::fluent_builders::PutAccessPointPolicyForObjectLambda).
             ///
             /// `ParseStrictResponse` impl for `PutAccessPointPolicyForObjectLambda`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1570,7 +1570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessPointPolicyForO
 /// Operation shape for `PutBucketLifecycleConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_lifecycle_configuration`](crate::client::Client::put_bucket_lifecycle_configuration).
+            /// [`put_bucket_lifecycle_configuration`](crate::client::fluent_builders::PutBucketLifecycleConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutBucketLifecycleConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1602,7 +1602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfig
 /// Operation shape for `PutBucketPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_policy`](crate::client::Client::put_bucket_policy).
+            /// [`put_bucket_policy`](crate::client::fluent_builders::PutBucketPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutBucketPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1634,7 +1634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketPolicy {
 /// Operation shape for `PutBucketTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_tagging`](crate::client::Client::put_bucket_tagging).
+            /// [`put_bucket_tagging`](crate::client::fluent_builders::PutBucketTagging).
             ///
             /// `ParseStrictResponse` impl for `PutBucketTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1666,7 +1666,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketTagging {
 /// Operation shape for `PutBucketVersioning`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_bucket_versioning`](crate::client::Client::put_bucket_versioning).
+            /// [`put_bucket_versioning`](crate::client::fluent_builders::PutBucketVersioning).
             ///
             /// `ParseStrictResponse` impl for `PutBucketVersioning`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1698,7 +1698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketVersioning {
 /// Operation shape for `PutJobTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_job_tagging`](crate::client::Client::put_job_tagging).
+            /// [`put_job_tagging`](crate::client::fluent_builders::PutJobTagging).
             ///
             /// `ParseStrictResponse` impl for `PutJobTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1730,7 +1730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutJobTagging {
 /// Operation shape for `PutMultiRegionAccessPointPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_multi_region_access_point_policy`](crate::client::Client::put_multi_region_access_point_policy).
+            /// [`put_multi_region_access_point_policy`](crate::client::fluent_builders::PutMultiRegionAccessPointPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutMultiRegionAccessPointPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1762,7 +1762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMultiRegionAccessPoin
 /// Operation shape for `PutPublicAccessBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_public_access_block`](crate::client::Client::put_public_access_block).
+            /// [`put_public_access_block`](crate::client::fluent_builders::PutPublicAccessBlock).
             ///
             /// `ParseStrictResponse` impl for `PutPublicAccessBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1794,7 +1794,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
 /// Operation shape for `PutStorageLensConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_storage_lens_configuration`](crate::client::Client::put_storage_lens_configuration).
+            /// [`put_storage_lens_configuration`](crate::client::fluent_builders::PutStorageLensConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutStorageLensConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1826,7 +1826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStorageLensConfigurat
 /// Operation shape for `PutStorageLensConfigurationTagging`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_storage_lens_configuration_tagging`](crate::client::Client::put_storage_lens_configuration_tagging).
+            /// [`put_storage_lens_configuration_tagging`](crate::client::fluent_builders::PutStorageLensConfigurationTagging).
             ///
             /// `ParseStrictResponse` impl for `PutStorageLensConfigurationTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1858,7 +1858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStorageLensConfigurat
 /// Operation shape for `SubmitMultiRegionAccessPointRoutes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`submit_multi_region_access_point_routes`](crate::client::Client::submit_multi_region_access_point_routes).
+            /// [`submit_multi_region_access_point_routes`](crate::client::fluent_builders::SubmitMultiRegionAccessPointRoutes).
             ///
             /// `ParseStrictResponse` impl for `SubmitMultiRegionAccessPointRoutes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1890,7 +1890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubmitMultiRegionAccessP
 /// Operation shape for `UpdateJobPriority`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_job_priority`](crate::client::Client::update_job_priority).
+            /// [`update_job_priority`](crate::client::fluent_builders::UpdateJobPriority).
             ///
             /// `ParseStrictResponse` impl for `UpdateJobPriority`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1922,7 +1922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobPriority {
 /// Operation shape for `UpdateJobStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_job_status`](crate::client::Client::update_job_status).
+            /// [`update_job_status`](crate::client::fluent_builders::UpdateJobStatus).
             ///
             /// `ParseStrictResponse` impl for `UpdateJobStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

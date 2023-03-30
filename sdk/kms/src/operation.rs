@@ -2,7 +2,7 @@
 /// Operation shape for `CancelKeyDeletion`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_key_deletion`](crate::client::Client::cancel_key_deletion).
+            /// [`cancel_key_deletion`](crate::client::fluent_builders::CancelKeyDeletion).
             ///
             /// `ParseStrictResponse` impl for `CancelKeyDeletion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelKeyDeletion {
 /// Operation shape for `ConnectCustomKeyStore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`connect_custom_key_store`](crate::client::Client::connect_custom_key_store).
+            /// [`connect_custom_key_store`](crate::client::fluent_builders::ConnectCustomKeyStore).
             ///
             /// `ParseStrictResponse` impl for `ConnectCustomKeyStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConnectCustomKeyStore {
 /// Operation shape for `CreateAlias`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_alias`](crate::client::Client::create_alias).
+            /// [`create_alias`](crate::client::fluent_builders::CreateAlias).
             ///
             /// `ParseStrictResponse` impl for `CreateAlias`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlias {
 /// Operation shape for `CreateCustomKeyStore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_custom_key_store`](crate::client::Client::create_custom_key_store).
+            /// [`create_custom_key_store`](crate::client::fluent_builders::CreateCustomKeyStore).
             ///
             /// `ParseStrictResponse` impl for `CreateCustomKeyStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomKeyStore {
 /// Operation shape for `CreateGrant`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_grant`](crate::client::Client::create_grant).
+            /// [`create_grant`](crate::client::fluent_builders::CreateGrant).
             ///
             /// `ParseStrictResponse` impl for `CreateGrant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGrant {
 /// Operation shape for `CreateKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_key`](crate::client::Client::create_key).
+            /// [`create_key`](crate::client::fluent_builders::CreateKey).
             ///
             /// `ParseStrictResponse` impl for `CreateKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKey {
 /// Operation shape for `Decrypt`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`decrypt`](crate::client::Client::decrypt).
+            /// [`decrypt`](crate::client::fluent_builders::Decrypt).
             ///
             /// `ParseStrictResponse` impl for `Decrypt`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Decrypt {
 /// Operation shape for `DeleteAlias`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_alias`](crate::client::Client::delete_alias).
+            /// [`delete_alias`](crate::client::fluent_builders::DeleteAlias).
             ///
             /// `ParseStrictResponse` impl for `DeleteAlias`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlias {
 /// Operation shape for `DeleteCustomKeyStore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_custom_key_store`](crate::client::Client::delete_custom_key_store).
+            /// [`delete_custom_key_store`](crate::client::fluent_builders::DeleteCustomKeyStore).
             ///
             /// `ParseStrictResponse` impl for `DeleteCustomKeyStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomKeyStore {
 /// Operation shape for `DeleteImportedKeyMaterial`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_imported_key_material`](crate::client::Client::delete_imported_key_material).
+            /// [`delete_imported_key_material`](crate::client::fluent_builders::DeleteImportedKeyMaterial).
             ///
             /// `ParseStrictResponse` impl for `DeleteImportedKeyMaterial`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteImportedKeyMateria
 /// Operation shape for `DescribeCustomKeyStores`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_custom_key_stores`](crate::client::Client::describe_custom_key_stores).
+            /// [`describe_custom_key_stores`](crate::client::fluent_builders::DescribeCustomKeyStores).
             ///
             /// `ParseStrictResponse` impl for `DescribeCustomKeyStores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomKeyStores 
 /// Operation shape for `DescribeKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_key`](crate::client::Client::describe_key).
+            /// [`describe_key`](crate::client::fluent_builders::DescribeKey).
             ///
             /// `ParseStrictResponse` impl for `DescribeKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeKey {
 /// Operation shape for `DisableKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_key`](crate::client::Client::disable_key).
+            /// [`disable_key`](crate::client::fluent_builders::DisableKey).
             ///
             /// `ParseStrictResponse` impl for `DisableKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableKey {
 /// Operation shape for `DisableKeyRotation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_key_rotation`](crate::client::Client::disable_key_rotation).
+            /// [`disable_key_rotation`](crate::client::fluent_builders::DisableKeyRotation).
             ///
             /// `ParseStrictResponse` impl for `DisableKeyRotation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableKeyRotation {
 /// Operation shape for `DisconnectCustomKeyStore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disconnect_custom_key_store`](crate::client::Client::disconnect_custom_key_store).
+            /// [`disconnect_custom_key_store`](crate::client::fluent_builders::DisconnectCustomKeyStore).
             ///
             /// `ParseStrictResponse` impl for `DisconnectCustomKeyStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectCustomKeyStore
 /// Operation shape for `EnableKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_key`](crate::client::Client::enable_key).
+            /// [`enable_key`](crate::client::fluent_builders::EnableKey).
             ///
             /// `ParseStrictResponse` impl for `EnableKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableKey {
 /// Operation shape for `EnableKeyRotation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_key_rotation`](crate::client::Client::enable_key_rotation).
+            /// [`enable_key_rotation`](crate::client::fluent_builders::EnableKeyRotation).
             ///
             /// `ParseStrictResponse` impl for `EnableKeyRotation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableKeyRotation {
 /// Operation shape for `Encrypt`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`encrypt`](crate::client::Client::encrypt).
+            /// [`encrypt`](crate::client::fluent_builders::Encrypt).
             ///
             /// `ParseStrictResponse` impl for `Encrypt`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Encrypt {
 /// Operation shape for `GenerateDataKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`generate_data_key`](crate::client::Client::generate_data_key).
+            /// [`generate_data_key`](crate::client::fluent_builders::GenerateDataKey).
             ///
             /// `ParseStrictResponse` impl for `GenerateDataKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKey {
 /// Operation shape for `GenerateDataKeyPair`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`generate_data_key_pair`](crate::client::Client::generate_data_key_pair).
+            /// [`generate_data_key_pair`](crate::client::fluent_builders::GenerateDataKeyPair).
             ///
             /// `ParseStrictResponse` impl for `GenerateDataKeyPair`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyPair {
 /// Operation shape for `GenerateDataKeyPairWithoutPlaintext`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`generate_data_key_pair_without_plaintext`](crate::client::Client::generate_data_key_pair_without_plaintext).
+            /// [`generate_data_key_pair_without_plaintext`](crate::client::fluent_builders::GenerateDataKeyPairWithoutPlaintext).
             ///
             /// `ParseStrictResponse` impl for `GenerateDataKeyPairWithoutPlaintext`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyPairWitho
 /// Operation shape for `GenerateDataKeyWithoutPlaintext`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`generate_data_key_without_plaintext`](crate::client::Client::generate_data_key_without_plaintext).
+            /// [`generate_data_key_without_plaintext`](crate::client::fluent_builders::GenerateDataKeyWithoutPlaintext).
             ///
             /// `ParseStrictResponse` impl for `GenerateDataKeyWithoutPlaintext`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyWithoutPl
 /// Operation shape for `GenerateMac`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`generate_mac`](crate::client::Client::generate_mac).
+            /// [`generate_mac`](crate::client::fluent_builders::GenerateMac).
             ///
             /// `ParseStrictResponse` impl for `GenerateMac`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateMac {
 /// Operation shape for `GenerateRandom`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`generate_random`](crate::client::Client::generate_random).
+            /// [`generate_random`](crate::client::fluent_builders::GenerateRandom).
             ///
             /// `ParseStrictResponse` impl for `GenerateRandom`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateRandom {
 /// Operation shape for `GetKeyPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_key_policy`](crate::client::Client::get_key_policy).
+            /// [`get_key_policy`](crate::client::fluent_builders::GetKeyPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetKeyPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyPolicy {
 /// Operation shape for `GetKeyRotationStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_key_rotation_status`](crate::client::Client::get_key_rotation_status).
+            /// [`get_key_rotation_status`](crate::client::fluent_builders::GetKeyRotationStatus).
             ///
             /// `ParseStrictResponse` impl for `GetKeyRotationStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyRotationStatus {
 /// Operation shape for `GetParametersForImport`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_parameters_for_import`](crate::client::Client::get_parameters_for_import).
+            /// [`get_parameters_for_import`](crate::client::fluent_builders::GetParametersForImport).
             ///
             /// `ParseStrictResponse` impl for `GetParametersForImport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetParametersForImport {
 /// Operation shape for `GetPublicKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_public_key`](crate::client::Client::get_public_key).
+            /// [`get_public_key`](crate::client::fluent_builders::GetPublicKey).
             ///
             /// `ParseStrictResponse` impl for `GetPublicKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicKey {
 /// Operation shape for `ImportKeyMaterial`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_key_material`](crate::client::Client::import_key_material).
+            /// [`import_key_material`](crate::client::fluent_builders::ImportKeyMaterial).
             ///
             /// `ParseStrictResponse` impl for `ImportKeyMaterial`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
 /// Operation shape for `ListAliases`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_aliases`](crate::client::Client::list_aliases).
+            /// [`list_aliases`](crate::client::fluent_builders::ListAliases).
             ///
             /// `ParseStrictResponse` impl for `ListAliases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAliases {
 /// Operation shape for `ListGrants`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_grants`](crate::client::Client::list_grants).
+            /// [`list_grants`](crate::client::fluent_builders::ListGrants).
             ///
             /// `ParseStrictResponse` impl for `ListGrants`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGrants {
 /// Operation shape for `ListKeyPolicies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_key_policies`](crate::client::Client::list_key_policies).
+            /// [`list_key_policies`](crate::client::fluent_builders::ListKeyPolicies).
             ///
             /// `ParseStrictResponse` impl for `ListKeyPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeyPolicies {
 /// Operation shape for `ListKeys`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_keys`](crate::client::Client::list_keys).
+            /// [`list_keys`](crate::client::fluent_builders::ListKeys).
             ///
             /// `ParseStrictResponse` impl for `ListKeys`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeys {
 /// Operation shape for `ListResourceTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_resource_tags`](crate::client::Client::list_resource_tags).
+            /// [`list_resource_tags`](crate::client::fluent_builders::ListResourceTags).
             ///
             /// `ParseStrictResponse` impl for `ListResourceTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceTags {
 /// Operation shape for `ListRetirableGrants`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_retirable_grants`](crate::client::Client::list_retirable_grants).
+            /// [`list_retirable_grants`](crate::client::fluent_builders::ListRetirableGrants).
             ///
             /// `ParseStrictResponse` impl for `ListRetirableGrants`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRetirableGrants {
 /// Operation shape for `PutKeyPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_key_policy`](crate::client::Client::put_key_policy).
+            /// [`put_key_policy`](crate::client::fluent_builders::PutKeyPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutKeyPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutKeyPolicy {
 /// Operation shape for `ReEncrypt`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`re_encrypt`](crate::client::Client::re_encrypt).
+            /// [`re_encrypt`](crate::client::fluent_builders::ReEncrypt).
             ///
             /// `ParseStrictResponse` impl for `ReEncrypt`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReEncrypt {
 /// Operation shape for `ReplicateKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`replicate_key`](crate::client::Client::replicate_key).
+            /// [`replicate_key`](crate::client::fluent_builders::ReplicateKey).
             ///
             /// `ParseStrictResponse` impl for `ReplicateKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplicateKey {
 /// Operation shape for `RetireGrant`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`retire_grant`](crate::client::Client::retire_grant).
+            /// [`retire_grant`](crate::client::fluent_builders::RetireGrant).
             ///
             /// `ParseStrictResponse` impl for `RetireGrant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetireGrant {
 /// Operation shape for `RevokeGrant`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`revoke_grant`](crate::client::Client::revoke_grant).
+            /// [`revoke_grant`](crate::client::fluent_builders::RevokeGrant).
             ///
             /// `ParseStrictResponse` impl for `RevokeGrant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeGrant {
 /// Operation shape for `ScheduleKeyDeletion`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`schedule_key_deletion`](crate::client::Client::schedule_key_deletion).
+            /// [`schedule_key_deletion`](crate::client::fluent_builders::ScheduleKeyDeletion).
             ///
             /// `ParseStrictResponse` impl for `ScheduleKeyDeletion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ScheduleKeyDeletion {
 /// Operation shape for `Sign`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`sign`](crate::client::Client::sign).
+            /// [`sign`](crate::client::fluent_builders::Sign).
             ///
             /// `ParseStrictResponse` impl for `Sign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Sign {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateAlias`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_alias`](crate::client::Client::update_alias).
+            /// [`update_alias`](crate::client::fluent_builders::UpdateAlias).
             ///
             /// `ParseStrictResponse` impl for `UpdateAlias`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1442,7 +1442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAlias {
 /// Operation shape for `UpdateCustomKeyStore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_custom_key_store`](crate::client::Client::update_custom_key_store).
+            /// [`update_custom_key_store`](crate::client::fluent_builders::UpdateCustomKeyStore).
             ///
             /// `ParseStrictResponse` impl for `UpdateCustomKeyStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomKeyStore {
 /// Operation shape for `UpdateKeyDescription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_key_description`](crate::client::Client::update_key_description).
+            /// [`update_key_description`](crate::client::fluent_builders::UpdateKeyDescription).
             ///
             /// `ParseStrictResponse` impl for `UpdateKeyDescription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1506,7 +1506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateKeyDescription {
 /// Operation shape for `UpdatePrimaryRegion`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_primary_region`](crate::client::Client::update_primary_region).
+            /// [`update_primary_region`](crate::client::fluent_builders::UpdatePrimaryRegion).
             ///
             /// `ParseStrictResponse` impl for `UpdatePrimaryRegion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePrimaryRegion {
 /// Operation shape for `Verify`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`verify`](crate::client::Client::verify).
+            /// [`verify`](crate::client::fluent_builders::Verify).
             ///
             /// `ParseStrictResponse` impl for `Verify`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1570,7 +1570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Verify {
 /// Operation shape for `VerifyMac`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`verify_mac`](crate::client::Client::verify_mac).
+            /// [`verify_mac`](crate::client::fluent_builders::VerifyMac).
             ///
             /// `ParseStrictResponse` impl for `VerifyMac`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

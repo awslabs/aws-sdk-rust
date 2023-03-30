@@ -83,8 +83,8 @@ impl Client  {
     ///   - [`status(Option<ZonalShiftStatus>)`](crate::output::CancelZonalShiftOutput::status): <p>A status for a zonal shift.</p>  <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>  <ul>   <li> <p> <b>ACTIVE:</b> The zonal shift is started and active.</p> </li>   <li> <p> <b>EXPIRED:</b> The zonal shift has expired (the expiry time was exceeded).</p> </li>   <li> <p> <b>CANCELED:</b> The zonal shift was canceled.</p> </li>  </ul>
     ///   - [`comment(Option<String>)`](crate::output::CancelZonalShiftOutput::comment): <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
                         /// - On failure, responds with [`SdkError<CancelZonalShiftError>`](crate::error::CancelZonalShiftError)
-    pub fn cancel_zonal_shift(&self) -> fluent_builders::CancelZonalShift {
-                            fluent_builders::CancelZonalShift::new(self.handle.clone())
+    pub fn cancel_zonal_shift(&self) -> crate::client::fluent_builders::CancelZonalShift {
+                            crate::client::fluent_builders::CancelZonalShift::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetManagedResource`](crate::client::fluent_builders::GetManagedResource) operation.
                         ///
@@ -96,8 +96,8 @@ impl Client  {
     ///   - [`applied_weights(Option<HashMap<String, f32>>)`](crate::output::GetManagedResourceOutput::applied_weights): <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
     ///   - [`zonal_shifts(Option<Vec<ZonalShiftInResource>>)`](crate::output::GetManagedResourceOutput::zonal_shifts): <p>The zonal shifts that are currently active for a resource. </p>
                         /// - On failure, responds with [`SdkError<GetManagedResourceError>`](crate::error::GetManagedResourceError)
-    pub fn get_managed_resource(&self) -> fluent_builders::GetManagedResource {
-                            fluent_builders::GetManagedResource::new(self.handle.clone())
+    pub fn get_managed_resource(&self) -> crate::client::fluent_builders::GetManagedResource {
+                            crate::client::fluent_builders::GetManagedResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListManagedResources`](crate::client::fluent_builders::ListManagedResources) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListManagedResources::into_paginator).
@@ -109,8 +109,8 @@ impl Client  {
                         ///   - [`items(Option<Vec<ManagedResourceSummary>>)`](crate::output::ListManagedResourcesOutput::items): <p>The items in the response list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListManagedResourcesOutput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
                         /// - On failure, responds with [`SdkError<ListManagedResourcesError>`](crate::error::ListManagedResourcesError)
-    pub fn list_managed_resources(&self) -> fluent_builders::ListManagedResources {
-                            fluent_builders::ListManagedResources::new(self.handle.clone())
+    pub fn list_managed_resources(&self) -> crate::client::fluent_builders::ListManagedResources {
+                            crate::client::fluent_builders::ListManagedResources::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListZonalShifts`](crate::client::fluent_builders::ListZonalShifts) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListZonalShifts::into_paginator).
@@ -123,8 +123,8 @@ impl Client  {
                         ///   - [`items(Option<Vec<ZonalShiftSummary>>)`](crate::output::ListZonalShiftsOutput::items): <p>The items in the response list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListZonalShiftsOutput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
                         /// - On failure, responds with [`SdkError<ListZonalShiftsError>`](crate::error::ListZonalShiftsError)
-    pub fn list_zonal_shifts(&self) -> fluent_builders::ListZonalShifts {
-                            fluent_builders::ListZonalShifts::new(self.handle.clone())
+    pub fn list_zonal_shifts(&self) -> crate::client::fluent_builders::ListZonalShifts {
+                            crate::client::fluent_builders::ListZonalShifts::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartZonalShift`](crate::client::fluent_builders::StartZonalShift) operation.
                         ///
@@ -142,8 +142,8 @@ impl Client  {
     ///   - [`status(Option<ZonalShiftStatus>)`](crate::output::StartZonalShiftOutput::status): <p>A status for a zonal shift.</p>  <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>  <ul>   <li> <p> <b>ACTIVE:</b> The zonal shift is started and active.</p> </li>   <li> <p> <b>EXPIRED:</b> The zonal shift has expired (the expiry time was exceeded).</p> </li>   <li> <p> <b>CANCELED:</b> The zonal shift was canceled.</p> </li>  </ul>
     ///   - [`comment(Option<String>)`](crate::output::StartZonalShiftOutput::comment): <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
                         /// - On failure, responds with [`SdkError<StartZonalShiftError>`](crate::error::StartZonalShiftError)
-    pub fn start_zonal_shift(&self) -> fluent_builders::StartZonalShift {
-                            fluent_builders::StartZonalShift::new(self.handle.clone())
+    pub fn start_zonal_shift(&self) -> crate::client::fluent_builders::StartZonalShift {
+                            crate::client::fluent_builders::StartZonalShift::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateZonalShift`](crate::client::fluent_builders::UpdateZonalShift) operation.
                         ///
@@ -160,489 +160,9 @@ impl Client  {
     ///   - [`status(Option<ZonalShiftStatus>)`](crate::output::UpdateZonalShiftOutput::status): <p>A status for a zonal shift.</p>  <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>  <ul>   <li> <p> <b>ACTIVE:</b> The zonal shift is started and active.</p> </li>   <li> <p> <b>EXPIRED:</b> The zonal shift has expired (the expiry time was exceeded).</p> </li>   <li> <p> <b>CANCELED:</b> The zonal shift was canceled.</p> </li>  </ul>
     ///   - [`comment(Option<String>)`](crate::output::UpdateZonalShiftOutput::comment): <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
                         /// - On failure, responds with [`SdkError<UpdateZonalShiftError>`](crate::error::UpdateZonalShiftError)
-    pub fn update_zonal_shift(&self) -> fluent_builders::UpdateZonalShift {
-                            fluent_builders::UpdateZonalShift::new(self.handle.clone())
+    pub fn update_zonal_shift(&self) -> crate::client::fluent_builders::UpdateZonalShift {
+                            crate::client::fluent_builders::UpdateZonalShift::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CancelZonalShift`.
-                        ///
-    /// <p>Cancel a zonal shift in Amazon Route 53 Application Recovery Controller that you've started for a resource in your AWS account in an AWS Region. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CancelZonalShift {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::cancel_zonal_shift_input::Builder
-                        }
-    impl CancelZonalShift  {
-        /// Creates a new `CancelZonalShift`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CancelZonalShift, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CancelZonalShiftError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CancelZonalShiftOutput, aws_smithy_http::result::SdkError<crate::error::CancelZonalShiftError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The internally-generated identifier of a zonal shift.</p>
-        pub fn zonal_shift_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.zonal_shift_id(input.into());
-            self
-        }
-        /// <p>The internally-generated identifier of a zonal shift.</p>
-        pub fn set_zonal_shift_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_zonal_shift_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetManagedResource`.
-                        ///
-    /// <p>Get information about a resource that's been registered for zonal shifts with Amazon Route 53 Application Recovery Controller in this AWS Region. Resources that are registered for zonal shifts are managed resources in Route 53 ARC.</p> 
-    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetManagedResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_managed_resource_input::Builder
-                        }
-    impl GetManagedResource  {
-        /// Creates a new `GetManagedResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetManagedResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetManagedResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetManagedResourceOutput, aws_smithy_http::result::SdkError<crate::error::GetManagedResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p> 
-        /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(input.into());
-            self
-        }
-        /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p> 
-        /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-        pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_identifier(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListManagedResources`.
-                        ///
-    /// <p>Lists all the resources in your AWS account in this AWS Region that are managed for zonal shifts in Amazon Route 53 Application Recovery Controller, and information about them. The information includes their Amazon Resource Names (ARNs), the Availability Zones the resources are deployed in, and the resource name.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListManagedResources {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_managed_resources_input::Builder
-                        }
-    impl ListManagedResources  {
-        /// Creates a new `ListManagedResources`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListManagedResources, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListManagedResourcesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListManagedResourcesOutput, aws_smithy_http::result::SdkError<crate::error::ListManagedResourcesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListManagedResourcesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListManagedResourcesPaginator {
-                                        crate::paginator::ListManagedResourcesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListZonalShifts`.
-                        ///
-    /// <p>Lists all the active zonal shifts in Amazon Route 53 Application Recovery Controller in your AWS account in this AWS Region.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListZonalShifts {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_zonal_shifts_input::Builder
-                        }
-    impl ListZonalShifts  {
-        /// Creates a new `ListZonalShifts`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListZonalShifts, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListZonalShiftsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListZonalShiftsOutput, aws_smithy_http::result::SdkError<crate::error::ListZonalShiftsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListZonalShiftsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListZonalShiftsPaginator {
-                                        crate::paginator::ListZonalShiftsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>A status for a zonal shift.</p> 
-        /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p> 
-        /// <ul> 
-        /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li> 
-        /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li> 
-        /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li> 
-        /// </ul>
-        pub fn status(mut self, input: crate::model::ZonalShiftStatus) -> Self {
-            self.inner = self.inner.status(input);
-            self
-        }
-        /// <p>A status for a zonal shift.</p> 
-        /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p> 
-        /// <ul> 
-        /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li> 
-        /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li> 
-        /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li> 
-        /// </ul>
-        pub fn set_status(mut self, input: std::option::Option<crate::model::ZonalShiftStatus>) -> Self {
-            self.inner = self.inner.set_status(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The number of objects that you want to return with this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartZonalShift`.
-                        ///
-    /// <p>You start a zonal shift to temporarily move load balancer traffic away from an Availability Zone in a AWS Region, to help your application recover immediately, for example, from a developer's bad code deployment or from an AWS infrastructure failure in a single Availability Zone. You can start a zonal shift in Route 53 ARC only for managed resources in your account in an AWS Region. Resources are automatically registered with Route 53 ARC by AWS services.</p> 
-    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p> 
-    /// <p>When you start a zonal shift, traffic for the resource is no longer routed to the Availability Zone. The zonal shift is created immediately in Route 53 ARC. However, it can take a short time, typically up to a few minutes, for existing, in-progress connections in the Availability Zone to complete.</p> 
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.html">Zonal shift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartZonalShift {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_zonal_shift_input::Builder
-                        }
-    impl StartZonalShift  {
-        /// Creates a new `StartZonalShift`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartZonalShift, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartZonalShiftError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartZonalShiftOutput, aws_smithy_http::result::SdkError<crate::error::StartZonalShiftError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p> 
-        /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(input.into());
-            self
-        }
-        /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p> 
-        /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-        pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_identifier(input);
-            self
-        }
-        /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
-        pub fn away_from(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.away_from(input.into());
-            self
-        }
-        /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
-        pub fn set_away_from(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_away_from(input);
-            self
-        }
-        /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p> 
-        /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p> 
-        /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p> 
-        /// <ul> 
-        /// <li> <p> <b>A lowercase letter m:</b> To specify that the value is in minutes.</p> </li> 
-        /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li> 
-        /// </ul> 
-        /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
-        pub fn expires_in(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expires_in(input.into());
-            self
-        }
-        /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p> 
-        /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p> 
-        /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p> 
-        /// <ul> 
-        /// <li> <p> <b>A lowercase letter m:</b> To specify that the value is in minutes.</p> </li> 
-        /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li> 
-        /// </ul> 
-        /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
-        pub fn set_expires_in(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_expires_in(input);
-            self
-        }
-        /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
-        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(input.into());
-            self
-        }
-        /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
-        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_comment(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateZonalShift`.
-                        ///
-    /// <p>Update an active zonal shift in Amazon Route 53 Application Recovery Controller in your AWS account. You can update a zonal shift to set a new expiration, or edit or replace the comment for the zonal shift. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateZonalShift {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_zonal_shift_input::Builder
-                        }
-    impl UpdateZonalShift  {
-        /// Creates a new `UpdateZonalShift`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateZonalShift, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateZonalShiftError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateZonalShiftOutput, aws_smithy_http::result::SdkError<crate::error::UpdateZonalShiftError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of a zonal shift.</p>
-        pub fn zonal_shift_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.zonal_shift_id(input.into());
-            self
-        }
-        /// <p>The identifier of a zonal shift.</p>
-        pub fn set_zonal_shift_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_zonal_shift_id(input);
-            self
-        }
-        /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
-        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(input.into());
-            self
-        }
-        /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
-        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_comment(input);
-            self
-        }
-        /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p> 
-        /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p> 
-        /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p> 
-        /// <ul> 
-        /// <li> <p> <b>A lowercase letter m:</b> To specify that the value is in minutes.</p> </li> 
-        /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li> 
-        /// </ul> 
-        /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
-        pub fn expires_in(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expires_in(input.into());
-            self
-        }
-        /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p> 
-        /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p> 
-        /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p> 
-        /// <ul> 
-        /// <li> <p> <b>A lowercase letter m:</b> To specify that the value is in minutes.</p> </li> 
-        /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li> 
-        /// </ul> 
-        /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
-        pub fn set_expires_in(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_expires_in(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -713,4 +233,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

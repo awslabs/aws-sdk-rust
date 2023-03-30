@@ -2,7 +2,7 @@
 /// Operation shape for `CreateDiscoverer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_discoverer`](crate::client::Client::create_discoverer).
+            /// [`create_discoverer`](crate::client::fluent_builders::CreateDiscoverer).
             ///
             /// `ParseStrictResponse` impl for `CreateDiscoverer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDiscoverer {
 /// Operation shape for `CreateRegistry`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_registry`](crate::client::Client::create_registry).
+            /// [`create_registry`](crate::client::fluent_builders::CreateRegistry).
             ///
             /// `ParseStrictResponse` impl for `CreateRegistry`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRegistry {
 /// Operation shape for `CreateSchema`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_schema`](crate::client::Client::create_schema).
+            /// [`create_schema`](crate::client::fluent_builders::CreateSchema).
             ///
             /// `ParseStrictResponse` impl for `CreateSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSchema {
 /// Operation shape for `DeleteDiscoverer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_discoverer`](crate::client::Client::delete_discoverer).
+            /// [`delete_discoverer`](crate::client::fluent_builders::DeleteDiscoverer).
             ///
             /// `ParseStrictResponse` impl for `DeleteDiscoverer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDiscoverer {
 /// Operation shape for `DeleteRegistry`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_registry`](crate::client::Client::delete_registry).
+            /// [`delete_registry`](crate::client::fluent_builders::DeleteRegistry).
             ///
             /// `ParseStrictResponse` impl for `DeleteRegistry`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRegistry {
 /// Operation shape for `DeleteResourcePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
+            /// [`delete_resource_policy`](crate::client::fluent_builders::DeleteResourcePolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// Operation shape for `DeleteSchema`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_schema`](crate::client::Client::delete_schema).
+            /// [`delete_schema`](crate::client::fluent_builders::DeleteSchema).
             ///
             /// `ParseStrictResponse` impl for `DeleteSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSchema {
 /// Operation shape for `DeleteSchemaVersion`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_schema_version`](crate::client::Client::delete_schema_version).
+            /// [`delete_schema_version`](crate::client::fluent_builders::DeleteSchemaVersion).
             ///
             /// `ParseStrictResponse` impl for `DeleteSchemaVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSchemaVersion {
 /// Operation shape for `DescribeCodeBinding`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_code_binding`](crate::client::Client::describe_code_binding).
+            /// [`describe_code_binding`](crate::client::fluent_builders::DescribeCodeBinding).
             ///
             /// `ParseStrictResponse` impl for `DescribeCodeBinding`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCodeBinding {
 /// Operation shape for `DescribeDiscoverer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_discoverer`](crate::client::Client::describe_discoverer).
+            /// [`describe_discoverer`](crate::client::fluent_builders::DescribeDiscoverer).
             ///
             /// `ParseStrictResponse` impl for `DescribeDiscoverer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDiscoverer {
 /// Operation shape for `DescribeRegistry`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_registry`](crate::client::Client::describe_registry).
+            /// [`describe_registry`](crate::client::fluent_builders::DescribeRegistry).
             ///
             /// `ParseStrictResponse` impl for `DescribeRegistry`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRegistry {
 /// Operation shape for `DescribeSchema`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_schema`](crate::client::Client::describe_schema).
+            /// [`describe_schema`](crate::client::fluent_builders::DescribeSchema).
             ///
             /// `ParseStrictResponse` impl for `DescribeSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSchema {
 /// Operation shape for `ExportSchema`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_schema`](crate::client::Client::export_schema).
+            /// [`export_schema`](crate::client::fluent_builders::ExportSchema).
             ///
             /// `ParseStrictResponse` impl for `ExportSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportSchema {
 /// Operation shape for `GetCodeBindingSource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_code_binding_source`](crate::client::Client::get_code_binding_source).
+            /// [`get_code_binding_source`](crate::client::fluent_builders::GetCodeBindingSource).
             ///
             /// `ParseStrictResponse` impl for `GetCodeBindingSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCodeBindingSource {
 /// Operation shape for `GetDiscoveredSchema`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_discovered_schema`](crate::client::Client::get_discovered_schema).
+            /// [`get_discovered_schema`](crate::client::fluent_builders::GetDiscoveredSchema).
             ///
             /// `ParseStrictResponse` impl for `GetDiscoveredSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDiscoveredSchema {
 /// Operation shape for `GetResourcePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_resource_policy`](crate::client::Client::get_resource_policy).
+            /// [`get_resource_policy`](crate::client::fluent_builders::GetResourcePolicy).
             ///
             /// `ParseStrictResponse` impl for `GetResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourcePolicy {
 /// Operation shape for `ListDiscoverers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_discoverers`](crate::client::Client::list_discoverers).
+            /// [`list_discoverers`](crate::client::fluent_builders::ListDiscoverers).
             ///
             /// `ParseStrictResponse` impl for `ListDiscoverers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDiscoverers {
 /// Operation shape for `ListRegistries`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_registries`](crate::client::Client::list_registries).
+            /// [`list_registries`](crate::client::fluent_builders::ListRegistries).
             ///
             /// `ParseStrictResponse` impl for `ListRegistries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRegistries {
 /// Operation shape for `ListSchemas`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_schemas`](crate::client::Client::list_schemas).
+            /// [`list_schemas`](crate::client::fluent_builders::ListSchemas).
             ///
             /// `ParseStrictResponse` impl for `ListSchemas`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSchemas {
 /// Operation shape for `ListSchemaVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_schema_versions`](crate::client::Client::list_schema_versions).
+            /// [`list_schema_versions`](crate::client::fluent_builders::ListSchemaVersions).
             ///
             /// `ParseStrictResponse` impl for `ListSchemaVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSchemaVersions {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutCodeBinding`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_code_binding`](crate::client::Client::put_code_binding).
+            /// [`put_code_binding`](crate::client::fluent_builders::PutCodeBinding).
             ///
             /// `ParseStrictResponse` impl for `PutCodeBinding`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCodeBinding {
 /// Operation shape for `PutResourcePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_resource_policy`](crate::client::Client::put_resource_policy).
+            /// [`put_resource_policy`](crate::client::fluent_builders::PutResourcePolicy).
             ///
             /// `ParseStrictResponse` impl for `PutResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// Operation shape for `SearchSchemas`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_schemas`](crate::client::Client::search_schemas).
+            /// [`search_schemas`](crate::client::fluent_builders::SearchSchemas).
             ///
             /// `ParseStrictResponse` impl for `SearchSchemas`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchSchemas {
 /// Operation shape for `StartDiscoverer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_discoverer`](crate::client::Client::start_discoverer).
+            /// [`start_discoverer`](crate::client::fluent_builders::StartDiscoverer).
             ///
             /// `ParseStrictResponse` impl for `StartDiscoverer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDiscoverer {
 /// Operation shape for `StopDiscoverer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_discoverer`](crate::client::Client::stop_discoverer).
+            /// [`stop_discoverer`](crate::client::fluent_builders::StopDiscoverer).
             ///
             /// `ParseStrictResponse` impl for `StopDiscoverer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDiscoverer {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateDiscoverer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_discoverer`](crate::client::Client::update_discoverer).
+            /// [`update_discoverer`](crate::client::fluent_builders::UpdateDiscoverer).
             ///
             /// `ParseStrictResponse` impl for `UpdateDiscoverer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDiscoverer {
 /// Operation shape for `UpdateRegistry`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_registry`](crate::client::Client::update_registry).
+            /// [`update_registry`](crate::client::fluent_builders::UpdateRegistry).
             ///
             /// `ParseStrictResponse` impl for `UpdateRegistry`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRegistry {
 /// Operation shape for `UpdateSchema`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_schema`](crate::client::Client::update_schema).
+            /// [`update_schema`](crate::client::fluent_builders::UpdateSchema).
             ///
             /// `ParseStrictResponse` impl for `UpdateSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

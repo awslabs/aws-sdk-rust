@@ -2,7 +2,7 @@
 /// Operation shape for `AddPermission`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_permission`](crate::client::Client::add_permission).
+            /// [`add_permission`](crate::client::fluent_builders::AddPermission).
             ///
             /// `ParseStrictResponse` impl for `AddPermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddPermission {
 /// Operation shape for `CheckIfPhoneNumberIsOptedOut`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`check_if_phone_number_is_opted_out`](crate::client::Client::check_if_phone_number_is_opted_out).
+            /// [`check_if_phone_number_is_opted_out`](crate::client::fluent_builders::CheckIfPhoneNumberIsOptedOut).
             ///
             /// `ParseStrictResponse` impl for `CheckIfPhoneNumberIsOptedOut`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckIfPhoneNumberIsOpte
 /// Operation shape for `ConfirmSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`confirm_subscription`](crate::client::Client::confirm_subscription).
+            /// [`confirm_subscription`](crate::client::fluent_builders::ConfirmSubscription).
             ///
             /// `ParseStrictResponse` impl for `ConfirmSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmSubscription {
 /// Operation shape for `CreatePlatformApplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_platform_application`](crate::client::Client::create_platform_application).
+            /// [`create_platform_application`](crate::client::fluent_builders::CreatePlatformApplication).
             ///
             /// `ParseStrictResponse` impl for `CreatePlatformApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlatformApplicatio
 /// Operation shape for `CreatePlatformEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_platform_endpoint`](crate::client::Client::create_platform_endpoint).
+            /// [`create_platform_endpoint`](crate::client::fluent_builders::CreatePlatformEndpoint).
             ///
             /// `ParseStrictResponse` impl for `CreatePlatformEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlatformEndpoint {
 /// Operation shape for `CreateSMSSandboxPhoneNumber`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_sms_sandbox_phone_number`](crate::client::Client::create_sms_sandbox_phone_number).
+            /// [`create_sms_sandbox_phone_number`](crate::client::fluent_builders::CreateSMSSandboxPhoneNumber).
             ///
             /// `ParseStrictResponse` impl for `CreateSMSSandboxPhoneNumber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSMSSandboxPhoneNum
 /// Operation shape for `CreateTopic`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_topic`](crate::client::Client::create_topic).
+            /// [`create_topic`](crate::client::fluent_builders::CreateTopic).
             ///
             /// `ParseStrictResponse` impl for `CreateTopic`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTopic {
 /// Operation shape for `DeleteEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_endpoint`](crate::client::Client::delete_endpoint).
+            /// [`delete_endpoint`](crate::client::fluent_builders::DeleteEndpoint).
             ///
             /// `ParseStrictResponse` impl for `DeleteEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpoint {
 /// Operation shape for `DeletePlatformApplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_platform_application`](crate::client::Client::delete_platform_application).
+            /// [`delete_platform_application`](crate::client::fluent_builders::DeletePlatformApplication).
             ///
             /// `ParseStrictResponse` impl for `DeletePlatformApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlatformApplicatio
 /// Operation shape for `DeleteSMSSandboxPhoneNumber`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_sms_sandbox_phone_number`](crate::client::Client::delete_sms_sandbox_phone_number).
+            /// [`delete_sms_sandbox_phone_number`](crate::client::fluent_builders::DeleteSMSSandboxPhoneNumber).
             ///
             /// `ParseStrictResponse` impl for `DeleteSMSSandboxPhoneNumber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSMSSandboxPhoneNum
 /// Operation shape for `DeleteTopic`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_topic`](crate::client::Client::delete_topic).
+            /// [`delete_topic`](crate::client::fluent_builders::DeleteTopic).
             ///
             /// `ParseStrictResponse` impl for `DeleteTopic`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTopic {
 /// Operation shape for `GetDataProtectionPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_data_protection_policy`](crate::client::Client::get_data_protection_policy).
+            /// [`get_data_protection_policy`](crate::client::fluent_builders::GetDataProtectionPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetDataProtectionPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataProtectionPolicy 
 /// Operation shape for `GetEndpointAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_endpoint_attributes`](crate::client::Client::get_endpoint_attributes).
+            /// [`get_endpoint_attributes`](crate::client::fluent_builders::GetEndpointAttributes).
             ///
             /// `ParseStrictResponse` impl for `GetEndpointAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEndpointAttributes {
 /// Operation shape for `GetPlatformApplicationAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_platform_application_attributes`](crate::client::Client::get_platform_application_attributes).
+            /// [`get_platform_application_attributes`](crate::client::fluent_builders::GetPlatformApplicationAttributes).
             ///
             /// `ParseStrictResponse` impl for `GetPlatformApplicationAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPlatformApplicationAt
 /// Operation shape for `GetSMSAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_sms_attributes`](crate::client::Client::get_sms_attributes).
+            /// [`get_sms_attributes`](crate::client::fluent_builders::GetSMSAttributes).
             ///
             /// `ParseStrictResponse` impl for `GetSMSAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSMSAttributes {
 /// Operation shape for `GetSMSSandboxAccountStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_sms_sandbox_account_status`](crate::client::Client::get_sms_sandbox_account_status).
+            /// [`get_sms_sandbox_account_status`](crate::client::fluent_builders::GetSMSSandboxAccountStatus).
             ///
             /// `ParseStrictResponse` impl for `GetSMSSandboxAccountStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSMSSandboxAccountStat
 /// Operation shape for `GetSubscriptionAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_subscription_attributes`](crate::client::Client::get_subscription_attributes).
+            /// [`get_subscription_attributes`](crate::client::fluent_builders::GetSubscriptionAttributes).
             ///
             /// `ParseStrictResponse` impl for `GetSubscriptionAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubscriptionAttribute
 /// Operation shape for `GetTopicAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_topic_attributes`](crate::client::Client::get_topic_attributes).
+            /// [`get_topic_attributes`](crate::client::fluent_builders::GetTopicAttributes).
             ///
             /// `ParseStrictResponse` impl for `GetTopicAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTopicAttributes {
 /// Operation shape for `ListEndpointsByPlatformApplication`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_endpoints_by_platform_application`](crate::client::Client::list_endpoints_by_platform_application).
+            /// [`list_endpoints_by_platform_application`](crate::client::fluent_builders::ListEndpointsByPlatformApplication).
             ///
             /// `ParseStrictResponse` impl for `ListEndpointsByPlatformApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpointsByPlatformA
 /// Operation shape for `ListOriginationNumbers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_origination_numbers`](crate::client::Client::list_origination_numbers).
+            /// [`list_origination_numbers`](crate::client::fluent_builders::ListOriginationNumbers).
             ///
             /// `ParseStrictResponse` impl for `ListOriginationNumbers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOriginationNumbers {
 /// Operation shape for `ListPhoneNumbersOptedOut`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_phone_numbers_opted_out`](crate::client::Client::list_phone_numbers_opted_out).
+            /// [`list_phone_numbers_opted_out`](crate::client::fluent_builders::ListPhoneNumbersOptedOut).
             ///
             /// `ParseStrictResponse` impl for `ListPhoneNumbersOptedOut`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumbersOptedOut
 /// Operation shape for `ListPlatformApplications`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_platform_applications`](crate::client::Client::list_platform_applications).
+            /// [`list_platform_applications`](crate::client::fluent_builders::ListPlatformApplications).
             ///
             /// `ParseStrictResponse` impl for `ListPlatformApplications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlatformApplications
 /// Operation shape for `ListSMSSandboxPhoneNumbers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_sms_sandbox_phone_numbers`](crate::client::Client::list_sms_sandbox_phone_numbers).
+            /// [`list_sms_sandbox_phone_numbers`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers).
             ///
             /// `ParseStrictResponse` impl for `ListSMSSandboxPhoneNumbers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSMSSandboxPhoneNumbe
 /// Operation shape for `ListSubscriptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_subscriptions`](crate::client::Client::list_subscriptions).
+            /// [`list_subscriptions`](crate::client::fluent_builders::ListSubscriptions).
             ///
             /// `ParseStrictResponse` impl for `ListSubscriptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubscriptions {
 /// Operation shape for `ListSubscriptionsByTopic`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_subscriptions_by_topic`](crate::client::Client::list_subscriptions_by_topic).
+            /// [`list_subscriptions_by_topic`](crate::client::fluent_builders::ListSubscriptionsByTopic).
             ///
             /// `ParseStrictResponse` impl for `ListSubscriptionsByTopic`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubscriptionsByTopic
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTopics`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_topics`](crate::client::Client::list_topics).
+            /// [`list_topics`](crate::client::fluent_builders::ListTopics).
             ///
             /// `ParseStrictResponse` impl for `ListTopics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTopics {
 /// Operation shape for `OptInPhoneNumber`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`opt_in_phone_number`](crate::client::Client::opt_in_phone_number).
+            /// [`opt_in_phone_number`](crate::client::fluent_builders::OptInPhoneNumber).
             ///
             /// `ParseStrictResponse` impl for `OptInPhoneNumber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OptInPhoneNumber {
 /// Operation shape for `Publish`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`publish`](crate::client::Client::publish).
+            /// [`publish`](crate::client::fluent_builders::Publish).
             ///
             /// `ParseStrictResponse` impl for `Publish`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Publish {
 /// Operation shape for `PublishBatch`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`publish_batch`](crate::client::Client::publish_batch).
+            /// [`publish_batch`](crate::client::fluent_builders::PublishBatch).
             ///
             /// `ParseStrictResponse` impl for `PublishBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishBatch {
 /// Operation shape for `PutDataProtectionPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_data_protection_policy`](crate::client::Client::put_data_protection_policy).
+            /// [`put_data_protection_policy`](crate::client::fluent_builders::PutDataProtectionPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutDataProtectionPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDataProtectionPolicy 
 /// Operation shape for `RemovePermission`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`remove_permission`](crate::client::Client::remove_permission).
+            /// [`remove_permission`](crate::client::fluent_builders::RemovePermission).
             ///
             /// `ParseStrictResponse` impl for `RemovePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemovePermission {
 /// Operation shape for `SetEndpointAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_endpoint_attributes`](crate::client::Client::set_endpoint_attributes).
+            /// [`set_endpoint_attributes`](crate::client::fluent_builders::SetEndpointAttributes).
             ///
             /// `ParseStrictResponse` impl for `SetEndpointAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetEndpointAttributes {
 /// Operation shape for `SetPlatformApplicationAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_platform_application_attributes`](crate::client::Client::set_platform_application_attributes).
+            /// [`set_platform_application_attributes`](crate::client::fluent_builders::SetPlatformApplicationAttributes).
             ///
             /// `ParseStrictResponse` impl for `SetPlatformApplicationAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetPlatformApplicationAt
 /// Operation shape for `SetSMSAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_sms_attributes`](crate::client::Client::set_sms_attributes).
+            /// [`set_sms_attributes`](crate::client::fluent_builders::SetSMSAttributes).
             ///
             /// `ParseStrictResponse` impl for `SetSMSAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetSMSAttributes {
 /// Operation shape for `SetSubscriptionAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_subscription_attributes`](crate::client::Client::set_subscription_attributes).
+            /// [`set_subscription_attributes`](crate::client::fluent_builders::SetSubscriptionAttributes).
             ///
             /// `ParseStrictResponse` impl for `SetSubscriptionAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetSubscriptionAttribute
 /// Operation shape for `SetTopicAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_topic_attributes`](crate::client::Client::set_topic_attributes).
+            /// [`set_topic_attributes`](crate::client::fluent_builders::SetTopicAttributes).
             ///
             /// `ParseStrictResponse` impl for `SetTopicAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetTopicAttributes {
 /// Operation shape for `Subscribe`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`subscribe`](crate::client::Client::subscribe).
+            /// [`subscribe`](crate::client::fluent_builders::Subscribe).
             ///
             /// `ParseStrictResponse` impl for `Subscribe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Subscribe {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `Unsubscribe`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`unsubscribe`](crate::client::Client::unsubscribe).
+            /// [`unsubscribe`](crate::client::fluent_builders::Unsubscribe).
             ///
             /// `ParseStrictResponse` impl for `Unsubscribe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Unsubscribe {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `VerifySMSSandboxPhoneNumber`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`verify_sms_sandbox_phone_number`](crate::client::Client::verify_sms_sandbox_phone_number).
+            /// [`verify_sms_sandbox_phone_number`](crate::client::fluent_builders::VerifySMSSandboxPhoneNumber).
             ///
             /// `ParseStrictResponse` impl for `VerifySMSSandboxPhoneNumber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

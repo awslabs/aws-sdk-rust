@@ -2,7 +2,7 @@
 /// Operation shape for `AcceptAddressTransfer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`accept_address_transfer`](crate::client::Client::accept_address_transfer).
+            /// [`accept_address_transfer`](crate::client::fluent_builders::AcceptAddressTransfer).
             ///
             /// `ParseStrictResponse` impl for `AcceptAddressTransfer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptAddressTransfer {
 /// Operation shape for `AcceptReservedInstancesExchangeQuote`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`accept_reserved_instances_exchange_quote`](crate::client::Client::accept_reserved_instances_exchange_quote).
+            /// [`accept_reserved_instances_exchange_quote`](crate::client::fluent_builders::AcceptReservedInstancesExchangeQuote).
             ///
             /// `ParseStrictResponse` impl for `AcceptReservedInstancesExchangeQuote`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptReservedInstancesE
 /// Operation shape for `AcceptTransitGatewayMulticastDomainAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`accept_transit_gateway_multicast_domain_associations`](crate::client::Client::accept_transit_gateway_multicast_domain_associations).
+            /// [`accept_transit_gateway_multicast_domain_associations`](crate::client::fluent_builders::AcceptTransitGatewayMulticastDomainAssociations).
             ///
             /// `ParseStrictResponse` impl for `AcceptTransitGatewayMulticastDomainAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptTransitGatewayMult
 /// Operation shape for `AcceptTransitGatewayPeeringAttachment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`accept_transit_gateway_peering_attachment`](crate::client::Client::accept_transit_gateway_peering_attachment).
+            /// [`accept_transit_gateway_peering_attachment`](crate::client::fluent_builders::AcceptTransitGatewayPeeringAttachment).
             ///
             /// `ParseStrictResponse` impl for `AcceptTransitGatewayPeeringAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptTransitGatewayPeer
 /// Operation shape for `AcceptTransitGatewayVpcAttachment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`accept_transit_gateway_vpc_attachment`](crate::client::Client::accept_transit_gateway_vpc_attachment).
+            /// [`accept_transit_gateway_vpc_attachment`](crate::client::fluent_builders::AcceptTransitGatewayVpcAttachment).
             ///
             /// `ParseStrictResponse` impl for `AcceptTransitGatewayVpcAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptTransitGatewayVpcA
 /// Operation shape for `AcceptVpcEndpointConnections`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`accept_vpc_endpoint_connections`](crate::client::Client::accept_vpc_endpoint_connections).
+            /// [`accept_vpc_endpoint_connections`](crate::client::fluent_builders::AcceptVpcEndpointConnections).
             ///
             /// `ParseStrictResponse` impl for `AcceptVpcEndpointConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptVpcEndpointConnect
 /// Operation shape for `AcceptVpcPeeringConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`accept_vpc_peering_connection`](crate::client::Client::accept_vpc_peering_connection).
+            /// [`accept_vpc_peering_connection`](crate::client::fluent_builders::AcceptVpcPeeringConnection).
             ///
             /// `ParseStrictResponse` impl for `AcceptVpcPeeringConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptVpcPeeringConnecti
 /// Operation shape for `AdvertiseByoipCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`advertise_byoip_cidr`](crate::client::Client::advertise_byoip_cidr).
+            /// [`advertise_byoip_cidr`](crate::client::fluent_builders::AdvertiseByoipCidr).
             ///
             /// `ParseStrictResponse` impl for `AdvertiseByoipCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdvertiseByoipCidr {
 /// Operation shape for `AllocateAddress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`allocate_address`](crate::client::Client::allocate_address).
+            /// [`allocate_address`](crate::client::fluent_builders::AllocateAddress).
             ///
             /// `ParseStrictResponse` impl for `AllocateAddress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateAddress {
 /// Operation shape for `AllocateHosts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`allocate_hosts`](crate::client::Client::allocate_hosts).
+            /// [`allocate_hosts`](crate::client::fluent_builders::AllocateHosts).
             ///
             /// `ParseStrictResponse` impl for `AllocateHosts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateHosts {
 /// Operation shape for `AllocateIpamPoolCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`allocate_ipam_pool_cidr`](crate::client::Client::allocate_ipam_pool_cidr).
+            /// [`allocate_ipam_pool_cidr`](crate::client::fluent_builders::AllocateIpamPoolCidr).
             ///
             /// `ParseStrictResponse` impl for `AllocateIpamPoolCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateIpamPoolCidr {
 /// Operation shape for `ApplySecurityGroupsToClientVpnTargetNetwork`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`apply_security_groups_to_client_vpn_target_network`](crate::client::Client::apply_security_groups_to_client_vpn_target_network).
+            /// [`apply_security_groups_to_client_vpn_target_network`](crate::client::fluent_builders::ApplySecurityGroupsToClientVpnTargetNetwork).
             ///
             /// `ParseStrictResponse` impl for `ApplySecurityGroupsToClientVpnTargetNetwork`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplySecurityGroupsToCli
 /// Operation shape for `AssignIpv6Addresses`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`assign_ipv6_addresses`](crate::client::Client::assign_ipv6_addresses).
+            /// [`assign_ipv6_addresses`](crate::client::fluent_builders::AssignIpv6Addresses).
             ///
             /// `ParseStrictResponse` impl for `AssignIpv6Addresses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssignIpv6Addresses {
 /// Operation shape for `AssignPrivateIpAddresses`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`assign_private_ip_addresses`](crate::client::Client::assign_private_ip_addresses).
+            /// [`assign_private_ip_addresses`](crate::client::fluent_builders::AssignPrivateIpAddresses).
             ///
             /// `ParseStrictResponse` impl for `AssignPrivateIpAddresses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssignPrivateIpAddresses
 /// Operation shape for `AssociateAddress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_address`](crate::client::Client::associate_address).
+            /// [`associate_address`](crate::client::fluent_builders::AssociateAddress).
             ///
             /// `ParseStrictResponse` impl for `AssociateAddress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAddress {
 /// Operation shape for `AssociateClientVpnTargetNetwork`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_client_vpn_target_network`](crate::client::Client::associate_client_vpn_target_network).
+            /// [`associate_client_vpn_target_network`](crate::client::fluent_builders::AssociateClientVpnTargetNetwork).
             ///
             /// `ParseStrictResponse` impl for `AssociateClientVpnTargetNetwork`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateClientVpnTarget
 /// Operation shape for `AssociateDhcpOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_dhcp_options`](crate::client::Client::associate_dhcp_options).
+            /// [`associate_dhcp_options`](crate::client::fluent_builders::AssociateDhcpOptions).
             ///
             /// `ParseStrictResponse` impl for `AssociateDhcpOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDhcpOptions {
 /// Operation shape for `AssociateEnclaveCertificateIamRole`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_enclave_certificate_iam_role`](crate::client::Client::associate_enclave_certificate_iam_role).
+            /// [`associate_enclave_certificate_iam_role`](crate::client::fluent_builders::AssociateEnclaveCertificateIamRole).
             ///
             /// `ParseStrictResponse` impl for `AssociateEnclaveCertificateIamRole`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateEnclaveCertific
 /// Operation shape for `AssociateIamInstanceProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_iam_instance_profile`](crate::client::Client::associate_iam_instance_profile).
+            /// [`associate_iam_instance_profile`](crate::client::fluent_builders::AssociateIamInstanceProfile).
             ///
             /// `ParseStrictResponse` impl for `AssociateIamInstanceProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateIamInstanceProf
 /// Operation shape for `AssociateInstanceEventWindow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_instance_event_window`](crate::client::Client::associate_instance_event_window).
+            /// [`associate_instance_event_window`](crate::client::fluent_builders::AssociateInstanceEventWindow).
             ///
             /// `ParseStrictResponse` impl for `AssociateInstanceEventWindow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateInstanceEventWi
 /// Operation shape for `AssociateRouteTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_route_table`](crate::client::Client::associate_route_table).
+            /// [`associate_route_table`](crate::client::fluent_builders::AssociateRouteTable).
             ///
             /// `ParseStrictResponse` impl for `AssociateRouteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateRouteTable {
 /// Operation shape for `AssociateSubnetCidrBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_subnet_cidr_block`](crate::client::Client::associate_subnet_cidr_block).
+            /// [`associate_subnet_cidr_block`](crate::client::fluent_builders::AssociateSubnetCidrBlock).
             ///
             /// `ParseStrictResponse` impl for `AssociateSubnetCidrBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateSubnetCidrBlock
 /// Operation shape for `AssociateTransitGatewayMulticastDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_transit_gateway_multicast_domain`](crate::client::Client::associate_transit_gateway_multicast_domain).
+            /// [`associate_transit_gateway_multicast_domain`](crate::client::fluent_builders::AssociateTransitGatewayMulticastDomain).
             ///
             /// `ParseStrictResponse` impl for `AssociateTransitGatewayMulticastDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTransitGatewayM
 /// Operation shape for `AssociateTransitGatewayPolicyTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_transit_gateway_policy_table`](crate::client::Client::associate_transit_gateway_policy_table).
+            /// [`associate_transit_gateway_policy_table`](crate::client::fluent_builders::AssociateTransitGatewayPolicyTable).
             ///
             /// `ParseStrictResponse` impl for `AssociateTransitGatewayPolicyTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTransitGatewayP
 /// Operation shape for `AssociateTransitGatewayRouteTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_transit_gateway_route_table`](crate::client::Client::associate_transit_gateway_route_table).
+            /// [`associate_transit_gateway_route_table`](crate::client::fluent_builders::AssociateTransitGatewayRouteTable).
             ///
             /// `ParseStrictResponse` impl for `AssociateTransitGatewayRouteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTransitGatewayR
 /// Operation shape for `AssociateTrunkInterface`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_trunk_interface`](crate::client::Client::associate_trunk_interface).
+            /// [`associate_trunk_interface`](crate::client::fluent_builders::AssociateTrunkInterface).
             ///
             /// `ParseStrictResponse` impl for `AssociateTrunkInterface`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTrunkInterface 
 /// Operation shape for `AssociateVpcCidrBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_vpc_cidr_block`](crate::client::Client::associate_vpc_cidr_block).
+            /// [`associate_vpc_cidr_block`](crate::client::fluent_builders::AssociateVpcCidrBlock).
             ///
             /// `ParseStrictResponse` impl for `AssociateVpcCidrBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateVpcCidrBlock {
 /// Operation shape for `AttachClassicLinkVpc`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`attach_classic_link_vpc`](crate::client::Client::attach_classic_link_vpc).
+            /// [`attach_classic_link_vpc`](crate::client::fluent_builders::AttachClassicLinkVpc).
             ///
             /// `ParseStrictResponse` impl for `AttachClassicLinkVpc`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachClassicLinkVpc {
 /// Operation shape for `AttachInternetGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`attach_internet_gateway`](crate::client::Client::attach_internet_gateway).
+            /// [`attach_internet_gateway`](crate::client::fluent_builders::AttachInternetGateway).
             ///
             /// `ParseStrictResponse` impl for `AttachInternetGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachInternetGateway {
 /// Operation shape for `AttachNetworkInterface`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`attach_network_interface`](crate::client::Client::attach_network_interface).
+            /// [`attach_network_interface`](crate::client::fluent_builders::AttachNetworkInterface).
             ///
             /// `ParseStrictResponse` impl for `AttachNetworkInterface`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachNetworkInterface {
 /// Operation shape for `AttachVerifiedAccessTrustProvider`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`attach_verified_access_trust_provider`](crate::client::Client::attach_verified_access_trust_provider).
+            /// [`attach_verified_access_trust_provider`](crate::client::fluent_builders::AttachVerifiedAccessTrustProvider).
             ///
             /// `ParseStrictResponse` impl for `AttachVerifiedAccessTrustProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachVerifiedAccessTrus
 /// Operation shape for `AttachVolume`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`attach_volume`](crate::client::Client::attach_volume).
+            /// [`attach_volume`](crate::client::fluent_builders::AttachVolume).
             ///
             /// `ParseStrictResponse` impl for `AttachVolume`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachVolume {
 /// Operation shape for `AttachVpnGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`attach_vpn_gateway`](crate::client::Client::attach_vpn_gateway).
+            /// [`attach_vpn_gateway`](crate::client::fluent_builders::AttachVpnGateway).
             ///
             /// `ParseStrictResponse` impl for `AttachVpnGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachVpnGateway {
 /// Operation shape for `AuthorizeClientVpnIngress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`authorize_client_vpn_ingress`](crate::client::Client::authorize_client_vpn_ingress).
+            /// [`authorize_client_vpn_ingress`](crate::client::fluent_builders::AuthorizeClientVpnIngress).
             ///
             /// `ParseStrictResponse` impl for `AuthorizeClientVpnIngress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AuthorizeClientVpnIngres
 /// Operation shape for `AuthorizeSecurityGroupEgress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`authorize_security_group_egress`](crate::client::Client::authorize_security_group_egress).
+            /// [`authorize_security_group_egress`](crate::client::fluent_builders::AuthorizeSecurityGroupEgress).
             ///
             /// `ParseStrictResponse` impl for `AuthorizeSecurityGroupEgress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AuthorizeSecurityGroupEg
 /// Operation shape for `AuthorizeSecurityGroupIngress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`authorize_security_group_ingress`](crate::client::Client::authorize_security_group_ingress).
+            /// [`authorize_security_group_ingress`](crate::client::fluent_builders::AuthorizeSecurityGroupIngress).
             ///
             /// `ParseStrictResponse` impl for `AuthorizeSecurityGroupIngress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AuthorizeSecurityGroupIn
 /// Operation shape for `BundleInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`bundle_instance`](crate::client::Client::bundle_instance).
+            /// [`bundle_instance`](crate::client::fluent_builders::BundleInstance).
             ///
             /// `ParseStrictResponse` impl for `BundleInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BundleInstance {
 /// Operation shape for `CancelBundleTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_bundle_task`](crate::client::Client::cancel_bundle_task).
+            /// [`cancel_bundle_task`](crate::client::fluent_builders::CancelBundleTask).
             ///
             /// `ParseStrictResponse` impl for `CancelBundleTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelBundleTask {
 /// Operation shape for `CancelCapacityReservation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_capacity_reservation`](crate::client::Client::cancel_capacity_reservation).
+            /// [`cancel_capacity_reservation`](crate::client::fluent_builders::CancelCapacityReservation).
             ///
             /// `ParseStrictResponse` impl for `CancelCapacityReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelCapacityReservatio
 /// Operation shape for `CancelCapacityReservationFleets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_capacity_reservation_fleets`](crate::client::Client::cancel_capacity_reservation_fleets).
+            /// [`cancel_capacity_reservation_fleets`](crate::client::fluent_builders::CancelCapacityReservationFleets).
             ///
             /// `ParseStrictResponse` impl for `CancelCapacityReservationFleets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelCapacityReservatio
 /// Operation shape for `CancelConversionTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_conversion_task`](crate::client::Client::cancel_conversion_task).
+            /// [`cancel_conversion_task`](crate::client::fluent_builders::CancelConversionTask).
             ///
             /// `ParseStrictResponse` impl for `CancelConversionTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelConversionTask {
 /// Operation shape for `CancelExportTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_export_task`](crate::client::Client::cancel_export_task).
+            /// [`cancel_export_task`](crate::client::fluent_builders::CancelExportTask).
             ///
             /// `ParseStrictResponse` impl for `CancelExportTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelExportTask {
 /// Operation shape for `CancelImageLaunchPermission`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_image_launch_permission`](crate::client::Client::cancel_image_launch_permission).
+            /// [`cancel_image_launch_permission`](crate::client::fluent_builders::CancelImageLaunchPermission).
             ///
             /// `ParseStrictResponse` impl for `CancelImageLaunchPermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelImageLaunchPermiss
 /// Operation shape for `CancelImportTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_import_task`](crate::client::Client::cancel_import_task).
+            /// [`cancel_import_task`](crate::client::fluent_builders::CancelImportTask).
             ///
             /// `ParseStrictResponse` impl for `CancelImportTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelImportTask {
 /// Operation shape for `CancelReservedInstancesListing`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_reserved_instances_listing`](crate::client::Client::cancel_reserved_instances_listing).
+            /// [`cancel_reserved_instances_listing`](crate::client::fluent_builders::CancelReservedInstancesListing).
             ///
             /// `ParseStrictResponse` impl for `CancelReservedInstancesListing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1442,7 +1442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelReservedInstancesL
 /// Operation shape for `CancelSpotFleetRequests`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_spot_fleet_requests`](crate::client::Client::cancel_spot_fleet_requests).
+            /// [`cancel_spot_fleet_requests`](crate::client::fluent_builders::CancelSpotFleetRequests).
             ///
             /// `ParseStrictResponse` impl for `CancelSpotFleetRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSpotFleetRequests 
 /// Operation shape for `CancelSpotInstanceRequests`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_spot_instance_requests`](crate::client::Client::cancel_spot_instance_requests).
+            /// [`cancel_spot_instance_requests`](crate::client::fluent_builders::CancelSpotInstanceRequests).
             ///
             /// `ParseStrictResponse` impl for `CancelSpotInstanceRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1506,7 +1506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSpotInstanceReques
 /// Operation shape for `ConfirmProductInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`confirm_product_instance`](crate::client::Client::confirm_product_instance).
+            /// [`confirm_product_instance`](crate::client::fluent_builders::ConfirmProductInstance).
             ///
             /// `ParseStrictResponse` impl for `ConfirmProductInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmProductInstance {
 /// Operation shape for `CopyFpgaImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`copy_fpga_image`](crate::client::Client::copy_fpga_image).
+            /// [`copy_fpga_image`](crate::client::fluent_builders::CopyFpgaImage).
             ///
             /// `ParseStrictResponse` impl for `CopyFpgaImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1570,7 +1570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyFpgaImage {
 /// Operation shape for `CopyImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`copy_image`](crate::client::Client::copy_image).
+            /// [`copy_image`](crate::client::fluent_builders::CopyImage).
             ///
             /// `ParseStrictResponse` impl for `CopyImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1602,7 +1602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyImage {
 /// Operation shape for `CopySnapshot`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`copy_snapshot`](crate::client::Client::copy_snapshot).
+            /// [`copy_snapshot`](crate::client::fluent_builders::CopySnapshot).
             ///
             /// `ParseStrictResponse` impl for `CopySnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1634,7 +1634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopySnapshot {
 /// Operation shape for `CreateCapacityReservation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_capacity_reservation`](crate::client::Client::create_capacity_reservation).
+            /// [`create_capacity_reservation`](crate::client::fluent_builders::CreateCapacityReservation).
             ///
             /// `ParseStrictResponse` impl for `CreateCapacityReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1666,7 +1666,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCapacityReservatio
 /// Operation shape for `CreateCapacityReservationFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_capacity_reservation_fleet`](crate::client::Client::create_capacity_reservation_fleet).
+            /// [`create_capacity_reservation_fleet`](crate::client::fluent_builders::CreateCapacityReservationFleet).
             ///
             /// `ParseStrictResponse` impl for `CreateCapacityReservationFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1698,7 +1698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCapacityReservatio
 /// Operation shape for `CreateCarrierGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_carrier_gateway`](crate::client::Client::create_carrier_gateway).
+            /// [`create_carrier_gateway`](crate::client::fluent_builders::CreateCarrierGateway).
             ///
             /// `ParseStrictResponse` impl for `CreateCarrierGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1730,7 +1730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCarrierGateway {
 /// Operation shape for `CreateClientVpnEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_client_vpn_endpoint`](crate::client::Client::create_client_vpn_endpoint).
+            /// [`create_client_vpn_endpoint`](crate::client::fluent_builders::CreateClientVpnEndpoint).
             ///
             /// `ParseStrictResponse` impl for `CreateClientVpnEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1762,7 +1762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateClientVpnEndpoint 
 /// Operation shape for `CreateClientVpnRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_client_vpn_route`](crate::client::Client::create_client_vpn_route).
+            /// [`create_client_vpn_route`](crate::client::fluent_builders::CreateClientVpnRoute).
             ///
             /// `ParseStrictResponse` impl for `CreateClientVpnRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1794,7 +1794,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateClientVpnRoute {
 /// Operation shape for `CreateCoipCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_coip_cidr`](crate::client::Client::create_coip_cidr).
+            /// [`create_coip_cidr`](crate::client::fluent_builders::CreateCoipCidr).
             ///
             /// `ParseStrictResponse` impl for `CreateCoipCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1826,7 +1826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCoipCidr {
 /// Operation shape for `CreateCoipPool`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_coip_pool`](crate::client::Client::create_coip_pool).
+            /// [`create_coip_pool`](crate::client::fluent_builders::CreateCoipPool).
             ///
             /// `ParseStrictResponse` impl for `CreateCoipPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1858,7 +1858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCoipPool {
 /// Operation shape for `CreateCustomerGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_customer_gateway`](crate::client::Client::create_customer_gateway).
+            /// [`create_customer_gateway`](crate::client::fluent_builders::CreateCustomerGateway).
             ///
             /// `ParseStrictResponse` impl for `CreateCustomerGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1890,7 +1890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomerGateway {
 /// Operation shape for `CreateDefaultSubnet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_default_subnet`](crate::client::Client::create_default_subnet).
+            /// [`create_default_subnet`](crate::client::fluent_builders::CreateDefaultSubnet).
             ///
             /// `ParseStrictResponse` impl for `CreateDefaultSubnet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1922,7 +1922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDefaultSubnet {
 /// Operation shape for `CreateDefaultVpc`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_default_vpc`](crate::client::Client::create_default_vpc).
+            /// [`create_default_vpc`](crate::client::fluent_builders::CreateDefaultVpc).
             ///
             /// `ParseStrictResponse` impl for `CreateDefaultVpc`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1954,7 +1954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDefaultVpc {
 /// Operation shape for `CreateDhcpOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_dhcp_options`](crate::client::Client::create_dhcp_options).
+            /// [`create_dhcp_options`](crate::client::fluent_builders::CreateDhcpOptions).
             ///
             /// `ParseStrictResponse` impl for `CreateDhcpOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1986,7 +1986,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDhcpOptions {
 /// Operation shape for `CreateEgressOnlyInternetGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_egress_only_internet_gateway`](crate::client::Client::create_egress_only_internet_gateway).
+            /// [`create_egress_only_internet_gateway`](crate::client::fluent_builders::CreateEgressOnlyInternetGateway).
             ///
             /// `ParseStrictResponse` impl for `CreateEgressOnlyInternetGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2018,7 +2018,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEgressOnlyInternet
 /// Operation shape for `CreateFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_fleet`](crate::client::Client::create_fleet).
+            /// [`create_fleet`](crate::client::fluent_builders::CreateFleet).
             ///
             /// `ParseStrictResponse` impl for `CreateFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2050,7 +2050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFleet {
 /// Operation shape for `CreateFlowLogs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_flow_logs`](crate::client::Client::create_flow_logs).
+            /// [`create_flow_logs`](crate::client::fluent_builders::CreateFlowLogs).
             ///
             /// `ParseStrictResponse` impl for `CreateFlowLogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2082,7 +2082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFlowLogs {
 /// Operation shape for `CreateFpgaImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_fpga_image`](crate::client::Client::create_fpga_image).
+            /// [`create_fpga_image`](crate::client::fluent_builders::CreateFpgaImage).
             ///
             /// `ParseStrictResponse` impl for `CreateFpgaImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2114,7 +2114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFpgaImage {
 /// Operation shape for `CreateImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_image`](crate::client::Client::create_image).
+            /// [`create_image`](crate::client::fluent_builders::CreateImage).
             ///
             /// `ParseStrictResponse` impl for `CreateImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2146,7 +2146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateImage {
 /// Operation shape for `CreateInstanceEventWindow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_instance_event_window`](crate::client::Client::create_instance_event_window).
+            /// [`create_instance_event_window`](crate::client::fluent_builders::CreateInstanceEventWindow).
             ///
             /// `ParseStrictResponse` impl for `CreateInstanceEventWindow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2178,7 +2178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInstanceEventWindo
 /// Operation shape for `CreateInstanceExportTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_instance_export_task`](crate::client::Client::create_instance_export_task).
+            /// [`create_instance_export_task`](crate::client::fluent_builders::CreateInstanceExportTask).
             ///
             /// `ParseStrictResponse` impl for `CreateInstanceExportTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2210,7 +2210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInstanceExportTask
 /// Operation shape for `CreateInternetGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_internet_gateway`](crate::client::Client::create_internet_gateway).
+            /// [`create_internet_gateway`](crate::client::fluent_builders::CreateInternetGateway).
             ///
             /// `ParseStrictResponse` impl for `CreateInternetGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2242,7 +2242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInternetGateway {
 /// Operation shape for `CreateIpam`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_ipam`](crate::client::Client::create_ipam).
+            /// [`create_ipam`](crate::client::fluent_builders::CreateIpam).
             ///
             /// `ParseStrictResponse` impl for `CreateIpam`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2274,7 +2274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIpam {
 /// Operation shape for `CreateIpamPool`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_ipam_pool`](crate::client::Client::create_ipam_pool).
+            /// [`create_ipam_pool`](crate::client::fluent_builders::CreateIpamPool).
             ///
             /// `ParseStrictResponse` impl for `CreateIpamPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2306,7 +2306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIpamPool {
 /// Operation shape for `CreateIpamScope`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_ipam_scope`](crate::client::Client::create_ipam_scope).
+            /// [`create_ipam_scope`](crate::client::fluent_builders::CreateIpamScope).
             ///
             /// `ParseStrictResponse` impl for `CreateIpamScope`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2338,7 +2338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIpamScope {
 /// Operation shape for `CreateKeyPair`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_key_pair`](crate::client::Client::create_key_pair).
+            /// [`create_key_pair`](crate::client::fluent_builders::CreateKeyPair).
             ///
             /// `ParseStrictResponse` impl for `CreateKeyPair`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2370,7 +2370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKeyPair {
 /// Operation shape for `CreateLaunchTemplate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_launch_template`](crate::client::Client::create_launch_template).
+            /// [`create_launch_template`](crate::client::fluent_builders::CreateLaunchTemplate).
             ///
             /// `ParseStrictResponse` impl for `CreateLaunchTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2402,7 +2402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLaunchTemplate {
 /// Operation shape for `CreateLaunchTemplateVersion`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_launch_template_version`](crate::client::Client::create_launch_template_version).
+            /// [`create_launch_template_version`](crate::client::fluent_builders::CreateLaunchTemplateVersion).
             ///
             /// `ParseStrictResponse` impl for `CreateLaunchTemplateVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2434,7 +2434,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLaunchTemplateVers
 /// Operation shape for `CreateLocalGatewayRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_local_gateway_route`](crate::client::Client::create_local_gateway_route).
+            /// [`create_local_gateway_route`](crate::client::fluent_builders::CreateLocalGatewayRoute).
             ///
             /// `ParseStrictResponse` impl for `CreateLocalGatewayRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2466,7 +2466,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocalGatewayRoute 
 /// Operation shape for `CreateLocalGatewayRouteTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_local_gateway_route_table`](crate::client::Client::create_local_gateway_route_table).
+            /// [`create_local_gateway_route_table`](crate::client::fluent_builders::CreateLocalGatewayRouteTable).
             ///
             /// `ParseStrictResponse` impl for `CreateLocalGatewayRouteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2498,7 +2498,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocalGatewayRouteT
 /// Operation shape for `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_local_gateway_route_table_virtual_interface_group_association`](crate::client::Client::create_local_gateway_route_table_virtual_interface_group_association).
+            /// [`create_local_gateway_route_table_virtual_interface_group_association`](crate::client::fluent_builders::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation).
             ///
             /// `ParseStrictResponse` impl for `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2530,7 +2530,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocalGatewayRouteT
 /// Operation shape for `CreateLocalGatewayRouteTableVpcAssociation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_local_gateway_route_table_vpc_association`](crate::client::Client::create_local_gateway_route_table_vpc_association).
+            /// [`create_local_gateway_route_table_vpc_association`](crate::client::fluent_builders::CreateLocalGatewayRouteTableVpcAssociation).
             ///
             /// `ParseStrictResponse` impl for `CreateLocalGatewayRouteTableVpcAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2562,7 +2562,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocalGatewayRouteT
 /// Operation shape for `CreateManagedPrefixList`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_managed_prefix_list`](crate::client::Client::create_managed_prefix_list).
+            /// [`create_managed_prefix_list`](crate::client::fluent_builders::CreateManagedPrefixList).
             ///
             /// `ParseStrictResponse` impl for `CreateManagedPrefixList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2594,7 +2594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateManagedPrefixList 
 /// Operation shape for `CreateNatGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_nat_gateway`](crate::client::Client::create_nat_gateway).
+            /// [`create_nat_gateway`](crate::client::fluent_builders::CreateNatGateway).
             ///
             /// `ParseStrictResponse` impl for `CreateNatGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2626,7 +2626,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNatGateway {
 /// Operation shape for `CreateNetworkAcl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_network_acl`](crate::client::Client::create_network_acl).
+            /// [`create_network_acl`](crate::client::fluent_builders::CreateNetworkAcl).
             ///
             /// `ParseStrictResponse` impl for `CreateNetworkAcl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2658,7 +2658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkAcl {
 /// Operation shape for `CreateNetworkAclEntry`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_network_acl_entry`](crate::client::Client::create_network_acl_entry).
+            /// [`create_network_acl_entry`](crate::client::fluent_builders::CreateNetworkAclEntry).
             ///
             /// `ParseStrictResponse` impl for `CreateNetworkAclEntry`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2690,7 +2690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkAclEntry {
 /// Operation shape for `CreateNetworkInsightsAccessScope`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_network_insights_access_scope`](crate::client::Client::create_network_insights_access_scope).
+            /// [`create_network_insights_access_scope`](crate::client::fluent_builders::CreateNetworkInsightsAccessScope).
             ///
             /// `ParseStrictResponse` impl for `CreateNetworkInsightsAccessScope`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2722,7 +2722,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkInsightsAcc
 /// Operation shape for `CreateNetworkInsightsPath`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_network_insights_path`](crate::client::Client::create_network_insights_path).
+            /// [`create_network_insights_path`](crate::client::fluent_builders::CreateNetworkInsightsPath).
             ///
             /// `ParseStrictResponse` impl for `CreateNetworkInsightsPath`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2754,7 +2754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkInsightsPat
 /// Operation shape for `CreateNetworkInterface`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_network_interface`](crate::client::Client::create_network_interface).
+            /// [`create_network_interface`](crate::client::fluent_builders::CreateNetworkInterface).
             ///
             /// `ParseStrictResponse` impl for `CreateNetworkInterface`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2786,7 +2786,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkInterface {
 /// Operation shape for `CreateNetworkInterfacePermission`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_network_interface_permission`](crate::client::Client::create_network_interface_permission).
+            /// [`create_network_interface_permission`](crate::client::fluent_builders::CreateNetworkInterfacePermission).
             ///
             /// `ParseStrictResponse` impl for `CreateNetworkInterfacePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2818,7 +2818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkInterfacePe
 /// Operation shape for `CreatePlacementGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_placement_group`](crate::client::Client::create_placement_group).
+            /// [`create_placement_group`](crate::client::fluent_builders::CreatePlacementGroup).
             ///
             /// `ParseStrictResponse` impl for `CreatePlacementGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2850,7 +2850,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlacementGroup {
 /// Operation shape for `CreatePublicIpv4Pool`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_public_ipv4_pool`](crate::client::Client::create_public_ipv4_pool).
+            /// [`create_public_ipv4_pool`](crate::client::fluent_builders::CreatePublicIpv4Pool).
             ///
             /// `ParseStrictResponse` impl for `CreatePublicIpv4Pool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2882,7 +2882,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePublicIpv4Pool {
 /// Operation shape for `CreateReplaceRootVolumeTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_replace_root_volume_task`](crate::client::Client::create_replace_root_volume_task).
+            /// [`create_replace_root_volume_task`](crate::client::fluent_builders::CreateReplaceRootVolumeTask).
             ///
             /// `ParseStrictResponse` impl for `CreateReplaceRootVolumeTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2914,7 +2914,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplaceRootVolumeT
 /// Operation shape for `CreateReservedInstancesListing`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_reserved_instances_listing`](crate::client::Client::create_reserved_instances_listing).
+            /// [`create_reserved_instances_listing`](crate::client::fluent_builders::CreateReservedInstancesListing).
             ///
             /// `ParseStrictResponse` impl for `CreateReservedInstancesListing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2946,7 +2946,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReservedInstancesL
 /// Operation shape for `CreateRestoreImageTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_restore_image_task`](crate::client::Client::create_restore_image_task).
+            /// [`create_restore_image_task`](crate::client::fluent_builders::CreateRestoreImageTask).
             ///
             /// `ParseStrictResponse` impl for `CreateRestoreImageTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2978,7 +2978,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRestoreImageTask {
 /// Operation shape for `CreateRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_route`](crate::client::Client::create_route).
+            /// [`create_route`](crate::client::fluent_builders::CreateRoute).
             ///
             /// `ParseStrictResponse` impl for `CreateRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3010,7 +3010,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoute {
 /// Operation shape for `CreateRouteTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_route_table`](crate::client::Client::create_route_table).
+            /// [`create_route_table`](crate::client::fluent_builders::CreateRouteTable).
             ///
             /// `ParseStrictResponse` impl for `CreateRouteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3042,7 +3042,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRouteTable {
 /// Operation shape for `CreateSecurityGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_security_group`](crate::client::Client::create_security_group).
+            /// [`create_security_group`](crate::client::fluent_builders::CreateSecurityGroup).
             ///
             /// `ParseStrictResponse` impl for `CreateSecurityGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3074,7 +3074,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSecurityGroup {
 /// Operation shape for `CreateSnapshot`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_snapshot`](crate::client::Client::create_snapshot).
+            /// [`create_snapshot`](crate::client::fluent_builders::CreateSnapshot).
             ///
             /// `ParseStrictResponse` impl for `CreateSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3106,7 +3106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshot {
 /// Operation shape for `CreateSnapshots`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_snapshots`](crate::client::Client::create_snapshots).
+            /// [`create_snapshots`](crate::client::fluent_builders::CreateSnapshots).
             ///
             /// `ParseStrictResponse` impl for `CreateSnapshots`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3138,7 +3138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshots {
 /// Operation shape for `CreateSpotDatafeedSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_spot_datafeed_subscription`](crate::client::Client::create_spot_datafeed_subscription).
+            /// [`create_spot_datafeed_subscription`](crate::client::fluent_builders::CreateSpotDatafeedSubscription).
             ///
             /// `ParseStrictResponse` impl for `CreateSpotDatafeedSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3170,7 +3170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSpotDatafeedSubscr
 /// Operation shape for `CreateStoreImageTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_store_image_task`](crate::client::Client::create_store_image_task).
+            /// [`create_store_image_task`](crate::client::fluent_builders::CreateStoreImageTask).
             ///
             /// `ParseStrictResponse` impl for `CreateStoreImageTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3202,7 +3202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStoreImageTask {
 /// Operation shape for `CreateSubnet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_subnet`](crate::client::Client::create_subnet).
+            /// [`create_subnet`](crate::client::fluent_builders::CreateSubnet).
             ///
             /// `ParseStrictResponse` impl for `CreateSubnet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3234,7 +3234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSubnet {
 /// Operation shape for `CreateSubnetCidrReservation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_subnet_cidr_reservation`](crate::client::Client::create_subnet_cidr_reservation).
+            /// [`create_subnet_cidr_reservation`](crate::client::fluent_builders::CreateSubnetCidrReservation).
             ///
             /// `ParseStrictResponse` impl for `CreateSubnetCidrReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3266,7 +3266,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSubnetCidrReservat
 /// Operation shape for `CreateTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_tags`](crate::client::Client::create_tags).
+            /// [`create_tags`](crate::client::fluent_builders::CreateTags).
             ///
             /// `ParseStrictResponse` impl for `CreateTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3298,7 +3298,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTags {
 /// Operation shape for `CreateTrafficMirrorFilter`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_traffic_mirror_filter`](crate::client::Client::create_traffic_mirror_filter).
+            /// [`create_traffic_mirror_filter`](crate::client::fluent_builders::CreateTrafficMirrorFilter).
             ///
             /// `ParseStrictResponse` impl for `CreateTrafficMirrorFilter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3330,7 +3330,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficMirrorFilte
 /// Operation shape for `CreateTrafficMirrorFilterRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_traffic_mirror_filter_rule`](crate::client::Client::create_traffic_mirror_filter_rule).
+            /// [`create_traffic_mirror_filter_rule`](crate::client::fluent_builders::CreateTrafficMirrorFilterRule).
             ///
             /// `ParseStrictResponse` impl for `CreateTrafficMirrorFilterRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3362,7 +3362,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficMirrorFilte
 /// Operation shape for `CreateTrafficMirrorSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_traffic_mirror_session`](crate::client::Client::create_traffic_mirror_session).
+            /// [`create_traffic_mirror_session`](crate::client::fluent_builders::CreateTrafficMirrorSession).
             ///
             /// `ParseStrictResponse` impl for `CreateTrafficMirrorSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3394,7 +3394,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficMirrorSessi
 /// Operation shape for `CreateTrafficMirrorTarget`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_traffic_mirror_target`](crate::client::Client::create_traffic_mirror_target).
+            /// [`create_traffic_mirror_target`](crate::client::fluent_builders::CreateTrafficMirrorTarget).
             ///
             /// `ParseStrictResponse` impl for `CreateTrafficMirrorTarget`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3426,7 +3426,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficMirrorTarge
 /// Operation shape for `CreateTransitGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway`](crate::client::Client::create_transit_gateway).
+            /// [`create_transit_gateway`](crate::client::fluent_builders::CreateTransitGateway).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3458,7 +3458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGateway {
 /// Operation shape for `CreateTransitGatewayConnect`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway_connect`](crate::client::Client::create_transit_gateway_connect).
+            /// [`create_transit_gateway_connect`](crate::client::fluent_builders::CreateTransitGatewayConnect).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGatewayConnect`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3490,7 +3490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayConn
 /// Operation shape for `CreateTransitGatewayConnectPeer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway_connect_peer`](crate::client::Client::create_transit_gateway_connect_peer).
+            /// [`create_transit_gateway_connect_peer`](crate::client::fluent_builders::CreateTransitGatewayConnectPeer).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGatewayConnectPeer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3522,7 +3522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayConn
 /// Operation shape for `CreateTransitGatewayMulticastDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway_multicast_domain`](crate::client::Client::create_transit_gateway_multicast_domain).
+            /// [`create_transit_gateway_multicast_domain`](crate::client::fluent_builders::CreateTransitGatewayMulticastDomain).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGatewayMulticastDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3554,7 +3554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayMult
 /// Operation shape for `CreateTransitGatewayPeeringAttachment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway_peering_attachment`](crate::client::Client::create_transit_gateway_peering_attachment).
+            /// [`create_transit_gateway_peering_attachment`](crate::client::fluent_builders::CreateTransitGatewayPeeringAttachment).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGatewayPeeringAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3586,7 +3586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayPeer
 /// Operation shape for `CreateTransitGatewayPolicyTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway_policy_table`](crate::client::Client::create_transit_gateway_policy_table).
+            /// [`create_transit_gateway_policy_table`](crate::client::fluent_builders::CreateTransitGatewayPolicyTable).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGatewayPolicyTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3618,7 +3618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayPoli
 /// Operation shape for `CreateTransitGatewayPrefixListReference`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway_prefix_list_reference`](crate::client::Client::create_transit_gateway_prefix_list_reference).
+            /// [`create_transit_gateway_prefix_list_reference`](crate::client::fluent_builders::CreateTransitGatewayPrefixListReference).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGatewayPrefixListReference`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3650,7 +3650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayPref
 /// Operation shape for `CreateTransitGatewayRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway_route`](crate::client::Client::create_transit_gateway_route).
+            /// [`create_transit_gateway_route`](crate::client::fluent_builders::CreateTransitGatewayRoute).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGatewayRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3682,7 +3682,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayRout
 /// Operation shape for `CreateTransitGatewayRouteTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway_route_table`](crate::client::Client::create_transit_gateway_route_table).
+            /// [`create_transit_gateway_route_table`](crate::client::fluent_builders::CreateTransitGatewayRouteTable).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGatewayRouteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3714,7 +3714,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayRout
 /// Operation shape for `CreateTransitGatewayRouteTableAnnouncement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway_route_table_announcement`](crate::client::Client::create_transit_gateway_route_table_announcement).
+            /// [`create_transit_gateway_route_table_announcement`](crate::client::fluent_builders::CreateTransitGatewayRouteTableAnnouncement).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGatewayRouteTableAnnouncement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3746,7 +3746,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayRout
 /// Operation shape for `CreateTransitGatewayVpcAttachment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_transit_gateway_vpc_attachment`](crate::client::Client::create_transit_gateway_vpc_attachment).
+            /// [`create_transit_gateway_vpc_attachment`](crate::client::fluent_builders::CreateTransitGatewayVpcAttachment).
             ///
             /// `ParseStrictResponse` impl for `CreateTransitGatewayVpcAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3778,7 +3778,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayVpcA
 /// Operation shape for `CreateVerifiedAccessEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_verified_access_endpoint`](crate::client::Client::create_verified_access_endpoint).
+            /// [`create_verified_access_endpoint`](crate::client::fluent_builders::CreateVerifiedAccessEndpoint).
             ///
             /// `ParseStrictResponse` impl for `CreateVerifiedAccessEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3810,7 +3810,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVerifiedAccessEndp
 /// Operation shape for `CreateVerifiedAccessGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_verified_access_group`](crate::client::Client::create_verified_access_group).
+            /// [`create_verified_access_group`](crate::client::fluent_builders::CreateVerifiedAccessGroup).
             ///
             /// `ParseStrictResponse` impl for `CreateVerifiedAccessGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3842,7 +3842,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVerifiedAccessGrou
 /// Operation shape for `CreateVerifiedAccessInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_verified_access_instance`](crate::client::Client::create_verified_access_instance).
+            /// [`create_verified_access_instance`](crate::client::fluent_builders::CreateVerifiedAccessInstance).
             ///
             /// `ParseStrictResponse` impl for `CreateVerifiedAccessInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3874,7 +3874,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVerifiedAccessInst
 /// Operation shape for `CreateVerifiedAccessTrustProvider`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_verified_access_trust_provider`](crate::client::Client::create_verified_access_trust_provider).
+            /// [`create_verified_access_trust_provider`](crate::client::fluent_builders::CreateVerifiedAccessTrustProvider).
             ///
             /// `ParseStrictResponse` impl for `CreateVerifiedAccessTrustProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3906,7 +3906,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVerifiedAccessTrus
 /// Operation shape for `CreateVolume`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_volume`](crate::client::Client::create_volume).
+            /// [`create_volume`](crate::client::fluent_builders::CreateVolume).
             ///
             /// `ParseStrictResponse` impl for `CreateVolume`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3938,7 +3938,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVolume {
 /// Operation shape for `CreateVpc`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vpc`](crate::client::Client::create_vpc).
+            /// [`create_vpc`](crate::client::fluent_builders::CreateVpc).
             ///
             /// `ParseStrictResponse` impl for `CreateVpc`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3970,7 +3970,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpc {
 /// Operation shape for `CreateVpcEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vpc_endpoint`](crate::client::Client::create_vpc_endpoint).
+            /// [`create_vpc_endpoint`](crate::client::fluent_builders::CreateVpcEndpoint).
             ///
             /// `ParseStrictResponse` impl for `CreateVpcEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4002,7 +4002,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcEndpoint {
 /// Operation shape for `CreateVpcEndpointConnectionNotification`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vpc_endpoint_connection_notification`](crate::client::Client::create_vpc_endpoint_connection_notification).
+            /// [`create_vpc_endpoint_connection_notification`](crate::client::fluent_builders::CreateVpcEndpointConnectionNotification).
             ///
             /// `ParseStrictResponse` impl for `CreateVpcEndpointConnectionNotification`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4034,7 +4034,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcEndpointConnect
 /// Operation shape for `CreateVpcEndpointServiceConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vpc_endpoint_service_configuration`](crate::client::Client::create_vpc_endpoint_service_configuration).
+            /// [`create_vpc_endpoint_service_configuration`](crate::client::fluent_builders::CreateVpcEndpointServiceConfiguration).
             ///
             /// `ParseStrictResponse` impl for `CreateVpcEndpointServiceConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4066,7 +4066,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcEndpointService
 /// Operation shape for `CreateVpcPeeringConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vpc_peering_connection`](crate::client::Client::create_vpc_peering_connection).
+            /// [`create_vpc_peering_connection`](crate::client::fluent_builders::CreateVpcPeeringConnection).
             ///
             /// `ParseStrictResponse` impl for `CreateVpcPeeringConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4098,7 +4098,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcPeeringConnecti
 /// Operation shape for `CreateVpnConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vpn_connection`](crate::client::Client::create_vpn_connection).
+            /// [`create_vpn_connection`](crate::client::fluent_builders::CreateVpnConnection).
             ///
             /// `ParseStrictResponse` impl for `CreateVpnConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4130,7 +4130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpnConnection {
 /// Operation shape for `CreateVpnConnectionRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vpn_connection_route`](crate::client::Client::create_vpn_connection_route).
+            /// [`create_vpn_connection_route`](crate::client::fluent_builders::CreateVpnConnectionRoute).
             ///
             /// `ParseStrictResponse` impl for `CreateVpnConnectionRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4162,7 +4162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpnConnectionRoute
 /// Operation shape for `CreateVpnGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_vpn_gateway`](crate::client::Client::create_vpn_gateway).
+            /// [`create_vpn_gateway`](crate::client::fluent_builders::CreateVpnGateway).
             ///
             /// `ParseStrictResponse` impl for `CreateVpnGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4194,7 +4194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpnGateway {
 /// Operation shape for `DeleteCarrierGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_carrier_gateway`](crate::client::Client::delete_carrier_gateway).
+            /// [`delete_carrier_gateway`](crate::client::fluent_builders::DeleteCarrierGateway).
             ///
             /// `ParseStrictResponse` impl for `DeleteCarrierGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4226,7 +4226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCarrierGateway {
 /// Operation shape for `DeleteClientVpnEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_client_vpn_endpoint`](crate::client::Client::delete_client_vpn_endpoint).
+            /// [`delete_client_vpn_endpoint`](crate::client::fluent_builders::DeleteClientVpnEndpoint).
             ///
             /// `ParseStrictResponse` impl for `DeleteClientVpnEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4258,7 +4258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteClientVpnEndpoint 
 /// Operation shape for `DeleteClientVpnRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_client_vpn_route`](crate::client::Client::delete_client_vpn_route).
+            /// [`delete_client_vpn_route`](crate::client::fluent_builders::DeleteClientVpnRoute).
             ///
             /// `ParseStrictResponse` impl for `DeleteClientVpnRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4290,7 +4290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteClientVpnRoute {
 /// Operation shape for `DeleteCoipCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_coip_cidr`](crate::client::Client::delete_coip_cidr).
+            /// [`delete_coip_cidr`](crate::client::fluent_builders::DeleteCoipCidr).
             ///
             /// `ParseStrictResponse` impl for `DeleteCoipCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4322,7 +4322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCoipCidr {
 /// Operation shape for `DeleteCoipPool`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_coip_pool`](crate::client::Client::delete_coip_pool).
+            /// [`delete_coip_pool`](crate::client::fluent_builders::DeleteCoipPool).
             ///
             /// `ParseStrictResponse` impl for `DeleteCoipPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4354,7 +4354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCoipPool {
 /// Operation shape for `DeleteCustomerGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_customer_gateway`](crate::client::Client::delete_customer_gateway).
+            /// [`delete_customer_gateway`](crate::client::fluent_builders::DeleteCustomerGateway).
             ///
             /// `ParseStrictResponse` impl for `DeleteCustomerGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4386,7 +4386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomerGateway {
 /// Operation shape for `DeleteDhcpOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_dhcp_options`](crate::client::Client::delete_dhcp_options).
+            /// [`delete_dhcp_options`](crate::client::fluent_builders::DeleteDhcpOptions).
             ///
             /// `ParseStrictResponse` impl for `DeleteDhcpOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4418,7 +4418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDhcpOptions {
 /// Operation shape for `DeleteEgressOnlyInternetGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_egress_only_internet_gateway`](crate::client::Client::delete_egress_only_internet_gateway).
+            /// [`delete_egress_only_internet_gateway`](crate::client::fluent_builders::DeleteEgressOnlyInternetGateway).
             ///
             /// `ParseStrictResponse` impl for `DeleteEgressOnlyInternetGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4450,7 +4450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEgressOnlyInternet
 /// Operation shape for `DeleteFleets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_fleets`](crate::client::Client::delete_fleets).
+            /// [`delete_fleets`](crate::client::fluent_builders::DeleteFleets).
             ///
             /// `ParseStrictResponse` impl for `DeleteFleets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4482,7 +4482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFleets {
 /// Operation shape for `DeleteFlowLogs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_flow_logs`](crate::client::Client::delete_flow_logs).
+            /// [`delete_flow_logs`](crate::client::fluent_builders::DeleteFlowLogs).
             ///
             /// `ParseStrictResponse` impl for `DeleteFlowLogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4514,7 +4514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFlowLogs {
 /// Operation shape for `DeleteFpgaImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_fpga_image`](crate::client::Client::delete_fpga_image).
+            /// [`delete_fpga_image`](crate::client::fluent_builders::DeleteFpgaImage).
             ///
             /// `ParseStrictResponse` impl for `DeleteFpgaImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4546,7 +4546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFpgaImage {
 /// Operation shape for `DeleteInstanceEventWindow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_instance_event_window`](crate::client::Client::delete_instance_event_window).
+            /// [`delete_instance_event_window`](crate::client::fluent_builders::DeleteInstanceEventWindow).
             ///
             /// `ParseStrictResponse` impl for `DeleteInstanceEventWindow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4578,7 +4578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInstanceEventWindo
 /// Operation shape for `DeleteInternetGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_internet_gateway`](crate::client::Client::delete_internet_gateway).
+            /// [`delete_internet_gateway`](crate::client::fluent_builders::DeleteInternetGateway).
             ///
             /// `ParseStrictResponse` impl for `DeleteInternetGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4610,7 +4610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInternetGateway {
 /// Operation shape for `DeleteIpam`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_ipam`](crate::client::Client::delete_ipam).
+            /// [`delete_ipam`](crate::client::fluent_builders::DeleteIpam).
             ///
             /// `ParseStrictResponse` impl for `DeleteIpam`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4642,7 +4642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIpam {
 /// Operation shape for `DeleteIpamPool`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_ipam_pool`](crate::client::Client::delete_ipam_pool).
+            /// [`delete_ipam_pool`](crate::client::fluent_builders::DeleteIpamPool).
             ///
             /// `ParseStrictResponse` impl for `DeleteIpamPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4674,7 +4674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIpamPool {
 /// Operation shape for `DeleteIpamScope`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_ipam_scope`](crate::client::Client::delete_ipam_scope).
+            /// [`delete_ipam_scope`](crate::client::fluent_builders::DeleteIpamScope).
             ///
             /// `ParseStrictResponse` impl for `DeleteIpamScope`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4706,7 +4706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIpamScope {
 /// Operation shape for `DeleteKeyPair`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_key_pair`](crate::client::Client::delete_key_pair).
+            /// [`delete_key_pair`](crate::client::fluent_builders::DeleteKeyPair).
             ///
             /// `ParseStrictResponse` impl for `DeleteKeyPair`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4738,7 +4738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeyPair {
 /// Operation shape for `DeleteLaunchTemplate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_launch_template`](crate::client::Client::delete_launch_template).
+            /// [`delete_launch_template`](crate::client::fluent_builders::DeleteLaunchTemplate).
             ///
             /// `ParseStrictResponse` impl for `DeleteLaunchTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4770,7 +4770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchTemplate {
 /// Operation shape for `DeleteLaunchTemplateVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_launch_template_versions`](crate::client::Client::delete_launch_template_versions).
+            /// [`delete_launch_template_versions`](crate::client::fluent_builders::DeleteLaunchTemplateVersions).
             ///
             /// `ParseStrictResponse` impl for `DeleteLaunchTemplateVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4802,7 +4802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchTemplateVers
 /// Operation shape for `DeleteLocalGatewayRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_local_gateway_route`](crate::client::Client::delete_local_gateway_route).
+            /// [`delete_local_gateway_route`](crate::client::fluent_builders::DeleteLocalGatewayRoute).
             ///
             /// `ParseStrictResponse` impl for `DeleteLocalGatewayRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4834,7 +4834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLocalGatewayRoute 
 /// Operation shape for `DeleteLocalGatewayRouteTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_local_gateway_route_table`](crate::client::Client::delete_local_gateway_route_table).
+            /// [`delete_local_gateway_route_table`](crate::client::fluent_builders::DeleteLocalGatewayRouteTable).
             ///
             /// `ParseStrictResponse` impl for `DeleteLocalGatewayRouteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4866,7 +4866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLocalGatewayRouteT
 /// Operation shape for `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_local_gateway_route_table_virtual_interface_group_association`](crate::client::Client::delete_local_gateway_route_table_virtual_interface_group_association).
+            /// [`delete_local_gateway_route_table_virtual_interface_group_association`](crate::client::fluent_builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation).
             ///
             /// `ParseStrictResponse` impl for `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4898,7 +4898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLocalGatewayRouteT
 /// Operation shape for `DeleteLocalGatewayRouteTableVpcAssociation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_local_gateway_route_table_vpc_association`](crate::client::Client::delete_local_gateway_route_table_vpc_association).
+            /// [`delete_local_gateway_route_table_vpc_association`](crate::client::fluent_builders::DeleteLocalGatewayRouteTableVpcAssociation).
             ///
             /// `ParseStrictResponse` impl for `DeleteLocalGatewayRouteTableVpcAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4930,7 +4930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLocalGatewayRouteT
 /// Operation shape for `DeleteManagedPrefixList`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_managed_prefix_list`](crate::client::Client::delete_managed_prefix_list).
+            /// [`delete_managed_prefix_list`](crate::client::fluent_builders::DeleteManagedPrefixList).
             ///
             /// `ParseStrictResponse` impl for `DeleteManagedPrefixList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4962,7 +4962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteManagedPrefixList 
 /// Operation shape for `DeleteNatGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_nat_gateway`](crate::client::Client::delete_nat_gateway).
+            /// [`delete_nat_gateway`](crate::client::fluent_builders::DeleteNatGateway).
             ///
             /// `ParseStrictResponse` impl for `DeleteNatGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -4994,7 +4994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNatGateway {
 /// Operation shape for `DeleteNetworkAcl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_network_acl`](crate::client::Client::delete_network_acl).
+            /// [`delete_network_acl`](crate::client::fluent_builders::DeleteNetworkAcl).
             ///
             /// `ParseStrictResponse` impl for `DeleteNetworkAcl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5026,7 +5026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkAcl {
 /// Operation shape for `DeleteNetworkAclEntry`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_network_acl_entry`](crate::client::Client::delete_network_acl_entry).
+            /// [`delete_network_acl_entry`](crate::client::fluent_builders::DeleteNetworkAclEntry).
             ///
             /// `ParseStrictResponse` impl for `DeleteNetworkAclEntry`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5058,7 +5058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkAclEntry {
 /// Operation shape for `DeleteNetworkInsightsAccessScope`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_network_insights_access_scope`](crate::client::Client::delete_network_insights_access_scope).
+            /// [`delete_network_insights_access_scope`](crate::client::fluent_builders::DeleteNetworkInsightsAccessScope).
             ///
             /// `ParseStrictResponse` impl for `DeleteNetworkInsightsAccessScope`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5090,7 +5090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkInsightsAcc
 /// Operation shape for `DeleteNetworkInsightsAccessScopeAnalysis`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_network_insights_access_scope_analysis`](crate::client::Client::delete_network_insights_access_scope_analysis).
+            /// [`delete_network_insights_access_scope_analysis`](crate::client::fluent_builders::DeleteNetworkInsightsAccessScopeAnalysis).
             ///
             /// `ParseStrictResponse` impl for `DeleteNetworkInsightsAccessScopeAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5122,7 +5122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkInsightsAcc
 /// Operation shape for `DeleteNetworkInsightsAnalysis`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_network_insights_analysis`](crate::client::Client::delete_network_insights_analysis).
+            /// [`delete_network_insights_analysis`](crate::client::fluent_builders::DeleteNetworkInsightsAnalysis).
             ///
             /// `ParseStrictResponse` impl for `DeleteNetworkInsightsAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5154,7 +5154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkInsightsAna
 /// Operation shape for `DeleteNetworkInsightsPath`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_network_insights_path`](crate::client::Client::delete_network_insights_path).
+            /// [`delete_network_insights_path`](crate::client::fluent_builders::DeleteNetworkInsightsPath).
             ///
             /// `ParseStrictResponse` impl for `DeleteNetworkInsightsPath`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5186,7 +5186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkInsightsPat
 /// Operation shape for `DeleteNetworkInterface`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_network_interface`](crate::client::Client::delete_network_interface).
+            /// [`delete_network_interface`](crate::client::fluent_builders::DeleteNetworkInterface).
             ///
             /// `ParseStrictResponse` impl for `DeleteNetworkInterface`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5218,7 +5218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkInterface {
 /// Operation shape for `DeleteNetworkInterfacePermission`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_network_interface_permission`](crate::client::Client::delete_network_interface_permission).
+            /// [`delete_network_interface_permission`](crate::client::fluent_builders::DeleteNetworkInterfacePermission).
             ///
             /// `ParseStrictResponse` impl for `DeleteNetworkInterfacePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5250,7 +5250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkInterfacePe
 /// Operation shape for `DeletePlacementGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_placement_group`](crate::client::Client::delete_placement_group).
+            /// [`delete_placement_group`](crate::client::fluent_builders::DeletePlacementGroup).
             ///
             /// `ParseStrictResponse` impl for `DeletePlacementGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5282,7 +5282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlacementGroup {
 /// Operation shape for `DeletePublicIpv4Pool`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_public_ipv4_pool`](crate::client::Client::delete_public_ipv4_pool).
+            /// [`delete_public_ipv4_pool`](crate::client::fluent_builders::DeletePublicIpv4Pool).
             ///
             /// `ParseStrictResponse` impl for `DeletePublicIpv4Pool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5314,7 +5314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePublicIpv4Pool {
 /// Operation shape for `DeleteQueuedReservedInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_queued_reserved_instances`](crate::client::Client::delete_queued_reserved_instances).
+            /// [`delete_queued_reserved_instances`](crate::client::fluent_builders::DeleteQueuedReservedInstances).
             ///
             /// `ParseStrictResponse` impl for `DeleteQueuedReservedInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5346,7 +5346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQueuedReservedInst
 /// Operation shape for `DeleteRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_route`](crate::client::Client::delete_route).
+            /// [`delete_route`](crate::client::fluent_builders::DeleteRoute).
             ///
             /// `ParseStrictResponse` impl for `DeleteRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5378,7 +5378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoute {
 /// Operation shape for `DeleteRouteTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_route_table`](crate::client::Client::delete_route_table).
+            /// [`delete_route_table`](crate::client::fluent_builders::DeleteRouteTable).
             ///
             /// `ParseStrictResponse` impl for `DeleteRouteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5410,7 +5410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRouteTable {
 /// Operation shape for `DeleteSecurityGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_security_group`](crate::client::Client::delete_security_group).
+            /// [`delete_security_group`](crate::client::fluent_builders::DeleteSecurityGroup).
             ///
             /// `ParseStrictResponse` impl for `DeleteSecurityGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5442,7 +5442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSecurityGroup {
 /// Operation shape for `DeleteSnapshot`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_snapshot`](crate::client::Client::delete_snapshot).
+            /// [`delete_snapshot`](crate::client::fluent_builders::DeleteSnapshot).
             ///
             /// `ParseStrictResponse` impl for `DeleteSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5474,7 +5474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSnapshot {
 /// Operation shape for `DeleteSpotDatafeedSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_spot_datafeed_subscription`](crate::client::Client::delete_spot_datafeed_subscription).
+            /// [`delete_spot_datafeed_subscription`](crate::client::fluent_builders::DeleteSpotDatafeedSubscription).
             ///
             /// `ParseStrictResponse` impl for `DeleteSpotDatafeedSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5506,7 +5506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSpotDatafeedSubscr
 /// Operation shape for `DeleteSubnet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_subnet`](crate::client::Client::delete_subnet).
+            /// [`delete_subnet`](crate::client::fluent_builders::DeleteSubnet).
             ///
             /// `ParseStrictResponse` impl for `DeleteSubnet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5538,7 +5538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSubnet {
 /// Operation shape for `DeleteSubnetCidrReservation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_subnet_cidr_reservation`](crate::client::Client::delete_subnet_cidr_reservation).
+            /// [`delete_subnet_cidr_reservation`](crate::client::fluent_builders::DeleteSubnetCidrReservation).
             ///
             /// `ParseStrictResponse` impl for `DeleteSubnetCidrReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5570,7 +5570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSubnetCidrReservat
 /// Operation shape for `DeleteTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_tags`](crate::client::Client::delete_tags).
+            /// [`delete_tags`](crate::client::fluent_builders::DeleteTags).
             ///
             /// `ParseStrictResponse` impl for `DeleteTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5602,7 +5602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTags {
 /// Operation shape for `DeleteTrafficMirrorFilter`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_traffic_mirror_filter`](crate::client::Client::delete_traffic_mirror_filter).
+            /// [`delete_traffic_mirror_filter`](crate::client::fluent_builders::DeleteTrafficMirrorFilter).
             ///
             /// `ParseStrictResponse` impl for `DeleteTrafficMirrorFilter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5634,7 +5634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrafficMirrorFilte
 /// Operation shape for `DeleteTrafficMirrorFilterRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_traffic_mirror_filter_rule`](crate::client::Client::delete_traffic_mirror_filter_rule).
+            /// [`delete_traffic_mirror_filter_rule`](crate::client::fluent_builders::DeleteTrafficMirrorFilterRule).
             ///
             /// `ParseStrictResponse` impl for `DeleteTrafficMirrorFilterRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5666,7 +5666,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrafficMirrorFilte
 /// Operation shape for `DeleteTrafficMirrorSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_traffic_mirror_session`](crate::client::Client::delete_traffic_mirror_session).
+            /// [`delete_traffic_mirror_session`](crate::client::fluent_builders::DeleteTrafficMirrorSession).
             ///
             /// `ParseStrictResponse` impl for `DeleteTrafficMirrorSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5698,7 +5698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrafficMirrorSessi
 /// Operation shape for `DeleteTrafficMirrorTarget`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_traffic_mirror_target`](crate::client::Client::delete_traffic_mirror_target).
+            /// [`delete_traffic_mirror_target`](crate::client::fluent_builders::DeleteTrafficMirrorTarget).
             ///
             /// `ParseStrictResponse` impl for `DeleteTrafficMirrorTarget`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5730,7 +5730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrafficMirrorTarge
 /// Operation shape for `DeleteTransitGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway`](crate::client::Client::delete_transit_gateway).
+            /// [`delete_transit_gateway`](crate::client::fluent_builders::DeleteTransitGateway).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5762,7 +5762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGateway {
 /// Operation shape for `DeleteTransitGatewayConnect`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway_connect`](crate::client::Client::delete_transit_gateway_connect).
+            /// [`delete_transit_gateway_connect`](crate::client::fluent_builders::DeleteTransitGatewayConnect).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGatewayConnect`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5794,7 +5794,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayConn
 /// Operation shape for `DeleteTransitGatewayConnectPeer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway_connect_peer`](crate::client::Client::delete_transit_gateway_connect_peer).
+            /// [`delete_transit_gateway_connect_peer`](crate::client::fluent_builders::DeleteTransitGatewayConnectPeer).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGatewayConnectPeer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5826,7 +5826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayConn
 /// Operation shape for `DeleteTransitGatewayMulticastDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway_multicast_domain`](crate::client::Client::delete_transit_gateway_multicast_domain).
+            /// [`delete_transit_gateway_multicast_domain`](crate::client::fluent_builders::DeleteTransitGatewayMulticastDomain).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGatewayMulticastDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5858,7 +5858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayMult
 /// Operation shape for `DeleteTransitGatewayPeeringAttachment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway_peering_attachment`](crate::client::Client::delete_transit_gateway_peering_attachment).
+            /// [`delete_transit_gateway_peering_attachment`](crate::client::fluent_builders::DeleteTransitGatewayPeeringAttachment).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGatewayPeeringAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5890,7 +5890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayPeer
 /// Operation shape for `DeleteTransitGatewayPolicyTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway_policy_table`](crate::client::Client::delete_transit_gateway_policy_table).
+            /// [`delete_transit_gateway_policy_table`](crate::client::fluent_builders::DeleteTransitGatewayPolicyTable).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGatewayPolicyTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5922,7 +5922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayPoli
 /// Operation shape for `DeleteTransitGatewayPrefixListReference`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway_prefix_list_reference`](crate::client::Client::delete_transit_gateway_prefix_list_reference).
+            /// [`delete_transit_gateway_prefix_list_reference`](crate::client::fluent_builders::DeleteTransitGatewayPrefixListReference).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGatewayPrefixListReference`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5954,7 +5954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayPref
 /// Operation shape for `DeleteTransitGatewayRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway_route`](crate::client::Client::delete_transit_gateway_route).
+            /// [`delete_transit_gateway_route`](crate::client::fluent_builders::DeleteTransitGatewayRoute).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGatewayRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -5986,7 +5986,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayRout
 /// Operation shape for `DeleteTransitGatewayRouteTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway_route_table`](crate::client::Client::delete_transit_gateway_route_table).
+            /// [`delete_transit_gateway_route_table`](crate::client::fluent_builders::DeleteTransitGatewayRouteTable).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGatewayRouteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6018,7 +6018,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayRout
 /// Operation shape for `DeleteTransitGatewayRouteTableAnnouncement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway_route_table_announcement`](crate::client::Client::delete_transit_gateway_route_table_announcement).
+            /// [`delete_transit_gateway_route_table_announcement`](crate::client::fluent_builders::DeleteTransitGatewayRouteTableAnnouncement).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGatewayRouteTableAnnouncement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6050,7 +6050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayRout
 /// Operation shape for `DeleteTransitGatewayVpcAttachment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_transit_gateway_vpc_attachment`](crate::client::Client::delete_transit_gateway_vpc_attachment).
+            /// [`delete_transit_gateway_vpc_attachment`](crate::client::fluent_builders::DeleteTransitGatewayVpcAttachment).
             ///
             /// `ParseStrictResponse` impl for `DeleteTransitGatewayVpcAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6082,7 +6082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayVpcA
 /// Operation shape for `DeleteVerifiedAccessEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_verified_access_endpoint`](crate::client::Client::delete_verified_access_endpoint).
+            /// [`delete_verified_access_endpoint`](crate::client::fluent_builders::DeleteVerifiedAccessEndpoint).
             ///
             /// `ParseStrictResponse` impl for `DeleteVerifiedAccessEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6114,7 +6114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVerifiedAccessEndp
 /// Operation shape for `DeleteVerifiedAccessGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_verified_access_group`](crate::client::Client::delete_verified_access_group).
+            /// [`delete_verified_access_group`](crate::client::fluent_builders::DeleteVerifiedAccessGroup).
             ///
             /// `ParseStrictResponse` impl for `DeleteVerifiedAccessGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6146,7 +6146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVerifiedAccessGrou
 /// Operation shape for `DeleteVerifiedAccessInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_verified_access_instance`](crate::client::Client::delete_verified_access_instance).
+            /// [`delete_verified_access_instance`](crate::client::fluent_builders::DeleteVerifiedAccessInstance).
             ///
             /// `ParseStrictResponse` impl for `DeleteVerifiedAccessInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6178,7 +6178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVerifiedAccessInst
 /// Operation shape for `DeleteVerifiedAccessTrustProvider`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_verified_access_trust_provider`](crate::client::Client::delete_verified_access_trust_provider).
+            /// [`delete_verified_access_trust_provider`](crate::client::fluent_builders::DeleteVerifiedAccessTrustProvider).
             ///
             /// `ParseStrictResponse` impl for `DeleteVerifiedAccessTrustProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6210,7 +6210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVerifiedAccessTrus
 /// Operation shape for `DeleteVolume`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_volume`](crate::client::Client::delete_volume).
+            /// [`delete_volume`](crate::client::fluent_builders::DeleteVolume).
             ///
             /// `ParseStrictResponse` impl for `DeleteVolume`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6242,7 +6242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVolume {
 /// Operation shape for `DeleteVpc`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vpc`](crate::client::Client::delete_vpc).
+            /// [`delete_vpc`](crate::client::fluent_builders::DeleteVpc).
             ///
             /// `ParseStrictResponse` impl for `DeleteVpc`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6274,7 +6274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpc {
 /// Operation shape for `DeleteVpcEndpointConnectionNotifications`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vpc_endpoint_connection_notifications`](crate::client::Client::delete_vpc_endpoint_connection_notifications).
+            /// [`delete_vpc_endpoint_connection_notifications`](crate::client::fluent_builders::DeleteVpcEndpointConnectionNotifications).
             ///
             /// `ParseStrictResponse` impl for `DeleteVpcEndpointConnectionNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6306,7 +6306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcEndpointConnect
 /// Operation shape for `DeleteVpcEndpoints`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vpc_endpoints`](crate::client::Client::delete_vpc_endpoints).
+            /// [`delete_vpc_endpoints`](crate::client::fluent_builders::DeleteVpcEndpoints).
             ///
             /// `ParseStrictResponse` impl for `DeleteVpcEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6338,7 +6338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcEndpoints {
 /// Operation shape for `DeleteVpcEndpointServiceConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vpc_endpoint_service_configurations`](crate::client::Client::delete_vpc_endpoint_service_configurations).
+            /// [`delete_vpc_endpoint_service_configurations`](crate::client::fluent_builders::DeleteVpcEndpointServiceConfigurations).
             ///
             /// `ParseStrictResponse` impl for `DeleteVpcEndpointServiceConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6370,7 +6370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcEndpointService
 /// Operation shape for `DeleteVpcPeeringConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vpc_peering_connection`](crate::client::Client::delete_vpc_peering_connection).
+            /// [`delete_vpc_peering_connection`](crate::client::fluent_builders::DeleteVpcPeeringConnection).
             ///
             /// `ParseStrictResponse` impl for `DeleteVpcPeeringConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6402,7 +6402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcPeeringConnecti
 /// Operation shape for `DeleteVpnConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vpn_connection`](crate::client::Client::delete_vpn_connection).
+            /// [`delete_vpn_connection`](crate::client::fluent_builders::DeleteVpnConnection).
             ///
             /// `ParseStrictResponse` impl for `DeleteVpnConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6434,7 +6434,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpnConnection {
 /// Operation shape for `DeleteVpnConnectionRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vpn_connection_route`](crate::client::Client::delete_vpn_connection_route).
+            /// [`delete_vpn_connection_route`](crate::client::fluent_builders::DeleteVpnConnectionRoute).
             ///
             /// `ParseStrictResponse` impl for `DeleteVpnConnectionRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6466,7 +6466,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpnConnectionRoute
 /// Operation shape for `DeleteVpnGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_vpn_gateway`](crate::client::Client::delete_vpn_gateway).
+            /// [`delete_vpn_gateway`](crate::client::fluent_builders::DeleteVpnGateway).
             ///
             /// `ParseStrictResponse` impl for `DeleteVpnGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6498,7 +6498,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpnGateway {
 /// Operation shape for `DeprovisionByoipCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deprovision_byoip_cidr`](crate::client::Client::deprovision_byoip_cidr).
+            /// [`deprovision_byoip_cidr`](crate::client::fluent_builders::DeprovisionByoipCidr).
             ///
             /// `ParseStrictResponse` impl for `DeprovisionByoipCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6530,7 +6530,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprovisionByoipCidr {
 /// Operation shape for `DeprovisionIpamPoolCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deprovision_ipam_pool_cidr`](crate::client::Client::deprovision_ipam_pool_cidr).
+            /// [`deprovision_ipam_pool_cidr`](crate::client::fluent_builders::DeprovisionIpamPoolCidr).
             ///
             /// `ParseStrictResponse` impl for `DeprovisionIpamPoolCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6562,7 +6562,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprovisionIpamPoolCidr 
 /// Operation shape for `DeprovisionPublicIpv4PoolCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deprovision_public_ipv4_pool_cidr`](crate::client::Client::deprovision_public_ipv4_pool_cidr).
+            /// [`deprovision_public_ipv4_pool_cidr`](crate::client::fluent_builders::DeprovisionPublicIpv4PoolCidr).
             ///
             /// `ParseStrictResponse` impl for `DeprovisionPublicIpv4PoolCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6594,7 +6594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprovisionPublicIpv4Poo
 /// Operation shape for `DeregisterImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deregister_image`](crate::client::Client::deregister_image).
+            /// [`deregister_image`](crate::client::fluent_builders::DeregisterImage).
             ///
             /// `ParseStrictResponse` impl for `DeregisterImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6626,7 +6626,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterImage {
 /// Operation shape for `DeregisterInstanceEventNotificationAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deregister_instance_event_notification_attributes`](crate::client::Client::deregister_instance_event_notification_attributes).
+            /// [`deregister_instance_event_notification_attributes`](crate::client::fluent_builders::DeregisterInstanceEventNotificationAttributes).
             ///
             /// `ParseStrictResponse` impl for `DeregisterInstanceEventNotificationAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6658,7 +6658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterInstanceEventN
 /// Operation shape for `DeregisterTransitGatewayMulticastGroupMembers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deregister_transit_gateway_multicast_group_members`](crate::client::Client::deregister_transit_gateway_multicast_group_members).
+            /// [`deregister_transit_gateway_multicast_group_members`](crate::client::fluent_builders::DeregisterTransitGatewayMulticastGroupMembers).
             ///
             /// `ParseStrictResponse` impl for `DeregisterTransitGatewayMulticastGroupMembers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6690,7 +6690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterTransitGateway
 /// Operation shape for `DeregisterTransitGatewayMulticastGroupSources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`deregister_transit_gateway_multicast_group_sources`](crate::client::Client::deregister_transit_gateway_multicast_group_sources).
+            /// [`deregister_transit_gateway_multicast_group_sources`](crate::client::fluent_builders::DeregisterTransitGatewayMulticastGroupSources).
             ///
             /// `ParseStrictResponse` impl for `DeregisterTransitGatewayMulticastGroupSources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6722,7 +6722,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterTransitGateway
 /// Operation shape for `DescribeAccountAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_account_attributes`](crate::client::Client::describe_account_attributes).
+            /// [`describe_account_attributes`](crate::client::fluent_builders::DescribeAccountAttributes).
             ///
             /// `ParseStrictResponse` impl for `DescribeAccountAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6754,7 +6754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAttribute
 /// Operation shape for `DescribeAddresses`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_addresses`](crate::client::Client::describe_addresses).
+            /// [`describe_addresses`](crate::client::fluent_builders::DescribeAddresses).
             ///
             /// `ParseStrictResponse` impl for `DescribeAddresses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6786,7 +6786,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAddresses {
 /// Operation shape for `DescribeAddressesAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_addresses_attribute`](crate::client::Client::describe_addresses_attribute).
+            /// [`describe_addresses_attribute`](crate::client::fluent_builders::DescribeAddressesAttribute).
             ///
             /// `ParseStrictResponse` impl for `DescribeAddressesAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6818,7 +6818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAddressesAttribu
 /// Operation shape for `DescribeAddressTransfers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_address_transfers`](crate::client::Client::describe_address_transfers).
+            /// [`describe_address_transfers`](crate::client::fluent_builders::DescribeAddressTransfers).
             ///
             /// `ParseStrictResponse` impl for `DescribeAddressTransfers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6850,7 +6850,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAddressTransfers
 /// Operation shape for `DescribeAggregateIdFormat`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_aggregate_id_format`](crate::client::Client::describe_aggregate_id_format).
+            /// [`describe_aggregate_id_format`](crate::client::fluent_builders::DescribeAggregateIdFormat).
             ///
             /// `ParseStrictResponse` impl for `DescribeAggregateIdFormat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6882,7 +6882,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAggregateIdForma
 /// Operation shape for `DescribeAvailabilityZones`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_availability_zones`](crate::client::Client::describe_availability_zones).
+            /// [`describe_availability_zones`](crate::client::fluent_builders::DescribeAvailabilityZones).
             ///
             /// `ParseStrictResponse` impl for `DescribeAvailabilityZones`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6914,7 +6914,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAvailabilityZone
 /// Operation shape for `DescribeAwsNetworkPerformanceMetricSubscriptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_aws_network_performance_metric_subscriptions`](crate::client::Client::describe_aws_network_performance_metric_subscriptions).
+            /// [`describe_aws_network_performance_metric_subscriptions`](crate::client::fluent_builders::DescribeAwsNetworkPerformanceMetricSubscriptions).
             ///
             /// `ParseStrictResponse` impl for `DescribeAwsNetworkPerformanceMetricSubscriptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6946,7 +6946,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAwsNetworkPerfor
 /// Operation shape for `DescribeBundleTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_bundle_tasks`](crate::client::Client::describe_bundle_tasks).
+            /// [`describe_bundle_tasks`](crate::client::fluent_builders::DescribeBundleTasks).
             ///
             /// `ParseStrictResponse` impl for `DescribeBundleTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -6978,7 +6978,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBundleTasks {
 /// Operation shape for `DescribeByoipCidrs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_byoip_cidrs`](crate::client::Client::describe_byoip_cidrs).
+            /// [`describe_byoip_cidrs`](crate::client::fluent_builders::DescribeByoipCidrs).
             ///
             /// `ParseStrictResponse` impl for `DescribeByoipCidrs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7010,7 +7010,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeByoipCidrs {
 /// Operation shape for `DescribeCapacityReservationFleets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_capacity_reservation_fleets`](crate::client::Client::describe_capacity_reservation_fleets).
+            /// [`describe_capacity_reservation_fleets`](crate::client::fluent_builders::DescribeCapacityReservationFleets).
             ///
             /// `ParseStrictResponse` impl for `DescribeCapacityReservationFleets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7042,7 +7042,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCapacityReservat
 /// Operation shape for `DescribeCapacityReservations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_capacity_reservations`](crate::client::Client::describe_capacity_reservations).
+            /// [`describe_capacity_reservations`](crate::client::fluent_builders::DescribeCapacityReservations).
             ///
             /// `ParseStrictResponse` impl for `DescribeCapacityReservations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7074,7 +7074,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCapacityReservat
 /// Operation shape for `DescribeCarrierGateways`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_carrier_gateways`](crate::client::Client::describe_carrier_gateways).
+            /// [`describe_carrier_gateways`](crate::client::fluent_builders::DescribeCarrierGateways).
             ///
             /// `ParseStrictResponse` impl for `DescribeCarrierGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7106,7 +7106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCarrierGateways 
 /// Operation shape for `DescribeClassicLinkInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_classic_link_instances`](crate::client::Client::describe_classic_link_instances).
+            /// [`describe_classic_link_instances`](crate::client::fluent_builders::DescribeClassicLinkInstances).
             ///
             /// `ParseStrictResponse` impl for `DescribeClassicLinkInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7138,7 +7138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClassicLinkInsta
 /// Operation shape for `DescribeClientVpnAuthorizationRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_client_vpn_authorization_rules`](crate::client::Client::describe_client_vpn_authorization_rules).
+            /// [`describe_client_vpn_authorization_rules`](crate::client::fluent_builders::DescribeClientVpnAuthorizationRules).
             ///
             /// `ParseStrictResponse` impl for `DescribeClientVpnAuthorizationRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7170,7 +7170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClientVpnAuthori
 /// Operation shape for `DescribeClientVpnConnections`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_client_vpn_connections`](crate::client::Client::describe_client_vpn_connections).
+            /// [`describe_client_vpn_connections`](crate::client::fluent_builders::DescribeClientVpnConnections).
             ///
             /// `ParseStrictResponse` impl for `DescribeClientVpnConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7202,7 +7202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClientVpnConnect
 /// Operation shape for `DescribeClientVpnEndpoints`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_client_vpn_endpoints`](crate::client::Client::describe_client_vpn_endpoints).
+            /// [`describe_client_vpn_endpoints`](crate::client::fluent_builders::DescribeClientVpnEndpoints).
             ///
             /// `ParseStrictResponse` impl for `DescribeClientVpnEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7234,7 +7234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClientVpnEndpoin
 /// Operation shape for `DescribeClientVpnRoutes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_client_vpn_routes`](crate::client::Client::describe_client_vpn_routes).
+            /// [`describe_client_vpn_routes`](crate::client::fluent_builders::DescribeClientVpnRoutes).
             ///
             /// `ParseStrictResponse` impl for `DescribeClientVpnRoutes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7266,7 +7266,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClientVpnRoutes 
 /// Operation shape for `DescribeClientVpnTargetNetworks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_client_vpn_target_networks`](crate::client::Client::describe_client_vpn_target_networks).
+            /// [`describe_client_vpn_target_networks`](crate::client::fluent_builders::DescribeClientVpnTargetNetworks).
             ///
             /// `ParseStrictResponse` impl for `DescribeClientVpnTargetNetworks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7298,7 +7298,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClientVpnTargetN
 /// Operation shape for `DescribeCoipPools`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_coip_pools`](crate::client::Client::describe_coip_pools).
+            /// [`describe_coip_pools`](crate::client::fluent_builders::DescribeCoipPools).
             ///
             /// `ParseStrictResponse` impl for `DescribeCoipPools`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7330,7 +7330,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCoipPools {
 /// Operation shape for `DescribeConversionTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_conversion_tasks`](crate::client::Client::describe_conversion_tasks).
+            /// [`describe_conversion_tasks`](crate::client::fluent_builders::DescribeConversionTasks).
             ///
             /// `ParseStrictResponse` impl for `DescribeConversionTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7362,7 +7362,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConversionTasks 
 /// Operation shape for `DescribeCustomerGateways`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_customer_gateways`](crate::client::Client::describe_customer_gateways).
+            /// [`describe_customer_gateways`](crate::client::fluent_builders::DescribeCustomerGateways).
             ///
             /// `ParseStrictResponse` impl for `DescribeCustomerGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7394,7 +7394,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomerGateways
 /// Operation shape for `DescribeDhcpOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_dhcp_options`](crate::client::Client::describe_dhcp_options).
+            /// [`describe_dhcp_options`](crate::client::fluent_builders::DescribeDhcpOptions).
             ///
             /// `ParseStrictResponse` impl for `DescribeDhcpOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7426,7 +7426,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDhcpOptions {
 /// Operation shape for `DescribeEgressOnlyInternetGateways`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_egress_only_internet_gateways`](crate::client::Client::describe_egress_only_internet_gateways).
+            /// [`describe_egress_only_internet_gateways`](crate::client::fluent_builders::DescribeEgressOnlyInternetGateways).
             ///
             /// `ParseStrictResponse` impl for `DescribeEgressOnlyInternetGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7458,7 +7458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEgressOnlyIntern
 /// Operation shape for `DescribeElasticGpus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_elastic_gpus`](crate::client::Client::describe_elastic_gpus).
+            /// [`describe_elastic_gpus`](crate::client::fluent_builders::DescribeElasticGpus).
             ///
             /// `ParseStrictResponse` impl for `DescribeElasticGpus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7490,7 +7490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticGpus {
 /// Operation shape for `DescribeExportImageTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_export_image_tasks`](crate::client::Client::describe_export_image_tasks).
+            /// [`describe_export_image_tasks`](crate::client::fluent_builders::DescribeExportImageTasks).
             ///
             /// `ParseStrictResponse` impl for `DescribeExportImageTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7522,7 +7522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExportImageTasks
 /// Operation shape for `DescribeExportTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_export_tasks`](crate::client::Client::describe_export_tasks).
+            /// [`describe_export_tasks`](crate::client::fluent_builders::DescribeExportTasks).
             ///
             /// `ParseStrictResponse` impl for `DescribeExportTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7554,7 +7554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExportTasks {
 /// Operation shape for `DescribeFastLaunchImages`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fast_launch_images`](crate::client::Client::describe_fast_launch_images).
+            /// [`describe_fast_launch_images`](crate::client::fluent_builders::DescribeFastLaunchImages).
             ///
             /// `ParseStrictResponse` impl for `DescribeFastLaunchImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7586,7 +7586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFastLaunchImages
 /// Operation shape for `DescribeFastSnapshotRestores`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fast_snapshot_restores`](crate::client::Client::describe_fast_snapshot_restores).
+            /// [`describe_fast_snapshot_restores`](crate::client::fluent_builders::DescribeFastSnapshotRestores).
             ///
             /// `ParseStrictResponse` impl for `DescribeFastSnapshotRestores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7618,7 +7618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFastSnapshotRest
 /// Operation shape for `DescribeFleetHistory`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fleet_history`](crate::client::Client::describe_fleet_history).
+            /// [`describe_fleet_history`](crate::client::fluent_builders::DescribeFleetHistory).
             ///
             /// `ParseStrictResponse` impl for `DescribeFleetHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7650,7 +7650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetHistory {
 /// Operation shape for `DescribeFleetInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fleet_instances`](crate::client::Client::describe_fleet_instances).
+            /// [`describe_fleet_instances`](crate::client::fluent_builders::DescribeFleetInstances).
             ///
             /// `ParseStrictResponse` impl for `DescribeFleetInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7682,7 +7682,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetInstances {
 /// Operation shape for `DescribeFleets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fleets`](crate::client::Client::describe_fleets).
+            /// [`describe_fleets`](crate::client::fluent_builders::DescribeFleets).
             ///
             /// `ParseStrictResponse` impl for `DescribeFleets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7714,7 +7714,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleets {
 /// Operation shape for `DescribeFlowLogs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_flow_logs`](crate::client::Client::describe_flow_logs).
+            /// [`describe_flow_logs`](crate::client::fluent_builders::DescribeFlowLogs).
             ///
             /// `ParseStrictResponse` impl for `DescribeFlowLogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7746,7 +7746,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFlowLogs {
 /// Operation shape for `DescribeFpgaImageAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fpga_image_attribute`](crate::client::Client::describe_fpga_image_attribute).
+            /// [`describe_fpga_image_attribute`](crate::client::fluent_builders::DescribeFpgaImageAttribute).
             ///
             /// `ParseStrictResponse` impl for `DescribeFpgaImageAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7778,7 +7778,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFpgaImageAttribu
 /// Operation shape for `DescribeFpgaImages`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fpga_images`](crate::client::Client::describe_fpga_images).
+            /// [`describe_fpga_images`](crate::client::fluent_builders::DescribeFpgaImages).
             ///
             /// `ParseStrictResponse` impl for `DescribeFpgaImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7810,7 +7810,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFpgaImages {
 /// Operation shape for `DescribeHostReservationOfferings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_host_reservation_offerings`](crate::client::Client::describe_host_reservation_offerings).
+            /// [`describe_host_reservation_offerings`](crate::client::fluent_builders::DescribeHostReservationOfferings).
             ///
             /// `ParseStrictResponse` impl for `DescribeHostReservationOfferings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7842,7 +7842,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHostReservationO
 /// Operation shape for `DescribeHostReservations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_host_reservations`](crate::client::Client::describe_host_reservations).
+            /// [`describe_host_reservations`](crate::client::fluent_builders::DescribeHostReservations).
             ///
             /// `ParseStrictResponse` impl for `DescribeHostReservations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7874,7 +7874,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHostReservations
 /// Operation shape for `DescribeHosts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_hosts`](crate::client::Client::describe_hosts).
+            /// [`describe_hosts`](crate::client::fluent_builders::DescribeHosts).
             ///
             /// `ParseStrictResponse` impl for `DescribeHosts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7906,7 +7906,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHosts {
 /// Operation shape for `DescribeIamInstanceProfileAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_iam_instance_profile_associations`](crate::client::Client::describe_iam_instance_profile_associations).
+            /// [`describe_iam_instance_profile_associations`](crate::client::fluent_builders::DescribeIamInstanceProfileAssociations).
             ///
             /// `ParseStrictResponse` impl for `DescribeIamInstanceProfileAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7938,7 +7938,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIamInstanceProfi
 /// Operation shape for `DescribeIdentityIdFormat`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_identity_id_format`](crate::client::Client::describe_identity_id_format).
+            /// [`describe_identity_id_format`](crate::client::fluent_builders::DescribeIdentityIdFormat).
             ///
             /// `ParseStrictResponse` impl for `DescribeIdentityIdFormat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -7970,7 +7970,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityIdFormat
 /// Operation shape for `DescribeIdFormat`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_id_format`](crate::client::Client::describe_id_format).
+            /// [`describe_id_format`](crate::client::fluent_builders::DescribeIdFormat).
             ///
             /// `ParseStrictResponse` impl for `DescribeIdFormat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8002,7 +8002,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdFormat {
 /// Operation shape for `DescribeImageAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_image_attribute`](crate::client::Client::describe_image_attribute).
+            /// [`describe_image_attribute`](crate::client::fluent_builders::DescribeImageAttribute).
             ///
             /// `ParseStrictResponse` impl for `DescribeImageAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8034,7 +8034,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageAttribute {
 /// Operation shape for `DescribeImages`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_images`](crate::client::Client::describe_images).
+            /// [`describe_images`](crate::client::fluent_builders::DescribeImages).
             ///
             /// `ParseStrictResponse` impl for `DescribeImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8066,7 +8066,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImages {
 /// Operation shape for `DescribeImportImageTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_import_image_tasks`](crate::client::Client::describe_import_image_tasks).
+            /// [`describe_import_image_tasks`](crate::client::fluent_builders::DescribeImportImageTasks).
             ///
             /// `ParseStrictResponse` impl for `DescribeImportImageTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8098,7 +8098,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImportImageTasks
 /// Operation shape for `DescribeImportSnapshotTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_import_snapshot_tasks`](crate::client::Client::describe_import_snapshot_tasks).
+            /// [`describe_import_snapshot_tasks`](crate::client::fluent_builders::DescribeImportSnapshotTasks).
             ///
             /// `ParseStrictResponse` impl for `DescribeImportSnapshotTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8130,7 +8130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImportSnapshotTa
 /// Operation shape for `DescribeInstanceAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_instance_attribute`](crate::client::Client::describe_instance_attribute).
+            /// [`describe_instance_attribute`](crate::client::fluent_builders::DescribeInstanceAttribute).
             ///
             /// `ParseStrictResponse` impl for `DescribeInstanceAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8162,7 +8162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceAttribut
 /// Operation shape for `DescribeInstanceCreditSpecifications`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_instance_credit_specifications`](crate::client::Client::describe_instance_credit_specifications).
+            /// [`describe_instance_credit_specifications`](crate::client::fluent_builders::DescribeInstanceCreditSpecifications).
             ///
             /// `ParseStrictResponse` impl for `DescribeInstanceCreditSpecifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8194,7 +8194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceCreditSp
 /// Operation shape for `DescribeInstanceEventNotificationAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_instance_event_notification_attributes`](crate::client::Client::describe_instance_event_notification_attributes).
+            /// [`describe_instance_event_notification_attributes`](crate::client::fluent_builders::DescribeInstanceEventNotificationAttributes).
             ///
             /// `ParseStrictResponse` impl for `DescribeInstanceEventNotificationAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8226,7 +8226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceEventNot
 /// Operation shape for `DescribeInstanceEventWindows`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_instance_event_windows`](crate::client::Client::describe_instance_event_windows).
+            /// [`describe_instance_event_windows`](crate::client::fluent_builders::DescribeInstanceEventWindows).
             ///
             /// `ParseStrictResponse` impl for `DescribeInstanceEventWindows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8258,7 +8258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceEventWin
 /// Operation shape for `DescribeInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_instances`](crate::client::Client::describe_instances).
+            /// [`describe_instances`](crate::client::fluent_builders::DescribeInstances).
             ///
             /// `ParseStrictResponse` impl for `DescribeInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8290,7 +8290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstances {
 /// Operation shape for `DescribeInstanceStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_instance_status`](crate::client::Client::describe_instance_status).
+            /// [`describe_instance_status`](crate::client::fluent_builders::DescribeInstanceStatus).
             ///
             /// `ParseStrictResponse` impl for `DescribeInstanceStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8322,7 +8322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceStatus {
 /// Operation shape for `DescribeInstanceTypeOfferings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_instance_type_offerings`](crate::client::Client::describe_instance_type_offerings).
+            /// [`describe_instance_type_offerings`](crate::client::fluent_builders::DescribeInstanceTypeOfferings).
             ///
             /// `ParseStrictResponse` impl for `DescribeInstanceTypeOfferings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8354,7 +8354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceTypeOffe
 /// Operation shape for `DescribeInstanceTypes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_instance_types`](crate::client::Client::describe_instance_types).
+            /// [`describe_instance_types`](crate::client::fluent_builders::DescribeInstanceTypes).
             ///
             /// `ParseStrictResponse` impl for `DescribeInstanceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8386,7 +8386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceTypes {
 /// Operation shape for `DescribeInternetGateways`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_internet_gateways`](crate::client::Client::describe_internet_gateways).
+            /// [`describe_internet_gateways`](crate::client::fluent_builders::DescribeInternetGateways).
             ///
             /// `ParseStrictResponse` impl for `DescribeInternetGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8418,7 +8418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInternetGateways
 /// Operation shape for `DescribeIpamPools`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_ipam_pools`](crate::client::Client::describe_ipam_pools).
+            /// [`describe_ipam_pools`](crate::client::fluent_builders::DescribeIpamPools).
             ///
             /// `ParseStrictResponse` impl for `DescribeIpamPools`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8450,7 +8450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIpamPools {
 /// Operation shape for `DescribeIpams`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_ipams`](crate::client::Client::describe_ipams).
+            /// [`describe_ipams`](crate::client::fluent_builders::DescribeIpams).
             ///
             /// `ParseStrictResponse` impl for `DescribeIpams`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8482,7 +8482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIpams {
 /// Operation shape for `DescribeIpamScopes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_ipam_scopes`](crate::client::Client::describe_ipam_scopes).
+            /// [`describe_ipam_scopes`](crate::client::fluent_builders::DescribeIpamScopes).
             ///
             /// `ParseStrictResponse` impl for `DescribeIpamScopes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8514,7 +8514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIpamScopes {
 /// Operation shape for `DescribeIpv6Pools`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_ipv6_pools`](crate::client::Client::describe_ipv6_pools).
+            /// [`describe_ipv6_pools`](crate::client::fluent_builders::DescribeIpv6Pools).
             ///
             /// `ParseStrictResponse` impl for `DescribeIpv6Pools`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8546,7 +8546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIpv6Pools {
 /// Operation shape for `DescribeKeyPairs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_key_pairs`](crate::client::Client::describe_key_pairs).
+            /// [`describe_key_pairs`](crate::client::fluent_builders::DescribeKeyPairs).
             ///
             /// `ParseStrictResponse` impl for `DescribeKeyPairs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8578,7 +8578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeKeyPairs {
 /// Operation shape for `DescribeLaunchTemplates`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_launch_templates`](crate::client::Client::describe_launch_templates).
+            /// [`describe_launch_templates`](crate::client::fluent_builders::DescribeLaunchTemplates).
             ///
             /// `ParseStrictResponse` impl for `DescribeLaunchTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8610,7 +8610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLaunchTemplates 
 /// Operation shape for `DescribeLaunchTemplateVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_launch_template_versions`](crate::client::Client::describe_launch_template_versions).
+            /// [`describe_launch_template_versions`](crate::client::fluent_builders::DescribeLaunchTemplateVersions).
             ///
             /// `ParseStrictResponse` impl for `DescribeLaunchTemplateVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8642,7 +8642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLaunchTemplateVe
 /// Operation shape for `DescribeLocalGatewayRouteTables`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_local_gateway_route_tables`](crate::client::Client::describe_local_gateway_route_tables).
+            /// [`describe_local_gateway_route_tables`](crate::client::fluent_builders::DescribeLocalGatewayRouteTables).
             ///
             /// `ParseStrictResponse` impl for `DescribeLocalGatewayRouteTables`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8674,7 +8674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocalGatewayRout
 /// Operation shape for `DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_local_gateway_route_table_virtual_interface_group_associations`](crate::client::Client::describe_local_gateway_route_table_virtual_interface_group_associations).
+            /// [`describe_local_gateway_route_table_virtual_interface_group_associations`](crate::client::fluent_builders::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations).
             ///
             /// `ParseStrictResponse` impl for `DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8706,7 +8706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocalGatewayRout
 /// Operation shape for `DescribeLocalGatewayRouteTableVpcAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_local_gateway_route_table_vpc_associations`](crate::client::Client::describe_local_gateway_route_table_vpc_associations).
+            /// [`describe_local_gateway_route_table_vpc_associations`](crate::client::fluent_builders::DescribeLocalGatewayRouteTableVpcAssociations).
             ///
             /// `ParseStrictResponse` impl for `DescribeLocalGatewayRouteTableVpcAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8738,7 +8738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocalGatewayRout
 /// Operation shape for `DescribeLocalGateways`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_local_gateways`](crate::client::Client::describe_local_gateways).
+            /// [`describe_local_gateways`](crate::client::fluent_builders::DescribeLocalGateways).
             ///
             /// `ParseStrictResponse` impl for `DescribeLocalGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8770,7 +8770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocalGateways {
 /// Operation shape for `DescribeLocalGatewayVirtualInterfaceGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_local_gateway_virtual_interface_groups`](crate::client::Client::describe_local_gateway_virtual_interface_groups).
+            /// [`describe_local_gateway_virtual_interface_groups`](crate::client::fluent_builders::DescribeLocalGatewayVirtualInterfaceGroups).
             ///
             /// `ParseStrictResponse` impl for `DescribeLocalGatewayVirtualInterfaceGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8802,7 +8802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocalGatewayVirt
 /// Operation shape for `DescribeLocalGatewayVirtualInterfaces`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_local_gateway_virtual_interfaces`](crate::client::Client::describe_local_gateway_virtual_interfaces).
+            /// [`describe_local_gateway_virtual_interfaces`](crate::client::fluent_builders::DescribeLocalGatewayVirtualInterfaces).
             ///
             /// `ParseStrictResponse` impl for `DescribeLocalGatewayVirtualInterfaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8834,7 +8834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocalGatewayVirt
 /// Operation shape for `DescribeManagedPrefixLists`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_managed_prefix_lists`](crate::client::Client::describe_managed_prefix_lists).
+            /// [`describe_managed_prefix_lists`](crate::client::fluent_builders::DescribeManagedPrefixLists).
             ///
             /// `ParseStrictResponse` impl for `DescribeManagedPrefixLists`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8866,7 +8866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeManagedPrefixLis
 /// Operation shape for `DescribeMovingAddresses`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_moving_addresses`](crate::client::Client::describe_moving_addresses).
+            /// [`describe_moving_addresses`](crate::client::fluent_builders::DescribeMovingAddresses).
             ///
             /// `ParseStrictResponse` impl for `DescribeMovingAddresses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8898,7 +8898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMovingAddresses 
 /// Operation shape for `DescribeNatGateways`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_nat_gateways`](crate::client::Client::describe_nat_gateways).
+            /// [`describe_nat_gateways`](crate::client::fluent_builders::DescribeNatGateways).
             ///
             /// `ParseStrictResponse` impl for `DescribeNatGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8930,7 +8930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNatGateways {
 /// Operation shape for `DescribeNetworkAcls`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_network_acls`](crate::client::Client::describe_network_acls).
+            /// [`describe_network_acls`](crate::client::fluent_builders::DescribeNetworkAcls).
             ///
             /// `ParseStrictResponse` impl for `DescribeNetworkAcls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8962,7 +8962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkAcls {
 /// Operation shape for `DescribeNetworkInsightsAccessScopeAnalyses`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_network_insights_access_scope_analyses`](crate::client::Client::describe_network_insights_access_scope_analyses).
+            /// [`describe_network_insights_access_scope_analyses`](crate::client::fluent_builders::DescribeNetworkInsightsAccessScopeAnalyses).
             ///
             /// `ParseStrictResponse` impl for `DescribeNetworkInsightsAccessScopeAnalyses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -8994,7 +8994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInsightsA
 /// Operation shape for `DescribeNetworkInsightsAccessScopes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_network_insights_access_scopes`](crate::client::Client::describe_network_insights_access_scopes).
+            /// [`describe_network_insights_access_scopes`](crate::client::fluent_builders::DescribeNetworkInsightsAccessScopes).
             ///
             /// `ParseStrictResponse` impl for `DescribeNetworkInsightsAccessScopes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9026,7 +9026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInsightsA
 /// Operation shape for `DescribeNetworkInsightsAnalyses`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_network_insights_analyses`](crate::client::Client::describe_network_insights_analyses).
+            /// [`describe_network_insights_analyses`](crate::client::fluent_builders::DescribeNetworkInsightsAnalyses).
             ///
             /// `ParseStrictResponse` impl for `DescribeNetworkInsightsAnalyses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9058,7 +9058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInsightsA
 /// Operation shape for `DescribeNetworkInsightsPaths`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_network_insights_paths`](crate::client::Client::describe_network_insights_paths).
+            /// [`describe_network_insights_paths`](crate::client::fluent_builders::DescribeNetworkInsightsPaths).
             ///
             /// `ParseStrictResponse` impl for `DescribeNetworkInsightsPaths`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9090,7 +9090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInsightsP
 /// Operation shape for `DescribeNetworkInterfaceAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_network_interface_attribute`](crate::client::Client::describe_network_interface_attribute).
+            /// [`describe_network_interface_attribute`](crate::client::fluent_builders::DescribeNetworkInterfaceAttribute).
             ///
             /// `ParseStrictResponse` impl for `DescribeNetworkInterfaceAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9122,7 +9122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInterface
 /// Operation shape for `DescribeNetworkInterfacePermissions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_network_interface_permissions`](crate::client::Client::describe_network_interface_permissions).
+            /// [`describe_network_interface_permissions`](crate::client::fluent_builders::DescribeNetworkInterfacePermissions).
             ///
             /// `ParseStrictResponse` impl for `DescribeNetworkInterfacePermissions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9154,7 +9154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInterface
 /// Operation shape for `DescribeNetworkInterfaces`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_network_interfaces`](crate::client::Client::describe_network_interfaces).
+            /// [`describe_network_interfaces`](crate::client::fluent_builders::DescribeNetworkInterfaces).
             ///
             /// `ParseStrictResponse` impl for `DescribeNetworkInterfaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9186,7 +9186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInterface
 /// Operation shape for `DescribePlacementGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_placement_groups`](crate::client::Client::describe_placement_groups).
+            /// [`describe_placement_groups`](crate::client::fluent_builders::DescribePlacementGroups).
             ///
             /// `ParseStrictResponse` impl for `DescribePlacementGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9218,7 +9218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePlacementGroups 
 /// Operation shape for `DescribePrefixLists`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_prefix_lists`](crate::client::Client::describe_prefix_lists).
+            /// [`describe_prefix_lists`](crate::client::fluent_builders::DescribePrefixLists).
             ///
             /// `ParseStrictResponse` impl for `DescribePrefixLists`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9250,7 +9250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePrefixLists {
 /// Operation shape for `DescribePrincipalIdFormat`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_principal_id_format`](crate::client::Client::describe_principal_id_format).
+            /// [`describe_principal_id_format`](crate::client::fluent_builders::DescribePrincipalIdFormat).
             ///
             /// `ParseStrictResponse` impl for `DescribePrincipalIdFormat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9282,7 +9282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePrincipalIdForma
 /// Operation shape for `DescribePublicIpv4Pools`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_public_ipv4_pools`](crate::client::Client::describe_public_ipv4_pools).
+            /// [`describe_public_ipv4_pools`](crate::client::fluent_builders::DescribePublicIpv4Pools).
             ///
             /// `ParseStrictResponse` impl for `DescribePublicIpv4Pools`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9314,7 +9314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePublicIpv4Pools 
 /// Operation shape for `DescribeRegions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_regions`](crate::client::Client::describe_regions).
+            /// [`describe_regions`](crate::client::fluent_builders::DescribeRegions).
             ///
             /// `ParseStrictResponse` impl for `DescribeRegions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9346,7 +9346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRegions {
 /// Operation shape for `DescribeReplaceRootVolumeTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_replace_root_volume_tasks`](crate::client::Client::describe_replace_root_volume_tasks).
+            /// [`describe_replace_root_volume_tasks`](crate::client::fluent_builders::DescribeReplaceRootVolumeTasks).
             ///
             /// `ParseStrictResponse` impl for `DescribeReplaceRootVolumeTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9378,7 +9378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplaceRootVolum
 /// Operation shape for `DescribeReservedInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_reserved_instances`](crate::client::Client::describe_reserved_instances).
+            /// [`describe_reserved_instances`](crate::client::fluent_builders::DescribeReservedInstances).
             ///
             /// `ParseStrictResponse` impl for `DescribeReservedInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9410,7 +9410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedInstance
 /// Operation shape for `DescribeReservedInstancesListings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_reserved_instances_listings`](crate::client::Client::describe_reserved_instances_listings).
+            /// [`describe_reserved_instances_listings`](crate::client::fluent_builders::DescribeReservedInstancesListings).
             ///
             /// `ParseStrictResponse` impl for `DescribeReservedInstancesListings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9442,7 +9442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedInstance
 /// Operation shape for `DescribeReservedInstancesModifications`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_reserved_instances_modifications`](crate::client::Client::describe_reserved_instances_modifications).
+            /// [`describe_reserved_instances_modifications`](crate::client::fluent_builders::DescribeReservedInstancesModifications).
             ///
             /// `ParseStrictResponse` impl for `DescribeReservedInstancesModifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9474,7 +9474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedInstance
 /// Operation shape for `DescribeReservedInstancesOfferings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_reserved_instances_offerings`](crate::client::Client::describe_reserved_instances_offerings).
+            /// [`describe_reserved_instances_offerings`](crate::client::fluent_builders::DescribeReservedInstancesOfferings).
             ///
             /// `ParseStrictResponse` impl for `DescribeReservedInstancesOfferings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9506,7 +9506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedInstance
 /// Operation shape for `DescribeRouteTables`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_route_tables`](crate::client::Client::describe_route_tables).
+            /// [`describe_route_tables`](crate::client::fluent_builders::DescribeRouteTables).
             ///
             /// `ParseStrictResponse` impl for `DescribeRouteTables`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9538,7 +9538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRouteTables {
 /// Operation shape for `DescribeScheduledInstanceAvailability`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_scheduled_instance_availability`](crate::client::Client::describe_scheduled_instance_availability).
+            /// [`describe_scheduled_instance_availability`](crate::client::fluent_builders::DescribeScheduledInstanceAvailability).
             ///
             /// `ParseStrictResponse` impl for `DescribeScheduledInstanceAvailability`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9570,7 +9570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScheduledInstanc
 /// Operation shape for `DescribeScheduledInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_scheduled_instances`](crate::client::Client::describe_scheduled_instances).
+            /// [`describe_scheduled_instances`](crate::client::fluent_builders::DescribeScheduledInstances).
             ///
             /// `ParseStrictResponse` impl for `DescribeScheduledInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9602,7 +9602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScheduledInstanc
 /// Operation shape for `DescribeSecurityGroupReferences`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_security_group_references`](crate::client::Client::describe_security_group_references).
+            /// [`describe_security_group_references`](crate::client::fluent_builders::DescribeSecurityGroupReferences).
             ///
             /// `ParseStrictResponse` impl for `DescribeSecurityGroupReferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9634,7 +9634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSecurityGroupRef
 /// Operation shape for `DescribeSecurityGroupRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_security_group_rules`](crate::client::Client::describe_security_group_rules).
+            /// [`describe_security_group_rules`](crate::client::fluent_builders::DescribeSecurityGroupRules).
             ///
             /// `ParseStrictResponse` impl for `DescribeSecurityGroupRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9666,7 +9666,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSecurityGroupRul
 /// Operation shape for `DescribeSecurityGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_security_groups`](crate::client::Client::describe_security_groups).
+            /// [`describe_security_groups`](crate::client::fluent_builders::DescribeSecurityGroups).
             ///
             /// `ParseStrictResponse` impl for `DescribeSecurityGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9698,7 +9698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSecurityGroups {
 /// Operation shape for `DescribeSnapshotAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_snapshot_attribute`](crate::client::Client::describe_snapshot_attribute).
+            /// [`describe_snapshot_attribute`](crate::client::fluent_builders::DescribeSnapshotAttribute).
             ///
             /// `ParseStrictResponse` impl for `DescribeSnapshotAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9730,7 +9730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshotAttribut
 /// Operation shape for `DescribeSnapshots`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_snapshots`](crate::client::Client::describe_snapshots).
+            /// [`describe_snapshots`](crate::client::fluent_builders::DescribeSnapshots).
             ///
             /// `ParseStrictResponse` impl for `DescribeSnapshots`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9762,7 +9762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshots {
 /// Operation shape for `DescribeSnapshotTierStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_snapshot_tier_status`](crate::client::Client::describe_snapshot_tier_status).
+            /// [`describe_snapshot_tier_status`](crate::client::fluent_builders::DescribeSnapshotTierStatus).
             ///
             /// `ParseStrictResponse` impl for `DescribeSnapshotTierStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9794,7 +9794,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshotTierStat
 /// Operation shape for `DescribeSpotDatafeedSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_spot_datafeed_subscription`](crate::client::Client::describe_spot_datafeed_subscription).
+            /// [`describe_spot_datafeed_subscription`](crate::client::fluent_builders::DescribeSpotDatafeedSubscription).
             ///
             /// `ParseStrictResponse` impl for `DescribeSpotDatafeedSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9826,7 +9826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpotDatafeedSubs
 /// Operation shape for `DescribeSpotFleetInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_spot_fleet_instances`](crate::client::Client::describe_spot_fleet_instances).
+            /// [`describe_spot_fleet_instances`](crate::client::fluent_builders::DescribeSpotFleetInstances).
             ///
             /// `ParseStrictResponse` impl for `DescribeSpotFleetInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9858,7 +9858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpotFleetInstanc
 /// Operation shape for `DescribeSpotFleetRequestHistory`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_spot_fleet_request_history`](crate::client::Client::describe_spot_fleet_request_history).
+            /// [`describe_spot_fleet_request_history`](crate::client::fluent_builders::DescribeSpotFleetRequestHistory).
             ///
             /// `ParseStrictResponse` impl for `DescribeSpotFleetRequestHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9890,7 +9890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpotFleetRequest
 /// Operation shape for `DescribeSpotFleetRequests`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_spot_fleet_requests`](crate::client::Client::describe_spot_fleet_requests).
+            /// [`describe_spot_fleet_requests`](crate::client::fluent_builders::DescribeSpotFleetRequests).
             ///
             /// `ParseStrictResponse` impl for `DescribeSpotFleetRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9922,7 +9922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpotFleetRequest
 /// Operation shape for `DescribeSpotInstanceRequests`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_spot_instance_requests`](crate::client::Client::describe_spot_instance_requests).
+            /// [`describe_spot_instance_requests`](crate::client::fluent_builders::DescribeSpotInstanceRequests).
             ///
             /// `ParseStrictResponse` impl for `DescribeSpotInstanceRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9954,7 +9954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpotInstanceRequ
 /// Operation shape for `DescribeSpotPriceHistory`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_spot_price_history`](crate::client::Client::describe_spot_price_history).
+            /// [`describe_spot_price_history`](crate::client::fluent_builders::DescribeSpotPriceHistory).
             ///
             /// `ParseStrictResponse` impl for `DescribeSpotPriceHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -9986,7 +9986,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpotPriceHistory
 /// Operation shape for `DescribeStaleSecurityGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_stale_security_groups`](crate::client::Client::describe_stale_security_groups).
+            /// [`describe_stale_security_groups`](crate::client::fluent_builders::DescribeStaleSecurityGroups).
             ///
             /// `ParseStrictResponse` impl for `DescribeStaleSecurityGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10018,7 +10018,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStaleSecurityGro
 /// Operation shape for `DescribeStoreImageTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_store_image_tasks`](crate::client::Client::describe_store_image_tasks).
+            /// [`describe_store_image_tasks`](crate::client::fluent_builders::DescribeStoreImageTasks).
             ///
             /// `ParseStrictResponse` impl for `DescribeStoreImageTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10050,7 +10050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStoreImageTasks 
 /// Operation shape for `DescribeSubnets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_subnets`](crate::client::Client::describe_subnets).
+            /// [`describe_subnets`](crate::client::fluent_builders::DescribeSubnets).
             ///
             /// `ParseStrictResponse` impl for `DescribeSubnets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10082,7 +10082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSubnets {
 /// Operation shape for `DescribeTags`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_tags`](crate::client::Client::describe_tags).
+            /// [`describe_tags`](crate::client::fluent_builders::DescribeTags).
             ///
             /// `ParseStrictResponse` impl for `DescribeTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10114,7 +10114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
 /// Operation shape for `DescribeTrafficMirrorFilters`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_traffic_mirror_filters`](crate::client::Client::describe_traffic_mirror_filters).
+            /// [`describe_traffic_mirror_filters`](crate::client::fluent_builders::DescribeTrafficMirrorFilters).
             ///
             /// `ParseStrictResponse` impl for `DescribeTrafficMirrorFilters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10146,7 +10146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrafficMirrorFil
 /// Operation shape for `DescribeTrafficMirrorSessions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_traffic_mirror_sessions`](crate::client::Client::describe_traffic_mirror_sessions).
+            /// [`describe_traffic_mirror_sessions`](crate::client::fluent_builders::DescribeTrafficMirrorSessions).
             ///
             /// `ParseStrictResponse` impl for `DescribeTrafficMirrorSessions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10178,7 +10178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrafficMirrorSes
 /// Operation shape for `DescribeTrafficMirrorTargets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_traffic_mirror_targets`](crate::client::Client::describe_traffic_mirror_targets).
+            /// [`describe_traffic_mirror_targets`](crate::client::fluent_builders::DescribeTrafficMirrorTargets).
             ///
             /// `ParseStrictResponse` impl for `DescribeTrafficMirrorTargets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10210,7 +10210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrafficMirrorTar
 /// Operation shape for `DescribeTransitGatewayAttachments`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_transit_gateway_attachments`](crate::client::Client::describe_transit_gateway_attachments).
+            /// [`describe_transit_gateway_attachments`](crate::client::fluent_builders::DescribeTransitGatewayAttachments).
             ///
             /// `ParseStrictResponse` impl for `DescribeTransitGatewayAttachments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10242,7 +10242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayAt
 /// Operation shape for `DescribeTransitGatewayConnectPeers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_transit_gateway_connect_peers`](crate::client::Client::describe_transit_gateway_connect_peers).
+            /// [`describe_transit_gateway_connect_peers`](crate::client::fluent_builders::DescribeTransitGatewayConnectPeers).
             ///
             /// `ParseStrictResponse` impl for `DescribeTransitGatewayConnectPeers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10274,7 +10274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayCo
 /// Operation shape for `DescribeTransitGatewayConnects`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_transit_gateway_connects`](crate::client::Client::describe_transit_gateway_connects).
+            /// [`describe_transit_gateway_connects`](crate::client::fluent_builders::DescribeTransitGatewayConnects).
             ///
             /// `ParseStrictResponse` impl for `DescribeTransitGatewayConnects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10306,7 +10306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayCo
 /// Operation shape for `DescribeTransitGatewayMulticastDomains`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_transit_gateway_multicast_domains`](crate::client::Client::describe_transit_gateway_multicast_domains).
+            /// [`describe_transit_gateway_multicast_domains`](crate::client::fluent_builders::DescribeTransitGatewayMulticastDomains).
             ///
             /// `ParseStrictResponse` impl for `DescribeTransitGatewayMulticastDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10338,7 +10338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayMu
 /// Operation shape for `DescribeTransitGatewayPeeringAttachments`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_transit_gateway_peering_attachments`](crate::client::Client::describe_transit_gateway_peering_attachments).
+            /// [`describe_transit_gateway_peering_attachments`](crate::client::fluent_builders::DescribeTransitGatewayPeeringAttachments).
             ///
             /// `ParseStrictResponse` impl for `DescribeTransitGatewayPeeringAttachments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10370,7 +10370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayPe
 /// Operation shape for `DescribeTransitGatewayPolicyTables`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_transit_gateway_policy_tables`](crate::client::Client::describe_transit_gateway_policy_tables).
+            /// [`describe_transit_gateway_policy_tables`](crate::client::fluent_builders::DescribeTransitGatewayPolicyTables).
             ///
             /// `ParseStrictResponse` impl for `DescribeTransitGatewayPolicyTables`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10402,7 +10402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayPo
 /// Operation shape for `DescribeTransitGatewayRouteTableAnnouncements`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_transit_gateway_route_table_announcements`](crate::client::Client::describe_transit_gateway_route_table_announcements).
+            /// [`describe_transit_gateway_route_table_announcements`](crate::client::fluent_builders::DescribeTransitGatewayRouteTableAnnouncements).
             ///
             /// `ParseStrictResponse` impl for `DescribeTransitGatewayRouteTableAnnouncements`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10434,7 +10434,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayRo
 /// Operation shape for `DescribeTransitGatewayRouteTables`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_transit_gateway_route_tables`](crate::client::Client::describe_transit_gateway_route_tables).
+            /// [`describe_transit_gateway_route_tables`](crate::client::fluent_builders::DescribeTransitGatewayRouteTables).
             ///
             /// `ParseStrictResponse` impl for `DescribeTransitGatewayRouteTables`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10466,7 +10466,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayRo
 /// Operation shape for `DescribeTransitGateways`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_transit_gateways`](crate::client::Client::describe_transit_gateways).
+            /// [`describe_transit_gateways`](crate::client::fluent_builders::DescribeTransitGateways).
             ///
             /// `ParseStrictResponse` impl for `DescribeTransitGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10498,7 +10498,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGateways 
 /// Operation shape for `DescribeTransitGatewayVpcAttachments`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_transit_gateway_vpc_attachments`](crate::client::Client::describe_transit_gateway_vpc_attachments).
+            /// [`describe_transit_gateway_vpc_attachments`](crate::client::fluent_builders::DescribeTransitGatewayVpcAttachments).
             ///
             /// `ParseStrictResponse` impl for `DescribeTransitGatewayVpcAttachments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10530,7 +10530,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayVp
 /// Operation shape for `DescribeTrunkInterfaceAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_trunk_interface_associations`](crate::client::Client::describe_trunk_interface_associations).
+            /// [`describe_trunk_interface_associations`](crate::client::fluent_builders::DescribeTrunkInterfaceAssociations).
             ///
             /// `ParseStrictResponse` impl for `DescribeTrunkInterfaceAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10562,7 +10562,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrunkInterfaceAs
 /// Operation shape for `DescribeVerifiedAccessEndpoints`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_verified_access_endpoints`](crate::client::Client::describe_verified_access_endpoints).
+            /// [`describe_verified_access_endpoints`](crate::client::fluent_builders::DescribeVerifiedAccessEndpoints).
             ///
             /// `ParseStrictResponse` impl for `DescribeVerifiedAccessEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10594,7 +10594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVerifiedAccessEn
 /// Operation shape for `DescribeVerifiedAccessGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_verified_access_groups`](crate::client::Client::describe_verified_access_groups).
+            /// [`describe_verified_access_groups`](crate::client::fluent_builders::DescribeVerifiedAccessGroups).
             ///
             /// `ParseStrictResponse` impl for `DescribeVerifiedAccessGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10626,7 +10626,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVerifiedAccessGr
 /// Operation shape for `DescribeVerifiedAccessInstanceLoggingConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_verified_access_instance_logging_configurations`](crate::client::Client::describe_verified_access_instance_logging_configurations).
+            /// [`describe_verified_access_instance_logging_configurations`](crate::client::fluent_builders::DescribeVerifiedAccessInstanceLoggingConfigurations).
             ///
             /// `ParseStrictResponse` impl for `DescribeVerifiedAccessInstanceLoggingConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10658,7 +10658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVerifiedAccessIn
 /// Operation shape for `DescribeVerifiedAccessInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_verified_access_instances`](crate::client::Client::describe_verified_access_instances).
+            /// [`describe_verified_access_instances`](crate::client::fluent_builders::DescribeVerifiedAccessInstances).
             ///
             /// `ParseStrictResponse` impl for `DescribeVerifiedAccessInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10690,7 +10690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVerifiedAccessIn
 /// Operation shape for `DescribeVerifiedAccessTrustProviders`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_verified_access_trust_providers`](crate::client::Client::describe_verified_access_trust_providers).
+            /// [`describe_verified_access_trust_providers`](crate::client::fluent_builders::DescribeVerifiedAccessTrustProviders).
             ///
             /// `ParseStrictResponse` impl for `DescribeVerifiedAccessTrustProviders`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10722,7 +10722,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVerifiedAccessTr
 /// Operation shape for `DescribeVolumeAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_volume_attribute`](crate::client::Client::describe_volume_attribute).
+            /// [`describe_volume_attribute`](crate::client::fluent_builders::DescribeVolumeAttribute).
             ///
             /// `ParseStrictResponse` impl for `DescribeVolumeAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10754,7 +10754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVolumeAttribute 
 /// Operation shape for `DescribeVolumes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_volumes`](crate::client::Client::describe_volumes).
+            /// [`describe_volumes`](crate::client::fluent_builders::DescribeVolumes).
             ///
             /// `ParseStrictResponse` impl for `DescribeVolumes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10786,7 +10786,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVolumes {
 /// Operation shape for `DescribeVolumesModifications`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_volumes_modifications`](crate::client::Client::describe_volumes_modifications).
+            /// [`describe_volumes_modifications`](crate::client::fluent_builders::DescribeVolumesModifications).
             ///
             /// `ParseStrictResponse` impl for `DescribeVolumesModifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10818,7 +10818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVolumesModificat
 /// Operation shape for `DescribeVolumeStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_volume_status`](crate::client::Client::describe_volume_status).
+            /// [`describe_volume_status`](crate::client::fluent_builders::DescribeVolumeStatus).
             ///
             /// `ParseStrictResponse` impl for `DescribeVolumeStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10850,7 +10850,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVolumeStatus {
 /// Operation shape for `DescribeVpcAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpc_attribute`](crate::client::Client::describe_vpc_attribute).
+            /// [`describe_vpc_attribute`](crate::client::fluent_builders::DescribeVpcAttribute).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10882,7 +10882,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcAttribute {
 /// Operation shape for `DescribeVpcClassicLink`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpc_classic_link`](crate::client::Client::describe_vpc_classic_link).
+            /// [`describe_vpc_classic_link`](crate::client::fluent_builders::DescribeVpcClassicLink).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcClassicLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10914,7 +10914,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcClassicLink {
 /// Operation shape for `DescribeVpcClassicLinkDnsSupport`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpc_classic_link_dns_support`](crate::client::Client::describe_vpc_classic_link_dns_support).
+            /// [`describe_vpc_classic_link_dns_support`](crate::client::fluent_builders::DescribeVpcClassicLinkDnsSupport).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcClassicLinkDnsSupport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10946,7 +10946,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcClassicLinkDn
 /// Operation shape for `DescribeVpcEndpointConnectionNotifications`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpc_endpoint_connection_notifications`](crate::client::Client::describe_vpc_endpoint_connection_notifications).
+            /// [`describe_vpc_endpoint_connection_notifications`](crate::client::fluent_builders::DescribeVpcEndpointConnectionNotifications).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcEndpointConnectionNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -10978,7 +10978,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcEndpointConne
 /// Operation shape for `DescribeVpcEndpointConnections`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpc_endpoint_connections`](crate::client::Client::describe_vpc_endpoint_connections).
+            /// [`describe_vpc_endpoint_connections`](crate::client::fluent_builders::DescribeVpcEndpointConnections).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcEndpointConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11010,7 +11010,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcEndpointConne
 /// Operation shape for `DescribeVpcEndpoints`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpc_endpoints`](crate::client::Client::describe_vpc_endpoints).
+            /// [`describe_vpc_endpoints`](crate::client::fluent_builders::DescribeVpcEndpoints).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11042,7 +11042,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcEndpoints {
 /// Operation shape for `DescribeVpcEndpointServiceConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpc_endpoint_service_configurations`](crate::client::Client::describe_vpc_endpoint_service_configurations).
+            /// [`describe_vpc_endpoint_service_configurations`](crate::client::fluent_builders::DescribeVpcEndpointServiceConfigurations).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcEndpointServiceConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11074,7 +11074,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcEndpointServi
 /// Operation shape for `DescribeVpcEndpointServicePermissions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpc_endpoint_service_permissions`](crate::client::Client::describe_vpc_endpoint_service_permissions).
+            /// [`describe_vpc_endpoint_service_permissions`](crate::client::fluent_builders::DescribeVpcEndpointServicePermissions).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcEndpointServicePermissions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11106,7 +11106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcEndpointServi
 /// Operation shape for `DescribeVpcEndpointServices`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpc_endpoint_services`](crate::client::Client::describe_vpc_endpoint_services).
+            /// [`describe_vpc_endpoint_services`](crate::client::fluent_builders::DescribeVpcEndpointServices).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcEndpointServices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11138,7 +11138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcEndpointServi
 /// Operation shape for `DescribeVpcPeeringConnections`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpc_peering_connections`](crate::client::Client::describe_vpc_peering_connections).
+            /// [`describe_vpc_peering_connections`](crate::client::fluent_builders::DescribeVpcPeeringConnections).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcPeeringConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11170,7 +11170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcPeeringConnec
 /// Operation shape for `DescribeVpcs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpcs`](crate::client::Client::describe_vpcs).
+            /// [`describe_vpcs`](crate::client::fluent_builders::DescribeVpcs).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpcs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11202,7 +11202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcs {
 /// Operation shape for `DescribeVpnConnections`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpn_connections`](crate::client::Client::describe_vpn_connections).
+            /// [`describe_vpn_connections`](crate::client::fluent_builders::DescribeVpnConnections).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpnConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11234,7 +11234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpnConnections {
 /// Operation shape for `DescribeVpnGateways`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_vpn_gateways`](crate::client::Client::describe_vpn_gateways).
+            /// [`describe_vpn_gateways`](crate::client::fluent_builders::DescribeVpnGateways).
             ///
             /// `ParseStrictResponse` impl for `DescribeVpnGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11266,7 +11266,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpnGateways {
 /// Operation shape for `DetachClassicLinkVpc`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`detach_classic_link_vpc`](crate::client::Client::detach_classic_link_vpc).
+            /// [`detach_classic_link_vpc`](crate::client::fluent_builders::DetachClassicLinkVpc).
             ///
             /// `ParseStrictResponse` impl for `DetachClassicLinkVpc`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11298,7 +11298,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachClassicLinkVpc {
 /// Operation shape for `DetachInternetGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`detach_internet_gateway`](crate::client::Client::detach_internet_gateway).
+            /// [`detach_internet_gateway`](crate::client::fluent_builders::DetachInternetGateway).
             ///
             /// `ParseStrictResponse` impl for `DetachInternetGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11330,7 +11330,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachInternetGateway {
 /// Operation shape for `DetachNetworkInterface`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`detach_network_interface`](crate::client::Client::detach_network_interface).
+            /// [`detach_network_interface`](crate::client::fluent_builders::DetachNetworkInterface).
             ///
             /// `ParseStrictResponse` impl for `DetachNetworkInterface`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11362,7 +11362,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachNetworkInterface {
 /// Operation shape for `DetachVerifiedAccessTrustProvider`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`detach_verified_access_trust_provider`](crate::client::Client::detach_verified_access_trust_provider).
+            /// [`detach_verified_access_trust_provider`](crate::client::fluent_builders::DetachVerifiedAccessTrustProvider).
             ///
             /// `ParseStrictResponse` impl for `DetachVerifiedAccessTrustProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11394,7 +11394,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachVerifiedAccessTrus
 /// Operation shape for `DetachVolume`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`detach_volume`](crate::client::Client::detach_volume).
+            /// [`detach_volume`](crate::client::fluent_builders::DetachVolume).
             ///
             /// `ParseStrictResponse` impl for `DetachVolume`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11426,7 +11426,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachVolume {
 /// Operation shape for `DetachVpnGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`detach_vpn_gateway`](crate::client::Client::detach_vpn_gateway).
+            /// [`detach_vpn_gateway`](crate::client::fluent_builders::DetachVpnGateway).
             ///
             /// `ParseStrictResponse` impl for `DetachVpnGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11458,7 +11458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachVpnGateway {
 /// Operation shape for `DisableAddressTransfer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_address_transfer`](crate::client::Client::disable_address_transfer).
+            /// [`disable_address_transfer`](crate::client::fluent_builders::DisableAddressTransfer).
             ///
             /// `ParseStrictResponse` impl for `DisableAddressTransfer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11490,7 +11490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAddressTransfer {
 /// Operation shape for `DisableAwsNetworkPerformanceMetricSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_aws_network_performance_metric_subscription`](crate::client::Client::disable_aws_network_performance_metric_subscription).
+            /// [`disable_aws_network_performance_metric_subscription`](crate::client::fluent_builders::DisableAwsNetworkPerformanceMetricSubscription).
             ///
             /// `ParseStrictResponse` impl for `DisableAwsNetworkPerformanceMetricSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11522,7 +11522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAwsNetworkPerform
 /// Operation shape for `DisableEbsEncryptionByDefault`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_ebs_encryption_by_default`](crate::client::Client::disable_ebs_encryption_by_default).
+            /// [`disable_ebs_encryption_by_default`](crate::client::fluent_builders::DisableEbsEncryptionByDefault).
             ///
             /// `ParseStrictResponse` impl for `DisableEbsEncryptionByDefault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11554,7 +11554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableEbsEncryptionByDe
 /// Operation shape for `DisableFastLaunch`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_fast_launch`](crate::client::Client::disable_fast_launch).
+            /// [`disable_fast_launch`](crate::client::fluent_builders::DisableFastLaunch).
             ///
             /// `ParseStrictResponse` impl for `DisableFastLaunch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11586,7 +11586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableFastLaunch {
 /// Operation shape for `DisableFastSnapshotRestores`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_fast_snapshot_restores`](crate::client::Client::disable_fast_snapshot_restores).
+            /// [`disable_fast_snapshot_restores`](crate::client::fluent_builders::DisableFastSnapshotRestores).
             ///
             /// `ParseStrictResponse` impl for `DisableFastSnapshotRestores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11618,7 +11618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableFastSnapshotResto
 /// Operation shape for `DisableImageDeprecation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_image_deprecation`](crate::client::Client::disable_image_deprecation).
+            /// [`disable_image_deprecation`](crate::client::fluent_builders::DisableImageDeprecation).
             ///
             /// `ParseStrictResponse` impl for `DisableImageDeprecation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11650,7 +11650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableImageDeprecation 
 /// Operation shape for `DisableIpamOrganizationAdminAccount`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_ipam_organization_admin_account`](crate::client::Client::disable_ipam_organization_admin_account).
+            /// [`disable_ipam_organization_admin_account`](crate::client::fluent_builders::DisableIpamOrganizationAdminAccount).
             ///
             /// `ParseStrictResponse` impl for `DisableIpamOrganizationAdminAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11682,7 +11682,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableIpamOrganizationA
 /// Operation shape for `DisableSerialConsoleAccess`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_serial_console_access`](crate::client::Client::disable_serial_console_access).
+            /// [`disable_serial_console_access`](crate::client::fluent_builders::DisableSerialConsoleAccess).
             ///
             /// `ParseStrictResponse` impl for `DisableSerialConsoleAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11714,7 +11714,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableSerialConsoleAcce
 /// Operation shape for `DisableTransitGatewayRouteTablePropagation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_transit_gateway_route_table_propagation`](crate::client::Client::disable_transit_gateway_route_table_propagation).
+            /// [`disable_transit_gateway_route_table_propagation`](crate::client::fluent_builders::DisableTransitGatewayRouteTablePropagation).
             ///
             /// `ParseStrictResponse` impl for `DisableTransitGatewayRouteTablePropagation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11746,7 +11746,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableTransitGatewayRou
 /// Operation shape for `DisableVgwRoutePropagation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_vgw_route_propagation`](crate::client::Client::disable_vgw_route_propagation).
+            /// [`disable_vgw_route_propagation`](crate::client::fluent_builders::DisableVgwRoutePropagation).
             ///
             /// `ParseStrictResponse` impl for `DisableVgwRoutePropagation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11778,7 +11778,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableVgwRoutePropagati
 /// Operation shape for `DisableVpcClassicLink`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_vpc_classic_link`](crate::client::Client::disable_vpc_classic_link).
+            /// [`disable_vpc_classic_link`](crate::client::fluent_builders::DisableVpcClassicLink).
             ///
             /// `ParseStrictResponse` impl for `DisableVpcClassicLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11810,7 +11810,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableVpcClassicLink {
 /// Operation shape for `DisableVpcClassicLinkDnsSupport`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_vpc_classic_link_dns_support`](crate::client::Client::disable_vpc_classic_link_dns_support).
+            /// [`disable_vpc_classic_link_dns_support`](crate::client::fluent_builders::DisableVpcClassicLinkDnsSupport).
             ///
             /// `ParseStrictResponse` impl for `DisableVpcClassicLinkDnsSupport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11842,7 +11842,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableVpcClassicLinkDns
 /// Operation shape for `DisassociateAddress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_address`](crate::client::Client::disassociate_address).
+            /// [`disassociate_address`](crate::client::fluent_builders::DisassociateAddress).
             ///
             /// `ParseStrictResponse` impl for `DisassociateAddress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11874,7 +11874,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAddress {
 /// Operation shape for `DisassociateClientVpnTargetNetwork`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_client_vpn_target_network`](crate::client::Client::disassociate_client_vpn_target_network).
+            /// [`disassociate_client_vpn_target_network`](crate::client::fluent_builders::DisassociateClientVpnTargetNetwork).
             ///
             /// `ParseStrictResponse` impl for `DisassociateClientVpnTargetNetwork`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11906,7 +11906,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateClientVpnTar
 /// Operation shape for `DisassociateEnclaveCertificateIamRole`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_enclave_certificate_iam_role`](crate::client::Client::disassociate_enclave_certificate_iam_role).
+            /// [`disassociate_enclave_certificate_iam_role`](crate::client::fluent_builders::DisassociateEnclaveCertificateIamRole).
             ///
             /// `ParseStrictResponse` impl for `DisassociateEnclaveCertificateIamRole`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11938,7 +11938,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateEnclaveCerti
 /// Operation shape for `DisassociateIamInstanceProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_iam_instance_profile`](crate::client::Client::disassociate_iam_instance_profile).
+            /// [`disassociate_iam_instance_profile`](crate::client::fluent_builders::DisassociateIamInstanceProfile).
             ///
             /// `ParseStrictResponse` impl for `DisassociateIamInstanceProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -11970,7 +11970,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateIamInstanceP
 /// Operation shape for `DisassociateInstanceEventWindow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_instance_event_window`](crate::client::Client::disassociate_instance_event_window).
+            /// [`disassociate_instance_event_window`](crate::client::fluent_builders::DisassociateInstanceEventWindow).
             ///
             /// `ParseStrictResponse` impl for `DisassociateInstanceEventWindow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12002,7 +12002,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateInstanceEven
 /// Operation shape for `DisassociateRouteTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_route_table`](crate::client::Client::disassociate_route_table).
+            /// [`disassociate_route_table`](crate::client::fluent_builders::DisassociateRouteTable).
             ///
             /// `ParseStrictResponse` impl for `DisassociateRouteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12034,7 +12034,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateRouteTable {
 /// Operation shape for `DisassociateSubnetCidrBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_subnet_cidr_block`](crate::client::Client::disassociate_subnet_cidr_block).
+            /// [`disassociate_subnet_cidr_block`](crate::client::fluent_builders::DisassociateSubnetCidrBlock).
             ///
             /// `ParseStrictResponse` impl for `DisassociateSubnetCidrBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12066,7 +12066,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateSubnetCidrBl
 /// Operation shape for `DisassociateTransitGatewayMulticastDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_transit_gateway_multicast_domain`](crate::client::Client::disassociate_transit_gateway_multicast_domain).
+            /// [`disassociate_transit_gateway_multicast_domain`](crate::client::fluent_builders::DisassociateTransitGatewayMulticastDomain).
             ///
             /// `ParseStrictResponse` impl for `DisassociateTransitGatewayMulticastDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12098,7 +12098,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTransitGatew
 /// Operation shape for `DisassociateTransitGatewayPolicyTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_transit_gateway_policy_table`](crate::client::Client::disassociate_transit_gateway_policy_table).
+            /// [`disassociate_transit_gateway_policy_table`](crate::client::fluent_builders::DisassociateTransitGatewayPolicyTable).
             ///
             /// `ParseStrictResponse` impl for `DisassociateTransitGatewayPolicyTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12130,7 +12130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTransitGatew
 /// Operation shape for `DisassociateTransitGatewayRouteTable`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_transit_gateway_route_table`](crate::client::Client::disassociate_transit_gateway_route_table).
+            /// [`disassociate_transit_gateway_route_table`](crate::client::fluent_builders::DisassociateTransitGatewayRouteTable).
             ///
             /// `ParseStrictResponse` impl for `DisassociateTransitGatewayRouteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12162,7 +12162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTransitGatew
 /// Operation shape for `DisassociateTrunkInterface`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_trunk_interface`](crate::client::Client::disassociate_trunk_interface).
+            /// [`disassociate_trunk_interface`](crate::client::fluent_builders::DisassociateTrunkInterface).
             ///
             /// `ParseStrictResponse` impl for `DisassociateTrunkInterface`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12194,7 +12194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTrunkInterfa
 /// Operation shape for `DisassociateVpcCidrBlock`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_vpc_cidr_block`](crate::client::Client::disassociate_vpc_cidr_block).
+            /// [`disassociate_vpc_cidr_block`](crate::client::fluent_builders::DisassociateVpcCidrBlock).
             ///
             /// `ParseStrictResponse` impl for `DisassociateVpcCidrBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12226,7 +12226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateVpcCidrBlock
 /// Operation shape for `EnableAddressTransfer`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_address_transfer`](crate::client::Client::enable_address_transfer).
+            /// [`enable_address_transfer`](crate::client::fluent_builders::EnableAddressTransfer).
             ///
             /// `ParseStrictResponse` impl for `EnableAddressTransfer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12258,7 +12258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAddressTransfer {
 /// Operation shape for `EnableAwsNetworkPerformanceMetricSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_aws_network_performance_metric_subscription`](crate::client::Client::enable_aws_network_performance_metric_subscription).
+            /// [`enable_aws_network_performance_metric_subscription`](crate::client::fluent_builders::EnableAwsNetworkPerformanceMetricSubscription).
             ///
             /// `ParseStrictResponse` impl for `EnableAwsNetworkPerformanceMetricSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12290,7 +12290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAwsNetworkPerforma
 /// Operation shape for `EnableEbsEncryptionByDefault`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_ebs_encryption_by_default`](crate::client::Client::enable_ebs_encryption_by_default).
+            /// [`enable_ebs_encryption_by_default`](crate::client::fluent_builders::EnableEbsEncryptionByDefault).
             ///
             /// `ParseStrictResponse` impl for `EnableEbsEncryptionByDefault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12322,7 +12322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableEbsEncryptionByDef
 /// Operation shape for `EnableFastLaunch`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_fast_launch`](crate::client::Client::enable_fast_launch).
+            /// [`enable_fast_launch`](crate::client::fluent_builders::EnableFastLaunch).
             ///
             /// `ParseStrictResponse` impl for `EnableFastLaunch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12354,7 +12354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableFastLaunch {
 /// Operation shape for `EnableFastSnapshotRestores`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_fast_snapshot_restores`](crate::client::Client::enable_fast_snapshot_restores).
+            /// [`enable_fast_snapshot_restores`](crate::client::fluent_builders::EnableFastSnapshotRestores).
             ///
             /// `ParseStrictResponse` impl for `EnableFastSnapshotRestores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12386,7 +12386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableFastSnapshotRestor
 /// Operation shape for `EnableImageDeprecation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_image_deprecation`](crate::client::Client::enable_image_deprecation).
+            /// [`enable_image_deprecation`](crate::client::fluent_builders::EnableImageDeprecation).
             ///
             /// `ParseStrictResponse` impl for `EnableImageDeprecation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12418,7 +12418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableImageDeprecation {
 /// Operation shape for `EnableIpamOrganizationAdminAccount`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_ipam_organization_admin_account`](crate::client::Client::enable_ipam_organization_admin_account).
+            /// [`enable_ipam_organization_admin_account`](crate::client::fluent_builders::EnableIpamOrganizationAdminAccount).
             ///
             /// `ParseStrictResponse` impl for `EnableIpamOrganizationAdminAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12450,7 +12450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableIpamOrganizationAd
 /// Operation shape for `EnableReachabilityAnalyzerOrganizationSharing`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_reachability_analyzer_organization_sharing`](crate::client::Client::enable_reachability_analyzer_organization_sharing).
+            /// [`enable_reachability_analyzer_organization_sharing`](crate::client::fluent_builders::EnableReachabilityAnalyzerOrganizationSharing).
             ///
             /// `ParseStrictResponse` impl for `EnableReachabilityAnalyzerOrganizationSharing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12482,7 +12482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableReachabilityAnalyz
 /// Operation shape for `EnableSerialConsoleAccess`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_serial_console_access`](crate::client::Client::enable_serial_console_access).
+            /// [`enable_serial_console_access`](crate::client::fluent_builders::EnableSerialConsoleAccess).
             ///
             /// `ParseStrictResponse` impl for `EnableSerialConsoleAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12514,7 +12514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableSerialConsoleAcces
 /// Operation shape for `EnableTransitGatewayRouteTablePropagation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_transit_gateway_route_table_propagation`](crate::client::Client::enable_transit_gateway_route_table_propagation).
+            /// [`enable_transit_gateway_route_table_propagation`](crate::client::fluent_builders::EnableTransitGatewayRouteTablePropagation).
             ///
             /// `ParseStrictResponse` impl for `EnableTransitGatewayRouteTablePropagation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12546,7 +12546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableTransitGatewayRout
 /// Operation shape for `EnableVgwRoutePropagation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_vgw_route_propagation`](crate::client::Client::enable_vgw_route_propagation).
+            /// [`enable_vgw_route_propagation`](crate::client::fluent_builders::EnableVgwRoutePropagation).
             ///
             /// `ParseStrictResponse` impl for `EnableVgwRoutePropagation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12578,7 +12578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableVgwRoutePropagatio
 /// Operation shape for `EnableVolumeIO`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_volume_io`](crate::client::Client::enable_volume_io).
+            /// [`enable_volume_io`](crate::client::fluent_builders::EnableVolumeIO).
             ///
             /// `ParseStrictResponse` impl for `EnableVolumeIO`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12610,7 +12610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableVolumeIO {
 /// Operation shape for `EnableVpcClassicLink`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_vpc_classic_link`](crate::client::Client::enable_vpc_classic_link).
+            /// [`enable_vpc_classic_link`](crate::client::fluent_builders::EnableVpcClassicLink).
             ///
             /// `ParseStrictResponse` impl for `EnableVpcClassicLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12642,7 +12642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableVpcClassicLink {
 /// Operation shape for `EnableVpcClassicLinkDnsSupport`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_vpc_classic_link_dns_support`](crate::client::Client::enable_vpc_classic_link_dns_support).
+            /// [`enable_vpc_classic_link_dns_support`](crate::client::fluent_builders::EnableVpcClassicLinkDnsSupport).
             ///
             /// `ParseStrictResponse` impl for `EnableVpcClassicLinkDnsSupport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12674,7 +12674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableVpcClassicLinkDnsS
 /// Operation shape for `ExportClientVpnClientCertificateRevocationList`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_client_vpn_client_certificate_revocation_list`](crate::client::Client::export_client_vpn_client_certificate_revocation_list).
+            /// [`export_client_vpn_client_certificate_revocation_list`](crate::client::fluent_builders::ExportClientVpnClientCertificateRevocationList).
             ///
             /// `ParseStrictResponse` impl for `ExportClientVpnClientCertificateRevocationList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12706,7 +12706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportClientVpnClientCer
 /// Operation shape for `ExportClientVpnClientConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_client_vpn_client_configuration`](crate::client::Client::export_client_vpn_client_configuration).
+            /// [`export_client_vpn_client_configuration`](crate::client::fluent_builders::ExportClientVpnClientConfiguration).
             ///
             /// `ParseStrictResponse` impl for `ExportClientVpnClientConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12738,7 +12738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportClientVpnClientCon
 /// Operation shape for `ExportImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_image`](crate::client::Client::export_image).
+            /// [`export_image`](crate::client::fluent_builders::ExportImage).
             ///
             /// `ParseStrictResponse` impl for `ExportImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12770,7 +12770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportImage {
 /// Operation shape for `ExportTransitGatewayRoutes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_transit_gateway_routes`](crate::client::Client::export_transit_gateway_routes).
+            /// [`export_transit_gateway_routes`](crate::client::fluent_builders::ExportTransitGatewayRoutes).
             ///
             /// `ParseStrictResponse` impl for `ExportTransitGatewayRoutes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12802,7 +12802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportTransitGatewayRout
 /// Operation shape for `GetAssociatedEnclaveCertificateIamRoles`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_associated_enclave_certificate_iam_roles`](crate::client::Client::get_associated_enclave_certificate_iam_roles).
+            /// [`get_associated_enclave_certificate_iam_roles`](crate::client::fluent_builders::GetAssociatedEnclaveCertificateIamRoles).
             ///
             /// `ParseStrictResponse` impl for `GetAssociatedEnclaveCertificateIamRoles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12834,7 +12834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssociatedEnclaveCert
 /// Operation shape for `GetAssociatedIpv6PoolCidrs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_associated_ipv6_pool_cidrs`](crate::client::Client::get_associated_ipv6_pool_cidrs).
+            /// [`get_associated_ipv6_pool_cidrs`](crate::client::fluent_builders::GetAssociatedIpv6PoolCidrs).
             ///
             /// `ParseStrictResponse` impl for `GetAssociatedIpv6PoolCidrs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12866,7 +12866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssociatedIpv6PoolCid
 /// Operation shape for `GetAwsNetworkPerformanceData`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_aws_network_performance_data`](crate::client::Client::get_aws_network_performance_data).
+            /// [`get_aws_network_performance_data`](crate::client::fluent_builders::GetAwsNetworkPerformanceData).
             ///
             /// `ParseStrictResponse` impl for `GetAwsNetworkPerformanceData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12898,7 +12898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAwsNetworkPerformance
 /// Operation shape for `GetCapacityReservationUsage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_capacity_reservation_usage`](crate::client::Client::get_capacity_reservation_usage).
+            /// [`get_capacity_reservation_usage`](crate::client::fluent_builders::GetCapacityReservationUsage).
             ///
             /// `ParseStrictResponse` impl for `GetCapacityReservationUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12930,7 +12930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCapacityReservationUs
 /// Operation shape for `GetCoipPoolUsage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_coip_pool_usage`](crate::client::Client::get_coip_pool_usage).
+            /// [`get_coip_pool_usage`](crate::client::fluent_builders::GetCoipPoolUsage).
             ///
             /// `ParseStrictResponse` impl for `GetCoipPoolUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12962,7 +12962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCoipPoolUsage {
 /// Operation shape for `GetConsoleOutput`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_console_output`](crate::client::Client::get_console_output).
+            /// [`get_console_output`](crate::client::fluent_builders::GetConsoleOutput).
             ///
             /// `ParseStrictResponse` impl for `GetConsoleOutput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -12994,7 +12994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConsoleOutput {
 /// Operation shape for `GetConsoleScreenshot`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_console_screenshot`](crate::client::Client::get_console_screenshot).
+            /// [`get_console_screenshot`](crate::client::fluent_builders::GetConsoleScreenshot).
             ///
             /// `ParseStrictResponse` impl for `GetConsoleScreenshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13026,7 +13026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConsoleScreenshot {
 /// Operation shape for `GetDefaultCreditSpecification`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_default_credit_specification`](crate::client::Client::get_default_credit_specification).
+            /// [`get_default_credit_specification`](crate::client::fluent_builders::GetDefaultCreditSpecification).
             ///
             /// `ParseStrictResponse` impl for `GetDefaultCreditSpecification`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13058,7 +13058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDefaultCreditSpecific
 /// Operation shape for `GetEbsDefaultKmsKeyId`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ebs_default_kms_key_id`](crate::client::Client::get_ebs_default_kms_key_id).
+            /// [`get_ebs_default_kms_key_id`](crate::client::fluent_builders::GetEbsDefaultKmsKeyId).
             ///
             /// `ParseStrictResponse` impl for `GetEbsDefaultKmsKeyId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13090,7 +13090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEbsDefaultKmsKeyId {
 /// Operation shape for `GetEbsEncryptionByDefault`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ebs_encryption_by_default`](crate::client::Client::get_ebs_encryption_by_default).
+            /// [`get_ebs_encryption_by_default`](crate::client::fluent_builders::GetEbsEncryptionByDefault).
             ///
             /// `ParseStrictResponse` impl for `GetEbsEncryptionByDefault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13122,7 +13122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEbsEncryptionByDefaul
 /// Operation shape for `GetFlowLogsIntegrationTemplate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_flow_logs_integration_template`](crate::client::Client::get_flow_logs_integration_template).
+            /// [`get_flow_logs_integration_template`](crate::client::fluent_builders::GetFlowLogsIntegrationTemplate).
             ///
             /// `ParseStrictResponse` impl for `GetFlowLogsIntegrationTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13154,7 +13154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFlowLogsIntegrationTe
 /// Operation shape for `GetGroupsForCapacityReservation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_groups_for_capacity_reservation`](crate::client::Client::get_groups_for_capacity_reservation).
+            /// [`get_groups_for_capacity_reservation`](crate::client::fluent_builders::GetGroupsForCapacityReservation).
             ///
             /// `ParseStrictResponse` impl for `GetGroupsForCapacityReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13186,7 +13186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroupsForCapacityRese
 /// Operation shape for `GetHostReservationPurchasePreview`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_host_reservation_purchase_preview`](crate::client::Client::get_host_reservation_purchase_preview).
+            /// [`get_host_reservation_purchase_preview`](crate::client::fluent_builders::GetHostReservationPurchasePreview).
             ///
             /// `ParseStrictResponse` impl for `GetHostReservationPurchasePreview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13218,7 +13218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHostReservationPurcha
 /// Operation shape for `GetInstanceTypesFromInstanceRequirements`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_instance_types_from_instance_requirements`](crate::client::Client::get_instance_types_from_instance_requirements).
+            /// [`get_instance_types_from_instance_requirements`](crate::client::fluent_builders::GetInstanceTypesFromInstanceRequirements).
             ///
             /// `ParseStrictResponse` impl for `GetInstanceTypesFromInstanceRequirements`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13250,7 +13250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceTypesFromInst
 /// Operation shape for `GetInstanceUefiData`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_instance_uefi_data`](crate::client::Client::get_instance_uefi_data).
+            /// [`get_instance_uefi_data`](crate::client::fluent_builders::GetInstanceUefiData).
             ///
             /// `ParseStrictResponse` impl for `GetInstanceUefiData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13282,7 +13282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceUefiData {
 /// Operation shape for `GetIpamAddressHistory`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ipam_address_history`](crate::client::Client::get_ipam_address_history).
+            /// [`get_ipam_address_history`](crate::client::fluent_builders::GetIpamAddressHistory).
             ///
             /// `ParseStrictResponse` impl for `GetIpamAddressHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13314,7 +13314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIpamAddressHistory {
 /// Operation shape for `GetIpamPoolAllocations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ipam_pool_allocations`](crate::client::Client::get_ipam_pool_allocations).
+            /// [`get_ipam_pool_allocations`](crate::client::fluent_builders::GetIpamPoolAllocations).
             ///
             /// `ParseStrictResponse` impl for `GetIpamPoolAllocations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13346,7 +13346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIpamPoolAllocations {
 /// Operation shape for `GetIpamPoolCidrs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ipam_pool_cidrs`](crate::client::Client::get_ipam_pool_cidrs).
+            /// [`get_ipam_pool_cidrs`](crate::client::fluent_builders::GetIpamPoolCidrs).
             ///
             /// `ParseStrictResponse` impl for `GetIpamPoolCidrs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13378,7 +13378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIpamPoolCidrs {
 /// Operation shape for `GetIpamResourceCidrs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ipam_resource_cidrs`](crate::client::Client::get_ipam_resource_cidrs).
+            /// [`get_ipam_resource_cidrs`](crate::client::fluent_builders::GetIpamResourceCidrs).
             ///
             /// `ParseStrictResponse` impl for `GetIpamResourceCidrs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13410,7 +13410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIpamResourceCidrs {
 /// Operation shape for `GetLaunchTemplateData`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_launch_template_data`](crate::client::Client::get_launch_template_data).
+            /// [`get_launch_template_data`](crate::client::fluent_builders::GetLaunchTemplateData).
             ///
             /// `ParseStrictResponse` impl for `GetLaunchTemplateData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13442,7 +13442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunchTemplateData {
 /// Operation shape for `GetManagedPrefixListAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_managed_prefix_list_associations`](crate::client::Client::get_managed_prefix_list_associations).
+            /// [`get_managed_prefix_list_associations`](crate::client::fluent_builders::GetManagedPrefixListAssociations).
             ///
             /// `ParseStrictResponse` impl for `GetManagedPrefixListAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13474,7 +13474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedPrefixListAsso
 /// Operation shape for `GetManagedPrefixListEntries`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_managed_prefix_list_entries`](crate::client::Client::get_managed_prefix_list_entries).
+            /// [`get_managed_prefix_list_entries`](crate::client::fluent_builders::GetManagedPrefixListEntries).
             ///
             /// `ParseStrictResponse` impl for `GetManagedPrefixListEntries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13506,7 +13506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedPrefixListEntr
 /// Operation shape for `GetNetworkInsightsAccessScopeAnalysisFindings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_network_insights_access_scope_analysis_findings`](crate::client::Client::get_network_insights_access_scope_analysis_findings).
+            /// [`get_network_insights_access_scope_analysis_findings`](crate::client::fluent_builders::GetNetworkInsightsAccessScopeAnalysisFindings).
             ///
             /// `ParseStrictResponse` impl for `GetNetworkInsightsAccessScopeAnalysisFindings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13538,7 +13538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkInsightsAccess
 /// Operation shape for `GetNetworkInsightsAccessScopeContent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_network_insights_access_scope_content`](crate::client::Client::get_network_insights_access_scope_content).
+            /// [`get_network_insights_access_scope_content`](crate::client::fluent_builders::GetNetworkInsightsAccessScopeContent).
             ///
             /// `ParseStrictResponse` impl for `GetNetworkInsightsAccessScopeContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13570,7 +13570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkInsightsAccess
 /// Operation shape for `GetPasswordData`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_password_data`](crate::client::Client::get_password_data).
+            /// [`get_password_data`](crate::client::fluent_builders::GetPasswordData).
             ///
             /// `ParseStrictResponse` impl for `GetPasswordData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13602,7 +13602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPasswordData {
 /// Operation shape for `GetReservedInstancesExchangeQuote`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_reserved_instances_exchange_quote`](crate::client::Client::get_reserved_instances_exchange_quote).
+            /// [`get_reserved_instances_exchange_quote`](crate::client::fluent_builders::GetReservedInstancesExchangeQuote).
             ///
             /// `ParseStrictResponse` impl for `GetReservedInstancesExchangeQuote`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13634,7 +13634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReservedInstancesExch
 /// Operation shape for `GetSerialConsoleAccessStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_serial_console_access_status`](crate::client::Client::get_serial_console_access_status).
+            /// [`get_serial_console_access_status`](crate::client::fluent_builders::GetSerialConsoleAccessStatus).
             ///
             /// `ParseStrictResponse` impl for `GetSerialConsoleAccessStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13666,7 +13666,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSerialConsoleAccessSt
 /// Operation shape for `GetSpotPlacementScores`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_spot_placement_scores`](crate::client::Client::get_spot_placement_scores).
+            /// [`get_spot_placement_scores`](crate::client::fluent_builders::GetSpotPlacementScores).
             ///
             /// `ParseStrictResponse` impl for `GetSpotPlacementScores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13698,7 +13698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSpotPlacementScores {
 /// Operation shape for `GetSubnetCidrReservations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_subnet_cidr_reservations`](crate::client::Client::get_subnet_cidr_reservations).
+            /// [`get_subnet_cidr_reservations`](crate::client::fluent_builders::GetSubnetCidrReservations).
             ///
             /// `ParseStrictResponse` impl for `GetSubnetCidrReservations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13730,7 +13730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubnetCidrReservation
 /// Operation shape for `GetTransitGatewayAttachmentPropagations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_transit_gateway_attachment_propagations`](crate::client::Client::get_transit_gateway_attachment_propagations).
+            /// [`get_transit_gateway_attachment_propagations`](crate::client::fluent_builders::GetTransitGatewayAttachmentPropagations).
             ///
             /// `ParseStrictResponse` impl for `GetTransitGatewayAttachmentPropagations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13762,7 +13762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayAttachm
 /// Operation shape for `GetTransitGatewayMulticastDomainAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_transit_gateway_multicast_domain_associations`](crate::client::Client::get_transit_gateway_multicast_domain_associations).
+            /// [`get_transit_gateway_multicast_domain_associations`](crate::client::fluent_builders::GetTransitGatewayMulticastDomainAssociations).
             ///
             /// `ParseStrictResponse` impl for `GetTransitGatewayMulticastDomainAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13794,7 +13794,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayMultica
 /// Operation shape for `GetTransitGatewayPolicyTableAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_transit_gateway_policy_table_associations`](crate::client::Client::get_transit_gateway_policy_table_associations).
+            /// [`get_transit_gateway_policy_table_associations`](crate::client::fluent_builders::GetTransitGatewayPolicyTableAssociations).
             ///
             /// `ParseStrictResponse` impl for `GetTransitGatewayPolicyTableAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13826,7 +13826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayPolicyT
 /// Operation shape for `GetTransitGatewayPolicyTableEntries`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_transit_gateway_policy_table_entries`](crate::client::Client::get_transit_gateway_policy_table_entries).
+            /// [`get_transit_gateway_policy_table_entries`](crate::client::fluent_builders::GetTransitGatewayPolicyTableEntries).
             ///
             /// `ParseStrictResponse` impl for `GetTransitGatewayPolicyTableEntries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13858,7 +13858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayPolicyT
 /// Operation shape for `GetTransitGatewayPrefixListReferences`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_transit_gateway_prefix_list_references`](crate::client::Client::get_transit_gateway_prefix_list_references).
+            /// [`get_transit_gateway_prefix_list_references`](crate::client::fluent_builders::GetTransitGatewayPrefixListReferences).
             ///
             /// `ParseStrictResponse` impl for `GetTransitGatewayPrefixListReferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13890,7 +13890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayPrefixL
 /// Operation shape for `GetTransitGatewayRouteTableAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_transit_gateway_route_table_associations`](crate::client::Client::get_transit_gateway_route_table_associations).
+            /// [`get_transit_gateway_route_table_associations`](crate::client::fluent_builders::GetTransitGatewayRouteTableAssociations).
             ///
             /// `ParseStrictResponse` impl for `GetTransitGatewayRouteTableAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13922,7 +13922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayRouteTa
 /// Operation shape for `GetTransitGatewayRouteTablePropagations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_transit_gateway_route_table_propagations`](crate::client::Client::get_transit_gateway_route_table_propagations).
+            /// [`get_transit_gateway_route_table_propagations`](crate::client::fluent_builders::GetTransitGatewayRouteTablePropagations).
             ///
             /// `ParseStrictResponse` impl for `GetTransitGatewayRouteTablePropagations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13954,7 +13954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayRouteTa
 /// Operation shape for `GetVerifiedAccessEndpointPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_verified_access_endpoint_policy`](crate::client::Client::get_verified_access_endpoint_policy).
+            /// [`get_verified_access_endpoint_policy`](crate::client::fluent_builders::GetVerifiedAccessEndpointPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetVerifiedAccessEndpointPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -13986,7 +13986,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVerifiedAccessEndpoin
 /// Operation shape for `GetVerifiedAccessGroupPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_verified_access_group_policy`](crate::client::Client::get_verified_access_group_policy).
+            /// [`get_verified_access_group_policy`](crate::client::fluent_builders::GetVerifiedAccessGroupPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetVerifiedAccessGroupPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14018,7 +14018,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVerifiedAccessGroupPo
 /// Operation shape for `GetVpnConnectionDeviceSampleConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_vpn_connection_device_sample_configuration`](crate::client::Client::get_vpn_connection_device_sample_configuration).
+            /// [`get_vpn_connection_device_sample_configuration`](crate::client::fluent_builders::GetVpnConnectionDeviceSampleConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetVpnConnectionDeviceSampleConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14050,7 +14050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVpnConnectionDeviceSa
 /// Operation shape for `GetVpnConnectionDeviceTypes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_vpn_connection_device_types`](crate::client::Client::get_vpn_connection_device_types).
+            /// [`get_vpn_connection_device_types`](crate::client::fluent_builders::GetVpnConnectionDeviceTypes).
             ///
             /// `ParseStrictResponse` impl for `GetVpnConnectionDeviceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14082,7 +14082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVpnConnectionDeviceTy
 /// Operation shape for `ImportClientVpnClientCertificateRevocationList`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_client_vpn_client_certificate_revocation_list`](crate::client::Client::import_client_vpn_client_certificate_revocation_list).
+            /// [`import_client_vpn_client_certificate_revocation_list`](crate::client::fluent_builders::ImportClientVpnClientCertificateRevocationList).
             ///
             /// `ParseStrictResponse` impl for `ImportClientVpnClientCertificateRevocationList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14114,7 +14114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportClientVpnClientCer
 /// Operation shape for `ImportImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_image`](crate::client::Client::import_image).
+            /// [`import_image`](crate::client::fluent_builders::ImportImage).
             ///
             /// `ParseStrictResponse` impl for `ImportImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14146,7 +14146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportImage {
 /// Operation shape for `ImportInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_instance`](crate::client::Client::import_instance).
+            /// [`import_instance`](crate::client::fluent_builders::ImportInstance).
             ///
             /// `ParseStrictResponse` impl for `ImportInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14178,7 +14178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportInstance {
 /// Operation shape for `ImportKeyPair`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_key_pair`](crate::client::Client::import_key_pair).
+            /// [`import_key_pair`](crate::client::fluent_builders::ImportKeyPair).
             ///
             /// `ParseStrictResponse` impl for `ImportKeyPair`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14210,7 +14210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportKeyPair {
 /// Operation shape for `ImportSnapshot`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_snapshot`](crate::client::Client::import_snapshot).
+            /// [`import_snapshot`](crate::client::fluent_builders::ImportSnapshot).
             ///
             /// `ParseStrictResponse` impl for `ImportSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14242,7 +14242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportSnapshot {
 /// Operation shape for `ImportVolume`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_volume`](crate::client::Client::import_volume).
+            /// [`import_volume`](crate::client::fluent_builders::ImportVolume).
             ///
             /// `ParseStrictResponse` impl for `ImportVolume`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14274,7 +14274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportVolume {
 /// Operation shape for `ListImagesInRecycleBin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_images_in_recycle_bin`](crate::client::Client::list_images_in_recycle_bin).
+            /// [`list_images_in_recycle_bin`](crate::client::fluent_builders::ListImagesInRecycleBin).
             ///
             /// `ParseStrictResponse` impl for `ListImagesInRecycleBin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14306,7 +14306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImagesInRecycleBin {
 /// Operation shape for `ListSnapshotsInRecycleBin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_snapshots_in_recycle_bin`](crate::client::Client::list_snapshots_in_recycle_bin).
+            /// [`list_snapshots_in_recycle_bin`](crate::client::fluent_builders::ListSnapshotsInRecycleBin).
             ///
             /// `ParseStrictResponse` impl for `ListSnapshotsInRecycleBin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14338,7 +14338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSnapshotsInRecycleBi
 /// Operation shape for `ModifyAddressAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_address_attribute`](crate::client::Client::modify_address_attribute).
+            /// [`modify_address_attribute`](crate::client::fluent_builders::ModifyAddressAttribute).
             ///
             /// `ParseStrictResponse` impl for `ModifyAddressAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14370,7 +14370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyAddressAttribute {
 /// Operation shape for `ModifyAvailabilityZoneGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_availability_zone_group`](crate::client::Client::modify_availability_zone_group).
+            /// [`modify_availability_zone_group`](crate::client::fluent_builders::ModifyAvailabilityZoneGroup).
             ///
             /// `ParseStrictResponse` impl for `ModifyAvailabilityZoneGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14402,7 +14402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyAvailabilityZoneGr
 /// Operation shape for `ModifyCapacityReservation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_capacity_reservation`](crate::client::Client::modify_capacity_reservation).
+            /// [`modify_capacity_reservation`](crate::client::fluent_builders::ModifyCapacityReservation).
             ///
             /// `ParseStrictResponse` impl for `ModifyCapacityReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14434,7 +14434,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyCapacityReservatio
 /// Operation shape for `ModifyCapacityReservationFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_capacity_reservation_fleet`](crate::client::Client::modify_capacity_reservation_fleet).
+            /// [`modify_capacity_reservation_fleet`](crate::client::fluent_builders::ModifyCapacityReservationFleet).
             ///
             /// `ParseStrictResponse` impl for `ModifyCapacityReservationFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14466,7 +14466,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyCapacityReservatio
 /// Operation shape for `ModifyClientVpnEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_client_vpn_endpoint`](crate::client::Client::modify_client_vpn_endpoint).
+            /// [`modify_client_vpn_endpoint`](crate::client::fluent_builders::ModifyClientVpnEndpoint).
             ///
             /// `ParseStrictResponse` impl for `ModifyClientVpnEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14498,7 +14498,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyClientVpnEndpoint 
 /// Operation shape for `ModifyDefaultCreditSpecification`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_default_credit_specification`](crate::client::Client::modify_default_credit_specification).
+            /// [`modify_default_credit_specification`](crate::client::fluent_builders::ModifyDefaultCreditSpecification).
             ///
             /// `ParseStrictResponse` impl for `ModifyDefaultCreditSpecification`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14530,7 +14530,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyDefaultCreditSpeci
 /// Operation shape for `ModifyEbsDefaultKmsKeyId`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_ebs_default_kms_key_id`](crate::client::Client::modify_ebs_default_kms_key_id).
+            /// [`modify_ebs_default_kms_key_id`](crate::client::fluent_builders::ModifyEbsDefaultKmsKeyId).
             ///
             /// `ParseStrictResponse` impl for `ModifyEbsDefaultKmsKeyId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14562,7 +14562,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyEbsDefaultKmsKeyId
 /// Operation shape for `ModifyFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_fleet`](crate::client::Client::modify_fleet).
+            /// [`modify_fleet`](crate::client::fluent_builders::ModifyFleet).
             ///
             /// `ParseStrictResponse` impl for `ModifyFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14594,7 +14594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyFleet {
 /// Operation shape for `ModifyFpgaImageAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_fpga_image_attribute`](crate::client::Client::modify_fpga_image_attribute).
+            /// [`modify_fpga_image_attribute`](crate::client::fluent_builders::ModifyFpgaImageAttribute).
             ///
             /// `ParseStrictResponse` impl for `ModifyFpgaImageAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14626,7 +14626,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyFpgaImageAttribute
 /// Operation shape for `ModifyHosts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_hosts`](crate::client::Client::modify_hosts).
+            /// [`modify_hosts`](crate::client::fluent_builders::ModifyHosts).
             ///
             /// `ParseStrictResponse` impl for `ModifyHosts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14658,7 +14658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyHosts {
 /// Operation shape for `ModifyIdentityIdFormat`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_identity_id_format`](crate::client::Client::modify_identity_id_format).
+            /// [`modify_identity_id_format`](crate::client::fluent_builders::ModifyIdentityIdFormat).
             ///
             /// `ParseStrictResponse` impl for `ModifyIdentityIdFormat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14690,7 +14690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyIdentityIdFormat {
 /// Operation shape for `ModifyIdFormat`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_id_format`](crate::client::Client::modify_id_format).
+            /// [`modify_id_format`](crate::client::fluent_builders::ModifyIdFormat).
             ///
             /// `ParseStrictResponse` impl for `ModifyIdFormat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14722,7 +14722,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyIdFormat {
 /// Operation shape for `ModifyImageAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_image_attribute`](crate::client::Client::modify_image_attribute).
+            /// [`modify_image_attribute`](crate::client::fluent_builders::ModifyImageAttribute).
             ///
             /// `ParseStrictResponse` impl for `ModifyImageAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14754,7 +14754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyImageAttribute {
 /// Operation shape for `ModifyInstanceAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_instance_attribute`](crate::client::Client::modify_instance_attribute).
+            /// [`modify_instance_attribute`](crate::client::fluent_builders::ModifyInstanceAttribute).
             ///
             /// `ParseStrictResponse` impl for `ModifyInstanceAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14786,7 +14786,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceAttribute 
 /// Operation shape for `ModifyInstanceCapacityReservationAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_instance_capacity_reservation_attributes`](crate::client::Client::modify_instance_capacity_reservation_attributes).
+            /// [`modify_instance_capacity_reservation_attributes`](crate::client::fluent_builders::ModifyInstanceCapacityReservationAttributes).
             ///
             /// `ParseStrictResponse` impl for `ModifyInstanceCapacityReservationAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14818,7 +14818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceCapacityRe
 /// Operation shape for `ModifyInstanceCreditSpecification`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_instance_credit_specification`](crate::client::Client::modify_instance_credit_specification).
+            /// [`modify_instance_credit_specification`](crate::client::fluent_builders::ModifyInstanceCreditSpecification).
             ///
             /// `ParseStrictResponse` impl for `ModifyInstanceCreditSpecification`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14850,7 +14850,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceCreditSpec
 /// Operation shape for `ModifyInstanceEventStartTime`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_instance_event_start_time`](crate::client::Client::modify_instance_event_start_time).
+            /// [`modify_instance_event_start_time`](crate::client::fluent_builders::ModifyInstanceEventStartTime).
             ///
             /// `ParseStrictResponse` impl for `ModifyInstanceEventStartTime`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14882,7 +14882,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceEventStart
 /// Operation shape for `ModifyInstanceEventWindow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_instance_event_window`](crate::client::Client::modify_instance_event_window).
+            /// [`modify_instance_event_window`](crate::client::fluent_builders::ModifyInstanceEventWindow).
             ///
             /// `ParseStrictResponse` impl for `ModifyInstanceEventWindow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14914,7 +14914,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceEventWindo
 /// Operation shape for `ModifyInstanceMaintenanceOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_instance_maintenance_options`](crate::client::Client::modify_instance_maintenance_options).
+            /// [`modify_instance_maintenance_options`](crate::client::fluent_builders::ModifyInstanceMaintenanceOptions).
             ///
             /// `ParseStrictResponse` impl for `ModifyInstanceMaintenanceOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14946,7 +14946,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceMaintenanc
 /// Operation shape for `ModifyInstanceMetadataOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_instance_metadata_options`](crate::client::Client::modify_instance_metadata_options).
+            /// [`modify_instance_metadata_options`](crate::client::fluent_builders::ModifyInstanceMetadataOptions).
             ///
             /// `ParseStrictResponse` impl for `ModifyInstanceMetadataOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -14978,7 +14978,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceMetadataOp
 /// Operation shape for `ModifyInstancePlacement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_instance_placement`](crate::client::Client::modify_instance_placement).
+            /// [`modify_instance_placement`](crate::client::fluent_builders::ModifyInstancePlacement).
             ///
             /// `ParseStrictResponse` impl for `ModifyInstancePlacement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15010,7 +15010,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstancePlacement 
 /// Operation shape for `ModifyIpam`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_ipam`](crate::client::Client::modify_ipam).
+            /// [`modify_ipam`](crate::client::fluent_builders::ModifyIpam).
             ///
             /// `ParseStrictResponse` impl for `ModifyIpam`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15042,7 +15042,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyIpam {
 /// Operation shape for `ModifyIpamPool`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_ipam_pool`](crate::client::Client::modify_ipam_pool).
+            /// [`modify_ipam_pool`](crate::client::fluent_builders::ModifyIpamPool).
             ///
             /// `ParseStrictResponse` impl for `ModifyIpamPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15074,7 +15074,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyIpamPool {
 /// Operation shape for `ModifyIpamResourceCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_ipam_resource_cidr`](crate::client::Client::modify_ipam_resource_cidr).
+            /// [`modify_ipam_resource_cidr`](crate::client::fluent_builders::ModifyIpamResourceCidr).
             ///
             /// `ParseStrictResponse` impl for `ModifyIpamResourceCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15106,7 +15106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyIpamResourceCidr {
 /// Operation shape for `ModifyIpamScope`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_ipam_scope`](crate::client::Client::modify_ipam_scope).
+            /// [`modify_ipam_scope`](crate::client::fluent_builders::ModifyIpamScope).
             ///
             /// `ParseStrictResponse` impl for `ModifyIpamScope`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15138,7 +15138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyIpamScope {
 /// Operation shape for `ModifyLaunchTemplate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_launch_template`](crate::client::Client::modify_launch_template).
+            /// [`modify_launch_template`](crate::client::fluent_builders::ModifyLaunchTemplate).
             ///
             /// `ParseStrictResponse` impl for `ModifyLaunchTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15170,7 +15170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLaunchTemplate {
 /// Operation shape for `ModifyLocalGatewayRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_local_gateway_route`](crate::client::Client::modify_local_gateway_route).
+            /// [`modify_local_gateway_route`](crate::client::fluent_builders::ModifyLocalGatewayRoute).
             ///
             /// `ParseStrictResponse` impl for `ModifyLocalGatewayRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15202,7 +15202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLocalGatewayRoute 
 /// Operation shape for `ModifyManagedPrefixList`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_managed_prefix_list`](crate::client::Client::modify_managed_prefix_list).
+            /// [`modify_managed_prefix_list`](crate::client::fluent_builders::ModifyManagedPrefixList).
             ///
             /// `ParseStrictResponse` impl for `ModifyManagedPrefixList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15234,7 +15234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyManagedPrefixList 
 /// Operation shape for `ModifyNetworkInterfaceAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_network_interface_attribute`](crate::client::Client::modify_network_interface_attribute).
+            /// [`modify_network_interface_attribute`](crate::client::fluent_builders::ModifyNetworkInterfaceAttribute).
             ///
             /// `ParseStrictResponse` impl for `ModifyNetworkInterfaceAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15266,7 +15266,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyNetworkInterfaceAt
 /// Operation shape for `ModifyPrivateDnsNameOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_private_dns_name_options`](crate::client::Client::modify_private_dns_name_options).
+            /// [`modify_private_dns_name_options`](crate::client::fluent_builders::ModifyPrivateDnsNameOptions).
             ///
             /// `ParseStrictResponse` impl for `ModifyPrivateDnsNameOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15298,7 +15298,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyPrivateDnsNameOpti
 /// Operation shape for `ModifyReservedInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_reserved_instances`](crate::client::Client::modify_reserved_instances).
+            /// [`modify_reserved_instances`](crate::client::fluent_builders::ModifyReservedInstances).
             ///
             /// `ParseStrictResponse` impl for `ModifyReservedInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15330,7 +15330,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyReservedInstances 
 /// Operation shape for `ModifySecurityGroupRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_security_group_rules`](crate::client::Client::modify_security_group_rules).
+            /// [`modify_security_group_rules`](crate::client::fluent_builders::ModifySecurityGroupRules).
             ///
             /// `ParseStrictResponse` impl for `ModifySecurityGroupRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15362,7 +15362,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySecurityGroupRules
 /// Operation shape for `ModifySnapshotAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_snapshot_attribute`](crate::client::Client::modify_snapshot_attribute).
+            /// [`modify_snapshot_attribute`](crate::client::fluent_builders::ModifySnapshotAttribute).
             ///
             /// `ParseStrictResponse` impl for `ModifySnapshotAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15394,7 +15394,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySnapshotAttribute 
 /// Operation shape for `ModifySnapshotTier`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_snapshot_tier`](crate::client::Client::modify_snapshot_tier).
+            /// [`modify_snapshot_tier`](crate::client::fluent_builders::ModifySnapshotTier).
             ///
             /// `ParseStrictResponse` impl for `ModifySnapshotTier`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15426,7 +15426,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySnapshotTier {
 /// Operation shape for `ModifySpotFleetRequest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_spot_fleet_request`](crate::client::Client::modify_spot_fleet_request).
+            /// [`modify_spot_fleet_request`](crate::client::fluent_builders::ModifySpotFleetRequest).
             ///
             /// `ParseStrictResponse` impl for `ModifySpotFleetRequest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15458,7 +15458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySpotFleetRequest {
 /// Operation shape for `ModifySubnetAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_subnet_attribute`](crate::client::Client::modify_subnet_attribute).
+            /// [`modify_subnet_attribute`](crate::client::fluent_builders::ModifySubnetAttribute).
             ///
             /// `ParseStrictResponse` impl for `ModifySubnetAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15490,7 +15490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySubnetAttribute {
 /// Operation shape for `ModifyTrafficMirrorFilterNetworkServices`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_traffic_mirror_filter_network_services`](crate::client::Client::modify_traffic_mirror_filter_network_services).
+            /// [`modify_traffic_mirror_filter_network_services`](crate::client::fluent_builders::ModifyTrafficMirrorFilterNetworkServices).
             ///
             /// `ParseStrictResponse` impl for `ModifyTrafficMirrorFilterNetworkServices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15522,7 +15522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyTrafficMirrorFilte
 /// Operation shape for `ModifyTrafficMirrorFilterRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_traffic_mirror_filter_rule`](crate::client::Client::modify_traffic_mirror_filter_rule).
+            /// [`modify_traffic_mirror_filter_rule`](crate::client::fluent_builders::ModifyTrafficMirrorFilterRule).
             ///
             /// `ParseStrictResponse` impl for `ModifyTrafficMirrorFilterRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15554,7 +15554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyTrafficMirrorFilte
 /// Operation shape for `ModifyTrafficMirrorSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_traffic_mirror_session`](crate::client::Client::modify_traffic_mirror_session).
+            /// [`modify_traffic_mirror_session`](crate::client::fluent_builders::ModifyTrafficMirrorSession).
             ///
             /// `ParseStrictResponse` impl for `ModifyTrafficMirrorSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15586,7 +15586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyTrafficMirrorSessi
 /// Operation shape for `ModifyTransitGateway`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_transit_gateway`](crate::client::Client::modify_transit_gateway).
+            /// [`modify_transit_gateway`](crate::client::fluent_builders::ModifyTransitGateway).
             ///
             /// `ParseStrictResponse` impl for `ModifyTransitGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15618,7 +15618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyTransitGateway {
 /// Operation shape for `ModifyTransitGatewayPrefixListReference`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_transit_gateway_prefix_list_reference`](crate::client::Client::modify_transit_gateway_prefix_list_reference).
+            /// [`modify_transit_gateway_prefix_list_reference`](crate::client::fluent_builders::ModifyTransitGatewayPrefixListReference).
             ///
             /// `ParseStrictResponse` impl for `ModifyTransitGatewayPrefixListReference`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15650,7 +15650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyTransitGatewayPref
 /// Operation shape for `ModifyTransitGatewayVpcAttachment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_transit_gateway_vpc_attachment`](crate::client::Client::modify_transit_gateway_vpc_attachment).
+            /// [`modify_transit_gateway_vpc_attachment`](crate::client::fluent_builders::ModifyTransitGatewayVpcAttachment).
             ///
             /// `ParseStrictResponse` impl for `ModifyTransitGatewayVpcAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15682,7 +15682,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyTransitGatewayVpcA
 /// Operation shape for `ModifyVerifiedAccessEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_verified_access_endpoint`](crate::client::Client::modify_verified_access_endpoint).
+            /// [`modify_verified_access_endpoint`](crate::client::fluent_builders::ModifyVerifiedAccessEndpoint).
             ///
             /// `ParseStrictResponse` impl for `ModifyVerifiedAccessEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15714,7 +15714,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVerifiedAccessEndp
 /// Operation shape for `ModifyVerifiedAccessEndpointPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_verified_access_endpoint_policy`](crate::client::Client::modify_verified_access_endpoint_policy).
+            /// [`modify_verified_access_endpoint_policy`](crate::client::fluent_builders::ModifyVerifiedAccessEndpointPolicy).
             ///
             /// `ParseStrictResponse` impl for `ModifyVerifiedAccessEndpointPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15746,7 +15746,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVerifiedAccessEndp
 /// Operation shape for `ModifyVerifiedAccessGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_verified_access_group`](crate::client::Client::modify_verified_access_group).
+            /// [`modify_verified_access_group`](crate::client::fluent_builders::ModifyVerifiedAccessGroup).
             ///
             /// `ParseStrictResponse` impl for `ModifyVerifiedAccessGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15778,7 +15778,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVerifiedAccessGrou
 /// Operation shape for `ModifyVerifiedAccessGroupPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_verified_access_group_policy`](crate::client::Client::modify_verified_access_group_policy).
+            /// [`modify_verified_access_group_policy`](crate::client::fluent_builders::ModifyVerifiedAccessGroupPolicy).
             ///
             /// `ParseStrictResponse` impl for `ModifyVerifiedAccessGroupPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15810,7 +15810,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVerifiedAccessGrou
 /// Operation shape for `ModifyVerifiedAccessInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_verified_access_instance`](crate::client::Client::modify_verified_access_instance).
+            /// [`modify_verified_access_instance`](crate::client::fluent_builders::ModifyVerifiedAccessInstance).
             ///
             /// `ParseStrictResponse` impl for `ModifyVerifiedAccessInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15842,7 +15842,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVerifiedAccessInst
 /// Operation shape for `ModifyVerifiedAccessInstanceLoggingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_verified_access_instance_logging_configuration`](crate::client::Client::modify_verified_access_instance_logging_configuration).
+            /// [`modify_verified_access_instance_logging_configuration`](crate::client::fluent_builders::ModifyVerifiedAccessInstanceLoggingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `ModifyVerifiedAccessInstanceLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15874,7 +15874,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVerifiedAccessInst
 /// Operation shape for `ModifyVerifiedAccessTrustProvider`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_verified_access_trust_provider`](crate::client::Client::modify_verified_access_trust_provider).
+            /// [`modify_verified_access_trust_provider`](crate::client::fluent_builders::ModifyVerifiedAccessTrustProvider).
             ///
             /// `ParseStrictResponse` impl for `ModifyVerifiedAccessTrustProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15906,7 +15906,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVerifiedAccessTrus
 /// Operation shape for `ModifyVolume`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_volume`](crate::client::Client::modify_volume).
+            /// [`modify_volume`](crate::client::fluent_builders::ModifyVolume).
             ///
             /// `ParseStrictResponse` impl for `ModifyVolume`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15938,7 +15938,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVolume {
 /// Operation shape for `ModifyVolumeAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_volume_attribute`](crate::client::Client::modify_volume_attribute).
+            /// [`modify_volume_attribute`](crate::client::fluent_builders::ModifyVolumeAttribute).
             ///
             /// `ParseStrictResponse` impl for `ModifyVolumeAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -15970,7 +15970,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVolumeAttribute {
 /// Operation shape for `ModifyVpcAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpc_attribute`](crate::client::Client::modify_vpc_attribute).
+            /// [`modify_vpc_attribute`](crate::client::fluent_builders::ModifyVpcAttribute).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpcAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16002,7 +16002,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcAttribute {
 /// Operation shape for `ModifyVpcEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpc_endpoint`](crate::client::Client::modify_vpc_endpoint).
+            /// [`modify_vpc_endpoint`](crate::client::fluent_builders::ModifyVpcEndpoint).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpcEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16034,7 +16034,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcEndpoint {
 /// Operation shape for `ModifyVpcEndpointConnectionNotification`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpc_endpoint_connection_notification`](crate::client::Client::modify_vpc_endpoint_connection_notification).
+            /// [`modify_vpc_endpoint_connection_notification`](crate::client::fluent_builders::ModifyVpcEndpointConnectionNotification).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpcEndpointConnectionNotification`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16066,7 +16066,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcEndpointConnect
 /// Operation shape for `ModifyVpcEndpointServiceConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpc_endpoint_service_configuration`](crate::client::Client::modify_vpc_endpoint_service_configuration).
+            /// [`modify_vpc_endpoint_service_configuration`](crate::client::fluent_builders::ModifyVpcEndpointServiceConfiguration).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpcEndpointServiceConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16098,7 +16098,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcEndpointService
 /// Operation shape for `ModifyVpcEndpointServicePayerResponsibility`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpc_endpoint_service_payer_responsibility`](crate::client::Client::modify_vpc_endpoint_service_payer_responsibility).
+            /// [`modify_vpc_endpoint_service_payer_responsibility`](crate::client::fluent_builders::ModifyVpcEndpointServicePayerResponsibility).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpcEndpointServicePayerResponsibility`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16130,7 +16130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcEndpointService
 /// Operation shape for `ModifyVpcEndpointServicePermissions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpc_endpoint_service_permissions`](crate::client::Client::modify_vpc_endpoint_service_permissions).
+            /// [`modify_vpc_endpoint_service_permissions`](crate::client::fluent_builders::ModifyVpcEndpointServicePermissions).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpcEndpointServicePermissions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16162,7 +16162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcEndpointService
 /// Operation shape for `ModifyVpcPeeringConnectionOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpc_peering_connection_options`](crate::client::Client::modify_vpc_peering_connection_options).
+            /// [`modify_vpc_peering_connection_options`](crate::client::fluent_builders::ModifyVpcPeeringConnectionOptions).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpcPeeringConnectionOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16194,7 +16194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcPeeringConnecti
 /// Operation shape for `ModifyVpcTenancy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpc_tenancy`](crate::client::Client::modify_vpc_tenancy).
+            /// [`modify_vpc_tenancy`](crate::client::fluent_builders::ModifyVpcTenancy).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpcTenancy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16226,7 +16226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcTenancy {
 /// Operation shape for `ModifyVpnConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpn_connection`](crate::client::Client::modify_vpn_connection).
+            /// [`modify_vpn_connection`](crate::client::fluent_builders::ModifyVpnConnection).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpnConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16258,7 +16258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpnConnection {
 /// Operation shape for `ModifyVpnConnectionOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpn_connection_options`](crate::client::Client::modify_vpn_connection_options).
+            /// [`modify_vpn_connection_options`](crate::client::fluent_builders::ModifyVpnConnectionOptions).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpnConnectionOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16290,7 +16290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpnConnectionOptio
 /// Operation shape for `ModifyVpnTunnelCertificate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpn_tunnel_certificate`](crate::client::Client::modify_vpn_tunnel_certificate).
+            /// [`modify_vpn_tunnel_certificate`](crate::client::fluent_builders::ModifyVpnTunnelCertificate).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpnTunnelCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16322,7 +16322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpnTunnelCertifica
 /// Operation shape for `ModifyVpnTunnelOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_vpn_tunnel_options`](crate::client::Client::modify_vpn_tunnel_options).
+            /// [`modify_vpn_tunnel_options`](crate::client::fluent_builders::ModifyVpnTunnelOptions).
             ///
             /// `ParseStrictResponse` impl for `ModifyVpnTunnelOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16354,7 +16354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpnTunnelOptions {
 /// Operation shape for `MonitorInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`monitor_instances`](crate::client::Client::monitor_instances).
+            /// [`monitor_instances`](crate::client::fluent_builders::MonitorInstances).
             ///
             /// `ParseStrictResponse` impl for `MonitorInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16386,7 +16386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MonitorInstances {
 /// Operation shape for `MoveAddressToVpc`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`move_address_to_vpc`](crate::client::Client::move_address_to_vpc).
+            /// [`move_address_to_vpc`](crate::client::fluent_builders::MoveAddressToVpc).
             ///
             /// `ParseStrictResponse` impl for `MoveAddressToVpc`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16418,7 +16418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MoveAddressToVpc {
 /// Operation shape for `MoveByoipCidrToIpam`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`move_byoip_cidr_to_ipam`](crate::client::Client::move_byoip_cidr_to_ipam).
+            /// [`move_byoip_cidr_to_ipam`](crate::client::fluent_builders::MoveByoipCidrToIpam).
             ///
             /// `ParseStrictResponse` impl for `MoveByoipCidrToIpam`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16450,7 +16450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MoveByoipCidrToIpam {
 /// Operation shape for `ProvisionByoipCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`provision_byoip_cidr`](crate::client::Client::provision_byoip_cidr).
+            /// [`provision_byoip_cidr`](crate::client::fluent_builders::ProvisionByoipCidr).
             ///
             /// `ParseStrictResponse` impl for `ProvisionByoipCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16482,7 +16482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvisionByoipCidr {
 /// Operation shape for `ProvisionIpamPoolCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`provision_ipam_pool_cidr`](crate::client::Client::provision_ipam_pool_cidr).
+            /// [`provision_ipam_pool_cidr`](crate::client::fluent_builders::ProvisionIpamPoolCidr).
             ///
             /// `ParseStrictResponse` impl for `ProvisionIpamPoolCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16514,7 +16514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvisionIpamPoolCidr {
 /// Operation shape for `ProvisionPublicIpv4PoolCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`provision_public_ipv4_pool_cidr`](crate::client::Client::provision_public_ipv4_pool_cidr).
+            /// [`provision_public_ipv4_pool_cidr`](crate::client::fluent_builders::ProvisionPublicIpv4PoolCidr).
             ///
             /// `ParseStrictResponse` impl for `ProvisionPublicIpv4PoolCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16546,7 +16546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvisionPublicIpv4PoolC
 /// Operation shape for `PurchaseHostReservation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`purchase_host_reservation`](crate::client::Client::purchase_host_reservation).
+            /// [`purchase_host_reservation`](crate::client::fluent_builders::PurchaseHostReservation).
             ///
             /// `ParseStrictResponse` impl for `PurchaseHostReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16578,7 +16578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseHostReservation 
 /// Operation shape for `PurchaseReservedInstancesOffering`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`purchase_reserved_instances_offering`](crate::client::Client::purchase_reserved_instances_offering).
+            /// [`purchase_reserved_instances_offering`](crate::client::fluent_builders::PurchaseReservedInstancesOffering).
             ///
             /// `ParseStrictResponse` impl for `PurchaseReservedInstancesOffering`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16610,7 +16610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseReservedInstance
 /// Operation shape for `PurchaseScheduledInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`purchase_scheduled_instances`](crate::client::Client::purchase_scheduled_instances).
+            /// [`purchase_scheduled_instances`](crate::client::fluent_builders::PurchaseScheduledInstances).
             ///
             /// `ParseStrictResponse` impl for `PurchaseScheduledInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16642,7 +16642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseScheduledInstanc
 /// Operation shape for `RebootInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reboot_instances`](crate::client::Client::reboot_instances).
+            /// [`reboot_instances`](crate::client::fluent_builders::RebootInstances).
             ///
             /// `ParseStrictResponse` impl for `RebootInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16674,7 +16674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebootInstances {
 /// Operation shape for `RegisterImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_image`](crate::client::Client::register_image).
+            /// [`register_image`](crate::client::fluent_builders::RegisterImage).
             ///
             /// `ParseStrictResponse` impl for `RegisterImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16706,7 +16706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterImage {
 /// Operation shape for `RegisterInstanceEventNotificationAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_instance_event_notification_attributes`](crate::client::Client::register_instance_event_notification_attributes).
+            /// [`register_instance_event_notification_attributes`](crate::client::fluent_builders::RegisterInstanceEventNotificationAttributes).
             ///
             /// `ParseStrictResponse` impl for `RegisterInstanceEventNotificationAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16738,7 +16738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterInstanceEventNot
 /// Operation shape for `RegisterTransitGatewayMulticastGroupMembers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_transit_gateway_multicast_group_members`](crate::client::Client::register_transit_gateway_multicast_group_members).
+            /// [`register_transit_gateway_multicast_group_members`](crate::client::fluent_builders::RegisterTransitGatewayMulticastGroupMembers).
             ///
             /// `ParseStrictResponse` impl for `RegisterTransitGatewayMulticastGroupMembers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16770,7 +16770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterTransitGatewayMu
 /// Operation shape for `RegisterTransitGatewayMulticastGroupSources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_transit_gateway_multicast_group_sources`](crate::client::Client::register_transit_gateway_multicast_group_sources).
+            /// [`register_transit_gateway_multicast_group_sources`](crate::client::fluent_builders::RegisterTransitGatewayMulticastGroupSources).
             ///
             /// `ParseStrictResponse` impl for `RegisterTransitGatewayMulticastGroupSources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16802,7 +16802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterTransitGatewayMu
 /// Operation shape for `RejectTransitGatewayMulticastDomainAssociations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reject_transit_gateway_multicast_domain_associations`](crate::client::Client::reject_transit_gateway_multicast_domain_associations).
+            /// [`reject_transit_gateway_multicast_domain_associations`](crate::client::fluent_builders::RejectTransitGatewayMulticastDomainAssociations).
             ///
             /// `ParseStrictResponse` impl for `RejectTransitGatewayMulticastDomainAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16834,7 +16834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectTransitGatewayMult
 /// Operation shape for `RejectTransitGatewayPeeringAttachment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reject_transit_gateway_peering_attachment`](crate::client::Client::reject_transit_gateway_peering_attachment).
+            /// [`reject_transit_gateway_peering_attachment`](crate::client::fluent_builders::RejectTransitGatewayPeeringAttachment).
             ///
             /// `ParseStrictResponse` impl for `RejectTransitGatewayPeeringAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16866,7 +16866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectTransitGatewayPeer
 /// Operation shape for `RejectTransitGatewayVpcAttachment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reject_transit_gateway_vpc_attachment`](crate::client::Client::reject_transit_gateway_vpc_attachment).
+            /// [`reject_transit_gateway_vpc_attachment`](crate::client::fluent_builders::RejectTransitGatewayVpcAttachment).
             ///
             /// `ParseStrictResponse` impl for `RejectTransitGatewayVpcAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16898,7 +16898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectTransitGatewayVpcA
 /// Operation shape for `RejectVpcEndpointConnections`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reject_vpc_endpoint_connections`](crate::client::Client::reject_vpc_endpoint_connections).
+            /// [`reject_vpc_endpoint_connections`](crate::client::fluent_builders::RejectVpcEndpointConnections).
             ///
             /// `ParseStrictResponse` impl for `RejectVpcEndpointConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16930,7 +16930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectVpcEndpointConnect
 /// Operation shape for `RejectVpcPeeringConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reject_vpc_peering_connection`](crate::client::Client::reject_vpc_peering_connection).
+            /// [`reject_vpc_peering_connection`](crate::client::fluent_builders::RejectVpcPeeringConnection).
             ///
             /// `ParseStrictResponse` impl for `RejectVpcPeeringConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16962,7 +16962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectVpcPeeringConnecti
 /// Operation shape for `ReleaseAddress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`release_address`](crate::client::Client::release_address).
+            /// [`release_address`](crate::client::fluent_builders::ReleaseAddress).
             ///
             /// `ParseStrictResponse` impl for `ReleaseAddress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -16994,7 +16994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleaseAddress {
 /// Operation shape for `ReleaseHosts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`release_hosts`](crate::client::Client::release_hosts).
+            /// [`release_hosts`](crate::client::fluent_builders::ReleaseHosts).
             ///
             /// `ParseStrictResponse` impl for `ReleaseHosts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17026,7 +17026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleaseHosts {
 /// Operation shape for `ReleaseIpamPoolAllocation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`release_ipam_pool_allocation`](crate::client::Client::release_ipam_pool_allocation).
+            /// [`release_ipam_pool_allocation`](crate::client::fluent_builders::ReleaseIpamPoolAllocation).
             ///
             /// `ParseStrictResponse` impl for `ReleaseIpamPoolAllocation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17058,7 +17058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleaseIpamPoolAllocatio
 /// Operation shape for `ReplaceIamInstanceProfileAssociation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`replace_iam_instance_profile_association`](crate::client::Client::replace_iam_instance_profile_association).
+            /// [`replace_iam_instance_profile_association`](crate::client::fluent_builders::ReplaceIamInstanceProfileAssociation).
             ///
             /// `ParseStrictResponse` impl for `ReplaceIamInstanceProfileAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17090,7 +17090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplaceIamInstanceProfil
 /// Operation shape for `ReplaceNetworkAclAssociation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`replace_network_acl_association`](crate::client::Client::replace_network_acl_association).
+            /// [`replace_network_acl_association`](crate::client::fluent_builders::ReplaceNetworkAclAssociation).
             ///
             /// `ParseStrictResponse` impl for `ReplaceNetworkAclAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17122,7 +17122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplaceNetworkAclAssocia
 /// Operation shape for `ReplaceNetworkAclEntry`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`replace_network_acl_entry`](crate::client::Client::replace_network_acl_entry).
+            /// [`replace_network_acl_entry`](crate::client::fluent_builders::ReplaceNetworkAclEntry).
             ///
             /// `ParseStrictResponse` impl for `ReplaceNetworkAclEntry`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17154,7 +17154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplaceNetworkAclEntry {
 /// Operation shape for `ReplaceRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`replace_route`](crate::client::Client::replace_route).
+            /// [`replace_route`](crate::client::fluent_builders::ReplaceRoute).
             ///
             /// `ParseStrictResponse` impl for `ReplaceRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17186,7 +17186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplaceRoute {
 /// Operation shape for `ReplaceRouteTableAssociation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`replace_route_table_association`](crate::client::Client::replace_route_table_association).
+            /// [`replace_route_table_association`](crate::client::fluent_builders::ReplaceRouteTableAssociation).
             ///
             /// `ParseStrictResponse` impl for `ReplaceRouteTableAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17218,7 +17218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplaceRouteTableAssocia
 /// Operation shape for `ReplaceTransitGatewayRoute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`replace_transit_gateway_route`](crate::client::Client::replace_transit_gateway_route).
+            /// [`replace_transit_gateway_route`](crate::client::fluent_builders::ReplaceTransitGatewayRoute).
             ///
             /// `ParseStrictResponse` impl for `ReplaceTransitGatewayRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17250,7 +17250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplaceTransitGatewayRou
 /// Operation shape for `ReportInstanceStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`report_instance_status`](crate::client::Client::report_instance_status).
+            /// [`report_instance_status`](crate::client::fluent_builders::ReportInstanceStatus).
             ///
             /// `ParseStrictResponse` impl for `ReportInstanceStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17282,7 +17282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReportInstanceStatus {
 /// Operation shape for `RequestSpotFleet`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`request_spot_fleet`](crate::client::Client::request_spot_fleet).
+            /// [`request_spot_fleet`](crate::client::fluent_builders::RequestSpotFleet).
             ///
             /// `ParseStrictResponse` impl for `RequestSpotFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17314,7 +17314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestSpotFleet {
 /// Operation shape for `RequestSpotInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`request_spot_instances`](crate::client::Client::request_spot_instances).
+            /// [`request_spot_instances`](crate::client::fluent_builders::RequestSpotInstances).
             ///
             /// `ParseStrictResponse` impl for `RequestSpotInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17346,7 +17346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestSpotInstances {
 /// Operation shape for `ResetAddressAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reset_address_attribute`](crate::client::Client::reset_address_attribute).
+            /// [`reset_address_attribute`](crate::client::fluent_builders::ResetAddressAttribute).
             ///
             /// `ParseStrictResponse` impl for `ResetAddressAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17378,7 +17378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetAddressAttribute {
 /// Operation shape for `ResetEbsDefaultKmsKeyId`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reset_ebs_default_kms_key_id`](crate::client::Client::reset_ebs_default_kms_key_id).
+            /// [`reset_ebs_default_kms_key_id`](crate::client::fluent_builders::ResetEbsDefaultKmsKeyId).
             ///
             /// `ParseStrictResponse` impl for `ResetEbsDefaultKmsKeyId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17410,7 +17410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetEbsDefaultKmsKeyId 
 /// Operation shape for `ResetFpgaImageAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reset_fpga_image_attribute`](crate::client::Client::reset_fpga_image_attribute).
+            /// [`reset_fpga_image_attribute`](crate::client::fluent_builders::ResetFpgaImageAttribute).
             ///
             /// `ParseStrictResponse` impl for `ResetFpgaImageAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17442,7 +17442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetFpgaImageAttribute 
 /// Operation shape for `ResetImageAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reset_image_attribute`](crate::client::Client::reset_image_attribute).
+            /// [`reset_image_attribute`](crate::client::fluent_builders::ResetImageAttribute).
             ///
             /// `ParseStrictResponse` impl for `ResetImageAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17474,7 +17474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetImageAttribute {
 /// Operation shape for `ResetInstanceAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reset_instance_attribute`](crate::client::Client::reset_instance_attribute).
+            /// [`reset_instance_attribute`](crate::client::fluent_builders::ResetInstanceAttribute).
             ///
             /// `ParseStrictResponse` impl for `ResetInstanceAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17506,7 +17506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetInstanceAttribute {
 /// Operation shape for `ResetNetworkInterfaceAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reset_network_interface_attribute`](crate::client::Client::reset_network_interface_attribute).
+            /// [`reset_network_interface_attribute`](crate::client::fluent_builders::ResetNetworkInterfaceAttribute).
             ///
             /// `ParseStrictResponse` impl for `ResetNetworkInterfaceAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17538,7 +17538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetNetworkInterfaceAtt
 /// Operation shape for `ResetSnapshotAttribute`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reset_snapshot_attribute`](crate::client::Client::reset_snapshot_attribute).
+            /// [`reset_snapshot_attribute`](crate::client::fluent_builders::ResetSnapshotAttribute).
             ///
             /// `ParseStrictResponse` impl for `ResetSnapshotAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17570,7 +17570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetSnapshotAttribute {
 /// Operation shape for `RestoreAddressToClassic`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`restore_address_to_classic`](crate::client::Client::restore_address_to_classic).
+            /// [`restore_address_to_classic`](crate::client::fluent_builders::RestoreAddressToClassic).
             ///
             /// `ParseStrictResponse` impl for `RestoreAddressToClassic`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17602,7 +17602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreAddressToClassic 
 /// Operation shape for `RestoreImageFromRecycleBin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`restore_image_from_recycle_bin`](crate::client::Client::restore_image_from_recycle_bin).
+            /// [`restore_image_from_recycle_bin`](crate::client::fluent_builders::RestoreImageFromRecycleBin).
             ///
             /// `ParseStrictResponse` impl for `RestoreImageFromRecycleBin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17634,7 +17634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreImageFromRecycleB
 /// Operation shape for `RestoreManagedPrefixListVersion`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`restore_managed_prefix_list_version`](crate::client::Client::restore_managed_prefix_list_version).
+            /// [`restore_managed_prefix_list_version`](crate::client::fluent_builders::RestoreManagedPrefixListVersion).
             ///
             /// `ParseStrictResponse` impl for `RestoreManagedPrefixListVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17666,7 +17666,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreManagedPrefixList
 /// Operation shape for `RestoreSnapshotFromRecycleBin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`restore_snapshot_from_recycle_bin`](crate::client::Client::restore_snapshot_from_recycle_bin).
+            /// [`restore_snapshot_from_recycle_bin`](crate::client::fluent_builders::RestoreSnapshotFromRecycleBin).
             ///
             /// `ParseStrictResponse` impl for `RestoreSnapshotFromRecycleBin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17698,7 +17698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreSnapshotFromRecyc
 /// Operation shape for `RestoreSnapshotTier`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`restore_snapshot_tier`](crate::client::Client::restore_snapshot_tier).
+            /// [`restore_snapshot_tier`](crate::client::fluent_builders::RestoreSnapshotTier).
             ///
             /// `ParseStrictResponse` impl for `RestoreSnapshotTier`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17730,7 +17730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreSnapshotTier {
 /// Operation shape for `RevokeClientVpnIngress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`revoke_client_vpn_ingress`](crate::client::Client::revoke_client_vpn_ingress).
+            /// [`revoke_client_vpn_ingress`](crate::client::fluent_builders::RevokeClientVpnIngress).
             ///
             /// `ParseStrictResponse` impl for `RevokeClientVpnIngress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17762,7 +17762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeClientVpnIngress {
 /// Operation shape for `RevokeSecurityGroupEgress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`revoke_security_group_egress`](crate::client::Client::revoke_security_group_egress).
+            /// [`revoke_security_group_egress`](crate::client::fluent_builders::RevokeSecurityGroupEgress).
             ///
             /// `ParseStrictResponse` impl for `RevokeSecurityGroupEgress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17794,7 +17794,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeSecurityGroupEgres
 /// Operation shape for `RevokeSecurityGroupIngress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`revoke_security_group_ingress`](crate::client::Client::revoke_security_group_ingress).
+            /// [`revoke_security_group_ingress`](crate::client::fluent_builders::RevokeSecurityGroupIngress).
             ///
             /// `ParseStrictResponse` impl for `RevokeSecurityGroupIngress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17826,7 +17826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeSecurityGroupIngre
 /// Operation shape for `RunInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`run_instances`](crate::client::Client::run_instances).
+            /// [`run_instances`](crate::client::fluent_builders::RunInstances).
             ///
             /// `ParseStrictResponse` impl for `RunInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17858,7 +17858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RunInstances {
 /// Operation shape for `RunScheduledInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`run_scheduled_instances`](crate::client::Client::run_scheduled_instances).
+            /// [`run_scheduled_instances`](crate::client::fluent_builders::RunScheduledInstances).
             ///
             /// `ParseStrictResponse` impl for `RunScheduledInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17890,7 +17890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RunScheduledInstances {
 /// Operation shape for `SearchLocalGatewayRoutes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_local_gateway_routes`](crate::client::Client::search_local_gateway_routes).
+            /// [`search_local_gateway_routes`](crate::client::fluent_builders::SearchLocalGatewayRoutes).
             ///
             /// `ParseStrictResponse` impl for `SearchLocalGatewayRoutes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17922,7 +17922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchLocalGatewayRoutes
 /// Operation shape for `SearchTransitGatewayMulticastGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_transit_gateway_multicast_groups`](crate::client::Client::search_transit_gateway_multicast_groups).
+            /// [`search_transit_gateway_multicast_groups`](crate::client::fluent_builders::SearchTransitGatewayMulticastGroups).
             ///
             /// `ParseStrictResponse` impl for `SearchTransitGatewayMulticastGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17954,7 +17954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchTransitGatewayMult
 /// Operation shape for `SearchTransitGatewayRoutes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_transit_gateway_routes`](crate::client::Client::search_transit_gateway_routes).
+            /// [`search_transit_gateway_routes`](crate::client::fluent_builders::SearchTransitGatewayRoutes).
             ///
             /// `ParseStrictResponse` impl for `SearchTransitGatewayRoutes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -17986,7 +17986,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchTransitGatewayRout
 /// Operation shape for `SendDiagnosticInterrupt`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`send_diagnostic_interrupt`](crate::client::Client::send_diagnostic_interrupt).
+            /// [`send_diagnostic_interrupt`](crate::client::fluent_builders::SendDiagnosticInterrupt).
             ///
             /// `ParseStrictResponse` impl for `SendDiagnosticInterrupt`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18018,7 +18018,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendDiagnosticInterrupt 
 /// Operation shape for `StartInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_instances`](crate::client::Client::start_instances).
+            /// [`start_instances`](crate::client::fluent_builders::StartInstances).
             ///
             /// `ParseStrictResponse` impl for `StartInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18050,7 +18050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartInstances {
 /// Operation shape for `StartNetworkInsightsAccessScopeAnalysis`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_network_insights_access_scope_analysis`](crate::client::Client::start_network_insights_access_scope_analysis).
+            /// [`start_network_insights_access_scope_analysis`](crate::client::fluent_builders::StartNetworkInsightsAccessScopeAnalysis).
             ///
             /// `ParseStrictResponse` impl for `StartNetworkInsightsAccessScopeAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18082,7 +18082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartNetworkInsightsAcce
 /// Operation shape for `StartNetworkInsightsAnalysis`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_network_insights_analysis`](crate::client::Client::start_network_insights_analysis).
+            /// [`start_network_insights_analysis`](crate::client::fluent_builders::StartNetworkInsightsAnalysis).
             ///
             /// `ParseStrictResponse` impl for `StartNetworkInsightsAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18114,7 +18114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartNetworkInsightsAnal
 /// Operation shape for `StartVpcEndpointServicePrivateDnsVerification`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_vpc_endpoint_service_private_dns_verification`](crate::client::Client::start_vpc_endpoint_service_private_dns_verification).
+            /// [`start_vpc_endpoint_service_private_dns_verification`](crate::client::fluent_builders::StartVpcEndpointServicePrivateDnsVerification).
             ///
             /// `ParseStrictResponse` impl for `StartVpcEndpointServicePrivateDnsVerification`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18146,7 +18146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartVpcEndpointServiceP
 /// Operation shape for `StopInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_instances`](crate::client::Client::stop_instances).
+            /// [`stop_instances`](crate::client::fluent_builders::StopInstances).
             ///
             /// `ParseStrictResponse` impl for `StopInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18178,7 +18178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopInstances {
 /// Operation shape for `TerminateClientVpnConnections`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`terminate_client_vpn_connections`](crate::client::Client::terminate_client_vpn_connections).
+            /// [`terminate_client_vpn_connections`](crate::client::fluent_builders::TerminateClientVpnConnections).
             ///
             /// `ParseStrictResponse` impl for `TerminateClientVpnConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18210,7 +18210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateClientVpnConnec
 /// Operation shape for `TerminateInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`terminate_instances`](crate::client::Client::terminate_instances).
+            /// [`terminate_instances`](crate::client::fluent_builders::TerminateInstances).
             ///
             /// `ParseStrictResponse` impl for `TerminateInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18242,7 +18242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateInstances {
 /// Operation shape for `UnassignIpv6Addresses`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`unassign_ipv6_addresses`](crate::client::Client::unassign_ipv6_addresses).
+            /// [`unassign_ipv6_addresses`](crate::client::fluent_builders::UnassignIpv6Addresses).
             ///
             /// `ParseStrictResponse` impl for `UnassignIpv6Addresses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18274,7 +18274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnassignIpv6Addresses {
 /// Operation shape for `UnassignPrivateIpAddresses`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`unassign_private_ip_addresses`](crate::client::Client::unassign_private_ip_addresses).
+            /// [`unassign_private_ip_addresses`](crate::client::fluent_builders::UnassignPrivateIpAddresses).
             ///
             /// `ParseStrictResponse` impl for `UnassignPrivateIpAddresses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18306,7 +18306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnassignPrivateIpAddress
 /// Operation shape for `UnmonitorInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`unmonitor_instances`](crate::client::Client::unmonitor_instances).
+            /// [`unmonitor_instances`](crate::client::fluent_builders::UnmonitorInstances).
             ///
             /// `ParseStrictResponse` impl for `UnmonitorInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18338,7 +18338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnmonitorInstances {
 /// Operation shape for `UpdateSecurityGroupRuleDescriptionsEgress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_security_group_rule_descriptions_egress`](crate::client::Client::update_security_group_rule_descriptions_egress).
+            /// [`update_security_group_rule_descriptions_egress`](crate::client::fluent_builders::UpdateSecurityGroupRuleDescriptionsEgress).
             ///
             /// `ParseStrictResponse` impl for `UpdateSecurityGroupRuleDescriptionsEgress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18370,7 +18370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecurityGroupRuleD
 /// Operation shape for `UpdateSecurityGroupRuleDescriptionsIngress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_security_group_rule_descriptions_ingress`](crate::client::Client::update_security_group_rule_descriptions_ingress).
+            /// [`update_security_group_rule_descriptions_ingress`](crate::client::fluent_builders::UpdateSecurityGroupRuleDescriptionsIngress).
             ///
             /// `ParseStrictResponse` impl for `UpdateSecurityGroupRuleDescriptionsIngress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -18402,7 +18402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecurityGroupRuleD
 /// Operation shape for `WithdrawByoipCidr`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`withdraw_byoip_cidr`](crate::client::Client::withdraw_byoip_cidr).
+            /// [`withdraw_byoip_cidr`](crate::client::fluent_builders::WithdrawByoipCidr).
             ///
             /// `ParseStrictResponse` impl for `WithdrawByoipCidr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

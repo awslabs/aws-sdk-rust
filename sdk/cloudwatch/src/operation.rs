@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteAlarms`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_alarms`](crate::client::Client::delete_alarms).
+            /// [`delete_alarms`](crate::client::fluent_builders::DeleteAlarms).
             ///
             /// `ParseStrictResponse` impl for `DeleteAlarms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlarms {
 /// Operation shape for `DeleteAnomalyDetector`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_anomaly_detector`](crate::client::Client::delete_anomaly_detector).
+            /// [`delete_anomaly_detector`](crate::client::fluent_builders::DeleteAnomalyDetector).
             ///
             /// `ParseStrictResponse` impl for `DeleteAnomalyDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAnomalyDetector {
 /// Operation shape for `DeleteDashboards`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_dashboards`](crate::client::Client::delete_dashboards).
+            /// [`delete_dashboards`](crate::client::fluent_builders::DeleteDashboards).
             ///
             /// `ParseStrictResponse` impl for `DeleteDashboards`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDashboards {
 /// Operation shape for `DeleteInsightRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_insight_rules`](crate::client::Client::delete_insight_rules).
+            /// [`delete_insight_rules`](crate::client::fluent_builders::DeleteInsightRules).
             ///
             /// `ParseStrictResponse` impl for `DeleteInsightRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInsightRules {
 /// Operation shape for `DeleteMetricStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_metric_stream`](crate::client::Client::delete_metric_stream).
+            /// [`delete_metric_stream`](crate::client::fluent_builders::DeleteMetricStream).
             ///
             /// `ParseStrictResponse` impl for `DeleteMetricStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMetricStream {
 /// Operation shape for `DescribeAlarmHistory`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_alarm_history`](crate::client::Client::describe_alarm_history).
+            /// [`describe_alarm_history`](crate::client::fluent_builders::DescribeAlarmHistory).
             ///
             /// `ParseStrictResponse` impl for `DescribeAlarmHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarmHistory {
 /// Operation shape for `DescribeAlarms`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_alarms`](crate::client::Client::describe_alarms).
+            /// [`describe_alarms`](crate::client::fluent_builders::DescribeAlarms).
             ///
             /// `ParseStrictResponse` impl for `DescribeAlarms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarms {
 /// Operation shape for `DescribeAlarmsForMetric`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_alarms_for_metric`](crate::client::Client::describe_alarms_for_metric).
+            /// [`describe_alarms_for_metric`](crate::client::fluent_builders::DescribeAlarmsForMetric).
             ///
             /// `ParseStrictResponse` impl for `DescribeAlarmsForMetric`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarmsForMetric 
 /// Operation shape for `DescribeAnomalyDetectors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_anomaly_detectors`](crate::client::Client::describe_anomaly_detectors).
+            /// [`describe_anomaly_detectors`](crate::client::fluent_builders::DescribeAnomalyDetectors).
             ///
             /// `ParseStrictResponse` impl for `DescribeAnomalyDetectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAnomalyDetectors
 /// Operation shape for `DescribeInsightRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_insight_rules`](crate::client::Client::describe_insight_rules).
+            /// [`describe_insight_rules`](crate::client::fluent_builders::DescribeInsightRules).
             ///
             /// `ParseStrictResponse` impl for `DescribeInsightRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInsightRules {
 /// Operation shape for `DisableAlarmActions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_alarm_actions`](crate::client::Client::disable_alarm_actions).
+            /// [`disable_alarm_actions`](crate::client::fluent_builders::DisableAlarmActions).
             ///
             /// `ParseStrictResponse` impl for `DisableAlarmActions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAlarmActions {
 /// Operation shape for `DisableInsightRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_insight_rules`](crate::client::Client::disable_insight_rules).
+            /// [`disable_insight_rules`](crate::client::fluent_builders::DisableInsightRules).
             ///
             /// `ParseStrictResponse` impl for `DisableInsightRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableInsightRules {
 /// Operation shape for `EnableAlarmActions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_alarm_actions`](crate::client::Client::enable_alarm_actions).
+            /// [`enable_alarm_actions`](crate::client::fluent_builders::EnableAlarmActions).
             ///
             /// `ParseStrictResponse` impl for `EnableAlarmActions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAlarmActions {
 /// Operation shape for `EnableInsightRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_insight_rules`](crate::client::Client::enable_insight_rules).
+            /// [`enable_insight_rules`](crate::client::fluent_builders::EnableInsightRules).
             ///
             /// `ParseStrictResponse` impl for `EnableInsightRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableInsightRules {
 /// Operation shape for `GetDashboard`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_dashboard`](crate::client::Client::get_dashboard).
+            /// [`get_dashboard`](crate::client::fluent_builders::GetDashboard).
             ///
             /// `ParseStrictResponse` impl for `GetDashboard`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDashboard {
 /// Operation shape for `GetInsightRuleReport`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_insight_rule_report`](crate::client::Client::get_insight_rule_report).
+            /// [`get_insight_rule_report`](crate::client::fluent_builders::GetInsightRuleReport).
             ///
             /// `ParseStrictResponse` impl for `GetInsightRuleReport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightRuleReport {
 /// Operation shape for `GetMetricData`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_metric_data`](crate::client::Client::get_metric_data).
+            /// [`get_metric_data`](crate::client::fluent_builders::GetMetricData).
             ///
             /// `ParseStrictResponse` impl for `GetMetricData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetricData {
 /// Operation shape for `GetMetricStatistics`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_metric_statistics`](crate::client::Client::get_metric_statistics).
+            /// [`get_metric_statistics`](crate::client::fluent_builders::GetMetricStatistics).
             ///
             /// `ParseStrictResponse` impl for `GetMetricStatistics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetricStatistics {
 /// Operation shape for `GetMetricStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_metric_stream`](crate::client::Client::get_metric_stream).
+            /// [`get_metric_stream`](crate::client::fluent_builders::GetMetricStream).
             ///
             /// `ParseStrictResponse` impl for `GetMetricStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetricStream {
 /// Operation shape for `GetMetricWidgetImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_metric_widget_image`](crate::client::Client::get_metric_widget_image).
+            /// [`get_metric_widget_image`](crate::client::fluent_builders::GetMetricWidgetImage).
             ///
             /// `ParseStrictResponse` impl for `GetMetricWidgetImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetricWidgetImage {
 /// Operation shape for `ListDashboards`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_dashboards`](crate::client::Client::list_dashboards).
+            /// [`list_dashboards`](crate::client::fluent_builders::ListDashboards).
             ///
             /// `ParseStrictResponse` impl for `ListDashboards`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDashboards {
 /// Operation shape for `ListManagedInsightRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_managed_insight_rules`](crate::client::Client::list_managed_insight_rules).
+            /// [`list_managed_insight_rules`](crate::client::fluent_builders::ListManagedInsightRules).
             ///
             /// `ParseStrictResponse` impl for `ListManagedInsightRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedInsightRules 
 /// Operation shape for `ListMetrics`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_metrics`](crate::client::Client::list_metrics).
+            /// [`list_metrics`](crate::client::fluent_builders::ListMetrics).
             ///
             /// `ParseStrictResponse` impl for `ListMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMetrics {
 /// Operation shape for `ListMetricStreams`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_metric_streams`](crate::client::Client::list_metric_streams).
+            /// [`list_metric_streams`](crate::client::fluent_builders::ListMetricStreams).
             ///
             /// `ParseStrictResponse` impl for `ListMetricStreams`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMetricStreams {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutAnomalyDetector`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_anomaly_detector`](crate::client::Client::put_anomaly_detector).
+            /// [`put_anomaly_detector`](crate::client::fluent_builders::PutAnomalyDetector).
             ///
             /// `ParseStrictResponse` impl for `PutAnomalyDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAnomalyDetector {
 /// Operation shape for `PutCompositeAlarm`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_composite_alarm`](crate::client::Client::put_composite_alarm).
+            /// [`put_composite_alarm`](crate::client::fluent_builders::PutCompositeAlarm).
             ///
             /// `ParseStrictResponse` impl for `PutCompositeAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCompositeAlarm {
 /// Operation shape for `PutDashboard`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_dashboard`](crate::client::Client::put_dashboard).
+            /// [`put_dashboard`](crate::client::fluent_builders::PutDashboard).
             ///
             /// `ParseStrictResponse` impl for `PutDashboard`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDashboard {
 /// Operation shape for `PutInsightRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_insight_rule`](crate::client::Client::put_insight_rule).
+            /// [`put_insight_rule`](crate::client::fluent_builders::PutInsightRule).
             ///
             /// `ParseStrictResponse` impl for `PutInsightRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutInsightRule {
 /// Operation shape for `PutManagedInsightRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_managed_insight_rules`](crate::client::Client::put_managed_insight_rules).
+            /// [`put_managed_insight_rules`](crate::client::fluent_builders::PutManagedInsightRules).
             ///
             /// `ParseStrictResponse` impl for `PutManagedInsightRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutManagedInsightRules {
 /// Operation shape for `PutMetricAlarm`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_metric_alarm`](crate::client::Client::put_metric_alarm).
+            /// [`put_metric_alarm`](crate::client::fluent_builders::PutMetricAlarm).
             ///
             /// `ParseStrictResponse` impl for `PutMetricAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetricAlarm {
 /// Operation shape for `PutMetricData`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_metric_data`](crate::client::Client::put_metric_data).
+            /// [`put_metric_data`](crate::client::fluent_builders::PutMetricData).
             ///
             /// `ParseStrictResponse` impl for `PutMetricData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetricData {
 /// Operation shape for `PutMetricStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_metric_stream`](crate::client::Client::put_metric_stream).
+            /// [`put_metric_stream`](crate::client::fluent_builders::PutMetricStream).
             ///
             /// `ParseStrictResponse` impl for `PutMetricStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetricStream {
 /// Operation shape for `SetAlarmState`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_alarm_state`](crate::client::Client::set_alarm_state).
+            /// [`set_alarm_state`](crate::client::fluent_builders::SetAlarmState).
             ///
             /// `ParseStrictResponse` impl for `SetAlarmState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetAlarmState {
 /// Operation shape for `StartMetricStreams`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_metric_streams`](crate::client::Client::start_metric_streams).
+            /// [`start_metric_streams`](crate::client::fluent_builders::StartMetricStreams).
             ///
             /// `ParseStrictResponse` impl for `StartMetricStreams`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMetricStreams {
 /// Operation shape for `StopMetricStreams`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_metric_streams`](crate::client::Client::stop_metric_streams).
+            /// [`stop_metric_streams`](crate::client::fluent_builders::StopMetricStreams).
             ///
             /// `ParseStrictResponse` impl for `StopMetricStreams`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMetricStreams {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

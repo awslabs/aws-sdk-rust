@@ -77,8 +77,8 @@ impl Client  {
                         /// - On success, responds with [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput)
                         
                         /// - On failure, responds with [`SdkError<ActivateAnomalyDetectorError>`](crate::error::ActivateAnomalyDetectorError)
-    pub fn activate_anomaly_detector(&self) -> fluent_builders::ActivateAnomalyDetector {
-                            fluent_builders::ActivateAnomalyDetector::new(self.handle.clone())
+    pub fn activate_anomaly_detector(&self) -> crate::client::fluent_builders::ActivateAnomalyDetector {
+                            crate::client::fluent_builders::ActivateAnomalyDetector::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`BackTestAnomalyDetector`](crate::client::fluent_builders::BackTestAnomalyDetector) operation.
                         ///
@@ -87,8 +87,8 @@ impl Client  {
                         /// - On success, responds with [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput)
                         
                         /// - On failure, responds with [`SdkError<BackTestAnomalyDetectorError>`](crate::error::BackTestAnomalyDetectorError)
-    pub fn back_test_anomaly_detector(&self) -> fluent_builders::BackTestAnomalyDetector {
-                            fluent_builders::BackTestAnomalyDetector::new(self.handle.clone())
+    pub fn back_test_anomaly_detector(&self) -> crate::client::fluent_builders::BackTestAnomalyDetector {
+                            crate::client::fluent_builders::BackTestAnomalyDetector::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateAlert`](crate::client::fluent_builders::CreateAlert) operation.
                         ///
@@ -103,8 +103,8 @@ impl Client  {
                         /// - On success, responds with [`CreateAlertOutput`](crate::output::CreateAlertOutput) with field(s):
                         ///   - [`alert_arn(Option<String>)`](crate::output::CreateAlertOutput::alert_arn): <p>The ARN of the alert.</p>
                         /// - On failure, responds with [`SdkError<CreateAlertError>`](crate::error::CreateAlertError)
-    pub fn create_alert(&self) -> fluent_builders::CreateAlert {
-                            fluent_builders::CreateAlert::new(self.handle.clone())
+    pub fn create_alert(&self) -> crate::client::fluent_builders::CreateAlert {
+                            crate::client::fluent_builders::CreateAlert::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateAnomalyDetector`](crate::client::fluent_builders::CreateAnomalyDetector) operation.
                         ///
@@ -117,8 +117,8 @@ impl Client  {
                         /// - On success, responds with [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput) with field(s):
                         ///   - [`anomaly_detector_arn(Option<String>)`](crate::output::CreateAnomalyDetectorOutput::anomaly_detector_arn): <p>The ARN of the detector.</p>
                         /// - On failure, responds with [`SdkError<CreateAnomalyDetectorError>`](crate::error::CreateAnomalyDetectorError)
-    pub fn create_anomaly_detector(&self) -> fluent_builders::CreateAnomalyDetector {
-                            fluent_builders::CreateAnomalyDetector::new(self.handle.clone())
+    pub fn create_anomaly_detector(&self) -> crate::client::fluent_builders::CreateAnomalyDetector {
+                            crate::client::fluent_builders::CreateAnomalyDetector::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateMetricSet`](crate::client::fluent_builders::CreateMetricSet) operation.
                         ///
@@ -138,8 +138,8 @@ impl Client  {
                         /// - On success, responds with [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput) with field(s):
                         ///   - [`metric_set_arn(Option<String>)`](crate::output::CreateMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
                         /// - On failure, responds with [`SdkError<CreateMetricSetError>`](crate::error::CreateMetricSetError)
-    pub fn create_metric_set(&self) -> fluent_builders::CreateMetricSet {
-                            fluent_builders::CreateMetricSet::new(self.handle.clone())
+    pub fn create_metric_set(&self) -> crate::client::fluent_builders::CreateMetricSet {
+                            crate::client::fluent_builders::CreateMetricSet::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeactivateAnomalyDetector`](crate::client::fluent_builders::DeactivateAnomalyDetector) operation.
                         ///
@@ -148,8 +148,8 @@ impl Client  {
                         /// - On success, responds with [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
                         
                         /// - On failure, responds with [`SdkError<DeactivateAnomalyDetectorError>`](crate::error::DeactivateAnomalyDetectorError)
-    pub fn deactivate_anomaly_detector(&self) -> fluent_builders::DeactivateAnomalyDetector {
-                            fluent_builders::DeactivateAnomalyDetector::new(self.handle.clone())
+    pub fn deactivate_anomaly_detector(&self) -> crate::client::fluent_builders::DeactivateAnomalyDetector {
+                            crate::client::fluent_builders::DeactivateAnomalyDetector::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteAlert`](crate::client::fluent_builders::DeleteAlert) operation.
                         ///
@@ -158,8 +158,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteAlertOutput`](crate::output::DeleteAlertOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteAlertError>`](crate::error::DeleteAlertError)
-    pub fn delete_alert(&self) -> fluent_builders::DeleteAlert {
-                            fluent_builders::DeleteAlert::new(self.handle.clone())
+    pub fn delete_alert(&self) -> crate::client::fluent_builders::DeleteAlert {
+                            crate::client::fluent_builders::DeleteAlert::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteAnomalyDetector`](crate::client::fluent_builders::DeleteAnomalyDetector) operation.
                         ///
@@ -168,8 +168,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteAnomalyDetectorError>`](crate::error::DeleteAnomalyDetectorError)
-    pub fn delete_anomaly_detector(&self) -> fluent_builders::DeleteAnomalyDetector {
-                            fluent_builders::DeleteAnomalyDetector::new(self.handle.clone())
+    pub fn delete_anomaly_detector(&self) -> crate::client::fluent_builders::DeleteAnomalyDetector {
+                            crate::client::fluent_builders::DeleteAnomalyDetector::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeAlert`](crate::client::fluent_builders::DescribeAlert) operation.
                         ///
@@ -178,8 +178,8 @@ impl Client  {
                         /// - On success, responds with [`DescribeAlertOutput`](crate::output::DescribeAlertOutput) with field(s):
                         ///   - [`alert(Option<Alert>)`](crate::output::DescribeAlertOutput::alert): <p>Contains information about an alert.</p>
                         /// - On failure, responds with [`SdkError<DescribeAlertError>`](crate::error::DescribeAlertError)
-    pub fn describe_alert(&self) -> fluent_builders::DescribeAlert {
-                            fluent_builders::DescribeAlert::new(self.handle.clone())
+    pub fn describe_alert(&self) -> crate::client::fluent_builders::DescribeAlert {
+                            crate::client::fluent_builders::DescribeAlert::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeAnomalyDetectionExecutions`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::into_paginator).
@@ -193,8 +193,8 @@ impl Client  {
                         ///   - [`execution_list(Option<Vec<ExecutionStatus>>)`](crate::output::DescribeAnomalyDetectionExecutionsOutput::execution_list): <p>A list of detection jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeAnomalyDetectionExecutionsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
                         /// - On failure, responds with [`SdkError<DescribeAnomalyDetectionExecutionsError>`](crate::error::DescribeAnomalyDetectionExecutionsError)
-    pub fn describe_anomaly_detection_executions(&self) -> fluent_builders::DescribeAnomalyDetectionExecutions {
-                            fluent_builders::DescribeAnomalyDetectionExecutions::new(self.handle.clone())
+    pub fn describe_anomaly_detection_executions(&self) -> crate::client::fluent_builders::DescribeAnomalyDetectionExecutions {
+                            crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeAnomalyDetector`](crate::client::fluent_builders::DescribeAnomalyDetector) operation.
                         ///
@@ -212,8 +212,8 @@ impl Client  {
     ///   - [`kms_key_arn(Option<String>)`](crate::output::DescribeAnomalyDetectorOutput::kms_key_arn): <p>The ARN of the KMS key to use to encrypt your data.</p>
     ///   - [`failure_type(Option<AnomalyDetectorFailureType>)`](crate::output::DescribeAnomalyDetectorOutput::failure_type): <p>The process that caused the detector to fail.</p>
                         /// - On failure, responds with [`SdkError<DescribeAnomalyDetectorError>`](crate::error::DescribeAnomalyDetectorError)
-    pub fn describe_anomaly_detector(&self) -> fluent_builders::DescribeAnomalyDetector {
-                            fluent_builders::DescribeAnomalyDetector::new(self.handle.clone())
+    pub fn describe_anomaly_detector(&self) -> crate::client::fluent_builders::DescribeAnomalyDetector {
+                            crate::client::fluent_builders::DescribeAnomalyDetector::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeMetricSet`](crate::client::fluent_builders::DescribeMetricSet) operation.
                         ///
@@ -235,8 +235,8 @@ impl Client  {
     ///   - [`metric_source(Option<MetricSource>)`](crate::output::DescribeMetricSetOutput::metric_source): <p>Contains information about the dataset's source data.</p>
     ///   - [`dimension_filter_list(Option<Vec<MetricSetDimensionFilter>>)`](crate::output::DescribeMetricSetOutput::dimension_filter_list): <p>The dimensions and their values that were used to filter the dataset.</p>
                         /// - On failure, responds with [`SdkError<DescribeMetricSetError>`](crate::error::DescribeMetricSetError)
-    pub fn describe_metric_set(&self) -> fluent_builders::DescribeMetricSet {
-                            fluent_builders::DescribeMetricSet::new(self.handle.clone())
+    pub fn describe_metric_set(&self) -> crate::client::fluent_builders::DescribeMetricSet {
+                            crate::client::fluent_builders::DescribeMetricSet::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DetectMetricSetConfig`](crate::client::fluent_builders::DetectMetricSetConfig) operation.
                         ///
@@ -246,8 +246,8 @@ impl Client  {
                         /// - On success, responds with [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput) with field(s):
                         ///   - [`detected_metric_set_config(Option<DetectedMetricSetConfig>)`](crate::output::DetectMetricSetConfigOutput::detected_metric_set_config): <p>The inferred dataset configuration for the datasource.</p>
                         /// - On failure, responds with [`SdkError<DetectMetricSetConfigError>`](crate::error::DetectMetricSetConfigError)
-    pub fn detect_metric_set_config(&self) -> fluent_builders::DetectMetricSetConfig {
-                            fluent_builders::DetectMetricSetConfig::new(self.handle.clone())
+    pub fn detect_metric_set_config(&self) -> crate::client::fluent_builders::DetectMetricSetConfig {
+                            crate::client::fluent_builders::DetectMetricSetConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetAnomalyGroup`](crate::client::fluent_builders::GetAnomalyGroup) operation.
                         ///
@@ -257,8 +257,8 @@ impl Client  {
                         /// - On success, responds with [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput) with field(s):
                         ///   - [`anomaly_group(Option<AnomalyGroup>)`](crate::output::GetAnomalyGroupOutput::anomaly_group): <p>Details about the anomaly group.</p>
                         /// - On failure, responds with [`SdkError<GetAnomalyGroupError>`](crate::error::GetAnomalyGroupError)
-    pub fn get_anomaly_group(&self) -> fluent_builders::GetAnomalyGroup {
-                            fluent_builders::GetAnomalyGroup::new(self.handle.clone())
+    pub fn get_anomaly_group(&self) -> crate::client::fluent_builders::GetAnomalyGroup {
+                            crate::client::fluent_builders::GetAnomalyGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetDataQualityMetrics`](crate::client::fluent_builders::GetDataQualityMetrics) operation.
                         ///
@@ -268,8 +268,8 @@ impl Client  {
                         /// - On success, responds with [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput) with field(s):
                         ///   - [`anomaly_detector_data_quality_metric_list(Option<Vec<AnomalyDetectorDataQualityMetric>>)`](crate::output::GetDataQualityMetricsOutput::anomaly_detector_data_quality_metric_list): <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
                         /// - On failure, responds with [`SdkError<GetDataQualityMetricsError>`](crate::error::GetDataQualityMetricsError)
-    pub fn get_data_quality_metrics(&self) -> fluent_builders::GetDataQualityMetrics {
-                            fluent_builders::GetDataQualityMetrics::new(self.handle.clone())
+    pub fn get_data_quality_metrics(&self) -> crate::client::fluent_builders::GetDataQualityMetrics {
+                            crate::client::fluent_builders::GetDataQualityMetrics::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetFeedback`](crate::client::fluent_builders::GetFeedback) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetFeedback::into_paginator).
@@ -283,8 +283,8 @@ impl Client  {
                         ///   - [`anomaly_group_time_series_feedback(Option<Vec<TimeSeriesFeedback>>)`](crate::output::GetFeedbackOutput::anomaly_group_time_series_feedback): <p>Feedback for an anomalous metric.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetFeedbackOutput::next_token): <p>The pagination token that's included if more results are available.</p>
                         /// - On failure, responds with [`SdkError<GetFeedbackError>`](crate::error::GetFeedbackError)
-    pub fn get_feedback(&self) -> fluent_builders::GetFeedback {
-                            fluent_builders::GetFeedback::new(self.handle.clone())
+    pub fn get_feedback(&self) -> crate::client::fluent_builders::GetFeedback {
+                            crate::client::fluent_builders::GetFeedback::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetSampleData`](crate::client::fluent_builders::GetSampleData) operation.
                         ///
@@ -294,8 +294,8 @@ impl Client  {
                         ///   - [`header_values(Option<Vec<String>>)`](crate::output::GetSampleDataOutput::header_values): <p>A list of header labels for the records.</p>
     ///   - [`sample_rows(Option<Vec<Vec<String>>>)`](crate::output::GetSampleDataOutput::sample_rows): <p>A list of records.</p>
                         /// - On failure, responds with [`SdkError<GetSampleDataError>`](crate::error::GetSampleDataError)
-    pub fn get_sample_data(&self) -> fluent_builders::GetSampleData {
-                            fluent_builders::GetSampleData::new(self.handle.clone())
+    pub fn get_sample_data(&self) -> crate::client::fluent_builders::GetSampleData {
+                            crate::client::fluent_builders::GetSampleData::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListAlerts`](crate::client::fluent_builders::ListAlerts) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAlerts::into_paginator).
@@ -308,8 +308,8 @@ impl Client  {
                         ///   - [`alert_summary_list(Option<Vec<AlertSummary>>)`](crate::output::ListAlertsOutput::alert_summary_list): <p>Contains information about an alert.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAlertsOutput::next_token): <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
                         /// - On failure, responds with [`SdkError<ListAlertsError>`](crate::error::ListAlertsError)
-    pub fn list_alerts(&self) -> fluent_builders::ListAlerts {
-                            fluent_builders::ListAlerts::new(self.handle.clone())
+    pub fn list_alerts(&self) -> crate::client::fluent_builders::ListAlerts {
+                            crate::client::fluent_builders::ListAlerts::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListAnomalyDetectors`](crate::client::fluent_builders::ListAnomalyDetectors) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyDetectors::into_paginator).
@@ -321,8 +321,8 @@ impl Client  {
                         ///   - [`anomaly_detector_summary_list(Option<Vec<AnomalyDetectorSummary>>)`](crate::output::ListAnomalyDetectorsOutput::anomaly_detector_summary_list): <p>A list of anomaly detectors in the account in the current region.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnomalyDetectorsOutput::next_token): <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
                         /// - On failure, responds with [`SdkError<ListAnomalyDetectorsError>`](crate::error::ListAnomalyDetectorsError)
-    pub fn list_anomaly_detectors(&self) -> fluent_builders::ListAnomalyDetectors {
-                            fluent_builders::ListAnomalyDetectors::new(self.handle.clone())
+    pub fn list_anomaly_detectors(&self) -> crate::client::fluent_builders::ListAnomalyDetectors {
+                            crate::client::fluent_builders::ListAnomalyDetectors::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListAnomalyGroupRelatedMetrics`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::into_paginator).
@@ -337,8 +337,8 @@ impl Client  {
                         ///   - [`inter_metric_impact_list(Option<Vec<InterMetricImpactDetails>>)`](crate::output::ListAnomalyGroupRelatedMetricsOutput::inter_metric_impact_list): <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnomalyGroupRelatedMetricsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
                         /// - On failure, responds with [`SdkError<ListAnomalyGroupRelatedMetricsError>`](crate::error::ListAnomalyGroupRelatedMetricsError)
-    pub fn list_anomaly_group_related_metrics(&self) -> fluent_builders::ListAnomalyGroupRelatedMetrics {
-                            fluent_builders::ListAnomalyGroupRelatedMetrics::new(self.handle.clone())
+    pub fn list_anomaly_group_related_metrics(&self) -> crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics {
+                            crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListAnomalyGroupSummaries`](crate::client::fluent_builders::ListAnomalyGroupSummaries) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupSummaries::into_paginator).
@@ -353,8 +353,8 @@ impl Client  {
     ///   - [`anomaly_group_statistics(Option<AnomalyGroupStatistics>)`](crate::output::ListAnomalyGroupSummariesOutput::anomaly_group_statistics): <p>Aggregated details about the anomaly groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnomalyGroupSummariesOutput::next_token): <p>The pagination token that's included if more results are available.</p>
                         /// - On failure, responds with [`SdkError<ListAnomalyGroupSummariesError>`](crate::error::ListAnomalyGroupSummariesError)
-    pub fn list_anomaly_group_summaries(&self) -> fluent_builders::ListAnomalyGroupSummaries {
-                            fluent_builders::ListAnomalyGroupSummaries::new(self.handle.clone())
+    pub fn list_anomaly_group_summaries(&self) -> crate::client::fluent_builders::ListAnomalyGroupSummaries {
+                            crate::client::fluent_builders::ListAnomalyGroupSummaries::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListAnomalyGroupTimeSeries`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::into_paginator).
@@ -372,8 +372,8 @@ impl Client  {
     ///   - [`next_token(Option<String>)`](crate::output::ListAnomalyGroupTimeSeriesOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     ///   - [`time_series_list(Option<Vec<TimeSeries>>)`](crate::output::ListAnomalyGroupTimeSeriesOutput::time_series_list): <p>A list of anomalous metrics.</p>
                         /// - On failure, responds with [`SdkError<ListAnomalyGroupTimeSeriesError>`](crate::error::ListAnomalyGroupTimeSeriesError)
-    pub fn list_anomaly_group_time_series(&self) -> fluent_builders::ListAnomalyGroupTimeSeries {
-                            fluent_builders::ListAnomalyGroupTimeSeries::new(self.handle.clone())
+    pub fn list_anomaly_group_time_series(&self) -> crate::client::fluent_builders::ListAnomalyGroupTimeSeries {
+                            crate::client::fluent_builders::ListAnomalyGroupTimeSeries::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListMetricSets`](crate::client::fluent_builders::ListMetricSets) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMetricSets::into_paginator).
@@ -386,8 +386,8 @@ impl Client  {
                         ///   - [`metric_set_summary_list(Option<Vec<MetricSetSummary>>)`](crate::output::ListMetricSetsOutput::metric_set_summary_list): <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMetricSetsOutput::next_token): <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
                         /// - On failure, responds with [`SdkError<ListMetricSetsError>`](crate::error::ListMetricSetsError)
-    pub fn list_metric_sets(&self) -> fluent_builders::ListMetricSets {
-                            fluent_builders::ListMetricSets::new(self.handle.clone())
+    pub fn list_metric_sets(&self) -> crate::client::fluent_builders::ListMetricSets {
+                            crate::client::fluent_builders::ListMetricSets::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -396,8 +396,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The resource's tags.</p>
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`PutFeedback`](crate::client::fluent_builders::PutFeedback) operation.
                         ///
@@ -407,8 +407,8 @@ impl Client  {
                         /// - On success, responds with [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
                         
                         /// - On failure, responds with [`SdkError<PutFeedbackError>`](crate::error::PutFeedbackError)
-    pub fn put_feedback(&self) -> fluent_builders::PutFeedback {
-                            fluent_builders::PutFeedback::new(self.handle.clone())
+    pub fn put_feedback(&self) -> crate::client::fluent_builders::PutFeedback {
+                            crate::client::fluent_builders::PutFeedback::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -418,8 +418,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -429,8 +429,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateAlert`](crate::client::fluent_builders::UpdateAlert) operation.
                         ///
@@ -443,8 +443,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateAlertOutput`](crate::output::UpdateAlertOutput) with field(s):
                         ///   - [`alert_arn(Option<String>)`](crate::output::UpdateAlertOutput::alert_arn): <p>The ARN of the updated alert.</p>
                         /// - On failure, responds with [`SdkError<UpdateAlertError>`](crate::error::UpdateAlertError)
-    pub fn update_alert(&self) -> fluent_builders::UpdateAlert {
-                            fluent_builders::UpdateAlert::new(self.handle.clone())
+    pub fn update_alert(&self) -> crate::client::fluent_builders::UpdateAlert {
+                            crate::client::fluent_builders::UpdateAlert::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateAnomalyDetector`](crate::client::fluent_builders::UpdateAnomalyDetector) operation.
                         ///
@@ -456,8 +456,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput) with field(s):
                         ///   - [`anomaly_detector_arn(Option<String>)`](crate::output::UpdateAnomalyDetectorOutput::anomaly_detector_arn): <p>The ARN of the updated detector.</p>
                         /// - On failure, responds with [`SdkError<UpdateAnomalyDetectorError>`](crate::error::UpdateAnomalyDetectorError)
-    pub fn update_anomaly_detector(&self) -> fluent_builders::UpdateAnomalyDetector {
-                            fluent_builders::UpdateAnomalyDetector::new(self.handle.clone())
+    pub fn update_anomaly_detector(&self) -> crate::client::fluent_builders::UpdateAnomalyDetector {
+                            crate::client::fluent_builders::UpdateAnomalyDetector::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateMetricSet`](crate::client::fluent_builders::UpdateMetricSet) operation.
                         ///
@@ -474,2407 +474,9 @@ impl Client  {
                         /// - On success, responds with [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput) with field(s):
                         ///   - [`metric_set_arn(Option<String>)`](crate::output::UpdateMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
                         /// - On failure, responds with [`SdkError<UpdateMetricSetError>`](crate::error::UpdateMetricSetError)
-    pub fn update_metric_set(&self) -> fluent_builders::UpdateMetricSet {
-                            fluent_builders::UpdateMetricSet::new(self.handle.clone())
+    pub fn update_metric_set(&self) -> crate::client::fluent_builders::UpdateMetricSet {
+                            crate::client::fluent_builders::UpdateMetricSet::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `ActivateAnomalyDetector`.
-                        ///
-    /// <p>Activates an anomaly detector.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ActivateAnomalyDetector {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::activate_anomaly_detector_input::Builder
-                        }
-    impl ActivateAnomalyDetector  {
-        /// Creates a new `ActivateAnomalyDetector`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ActivateAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ActivateAnomalyDetectorError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ActivateAnomalyDetectorOutput, aws_smithy_http::result::SdkError<crate::error::ActivateAnomalyDetectorError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the anomaly detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `BackTestAnomalyDetector`.
-                        ///
-    /// <p>Runs a backtest for anomaly detection for the specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BackTestAnomalyDetector {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::back_test_anomaly_detector_input::Builder
-                        }
-    impl BackTestAnomalyDetector  {
-        /// Creates a new `BackTestAnomalyDetector`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::BackTestAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::BackTestAnomalyDetectorError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::BackTestAnomalyDetectorOutput, aws_smithy_http::result::SdkError<crate::error::BackTestAnomalyDetectorError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateAlert`.
-                        ///
-    /// <p>Creates an alert for an anomaly detector.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateAlert {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_alert_input::Builder
-                        }
-    impl CreateAlert  {
-        /// Creates a new `CreateAlert`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateAlert, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateAlertError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateAlertOutput, aws_smithy_http::result::SdkError<crate::error::CreateAlertError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the alert.</p>
-        pub fn alert_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_name(input.into());
-            self
-        }
-        /// <p>The name of the alert.</p>
-        pub fn set_alert_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alert_name(input);
-            self
-        }
-        /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-        pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
-            self.inner = self.inner.alert_sensitivity_threshold(input);
-            self
-        }
-        /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-        pub fn set_alert_sensitivity_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_alert_sensitivity_threshold(input);
-            self
-        }
-        /// <p>A description of the alert.</p>
-        pub fn alert_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_description(input.into());
-            self
-        }
-        /// <p>A description of the alert.</p>
-        pub fn set_alert_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alert_description(input);
-            self
-        }
-        /// <p>The ARN of the detector to which the alert is attached.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the detector to which the alert is attached.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>Action that will be triggered when there is an alert.</p>
-        pub fn action(mut self, input: crate::model::Action) -> Self {
-            self.inner = self.inner.action(input);
-            self
-        }
-        /// <p>Action that will be triggered when there is an alert.</p>
-        pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.inner = self.inner.set_action(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-        /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
-        pub fn alert_filters(mut self, input: crate::model::AlertFilters) -> Self {
-            self.inner = self.inner.alert_filters(input);
-            self
-        }
-        /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
-        pub fn set_alert_filters(mut self, input: std::option::Option<crate::model::AlertFilters>) -> Self {
-            self.inner = self.inner.set_alert_filters(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateAnomalyDetector`.
-                        ///
-    /// <p>Creates an anomaly detector.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateAnomalyDetector {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_anomaly_detector_input::Builder
-                        }
-    impl CreateAnomalyDetector  {
-        /// Creates a new `CreateAnomalyDetector`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateAnomalyDetectorError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateAnomalyDetectorOutput, aws_smithy_http::result::SdkError<crate::error::CreateAnomalyDetectorError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the detector.</p>
-        pub fn anomaly_detector_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_name(input.into());
-            self
-        }
-        /// <p>The name of the detector.</p>
-        pub fn set_anomaly_detector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_name(input);
-            self
-        }
-        /// <p>A description of the detector.</p>
-        pub fn anomaly_detector_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_description(input.into());
-            self
-        }
-        /// <p>A description of the detector.</p>
-        pub fn set_anomaly_detector_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_description(input);
-            self
-        }
-        /// <p>Contains information about the configuration of the anomaly detector.</p>
-        pub fn anomaly_detector_config(mut self, input: crate::model::AnomalyDetectorConfig) -> Self {
-            self.inner = self.inner.anomaly_detector_config(input);
-            self
-        }
-        /// <p>Contains information about the configuration of the anomaly detector.</p>
-        pub fn set_anomaly_detector_config(mut self, input: std::option::Option<crate::model::AnomalyDetectorConfig>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_config(input);
-            self
-        }
-        /// <p>The ARN of the KMS key to use to encrypt your data.</p>
-        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the KMS key to use to encrypt your data.</p>
-        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateMetricSet`.
-                        ///
-    /// <p>Creates a dataset.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateMetricSet {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_metric_set_input::Builder
-                        }
-    impl CreateMetricSet  {
-        /// Creates a new `CreateMetricSet`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateMetricSet, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateMetricSetError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateMetricSetOutput, aws_smithy_http::result::SdkError<crate::error::CreateMetricSetError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the anomaly detector that will use the dataset.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the anomaly detector that will use the dataset.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>The name of the dataset.</p>
-        pub fn metric_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_name(input.into());
-            self
-        }
-        /// <p>The name of the dataset.</p>
-        pub fn set_metric_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_metric_set_name(input);
-            self
-        }
-        /// <p>A description of the dataset you are creating.</p>
-        pub fn metric_set_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_description(input.into());
-            self
-        }
-        /// <p>A description of the dataset you are creating.</p>
-        pub fn set_metric_set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_metric_set_description(input);
-            self
-        }
-        /// Appends an item to `MetricList`.
-        ///
-        /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
-        ///
-        /// <p>A list of metrics that the dataset will contain.</p>
-        pub fn metric_list(mut self, input: crate::model::Metric) -> Self {
-            self.inner = self.inner.metric_list(input);
-            self
-        }
-        /// <p>A list of metrics that the dataset will contain.</p>
-        pub fn set_metric_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metric>>) -> Self {
-            self.inner = self.inner.set_metric_list(input);
-            self
-        }
-        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
-        pub fn offset(mut self, input: i32) -> Self {
-            self.inner = self.inner.offset(input);
-            self
-        }
-        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
-        pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_offset(input);
-            self
-        }
-        /// <p>Contains information about the column used for tracking time in your source data.</p>
-        pub fn timestamp_column(mut self, input: crate::model::TimestampColumn) -> Self {
-            self.inner = self.inner.timestamp_column(input);
-            self
-        }
-        /// <p>Contains information about the column used for tracking time in your source data.</p>
-        pub fn set_timestamp_column(mut self, input: std::option::Option<crate::model::TimestampColumn>) -> Self {
-            self.inner = self.inner.set_timestamp_column(input);
-            self
-        }
-        /// Appends an item to `DimensionList`.
-        ///
-        /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
-        ///
-        /// <p>A list of the fields you want to treat as dimensions.</p>
-        pub fn dimension_list(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dimension_list(input.into());
-            self
-        }
-        /// <p>A list of the fields you want to treat as dimensions.</p>
-        pub fn set_dimension_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_dimension_list(input);
-            self
-        }
-        /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
-        pub fn metric_set_frequency(mut self, input: crate::model::Frequency) -> Self {
-            self.inner = self.inner.metric_set_frequency(input);
-            self
-        }
-        /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
-        pub fn set_metric_set_frequency(mut self, input: std::option::Option<crate::model::Frequency>) -> Self {
-            self.inner = self.inner.set_metric_set_frequency(input);
-            self
-        }
-        /// <p>Contains information about how the source data should be interpreted.</p>
-        pub fn metric_source(mut self, input: crate::model::MetricSource) -> Self {
-            self.inner = self.inner.metric_source(input);
-            self
-        }
-        /// <p>Contains information about how the source data should be interpreted.</p>
-        pub fn set_metric_source(mut self, input: std::option::Option<crate::model::MetricSource>) -> Self {
-            self.inner = self.inner.set_metric_source(input);
-            self
-        }
-        /// <p>The time zone in which your source data was recorded.</p>
-        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(input.into());
-            self
-        }
-        /// <p>The time zone in which your source data was recorded.</p>
-        pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_timezone(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-        /// Appends an item to `DimensionFilterList`.
-        ///
-        /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
-        ///
-        /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
-        pub fn dimension_filter_list(mut self, input: crate::model::MetricSetDimensionFilter) -> Self {
-            self.inner = self.inner.dimension_filter_list(input);
-            self
-        }
-        /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
-        pub fn set_dimension_filter_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>) -> Self {
-            self.inner = self.inner.set_dimension_filter_list(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeactivateAnomalyDetector`.
-                        ///
-    /// <p>Deactivates an anomaly detector.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeactivateAnomalyDetector {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::deactivate_anomaly_detector_input::Builder
-                        }
-    impl DeactivateAnomalyDetector  {
-        /// Creates a new `DeactivateAnomalyDetector`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeactivateAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeactivateAnomalyDetectorError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeactivateAnomalyDetectorOutput, aws_smithy_http::result::SdkError<crate::error::DeactivateAnomalyDetectorError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteAlert`.
-                        ///
-    /// <p>Deletes an alert.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteAlert {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_alert_input::Builder
-                        }
-    impl DeleteAlert  {
-        /// Creates a new `DeleteAlert`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteAlert, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteAlertError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteAlertOutput, aws_smithy_http::result::SdkError<crate::error::DeleteAlertError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the alert to delete.</p>
-        pub fn alert_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the alert to delete.</p>
-        pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alert_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteAnomalyDetector`.
-                        ///
-    /// <p>Deletes a detector. Deleting an anomaly detector will delete all of its corresponding resources including any configured datasets and alerts.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteAnomalyDetector {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_anomaly_detector_input::Builder
-                        }
-    impl DeleteAnomalyDetector  {
-        /// Creates a new `DeleteAnomalyDetector`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteAnomalyDetectorError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteAnomalyDetectorOutput, aws_smithy_http::result::SdkError<crate::error::DeleteAnomalyDetectorError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the detector to delete.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the detector to delete.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeAlert`.
-                        ///
-    /// <p>Describes an alert.</p> 
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeAlert {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_alert_input::Builder
-                        }
-    impl DescribeAlert  {
-        /// Creates a new `DescribeAlert`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeAlert, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeAlertError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeAlertOutput, aws_smithy_http::result::SdkError<crate::error::DescribeAlertError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the alert to describe.</p>
-        pub fn alert_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the alert to describe.</p>
-        pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alert_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeAnomalyDetectionExecutions`.
-                        ///
-    /// <p>Returns information about the status of the specified anomaly detection jobs.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeAnomalyDetectionExecutions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_anomaly_detection_executions_input::Builder
-                        }
-    impl DescribeAnomalyDetectionExecutions  {
-        /// Creates a new `DescribeAnomalyDetectionExecutions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeAnomalyDetectionExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeAnomalyDetectionExecutionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeAnomalyDetectionExecutionsOutput, aws_smithy_http::result::SdkError<crate::error::DescribeAnomalyDetectionExecutionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAnomalyDetectionExecutionsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeAnomalyDetectionExecutionsPaginator {
-                                        crate::paginator::DescribeAnomalyDetectionExecutionsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>The timestamp of the anomaly detection job.</p>
-        pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timestamp(input.into());
-            self
-        }
-        /// <p>The timestamp of the anomaly detection job.</p>
-        pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_timestamp(input);
-            self
-        }
-        /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The number of items to return in the response.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeAnomalyDetector`.
-                        ///
-    /// <p>Describes a detector.</p> 
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeAnomalyDetector {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_anomaly_detector_input::Builder
-                        }
-    impl DescribeAnomalyDetector  {
-        /// Creates a new `DescribeAnomalyDetector`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeAnomalyDetectorError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeAnomalyDetectorOutput, aws_smithy_http::result::SdkError<crate::error::DescribeAnomalyDetectorError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the detector to describe.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the detector to describe.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeMetricSet`.
-                        ///
-    /// <p>Describes a dataset.</p> 
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeMetricSet {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_metric_set_input::Builder
-                        }
-    impl DescribeMetricSet  {
-        /// Creates a new `DescribeMetricSet`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeMetricSet, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeMetricSetError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeMetricSetOutput, aws_smithy_http::result::SdkError<crate::error::DescribeMetricSetError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the dataset.</p>
-        pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the dataset.</p>
-        pub fn set_metric_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_metric_set_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DetectMetricSetConfig`.
-                        ///
-    /// <p>Detects an Amazon S3 dataset's file format, interval, and offset.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DetectMetricSetConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::detect_metric_set_config_input::Builder
-                        }
-    impl DetectMetricSetConfig  {
-        /// Creates a new `DetectMetricSetConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DetectMetricSetConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DetectMetricSetConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DetectMetricSetConfigOutput, aws_smithy_http::result::SdkError<crate::error::DetectMetricSetConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>An anomaly detector ARN.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>An anomaly detector ARN.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>A data source.</p>
-        pub fn auto_detection_metric_source(mut self, input: crate::model::AutoDetectionMetricSource) -> Self {
-            self.inner = self.inner.auto_detection_metric_source(input);
-            self
-        }
-        /// <p>A data source.</p>
-        pub fn set_auto_detection_metric_source(mut self, input: std::option::Option<crate::model::AutoDetectionMetricSource>) -> Self {
-            self.inner = self.inner.set_auto_detection_metric_source(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetAnomalyGroup`.
-                        ///
-    /// <p>Returns details about a group of anomalous metrics.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetAnomalyGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_anomaly_group_input::Builder
-                        }
-    impl GetAnomalyGroup  {
-        /// Creates a new `GetAnomalyGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetAnomalyGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetAnomalyGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetAnomalyGroupOutput, aws_smithy_http::result::SdkError<crate::error::GetAnomalyGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the anomaly group.</p>
-        pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_group_id(input.into());
-            self
-        }
-        /// <p>The ID of the anomaly group.</p>
-        pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_group_id(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetDataQualityMetrics`.
-                        ///
-    /// <p>Returns details about the requested data quality metrics.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDataQualityMetrics {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_data_quality_metrics_input::Builder
-                        }
-    impl GetDataQualityMetrics  {
-        /// Creates a new `GetDataQualityMetrics`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetDataQualityMetrics, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetDataQualityMetricsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetDataQualityMetricsOutput, aws_smithy_http::result::SdkError<crate::error::GetDataQualityMetricsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
-        pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
-        pub fn set_metric_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_metric_set_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetFeedback`.
-                        ///
-    /// <p>Get feedback for an anomaly group.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetFeedback {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_feedback_input::Builder
-                        }
-    impl GetFeedback  {
-        /// Creates a new `GetFeedback`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetFeedback, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetFeedbackError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetFeedbackOutput, aws_smithy_http::result::SdkError<crate::error::GetFeedbackError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::GetFeedbackPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::GetFeedbackPaginator {
-                                        crate::paginator::GetFeedbackPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>The anomalous metric and group ID.</p>
-        pub fn anomaly_group_time_series_feedback(mut self, input: crate::model::AnomalyGroupTimeSeries) -> Self {
-            self.inner = self.inner.anomaly_group_time_series_feedback(input);
-            self
-        }
-        /// <p>The anomalous metric and group ID.</p>
-        pub fn set_anomaly_group_time_series_feedback(mut self, input: std::option::Option<crate::model::AnomalyGroupTimeSeries>) -> Self {
-            self.inner = self.inner.set_anomaly_group_time_series_feedback(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetSampleData`.
-                        ///
-    /// <p>Returns a selection of sample records from an Amazon S3 datasource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetSampleData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_sample_data_input::Builder
-                        }
-    impl GetSampleData  {
-        /// Creates a new `GetSampleData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetSampleData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetSampleDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetSampleDataOutput, aws_smithy_http::result::SdkError<crate::error::GetSampleDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A datasource bucket in Amazon S3.</p>
-        pub fn s3_source_config(mut self, input: crate::model::SampleDataS3SourceConfig) -> Self {
-            self.inner = self.inner.s3_source_config(input);
-            self
-        }
-        /// <p>A datasource bucket in Amazon S3.</p>
-        pub fn set_s3_source_config(mut self, input: std::option::Option<crate::model::SampleDataS3SourceConfig>) -> Self {
-            self.inner = self.inner.set_s3_source_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAlerts`.
-                        ///
-    /// <p>Lists the alerts attached to a detector.</p> 
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAlerts {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_alerts_input::Builder
-                        }
-    impl ListAlerts  {
-        /// Creates a new `ListAlerts`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListAlerts, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListAlertsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListAlertsOutput, aws_smithy_http::result::SdkError<crate::error::ListAlertsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAlertsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListAlertsPaginator {
-                                        crate::paginator::ListAlertsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The ARN of the alert's detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the alert's detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results that will be displayed by the request.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results that will be displayed by the request.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAnomalyDetectors`.
-                        ///
-    /// <p>Lists the detectors in the current AWS Region.</p> 
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAnomalyDetectors {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_anomaly_detectors_input::Builder
-                        }
-    impl ListAnomalyDetectors  {
-        /// Creates a new `ListAnomalyDetectors`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListAnomalyDetectors, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListAnomalyDetectorsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListAnomalyDetectorsOutput, aws_smithy_http::result::SdkError<crate::error::ListAnomalyDetectorsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAnomalyDetectorsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListAnomalyDetectorsPaginator {
-                                        crate::paginator::ListAnomalyDetectorsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAnomalyGroupRelatedMetrics`.
-                        ///
-    /// <p>Returns a list of measures that are potential causes or effects of an anomaly group.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAnomalyGroupRelatedMetrics {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_anomaly_group_related_metrics_input::Builder
-                        }
-    impl ListAnomalyGroupRelatedMetrics  {
-        /// Creates a new `ListAnomalyGroupRelatedMetrics`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListAnomalyGroupRelatedMetrics, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListAnomalyGroupRelatedMetricsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListAnomalyGroupRelatedMetricsOutput, aws_smithy_http::result::SdkError<crate::error::ListAnomalyGroupRelatedMetricsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAnomalyGroupRelatedMetricsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListAnomalyGroupRelatedMetricsPaginator {
-                                        crate::paginator::ListAnomalyGroupRelatedMetricsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>The ID of the anomaly group.</p>
-        pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_group_id(input.into());
-            self
-        }
-        /// <p>The ID of the anomaly group.</p>
-        pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_group_id(input);
-            self
-        }
-        /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
-        pub fn relationship_type_filter(mut self, input: crate::model::RelationshipType) -> Self {
-            self.inner = self.inner.relationship_type_filter(input);
-            self
-        }
-        /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
-        pub fn set_relationship_type_filter(mut self, input: std::option::Option<crate::model::RelationshipType>) -> Self {
-            self.inner = self.inner.set_relationship_type_filter(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAnomalyGroupSummaries`.
-                        ///
-    /// <p>Returns a list of anomaly groups.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAnomalyGroupSummaries {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_anomaly_group_summaries_input::Builder
-                        }
-    impl ListAnomalyGroupSummaries  {
-        /// Creates a new `ListAnomalyGroupSummaries`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListAnomalyGroupSummaries, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListAnomalyGroupSummariesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListAnomalyGroupSummariesOutput, aws_smithy_http::result::SdkError<crate::error::ListAnomalyGroupSummariesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAnomalyGroupSummariesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListAnomalyGroupSummariesPaginator {
-                                        crate::paginator::ListAnomalyGroupSummariesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>The minimum severity score for inclusion in the output.</p>
-        pub fn sensitivity_threshold(mut self, input: i32) -> Self {
-            self.inner = self.inner.sensitivity_threshold(input);
-            self
-        }
-        /// <p>The minimum severity score for inclusion in the output.</p>
-        pub fn set_sensitivity_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_sensitivity_threshold(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAnomalyGroupTimeSeries`.
-                        ///
-    /// <p>Gets a list of anomalous metrics for a measure in an anomaly group.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAnomalyGroupTimeSeries {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_anomaly_group_time_series_input::Builder
-                        }
-    impl ListAnomalyGroupTimeSeries  {
-        /// Creates a new `ListAnomalyGroupTimeSeries`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListAnomalyGroupTimeSeries, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListAnomalyGroupTimeSeriesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListAnomalyGroupTimeSeriesOutput, aws_smithy_http::result::SdkError<crate::error::ListAnomalyGroupTimeSeriesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAnomalyGroupTimeSeriesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListAnomalyGroupTimeSeriesPaginator {
-                                        crate::paginator::ListAnomalyGroupTimeSeriesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>The ID of the anomaly group.</p>
-        pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_group_id(input.into());
-            self
-        }
-        /// <p>The ID of the anomaly group.</p>
-        pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_group_id(input);
-            self
-        }
-        /// <p>The name of the measure field.</p>
-        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(input.into());
-            self
-        }
-        /// <p>The name of the measure field.</p>
-        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_metric_name(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListMetricSets`.
-                        ///
-    /// <p>Lists the datasets in the current AWS Region.</p> 
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListMetricSets {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_metric_sets_input::Builder
-                        }
-    impl ListMetricSets  {
-        /// Creates a new `ListMetricSets`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListMetricSets, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListMetricSetsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListMetricSetsOutput, aws_smithy_http::result::SdkError<crate::error::ListMetricSetsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListMetricSetsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListMetricSetsPaginator {
-                                        crate::paginator::ListMetricSetsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// <p>Gets a list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> for a detector, dataset, or alert.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutFeedback`.
-                        ///
-    /// <p>Add feedback for an anomalous metric.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutFeedback {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::put_feedback_input::Builder
-                        }
-    impl PutFeedback  {
-        /// Creates a new `PutFeedback`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::PutFeedback, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::PutFeedbackError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::PutFeedbackOutput, aws_smithy_http::result::SdkError<crate::error::PutFeedbackError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>Feedback for an anomalous metric.</p>
-        pub fn anomaly_group_time_series_feedback(mut self, input: crate::model::AnomalyGroupTimeSeriesFeedback) -> Self {
-            self.inner = self.inner.anomaly_group_time_series_feedback(input);
-            self
-        }
-        /// <p>Feedback for an anomalous metric.</p>
-        pub fn set_anomaly_group_time_series_feedback(mut self, input: std::option::Option<crate::model::AnomalyGroupTimeSeriesFeedback>) -> Self {
-            self.inner = self.inner.set_anomaly_group_time_series_feedback(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>Adds <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to a detector, dataset, or alert.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>Removes <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> from a detector, dataset, or alert.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>Keys to remove from the resource's tags.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>Keys to remove from the resource's tags.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateAlert`.
-                        ///
-    /// <p>Make changes to an existing alert.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateAlert {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_alert_input::Builder
-                        }
-    impl UpdateAlert  {
-        /// Creates a new `UpdateAlert`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateAlert, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateAlertError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateAlertOutput, aws_smithy_http::result::SdkError<crate::error::UpdateAlertError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the alert to update.</p>
-        pub fn alert_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the alert to update.</p>
-        pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alert_arn(input);
-            self
-        }
-        /// <p>A description of the alert.</p>
-        pub fn alert_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_description(input.into());
-            self
-        }
-        /// <p>A description of the alert.</p>
-        pub fn set_alert_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alert_description(input);
-            self
-        }
-        /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-        pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
-            self.inner = self.inner.alert_sensitivity_threshold(input);
-            self
-        }
-        /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-        pub fn set_alert_sensitivity_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_alert_sensitivity_threshold(input);
-            self
-        }
-        /// <p>Action that will be triggered when there is an alert.</p>
-        pub fn action(mut self, input: crate::model::Action) -> Self {
-            self.inner = self.inner.action(input);
-            self
-        }
-        /// <p>Action that will be triggered when there is an alert.</p>
-        pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.inner = self.inner.set_action(input);
-            self
-        }
-        /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
-        pub fn alert_filters(mut self, input: crate::model::AlertFilters) -> Self {
-            self.inner = self.inner.alert_filters(input);
-            self
-        }
-        /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
-        pub fn set_alert_filters(mut self, input: std::option::Option<crate::model::AlertFilters>) -> Self {
-            self.inner = self.inner.set_alert_filters(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateAnomalyDetector`.
-                        ///
-    /// <p>Updates a detector. After activation, you can only change a detector's ingestion delay and description.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateAnomalyDetector {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_anomaly_detector_input::Builder
-                        }
-    impl UpdateAnomalyDetector  {
-        /// Creates a new `UpdateAnomalyDetector`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateAnomalyDetectorError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateAnomalyDetectorOutput, aws_smithy_http::result::SdkError<crate::error::UpdateAnomalyDetectorError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the detector to update.</p>
-        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the detector to update.</p>
-        pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_arn(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
-        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
-        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_kms_key_arn(input);
-            self
-        }
-        /// <p>The updated detector description.</p>
-        pub fn anomaly_detector_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_description(input.into());
-            self
-        }
-        /// <p>The updated detector description.</p>
-        pub fn set_anomaly_detector_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_description(input);
-            self
-        }
-        /// <p>Contains information about the configuration to which the detector will be updated.</p>
-        pub fn anomaly_detector_config(mut self, input: crate::model::AnomalyDetectorConfig) -> Self {
-            self.inner = self.inner.anomaly_detector_config(input);
-            self
-        }
-        /// <p>Contains information about the configuration to which the detector will be updated.</p>
-        pub fn set_anomaly_detector_config(mut self, input: std::option::Option<crate::model::AnomalyDetectorConfig>) -> Self {
-            self.inner = self.inner.set_anomaly_detector_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateMetricSet`.
-                        ///
-    /// <p>Updates a dataset.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateMetricSet {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_metric_set_input::Builder
-                        }
-    impl UpdateMetricSet  {
-        /// Creates a new `UpdateMetricSet`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateMetricSet, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateMetricSetError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateMetricSetOutput, aws_smithy_http::result::SdkError<crate::error::UpdateMetricSetError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the dataset to update.</p>
-        pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the dataset to update.</p>
-        pub fn set_metric_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_metric_set_arn(input);
-            self
-        }
-        /// <p>The dataset's description.</p>
-        pub fn metric_set_description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_description(input.into());
-            self
-        }
-        /// <p>The dataset's description.</p>
-        pub fn set_metric_set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_metric_set_description(input);
-            self
-        }
-        /// Appends an item to `MetricList`.
-        ///
-        /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
-        ///
-        /// <p>The metric list.</p>
-        pub fn metric_list(mut self, input: crate::model::Metric) -> Self {
-            self.inner = self.inner.metric_list(input);
-            self
-        }
-        /// <p>The metric list.</p>
-        pub fn set_metric_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metric>>) -> Self {
-            self.inner = self.inner.set_metric_list(input);
-            self
-        }
-        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
-        pub fn offset(mut self, input: i32) -> Self {
-            self.inner = self.inner.offset(input);
-            self
-        }
-        /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
-        pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_offset(input);
-            self
-        }
-        /// <p>The timestamp column.</p>
-        pub fn timestamp_column(mut self, input: crate::model::TimestampColumn) -> Self {
-            self.inner = self.inner.timestamp_column(input);
-            self
-        }
-        /// <p>The timestamp column.</p>
-        pub fn set_timestamp_column(mut self, input: std::option::Option<crate::model::TimestampColumn>) -> Self {
-            self.inner = self.inner.set_timestamp_column(input);
-            self
-        }
-        /// Appends an item to `DimensionList`.
-        ///
-        /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
-        ///
-        /// <p>The dimension list.</p>
-        pub fn dimension_list(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dimension_list(input.into());
-            self
-        }
-        /// <p>The dimension list.</p>
-        pub fn set_dimension_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_dimension_list(input);
-            self
-        }
-        /// <p>The dataset's interval.</p>
-        pub fn metric_set_frequency(mut self, input: crate::model::Frequency) -> Self {
-            self.inner = self.inner.metric_set_frequency(input);
-            self
-        }
-        /// <p>The dataset's interval.</p>
-        pub fn set_metric_set_frequency(mut self, input: std::option::Option<crate::model::Frequency>) -> Self {
-            self.inner = self.inner.set_metric_set_frequency(input);
-            self
-        }
-        /// <p>Contains information about source data used to generate metrics.</p>
-        pub fn metric_source(mut self, input: crate::model::MetricSource) -> Self {
-            self.inner = self.inner.metric_source(input);
-            self
-        }
-        /// <p>Contains information about source data used to generate metrics.</p>
-        pub fn set_metric_source(mut self, input: std::option::Option<crate::model::MetricSource>) -> Self {
-            self.inner = self.inner.set_metric_source(input);
-            self
-        }
-        /// Appends an item to `DimensionFilterList`.
-        ///
-        /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
-        ///
-        /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-        pub fn dimension_filter_list(mut self, input: crate::model::MetricSetDimensionFilter) -> Self {
-            self.inner = self.inner.dimension_filter_list(input);
-            self
-        }
-        /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-        pub fn set_dimension_filter_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>) -> Self {
-            self.inner = self.inner.set_dimension_filter_list(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -2945,4 +547,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

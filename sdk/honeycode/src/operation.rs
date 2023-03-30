@@ -2,7 +2,7 @@
 /// Operation shape for `BatchCreateTableRows`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_create_table_rows`](crate::client::Client::batch_create_table_rows).
+            /// [`batch_create_table_rows`](crate::client::fluent_builders::BatchCreateTableRows).
             ///
             /// `ParseStrictResponse` impl for `BatchCreateTableRows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateTableRows {
 /// Operation shape for `BatchDeleteTableRows`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_delete_table_rows`](crate::client::Client::batch_delete_table_rows).
+            /// [`batch_delete_table_rows`](crate::client::fluent_builders::BatchDeleteTableRows).
             ///
             /// `ParseStrictResponse` impl for `BatchDeleteTableRows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteTableRows {
 /// Operation shape for `BatchUpdateTableRows`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_update_table_rows`](crate::client::Client::batch_update_table_rows).
+            /// [`batch_update_table_rows`](crate::client::fluent_builders::BatchUpdateTableRows).
             ///
             /// `ParseStrictResponse` impl for `BatchUpdateTableRows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateTableRows {
 /// Operation shape for `BatchUpsertTableRows`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_upsert_table_rows`](crate::client::Client::batch_upsert_table_rows).
+            /// [`batch_upsert_table_rows`](crate::client::fluent_builders::BatchUpsertTableRows).
             ///
             /// `ParseStrictResponse` impl for `BatchUpsertTableRows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpsertTableRows {
 /// Operation shape for `DescribeTableDataImportJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_table_data_import_job`](crate::client::Client::describe_table_data_import_job).
+            /// [`describe_table_data_import_job`](crate::client::fluent_builders::DescribeTableDataImportJob).
             ///
             /// `ParseStrictResponse` impl for `DescribeTableDataImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTableDataImportJ
 /// Operation shape for `GetScreenData`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_screen_data`](crate::client::Client::get_screen_data).
+            /// [`get_screen_data`](crate::client::fluent_builders::GetScreenData).
             ///
             /// `ParseStrictResponse` impl for `GetScreenData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScreenData {
 /// Operation shape for `InvokeScreenAutomation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`invoke_screen_automation`](crate::client::Client::invoke_screen_automation).
+            /// [`invoke_screen_automation`](crate::client::fluent_builders::InvokeScreenAutomation).
             ///
             /// `ParseStrictResponse` impl for `InvokeScreenAutomation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeScreenAutomation {
 /// Operation shape for `ListTableColumns`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_table_columns`](crate::client::Client::list_table_columns).
+            /// [`list_table_columns`](crate::client::fluent_builders::ListTableColumns).
             ///
             /// `ParseStrictResponse` impl for `ListTableColumns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTableColumns {
 /// Operation shape for `ListTableRows`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_table_rows`](crate::client::Client::list_table_rows).
+            /// [`list_table_rows`](crate::client::fluent_builders::ListTableRows).
             ///
             /// `ParseStrictResponse` impl for `ListTableRows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTableRows {
 /// Operation shape for `ListTables`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tables`](crate::client::Client::list_tables).
+            /// [`list_tables`](crate::client::fluent_builders::ListTables).
             ///
             /// `ParseStrictResponse` impl for `ListTables`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTables {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `QueryTableRows`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`query_table_rows`](crate::client::Client::query_table_rows).
+            /// [`query_table_rows`](crate::client::fluent_builders::QueryTableRows).
             ///
             /// `ParseStrictResponse` impl for `QueryTableRows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryTableRows {
 /// Operation shape for `StartTableDataImportJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_table_data_import_job`](crate::client::Client::start_table_data_import_job).
+            /// [`start_table_data_import_job`](crate::client::fluent_builders::StartTableDataImportJob).
             ///
             /// `ParseStrictResponse` impl for `StartTableDataImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTableDataImportJob 
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

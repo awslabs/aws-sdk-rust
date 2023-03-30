@@ -80,8 +80,8 @@ impl Client  {
                         ///   - [`request_id(Option<String>)`](crate::output::SendSerialConsoleSshPublicKeyOutput::request_id): <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
     ///   - [`success(bool)`](crate::output::SendSerialConsoleSshPublicKeyOutput::success): <p>Is true if the request succeeds and an error otherwise.</p>
                         /// - On failure, responds with [`SdkError<SendSerialConsoleSSHPublicKeyError>`](crate::error::SendSerialConsoleSSHPublicKeyError)
-    pub fn send_serial_console_ssh_public_key(&self) -> fluent_builders::SendSerialConsoleSSHPublicKey {
-                            fluent_builders::SendSerialConsoleSSHPublicKey::new(self.handle.clone())
+    pub fn send_serial_console_ssh_public_key(&self) -> crate::client::fluent_builders::SendSerialConsoleSSHPublicKey {
+                            crate::client::fluent_builders::SendSerialConsoleSSHPublicKey::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SendSSHPublicKey`](crate::client::fluent_builders::SendSSHPublicKey) operation.
                         ///
@@ -94,181 +94,9 @@ impl Client  {
                         ///   - [`request_id(Option<String>)`](crate::output::SendSshPublicKeyOutput::request_id): <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
     ///   - [`success(bool)`](crate::output::SendSshPublicKeyOutput::success): <p>Is true if the request succeeds and an error otherwise.</p>
                         /// - On failure, responds with [`SdkError<SendSSHPublicKeyError>`](crate::error::SendSSHPublicKeyError)
-    pub fn send_ssh_public_key(&self) -> fluent_builders::SendSSHPublicKey {
-                            fluent_builders::SendSSHPublicKey::new(self.handle.clone())
+    pub fn send_ssh_public_key(&self) -> crate::client::fluent_builders::SendSSHPublicKey {
+                            crate::client::fluent_builders::SendSSHPublicKey::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `SendSerialConsoleSSHPublicKey`.
-                        ///
-    /// <p>Pushes an SSH public key to the specified EC2 instance. The key remains for 60 seconds, which gives you 60 seconds to establish a serial console connection to the instance using SSH. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2 Serial Console</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SendSerialConsoleSSHPublicKey {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::send_serial_console_ssh_public_key_input::Builder
-                        }
-    impl SendSerialConsoleSSHPublicKey  {
-        /// Creates a new `SendSerialConsoleSSHPublicKey`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SendSerialConsoleSSHPublicKey, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SendSerialConsoleSSHPublicKeyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SendSerialConsoleSshPublicKeyOutput, aws_smithy_http::result::SdkError<crate::error::SendSerialConsoleSSHPublicKeyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the EC2 instance.</p>
-        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(input.into());
-            self
-        }
-        /// <p>The ID of the EC2 instance.</p>
-        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_instance_id(input);
-            self
-        }
-        /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p> 
-        /// <p>Default: 0</p>
-        pub fn serial_port(mut self, input: i32) -> Self {
-            self.inner = self.inner.serial_port(input);
-            self
-        }
-        /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p> 
-        /// <p>Default: 0</p>
-        pub fn set_serial_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_serial_port(input);
-            self
-        }
-        /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
-        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(input.into());
-            self
-        }
-        /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
-        pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_ssh_public_key(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SendSSHPublicKey`.
-                        ///
-    /// <p>Pushes an SSH public key to the specified EC2 instance for use by the specified user. The key remains for 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect to your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SendSSHPublicKey {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::send_ssh_public_key_input::Builder
-                        }
-    impl SendSSHPublicKey  {
-        /// Creates a new `SendSSHPublicKey`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SendSSHPublicKey, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SendSSHPublicKeyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SendSshPublicKeyOutput, aws_smithy_http::result::SdkError<crate::error::SendSSHPublicKeyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the EC2 instance.</p>
-        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(input.into());
-            self
-        }
-        /// <p>The ID of the EC2 instance.</p>
-        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_instance_id(input);
-            self
-        }
-        /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
-        pub fn instance_os_user(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_os_user(input.into());
-            self
-        }
-        /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
-        pub fn set_instance_os_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_instance_os_user(input);
-            self
-        }
-        /// <p>The public key material. To use the public key, you must have the matching private key.</p>
-        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(input.into());
-            self
-        }
-        /// <p>The public key material. To use the public key, you must have the matching private key.</p>
-        pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_ssh_public_key(input);
-            self
-        }
-        /// <p>The Availability Zone in which the EC2 instance was launched.</p>
-        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(input.into());
-            self
-        }
-        /// <p>The Availability Zone in which the EC2 instance was launched.</p>
-        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_availability_zone(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -339,4 +167,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

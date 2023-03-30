@@ -78,8 +78,8 @@ impl Client  {
                         /// - On success, responds with [`AssociateAliasOutput`](crate::output::AssociateAliasOutput)
                         
                         /// - On failure, responds with [`SdkError<AssociateAliasError>`](crate::error::AssociateAliasError)
-    pub fn associate_alias(&self) -> fluent_builders::AssociateAlias {
-                            fluent_builders::AssociateAlias::new(self.handle.clone())
+    pub fn associate_alias(&self) -> crate::client::fluent_builders::AssociateAlias {
+                            crate::client::fluent_builders::AssociateAlias::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CopyDistribution`](crate::client::fluent_builders::CopyDistribution) operation.
                         ///
@@ -93,8 +93,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CopyDistributionOutput::location): <p>The URL of the staging distribution.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CopyDistributionOutput::e_tag): <p>The version identifier for the current version of the staging distribution.</p>
                         /// - On failure, responds with [`SdkError<CopyDistributionError>`](crate::error::CopyDistributionError)
-    pub fn copy_distribution(&self) -> fluent_builders::CopyDistribution {
-                            fluent_builders::CopyDistribution::new(self.handle.clone())
+    pub fn copy_distribution(&self) -> crate::client::fluent_builders::CopyDistribution {
+                            crate::client::fluent_builders::CopyDistribution::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateCachePolicy`](crate::client::fluent_builders::CreateCachePolicy) operation.
                         ///
@@ -105,8 +105,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateCachePolicyOutput::location): <p>The fully qualified URI of the cache policy just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
                         /// - On failure, responds with [`SdkError<CreateCachePolicyError>`](crate::error::CreateCachePolicyError)
-    pub fn create_cache_policy(&self) -> fluent_builders::CreateCachePolicy {
-                            fluent_builders::CreateCachePolicy::new(self.handle.clone())
+    pub fn create_cache_policy(&self) -> crate::client::fluent_builders::CreateCachePolicy {
+                            crate::client::fluent_builders::CreateCachePolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateCloudFrontOriginAccessIdentity`](crate::client::fluent_builders::CreateCloudFrontOriginAccessIdentity) operation.
                         ///
@@ -117,8 +117,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateCloudFrontOriginAccessIdentityOutput::location): <p>The fully qualified URI of the new origin access identity just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateCloudFrontOriginAccessIdentityOutput::e_tag): <p>The current version of the origin access identity created.</p>
                         /// - On failure, responds with [`SdkError<CreateCloudFrontOriginAccessIdentityError>`](crate::error::CreateCloudFrontOriginAccessIdentityError)
-    pub fn create_cloud_front_origin_access_identity(&self) -> fluent_builders::CreateCloudFrontOriginAccessIdentity {
-                            fluent_builders::CreateCloudFrontOriginAccessIdentity::new(self.handle.clone())
+    pub fn create_cloud_front_origin_access_identity(&self) -> crate::client::fluent_builders::CreateCloudFrontOriginAccessIdentity {
+                            crate::client::fluent_builders::CreateCloudFrontOriginAccessIdentity::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateContinuousDeploymentPolicy`](crate::client::fluent_builders::CreateContinuousDeploymentPolicy) operation.
                         ///
@@ -129,8 +129,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateContinuousDeploymentPolicyOutput::location): <p>The location of the continuous deployment policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateContinuousDeploymentPolicyOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
                         /// - On failure, responds with [`SdkError<CreateContinuousDeploymentPolicyError>`](crate::error::CreateContinuousDeploymentPolicyError)
-    pub fn create_continuous_deployment_policy(&self) -> fluent_builders::CreateContinuousDeploymentPolicy {
-                            fluent_builders::CreateContinuousDeploymentPolicy::new(self.handle.clone())
+    pub fn create_continuous_deployment_policy(&self) -> crate::client::fluent_builders::CreateContinuousDeploymentPolicy {
+                            crate::client::fluent_builders::CreateContinuousDeploymentPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateDistribution`](crate::client::fluent_builders::CreateDistribution) operation.
                         ///
@@ -141,8 +141,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateDistributionOutput::location): <p>The fully qualified URI of the new distribution resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateDistributionOutput::e_tag): <p>The current version of the distribution created.</p>
                         /// - On failure, responds with [`SdkError<CreateDistributionError>`](crate::error::CreateDistributionError)
-    pub fn create_distribution(&self) -> fluent_builders::CreateDistribution {
-                            fluent_builders::CreateDistribution::new(self.handle.clone())
+    pub fn create_distribution(&self) -> crate::client::fluent_builders::CreateDistribution {
+                            crate::client::fluent_builders::CreateDistribution::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateDistributionWithTags`](crate::client::fluent_builders::CreateDistributionWithTags) operation.
                         ///
@@ -153,8 +153,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateDistributionWithTagsOutput::location): <p>The fully qualified URI of the new distribution resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateDistributionWithTagsOutput::e_tag): <p>The current version of the distribution created.</p>
                         /// - On failure, responds with [`SdkError<CreateDistributionWithTagsError>`](crate::error::CreateDistributionWithTagsError)
-    pub fn create_distribution_with_tags(&self) -> fluent_builders::CreateDistributionWithTags {
-                            fluent_builders::CreateDistributionWithTags::new(self.handle.clone())
+    pub fn create_distribution_with_tags(&self) -> crate::client::fluent_builders::CreateDistributionWithTags {
+                            crate::client::fluent_builders::CreateDistributionWithTags::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateFieldLevelEncryptionConfig`](crate::client::fluent_builders::CreateFieldLevelEncryptionConfig) operation.
                         ///
@@ -165,8 +165,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateFieldLevelEncryptionConfigOutput::location): <p>The fully qualified URI of the new configuration resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateFieldLevelEncryptionConfigOutput::e_tag): <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<CreateFieldLevelEncryptionConfigError>`](crate::error::CreateFieldLevelEncryptionConfigError)
-    pub fn create_field_level_encryption_config(&self) -> fluent_builders::CreateFieldLevelEncryptionConfig {
-                            fluent_builders::CreateFieldLevelEncryptionConfig::new(self.handle.clone())
+    pub fn create_field_level_encryption_config(&self) -> crate::client::fluent_builders::CreateFieldLevelEncryptionConfig {
+                            crate::client::fluent_builders::CreateFieldLevelEncryptionConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateFieldLevelEncryptionProfile`](crate::client::fluent_builders::CreateFieldLevelEncryptionProfile) operation.
                         ///
@@ -177,8 +177,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateFieldLevelEncryptionProfileOutput::location): <p>The fully qualified URI of the new profile resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateFieldLevelEncryptionProfileOutput::e_tag): <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<CreateFieldLevelEncryptionProfileError>`](crate::error::CreateFieldLevelEncryptionProfileError)
-    pub fn create_field_level_encryption_profile(&self) -> fluent_builders::CreateFieldLevelEncryptionProfile {
-                            fluent_builders::CreateFieldLevelEncryptionProfile::new(self.handle.clone())
+    pub fn create_field_level_encryption_profile(&self) -> crate::client::fluent_builders::CreateFieldLevelEncryptionProfile {
+                            crate::client::fluent_builders::CreateFieldLevelEncryptionProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateFunction`](crate::client::fluent_builders::CreateFunction) operation.
                         ///
@@ -191,8 +191,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateFunctionOutput::location): <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront API.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
                         /// - On failure, responds with [`SdkError<CreateFunctionError>`](crate::error::CreateFunctionError)
-    pub fn create_function(&self) -> fluent_builders::CreateFunction {
-                            fluent_builders::CreateFunction::new(self.handle.clone())
+    pub fn create_function(&self) -> crate::client::fluent_builders::CreateFunction {
+                            crate::client::fluent_builders::CreateFunction::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateInvalidation`](crate::client::fluent_builders::CreateInvalidation) operation.
                         ///
@@ -203,8 +203,8 @@ impl Client  {
                         ///   - [`location(Option<String>)`](crate::output::CreateInvalidationOutput::location): <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
     ///   - [`invalidation(Option<Invalidation>)`](crate::output::CreateInvalidationOutput::invalidation): <p>The invalidation's information.</p>
                         /// - On failure, responds with [`SdkError<CreateInvalidationError>`](crate::error::CreateInvalidationError)
-    pub fn create_invalidation(&self) -> fluent_builders::CreateInvalidation {
-                            fluent_builders::CreateInvalidation::new(self.handle.clone())
+    pub fn create_invalidation(&self) -> crate::client::fluent_builders::CreateInvalidation {
+                            crate::client::fluent_builders::CreateInvalidation::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateKeyGroup`](crate::client::fluent_builders::CreateKeyGroup) operation.
                         ///
@@ -215,8 +215,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateKeyGroupOutput::location): <p>The URL of the key group.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>
                         /// - On failure, responds with [`SdkError<CreateKeyGroupError>`](crate::error::CreateKeyGroupError)
-    pub fn create_key_group(&self) -> fluent_builders::CreateKeyGroup {
-                            fluent_builders::CreateKeyGroup::new(self.handle.clone())
+    pub fn create_key_group(&self) -> crate::client::fluent_builders::CreateKeyGroup {
+                            crate::client::fluent_builders::CreateKeyGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateMonitoringSubscription`](crate::client::fluent_builders::CreateMonitoringSubscription) operation.
                         ///
@@ -226,8 +226,8 @@ impl Client  {
                         /// - On success, responds with [`CreateMonitoringSubscriptionOutput`](crate::output::CreateMonitoringSubscriptionOutput) with field(s):
                         ///   - [`monitoring_subscription(Option<MonitoringSubscription>)`](crate::output::CreateMonitoringSubscriptionOutput::monitoring_subscription): <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
                         /// - On failure, responds with [`SdkError<CreateMonitoringSubscriptionError>`](crate::error::CreateMonitoringSubscriptionError)
-    pub fn create_monitoring_subscription(&self) -> fluent_builders::CreateMonitoringSubscription {
-                            fluent_builders::CreateMonitoringSubscription::new(self.handle.clone())
+    pub fn create_monitoring_subscription(&self) -> crate::client::fluent_builders::CreateMonitoringSubscription {
+                            crate::client::fluent_builders::CreateMonitoringSubscription::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateOriginAccessControl`](crate::client::fluent_builders::CreateOriginAccessControl) operation.
                         ///
@@ -238,8 +238,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateOriginAccessControlOutput::location): <p>The URL of the origin access control.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateOriginAccessControlOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
                         /// - On failure, responds with [`SdkError<CreateOriginAccessControlError>`](crate::error::CreateOriginAccessControlError)
-    pub fn create_origin_access_control(&self) -> fluent_builders::CreateOriginAccessControl {
-                            fluent_builders::CreateOriginAccessControl::new(self.handle.clone())
+    pub fn create_origin_access_control(&self) -> crate::client::fluent_builders::CreateOriginAccessControl {
+                            crate::client::fluent_builders::CreateOriginAccessControl::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateOriginRequestPolicy`](crate::client::fluent_builders::CreateOriginRequestPolicy) operation.
                         ///
@@ -250,8 +250,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateOriginRequestPolicyOutput::location): <p>The fully qualified URI of the origin request policy just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateOriginRequestPolicyOutput::e_tag): <p>The current version of the origin request policy.</p>
                         /// - On failure, responds with [`SdkError<CreateOriginRequestPolicyError>`](crate::error::CreateOriginRequestPolicyError)
-    pub fn create_origin_request_policy(&self) -> fluent_builders::CreateOriginRequestPolicy {
-                            fluent_builders::CreateOriginRequestPolicy::new(self.handle.clone())
+    pub fn create_origin_request_policy(&self) -> crate::client::fluent_builders::CreateOriginRequestPolicy {
+                            crate::client::fluent_builders::CreateOriginRequestPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreatePublicKey`](crate::client::fluent_builders::CreatePublicKey) operation.
                         ///
@@ -262,8 +262,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreatePublicKeyOutput::location): <p>The URL of the public key.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreatePublicKeyOutput::e_tag): <p>The identifier for this version of the public key.</p>
                         /// - On failure, responds with [`SdkError<CreatePublicKeyError>`](crate::error::CreatePublicKeyError)
-    pub fn create_public_key(&self) -> fluent_builders::CreatePublicKey {
-                            fluent_builders::CreatePublicKey::new(self.handle.clone())
+    pub fn create_public_key(&self) -> crate::client::fluent_builders::CreatePublicKey {
+                            crate::client::fluent_builders::CreatePublicKey::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateRealtimeLogConfig`](crate::client::fluent_builders::CreateRealtimeLogConfig) operation.
                         ///
@@ -275,8 +275,8 @@ impl Client  {
                         /// - On success, responds with [`CreateRealtimeLogConfigOutput`](crate::output::CreateRealtimeLogConfigOutput) with field(s):
                         ///   - [`realtime_log_config(Option<RealtimeLogConfig>)`](crate::output::CreateRealtimeLogConfigOutput::realtime_log_config): <p>A real-time log configuration.</p>
                         /// - On failure, responds with [`SdkError<CreateRealtimeLogConfigError>`](crate::error::CreateRealtimeLogConfigError)
-    pub fn create_realtime_log_config(&self) -> fluent_builders::CreateRealtimeLogConfig {
-                            fluent_builders::CreateRealtimeLogConfig::new(self.handle.clone())
+    pub fn create_realtime_log_config(&self) -> crate::client::fluent_builders::CreateRealtimeLogConfig {
+                            crate::client::fluent_builders::CreateRealtimeLogConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateResponseHeadersPolicy`](crate::client::fluent_builders::CreateResponseHeadersPolicy) operation.
                         ///
@@ -287,8 +287,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateResponseHeadersPolicyOutput::location): <p>The URL of the response headers policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateResponseHeadersPolicyOutput::e_tag): <p>The version identifier for the current version of the response headers policy.</p>
                         /// - On failure, responds with [`SdkError<CreateResponseHeadersPolicyError>`](crate::error::CreateResponseHeadersPolicyError)
-    pub fn create_response_headers_policy(&self) -> fluent_builders::CreateResponseHeadersPolicy {
-                            fluent_builders::CreateResponseHeadersPolicy::new(self.handle.clone())
+    pub fn create_response_headers_policy(&self) -> crate::client::fluent_builders::CreateResponseHeadersPolicy {
+                            crate::client::fluent_builders::CreateResponseHeadersPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateStreamingDistribution`](crate::client::fluent_builders::CreateStreamingDistribution) operation.
                         ///
@@ -299,8 +299,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateStreamingDistributionOutput::location): <p>The fully qualified URI of the new streaming distribution resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateStreamingDistributionOutput::e_tag): <p>The current version of the streaming distribution created.</p>
                         /// - On failure, responds with [`SdkError<CreateStreamingDistributionError>`](crate::error::CreateStreamingDistributionError)
-    pub fn create_streaming_distribution(&self) -> fluent_builders::CreateStreamingDistribution {
-                            fluent_builders::CreateStreamingDistribution::new(self.handle.clone())
+    pub fn create_streaming_distribution(&self) -> crate::client::fluent_builders::CreateStreamingDistribution {
+                            crate::client::fluent_builders::CreateStreamingDistribution::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateStreamingDistributionWithTags`](crate::client::fluent_builders::CreateStreamingDistributionWithTags) operation.
                         ///
@@ -311,8 +311,8 @@ impl Client  {
     ///   - [`location(Option<String>)`](crate::output::CreateStreamingDistributionWithTagsOutput::location): <p>The fully qualified URI of the new streaming distribution resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::CreateStreamingDistributionWithTagsOutput::e_tag): <p>The current version of the distribution created.</p>
                         /// - On failure, responds with [`SdkError<CreateStreamingDistributionWithTagsError>`](crate::error::CreateStreamingDistributionWithTagsError)
-    pub fn create_streaming_distribution_with_tags(&self) -> fluent_builders::CreateStreamingDistributionWithTags {
-                            fluent_builders::CreateStreamingDistributionWithTags::new(self.handle.clone())
+    pub fn create_streaming_distribution_with_tags(&self) -> crate::client::fluent_builders::CreateStreamingDistributionWithTags {
+                            crate::client::fluent_builders::CreateStreamingDistributionWithTags::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteCachePolicy`](crate::client::fluent_builders::DeleteCachePolicy) operation.
                         ///
@@ -322,8 +322,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteCachePolicyOutput`](crate::output::DeleteCachePolicyOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteCachePolicyError>`](crate::error::DeleteCachePolicyError)
-    pub fn delete_cache_policy(&self) -> fluent_builders::DeleteCachePolicy {
-                            fluent_builders::DeleteCachePolicy::new(self.handle.clone())
+    pub fn delete_cache_policy(&self) -> crate::client::fluent_builders::DeleteCachePolicy {
+                            crate::client::fluent_builders::DeleteCachePolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteCloudFrontOriginAccessIdentity`](crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity) operation.
                         ///
@@ -333,8 +333,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteCloudFrontOriginAccessIdentityOutput`](crate::output::DeleteCloudFrontOriginAccessIdentityOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteCloudFrontOriginAccessIdentityError>`](crate::error::DeleteCloudFrontOriginAccessIdentityError)
-    pub fn delete_cloud_front_origin_access_identity(&self) -> fluent_builders::DeleteCloudFrontOriginAccessIdentity {
-                            fluent_builders::DeleteCloudFrontOriginAccessIdentity::new(self.handle.clone())
+    pub fn delete_cloud_front_origin_access_identity(&self) -> crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity {
+                            crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteContinuousDeploymentPolicy`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy) operation.
                         ///
@@ -344,8 +344,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteContinuousDeploymentPolicyOutput`](crate::output::DeleteContinuousDeploymentPolicyOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteContinuousDeploymentPolicyError>`](crate::error::DeleteContinuousDeploymentPolicyError)
-    pub fn delete_continuous_deployment_policy(&self) -> fluent_builders::DeleteContinuousDeploymentPolicy {
-                            fluent_builders::DeleteContinuousDeploymentPolicy::new(self.handle.clone())
+    pub fn delete_continuous_deployment_policy(&self) -> crate::client::fluent_builders::DeleteContinuousDeploymentPolicy {
+                            crate::client::fluent_builders::DeleteContinuousDeploymentPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteDistribution`](crate::client::fluent_builders::DeleteDistribution) operation.
                         ///
@@ -355,8 +355,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteDistributionError>`](crate::error::DeleteDistributionError)
-    pub fn delete_distribution(&self) -> fluent_builders::DeleteDistribution {
-                            fluent_builders::DeleteDistribution::new(self.handle.clone())
+    pub fn delete_distribution(&self) -> crate::client::fluent_builders::DeleteDistribution {
+                            crate::client::fluent_builders::DeleteDistribution::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteFieldLevelEncryptionConfig`](crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig) operation.
                         ///
@@ -366,8 +366,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteFieldLevelEncryptionConfigOutput`](crate::output::DeleteFieldLevelEncryptionConfigOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteFieldLevelEncryptionConfigError>`](crate::error::DeleteFieldLevelEncryptionConfigError)
-    pub fn delete_field_level_encryption_config(&self) -> fluent_builders::DeleteFieldLevelEncryptionConfig {
-                            fluent_builders::DeleteFieldLevelEncryptionConfig::new(self.handle.clone())
+    pub fn delete_field_level_encryption_config(&self) -> crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig {
+                            crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteFieldLevelEncryptionProfile`](crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile) operation.
                         ///
@@ -377,8 +377,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteFieldLevelEncryptionProfileOutput`](crate::output::DeleteFieldLevelEncryptionProfileOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteFieldLevelEncryptionProfileError>`](crate::error::DeleteFieldLevelEncryptionProfileError)
-    pub fn delete_field_level_encryption_profile(&self) -> fluent_builders::DeleteFieldLevelEncryptionProfile {
-                            fluent_builders::DeleteFieldLevelEncryptionProfile::new(self.handle.clone())
+    pub fn delete_field_level_encryption_profile(&self) -> crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile {
+                            crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteFunction`](crate::client::fluent_builders::DeleteFunction) operation.
                         ///
@@ -388,8 +388,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteFunctionError>`](crate::error::DeleteFunctionError)
-    pub fn delete_function(&self) -> fluent_builders::DeleteFunction {
-                            fluent_builders::DeleteFunction::new(self.handle.clone())
+    pub fn delete_function(&self) -> crate::client::fluent_builders::DeleteFunction {
+                            crate::client::fluent_builders::DeleteFunction::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteKeyGroup`](crate::client::fluent_builders::DeleteKeyGroup) operation.
                         ///
@@ -399,8 +399,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteKeyGroupOutput`](crate::output::DeleteKeyGroupOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteKeyGroupError>`](crate::error::DeleteKeyGroupError)
-    pub fn delete_key_group(&self) -> fluent_builders::DeleteKeyGroup {
-                            fluent_builders::DeleteKeyGroup::new(self.handle.clone())
+    pub fn delete_key_group(&self) -> crate::client::fluent_builders::DeleteKeyGroup {
+                            crate::client::fluent_builders::DeleteKeyGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteMonitoringSubscription`](crate::client::fluent_builders::DeleteMonitoringSubscription) operation.
                         ///
@@ -409,8 +409,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteMonitoringSubscriptionOutput`](crate::output::DeleteMonitoringSubscriptionOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteMonitoringSubscriptionError>`](crate::error::DeleteMonitoringSubscriptionError)
-    pub fn delete_monitoring_subscription(&self) -> fluent_builders::DeleteMonitoringSubscription {
-                            fluent_builders::DeleteMonitoringSubscription::new(self.handle.clone())
+    pub fn delete_monitoring_subscription(&self) -> crate::client::fluent_builders::DeleteMonitoringSubscription {
+                            crate::client::fluent_builders::DeleteMonitoringSubscription::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteOriginAccessControl`](crate::client::fluent_builders::DeleteOriginAccessControl) operation.
                         ///
@@ -420,8 +420,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteOriginAccessControlOutput`](crate::output::DeleteOriginAccessControlOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteOriginAccessControlError>`](crate::error::DeleteOriginAccessControlError)
-    pub fn delete_origin_access_control(&self) -> fluent_builders::DeleteOriginAccessControl {
-                            fluent_builders::DeleteOriginAccessControl::new(self.handle.clone())
+    pub fn delete_origin_access_control(&self) -> crate::client::fluent_builders::DeleteOriginAccessControl {
+                            crate::client::fluent_builders::DeleteOriginAccessControl::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteOriginRequestPolicy`](crate::client::fluent_builders::DeleteOriginRequestPolicy) operation.
                         ///
@@ -431,8 +431,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteOriginRequestPolicyOutput`](crate::output::DeleteOriginRequestPolicyOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteOriginRequestPolicyError>`](crate::error::DeleteOriginRequestPolicyError)
-    pub fn delete_origin_request_policy(&self) -> fluent_builders::DeleteOriginRequestPolicy {
-                            fluent_builders::DeleteOriginRequestPolicy::new(self.handle.clone())
+    pub fn delete_origin_request_policy(&self) -> crate::client::fluent_builders::DeleteOriginRequestPolicy {
+                            crate::client::fluent_builders::DeleteOriginRequestPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeletePublicKey`](crate::client::fluent_builders::DeletePublicKey) operation.
                         ///
@@ -442,8 +442,8 @@ impl Client  {
                         /// - On success, responds with [`DeletePublicKeyOutput`](crate::output::DeletePublicKeyOutput)
                         
                         /// - On failure, responds with [`SdkError<DeletePublicKeyError>`](crate::error::DeletePublicKeyError)
-    pub fn delete_public_key(&self) -> fluent_builders::DeletePublicKey {
-                            fluent_builders::DeletePublicKey::new(self.handle.clone())
+    pub fn delete_public_key(&self) -> crate::client::fluent_builders::DeletePublicKey {
+                            crate::client::fluent_builders::DeletePublicKey::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteRealtimeLogConfig`](crate::client::fluent_builders::DeleteRealtimeLogConfig) operation.
                         ///
@@ -453,8 +453,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteRealtimeLogConfigOutput`](crate::output::DeleteRealtimeLogConfigOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteRealtimeLogConfigError>`](crate::error::DeleteRealtimeLogConfigError)
-    pub fn delete_realtime_log_config(&self) -> fluent_builders::DeleteRealtimeLogConfig {
-                            fluent_builders::DeleteRealtimeLogConfig::new(self.handle.clone())
+    pub fn delete_realtime_log_config(&self) -> crate::client::fluent_builders::DeleteRealtimeLogConfig {
+                            crate::client::fluent_builders::DeleteRealtimeLogConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteResponseHeadersPolicy`](crate::client::fluent_builders::DeleteResponseHeadersPolicy) operation.
                         ///
@@ -464,8 +464,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteResponseHeadersPolicyOutput`](crate::output::DeleteResponseHeadersPolicyOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteResponseHeadersPolicyError>`](crate::error::DeleteResponseHeadersPolicyError)
-    pub fn delete_response_headers_policy(&self) -> fluent_builders::DeleteResponseHeadersPolicy {
-                            fluent_builders::DeleteResponseHeadersPolicy::new(self.handle.clone())
+    pub fn delete_response_headers_policy(&self) -> crate::client::fluent_builders::DeleteResponseHeadersPolicy {
+                            crate::client::fluent_builders::DeleteResponseHeadersPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteStreamingDistribution`](crate::client::fluent_builders::DeleteStreamingDistribution) operation.
                         ///
@@ -475,8 +475,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteStreamingDistributionOutput`](crate::output::DeleteStreamingDistributionOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteStreamingDistributionError>`](crate::error::DeleteStreamingDistributionError)
-    pub fn delete_streaming_distribution(&self) -> fluent_builders::DeleteStreamingDistribution {
-                            fluent_builders::DeleteStreamingDistribution::new(self.handle.clone())
+    pub fn delete_streaming_distribution(&self) -> crate::client::fluent_builders::DeleteStreamingDistribution {
+                            crate::client::fluent_builders::DeleteStreamingDistribution::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeFunction`](crate::client::fluent_builders::DescribeFunction) operation.
                         ///
@@ -487,8 +487,8 @@ impl Client  {
                         ///   - [`function_summary(Option<FunctionSummary>)`](crate::output::DescribeFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::DescribeFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
                         /// - On failure, responds with [`SdkError<DescribeFunctionError>`](crate::error::DescribeFunctionError)
-    pub fn describe_function(&self) -> fluent_builders::DescribeFunction {
-                            fluent_builders::DescribeFunction::new(self.handle.clone())
+    pub fn describe_function(&self) -> crate::client::fluent_builders::DescribeFunction {
+                            crate::client::fluent_builders::DescribeFunction::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetCachePolicy`](crate::client::fluent_builders::GetCachePolicy) operation.
                         ///
@@ -498,8 +498,8 @@ impl Client  {
                         ///   - [`cache_policy(Option<CachePolicy>)`](crate::output::GetCachePolicyOutput::cache_policy): <p>The cache policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
                         /// - On failure, responds with [`SdkError<GetCachePolicyError>`](crate::error::GetCachePolicyError)
-    pub fn get_cache_policy(&self) -> fluent_builders::GetCachePolicy {
-                            fluent_builders::GetCachePolicy::new(self.handle.clone())
+    pub fn get_cache_policy(&self) -> crate::client::fluent_builders::GetCachePolicy {
+                            crate::client::fluent_builders::GetCachePolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetCachePolicyConfig`](crate::client::fluent_builders::GetCachePolicyConfig) operation.
                         ///
@@ -509,8 +509,8 @@ impl Client  {
                         ///   - [`cache_policy_config(Option<CachePolicyConfig>)`](crate::output::GetCachePolicyConfigOutput::cache_policy_config): <p>The cache policy configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetCachePolicyConfigOutput::e_tag): <p>The current version of the cache policy.</p>
                         /// - On failure, responds with [`SdkError<GetCachePolicyConfigError>`](crate::error::GetCachePolicyConfigError)
-    pub fn get_cache_policy_config(&self) -> fluent_builders::GetCachePolicyConfig {
-                            fluent_builders::GetCachePolicyConfig::new(self.handle.clone())
+    pub fn get_cache_policy_config(&self) -> crate::client::fluent_builders::GetCachePolicyConfig {
+                            crate::client::fluent_builders::GetCachePolicyConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetCloudFrontOriginAccessIdentity`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentity) operation.
                         ///
@@ -520,8 +520,8 @@ impl Client  {
                         ///   - [`cloud_front_origin_access_identity(Option<CloudFrontOriginAccessIdentity>)`](crate::output::GetCloudFrontOriginAccessIdentityOutput::cloud_front_origin_access_identity): <p>The origin access identity's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetCloudFrontOriginAccessIdentityOutput::e_tag): <p>The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<GetCloudFrontOriginAccessIdentityError>`](crate::error::GetCloudFrontOriginAccessIdentityError)
-    pub fn get_cloud_front_origin_access_identity(&self) -> fluent_builders::GetCloudFrontOriginAccessIdentity {
-                            fluent_builders::GetCloudFrontOriginAccessIdentity::new(self.handle.clone())
+    pub fn get_cloud_front_origin_access_identity(&self) -> crate::client::fluent_builders::GetCloudFrontOriginAccessIdentity {
+                            crate::client::fluent_builders::GetCloudFrontOriginAccessIdentity::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetCloudFrontOriginAccessIdentityConfig`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig) operation.
                         ///
@@ -531,8 +531,8 @@ impl Client  {
                         ///   - [`cloud_front_origin_access_identity_config(Option<CloudFrontOriginAccessIdentityConfig>)`](crate::output::GetCloudFrontOriginAccessIdentityConfigOutput::cloud_front_origin_access_identity_config): <p>The origin access identity's configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetCloudFrontOriginAccessIdentityConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<GetCloudFrontOriginAccessIdentityConfigError>`](crate::error::GetCloudFrontOriginAccessIdentityConfigError)
-    pub fn get_cloud_front_origin_access_identity_config(&self) -> fluent_builders::GetCloudFrontOriginAccessIdentityConfig {
-                            fluent_builders::GetCloudFrontOriginAccessIdentityConfig::new(self.handle.clone())
+    pub fn get_cloud_front_origin_access_identity_config(&self) -> crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig {
+                            crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetContinuousDeploymentPolicy`](crate::client::fluent_builders::GetContinuousDeploymentPolicy) operation.
                         ///
@@ -542,8 +542,8 @@ impl Client  {
                         ///   - [`continuous_deployment_policy(Option<ContinuousDeploymentPolicy>)`](crate::output::GetContinuousDeploymentPolicyOutput::continuous_deployment_policy): <p>A continuous deployment policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetContinuousDeploymentPolicyOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
                         /// - On failure, responds with [`SdkError<GetContinuousDeploymentPolicyError>`](crate::error::GetContinuousDeploymentPolicyError)
-    pub fn get_continuous_deployment_policy(&self) -> fluent_builders::GetContinuousDeploymentPolicy {
-                            fluent_builders::GetContinuousDeploymentPolicy::new(self.handle.clone())
+    pub fn get_continuous_deployment_policy(&self) -> crate::client::fluent_builders::GetContinuousDeploymentPolicy {
+                            crate::client::fluent_builders::GetContinuousDeploymentPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetContinuousDeploymentPolicyConfig`](crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig) operation.
                         ///
@@ -553,8 +553,8 @@ impl Client  {
                         ///   - [`continuous_deployment_policy_config(Option<ContinuousDeploymentPolicyConfig>)`](crate::output::GetContinuousDeploymentPolicyConfigOutput::continuous_deployment_policy_config): <p>Contains the configuration for a continuous deployment policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetContinuousDeploymentPolicyConfigOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
                         /// - On failure, responds with [`SdkError<GetContinuousDeploymentPolicyConfigError>`](crate::error::GetContinuousDeploymentPolicyConfigError)
-    pub fn get_continuous_deployment_policy_config(&self) -> fluent_builders::GetContinuousDeploymentPolicyConfig {
-                            fluent_builders::GetContinuousDeploymentPolicyConfig::new(self.handle.clone())
+    pub fn get_continuous_deployment_policy_config(&self) -> crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig {
+                            crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetDistribution`](crate::client::fluent_builders::GetDistribution) operation.
                         ///
@@ -564,8 +564,8 @@ impl Client  {
                         ///   - [`distribution(Option<Distribution>)`](crate::output::GetDistributionOutput::distribution): <p>The distribution's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetDistributionOutput::e_tag): <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<GetDistributionError>`](crate::error::GetDistributionError)
-    pub fn get_distribution(&self) -> fluent_builders::GetDistribution {
-                            fluent_builders::GetDistribution::new(self.handle.clone())
+    pub fn get_distribution(&self) -> crate::client::fluent_builders::GetDistribution {
+                            crate::client::fluent_builders::GetDistribution::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetDistributionConfig`](crate::client::fluent_builders::GetDistributionConfig) operation.
                         ///
@@ -575,8 +575,8 @@ impl Client  {
                         ///   - [`distribution_config(Option<DistributionConfig>)`](crate::output::GetDistributionConfigOutput::distribution_config): <p>The distribution's configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetDistributionConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<GetDistributionConfigError>`](crate::error::GetDistributionConfigError)
-    pub fn get_distribution_config(&self) -> fluent_builders::GetDistributionConfig {
-                            fluent_builders::GetDistributionConfig::new(self.handle.clone())
+    pub fn get_distribution_config(&self) -> crate::client::fluent_builders::GetDistributionConfig {
+                            crate::client::fluent_builders::GetDistributionConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetFieldLevelEncryption`](crate::client::fluent_builders::GetFieldLevelEncryption) operation.
                         ///
@@ -586,8 +586,8 @@ impl Client  {
                         ///   - [`field_level_encryption(Option<FieldLevelEncryption>)`](crate::output::GetFieldLevelEncryptionOutput::field_level_encryption): <p>Return the field-level encryption configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetFieldLevelEncryptionOutput::e_tag): <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<GetFieldLevelEncryptionError>`](crate::error::GetFieldLevelEncryptionError)
-    pub fn get_field_level_encryption(&self) -> fluent_builders::GetFieldLevelEncryption {
-                            fluent_builders::GetFieldLevelEncryption::new(self.handle.clone())
+    pub fn get_field_level_encryption(&self) -> crate::client::fluent_builders::GetFieldLevelEncryption {
+                            crate::client::fluent_builders::GetFieldLevelEncryption::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetFieldLevelEncryptionConfig`](crate::client::fluent_builders::GetFieldLevelEncryptionConfig) operation.
                         ///
@@ -597,8 +597,8 @@ impl Client  {
                         ///   - [`field_level_encryption_config(Option<FieldLevelEncryptionConfig>)`](crate::output::GetFieldLevelEncryptionConfigOutput::field_level_encryption_config): <p>Return the field-level encryption configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetFieldLevelEncryptionConfigOutput::e_tag): <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<GetFieldLevelEncryptionConfigError>`](crate::error::GetFieldLevelEncryptionConfigError)
-    pub fn get_field_level_encryption_config(&self) -> fluent_builders::GetFieldLevelEncryptionConfig {
-                            fluent_builders::GetFieldLevelEncryptionConfig::new(self.handle.clone())
+    pub fn get_field_level_encryption_config(&self) -> crate::client::fluent_builders::GetFieldLevelEncryptionConfig {
+                            crate::client::fluent_builders::GetFieldLevelEncryptionConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetFieldLevelEncryptionProfile`](crate::client::fluent_builders::GetFieldLevelEncryptionProfile) operation.
                         ///
@@ -608,8 +608,8 @@ impl Client  {
                         ///   - [`field_level_encryption_profile(Option<FieldLevelEncryptionProfile>)`](crate::output::GetFieldLevelEncryptionProfileOutput::field_level_encryption_profile): <p>Return the field-level encryption profile information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetFieldLevelEncryptionProfileOutput::e_tag): <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<GetFieldLevelEncryptionProfileError>`](crate::error::GetFieldLevelEncryptionProfileError)
-    pub fn get_field_level_encryption_profile(&self) -> fluent_builders::GetFieldLevelEncryptionProfile {
-                            fluent_builders::GetFieldLevelEncryptionProfile::new(self.handle.clone())
+    pub fn get_field_level_encryption_profile(&self) -> crate::client::fluent_builders::GetFieldLevelEncryptionProfile {
+                            crate::client::fluent_builders::GetFieldLevelEncryptionProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetFieldLevelEncryptionProfileConfig`](crate::client::fluent_builders::GetFieldLevelEncryptionProfileConfig) operation.
                         ///
@@ -619,8 +619,8 @@ impl Client  {
                         ///   - [`field_level_encryption_profile_config(Option<FieldLevelEncryptionProfileConfig>)`](crate::output::GetFieldLevelEncryptionProfileConfigOutput::field_level_encryption_profile_config): <p>Return the field-level encryption profile configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetFieldLevelEncryptionProfileConfigOutput::e_tag): <p>The current version of the field-level encryption profile configuration result. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<GetFieldLevelEncryptionProfileConfigError>`](crate::error::GetFieldLevelEncryptionProfileConfigError)
-    pub fn get_field_level_encryption_profile_config(&self) -> fluent_builders::GetFieldLevelEncryptionProfileConfig {
-                            fluent_builders::GetFieldLevelEncryptionProfileConfig::new(self.handle.clone())
+    pub fn get_field_level_encryption_profile_config(&self) -> crate::client::fluent_builders::GetFieldLevelEncryptionProfileConfig {
+                            crate::client::fluent_builders::GetFieldLevelEncryptionProfileConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetFunction`](crate::client::fluent_builders::GetFunction) operation.
                         ///
@@ -632,8 +632,8 @@ impl Client  {
     ///   - [`e_tag(Option<String>)`](crate::output::GetFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
     ///   - [`content_type(Option<String>)`](crate::output::GetFunctionOutput::content_type): <p>The content type (media type) of the response.</p>
                         /// - On failure, responds with [`SdkError<GetFunctionError>`](crate::error::GetFunctionError)
-    pub fn get_function(&self) -> fluent_builders::GetFunction {
-                            fluent_builders::GetFunction::new(self.handle.clone())
+    pub fn get_function(&self) -> crate::client::fluent_builders::GetFunction {
+                            crate::client::fluent_builders::GetFunction::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetInvalidation`](crate::client::fluent_builders::GetInvalidation) operation.
                         ///
@@ -643,8 +643,8 @@ impl Client  {
                         /// - On success, responds with [`GetInvalidationOutput`](crate::output::GetInvalidationOutput) with field(s):
                         ///   - [`invalidation(Option<Invalidation>)`](crate::output::GetInvalidationOutput::invalidation): <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
                         /// - On failure, responds with [`SdkError<GetInvalidationError>`](crate::error::GetInvalidationError)
-    pub fn get_invalidation(&self) -> fluent_builders::GetInvalidation {
-                            fluent_builders::GetInvalidation::new(self.handle.clone())
+    pub fn get_invalidation(&self) -> crate::client::fluent_builders::GetInvalidation {
+                            crate::client::fluent_builders::GetInvalidation::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetKeyGroup`](crate::client::fluent_builders::GetKeyGroup) operation.
                         ///
@@ -654,8 +654,8 @@ impl Client  {
                         ///   - [`key_group(Option<KeyGroup>)`](crate::output::GetKeyGroupOutput::key_group): <p>The key group.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>
                         /// - On failure, responds with [`SdkError<GetKeyGroupError>`](crate::error::GetKeyGroupError)
-    pub fn get_key_group(&self) -> fluent_builders::GetKeyGroup {
-                            fluent_builders::GetKeyGroup::new(self.handle.clone())
+    pub fn get_key_group(&self) -> crate::client::fluent_builders::GetKeyGroup {
+                            crate::client::fluent_builders::GetKeyGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetKeyGroupConfig`](crate::client::fluent_builders::GetKeyGroupConfig) operation.
                         ///
@@ -665,8 +665,8 @@ impl Client  {
                         ///   - [`key_group_config(Option<KeyGroupConfig>)`](crate::output::GetKeyGroupConfigOutput::key_group_config): <p>The key group configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetKeyGroupConfigOutput::e_tag): <p>The identifier for this version of the key group.</p>
                         /// - On failure, responds with [`SdkError<GetKeyGroupConfigError>`](crate::error::GetKeyGroupConfigError)
-    pub fn get_key_group_config(&self) -> fluent_builders::GetKeyGroupConfig {
-                            fluent_builders::GetKeyGroupConfig::new(self.handle.clone())
+    pub fn get_key_group_config(&self) -> crate::client::fluent_builders::GetKeyGroupConfig {
+                            crate::client::fluent_builders::GetKeyGroupConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetMonitoringSubscription`](crate::client::fluent_builders::GetMonitoringSubscription) operation.
                         ///
@@ -675,8 +675,8 @@ impl Client  {
                         /// - On success, responds with [`GetMonitoringSubscriptionOutput`](crate::output::GetMonitoringSubscriptionOutput) with field(s):
                         ///   - [`monitoring_subscription(Option<MonitoringSubscription>)`](crate::output::GetMonitoringSubscriptionOutput::monitoring_subscription): <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
                         /// - On failure, responds with [`SdkError<GetMonitoringSubscriptionError>`](crate::error::GetMonitoringSubscriptionError)
-    pub fn get_monitoring_subscription(&self) -> fluent_builders::GetMonitoringSubscription {
-                            fluent_builders::GetMonitoringSubscription::new(self.handle.clone())
+    pub fn get_monitoring_subscription(&self) -> crate::client::fluent_builders::GetMonitoringSubscription {
+                            crate::client::fluent_builders::GetMonitoringSubscription::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetOriginAccessControl`](crate::client::fluent_builders::GetOriginAccessControl) operation.
                         ///
@@ -686,8 +686,8 @@ impl Client  {
                         ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::output::GetOriginAccessControlOutput::origin_access_control): <p>Contains an origin access control, including its unique identifier.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetOriginAccessControlOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
                         /// - On failure, responds with [`SdkError<GetOriginAccessControlError>`](crate::error::GetOriginAccessControlError)
-    pub fn get_origin_access_control(&self) -> fluent_builders::GetOriginAccessControl {
-                            fluent_builders::GetOriginAccessControl::new(self.handle.clone())
+    pub fn get_origin_access_control(&self) -> crate::client::fluent_builders::GetOriginAccessControl {
+                            crate::client::fluent_builders::GetOriginAccessControl::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetOriginAccessControlConfig`](crate::client::fluent_builders::GetOriginAccessControlConfig) operation.
                         ///
@@ -697,8 +697,8 @@ impl Client  {
                         ///   - [`origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::output::GetOriginAccessControlConfigOutput::origin_access_control_config): <p>Contains an origin access control configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetOriginAccessControlConfigOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
                         /// - On failure, responds with [`SdkError<GetOriginAccessControlConfigError>`](crate::error::GetOriginAccessControlConfigError)
-    pub fn get_origin_access_control_config(&self) -> fluent_builders::GetOriginAccessControlConfig {
-                            fluent_builders::GetOriginAccessControlConfig::new(self.handle.clone())
+    pub fn get_origin_access_control_config(&self) -> crate::client::fluent_builders::GetOriginAccessControlConfig {
+                            crate::client::fluent_builders::GetOriginAccessControlConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetOriginRequestPolicy`](crate::client::fluent_builders::GetOriginRequestPolicy) operation.
                         ///
@@ -708,8 +708,8 @@ impl Client  {
                         ///   - [`origin_request_policy(Option<OriginRequestPolicy>)`](crate::output::GetOriginRequestPolicyOutput::origin_request_policy): <p>The origin request policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetOriginRequestPolicyOutput::e_tag): <p>The current version of the origin request policy.</p>
                         /// - On failure, responds with [`SdkError<GetOriginRequestPolicyError>`](crate::error::GetOriginRequestPolicyError)
-    pub fn get_origin_request_policy(&self) -> fluent_builders::GetOriginRequestPolicy {
-                            fluent_builders::GetOriginRequestPolicy::new(self.handle.clone())
+    pub fn get_origin_request_policy(&self) -> crate::client::fluent_builders::GetOriginRequestPolicy {
+                            crate::client::fluent_builders::GetOriginRequestPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetOriginRequestPolicyConfig`](crate::client::fluent_builders::GetOriginRequestPolicyConfig) operation.
                         ///
@@ -719,8 +719,8 @@ impl Client  {
                         ///   - [`origin_request_policy_config(Option<OriginRequestPolicyConfig>)`](crate::output::GetOriginRequestPolicyConfigOutput::origin_request_policy_config): <p>The origin request policy configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetOriginRequestPolicyConfigOutput::e_tag): <p>The current version of the origin request policy.</p>
                         /// - On failure, responds with [`SdkError<GetOriginRequestPolicyConfigError>`](crate::error::GetOriginRequestPolicyConfigError)
-    pub fn get_origin_request_policy_config(&self) -> fluent_builders::GetOriginRequestPolicyConfig {
-                            fluent_builders::GetOriginRequestPolicyConfig::new(self.handle.clone())
+    pub fn get_origin_request_policy_config(&self) -> crate::client::fluent_builders::GetOriginRequestPolicyConfig {
+                            crate::client::fluent_builders::GetOriginRequestPolicyConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetPublicKey`](crate::client::fluent_builders::GetPublicKey) operation.
                         ///
@@ -730,8 +730,8 @@ impl Client  {
                         ///   - [`public_key(Option<PublicKey>)`](crate::output::GetPublicKeyOutput::public_key): <p>The public key.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetPublicKeyOutput::e_tag): <p>The identifier for this version of the public key.</p>
                         /// - On failure, responds with [`SdkError<GetPublicKeyError>`](crate::error::GetPublicKeyError)
-    pub fn get_public_key(&self) -> fluent_builders::GetPublicKey {
-                            fluent_builders::GetPublicKey::new(self.handle.clone())
+    pub fn get_public_key(&self) -> crate::client::fluent_builders::GetPublicKey {
+                            crate::client::fluent_builders::GetPublicKey::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetPublicKeyConfig`](crate::client::fluent_builders::GetPublicKeyConfig) operation.
                         ///
@@ -741,8 +741,8 @@ impl Client  {
                         ///   - [`public_key_config(Option<PublicKeyConfig>)`](crate::output::GetPublicKeyConfigOutput::public_key_config): <p>A public key configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetPublicKeyConfigOutput::e_tag): <p>The identifier for this version of the public key configuration.</p>
                         /// - On failure, responds with [`SdkError<GetPublicKeyConfigError>`](crate::error::GetPublicKeyConfigError)
-    pub fn get_public_key_config(&self) -> fluent_builders::GetPublicKeyConfig {
-                            fluent_builders::GetPublicKeyConfig::new(self.handle.clone())
+    pub fn get_public_key_config(&self) -> crate::client::fluent_builders::GetPublicKeyConfig {
+                            crate::client::fluent_builders::GetPublicKeyConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetRealtimeLogConfig`](crate::client::fluent_builders::GetRealtimeLogConfig) operation.
                         ///
@@ -752,8 +752,8 @@ impl Client  {
                         /// - On success, responds with [`GetRealtimeLogConfigOutput`](crate::output::GetRealtimeLogConfigOutput) with field(s):
                         ///   - [`realtime_log_config(Option<RealtimeLogConfig>)`](crate::output::GetRealtimeLogConfigOutput::realtime_log_config): <p>A real-time log configuration.</p>
                         /// - On failure, responds with [`SdkError<GetRealtimeLogConfigError>`](crate::error::GetRealtimeLogConfigError)
-    pub fn get_realtime_log_config(&self) -> fluent_builders::GetRealtimeLogConfig {
-                            fluent_builders::GetRealtimeLogConfig::new(self.handle.clone())
+    pub fn get_realtime_log_config(&self) -> crate::client::fluent_builders::GetRealtimeLogConfig {
+                            crate::client::fluent_builders::GetRealtimeLogConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetResponseHeadersPolicy`](crate::client::fluent_builders::GetResponseHeadersPolicy) operation.
                         ///
@@ -763,8 +763,8 @@ impl Client  {
                         ///   - [`response_headers_policy(Option<ResponseHeadersPolicy>)`](crate::output::GetResponseHeadersPolicyOutput::response_headers_policy): <p>Contains a response headers policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetResponseHeadersPolicyOutput::e_tag): <p>The version identifier for the current version of the response headers policy.</p>
                         /// - On failure, responds with [`SdkError<GetResponseHeadersPolicyError>`](crate::error::GetResponseHeadersPolicyError)
-    pub fn get_response_headers_policy(&self) -> fluent_builders::GetResponseHeadersPolicy {
-                            fluent_builders::GetResponseHeadersPolicy::new(self.handle.clone())
+    pub fn get_response_headers_policy(&self) -> crate::client::fluent_builders::GetResponseHeadersPolicy {
+                            crate::client::fluent_builders::GetResponseHeadersPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetResponseHeadersPolicyConfig`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig) operation.
                         ///
@@ -774,8 +774,8 @@ impl Client  {
                         ///   - [`response_headers_policy_config(Option<ResponseHeadersPolicyConfig>)`](crate::output::GetResponseHeadersPolicyConfigOutput::response_headers_policy_config): <p>Contains a response headers policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetResponseHeadersPolicyConfigOutput::e_tag): <p>The version identifier for the current version of the response headers policy.</p>
                         /// - On failure, responds with [`SdkError<GetResponseHeadersPolicyConfigError>`](crate::error::GetResponseHeadersPolicyConfigError)
-    pub fn get_response_headers_policy_config(&self) -> fluent_builders::GetResponseHeadersPolicyConfig {
-                            fluent_builders::GetResponseHeadersPolicyConfig::new(self.handle.clone())
+    pub fn get_response_headers_policy_config(&self) -> crate::client::fluent_builders::GetResponseHeadersPolicyConfig {
+                            crate::client::fluent_builders::GetResponseHeadersPolicyConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetStreamingDistribution`](crate::client::fluent_builders::GetStreamingDistribution) operation.
                         ///
@@ -785,8 +785,8 @@ impl Client  {
                         ///   - [`streaming_distribution(Option<StreamingDistribution>)`](crate::output::GetStreamingDistributionOutput::streaming_distribution): <p>The streaming distribution's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetStreamingDistributionOutput::e_tag): <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<GetStreamingDistributionError>`](crate::error::GetStreamingDistributionError)
-    pub fn get_streaming_distribution(&self) -> fluent_builders::GetStreamingDistribution {
-                            fluent_builders::GetStreamingDistribution::new(self.handle.clone())
+    pub fn get_streaming_distribution(&self) -> crate::client::fluent_builders::GetStreamingDistribution {
+                            crate::client::fluent_builders::GetStreamingDistribution::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetStreamingDistributionConfig`](crate::client::fluent_builders::GetStreamingDistributionConfig) operation.
                         ///
@@ -796,8 +796,8 @@ impl Client  {
                         ///   - [`streaming_distribution_config(Option<StreamingDistributionConfig>)`](crate::output::GetStreamingDistributionConfigOutput::streaming_distribution_config): <p>The streaming distribution's configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::GetStreamingDistributionConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
                         /// - On failure, responds with [`SdkError<GetStreamingDistributionConfigError>`](crate::error::GetStreamingDistributionConfigError)
-    pub fn get_streaming_distribution_config(&self) -> fluent_builders::GetStreamingDistributionConfig {
-                            fluent_builders::GetStreamingDistributionConfig::new(self.handle.clone())
+    pub fn get_streaming_distribution_config(&self) -> crate::client::fluent_builders::GetStreamingDistributionConfig {
+                            crate::client::fluent_builders::GetStreamingDistributionConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListCachePolicies`](crate::client::fluent_builders::ListCachePolicies) operation.
                         ///
@@ -808,8 +808,8 @@ impl Client  {
                         /// - On success, responds with [`ListCachePoliciesOutput`](crate::output::ListCachePoliciesOutput) with field(s):
                         ///   - [`cache_policy_list(Option<CachePolicyList>)`](crate::output::ListCachePoliciesOutput::cache_policy_list): <p>A list of cache policies.</p>
                         /// - On failure, responds with [`SdkError<ListCachePoliciesError>`](crate::error::ListCachePoliciesError)
-    pub fn list_cache_policies(&self) -> fluent_builders::ListCachePolicies {
-                            fluent_builders::ListCachePolicies::new(self.handle.clone())
+    pub fn list_cache_policies(&self) -> crate::client::fluent_builders::ListCachePolicies {
+                            crate::client::fluent_builders::ListCachePolicies::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListCloudFrontOriginAccessIdentities`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::into_paginator).
@@ -820,8 +820,8 @@ impl Client  {
                         /// - On success, responds with [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::output::ListCloudFrontOriginAccessIdentitiesOutput) with field(s):
                         ///   - [`cloud_front_origin_access_identity_list(Option<CloudFrontOriginAccessIdentityList>)`](crate::output::ListCloudFrontOriginAccessIdentitiesOutput::cloud_front_origin_access_identity_list): <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
                         /// - On failure, responds with [`SdkError<ListCloudFrontOriginAccessIdentitiesError>`](crate::error::ListCloudFrontOriginAccessIdentitiesError)
-    pub fn list_cloud_front_origin_access_identities(&self) -> fluent_builders::ListCloudFrontOriginAccessIdentities {
-                            fluent_builders::ListCloudFrontOriginAccessIdentities::new(self.handle.clone())
+    pub fn list_cloud_front_origin_access_identities(&self) -> crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities {
+                            crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListConflictingAliases`](crate::client::fluent_builders::ListConflictingAliases) operation.
                         ///
@@ -833,8 +833,8 @@ impl Client  {
                         /// - On success, responds with [`ListConflictingAliasesOutput`](crate::output::ListConflictingAliasesOutput) with field(s):
                         ///   - [`conflicting_aliases_list(Option<ConflictingAliasesList>)`](crate::output::ListConflictingAliasesOutput::conflicting_aliases_list): <p>A list of conflicting aliases.</p>
                         /// - On failure, responds with [`SdkError<ListConflictingAliasesError>`](crate::error::ListConflictingAliasesError)
-    pub fn list_conflicting_aliases(&self) -> fluent_builders::ListConflictingAliases {
-                            fluent_builders::ListConflictingAliases::new(self.handle.clone())
+    pub fn list_conflicting_aliases(&self) -> crate::client::fluent_builders::ListConflictingAliases {
+                            crate::client::fluent_builders::ListConflictingAliases::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListContinuousDeploymentPolicies`](crate::client::fluent_builders::ListContinuousDeploymentPolicies) operation.
                         ///
@@ -844,8 +844,8 @@ impl Client  {
                         /// - On success, responds with [`ListContinuousDeploymentPoliciesOutput`](crate::output::ListContinuousDeploymentPoliciesOutput) with field(s):
                         ///   - [`continuous_deployment_policy_list(Option<ContinuousDeploymentPolicyList>)`](crate::output::ListContinuousDeploymentPoliciesOutput::continuous_deployment_policy_list): <p>A list of continuous deployment policies.</p>
                         /// - On failure, responds with [`SdkError<ListContinuousDeploymentPoliciesError>`](crate::error::ListContinuousDeploymentPoliciesError)
-    pub fn list_continuous_deployment_policies(&self) -> fluent_builders::ListContinuousDeploymentPolicies {
-                            fluent_builders::ListContinuousDeploymentPolicies::new(self.handle.clone())
+    pub fn list_continuous_deployment_policies(&self) -> crate::client::fluent_builders::ListContinuousDeploymentPolicies {
+                            crate::client::fluent_builders::ListContinuousDeploymentPolicies::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDistributions`](crate::client::fluent_builders::ListDistributions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDistributions::into_paginator).
@@ -856,8 +856,8 @@ impl Client  {
                         /// - On success, responds with [`ListDistributionsOutput`](crate::output::ListDistributionsOutput) with field(s):
                         ///   - [`distribution_list(Option<DistributionList>)`](crate::output::ListDistributionsOutput::distribution_list): <p>The <code>DistributionList</code> type.</p>
                         /// - On failure, responds with [`SdkError<ListDistributionsError>`](crate::error::ListDistributionsError)
-    pub fn list_distributions(&self) -> fluent_builders::ListDistributions {
-                            fluent_builders::ListDistributions::new(self.handle.clone())
+    pub fn list_distributions(&self) -> crate::client::fluent_builders::ListDistributions {
+                            crate::client::fluent_builders::ListDistributions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDistributionsByCachePolicyId`](crate::client::fluent_builders::ListDistributionsByCachePolicyId) operation.
                         ///
@@ -868,8 +868,8 @@ impl Client  {
                         /// - On success, responds with [`ListDistributionsByCachePolicyIdOutput`](crate::output::ListDistributionsByCachePolicyIdOutput) with field(s):
                         ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::output::ListDistributionsByCachePolicyIdOutput::distribution_id_list): <p>A list of distribution IDs.</p>
                         /// - On failure, responds with [`SdkError<ListDistributionsByCachePolicyIdError>`](crate::error::ListDistributionsByCachePolicyIdError)
-    pub fn list_distributions_by_cache_policy_id(&self) -> fluent_builders::ListDistributionsByCachePolicyId {
-                            fluent_builders::ListDistributionsByCachePolicyId::new(self.handle.clone())
+    pub fn list_distributions_by_cache_policy_id(&self) -> crate::client::fluent_builders::ListDistributionsByCachePolicyId {
+                            crate::client::fluent_builders::ListDistributionsByCachePolicyId::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDistributionsByKeyGroup`](crate::client::fluent_builders::ListDistributionsByKeyGroup) operation.
                         ///
@@ -880,8 +880,8 @@ impl Client  {
                         /// - On success, responds with [`ListDistributionsByKeyGroupOutput`](crate::output::ListDistributionsByKeyGroupOutput) with field(s):
                         ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::output::ListDistributionsByKeyGroupOutput::distribution_id_list): <p>A list of distribution IDs.</p>
                         /// - On failure, responds with [`SdkError<ListDistributionsByKeyGroupError>`](crate::error::ListDistributionsByKeyGroupError)
-    pub fn list_distributions_by_key_group(&self) -> fluent_builders::ListDistributionsByKeyGroup {
-                            fluent_builders::ListDistributionsByKeyGroup::new(self.handle.clone())
+    pub fn list_distributions_by_key_group(&self) -> crate::client::fluent_builders::ListDistributionsByKeyGroup {
+                            crate::client::fluent_builders::ListDistributionsByKeyGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDistributionsByOriginRequestPolicyId`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId) operation.
                         ///
@@ -892,8 +892,8 @@ impl Client  {
                         /// - On success, responds with [`ListDistributionsByOriginRequestPolicyIdOutput`](crate::output::ListDistributionsByOriginRequestPolicyIdOutput) with field(s):
                         ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::output::ListDistributionsByOriginRequestPolicyIdOutput::distribution_id_list): <p>A list of distribution IDs.</p>
                         /// - On failure, responds with [`SdkError<ListDistributionsByOriginRequestPolicyIdError>`](crate::error::ListDistributionsByOriginRequestPolicyIdError)
-    pub fn list_distributions_by_origin_request_policy_id(&self) -> fluent_builders::ListDistributionsByOriginRequestPolicyId {
-                            fluent_builders::ListDistributionsByOriginRequestPolicyId::new(self.handle.clone())
+    pub fn list_distributions_by_origin_request_policy_id(&self) -> crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId {
+                            crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDistributionsByRealtimeLogConfig`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig) operation.
                         ///
@@ -905,8 +905,8 @@ impl Client  {
                         /// - On success, responds with [`ListDistributionsByRealtimeLogConfigOutput`](crate::output::ListDistributionsByRealtimeLogConfigOutput) with field(s):
                         ///   - [`distribution_list(Option<DistributionList>)`](crate::output::ListDistributionsByRealtimeLogConfigOutput::distribution_list): <p>A distribution list.</p>
                         /// - On failure, responds with [`SdkError<ListDistributionsByRealtimeLogConfigError>`](crate::error::ListDistributionsByRealtimeLogConfigError)
-    pub fn list_distributions_by_realtime_log_config(&self) -> fluent_builders::ListDistributionsByRealtimeLogConfig {
-                            fluent_builders::ListDistributionsByRealtimeLogConfig::new(self.handle.clone())
+    pub fn list_distributions_by_realtime_log_config(&self) -> crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig {
+                            crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDistributionsByResponseHeadersPolicyId`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId) operation.
                         ///
@@ -917,8 +917,8 @@ impl Client  {
                         /// - On success, responds with [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::output::ListDistributionsByResponseHeadersPolicyIdOutput) with field(s):
                         ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::output::ListDistributionsByResponseHeadersPolicyIdOutput::distribution_id_list): <p>A list of distribution IDs.</p>
                         /// - On failure, responds with [`SdkError<ListDistributionsByResponseHeadersPolicyIdError>`](crate::error::ListDistributionsByResponseHeadersPolicyIdError)
-    pub fn list_distributions_by_response_headers_policy_id(&self) -> fluent_builders::ListDistributionsByResponseHeadersPolicyId {
-                            fluent_builders::ListDistributionsByResponseHeadersPolicyId::new(self.handle.clone())
+    pub fn list_distributions_by_response_headers_policy_id(&self) -> crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId {
+                            crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDistributionsByWebACLId`](crate::client::fluent_builders::ListDistributionsByWebACLId) operation.
                         ///
@@ -929,8 +929,8 @@ impl Client  {
                         /// - On success, responds with [`ListDistributionsByWebAclIdOutput`](crate::output::ListDistributionsByWebAclIdOutput) with field(s):
                         ///   - [`distribution_list(Option<DistributionList>)`](crate::output::ListDistributionsByWebAclIdOutput::distribution_list): <p>The <code>DistributionList</code> type.</p>
                         /// - On failure, responds with [`SdkError<ListDistributionsByWebACLIdError>`](crate::error::ListDistributionsByWebACLIdError)
-    pub fn list_distributions_by_web_acl_id(&self) -> fluent_builders::ListDistributionsByWebACLId {
-                            fluent_builders::ListDistributionsByWebACLId::new(self.handle.clone())
+    pub fn list_distributions_by_web_acl_id(&self) -> crate::client::fluent_builders::ListDistributionsByWebACLId {
+                            crate::client::fluent_builders::ListDistributionsByWebACLId::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListFieldLevelEncryptionConfigs`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs) operation.
                         ///
@@ -940,8 +940,8 @@ impl Client  {
                         /// - On success, responds with [`ListFieldLevelEncryptionConfigsOutput`](crate::output::ListFieldLevelEncryptionConfigsOutput) with field(s):
                         ///   - [`field_level_encryption_list(Option<FieldLevelEncryptionList>)`](crate::output::ListFieldLevelEncryptionConfigsOutput::field_level_encryption_list): <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
                         /// - On failure, responds with [`SdkError<ListFieldLevelEncryptionConfigsError>`](crate::error::ListFieldLevelEncryptionConfigsError)
-    pub fn list_field_level_encryption_configs(&self) -> fluent_builders::ListFieldLevelEncryptionConfigs {
-                            fluent_builders::ListFieldLevelEncryptionConfigs::new(self.handle.clone())
+    pub fn list_field_level_encryption_configs(&self) -> crate::client::fluent_builders::ListFieldLevelEncryptionConfigs {
+                            crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListFieldLevelEncryptionProfiles`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles) operation.
                         ///
@@ -951,8 +951,8 @@ impl Client  {
                         /// - On success, responds with [`ListFieldLevelEncryptionProfilesOutput`](crate::output::ListFieldLevelEncryptionProfilesOutput) with field(s):
                         ///   - [`field_level_encryption_profile_list(Option<FieldLevelEncryptionProfileList>)`](crate::output::ListFieldLevelEncryptionProfilesOutput::field_level_encryption_profile_list): <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
                         /// - On failure, responds with [`SdkError<ListFieldLevelEncryptionProfilesError>`](crate::error::ListFieldLevelEncryptionProfilesError)
-    pub fn list_field_level_encryption_profiles(&self) -> fluent_builders::ListFieldLevelEncryptionProfiles {
-                            fluent_builders::ListFieldLevelEncryptionProfiles::new(self.handle.clone())
+    pub fn list_field_level_encryption_profiles(&self) -> crate::client::fluent_builders::ListFieldLevelEncryptionProfiles {
+                            crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListFunctions`](crate::client::fluent_builders::ListFunctions) operation.
                         ///
@@ -963,8 +963,8 @@ impl Client  {
                         /// - On success, responds with [`ListFunctionsOutput`](crate::output::ListFunctionsOutput) with field(s):
                         ///   - [`function_list(Option<FunctionList>)`](crate::output::ListFunctionsOutput::function_list): <p>A list of CloudFront functions.</p>
                         /// - On failure, responds with [`SdkError<ListFunctionsError>`](crate::error::ListFunctionsError)
-    pub fn list_functions(&self) -> fluent_builders::ListFunctions {
-                            fluent_builders::ListFunctions::new(self.handle.clone())
+    pub fn list_functions(&self) -> crate::client::fluent_builders::ListFunctions {
+                            crate::client::fluent_builders::ListFunctions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListInvalidations`](crate::client::fluent_builders::ListInvalidations) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInvalidations::into_paginator).
@@ -976,8 +976,8 @@ impl Client  {
                         /// - On success, responds with [`ListInvalidationsOutput`](crate::output::ListInvalidationsOutput) with field(s):
                         ///   - [`invalidation_list(Option<InvalidationList>)`](crate::output::ListInvalidationsOutput::invalidation_list): <p>Information about invalidation batches.</p>
                         /// - On failure, responds with [`SdkError<ListInvalidationsError>`](crate::error::ListInvalidationsError)
-    pub fn list_invalidations(&self) -> fluent_builders::ListInvalidations {
-                            fluent_builders::ListInvalidations::new(self.handle.clone())
+    pub fn list_invalidations(&self) -> crate::client::fluent_builders::ListInvalidations {
+                            crate::client::fluent_builders::ListInvalidations::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListKeyGroups`](crate::client::fluent_builders::ListKeyGroups) operation.
                         ///
@@ -987,8 +987,8 @@ impl Client  {
                         /// - On success, responds with [`ListKeyGroupsOutput`](crate::output::ListKeyGroupsOutput) with field(s):
                         ///   - [`key_group_list(Option<KeyGroupList>)`](crate::output::ListKeyGroupsOutput::key_group_list): <p>A list of key groups.</p>
                         /// - On failure, responds with [`SdkError<ListKeyGroupsError>`](crate::error::ListKeyGroupsError)
-    pub fn list_key_groups(&self) -> fluent_builders::ListKeyGroups {
-                            fluent_builders::ListKeyGroups::new(self.handle.clone())
+    pub fn list_key_groups(&self) -> crate::client::fluent_builders::ListKeyGroups {
+                            crate::client::fluent_builders::ListKeyGroups::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListOriginAccessControls`](crate::client::fluent_builders::ListOriginAccessControls) operation.
                         ///
@@ -998,8 +998,8 @@ impl Client  {
                         /// - On success, responds with [`ListOriginAccessControlsOutput`](crate::output::ListOriginAccessControlsOutput) with field(s):
                         ///   - [`origin_access_control_list(Option<OriginAccessControlList>)`](crate::output::ListOriginAccessControlsOutput::origin_access_control_list): <p>A list of origin access controls.</p>
                         /// - On failure, responds with [`SdkError<ListOriginAccessControlsError>`](crate::error::ListOriginAccessControlsError)
-    pub fn list_origin_access_controls(&self) -> fluent_builders::ListOriginAccessControls {
-                            fluent_builders::ListOriginAccessControls::new(self.handle.clone())
+    pub fn list_origin_access_controls(&self) -> crate::client::fluent_builders::ListOriginAccessControls {
+                            crate::client::fluent_builders::ListOriginAccessControls::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListOriginRequestPolicies`](crate::client::fluent_builders::ListOriginRequestPolicies) operation.
                         ///
@@ -1010,8 +1010,8 @@ impl Client  {
                         /// - On success, responds with [`ListOriginRequestPoliciesOutput`](crate::output::ListOriginRequestPoliciesOutput) with field(s):
                         ///   - [`origin_request_policy_list(Option<OriginRequestPolicyList>)`](crate::output::ListOriginRequestPoliciesOutput::origin_request_policy_list): <p>A list of origin request policies.</p>
                         /// - On failure, responds with [`SdkError<ListOriginRequestPoliciesError>`](crate::error::ListOriginRequestPoliciesError)
-    pub fn list_origin_request_policies(&self) -> fluent_builders::ListOriginRequestPolicies {
-                            fluent_builders::ListOriginRequestPolicies::new(self.handle.clone())
+    pub fn list_origin_request_policies(&self) -> crate::client::fluent_builders::ListOriginRequestPolicies {
+                            crate::client::fluent_builders::ListOriginRequestPolicies::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListPublicKeys`](crate::client::fluent_builders::ListPublicKeys) operation.
                         ///
@@ -1021,8 +1021,8 @@ impl Client  {
                         /// - On success, responds with [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput) with field(s):
                         ///   - [`public_key_list(Option<PublicKeyList>)`](crate::output::ListPublicKeysOutput::public_key_list): <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
                         /// - On failure, responds with [`SdkError<ListPublicKeysError>`](crate::error::ListPublicKeysError)
-    pub fn list_public_keys(&self) -> fluent_builders::ListPublicKeys {
-                            fluent_builders::ListPublicKeys::new(self.handle.clone())
+    pub fn list_public_keys(&self) -> crate::client::fluent_builders::ListPublicKeys {
+                            crate::client::fluent_builders::ListPublicKeys::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListRealtimeLogConfigs`](crate::client::fluent_builders::ListRealtimeLogConfigs) operation.
                         ///
@@ -1032,8 +1032,8 @@ impl Client  {
                         /// - On success, responds with [`ListRealtimeLogConfigsOutput`](crate::output::ListRealtimeLogConfigsOutput) with field(s):
                         ///   - [`realtime_log_configs(Option<RealtimeLogConfigs>)`](crate::output::ListRealtimeLogConfigsOutput::realtime_log_configs): <p>A list of real-time log configurations.</p>
                         /// - On failure, responds with [`SdkError<ListRealtimeLogConfigsError>`](crate::error::ListRealtimeLogConfigsError)
-    pub fn list_realtime_log_configs(&self) -> fluent_builders::ListRealtimeLogConfigs {
-                            fluent_builders::ListRealtimeLogConfigs::new(self.handle.clone())
+    pub fn list_realtime_log_configs(&self) -> crate::client::fluent_builders::ListRealtimeLogConfigs {
+                            crate::client::fluent_builders::ListRealtimeLogConfigs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListResponseHeadersPolicies`](crate::client::fluent_builders::ListResponseHeadersPolicies) operation.
                         ///
@@ -1044,8 +1044,8 @@ impl Client  {
                         /// - On success, responds with [`ListResponseHeadersPoliciesOutput`](crate::output::ListResponseHeadersPoliciesOutput) with field(s):
                         ///   - [`response_headers_policy_list(Option<ResponseHeadersPolicyList>)`](crate::output::ListResponseHeadersPoliciesOutput::response_headers_policy_list): <p>A list of response headers policies.</p>
                         /// - On failure, responds with [`SdkError<ListResponseHeadersPoliciesError>`](crate::error::ListResponseHeadersPoliciesError)
-    pub fn list_response_headers_policies(&self) -> fluent_builders::ListResponseHeadersPolicies {
-                            fluent_builders::ListResponseHeadersPolicies::new(self.handle.clone())
+    pub fn list_response_headers_policies(&self) -> crate::client::fluent_builders::ListResponseHeadersPolicies {
+                            crate::client::fluent_builders::ListResponseHeadersPolicies::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListStreamingDistributions`](crate::client::fluent_builders::ListStreamingDistributions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamingDistributions::into_paginator).
@@ -1056,8 +1056,8 @@ impl Client  {
                         /// - On success, responds with [`ListStreamingDistributionsOutput`](crate::output::ListStreamingDistributionsOutput) with field(s):
                         ///   - [`streaming_distribution_list(Option<StreamingDistributionList>)`](crate::output::ListStreamingDistributionsOutput::streaming_distribution_list): <p>The <code>StreamingDistributionList</code> type.</p>
                         /// - On failure, responds with [`SdkError<ListStreamingDistributionsError>`](crate::error::ListStreamingDistributionsError)
-    pub fn list_streaming_distributions(&self) -> fluent_builders::ListStreamingDistributions {
-                            fluent_builders::ListStreamingDistributions::new(self.handle.clone())
+    pub fn list_streaming_distributions(&self) -> crate::client::fluent_builders::ListStreamingDistributions {
+                            crate::client::fluent_builders::ListStreamingDistributions::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -1066,8 +1066,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<Tags>)`](crate::output::ListTagsForResourceOutput::tags): <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`PublishFunction`](crate::client::fluent_builders::PublishFunction) operation.
                         ///
@@ -1077,8 +1077,8 @@ impl Client  {
                         /// - On success, responds with [`PublishFunctionOutput`](crate::output::PublishFunctionOutput) with field(s):
                         ///   - [`function_summary(Option<FunctionSummary>)`](crate::output::PublishFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
                         /// - On failure, responds with [`SdkError<PublishFunctionError>`](crate::error::PublishFunctionError)
-    pub fn publish_function(&self) -> fluent_builders::PublishFunction {
-                            fluent_builders::PublishFunction::new(self.handle.clone())
+    pub fn publish_function(&self) -> crate::client::fluent_builders::PublishFunction {
+                            crate::client::fluent_builders::PublishFunction::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -1088,8 +1088,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TestFunction`](crate::client::fluent_builders::TestFunction) operation.
                         ///
@@ -1101,8 +1101,8 @@ impl Client  {
                         /// - On success, responds with [`TestFunctionOutput`](crate::output::TestFunctionOutput) with field(s):
                         ///   - [`test_result(Option<TestResult>)`](crate::output::TestFunctionOutput::test_result): <p>An object that represents the result of running the function with the provided event object.</p>
                         /// - On failure, responds with [`SdkError<TestFunctionError>`](crate::error::TestFunctionError)
-    pub fn test_function(&self) -> fluent_builders::TestFunction {
-                            fluent_builders::TestFunction::new(self.handle.clone())
+    pub fn test_function(&self) -> crate::client::fluent_builders::TestFunction {
+                            crate::client::fluent_builders::TestFunction::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -1112,8 +1112,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateCachePolicy`](crate::client::fluent_builders::UpdateCachePolicy) operation.
                         ///
@@ -1125,8 +1125,8 @@ impl Client  {
                         ///   - [`cache_policy(Option<CachePolicy>)`](crate::output::UpdateCachePolicyOutput::cache_policy): <p>A cache policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
                         /// - On failure, responds with [`SdkError<UpdateCachePolicyError>`](crate::error::UpdateCachePolicyError)
-    pub fn update_cache_policy(&self) -> fluent_builders::UpdateCachePolicy {
-                            fluent_builders::UpdateCachePolicy::new(self.handle.clone())
+    pub fn update_cache_policy(&self) -> crate::client::fluent_builders::UpdateCachePolicy {
+                            crate::client::fluent_builders::UpdateCachePolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateCloudFrontOriginAccessIdentity`](crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity) operation.
                         ///
@@ -1138,8 +1138,8 @@ impl Client  {
                         ///   - [`cloud_front_origin_access_identity(Option<CloudFrontOriginAccessIdentity>)`](crate::output::UpdateCloudFrontOriginAccessIdentityOutput::cloud_front_origin_access_identity): <p>The origin access identity's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateCloudFrontOriginAccessIdentityOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<UpdateCloudFrontOriginAccessIdentityError>`](crate::error::UpdateCloudFrontOriginAccessIdentityError)
-    pub fn update_cloud_front_origin_access_identity(&self) -> fluent_builders::UpdateCloudFrontOriginAccessIdentity {
-                            fluent_builders::UpdateCloudFrontOriginAccessIdentity::new(self.handle.clone())
+    pub fn update_cloud_front_origin_access_identity(&self) -> crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity {
+                            crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateContinuousDeploymentPolicy`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy) operation.
                         ///
@@ -1151,8 +1151,8 @@ impl Client  {
                         ///   - [`continuous_deployment_policy(Option<ContinuousDeploymentPolicy>)`](crate::output::UpdateContinuousDeploymentPolicyOutput::continuous_deployment_policy): <p>A continuous deployment policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateContinuousDeploymentPolicyOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
                         /// - On failure, responds with [`SdkError<UpdateContinuousDeploymentPolicyError>`](crate::error::UpdateContinuousDeploymentPolicyError)
-    pub fn update_continuous_deployment_policy(&self) -> fluent_builders::UpdateContinuousDeploymentPolicy {
-                            fluent_builders::UpdateContinuousDeploymentPolicy::new(self.handle.clone())
+    pub fn update_continuous_deployment_policy(&self) -> crate::client::fluent_builders::UpdateContinuousDeploymentPolicy {
+                            crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateDistribution`](crate::client::fluent_builders::UpdateDistribution) operation.
                         ///
@@ -1164,8 +1164,8 @@ impl Client  {
                         ///   - [`distribution(Option<Distribution>)`](crate::output::UpdateDistributionOutput::distribution): <p>The distribution's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateDistributionOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<UpdateDistributionError>`](crate::error::UpdateDistributionError)
-    pub fn update_distribution(&self) -> fluent_builders::UpdateDistribution {
-                            fluent_builders::UpdateDistribution::new(self.handle.clone())
+    pub fn update_distribution(&self) -> crate::client::fluent_builders::UpdateDistribution {
+                            crate::client::fluent_builders::UpdateDistribution::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateDistributionWithStagingConfig`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig) operation.
                         ///
@@ -1177,8 +1177,8 @@ impl Client  {
                         ///   - [`distribution(Option<Distribution>)`](crate::output::UpdateDistributionWithStagingConfigOutput::distribution): <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateDistributionWithStagingConfigOutput::e_tag): <p>The current version of the primary distribution (after it's updated).</p>
                         /// - On failure, responds with [`SdkError<UpdateDistributionWithStagingConfigError>`](crate::error::UpdateDistributionWithStagingConfigError)
-    pub fn update_distribution_with_staging_config(&self) -> fluent_builders::UpdateDistributionWithStagingConfig {
-                            fluent_builders::UpdateDistributionWithStagingConfig::new(self.handle.clone())
+    pub fn update_distribution_with_staging_config(&self) -> crate::client::fluent_builders::UpdateDistributionWithStagingConfig {
+                            crate::client::fluent_builders::UpdateDistributionWithStagingConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateFieldLevelEncryptionConfig`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig) operation.
                         ///
@@ -1190,8 +1190,8 @@ impl Client  {
                         ///   - [`field_level_encryption(Option<FieldLevelEncryption>)`](crate::output::UpdateFieldLevelEncryptionConfigOutput::field_level_encryption): <p>Return the results of updating the configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateFieldLevelEncryptionConfigOutput::e_tag): <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<UpdateFieldLevelEncryptionConfigError>`](crate::error::UpdateFieldLevelEncryptionConfigError)
-    pub fn update_field_level_encryption_config(&self) -> fluent_builders::UpdateFieldLevelEncryptionConfig {
-                            fluent_builders::UpdateFieldLevelEncryptionConfig::new(self.handle.clone())
+    pub fn update_field_level_encryption_config(&self) -> crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig {
+                            crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateFieldLevelEncryptionProfile`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile) operation.
                         ///
@@ -1203,8 +1203,8 @@ impl Client  {
                         ///   - [`field_level_encryption_profile(Option<FieldLevelEncryptionProfile>)`](crate::output::UpdateFieldLevelEncryptionProfileOutput::field_level_encryption_profile): <p>Return the results of updating the profile.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateFieldLevelEncryptionProfileOutput::e_tag): <p>The result of the field-level encryption profile request.</p>
                         /// - On failure, responds with [`SdkError<UpdateFieldLevelEncryptionProfileError>`](crate::error::UpdateFieldLevelEncryptionProfileError)
-    pub fn update_field_level_encryption_profile(&self) -> fluent_builders::UpdateFieldLevelEncryptionProfile {
-                            fluent_builders::UpdateFieldLevelEncryptionProfile::new(self.handle.clone())
+    pub fn update_field_level_encryption_profile(&self) -> crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile {
+                            crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateFunction`](crate::client::fluent_builders::UpdateFunction) operation.
                         ///
@@ -1217,8 +1217,8 @@ impl Client  {
                         ///   - [`function_summary(Option<FunctionSummary>)`](crate::output::UpdateFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
                         /// - On failure, responds with [`SdkError<UpdateFunctionError>`](crate::error::UpdateFunctionError)
-    pub fn update_function(&self) -> fluent_builders::UpdateFunction {
-                            fluent_builders::UpdateFunction::new(self.handle.clone())
+    pub fn update_function(&self) -> crate::client::fluent_builders::UpdateFunction {
+                            crate::client::fluent_builders::UpdateFunction::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateKeyGroup`](crate::client::fluent_builders::UpdateKeyGroup) operation.
                         ///
@@ -1230,8 +1230,8 @@ impl Client  {
                         ///   - [`key_group(Option<KeyGroup>)`](crate::output::UpdateKeyGroupOutput::key_group): <p>The key group that was just updated.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>
                         /// - On failure, responds with [`SdkError<UpdateKeyGroupError>`](crate::error::UpdateKeyGroupError)
-    pub fn update_key_group(&self) -> fluent_builders::UpdateKeyGroup {
-                            fluent_builders::UpdateKeyGroup::new(self.handle.clone())
+    pub fn update_key_group(&self) -> crate::client::fluent_builders::UpdateKeyGroup {
+                            crate::client::fluent_builders::UpdateKeyGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateOriginAccessControl`](crate::client::fluent_builders::UpdateOriginAccessControl) operation.
                         ///
@@ -1243,8 +1243,8 @@ impl Client  {
                         ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::output::UpdateOriginAccessControlOutput::origin_access_control): <p>The origin access control after it has been updated.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateOriginAccessControlOutput::e_tag): <p>The new version of the origin access control after it has been updated.</p>
                         /// - On failure, responds with [`SdkError<UpdateOriginAccessControlError>`](crate::error::UpdateOriginAccessControlError)
-    pub fn update_origin_access_control(&self) -> fluent_builders::UpdateOriginAccessControl {
-                            fluent_builders::UpdateOriginAccessControl::new(self.handle.clone())
+    pub fn update_origin_access_control(&self) -> crate::client::fluent_builders::UpdateOriginAccessControl {
+                            crate::client::fluent_builders::UpdateOriginAccessControl::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateOriginRequestPolicy`](crate::client::fluent_builders::UpdateOriginRequestPolicy) operation.
                         ///
@@ -1256,8 +1256,8 @@ impl Client  {
                         ///   - [`origin_request_policy(Option<OriginRequestPolicy>)`](crate::output::UpdateOriginRequestPolicyOutput::origin_request_policy): <p>An origin request policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateOriginRequestPolicyOutput::e_tag): <p>The current version of the origin request policy.</p>
                         /// - On failure, responds with [`SdkError<UpdateOriginRequestPolicyError>`](crate::error::UpdateOriginRequestPolicyError)
-    pub fn update_origin_request_policy(&self) -> fluent_builders::UpdateOriginRequestPolicy {
-                            fluent_builders::UpdateOriginRequestPolicy::new(self.handle.clone())
+    pub fn update_origin_request_policy(&self) -> crate::client::fluent_builders::UpdateOriginRequestPolicy {
+                            crate::client::fluent_builders::UpdateOriginRequestPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdatePublicKey`](crate::client::fluent_builders::UpdatePublicKey) operation.
                         ///
@@ -1269,8 +1269,8 @@ impl Client  {
                         ///   - [`public_key(Option<PublicKey>)`](crate::output::UpdatePublicKeyOutput::public_key): <p>The public key.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdatePublicKeyOutput::e_tag): <p>The identifier of the current version of the public key.</p>
                         /// - On failure, responds with [`SdkError<UpdatePublicKeyError>`](crate::error::UpdatePublicKeyError)
-    pub fn update_public_key(&self) -> fluent_builders::UpdatePublicKey {
-                            fluent_builders::UpdatePublicKey::new(self.handle.clone())
+    pub fn update_public_key(&self) -> crate::client::fluent_builders::UpdatePublicKey {
+                            crate::client::fluent_builders::UpdatePublicKey::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateRealtimeLogConfig`](crate::client::fluent_builders::UpdateRealtimeLogConfig) operation.
                         ///
@@ -1283,8 +1283,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateRealtimeLogConfigOutput`](crate::output::UpdateRealtimeLogConfigOutput) with field(s):
                         ///   - [`realtime_log_config(Option<RealtimeLogConfig>)`](crate::output::UpdateRealtimeLogConfigOutput::realtime_log_config): <p>A real-time log configuration.</p>
                         /// - On failure, responds with [`SdkError<UpdateRealtimeLogConfigError>`](crate::error::UpdateRealtimeLogConfigError)
-    pub fn update_realtime_log_config(&self) -> fluent_builders::UpdateRealtimeLogConfig {
-                            fluent_builders::UpdateRealtimeLogConfig::new(self.handle.clone())
+    pub fn update_realtime_log_config(&self) -> crate::client::fluent_builders::UpdateRealtimeLogConfig {
+                            crate::client::fluent_builders::UpdateRealtimeLogConfig::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateResponseHeadersPolicy`](crate::client::fluent_builders::UpdateResponseHeadersPolicy) operation.
                         ///
@@ -1296,8 +1296,8 @@ impl Client  {
                         ///   - [`response_headers_policy(Option<ResponseHeadersPolicy>)`](crate::output::UpdateResponseHeadersPolicyOutput::response_headers_policy): <p>A response headers policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateResponseHeadersPolicyOutput::e_tag): <p>The current version of the response headers policy.</p>
                         /// - On failure, responds with [`SdkError<UpdateResponseHeadersPolicyError>`](crate::error::UpdateResponseHeadersPolicyError)
-    pub fn update_response_headers_policy(&self) -> fluent_builders::UpdateResponseHeadersPolicy {
-                            fluent_builders::UpdateResponseHeadersPolicy::new(self.handle.clone())
+    pub fn update_response_headers_policy(&self) -> crate::client::fluent_builders::UpdateResponseHeadersPolicy {
+                            crate::client::fluent_builders::UpdateResponseHeadersPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateStreamingDistribution`](crate::client::fluent_builders::UpdateStreamingDistribution) operation.
                         ///
@@ -1309,7130 +1309,9 @@ impl Client  {
                         ///   - [`streaming_distribution(Option<StreamingDistribution>)`](crate::output::UpdateStreamingDistributionOutput::streaming_distribution): <p>The streaming distribution's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::output::UpdateStreamingDistributionOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
                         /// - On failure, responds with [`SdkError<UpdateStreamingDistributionError>`](crate::error::UpdateStreamingDistributionError)
-    pub fn update_streaming_distribution(&self) -> fluent_builders::UpdateStreamingDistribution {
-                            fluent_builders::UpdateStreamingDistribution::new(self.handle.clone())
+    pub fn update_streaming_distribution(&self) -> crate::client::fluent_builders::UpdateStreamingDistribution {
+                            crate::client::fluent_builders::UpdateStreamingDistribution::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `AssociateAlias`.
-                        ///
-    /// <p>Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront distribution.</p> 
-    /// <p>With this operation you can move an alias that's already in use on a CloudFront distribution to a different distribution in one step. This prevents the downtime that could occur if you first remove the alias from one distribution and then separately add the alias to another distribution.</p> 
-    /// <p>To use this operation to associate an alias with a distribution, you provide the alias and the ID of the target distribution for the alias. For more information, including how to set up the target distribution, prerequisites that you must complete, and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateAlias {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::associate_alias_input::Builder
-                        }
-    impl AssociateAlias  {
-        /// Creates a new `AssociateAlias`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::AssociateAlias, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::AssociateAliasError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::AssociateAliasOutput, aws_smithy_http::result::SdkError<crate::error::AssociateAliasError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the distribution that you're associating the alias with.</p>
-        pub fn target_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_distribution_id(input.into());
-            self
-        }
-        /// <p>The ID of the distribution that you're associating the alias with.</p>
-        pub fn set_target_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target_distribution_id(input);
-            self
-        }
-        /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
-        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(input.into());
-            self
-        }
-        /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
-        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alias(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CopyDistribution`.
-                        ///
-    /// <p>Creates a staging distribution using the configuration of the provided primary distribution. A staging distribution is a copy of an existing distribution (called the primary distribution) that you can use in a continuous deployment workflow.</p> 
-    /// <p>After you create a staging distribution, you can use <code>UpdateDistribution</code> to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally move traffic to the staging distribution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CopyDistribution {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::copy_distribution_input::Builder
-                        }
-    impl CopyDistribution  {
-        /// Creates a new `CopyDistribution`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CopyDistribution, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CopyDistributionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CopyDistributionOutput, aws_smithy_http::result::SdkError<crate::error::CopyDistributionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
-        pub fn primary_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.primary_distribution_id(input.into());
-            self
-        }
-        /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
-        pub fn set_primary_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_primary_distribution_id(input);
-            self
-        }
-        /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
-        pub fn staging(mut self, input: bool) -> Self {
-            self.inner = self.inner.staging(input);
-            self
-        }
-        /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
-        pub fn set_staging(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_staging(input);
-            self
-        }
-        /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
-        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_reference(input.into());
-            self
-        }
-        /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
-        pub fn set_caller_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_caller_reference(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateCachePolicy`.
-                        ///
-    /// <p>Creates a cache policy.</p> 
-    /// <p>After you create a cache policy, you can attach it to one or more cache behaviors. When it's attached to a cache behavior, the cache policy determines the following:</p> 
-    /// <ul> 
-    /// <li> <p>The values that CloudFront includes in the <i>cache key</i>. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.</p> </li> 
-    /// <li> <p>The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront cache.</p> </li> 
-    /// </ul> 
-    /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can't find an object in its cache that matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p> 
-    /// <p>For more information about cache policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateCachePolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_cache_policy_input::Builder
-                        }
-    impl CreateCachePolicy  {
-        /// Creates a new `CreateCachePolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateCachePolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateCachePolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateCachePolicyOutput, aws_smithy_http::result::SdkError<crate::error::CreateCachePolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A cache policy configuration.</p>
-        pub fn cache_policy_config(mut self, input: crate::model::CachePolicyConfig) -> Self {
-            self.inner = self.inner.cache_policy_config(input);
-            self
-        }
-        /// <p>A cache policy configuration.</p>
-        pub fn set_cache_policy_config(mut self, input: std::option::Option<crate::model::CachePolicyConfig>) -> Self {
-            self.inner = self.inner.set_cache_policy_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateCloudFrontOriginAccessIdentity`.
-                        ///
-    /// <p>Creates a new origin access identity. If you're using Amazon S3 for your origin, you can use an origin access identity to require users to access your content using a CloudFront URL instead of the Amazon S3 URL. For more information about how to use origin access identities, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateCloudFrontOriginAccessIdentity {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_cloud_front_origin_access_identity_input::Builder
-                        }
-    impl CreateCloudFrontOriginAccessIdentity  {
-        /// Creates a new `CreateCloudFrontOriginAccessIdentity`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateCloudFrontOriginAccessIdentity, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateCloudFrontOriginAccessIdentityError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateCloudFrontOriginAccessIdentityOutput, aws_smithy_http::result::SdkError<crate::error::CreateCloudFrontOriginAccessIdentityError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The current configuration information for the identity.</p>
-        pub fn cloud_front_origin_access_identity_config(mut self, input: crate::model::CloudFrontOriginAccessIdentityConfig) -> Self {
-            self.inner = self.inner.cloud_front_origin_access_identity_config(input);
-            self
-        }
-        /// <p>The current configuration information for the identity.</p>
-        pub fn set_cloud_front_origin_access_identity_config(mut self, input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>) -> Self {
-            self.inner = self.inner.set_cloud_front_origin_access_identity_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateContinuousDeploymentPolicy`.
-                        ///
-    /// <p>Creates a continuous deployment policy that distributes traffic for a custom domain name to two different CloudFront distributions.</p> 
-    /// <p>To use a continuous deployment policy, first use <code>CopyDistribution</code> to create a staging distribution, then use <code>UpdateDistribution</code> to modify the staging distribution's configuration.</p> 
-    /// <p>After you create and update a staging distribution, you can use a continuous deployment policy to incrementally move traffic to the staging distribution. This workflow enables you to test changes to a distribution's configuration before moving all of your domain's production traffic to the new configuration.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateContinuousDeploymentPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_continuous_deployment_policy_input::Builder
-                        }
-    impl CreateContinuousDeploymentPolicy  {
-        /// Creates a new `CreateContinuousDeploymentPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateContinuousDeploymentPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateContinuousDeploymentPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateContinuousDeploymentPolicyOutput, aws_smithy_http::result::SdkError<crate::error::CreateContinuousDeploymentPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Contains the configuration for a continuous deployment policy.</p>
-        pub fn continuous_deployment_policy_config(mut self, input: crate::model::ContinuousDeploymentPolicyConfig) -> Self {
-            self.inner = self.inner.continuous_deployment_policy_config(input);
-            self
-        }
-        /// <p>Contains the configuration for a continuous deployment policy.</p>
-        pub fn set_continuous_deployment_policy_config(mut self, input: std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>) -> Self {
-            self.inner = self.inner.set_continuous_deployment_policy_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateDistribution`.
-                        ///
-    /// <p>Creates a CloudFront distribution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateDistribution {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_distribution_input::Builder
-                        }
-    impl CreateDistribution  {
-        /// Creates a new `CreateDistribution`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateDistribution, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateDistributionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateDistributionOutput, aws_smithy_http::result::SdkError<crate::error::CreateDistributionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The distribution's configuration information.</p>
-        pub fn distribution_config(mut self, input: crate::model::DistributionConfig) -> Self {
-            self.inner = self.inner.distribution_config(input);
-            self
-        }
-        /// <p>The distribution's configuration information.</p>
-        pub fn set_distribution_config(mut self, input: std::option::Option<crate::model::DistributionConfig>) -> Self {
-            self.inner = self.inner.set_distribution_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateDistributionWithTags`.
-                        ///
-    /// <p>Create a new distribution with tags.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateDistributionWithTags {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_distribution_with_tags_input::Builder
-                        }
-    impl CreateDistributionWithTags  {
-        /// Creates a new `CreateDistributionWithTags`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateDistributionWithTags, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateDistributionWithTagsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateDistributionWithTagsOutput, aws_smithy_http::result::SdkError<crate::error::CreateDistributionWithTagsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The distribution's configuration information.</p>
-        pub fn distribution_config_with_tags(mut self, input: crate::model::DistributionConfigWithTags) -> Self {
-            self.inner = self.inner.distribution_config_with_tags(input);
-            self
-        }
-        /// <p>The distribution's configuration information.</p>
-        pub fn set_distribution_config_with_tags(mut self, input: std::option::Option<crate::model::DistributionConfigWithTags>) -> Self {
-            self.inner = self.inner.set_distribution_config_with_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateFieldLevelEncryptionConfig`.
-                        ///
-    /// <p>Create a new field-level encryption configuration.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateFieldLevelEncryptionConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_field_level_encryption_config_input::Builder
-                        }
-    impl CreateFieldLevelEncryptionConfig  {
-        /// Creates a new `CreateFieldLevelEncryptionConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateFieldLevelEncryptionConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateFieldLevelEncryptionConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateFieldLevelEncryptionConfigOutput, aws_smithy_http::result::SdkError<crate::error::CreateFieldLevelEncryptionConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The request to create a new field-level encryption configuration.</p>
-        pub fn field_level_encryption_config(mut self, input: crate::model::FieldLevelEncryptionConfig) -> Self {
-            self.inner = self.inner.field_level_encryption_config(input);
-            self
-        }
-        /// <p>The request to create a new field-level encryption configuration.</p>
-        pub fn set_field_level_encryption_config(mut self, input: std::option::Option<crate::model::FieldLevelEncryptionConfig>) -> Self {
-            self.inner = self.inner.set_field_level_encryption_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateFieldLevelEncryptionProfile`.
-                        ///
-    /// <p>Create a field-level encryption profile.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateFieldLevelEncryptionProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_field_level_encryption_profile_input::Builder
-                        }
-    impl CreateFieldLevelEncryptionProfile  {
-        /// Creates a new `CreateFieldLevelEncryptionProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateFieldLevelEncryptionProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateFieldLevelEncryptionProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateFieldLevelEncryptionProfileOutput, aws_smithy_http::result::SdkError<crate::error::CreateFieldLevelEncryptionProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The request to create a field-level encryption profile.</p>
-        pub fn field_level_encryption_profile_config(mut self, input: crate::model::FieldLevelEncryptionProfileConfig) -> Self {
-            self.inner = self.inner.field_level_encryption_profile_config(input);
-            self
-        }
-        /// <p>The request to create a field-level encryption profile.</p>
-        pub fn set_field_level_encryption_profile_config(mut self, input: std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>) -> Self {
-            self.inner = self.inner.set_field_level_encryption_profile_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateFunction`.
-                        ///
-    /// <p>Creates a CloudFront function.</p> 
-    /// <p>To create a function, you provide the function code and some configuration information about the function. The response contains an Amazon Resource Name (ARN) that uniquely identifies the function.</p> 
-    /// <p>When you create a function, it's in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p> 
-    /// <p>When you're ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it's live, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateFunction {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_function_input::Builder
-                        }
-    impl CreateFunction  {
-        /// Creates a new `CreateFunction`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateFunction, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateFunctionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateFunctionOutput, aws_smithy_http::result::SdkError<crate::error::CreateFunctionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A name to identify the function.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>A name to identify the function.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
-        pub fn function_config(mut self, input: crate::model::FunctionConfig) -> Self {
-            self.inner = self.inner.function_config(input);
-            self
-        }
-        /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
-        pub fn set_function_config(mut self, input: std::option::Option<crate::model::FunctionConfig>) -> Self {
-            self.inner = self.inner.set_function_config(input);
-            self
-        }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn function_code(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.function_code(input);
-            self
-        }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn set_function_code(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_function_code(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateInvalidation`.
-                        ///
-    /// <p>Create a new invalidation.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateInvalidation {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_invalidation_input::Builder
-                        }
-    impl CreateInvalidation  {
-        /// Creates a new `CreateInvalidation`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateInvalidation, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateInvalidationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateInvalidationOutput, aws_smithy_http::result::SdkError<crate::error::CreateInvalidationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The distribution's id.</p>
-        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(input.into());
-            self
-        }
-        /// <p>The distribution's id.</p>
-        pub fn set_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_distribution_id(input);
-            self
-        }
-        /// <p>The batch information for the invalidation.</p>
-        pub fn invalidation_batch(mut self, input: crate::model::InvalidationBatch) -> Self {
-            self.inner = self.inner.invalidation_batch(input);
-            self
-        }
-        /// <p>The batch information for the invalidation.</p>
-        pub fn set_invalidation_batch(mut self, input: std::option::Option<crate::model::InvalidationBatch>) -> Self {
-            self.inner = self.inner.set_invalidation_batch(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateKeyGroup`.
-                        ///
-    /// <p>Creates a key group that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p> 
-    /// <p>To create a key group, you must specify at least one public key for the key group. After you create a key group, you can reference it from one or more cache behaviors. When you reference a key group in a cache behavior, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateKeyGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_key_group_input::Builder
-                        }
-    impl CreateKeyGroup  {
-        /// Creates a new `CreateKeyGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateKeyGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateKeyGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateKeyGroupOutput, aws_smithy_http::result::SdkError<crate::error::CreateKeyGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A key group configuration.</p>
-        pub fn key_group_config(mut self, input: crate::model::KeyGroupConfig) -> Self {
-            self.inner = self.inner.key_group_config(input);
-            self
-        }
-        /// <p>A key group configuration.</p>
-        pub fn set_key_group_config(mut self, input: std::option::Option<crate::model::KeyGroupConfig>) -> Self {
-            self.inner = self.inner.set_key_group_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateMonitoringSubscription`.
-                        ///
-    /// <p>Enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an additional cost.</p> 
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateMonitoringSubscription {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_monitoring_subscription_input::Builder
-                        }
-    impl CreateMonitoringSubscription  {
-        /// Creates a new `CreateMonitoringSubscription`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateMonitoringSubscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateMonitoringSubscriptionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateMonitoringSubscriptionOutput, aws_smithy_http::result::SdkError<crate::error::CreateMonitoringSubscriptionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the distribution that you are enabling metrics for.</p>
-        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(input.into());
-            self
-        }
-        /// <p>The ID of the distribution that you are enabling metrics for.</p>
-        pub fn set_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_distribution_id(input);
-            self
-        }
-        /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-        pub fn monitoring_subscription(mut self, input: crate::model::MonitoringSubscription) -> Self {
-            self.inner = self.inner.monitoring_subscription(input);
-            self
-        }
-        /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-        pub fn set_monitoring_subscription(mut self, input: std::option::Option<crate::model::MonitoringSubscription>) -> Self {
-            self.inner = self.inner.set_monitoring_subscription(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateOriginAccessControl`.
-                        ///
-    /// <p>Creates a new origin access control in CloudFront. After you create an origin access control, you can add it to an origin in a CloudFront distribution so that CloudFront sends authenticated (signed) requests to the origin.</p> 
-    /// <p>For an Amazon S3 origin, this makes it possible to block public access to the Amazon S3 bucket so that viewers (users) can access the content in the bucket only through CloudFront.</p> 
-    /// <p>For more information about using a CloudFront origin access control, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateOriginAccessControl {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_origin_access_control_input::Builder
-                        }
-    impl CreateOriginAccessControl  {
-        /// Creates a new `CreateOriginAccessControl`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateOriginAccessControl, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateOriginAccessControlError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateOriginAccessControlOutput, aws_smithy_http::result::SdkError<crate::error::CreateOriginAccessControlError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Contains the origin access control.</p>
-        pub fn origin_access_control_config(mut self, input: crate::model::OriginAccessControlConfig) -> Self {
-            self.inner = self.inner.origin_access_control_config(input);
-            self
-        }
-        /// <p>Contains the origin access control.</p>
-        pub fn set_origin_access_control_config(mut self, input: std::option::Option<crate::model::OriginAccessControlConfig>) -> Self {
-            self.inner = self.inner.set_origin_access_control_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateOriginRequestPolicy`.
-                        ///
-    /// <p>Creates an origin request policy.</p> 
-    /// <p>After you create an origin request policy, you can attach it to one or more cache behaviors. When it's attached to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:</p> 
-    /// <ul> 
-    /// <li> <p>The request body and the URL path (without the domain name) from the viewer request.</p> </li> 
-    /// <li> <p>The headers that CloudFront automatically includes in every origin request, including <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.</p> </li> 
-    /// <li> <p>All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request policy. These can include items from the viewer request and, in the case of headers, additional ones that are added by CloudFront.</p> </li> 
-    /// </ul> 
-    /// <p>CloudFront sends a request when it can't find a valid object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p> 
-    /// <p>For more information about origin request policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling origin requests</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateOriginRequestPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_origin_request_policy_input::Builder
-                        }
-    impl CreateOriginRequestPolicy  {
-        /// Creates a new `CreateOriginRequestPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateOriginRequestPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateOriginRequestPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateOriginRequestPolicyOutput, aws_smithy_http::result::SdkError<crate::error::CreateOriginRequestPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>An origin request policy configuration.</p>
-        pub fn origin_request_policy_config(mut self, input: crate::model::OriginRequestPolicyConfig) -> Self {
-            self.inner = self.inner.origin_request_policy_config(input);
-            self
-        }
-        /// <p>An origin request policy configuration.</p>
-        pub fn set_origin_request_policy_config(mut self, input: std::option::Option<crate::model::OriginRequestPolicyConfig>) -> Self {
-            self.inner = self.inner.set_origin_request_policy_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreatePublicKey`.
-                        ///
-    /// <p>Uploads a public key to CloudFront that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreatePublicKey {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_public_key_input::Builder
-                        }
-    impl CreatePublicKey  {
-        /// Creates a new `CreatePublicKey`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreatePublicKey, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreatePublicKeyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreatePublicKeyOutput, aws_smithy_http::result::SdkError<crate::error::CreatePublicKeyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A CloudFront public key configuration.</p>
-        pub fn public_key_config(mut self, input: crate::model::PublicKeyConfig) -> Self {
-            self.inner = self.inner.public_key_config(input);
-            self
-        }
-        /// <p>A CloudFront public key configuration.</p>
-        pub fn set_public_key_config(mut self, input: std::option::Option<crate::model::PublicKeyConfig>) -> Self {
-            self.inner = self.inner.set_public_key_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateRealtimeLogConfig`.
-                        ///
-    /// <p>Creates a real-time log configuration.</p> 
-    /// <p>After you create a real-time log configuration, you can attach it to one or more cache behaviors to send real-time log data to the specified Amazon Kinesis data stream.</p> 
-    /// <p>For more information about real-time log configurations, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateRealtimeLogConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_realtime_log_config_input::Builder
-                        }
-    impl CreateRealtimeLogConfig  {
-        /// Creates a new `CreateRealtimeLogConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateRealtimeLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateRealtimeLogConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateRealtimeLogConfigOutput, aws_smithy_http::result::SdkError<crate::error::CreateRealtimeLogConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `EndPoints`.
-        ///
-        /// To override the contents of this collection use [`set_end_points`](Self::set_end_points).
-        ///
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-        pub fn end_points(mut self, input: crate::model::EndPoint) -> Self {
-            self.inner = self.inner.end_points(input);
-            self
-        }
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-        pub fn set_end_points(mut self, input: std::option::Option<std::vec::Vec<crate::model::EndPoint>>) -> Self {
-            self.inner = self.inner.set_end_points(input);
-            self
-        }
-        /// Appends an item to `Fields`.
-        ///
-        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
-        ///
-        /// <p>A list of fields to include in each real-time log record.</p> 
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fields(input.into());
-            self
-        }
-        /// <p>A list of fields to include in each real-time log record.</p> 
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_fields(input);
-            self
-        }
-        /// <p>A unique name to identify this real-time log configuration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>A unique name to identify this real-time log configuration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
-        pub fn sampling_rate(mut self, input: i64) -> Self {
-            self.inner = self.inner.sampling_rate(input);
-            self
-        }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
-        pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_sampling_rate(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateResponseHeadersPolicy`.
-                        ///
-    /// <p>Creates a response headers policy.</p> 
-    /// <p>A response headers policy contains information about a set of HTTP headers. To create a response headers policy, you provide some metadata about the policy and a set of configurations that specify the headers.</p> 
-    /// <p>After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a CloudFront distribution. When it's attached to a cache behavior, the response headers policy affects the HTTP headers that CloudFront includes in HTTP responses to requests that match the cache behavior. CloudFront adds or removes response headers according to the configuration of the response headers policy.</p> 
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateResponseHeadersPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_response_headers_policy_input::Builder
-                        }
-    impl CreateResponseHeadersPolicy  {
-        /// Creates a new `CreateResponseHeadersPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateResponseHeadersPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateResponseHeadersPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateResponseHeadersPolicyOutput, aws_smithy_http::result::SdkError<crate::error::CreateResponseHeadersPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
-        pub fn response_headers_policy_config(mut self, input: crate::model::ResponseHeadersPolicyConfig) -> Self {
-            self.inner = self.inner.response_headers_policy_config(input);
-            self
-        }
-        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
-        pub fn set_response_headers_policy_config(mut self, input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>) -> Self {
-            self.inner = self.inner.set_response_headers_policy_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateStreamingDistribution`.
-                        ///
-    /// <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateStreamingDistribution {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_streaming_distribution_input::Builder
-                        }
-    impl CreateStreamingDistribution  {
-        /// Creates a new `CreateStreamingDistribution`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateStreamingDistribution, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateStreamingDistributionOutput, aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The streaming distribution's configuration information.</p>
-        pub fn streaming_distribution_config(mut self, input: crate::model::StreamingDistributionConfig) -> Self {
-            self.inner = self.inner.streaming_distribution_config(input);
-            self
-        }
-        /// <p>The streaming distribution's configuration information.</p>
-        pub fn set_streaming_distribution_config(mut self, input: std::option::Option<crate::model::StreamingDistributionConfig>) -> Self {
-            self.inner = self.inner.set_streaming_distribution_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateStreamingDistributionWithTags`.
-                        ///
-    /// <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateStreamingDistributionWithTags {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_streaming_distribution_with_tags_input::Builder
-                        }
-    impl CreateStreamingDistributionWithTags  {
-        /// Creates a new `CreateStreamingDistributionWithTags`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateStreamingDistributionWithTags, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionWithTagsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateStreamingDistributionWithTagsOutput, aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionWithTagsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The streaming distribution's configuration information.</p>
-        pub fn streaming_distribution_config_with_tags(mut self, input: crate::model::StreamingDistributionConfigWithTags) -> Self {
-            self.inner = self.inner.streaming_distribution_config_with_tags(input);
-            self
-        }
-        /// <p>The streaming distribution's configuration information.</p>
-        pub fn set_streaming_distribution_config_with_tags(mut self, input: std::option::Option<crate::model::StreamingDistributionConfigWithTags>) -> Self {
-            self.inner = self.inner.set_streaming_distribution_config_with_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteCachePolicy`.
-                        ///
-    /// <p>Deletes a cache policy.</p> 
-    /// <p>You cannot delete a cache policy if it's attached to a cache behavior. First update your distributions to remove the cache policy from all cache behaviors, then delete the cache policy.</p> 
-    /// <p>To delete a cache policy, you must provide the policy's identifier and version. To get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteCachePolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_cache_policy_input::Builder
-                        }
-    impl DeleteCachePolicy  {
-        /// Creates a new `DeleteCachePolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteCachePolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteCachePolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteCachePolicyOutput, aws_smithy_http::result::SdkError<crate::error::DeleteCachePolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteCloudFrontOriginAccessIdentity`.
-                        ///
-    /// <p>Delete an origin access identity.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteCloudFrontOriginAccessIdentity {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_cloud_front_origin_access_identity_input::Builder
-                        }
-    impl DeleteCloudFrontOriginAccessIdentity  {
-        /// Creates a new `DeleteCloudFrontOriginAccessIdentity`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteCloudFrontOriginAccessIdentity, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteCloudFrontOriginAccessIdentityError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteCloudFrontOriginAccessIdentityOutput, aws_smithy_http::result::SdkError<crate::error::DeleteCloudFrontOriginAccessIdentityError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The origin access identity's ID.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The origin access identity's ID.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteContinuousDeploymentPolicy`.
-                        ///
-    /// <p>Deletes a continuous deployment policy.</p> 
-    /// <p>You cannot delete a continuous deployment policy that's attached to a primary distribution. First update your distribution to remove the continuous deployment policy, then you can delete the policy.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteContinuousDeploymentPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_continuous_deployment_policy_input::Builder
-                        }
-    impl DeleteContinuousDeploymentPolicy  {
-        /// Creates a new `DeleteContinuousDeploymentPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteContinuousDeploymentPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteContinuousDeploymentPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteContinuousDeploymentPolicyOutput, aws_smithy_http::result::SdkError<crate::error::DeleteContinuousDeploymentPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteDistribution`.
-                        ///
-    /// <p>Delete a distribution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteDistribution {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_distribution_input::Builder
-                        }
-    impl DeleteDistribution  {
-        /// Creates a new `DeleteDistribution`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteDistribution, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteDistributionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteDistributionOutput, aws_smithy_http::result::SdkError<crate::error::DeleteDistributionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The distribution ID.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The distribution ID.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteFieldLevelEncryptionConfig`.
-                        ///
-    /// <p>Remove a field-level encryption configuration.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteFieldLevelEncryptionConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_field_level_encryption_config_input::Builder
-                        }
-    impl DeleteFieldLevelEncryptionConfig  {
-        /// Creates a new `DeleteFieldLevelEncryptionConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteFieldLevelEncryptionConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteFieldLevelEncryptionConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteFieldLevelEncryptionConfigOutput, aws_smithy_http::result::SdkError<crate::error::DeleteFieldLevelEncryptionConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the configuration you want to delete from CloudFront.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The ID of the configuration you want to delete from CloudFront.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteFieldLevelEncryptionProfile`.
-                        ///
-    /// <p>Remove a field-level encryption profile.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteFieldLevelEncryptionProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_field_level_encryption_profile_input::Builder
-                        }
-    impl DeleteFieldLevelEncryptionProfile  {
-        /// Creates a new `DeleteFieldLevelEncryptionProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteFieldLevelEncryptionProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteFieldLevelEncryptionProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteFieldLevelEncryptionProfileOutput, aws_smithy_http::result::SdkError<crate::error::DeleteFieldLevelEncryptionProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteFunction`.
-                        ///
-    /// <p>Deletes a CloudFront function.</p> 
-    /// <p>You cannot delete a function if it's associated with a cache behavior. First, update your distributions to remove the function association from all cache behaviors, then delete the function.</p> 
-    /// <p>To delete a function, you must provide the function's name and version (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteFunction {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_function_input::Builder
-                        }
-    impl DeleteFunction  {
-        /// Creates a new `DeleteFunction`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteFunction, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteFunctionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteFunctionOutput, aws_smithy_http::result::SdkError<crate::error::DeleteFunctionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the function that you are deleting.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the function that you are deleting.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteKeyGroup`.
-                        ///
-    /// <p>Deletes a key group.</p> 
-    /// <p>You cannot delete a key group that is referenced in a cache behavior. First update your distributions to remove the key group from all cache behaviors, then delete the key group.</p> 
-    /// <p>To delete a key group, you must provide the key group's identifier and version. To get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteKeyGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_key_group_input::Builder
-                        }
-    impl DeleteKeyGroup  {
-        /// Creates a new `DeleteKeyGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteKeyGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteKeyGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteKeyGroupOutput, aws_smithy_http::result::SdkError<crate::error::DeleteKeyGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteMonitoringSubscription`.
-                        ///
-    /// <p>Disables additional CloudWatch metrics for the specified CloudFront distribution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteMonitoringSubscription {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_monitoring_subscription_input::Builder
-                        }
-    impl DeleteMonitoringSubscription  {
-        /// Creates a new `DeleteMonitoringSubscription`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteMonitoringSubscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteMonitoringSubscriptionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteMonitoringSubscriptionOutput, aws_smithy_http::result::SdkError<crate::error::DeleteMonitoringSubscriptionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the distribution that you are disabling metrics for.</p>
-        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(input.into());
-            self
-        }
-        /// <p>The ID of the distribution that you are disabling metrics for.</p>
-        pub fn set_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_distribution_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteOriginAccessControl`.
-                        ///
-    /// <p>Deletes a CloudFront origin access control.</p> 
-    /// <p>You cannot delete an origin access control if it's in use. First, update all distributions to remove the origin access control from all origins, then delete the origin access control.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteOriginAccessControl {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_origin_access_control_input::Builder
-                        }
-    impl DeleteOriginAccessControl  {
-        /// Creates a new `DeleteOriginAccessControl`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteOriginAccessControl, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteOriginAccessControlError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteOriginAccessControlOutput, aws_smithy_http::result::SdkError<crate::error::DeleteOriginAccessControlError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier of the origin access control that you are deleting.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the origin access control that you are deleting.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the origin access control that you are deleting.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the origin access control that you are deleting.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteOriginRequestPolicy`.
-                        ///
-    /// <p>Deletes an origin request policy.</p> 
-    /// <p>You cannot delete an origin request policy if it's attached to any cache behaviors. First update your distributions to remove the origin request policy from all cache behaviors, then delete the origin request policy.</p> 
-    /// <p>To delete an origin request policy, you must provide the policy's identifier and version. To get the identifier, you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteOriginRequestPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_origin_request_policy_input::Builder
-                        }
-    impl DeleteOriginRequestPolicy  {
-        /// Creates a new `DeleteOriginRequestPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteOriginRequestPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteOriginRequestPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteOriginRequestPolicyOutput, aws_smithy_http::result::SdkError<crate::error::DeleteOriginRequestPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeletePublicKey`.
-                        ///
-    /// <p>Remove a public key you previously added to CloudFront.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeletePublicKey {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_public_key_input::Builder
-                        }
-    impl DeletePublicKey  {
-        /// Creates a new `DeletePublicKey`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeletePublicKey, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeletePublicKeyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeletePublicKeyOutput, aws_smithy_http::result::SdkError<crate::error::DeletePublicKeyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the public key you want to remove from CloudFront.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The ID of the public key you want to remove from CloudFront.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteRealtimeLogConfig`.
-                        ///
-    /// <p>Deletes a real-time log configuration.</p> 
-    /// <p>You cannot delete a real-time log configuration if it's attached to a cache behavior. First update your distributions to remove the real-time log configuration from all cache behaviors, then delete the real-time log configuration.</p> 
-    /// <p>To delete a real-time log configuration, you can provide the configuration's name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to delete.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteRealtimeLogConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_realtime_log_config_input::Builder
-                        }
-    impl DeleteRealtimeLogConfig  {
-        /// Creates a new `DeleteRealtimeLogConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteRealtimeLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteRealtimeLogConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteRealtimeLogConfigOutput, aws_smithy_http::result::SdkError<crate::error::DeleteRealtimeLogConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the real-time log configuration to delete.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the real-time log configuration to delete.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteResponseHeadersPolicy`.
-                        ///
-    /// <p>Deletes a response headers policy.</p> 
-    /// <p>You cannot delete a response headers policy if it's attached to a cache behavior. First update your distributions to remove the response headers policy from all cache behaviors, then delete the response headers policy.</p> 
-    /// <p>To delete a response headers policy, you must provide the policy's identifier and version. To get these values, you can use <code>ListResponseHeadersPolicies</code> or <code>GetResponseHeadersPolicy</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteResponseHeadersPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_response_headers_policy_input::Builder
-                        }
-    impl DeleteResponseHeadersPolicy  {
-        /// Creates a new `DeleteResponseHeadersPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteResponseHeadersPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteResponseHeadersPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteResponseHeadersPolicyOutput, aws_smithy_http::result::SdkError<crate::error::DeleteResponseHeadersPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier for the response headers policy that you are deleting.</p> 
-        /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier for the response headers policy that you are deleting.</p> 
-        /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The version of the response headers policy that you are deleting.</p> 
-        /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The version of the response headers policy that you are deleting.</p> 
-        /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteStreamingDistribution`.
-                        ///
-    /// <p>Delete a streaming distribution. To delete an RTMP distribution using the CloudFront API, perform the following steps.</p> 
-    /// <p> <b>To delete an RTMP distribution using the CloudFront API</b>:</p> 
-    /// <ol> 
-    /// <li> <p>Disable the RTMP distribution.</p> </li> 
-    /// <li> <p>Submit a <code>GET Streaming Distribution Config</code> request to get the current configuration and the <code>Etag</code> header for the distribution. </p> </li> 
-    /// <li> <p>Update the XML document that was returned in the response to your <code>GET Streaming Distribution Config</code> request to change the value of <code>Enabled</code> to <code>false</code>.</p> </li> 
-    /// <li> <p>Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration for your distribution. In the request body, include the XML document that you updated in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code> request in Step 2.</p> </li> 
-    /// <li> <p>Review the response to the <code>PUT Streaming Distribution Config</code> request to confirm that the distribution was successfully disabled.</p> </li> 
-    /// <li> <p>Submit a <code>GET Streaming Distribution Config</code> request to confirm that your changes have propagated. When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.</p> </li> 
-    /// <li> <p>Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code> request in Step 2.</p> </li> 
-    /// <li> <p>Review the response to your <code>DELETE Streaming Distribution</code> request to confirm that the distribution was successfully deleted.</p> </li> 
-    /// </ol> 
-    /// <p>For information about deleting a distribution using the CloudFront console, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteStreamingDistribution {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_streaming_distribution_input::Builder
-                        }
-    impl DeleteStreamingDistribution  {
-        /// Creates a new `DeleteStreamingDistribution`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteStreamingDistribution, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteStreamingDistributionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteStreamingDistributionOutput, aws_smithy_http::result::SdkError<crate::error::DeleteStreamingDistributionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The distribution ID.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The distribution ID.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeFunction`.
-                        ///
-    /// <p>Gets configuration information and metadata about a CloudFront function, but not the function's code. To get a function's code, use <code>GetFunction</code>.</p> 
-    /// <p>To get configuration information and metadata about a function, you must provide the function's name and stage. To get these values, you can use <code>ListFunctions</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeFunction {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_function_input::Builder
-                        }
-    impl DescribeFunction  {
-        /// Creates a new `DescribeFunction`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeFunction, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeFunctionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeFunctionOutput, aws_smithy_http::result::SdkError<crate::error::DescribeFunctionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the function that you are getting information about.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the function that you are getting information about.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
-            self.inner = self.inner.stage(input);
-            self
-        }
-        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn set_stage(mut self, input: std::option::Option<crate::model::FunctionStage>) -> Self {
-            self.inner = self.inner.set_stage(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetCachePolicy`.
-                        ///
-    /// <p>Gets a cache policy, including the following metadata:</p> 
-    /// <ul> 
-    /// <li> <p>The policy's identifier.</p> </li> 
-    /// <li> <p>The date and time when the policy was last modified.</p> </li> 
-    /// </ul> 
-    /// <p>To get a cache policy, you must provide the policy's identifier. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetCachePolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_cache_policy_input::Builder
-                        }
-    impl GetCachePolicy  {
-        /// Creates a new `GetCachePolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetCachePolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetCachePolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetCachePolicyOutput, aws_smithy_http::result::SdkError<crate::error::GetCachePolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetCachePolicyConfig`.
-                        ///
-    /// <p>Gets a cache policy configuration.</p> 
-    /// <p>To get a cache policy configuration, you must provide the policy's identifier. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetCachePolicyConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_cache_policy_config_input::Builder
-                        }
-    impl GetCachePolicyConfig  {
-        /// Creates a new `GetCachePolicyConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetCachePolicyConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetCachePolicyConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetCachePolicyConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetCachePolicyConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetCloudFrontOriginAccessIdentity`.
-                        ///
-    /// <p>Get the information about an origin access identity.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetCloudFrontOriginAccessIdentity {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_cloud_front_origin_access_identity_input::Builder
-                        }
-    impl GetCloudFrontOriginAccessIdentity  {
-        /// Creates a new `GetCloudFrontOriginAccessIdentity`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetCloudFrontOriginAccessIdentity, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetCloudFrontOriginAccessIdentityError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetCloudFrontOriginAccessIdentityOutput, aws_smithy_http::result::SdkError<crate::error::GetCloudFrontOriginAccessIdentityError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identity's ID.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identity's ID.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetCloudFrontOriginAccessIdentityConfig`.
-                        ///
-    /// <p>Get the configuration information about an origin access identity.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetCloudFrontOriginAccessIdentityConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_cloud_front_origin_access_identity_config_input::Builder
-                        }
-    impl GetCloudFrontOriginAccessIdentityConfig  {
-        /// Creates a new `GetCloudFrontOriginAccessIdentityConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetCloudFrontOriginAccessIdentityConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetCloudFrontOriginAccessIdentityConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetCloudFrontOriginAccessIdentityConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetCloudFrontOriginAccessIdentityConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identity's ID.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identity's ID.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetContinuousDeploymentPolicy`.
-                        ///
-    /// <p>Gets a continuous deployment policy, including metadata (the policy's identifier and the date and time when the policy was last modified).</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetContinuousDeploymentPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_continuous_deployment_policy_input::Builder
-                        }
-    impl GetContinuousDeploymentPolicy  {
-        /// Creates a new `GetContinuousDeploymentPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetContinuousDeploymentPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetContinuousDeploymentPolicyOutput, aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the continuous deployment policy that you are getting.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the continuous deployment policy that you are getting.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetContinuousDeploymentPolicyConfig`.
-                        ///
-    /// <p>Gets configuration information about a continuous deployment policy.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetContinuousDeploymentPolicyConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_continuous_deployment_policy_config_input::Builder
-                        }
-    impl GetContinuousDeploymentPolicyConfig  {
-        /// Creates a new `GetContinuousDeploymentPolicyConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetContinuousDeploymentPolicyConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetContinuousDeploymentPolicyConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetDistribution`.
-                        ///
-    /// <p>Get the information about a distribution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDistribution {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_distribution_input::Builder
-                        }
-    impl GetDistribution  {
-        /// Creates a new `GetDistribution`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetDistribution, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetDistributionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetDistributionOutput, aws_smithy_http::result::SdkError<crate::error::GetDistributionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetDistributionConfig`.
-                        ///
-    /// <p>Get the configuration information about a distribution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDistributionConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_distribution_config_input::Builder
-                        }
-    impl GetDistributionConfig  {
-        /// Creates a new `GetDistributionConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetDistributionConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetDistributionConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetDistributionConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetDistributionConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetFieldLevelEncryption`.
-                        ///
-    /// <p>Get the field-level encryption configuration information.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetFieldLevelEncryption {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_field_level_encryption_input::Builder
-                        }
-    impl GetFieldLevelEncryption  {
-        /// Creates a new `GetFieldLevelEncryption`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetFieldLevelEncryption, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetFieldLevelEncryptionOutput, aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Request the ID for the field-level encryption configuration information.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>Request the ID for the field-level encryption configuration information.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetFieldLevelEncryptionConfig`.
-                        ///
-    /// <p>Get the field-level encryption configuration information.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetFieldLevelEncryptionConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_field_level_encryption_config_input::Builder
-                        }
-    impl GetFieldLevelEncryptionConfig  {
-        /// Creates a new `GetFieldLevelEncryptionConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetFieldLevelEncryptionConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetFieldLevelEncryptionConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Request the ID for the field-level encryption configuration information.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>Request the ID for the field-level encryption configuration information.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetFieldLevelEncryptionProfile`.
-                        ///
-    /// <p>Get the field-level encryption profile information.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetFieldLevelEncryptionProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_field_level_encryption_profile_input::Builder
-                        }
-    impl GetFieldLevelEncryptionProfile  {
-        /// Creates a new `GetFieldLevelEncryptionProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetFieldLevelEncryptionProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetFieldLevelEncryptionProfileOutput, aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Get the ID for the field-level encryption profile information.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>Get the ID for the field-level encryption profile information.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetFieldLevelEncryptionProfileConfig`.
-                        ///
-    /// <p>Get the field-level encryption profile configuration information.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetFieldLevelEncryptionProfileConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_field_level_encryption_profile_config_input::Builder
-                        }
-    impl GetFieldLevelEncryptionProfileConfig  {
-        /// Creates a new `GetFieldLevelEncryptionProfileConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetFieldLevelEncryptionProfileConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionProfileConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetFieldLevelEncryptionProfileConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionProfileConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Get the ID for the field-level encryption profile configuration information.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>Get the ID for the field-level encryption profile configuration information.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetFunction`.
-                        ///
-    /// <p>Gets the code of a CloudFront function. To get configuration information and metadata about a function, use <code>DescribeFunction</code>.</p> 
-    /// <p>To get a function's code, you must provide the function's name and stage. To get these values, you can use <code>ListFunctions</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetFunction {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_function_input::Builder
-                        }
-    impl GetFunction  {
-        /// Creates a new `GetFunction`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetFunction, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetFunctionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetFunctionOutput, aws_smithy_http::result::SdkError<crate::error::GetFunctionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the function whose code you are getting.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the function whose code you are getting.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
-            self.inner = self.inner.stage(input);
-            self
-        }
-        /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn set_stage(mut self, input: std::option::Option<crate::model::FunctionStage>) -> Self {
-            self.inner = self.inner.set_stage(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetInvalidation`.
-                        ///
-    /// <p>Get the information about an invalidation.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetInvalidation {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_invalidation_input::Builder
-                        }
-    impl GetInvalidation  {
-        /// Creates a new `GetInvalidation`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetInvalidation, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetInvalidationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetInvalidationOutput, aws_smithy_http::result::SdkError<crate::error::GetInvalidationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The distribution's ID.</p>
-        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(input.into());
-            self
-        }
-        /// <p>The distribution's ID.</p>
-        pub fn set_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_distribution_id(input);
-            self
-        }
-        /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetKeyGroup`.
-                        ///
-    /// <p>Gets a key group, including the date and time when the key group was last modified.</p> 
-    /// <p>To get a key group, you must provide the key group's identifier. If the key group is referenced in a distribution's cache behavior, you can get the key group's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetKeyGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_key_group_input::Builder
-                        }
-    impl GetKeyGroup  {
-        /// Creates a new `GetKeyGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetKeyGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetKeyGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetKeyGroupOutput, aws_smithy_http::result::SdkError<crate::error::GetKeyGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetKeyGroupConfig`.
-                        ///
-    /// <p>Gets a key group configuration.</p> 
-    /// <p>To get a key group configuration, you must provide the key group's identifier. If the key group is referenced in a distribution's cache behavior, you can get the key group's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetKeyGroupConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_key_group_config_input::Builder
-                        }
-    impl GetKeyGroupConfig  {
-        /// Creates a new `GetKeyGroupConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetKeyGroupConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetKeyGroupConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetKeyGroupConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetKeyGroupConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetMonitoringSubscription`.
-                        ///
-    /// <p>Gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront distribution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetMonitoringSubscription {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_monitoring_subscription_input::Builder
-                        }
-    impl GetMonitoringSubscription  {
-        /// Creates a new `GetMonitoringSubscription`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetMonitoringSubscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetMonitoringSubscriptionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetMonitoringSubscriptionOutput, aws_smithy_http::result::SdkError<crate::error::GetMonitoringSubscriptionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the distribution that you are getting metrics information for.</p>
-        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(input.into());
-            self
-        }
-        /// <p>The ID of the distribution that you are getting metrics information for.</p>
-        pub fn set_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_distribution_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetOriginAccessControl`.
-                        ///
-    /// <p>Gets a CloudFront origin access control, including its unique identifier.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetOriginAccessControl {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_origin_access_control_input::Builder
-                        }
-    impl GetOriginAccessControl  {
-        /// Creates a new `GetOriginAccessControl`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetOriginAccessControl, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetOriginAccessControlOutput, aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier of the origin access control.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the origin access control.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetOriginAccessControlConfig`.
-                        ///
-    /// <p>Gets a CloudFront origin access control configuration.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetOriginAccessControlConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_origin_access_control_config_input::Builder
-                        }
-    impl GetOriginAccessControlConfig  {
-        /// Creates a new `GetOriginAccessControlConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetOriginAccessControlConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetOriginAccessControlConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier of the origin access control.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the origin access control.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetOriginRequestPolicy`.
-                        ///
-    /// <p>Gets an origin request policy, including the following metadata:</p> 
-    /// <ul> 
-    /// <li> <p>The policy's identifier.</p> </li> 
-    /// <li> <p>The date and time when the policy was last modified.</p> </li> 
-    /// </ul> 
-    /// <p>To get an origin request policy, you must provide the policy's identifier. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetOriginRequestPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_origin_request_policy_input::Builder
-                        }
-    impl GetOriginRequestPolicy  {
-        /// Creates a new `GetOriginRequestPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetOriginRequestPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetOriginRequestPolicyOutput, aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetOriginRequestPolicyConfig`.
-                        ///
-    /// <p>Gets an origin request policy configuration.</p> 
-    /// <p>To get an origin request policy configuration, you must provide the policy's identifier. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetOriginRequestPolicyConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_origin_request_policy_config_input::Builder
-                        }
-    impl GetOriginRequestPolicyConfig  {
-        /// Creates a new `GetOriginRequestPolicyConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetOriginRequestPolicyConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetOriginRequestPolicyConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetPublicKey`.
-                        ///
-    /// <p>Gets a public key.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetPublicKey {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_public_key_input::Builder
-                        }
-    impl GetPublicKey  {
-        /// Creates a new `GetPublicKey`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetPublicKey, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetPublicKeyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetPublicKeyOutput, aws_smithy_http::result::SdkError<crate::error::GetPublicKeyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the public key you are getting.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the public key you are getting.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetPublicKeyConfig`.
-                        ///
-    /// <p>Gets a public key configuration.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetPublicKeyConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_public_key_config_input::Builder
-                        }
-    impl GetPublicKeyConfig  {
-        /// Creates a new `GetPublicKeyConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetPublicKeyConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetPublicKeyConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetPublicKeyConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetPublicKeyConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the public key whose configuration you are getting.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the public key whose configuration you are getting.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetRealtimeLogConfig`.
-                        ///
-    /// <p>Gets a real-time log configuration.</p> 
-    /// <p>To get a real-time log configuration, you can provide the configuration's name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to get.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetRealtimeLogConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_realtime_log_config_input::Builder
-                        }
-    impl GetRealtimeLogConfig  {
-        /// Creates a new `GetRealtimeLogConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetRealtimeLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetRealtimeLogConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetRealtimeLogConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetRealtimeLogConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the real-time log configuration to get.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the real-time log configuration to get.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetResponseHeadersPolicy`.
-                        ///
-    /// <p>Gets a response headers policy, including metadata (the policy's identifier and the date and time when the policy was last modified).</p> 
-    /// <p>To get a response headers policy, you must provide the policy's identifier. If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetResponseHeadersPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_response_headers_policy_input::Builder
-                        }
-    impl GetResponseHeadersPolicy  {
-        /// Creates a new `GetResponseHeadersPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetResponseHeadersPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetResponseHeadersPolicyOutput, aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier for the response headers policy.</p> 
-        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier for the response headers policy.</p> 
-        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetResponseHeadersPolicyConfig`.
-                        ///
-    /// <p>Gets a response headers policy configuration.</p> 
-    /// <p>To get a response headers policy configuration, you must provide the policy's identifier. If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetResponseHeadersPolicyConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_response_headers_policy_config_input::Builder
-                        }
-    impl GetResponseHeadersPolicyConfig  {
-        /// Creates a new `GetResponseHeadersPolicyConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetResponseHeadersPolicyConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetResponseHeadersPolicyConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier for the response headers policy.</p> 
-        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier for the response headers policy.</p> 
-        /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetStreamingDistribution`.
-                        ///
-    /// <p>Gets information about a specified RTMP distribution, including the distribution configuration.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetStreamingDistribution {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_streaming_distribution_input::Builder
-                        }
-    impl GetStreamingDistribution  {
-        /// Creates a new `GetStreamingDistribution`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetStreamingDistribution, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetStreamingDistributionOutput, aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The streaming distribution's ID.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The streaming distribution's ID.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetStreamingDistributionConfig`.
-                        ///
-    /// <p>Get the configuration information about a streaming distribution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetStreamingDistributionConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_streaming_distribution_config_input::Builder
-                        }
-    impl GetStreamingDistributionConfig  {
-        /// Creates a new `GetStreamingDistributionConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetStreamingDistributionConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetStreamingDistributionConfigOutput, aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The streaming distribution's ID.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The streaming distribution's ID.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListCachePolicies`.
-                        ///
-    /// <p>Gets a list of cache policies.</p> 
-    /// <p>You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the custom policies created in your Amazon Web Services account.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListCachePolicies {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_cache_policies_input::Builder
-                        }
-    impl ListCachePolicies  {
-        /// Creates a new `ListCachePolicies`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListCachePolicies, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListCachePoliciesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListCachePoliciesOutput, aws_smithy_http::result::SdkError<crate::error::ListCachePoliciesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p> 
-        /// <ul> 
-        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li> 
-        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li> 
-        /// </ul>
-        pub fn r#type(mut self, input: crate::model::CachePolicyType) -> Self {
-            self.inner = self.inner.r#type(input);
-            self
-        }
-        /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p> 
-        /// <ul> 
-        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li> 
-        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li> 
-        /// </ul>
-        pub fn set_type(mut self, input: std::option::Option<crate::model::CachePolicyType>) -> Self {
-            self.inner = self.inner.set_type(input);
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of cache policies that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of cache policies that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListCloudFrontOriginAccessIdentities`.
-                        ///
-    /// <p>Lists origin access identities.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListCloudFrontOriginAccessIdentities {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_cloud_front_origin_access_identities_input::Builder
-                        }
-    impl ListCloudFrontOriginAccessIdentities  {
-        /// Creates a new `ListCloudFrontOriginAccessIdentities`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListCloudFrontOriginAccessIdentities, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListCloudFrontOriginAccessIdentitiesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListCloudFrontOriginAccessIdentitiesOutput, aws_smithy_http::result::SdkError<crate::error::ListCloudFrontOriginAccessIdentitiesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListCloudFrontOriginAccessIdentitiesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListCloudFrontOriginAccessIdentitiesPaginator {
-                                        crate::paginator::ListCloudFrontOriginAccessIdentitiesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of origin access identities you want in the response body.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of origin access identities you want in the response body.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListConflictingAliases`.
-                        ///
-    /// <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or overlap with the provided alias, and the associated CloudFront distributions and Amazon Web Services accounts for each conflicting alias. In the returned list, the distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don't own.</p> 
-    /// <p>Use this operation to find aliases that are in use in CloudFront that conflict or overlap with the provided alias. For example, if you provide <code>www.example.com</code> as input, the returned list can include <code>www.example.com</code> and the overlapping wildcard alternate domain name (<code>*.example.com</code>), if they exist. If you provide <code>*.example.com</code> as input, the returned list can include <code>*.example.com</code> and any alternate domain names covered by that wildcard (for example, <code>www.example.com</code>, <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they exist.</p> 
-    /// <p>To list conflicting aliases, you provide the alias to search and the ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias. For more information, including how to set up the distribution and certificate, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListConflictingAliases {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_conflicting_aliases_input::Builder
-                        }
-    impl ListConflictingAliases  {
-        /// Creates a new `ListConflictingAliases`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListConflictingAliases, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListConflictingAliasesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListConflictingAliasesOutput, aws_smithy_http::result::SdkError<crate::error::ListConflictingAliasesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
-        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(input.into());
-            self
-        }
-        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
-        pub fn set_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_distribution_id(input);
-            self
-        }
-        /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
-        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(input.into());
-            self
-        }
-        /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
-        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alias(input);
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of conflicting aliases that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of conflicting aliases that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListContinuousDeploymentPolicies`.
-                        ///
-    /// <p>Gets a list of the continuous deployment policies in your Amazon Web Services account.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListContinuousDeploymentPolicies {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_continuous_deployment_policies_input::Builder
-                        }
-    impl ListContinuousDeploymentPolicies  {
-        /// Creates a new `ListContinuousDeploymentPolicies`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListContinuousDeploymentPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListContinuousDeploymentPoliciesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListContinuousDeploymentPoliciesOutput, aws_smithy_http::result::SdkError<crate::error::ListContinuousDeploymentPoliciesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDistributions`.
-                        ///
-    /// <p>List CloudFront distributions.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDistributions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_distributions_input::Builder
-                        }
-    impl ListDistributions  {
-        /// Creates a new `ListDistributions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDistributions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDistributionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDistributionsOutput, aws_smithy_http::result::SdkError<crate::error::ListDistributionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListDistributionsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListDistributionsPaginator {
-                                        crate::paginator::ListDistributionsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of distributions you want in the response body.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of distributions you want in the response body.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDistributionsByCachePolicyId`.
-                        ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDistributionsByCachePolicyId {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_distributions_by_cache_policy_id_input::Builder
-                        }
-    impl ListDistributionsByCachePolicyId  {
-        /// Creates a new `ListDistributionsByCachePolicyId`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDistributionsByCachePolicyId, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDistributionsByCachePolicyIdError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDistributionsByCachePolicyIdOutput, aws_smithy_http::result::SdkError<crate::error::ListDistributionsByCachePolicyIdError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of distribution IDs that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of distribution IDs that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-        /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
-        pub fn cache_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_policy_id(input.into());
-            self
-        }
-        /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
-        pub fn set_cache_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cache_policy_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDistributionsByKeyGroup`.
-                        ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that references the specified key group.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDistributionsByKeyGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_distributions_by_key_group_input::Builder
-                        }
-    impl ListDistributionsByKeyGroup  {
-        /// Creates a new `ListDistributionsByKeyGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDistributionsByKeyGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDistributionsByKeyGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDistributionsByKeyGroupOutput, aws_smithy_http::result::SdkError<crate::error::ListDistributionsByKeyGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of distribution IDs that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of distribution IDs that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-        /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
-        pub fn key_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_group_id(input.into());
-            self
-        }
-        /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
-        pub fn set_key_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_group_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDistributionsByOriginRequestPolicyId`.
-                        ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDistributionsByOriginRequestPolicyId {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_distributions_by_origin_request_policy_id_input::Builder
-                        }
-    impl ListDistributionsByOriginRequestPolicyId  {
-        /// Creates a new `ListDistributionsByOriginRequestPolicyId`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDistributionsByOriginRequestPolicyId, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDistributionsByOriginRequestPolicyIdError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDistributionsByOriginRequestPolicyIdOutput, aws_smithy_http::result::SdkError<crate::error::ListDistributionsByOriginRequestPolicyIdError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of distribution IDs that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of distribution IDs that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-        /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
-        pub fn origin_request_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origin_request_policy_id(input.into());
-            self
-        }
-        /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
-        pub fn set_origin_request_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_origin_request_policy_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDistributionsByRealtimeLogConfig`.
-                        ///
-    /// <p>Gets a list of distributions that have a cache behavior that's associated with the specified real-time log configuration.</p> 
-    /// <p>You can specify the real-time log configuration by its name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to list distributions for.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDistributionsByRealtimeLogConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_distributions_by_realtime_log_config_input::Builder
-                        }
-    impl ListDistributionsByRealtimeLogConfig  {
-        /// Creates a new `ListDistributionsByRealtimeLogConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDistributionsByRealtimeLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDistributionsByRealtimeLogConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDistributionsByRealtimeLogConfigOutput, aws_smithy_http::result::SdkError<crate::error::ListDistributionsByRealtimeLogConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of distributions that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of distributions that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-        /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-        pub fn realtime_log_config_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.realtime_log_config_name(input.into());
-            self
-        }
-        /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-        pub fn set_realtime_log_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_realtime_log_config_name(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-        pub fn realtime_log_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.realtime_log_config_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-        pub fn set_realtime_log_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_realtime_log_config_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDistributionsByResponseHeadersPolicyId`.
-                        ///
-    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified response headers policy.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDistributionsByResponseHeadersPolicyId {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_distributions_by_response_headers_policy_id_input::Builder
-                        }
-    impl ListDistributionsByResponseHeadersPolicyId  {
-        /// Creates a new `ListDistributionsByResponseHeadersPolicyId`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDistributionsByResponseHeadersPolicyId, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDistributionsByResponseHeadersPolicyIdError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDistributionsByResponseHeadersPolicyIdOutput, aws_smithy_http::result::SdkError<crate::error::ListDistributionsByResponseHeadersPolicyIdError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-        /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
-        pub fn response_headers_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_headers_policy_id(input.into());
-            self
-        }
-        /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
-        pub fn set_response_headers_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_response_headers_policy_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDistributionsByWebACLId`.
-                        ///
-    /// <p>List the distributions that are associated with a specified WAF web ACL.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDistributionsByWebACLId {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_distributions_by_web_acl_id_input::Builder
-                        }
-    impl ListDistributionsByWebACLId  {
-        /// Creates a new `ListDistributionsByWebACLId`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDistributionsByWebACLId, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDistributionsByWebACLIdError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDistributionsByWebAclIdOutput, aws_smithy_http::result::SdkError<crate::error::ListDistributionsByWebACLIdError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-        /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
-        pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_id(input.into());
-            self
-        }
-        /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
-        pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_web_acl_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListFieldLevelEncryptionConfigs`.
-                        ///
-    /// <p>List all field-level encryption configurations that have been created in CloudFront for this account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListFieldLevelEncryptionConfigs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_field_level_encryption_configs_input::Builder
-                        }
-    impl ListFieldLevelEncryptionConfigs  {
-        /// Creates a new `ListFieldLevelEncryptionConfigs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListFieldLevelEncryptionConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListFieldLevelEncryptionConfigsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListFieldLevelEncryptionConfigsOutput, aws_smithy_http::result::SdkError<crate::error::ListFieldLevelEncryptionConfigsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of field-level encryption configurations you want in the response body.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListFieldLevelEncryptionProfiles`.
-                        ///
-    /// <p>Request a list of field-level encryption profiles that have been created in CloudFront for this account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListFieldLevelEncryptionProfiles {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_field_level_encryption_profiles_input::Builder
-                        }
-    impl ListFieldLevelEncryptionProfiles  {
-        /// Creates a new `ListFieldLevelEncryptionProfiles`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListFieldLevelEncryptionProfiles, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListFieldLevelEncryptionProfilesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListFieldLevelEncryptionProfilesOutput, aws_smithy_http::result::SdkError<crate::error::ListFieldLevelEncryptionProfilesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListFunctions`.
-                        ///
-    /// <p>Gets a list of all CloudFront functions in your Amazon Web Services account.</p> 
-    /// <p>You can optionally apply a filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListFunctions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_functions_input::Builder
-                        }
-    impl ListFunctions  {
-        /// Creates a new `ListFunctions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListFunctions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListFunctionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListFunctionsOutput, aws_smithy_http::result::SdkError<crate::error::ListFunctionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of functions that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of functions that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-        /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
-            self.inner = self.inner.stage(input);
-            self
-        }
-        /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn set_stage(mut self, input: std::option::Option<crate::model::FunctionStage>) -> Self {
-            self.inner = self.inner.set_stage(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListInvalidations`.
-                        ///
-    /// <p>Lists invalidation batches.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListInvalidations {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_invalidations_input::Builder
-                        }
-    impl ListInvalidations  {
-        /// Creates a new `ListInvalidations`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListInvalidations, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListInvalidationsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListInvalidationsOutput, aws_smithy_http::result::SdkError<crate::error::ListInvalidationsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListInvalidationsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListInvalidationsPaginator {
-                                        crate::paginator::ListInvalidationsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The distribution's ID.</p>
-        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(input.into());
-            self
-        }
-        /// <p>The distribution's ID.</p>
-        pub fn set_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_distribution_id(input);
-            self
-        }
-        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of invalidation batches that you want in the response body.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of invalidation batches that you want in the response body.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListKeyGroups`.
-                        ///
-    /// <p>Gets a list of key groups.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListKeyGroups {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_key_groups_input::Builder
-                        }
-    impl ListKeyGroups  {
-        /// Creates a new `ListKeyGroups`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListKeyGroups, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListKeyGroupsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListKeyGroupsOutput, aws_smithy_http::result::SdkError<crate::error::ListKeyGroupsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of key groups that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of key groups that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListOriginAccessControls`.
-                        ///
-    /// <p>Gets the list of CloudFront origin access controls in this Amazon Web Services account.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send another request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the next request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListOriginAccessControls {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_origin_access_controls_input::Builder
-                        }
-    impl ListOriginAccessControls  {
-        /// Creates a new `ListOriginAccessControls`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListOriginAccessControls, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListOriginAccessControlsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListOriginAccessControlsOutput, aws_smithy_http::result::SdkError<crate::error::ListOriginAccessControlsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of origin access controls. The response includes the items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of origin access controls. The response includes the items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of origin access controls that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of origin access controls that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListOriginRequestPolicies`.
-                        ///
-    /// <p>Gets a list of origin request policies.</p> 
-    /// <p>You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the custom policies created in your Amazon Web Services account.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListOriginRequestPolicies {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_origin_request_policies_input::Builder
-                        }
-    impl ListOriginRequestPolicies  {
-        /// Creates a new `ListOriginRequestPolicies`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListOriginRequestPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListOriginRequestPoliciesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListOriginRequestPoliciesOutput, aws_smithy_http::result::SdkError<crate::error::ListOriginRequestPoliciesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p> 
-        /// <ul> 
-        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li> 
-        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li> 
-        /// </ul>
-        pub fn r#type(mut self, input: crate::model::OriginRequestPolicyType) -> Self {
-            self.inner = self.inner.r#type(input);
-            self
-        }
-        /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p> 
-        /// <ul> 
-        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li> 
-        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li> 
-        /// </ul>
-        pub fn set_type(mut self, input: std::option::Option<crate::model::OriginRequestPolicyType>) -> Self {
-            self.inner = self.inner.set_type(input);
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of origin request policies that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of origin request policies that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListPublicKeys`.
-                        ///
-    /// <p>List all public keys that have been added to CloudFront for this account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListPublicKeys {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_public_keys_input::Builder
-                        }
-    impl ListPublicKeys  {
-        /// Creates a new `ListPublicKeys`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListPublicKeys, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListPublicKeysError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListPublicKeysOutput, aws_smithy_http::result::SdkError<crate::error::ListPublicKeysError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of public keys you want in the response body.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of public keys you want in the response body.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListRealtimeLogConfigs`.
-                        ///
-    /// <p>Gets a list of real-time log configurations.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListRealtimeLogConfigs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_realtime_log_configs_input::Builder
-                        }
-    impl ListRealtimeLogConfigs  {
-        /// Creates a new `ListRealtimeLogConfigs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListRealtimeLogConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListRealtimeLogConfigsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListRealtimeLogConfigsOutput, aws_smithy_http::result::SdkError<crate::error::ListRealtimeLogConfigsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The maximum number of real-time log configurations that you want in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of real-time log configurations that you want in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListResponseHeadersPolicies`.
-                        ///
-    /// <p>Gets a list of response headers policies.</p> 
-    /// <p>You can optionally apply a filter to get only the managed policies created by Amazon Web Services, or only the custom policies created in your Amazon Web Services account.</p> 
-    /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListResponseHeadersPolicies {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_response_headers_policies_input::Builder
-                        }
-    impl ListResponseHeadersPolicies  {
-        /// Creates a new `ListResponseHeadersPolicies`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListResponseHeadersPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListResponseHeadersPoliciesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListResponseHeadersPoliciesOutput, aws_smithy_http::result::SdkError<crate::error::ListResponseHeadersPoliciesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p> 
-        /// <ul> 
-        /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li> 
-        /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li> 
-        /// </ul>
-        pub fn r#type(mut self, input: crate::model::ResponseHeadersPolicyType) -> Self {
-            self.inner = self.inner.r#type(input);
-            self
-        }
-        /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p> 
-        /// <ul> 
-        /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li> 
-        /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li> 
-        /// </ul>
-        pub fn set_type(mut self, input: std::option::Option<crate::model::ResponseHeadersPolicyType>) -> Self {
-            self.inner = self.inner.set_type(input);
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The maximum number of response headers policies that you want to get in the response.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The maximum number of response headers policies that you want to get in the response.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListStreamingDistributions`.
-                        ///
-    /// <p>List streaming distributions.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListStreamingDistributions {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_streaming_distributions_input::Builder
-                        }
-    impl ListStreamingDistributions  {
-        /// Creates a new `ListStreamingDistributions`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListStreamingDistributions, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListStreamingDistributionsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListStreamingDistributionsOutput, aws_smithy_http::result::SdkError<crate::error::ListStreamingDistributionsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListStreamingDistributionsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListStreamingDistributionsPaginator {
-                                        crate::paginator::ListStreamingDistributionsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
-        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(input.into());
-            self
-        }
-        /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
-        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(input);
-            self
-        }
-        /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
-        pub fn max_items(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_items(input);
-            self
-        }
-        /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
-        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_items(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// <p>List tags for a CloudFront resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>An ARN of a CloudFront resource.</p>
-        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(input.into());
-            self
-        }
-        /// <p>An ARN of a CloudFront resource.</p>
-        pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PublishFunction`.
-                        ///
-    /// <p>Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. This automatically updates all cache behaviors that are using this function to use the newly published copy in the <code>LIVE</code> stage.</p> 
-    /// <p>When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's Amazon Resource Name (ARN).</p> 
-    /// <p>To publish a function, you must provide the function's name and version (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PublishFunction {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::publish_function_input::Builder
-                        }
-    impl PublishFunction  {
-        /// Creates a new `PublishFunction`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::PublishFunction, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::PublishFunctionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::PublishFunctionOutput, aws_smithy_http::result::SdkError<crate::error::PublishFunctionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the function that you are publishing.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the function that you are publishing.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>Add tags to a CloudFront resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>An ARN of a CloudFront resource.</p>
-        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(input.into());
-            self
-        }
-        /// <p>An ARN of a CloudFront resource.</p>
-        pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource(input);
-            self
-        }
-        /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-        pub fn tags(mut self, input: crate::model::Tags) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-        pub fn set_tags(mut self, input: std::option::Option<crate::model::Tags>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TestFunction`.
-                        ///
-    /// <p>Tests a CloudFront function.</p> 
-    /// <p>To test a function, you provide an <i>event object</i> that represents an HTTP request or response that your CloudFront distribution could receive in production. CloudFront runs the function, passing it the event object that you provided, and returns the function's result (the modified event object) in the response. The response also contains function logs and error messages, if any exist. For more information about testing functions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> 
-    /// <p>To test a function, you provide the function's name and version (<code>ETag</code> value) along with the event object. To get the function's name and version, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TestFunction {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::test_function_input::Builder
-                        }
-    impl TestFunction  {
-        /// Creates a new `TestFunction`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TestFunction, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TestFunctionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TestFunctionOutput, aws_smithy_http::result::SdkError<crate::error::TestFunctionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the function that you are testing.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the function that you are testing.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
-            self.inner = self.inner.stage(input);
-            self
-        }
-        /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn set_stage(mut self, input: std::option::Option<crate::model::FunctionStage>) -> Self {
-            self.inner = self.inner.set_stage(input);
-            self
-        }
-        /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn event_object(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.event_object(input);
-            self
-        }
-        /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn set_event_object(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_event_object(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>Remove tags from a CloudFront resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>An ARN of a CloudFront resource.</p>
-        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(input.into());
-            self
-        }
-        /// <p>An ARN of a CloudFront resource.</p>
-        pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource(input);
-            self
-        }
-        /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
-        pub fn tag_keys(mut self, input: crate::model::TagKeys) -> Self {
-            self.inner = self.inner.tag_keys(input);
-            self
-        }
-        /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<crate::model::TagKeys>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateCachePolicy`.
-                        ///
-    /// <p>Updates a cache policy configuration.</p> 
-    /// <p>When you update a cache policy configuration, all the fields are updated with the values provided in the request. You cannot update some fields independent of others. To update a cache policy configuration:</p> 
-    /// <ol> 
-    /// <li> <p>Use <code>GetCachePolicyConfig</code> to get the current configuration.</p> </li> 
-    /// <li> <p>Locally modify the fields in the cache policy configuration that you want to update.</p> </li> 
-    /// <li> <p>Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that you modified and those that you didn't.</p> </li> 
-    /// </ol>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateCachePolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_cache_policy_input::Builder
-                        }
-    impl UpdateCachePolicy  {
-        /// Creates a new `UpdateCachePolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateCachePolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateCachePolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateCachePolicyOutput, aws_smithy_http::result::SdkError<crate::error::UpdateCachePolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A cache policy configuration.</p>
-        pub fn cache_policy_config(mut self, input: crate::model::CachePolicyConfig) -> Self {
-            self.inner = self.inner.cache_policy_config(input);
-            self
-        }
-        /// <p>A cache policy configuration.</p>
-        pub fn set_cache_policy_config(mut self, input: std::option::Option<crate::model::CachePolicyConfig>) -> Self {
-            self.inner = self.inner.set_cache_policy_config(input);
-            self
-        }
-        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateCloudFrontOriginAccessIdentity`.
-                        ///
-    /// <p>Update an origin access identity.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateCloudFrontOriginAccessIdentity {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_cloud_front_origin_access_identity_input::Builder
-                        }
-    impl UpdateCloudFrontOriginAccessIdentity  {
-        /// Creates a new `UpdateCloudFrontOriginAccessIdentity`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateCloudFrontOriginAccessIdentity, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateCloudFrontOriginAccessIdentityError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateCloudFrontOriginAccessIdentityOutput, aws_smithy_http::result::SdkError<crate::error::UpdateCloudFrontOriginAccessIdentityError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identity's configuration information.</p>
-        pub fn cloud_front_origin_access_identity_config(mut self, input: crate::model::CloudFrontOriginAccessIdentityConfig) -> Self {
-            self.inner = self.inner.cloud_front_origin_access_identity_config(input);
-            self
-        }
-        /// <p>The identity's configuration information.</p>
-        pub fn set_cloud_front_origin_access_identity_config(mut self, input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>) -> Self {
-            self.inner = self.inner.set_cloud_front_origin_access_identity_config(input);
-            self
-        }
-        /// <p>The identity's id.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identity's id.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateContinuousDeploymentPolicy`.
-                        ///
-    /// <p>Updates a continuous deployment policy. You can update a continuous deployment policy to enable or disable it, to change the percentage of traffic that it sends to the staging distribution, or to change the staging distribution that it sends traffic to.</p> 
-    /// <p>When you update a continuous deployment policy configuration, all the fields are updated with the values that are provided in the request. You cannot update some fields independent of others. To update a continuous deployment policy configuration:</p> 
-    /// <ol> 
-    /// <li> <p>Use <code>GetContinuousDeploymentPolicyConfig</code> to get the current configuration.</p> </li> 
-    /// <li> <p>Locally modify the fields in the continuous deployment policy configuration that you want to update.</p> </li> 
-    /// <li> <p>Use <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous deployment policy configuration, including the fields that you modified and those that you didn't.</p> </li> 
-    /// </ol>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateContinuousDeploymentPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_continuous_deployment_policy_input::Builder
-                        }
-    impl UpdateContinuousDeploymentPolicy  {
-        /// Creates a new `UpdateContinuousDeploymentPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateContinuousDeploymentPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateContinuousDeploymentPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateContinuousDeploymentPolicyOutput, aws_smithy_http::result::SdkError<crate::error::UpdateContinuousDeploymentPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The continuous deployment policy configuration.</p>
-        pub fn continuous_deployment_policy_config(mut self, input: crate::model::ContinuousDeploymentPolicyConfig) -> Self {
-            self.inner = self.inner.continuous_deployment_policy_config(input);
-            self
-        }
-        /// <p>The continuous deployment policy configuration.</p>
-        pub fn set_continuous_deployment_policy_config(mut self, input: std::option::Option<crate::model::ContinuousDeploymentPolicyConfig>) -> Self {
-            self.inner = self.inner.set_continuous_deployment_policy_config(input);
-            self
-        }
-        /// <p>The identifier of the continuous deployment policy that you are updating.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the continuous deployment policy that you are updating.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateDistribution`.
-                        ///
-    /// <p>Updates the configuration for a CloudFront distribution.</p> 
-    /// <p>The update process includes getting the current distribution configuration, updating it to make your changes, and then submitting an <code>UpdateDistribution</code> request to make the updates.</p> 
-    /// <p> <b>To update a web distribution using the CloudFront API</b> </p> 
-    /// <ol> 
-    /// <li> <p>Use <code>GetDistributionConfig</code> to get the current configuration, including the version identifier (<code>ETag</code>).</p> </li> 
-    /// <li> <p>Update the distribution configuration that was returned in the response. Note the following important requirements and restrictions:</p> 
-    /// <ul> 
-    /// <li> <p>You must rename the <code>ETag</code> field to <code>IfMatch</code>, leaving the value unchanged. (Set the value of <code>IfMatch</code> to the value of <code>ETag</code>, then remove the <code>ETag</code> field.)</p> </li> 
-    /// <li> <p>You can't change the value of <code>CallerReference</code>.</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>Submit an <code>UpdateDistribution</code> request, providing the distribution configuration. The new configuration replaces the existing configuration. The values that you specify in an <code>UpdateDistribution</code> request are not merged into your existing configuration. Make sure to include all fields: the ones that you modified and also the ones that you didn't.</p> </li> 
-    /// </ol>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateDistribution {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_distribution_input::Builder
-                        }
-    impl UpdateDistribution  {
-        /// Creates a new `UpdateDistribution`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateDistribution, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateDistributionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateDistributionOutput, aws_smithy_http::result::SdkError<crate::error::UpdateDistributionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The distribution's configuration information.</p>
-        pub fn distribution_config(mut self, input: crate::model::DistributionConfig) -> Self {
-            self.inner = self.inner.distribution_config(input);
-            self
-        }
-        /// <p>The distribution's configuration information.</p>
-        pub fn set_distribution_config(mut self, input: std::option::Option<crate::model::DistributionConfig>) -> Self {
-            self.inner = self.inner.set_distribution_config(input);
-            self
-        }
-        /// <p>The distribution's id.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The distribution's id.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateDistributionWithStagingConfig`.
-                        ///
-    /// <p>Copies the staging distribution's configuration to its corresponding primary distribution. The primary distribution retains its <code>Aliases</code> (also known as alternate domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise its configuration is overwritten to match the staging distribution.</p> 
-    /// <p>You can use this operation in a continuous deployment workflow after you have tested configuration changes on the staging distribution. After using a continuous deployment policy to move a portion of your domain name's traffic to the staging distribution and verifying that it works as intended, you can use this operation to copy the staging distribution's configuration to the primary distribution. This action will disable the continuous deployment policy and move your domain's traffic back to the primary distribution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateDistributionWithStagingConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_distribution_with_staging_config_input::Builder
-                        }
-    impl UpdateDistributionWithStagingConfig  {
-        /// Creates a new `UpdateDistributionWithStagingConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateDistributionWithStagingConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateDistributionWithStagingConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateDistributionWithStagingConfigOutput, aws_smithy_http::result::SdkError<crate::error::UpdateDistributionWithStagingConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
-        pub fn staging_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_distribution_id(input.into());
-            self
-        }
-        /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
-        pub fn set_staging_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_staging_distribution_id(input);
-            self
-        }
-        /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p> 
-        /// <p> <code>
-        /// <primary etag>
-        /// , 
-        /// <staging etag></staging>
-        /// </primary></code> </p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p> 
-        /// <p> <code>
-        /// <primary etag>
-        /// , 
-        /// <staging etag></staging>
-        /// </primary></code> </p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateFieldLevelEncryptionConfig`.
-                        ///
-    /// <p>Update a field-level encryption configuration.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateFieldLevelEncryptionConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_field_level_encryption_config_input::Builder
-                        }
-    impl UpdateFieldLevelEncryptionConfig  {
-        /// Creates a new `UpdateFieldLevelEncryptionConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateFieldLevelEncryptionConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateFieldLevelEncryptionConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateFieldLevelEncryptionConfigOutput, aws_smithy_http::result::SdkError<crate::error::UpdateFieldLevelEncryptionConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Request to update a field-level encryption configuration.</p>
-        pub fn field_level_encryption_config(mut self, input: crate::model::FieldLevelEncryptionConfig) -> Self {
-            self.inner = self.inner.field_level_encryption_config(input);
-            self
-        }
-        /// <p>Request to update a field-level encryption configuration.</p>
-        pub fn set_field_level_encryption_config(mut self, input: std::option::Option<crate::model::FieldLevelEncryptionConfig>) -> Self {
-            self.inner = self.inner.set_field_level_encryption_config(input);
-            self
-        }
-        /// <p>The ID of the configuration you want to update.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The ID of the configuration you want to update.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateFieldLevelEncryptionProfile`.
-                        ///
-    /// <p>Update a field-level encryption profile.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateFieldLevelEncryptionProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_field_level_encryption_profile_input::Builder
-                        }
-    impl UpdateFieldLevelEncryptionProfile  {
-        /// Creates a new `UpdateFieldLevelEncryptionProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateFieldLevelEncryptionProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateFieldLevelEncryptionProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateFieldLevelEncryptionProfileOutput, aws_smithy_http::result::SdkError<crate::error::UpdateFieldLevelEncryptionProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>Request to update a field-level encryption profile.</p>
-        pub fn field_level_encryption_profile_config(mut self, input: crate::model::FieldLevelEncryptionProfileConfig) -> Self {
-            self.inner = self.inner.field_level_encryption_profile_config(input);
-            self
-        }
-        /// <p>Request to update a field-level encryption profile.</p>
-        pub fn set_field_level_encryption_profile_config(mut self, input: std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>) -> Self {
-            self.inner = self.inner.set_field_level_encryption_profile_config(input);
-            self
-        }
-        /// <p>The ID of the field-level encryption profile request.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The ID of the field-level encryption profile request.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateFunction`.
-                        ///
-    /// <p>Updates a CloudFront function.</p> 
-    /// <p>You can update a function's code or the comment that describes the function. You cannot update a function's name.</p> 
-    /// <p>To update a function, you provide the function's name and version (<code>ETag</code> value) along with the updated function code. To get the name and version, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateFunction {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_function_input::Builder
-                        }
-    impl UpdateFunction  {
-        /// Creates a new `UpdateFunction`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateFunction, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateFunctionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateFunctionOutput, aws_smithy_http::result::SdkError<crate::error::UpdateFunctionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the function that you are updating.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the function that you are updating.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>Configuration information about the function.</p>
-        pub fn function_config(mut self, input: crate::model::FunctionConfig) -> Self {
-            self.inner = self.inner.function_config(input);
-            self
-        }
-        /// <p>Configuration information about the function.</p>
-        pub fn set_function_config(mut self, input: std::option::Option<crate::model::FunctionConfig>) -> Self {
-            self.inner = self.inner.set_function_config(input);
-            self
-        }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn function_code(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.function_code(input);
-            self
-        }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn set_function_code(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_function_code(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateKeyGroup`.
-                        ///
-    /// <p>Updates a key group.</p> 
-    /// <p>When you update a key group, all the fields are updated with the values provided in the request. You cannot update some fields independent of others. To update a key group:</p> 
-    /// <ol> 
-    /// <li> <p>Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p> </li> 
-    /// <li> <p>Locally modify the fields in the key group that you want to update. For example, add or remove public key IDs.</p> </li> 
-    /// <li> <p>Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and those that you didn't.</p> </li> 
-    /// </ol>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateKeyGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_key_group_input::Builder
-                        }
-    impl UpdateKeyGroup  {
-        /// Creates a new `UpdateKeyGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateKeyGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateKeyGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateKeyGroupOutput, aws_smithy_http::result::SdkError<crate::error::UpdateKeyGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The key group configuration.</p>
-        pub fn key_group_config(mut self, input: crate::model::KeyGroupConfig) -> Self {
-            self.inner = self.inner.key_group_config(input);
-            self
-        }
-        /// <p>The key group configuration.</p>
-        pub fn set_key_group_config(mut self, input: std::option::Option<crate::model::KeyGroupConfig>) -> Self {
-            self.inner = self.inner.set_key_group_config(input);
-            self
-        }
-        /// <p>The identifier of the key group that you are updating.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the key group that you are updating.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateOriginAccessControl`.
-                        ///
-    /// <p>Updates a CloudFront origin access control.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateOriginAccessControl {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_origin_access_control_input::Builder
-                        }
-    impl UpdateOriginAccessControl  {
-        /// Creates a new `UpdateOriginAccessControl`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateOriginAccessControl, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateOriginAccessControlError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateOriginAccessControlOutput, aws_smithy_http::result::SdkError<crate::error::UpdateOriginAccessControlError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>An origin access control.</p>
-        pub fn origin_access_control_config(mut self, input: crate::model::OriginAccessControlConfig) -> Self {
-            self.inner = self.inner.origin_access_control_config(input);
-            self
-        }
-        /// <p>An origin access control.</p>
-        pub fn set_origin_access_control_config(mut self, input: std::option::Option<crate::model::OriginAccessControlConfig>) -> Self {
-            self.inner = self.inner.set_origin_access_control_config(input);
-            self
-        }
-        /// <p>The unique identifier of the origin access control that you are updating.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the origin access control that you are updating.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateOriginRequestPolicy`.
-                        ///
-    /// <p>Updates an origin request policy configuration.</p> 
-    /// <p>When you update an origin request policy configuration, all the fields are updated with the values provided in the request. You cannot update some fields independent of others. To update an origin request policy configuration:</p> 
-    /// <ol> 
-    /// <li> <p>Use <code>GetOriginRequestPolicyConfig</code> to get the current configuration.</p> </li> 
-    /// <li> <p>Locally modify the fields in the origin request policy configuration that you want to update.</p> </li> 
-    /// <li> <p>Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request policy configuration, including the fields that you modified and those that you didn't.</p> </li> 
-    /// </ol>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateOriginRequestPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_origin_request_policy_input::Builder
-                        }
-    impl UpdateOriginRequestPolicy  {
-        /// Creates a new `UpdateOriginRequestPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateOriginRequestPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateOriginRequestPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateOriginRequestPolicyOutput, aws_smithy_http::result::SdkError<crate::error::UpdateOriginRequestPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>An origin request policy configuration.</p>
-        pub fn origin_request_policy_config(mut self, input: crate::model::OriginRequestPolicyConfig) -> Self {
-            self.inner = self.inner.origin_request_policy_config(input);
-            self
-        }
-        /// <p>An origin request policy configuration.</p>
-        pub fn set_origin_request_policy_config(mut self, input: std::option::Option<crate::model::OriginRequestPolicyConfig>) -> Self {
-            self.inner = self.inner.set_origin_request_policy_config(input);
-            self
-        }
-        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdatePublicKey`.
-                        ///
-    /// <p>Update public key information. Note that the only value you can change is the comment.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdatePublicKey {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_public_key_input::Builder
-                        }
-    impl UpdatePublicKey  {
-        /// Creates a new `UpdatePublicKey`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdatePublicKey, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdatePublicKeyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdatePublicKeyOutput, aws_smithy_http::result::SdkError<crate::error::UpdatePublicKeyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A public key configuration.</p>
-        pub fn public_key_config(mut self, input: crate::model::PublicKeyConfig) -> Self {
-            self.inner = self.inner.public_key_config(input);
-            self
-        }
-        /// <p>A public key configuration.</p>
-        pub fn set_public_key_config(mut self, input: std::option::Option<crate::model::PublicKeyConfig>) -> Self {
-            self.inner = self.inner.set_public_key_config(input);
-            self
-        }
-        /// <p>The identifier of the public key that you are updating.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier of the public key that you are updating.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateRealtimeLogConfig`.
-                        ///
-    /// <p>Updates a real-time log configuration.</p> 
-    /// <p>When you update a real-time log configuration, all the parameters are updated with the values provided in the request. You cannot update some parameters independent of others. To update a real-time log configuration:</p> 
-    /// <ol> 
-    /// <li> <p>Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.</p> </li> 
-    /// <li> <p>Locally modify the parameters in the real-time log configuration that you want to update.</p> </li> 
-    /// <li> <p>Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time log configuration, including the parameters that you modified and those that you didn't.</p> </li> 
-    /// </ol> 
-    /// <p>You cannot update a real-time log configuration's <code>Name</code> or <code>ARN</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateRealtimeLogConfig {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_realtime_log_config_input::Builder
-                        }
-    impl UpdateRealtimeLogConfig  {
-        /// Creates a new `UpdateRealtimeLogConfig`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateRealtimeLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateRealtimeLogConfigError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateRealtimeLogConfigOutput, aws_smithy_http::result::SdkError<crate::error::UpdateRealtimeLogConfigError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `EndPoints`.
-        ///
-        /// To override the contents of this collection use [`set_end_points`](Self::set_end_points).
-        ///
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-        pub fn end_points(mut self, input: crate::model::EndPoint) -> Self {
-            self.inner = self.inner.end_points(input);
-            self
-        }
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-        pub fn set_end_points(mut self, input: std::option::Option<std::vec::Vec<crate::model::EndPoint>>) -> Self {
-            self.inner = self.inner.set_end_points(input);
-            self
-        }
-        /// Appends an item to `Fields`.
-        ///
-        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
-        ///
-        /// <p>A list of fields to include in each real-time log record.</p> 
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fields(input.into());
-            self
-        }
-        /// <p>A list of fields to include in each real-time log record.</p> 
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_fields(input);
-            self
-        }
-        /// <p>The name for this real-time log configuration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name for this real-time log configuration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for this real-time log configuration.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for this real-time log configuration.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(input);
-            self
-        }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
-        pub fn sampling_rate(mut self, input: i64) -> Self {
-            self.inner = self.inner.sampling_rate(input);
-            self
-        }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
-        pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_sampling_rate(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateResponseHeadersPolicy`.
-                        ///
-    /// <p>Updates a response headers policy.</p> 
-    /// <p>When you update a response headers policy, the entire policy is replaced. You cannot update some policy fields independent of others. To update a response headers policy configuration:</p> 
-    /// <ol> 
-    /// <li> <p>Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy's configuration.</p> </li> 
-    /// <li> <p>Modify the fields in the response headers policy configuration that you want to update.</p> </li> 
-    /// <li> <p>Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers policy configuration, including the fields that you modified and those that you didn't.</p> </li> 
-    /// </ol>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateResponseHeadersPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_response_headers_policy_input::Builder
-                        }
-    impl UpdateResponseHeadersPolicy  {
-        /// Creates a new `UpdateResponseHeadersPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateResponseHeadersPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateResponseHeadersPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateResponseHeadersPolicyOutput, aws_smithy_http::result::SdkError<crate::error::UpdateResponseHeadersPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>A response headers policy configuration.</p>
-        pub fn response_headers_policy_config(mut self, input: crate::model::ResponseHeadersPolicyConfig) -> Self {
-            self.inner = self.inner.response_headers_policy_config(input);
-            self
-        }
-        /// <p>A response headers policy configuration.</p>
-        pub fn set_response_headers_policy_config(mut self, input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>) -> Self {
-            self.inner = self.inner.set_response_headers_policy_config(input);
-            self
-        }
-        /// <p>The identifier for the response headers policy that you are updating.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The identifier for the response headers policy that you are updating.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The version of the response headers policy that you are updating.</p> 
-        /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The version of the response headers policy that you are updating.</p> 
-        /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateStreamingDistribution`.
-                        ///
-    /// <p>Update a streaming distribution.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateStreamingDistribution {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_streaming_distribution_input::Builder
-                        }
-    impl UpdateStreamingDistribution  {
-        /// Creates a new `UpdateStreamingDistribution`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateStreamingDistribution, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateStreamingDistributionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateStreamingDistributionOutput, aws_smithy_http::result::SdkError<crate::error::UpdateStreamingDistributionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The streaming distribution's configuration information.</p>
-        pub fn streaming_distribution_config(mut self, input: crate::model::StreamingDistributionConfig) -> Self {
-            self.inner = self.inner.streaming_distribution_config(input);
-            self
-        }
-        /// <p>The streaming distribution's configuration information.</p>
-        pub fn set_streaming_distribution_config(mut self, input: std::option::Option<crate::model::StreamingDistributionConfig>) -> Self {
-            self.inner = self.inner.set_streaming_distribution_config(input);
-            self
-        }
-        /// <p>The streaming distribution's id.</p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// <p>The streaming distribution's id.</p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(input.into());
-            self
-        }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_if_match(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -8503,4 +1382,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

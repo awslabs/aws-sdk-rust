@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteThingShadow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_thing_shadow`](crate::client::Client::delete_thing_shadow).
+            /// [`delete_thing_shadow`](crate::client::fluent_builders::DeleteThingShadow).
             ///
             /// `ParseStrictResponse` impl for `DeleteThingShadow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteThingShadow {
 /// Operation shape for `GetRetainedMessage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_retained_message`](crate::client::Client::get_retained_message).
+            /// [`get_retained_message`](crate::client::fluent_builders::GetRetainedMessage).
             ///
             /// `ParseStrictResponse` impl for `GetRetainedMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRetainedMessage {
 /// Operation shape for `GetThingShadow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_thing_shadow`](crate::client::Client::get_thing_shadow).
+            /// [`get_thing_shadow`](crate::client::fluent_builders::GetThingShadow).
             ///
             /// `ParseStrictResponse` impl for `GetThingShadow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetThingShadow {
 /// Operation shape for `ListNamedShadowsForThing`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_named_shadows_for_thing`](crate::client::Client::list_named_shadows_for_thing).
+            /// [`list_named_shadows_for_thing`](crate::client::fluent_builders::ListNamedShadowsForThing).
             ///
             /// `ParseStrictResponse` impl for `ListNamedShadowsForThing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNamedShadowsForThing
 /// Operation shape for `ListRetainedMessages`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_retained_messages`](crate::client::Client::list_retained_messages).
+            /// [`list_retained_messages`](crate::client::fluent_builders::ListRetainedMessages).
             ///
             /// `ParseStrictResponse` impl for `ListRetainedMessages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRetainedMessages {
 /// Operation shape for `Publish`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`publish`](crate::client::Client::publish).
+            /// [`publish`](crate::client::fluent_builders::Publish).
             ///
             /// `ParseStrictResponse` impl for `Publish`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Publish {
 /// Operation shape for `UpdateThingShadow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_thing_shadow`](crate::client::Client::update_thing_shadow).
+            /// [`update_thing_shadow`](crate::client::fluent_builders::UpdateThingShadow).
             ///
             /// `ParseStrictResponse` impl for `UpdateThingShadow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

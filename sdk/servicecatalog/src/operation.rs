@@ -2,7 +2,7 @@
 /// Operation shape for `AcceptPortfolioShare`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`accept_portfolio_share`](crate::client::Client::accept_portfolio_share).
+            /// [`accept_portfolio_share`](crate::client::fluent_builders::AcceptPortfolioShare).
             ///
             /// `ParseStrictResponse` impl for `AcceptPortfolioShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptPortfolioShare {
 /// Operation shape for `AssociateBudgetWithResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_budget_with_resource`](crate::client::Client::associate_budget_with_resource).
+            /// [`associate_budget_with_resource`](crate::client::fluent_builders::AssociateBudgetWithResource).
             ///
             /// `ParseStrictResponse` impl for `AssociateBudgetWithResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateBudgetWithResou
 /// Operation shape for `AssociatePrincipalWithPortfolio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_principal_with_portfolio`](crate::client::Client::associate_principal_with_portfolio).
+            /// [`associate_principal_with_portfolio`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio).
             ///
             /// `ParseStrictResponse` impl for `AssociatePrincipalWithPortfolio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePrincipalWithPo
 /// Operation shape for `AssociateProductWithPortfolio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_product_with_portfolio`](crate::client::Client::associate_product_with_portfolio).
+            /// [`associate_product_with_portfolio`](crate::client::fluent_builders::AssociateProductWithPortfolio).
             ///
             /// `ParseStrictResponse` impl for `AssociateProductWithPortfolio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateProductWithPort
 /// Operation shape for `AssociateServiceActionWithProvisioningArtifact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_service_action_with_provisioning_artifact`](crate::client::Client::associate_service_action_with_provisioning_artifact).
+            /// [`associate_service_action_with_provisioning_artifact`](crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact).
             ///
             /// `ParseStrictResponse` impl for `AssociateServiceActionWithProvisioningArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateServiceActionWi
 /// Operation shape for `AssociateTagOptionWithResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_tag_option_with_resource`](crate::client::Client::associate_tag_option_with_resource).
+            /// [`associate_tag_option_with_resource`](crate::client::fluent_builders::AssociateTagOptionWithResource).
             ///
             /// `ParseStrictResponse` impl for `AssociateTagOptionWithResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTagOptionWithRe
 /// Operation shape for `BatchAssociateServiceActionWithProvisioningArtifact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_associate_service_action_with_provisioning_artifact`](crate::client::Client::batch_associate_service_action_with_provisioning_artifact).
+            /// [`batch_associate_service_action_with_provisioning_artifact`](crate::client::fluent_builders::BatchAssociateServiceActionWithProvisioningArtifact).
             ///
             /// `ParseStrictResponse` impl for `BatchAssociateServiceActionWithProvisioningArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateServiceAct
 /// Operation shape for `BatchDisassociateServiceActionFromProvisioningArtifact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_disassociate_service_action_from_provisioning_artifact`](crate::client::Client::batch_disassociate_service_action_from_provisioning_artifact).
+            /// [`batch_disassociate_service_action_from_provisioning_artifact`](crate::client::fluent_builders::BatchDisassociateServiceActionFromProvisioningArtifact).
             ///
             /// `ParseStrictResponse` impl for `BatchDisassociateServiceActionFromProvisioningArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDisassociateService
 /// Operation shape for `CopyProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`copy_product`](crate::client::Client::copy_product).
+            /// [`copy_product`](crate::client::fluent_builders::CopyProduct).
             ///
             /// `ParseStrictResponse` impl for `CopyProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyProduct {
 /// Operation shape for `CreateConstraint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_constraint`](crate::client::Client::create_constraint).
+            /// [`create_constraint`](crate::client::fluent_builders::CreateConstraint).
             ///
             /// `ParseStrictResponse` impl for `CreateConstraint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConstraint {
 /// Operation shape for `CreatePortfolio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_portfolio`](crate::client::Client::create_portfolio).
+            /// [`create_portfolio`](crate::client::fluent_builders::CreatePortfolio).
             ///
             /// `ParseStrictResponse` impl for `CreatePortfolio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePortfolio {
 /// Operation shape for `CreatePortfolioShare`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_portfolio_share`](crate::client::Client::create_portfolio_share).
+            /// [`create_portfolio_share`](crate::client::fluent_builders::CreatePortfolioShare).
             ///
             /// `ParseStrictResponse` impl for `CreatePortfolioShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePortfolioShare {
 /// Operation shape for `CreateProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_product`](crate::client::Client::create_product).
+            /// [`create_product`](crate::client::fluent_builders::CreateProduct).
             ///
             /// `ParseStrictResponse` impl for `CreateProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProduct {
 /// Operation shape for `CreateProvisionedProductPlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_provisioned_product_plan`](crate::client::Client::create_provisioned_product_plan).
+            /// [`create_provisioned_product_plan`](crate::client::fluent_builders::CreateProvisionedProductPlan).
             ///
             /// `ParseStrictResponse` impl for `CreateProvisionedProductPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProvisionedProduct
 /// Operation shape for `CreateProvisioningArtifact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_provisioning_artifact`](crate::client::Client::create_provisioning_artifact).
+            /// [`create_provisioning_artifact`](crate::client::fluent_builders::CreateProvisioningArtifact).
             ///
             /// `ParseStrictResponse` impl for `CreateProvisioningArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProvisioningArtifa
 /// Operation shape for `CreateServiceAction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_service_action`](crate::client::Client::create_service_action).
+            /// [`create_service_action`](crate::client::fluent_builders::CreateServiceAction).
             ///
             /// `ParseStrictResponse` impl for `CreateServiceAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateServiceAction {
 /// Operation shape for `CreateTagOption`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_tag_option`](crate::client::Client::create_tag_option).
+            /// [`create_tag_option`](crate::client::fluent_builders::CreateTagOption).
             ///
             /// `ParseStrictResponse` impl for `CreateTagOption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTagOption {
 /// Operation shape for `DeleteConstraint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_constraint`](crate::client::Client::delete_constraint).
+            /// [`delete_constraint`](crate::client::fluent_builders::DeleteConstraint).
             ///
             /// `ParseStrictResponse` impl for `DeleteConstraint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConstraint {
 /// Operation shape for `DeletePortfolio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_portfolio`](crate::client::Client::delete_portfolio).
+            /// [`delete_portfolio`](crate::client::fluent_builders::DeletePortfolio).
             ///
             /// `ParseStrictResponse` impl for `DeletePortfolio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePortfolio {
 /// Operation shape for `DeletePortfolioShare`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_portfolio_share`](crate::client::Client::delete_portfolio_share).
+            /// [`delete_portfolio_share`](crate::client::fluent_builders::DeletePortfolioShare).
             ///
             /// `ParseStrictResponse` impl for `DeletePortfolioShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePortfolioShare {
 /// Operation shape for `DeleteProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_product`](crate::client::Client::delete_product).
+            /// [`delete_product`](crate::client::fluent_builders::DeleteProduct).
             ///
             /// `ParseStrictResponse` impl for `DeleteProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProduct {
 /// Operation shape for `DeleteProvisionedProductPlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_provisioned_product_plan`](crate::client::Client::delete_provisioned_product_plan).
+            /// [`delete_provisioned_product_plan`](crate::client::fluent_builders::DeleteProvisionedProductPlan).
             ///
             /// `ParseStrictResponse` impl for `DeleteProvisionedProductPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProvisionedProduct
 /// Operation shape for `DeleteProvisioningArtifact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_provisioning_artifact`](crate::client::Client::delete_provisioning_artifact).
+            /// [`delete_provisioning_artifact`](crate::client::fluent_builders::DeleteProvisioningArtifact).
             ///
             /// `ParseStrictResponse` impl for `DeleteProvisioningArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProvisioningArtifa
 /// Operation shape for `DeleteServiceAction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_service_action`](crate::client::Client::delete_service_action).
+            /// [`delete_service_action`](crate::client::fluent_builders::DeleteServiceAction).
             ///
             /// `ParseStrictResponse` impl for `DeleteServiceAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteServiceAction {
 /// Operation shape for `DeleteTagOption`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_tag_option`](crate::client::Client::delete_tag_option).
+            /// [`delete_tag_option`](crate::client::fluent_builders::DeleteTagOption).
             ///
             /// `ParseStrictResponse` impl for `DeleteTagOption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTagOption {
 /// Operation shape for `DescribeConstraint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_constraint`](crate::client::Client::describe_constraint).
+            /// [`describe_constraint`](crate::client::fluent_builders::DescribeConstraint).
             ///
             /// `ParseStrictResponse` impl for `DescribeConstraint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConstraint {
 /// Operation shape for `DescribeCopyProductStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_copy_product_status`](crate::client::Client::describe_copy_product_status).
+            /// [`describe_copy_product_status`](crate::client::fluent_builders::DescribeCopyProductStatus).
             ///
             /// `ParseStrictResponse` impl for `DescribeCopyProductStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCopyProductStatu
 /// Operation shape for `DescribePortfolio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_portfolio`](crate::client::Client::describe_portfolio).
+            /// [`describe_portfolio`](crate::client::fluent_builders::DescribePortfolio).
             ///
             /// `ParseStrictResponse` impl for `DescribePortfolio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePortfolio {
 /// Operation shape for `DescribePortfolioShares`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_portfolio_shares`](crate::client::Client::describe_portfolio_shares).
+            /// [`describe_portfolio_shares`](crate::client::fluent_builders::DescribePortfolioShares).
             ///
             /// `ParseStrictResponse` impl for `DescribePortfolioShares`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePortfolioShares 
 /// Operation shape for `DescribePortfolioShareStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_portfolio_share_status`](crate::client::Client::describe_portfolio_share_status).
+            /// [`describe_portfolio_share_status`](crate::client::fluent_builders::DescribePortfolioShareStatus).
             ///
             /// `ParseStrictResponse` impl for `DescribePortfolioShareStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePortfolioShareSt
 /// Operation shape for `DescribeProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_product`](crate::client::Client::describe_product).
+            /// [`describe_product`](crate::client::fluent_builders::DescribeProduct).
             ///
             /// `ParseStrictResponse` impl for `DescribeProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProduct {
 /// Operation shape for `DescribeProductAsAdmin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_product_as_admin`](crate::client::Client::describe_product_as_admin).
+            /// [`describe_product_as_admin`](crate::client::fluent_builders::DescribeProductAsAdmin).
             ///
             /// `ParseStrictResponse` impl for `DescribeProductAsAdmin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProductAsAdmin {
 /// Operation shape for `DescribeProductView`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_product_view`](crate::client::Client::describe_product_view).
+            /// [`describe_product_view`](crate::client::fluent_builders::DescribeProductView).
             ///
             /// `ParseStrictResponse` impl for `DescribeProductView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProductView {
 /// Operation shape for `DescribeProvisionedProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_provisioned_product`](crate::client::Client::describe_provisioned_product).
+            /// [`describe_provisioned_product`](crate::client::fluent_builders::DescribeProvisionedProduct).
             ///
             /// `ParseStrictResponse` impl for `DescribeProvisionedProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProvisionedProdu
 /// Operation shape for `DescribeProvisionedProductPlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_provisioned_product_plan`](crate::client::Client::describe_provisioned_product_plan).
+            /// [`describe_provisioned_product_plan`](crate::client::fluent_builders::DescribeProvisionedProductPlan).
             ///
             /// `ParseStrictResponse` impl for `DescribeProvisionedProductPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProvisionedProdu
 /// Operation shape for `DescribeProvisioningArtifact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_provisioning_artifact`](crate::client::Client::describe_provisioning_artifact).
+            /// [`describe_provisioning_artifact`](crate::client::fluent_builders::DescribeProvisioningArtifact).
             ///
             /// `ParseStrictResponse` impl for `DescribeProvisioningArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProvisioningArti
 /// Operation shape for `DescribeProvisioningParameters`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_provisioning_parameters`](crate::client::Client::describe_provisioning_parameters).
+            /// [`describe_provisioning_parameters`](crate::client::fluent_builders::DescribeProvisioningParameters).
             ///
             /// `ParseStrictResponse` impl for `DescribeProvisioningParameters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProvisioningPara
 /// Operation shape for `DescribeRecord`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_record`](crate::client::Client::describe_record).
+            /// [`describe_record`](crate::client::fluent_builders::DescribeRecord).
             ///
             /// `ParseStrictResponse` impl for `DescribeRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecord {
 /// Operation shape for `DescribeServiceAction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_service_action`](crate::client::Client::describe_service_action).
+            /// [`describe_service_action`](crate::client::fluent_builders::DescribeServiceAction).
             ///
             /// `ParseStrictResponse` impl for `DescribeServiceAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeServiceAction {
 /// Operation shape for `DescribeServiceActionExecutionParameters`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_service_action_execution_parameters`](crate::client::Client::describe_service_action_execution_parameters).
+            /// [`describe_service_action_execution_parameters`](crate::client::fluent_builders::DescribeServiceActionExecutionParameters).
             ///
             /// `ParseStrictResponse` impl for `DescribeServiceActionExecutionParameters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeServiceActionExe
 /// Operation shape for `DescribeTagOption`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_tag_option`](crate::client::Client::describe_tag_option).
+            /// [`describe_tag_option`](crate::client::fluent_builders::DescribeTagOption).
             ///
             /// `ParseStrictResponse` impl for `DescribeTagOption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTagOption {
 /// Operation shape for `DisableAWSOrganizationsAccess`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_aws_organizations_access`](crate::client::Client::disable_aws_organizations_access).
+            /// [`disable_aws_organizations_access`](crate::client::fluent_builders::DisableAWSOrganizationsAccess).
             ///
             /// `ParseStrictResponse` impl for `DisableAWSOrganizationsAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAWSOrganizationsA
 /// Operation shape for `DisassociateBudgetFromResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_budget_from_resource`](crate::client::Client::disassociate_budget_from_resource).
+            /// [`disassociate_budget_from_resource`](crate::client::fluent_builders::DisassociateBudgetFromResource).
             ///
             /// `ParseStrictResponse` impl for `DisassociateBudgetFromResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateBudgetFromRe
 /// Operation shape for `DisassociatePrincipalFromPortfolio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_principal_from_portfolio`](crate::client::Client::disassociate_principal_from_portfolio).
+            /// [`disassociate_principal_from_portfolio`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio).
             ///
             /// `ParseStrictResponse` impl for `DisassociatePrincipalFromPortfolio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociatePrincipalFro
 /// Operation shape for `DisassociateProductFromPortfolio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_product_from_portfolio`](crate::client::Client::disassociate_product_from_portfolio).
+            /// [`disassociate_product_from_portfolio`](crate::client::fluent_builders::DisassociateProductFromPortfolio).
             ///
             /// `ParseStrictResponse` impl for `DisassociateProductFromPortfolio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1442,7 +1442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateProductFromP
 /// Operation shape for `DisassociateServiceActionFromProvisioningArtifact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_service_action_from_provisioning_artifact`](crate::client::Client::disassociate_service_action_from_provisioning_artifact).
+            /// [`disassociate_service_action_from_provisioning_artifact`](crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact).
             ///
             /// `ParseStrictResponse` impl for `DisassociateServiceActionFromProvisioningArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateServiceActio
 /// Operation shape for `DisassociateTagOptionFromResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_tag_option_from_resource`](crate::client::Client::disassociate_tag_option_from_resource).
+            /// [`disassociate_tag_option_from_resource`](crate::client::fluent_builders::DisassociateTagOptionFromResource).
             ///
             /// `ParseStrictResponse` impl for `DisassociateTagOptionFromResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1506,7 +1506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTagOptionFro
 /// Operation shape for `EnableAWSOrganizationsAccess`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_aws_organizations_access`](crate::client::Client::enable_aws_organizations_access).
+            /// [`enable_aws_organizations_access`](crate::client::fluent_builders::EnableAWSOrganizationsAccess).
             ///
             /// `ParseStrictResponse` impl for `EnableAWSOrganizationsAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAWSOrganizationsAc
 /// Operation shape for `ExecuteProvisionedProductPlan`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`execute_provisioned_product_plan`](crate::client::Client::execute_provisioned_product_plan).
+            /// [`execute_provisioned_product_plan`](crate::client::fluent_builders::ExecuteProvisionedProductPlan).
             ///
             /// `ParseStrictResponse` impl for `ExecuteProvisionedProductPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1570,7 +1570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteProvisionedProduc
 /// Operation shape for `ExecuteProvisionedProductServiceAction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`execute_provisioned_product_service_action`](crate::client::Client::execute_provisioned_product_service_action).
+            /// [`execute_provisioned_product_service_action`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction).
             ///
             /// `ParseStrictResponse` impl for `ExecuteProvisionedProductServiceAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1602,7 +1602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteProvisionedProduc
 /// Operation shape for `GetAWSOrganizationsAccessStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_aws_organizations_access_status`](crate::client::Client::get_aws_organizations_access_status).
+            /// [`get_aws_organizations_access_status`](crate::client::fluent_builders::GetAWSOrganizationsAccessStatus).
             ///
             /// `ParseStrictResponse` impl for `GetAWSOrganizationsAccessStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1634,7 +1634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAWSOrganizationsAcces
 /// Operation shape for `GetProvisionedProductOutputs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_provisioned_product_outputs`](crate::client::Client::get_provisioned_product_outputs).
+            /// [`get_provisioned_product_outputs`](crate::client::fluent_builders::GetProvisionedProductOutputs).
             ///
             /// `ParseStrictResponse` impl for `GetProvisionedProductOutputs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1666,7 +1666,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProvisionedProductOut
 /// Operation shape for `ImportAsProvisionedProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_as_provisioned_product`](crate::client::Client::import_as_provisioned_product).
+            /// [`import_as_provisioned_product`](crate::client::fluent_builders::ImportAsProvisionedProduct).
             ///
             /// `ParseStrictResponse` impl for `ImportAsProvisionedProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1698,7 +1698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportAsProvisionedProdu
 /// Operation shape for `ListAcceptedPortfolioShares`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_accepted_portfolio_shares`](crate::client::Client::list_accepted_portfolio_shares).
+            /// [`list_accepted_portfolio_shares`](crate::client::fluent_builders::ListAcceptedPortfolioShares).
             ///
             /// `ParseStrictResponse` impl for `ListAcceptedPortfolioShares`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1730,7 +1730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAcceptedPortfolioSha
 /// Operation shape for `ListBudgetsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_budgets_for_resource`](crate::client::Client::list_budgets_for_resource).
+            /// [`list_budgets_for_resource`](crate::client::fluent_builders::ListBudgetsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListBudgetsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1762,7 +1762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBudgetsForResource {
 /// Operation shape for `ListConstraintsForPortfolio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_constraints_for_portfolio`](crate::client::Client::list_constraints_for_portfolio).
+            /// [`list_constraints_for_portfolio`](crate::client::fluent_builders::ListConstraintsForPortfolio).
             ///
             /// `ParseStrictResponse` impl for `ListConstraintsForPortfolio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1794,7 +1794,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConstraintsForPortfo
 /// Operation shape for `ListLaunchPaths`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_launch_paths`](crate::client::Client::list_launch_paths).
+            /// [`list_launch_paths`](crate::client::fluent_builders::ListLaunchPaths).
             ///
             /// `ParseStrictResponse` impl for `ListLaunchPaths`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1826,7 +1826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLaunchPaths {
 /// Operation shape for `ListOrganizationPortfolioAccess`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_organization_portfolio_access`](crate::client::Client::list_organization_portfolio_access).
+            /// [`list_organization_portfolio_access`](crate::client::fluent_builders::ListOrganizationPortfolioAccess).
             ///
             /// `ParseStrictResponse` impl for `ListOrganizationPortfolioAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1858,7 +1858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOrganizationPortfoli
 /// Operation shape for `ListPortfolioAccess`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_portfolio_access`](crate::client::Client::list_portfolio_access).
+            /// [`list_portfolio_access`](crate::client::fluent_builders::ListPortfolioAccess).
             ///
             /// `ParseStrictResponse` impl for `ListPortfolioAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1890,7 +1890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPortfolioAccess {
 /// Operation shape for `ListPortfolios`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_portfolios`](crate::client::Client::list_portfolios).
+            /// [`list_portfolios`](crate::client::fluent_builders::ListPortfolios).
             ///
             /// `ParseStrictResponse` impl for `ListPortfolios`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1922,7 +1922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPortfolios {
 /// Operation shape for `ListPortfoliosForProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_portfolios_for_product`](crate::client::Client::list_portfolios_for_product).
+            /// [`list_portfolios_for_product`](crate::client::fluent_builders::ListPortfoliosForProduct).
             ///
             /// `ParseStrictResponse` impl for `ListPortfoliosForProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1954,7 +1954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPortfoliosForProduct
 /// Operation shape for `ListPrincipalsForPortfolio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_principals_for_portfolio`](crate::client::Client::list_principals_for_portfolio).
+            /// [`list_principals_for_portfolio`](crate::client::fluent_builders::ListPrincipalsForPortfolio).
             ///
             /// `ParseStrictResponse` impl for `ListPrincipalsForPortfolio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1986,7 +1986,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPrincipalsForPortfol
 /// Operation shape for `ListProvisionedProductPlans`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_provisioned_product_plans`](crate::client::Client::list_provisioned_product_plans).
+            /// [`list_provisioned_product_plans`](crate::client::fluent_builders::ListProvisionedProductPlans).
             ///
             /// `ParseStrictResponse` impl for `ListProvisionedProductPlans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2018,7 +2018,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProvisionedProductPl
 /// Operation shape for `ListProvisioningArtifacts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_provisioning_artifacts`](crate::client::Client::list_provisioning_artifacts).
+            /// [`list_provisioning_artifacts`](crate::client::fluent_builders::ListProvisioningArtifacts).
             ///
             /// `ParseStrictResponse` impl for `ListProvisioningArtifacts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2050,7 +2050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProvisioningArtifact
 /// Operation shape for `ListProvisioningArtifactsForServiceAction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_provisioning_artifacts_for_service_action`](crate::client::Client::list_provisioning_artifacts_for_service_action).
+            /// [`list_provisioning_artifacts_for_service_action`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction).
             ///
             /// `ParseStrictResponse` impl for `ListProvisioningArtifactsForServiceAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2082,7 +2082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProvisioningArtifact
 /// Operation shape for `ListRecordHistory`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_record_history`](crate::client::Client::list_record_history).
+            /// [`list_record_history`](crate::client::fluent_builders::ListRecordHistory).
             ///
             /// `ParseStrictResponse` impl for `ListRecordHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2114,7 +2114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecordHistory {
 /// Operation shape for `ListResourcesForTagOption`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_resources_for_tag_option`](crate::client::Client::list_resources_for_tag_option).
+            /// [`list_resources_for_tag_option`](crate::client::fluent_builders::ListResourcesForTagOption).
             ///
             /// `ParseStrictResponse` impl for `ListResourcesForTagOption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2146,7 +2146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourcesForTagOptio
 /// Operation shape for `ListServiceActions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_service_actions`](crate::client::Client::list_service_actions).
+            /// [`list_service_actions`](crate::client::fluent_builders::ListServiceActions).
             ///
             /// `ParseStrictResponse` impl for `ListServiceActions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2178,7 +2178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServiceActions {
 /// Operation shape for `ListServiceActionsForProvisioningArtifact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_service_actions_for_provisioning_artifact`](crate::client::Client::list_service_actions_for_provisioning_artifact).
+            /// [`list_service_actions_for_provisioning_artifact`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact).
             ///
             /// `ParseStrictResponse` impl for `ListServiceActionsForProvisioningArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2210,7 +2210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServiceActionsForPro
 /// Operation shape for `ListStackInstancesForProvisionedProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_stack_instances_for_provisioned_product`](crate::client::Client::list_stack_instances_for_provisioned_product).
+            /// [`list_stack_instances_for_provisioned_product`](crate::client::fluent_builders::ListStackInstancesForProvisionedProduct).
             ///
             /// `ParseStrictResponse` impl for `ListStackInstancesForProvisionedProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2242,7 +2242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStackInstancesForPro
 /// Operation shape for `ListTagOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tag_options`](crate::client::Client::list_tag_options).
+            /// [`list_tag_options`](crate::client::fluent_builders::ListTagOptions).
             ///
             /// `ParseStrictResponse` impl for `ListTagOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2274,7 +2274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagOptions {
 /// Operation shape for `ProvisionProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`provision_product`](crate::client::Client::provision_product).
+            /// [`provision_product`](crate::client::fluent_builders::ProvisionProduct).
             ///
             /// `ParseStrictResponse` impl for `ProvisionProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2306,7 +2306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvisionProduct {
 /// Operation shape for `RejectPortfolioShare`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reject_portfolio_share`](crate::client::Client::reject_portfolio_share).
+            /// [`reject_portfolio_share`](crate::client::fluent_builders::RejectPortfolioShare).
             ///
             /// `ParseStrictResponse` impl for `RejectPortfolioShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2338,7 +2338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectPortfolioShare {
 /// Operation shape for `ScanProvisionedProducts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`scan_provisioned_products`](crate::client::Client::scan_provisioned_products).
+            /// [`scan_provisioned_products`](crate::client::fluent_builders::ScanProvisionedProducts).
             ///
             /// `ParseStrictResponse` impl for `ScanProvisionedProducts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2370,7 +2370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ScanProvisionedProducts 
 /// Operation shape for `SearchProducts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_products`](crate::client::Client::search_products).
+            /// [`search_products`](crate::client::fluent_builders::SearchProducts).
             ///
             /// `ParseStrictResponse` impl for `SearchProducts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2402,7 +2402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchProducts {
 /// Operation shape for `SearchProductsAsAdmin`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_products_as_admin`](crate::client::Client::search_products_as_admin).
+            /// [`search_products_as_admin`](crate::client::fluent_builders::SearchProductsAsAdmin).
             ///
             /// `ParseStrictResponse` impl for `SearchProductsAsAdmin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2434,7 +2434,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchProductsAsAdmin {
 /// Operation shape for `SearchProvisionedProducts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_provisioned_products`](crate::client::Client::search_provisioned_products).
+            /// [`search_provisioned_products`](crate::client::fluent_builders::SearchProvisionedProducts).
             ///
             /// `ParseStrictResponse` impl for `SearchProvisionedProducts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2466,7 +2466,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchProvisionedProduct
 /// Operation shape for `TerminateProvisionedProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`terminate_provisioned_product`](crate::client::Client::terminate_provisioned_product).
+            /// [`terminate_provisioned_product`](crate::client::fluent_builders::TerminateProvisionedProduct).
             ///
             /// `ParseStrictResponse` impl for `TerminateProvisionedProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2498,7 +2498,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateProvisionedProd
 /// Operation shape for `UpdateConstraint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_constraint`](crate::client::Client::update_constraint).
+            /// [`update_constraint`](crate::client::fluent_builders::UpdateConstraint).
             ///
             /// `ParseStrictResponse` impl for `UpdateConstraint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2530,7 +2530,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConstraint {
 /// Operation shape for `UpdatePortfolio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_portfolio`](crate::client::Client::update_portfolio).
+            /// [`update_portfolio`](crate::client::fluent_builders::UpdatePortfolio).
             ///
             /// `ParseStrictResponse` impl for `UpdatePortfolio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2562,7 +2562,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePortfolio {
 /// Operation shape for `UpdatePortfolioShare`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_portfolio_share`](crate::client::Client::update_portfolio_share).
+            /// [`update_portfolio_share`](crate::client::fluent_builders::UpdatePortfolioShare).
             ///
             /// `ParseStrictResponse` impl for `UpdatePortfolioShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2594,7 +2594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePortfolioShare {
 /// Operation shape for `UpdateProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_product`](crate::client::Client::update_product).
+            /// [`update_product`](crate::client::fluent_builders::UpdateProduct).
             ///
             /// `ParseStrictResponse` impl for `UpdateProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2626,7 +2626,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProduct {
 /// Operation shape for `UpdateProvisionedProduct`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_provisioned_product`](crate::client::Client::update_provisioned_product).
+            /// [`update_provisioned_product`](crate::client::fluent_builders::UpdateProvisionedProduct).
             ///
             /// `ParseStrictResponse` impl for `UpdateProvisionedProduct`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2658,7 +2658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProvisionedProduct
 /// Operation shape for `UpdateProvisionedProductProperties`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_provisioned_product_properties`](crate::client::Client::update_provisioned_product_properties).
+            /// [`update_provisioned_product_properties`](crate::client::fluent_builders::UpdateProvisionedProductProperties).
             ///
             /// `ParseStrictResponse` impl for `UpdateProvisionedProductProperties`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2690,7 +2690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProvisionedProduct
 /// Operation shape for `UpdateProvisioningArtifact`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_provisioning_artifact`](crate::client::Client::update_provisioning_artifact).
+            /// [`update_provisioning_artifact`](crate::client::fluent_builders::UpdateProvisioningArtifact).
             ///
             /// `ParseStrictResponse` impl for `UpdateProvisioningArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2722,7 +2722,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProvisioningArtifa
 /// Operation shape for `UpdateServiceAction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_service_action`](crate::client::Client::update_service_action).
+            /// [`update_service_action`](crate::client::fluent_builders::UpdateServiceAction).
             ///
             /// `ParseStrictResponse` impl for `UpdateServiceAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2754,7 +2754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServiceAction {
 /// Operation shape for `UpdateTagOption`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_tag_option`](crate::client::Client::update_tag_option).
+            /// [`update_tag_option`](crate::client::fluent_builders::UpdateTagOption).
             ///
             /// `ParseStrictResponse` impl for `UpdateTagOption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

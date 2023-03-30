@@ -2,7 +2,7 @@
 /// Operation shape for `CreateRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_rule`](crate::client::Client::create_rule).
+            /// [`create_rule`](crate::client::fluent_builders::CreateRule).
             ///
             /// `ParseStrictResponse` impl for `CreateRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRule {
 /// Operation shape for `DeleteRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_rule`](crate::client::Client::delete_rule).
+            /// [`delete_rule`](crate::client::fluent_builders::DeleteRule).
             ///
             /// `ParseStrictResponse` impl for `DeleteRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRule {
 /// Operation shape for `GetRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_rule`](crate::client::Client::get_rule).
+            /// [`get_rule`](crate::client::fluent_builders::GetRule).
             ///
             /// `ParseStrictResponse` impl for `GetRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRule {
 /// Operation shape for `ListRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_rules`](crate::client::Client::list_rules).
+            /// [`list_rules`](crate::client::fluent_builders::ListRules).
             ///
             /// `ParseStrictResponse` impl for `ListRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRules {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `LockRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`lock_rule`](crate::client::Client::lock_rule).
+            /// [`lock_rule`](crate::client::fluent_builders::LockRule).
             ///
             /// `ParseStrictResponse` impl for `LockRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LockRule {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UnlockRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`unlock_rule`](crate::client::Client::unlock_rule).
+            /// [`unlock_rule`](crate::client::fluent_builders::UnlockRule).
             ///
             /// `ParseStrictResponse` impl for `UnlockRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnlockRule {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_rule`](crate::client::Client::update_rule).
+            /// [`update_rule`](crate::client::fluent_builders::UpdateRule).
             ///
             /// `ParseStrictResponse` impl for `UpdateRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

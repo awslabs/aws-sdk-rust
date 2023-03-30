@@ -2,7 +2,7 @@
 /// Operation shape for `CancelOrder`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_order`](crate::client::Client::cancel_order).
+            /// [`cancel_order`](crate::client::fluent_builders::CancelOrder).
             ///
             /// `ParseStrictResponse` impl for `CancelOrder`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelOrder {
 /// Operation shape for `CreateOrder`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_order`](crate::client::Client::create_order).
+            /// [`create_order`](crate::client::fluent_builders::CreateOrder).
             ///
             /// `ParseStrictResponse` impl for `CreateOrder`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOrder {
 /// Operation shape for `CreateOutpost`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_outpost`](crate::client::Client::create_outpost).
+            /// [`create_outpost`](crate::client::fluent_builders::CreateOutpost).
             ///
             /// `ParseStrictResponse` impl for `CreateOutpost`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOutpost {
 /// Operation shape for `CreateSite`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_site`](crate::client::Client::create_site).
+            /// [`create_site`](crate::client::fluent_builders::CreateSite).
             ///
             /// `ParseStrictResponse` impl for `CreateSite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSite {
 /// Operation shape for `DeleteOutpost`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_outpost`](crate::client::Client::delete_outpost).
+            /// [`delete_outpost`](crate::client::fluent_builders::DeleteOutpost).
             ///
             /// `ParseStrictResponse` impl for `DeleteOutpost`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOutpost {
 /// Operation shape for `DeleteSite`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_site`](crate::client::Client::delete_site).
+            /// [`delete_site`](crate::client::fluent_builders::DeleteSite).
             ///
             /// `ParseStrictResponse` impl for `DeleteSite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSite {
 /// Operation shape for `GetCatalogItem`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_catalog_item`](crate::client::Client::get_catalog_item).
+            /// [`get_catalog_item`](crate::client::fluent_builders::GetCatalogItem).
             ///
             /// `ParseStrictResponse` impl for `GetCatalogItem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCatalogItem {
 /// Operation shape for `GetConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_connection`](crate::client::Client::get_connection).
+            /// [`get_connection`](crate::client::fluent_builders::GetConnection).
             ///
             /// `ParseStrictResponse` impl for `GetConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnection {
 /// Operation shape for `GetOrder`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_order`](crate::client::Client::get_order).
+            /// [`get_order`](crate::client::fluent_builders::GetOrder).
             ///
             /// `ParseStrictResponse` impl for `GetOrder`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOrder {
 /// Operation shape for `GetOutpost`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_outpost`](crate::client::Client::get_outpost).
+            /// [`get_outpost`](crate::client::fluent_builders::GetOutpost).
             ///
             /// `ParseStrictResponse` impl for `GetOutpost`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOutpost {
 /// Operation shape for `GetOutpostInstanceTypes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_outpost_instance_types`](crate::client::Client::get_outpost_instance_types).
+            /// [`get_outpost_instance_types`](crate::client::fluent_builders::GetOutpostInstanceTypes).
             ///
             /// `ParseStrictResponse` impl for `GetOutpostInstanceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOutpostInstanceTypes 
 /// Operation shape for `GetSite`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_site`](crate::client::Client::get_site).
+            /// [`get_site`](crate::client::fluent_builders::GetSite).
             ///
             /// `ParseStrictResponse` impl for `GetSite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSite {
 /// Operation shape for `GetSiteAddress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_site_address`](crate::client::Client::get_site_address).
+            /// [`get_site_address`](crate::client::fluent_builders::GetSiteAddress).
             ///
             /// `ParseStrictResponse` impl for `GetSiteAddress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSiteAddress {
 /// Operation shape for `ListAssets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_assets`](crate::client::Client::list_assets).
+            /// [`list_assets`](crate::client::fluent_builders::ListAssets).
             ///
             /// `ParseStrictResponse` impl for `ListAssets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssets {
 /// Operation shape for `ListCatalogItems`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_catalog_items`](crate::client::Client::list_catalog_items).
+            /// [`list_catalog_items`](crate::client::fluent_builders::ListCatalogItems).
             ///
             /// `ParseStrictResponse` impl for `ListCatalogItems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCatalogItems {
 /// Operation shape for `ListOrders`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_orders`](crate::client::Client::list_orders).
+            /// [`list_orders`](crate::client::fluent_builders::ListOrders).
             ///
             /// `ParseStrictResponse` impl for `ListOrders`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOrders {
 /// Operation shape for `ListOutposts`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_outposts`](crate::client::Client::list_outposts).
+            /// [`list_outposts`](crate::client::fluent_builders::ListOutposts).
             ///
             /// `ParseStrictResponse` impl for `ListOutposts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOutposts {
 /// Operation shape for `ListSites`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_sites`](crate::client::Client::list_sites).
+            /// [`list_sites`](crate::client::fluent_builders::ListSites).
             ///
             /// `ParseStrictResponse` impl for `ListSites`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSites {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `StartConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_connection`](crate::client::Client::start_connection).
+            /// [`start_connection`](crate::client::fluent_builders::StartConnection).
             ///
             /// `ParseStrictResponse` impl for `StartConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartConnection {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateOutpost`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_outpost`](crate::client::Client::update_outpost).
+            /// [`update_outpost`](crate::client::fluent_builders::UpdateOutpost).
             ///
             /// `ParseStrictResponse` impl for `UpdateOutpost`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateOutpost {
 /// Operation shape for `UpdateSite`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_site`](crate::client::Client::update_site).
+            /// [`update_site`](crate::client::fluent_builders::UpdateSite).
             ///
             /// `ParseStrictResponse` impl for `UpdateSite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSite {
 /// Operation shape for `UpdateSiteAddress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_site_address`](crate::client::Client::update_site_address).
+            /// [`update_site_address`](crate::client::fluent_builders::UpdateSiteAddress).
             ///
             /// `ParseStrictResponse` impl for `UpdateSiteAddress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSiteAddress {
 /// Operation shape for `UpdateSiteRackPhysicalProperties`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_site_rack_physical_properties`](crate::client::Client::update_site_rack_physical_properties).
+            /// [`update_site_rack_physical_properties`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties).
             ///
             /// `ParseStrictResponse` impl for `UpdateSiteRackPhysicalProperties`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

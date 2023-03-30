@@ -2,7 +2,7 @@
 /// Operation shape for `CreateFHIRDatastore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_fhir_datastore`](crate::client::Client::create_fhir_datastore).
+            /// [`create_fhir_datastore`](crate::client::fluent_builders::CreateFHIRDatastore).
             ///
             /// `ParseStrictResponse` impl for `CreateFHIRDatastore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFHIRDatastore {
 /// Operation shape for `DeleteFHIRDatastore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_fhir_datastore`](crate::client::Client::delete_fhir_datastore).
+            /// [`delete_fhir_datastore`](crate::client::fluent_builders::DeleteFHIRDatastore).
             ///
             /// `ParseStrictResponse` impl for `DeleteFHIRDatastore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFHIRDatastore {
 /// Operation shape for `DescribeFHIRDatastore`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fhir_datastore`](crate::client::Client::describe_fhir_datastore).
+            /// [`describe_fhir_datastore`](crate::client::fluent_builders::DescribeFHIRDatastore).
             ///
             /// `ParseStrictResponse` impl for `DescribeFHIRDatastore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFHIRDatastore {
 /// Operation shape for `DescribeFHIRExportJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fhir_export_job`](crate::client::Client::describe_fhir_export_job).
+            /// [`describe_fhir_export_job`](crate::client::fluent_builders::DescribeFHIRExportJob).
             ///
             /// `ParseStrictResponse` impl for `DescribeFHIRExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFHIRExportJob {
 /// Operation shape for `DescribeFHIRImportJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fhir_import_job`](crate::client::Client::describe_fhir_import_job).
+            /// [`describe_fhir_import_job`](crate::client::fluent_builders::DescribeFHIRImportJob).
             ///
             /// `ParseStrictResponse` impl for `DescribeFHIRImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFHIRImportJob {
 /// Operation shape for `ListFHIRDatastores`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_fhir_datastores`](crate::client::Client::list_fhir_datastores).
+            /// [`list_fhir_datastores`](crate::client::fluent_builders::ListFHIRDatastores).
             ///
             /// `ParseStrictResponse` impl for `ListFHIRDatastores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFHIRDatastores {
 /// Operation shape for `ListFHIRExportJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_fhir_export_jobs`](crate::client::Client::list_fhir_export_jobs).
+            /// [`list_fhir_export_jobs`](crate::client::fluent_builders::ListFHIRExportJobs).
             ///
             /// `ParseStrictResponse` impl for `ListFHIRExportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFHIRExportJobs {
 /// Operation shape for `ListFHIRImportJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_fhir_import_jobs`](crate::client::Client::list_fhir_import_jobs).
+            /// [`list_fhir_import_jobs`](crate::client::fluent_builders::ListFHIRImportJobs).
             ///
             /// `ParseStrictResponse` impl for `ListFHIRImportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFHIRImportJobs {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `StartFHIRExportJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_fhir_export_job`](crate::client::Client::start_fhir_export_job).
+            /// [`start_fhir_export_job`](crate::client::fluent_builders::StartFHIRExportJob).
             ///
             /// `ParseStrictResponse` impl for `StartFHIRExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFHIRExportJob {
 /// Operation shape for `StartFHIRImportJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_fhir_import_job`](crate::client::Client::start_fhir_import_job).
+            /// [`start_fhir_import_job`](crate::client::fluent_builders::StartFHIRImportJob).
             ///
             /// `ParseStrictResponse` impl for `StartFHIRImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFHIRImportJob {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

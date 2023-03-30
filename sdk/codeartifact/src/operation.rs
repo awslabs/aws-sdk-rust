@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateExternalConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`associate_external_connection`](crate::client::Client::associate_external_connection).
+            /// [`associate_external_connection`](crate::client::fluent_builders::AssociateExternalConnection).
             ///
             /// `ParseStrictResponse` impl for `AssociateExternalConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateExternalConnect
 /// Operation shape for `CopyPackageVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`copy_package_versions`](crate::client::Client::copy_package_versions).
+            /// [`copy_package_versions`](crate::client::fluent_builders::CopyPackageVersions).
             ///
             /// `ParseStrictResponse` impl for `CopyPackageVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyPackageVersions {
 /// Operation shape for `CreateDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_domain`](crate::client::Client::create_domain).
+            /// [`create_domain`](crate::client::fluent_builders::CreateDomain).
             ///
             /// `ParseStrictResponse` impl for `CreateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomain {
 /// Operation shape for `CreateRepository`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_repository`](crate::client::Client::create_repository).
+            /// [`create_repository`](crate::client::fluent_builders::CreateRepository).
             ///
             /// `ParseStrictResponse` impl for `CreateRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRepository {
 /// Operation shape for `DeleteDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_domain`](crate::client::Client::delete_domain).
+            /// [`delete_domain`](crate::client::fluent_builders::DeleteDomain).
             ///
             /// `ParseStrictResponse` impl for `DeleteDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomain {
 /// Operation shape for `DeleteDomainPermissionsPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_domain_permissions_policy`](crate::client::Client::delete_domain_permissions_policy).
+            /// [`delete_domain_permissions_policy`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteDomainPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomainPermissionsP
 /// Operation shape for `DeletePackageVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_package_versions`](crate::client::Client::delete_package_versions).
+            /// [`delete_package_versions`](crate::client::fluent_builders::DeletePackageVersions).
             ///
             /// `ParseStrictResponse` impl for `DeletePackageVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackageVersions {
 /// Operation shape for `DeleteRepository`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_repository`](crate::client::Client::delete_repository).
+            /// [`delete_repository`](crate::client::fluent_builders::DeleteRepository).
             ///
             /// `ParseStrictResponse` impl for `DeleteRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepository {
 /// Operation shape for `DeleteRepositoryPermissionsPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_repository_permissions_policy`](crate::client::Client::delete_repository_permissions_policy).
+            /// [`delete_repository_permissions_policy`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteRepositoryPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepositoryPermissi
 /// Operation shape for `DescribeDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_domain`](crate::client::Client::describe_domain).
+            /// [`describe_domain`](crate::client::fluent_builders::DescribeDomain).
             ///
             /// `ParseStrictResponse` impl for `DescribeDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
 /// Operation shape for `DescribePackage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_package`](crate::client::Client::describe_package).
+            /// [`describe_package`](crate::client::fluent_builders::DescribePackage).
             ///
             /// `ParseStrictResponse` impl for `DescribePackage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackage {
 /// Operation shape for `DescribePackageVersion`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_package_version`](crate::client::Client::describe_package_version).
+            /// [`describe_package_version`](crate::client::fluent_builders::DescribePackageVersion).
             ///
             /// `ParseStrictResponse` impl for `DescribePackageVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackageVersion {
 /// Operation shape for `DescribeRepository`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_repository`](crate::client::Client::describe_repository).
+            /// [`describe_repository`](crate::client::fluent_builders::DescribeRepository).
             ///
             /// `ParseStrictResponse` impl for `DescribeRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRepository {
 /// Operation shape for `DisassociateExternalConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disassociate_external_connection`](crate::client::Client::disassociate_external_connection).
+            /// [`disassociate_external_connection`](crate::client::fluent_builders::DisassociateExternalConnection).
             ///
             /// `ParseStrictResponse` impl for `DisassociateExternalConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateExternalConn
 /// Operation shape for `DisposePackageVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`dispose_package_versions`](crate::client::Client::dispose_package_versions).
+            /// [`dispose_package_versions`](crate::client::fluent_builders::DisposePackageVersions).
             ///
             /// `ParseStrictResponse` impl for `DisposePackageVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisposePackageVersions {
 /// Operation shape for `GetAuthorizationToken`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_authorization_token`](crate::client::Client::get_authorization_token).
+            /// [`get_authorization_token`](crate::client::fluent_builders::GetAuthorizationToken).
             ///
             /// `ParseStrictResponse` impl for `GetAuthorizationToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAuthorizationToken {
 /// Operation shape for `GetDomainPermissionsPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_domain_permissions_policy`](crate::client::Client::get_domain_permissions_policy).
+            /// [`get_domain_permissions_policy`](crate::client::fluent_builders::GetDomainPermissionsPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetDomainPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainPermissionsPoli
 /// Operation shape for `GetPackageVersionAsset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_package_version_asset`](crate::client::Client::get_package_version_asset).
+            /// [`get_package_version_asset`](crate::client::fluent_builders::GetPackageVersionAsset).
             ///
             /// `ParseStrictResponse` impl for `GetPackageVersionAsset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -581,7 +581,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetPackageVersionAsset {
 /// Operation shape for `GetPackageVersionReadme`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_package_version_readme`](crate::client::Client::get_package_version_readme).
+            /// [`get_package_version_readme`](crate::client::fluent_builders::GetPackageVersionReadme).
             ///
             /// `ParseStrictResponse` impl for `GetPackageVersionReadme`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPackageVersionReadme 
 /// Operation shape for `GetRepositoryEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_repository_endpoint`](crate::client::Client::get_repository_endpoint).
+            /// [`get_repository_endpoint`](crate::client::fluent_builders::GetRepositoryEndpoint).
             ///
             /// `ParseStrictResponse` impl for `GetRepositoryEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -645,7 +645,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryEndpoint {
 /// Operation shape for `GetRepositoryPermissionsPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_repository_permissions_policy`](crate::client::Client::get_repository_permissions_policy).
+            /// [`get_repository_permissions_policy`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetRepositoryPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -677,7 +677,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryPermissions
 /// Operation shape for `ListDomains`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_domains`](crate::client::Client::list_domains).
+            /// [`list_domains`](crate::client::fluent_builders::ListDomains).
             ///
             /// `ParseStrictResponse` impl for `ListDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -709,7 +709,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// Operation shape for `ListPackages`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_packages`](crate::client::Client::list_packages).
+            /// [`list_packages`](crate::client::fluent_builders::ListPackages).
             ///
             /// `ParseStrictResponse` impl for `ListPackages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -741,7 +741,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackages {
 /// Operation shape for `ListPackageVersionAssets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_package_version_assets`](crate::client::Client::list_package_version_assets).
+            /// [`list_package_version_assets`](crate::client::fluent_builders::ListPackageVersionAssets).
             ///
             /// `ParseStrictResponse` impl for `ListPackageVersionAssets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -773,7 +773,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackageVersionAssets
 /// Operation shape for `ListPackageVersionDependencies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_package_version_dependencies`](crate::client::Client::list_package_version_dependencies).
+            /// [`list_package_version_dependencies`](crate::client::fluent_builders::ListPackageVersionDependencies).
             ///
             /// `ParseStrictResponse` impl for `ListPackageVersionDependencies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -805,7 +805,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackageVersionDepend
 /// Operation shape for `ListPackageVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_package_versions`](crate::client::Client::list_package_versions).
+            /// [`list_package_versions`](crate::client::fluent_builders::ListPackageVersions).
             ///
             /// `ParseStrictResponse` impl for `ListPackageVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -837,7 +837,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackageVersions {
 /// Operation shape for `ListRepositories`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_repositories`](crate::client::Client::list_repositories).
+            /// [`list_repositories`](crate::client::fluent_builders::ListRepositories).
             ///
             /// `ParseStrictResponse` impl for `ListRepositories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -869,7 +869,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositories {
 /// Operation shape for `ListRepositoriesInDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_repositories_in_domain`](crate::client::Client::list_repositories_in_domain).
+            /// [`list_repositories_in_domain`](crate::client::fluent_builders::ListRepositoriesInDomain).
             ///
             /// `ParseStrictResponse` impl for `ListRepositoriesInDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -901,7 +901,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositoriesInDomain
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -933,7 +933,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutDomainPermissionsPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_domain_permissions_policy`](crate::client::Client::put_domain_permissions_policy).
+            /// [`put_domain_permissions_policy`](crate::client::fluent_builders::PutDomainPermissionsPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutDomainPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -965,7 +965,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDomainPermissionsPoli
 /// Operation shape for `PutPackageOriginConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_package_origin_configuration`](crate::client::Client::put_package_origin_configuration).
+            /// [`put_package_origin_configuration`](crate::client::fluent_builders::PutPackageOriginConfiguration).
             ///
             /// `ParseStrictResponse` impl for `PutPackageOriginConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -997,7 +997,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPackageOriginConfigur
 /// Operation shape for `PutRepositoryPermissionsPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_repository_permissions_policy`](crate::client::Client::put_repository_permissions_policy).
+            /// [`put_repository_permissions_policy`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutRepositoryPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1029,7 +1029,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRepositoryPermissions
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1061,7 +1061,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1093,7 +1093,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdatePackageVersionsStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_package_versions_status`](crate::client::Client::update_package_versions_status).
+            /// [`update_package_versions_status`](crate::client::fluent_builders::UpdatePackageVersionsStatus).
             ///
             /// `ParseStrictResponse` impl for `UpdatePackageVersionsStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1125,7 +1125,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePackageVersionsSta
 /// Operation shape for `UpdateRepository`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_repository`](crate::client::Client::update_repository).
+            /// [`update_repository`](crate::client::fluent_builders::UpdateRepository).
             ///
             /// `ParseStrictResponse` impl for `UpdateRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

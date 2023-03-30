@@ -2,7 +2,7 @@
 /// Operation shape for `CreateAlarmModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_alarm_model`](crate::client::Client::create_alarm_model).
+            /// [`create_alarm_model`](crate::client::fluent_builders::CreateAlarmModel).
             ///
             /// `ParseStrictResponse` impl for `CreateAlarmModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlarmModel {
 /// Operation shape for `CreateDetectorModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_detector_model`](crate::client::Client::create_detector_model).
+            /// [`create_detector_model`](crate::client::fluent_builders::CreateDetectorModel).
             ///
             /// `ParseStrictResponse` impl for `CreateDetectorModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDetectorModel {
 /// Operation shape for `CreateInput`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_input`](crate::client::Client::create_input).
+            /// [`create_input`](crate::client::fluent_builders::CreateInput).
             ///
             /// `ParseStrictResponse` impl for `CreateInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInput {
 /// Operation shape for `DeleteAlarmModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_alarm_model`](crate::client::Client::delete_alarm_model).
+            /// [`delete_alarm_model`](crate::client::fluent_builders::DeleteAlarmModel).
             ///
             /// `ParseStrictResponse` impl for `DeleteAlarmModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlarmModel {
 /// Operation shape for `DeleteDetectorModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_detector_model`](crate::client::Client::delete_detector_model).
+            /// [`delete_detector_model`](crate::client::fluent_builders::DeleteDetectorModel).
             ///
             /// `ParseStrictResponse` impl for `DeleteDetectorModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDetectorModel {
 /// Operation shape for `DeleteInput`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_input`](crate::client::Client::delete_input).
+            /// [`delete_input`](crate::client::fluent_builders::DeleteInput).
             ///
             /// `ParseStrictResponse` impl for `DeleteInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInput {
 /// Operation shape for `DescribeAlarmModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_alarm_model`](crate::client::Client::describe_alarm_model).
+            /// [`describe_alarm_model`](crate::client::fluent_builders::DescribeAlarmModel).
             ///
             /// `ParseStrictResponse` impl for `DescribeAlarmModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarmModel {
 /// Operation shape for `DescribeDetectorModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_detector_model`](crate::client::Client::describe_detector_model).
+            /// [`describe_detector_model`](crate::client::fluent_builders::DescribeDetectorModel).
             ///
             /// `ParseStrictResponse` impl for `DescribeDetectorModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDetectorModel {
 /// Operation shape for `DescribeDetectorModelAnalysis`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_detector_model_analysis`](crate::client::Client::describe_detector_model_analysis).
+            /// [`describe_detector_model_analysis`](crate::client::fluent_builders::DescribeDetectorModelAnalysis).
             ///
             /// `ParseStrictResponse` impl for `DescribeDetectorModelAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDetectorModelAna
 /// Operation shape for `DescribeInput`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_input`](crate::client::Client::describe_input).
+            /// [`describe_input`](crate::client::fluent_builders::DescribeInput).
             ///
             /// `ParseStrictResponse` impl for `DescribeInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInput {
 /// Operation shape for `DescribeLoggingOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_logging_options`](crate::client::Client::describe_logging_options).
+            /// [`describe_logging_options`](crate::client::fluent_builders::DescribeLoggingOptions).
             ///
             /// `ParseStrictResponse` impl for `DescribeLoggingOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoggingOptions {
 /// Operation shape for `GetDetectorModelAnalysisResults`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_detector_model_analysis_results`](crate::client::Client::get_detector_model_analysis_results).
+            /// [`get_detector_model_analysis_results`](crate::client::fluent_builders::GetDetectorModelAnalysisResults).
             ///
             /// `ParseStrictResponse` impl for `GetDetectorModelAnalysisResults`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDetectorModelAnalysis
 /// Operation shape for `ListAlarmModels`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_alarm_models`](crate::client::Client::list_alarm_models).
+            /// [`list_alarm_models`](crate::client::fluent_builders::ListAlarmModels).
             ///
             /// `ParseStrictResponse` impl for `ListAlarmModels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlarmModels {
 /// Operation shape for `ListAlarmModelVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_alarm_model_versions`](crate::client::Client::list_alarm_model_versions).
+            /// [`list_alarm_model_versions`](crate::client::fluent_builders::ListAlarmModelVersions).
             ///
             /// `ParseStrictResponse` impl for `ListAlarmModelVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlarmModelVersions {
 /// Operation shape for `ListDetectorModels`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_detector_models`](crate::client::Client::list_detector_models).
+            /// [`list_detector_models`](crate::client::fluent_builders::ListDetectorModels).
             ///
             /// `ParseStrictResponse` impl for `ListDetectorModels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDetectorModels {
 /// Operation shape for `ListDetectorModelVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_detector_model_versions`](crate::client::Client::list_detector_model_versions).
+            /// [`list_detector_model_versions`](crate::client::fluent_builders::ListDetectorModelVersions).
             ///
             /// `ParseStrictResponse` impl for `ListDetectorModelVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDetectorModelVersion
 /// Operation shape for `ListInputRoutings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_input_routings`](crate::client::Client::list_input_routings).
+            /// [`list_input_routings`](crate::client::fluent_builders::ListInputRoutings).
             ///
             /// `ParseStrictResponse` impl for `ListInputRoutings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputRoutings {
 /// Operation shape for `ListInputs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_inputs`](crate::client::Client::list_inputs).
+            /// [`list_inputs`](crate::client::fluent_builders::ListInputs).
             ///
             /// `ParseStrictResponse` impl for `ListInputs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputs {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutLoggingOptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_logging_options`](crate::client::Client::put_logging_options).
+            /// [`put_logging_options`](crate::client::fluent_builders::PutLoggingOptions).
             ///
             /// `ParseStrictResponse` impl for `PutLoggingOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLoggingOptions {
 /// Operation shape for `StartDetectorModelAnalysis`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_detector_model_analysis`](crate::client::Client::start_detector_model_analysis).
+            /// [`start_detector_model_analysis`](crate::client::fluent_builders::StartDetectorModelAnalysis).
             ///
             /// `ParseStrictResponse` impl for `StartDetectorModelAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDetectorModelAnalys
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateAlarmModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_alarm_model`](crate::client::Client::update_alarm_model).
+            /// [`update_alarm_model`](crate::client::fluent_builders::UpdateAlarmModel).
             ///
             /// `ParseStrictResponse` impl for `UpdateAlarmModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAlarmModel {
 /// Operation shape for `UpdateDetectorModel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_detector_model`](crate::client::Client::update_detector_model).
+            /// [`update_detector_model`](crate::client::fluent_builders::UpdateDetectorModel).
             ///
             /// `ParseStrictResponse` impl for `UpdateDetectorModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDetectorModel {
 /// Operation shape for `UpdateInput`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_input`](crate::client::Client::update_input).
+            /// [`update_input`](crate::client::fluent_builders::UpdateInput).
             ///
             /// `ParseStrictResponse` impl for `UpdateInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

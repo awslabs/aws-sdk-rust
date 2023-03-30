@@ -2,7 +2,7 @@
 /// Operation shape for `DescribeAffectedAccountsForOrganization`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_affected_accounts_for_organization`](crate::client::Client::describe_affected_accounts_for_organization).
+            /// [`describe_affected_accounts_for_organization`](crate::client::fluent_builders::DescribeAffectedAccountsForOrganization).
             ///
             /// `ParseStrictResponse` impl for `DescribeAffectedAccountsForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAffectedAccounts
 /// Operation shape for `DescribeAffectedEntities`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_affected_entities`](crate::client::Client::describe_affected_entities).
+            /// [`describe_affected_entities`](crate::client::fluent_builders::DescribeAffectedEntities).
             ///
             /// `ParseStrictResponse` impl for `DescribeAffectedEntities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAffectedEntities
 /// Operation shape for `DescribeAffectedEntitiesForOrganization`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_affected_entities_for_organization`](crate::client::Client::describe_affected_entities_for_organization).
+            /// [`describe_affected_entities_for_organization`](crate::client::fluent_builders::DescribeAffectedEntitiesForOrganization).
             ///
             /// `ParseStrictResponse` impl for `DescribeAffectedEntitiesForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAffectedEntities
 /// Operation shape for `DescribeEntityAggregates`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_entity_aggregates`](crate::client::Client::describe_entity_aggregates).
+            /// [`describe_entity_aggregates`](crate::client::fluent_builders::DescribeEntityAggregates).
             ///
             /// `ParseStrictResponse` impl for `DescribeEntityAggregates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEntityAggregates
 /// Operation shape for `DescribeEventAggregates`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_event_aggregates`](crate::client::Client::describe_event_aggregates).
+            /// [`describe_event_aggregates`](crate::client::fluent_builders::DescribeEventAggregates).
             ///
             /// `ParseStrictResponse` impl for `DescribeEventAggregates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventAggregates 
 /// Operation shape for `DescribeEventDetails`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_event_details`](crate::client::Client::describe_event_details).
+            /// [`describe_event_details`](crate::client::fluent_builders::DescribeEventDetails).
             ///
             /// `ParseStrictResponse` impl for `DescribeEventDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventDetails {
 /// Operation shape for `DescribeEventDetailsForOrganization`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_event_details_for_organization`](crate::client::Client::describe_event_details_for_organization).
+            /// [`describe_event_details_for_organization`](crate::client::fluent_builders::DescribeEventDetailsForOrganization).
             ///
             /// `ParseStrictResponse` impl for `DescribeEventDetailsForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventDetailsForO
 /// Operation shape for `DescribeEvents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_events`](crate::client::Client::describe_events).
+            /// [`describe_events`](crate::client::fluent_builders::DescribeEvents).
             ///
             /// `ParseStrictResponse` impl for `DescribeEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEvents {
 /// Operation shape for `DescribeEventsForOrganization`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_events_for_organization`](crate::client::Client::describe_events_for_organization).
+            /// [`describe_events_for_organization`](crate::client::fluent_builders::DescribeEventsForOrganization).
             ///
             /// `ParseStrictResponse` impl for `DescribeEventsForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventsForOrganiz
 /// Operation shape for `DescribeEventTypes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_event_types`](crate::client::Client::describe_event_types).
+            /// [`describe_event_types`](crate::client::fluent_builders::DescribeEventTypes).
             ///
             /// `ParseStrictResponse` impl for `DescribeEventTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventTypes {
 /// Operation shape for `DescribeHealthServiceStatusForOrganization`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_health_service_status_for_organization`](crate::client::Client::describe_health_service_status_for_organization).
+            /// [`describe_health_service_status_for_organization`](crate::client::fluent_builders::DescribeHealthServiceStatusForOrganization).
             ///
             /// `ParseStrictResponse` impl for `DescribeHealthServiceStatusForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHealthServiceSta
 /// Operation shape for `DisableHealthServiceAccessForOrganization`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_health_service_access_for_organization`](crate::client::Client::disable_health_service_access_for_organization).
+            /// [`disable_health_service_access_for_organization`](crate::client::fluent_builders::DisableHealthServiceAccessForOrganization).
             ///
             /// `ParseStrictResponse` impl for `DisableHealthServiceAccessForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableHealthServiceAcce
 /// Operation shape for `EnableHealthServiceAccessForOrganization`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_health_service_access_for_organization`](crate::client::Client::enable_health_service_access_for_organization).
+            /// [`enable_health_service_access_for_organization`](crate::client::fluent_builders::EnableHealthServiceAccessForOrganization).
             ///
             /// `ParseStrictResponse` impl for `EnableHealthServiceAccessForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

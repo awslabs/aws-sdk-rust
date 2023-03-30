@@ -2,7 +2,7 @@
 /// Operation shape for `AddTagsToResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_tags_to_resource`](crate::client::Client::add_tags_to_resource).
+            /// [`add_tags_to_resource`](crate::client::fluent_builders::AddTagsToResource).
             ///
             /// `ParseStrictResponse` impl for `AddTagsToResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToResource {
 /// Operation shape for `ApplyPendingMaintenanceAction`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`apply_pending_maintenance_action`](crate::client::Client::apply_pending_maintenance_action).
+            /// [`apply_pending_maintenance_action`](crate::client::fluent_builders::ApplyPendingMaintenanceAction).
             ///
             /// `ParseStrictResponse` impl for `ApplyPendingMaintenanceAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplyPendingMaintenanceA
 /// Operation shape for `CancelReplicationTaskAssessmentRun`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_replication_task_assessment_run`](crate::client::Client::cancel_replication_task_assessment_run).
+            /// [`cancel_replication_task_assessment_run`](crate::client::fluent_builders::CancelReplicationTaskAssessmentRun).
             ///
             /// `ParseStrictResponse` impl for `CancelReplicationTaskAssessmentRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelReplicationTaskAss
 /// Operation shape for `CreateEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_endpoint`](crate::client::Client::create_endpoint).
+            /// [`create_endpoint`](crate::client::fluent_builders::CreateEndpoint).
             ///
             /// `ParseStrictResponse` impl for `CreateEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEndpoint {
 /// Operation shape for `CreateEventSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_event_subscription`](crate::client::Client::create_event_subscription).
+            /// [`create_event_subscription`](crate::client::fluent_builders::CreateEventSubscription).
             ///
             /// `ParseStrictResponse` impl for `CreateEventSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventSubscription 
 /// Operation shape for `CreateFleetAdvisorCollector`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_fleet_advisor_collector`](crate::client::Client::create_fleet_advisor_collector).
+            /// [`create_fleet_advisor_collector`](crate::client::fluent_builders::CreateFleetAdvisorCollector).
             ///
             /// `ParseStrictResponse` impl for `CreateFleetAdvisorCollector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFleetAdvisorCollec
 /// Operation shape for `CreateReplicationInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_replication_instance`](crate::client::Client::create_replication_instance).
+            /// [`create_replication_instance`](crate::client::fluent_builders::CreateReplicationInstance).
             ///
             /// `ParseStrictResponse` impl for `CreateReplicationInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationInstanc
 /// Operation shape for `CreateReplicationSubnetGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_replication_subnet_group`](crate::client::Client::create_replication_subnet_group).
+            /// [`create_replication_subnet_group`](crate::client::fluent_builders::CreateReplicationSubnetGroup).
             ///
             /// `ParseStrictResponse` impl for `CreateReplicationSubnetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationSubnetG
 /// Operation shape for `CreateReplicationTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_replication_task`](crate::client::Client::create_replication_task).
+            /// [`create_replication_task`](crate::client::fluent_builders::CreateReplicationTask).
             ///
             /// `ParseStrictResponse` impl for `CreateReplicationTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationTask {
 /// Operation shape for `DeleteCertificate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_certificate`](crate::client::Client::delete_certificate).
+            /// [`delete_certificate`](crate::client::fluent_builders::DeleteCertificate).
             ///
             /// `ParseStrictResponse` impl for `DeleteCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCertificate {
 /// Operation shape for `DeleteConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_connection`](crate::client::Client::delete_connection).
+            /// [`delete_connection`](crate::client::fluent_builders::DeleteConnection).
             ///
             /// `ParseStrictResponse` impl for `DeleteConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnection {
 /// Operation shape for `DeleteEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_endpoint`](crate::client::Client::delete_endpoint).
+            /// [`delete_endpoint`](crate::client::fluent_builders::DeleteEndpoint).
             ///
             /// `ParseStrictResponse` impl for `DeleteEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpoint {
 /// Operation shape for `DeleteEventSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_event_subscription`](crate::client::Client::delete_event_subscription).
+            /// [`delete_event_subscription`](crate::client::fluent_builders::DeleteEventSubscription).
             ///
             /// `ParseStrictResponse` impl for `DeleteEventSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventSubscription 
 /// Operation shape for `DeleteFleetAdvisorCollector`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_fleet_advisor_collector`](crate::client::Client::delete_fleet_advisor_collector).
+            /// [`delete_fleet_advisor_collector`](crate::client::fluent_builders::DeleteFleetAdvisorCollector).
             ///
             /// `ParseStrictResponse` impl for `DeleteFleetAdvisorCollector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFleetAdvisorCollec
 /// Operation shape for `DeleteFleetAdvisorDatabases`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_fleet_advisor_databases`](crate::client::Client::delete_fleet_advisor_databases).
+            /// [`delete_fleet_advisor_databases`](crate::client::fluent_builders::DeleteFleetAdvisorDatabases).
             ///
             /// `ParseStrictResponse` impl for `DeleteFleetAdvisorDatabases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFleetAdvisorDataba
 /// Operation shape for `DeleteReplicationInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_replication_instance`](crate::client::Client::delete_replication_instance).
+            /// [`delete_replication_instance`](crate::client::fluent_builders::DeleteReplicationInstance).
             ///
             /// `ParseStrictResponse` impl for `DeleteReplicationInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReplicationInstanc
 /// Operation shape for `DeleteReplicationSubnetGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_replication_subnet_group`](crate::client::Client::delete_replication_subnet_group).
+            /// [`delete_replication_subnet_group`](crate::client::fluent_builders::DeleteReplicationSubnetGroup).
             ///
             /// `ParseStrictResponse` impl for `DeleteReplicationSubnetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReplicationSubnetG
 /// Operation shape for `DeleteReplicationTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_replication_task`](crate::client::Client::delete_replication_task).
+            /// [`delete_replication_task`](crate::client::fluent_builders::DeleteReplicationTask).
             ///
             /// `ParseStrictResponse` impl for `DeleteReplicationTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReplicationTask {
 /// Operation shape for `DeleteReplicationTaskAssessmentRun`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_replication_task_assessment_run`](crate::client::Client::delete_replication_task_assessment_run).
+            /// [`delete_replication_task_assessment_run`](crate::client::fluent_builders::DeleteReplicationTaskAssessmentRun).
             ///
             /// `ParseStrictResponse` impl for `DeleteReplicationTaskAssessmentRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReplicationTaskAss
 /// Operation shape for `DescribeAccountAttributes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_account_attributes`](crate::client::Client::describe_account_attributes).
+            /// [`describe_account_attributes`](crate::client::fluent_builders::DescribeAccountAttributes).
             ///
             /// `ParseStrictResponse` impl for `DescribeAccountAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAttribute
 /// Operation shape for `DescribeApplicableIndividualAssessments`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_applicable_individual_assessments`](crate::client::Client::describe_applicable_individual_assessments).
+            /// [`describe_applicable_individual_assessments`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments).
             ///
             /// `ParseStrictResponse` impl for `DescribeApplicableIndividualAssessments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApplicableIndivi
 /// Operation shape for `DescribeCertificates`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_certificates`](crate::client::Client::describe_certificates).
+            /// [`describe_certificates`](crate::client::fluent_builders::DescribeCertificates).
             ///
             /// `ParseStrictResponse` impl for `DescribeCertificates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificates {
 /// Operation shape for `DescribeConnections`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_connections`](crate::client::Client::describe_connections).
+            /// [`describe_connections`](crate::client::fluent_builders::DescribeConnections).
             ///
             /// `ParseStrictResponse` impl for `DescribeConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnections {
 /// Operation shape for `DescribeEndpoints`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_endpoints`](crate::client::Client::describe_endpoints).
+            /// [`describe_endpoints`](crate::client::fluent_builders::DescribeEndpoints).
             ///
             /// `ParseStrictResponse` impl for `DescribeEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEndpoints {
 /// Operation shape for `DescribeEndpointSettings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_endpoint_settings`](crate::client::Client::describe_endpoint_settings).
+            /// [`describe_endpoint_settings`](crate::client::fluent_builders::DescribeEndpointSettings).
             ///
             /// `ParseStrictResponse` impl for `DescribeEndpointSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEndpointSettings
 /// Operation shape for `DescribeEndpointTypes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_endpoint_types`](crate::client::Client::describe_endpoint_types).
+            /// [`describe_endpoint_types`](crate::client::fluent_builders::DescribeEndpointTypes).
             ///
             /// `ParseStrictResponse` impl for `DescribeEndpointTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEndpointTypes {
 /// Operation shape for `DescribeEventCategories`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_event_categories`](crate::client::Client::describe_event_categories).
+            /// [`describe_event_categories`](crate::client::fluent_builders::DescribeEventCategories).
             ///
             /// `ParseStrictResponse` impl for `DescribeEventCategories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventCategories 
 /// Operation shape for `DescribeEvents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_events`](crate::client::Client::describe_events).
+            /// [`describe_events`](crate::client::fluent_builders::DescribeEvents).
             ///
             /// `ParseStrictResponse` impl for `DescribeEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEvents {
 /// Operation shape for `DescribeEventSubscriptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_event_subscriptions`](crate::client::Client::describe_event_subscriptions).
+            /// [`describe_event_subscriptions`](crate::client::fluent_builders::DescribeEventSubscriptions).
             ///
             /// `ParseStrictResponse` impl for `DescribeEventSubscriptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventSubscriptio
 /// Operation shape for `DescribeFleetAdvisorCollectors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fleet_advisor_collectors`](crate::client::Client::describe_fleet_advisor_collectors).
+            /// [`describe_fleet_advisor_collectors`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors).
             ///
             /// `ParseStrictResponse` impl for `DescribeFleetAdvisorCollectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorColl
 /// Operation shape for `DescribeFleetAdvisorDatabases`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fleet_advisor_databases`](crate::client::Client::describe_fleet_advisor_databases).
+            /// [`describe_fleet_advisor_databases`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases).
             ///
             /// `ParseStrictResponse` impl for `DescribeFleetAdvisorDatabases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorData
 /// Operation shape for `DescribeFleetAdvisorLsaAnalysis`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fleet_advisor_lsa_analysis`](crate::client::Client::describe_fleet_advisor_lsa_analysis).
+            /// [`describe_fleet_advisor_lsa_analysis`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis).
             ///
             /// `ParseStrictResponse` impl for `DescribeFleetAdvisorLsaAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorLsaA
 /// Operation shape for `DescribeFleetAdvisorSchemaObjectSummary`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fleet_advisor_schema_object_summary`](crate::client::Client::describe_fleet_advisor_schema_object_summary).
+            /// [`describe_fleet_advisor_schema_object_summary`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary).
             ///
             /// `ParseStrictResponse` impl for `DescribeFleetAdvisorSchemaObjectSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorSche
 /// Operation shape for `DescribeFleetAdvisorSchemas`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_fleet_advisor_schemas`](crate::client::Client::describe_fleet_advisor_schemas).
+            /// [`describe_fleet_advisor_schemas`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas).
             ///
             /// `ParseStrictResponse` impl for `DescribeFleetAdvisorSchemas`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorSche
 /// Operation shape for `DescribeOrderableReplicationInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_orderable_replication_instances`](crate::client::Client::describe_orderable_replication_instances).
+            /// [`describe_orderable_replication_instances`](crate::client::fluent_builders::DescribeOrderableReplicationInstances).
             ///
             /// `ParseStrictResponse` impl for `DescribeOrderableReplicationInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOrderableReplica
 /// Operation shape for `DescribePendingMaintenanceActions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_pending_maintenance_actions`](crate::client::Client::describe_pending_maintenance_actions).
+            /// [`describe_pending_maintenance_actions`](crate::client::fluent_builders::DescribePendingMaintenanceActions).
             ///
             /// `ParseStrictResponse` impl for `DescribePendingMaintenanceActions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePendingMaintenan
 /// Operation shape for `DescribeRefreshSchemasStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_refresh_schemas_status`](crate::client::Client::describe_refresh_schemas_status).
+            /// [`describe_refresh_schemas_status`](crate::client::fluent_builders::DescribeRefreshSchemasStatus).
             ///
             /// `ParseStrictResponse` impl for `DescribeRefreshSchemasStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRefreshSchemasSt
 /// Operation shape for `DescribeReplicationInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_replication_instances`](crate::client::Client::describe_replication_instances).
+            /// [`describe_replication_instances`](crate::client::fluent_builders::DescribeReplicationInstances).
             ///
             /// `ParseStrictResponse` impl for `DescribeReplicationInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationInsta
 /// Operation shape for `DescribeReplicationInstanceTaskLogs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_replication_instance_task_logs`](crate::client::Client::describe_replication_instance_task_logs).
+            /// [`describe_replication_instance_task_logs`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs).
             ///
             /// `ParseStrictResponse` impl for `DescribeReplicationInstanceTaskLogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationInsta
 /// Operation shape for `DescribeReplicationSubnetGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_replication_subnet_groups`](crate::client::Client::describe_replication_subnet_groups).
+            /// [`describe_replication_subnet_groups`](crate::client::fluent_builders::DescribeReplicationSubnetGroups).
             ///
             /// `ParseStrictResponse` impl for `DescribeReplicationSubnetGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationSubne
 /// Operation shape for `DescribeReplicationTaskAssessmentResults`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_replication_task_assessment_results`](crate::client::Client::describe_replication_task_assessment_results).
+            /// [`describe_replication_task_assessment_results`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults).
             ///
             /// `ParseStrictResponse` impl for `DescribeReplicationTaskAssessmentResults`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationTaskA
 /// Operation shape for `DescribeReplicationTaskAssessmentRuns`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_replication_task_assessment_runs`](crate::client::Client::describe_replication_task_assessment_runs).
+            /// [`describe_replication_task_assessment_runs`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns).
             ///
             /// `ParseStrictResponse` impl for `DescribeReplicationTaskAssessmentRuns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationTaskA
 /// Operation shape for `DescribeReplicationTaskIndividualAssessments`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_replication_task_individual_assessments`](crate::client::Client::describe_replication_task_individual_assessments).
+            /// [`describe_replication_task_individual_assessments`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments).
             ///
             /// `ParseStrictResponse` impl for `DescribeReplicationTaskIndividualAssessments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationTaskI
 /// Operation shape for `DescribeReplicationTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_replication_tasks`](crate::client::Client::describe_replication_tasks).
+            /// [`describe_replication_tasks`](crate::client::fluent_builders::DescribeReplicationTasks).
             ///
             /// `ParseStrictResponse` impl for `DescribeReplicationTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationTasks
 /// Operation shape for `DescribeSchemas`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_schemas`](crate::client::Client::describe_schemas).
+            /// [`describe_schemas`](crate::client::fluent_builders::DescribeSchemas).
             ///
             /// `ParseStrictResponse` impl for `DescribeSchemas`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1442,7 +1442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSchemas {
 /// Operation shape for `DescribeTableStatistics`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_table_statistics`](crate::client::Client::describe_table_statistics).
+            /// [`describe_table_statistics`](crate::client::fluent_builders::DescribeTableStatistics).
             ///
             /// `ParseStrictResponse` impl for `DescribeTableStatistics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTableStatistics 
 /// Operation shape for `ImportCertificate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_certificate`](crate::client::Client::import_certificate).
+            /// [`import_certificate`](crate::client::fluent_builders::ImportCertificate).
             ///
             /// `ParseStrictResponse` impl for `ImportCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1506,7 +1506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportCertificate {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ModifyEndpoint`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_endpoint`](crate::client::Client::modify_endpoint).
+            /// [`modify_endpoint`](crate::client::fluent_builders::ModifyEndpoint).
             ///
             /// `ParseStrictResponse` impl for `ModifyEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1570,7 +1570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyEndpoint {
 /// Operation shape for `ModifyEventSubscription`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_event_subscription`](crate::client::Client::modify_event_subscription).
+            /// [`modify_event_subscription`](crate::client::fluent_builders::ModifyEventSubscription).
             ///
             /// `ParseStrictResponse` impl for `ModifyEventSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1602,7 +1602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyEventSubscription 
 /// Operation shape for `ModifyReplicationInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_replication_instance`](crate::client::Client::modify_replication_instance).
+            /// [`modify_replication_instance`](crate::client::fluent_builders::ModifyReplicationInstance).
             ///
             /// `ParseStrictResponse` impl for `ModifyReplicationInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1634,7 +1634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyReplicationInstanc
 /// Operation shape for `ModifyReplicationSubnetGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_replication_subnet_group`](crate::client::Client::modify_replication_subnet_group).
+            /// [`modify_replication_subnet_group`](crate::client::fluent_builders::ModifyReplicationSubnetGroup).
             ///
             /// `ParseStrictResponse` impl for `ModifyReplicationSubnetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1666,7 +1666,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyReplicationSubnetG
 /// Operation shape for `ModifyReplicationTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_replication_task`](crate::client::Client::modify_replication_task).
+            /// [`modify_replication_task`](crate::client::fluent_builders::ModifyReplicationTask).
             ///
             /// `ParseStrictResponse` impl for `ModifyReplicationTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1698,7 +1698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyReplicationTask {
 /// Operation shape for `MoveReplicationTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`move_replication_task`](crate::client::Client::move_replication_task).
+            /// [`move_replication_task`](crate::client::fluent_builders::MoveReplicationTask).
             ///
             /// `ParseStrictResponse` impl for `MoveReplicationTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1730,7 +1730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MoveReplicationTask {
 /// Operation shape for `RebootReplicationInstance`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reboot_replication_instance`](crate::client::Client::reboot_replication_instance).
+            /// [`reboot_replication_instance`](crate::client::fluent_builders::RebootReplicationInstance).
             ///
             /// `ParseStrictResponse` impl for `RebootReplicationInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1762,7 +1762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebootReplicationInstanc
 /// Operation shape for `RefreshSchemas`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`refresh_schemas`](crate::client::Client::refresh_schemas).
+            /// [`refresh_schemas`](crate::client::fluent_builders::RefreshSchemas).
             ///
             /// `ParseStrictResponse` impl for `RefreshSchemas`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1794,7 +1794,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RefreshSchemas {
 /// Operation shape for `ReloadTables`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`reload_tables`](crate::client::Client::reload_tables).
+            /// [`reload_tables`](crate::client::fluent_builders::ReloadTables).
             ///
             /// `ParseStrictResponse` impl for `ReloadTables`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1826,7 +1826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReloadTables {
 /// Operation shape for `RemoveTagsFromResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`remove_tags_from_resource`](crate::client::Client::remove_tags_from_resource).
+            /// [`remove_tags_from_resource`](crate::client::fluent_builders::RemoveTagsFromResource).
             ///
             /// `ParseStrictResponse` impl for `RemoveTagsFromResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1858,7 +1858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
 /// Operation shape for `RunFleetAdvisorLsaAnalysis`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`run_fleet_advisor_lsa_analysis`](crate::client::Client::run_fleet_advisor_lsa_analysis).
+            /// [`run_fleet_advisor_lsa_analysis`](crate::client::fluent_builders::RunFleetAdvisorLsaAnalysis).
             ///
             /// `ParseStrictResponse` impl for `RunFleetAdvisorLsaAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1890,7 +1890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RunFleetAdvisorLsaAnalys
 /// Operation shape for `StartReplicationTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_replication_task`](crate::client::Client::start_replication_task).
+            /// [`start_replication_task`](crate::client::fluent_builders::StartReplicationTask).
             ///
             /// `ParseStrictResponse` impl for `StartReplicationTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1922,7 +1922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReplicationTask {
 /// Operation shape for `StartReplicationTaskAssessment`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_replication_task_assessment`](crate::client::Client::start_replication_task_assessment).
+            /// [`start_replication_task_assessment`](crate::client::fluent_builders::StartReplicationTaskAssessment).
             ///
             /// `ParseStrictResponse` impl for `StartReplicationTaskAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1954,7 +1954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReplicationTaskAsse
 /// Operation shape for `StartReplicationTaskAssessmentRun`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_replication_task_assessment_run`](crate::client::Client::start_replication_task_assessment_run).
+            /// [`start_replication_task_assessment_run`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun).
             ///
             /// `ParseStrictResponse` impl for `StartReplicationTaskAssessmentRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1986,7 +1986,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReplicationTaskAsse
 /// Operation shape for `StopReplicationTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_replication_task`](crate::client::Client::stop_replication_task).
+            /// [`stop_replication_task`](crate::client::fluent_builders::StopReplicationTask).
             ///
             /// `ParseStrictResponse` impl for `StopReplicationTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2018,7 +2018,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopReplicationTask {
 /// Operation shape for `TestConnection`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`test_connection`](crate::client::Client::test_connection).
+            /// [`test_connection`](crate::client::fluent_builders::TestConnection).
             ///
             /// `ParseStrictResponse` impl for `TestConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2050,7 +2050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestConnection {
 /// Operation shape for `UpdateSubscriptionsToEventBridge`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_subscriptions_to_event_bridge`](crate::client::Client::update_subscriptions_to_event_bridge).
+            /// [`update_subscriptions_to_event_bridge`](crate::client::fluent_builders::UpdateSubscriptionsToEventBridge).
             ///
             /// `ParseStrictResponse` impl for `UpdateSubscriptionsToEventBridge`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

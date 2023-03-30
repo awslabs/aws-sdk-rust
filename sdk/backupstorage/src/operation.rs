@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_object`](crate::client::Client::delete_object).
+            /// [`delete_object`](crate::client::fluent_builders::DeleteObject).
             ///
             /// `ParseStrictResponse` impl for `DeleteObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
 /// Operation shape for `GetChunk`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_chunk`](crate::client::Client::get_chunk).
+            /// [`get_chunk`](crate::client::fluent_builders::GetChunk).
             ///
             /// `ParseStrictResponse` impl for `GetChunk`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetChunk {
 /// Operation shape for `GetObjectMetadata`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_object_metadata`](crate::client::Client::get_object_metadata).
+            /// [`get_object_metadata`](crate::client::fluent_builders::GetObjectMetadata).
             ///
             /// `ParseStrictResponse` impl for `GetObjectMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObjectMetadata {
 /// Operation shape for `ListChunks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_chunks`](crate::client::Client::list_chunks).
+            /// [`list_chunks`](crate::client::fluent_builders::ListChunks).
             ///
             /// `ParseStrictResponse` impl for `ListChunks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChunks {
 /// Operation shape for `ListObjects`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_objects`](crate::client::Client::list_objects).
+            /// [`list_objects`](crate::client::fluent_builders::ListObjects).
             ///
             /// `ParseStrictResponse` impl for `ListObjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -168,7 +168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjects {
 /// Operation shape for `NotifyObjectComplete`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`notify_object_complete`](crate::client::Client::notify_object_complete).
+            /// [`notify_object_complete`](crate::client::fluent_builders::NotifyObjectComplete).
             ///
             /// `ParseStrictResponse` impl for `NotifyObjectComplete`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -200,7 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyObjectComplete {
 /// Operation shape for `PutChunk`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_chunk`](crate::client::Client::put_chunk).
+            /// [`put_chunk`](crate::client::fluent_builders::PutChunk).
             ///
             /// `ParseStrictResponse` impl for `PutChunk`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -232,7 +232,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutChunk {
 /// Operation shape for `PutObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_object`](crate::client::Client::put_object).
+            /// [`put_object`](crate::client::fluent_builders::PutObject).
             ///
             /// `ParseStrictResponse` impl for `PutObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -264,7 +264,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObject {
 /// Operation shape for `StartObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_object`](crate::client::Client::start_object).
+            /// [`start_object`](crate::client::fluent_builders::StartObject).
             ///
             /// `ParseStrictResponse` impl for `StartObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

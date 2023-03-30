@@ -77,8 +77,8 @@ impl Client  {
                         /// - On success, responds with [`ApproveSkillOutput`](crate::output::ApproveSkillOutput)
                         
                         /// - On failure, responds with [`SdkError<ApproveSkillError>`](crate::error::ApproveSkillError)
-    pub fn approve_skill(&self) -> fluent_builders::ApproveSkill {
-                            fluent_builders::ApproveSkill::new(self.handle.clone())
+    pub fn approve_skill(&self) -> crate::client::fluent_builders::ApproveSkill {
+                            crate::client::fluent_builders::ApproveSkill::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`AssociateContactWithAddressBook`](crate::client::fluent_builders::AssociateContactWithAddressBook) operation.
                         ///
@@ -88,8 +88,8 @@ impl Client  {
                         /// - On success, responds with [`AssociateContactWithAddressBookOutput`](crate::output::AssociateContactWithAddressBookOutput)
                         
                         /// - On failure, responds with [`SdkError<AssociateContactWithAddressBookError>`](crate::error::AssociateContactWithAddressBookError)
-    pub fn associate_contact_with_address_book(&self) -> fluent_builders::AssociateContactWithAddressBook {
-                            fluent_builders::AssociateContactWithAddressBook::new(self.handle.clone())
+    pub fn associate_contact_with_address_book(&self) -> crate::client::fluent_builders::AssociateContactWithAddressBook {
+                            crate::client::fluent_builders::AssociateContactWithAddressBook::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`AssociateDeviceWithNetworkProfile`](crate::client::fluent_builders::AssociateDeviceWithNetworkProfile) operation.
                         ///
@@ -99,8 +99,8 @@ impl Client  {
                         /// - On success, responds with [`AssociateDeviceWithNetworkProfileOutput`](crate::output::AssociateDeviceWithNetworkProfileOutput)
                         
                         /// - On failure, responds with [`SdkError<AssociateDeviceWithNetworkProfileError>`](crate::error::AssociateDeviceWithNetworkProfileError)
-    pub fn associate_device_with_network_profile(&self) -> fluent_builders::AssociateDeviceWithNetworkProfile {
-                            fluent_builders::AssociateDeviceWithNetworkProfile::new(self.handle.clone())
+    pub fn associate_device_with_network_profile(&self) -> crate::client::fluent_builders::AssociateDeviceWithNetworkProfile {
+                            crate::client::fluent_builders::AssociateDeviceWithNetworkProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`AssociateDeviceWithRoom`](crate::client::fluent_builders::AssociateDeviceWithRoom) operation.
                         ///
@@ -110,8 +110,8 @@ impl Client  {
                         /// - On success, responds with [`AssociateDeviceWithRoomOutput`](crate::output::AssociateDeviceWithRoomOutput)
                         
                         /// - On failure, responds with [`SdkError<AssociateDeviceWithRoomError>`](crate::error::AssociateDeviceWithRoomError)
-    pub fn associate_device_with_room(&self) -> fluent_builders::AssociateDeviceWithRoom {
-                            fluent_builders::AssociateDeviceWithRoom::new(self.handle.clone())
+    pub fn associate_device_with_room(&self) -> crate::client::fluent_builders::AssociateDeviceWithRoom {
+                            crate::client::fluent_builders::AssociateDeviceWithRoom::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`AssociateSkillGroupWithRoom`](crate::client::fluent_builders::AssociateSkillGroupWithRoom) operation.
                         ///
@@ -121,8 +121,8 @@ impl Client  {
                         /// - On success, responds with [`AssociateSkillGroupWithRoomOutput`](crate::output::AssociateSkillGroupWithRoomOutput)
                         
                         /// - On failure, responds with [`SdkError<AssociateSkillGroupWithRoomError>`](crate::error::AssociateSkillGroupWithRoomError)
-    pub fn associate_skill_group_with_room(&self) -> fluent_builders::AssociateSkillGroupWithRoom {
-                            fluent_builders::AssociateSkillGroupWithRoom::new(self.handle.clone())
+    pub fn associate_skill_group_with_room(&self) -> crate::client::fluent_builders::AssociateSkillGroupWithRoom {
+                            crate::client::fluent_builders::AssociateSkillGroupWithRoom::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`AssociateSkillWithSkillGroup`](crate::client::fluent_builders::AssociateSkillWithSkillGroup) operation.
                         ///
@@ -132,8 +132,8 @@ impl Client  {
                         /// - On success, responds with [`AssociateSkillWithSkillGroupOutput`](crate::output::AssociateSkillWithSkillGroupOutput)
                         
                         /// - On failure, responds with [`SdkError<AssociateSkillWithSkillGroupError>`](crate::error::AssociateSkillWithSkillGroupError)
-    pub fn associate_skill_with_skill_group(&self) -> fluent_builders::AssociateSkillWithSkillGroup {
-                            fluent_builders::AssociateSkillWithSkillGroup::new(self.handle.clone())
+    pub fn associate_skill_with_skill_group(&self) -> crate::client::fluent_builders::AssociateSkillWithSkillGroup {
+                            crate::client::fluent_builders::AssociateSkillWithSkillGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`AssociateSkillWithUsers`](crate::client::fluent_builders::AssociateSkillWithUsers) operation.
                         ///
@@ -142,8 +142,8 @@ impl Client  {
                         /// - On success, responds with [`AssociateSkillWithUsersOutput`](crate::output::AssociateSkillWithUsersOutput)
                         
                         /// - On failure, responds with [`SdkError<AssociateSkillWithUsersError>`](crate::error::AssociateSkillWithUsersError)
-    pub fn associate_skill_with_users(&self) -> fluent_builders::AssociateSkillWithUsers {
-                            fluent_builders::AssociateSkillWithUsers::new(self.handle.clone())
+    pub fn associate_skill_with_users(&self) -> crate::client::fluent_builders::AssociateSkillWithUsers {
+                            crate::client::fluent_builders::AssociateSkillWithUsers::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateAddressBook`](crate::client::fluent_builders::CreateAddressBook) operation.
                         ///
@@ -155,8 +155,8 @@ impl Client  {
                         /// - On success, responds with [`CreateAddressBookOutput`](crate::output::CreateAddressBookOutput) with field(s):
                         ///   - [`address_book_arn(Option<String>)`](crate::output::CreateAddressBookOutput::address_book_arn): <p>The ARN of the newly created address book.</p>
                         /// - On failure, responds with [`SdkError<CreateAddressBookError>`](crate::error::CreateAddressBookError)
-    pub fn create_address_book(&self) -> fluent_builders::CreateAddressBook {
-                            fluent_builders::CreateAddressBook::new(self.handle.clone())
+    pub fn create_address_book(&self) -> crate::client::fluent_builders::CreateAddressBook {
+                            crate::client::fluent_builders::CreateAddressBook::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateBusinessReportSchedule`](crate::client::fluent_builders::CreateBusinessReportSchedule) operation.
                         ///
@@ -172,8 +172,8 @@ impl Client  {
                         /// - On success, responds with [`CreateBusinessReportScheduleOutput`](crate::output::CreateBusinessReportScheduleOutput) with field(s):
                         ///   - [`schedule_arn(Option<String>)`](crate::output::CreateBusinessReportScheduleOutput::schedule_arn): <p>The ARN of the business report schedule.</p>
                         /// - On failure, responds with [`SdkError<CreateBusinessReportScheduleError>`](crate::error::CreateBusinessReportScheduleError)
-    pub fn create_business_report_schedule(&self) -> fluent_builders::CreateBusinessReportSchedule {
-                            fluent_builders::CreateBusinessReportSchedule::new(self.handle.clone())
+    pub fn create_business_report_schedule(&self) -> crate::client::fluent_builders::CreateBusinessReportSchedule {
+                            crate::client::fluent_builders::CreateBusinessReportSchedule::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateConferenceProvider`](crate::client::fluent_builders::CreateConferenceProvider) operation.
                         ///
@@ -188,8 +188,8 @@ impl Client  {
                         /// - On success, responds with [`CreateConferenceProviderOutput`](crate::output::CreateConferenceProviderOutput) with field(s):
                         ///   - [`conference_provider_arn(Option<String>)`](crate::output::CreateConferenceProviderOutput::conference_provider_arn): <p>The ARN of the newly-created conference provider.</p>
                         /// - On failure, responds with [`SdkError<CreateConferenceProviderError>`](crate::error::CreateConferenceProviderError)
-    pub fn create_conference_provider(&self) -> fluent_builders::CreateConferenceProvider {
-                            fluent_builders::CreateConferenceProvider::new(self.handle.clone())
+    pub fn create_conference_provider(&self) -> crate::client::fluent_builders::CreateConferenceProvider {
+                            crate::client::fluent_builders::CreateConferenceProvider::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateContact`](crate::client::fluent_builders::CreateContact) operation.
                         ///
@@ -205,8 +205,8 @@ impl Client  {
                         /// - On success, responds with [`CreateContactOutput`](crate::output::CreateContactOutput) with field(s):
                         ///   - [`contact_arn(Option<String>)`](crate::output::CreateContactOutput::contact_arn): <p>The ARN of the newly created address book.</p>
                         /// - On failure, responds with [`SdkError<CreateContactError>`](crate::error::CreateContactError)
-    pub fn create_contact(&self) -> fluent_builders::CreateContact {
-                            fluent_builders::CreateContact::new(self.handle.clone())
+    pub fn create_contact(&self) -> crate::client::fluent_builders::CreateContact {
+                            crate::client::fluent_builders::CreateContact::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateGatewayGroup`](crate::client::fluent_builders::CreateGatewayGroup) operation.
                         ///
@@ -218,8 +218,8 @@ impl Client  {
                         /// - On success, responds with [`CreateGatewayGroupOutput`](crate::output::CreateGatewayGroupOutput) with field(s):
                         ///   - [`gateway_group_arn(Option<String>)`](crate::output::CreateGatewayGroupOutput::gateway_group_arn): <p>The ARN of the created gateway group.</p>
                         /// - On failure, responds with [`SdkError<CreateGatewayGroupError>`](crate::error::CreateGatewayGroupError)
-    pub fn create_gateway_group(&self) -> fluent_builders::CreateGatewayGroup {
-                            fluent_builders::CreateGatewayGroup::new(self.handle.clone())
+    pub fn create_gateway_group(&self) -> crate::client::fluent_builders::CreateGatewayGroup {
+                            crate::client::fluent_builders::CreateGatewayGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateNetworkProfile`](crate::client::fluent_builders::CreateNetworkProfile) operation.
                         ///
@@ -238,8 +238,8 @@ impl Client  {
                         /// - On success, responds with [`CreateNetworkProfileOutput`](crate::output::CreateNetworkProfileOutput) with field(s):
                         ///   - [`network_profile_arn(Option<String>)`](crate::output::CreateNetworkProfileOutput::network_profile_arn): <p>The ARN of the network profile associated with a device.</p>
                         /// - On failure, responds with [`SdkError<CreateNetworkProfileError>`](crate::error::CreateNetworkProfileError)
-    pub fn create_network_profile(&self) -> fluent_builders::CreateNetworkProfile {
-                            fluent_builders::CreateNetworkProfile::new(self.handle.clone())
+    pub fn create_network_profile(&self) -> crate::client::fluent_builders::CreateNetworkProfile {
+                            crate::client::fluent_builders::CreateNetworkProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateProfile`](crate::client::fluent_builders::CreateProfile) operation.
                         ///
@@ -261,8 +261,8 @@ impl Client  {
                         /// - On success, responds with [`CreateProfileOutput`](crate::output::CreateProfileOutput) with field(s):
                         ///   - [`profile_arn(Option<String>)`](crate::output::CreateProfileOutput::profile_arn): <p>The ARN of the newly created room profile in the response.</p>
                         /// - On failure, responds with [`SdkError<CreateProfileError>`](crate::error::CreateProfileError)
-    pub fn create_profile(&self) -> fluent_builders::CreateProfile {
-                            fluent_builders::CreateProfile::new(self.handle.clone())
+    pub fn create_profile(&self) -> crate::client::fluent_builders::CreateProfile {
+                            crate::client::fluent_builders::CreateProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateRoom`](crate::client::fluent_builders::CreateRoom) operation.
                         ///
@@ -276,8 +276,8 @@ impl Client  {
                         /// - On success, responds with [`CreateRoomOutput`](crate::output::CreateRoomOutput) with field(s):
                         ///   - [`room_arn(Option<String>)`](crate::output::CreateRoomOutput::room_arn): <p>The ARN of the newly created room in the response.</p>
                         /// - On failure, responds with [`SdkError<CreateRoomError>`](crate::error::CreateRoomError)
-    pub fn create_room(&self) -> fluent_builders::CreateRoom {
-                            fluent_builders::CreateRoom::new(self.handle.clone())
+    pub fn create_room(&self) -> crate::client::fluent_builders::CreateRoom {
+                            crate::client::fluent_builders::CreateRoom::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateSkillGroup`](crate::client::fluent_builders::CreateSkillGroup) operation.
                         ///
@@ -289,8 +289,8 @@ impl Client  {
                         /// - On success, responds with [`CreateSkillGroupOutput`](crate::output::CreateSkillGroupOutput) with field(s):
                         ///   - [`skill_group_arn(Option<String>)`](crate::output::CreateSkillGroupOutput::skill_group_arn): <p>The ARN of the newly created skill group in the response.</p>
                         /// - On failure, responds with [`SdkError<CreateSkillGroupError>`](crate::error::CreateSkillGroupError)
-    pub fn create_skill_group(&self) -> fluent_builders::CreateSkillGroup {
-                            fluent_builders::CreateSkillGroup::new(self.handle.clone())
+    pub fn create_skill_group(&self) -> crate::client::fluent_builders::CreateSkillGroup {
+                            crate::client::fluent_builders::CreateSkillGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
                         ///
@@ -304,8 +304,8 @@ impl Client  {
                         /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
                         ///   - [`user_arn(Option<String>)`](crate::output::CreateUserOutput::user_arn): <p>The ARN of the newly created user in the response.</p>
                         /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
-    pub fn create_user(&self) -> fluent_builders::CreateUser {
-                            fluent_builders::CreateUser::new(self.handle.clone())
+    pub fn create_user(&self) -> crate::client::fluent_builders::CreateUser {
+                            crate::client::fluent_builders::CreateUser::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteAddressBook`](crate::client::fluent_builders::DeleteAddressBook) operation.
                         ///
@@ -314,8 +314,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteAddressBookOutput`](crate::output::DeleteAddressBookOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteAddressBookError>`](crate::error::DeleteAddressBookError)
-    pub fn delete_address_book(&self) -> fluent_builders::DeleteAddressBook {
-                            fluent_builders::DeleteAddressBook::new(self.handle.clone())
+    pub fn delete_address_book(&self) -> crate::client::fluent_builders::DeleteAddressBook {
+                            crate::client::fluent_builders::DeleteAddressBook::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteBusinessReportSchedule`](crate::client::fluent_builders::DeleteBusinessReportSchedule) operation.
                         ///
@@ -324,8 +324,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteBusinessReportScheduleOutput`](crate::output::DeleteBusinessReportScheduleOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteBusinessReportScheduleError>`](crate::error::DeleteBusinessReportScheduleError)
-    pub fn delete_business_report_schedule(&self) -> fluent_builders::DeleteBusinessReportSchedule {
-                            fluent_builders::DeleteBusinessReportSchedule::new(self.handle.clone())
+    pub fn delete_business_report_schedule(&self) -> crate::client::fluent_builders::DeleteBusinessReportSchedule {
+                            crate::client::fluent_builders::DeleteBusinessReportSchedule::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteConferenceProvider`](crate::client::fluent_builders::DeleteConferenceProvider) operation.
                         ///
@@ -334,8 +334,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteConferenceProviderOutput`](crate::output::DeleteConferenceProviderOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteConferenceProviderError>`](crate::error::DeleteConferenceProviderError)
-    pub fn delete_conference_provider(&self) -> fluent_builders::DeleteConferenceProvider {
-                            fluent_builders::DeleteConferenceProvider::new(self.handle.clone())
+    pub fn delete_conference_provider(&self) -> crate::client::fluent_builders::DeleteConferenceProvider {
+                            crate::client::fluent_builders::DeleteConferenceProvider::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteContact`](crate::client::fluent_builders::DeleteContact) operation.
                         ///
@@ -344,8 +344,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteContactOutput`](crate::output::DeleteContactOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteContactError>`](crate::error::DeleteContactError)
-    pub fn delete_contact(&self) -> fluent_builders::DeleteContact {
-                            fluent_builders::DeleteContact::new(self.handle.clone())
+    pub fn delete_contact(&self) -> crate::client::fluent_builders::DeleteContact {
+                            crate::client::fluent_builders::DeleteContact::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteDevice`](crate::client::fluent_builders::DeleteDevice) operation.
                         ///
@@ -354,8 +354,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteDeviceError>`](crate::error::DeleteDeviceError)
-    pub fn delete_device(&self) -> fluent_builders::DeleteDevice {
-                            fluent_builders::DeleteDevice::new(self.handle.clone())
+    pub fn delete_device(&self) -> crate::client::fluent_builders::DeleteDevice {
+                            crate::client::fluent_builders::DeleteDevice::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteDeviceUsageData`](crate::client::fluent_builders::DeleteDeviceUsageData) operation.
                         ///
@@ -365,8 +365,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteDeviceUsageDataOutput`](crate::output::DeleteDeviceUsageDataOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteDeviceUsageDataError>`](crate::error::DeleteDeviceUsageDataError)
-    pub fn delete_device_usage_data(&self) -> fluent_builders::DeleteDeviceUsageData {
-                            fluent_builders::DeleteDeviceUsageData::new(self.handle.clone())
+    pub fn delete_device_usage_data(&self) -> crate::client::fluent_builders::DeleteDeviceUsageData {
+                            crate::client::fluent_builders::DeleteDeviceUsageData::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteGatewayGroup`](crate::client::fluent_builders::DeleteGatewayGroup) operation.
                         ///
@@ -375,8 +375,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteGatewayGroupOutput`](crate::output::DeleteGatewayGroupOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteGatewayGroupError>`](crate::error::DeleteGatewayGroupError)
-    pub fn delete_gateway_group(&self) -> fluent_builders::DeleteGatewayGroup {
-                            fluent_builders::DeleteGatewayGroup::new(self.handle.clone())
+    pub fn delete_gateway_group(&self) -> crate::client::fluent_builders::DeleteGatewayGroup {
+                            crate::client::fluent_builders::DeleteGatewayGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteNetworkProfile`](crate::client::fluent_builders::DeleteNetworkProfile) operation.
                         ///
@@ -385,8 +385,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteNetworkProfileOutput`](crate::output::DeleteNetworkProfileOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteNetworkProfileError>`](crate::error::DeleteNetworkProfileError)
-    pub fn delete_network_profile(&self) -> fluent_builders::DeleteNetworkProfile {
-                            fluent_builders::DeleteNetworkProfile::new(self.handle.clone())
+    pub fn delete_network_profile(&self) -> crate::client::fluent_builders::DeleteNetworkProfile {
+                            crate::client::fluent_builders::DeleteNetworkProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteProfile`](crate::client::fluent_builders::DeleteProfile) operation.
                         ///
@@ -395,8 +395,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteProfileOutput`](crate::output::DeleteProfileOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteProfileError>`](crate::error::DeleteProfileError)
-    pub fn delete_profile(&self) -> fluent_builders::DeleteProfile {
-                            fluent_builders::DeleteProfile::new(self.handle.clone())
+    pub fn delete_profile(&self) -> crate::client::fluent_builders::DeleteProfile {
+                            crate::client::fluent_builders::DeleteProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteRoom`](crate::client::fluent_builders::DeleteRoom) operation.
                         ///
@@ -405,8 +405,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteRoomOutput`](crate::output::DeleteRoomOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteRoomError>`](crate::error::DeleteRoomError)
-    pub fn delete_room(&self) -> fluent_builders::DeleteRoom {
-                            fluent_builders::DeleteRoom::new(self.handle.clone())
+    pub fn delete_room(&self) -> crate::client::fluent_builders::DeleteRoom {
+                            crate::client::fluent_builders::DeleteRoom::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteRoomSkillParameter`](crate::client::fluent_builders::DeleteRoomSkillParameter) operation.
                         ///
@@ -417,8 +417,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteRoomSkillParameterOutput`](crate::output::DeleteRoomSkillParameterOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteRoomSkillParameterError>`](crate::error::DeleteRoomSkillParameterError)
-    pub fn delete_room_skill_parameter(&self) -> fluent_builders::DeleteRoomSkillParameter {
-                            fluent_builders::DeleteRoomSkillParameter::new(self.handle.clone())
+    pub fn delete_room_skill_parameter(&self) -> crate::client::fluent_builders::DeleteRoomSkillParameter {
+                            crate::client::fluent_builders::DeleteRoomSkillParameter::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteSkillAuthorization`](crate::client::fluent_builders::DeleteSkillAuthorization) operation.
                         ///
@@ -428,8 +428,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteSkillAuthorizationOutput`](crate::output::DeleteSkillAuthorizationOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteSkillAuthorizationError>`](crate::error::DeleteSkillAuthorizationError)
-    pub fn delete_skill_authorization(&self) -> fluent_builders::DeleteSkillAuthorization {
-                            fluent_builders::DeleteSkillAuthorization::new(self.handle.clone())
+    pub fn delete_skill_authorization(&self) -> crate::client::fluent_builders::DeleteSkillAuthorization {
+                            crate::client::fluent_builders::DeleteSkillAuthorization::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteSkillGroup`](crate::client::fluent_builders::DeleteSkillGroup) operation.
                         ///
@@ -438,8 +438,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteSkillGroupOutput`](crate::output::DeleteSkillGroupOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteSkillGroupError>`](crate::error::DeleteSkillGroupError)
-    pub fn delete_skill_group(&self) -> fluent_builders::DeleteSkillGroup {
-                            fluent_builders::DeleteSkillGroup::new(self.handle.clone())
+    pub fn delete_skill_group(&self) -> crate::client::fluent_builders::DeleteSkillGroup {
+                            crate::client::fluent_builders::DeleteSkillGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
                         ///
@@ -449,8 +449,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
-    pub fn delete_user(&self) -> fluent_builders::DeleteUser {
-                            fluent_builders::DeleteUser::new(self.handle.clone())
+    pub fn delete_user(&self) -> crate::client::fluent_builders::DeleteUser {
+                            crate::client::fluent_builders::DeleteUser::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DisassociateContactFromAddressBook`](crate::client::fluent_builders::DisassociateContactFromAddressBook) operation.
                         ///
@@ -460,8 +460,8 @@ impl Client  {
                         /// - On success, responds with [`DisassociateContactFromAddressBookOutput`](crate::output::DisassociateContactFromAddressBookOutput)
                         
                         /// - On failure, responds with [`SdkError<DisassociateContactFromAddressBookError>`](crate::error::DisassociateContactFromAddressBookError)
-    pub fn disassociate_contact_from_address_book(&self) -> fluent_builders::DisassociateContactFromAddressBook {
-                            fluent_builders::DisassociateContactFromAddressBook::new(self.handle.clone())
+    pub fn disassociate_contact_from_address_book(&self) -> crate::client::fluent_builders::DisassociateContactFromAddressBook {
+                            crate::client::fluent_builders::DisassociateContactFromAddressBook::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DisassociateDeviceFromRoom`](crate::client::fluent_builders::DisassociateDeviceFromRoom) operation.
                         ///
@@ -470,8 +470,8 @@ impl Client  {
                         /// - On success, responds with [`DisassociateDeviceFromRoomOutput`](crate::output::DisassociateDeviceFromRoomOutput)
                         
                         /// - On failure, responds with [`SdkError<DisassociateDeviceFromRoomError>`](crate::error::DisassociateDeviceFromRoomError)
-    pub fn disassociate_device_from_room(&self) -> fluent_builders::DisassociateDeviceFromRoom {
-                            fluent_builders::DisassociateDeviceFromRoom::new(self.handle.clone())
+    pub fn disassociate_device_from_room(&self) -> crate::client::fluent_builders::DisassociateDeviceFromRoom {
+                            crate::client::fluent_builders::DisassociateDeviceFromRoom::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DisassociateSkillFromSkillGroup`](crate::client::fluent_builders::DisassociateSkillFromSkillGroup) operation.
                         ///
@@ -481,8 +481,8 @@ impl Client  {
                         /// - On success, responds with [`DisassociateSkillFromSkillGroupOutput`](crate::output::DisassociateSkillFromSkillGroupOutput)
                         
                         /// - On failure, responds with [`SdkError<DisassociateSkillFromSkillGroupError>`](crate::error::DisassociateSkillFromSkillGroupError)
-    pub fn disassociate_skill_from_skill_group(&self) -> fluent_builders::DisassociateSkillFromSkillGroup {
-                            fluent_builders::DisassociateSkillFromSkillGroup::new(self.handle.clone())
+    pub fn disassociate_skill_from_skill_group(&self) -> crate::client::fluent_builders::DisassociateSkillFromSkillGroup {
+                            crate::client::fluent_builders::DisassociateSkillFromSkillGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DisassociateSkillFromUsers`](crate::client::fluent_builders::DisassociateSkillFromUsers) operation.
                         ///
@@ -491,8 +491,8 @@ impl Client  {
                         /// - On success, responds with [`DisassociateSkillFromUsersOutput`](crate::output::DisassociateSkillFromUsersOutput)
                         
                         /// - On failure, responds with [`SdkError<DisassociateSkillFromUsersError>`](crate::error::DisassociateSkillFromUsersError)
-    pub fn disassociate_skill_from_users(&self) -> fluent_builders::DisassociateSkillFromUsers {
-                            fluent_builders::DisassociateSkillFromUsers::new(self.handle.clone())
+    pub fn disassociate_skill_from_users(&self) -> crate::client::fluent_builders::DisassociateSkillFromUsers {
+                            crate::client::fluent_builders::DisassociateSkillFromUsers::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DisassociateSkillGroupFromRoom`](crate::client::fluent_builders::DisassociateSkillGroupFromRoom) operation.
                         ///
@@ -502,8 +502,8 @@ impl Client  {
                         /// - On success, responds with [`DisassociateSkillGroupFromRoomOutput`](crate::output::DisassociateSkillGroupFromRoomOutput)
                         
                         /// - On failure, responds with [`SdkError<DisassociateSkillGroupFromRoomError>`](crate::error::DisassociateSkillGroupFromRoomError)
-    pub fn disassociate_skill_group_from_room(&self) -> fluent_builders::DisassociateSkillGroupFromRoom {
-                            fluent_builders::DisassociateSkillGroupFromRoom::new(self.handle.clone())
+    pub fn disassociate_skill_group_from_room(&self) -> crate::client::fluent_builders::DisassociateSkillGroupFromRoom {
+                            crate::client::fluent_builders::DisassociateSkillGroupFromRoom::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ForgetSmartHomeAppliances`](crate::client::fluent_builders::ForgetSmartHomeAppliances) operation.
                         ///
@@ -512,8 +512,8 @@ impl Client  {
                         /// - On success, responds with [`ForgetSmartHomeAppliancesOutput`](crate::output::ForgetSmartHomeAppliancesOutput)
                         
                         /// - On failure, responds with [`SdkError<ForgetSmartHomeAppliancesError>`](crate::error::ForgetSmartHomeAppliancesError)
-    pub fn forget_smart_home_appliances(&self) -> fluent_builders::ForgetSmartHomeAppliances {
-                            fluent_builders::ForgetSmartHomeAppliances::new(self.handle.clone())
+    pub fn forget_smart_home_appliances(&self) -> crate::client::fluent_builders::ForgetSmartHomeAppliances {
+                            crate::client::fluent_builders::ForgetSmartHomeAppliances::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetAddressBook`](crate::client::fluent_builders::GetAddressBook) operation.
                         ///
@@ -522,8 +522,8 @@ impl Client  {
                         /// - On success, responds with [`GetAddressBookOutput`](crate::output::GetAddressBookOutput) with field(s):
                         ///   - [`address_book(Option<AddressBook>)`](crate::output::GetAddressBookOutput::address_book): <p>The details of the requested address book.</p>
                         /// - On failure, responds with [`SdkError<GetAddressBookError>`](crate::error::GetAddressBookError)
-    pub fn get_address_book(&self) -> fluent_builders::GetAddressBook {
-                            fluent_builders::GetAddressBook::new(self.handle.clone())
+    pub fn get_address_book(&self) -> crate::client::fluent_builders::GetAddressBook {
+                            crate::client::fluent_builders::GetAddressBook::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetConferencePreference`](crate::client::fluent_builders::GetConferencePreference) operation.
                         ///
@@ -532,8 +532,8 @@ impl Client  {
                         /// - On success, responds with [`GetConferencePreferenceOutput`](crate::output::GetConferencePreferenceOutput) with field(s):
                         ///   - [`preference(Option<ConferencePreference>)`](crate::output::GetConferencePreferenceOutput::preference): <p>The conference preference.</p>
                         /// - On failure, responds with [`SdkError<GetConferencePreferenceError>`](crate::error::GetConferencePreferenceError)
-    pub fn get_conference_preference(&self) -> fluent_builders::GetConferencePreference {
-                            fluent_builders::GetConferencePreference::new(self.handle.clone())
+    pub fn get_conference_preference(&self) -> crate::client::fluent_builders::GetConferencePreference {
+                            crate::client::fluent_builders::GetConferencePreference::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetConferenceProvider`](crate::client::fluent_builders::GetConferenceProvider) operation.
                         ///
@@ -542,8 +542,8 @@ impl Client  {
                         /// - On success, responds with [`GetConferenceProviderOutput`](crate::output::GetConferenceProviderOutput) with field(s):
                         ///   - [`conference_provider(Option<ConferenceProvider>)`](crate::output::GetConferenceProviderOutput::conference_provider): <p>The conference provider.</p>
                         /// - On failure, responds with [`SdkError<GetConferenceProviderError>`](crate::error::GetConferenceProviderError)
-    pub fn get_conference_provider(&self) -> fluent_builders::GetConferenceProvider {
-                            fluent_builders::GetConferenceProvider::new(self.handle.clone())
+    pub fn get_conference_provider(&self) -> crate::client::fluent_builders::GetConferenceProvider {
+                            crate::client::fluent_builders::GetConferenceProvider::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetContact`](crate::client::fluent_builders::GetContact) operation.
                         ///
@@ -552,8 +552,8 @@ impl Client  {
                         /// - On success, responds with [`GetContactOutput`](crate::output::GetContactOutput) with field(s):
                         ///   - [`contact(Option<Contact>)`](crate::output::GetContactOutput::contact): <p>The details of the requested contact.</p>
                         /// - On failure, responds with [`SdkError<GetContactError>`](crate::error::GetContactError)
-    pub fn get_contact(&self) -> fluent_builders::GetContact {
-                            fluent_builders::GetContact::new(self.handle.clone())
+    pub fn get_contact(&self) -> crate::client::fluent_builders::GetContact {
+                            crate::client::fluent_builders::GetContact::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetDevice`](crate::client::fluent_builders::GetDevice) operation.
                         ///
@@ -562,8 +562,8 @@ impl Client  {
                         /// - On success, responds with [`GetDeviceOutput`](crate::output::GetDeviceOutput) with field(s):
                         ///   - [`device(Option<Device>)`](crate::output::GetDeviceOutput::device): <p>The details of the device requested. Required.</p>
                         /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::error::GetDeviceError)
-    pub fn get_device(&self) -> fluent_builders::GetDevice {
-                            fluent_builders::GetDevice::new(self.handle.clone())
+    pub fn get_device(&self) -> crate::client::fluent_builders::GetDevice {
+                            crate::client::fluent_builders::GetDevice::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetGateway`](crate::client::fluent_builders::GetGateway) operation.
                         ///
@@ -572,8 +572,8 @@ impl Client  {
                         /// - On success, responds with [`GetGatewayOutput`](crate::output::GetGatewayOutput) with field(s):
                         ///   - [`gateway(Option<Gateway>)`](crate::output::GetGatewayOutput::gateway): <p>The details of the gateway.</p>
                         /// - On failure, responds with [`SdkError<GetGatewayError>`](crate::error::GetGatewayError)
-    pub fn get_gateway(&self) -> fluent_builders::GetGateway {
-                            fluent_builders::GetGateway::new(self.handle.clone())
+    pub fn get_gateway(&self) -> crate::client::fluent_builders::GetGateway {
+                            crate::client::fluent_builders::GetGateway::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetGatewayGroup`](crate::client::fluent_builders::GetGatewayGroup) operation.
                         ///
@@ -582,8 +582,8 @@ impl Client  {
                         /// - On success, responds with [`GetGatewayGroupOutput`](crate::output::GetGatewayGroupOutput) with field(s):
                         ///   - [`gateway_group(Option<GatewayGroup>)`](crate::output::GetGatewayGroupOutput::gateway_group): <p>The details of the gateway group.</p>
                         /// - On failure, responds with [`SdkError<GetGatewayGroupError>`](crate::error::GetGatewayGroupError)
-    pub fn get_gateway_group(&self) -> fluent_builders::GetGatewayGroup {
-                            fluent_builders::GetGatewayGroup::new(self.handle.clone())
+    pub fn get_gateway_group(&self) -> crate::client::fluent_builders::GetGatewayGroup {
+                            crate::client::fluent_builders::GetGatewayGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetInvitationConfiguration`](crate::client::fluent_builders::GetInvitationConfiguration) operation.
                         ///
@@ -594,8 +594,8 @@ impl Client  {
     ///   - [`contact_email(Option<String>)`](crate::output::GetInvitationConfigurationOutput::contact_email): <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     ///   - [`private_skill_ids(Option<Vec<String>>)`](crate::output::GetInvitationConfigurationOutput::private_skill_ids): <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
                         /// - On failure, responds with [`SdkError<GetInvitationConfigurationError>`](crate::error::GetInvitationConfigurationError)
-    pub fn get_invitation_configuration(&self) -> fluent_builders::GetInvitationConfiguration {
-                            fluent_builders::GetInvitationConfiguration::new(self.handle.clone())
+    pub fn get_invitation_configuration(&self) -> crate::client::fluent_builders::GetInvitationConfiguration {
+                            crate::client::fluent_builders::GetInvitationConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetNetworkProfile`](crate::client::fluent_builders::GetNetworkProfile) operation.
                         ///
@@ -604,8 +604,8 @@ impl Client  {
                         /// - On success, responds with [`GetNetworkProfileOutput`](crate::output::GetNetworkProfileOutput) with field(s):
                         ///   - [`network_profile(Option<NetworkProfile>)`](crate::output::GetNetworkProfileOutput::network_profile): <p>The network profile associated with a device.</p>
                         /// - On failure, responds with [`SdkError<GetNetworkProfileError>`](crate::error::GetNetworkProfileError)
-    pub fn get_network_profile(&self) -> fluent_builders::GetNetworkProfile {
-                            fluent_builders::GetNetworkProfile::new(self.handle.clone())
+    pub fn get_network_profile(&self) -> crate::client::fluent_builders::GetNetworkProfile {
+                            crate::client::fluent_builders::GetNetworkProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetProfile`](crate::client::fluent_builders::GetProfile) operation.
                         ///
@@ -614,8 +614,8 @@ impl Client  {
                         /// - On success, responds with [`GetProfileOutput`](crate::output::GetProfileOutput) with field(s):
                         ///   - [`profile(Option<Profile>)`](crate::output::GetProfileOutput::profile): <p>The details of the room profile requested. Required.</p>
                         /// - On failure, responds with [`SdkError<GetProfileError>`](crate::error::GetProfileError)
-    pub fn get_profile(&self) -> fluent_builders::GetProfile {
-                            fluent_builders::GetProfile::new(self.handle.clone())
+    pub fn get_profile(&self) -> crate::client::fluent_builders::GetProfile {
+                            crate::client::fluent_builders::GetProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetRoom`](crate::client::fluent_builders::GetRoom) operation.
                         ///
@@ -624,8 +624,8 @@ impl Client  {
                         /// - On success, responds with [`GetRoomOutput`](crate::output::GetRoomOutput) with field(s):
                         ///   - [`room(Option<Room>)`](crate::output::GetRoomOutput::room): <p>The details of the room requested.</p>
                         /// - On failure, responds with [`SdkError<GetRoomError>`](crate::error::GetRoomError)
-    pub fn get_room(&self) -> fluent_builders::GetRoom {
-                            fluent_builders::GetRoom::new(self.handle.clone())
+    pub fn get_room(&self) -> crate::client::fluent_builders::GetRoom {
+                            crate::client::fluent_builders::GetRoom::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetRoomSkillParameter`](crate::client::fluent_builders::GetRoomSkillParameter) operation.
                         ///
@@ -636,8 +636,8 @@ impl Client  {
                         /// - On success, responds with [`GetRoomSkillParameterOutput`](crate::output::GetRoomSkillParameterOutput) with field(s):
                         ///   - [`room_skill_parameter(Option<RoomSkillParameter>)`](crate::output::GetRoomSkillParameterOutput::room_skill_parameter): <p>The details of the room skill parameter requested. Required.</p>
                         /// - On failure, responds with [`SdkError<GetRoomSkillParameterError>`](crate::error::GetRoomSkillParameterError)
-    pub fn get_room_skill_parameter(&self) -> fluent_builders::GetRoomSkillParameter {
-                            fluent_builders::GetRoomSkillParameter::new(self.handle.clone())
+    pub fn get_room_skill_parameter(&self) -> crate::client::fluent_builders::GetRoomSkillParameter {
+                            crate::client::fluent_builders::GetRoomSkillParameter::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetSkillGroup`](crate::client::fluent_builders::GetSkillGroup) operation.
                         ///
@@ -646,8 +646,8 @@ impl Client  {
                         /// - On success, responds with [`GetSkillGroupOutput`](crate::output::GetSkillGroupOutput) with field(s):
                         ///   - [`skill_group(Option<SkillGroup>)`](crate::output::GetSkillGroupOutput::skill_group): <p>The details of the skill group requested. Required.</p>
                         /// - On failure, responds with [`SdkError<GetSkillGroupError>`](crate::error::GetSkillGroupError)
-    pub fn get_skill_group(&self) -> fluent_builders::GetSkillGroup {
-                            fluent_builders::GetSkillGroup::new(self.handle.clone())
+    pub fn get_skill_group(&self) -> crate::client::fluent_builders::GetSkillGroup {
+                            crate::client::fluent_builders::GetSkillGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListBusinessReportSchedules`](crate::client::fluent_builders::ListBusinessReportSchedules) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBusinessReportSchedules::into_paginator).
@@ -659,8 +659,8 @@ impl Client  {
                         ///   - [`business_report_schedules(Option<Vec<BusinessReportSchedule>>)`](crate::output::ListBusinessReportSchedulesOutput::business_report_schedules): <p>The schedule of the reports.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBusinessReportSchedulesOutput::next_token): <p>The token used to list the remaining schedules from the previous API call.</p>
                         /// - On failure, responds with [`SdkError<ListBusinessReportSchedulesError>`](crate::error::ListBusinessReportSchedulesError)
-    pub fn list_business_report_schedules(&self) -> fluent_builders::ListBusinessReportSchedules {
-                            fluent_builders::ListBusinessReportSchedules::new(self.handle.clone())
+    pub fn list_business_report_schedules(&self) -> crate::client::fluent_builders::ListBusinessReportSchedules {
+                            crate::client::fluent_builders::ListBusinessReportSchedules::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListConferenceProviders`](crate::client::fluent_builders::ListConferenceProviders) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConferenceProviders::into_paginator).
@@ -672,8 +672,8 @@ impl Client  {
                         ///   - [`conference_providers(Option<Vec<ConferenceProvider>>)`](crate::output::ListConferenceProvidersOutput::conference_providers): <p>The conference providers.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListConferenceProvidersOutput::next_token): <p>The tokens used for pagination.</p>
                         /// - On failure, responds with [`SdkError<ListConferenceProvidersError>`](crate::error::ListConferenceProvidersError)
-    pub fn list_conference_providers(&self) -> fluent_builders::ListConferenceProviders {
-                            fluent_builders::ListConferenceProviders::new(self.handle.clone())
+    pub fn list_conference_providers(&self) -> crate::client::fluent_builders::ListConferenceProviders {
+                            crate::client::fluent_builders::ListConferenceProviders::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListDeviceEvents`](crate::client::fluent_builders::ListDeviceEvents) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeviceEvents::into_paginator).
@@ -687,8 +687,8 @@ impl Client  {
                         ///   - [`device_events(Option<Vec<DeviceEvent>>)`](crate::output::ListDeviceEventsOutput::device_events): <p>The device events requested for the device ARN.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDeviceEventsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
                         /// - On failure, responds with [`SdkError<ListDeviceEventsError>`](crate::error::ListDeviceEventsError)
-    pub fn list_device_events(&self) -> fluent_builders::ListDeviceEvents {
-                            fluent_builders::ListDeviceEvents::new(self.handle.clone())
+    pub fn list_device_events(&self) -> crate::client::fluent_builders::ListDeviceEvents {
+                            crate::client::fluent_builders::ListDeviceEvents::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListGatewayGroups`](crate::client::fluent_builders::ListGatewayGroups) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGatewayGroups::into_paginator).
@@ -700,8 +700,8 @@ impl Client  {
                         ///   - [`gateway_groups(Option<Vec<GatewayGroupSummary>>)`](crate::output::ListGatewayGroupsOutput::gateway_groups): <p>The gateway groups in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGatewayGroupsOutput::next_token): <p>The token used to paginate though multiple pages of gateway group summaries.</p>
                         /// - On failure, responds with [`SdkError<ListGatewayGroupsError>`](crate::error::ListGatewayGroupsError)
-    pub fn list_gateway_groups(&self) -> fluent_builders::ListGatewayGroups {
-                            fluent_builders::ListGatewayGroups::new(self.handle.clone())
+    pub fn list_gateway_groups(&self) -> crate::client::fluent_builders::ListGatewayGroups {
+                            crate::client::fluent_builders::ListGatewayGroups::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListGateways`](crate::client::fluent_builders::ListGateways) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGateways::into_paginator).
@@ -714,8 +714,8 @@ impl Client  {
                         ///   - [`gateways(Option<Vec<GatewaySummary>>)`](crate::output::ListGatewaysOutput::gateways): <p>The gateways in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGatewaysOutput::next_token): <p>The token used to paginate though multiple pages of gateway summaries.</p>
                         /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::error::ListGatewaysError)
-    pub fn list_gateways(&self) -> fluent_builders::ListGateways {
-                            fluent_builders::ListGateways::new(self.handle.clone())
+    pub fn list_gateways(&self) -> crate::client::fluent_builders::ListGateways {
+                            crate::client::fluent_builders::ListGateways::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListSkills`](crate::client::fluent_builders::ListSkills) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSkills::into_paginator).
@@ -730,8 +730,8 @@ impl Client  {
                         ///   - [`skill_summaries(Option<Vec<SkillSummary>>)`](crate::output::ListSkillsOutput::skill_summaries): <p>The list of enabled skills requested. Required.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSkillsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
                         /// - On failure, responds with [`SdkError<ListSkillsError>`](crate::error::ListSkillsError)
-    pub fn list_skills(&self) -> fluent_builders::ListSkills {
-                            fluent_builders::ListSkills::new(self.handle.clone())
+    pub fn list_skills(&self) -> crate::client::fluent_builders::ListSkills {
+                            crate::client::fluent_builders::ListSkills::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListSkillsStoreCategories`](crate::client::fluent_builders::ListSkillsStoreCategories) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSkillsStoreCategories::into_paginator).
@@ -743,8 +743,8 @@ impl Client  {
                         ///   - [`category_list(Option<Vec<Category>>)`](crate::output::ListSkillsStoreCategoriesOutput::category_list): <p>The list of categories.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSkillsStoreCategoriesOutput::next_token): <p>The tokens used for pagination.</p>
                         /// - On failure, responds with [`SdkError<ListSkillsStoreCategoriesError>`](crate::error::ListSkillsStoreCategoriesError)
-    pub fn list_skills_store_categories(&self) -> fluent_builders::ListSkillsStoreCategories {
-                            fluent_builders::ListSkillsStoreCategories::new(self.handle.clone())
+    pub fn list_skills_store_categories(&self) -> crate::client::fluent_builders::ListSkillsStoreCategories {
+                            crate::client::fluent_builders::ListSkillsStoreCategories::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListSkillsStoreSkillsByCategory`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory::into_paginator).
@@ -757,8 +757,8 @@ impl Client  {
                         ///   - [`skills_store_skills(Option<Vec<SkillsStoreSkill>>)`](crate::output::ListSkillsStoreSkillsByCategoryOutput::skills_store_skills): <p>The skill store skills.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSkillsStoreSkillsByCategoryOutput::next_token): <p>The tokens used for pagination.</p>
                         /// - On failure, responds with [`SdkError<ListSkillsStoreSkillsByCategoryError>`](crate::error::ListSkillsStoreSkillsByCategoryError)
-    pub fn list_skills_store_skills_by_category(&self) -> fluent_builders::ListSkillsStoreSkillsByCategory {
-                            fluent_builders::ListSkillsStoreSkillsByCategory::new(self.handle.clone())
+    pub fn list_skills_store_skills_by_category(&self) -> crate::client::fluent_builders::ListSkillsStoreSkillsByCategory {
+                            crate::client::fluent_builders::ListSkillsStoreSkillsByCategory::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListSmartHomeAppliances`](crate::client::fluent_builders::ListSmartHomeAppliances) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSmartHomeAppliances::into_paginator).
@@ -771,8 +771,8 @@ impl Client  {
                         ///   - [`smart_home_appliances(Option<Vec<SmartHomeAppliance>>)`](crate::output::ListSmartHomeAppliancesOutput::smart_home_appliances): <p>The smart home appliances.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSmartHomeAppliancesOutput::next_token): <p>The tokens used for pagination.</p>
                         /// - On failure, responds with [`SdkError<ListSmartHomeAppliancesError>`](crate::error::ListSmartHomeAppliancesError)
-    pub fn list_smart_home_appliances(&self) -> fluent_builders::ListSmartHomeAppliances {
-                            fluent_builders::ListSmartHomeAppliances::new(self.handle.clone())
+    pub fn list_smart_home_appliances(&self) -> crate::client::fluent_builders::ListSmartHomeAppliances {
+                            crate::client::fluent_builders::ListSmartHomeAppliances::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
@@ -785,8 +785,8 @@ impl Client  {
                         ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tags): <p>The tags requested for the specified resource.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
                         /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
-    pub fn list_tags(&self) -> fluent_builders::ListTags {
-                            fluent_builders::ListTags::new(self.handle.clone())
+    pub fn list_tags(&self) -> crate::client::fluent_builders::ListTags {
+                            crate::client::fluent_builders::ListTags::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`PutConferencePreference`](crate::client::fluent_builders::PutConferencePreference) operation.
                         ///
@@ -795,8 +795,8 @@ impl Client  {
                         /// - On success, responds with [`PutConferencePreferenceOutput`](crate::output::PutConferencePreferenceOutput)
                         
                         /// - On failure, responds with [`SdkError<PutConferencePreferenceError>`](crate::error::PutConferencePreferenceError)
-    pub fn put_conference_preference(&self) -> fluent_builders::PutConferencePreference {
-                            fluent_builders::PutConferencePreference::new(self.handle.clone())
+    pub fn put_conference_preference(&self) -> crate::client::fluent_builders::PutConferencePreference {
+                            crate::client::fluent_builders::PutConferencePreference::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`PutInvitationConfiguration`](crate::client::fluent_builders::PutInvitationConfiguration) operation.
                         ///
@@ -807,8 +807,8 @@ impl Client  {
                         /// - On success, responds with [`PutInvitationConfigurationOutput`](crate::output::PutInvitationConfigurationOutput)
                         
                         /// - On failure, responds with [`SdkError<PutInvitationConfigurationError>`](crate::error::PutInvitationConfigurationError)
-    pub fn put_invitation_configuration(&self) -> fluent_builders::PutInvitationConfiguration {
-                            fluent_builders::PutInvitationConfiguration::new(self.handle.clone())
+    pub fn put_invitation_configuration(&self) -> crate::client::fluent_builders::PutInvitationConfiguration {
+                            crate::client::fluent_builders::PutInvitationConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`PutRoomSkillParameter`](crate::client::fluent_builders::PutRoomSkillParameter) operation.
                         ///
@@ -819,8 +819,8 @@ impl Client  {
                         /// - On success, responds with [`PutRoomSkillParameterOutput`](crate::output::PutRoomSkillParameterOutput)
                         
                         /// - On failure, responds with [`SdkError<PutRoomSkillParameterError>`](crate::error::PutRoomSkillParameterError)
-    pub fn put_room_skill_parameter(&self) -> fluent_builders::PutRoomSkillParameter {
-                            fluent_builders::PutRoomSkillParameter::new(self.handle.clone())
+    pub fn put_room_skill_parameter(&self) -> crate::client::fluent_builders::PutRoomSkillParameter {
+                            crate::client::fluent_builders::PutRoomSkillParameter::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`PutSkillAuthorization`](crate::client::fluent_builders::PutSkillAuthorization) operation.
                         ///
@@ -831,8 +831,8 @@ impl Client  {
                         /// - On success, responds with [`PutSkillAuthorizationOutput`](crate::output::PutSkillAuthorizationOutput)
                         
                         /// - On failure, responds with [`SdkError<PutSkillAuthorizationError>`](crate::error::PutSkillAuthorizationError)
-    pub fn put_skill_authorization(&self) -> fluent_builders::PutSkillAuthorization {
-                            fluent_builders::PutSkillAuthorization::new(self.handle.clone())
+    pub fn put_skill_authorization(&self) -> crate::client::fluent_builders::PutSkillAuthorization {
+                            crate::client::fluent_builders::PutSkillAuthorization::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`RegisterAVSDevice`](crate::client::fluent_builders::RegisterAVSDevice) operation.
                         ///
@@ -847,8 +847,8 @@ impl Client  {
                         /// - On success, responds with [`RegisterAvsDeviceOutput`](crate::output::RegisterAvsDeviceOutput) with field(s):
                         ///   - [`device_arn(Option<String>)`](crate::output::RegisterAvsDeviceOutput::device_arn): <p>The ARN of the device.</p>
                         /// - On failure, responds with [`SdkError<RegisterAVSDeviceError>`](crate::error::RegisterAVSDeviceError)
-    pub fn register_avs_device(&self) -> fluent_builders::RegisterAVSDevice {
-                            fluent_builders::RegisterAVSDevice::new(self.handle.clone())
+    pub fn register_avs_device(&self) -> crate::client::fluent_builders::RegisterAVSDevice {
+                            crate::client::fluent_builders::RegisterAVSDevice::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`RejectSkill`](crate::client::fluent_builders::RejectSkill) operation.
                         ///
@@ -857,8 +857,8 @@ impl Client  {
                         /// - On success, responds with [`RejectSkillOutput`](crate::output::RejectSkillOutput)
                         
                         /// - On failure, responds with [`SdkError<RejectSkillError>`](crate::error::RejectSkillError)
-    pub fn reject_skill(&self) -> fluent_builders::RejectSkill {
-                            fluent_builders::RejectSkill::new(self.handle.clone())
+    pub fn reject_skill(&self) -> crate::client::fluent_builders::RejectSkill {
+                            crate::client::fluent_builders::RejectSkill::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ResolveRoom`](crate::client::fluent_builders::ResolveRoom) operation.
                         ///
@@ -870,8 +870,8 @@ impl Client  {
     ///   - [`room_name(Option<String>)`](crate::output::ResolveRoomOutput::room_name): <p>The name of the room from which the skill request was invoked.</p>
     ///   - [`room_skill_parameters(Option<Vec<RoomSkillParameter>>)`](crate::output::ResolveRoomOutput::room_skill_parameters): <p>Response to get the room profile request. Required.</p>
                         /// - On failure, responds with [`SdkError<ResolveRoomError>`](crate::error::ResolveRoomError)
-    pub fn resolve_room(&self) -> fluent_builders::ResolveRoom {
-                            fluent_builders::ResolveRoom::new(self.handle.clone())
+    pub fn resolve_room(&self) -> crate::client::fluent_builders::ResolveRoom {
+                            crate::client::fluent_builders::ResolveRoom::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`RevokeInvitation`](crate::client::fluent_builders::RevokeInvitation) operation.
                         ///
@@ -881,8 +881,8 @@ impl Client  {
                         /// - On success, responds with [`RevokeInvitationOutput`](crate::output::RevokeInvitationOutput)
                         
                         /// - On failure, responds with [`SdkError<RevokeInvitationError>`](crate::error::RevokeInvitationError)
-    pub fn revoke_invitation(&self) -> fluent_builders::RevokeInvitation {
-                            fluent_builders::RevokeInvitation::new(self.handle.clone())
+    pub fn revoke_invitation(&self) -> crate::client::fluent_builders::RevokeInvitation {
+                            crate::client::fluent_builders::RevokeInvitation::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SearchAddressBooks`](crate::client::fluent_builders::SearchAddressBooks) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchAddressBooks::into_paginator).
@@ -897,8 +897,8 @@ impl Client  {
     ///   - [`next_token(Option<String>)`](crate::output::SearchAddressBooksOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::output::SearchAddressBooksOutput::total_count): <p>The total number of address books returned.</p>
                         /// - On failure, responds with [`SdkError<SearchAddressBooksError>`](crate::error::SearchAddressBooksError)
-    pub fn search_address_books(&self) -> fluent_builders::SearchAddressBooks {
-                            fluent_builders::SearchAddressBooks::new(self.handle.clone())
+    pub fn search_address_books(&self) -> crate::client::fluent_builders::SearchAddressBooks {
+                            crate::client::fluent_builders::SearchAddressBooks::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SearchContacts`](crate::client::fluent_builders::SearchContacts) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchContacts::into_paginator).
@@ -913,8 +913,8 @@ impl Client  {
     ///   - [`next_token(Option<String>)`](crate::output::SearchContactsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::output::SearchContactsOutput::total_count): <p>The total number of contacts returned.</p>
                         /// - On failure, responds with [`SdkError<SearchContactsError>`](crate::error::SearchContactsError)
-    pub fn search_contacts(&self) -> fluent_builders::SearchContacts {
-                            fluent_builders::SearchContacts::new(self.handle.clone())
+    pub fn search_contacts(&self) -> crate::client::fluent_builders::SearchContacts {
+                            crate::client::fluent_builders::SearchContacts::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SearchDevices`](crate::client::fluent_builders::SearchDevices) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchDevices::into_paginator).
@@ -929,8 +929,8 @@ impl Client  {
     ///   - [`next_token(Option<String>)`](crate::output::SearchDevicesOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::output::SearchDevicesOutput::total_count): <p>The total number of devices returned.</p>
                         /// - On failure, responds with [`SdkError<SearchDevicesError>`](crate::error::SearchDevicesError)
-    pub fn search_devices(&self) -> fluent_builders::SearchDevices {
-                            fluent_builders::SearchDevices::new(self.handle.clone())
+    pub fn search_devices(&self) -> crate::client::fluent_builders::SearchDevices {
+                            crate::client::fluent_builders::SearchDevices::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SearchNetworkProfiles`](crate::client::fluent_builders::SearchNetworkProfiles) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchNetworkProfiles::into_paginator).
@@ -945,8 +945,8 @@ impl Client  {
     ///   - [`next_token(Option<String>)`](crate::output::SearchNetworkProfilesOutput::next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     ///   - [`total_count(Option<i32>)`](crate::output::SearchNetworkProfilesOutput::total_count): <p>The total number of network profiles returned.</p>
                         /// - On failure, responds with [`SdkError<SearchNetworkProfilesError>`](crate::error::SearchNetworkProfilesError)
-    pub fn search_network_profiles(&self) -> fluent_builders::SearchNetworkProfiles {
-                            fluent_builders::SearchNetworkProfiles::new(self.handle.clone())
+    pub fn search_network_profiles(&self) -> crate::client::fluent_builders::SearchNetworkProfiles {
+                            crate::client::fluent_builders::SearchNetworkProfiles::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SearchProfiles`](crate::client::fluent_builders::SearchProfiles) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchProfiles::into_paginator).
@@ -961,8 +961,8 @@ impl Client  {
     ///   - [`next_token(Option<String>)`](crate::output::SearchProfilesOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::output::SearchProfilesOutput::total_count): <p>The total number of room profiles returned.</p>
                         /// - On failure, responds with [`SdkError<SearchProfilesError>`](crate::error::SearchProfilesError)
-    pub fn search_profiles(&self) -> fluent_builders::SearchProfiles {
-                            fluent_builders::SearchProfiles::new(self.handle.clone())
+    pub fn search_profiles(&self) -> crate::client::fluent_builders::SearchProfiles {
+                            crate::client::fluent_builders::SearchProfiles::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SearchRooms`](crate::client::fluent_builders::SearchRooms) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchRooms::into_paginator).
@@ -977,8 +977,8 @@ impl Client  {
     ///   - [`next_token(Option<String>)`](crate::output::SearchRoomsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::output::SearchRoomsOutput::total_count): <p>The total number of rooms returned.</p>
                         /// - On failure, responds with [`SdkError<SearchRoomsError>`](crate::error::SearchRoomsError)
-    pub fn search_rooms(&self) -> fluent_builders::SearchRooms {
-                            fluent_builders::SearchRooms::new(self.handle.clone())
+    pub fn search_rooms(&self) -> crate::client::fluent_builders::SearchRooms {
+                            crate::client::fluent_builders::SearchRooms::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SearchSkillGroups`](crate::client::fluent_builders::SearchSkillGroups) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchSkillGroups::into_paginator).
@@ -993,8 +993,8 @@ impl Client  {
     ///   - [`next_token(Option<String>)`](crate::output::SearchSkillGroupsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::output::SearchSkillGroupsOutput::total_count): <p>The total number of skill groups returned.</p>
                         /// - On failure, responds with [`SdkError<SearchSkillGroupsError>`](crate::error::SearchSkillGroupsError)
-    pub fn search_skill_groups(&self) -> fluent_builders::SearchSkillGroups {
-                            fluent_builders::SearchSkillGroups::new(self.handle.clone())
+    pub fn search_skill_groups(&self) -> crate::client::fluent_builders::SearchSkillGroups {
+                            crate::client::fluent_builders::SearchSkillGroups::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SearchUsers`](crate::client::fluent_builders::SearchUsers) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchUsers::into_paginator).
@@ -1009,8 +1009,8 @@ impl Client  {
     ///   - [`next_token(Option<String>)`](crate::output::SearchUsersOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::output::SearchUsersOutput::total_count): <p>The total number of users returned.</p>
                         /// - On failure, responds with [`SdkError<SearchUsersError>`](crate::error::SearchUsersError)
-    pub fn search_users(&self) -> fluent_builders::SearchUsers {
-                            fluent_builders::SearchUsers::new(self.handle.clone())
+    pub fn search_users(&self) -> crate::client::fluent_builders::SearchUsers {
+                            crate::client::fluent_builders::SearchUsers::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SendAnnouncement`](crate::client::fluent_builders::SendAnnouncement) operation.
                         ///
@@ -1022,8 +1022,8 @@ impl Client  {
                         /// - On success, responds with [`SendAnnouncementOutput`](crate::output::SendAnnouncementOutput) with field(s):
                         ///   - [`announcement_arn(Option<String>)`](crate::output::SendAnnouncementOutput::announcement_arn): <p>The identifier of the announcement.</p>
                         /// - On failure, responds with [`SdkError<SendAnnouncementError>`](crate::error::SendAnnouncementError)
-    pub fn send_announcement(&self) -> fluent_builders::SendAnnouncement {
-                            fluent_builders::SendAnnouncement::new(self.handle.clone())
+    pub fn send_announcement(&self) -> crate::client::fluent_builders::SendAnnouncement {
+                            crate::client::fluent_builders::SendAnnouncement::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SendInvitation`](crate::client::fluent_builders::SendInvitation) operation.
                         ///
@@ -1032,8 +1032,8 @@ impl Client  {
                         /// - On success, responds with [`SendInvitationOutput`](crate::output::SendInvitationOutput)
                         
                         /// - On failure, responds with [`SdkError<SendInvitationError>`](crate::error::SendInvitationError)
-    pub fn send_invitation(&self) -> fluent_builders::SendInvitation {
-                            fluent_builders::SendInvitation::new(self.handle.clone())
+    pub fn send_invitation(&self) -> crate::client::fluent_builders::SendInvitation {
+                            crate::client::fluent_builders::SendInvitation::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartDeviceSync`](crate::client::fluent_builders::StartDeviceSync) operation.
                         ///
@@ -1044,8 +1044,8 @@ impl Client  {
                         /// - On success, responds with [`StartDeviceSyncOutput`](crate::output::StartDeviceSyncOutput)
                         
                         /// - On failure, responds with [`SdkError<StartDeviceSyncError>`](crate::error::StartDeviceSyncError)
-    pub fn start_device_sync(&self) -> fluent_builders::StartDeviceSync {
-                            fluent_builders::StartDeviceSync::new(self.handle.clone())
+    pub fn start_device_sync(&self) -> crate::client::fluent_builders::StartDeviceSync {
+                            crate::client::fluent_builders::StartDeviceSync::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartSmartHomeApplianceDiscovery`](crate::client::fluent_builders::StartSmartHomeApplianceDiscovery) operation.
                         ///
@@ -1054,8 +1054,8 @@ impl Client  {
                         /// - On success, responds with [`StartSmartHomeApplianceDiscoveryOutput`](crate::output::StartSmartHomeApplianceDiscoveryOutput)
                         
                         /// - On failure, responds with [`SdkError<StartSmartHomeApplianceDiscoveryError>`](crate::error::StartSmartHomeApplianceDiscoveryError)
-    pub fn start_smart_home_appliance_discovery(&self) -> fluent_builders::StartSmartHomeApplianceDiscovery {
-                            fluent_builders::StartSmartHomeApplianceDiscovery::new(self.handle.clone())
+    pub fn start_smart_home_appliance_discovery(&self) -> crate::client::fluent_builders::StartSmartHomeApplianceDiscovery {
+                            crate::client::fluent_builders::StartSmartHomeApplianceDiscovery::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -1065,8 +1065,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -1076,8 +1076,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateAddressBook`](crate::client::fluent_builders::UpdateAddressBook) operation.
                         ///
@@ -1088,8 +1088,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateAddressBookOutput`](crate::output::UpdateAddressBookOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateAddressBookError>`](crate::error::UpdateAddressBookError)
-    pub fn update_address_book(&self) -> fluent_builders::UpdateAddressBook {
-                            fluent_builders::UpdateAddressBook::new(self.handle.clone())
+    pub fn update_address_book(&self) -> crate::client::fluent_builders::UpdateAddressBook {
+                            crate::client::fluent_builders::UpdateAddressBook::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateBusinessReportSchedule`](crate::client::fluent_builders::UpdateBusinessReportSchedule) operation.
                         ///
@@ -1103,8 +1103,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateBusinessReportScheduleOutput`](crate::output::UpdateBusinessReportScheduleOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateBusinessReportScheduleError>`](crate::error::UpdateBusinessReportScheduleError)
-    pub fn update_business_report_schedule(&self) -> fluent_builders::UpdateBusinessReportSchedule {
-                            fluent_builders::UpdateBusinessReportSchedule::new(self.handle.clone())
+    pub fn update_business_report_schedule(&self) -> crate::client::fluent_builders::UpdateBusinessReportSchedule {
+                            crate::client::fluent_builders::UpdateBusinessReportSchedule::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateConferenceProvider`](crate::client::fluent_builders::UpdateConferenceProvider) operation.
                         ///
@@ -1117,8 +1117,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateConferenceProviderOutput`](crate::output::UpdateConferenceProviderOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateConferenceProviderError>`](crate::error::UpdateConferenceProviderError)
-    pub fn update_conference_provider(&self) -> fluent_builders::UpdateConferenceProvider {
-                            fluent_builders::UpdateConferenceProvider::new(self.handle.clone())
+    pub fn update_conference_provider(&self) -> crate::client::fluent_builders::UpdateConferenceProvider {
+                            crate::client::fluent_builders::UpdateConferenceProvider::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateContact`](crate::client::fluent_builders::UpdateContact) operation.
                         ///
@@ -1133,8 +1133,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateContactOutput`](crate::output::UpdateContactOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateContactError>`](crate::error::UpdateContactError)
-    pub fn update_contact(&self) -> fluent_builders::UpdateContact {
-                            fluent_builders::UpdateContact::new(self.handle.clone())
+    pub fn update_contact(&self) -> crate::client::fluent_builders::UpdateContact {
+                            crate::client::fluent_builders::UpdateContact::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateDevice`](crate::client::fluent_builders::UpdateDevice) operation.
                         ///
@@ -1144,8 +1144,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateDeviceOutput`](crate::output::UpdateDeviceOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateDeviceError>`](crate::error::UpdateDeviceError)
-    pub fn update_device(&self) -> fluent_builders::UpdateDevice {
-                            fluent_builders::UpdateDevice::new(self.handle.clone())
+    pub fn update_device(&self) -> crate::client::fluent_builders::UpdateDevice {
+                            crate::client::fluent_builders::UpdateDevice::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateGateway`](crate::client::fluent_builders::UpdateGateway) operation.
                         ///
@@ -1157,8 +1157,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateGatewayOutput`](crate::output::UpdateGatewayOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateGatewayError>`](crate::error::UpdateGatewayError)
-    pub fn update_gateway(&self) -> fluent_builders::UpdateGateway {
-                            fluent_builders::UpdateGateway::new(self.handle.clone())
+    pub fn update_gateway(&self) -> crate::client::fluent_builders::UpdateGateway {
+                            crate::client::fluent_builders::UpdateGateway::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateGatewayGroup`](crate::client::fluent_builders::UpdateGatewayGroup) operation.
                         ///
@@ -1169,8 +1169,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateGatewayGroupOutput`](crate::output::UpdateGatewayGroupOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateGatewayGroupError>`](crate::error::UpdateGatewayGroupError)
-    pub fn update_gateway_group(&self) -> fluent_builders::UpdateGatewayGroup {
-                            fluent_builders::UpdateGatewayGroup::new(self.handle.clone())
+    pub fn update_gateway_group(&self) -> crate::client::fluent_builders::UpdateGatewayGroup {
+                            crate::client::fluent_builders::UpdateGatewayGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateNetworkProfile`](crate::client::fluent_builders::UpdateNetworkProfile) operation.
                         ///
@@ -1185,8 +1185,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateNetworkProfileOutput`](crate::output::UpdateNetworkProfileOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateNetworkProfileError>`](crate::error::UpdateNetworkProfileError)
-    pub fn update_network_profile(&self) -> fluent_builders::UpdateNetworkProfile {
-                            fluent_builders::UpdateNetworkProfile::new(self.handle.clone())
+    pub fn update_network_profile(&self) -> crate::client::fluent_builders::UpdateNetworkProfile {
+                            crate::client::fluent_builders::UpdateNetworkProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateProfile`](crate::client::fluent_builders::UpdateProfile) operation.
                         ///
@@ -1208,8 +1208,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateProfileOutput`](crate::output::UpdateProfileOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateProfileError>`](crate::error::UpdateProfileError)
-    pub fn update_profile(&self) -> fluent_builders::UpdateProfile {
-                            fluent_builders::UpdateProfile::new(self.handle.clone())
+    pub fn update_profile(&self) -> crate::client::fluent_builders::UpdateProfile {
+                            crate::client::fluent_builders::UpdateProfile::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateRoom`](crate::client::fluent_builders::UpdateRoom) operation.
                         ///
@@ -1222,8 +1222,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateRoomOutput`](crate::output::UpdateRoomOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateRoomError>`](crate::error::UpdateRoomError)
-    pub fn update_room(&self) -> fluent_builders::UpdateRoom {
-                            fluent_builders::UpdateRoom::new(self.handle.clone())
+    pub fn update_room(&self) -> crate::client::fluent_builders::UpdateRoom {
+                            crate::client::fluent_builders::UpdateRoom::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateSkillGroup`](crate::client::fluent_builders::UpdateSkillGroup) operation.
                         ///
@@ -1234,7276 +1234,9 @@ impl Client  {
                         /// - On success, responds with [`UpdateSkillGroupOutput`](crate::output::UpdateSkillGroupOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateSkillGroupError>`](crate::error::UpdateSkillGroupError)
-    pub fn update_skill_group(&self) -> fluent_builders::UpdateSkillGroup {
-                            fluent_builders::UpdateSkillGroup::new(self.handle.clone())
+    pub fn update_skill_group(&self) -> crate::client::fluent_builders::UpdateSkillGroup {
+                            crate::client::fluent_builders::UpdateSkillGroup::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `ApproveSkill`.
-                        ///
-    /// <p>Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ApproveSkill {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::approve_skill_input::Builder
-                        }
-    impl ApproveSkill  {
-        /// Creates a new `ApproveSkill`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ApproveSkill, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ApproveSkillError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ApproveSkillOutput, aws_smithy_http::result::SdkError<crate::error::ApproveSkillError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier of the skill.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the skill.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `AssociateContactWithAddressBook`.
-                        ///
-    /// <p>Associates a contact with a given address book.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateContactWithAddressBook {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::associate_contact_with_address_book_input::Builder
-                        }
-    impl AssociateContactWithAddressBook  {
-        /// Creates a new `AssociateContactWithAddressBook`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::AssociateContactWithAddressBook, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::AssociateContactWithAddressBookError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::AssociateContactWithAddressBookOutput, aws_smithy_http::result::SdkError<crate::error::AssociateContactWithAddressBookError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the contact to associate with an address book.</p>
-        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the contact to associate with an address book.</p>
-        pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_contact_arn(input);
-            self
-        }
-        /// <p>The ARN of the address book with which to associate the contact.</p>
-        pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_book_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the address book with which to associate the contact.</p>
-        pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_address_book_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `AssociateDeviceWithNetworkProfile`.
-                        ///
-    /// <p>Associates a device with the specified network profile.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateDeviceWithNetworkProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::associate_device_with_network_profile_input::Builder
-                        }
-    impl AssociateDeviceWithNetworkProfile  {
-        /// Creates a new `AssociateDeviceWithNetworkProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::AssociateDeviceWithNetworkProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::AssociateDeviceWithNetworkProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::AssociateDeviceWithNetworkProfileOutput, aws_smithy_http::result::SdkError<crate::error::AssociateDeviceWithNetworkProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The device ARN.</p>
-        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(input.into());
-            self
-        }
-        /// <p>The device ARN.</p>
-        pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_arn(input);
-            self
-        }
-        /// <p>The ARN of the network profile to associate with a device.</p>
-        pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the network profile to associate with a device.</p>
-        pub fn set_network_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_network_profile_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `AssociateDeviceWithRoom`.
-                        ///
-    /// <p>Associates a device with a given room. This applies all the settings from the room profile to the device, and all the skills in any skill groups added to that room. This operation requires the device to be online, or else a manual sync is required. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateDeviceWithRoom {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::associate_device_with_room_input::Builder
-                        }
-    impl AssociateDeviceWithRoom  {
-        /// Creates a new `AssociateDeviceWithRoom`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::AssociateDeviceWithRoom, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::AssociateDeviceWithRoomError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::AssociateDeviceWithRoomOutput, aws_smithy_http::result::SdkError<crate::error::AssociateDeviceWithRoomError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the device to associate to a room. Required.</p>
-        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the device to associate to a room. Required.</p>
-        pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_arn(input);
-            self
-        }
-        /// <p>The ARN of the room with which to associate the device. Required.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room with which to associate the device. Required.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `AssociateSkillGroupWithRoom`.
-                        ///
-    /// <p>Associates a skill group with a given room. This enables all skills in the associated skill group on all devices in the room.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateSkillGroupWithRoom {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::associate_skill_group_with_room_input::Builder
-                        }
-    impl AssociateSkillGroupWithRoom  {
-        /// Creates a new `AssociateSkillGroupWithRoom`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::AssociateSkillGroupWithRoom, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::AssociateSkillGroupWithRoomError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::AssociateSkillGroupWithRoomOutput, aws_smithy_http::result::SdkError<crate::error::AssociateSkillGroupWithRoomError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the skill group to associate with a room. Required.</p>
-        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the skill group to associate with a room. Required.</p>
-        pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_group_arn(input);
-            self
-        }
-        /// <p>The ARN of the room with which to associate the skill group. Required.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room with which to associate the skill group. Required.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `AssociateSkillWithSkillGroup`.
-                        ///
-    /// <p>Associates a skill with a skill group.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateSkillWithSkillGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::associate_skill_with_skill_group_input::Builder
-                        }
-    impl AssociateSkillWithSkillGroup  {
-        /// Creates a new `AssociateSkillWithSkillGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::AssociateSkillWithSkillGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::AssociateSkillWithSkillGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::AssociateSkillWithSkillGroupOutput, aws_smithy_http::result::SdkError<crate::error::AssociateSkillWithSkillGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the skill group to associate the skill to. Required.</p>
-        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the skill group to associate the skill to. Required.</p>
-        pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_group_arn(input);
-            self
-        }
-        /// <p>The unique identifier of the skill.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the skill.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `AssociateSkillWithUsers`.
-                        ///
-    /// <p>Makes a private skill available for enrolled users to enable on their devices.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateSkillWithUsers {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::associate_skill_with_users_input::Builder
-                        }
-    impl AssociateSkillWithUsers  {
-        /// Creates a new `AssociateSkillWithUsers`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::AssociateSkillWithUsers, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::AssociateSkillWithUsersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::AssociateSkillWithUsersOutput, aws_smithy_http::result::SdkError<crate::error::AssociateSkillWithUsersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The private skill ID you want to make available to enrolled users.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The private skill ID you want to make available to enrolled users.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateAddressBook`.
-                        ///
-    /// <p>Creates an address book with the specified details.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateAddressBook {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_address_book_input::Builder
-                        }
-    impl CreateAddressBook  {
-        /// Creates a new `CreateAddressBook`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateAddressBook, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateAddressBookError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateAddressBookOutput, aws_smithy_http::result::SdkError<crate::error::CreateAddressBookError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the address book.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the address book.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The description of the address book.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description of the address book.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateBusinessReportSchedule`.
-                        ///
-    /// <p>Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateBusinessReportSchedule {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_business_report_schedule_input::Builder
-                        }
-    impl CreateBusinessReportSchedule  {
-        /// Creates a new `CreateBusinessReportSchedule`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateBusinessReportSchedule, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateBusinessReportScheduleError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateBusinessReportScheduleOutput, aws_smithy_http::result::SdkError<crate::error::CreateBusinessReportScheduleError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name identifier of the schedule.</p>
-        pub fn schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_name(input.into());
-            self
-        }
-        /// <p>The name identifier of the schedule.</p>
-        pub fn set_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_schedule_name(input);
-            self
-        }
-        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
-        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(input.into());
-            self
-        }
-        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
-        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_bucket_name(input);
-            self
-        }
-        /// <p>The S3 key where the report is delivered.</p>
-        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(input.into());
-            self
-        }
-        /// <p>The S3 key where the report is delivered.</p>
-        pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_key_prefix(input);
-            self
-        }
-        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-        pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
-            self.inner = self.inner.format(input);
-            self
-        }
-        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::BusinessReportFormat>) -> Self {
-            self.inner = self.inner.set_format(input);
-            self
-        }
-        /// <p>The content range of the reports.</p>
-        pub fn content_range(mut self, input: crate::model::BusinessReportContentRange) -> Self {
-            self.inner = self.inner.content_range(input);
-            self
-        }
-        /// <p>The content range of the reports.</p>
-        pub fn set_content_range(mut self, input: std::option::Option<crate::model::BusinessReportContentRange>) -> Self {
-            self.inner = self.inner.set_content_range(input);
-            self
-        }
-        /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
-        pub fn recurrence(mut self, input: crate::model::BusinessReportRecurrence) -> Self {
-            self.inner = self.inner.recurrence(input);
-            self
-        }
-        /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
-        pub fn set_recurrence(mut self, input: std::option::Option<crate::model::BusinessReportRecurrence>) -> Self {
-            self.inner = self.inner.set_recurrence(input);
-            self
-        }
-        /// <p>The client request token.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>The client request token.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags for the business report schedule.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags for the business report schedule.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateConferenceProvider`.
-                        ///
-    /// <p>Adds a new conference provider under the user's AWS account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateConferenceProvider {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_conference_provider_input::Builder
-                        }
-    impl CreateConferenceProvider  {
-        /// Creates a new `CreateConferenceProvider`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateConferenceProvider, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateConferenceProviderError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateConferenceProviderOutput, aws_smithy_http::result::SdkError<crate::error::CreateConferenceProviderError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the conference provider.</p>
-        pub fn conference_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conference_provider_name(input.into());
-            self
-        }
-        /// <p>The name of the conference provider.</p>
-        pub fn set_conference_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_conference_provider_name(input);
-            self
-        }
-        /// <p>Represents a type within a list of predefined types.</p>
-        pub fn conference_provider_type(mut self, input: crate::model::ConferenceProviderType) -> Self {
-            self.inner = self.inner.conference_provider_type(input);
-            self
-        }
-        /// <p>Represents a type within a list of predefined types.</p>
-        pub fn set_conference_provider_type(mut self, input: std::option::Option<crate::model::ConferenceProviderType>) -> Self {
-            self.inner = self.inner.set_conference_provider_type(input);
-            self
-        }
-        /// <p>The IP endpoint and protocol for calling.</p>
-        pub fn ip_dial_in(mut self, input: crate::model::IpDialIn) -> Self {
-            self.inner = self.inner.ip_dial_in(input);
-            self
-        }
-        /// <p>The IP endpoint and protocol for calling.</p>
-        pub fn set_ip_dial_in(mut self, input: std::option::Option<crate::model::IpDialIn>) -> Self {
-            self.inner = self.inner.set_ip_dial_in(input);
-            self
-        }
-        /// <p>The information for PSTN conferencing.</p>
-        pub fn pstn_dial_in(mut self, input: crate::model::PstnDialIn) -> Self {
-            self.inner = self.inner.pstn_dial_in(input);
-            self
-        }
-        /// <p>The information for PSTN conferencing.</p>
-        pub fn set_pstn_dial_in(mut self, input: std::option::Option<crate::model::PstnDialIn>) -> Self {
-            self.inner = self.inner.set_pstn_dial_in(input);
-            self
-        }
-        /// <p>The meeting settings for the conference provider.</p>
-        pub fn meeting_setting(mut self, input: crate::model::MeetingSetting) -> Self {
-            self.inner = self.inner.meeting_setting(input);
-            self
-        }
-        /// <p>The meeting settings for the conference provider.</p>
-        pub fn set_meeting_setting(mut self, input: std::option::Option<crate::model::MeetingSetting>) -> Self {
-            self.inner = self.inner.set_meeting_setting(input);
-            self
-        }
-        /// <p>The request token of the client.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>The request token of the client.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateContact`.
-                        ///
-    /// <p>Creates a contact with the specified details.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateContact {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_contact_input::Builder
-                        }
-    impl CreateContact  {
-        /// Creates a new `CreateContact`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateContact, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateContactError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateContactOutput, aws_smithy_http::result::SdkError<crate::error::CreateContactError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the contact to display on the console.</p>
-        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(input.into());
-            self
-        }
-        /// <p>The name of the contact to display on the console.</p>
-        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(input);
-            self
-        }
-        /// <p>The first name of the contact that is used to call the contact on the device.</p>
-        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(input.into());
-            self
-        }
-        /// <p>The first name of the contact that is used to call the contact on the device.</p>
-        pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_first_name(input);
-            self
-        }
-        /// <p>The last name of the contact that is used to call the contact on the device.</p>
-        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(input.into());
-            self
-        }
-        /// <p>The last name of the contact that is used to call the contact on the device.</p>
-        pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_last_name(input);
-            self
-        }
-        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(input.into());
-            self
-        }
-        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_phone_number(input);
-            self
-        }
-        /// Appends an item to `PhoneNumbers`.
-        ///
-        /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
-        ///
-        /// <p>The list of phone numbers for the contact.</p>
-        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
-            self.inner = self.inner.phone_numbers(input);
-            self
-        }
-        /// <p>The list of phone numbers for the contact.</p>
-        pub fn set_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>) -> Self {
-            self.inner = self.inner.set_phone_numbers(input);
-            self
-        }
-        /// Appends an item to `SipAddresses`.
-        ///
-        /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
-        ///
-        /// <p>The list of SIP addresses for the contact.</p>
-        pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
-            self.inner = self.inner.sip_addresses(input);
-            self
-        }
-        /// <p>The list of SIP addresses for the contact.</p>
-        pub fn set_sip_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::model::SipAddress>>) -> Self {
-            self.inner = self.inner.set_sip_addresses(input);
-            self
-        }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateGatewayGroup`.
-                        ///
-    /// <p>Creates a gateway group with the specified details.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateGatewayGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_gateway_group_input::Builder
-                        }
-    impl CreateGatewayGroup  {
-        /// Creates a new `CreateGatewayGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateGatewayGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateGatewayGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateGatewayGroupOutput, aws_smithy_http::result::SdkError<crate::error::CreateGatewayGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the gateway group.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the gateway group.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The description of the gateway group.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description of the gateway group.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateNetworkProfile`.
-                        ///
-    /// <p>Creates a network profile with the specified details.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateNetworkProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_network_profile_input::Builder
-                        }
-    impl CreateNetworkProfile  {
-        /// Creates a new `CreateNetworkProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateNetworkProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateNetworkProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateNetworkProfileOutput, aws_smithy_http::result::SdkError<crate::error::CreateNetworkProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the network profile associated with a device.</p>
-        pub fn network_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_name(input.into());
-            self
-        }
-        /// <p>The name of the network profile associated with a device.</p>
-        pub fn set_network_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_network_profile_name(input);
-            self
-        }
-        /// <p>Detailed information about a device's network profile.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>Detailed information about a device's network profile.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The SSID of the Wi-Fi network.</p>
-        pub fn ssid(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssid(input.into());
-            self
-        }
-        /// <p>The SSID of the Wi-Fi network.</p>
-        pub fn set_ssid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_ssid(input);
-            self
-        }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-        pub fn security_type(mut self, input: crate::model::NetworkSecurityType) -> Self {
-            self.inner = self.inner.security_type(input);
-            self
-        }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-        pub fn set_security_type(mut self, input: std::option::Option<crate::model::NetworkSecurityType>) -> Self {
-            self.inner = self.inner.set_security_type(input);
-            self
-        }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
-        pub fn eap_method(mut self, input: crate::model::NetworkEapMethod) -> Self {
-            self.inner = self.inner.eap_method(input);
-            self
-        }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
-        pub fn set_eap_method(mut self, input: std::option::Option<crate::model::NetworkEapMethod>) -> Self {
-            self.inner = self.inner.set_eap_method(input);
-            self
-        }
-        /// <p>The current password of the Wi-Fi network.</p>
-        pub fn current_password(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_password(input.into());
-            self
-        }
-        /// <p>The current password of the Wi-Fi network.</p>
-        pub fn set_current_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_current_password(input);
-            self
-        }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-        pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_password(input.into());
-            self
-        }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-        pub fn set_next_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_password(input);
-            self
-        }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-        pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-        pub fn set_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_certificate_authority_arn(input);
-            self
-        }
-        /// Appends an item to `TrustAnchors`.
-        ///
-        /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
-        ///
-        /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
-        pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_anchors(input.into());
-            self
-        }
-        /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
-        pub fn set_trust_anchors(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_trust_anchors(input);
-            self
-        }
-        /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateProfile`.
-                        ///
-    /// <p>Creates a new room profile with the specified details.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_profile_input::Builder
-                        }
-    impl CreateProfile  {
-        /// Creates a new `CreateProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateProfileOutput, aws_smithy_http::result::SdkError<crate::error::CreateProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of a room profile.</p>
-        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(input.into());
-            self
-        }
-        /// <p>The name of a room profile.</p>
-        pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_profile_name(input);
-            self
-        }
-        /// <p>The time zone used by a room profile.</p>
-        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(input.into());
-            self
-        }
-        /// <p>The time zone used by a room profile.</p>
-        pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_timezone(input);
-            self
-        }
-        /// <p>The valid address for the room.</p>
-        pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address(input.into());
-            self
-        }
-        /// <p>The valid address for the room.</p>
-        pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_address(input);
-            self
-        }
-        /// <p>The distance unit to be used by devices in the profile.</p>
-        pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
-            self.inner = self.inner.distance_unit(input);
-            self
-        }
-        /// <p>The distance unit to be used by devices in the profile.</p>
-        pub fn set_distance_unit(mut self, input: std::option::Option<crate::model::DistanceUnit>) -> Self {
-            self.inner = self.inner.set_distance_unit(input);
-            self
-        }
-        /// <p>The temperature unit to be used by devices in the profile.</p>
-        pub fn temperature_unit(mut self, input: crate::model::TemperatureUnit) -> Self {
-            self.inner = self.inner.temperature_unit(input);
-            self
-        }
-        /// <p>The temperature unit to be used by devices in the profile.</p>
-        pub fn set_temperature_unit(mut self, input: std::option::Option<crate::model::TemperatureUnit>) -> Self {
-            self.inner = self.inner.set_temperature_unit(input);
-            self
-        }
-        /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
-        pub fn wake_word(mut self, input: crate::model::WakeWord) -> Self {
-            self.inner = self.inner.wake_word(input);
-            self
-        }
-        /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
-        pub fn set_wake_word(mut self, input: std::option::Option<crate::model::WakeWord>) -> Self {
-            self.inner = self.inner.set_wake_word(input);
-            self
-        }
-        /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
-        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(input.into());
-            self
-        }
-        /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
-        pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_locale(input);
-            self
-        }
-        /// <p>The user-specified token that is used during the creation of a profile.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>The user-specified token that is used during the creation of a profile.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// <p>Whether room profile setup is enabled.</p>
-        pub fn setup_mode_disabled(mut self, input: bool) -> Self {
-            self.inner = self.inner.setup_mode_disabled(input);
-            self
-        }
-        /// <p>Whether room profile setup is enabled.</p>
-        pub fn set_setup_mode_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_setup_mode_disabled(input);
-            self
-        }
-        /// <p>The maximum volume limit for a room profile.</p>
-        pub fn max_volume_limit(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_volume_limit(input);
-            self
-        }
-        /// <p>The maximum volume limit for a room profile.</p>
-        pub fn set_max_volume_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_volume_limit(input);
-            self
-        }
-        /// <p>Whether PSTN calling is enabled.</p>
-        pub fn pstn_enabled(mut self, input: bool) -> Self {
-            self.inner = self.inner.pstn_enabled(input);
-            self
-        }
-        /// <p>Whether PSTN calling is enabled.</p>
-        pub fn set_pstn_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_pstn_enabled(input);
-            self
-        }
-        /// <p>Whether data retention of the profile is enabled.</p>
-        pub fn data_retention_opt_in(mut self, input: bool) -> Self {
-            self.inner = self.inner.data_retention_opt_in(input);
-            self
-        }
-        /// <p>Whether data retention of the profile is enabled.</p>
-        pub fn set_data_retention_opt_in(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_data_retention_opt_in(input);
-            self
-        }
-        /// <p>The meeting room settings of a room profile.</p>
-        pub fn meeting_room_configuration(mut self, input: crate::model::CreateMeetingRoomConfiguration) -> Self {
-            self.inner = self.inner.meeting_room_configuration(input);
-            self
-        }
-        /// <p>The meeting room settings of a room profile.</p>
-        pub fn set_meeting_room_configuration(mut self, input: std::option::Option<crate::model::CreateMeetingRoomConfiguration>) -> Self {
-            self.inner = self.inner.set_meeting_room_configuration(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags for the profile.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags for the profile.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateRoom`.
-                        ///
-    /// <p>Creates a room with the specified details.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateRoom {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_room_input::Builder
-                        }
-    impl CreateRoom  {
-        /// Creates a new `CreateRoom`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateRoom, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateRoomError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateRoomOutput, aws_smithy_http::result::SdkError<crate::error::CreateRoomError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name for the room.</p>
-        pub fn room_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_name(input.into());
-            self
-        }
-        /// <p>The name for the room.</p>
-        pub fn set_room_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_name(input);
-            self
-        }
-        /// <p>The description for the room.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description for the room.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The profile ARN for the room. This is required.</p>
-        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(input.into());
-            self
-        }
-        /// <p>The profile ARN for the room. This is required.</p>
-        pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_profile_arn(input);
-            self
-        }
-        /// <p>The calendar ARN for the room.</p>
-        pub fn provider_calendar_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_calendar_id(input.into());
-            self
-        }
-        /// <p>The calendar ARN for the room.</p>
-        pub fn set_provider_calendar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_provider_calendar_id(input);
-            self
-        }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags for the room.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags for the room.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateSkillGroup`.
-                        ///
-    /// <p>Creates a skill group with a specified name and description.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateSkillGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_skill_group_input::Builder
-                        }
-    impl CreateSkillGroup  {
-        /// Creates a new `CreateSkillGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateSkillGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateSkillGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateSkillGroupOutput, aws_smithy_http::result::SdkError<crate::error::CreateSkillGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name for the skill group.</p>
-        pub fn skill_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_name(input.into());
-            self
-        }
-        /// <p>The name for the skill group.</p>
-        pub fn set_skill_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_group_name(input);
-            self
-        }
-        /// <p>The description for the skill group.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The description for the skill group.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags for the skill group.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags for the skill group.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateUser`.
-                        ///
-    /// <p>Creates a user.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateUser {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_user_input::Builder
-                        }
-    impl CreateUser  {
-        /// Creates a new `CreateUser`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateUser, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateUserError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateUserOutput, aws_smithy_http::result::SdkError<crate::error::CreateUserError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN for the user.</p>
-        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(input.into());
-            self
-        }
-        /// <p>The ARN for the user.</p>
-        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_id(input);
-            self
-        }
-        /// <p>The first name for the user.</p>
-        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(input.into());
-            self
-        }
-        /// <p>The first name for the user.</p>
-        pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_first_name(input);
-            self
-        }
-        /// <p>The last name for the user.</p>
-        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(input.into());
-            self
-        }
-        /// <p>The last name for the user.</p>
-        pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_last_name(input);
-            self
-        }
-        /// <p>The email address for the user.</p>
-        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(input.into());
-            self
-        }
-        /// <p>The email address for the user.</p>
-        pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_email(input);
-            self
-        }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags for the user.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags for the user.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteAddressBook`.
-                        ///
-    /// <p>Deletes an address book by the address book ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteAddressBook {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_address_book_input::Builder
-                        }
-    impl DeleteAddressBook  {
-        /// Creates a new `DeleteAddressBook`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteAddressBook, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteAddressBookError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteAddressBookOutput, aws_smithy_http::result::SdkError<crate::error::DeleteAddressBookError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the address book to delete.</p>
-        pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_book_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the address book to delete.</p>
-        pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_address_book_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteBusinessReportSchedule`.
-                        ///
-    /// <p>Deletes the recurring report delivery schedule with the specified schedule ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteBusinessReportSchedule {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_business_report_schedule_input::Builder
-                        }
-    impl DeleteBusinessReportSchedule  {
-        /// Creates a new `DeleteBusinessReportSchedule`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteBusinessReportSchedule, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteBusinessReportScheduleError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteBusinessReportScheduleOutput, aws_smithy_http::result::SdkError<crate::error::DeleteBusinessReportScheduleError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the business report schedule.</p>
-        pub fn schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the business report schedule.</p>
-        pub fn set_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_schedule_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteConferenceProvider`.
-                        ///
-    /// <p>Deletes a conference provider.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteConferenceProvider {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_conference_provider_input::Builder
-                        }
-    impl DeleteConferenceProvider  {
-        /// Creates a new `DeleteConferenceProvider`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteConferenceProvider, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteConferenceProviderError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteConferenceProviderOutput, aws_smithy_http::result::SdkError<crate::error::DeleteConferenceProviderError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the conference provider.</p>
-        pub fn conference_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conference_provider_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the conference provider.</p>
-        pub fn set_conference_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_conference_provider_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteContact`.
-                        ///
-    /// <p>Deletes a contact by the contact ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteContact {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_contact_input::Builder
-                        }
-    impl DeleteContact  {
-        /// Creates a new `DeleteContact`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteContact, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteContactError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteContactOutput, aws_smithy_http::result::SdkError<crate::error::DeleteContactError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the contact to delete.</p>
-        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the contact to delete.</p>
-        pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_contact_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteDevice`.
-                        ///
-    /// <p>Removes a device from Alexa For Business.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteDevice {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_device_input::Builder
-                        }
-    impl DeleteDevice  {
-        /// Creates a new `DeleteDevice`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteDevice, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteDeviceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteDeviceOutput, aws_smithy_http::result::SdkError<crate::error::DeleteDeviceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the device for which to request details.</p>
-        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the device for which to request details.</p>
-        pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteDeviceUsageData`.
-                        ///
-    /// <p>When this action is called for a specified shared device, it allows authorized users to delete the device's entire previous history of voice input data and associated response data. This action can be called once every 24 hours for a specific shared device.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteDeviceUsageData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_device_usage_data_input::Builder
-                        }
-    impl DeleteDeviceUsageData  {
-        /// Creates a new `DeleteDeviceUsageData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteDeviceUsageData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteDeviceUsageDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteDeviceUsageDataOutput, aws_smithy_http::result::SdkError<crate::error::DeleteDeviceUsageDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the device.</p>
-        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the device.</p>
-        pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_arn(input);
-            self
-        }
-        /// <p>The type of usage data to delete.</p>
-        pub fn device_usage_type(mut self, input: crate::model::DeviceUsageType) -> Self {
-            self.inner = self.inner.device_usage_type(input);
-            self
-        }
-        /// <p>The type of usage data to delete.</p>
-        pub fn set_device_usage_type(mut self, input: std::option::Option<crate::model::DeviceUsageType>) -> Self {
-            self.inner = self.inner.set_device_usage_type(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteGatewayGroup`.
-                        ///
-    /// <p>Deletes a gateway group.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteGatewayGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_gateway_group_input::Builder
-                        }
-    impl DeleteGatewayGroup  {
-        /// Creates a new `DeleteGatewayGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteGatewayGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteGatewayGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteGatewayGroupOutput, aws_smithy_http::result::SdkError<crate::error::DeleteGatewayGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the gateway group to delete.</p>
-        pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_group_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the gateway group to delete.</p>
-        pub fn set_gateway_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_gateway_group_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteNetworkProfile`.
-                        ///
-    /// <p>Deletes a network profile by the network profile ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteNetworkProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_network_profile_input::Builder
-                        }
-    impl DeleteNetworkProfile  {
-        /// Creates a new `DeleteNetworkProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteNetworkProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteNetworkProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteNetworkProfileOutput, aws_smithy_http::result::SdkError<crate::error::DeleteNetworkProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn set_network_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_network_profile_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteProfile`.
-                        ///
-    /// <p>Deletes a room profile by the profile ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_profile_input::Builder
-                        }
-    impl DeleteProfile  {
-        /// Creates a new `DeleteProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteProfileOutput, aws_smithy_http::result::SdkError<crate::error::DeleteProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room profile to delete. Required.</p>
-        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room profile to delete. Required.</p>
-        pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_profile_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteRoom`.
-                        ///
-    /// <p>Deletes a room by the room ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteRoom {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_room_input::Builder
-                        }
-    impl DeleteRoom  {
-        /// Creates a new `DeleteRoom`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteRoom, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteRoomError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteRoomOutput, aws_smithy_http::result::SdkError<crate::error::DeleteRoomError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room to delete. Required.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room to delete. Required.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteRoomSkillParameter`.
-                        ///
-    /// <p>Deletes room skill parameter details by room, skill, and parameter key ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteRoomSkillParameter {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_room_skill_parameter_input::Builder
-                        }
-    impl DeleteRoomSkillParameter  {
-        /// Creates a new `DeleteRoomSkillParameter`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteRoomSkillParameter, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteRoomSkillParameterError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteRoomSkillParameterOutput, aws_smithy_http::result::SdkError<crate::error::DeleteRoomSkillParameterError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-        /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-        /// <p>The room skill parameter key for which to remove details.</p>
-        pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_key(input.into());
-            self
-        }
-        /// <p>The room skill parameter key for which to remove details.</p>
-        pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_parameter_key(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteSkillAuthorization`.
-                        ///
-    /// <p>Unlinks a third-party account from a skill.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteSkillAuthorization {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_skill_authorization_input::Builder
-                        }
-    impl DeleteSkillAuthorization  {
-        /// Creates a new `DeleteSkillAuthorization`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteSkillAuthorization, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteSkillAuthorizationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteSkillAuthorizationOutput, aws_smithy_http::result::SdkError<crate::error::DeleteSkillAuthorizationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier of a skill.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of a skill.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-        /// <p>The room that the skill is authorized for.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The room that the skill is authorized for.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteSkillGroup`.
-                        ///
-    /// <p>Deletes a skill group by skill group ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteSkillGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_skill_group_input::Builder
-                        }
-    impl DeleteSkillGroup  {
-        /// Creates a new `DeleteSkillGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteSkillGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteSkillGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteSkillGroupOutput, aws_smithy_http::result::SdkError<crate::error::DeleteSkillGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the skill group to delete. Required.</p>
-        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the skill group to delete. Required.</p>
-        pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_group_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteUser`.
-                        ///
-    /// <p>Deletes a specified user by user ARN and enrollment ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteUser {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_user_input::Builder
-                        }
-    impl DeleteUser  {
-        /// Creates a new `DeleteUser`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteUser, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteUserError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteUserOutput, aws_smithy_http::result::SdkError<crate::error::DeleteUserError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the user to delete in the organization. Required.</p>
-        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the user to delete in the organization. Required.</p>
-        pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_arn(input);
-            self
-        }
-        /// <p>The ARN of the user's enrollment in the organization. Required.</p>
-        pub fn enrollment_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.enrollment_id(input.into());
-            self
-        }
-        /// <p>The ARN of the user's enrollment in the organization. Required.</p>
-        pub fn set_enrollment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_enrollment_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisassociateContactFromAddressBook`.
-                        ///
-    /// <p>Disassociates a contact from a given address book.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisassociateContactFromAddressBook {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::disassociate_contact_from_address_book_input::Builder
-                        }
-    impl DisassociateContactFromAddressBook  {
-        /// Creates a new `DisassociateContactFromAddressBook`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DisassociateContactFromAddressBook, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DisassociateContactFromAddressBookError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DisassociateContactFromAddressBookOutput, aws_smithy_http::result::SdkError<crate::error::DisassociateContactFromAddressBookError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the contact to disassociate from an address book.</p>
-        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the contact to disassociate from an address book.</p>
-        pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_contact_arn(input);
-            self
-        }
-        /// <p>The ARN of the address from which to disassociate the contact.</p>
-        pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_book_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the address from which to disassociate the contact.</p>
-        pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_address_book_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisassociateDeviceFromRoom`.
-                        ///
-    /// <p>Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is still registered to the account. The device settings and skills are removed from the room.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisassociateDeviceFromRoom {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::disassociate_device_from_room_input::Builder
-                        }
-    impl DisassociateDeviceFromRoom  {
-        /// Creates a new `DisassociateDeviceFromRoom`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DisassociateDeviceFromRoom, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DisassociateDeviceFromRoomError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DisassociateDeviceFromRoomOutput, aws_smithy_http::result::SdkError<crate::error::DisassociateDeviceFromRoomError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the device to disassociate from a room. Required.</p>
-        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the device to disassociate from a room. Required.</p>
-        pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisassociateSkillFromSkillGroup`.
-                        ///
-    /// <p>Disassociates a skill from a skill group.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisassociateSkillFromSkillGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::disassociate_skill_from_skill_group_input::Builder
-                        }
-    impl DisassociateSkillFromSkillGroup  {
-        /// Creates a new `DisassociateSkillFromSkillGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DisassociateSkillFromSkillGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DisassociateSkillFromSkillGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DisassociateSkillFromSkillGroupOutput, aws_smithy_http::result::SdkError<crate::error::DisassociateSkillFromSkillGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier of a skill. Required.</p>
-        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(input.into());
-            self
-        }
-        /// <p>The unique identifier of a skill. Required.</p>
-        pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_group_arn(input);
-            self
-        }
-        /// <p>The ARN of a skill group to associate to a skill.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The ARN of a skill group to associate to a skill.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisassociateSkillFromUsers`.
-                        ///
-    /// <p>Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisassociateSkillFromUsers {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::disassociate_skill_from_users_input::Builder
-                        }
-    impl DisassociateSkillFromUsers  {
-        /// Creates a new `DisassociateSkillFromUsers`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DisassociateSkillFromUsers, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DisassociateSkillFromUsersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DisassociateSkillFromUsersOutput, aws_smithy_http::result::SdkError<crate::error::DisassociateSkillFromUsersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisassociateSkillGroupFromRoom`.
-                        ///
-    /// <p>Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in the room.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisassociateSkillGroupFromRoom {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::disassociate_skill_group_from_room_input::Builder
-                        }
-    impl DisassociateSkillGroupFromRoom  {
-        /// Creates a new `DisassociateSkillGroupFromRoom`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DisassociateSkillGroupFromRoom, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DisassociateSkillGroupFromRoomError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DisassociateSkillGroupFromRoomOutput, aws_smithy_http::result::SdkError<crate::error::DisassociateSkillGroupFromRoomError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
-        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
-        pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_group_arn(input);
-            self
-        }
-        /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ForgetSmartHomeAppliances`.
-                        ///
-    /// <p>Forgets smart home appliances associated to a room.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ForgetSmartHomeAppliances {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::forget_smart_home_appliances_input::Builder
-                        }
-    impl ForgetSmartHomeAppliances  {
-        /// Creates a new `ForgetSmartHomeAppliances`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ForgetSmartHomeAppliances, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ForgetSmartHomeAppliancesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ForgetSmartHomeAppliancesOutput, aws_smithy_http::result::SdkError<crate::error::ForgetSmartHomeAppliancesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The room that the appliances are associated with.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The room that the appliances are associated with.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetAddressBook`.
-                        ///
-    /// <p>Gets address the book details by the address book ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetAddressBook {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_address_book_input::Builder
-                        }
-    impl GetAddressBook  {
-        /// Creates a new `GetAddressBook`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetAddressBook, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetAddressBookError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetAddressBookOutput, aws_smithy_http::result::SdkError<crate::error::GetAddressBookError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the address book for which to request details.</p>
-        pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_book_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the address book for which to request details.</p>
-        pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_address_book_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetConferencePreference`.
-                        ///
-    /// <p>Retrieves the existing conference preferences.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetConferencePreference {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_conference_preference_input::Builder
-                        }
-    impl GetConferencePreference  {
-        /// Creates a new `GetConferencePreference`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetConferencePreference, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetConferencePreferenceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetConferencePreferenceOutput, aws_smithy_http::result::SdkError<crate::error::GetConferencePreferenceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `GetConferenceProvider`.
-                        ///
-    /// <p>Gets details about a specific conference provider.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetConferenceProvider {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_conference_provider_input::Builder
-                        }
-    impl GetConferenceProvider  {
-        /// Creates a new `GetConferenceProvider`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetConferenceProvider, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetConferenceProviderError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetConferenceProviderOutput, aws_smithy_http::result::SdkError<crate::error::GetConferenceProviderError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the newly created conference provider.</p>
-        pub fn conference_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conference_provider_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the newly created conference provider.</p>
-        pub fn set_conference_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_conference_provider_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetContact`.
-                        ///
-    /// <p>Gets the contact details by the contact ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetContact {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_contact_input::Builder
-                        }
-    impl GetContact  {
-        /// Creates a new `GetContact`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetContact, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetContactError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetContactOutput, aws_smithy_http::result::SdkError<crate::error::GetContactError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the contact for which to request details.</p>
-        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the contact for which to request details.</p>
-        pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_contact_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetDevice`.
-                        ///
-    /// <p>Gets the details of a device by device ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetDevice {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_device_input::Builder
-                        }
-    impl GetDevice  {
-        /// Creates a new `GetDevice`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetDevice, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetDeviceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetDeviceOutput, aws_smithy_http::result::SdkError<crate::error::GetDeviceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the device for which to request details. Required.</p>
-        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the device for which to request details. Required.</p>
-        pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetGateway`.
-                        ///
-    /// <p>Retrieves the details of a gateway.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetGateway {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_gateway_input::Builder
-                        }
-    impl GetGateway  {
-        /// Creates a new `GetGateway`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetGateway, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetGatewayError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetGatewayOutput, aws_smithy_http::result::SdkError<crate::error::GetGatewayError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the gateway to get.</p>
-        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the gateway to get.</p>
-        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_gateway_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetGatewayGroup`.
-                        ///
-    /// <p>Retrieves the details of a gateway group.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetGatewayGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_gateway_group_input::Builder
-                        }
-    impl GetGatewayGroup  {
-        /// Creates a new `GetGatewayGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetGatewayGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetGatewayGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetGatewayGroupOutput, aws_smithy_http::result::SdkError<crate::error::GetGatewayGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the gateway group to get.</p>
-        pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_group_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the gateway group to get.</p>
-        pub fn set_gateway_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_gateway_group_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetInvitationConfiguration`.
-                        ///
-    /// <p>Retrieves the configured values for the user enrollment invitation email template.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetInvitationConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_invitation_configuration_input::Builder
-                        }
-    impl GetInvitationConfiguration  {
-        /// Creates a new `GetInvitationConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetInvitationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetInvitationConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetInvitationConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::GetInvitationConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `GetNetworkProfile`.
-                        ///
-    /// <p>Gets the network profile details by the network profile ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetNetworkProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_network_profile_input::Builder
-                        }
-    impl GetNetworkProfile  {
-        /// Creates a new `GetNetworkProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetNetworkProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetNetworkProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetNetworkProfileOutput, aws_smithy_http::result::SdkError<crate::error::GetNetworkProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn set_network_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_network_profile_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetProfile`.
-                        ///
-    /// <p>Gets the details of a room profile by profile ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_profile_input::Builder
-                        }
-    impl GetProfile  {
-        /// Creates a new `GetProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetProfileOutput, aws_smithy_http::result::SdkError<crate::error::GetProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room profile for which to request details. Required.</p>
-        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room profile for which to request details. Required.</p>
-        pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_profile_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetRoom`.
-                        ///
-    /// <p>Gets room details by room ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetRoom {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_room_input::Builder
-                        }
-    impl GetRoom  {
-        /// Creates a new `GetRoom`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetRoom, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetRoomError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetRoomOutput, aws_smithy_http::result::SdkError<crate::error::GetRoomError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room for which to request details. Required.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room for which to request details. Required.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetRoomSkillParameter`.
-                        ///
-    /// <p>Gets room skill parameter details by room, skill, and parameter key ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetRoomSkillParameter {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_room_skill_parameter_input::Builder
-                        }
-    impl GetRoomSkillParameter  {
-        /// Creates a new `GetRoomSkillParameter`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetRoomSkillParameter, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetRoomSkillParameterError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetRoomSkillParameterOutput, aws_smithy_http::result::SdkError<crate::error::GetRoomSkillParameterError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room from which to get the room skill parameter details. </p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room from which to get the room skill parameter details. </p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-        /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-        /// <p>The room skill parameter key for which to get details. Required.</p>
-        pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_key(input.into());
-            self
-        }
-        /// <p>The room skill parameter key for which to get details. Required.</p>
-        pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_parameter_key(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetSkillGroup`.
-                        ///
-    /// <p>Gets skill group details by skill group ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetSkillGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_skill_group_input::Builder
-                        }
-    impl GetSkillGroup  {
-        /// Creates a new `GetSkillGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetSkillGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetSkillGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetSkillGroupOutput, aws_smithy_http::result::SdkError<crate::error::GetSkillGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the skill group for which to get details. Required.</p>
-        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the skill group for which to get details. Required.</p>
-        pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_group_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListBusinessReportSchedules`.
-                        ///
-    /// <p>Lists the details of the schedules that a user configured. A download URL of the report associated with each schedule is returned every time this action is called. A new download URL is returned each time, and is valid for 24 hours.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListBusinessReportSchedules {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_business_report_schedules_input::Builder
-                        }
-    impl ListBusinessReportSchedules  {
-        /// Creates a new `ListBusinessReportSchedules`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListBusinessReportSchedules, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListBusinessReportSchedulesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListBusinessReportSchedulesOutput, aws_smithy_http::result::SdkError<crate::error::ListBusinessReportSchedulesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListBusinessReportSchedulesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListBusinessReportSchedulesPaginator {
-                                        crate::paginator::ListBusinessReportSchedulesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The token used to list the remaining schedules from the previous API call.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token used to list the remaining schedules from the previous API call.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of schedules listed in the call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of schedules listed in the call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListConferenceProviders`.
-                        ///
-    /// <p>Lists conference providers under a specific AWS account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListConferenceProviders {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_conference_providers_input::Builder
-                        }
-    impl ListConferenceProviders  {
-        /// Creates a new `ListConferenceProviders`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListConferenceProviders, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListConferenceProvidersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListConferenceProvidersOutput, aws_smithy_http::result::SdkError<crate::error::ListConferenceProvidersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListConferenceProvidersPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListConferenceProvidersPaginator {
-                                        crate::paginator::ListConferenceProvidersPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The tokens used for pagination.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The tokens used for pagination.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListDeviceEvents`.
-                        ///
-    /// <p>Lists the device event history, including device connection status, for up to 30 days.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListDeviceEvents {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_device_events_input::Builder
-                        }
-    impl ListDeviceEvents  {
-        /// Creates a new `ListDeviceEvents`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListDeviceEvents, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListDeviceEventsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListDeviceEventsOutput, aws_smithy_http::result::SdkError<crate::error::ListDeviceEventsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListDeviceEventsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListDeviceEventsPaginator {
-                                        crate::paginator::ListDeviceEventsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The ARN of a device.</p>
-        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(input.into());
-            self
-        }
-        /// <p>The ARN of a device.</p>
-        pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_arn(input);
-            self
-        }
-        /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
-        pub fn event_type(mut self, input: crate::model::DeviceEventType) -> Self {
-            self.inner = self.inner.event_type(input);
-            self
-        }
-        /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
-        pub fn set_event_type(mut self, input: std::option::Option<crate::model::DeviceEventType>) -> Self {
-            self.inner = self.inner.set_event_type(input);
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListGatewayGroups`.
-                        ///
-    /// <p>Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details of a specific gateway group.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListGatewayGroups {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_gateway_groups_input::Builder
-                        }
-    impl ListGatewayGroups  {
-        /// Creates a new `ListGatewayGroups`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListGatewayGroups, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListGatewayGroupsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListGatewayGroupsOutput, aws_smithy_http::result::SdkError<crate::error::ListGatewayGroupsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListGatewayGroupsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListGatewayGroupsPaginator {
-                                        crate::paginator::ListGatewayGroupsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of gateway group summaries to return. The default is 50.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of gateway group summaries to return. The default is 50.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListGateways`.
-                        ///
-    /// <p>Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific gateway. An optional gateway group ARN can be provided to only retrieve gateway summaries of gateways that are associated with that gateway group ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListGateways {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_gateways_input::Builder
-                        }
-    impl ListGateways  {
-        /// Creates a new `ListGateways`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListGateways, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListGatewaysError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListGatewaysOutput, aws_smithy_http::result::SdkError<crate::error::ListGatewaysError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListGatewaysPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListGatewaysPaginator {
-                                        crate::paginator::ListGatewaysPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The gateway group ARN for which to list gateways.</p>
-        pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_group_arn(input.into());
-            self
-        }
-        /// <p>The gateway group ARN for which to list gateways.</p>
-        pub fn set_gateway_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_gateway_group_arn(input);
-            self
-        }
-        /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of gateway summaries to return. The default is 50.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of gateway summaries to return. The default is 50.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListSkills`.
-                        ///
-    /// <p>Lists all enabled skills in a specific skill group.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListSkills {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_skills_input::Builder
-                        }
-    impl ListSkills  {
-        /// Creates a new `ListSkills`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListSkills, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListSkillsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListSkillsOutput, aws_smithy_http::result::SdkError<crate::error::ListSkillsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListSkillsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListSkillsPaginator {
-                                        crate::paginator::ListSkillsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The ARN of the skill group for which to list enabled skills.</p>
-        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the skill group for which to list enabled skills.</p>
-        pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_group_arn(input);
-            self
-        }
-        /// <p>Whether the skill is enabled under the user's account.</p>
-        pub fn enablement_type(mut self, input: crate::model::EnablementTypeFilter) -> Self {
-            self.inner = self.inner.enablement_type(input);
-            self
-        }
-        /// <p>Whether the skill is enabled under the user's account.</p>
-        pub fn set_enablement_type(mut self, input: std::option::Option<crate::model::EnablementTypeFilter>) -> Self {
-            self.inner = self.inner.set_enablement_type(input);
-            self
-        }
-        /// <p>Whether the skill is publicly available or is a private skill.</p>
-        pub fn skill_type(mut self, input: crate::model::SkillTypeFilter) -> Self {
-            self.inner = self.inner.skill_type(input);
-            self
-        }
-        /// <p>Whether the skill is publicly available or is a private skill.</p>
-        pub fn set_skill_type(mut self, input: std::option::Option<crate::model::SkillTypeFilter>) -> Self {
-            self.inner = self.inner.set_skill_type(input);
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListSkillsStoreCategories`.
-                        ///
-    /// <p>Lists all categories in the Alexa skill store.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListSkillsStoreCategories {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_skills_store_categories_input::Builder
-                        }
-    impl ListSkillsStoreCategories  {
-        /// Creates a new `ListSkillsStoreCategories`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListSkillsStoreCategories, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListSkillsStoreCategoriesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListSkillsStoreCategoriesOutput, aws_smithy_http::result::SdkError<crate::error::ListSkillsStoreCategoriesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListSkillsStoreCategoriesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListSkillsStoreCategoriesPaginator {
-                                        crate::paginator::ListSkillsStoreCategoriesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The tokens used for pagination.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The tokens used for pagination.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of categories returned, per paginated calls.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of categories returned, per paginated calls.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListSkillsStoreSkillsByCategory`.
-                        ///
-    /// <p>Lists all skills in the Alexa skill store by category.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListSkillsStoreSkillsByCategory {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_skills_store_skills_by_category_input::Builder
-                        }
-    impl ListSkillsStoreSkillsByCategory  {
-        /// Creates a new `ListSkillsStoreSkillsByCategory`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListSkillsStoreSkillsByCategory, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListSkillsStoreSkillsByCategoryError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListSkillsStoreSkillsByCategoryOutput, aws_smithy_http::result::SdkError<crate::error::ListSkillsStoreSkillsByCategoryError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListSkillsStoreSkillsByCategoryPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListSkillsStoreSkillsByCategoryPaginator {
-                                        crate::paginator::ListSkillsStoreSkillsByCategoryPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
-        pub fn category_id(mut self, input: i64) -> Self {
-            self.inner = self.inner.category_id(input);
-            self
-        }
-        /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
-        pub fn set_category_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_category_id(input);
-            self
-        }
-        /// <p>The tokens used for pagination.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The tokens used for pagination.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of skills returned per paginated calls.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of skills returned per paginated calls.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListSmartHomeAppliances`.
-                        ///
-    /// <p>Lists all of the smart home appliances associated with a room.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListSmartHomeAppliances {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_smart_home_appliances_input::Builder
-                        }
-    impl ListSmartHomeAppliances  {
-        /// Creates a new `ListSmartHomeAppliances`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListSmartHomeAppliances, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListSmartHomeAppliancesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListSmartHomeAppliancesOutput, aws_smithy_http::result::SdkError<crate::error::ListSmartHomeAppliancesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListSmartHomeAppliancesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListSmartHomeAppliancesPaginator {
-                                        crate::paginator::ListSmartHomeAppliancesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The room that the appliances are associated with.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The room that the appliances are associated with.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-        /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The tokens used for pagination.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The tokens used for pagination.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTags`.
-                        ///
-    /// <p>Lists all tags for the specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTags {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_input::Builder
-                        }
-    impl ListTags  {
-        /// Creates a new `ListTags`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTags, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListTagsPaginator {
-                                        crate::paginator::ListTagsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The ARN of the specified resource for which to list tags.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(input.into());
-            self
-        }
-        /// <p>The ARN of the specified resource for which to list tags.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(input);
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutConferencePreference`.
-                        ///
-    /// <p>Sets the conference preferences on a specific conference provider at the account level.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutConferencePreference {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::put_conference_preference_input::Builder
-                        }
-    impl PutConferencePreference  {
-        /// Creates a new `PutConferencePreference`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::PutConferencePreference, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::PutConferencePreferenceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::PutConferencePreferenceOutput, aws_smithy_http::result::SdkError<crate::error::PutConferencePreferenceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The conference preference of a specific conference provider.</p>
-        pub fn conference_preference(mut self, input: crate::model::ConferencePreference) -> Self {
-            self.inner = self.inner.conference_preference(input);
-            self
-        }
-        /// <p>The conference preference of a specific conference provider.</p>
-        pub fn set_conference_preference(mut self, input: std::option::Option<crate::model::ConferencePreference>) -> Self {
-            self.inner = self.inner.set_conference_preference(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutInvitationConfiguration`.
-                        ///
-    /// <p>Configures the email template for the user enrollment invitation with the specified attributes.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutInvitationConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::put_invitation_configuration_input::Builder
-                        }
-    impl PutInvitationConfiguration  {
-        /// Creates a new `PutInvitationConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::PutInvitationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::PutInvitationConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::PutInvitationConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::PutInvitationConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name of the organization sending the enrollment invite to a user.</p>
-        pub fn organization_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_name(input.into());
-            self
-        }
-        /// <p>The name of the organization sending the enrollment invite to a user.</p>
-        pub fn set_organization_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_organization_name(input);
-            self
-        }
-        /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
-        pub fn contact_email(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_email(input.into());
-            self
-        }
-        /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
-        pub fn set_contact_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_contact_email(input);
-            self
-        }
-        /// Appends an item to `PrivateSkillIds`.
-        ///
-        /// To override the contents of this collection use [`set_private_skill_ids`](Self::set_private_skill_ids).
-        ///
-        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-        pub fn private_skill_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.private_skill_ids(input.into());
-            self
-        }
-        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-        pub fn set_private_skill_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_private_skill_ids(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutRoomSkillParameter`.
-                        ///
-    /// <p>Updates room skill parameter details by room, skill, and parameter key ID. Not all skills have a room skill parameter.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutRoomSkillParameter {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::put_room_skill_parameter_input::Builder
-                        }
-    impl PutRoomSkillParameter  {
-        /// Creates a new `PutRoomSkillParameter`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::PutRoomSkillParameter, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::PutRoomSkillParameterError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::PutRoomSkillParameterOutput, aws_smithy_http::result::SdkError<crate::error::PutRoomSkillParameterError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room associated with the room skill parameter. Required.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room associated with the room skill parameter. Required.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-        /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-        /// <p>The updated room skill parameter. Required.</p>
-        pub fn room_skill_parameter(mut self, input: crate::model::RoomSkillParameter) -> Self {
-            self.inner = self.inner.room_skill_parameter(input);
-            self
-        }
-        /// <p>The updated room skill parameter. Required.</p>
-        pub fn set_room_skill_parameter(mut self, input: std::option::Option<crate::model::RoomSkillParameter>) -> Self {
-            self.inner = self.inner.set_room_skill_parameter(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutSkillAuthorization`.
-                        ///
-    /// <p>Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role, the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the IAM role.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutSkillAuthorization {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::put_skill_authorization_input::Builder
-                        }
-    impl PutSkillAuthorization  {
-        /// Creates a new `PutSkillAuthorization`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::PutSkillAuthorization, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::PutSkillAuthorizationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::PutSkillAuthorizationOutput, aws_smithy_http::result::SdkError<crate::error::PutSkillAuthorizationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Adds a key-value pair to `AuthorizationResult`.
-        ///
-        /// To override the contents of this collection use [`set_authorization_result`](Self::set_authorization_result).
-        ///
-        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
-        pub fn authorization_result(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorization_result(k.into(), v.into());
-            self
-        }
-        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
-        pub fn set_authorization_result(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_authorization_result(input);
-            self
-        }
-        /// <p>The unique identifier of a skill.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of a skill.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-        /// <p>The room that the skill is authorized for.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The room that the skill is authorized for.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `RegisterAVSDevice`.
-                        ///
-    /// <p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct RegisterAVSDevice {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::register_avs_device_input::Builder
-                        }
-    impl RegisterAVSDevice  {
-        /// Creates a new `RegisterAVSDevice`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::RegisterAVSDevice, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::RegisterAVSDeviceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::RegisterAvsDeviceOutput, aws_smithy_http::result::SdkError<crate::error::RegisterAVSDeviceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
-        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(input.into());
-            self
-        }
-        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
-        pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_id(input);
-            self
-        }
-        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
-        pub fn user_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_code(input.into());
-            self
-        }
-        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
-        pub fn set_user_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_code(input);
-            self
-        }
-        /// <p>The product ID used to identify your AVS device during authorization.</p>
-        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(input.into());
-            self
-        }
-        /// <p>The product ID used to identify your AVS device during authorization.</p>
-        pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_product_id(input);
-            self
-        }
-        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
-        pub fn device_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_serial_number(input.into());
-            self
-        }
-        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
-        pub fn set_device_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_serial_number(input);
-            self
-        }
-        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
-        pub fn amazon_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amazon_id(input.into());
-            self
-        }
-        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
-        pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_amazon_id(input);
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `RejectSkill`.
-                        ///
-    /// <p>Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves to an AcceptStatus of PENDING. Any private or public skill that is rejected can be added later by calling the ApproveSkill API. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct RejectSkill {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::reject_skill_input::Builder
-                        }
-    impl RejectSkill  {
-        /// Creates a new `RejectSkill`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::RejectSkill, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::RejectSkillError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::RejectSkillOutput, aws_smithy_http::result::SdkError<crate::error::RejectSkillError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier of the skill.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The unique identifier of the skill.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ResolveRoom`.
-                        ///
-    /// <p>Determines the details for the room from which a skill request was invoked. This operation is used by skill developers.</p> 
-    /// <p>To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS Lambda function, the skill is automatically authorized when you publish your skill as a private skill to your AWS account. Skills that are hosted using a custom web service must be manually authorized. To get your skill authorized, contact AWS Support with your AWS account ID that queries the ResolveRoom API and skill ID. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ResolveRoom {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::resolve_room_input::Builder
-                        }
-    impl ResolveRoom  {
-        /// Creates a new `ResolveRoom`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ResolveRoom, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ResolveRoomError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ResolveRoomOutput, aws_smithy_http::result::SdkError<crate::error::ResolveRoomError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the user. Required.</p>
-        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(input.into());
-            self
-        }
-        /// <p>The ARN of the user. Required.</p>
-        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_id(input);
-            self
-        }
-        /// <p>The ARN of the skill that was requested. Required.</p>
-        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(input.into());
-            self
-        }
-        /// <p>The ARN of the skill that was requested. Required.</p>
-        pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `RevokeInvitation`.
-                        ///
-    /// <p>Revokes an invitation and invalidates the enrollment URL.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct RevokeInvitation {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::revoke_invitation_input::Builder
-                        }
-    impl RevokeInvitation  {
-        /// Creates a new `RevokeInvitation`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::RevokeInvitation, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::RevokeInvitationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::RevokeInvitationOutput, aws_smithy_http::result::SdkError<crate::error::RevokeInvitationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
-        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
-        pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_arn(input);
-            self
-        }
-        /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
-        pub fn enrollment_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.enrollment_id(input.into());
-            self
-        }
-        /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
-        pub fn set_enrollment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_enrollment_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SearchAddressBooks`.
-                        ///
-    /// <p>Searches address books and lists the ones that meet a set of filter and sort criteria.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SearchAddressBooks {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::search_address_books_input::Builder
-                        }
-    impl SearchAddressBooks  {
-        /// Creates a new `SearchAddressBooks`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SearchAddressBooks, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SearchAddressBooksError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SearchAddressBooksOutput, aws_smithy_http::result::SdkError<crate::error::SearchAddressBooksError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::SearchAddressBooksPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::SearchAddressBooksPaginator {
-                                        crate::paginator::SearchAddressBooksPaginator::new(self.handle, self.inner)
-                                    }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// Appends an item to `SortCriteria`.
-        ///
-        /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
-        ///
-        /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
-        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort_criteria(input);
-            self
-        }
-        /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
-        pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::model::Sort>>) -> Self {
-            self.inner = self.inner.set_sort_criteria(input);
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SearchContacts`.
-                        ///
-    /// <p>Searches contacts and lists the ones that meet a set of filter and sort criteria.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SearchContacts {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::search_contacts_input::Builder
-                        }
-    impl SearchContacts  {
-        /// Creates a new `SearchContacts`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SearchContacts, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SearchContactsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SearchContactsOutput, aws_smithy_http::result::SdkError<crate::error::SearchContactsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::SearchContactsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::SearchContactsPaginator {
-                                        crate::paginator::SearchContactsPaginator::new(self.handle, self.inner)
-                                    }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// Appends an item to `SortCriteria`.
-        ///
-        /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
-        ///
-        /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
-        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort_criteria(input);
-            self
-        }
-        /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
-        pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::model::Sort>>) -> Self {
-            self.inner = self.inner.set_sort_criteria(input);
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SearchDevices`.
-                        ///
-    /// <p>Searches devices and lists the ones that meet a set of filter criteria.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SearchDevices {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::search_devices_input::Builder
-                        }
-    impl SearchDevices  {
-        /// Creates a new `SearchDevices`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SearchDevices, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SearchDevicesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SearchDevicesOutput, aws_smithy_http::result::SdkError<crate::error::SearchDevicesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::SearchDevicesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::SearchDevicesPaginator {
-                                        crate::paginator::SearchDevicesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// Appends an item to `SortCriteria`.
-        ///
-        /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
-        ///
-        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort_criteria(input);
-            self
-        }
-        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-        pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::model::Sort>>) -> Self {
-            self.inner = self.inner.set_sort_criteria(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SearchNetworkProfiles`.
-                        ///
-    /// <p>Searches network profiles and lists the ones that meet a set of filter and sort criteria.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SearchNetworkProfiles {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::search_network_profiles_input::Builder
-                        }
-    impl SearchNetworkProfiles  {
-        /// Creates a new `SearchNetworkProfiles`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SearchNetworkProfiles, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SearchNetworkProfilesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SearchNetworkProfilesOutput, aws_smithy_http::result::SdkError<crate::error::SearchNetworkProfilesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::SearchNetworkProfilesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::SearchNetworkProfilesPaginator {
-                                        crate::paginator::SearchNetworkProfilesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// Appends an item to `SortCriteria`.
-        ///
-        /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
-        ///
-        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
-        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort_criteria(input);
-            self
-        }
-        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
-        pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::model::Sort>>) -> Self {
-            self.inner = self.inner.set_sort_criteria(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SearchProfiles`.
-                        ///
-    /// <p>Searches room profiles and lists the ones that meet a set of filter criteria.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SearchProfiles {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::search_profiles_input::Builder
-                        }
-    impl SearchProfiles  {
-        /// Creates a new `SearchProfiles`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SearchProfiles, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SearchProfilesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SearchProfilesOutput, aws_smithy_http::result::SdkError<crate::error::SearchProfilesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::SearchProfilesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::SearchProfilesPaginator {
-                                        crate::paginator::SearchProfilesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// Appends an item to `SortCriteria`.
-        ///
-        /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
-        ///
-        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
-        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort_criteria(input);
-            self
-        }
-        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
-        pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::model::Sort>>) -> Self {
-            self.inner = self.inner.set_sort_criteria(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SearchRooms`.
-                        ///
-    /// <p>Searches rooms and lists the ones that meet a set of filter and sort criteria.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SearchRooms {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::search_rooms_input::Builder
-                        }
-    impl SearchRooms  {
-        /// Creates a new `SearchRooms`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SearchRooms, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SearchRoomsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SearchRoomsOutput, aws_smithy_http::result::SdkError<crate::error::SearchRoomsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::SearchRoomsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::SearchRoomsPaginator {
-                                        crate::paginator::SearchRoomsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// Appends an item to `SortCriteria`.
-        ///
-        /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
-        ///
-        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
-        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort_criteria(input);
-            self
-        }
-        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
-        pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::model::Sort>>) -> Self {
-            self.inner = self.inner.set_sort_criteria(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SearchSkillGroups`.
-                        ///
-    /// <p>Searches skill groups and lists the ones that meet a set of filter and sort criteria.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SearchSkillGroups {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::search_skill_groups_input::Builder
-                        }
-    impl SearchSkillGroups  {
-        /// Creates a new `SearchSkillGroups`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SearchSkillGroups, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SearchSkillGroupsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SearchSkillGroupsOutput, aws_smithy_http::result::SdkError<crate::error::SearchSkillGroupsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::SearchSkillGroupsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::SearchSkillGroupsPaginator {
-                                        crate::paginator::SearchSkillGroupsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// Appends an item to `SortCriteria`.
-        ///
-        /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
-        ///
-        /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
-        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort_criteria(input);
-            self
-        }
-        /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
-        pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::model::Sort>>) -> Self {
-            self.inner = self.inner.set_sort_criteria(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SearchUsers`.
-                        ///
-    /// <p>Searches users and lists the ones that meet a set of filter and sort criteria.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SearchUsers {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::search_users_input::Builder
-                        }
-    impl SearchUsers  {
-        /// Creates a new `SearchUsers`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SearchUsers, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SearchUsersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SearchUsersOutput, aws_smithy_http::result::SdkError<crate::error::SearchUsersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::SearchUsersPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::SearchUsersPaginator {
-                                        crate::paginator::SearchUsersPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        ///
-        /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
-        pub fn filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// Appends an item to `SortCriteria`.
-        ///
-        /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
-        ///
-        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
-        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort_criteria(input);
-            self
-        }
-        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
-        pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::model::Sort>>) -> Self {
-            self.inner = self.inner.set_sort_criteria(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SendAnnouncement`.
-                        ///
-    /// <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search or filter. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SendAnnouncement {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::send_announcement_input::Builder
-                        }
-    impl SendAnnouncement  {
-        /// Creates a new `SendAnnouncement`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SendAnnouncement, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SendAnnouncementError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SendAnnouncementOutput, aws_smithy_http::result::SdkError<crate::error::SendAnnouncementError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `RoomFilters`.
-        ///
-        /// To override the contents of this collection use [`set_room_filters`](Self::set_room_filters).
-        ///
-        /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-        pub fn room_filters(mut self, input: crate::model::Filter) -> Self {
-            self.inner = self.inner.room_filters(input);
-            self
-        }
-        /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-        pub fn set_room_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.inner = self.inner.set_room_filters(input);
-            self
-        }
-        /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
-        pub fn content(mut self, input: crate::model::Content) -> Self {
-            self.inner = self.inner.content(input);
-            self
-        }
-        /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
-        pub fn set_content(mut self, input: std::option::Option<crate::model::Content>) -> Self {
-            self.inner = self.inner.set_content(input);
-            self
-        }
-        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
-        pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
-            self.inner = self.inner.time_to_live_in_seconds(input);
-            self
-        }
-        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
-        pub fn set_time_to_live_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_time_to_live_in_seconds(input);
-            self
-        }
-        /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SendInvitation`.
-                        ///
-    /// <p>Sends an enrollment invitation email with a URL to a user. The URL is valid for 30 days or until you call this operation again, whichever comes first. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SendInvitation {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::send_invitation_input::Builder
-                        }
-    impl SendInvitation  {
-        /// Creates a new `SendInvitation`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SendInvitation, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SendInvitationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SendInvitationOutput, aws_smithy_http::result::SdkError<crate::error::SendInvitationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the user to whom to send an invitation. Required.</p>
-        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the user to whom to send an invitation. Required.</p>
-        pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_user_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartDeviceSync`.
-                        ///
-    /// <p>Resets a device and its account to the known default settings. This clears all information and settings set by previous users in the following ways:</p> 
-    /// <ul> 
-    /// <li> <p>Bluetooth - This unpairs all bluetooth devices paired with your echo device.</p> </li> 
-    /// <li> <p>Volume - This resets the echo device's volume to the default value.</p> </li> 
-    /// <li> <p>Notifications - This clears all notifications from your echo device.</p> </li> 
-    /// <li> <p>Lists - This clears all to-do items from your echo device.</p> </li> 
-    /// <li> <p>Settings - This internally syncs the room's profile (if the device is assigned to a room), contacts, address books, delegation access for account linking, and communications (if enabled on the room profile).</p> </li> 
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartDeviceSync {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_device_sync_input::Builder
-                        }
-    impl StartDeviceSync  {
-        /// Creates a new `StartDeviceSync`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartDeviceSync, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartDeviceSyncError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartDeviceSyncOutput, aws_smithy_http::result::SdkError<crate::error::StartDeviceSyncError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-        /// <p>The ARN of the device to sync. Required.</p>
-        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the device to sync. Required.</p>
-        pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_arn(input);
-            self
-        }
-        /// Appends an item to `Features`.
-        ///
-        /// To override the contents of this collection use [`set_features`](Self::set_features).
-        ///
-        /// <p>Request structure to start the device sync. Required.</p>
-        pub fn features(mut self, input: crate::model::Feature) -> Self {
-            self.inner = self.inner.features(input);
-            self
-        }
-        /// <p>Request structure to start the device sync. Required.</p>
-        pub fn set_features(mut self, input: std::option::Option<std::vec::Vec<crate::model::Feature>>) -> Self {
-            self.inner = self.inner.set_features(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartSmartHomeApplianceDiscovery`.
-                        ///
-    /// <p>Initiates the discovery of any smart home appliances associated with the room.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartSmartHomeApplianceDiscovery {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_smart_home_appliance_discovery_input::Builder
-                        }
-    impl StartSmartHomeApplianceDiscovery  {
-        /// Creates a new `StartSmartHomeApplianceDiscovery`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartSmartHomeApplianceDiscovery, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartSmartHomeApplianceDiscoveryError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartSmartHomeApplianceDiscoveryOutput, aws_smithy_http::result::SdkError<crate::error::StartSmartHomeApplianceDiscoveryError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The room where smart home appliance discovery was initiated.</p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The room where smart home appliance discovery was initiated.</p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>Adds metadata tags to a specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>Removes metadata tags from a specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateAddressBook`.
-                        ///
-    /// <p>Updates address book details by the address book ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateAddressBook {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_address_book_input::Builder
-                        }
-    impl UpdateAddressBook  {
-        /// Creates a new `UpdateAddressBook`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateAddressBook, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateAddressBookError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateAddressBookOutput, aws_smithy_http::result::SdkError<crate::error::UpdateAddressBookError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room to update.</p>
-        pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_book_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room to update.</p>
-        pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_address_book_arn(input);
-            self
-        }
-        /// <p>The updated name of the room.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The updated name of the room.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The updated description of the room.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The updated description of the room.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateBusinessReportSchedule`.
-                        ///
-    /// <p>Updates the configuration of the report delivery schedule with the specified schedule ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateBusinessReportSchedule {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_business_report_schedule_input::Builder
-                        }
-    impl UpdateBusinessReportSchedule  {
-        /// Creates a new `UpdateBusinessReportSchedule`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateBusinessReportSchedule, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateBusinessReportScheduleError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateBusinessReportScheduleOutput, aws_smithy_http::result::SdkError<crate::error::UpdateBusinessReportScheduleError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the business report schedule.</p>
-        pub fn schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the business report schedule.</p>
-        pub fn set_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_schedule_arn(input);
-            self
-        }
-        /// <p>The S3 location of the output reports.</p>
-        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(input.into());
-            self
-        }
-        /// <p>The S3 location of the output reports.</p>
-        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_bucket_name(input);
-            self
-        }
-        /// <p>The S3 key where the report is delivered.</p>
-        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(input.into());
-            self
-        }
-        /// <p>The S3 key where the report is delivered.</p>
-        pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_s3_key_prefix(input);
-            self
-        }
-        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-        pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
-            self.inner = self.inner.format(input);
-            self
-        }
-        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::BusinessReportFormat>) -> Self {
-            self.inner = self.inner.set_format(input);
-            self
-        }
-        /// <p>The name identifier of the schedule.</p>
-        pub fn schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_name(input.into());
-            self
-        }
-        /// <p>The name identifier of the schedule.</p>
-        pub fn set_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_schedule_name(input);
-            self
-        }
-        /// <p>The recurrence of the reports.</p>
-        pub fn recurrence(mut self, input: crate::model::BusinessReportRecurrence) -> Self {
-            self.inner = self.inner.recurrence(input);
-            self
-        }
-        /// <p>The recurrence of the reports.</p>
-        pub fn set_recurrence(mut self, input: std::option::Option<crate::model::BusinessReportRecurrence>) -> Self {
-            self.inner = self.inner.set_recurrence(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateConferenceProvider`.
-                        ///
-    /// <p>Updates an existing conference provider's settings.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateConferenceProvider {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_conference_provider_input::Builder
-                        }
-    impl UpdateConferenceProvider  {
-        /// Creates a new `UpdateConferenceProvider`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateConferenceProvider, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateConferenceProviderError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateConferenceProviderOutput, aws_smithy_http::result::SdkError<crate::error::UpdateConferenceProviderError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the conference provider.</p>
-        pub fn conference_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conference_provider_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the conference provider.</p>
-        pub fn set_conference_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_conference_provider_arn(input);
-            self
-        }
-        /// <p>The type of the conference provider.</p>
-        pub fn conference_provider_type(mut self, input: crate::model::ConferenceProviderType) -> Self {
-            self.inner = self.inner.conference_provider_type(input);
-            self
-        }
-        /// <p>The type of the conference provider.</p>
-        pub fn set_conference_provider_type(mut self, input: std::option::Option<crate::model::ConferenceProviderType>) -> Self {
-            self.inner = self.inner.set_conference_provider_type(input);
-            self
-        }
-        /// <p>The IP endpoint and protocol for calling.</p>
-        pub fn ip_dial_in(mut self, input: crate::model::IpDialIn) -> Self {
-            self.inner = self.inner.ip_dial_in(input);
-            self
-        }
-        /// <p>The IP endpoint and protocol for calling.</p>
-        pub fn set_ip_dial_in(mut self, input: std::option::Option<crate::model::IpDialIn>) -> Self {
-            self.inner = self.inner.set_ip_dial_in(input);
-            self
-        }
-        /// <p>The information for PSTN conferencing.</p>
-        pub fn pstn_dial_in(mut self, input: crate::model::PstnDialIn) -> Self {
-            self.inner = self.inner.pstn_dial_in(input);
-            self
-        }
-        /// <p>The information for PSTN conferencing.</p>
-        pub fn set_pstn_dial_in(mut self, input: std::option::Option<crate::model::PstnDialIn>) -> Self {
-            self.inner = self.inner.set_pstn_dial_in(input);
-            self
-        }
-        /// <p>The meeting settings for the conference provider.</p>
-        pub fn meeting_setting(mut self, input: crate::model::MeetingSetting) -> Self {
-            self.inner = self.inner.meeting_setting(input);
-            self
-        }
-        /// <p>The meeting settings for the conference provider.</p>
-        pub fn set_meeting_setting(mut self, input: std::option::Option<crate::model::MeetingSetting>) -> Self {
-            self.inner = self.inner.set_meeting_setting(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateContact`.
-                        ///
-    /// <p>Updates the contact details by the contact ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateContact {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_contact_input::Builder
-                        }
-    impl UpdateContact  {
-        /// Creates a new `UpdateContact`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateContact, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateContactError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateContactOutput, aws_smithy_http::result::SdkError<crate::error::UpdateContactError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the contact to update.</p>
-        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the contact to update.</p>
-        pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_contact_arn(input);
-            self
-        }
-        /// <p>The updated display name of the contact.</p>
-        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(input.into());
-            self
-        }
-        /// <p>The updated display name of the contact.</p>
-        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(input);
-            self
-        }
-        /// <p>The updated first name of the contact.</p>
-        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(input.into());
-            self
-        }
-        /// <p>The updated first name of the contact.</p>
-        pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_first_name(input);
-            self
-        }
-        /// <p>The updated last name of the contact.</p>
-        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(input.into());
-            self
-        }
-        /// <p>The updated last name of the contact.</p>
-        pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_last_name(input);
-            self
-        }
-        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(input.into());
-            self
-        }
-        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-        pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_phone_number(input);
-            self
-        }
-        /// Appends an item to `PhoneNumbers`.
-        ///
-        /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
-        ///
-        /// <p>The list of phone numbers for the contact.</p>
-        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
-            self.inner = self.inner.phone_numbers(input);
-            self
-        }
-        /// <p>The list of phone numbers for the contact.</p>
-        pub fn set_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>) -> Self {
-            self.inner = self.inner.set_phone_numbers(input);
-            self
-        }
-        /// Appends an item to `SipAddresses`.
-        ///
-        /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
-        ///
-        /// <p>The list of SIP addresses for the contact.</p>
-        pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
-            self.inner = self.inner.sip_addresses(input);
-            self
-        }
-        /// <p>The list of SIP addresses for the contact.</p>
-        pub fn set_sip_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::model::SipAddress>>) -> Self {
-            self.inner = self.inner.set_sip_addresses(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateDevice`.
-                        ///
-    /// <p>Updates the device name by device ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateDevice {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_device_input::Builder
-                        }
-    impl UpdateDevice  {
-        /// Creates a new `UpdateDevice`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateDevice, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateDeviceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateDeviceOutput, aws_smithy_http::result::SdkError<crate::error::UpdateDeviceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the device to update. Required.</p>
-        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the device to update. Required.</p>
-        pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_arn(input);
-            self
-        }
-        /// <p>The updated device name. Required.</p>
-        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(input.into());
-            self
-        }
-        /// <p>The updated device name. Required.</p>
-        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_device_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateGateway`.
-                        ///
-    /// <p>Updates the details of a gateway. If any optional field is not provided, the existing corresponding value is left unmodified.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateGateway {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_gateway_input::Builder
-                        }
-    impl UpdateGateway  {
-        /// Creates a new `UpdateGateway`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateGateway, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateGatewayError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateGatewayOutput, aws_smithy_http::result::SdkError<crate::error::UpdateGatewayError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the gateway to update.</p>
-        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the gateway to update.</p>
-        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_gateway_arn(input);
-            self
-        }
-        /// <p>The updated name of the gateway.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The updated name of the gateway.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The updated description of the gateway.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The updated description of the gateway.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-        pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.software_version(input.into());
-            self
-        }
-        /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-        pub fn set_software_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_software_version(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateGatewayGroup`.
-                        ///
-    /// <p>Updates the details of a gateway group. If any optional field is not provided, the existing corresponding value is left unmodified.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateGatewayGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_gateway_group_input::Builder
-                        }
-    impl UpdateGatewayGroup  {
-        /// Creates a new `UpdateGatewayGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateGatewayGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateGatewayGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateGatewayGroupOutput, aws_smithy_http::result::SdkError<crate::error::UpdateGatewayGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the gateway group to update.</p>
-        pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_group_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the gateway group to update.</p>
-        pub fn set_gateway_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_gateway_group_arn(input);
-            self
-        }
-        /// <p>The updated name of the gateway group.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The updated name of the gateway group.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The updated description of the gateway group.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The updated description of the gateway group.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateNetworkProfile`.
-                        ///
-    /// <p>Updates a network profile by the network profile ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateNetworkProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_network_profile_input::Builder
-                        }
-    impl UpdateNetworkProfile  {
-        /// Creates a new `UpdateNetworkProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateNetworkProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateNetworkProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateNetworkProfileOutput, aws_smithy_http::result::SdkError<crate::error::UpdateNetworkProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn set_network_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_network_profile_arn(input);
-            self
-        }
-        /// <p>The name of the network profile associated with a device.</p>
-        pub fn network_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_name(input.into());
-            self
-        }
-        /// <p>The name of the network profile associated with a device.</p>
-        pub fn set_network_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_network_profile_name(input);
-            self
-        }
-        /// <p>Detailed information about a device's network profile.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>Detailed information about a device's network profile.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The current password of the Wi-Fi network.</p>
-        pub fn current_password(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_password(input.into());
-            self
-        }
-        /// <p>The current password of the Wi-Fi network.</p>
-        pub fn set_current_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_current_password(input);
-            self
-        }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-        pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_password(input.into());
-            self
-        }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-        pub fn set_next_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_password(input);
-            self
-        }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-        pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-        pub fn set_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_certificate_authority_arn(input);
-            self
-        }
-        /// Appends an item to `TrustAnchors`.
-        ///
-        /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
-        ///
-        /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
-        pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_anchors(input.into());
-            self
-        }
-        /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
-        pub fn set_trust_anchors(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_trust_anchors(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateProfile`.
-                        ///
-    /// <p>Updates an existing room profile by room profile ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateProfile {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_profile_input::Builder
-                        }
-    impl UpdateProfile  {
-        /// Creates a new `UpdateProfile`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateProfileError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateProfileOutput, aws_smithy_http::result::SdkError<crate::error::UpdateProfileError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room profile to update. Required.</p>
-        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room profile to update. Required.</p>
-        pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_profile_arn(input);
-            self
-        }
-        /// <p>The updated name for the room profile.</p>
-        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(input.into());
-            self
-        }
-        /// <p>The updated name for the room profile.</p>
-        pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_profile_name(input);
-            self
-        }
-        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
-        pub fn is_default(mut self, input: bool) -> Self {
-            self.inner = self.inner.is_default(input);
-            self
-        }
-        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
-        pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_is_default(input);
-            self
-        }
-        /// <p>The updated timezone for the room profile.</p>
-        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(input.into());
-            self
-        }
-        /// <p>The updated timezone for the room profile.</p>
-        pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_timezone(input);
-            self
-        }
-        /// <p>The updated address for the room profile.</p>
-        pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address(input.into());
-            self
-        }
-        /// <p>The updated address for the room profile.</p>
-        pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_address(input);
-            self
-        }
-        /// <p>The updated distance unit for the room profile.</p>
-        pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
-            self.inner = self.inner.distance_unit(input);
-            self
-        }
-        /// <p>The updated distance unit for the room profile.</p>
-        pub fn set_distance_unit(mut self, input: std::option::Option<crate::model::DistanceUnit>) -> Self {
-            self.inner = self.inner.set_distance_unit(input);
-            self
-        }
-        /// <p>The updated temperature unit for the room profile.</p>
-        pub fn temperature_unit(mut self, input: crate::model::TemperatureUnit) -> Self {
-            self.inner = self.inner.temperature_unit(input);
-            self
-        }
-        /// <p>The updated temperature unit for the room profile.</p>
-        pub fn set_temperature_unit(mut self, input: std::option::Option<crate::model::TemperatureUnit>) -> Self {
-            self.inner = self.inner.set_temperature_unit(input);
-            self
-        }
-        /// <p>The updated wake word for the room profile.</p>
-        pub fn wake_word(mut self, input: crate::model::WakeWord) -> Self {
-            self.inner = self.inner.wake_word(input);
-            self
-        }
-        /// <p>The updated wake word for the room profile.</p>
-        pub fn set_wake_word(mut self, input: std::option::Option<crate::model::WakeWord>) -> Self {
-            self.inner = self.inner.set_wake_word(input);
-            self
-        }
-        /// <p>The updated locale for the room profile. (This is currently only available to a limited preview audience.)</p>
-        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(input.into());
-            self
-        }
-        /// <p>The updated locale for the room profile. (This is currently only available to a limited preview audience.)</p>
-        pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_locale(input);
-            self
-        }
-        /// <p>Whether the setup mode of the profile is enabled.</p>
-        pub fn setup_mode_disabled(mut self, input: bool) -> Self {
-            self.inner = self.inner.setup_mode_disabled(input);
-            self
-        }
-        /// <p>Whether the setup mode of the profile is enabled.</p>
-        pub fn set_setup_mode_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_setup_mode_disabled(input);
-            self
-        }
-        /// <p>The updated maximum volume limit for the room profile.</p>
-        pub fn max_volume_limit(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_volume_limit(input);
-            self
-        }
-        /// <p>The updated maximum volume limit for the room profile.</p>
-        pub fn set_max_volume_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_volume_limit(input);
-            self
-        }
-        /// <p>Whether the PSTN setting of the room profile is enabled.</p>
-        pub fn pstn_enabled(mut self, input: bool) -> Self {
-            self.inner = self.inner.pstn_enabled(input);
-            self
-        }
-        /// <p>Whether the PSTN setting of the room profile is enabled.</p>
-        pub fn set_pstn_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_pstn_enabled(input);
-            self
-        }
-        /// <p>Whether data retention of the profile is enabled.</p>
-        pub fn data_retention_opt_in(mut self, input: bool) -> Self {
-            self.inner = self.inner.data_retention_opt_in(input);
-            self
-        }
-        /// <p>Whether data retention of the profile is enabled.</p>
-        pub fn set_data_retention_opt_in(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_data_retention_opt_in(input);
-            self
-        }
-        /// <p>The updated meeting room settings of a room profile.</p>
-        pub fn meeting_room_configuration(mut self, input: crate::model::UpdateMeetingRoomConfiguration) -> Self {
-            self.inner = self.inner.meeting_room_configuration(input);
-            self
-        }
-        /// <p>The updated meeting room settings of a room profile.</p>
-        pub fn set_meeting_room_configuration(mut self, input: std::option::Option<crate::model::UpdateMeetingRoomConfiguration>) -> Self {
-            self.inner = self.inner.set_meeting_room_configuration(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateRoom`.
-                        ///
-    /// <p>Updates room details by room ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateRoom {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_room_input::Builder
-                        }
-    impl UpdateRoom  {
-        /// Creates a new `UpdateRoom`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateRoom, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateRoomError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateRoomOutput, aws_smithy_http::result::SdkError<crate::error::UpdateRoomError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the room to update. </p>
-        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the room to update. </p>
-        pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_arn(input);
-            self
-        }
-        /// <p>The updated name for the room.</p>
-        pub fn room_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_name(input.into());
-            self
-        }
-        /// <p>The updated name for the room.</p>
-        pub fn set_room_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_room_name(input);
-            self
-        }
-        /// <p>The updated description for the room.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The updated description for the room.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// <p>The updated provider calendar ARN for the room.</p>
-        pub fn provider_calendar_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_calendar_id(input.into());
-            self
-        }
-        /// <p>The updated provider calendar ARN for the room.</p>
-        pub fn set_provider_calendar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_provider_calendar_id(input);
-            self
-        }
-        /// <p>The updated profile ARN for the room.</p>
-        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(input.into());
-            self
-        }
-        /// <p>The updated profile ARN for the room.</p>
-        pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_profile_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateSkillGroup`.
-                        ///
-    /// <p>Updates skill group details by skill group ARN.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateSkillGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_skill_group_input::Builder
-                        }
-    impl UpdateSkillGroup  {
-        /// Creates a new `UpdateSkillGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateSkillGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateSkillGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateSkillGroupOutput, aws_smithy_http::result::SdkError<crate::error::UpdateSkillGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the skill group to update. </p>
-        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the skill group to update. </p>
-        pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_group_arn(input);
-            self
-        }
-        /// <p>The updated name for the skill group.</p>
-        pub fn skill_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_name(input.into());
-            self
-        }
-        /// <p>The updated name for the skill group.</p>
-        pub fn set_skill_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_skill_group_name(input);
-            self
-        }
-        /// <p>The updated description for the skill group.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>The updated description for the skill group.</p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -8574,4 +1307,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

@@ -2,7 +2,7 @@
 /// Operation shape for `BatchGetTraces`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_get_traces`](crate::client::Client::batch_get_traces).
+            /// [`batch_get_traces`](crate::client::fluent_builders::BatchGetTraces).
             ///
             /// `ParseStrictResponse` impl for `BatchGetTraces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetTraces {
 /// Operation shape for `CreateGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_group`](crate::client::Client::create_group).
+            /// [`create_group`](crate::client::fluent_builders::CreateGroup).
             ///
             /// `ParseStrictResponse` impl for `CreateGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroup {
 /// Operation shape for `CreateSamplingRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_sampling_rule`](crate::client::Client::create_sampling_rule).
+            /// [`create_sampling_rule`](crate::client::fluent_builders::CreateSamplingRule).
             ///
             /// `ParseStrictResponse` impl for `CreateSamplingRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSamplingRule {
 /// Operation shape for `DeleteGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_group`](crate::client::Client::delete_group).
+            /// [`delete_group`](crate::client::fluent_builders::DeleteGroup).
             ///
             /// `ParseStrictResponse` impl for `DeleteGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
 /// Operation shape for `DeleteResourcePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
+            /// [`delete_resource_policy`](crate::client::fluent_builders::DeleteResourcePolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// Operation shape for `DeleteSamplingRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_sampling_rule`](crate::client::Client::delete_sampling_rule).
+            /// [`delete_sampling_rule`](crate::client::fluent_builders::DeleteSamplingRule).
             ///
             /// `ParseStrictResponse` impl for `DeleteSamplingRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSamplingRule {
 /// Operation shape for `GetEncryptionConfig`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_encryption_config`](crate::client::Client::get_encryption_config).
+            /// [`get_encryption_config`](crate::client::fluent_builders::GetEncryptionConfig).
             ///
             /// `ParseStrictResponse` impl for `GetEncryptionConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEncryptionConfig {
 /// Operation shape for `GetGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_group`](crate::client::Client::get_group).
+            /// [`get_group`](crate::client::fluent_builders::GetGroup).
             ///
             /// `ParseStrictResponse` impl for `GetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroup {
 /// Operation shape for `GetGroups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_groups`](crate::client::Client::get_groups).
+            /// [`get_groups`](crate::client::fluent_builders::GetGroups).
             ///
             /// `ParseStrictResponse` impl for `GetGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroups {
 /// Operation shape for `GetInsight`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_insight`](crate::client::Client::get_insight).
+            /// [`get_insight`](crate::client::fluent_builders::GetInsight).
             ///
             /// `ParseStrictResponse` impl for `GetInsight`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsight {
 /// Operation shape for `GetInsightEvents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_insight_events`](crate::client::Client::get_insight_events).
+            /// [`get_insight_events`](crate::client::fluent_builders::GetInsightEvents).
             ///
             /// `ParseStrictResponse` impl for `GetInsightEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightEvents {
 /// Operation shape for `GetInsightImpactGraph`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_insight_impact_graph`](crate::client::Client::get_insight_impact_graph).
+            /// [`get_insight_impact_graph`](crate::client::fluent_builders::GetInsightImpactGraph).
             ///
             /// `ParseStrictResponse` impl for `GetInsightImpactGraph`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightImpactGraph {
 /// Operation shape for `GetInsightSummaries`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_insight_summaries`](crate::client::Client::get_insight_summaries).
+            /// [`get_insight_summaries`](crate::client::fluent_builders::GetInsightSummaries).
             ///
             /// `ParseStrictResponse` impl for `GetInsightSummaries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightSummaries {
 /// Operation shape for `GetSamplingRules`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_sampling_rules`](crate::client::Client::get_sampling_rules).
+            /// [`get_sampling_rules`](crate::client::fluent_builders::GetSamplingRules).
             ///
             /// `ParseStrictResponse` impl for `GetSamplingRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSamplingRules {
 /// Operation shape for `GetSamplingStatisticSummaries`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_sampling_statistic_summaries`](crate::client::Client::get_sampling_statistic_summaries).
+            /// [`get_sampling_statistic_summaries`](crate::client::fluent_builders::GetSamplingStatisticSummaries).
             ///
             /// `ParseStrictResponse` impl for `GetSamplingStatisticSummaries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSamplingStatisticSumm
 /// Operation shape for `GetSamplingTargets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_sampling_targets`](crate::client::Client::get_sampling_targets).
+            /// [`get_sampling_targets`](crate::client::fluent_builders::GetSamplingTargets).
             ///
             /// `ParseStrictResponse` impl for `GetSamplingTargets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSamplingTargets {
 /// Operation shape for `GetServiceGraph`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_service_graph`](crate::client::Client::get_service_graph).
+            /// [`get_service_graph`](crate::client::fluent_builders::GetServiceGraph).
             ///
             /// `ParseStrictResponse` impl for `GetServiceGraph`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceGraph {
 /// Operation shape for `GetTimeSeriesServiceStatistics`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_time_series_service_statistics`](crate::client::Client::get_time_series_service_statistics).
+            /// [`get_time_series_service_statistics`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics).
             ///
             /// `ParseStrictResponse` impl for `GetTimeSeriesServiceStatistics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTimeSeriesServiceStat
 /// Operation shape for `GetTraceGraph`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_trace_graph`](crate::client::Client::get_trace_graph).
+            /// [`get_trace_graph`](crate::client::fluent_builders::GetTraceGraph).
             ///
             /// `ParseStrictResponse` impl for `GetTraceGraph`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTraceGraph {
 /// Operation shape for `GetTraceSummaries`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_trace_summaries`](crate::client::Client::get_trace_summaries).
+            /// [`get_trace_summaries`](crate::client::fluent_builders::GetTraceSummaries).
             ///
             /// `ParseStrictResponse` impl for `GetTraceSummaries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTraceSummaries {
 /// Operation shape for `ListResourcePolicies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_resource_policies`](crate::client::Client::list_resource_policies).
+            /// [`list_resource_policies`](crate::client::fluent_builders::ListResourcePolicies).
             ///
             /// `ParseStrictResponse` impl for `ListResourcePolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourcePolicies {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutEncryptionConfig`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_encryption_config`](crate::client::Client::put_encryption_config).
+            /// [`put_encryption_config`](crate::client::fluent_builders::PutEncryptionConfig).
             ///
             /// `ParseStrictResponse` impl for `PutEncryptionConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEncryptionConfig {
 /// Operation shape for `PutResourcePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_resource_policy`](crate::client::Client::put_resource_policy).
+            /// [`put_resource_policy`](crate::client::fluent_builders::PutResourcePolicy).
             ///
             /// `ParseStrictResponse` impl for `PutResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// Operation shape for `PutTelemetryRecords`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_telemetry_records`](crate::client::Client::put_telemetry_records).
+            /// [`put_telemetry_records`](crate::client::fluent_builders::PutTelemetryRecords).
             ///
             /// `ParseStrictResponse` impl for `PutTelemetryRecords`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutTelemetryRecords {
 /// Operation shape for `PutTraceSegments`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_trace_segments`](crate::client::Client::put_trace_segments).
+            /// [`put_trace_segments`](crate::client::fluent_builders::PutTraceSegments).
             ///
             /// `ParseStrictResponse` impl for `PutTraceSegments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutTraceSegments {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateGroup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_group`](crate::client::Client::update_group).
+            /// [`update_group`](crate::client::fluent_builders::UpdateGroup).
             ///
             /// `ParseStrictResponse` impl for `UpdateGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGroup {
 /// Operation shape for `UpdateSamplingRule`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_sampling_rule`](crate::client::Client::update_sampling_rule).
+            /// [`update_sampling_rule`](crate::client::fluent_builders::UpdateSamplingRule).
             ///
             /// `ParseStrictResponse` impl for `UpdateSamplingRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

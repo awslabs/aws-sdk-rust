@@ -2,7 +2,7 @@
 /// Operation shape for `AddProfileKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_profile_key`](crate::client::Client::add_profile_key).
+            /// [`add_profile_key`](crate::client::fluent_builders::AddProfileKey).
             ///
             /// `ParseStrictResponse` impl for `AddProfileKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddProfileKey {
 /// Operation shape for `CreateDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_domain`](crate::client::Client::create_domain).
+            /// [`create_domain`](crate::client::fluent_builders::CreateDomain).
             ///
             /// `ParseStrictResponse` impl for `CreateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomain {
 /// Operation shape for `CreateIntegrationWorkflow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_integration_workflow`](crate::client::Client::create_integration_workflow).
+            /// [`create_integration_workflow`](crate::client::fluent_builders::CreateIntegrationWorkflow).
             ///
             /// `ParseStrictResponse` impl for `CreateIntegrationWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIntegrationWorkflo
 /// Operation shape for `CreateProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_profile`](crate::client::Client::create_profile).
+            /// [`create_profile`](crate::client::fluent_builders::CreateProfile).
             ///
             /// `ParseStrictResponse` impl for `CreateProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProfile {
 /// Operation shape for `DeleteDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_domain`](crate::client::Client::delete_domain).
+            /// [`delete_domain`](crate::client::fluent_builders::DeleteDomain).
             ///
             /// `ParseStrictResponse` impl for `DeleteDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomain {
 /// Operation shape for `DeleteIntegration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_integration`](crate::client::Client::delete_integration).
+            /// [`delete_integration`](crate::client::fluent_builders::DeleteIntegration).
             ///
             /// `ParseStrictResponse` impl for `DeleteIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIntegration {
 /// Operation shape for `DeleteProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_profile`](crate::client::Client::delete_profile).
+            /// [`delete_profile`](crate::client::fluent_builders::DeleteProfile).
             ///
             /// `ParseStrictResponse` impl for `DeleteProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfile {
 /// Operation shape for `DeleteProfileKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_profile_key`](crate::client::Client::delete_profile_key).
+            /// [`delete_profile_key`](crate::client::fluent_builders::DeleteProfileKey).
             ///
             /// `ParseStrictResponse` impl for `DeleteProfileKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfileKey {
 /// Operation shape for `DeleteProfileObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_profile_object`](crate::client::Client::delete_profile_object).
+            /// [`delete_profile_object`](crate::client::fluent_builders::DeleteProfileObject).
             ///
             /// `ParseStrictResponse` impl for `DeleteProfileObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfileObject {
 /// Operation shape for `DeleteProfileObjectType`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_profile_object_type`](crate::client::Client::delete_profile_object_type).
+            /// [`delete_profile_object_type`](crate::client::fluent_builders::DeleteProfileObjectType).
             ///
             /// `ParseStrictResponse` impl for `DeleteProfileObjectType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfileObjectType 
 /// Operation shape for `DeleteWorkflow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_workflow`](crate::client::Client::delete_workflow).
+            /// [`delete_workflow`](crate::client::fluent_builders::DeleteWorkflow).
             ///
             /// `ParseStrictResponse` impl for `DeleteWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflow {
 /// Operation shape for `GetAutoMergingPreview`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_auto_merging_preview`](crate::client::Client::get_auto_merging_preview).
+            /// [`get_auto_merging_preview`](crate::client::fluent_builders::GetAutoMergingPreview).
             ///
             /// `ParseStrictResponse` impl for `GetAutoMergingPreview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAutoMergingPreview {
 /// Operation shape for `GetDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_domain`](crate::client::Client::get_domain).
+            /// [`get_domain`](crate::client::fluent_builders::GetDomain).
             ///
             /// `ParseStrictResponse` impl for `GetDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomain {
 /// Operation shape for `GetIdentityResolutionJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_identity_resolution_job`](crate::client::Client::get_identity_resolution_job).
+            /// [`get_identity_resolution_job`](crate::client::fluent_builders::GetIdentityResolutionJob).
             ///
             /// `ParseStrictResponse` impl for `GetIdentityResolutionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityResolutionJob
 /// Operation shape for `GetIntegration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_integration`](crate::client::Client::get_integration).
+            /// [`get_integration`](crate::client::fluent_builders::GetIntegration).
             ///
             /// `ParseStrictResponse` impl for `GetIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIntegration {
 /// Operation shape for `GetMatches`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_matches`](crate::client::Client::get_matches).
+            /// [`get_matches`](crate::client::fluent_builders::GetMatches).
             ///
             /// `ParseStrictResponse` impl for `GetMatches`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMatches {
 /// Operation shape for `GetProfileObjectType`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_profile_object_type`](crate::client::Client::get_profile_object_type).
+            /// [`get_profile_object_type`](crate::client::fluent_builders::GetProfileObjectType).
             ///
             /// `ParseStrictResponse` impl for `GetProfileObjectType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProfileObjectType {
 /// Operation shape for `GetProfileObjectTypeTemplate`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_profile_object_type_template`](crate::client::Client::get_profile_object_type_template).
+            /// [`get_profile_object_type_template`](crate::client::fluent_builders::GetProfileObjectTypeTemplate).
             ///
             /// `ParseStrictResponse` impl for `GetProfileObjectTypeTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProfileObjectTypeTemp
 /// Operation shape for `GetWorkflow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_workflow`](crate::client::Client::get_workflow).
+            /// [`get_workflow`](crate::client::fluent_builders::GetWorkflow).
             ///
             /// `ParseStrictResponse` impl for `GetWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflow {
 /// Operation shape for `GetWorkflowSteps`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_workflow_steps`](crate::client::Client::get_workflow_steps).
+            /// [`get_workflow_steps`](crate::client::fluent_builders::GetWorkflowSteps).
             ///
             /// `ParseStrictResponse` impl for `GetWorkflowSteps`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowSteps {
 /// Operation shape for `ListAccountIntegrations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_account_integrations`](crate::client::Client::list_account_integrations).
+            /// [`list_account_integrations`](crate::client::fluent_builders::ListAccountIntegrations).
             ///
             /// `ParseStrictResponse` impl for `ListAccountIntegrations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountIntegrations 
 /// Operation shape for `ListDomains`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_domains`](crate::client::Client::list_domains).
+            /// [`list_domains`](crate::client::fluent_builders::ListDomains).
             ///
             /// `ParseStrictResponse` impl for `ListDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// Operation shape for `ListIdentityResolutionJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_identity_resolution_jobs`](crate::client::Client::list_identity_resolution_jobs).
+            /// [`list_identity_resolution_jobs`](crate::client::fluent_builders::ListIdentityResolutionJobs).
             ///
             /// `ParseStrictResponse` impl for `ListIdentityResolutionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityResolutionJo
 /// Operation shape for `ListIntegrations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_integrations`](crate::client::Client::list_integrations).
+            /// [`list_integrations`](crate::client::fluent_builders::ListIntegrations).
             ///
             /// `ParseStrictResponse` impl for `ListIntegrations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIntegrations {
 /// Operation shape for `ListProfileObjects`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_profile_objects`](crate::client::Client::list_profile_objects).
+            /// [`list_profile_objects`](crate::client::fluent_builders::ListProfileObjects).
             ///
             /// `ParseStrictResponse` impl for `ListProfileObjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfileObjects {
 /// Operation shape for `ListProfileObjectTypes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_profile_object_types`](crate::client::Client::list_profile_object_types).
+            /// [`list_profile_object_types`](crate::client::fluent_builders::ListProfileObjectTypes).
             ///
             /// `ParseStrictResponse` impl for `ListProfileObjectTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfileObjectTypes {
 /// Operation shape for `ListProfileObjectTypeTemplates`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_profile_object_type_templates`](crate::client::Client::list_profile_object_type_templates).
+            /// [`list_profile_object_type_templates`](crate::client::fluent_builders::ListProfileObjectTypeTemplates).
             ///
             /// `ParseStrictResponse` impl for `ListProfileObjectTypeTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfileObjectTypeTem
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListWorkflows`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_workflows`](crate::client::Client::list_workflows).
+            /// [`list_workflows`](crate::client::fluent_builders::ListWorkflows).
             ///
             /// `ParseStrictResponse` impl for `ListWorkflows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflows {
 /// Operation shape for `MergeProfiles`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`merge_profiles`](crate::client::Client::merge_profiles).
+            /// [`merge_profiles`](crate::client::fluent_builders::MergeProfiles).
             ///
             /// `ParseStrictResponse` impl for `MergeProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeProfiles {
 /// Operation shape for `PutIntegration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_integration`](crate::client::Client::put_integration).
+            /// [`put_integration`](crate::client::fluent_builders::PutIntegration).
             ///
             /// `ParseStrictResponse` impl for `PutIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutIntegration {
 /// Operation shape for `PutProfileObject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_profile_object`](crate::client::Client::put_profile_object).
+            /// [`put_profile_object`](crate::client::fluent_builders::PutProfileObject).
             ///
             /// `ParseStrictResponse` impl for `PutProfileObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProfileObject {
 /// Operation shape for `PutProfileObjectType`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_profile_object_type`](crate::client::Client::put_profile_object_type).
+            /// [`put_profile_object_type`](crate::client::fluent_builders::PutProfileObjectType).
             ///
             /// `ParseStrictResponse` impl for `PutProfileObjectType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProfileObjectType {
 /// Operation shape for `SearchProfiles`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_profiles`](crate::client::Client::search_profiles).
+            /// [`search_profiles`](crate::client::fluent_builders::SearchProfiles).
             ///
             /// `ParseStrictResponse` impl for `SearchProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchProfiles {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateDomain`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_domain`](crate::client::Client::update_domain).
+            /// [`update_domain`](crate::client::fluent_builders::UpdateDomain).
             ///
             /// `ParseStrictResponse` impl for `UpdateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomain {
 /// Operation shape for `UpdateProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_profile`](crate::client::Client::update_profile).
+            /// [`update_profile`](crate::client::fluent_builders::UpdateProfile).
             ///
             /// `ParseStrictResponse` impl for `UpdateProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

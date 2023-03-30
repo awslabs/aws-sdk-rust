@@ -2,7 +2,7 @@
 /// Operation shape for `CancelImageCreation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_image_creation`](crate::client::Client::cancel_image_creation).
+            /// [`cancel_image_creation`](crate::client::fluent_builders::CancelImageCreation).
             ///
             /// `ParseStrictResponse` impl for `CancelImageCreation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelImageCreation {
 /// Operation shape for `CreateComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_component`](crate::client::Client::create_component).
+            /// [`create_component`](crate::client::fluent_builders::CreateComponent).
             ///
             /// `ParseStrictResponse` impl for `CreateComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComponent {
 /// Operation shape for `CreateContainerRecipe`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_container_recipe`](crate::client::Client::create_container_recipe).
+            /// [`create_container_recipe`](crate::client::fluent_builders::CreateContainerRecipe).
             ///
             /// `ParseStrictResponse` impl for `CreateContainerRecipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContainerRecipe {
 /// Operation shape for `CreateDistributionConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_distribution_configuration`](crate::client::Client::create_distribution_configuration).
+            /// [`create_distribution_configuration`](crate::client::fluent_builders::CreateDistributionConfiguration).
             ///
             /// `ParseStrictResponse` impl for `CreateDistributionConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDistributionConfig
 /// Operation shape for `CreateImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_image`](crate::client::Client::create_image).
+            /// [`create_image`](crate::client::fluent_builders::CreateImage).
             ///
             /// `ParseStrictResponse` impl for `CreateImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateImage {
 /// Operation shape for `CreateImagePipeline`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_image_pipeline`](crate::client::Client::create_image_pipeline).
+            /// [`create_image_pipeline`](crate::client::fluent_builders::CreateImagePipeline).
             ///
             /// `ParseStrictResponse` impl for `CreateImagePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateImagePipeline {
 /// Operation shape for `CreateImageRecipe`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_image_recipe`](crate::client::Client::create_image_recipe).
+            /// [`create_image_recipe`](crate::client::fluent_builders::CreateImageRecipe).
             ///
             /// `ParseStrictResponse` impl for `CreateImageRecipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateImageRecipe {
 /// Operation shape for `CreateInfrastructureConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_infrastructure_configuration`](crate::client::Client::create_infrastructure_configuration).
+            /// [`create_infrastructure_configuration`](crate::client::fluent_builders::CreateInfrastructureConfiguration).
             ///
             /// `ParseStrictResponse` impl for `CreateInfrastructureConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInfrastructureConf
 /// Operation shape for `DeleteComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_component`](crate::client::Client::delete_component).
+            /// [`delete_component`](crate::client::fluent_builders::DeleteComponent).
             ///
             /// `ParseStrictResponse` impl for `DeleteComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteComponent {
 /// Operation shape for `DeleteContainerRecipe`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_container_recipe`](crate::client::Client::delete_container_recipe).
+            /// [`delete_container_recipe`](crate::client::fluent_builders::DeleteContainerRecipe).
             ///
             /// `ParseStrictResponse` impl for `DeleteContainerRecipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContainerRecipe {
 /// Operation shape for `DeleteDistributionConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_distribution_configuration`](crate::client::Client::delete_distribution_configuration).
+            /// [`delete_distribution_configuration`](crate::client::fluent_builders::DeleteDistributionConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteDistributionConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDistributionConfig
 /// Operation shape for `DeleteImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_image`](crate::client::Client::delete_image).
+            /// [`delete_image`](crate::client::fluent_builders::DeleteImage).
             ///
             /// `ParseStrictResponse` impl for `DeleteImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteImage {
 /// Operation shape for `DeleteImagePipeline`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_image_pipeline`](crate::client::Client::delete_image_pipeline).
+            /// [`delete_image_pipeline`](crate::client::fluent_builders::DeleteImagePipeline).
             ///
             /// `ParseStrictResponse` impl for `DeleteImagePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteImagePipeline {
 /// Operation shape for `DeleteImageRecipe`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_image_recipe`](crate::client::Client::delete_image_recipe).
+            /// [`delete_image_recipe`](crate::client::fluent_builders::DeleteImageRecipe).
             ///
             /// `ParseStrictResponse` impl for `DeleteImageRecipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteImageRecipe {
 /// Operation shape for `DeleteInfrastructureConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_infrastructure_configuration`](crate::client::Client::delete_infrastructure_configuration).
+            /// [`delete_infrastructure_configuration`](crate::client::fluent_builders::DeleteInfrastructureConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteInfrastructureConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInfrastructureConf
 /// Operation shape for `GetComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_component`](crate::client::Client::get_component).
+            /// [`get_component`](crate::client::fluent_builders::GetComponent).
             ///
             /// `ParseStrictResponse` impl for `GetComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
 /// Operation shape for `GetComponentPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_component_policy`](crate::client::Client::get_component_policy).
+            /// [`get_component_policy`](crate::client::fluent_builders::GetComponentPolicy).
             ///
             /// `ParseStrictResponse` impl for `GetComponentPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponentPolicy {
 /// Operation shape for `GetContainerRecipe`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_container_recipe`](crate::client::Client::get_container_recipe).
+            /// [`get_container_recipe`](crate::client::fluent_builders::GetContainerRecipe).
             ///
             /// `ParseStrictResponse` impl for `GetContainerRecipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContainerRecipe {
 /// Operation shape for `GetContainerRecipePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_container_recipe_policy`](crate::client::Client::get_container_recipe_policy).
+            /// [`get_container_recipe_policy`](crate::client::fluent_builders::GetContainerRecipePolicy).
             ///
             /// `ParseStrictResponse` impl for `GetContainerRecipePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContainerRecipePolicy
 /// Operation shape for `GetDistributionConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_distribution_configuration`](crate::client::Client::get_distribution_configuration).
+            /// [`get_distribution_configuration`](crate::client::fluent_builders::GetDistributionConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetDistributionConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDistributionConfigura
 /// Operation shape for `GetImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_image`](crate::client::Client::get_image).
+            /// [`get_image`](crate::client::fluent_builders::GetImage).
             ///
             /// `ParseStrictResponse` impl for `GetImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImage {
 /// Operation shape for `GetImagePipeline`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_image_pipeline`](crate::client::Client::get_image_pipeline).
+            /// [`get_image_pipeline`](crate::client::fluent_builders::GetImagePipeline).
             ///
             /// `ParseStrictResponse` impl for `GetImagePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImagePipeline {
 /// Operation shape for `GetImagePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_image_policy`](crate::client::Client::get_image_policy).
+            /// [`get_image_policy`](crate::client::fluent_builders::GetImagePolicy).
             ///
             /// `ParseStrictResponse` impl for `GetImagePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImagePolicy {
 /// Operation shape for `GetImageRecipe`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_image_recipe`](crate::client::Client::get_image_recipe).
+            /// [`get_image_recipe`](crate::client::fluent_builders::GetImageRecipe).
             ///
             /// `ParseStrictResponse` impl for `GetImageRecipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImageRecipe {
 /// Operation shape for `GetImageRecipePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_image_recipe_policy`](crate::client::Client::get_image_recipe_policy).
+            /// [`get_image_recipe_policy`](crate::client::fluent_builders::GetImageRecipePolicy).
             ///
             /// `ParseStrictResponse` impl for `GetImageRecipePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImageRecipePolicy {
 /// Operation shape for `GetInfrastructureConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_infrastructure_configuration`](crate::client::Client::get_infrastructure_configuration).
+            /// [`get_infrastructure_configuration`](crate::client::fluent_builders::GetInfrastructureConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetInfrastructureConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInfrastructureConfigu
 /// Operation shape for `ImportComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_component`](crate::client::Client::import_component).
+            /// [`import_component`](crate::client::fluent_builders::ImportComponent).
             ///
             /// `ParseStrictResponse` impl for `ImportComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportComponent {
 /// Operation shape for `ImportVmImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_vm_image`](crate::client::Client::import_vm_image).
+            /// [`import_vm_image`](crate::client::fluent_builders::ImportVmImage).
             ///
             /// `ParseStrictResponse` impl for `ImportVmImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportVmImage {
 /// Operation shape for `ListComponentBuildVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_component_build_versions`](crate::client::Client::list_component_build_versions).
+            /// [`list_component_build_versions`](crate::client::fluent_builders::ListComponentBuildVersions).
             ///
             /// `ParseStrictResponse` impl for `ListComponentBuildVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponentBuildVersio
 /// Operation shape for `ListComponents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_components`](crate::client::Client::list_components).
+            /// [`list_components`](crate::client::fluent_builders::ListComponents).
             ///
             /// `ParseStrictResponse` impl for `ListComponents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
 /// Operation shape for `ListContainerRecipes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_container_recipes`](crate::client::Client::list_container_recipes).
+            /// [`list_container_recipes`](crate::client::fluent_builders::ListContainerRecipes).
             ///
             /// `ParseStrictResponse` impl for `ListContainerRecipes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContainerRecipes {
 /// Operation shape for `ListDistributionConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_distribution_configurations`](crate::client::Client::list_distribution_configurations).
+            /// [`list_distribution_configurations`](crate::client::fluent_builders::ListDistributionConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListDistributionConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionConfigur
 /// Operation shape for `ListImageBuildVersions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_image_build_versions`](crate::client::Client::list_image_build_versions).
+            /// [`list_image_build_versions`](crate::client::fluent_builders::ListImageBuildVersions).
             ///
             /// `ParseStrictResponse` impl for `ListImageBuildVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImageBuildVersions {
 /// Operation shape for `ListImagePackages`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_image_packages`](crate::client::Client::list_image_packages).
+            /// [`list_image_packages`](crate::client::fluent_builders::ListImagePackages).
             ///
             /// `ParseStrictResponse` impl for `ListImagePackages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImagePackages {
 /// Operation shape for `ListImagePipelineImages`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_image_pipeline_images`](crate::client::Client::list_image_pipeline_images).
+            /// [`list_image_pipeline_images`](crate::client::fluent_builders::ListImagePipelineImages).
             ///
             /// `ParseStrictResponse` impl for `ListImagePipelineImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImagePipelineImages 
 /// Operation shape for `ListImagePipelines`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_image_pipelines`](crate::client::Client::list_image_pipelines).
+            /// [`list_image_pipelines`](crate::client::fluent_builders::ListImagePipelines).
             ///
             /// `ParseStrictResponse` impl for `ListImagePipelines`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImagePipelines {
 /// Operation shape for `ListImageRecipes`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_image_recipes`](crate::client::Client::list_image_recipes).
+            /// [`list_image_recipes`](crate::client::fluent_builders::ListImageRecipes).
             ///
             /// `ParseStrictResponse` impl for `ListImageRecipes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImageRecipes {
 /// Operation shape for `ListImages`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_images`](crate::client::Client::list_images).
+            /// [`list_images`](crate::client::fluent_builders::ListImages).
             ///
             /// `ParseStrictResponse` impl for `ListImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImages {
 /// Operation shape for `ListInfrastructureConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_infrastructure_configurations`](crate::client::Client::list_infrastructure_configurations).
+            /// [`list_infrastructure_configurations`](crate::client::fluent_builders::ListInfrastructureConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListInfrastructureConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInfrastructureConfig
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutComponentPolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_component_policy`](crate::client::Client::put_component_policy).
+            /// [`put_component_policy`](crate::client::fluent_builders::PutComponentPolicy).
             ///
             /// `ParseStrictResponse` impl for `PutComponentPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutComponentPolicy {
 /// Operation shape for `PutContainerRecipePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_container_recipe_policy`](crate::client::Client::put_container_recipe_policy).
+            /// [`put_container_recipe_policy`](crate::client::fluent_builders::PutContainerRecipePolicy).
             ///
             /// `ParseStrictResponse` impl for `PutContainerRecipePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutContainerRecipePolicy
 /// Operation shape for `PutImagePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_image_policy`](crate::client::Client::put_image_policy).
+            /// [`put_image_policy`](crate::client::fluent_builders::PutImagePolicy).
             ///
             /// `ParseStrictResponse` impl for `PutImagePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutImagePolicy {
 /// Operation shape for `PutImageRecipePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_image_recipe_policy`](crate::client::Client::put_image_recipe_policy).
+            /// [`put_image_recipe_policy`](crate::client::fluent_builders::PutImageRecipePolicy).
             ///
             /// `ParseStrictResponse` impl for `PutImageRecipePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutImageRecipePolicy {
 /// Operation shape for `StartImagePipelineExecution`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_image_pipeline_execution`](crate::client::Client::start_image_pipeline_execution).
+            /// [`start_image_pipeline_execution`](crate::client::fluent_builders::StartImagePipelineExecution).
             ///
             /// `ParseStrictResponse` impl for `StartImagePipelineExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1442,7 +1442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartImagePipelineExecut
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1506,7 +1506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateDistributionConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_distribution_configuration`](crate::client::Client::update_distribution_configuration).
+            /// [`update_distribution_configuration`](crate::client::fluent_builders::UpdateDistributionConfiguration).
             ///
             /// `ParseStrictResponse` impl for `UpdateDistributionConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDistributionConfig
 /// Operation shape for `UpdateImagePipeline`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_image_pipeline`](crate::client::Client::update_image_pipeline).
+            /// [`update_image_pipeline`](crate::client::fluent_builders::UpdateImagePipeline).
             ///
             /// `ParseStrictResponse` impl for `UpdateImagePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1570,7 +1570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateImagePipeline {
 /// Operation shape for `UpdateInfrastructureConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_infrastructure_configuration`](crate::client::Client::update_infrastructure_configuration).
+            /// [`update_infrastructure_configuration`](crate::client::fluent_builders::UpdateInfrastructureConfiguration).
             ///
             /// `ParseStrictResponse` impl for `UpdateInfrastructureConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

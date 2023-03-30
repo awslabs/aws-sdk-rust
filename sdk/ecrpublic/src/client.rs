@@ -80,8 +80,8 @@ impl Client  {
                         ///   - [`layers(Option<Vec<Layer>>)`](crate::output::BatchCheckLayerAvailabilityOutput::layers): <p>A list of image layer objects that correspond to the image layer references in the request.</p>
     ///   - [`failures(Option<Vec<LayerFailure>>)`](crate::output::BatchCheckLayerAvailabilityOutput::failures): <p>Any failures associated with the call.</p>
                         /// - On failure, responds with [`SdkError<BatchCheckLayerAvailabilityError>`](crate::error::BatchCheckLayerAvailabilityError)
-    pub fn batch_check_layer_availability(&self) -> fluent_builders::BatchCheckLayerAvailability {
-                            fluent_builders::BatchCheckLayerAvailability::new(self.handle.clone())
+    pub fn batch_check_layer_availability(&self) -> crate::client::fluent_builders::BatchCheckLayerAvailability {
+                            crate::client::fluent_builders::BatchCheckLayerAvailability::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`BatchDeleteImage`](crate::client::fluent_builders::BatchDeleteImage) operation.
                         ///
@@ -93,8 +93,8 @@ impl Client  {
                         ///   - [`image_ids(Option<Vec<ImageIdentifier>>)`](crate::output::BatchDeleteImageOutput::image_ids): <p>The image IDs of the deleted images.</p>
     ///   - [`failures(Option<Vec<ImageFailure>>)`](crate::output::BatchDeleteImageOutput::failures): <p>Any failures associated with the call.</p>
                         /// - On failure, responds with [`SdkError<BatchDeleteImageError>`](crate::error::BatchDeleteImageError)
-    pub fn batch_delete_image(&self) -> fluent_builders::BatchDeleteImage {
-                            fluent_builders::BatchDeleteImage::new(self.handle.clone())
+    pub fn batch_delete_image(&self) -> crate::client::fluent_builders::BatchDeleteImage {
+                            crate::client::fluent_builders::BatchDeleteImage::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CompleteLayerUpload`](crate::client::fluent_builders::CompleteLayerUpload) operation.
                         ///
@@ -109,8 +109,8 @@ impl Client  {
     ///   - [`upload_id(Option<String>)`](crate::output::CompleteLayerUploadOutput::upload_id): <p>The upload ID that's associated with the layer.</p>
     ///   - [`layer_digest(Option<String>)`](crate::output::CompleteLayerUploadOutput::layer_digest): <p>The <code>sha256</code> digest of the image layer.</p>
                         /// - On failure, responds with [`SdkError<CompleteLayerUploadError>`](crate::error::CompleteLayerUploadError)
-    pub fn complete_layer_upload(&self) -> fluent_builders::CompleteLayerUpload {
-                            fluent_builders::CompleteLayerUpload::new(self.handle.clone())
+    pub fn complete_layer_upload(&self) -> crate::client::fluent_builders::CompleteLayerUpload {
+                            crate::client::fluent_builders::CompleteLayerUpload::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateRepository`](crate::client::fluent_builders::CreateRepository) operation.
                         ///
@@ -122,8 +122,8 @@ impl Client  {
                         ///   - [`repository(Option<Repository>)`](crate::output::CreateRepositoryOutput::repository): <p>The repository that was created.</p>
     ///   - [`catalog_data(Option<RepositoryCatalogData>)`](crate::output::CreateRepositoryOutput::catalog_data): <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
                         /// - On failure, responds with [`SdkError<CreateRepositoryError>`](crate::error::CreateRepositoryError)
-    pub fn create_repository(&self) -> fluent_builders::CreateRepository {
-                            fluent_builders::CreateRepository::new(self.handle.clone())
+    pub fn create_repository(&self) -> crate::client::fluent_builders::CreateRepository {
+                            crate::client::fluent_builders::CreateRepository::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteRepository`](crate::client::fluent_builders::DeleteRepository) operation.
                         ///
@@ -134,8 +134,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput) with field(s):
                         ///   - [`repository(Option<Repository>)`](crate::output::DeleteRepositoryOutput::repository): <p>The repository that was deleted.</p>
                         /// - On failure, responds with [`SdkError<DeleteRepositoryError>`](crate::error::DeleteRepositoryError)
-    pub fn delete_repository(&self) -> fluent_builders::DeleteRepository {
-                            fluent_builders::DeleteRepository::new(self.handle.clone())
+    pub fn delete_repository(&self) -> crate::client::fluent_builders::DeleteRepository {
+                            crate::client::fluent_builders::DeleteRepository::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteRepositoryPolicy`](crate::client::fluent_builders::DeleteRepositoryPolicy) operation.
                         ///
@@ -147,8 +147,8 @@ impl Client  {
     ///   - [`repository_name(Option<String>)`](crate::output::DeleteRepositoryPolicyOutput::repository_name): <p>The repository name that's associated with the request.</p>
     ///   - [`policy_text(Option<String>)`](crate::output::DeleteRepositoryPolicyOutput::policy_text): <p>The JSON repository policy that was deleted from the repository.</p>
                         /// - On failure, responds with [`SdkError<DeleteRepositoryPolicyError>`](crate::error::DeleteRepositoryPolicyError)
-    pub fn delete_repository_policy(&self) -> fluent_builders::DeleteRepositoryPolicy {
-                            fluent_builders::DeleteRepositoryPolicy::new(self.handle.clone())
+    pub fn delete_repository_policy(&self) -> crate::client::fluent_builders::DeleteRepositoryPolicy {
+                            crate::client::fluent_builders::DeleteRepositoryPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeImages`](crate::client::fluent_builders::DescribeImages) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeImages::into_paginator).
@@ -163,8 +163,8 @@ impl Client  {
                         ///   - [`image_details(Option<Vec<ImageDetail>>)`](crate::output::DescribeImagesOutput::image_details): <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeImagesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
                         /// - On failure, responds with [`SdkError<DescribeImagesError>`](crate::error::DescribeImagesError)
-    pub fn describe_images(&self) -> fluent_builders::DescribeImages {
-                            fluent_builders::DescribeImages::new(self.handle.clone())
+    pub fn describe_images(&self) -> crate::client::fluent_builders::DescribeImages {
+                            crate::client::fluent_builders::DescribeImages::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeImageTags`](crate::client::fluent_builders::DescribeImageTags) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeImageTags::into_paginator).
@@ -178,8 +178,8 @@ impl Client  {
                         ///   - [`image_tag_details(Option<Vec<ImageTagDetail>>)`](crate::output::DescribeImageTagsOutput::image_tag_details): <p>The image tag details for the images in the requested repository.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeImageTagsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
                         /// - On failure, responds with [`SdkError<DescribeImageTagsError>`](crate::error::DescribeImageTagsError)
-    pub fn describe_image_tags(&self) -> fluent_builders::DescribeImageTags {
-                            fluent_builders::DescribeImageTags::new(self.handle.clone())
+    pub fn describe_image_tags(&self) -> crate::client::fluent_builders::DescribeImageTags {
+                            crate::client::fluent_builders::DescribeImageTags::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeRegistries`](crate::client::fluent_builders::DescribeRegistries) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeRegistries::into_paginator).
@@ -191,8 +191,8 @@ impl Client  {
                         ///   - [`registries(Option<Vec<Registry>>)`](crate::output::DescribeRegistriesOutput::registries): <p>An object that contains the details for a public registry.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeRegistriesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
                         /// - On failure, responds with [`SdkError<DescribeRegistriesError>`](crate::error::DescribeRegistriesError)
-    pub fn describe_registries(&self) -> fluent_builders::DescribeRegistries {
-                            fluent_builders::DescribeRegistries::new(self.handle.clone())
+    pub fn describe_registries(&self) -> crate::client::fluent_builders::DescribeRegistries {
+                            crate::client::fluent_builders::DescribeRegistries::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeRepositories`](crate::client::fluent_builders::DescribeRepositories) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeRepositories::into_paginator).
@@ -206,8 +206,8 @@ impl Client  {
                         ///   - [`repositories(Option<Vec<Repository>>)`](crate::output::DescribeRepositoriesOutput::repositories): <p>A list of repository objects corresponding to valid repositories.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeRepositoriesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
                         /// - On failure, responds with [`SdkError<DescribeRepositoriesError>`](crate::error::DescribeRepositoriesError)
-    pub fn describe_repositories(&self) -> fluent_builders::DescribeRepositories {
-                            fluent_builders::DescribeRepositories::new(self.handle.clone())
+    pub fn describe_repositories(&self) -> crate::client::fluent_builders::DescribeRepositories {
+                            crate::client::fluent_builders::DescribeRepositories::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetAuthorizationToken`](crate::client::fluent_builders::GetAuthorizationToken) operation.
                         ///
@@ -216,8 +216,8 @@ impl Client  {
                         /// - On success, responds with [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput) with field(s):
                         ///   - [`authorization_data(Option<AuthorizationData>)`](crate::output::GetAuthorizationTokenOutput::authorization_data): <p>An authorization token data object that corresponds to a public registry.</p>
                         /// - On failure, responds with [`SdkError<GetAuthorizationTokenError>`](crate::error::GetAuthorizationTokenError)
-    pub fn get_authorization_token(&self) -> fluent_builders::GetAuthorizationToken {
-                            fluent_builders::GetAuthorizationToken::new(self.handle.clone())
+    pub fn get_authorization_token(&self) -> crate::client::fluent_builders::GetAuthorizationToken {
+                            crate::client::fluent_builders::GetAuthorizationToken::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetRegistryCatalogData`](crate::client::fluent_builders::GetRegistryCatalogData) operation.
                         ///
@@ -226,8 +226,8 @@ impl Client  {
                         /// - On success, responds with [`GetRegistryCatalogDataOutput`](crate::output::GetRegistryCatalogDataOutput) with field(s):
                         ///   - [`registry_catalog_data(Option<RegistryCatalogData>)`](crate::output::GetRegistryCatalogDataOutput::registry_catalog_data): <p>The catalog metadata for the public registry.</p>
                         /// - On failure, responds with [`SdkError<GetRegistryCatalogDataError>`](crate::error::GetRegistryCatalogDataError)
-    pub fn get_registry_catalog_data(&self) -> fluent_builders::GetRegistryCatalogData {
-                            fluent_builders::GetRegistryCatalogData::new(self.handle.clone())
+    pub fn get_registry_catalog_data(&self) -> crate::client::fluent_builders::GetRegistryCatalogData {
+                            crate::client::fluent_builders::GetRegistryCatalogData::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetRepositoryCatalogData`](crate::client::fluent_builders::GetRepositoryCatalogData) operation.
                         ///
@@ -237,8 +237,8 @@ impl Client  {
                         /// - On success, responds with [`GetRepositoryCatalogDataOutput`](crate::output::GetRepositoryCatalogDataOutput) with field(s):
                         ///   - [`catalog_data(Option<RepositoryCatalogData>)`](crate::output::GetRepositoryCatalogDataOutput::catalog_data): <p>The catalog metadata for the repository.</p>
                         /// - On failure, responds with [`SdkError<GetRepositoryCatalogDataError>`](crate::error::GetRepositoryCatalogDataError)
-    pub fn get_repository_catalog_data(&self) -> fluent_builders::GetRepositoryCatalogData {
-                            fluent_builders::GetRepositoryCatalogData::new(self.handle.clone())
+    pub fn get_repository_catalog_data(&self) -> crate::client::fluent_builders::GetRepositoryCatalogData {
+                            crate::client::fluent_builders::GetRepositoryCatalogData::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetRepositoryPolicy`](crate::client::fluent_builders::GetRepositoryPolicy) operation.
                         ///
@@ -250,8 +250,8 @@ impl Client  {
     ///   - [`repository_name(Option<String>)`](crate::output::GetRepositoryPolicyOutput::repository_name): <p>The repository name that's associated with the request.</p>
     ///   - [`policy_text(Option<String>)`](crate::output::GetRepositoryPolicyOutput::policy_text): <p>The repository policy text that's associated with the repository. The policy text will be in JSON format.</p>
                         /// - On failure, responds with [`SdkError<GetRepositoryPolicyError>`](crate::error::GetRepositoryPolicyError)
-    pub fn get_repository_policy(&self) -> fluent_builders::GetRepositoryPolicy {
-                            fluent_builders::GetRepositoryPolicy::new(self.handle.clone())
+    pub fn get_repository_policy(&self) -> crate::client::fluent_builders::GetRepositoryPolicy {
+                            crate::client::fluent_builders::GetRepositoryPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`InitiateLayerUpload`](crate::client::fluent_builders::InitiateLayerUpload) operation.
                         ///
@@ -262,8 +262,8 @@ impl Client  {
                         ///   - [`upload_id(Option<String>)`](crate::output::InitiateLayerUploadOutput::upload_id): <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
     ///   - [`part_size(Option<i64>)`](crate::output::InitiateLayerUploadOutput::part_size): <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
                         /// - On failure, responds with [`SdkError<InitiateLayerUploadError>`](crate::error::InitiateLayerUploadError)
-    pub fn initiate_layer_upload(&self) -> fluent_builders::InitiateLayerUpload {
-                            fluent_builders::InitiateLayerUpload::new(self.handle.clone())
+    pub fn initiate_layer_upload(&self) -> crate::client::fluent_builders::InitiateLayerUpload {
+                            crate::client::fluent_builders::InitiateLayerUpload::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -272,8 +272,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`PutImage`](crate::client::fluent_builders::PutImage) operation.
                         ///
@@ -287,8 +287,8 @@ impl Client  {
                         /// - On success, responds with [`PutImageOutput`](crate::output::PutImageOutput) with field(s):
                         ///   - [`image(Option<Image>)`](crate::output::PutImageOutput::image): <p>Details of the image uploaded.</p>
                         /// - On failure, responds with [`SdkError<PutImageError>`](crate::error::PutImageError)
-    pub fn put_image(&self) -> fluent_builders::PutImage {
-                            fluent_builders::PutImage::new(self.handle.clone())
+    pub fn put_image(&self) -> crate::client::fluent_builders::PutImage {
+                            crate::client::fluent_builders::PutImage::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`PutRegistryCatalogData`](crate::client::fluent_builders::PutRegistryCatalogData) operation.
                         ///
@@ -297,8 +297,8 @@ impl Client  {
                         /// - On success, responds with [`PutRegistryCatalogDataOutput`](crate::output::PutRegistryCatalogDataOutput) with field(s):
                         ///   - [`registry_catalog_data(Option<RegistryCatalogData>)`](crate::output::PutRegistryCatalogDataOutput::registry_catalog_data): <p>The catalog data for the public registry.</p>
                         /// - On failure, responds with [`SdkError<PutRegistryCatalogDataError>`](crate::error::PutRegistryCatalogDataError)
-    pub fn put_registry_catalog_data(&self) -> fluent_builders::PutRegistryCatalogData {
-                            fluent_builders::PutRegistryCatalogData::new(self.handle.clone())
+    pub fn put_registry_catalog_data(&self) -> crate::client::fluent_builders::PutRegistryCatalogData {
+                            crate::client::fluent_builders::PutRegistryCatalogData::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`PutRepositoryCatalogData`](crate::client::fluent_builders::PutRepositoryCatalogData) operation.
                         ///
@@ -309,8 +309,8 @@ impl Client  {
                         /// - On success, responds with [`PutRepositoryCatalogDataOutput`](crate::output::PutRepositoryCatalogDataOutput) with field(s):
                         ///   - [`catalog_data(Option<RepositoryCatalogData>)`](crate::output::PutRepositoryCatalogDataOutput::catalog_data): <p>The catalog data for the repository.</p>
                         /// - On failure, responds with [`SdkError<PutRepositoryCatalogDataError>`](crate::error::PutRepositoryCatalogDataError)
-    pub fn put_repository_catalog_data(&self) -> fluent_builders::PutRepositoryCatalogData {
-                            fluent_builders::PutRepositoryCatalogData::new(self.handle.clone())
+    pub fn put_repository_catalog_data(&self) -> crate::client::fluent_builders::PutRepositoryCatalogData {
+                            crate::client::fluent_builders::PutRepositoryCatalogData::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`SetRepositoryPolicy`](crate::client::fluent_builders::SetRepositoryPolicy) operation.
                         ///
@@ -324,8 +324,8 @@ impl Client  {
     ///   - [`repository_name(Option<String>)`](crate::output::SetRepositoryPolicyOutput::repository_name): <p>The repository name that's associated with the request.</p>
     ///   - [`policy_text(Option<String>)`](crate::output::SetRepositoryPolicyOutput::policy_text): <p>The JSON repository policy text that's applied to the repository.</p>
                         /// - On failure, responds with [`SdkError<SetRepositoryPolicyError>`](crate::error::SetRepositoryPolicyError)
-    pub fn set_repository_policy(&self) -> fluent_builders::SetRepositoryPolicy {
-                            fluent_builders::SetRepositoryPolicy::new(self.handle.clone())
+    pub fn set_repository_policy(&self) -> crate::client::fluent_builders::SetRepositoryPolicy {
+                            crate::client::fluent_builders::SetRepositoryPolicy::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -335,8 +335,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -346,8 +346,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UploadLayerPart`](crate::client::fluent_builders::UploadLayerPart) operation.
                         ///
@@ -364,1780 +364,9 @@ impl Client  {
     ///   - [`upload_id(Option<String>)`](crate::output::UploadLayerPartOutput::upload_id): <p>The upload ID that's associated with the request.</p>
     ///   - [`last_byte_received(Option<i64>)`](crate::output::UploadLayerPartOutput::last_byte_received): <p>The integer value of the last byte that's received in the request.</p>
                         /// - On failure, responds with [`SdkError<UploadLayerPartError>`](crate::error::UploadLayerPartError)
-    pub fn upload_layer_part(&self) -> fluent_builders::UploadLayerPart {
-                            fluent_builders::UploadLayerPart::new(self.handle.clone())
+    pub fn upload_layer_part(&self) -> crate::client::fluent_builders::UploadLayerPart {
+                            crate::client::fluent_builders::UploadLayerPart::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `BatchCheckLayerAvailability`.
-                        ///
-    /// <p>Checks the availability of one or more image layers that are within a repository in a public registry. When an image is pushed to a repository, each image layer is checked to verify if it has been uploaded before. If it has been uploaded, then the image layer is skipped.</p> <note> 
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchCheckLayerAvailability {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::batch_check_layer_availability_input::Builder
-                        }
-    impl BatchCheckLayerAvailability  {
-        /// Creates a new `BatchCheckLayerAvailability`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::BatchCheckLayerAvailability, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::BatchCheckLayerAvailabilityError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::BatchCheckLayerAvailabilityOutput, aws_smithy_http::result::SdkError<crate::error::BatchCheckLayerAvailabilityError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository that's associated with the image layers to check.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository that's associated with the image layers to check.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// Appends an item to `layerDigests`.
-        ///
-        /// To override the contents of this collection use [`set_layer_digests`](Self::set_layer_digests).
-        ///
-        /// <p>The digests of the image layers to check.</p>
-        pub fn layer_digests(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_digests(input.into());
-            self
-        }
-        /// <p>The digests of the image layers to check.</p>
-        pub fn set_layer_digests(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_layer_digests(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `BatchDeleteImage`.
-                        ///
-    /// <p>Deletes a list of specified images that are within a repository in a public registry. Images are specified with either an <code>imageTag</code> or <code>imageDigest</code>.</p> 
-    /// <p>You can remove a tag from an image by specifying the image's tag in your request. When you remove the last tag from an image, the image is deleted from your repository.</p> 
-    /// <p>You can completely delete an image (and all of its tags) by specifying the digest of the image in your request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchDeleteImage {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::batch_delete_image_input::Builder
-                        }
-    impl BatchDeleteImage  {
-        /// Creates a new `BatchDeleteImage`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::BatchDeleteImage, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::BatchDeleteImageError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::BatchDeleteImageOutput, aws_smithy_http::result::SdkError<crate::error::BatchDeleteImageError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The repository in a public registry that contains the image to delete.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The repository in a public registry that contains the image to delete.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// Appends an item to `imageIds`.
-        ///
-        /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
-        ///
-        /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
-            self.inner = self.inner.image_ids(input);
-            self
-        }
-        /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-        pub fn set_image_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>) -> Self {
-            self.inner = self.inner.set_image_ids(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CompleteLayerUpload`.
-                        ///
-    /// <p>Informs Amazon ECR that the image layer upload is complete for a specified public registry, repository name, and upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation purposes.</p> 
-    /// <p>When an image is pushed, the CompleteLayerUpload API is called once for each new image layer to verify that the upload is complete.</p> <note> 
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CompleteLayerUpload {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::complete_layer_upload_input::Builder
-                        }
-    impl CompleteLayerUpload  {
-        /// Creates a new `CompleteLayerUpload`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CompleteLayerUpload, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CompleteLayerUploadError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CompleteLayerUploadOutput, aws_smithy_http::result::SdkError<crate::error::CompleteLayerUploadError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository in a public registry to associate with the image layer.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository in a public registry to associate with the image layer.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
-        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(input.into());
-            self
-        }
-        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
-        pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_upload_id(input);
-            self
-        }
-        /// Appends an item to `layerDigests`.
-        ///
-        /// To override the contents of this collection use [`set_layer_digests`](Self::set_layer_digests).
-        ///
-        /// <p>The <code>sha256</code> digest of the image layer.</p>
-        pub fn layer_digests(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_digests(input.into());
-            self
-        }
-        /// <p>The <code>sha256</code> digest of the image layer.</p>
-        pub fn set_layer_digests(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_layer_digests(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateRepository`.
-                        ///
-    /// <p>Creates a repository in a public registry. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateRepository {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_repository_input::Builder
-                        }
-    impl CreateRepository  {
-        /// Creates a new `CreateRepository`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateRepository, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateRepositoryError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateRepositoryOutput, aws_smithy_http::result::SdkError<crate::error::CreateRepositoryError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the repository into a category (for example <code>project-a/nginx-web-app</code>).</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the repository into a category (for example <code>project-a/nginx-web-app</code>).</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
-        pub fn catalog_data(mut self, input: crate::model::RepositoryCatalogDataInput) -> Self {
-            self.inner = self.inner.catalog_data(input);
-            self
-        }
-        /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
-        pub fn set_catalog_data(mut self, input: std::option::Option<crate::model::RepositoryCatalogDataInput>) -> Self {
-            self.inner = self.inner.set_catalog_data(input);
-            self
-        }
-        /// Appends an item to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The metadata that you apply to each repository to help categorize and organize your repositories. Each tag consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The metadata that you apply to each repository to help categorize and organize your repositories. Each tag consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteRepository`.
-                        ///
-    /// <p>Deletes a repository in a public registry. If the repository contains images, you must either manually delete all images in the repository or use the <code>force</code> option. This option deletes all images on your behalf before deleting the repository.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteRepository {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_repository_input::Builder
-                        }
-    impl DeleteRepository  {
-        /// Creates a new `DeleteRepository`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteRepository, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteRepositoryError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteRepositoryOutput, aws_smithy_http::result::SdkError<crate::error::DeleteRepositoryError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository to delete. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository to delete. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository to delete.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository to delete.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// <p> The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
-        pub fn force(mut self, input: bool) -> Self {
-            self.inner = self.inner.force(input);
-            self
-        }
-        /// <p> The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.</p>
-        pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_force(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteRepositoryPolicy`.
-                        ///
-    /// <p>Deletes the repository policy that's associated with the specified repository.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteRepositoryPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_repository_policy_input::Builder
-                        }
-    impl DeleteRepositoryPolicy  {
-        /// Creates a new `DeleteRepositoryPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteRepositoryPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteRepositoryPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteRepositoryPolicyOutput, aws_smithy_http::result::SdkError<crate::error::DeleteRepositoryPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository that's associated with the repository policy to delete.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository that's associated with the repository policy to delete.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeImages`.
-                        ///
-    /// <p>Returns metadata that's related to the images in a repository in a public registry.</p> <note> 
-    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeImages {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_images_input::Builder
-                        }
-    impl DescribeImages  {
-        /// Creates a new `DescribeImages`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeImages, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeImagesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeImagesOutput, aws_smithy_http::result::SdkError<crate::error::DescribeImagesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeImagesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeImagesPaginator {
-                                        crate::paginator::DescribeImagesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository where images are described. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository where images are described. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The repository that contains the images to describe.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The repository that contains the images to describe.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// Appends an item to `imageIds`.
-        ///
-        /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
-        ///
-        /// <p>The list of image IDs for the requested repository.</p>
-        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
-            self.inner = self.inner.image_ids(input);
-            self
-        }
-        /// <p>The list of image IDs for the requested repository.</p>
-        pub fn set_image_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>) -> Self {
-            self.inner = self.inner.set_image_ids(input);
-            self
-        }
-        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this option.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this option.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of repository results that's returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you can't use this option.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of repository results that's returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you can't use this option.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeImageTags`.
-                        ///
-    /// <p>Returns the image tag details for a repository in a public registry.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeImageTags {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_image_tags_input::Builder
-                        }
-    impl DescribeImageTags  {
-        /// Creates a new `DescribeImageTags`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeImageTags, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeImageTagsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeImageTagsOutput, aws_smithy_http::result::SdkError<crate::error::DescribeImageTagsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeImageTagsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeImageTagsPaginator {
-                                        crate::paginator::DescribeImageTagsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository where images are described. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository where images are described. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository that contains the image tag details to describe.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository that contains the image tag details to describe.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this option.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this option.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of repository results that's returned by <code>DescribeImageTags</code> in paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>DescribeImageTags</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImageTags</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you can't use this option.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of repository results that's returned by <code>DescribeImageTags</code> in paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>DescribeImageTags</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImageTags</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you can't use this option.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeRegistries`.
-                        ///
-    /// <p>Returns details for a public registry.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeRegistries {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_registries_input::Builder
-                        }
-    impl DescribeRegistries  {
-        /// Creates a new `DescribeRegistries`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeRegistries, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeRegistriesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeRegistriesOutput, aws_smithy_http::result::SdkError<crate::error::DescribeRegistriesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRegistriesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeRegistriesPaginator {
-                                        crate::paginator::DescribeRegistriesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>.</p> <note> 
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
-        /// </note>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>.</p> <note> 
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
-        /// </note>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeRepositories`.
-                        ///
-    /// <p>Describes repositories that are in a public registry.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeRepositories {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_repositories_input::Builder
-                        }
-    impl DescribeRepositories  {
-        /// Creates a new `DescribeRepositories`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeRepositories, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeRepositoriesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeRepositoriesOutput, aws_smithy_http::result::SdkError<crate::error::DescribeRepositoriesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRepositoriesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeRepositoriesPaginator {
-                                        crate::paginator::DescribeRepositoriesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// Appends an item to `repositoryNames`.
-        ///
-        /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
-        ///
-        /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-        pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_names(input.into());
-            self
-        }
-        /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-        pub fn set_repository_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_repository_names(input);
-            self
-        }
-        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>. If you specify repositories with <code>repositoryNames</code>, you can't use this option.</p> <note> 
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
-        /// </note>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>. If you specify repositories with <code>repositoryNames</code>, you can't use this option.</p> <note> 
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
-        /// </note>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of repository results that's returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. If you specify repositories with <code>repositoryNames</code>, you can't use this option.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of repository results that's returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. If you specify repositories with <code>repositoryNames</code>, you can't use this option.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetAuthorizationToken`.
-                        ///
-    /// <p>Retrieves an authorization token. An authorization token represents your IAM authentication credentials. You can use it to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid for 12 hours. This API requires the <code>ecr-public:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetAuthorizationToken {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_authorization_token_input::Builder
-                        }
-    impl GetAuthorizationToken  {
-        /// Creates a new `GetAuthorizationToken`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetAuthorizationToken, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetAuthorizationTokenError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetAuthorizationTokenOutput, aws_smithy_http::result::SdkError<crate::error::GetAuthorizationTokenError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `GetRegistryCatalogData`.
-                        ///
-    /// <p>Retrieves catalog metadata for a public registry.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetRegistryCatalogData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_registry_catalog_data_input::Builder
-                        }
-    impl GetRegistryCatalogData  {
-        /// Creates a new `GetRegistryCatalogData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetRegistryCatalogData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetRegistryCatalogDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetRegistryCatalogDataOutput, aws_smithy_http::result::SdkError<crate::error::GetRegistryCatalogDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `GetRepositoryCatalogData`.
-                        ///
-    /// <p>Retrieve catalog metadata for a repository in a public registry. This metadata is displayed publicly in the Amazon ECR Public Gallery.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetRepositoryCatalogData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_repository_catalog_data_input::Builder
-                        }
-    impl GetRepositoryCatalogData  {
-        /// Creates a new `GetRepositoryCatalogData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetRepositoryCatalogData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetRepositoryCatalogDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetRepositoryCatalogDataOutput, aws_smithy_http::result::SdkError<crate::error::GetRepositoryCatalogDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository to retrieve the catalog metadata for.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository to retrieve the catalog metadata for.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetRepositoryPolicy`.
-                        ///
-    /// <p>Retrieves the repository policy for the specified repository.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetRepositoryPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_repository_policy_input::Builder
-                        }
-    impl GetRepositoryPolicy  {
-        /// Creates a new `GetRepositoryPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetRepositoryPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetRepositoryPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetRepositoryPolicyOutput, aws_smithy_http::result::SdkError<crate::error::GetRepositoryPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository with the policy to retrieve.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository with the policy to retrieve.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `InitiateLayerUpload`.
-                        ///
-    /// <p>Notifies Amazon ECR that you intend to upload an image layer.</p> 
-    /// <p>When an image is pushed, the InitiateLayerUpload API is called once for each image layer that hasn't already been uploaded. Whether an image layer uploads is determined by the BatchCheckLayerAvailability API action.</p> <note> 
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct InitiateLayerUpload {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::initiate_layer_upload_input::Builder
-                        }
-    impl InitiateLayerUpload  {
-        /// Creates a new `InitiateLayerUpload`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::InitiateLayerUpload, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::InitiateLayerUploadError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::InitiateLayerUploadOutput, aws_smithy_http::result::SdkError<crate::error::InitiateLayerUploadError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you intend to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you intend to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository that you want to upload layers to.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository that you want to upload layers to.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// <p>List the tags for an Amazon ECR Public resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resource is an Amazon ECR Public repository.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resource is an Amazon ECR Public repository.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutImage`.
-                        ///
-    /// <p>Creates or updates the image manifest and tags that are associated with an image.</p> 
-    /// <p>When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or update the image manifest and the tags that are associated with the image.</p> <note> 
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutImage {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::put_image_input::Builder
-                        }
-    impl PutImage  {
-        /// Creates a new `PutImage`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::PutImage, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::PutImageError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::PutImageOutput, aws_smithy_http::result::SdkError<crate::error::PutImageError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains the repository where the image is put. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains the repository where the image is put. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository where the image is put.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository where the image is put.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// <p>The image manifest that corresponds to the image to be uploaded.</p>
-        pub fn image_manifest(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_manifest(input.into());
-            self
-        }
-        /// <p>The image manifest that corresponds to the image to be uploaded.</p>
-        pub fn set_image_manifest(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_manifest(input);
-            self
-        }
-        /// <p>The media type of the image manifest. If you push an image manifest that doesn't contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
-        pub fn image_manifest_media_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_manifest_media_type(input.into());
-            self
-        }
-        /// <p>The media type of the image manifest. If you push an image manifest that doesn't contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
-        pub fn set_image_manifest_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_manifest_media_type(input);
-            self
-        }
-        /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
-        pub fn image_tag(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_tag(input.into());
-            self
-        }
-        /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
-        pub fn set_image_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_tag(input);
-            self
-        }
-        /// <p>The image digest of the image manifest that corresponds to the image.</p>
-        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_digest(input.into());
-            self
-        }
-        /// <p>The image digest of the image manifest that corresponds to the image.</p>
-        pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_image_digest(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutRegistryCatalogData`.
-                        ///
-    /// <p>Create or update the catalog data for a public registry.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutRegistryCatalogData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::put_registry_catalog_data_input::Builder
-                        }
-    impl PutRegistryCatalogData  {
-        /// Creates a new `PutRegistryCatalogData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::PutRegistryCatalogData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::PutRegistryCatalogDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::PutRegistryCatalogDataOutput, aws_smithy_http::result::SdkError<crate::error::PutRegistryCatalogDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p> <note> 
-        /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p> 
-        /// </note>
-        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(input.into());
-            self
-        }
-        /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p> <note> 
-        /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p> 
-        /// </note>
-        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_display_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutRepositoryCatalogData`.
-                        ///
-    /// <p>Creates or updates the catalog data for a repository in a public registry.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutRepositoryCatalogData {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::put_repository_catalog_data_input::Builder
-                        }
-    impl PutRepositoryCatalogData  {
-        /// Creates a new `PutRepositoryCatalogData`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::PutRepositoryCatalogData, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::PutRepositoryCatalogDataError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::PutRepositoryCatalogDataOutput, aws_smithy_http::result::SdkError<crate::error::PutRepositoryCatalogDataError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry the repository is in. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID that's associated with the public registry the repository is in. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository to create or update the catalog data for.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository to create or update the catalog data for.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-        pub fn catalog_data(mut self, input: crate::model::RepositoryCatalogDataInput) -> Self {
-            self.inner = self.inner.catalog_data(input);
-            self
-        }
-        /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-        pub fn set_catalog_data(mut self, input: std::option::Option<crate::model::RepositoryCatalogDataInput>) -> Self {
-            self.inner = self.inner.set_catalog_data(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `SetRepositoryPolicy`.
-                        ///
-    /// <p>Applies a repository policy to the specified public repository to control access permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct SetRepositoryPolicy {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::set_repository_policy_input::Builder
-                        }
-    impl SetRepositoryPolicy  {
-        /// Creates a new `SetRepositoryPolicy`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::SetRepositoryPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::SetRepositoryPolicyError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::SetRepositoryPolicyOutput, aws_smithy_http::result::SdkError<crate::error::SetRepositoryPolicyError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository to receive the policy.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository to receive the policy.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-        pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_text(input.into());
-            self
-        }
-        /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-        pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_text(input);
-            self
-        }
-        /// <p>If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This prevents accidental repository lockouts.</p>
-        pub fn force(mut self, input: bool) -> Self {
-            self.inner = self.inner.force(input);
-            self
-        }
-        /// <p>If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This prevents accidental repository lockouts.</p>
-        pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_force(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags associated with that resource are also deleted.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resource is an Amazon ECR Public repository.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resource is an Amazon ECR Public repository.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>Deletes specified tags from a resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resource is an Amazon ECR Public repository.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resource is an Amazon ECR Public repository.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `tagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The keys of the tags to be removed.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The keys of the tags to be removed.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UploadLayerPart`.
-                        ///
-    /// <p>Uploads an image layer part to Amazon ECR.</p> 
-    /// <p>When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can be 20971520 bytes (about 20MB). The UploadLayerPart API is called once for each new image layer part.</p> <note> 
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> 
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UploadLayerPart {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::upload_layer_part_input::Builder
-                        }
-    impl UploadLayerPart  {
-        /// Creates a new `UploadLayerPart`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UploadLayerPart, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UploadLayerPartError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UploadLayerPartOutput, aws_smithy_http::result::SdkError<crate::error::UploadLayerPartError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry that you're uploading layer parts to. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry that you're uploading layer parts to. If you do not specify a registry, the default public registry is assumed.</p>
-        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_registry_id(input);
-            self
-        }
-        /// <p>The name of the repository that you're uploading layer parts to.</p>
-        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(input.into());
-            self
-        }
-        /// <p>The name of the repository that you're uploading layer parts to.</p>
-        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_repository_name(input);
-            self
-        }
-        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
-        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(input.into());
-            self
-        }
-        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
-        pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_upload_id(input);
-            self
-        }
-        /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
-        pub fn part_first_byte(mut self, input: i64) -> Self {
-            self.inner = self.inner.part_first_byte(input);
-            self
-        }
-        /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
-        pub fn set_part_first_byte(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_part_first_byte(input);
-            self
-        }
-        /// <p>The position of the last byte of the layer part within the overall image layer.</p>
-        pub fn part_last_byte(mut self, input: i64) -> Self {
-            self.inner = self.inner.part_last_byte(input);
-            self
-        }
-        /// <p>The position of the last byte of the layer part within the overall image layer.</p>
-        pub fn set_part_last_byte(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_part_last_byte(input);
-            self
-        }
-        /// <p>The base64-encoded layer part payload.</p>
-        pub fn layer_part_blob(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.layer_part_blob(input);
-            self
-        }
-        /// <p>The base64-encoded layer part payload.</p>
-        pub fn set_layer_part_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_layer_part_blob(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -2208,4 +437,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

@@ -2,7 +2,7 @@
 /// Operation shape for `GetEntitlements`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_entitlements`](crate::client::Client::get_entitlements).
+            /// [`get_entitlements`](crate::client::fluent_builders::GetEntitlements).
             ///
             /// `ParseStrictResponse` impl for `GetEntitlements`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

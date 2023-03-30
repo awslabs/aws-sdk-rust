@@ -2,7 +2,7 @@
 /// Operation shape for `CancelTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_task`](crate::client::Client::cancel_task).
+            /// [`cancel_task`](crate::client::fluent_builders::CancelTask).
             ///
             /// `ParseStrictResponse` impl for `CancelTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelTask {
 /// Operation shape for `CreateTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_task`](crate::client::Client::create_task).
+            /// [`create_task`](crate::client::fluent_builders::CreateTask).
             ///
             /// `ParseStrictResponse` impl for `CreateTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTask {
 /// Operation shape for `DescribeDevice`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_device`](crate::client::Client::describe_device).
+            /// [`describe_device`](crate::client::fluent_builders::DescribeDevice).
             ///
             /// `ParseStrictResponse` impl for `DescribeDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDevice {
 /// Operation shape for `DescribeDeviceEc2Instances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_device_ec2_instances`](crate::client::Client::describe_device_ec2_instances).
+            /// [`describe_device_ec2_instances`](crate::client::fluent_builders::DescribeDeviceEc2Instances).
             ///
             /// `ParseStrictResponse` impl for `DescribeDeviceEc2Instances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDeviceEc2Instanc
 /// Operation shape for `DescribeExecution`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_execution`](crate::client::Client::describe_execution).
+            /// [`describe_execution`](crate::client::fluent_builders::DescribeExecution).
             ///
             /// `ParseStrictResponse` impl for `DescribeExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExecution {
 /// Operation shape for `DescribeTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_task`](crate::client::Client::describe_task).
+            /// [`describe_task`](crate::client::fluent_builders::DescribeTask).
             ///
             /// `ParseStrictResponse` impl for `DescribeTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTask {
 /// Operation shape for `ListDeviceResources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_device_resources`](crate::client::Client::list_device_resources).
+            /// [`list_device_resources`](crate::client::fluent_builders::ListDeviceResources).
             ///
             /// `ParseStrictResponse` impl for `ListDeviceResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeviceResources {
 /// Operation shape for `ListDevices`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_devices`](crate::client::Client::list_devices).
+            /// [`list_devices`](crate::client::fluent_builders::ListDevices).
             ///
             /// `ParseStrictResponse` impl for `ListDevices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevices {
 /// Operation shape for `ListExecutions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_executions`](crate::client::Client::list_executions).
+            /// [`list_executions`](crate::client::fluent_builders::ListExecutions).
             ///
             /// `ParseStrictResponse` impl for `ListExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExecutions {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tasks`](crate::client::Client::list_tasks).
+            /// [`list_tasks`](crate::client::fluent_builders::ListTasks).
             ///
             /// `ParseStrictResponse` impl for `ListTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTasks {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

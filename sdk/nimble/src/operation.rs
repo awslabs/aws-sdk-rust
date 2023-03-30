@@ -2,7 +2,7 @@
 /// Operation shape for `AcceptEulas`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`accept_eulas`](crate::client::Client::accept_eulas).
+            /// [`accept_eulas`](crate::client::fluent_builders::AcceptEulas).
             ///
             /// `ParseStrictResponse` impl for `AcceptEulas`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptEulas {
 /// Operation shape for `CreateLaunchProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_launch_profile`](crate::client::Client::create_launch_profile).
+            /// [`create_launch_profile`](crate::client::fluent_builders::CreateLaunchProfile).
             ///
             /// `ParseStrictResponse` impl for `CreateLaunchProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLaunchProfile {
 /// Operation shape for `CreateStreamingImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_streaming_image`](crate::client::Client::create_streaming_image).
+            /// [`create_streaming_image`](crate::client::fluent_builders::CreateStreamingImage).
             ///
             /// `ParseStrictResponse` impl for `CreateStreamingImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingImage {
 /// Operation shape for `CreateStreamingSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_streaming_session`](crate::client::Client::create_streaming_session).
+            /// [`create_streaming_session`](crate::client::fluent_builders::CreateStreamingSession).
             ///
             /// `ParseStrictResponse` impl for `CreateStreamingSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingSession {
 /// Operation shape for `CreateStreamingSessionStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_streaming_session_stream`](crate::client::Client::create_streaming_session_stream).
+            /// [`create_streaming_session_stream`](crate::client::fluent_builders::CreateStreamingSessionStream).
             ///
             /// `ParseStrictResponse` impl for `CreateStreamingSessionStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingSessionSt
 /// Operation shape for `CreateStudio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_studio`](crate::client::Client::create_studio).
+            /// [`create_studio`](crate::client::fluent_builders::CreateStudio).
             ///
             /// `ParseStrictResponse` impl for `CreateStudio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStudio {
 /// Operation shape for `CreateStudioComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_studio_component`](crate::client::Client::create_studio_component).
+            /// [`create_studio_component`](crate::client::fluent_builders::CreateStudioComponent).
             ///
             /// `ParseStrictResponse` impl for `CreateStudioComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStudioComponent {
 /// Operation shape for `DeleteLaunchProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_launch_profile`](crate::client::Client::delete_launch_profile).
+            /// [`delete_launch_profile`](crate::client::fluent_builders::DeleteLaunchProfile).
             ///
             /// `ParseStrictResponse` impl for `DeleteLaunchProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchProfile {
 /// Operation shape for `DeleteLaunchProfileMember`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_launch_profile_member`](crate::client::Client::delete_launch_profile_member).
+            /// [`delete_launch_profile_member`](crate::client::fluent_builders::DeleteLaunchProfileMember).
             ///
             /// `ParseStrictResponse` impl for `DeleteLaunchProfileMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchProfileMembe
 /// Operation shape for `DeleteStreamingImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_streaming_image`](crate::client::Client::delete_streaming_image).
+            /// [`delete_streaming_image`](crate::client::fluent_builders::DeleteStreamingImage).
             ///
             /// `ParseStrictResponse` impl for `DeleteStreamingImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStreamingImage {
 /// Operation shape for `DeleteStreamingSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_streaming_session`](crate::client::Client::delete_streaming_session).
+            /// [`delete_streaming_session`](crate::client::fluent_builders::DeleteStreamingSession).
             ///
             /// `ParseStrictResponse` impl for `DeleteStreamingSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStreamingSession {
 /// Operation shape for `DeleteStudio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_studio`](crate::client::Client::delete_studio).
+            /// [`delete_studio`](crate::client::fluent_builders::DeleteStudio).
             ///
             /// `ParseStrictResponse` impl for `DeleteStudio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStudio {
 /// Operation shape for `DeleteStudioComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_studio_component`](crate::client::Client::delete_studio_component).
+            /// [`delete_studio_component`](crate::client::fluent_builders::DeleteStudioComponent).
             ///
             /// `ParseStrictResponse` impl for `DeleteStudioComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStudioComponent {
 /// Operation shape for `DeleteStudioMember`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_studio_member`](crate::client::Client::delete_studio_member).
+            /// [`delete_studio_member`](crate::client::fluent_builders::DeleteStudioMember).
             ///
             /// `ParseStrictResponse` impl for `DeleteStudioMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStudioMember {
 /// Operation shape for `GetEula`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_eula`](crate::client::Client::get_eula).
+            /// [`get_eula`](crate::client::fluent_builders::GetEula).
             ///
             /// `ParseStrictResponse` impl for `GetEula`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEula {
 /// Operation shape for `GetLaunchProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_launch_profile`](crate::client::Client::get_launch_profile).
+            /// [`get_launch_profile`](crate::client::fluent_builders::GetLaunchProfile).
             ///
             /// `ParseStrictResponse` impl for `GetLaunchProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfile {
 /// Operation shape for `GetLaunchProfileDetails`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_launch_profile_details`](crate::client::Client::get_launch_profile_details).
+            /// [`get_launch_profile_details`](crate::client::fluent_builders::GetLaunchProfileDetails).
             ///
             /// `ParseStrictResponse` impl for `GetLaunchProfileDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfileDetails 
 /// Operation shape for `GetLaunchProfileInitialization`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_launch_profile_initialization`](crate::client::Client::get_launch_profile_initialization).
+            /// [`get_launch_profile_initialization`](crate::client::fluent_builders::GetLaunchProfileInitialization).
             ///
             /// `ParseStrictResponse` impl for `GetLaunchProfileInitialization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfileInitiali
 /// Operation shape for `GetLaunchProfileMember`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_launch_profile_member`](crate::client::Client::get_launch_profile_member).
+            /// [`get_launch_profile_member`](crate::client::fluent_builders::GetLaunchProfileMember).
             ///
             /// `ParseStrictResponse` impl for `GetLaunchProfileMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfileMember {
 /// Operation shape for `GetStreamingImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_streaming_image`](crate::client::Client::get_streaming_image).
+            /// [`get_streaming_image`](crate::client::fluent_builders::GetStreamingImage).
             ///
             /// `ParseStrictResponse` impl for `GetStreamingImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingImage {
 /// Operation shape for `GetStreamingSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_streaming_session`](crate::client::Client::get_streaming_session).
+            /// [`get_streaming_session`](crate::client::fluent_builders::GetStreamingSession).
             ///
             /// `ParseStrictResponse` impl for `GetStreamingSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSession {
 /// Operation shape for `GetStreamingSessionBackup`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_streaming_session_backup`](crate::client::Client::get_streaming_session_backup).
+            /// [`get_streaming_session_backup`](crate::client::fluent_builders::GetStreamingSessionBackup).
             ///
             /// `ParseStrictResponse` impl for `GetStreamingSessionBackup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSessionBacku
 /// Operation shape for `GetStreamingSessionStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_streaming_session_stream`](crate::client::Client::get_streaming_session_stream).
+            /// [`get_streaming_session_stream`](crate::client::fluent_builders::GetStreamingSessionStream).
             ///
             /// `ParseStrictResponse` impl for `GetStreamingSessionStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSessionStrea
 /// Operation shape for `GetStudio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_studio`](crate::client::Client::get_studio).
+            /// [`get_studio`](crate::client::fluent_builders::GetStudio).
             ///
             /// `ParseStrictResponse` impl for `GetStudio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStudio {
 /// Operation shape for `GetStudioComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_studio_component`](crate::client::Client::get_studio_component).
+            /// [`get_studio_component`](crate::client::fluent_builders::GetStudioComponent).
             ///
             /// `ParseStrictResponse` impl for `GetStudioComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStudioComponent {
 /// Operation shape for `GetStudioMember`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_studio_member`](crate::client::Client::get_studio_member).
+            /// [`get_studio_member`](crate::client::fluent_builders::GetStudioMember).
             ///
             /// `ParseStrictResponse` impl for `GetStudioMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStudioMember {
 /// Operation shape for `ListEulaAcceptances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_eula_acceptances`](crate::client::Client::list_eula_acceptances).
+            /// [`list_eula_acceptances`](crate::client::fluent_builders::ListEulaAcceptances).
             ///
             /// `ParseStrictResponse` impl for `ListEulaAcceptances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEulaAcceptances {
 /// Operation shape for `ListEulas`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_eulas`](crate::client::Client::list_eulas).
+            /// [`list_eulas`](crate::client::fluent_builders::ListEulas).
             ///
             /// `ParseStrictResponse` impl for `ListEulas`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEulas {
 /// Operation shape for `ListLaunchProfileMembers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_launch_profile_members`](crate::client::Client::list_launch_profile_members).
+            /// [`list_launch_profile_members`](crate::client::fluent_builders::ListLaunchProfileMembers).
             ///
             /// `ParseStrictResponse` impl for `ListLaunchProfileMembers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLaunchProfileMembers
 /// Operation shape for `ListLaunchProfiles`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_launch_profiles`](crate::client::Client::list_launch_profiles).
+            /// [`list_launch_profiles`](crate::client::fluent_builders::ListLaunchProfiles).
             ///
             /// `ParseStrictResponse` impl for `ListLaunchProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLaunchProfiles {
 /// Operation shape for `ListStreamingImages`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_streaming_images`](crate::client::Client::list_streaming_images).
+            /// [`list_streaming_images`](crate::client::fluent_builders::ListStreamingImages).
             ///
             /// `ParseStrictResponse` impl for `ListStreamingImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamingImages {
 /// Operation shape for `ListStreamingSessionBackups`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_streaming_session_backups`](crate::client::Client::list_streaming_session_backups).
+            /// [`list_streaming_session_backups`](crate::client::fluent_builders::ListStreamingSessionBackups).
             ///
             /// `ParseStrictResponse` impl for `ListStreamingSessionBackups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1026,7 +1026,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamingSessionBack
 /// Operation shape for `ListStreamingSessions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_streaming_sessions`](crate::client::Client::list_streaming_sessions).
+            /// [`list_streaming_sessions`](crate::client::fluent_builders::ListStreamingSessions).
             ///
             /// `ParseStrictResponse` impl for `ListStreamingSessions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamingSessions {
 /// Operation shape for `ListStudioComponents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_studio_components`](crate::client::Client::list_studio_components).
+            /// [`list_studio_components`](crate::client::fluent_builders::ListStudioComponents).
             ///
             /// `ParseStrictResponse` impl for `ListStudioComponents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1090,7 +1090,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStudioComponents {
 /// Operation shape for `ListStudioMembers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_studio_members`](crate::client::Client::list_studio_members).
+            /// [`list_studio_members`](crate::client::fluent_builders::ListStudioMembers).
             ///
             /// `ParseStrictResponse` impl for `ListStudioMembers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStudioMembers {
 /// Operation shape for `ListStudios`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_studios`](crate::client::Client::list_studios).
+            /// [`list_studios`](crate::client::fluent_builders::ListStudios).
             ///
             /// `ParseStrictResponse` impl for `ListStudios`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStudios {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutLaunchProfileMembers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_launch_profile_members`](crate::client::Client::put_launch_profile_members).
+            /// [`put_launch_profile_members`](crate::client::fluent_builders::PutLaunchProfileMembers).
             ///
             /// `ParseStrictResponse` impl for `PutLaunchProfileMembers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1218,7 +1218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLaunchProfileMembers 
 /// Operation shape for `PutStudioMembers`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_studio_members`](crate::client::Client::put_studio_members).
+            /// [`put_studio_members`](crate::client::fluent_builders::PutStudioMembers).
             ///
             /// `ParseStrictResponse` impl for `PutStudioMembers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1250,7 +1250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStudioMembers {
 /// Operation shape for `StartStreamingSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_streaming_session`](crate::client::Client::start_streaming_session).
+            /// [`start_streaming_session`](crate::client::fluent_builders::StartStreamingSession).
             ///
             /// `ParseStrictResponse` impl for `StartStreamingSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartStreamingSession {
 /// Operation shape for `StartStudioSSOConfigurationRepair`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_studio_sso_configuration_repair`](crate::client::Client::start_studio_sso_configuration_repair).
+            /// [`start_studio_sso_configuration_repair`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair).
             ///
             /// `ParseStrictResponse` impl for `StartStudioSSOConfigurationRepair`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartStudioSSOConfigurat
 /// Operation shape for `StopStreamingSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_streaming_session`](crate::client::Client::stop_streaming_session).
+            /// [`stop_streaming_session`](crate::client::fluent_builders::StopStreamingSession).
             ///
             /// `ParseStrictResponse` impl for `StopStreamingSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopStreamingSession {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateLaunchProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_launch_profile`](crate::client::Client::update_launch_profile).
+            /// [`update_launch_profile`](crate::client::fluent_builders::UpdateLaunchProfile).
             ///
             /// `ParseStrictResponse` impl for `UpdateLaunchProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1442,7 +1442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunchProfile {
 /// Operation shape for `UpdateLaunchProfileMember`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_launch_profile_member`](crate::client::Client::update_launch_profile_member).
+            /// [`update_launch_profile_member`](crate::client::fluent_builders::UpdateLaunchProfileMember).
             ///
             /// `ParseStrictResponse` impl for `UpdateLaunchProfileMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunchProfileMembe
 /// Operation shape for `UpdateStreamingImage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_streaming_image`](crate::client::Client::update_streaming_image).
+            /// [`update_streaming_image`](crate::client::fluent_builders::UpdateStreamingImage).
             ///
             /// `ParseStrictResponse` impl for `UpdateStreamingImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1506,7 +1506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStreamingImage {
 /// Operation shape for `UpdateStudio`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_studio`](crate::client::Client::update_studio).
+            /// [`update_studio`](crate::client::fluent_builders::UpdateStudio).
             ///
             /// `ParseStrictResponse` impl for `UpdateStudio`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStudio {
 /// Operation shape for `UpdateStudioComponent`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_studio_component`](crate::client::Client::update_studio_component).
+            /// [`update_studio_component`](crate::client::fluent_builders::UpdateStudioComponent).
             ///
             /// `ParseStrictResponse` impl for `UpdateStudioComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `CreateProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_profile`](crate::client::Client::create_profile).
+            /// [`create_profile`](crate::client::fluent_builders::CreateProfile).
             ///
             /// `ParseStrictResponse` impl for `CreateProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProfile {
 /// Operation shape for `CreateTrustAnchor`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_trust_anchor`](crate::client::Client::create_trust_anchor).
+            /// [`create_trust_anchor`](crate::client::fluent_builders::CreateTrustAnchor).
             ///
             /// `ParseStrictResponse` impl for `CreateTrustAnchor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrustAnchor {
 /// Operation shape for `DeleteCrl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_crl`](crate::client::Client::delete_crl).
+            /// [`delete_crl`](crate::client::fluent_builders::DeleteCrl).
             ///
             /// `ParseStrictResponse` impl for `DeleteCrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCrl {
 /// Operation shape for `DeleteProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_profile`](crate::client::Client::delete_profile).
+            /// [`delete_profile`](crate::client::fluent_builders::DeleteProfile).
             ///
             /// `ParseStrictResponse` impl for `DeleteProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfile {
 /// Operation shape for `DeleteTrustAnchor`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_trust_anchor`](crate::client::Client::delete_trust_anchor).
+            /// [`delete_trust_anchor`](crate::client::fluent_builders::DeleteTrustAnchor).
             ///
             /// `ParseStrictResponse` impl for `DeleteTrustAnchor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrustAnchor {
 /// Operation shape for `DisableCrl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_crl`](crate::client::Client::disable_crl).
+            /// [`disable_crl`](crate::client::fluent_builders::DisableCrl).
             ///
             /// `ParseStrictResponse` impl for `DisableCrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableCrl {
 /// Operation shape for `DisableProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_profile`](crate::client::Client::disable_profile).
+            /// [`disable_profile`](crate::client::fluent_builders::DisableProfile).
             ///
             /// `ParseStrictResponse` impl for `DisableProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableProfile {
 /// Operation shape for `DisableTrustAnchor`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`disable_trust_anchor`](crate::client::Client::disable_trust_anchor).
+            /// [`disable_trust_anchor`](crate::client::fluent_builders::DisableTrustAnchor).
             ///
             /// `ParseStrictResponse` impl for `DisableTrustAnchor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableTrustAnchor {
 /// Operation shape for `EnableCrl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_crl`](crate::client::Client::enable_crl).
+            /// [`enable_crl`](crate::client::fluent_builders::EnableCrl).
             ///
             /// `ParseStrictResponse` impl for `EnableCrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableCrl {
 /// Operation shape for `EnableProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_profile`](crate::client::Client::enable_profile).
+            /// [`enable_profile`](crate::client::fluent_builders::EnableProfile).
             ///
             /// `ParseStrictResponse` impl for `EnableProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableProfile {
 /// Operation shape for `EnableTrustAnchor`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`enable_trust_anchor`](crate::client::Client::enable_trust_anchor).
+            /// [`enable_trust_anchor`](crate::client::fluent_builders::EnableTrustAnchor).
             ///
             /// `ParseStrictResponse` impl for `EnableTrustAnchor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableTrustAnchor {
 /// Operation shape for `GetCrl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_crl`](crate::client::Client::get_crl).
+            /// [`get_crl`](crate::client::fluent_builders::GetCrl).
             ///
             /// `ParseStrictResponse` impl for `GetCrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCrl {
 /// Operation shape for `GetProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_profile`](crate::client::Client::get_profile).
+            /// [`get_profile`](crate::client::fluent_builders::GetProfile).
             ///
             /// `ParseStrictResponse` impl for `GetProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProfile {
 /// Operation shape for `GetSubject`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_subject`](crate::client::Client::get_subject).
+            /// [`get_subject`](crate::client::fluent_builders::GetSubject).
             ///
             /// `ParseStrictResponse` impl for `GetSubject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubject {
 /// Operation shape for `GetTrustAnchor`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_trust_anchor`](crate::client::Client::get_trust_anchor).
+            /// [`get_trust_anchor`](crate::client::fluent_builders::GetTrustAnchor).
             ///
             /// `ParseStrictResponse` impl for `GetTrustAnchor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrustAnchor {
 /// Operation shape for `ImportCrl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_crl`](crate::client::Client::import_crl).
+            /// [`import_crl`](crate::client::fluent_builders::ImportCrl).
             ///
             /// `ParseStrictResponse` impl for `ImportCrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportCrl {
 /// Operation shape for `ListCrls`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_crls`](crate::client::Client::list_crls).
+            /// [`list_crls`](crate::client::fluent_builders::ListCrls).
             ///
             /// `ParseStrictResponse` impl for `ListCrls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCrls {
 /// Operation shape for `ListProfiles`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_profiles`](crate::client::Client::list_profiles).
+            /// [`list_profiles`](crate::client::fluent_builders::ListProfiles).
             ///
             /// `ParseStrictResponse` impl for `ListProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfiles {
 /// Operation shape for `ListSubjects`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_subjects`](crate::client::Client::list_subjects).
+            /// [`list_subjects`](crate::client::fluent_builders::ListSubjects).
             ///
             /// `ParseStrictResponse` impl for `ListSubjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubjects {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTrustAnchors`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_trust_anchors`](crate::client::Client::list_trust_anchors).
+            /// [`list_trust_anchors`](crate::client::fluent_builders::ListTrustAnchors).
             ///
             /// `ParseStrictResponse` impl for `ListTrustAnchors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrustAnchors {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateCrl`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_crl`](crate::client::Client::update_crl).
+            /// [`update_crl`](crate::client::fluent_builders::UpdateCrl).
             ///
             /// `ParseStrictResponse` impl for `UpdateCrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCrl {
 /// Operation shape for `UpdateProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_profile`](crate::client::Client::update_profile).
+            /// [`update_profile`](crate::client::fluent_builders::UpdateProfile).
             ///
             /// `ParseStrictResponse` impl for `UpdateProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProfile {
 /// Operation shape for `UpdateTrustAnchor`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_trust_anchor`](crate::client::Client::update_trust_anchor).
+            /// [`update_trust_anchor`](crate::client::fluent_builders::UpdateTrustAnchor).
             ///
             /// `ParseStrictResponse` impl for `UpdateTrustAnchor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

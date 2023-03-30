@@ -78,8 +78,8 @@ impl Client  {
                         /// - On success, responds with [`CreateExtendedSourceServerOutput`](crate::output::CreateExtendedSourceServerOutput) with field(s):
                         ///   - [`source_server(Option<SourceServer>)`](crate::output::CreateExtendedSourceServerOutput::source_server): <p>Created extended source server.</p>
                         /// - On failure, responds with [`SdkError<CreateExtendedSourceServerError>`](crate::error::CreateExtendedSourceServerError)
-    pub fn create_extended_source_server(&self) -> fluent_builders::CreateExtendedSourceServer {
-                            fluent_builders::CreateExtendedSourceServer::new(self.handle.clone())
+    pub fn create_extended_source_server(&self) -> crate::client::fluent_builders::CreateExtendedSourceServer {
+                            crate::client::fluent_builders::CreateExtendedSourceServer::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateReplicationConfigurationTemplate`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate) operation.
                         ///
@@ -116,8 +116,8 @@ impl Client  {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateReplicationConfigurationTemplateOutput::tags): <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
     ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::output::CreateReplicationConfigurationTemplateOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
                         /// - On failure, responds with [`SdkError<CreateReplicationConfigurationTemplateError>`](crate::error::CreateReplicationConfigurationTemplateError)
-    pub fn create_replication_configuration_template(&self) -> fluent_builders::CreateReplicationConfigurationTemplate {
-                            fluent_builders::CreateReplicationConfigurationTemplate::new(self.handle.clone())
+    pub fn create_replication_configuration_template(&self) -> crate::client::fluent_builders::CreateReplicationConfigurationTemplate {
+                            crate::client::fluent_builders::CreateReplicationConfigurationTemplate::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteJob`](crate::client::fluent_builders::DeleteJob) operation.
                         ///
@@ -126,8 +126,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteJobOutput`](crate::output::DeleteJobOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::error::DeleteJobError)
-    pub fn delete_job(&self) -> fluent_builders::DeleteJob {
-                            fluent_builders::DeleteJob::new(self.handle.clone())
+    pub fn delete_job(&self) -> crate::client::fluent_builders::DeleteJob {
+                            crate::client::fluent_builders::DeleteJob::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteRecoveryInstance`](crate::client::fluent_builders::DeleteRecoveryInstance) operation.
                         ///
@@ -136,8 +136,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteRecoveryInstanceOutput`](crate::output::DeleteRecoveryInstanceOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteRecoveryInstanceError>`](crate::error::DeleteRecoveryInstanceError)
-    pub fn delete_recovery_instance(&self) -> fluent_builders::DeleteRecoveryInstance {
-                            fluent_builders::DeleteRecoveryInstance::new(self.handle.clone())
+    pub fn delete_recovery_instance(&self) -> crate::client::fluent_builders::DeleteRecoveryInstance {
+                            crate::client::fluent_builders::DeleteRecoveryInstance::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteReplicationConfigurationTemplate`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate) operation.
                         ///
@@ -146,8 +146,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteReplicationConfigurationTemplateOutput`](crate::output::DeleteReplicationConfigurationTemplateOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteReplicationConfigurationTemplateError>`](crate::error::DeleteReplicationConfigurationTemplateError)
-    pub fn delete_replication_configuration_template(&self) -> fluent_builders::DeleteReplicationConfigurationTemplate {
-                            fluent_builders::DeleteReplicationConfigurationTemplate::new(self.handle.clone())
+    pub fn delete_replication_configuration_template(&self) -> crate::client::fluent_builders::DeleteReplicationConfigurationTemplate {
+                            crate::client::fluent_builders::DeleteReplicationConfigurationTemplate::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteSourceServer`](crate::client::fluent_builders::DeleteSourceServer) operation.
                         ///
@@ -156,8 +156,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteSourceServerOutput`](crate::output::DeleteSourceServerOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteSourceServerError>`](crate::error::DeleteSourceServerError)
-    pub fn delete_source_server(&self) -> fluent_builders::DeleteSourceServer {
-                            fluent_builders::DeleteSourceServer::new(self.handle.clone())
+    pub fn delete_source_server(&self) -> crate::client::fluent_builders::DeleteSourceServer {
+                            crate::client::fluent_builders::DeleteSourceServer::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeJobLogItems`](crate::client::fluent_builders::DescribeJobLogItems) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeJobLogItems::into_paginator).
@@ -170,8 +170,8 @@ impl Client  {
                         ///   - [`items(Option<Vec<JobLog>>)`](crate::output::DescribeJobLogItemsOutput::items): <p>An array of Job log items.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeJobLogItemsOutput::next_token): <p>The token of the next Job log items to retrieve.</p>
                         /// - On failure, responds with [`SdkError<DescribeJobLogItemsError>`](crate::error::DescribeJobLogItemsError)
-    pub fn describe_job_log_items(&self) -> fluent_builders::DescribeJobLogItems {
-                            fluent_builders::DescribeJobLogItems::new(self.handle.clone())
+    pub fn describe_job_log_items(&self) -> crate::client::fluent_builders::DescribeJobLogItems {
+                            crate::client::fluent_builders::DescribeJobLogItems::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeJobs`](crate::client::fluent_builders::DescribeJobs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeJobs::into_paginator).
@@ -184,8 +184,8 @@ impl Client  {
                         ///   - [`items(Option<Vec<Job>>)`](crate::output::DescribeJobsOutput::items): <p>An array of Jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeJobsOutput::next_token): <p>The token of the next Job to retrieve.</p>
                         /// - On failure, responds with [`SdkError<DescribeJobsError>`](crate::error::DescribeJobsError)
-    pub fn describe_jobs(&self) -> fluent_builders::DescribeJobs {
-                            fluent_builders::DescribeJobs::new(self.handle.clone())
+    pub fn describe_jobs(&self) -> crate::client::fluent_builders::DescribeJobs {
+                            crate::client::fluent_builders::DescribeJobs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeRecoveryInstances`](crate::client::fluent_builders::DescribeRecoveryInstances) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeRecoveryInstances::into_paginator).
@@ -198,8 +198,8 @@ impl Client  {
                         ///   - [`next_token(Option<String>)`](crate::output::DescribeRecoveryInstancesOutput::next_token): <p>The token of the next Recovery Instance to retrieve.</p>
     ///   - [`items(Option<Vec<RecoveryInstance>>)`](crate::output::DescribeRecoveryInstancesOutput::items): <p>An array of Recovery Instances.</p>
                         /// - On failure, responds with [`SdkError<DescribeRecoveryInstancesError>`](crate::error::DescribeRecoveryInstancesError)
-    pub fn describe_recovery_instances(&self) -> fluent_builders::DescribeRecoveryInstances {
-                            fluent_builders::DescribeRecoveryInstances::new(self.handle.clone())
+    pub fn describe_recovery_instances(&self) -> crate::client::fluent_builders::DescribeRecoveryInstances {
+                            crate::client::fluent_builders::DescribeRecoveryInstances::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeRecoverySnapshots`](crate::client::fluent_builders::DescribeRecoverySnapshots) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeRecoverySnapshots::into_paginator).
@@ -214,8 +214,8 @@ impl Client  {
                         ///   - [`items(Option<Vec<RecoverySnapshot>>)`](crate::output::DescribeRecoverySnapshotsOutput::items): <p>An array of Recovery Snapshots.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeRecoverySnapshotsOutput::next_token): <p>The token of the next Recovery Snapshot to retrieve.</p>
                         /// - On failure, responds with [`SdkError<DescribeRecoverySnapshotsError>`](crate::error::DescribeRecoverySnapshotsError)
-    pub fn describe_recovery_snapshots(&self) -> fluent_builders::DescribeRecoverySnapshots {
-                            fluent_builders::DescribeRecoverySnapshots::new(self.handle.clone())
+    pub fn describe_recovery_snapshots(&self) -> crate::client::fluent_builders::DescribeRecoverySnapshots {
+                            crate::client::fluent_builders::DescribeRecoverySnapshots::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeReplicationConfigurationTemplates`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::into_paginator).
@@ -228,8 +228,8 @@ impl Client  {
                         ///   - [`items(Option<Vec<ReplicationConfigurationTemplate>>)`](crate::output::DescribeReplicationConfigurationTemplatesOutput::items): <p>An array of Replication Configuration Templates.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeReplicationConfigurationTemplatesOutput::next_token): <p>The token of the next Replication Configuration Template to retrieve.</p>
                         /// - On failure, responds with [`SdkError<DescribeReplicationConfigurationTemplatesError>`](crate::error::DescribeReplicationConfigurationTemplatesError)
-    pub fn describe_replication_configuration_templates(&self) -> fluent_builders::DescribeReplicationConfigurationTemplates {
-                            fluent_builders::DescribeReplicationConfigurationTemplates::new(self.handle.clone())
+    pub fn describe_replication_configuration_templates(&self) -> crate::client::fluent_builders::DescribeReplicationConfigurationTemplates {
+                            crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeSourceServers`](crate::client::fluent_builders::DescribeSourceServers) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSourceServers::into_paginator).
@@ -242,8 +242,8 @@ impl Client  {
                         ///   - [`items(Option<Vec<SourceServer>>)`](crate::output::DescribeSourceServersOutput::items): <p>An array of Source Servers.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSourceServersOutput::next_token): <p>The token of the next Source Server to retrieve.</p>
                         /// - On failure, responds with [`SdkError<DescribeSourceServersError>`](crate::error::DescribeSourceServersError)
-    pub fn describe_source_servers(&self) -> fluent_builders::DescribeSourceServers {
-                            fluent_builders::DescribeSourceServers::new(self.handle.clone())
+    pub fn describe_source_servers(&self) -> crate::client::fluent_builders::DescribeSourceServers {
+                            crate::client::fluent_builders::DescribeSourceServers::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DisconnectRecoveryInstance`](crate::client::fluent_builders::DisconnectRecoveryInstance) operation.
                         ///
@@ -252,8 +252,8 @@ impl Client  {
                         /// - On success, responds with [`DisconnectRecoveryInstanceOutput`](crate::output::DisconnectRecoveryInstanceOutput)
                         
                         /// - On failure, responds with [`SdkError<DisconnectRecoveryInstanceError>`](crate::error::DisconnectRecoveryInstanceError)
-    pub fn disconnect_recovery_instance(&self) -> fluent_builders::DisconnectRecoveryInstance {
-                            fluent_builders::DisconnectRecoveryInstance::new(self.handle.clone())
+    pub fn disconnect_recovery_instance(&self) -> crate::client::fluent_builders::DisconnectRecoveryInstance {
+                            crate::client::fluent_builders::DisconnectRecoveryInstance::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DisconnectSourceServer`](crate::client::fluent_builders::DisconnectSourceServer) operation.
                         ///
@@ -273,8 +273,8 @@ impl Client  {
     ///   - [`replication_direction(Option<ReplicationDirection>)`](crate::output::DisconnectSourceServerOutput::replication_direction): <p>Replication direction of the Source Server.</p>
     ///   - [`reversed_direction_source_server_arn(Option<String>)`](crate::output::DisconnectSourceServerOutput::reversed_direction_source_server_arn): <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
                         /// - On failure, responds with [`SdkError<DisconnectSourceServerError>`](crate::error::DisconnectSourceServerError)
-    pub fn disconnect_source_server(&self) -> fluent_builders::DisconnectSourceServer {
-                            fluent_builders::DisconnectSourceServer::new(self.handle.clone())
+    pub fn disconnect_source_server(&self) -> crate::client::fluent_builders::DisconnectSourceServer {
+                            crate::client::fluent_builders::DisconnectSourceServer::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetFailbackReplicationConfiguration`](crate::client::fluent_builders::GetFailbackReplicationConfiguration) operation.
                         ///
@@ -286,8 +286,8 @@ impl Client  {
     ///   - [`bandwidth_throttling(i64)`](crate::output::GetFailbackReplicationConfigurationOutput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
     ///   - [`use_private_ip(Option<bool>)`](crate::output::GetFailbackReplicationConfigurationOutput::use_private_ip): <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
                         /// - On failure, responds with [`SdkError<GetFailbackReplicationConfigurationError>`](crate::error::GetFailbackReplicationConfigurationError)
-    pub fn get_failback_replication_configuration(&self) -> fluent_builders::GetFailbackReplicationConfiguration {
-                            fluent_builders::GetFailbackReplicationConfiguration::new(self.handle.clone())
+    pub fn get_failback_replication_configuration(&self) -> crate::client::fluent_builders::GetFailbackReplicationConfiguration {
+                            crate::client::fluent_builders::GetFailbackReplicationConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetLaunchConfiguration`](crate::client::fluent_builders::GetLaunchConfiguration) operation.
                         ///
@@ -303,8 +303,8 @@ impl Client  {
     ///   - [`copy_tags(Option<bool>)`](crate::output::GetLaunchConfigurationOutput::copy_tags): <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
     ///   - [`licensing(Option<Licensing>)`](crate::output::GetLaunchConfigurationOutput::licensing): <p>The licensing configuration to be used for this launch configuration.</p>
                         /// - On failure, responds with [`SdkError<GetLaunchConfigurationError>`](crate::error::GetLaunchConfigurationError)
-    pub fn get_launch_configuration(&self) -> fluent_builders::GetLaunchConfiguration {
-                            fluent_builders::GetLaunchConfiguration::new(self.handle.clone())
+    pub fn get_launch_configuration(&self) -> crate::client::fluent_builders::GetLaunchConfiguration {
+                            crate::client::fluent_builders::GetLaunchConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetReplicationConfiguration`](crate::client::fluent_builders::GetReplicationConfiguration) operation.
                         ///
@@ -328,8 +328,8 @@ impl Client  {
     ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::output::GetReplicationConfigurationOutput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
     ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::output::GetReplicationConfigurationOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
                         /// - On failure, responds with [`SdkError<GetReplicationConfigurationError>`](crate::error::GetReplicationConfigurationError)
-    pub fn get_replication_configuration(&self) -> fluent_builders::GetReplicationConfiguration {
-                            fluent_builders::GetReplicationConfiguration::new(self.handle.clone())
+    pub fn get_replication_configuration(&self) -> crate::client::fluent_builders::GetReplicationConfiguration {
+                            crate::client::fluent_builders::GetReplicationConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`InitializeService`](crate::client::fluent_builders::InitializeService) operation.
                         ///
@@ -338,8 +338,8 @@ impl Client  {
                         /// - On success, responds with [`InitializeServiceOutput`](crate::output::InitializeServiceOutput)
                         
                         /// - On failure, responds with [`SdkError<InitializeServiceError>`](crate::error::InitializeServiceError)
-    pub fn initialize_service(&self) -> fluent_builders::InitializeService {
-                            fluent_builders::InitializeService::new(self.handle.clone())
+    pub fn initialize_service(&self) -> crate::client::fluent_builders::InitializeService {
+                            crate::client::fluent_builders::InitializeService::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListExtensibleSourceServers`](crate::client::fluent_builders::ListExtensibleSourceServers) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExtensibleSourceServers::into_paginator).
@@ -352,8 +352,8 @@ impl Client  {
                         ///   - [`items(Option<Vec<StagingSourceServer>>)`](crate::output::ListExtensibleSourceServersOutput::items): <p>A list of source servers on a staging Account that are extensible.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListExtensibleSourceServersOutput::next_token): <p>The token of the next extensible source server to retrieve.</p>
                         /// - On failure, responds with [`SdkError<ListExtensibleSourceServersError>`](crate::error::ListExtensibleSourceServersError)
-    pub fn list_extensible_source_servers(&self) -> fluent_builders::ListExtensibleSourceServers {
-                            fluent_builders::ListExtensibleSourceServers::new(self.handle.clone())
+    pub fn list_extensible_source_servers(&self) -> crate::client::fluent_builders::ListExtensibleSourceServers {
+                            crate::client::fluent_builders::ListExtensibleSourceServers::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListStagingAccounts`](crate::client::fluent_builders::ListStagingAccounts) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStagingAccounts::into_paginator).
@@ -365,8 +365,8 @@ impl Client  {
                         ///   - [`accounts(Option<Vec<Account>>)`](crate::output::ListStagingAccountsOutput::accounts): <p>An array of staging AWS Accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListStagingAccountsOutput::next_token): <p>The token of the next staging Account to retrieve.</p>
                         /// - On failure, responds with [`SdkError<ListStagingAccountsError>`](crate::error::ListStagingAccountsError)
-    pub fn list_staging_accounts(&self) -> fluent_builders::ListStagingAccounts {
-                            fluent_builders::ListStagingAccounts::new(self.handle.clone())
+    pub fn list_staging_accounts(&self) -> crate::client::fluent_builders::ListStagingAccounts {
+                            crate::client::fluent_builders::ListStagingAccounts::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -375,8 +375,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags of the requested resource.</p>
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`RetryDataReplication`](crate::client::fluent_builders::RetryDataReplication) operation.
                         ///
@@ -396,8 +396,8 @@ impl Client  {
     ///   - [`replication_direction(Option<ReplicationDirection>)`](crate::output::RetryDataReplicationOutput::replication_direction): <p>Replication direction of the Source Server.</p>
     ///   - [`reversed_direction_source_server_arn(Option<String>)`](crate::output::RetryDataReplicationOutput::reversed_direction_source_server_arn): <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
                         /// - On failure, responds with [`SdkError<RetryDataReplicationError>`](crate::error::RetryDataReplicationError)
-    pub fn retry_data_replication(&self) -> fluent_builders::RetryDataReplication {
-                            fluent_builders::RetryDataReplication::new(self.handle.clone())
+    pub fn retry_data_replication(&self) -> crate::client::fluent_builders::RetryDataReplication {
+                            crate::client::fluent_builders::RetryDataReplication::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ReverseReplication`](crate::client::fluent_builders::ReverseReplication) operation.
                         ///
@@ -406,8 +406,8 @@ impl Client  {
                         /// - On success, responds with [`ReverseReplicationOutput`](crate::output::ReverseReplicationOutput) with field(s):
                         ///   - [`reversed_direction_source_server_arn(Option<String>)`](crate::output::ReverseReplicationOutput::reversed_direction_source_server_arn): <p>ARN of created SourceServer.</p>
                         /// - On failure, responds with [`SdkError<ReverseReplicationError>`](crate::error::ReverseReplicationError)
-    pub fn reverse_replication(&self) -> fluent_builders::ReverseReplication {
-                            fluent_builders::ReverseReplication::new(self.handle.clone())
+    pub fn reverse_replication(&self) -> crate::client::fluent_builders::ReverseReplication {
+                            crate::client::fluent_builders::ReverseReplication::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartFailbackLaunch`](crate::client::fluent_builders::StartFailbackLaunch) operation.
                         ///
@@ -417,8 +417,8 @@ impl Client  {
                         /// - On success, responds with [`StartFailbackLaunchOutput`](crate::output::StartFailbackLaunchOutput) with field(s):
                         ///   - [`job(Option<Job>)`](crate::output::StartFailbackLaunchOutput::job): <p>The failback launch Job.</p>
                         /// - On failure, responds with [`SdkError<StartFailbackLaunchError>`](crate::error::StartFailbackLaunchError)
-    pub fn start_failback_launch(&self) -> fluent_builders::StartFailbackLaunch {
-                            fluent_builders::StartFailbackLaunch::new(self.handle.clone())
+    pub fn start_failback_launch(&self) -> crate::client::fluent_builders::StartFailbackLaunch {
+                            crate::client::fluent_builders::StartFailbackLaunch::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartRecovery`](crate::client::fluent_builders::StartRecovery) operation.
                         ///
@@ -429,8 +429,8 @@ impl Client  {
                         /// - On success, responds with [`StartRecoveryOutput`](crate::output::StartRecoveryOutput) with field(s):
                         ///   - [`job(Option<Job>)`](crate::output::StartRecoveryOutput::job): <p>The Recovery Job.</p>
                         /// - On failure, responds with [`SdkError<StartRecoveryError>`](crate::error::StartRecoveryError)
-    pub fn start_recovery(&self) -> fluent_builders::StartRecovery {
-                            fluent_builders::StartRecovery::new(self.handle.clone())
+    pub fn start_recovery(&self) -> crate::client::fluent_builders::StartRecovery {
+                            crate::client::fluent_builders::StartRecovery::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartReplication`](crate::client::fluent_builders::StartReplication) operation.
                         ///
@@ -439,8 +439,8 @@ impl Client  {
                         /// - On success, responds with [`StartReplicationOutput`](crate::output::StartReplicationOutput) with field(s):
                         ///   - [`source_server(Option<SourceServer>)`](crate::output::StartReplicationOutput::source_server): <p>The Source Server that this action was targeted on.</p>
                         /// - On failure, responds with [`SdkError<StartReplicationError>`](crate::error::StartReplicationError)
-    pub fn start_replication(&self) -> fluent_builders::StartReplication {
-                            fluent_builders::StartReplication::new(self.handle.clone())
+    pub fn start_replication(&self) -> crate::client::fluent_builders::StartReplication {
+                            crate::client::fluent_builders::StartReplication::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopFailback`](crate::client::fluent_builders::StopFailback) operation.
                         ///
@@ -449,8 +449,8 @@ impl Client  {
                         /// - On success, responds with [`StopFailbackOutput`](crate::output::StopFailbackOutput)
                         
                         /// - On failure, responds with [`SdkError<StopFailbackError>`](crate::error::StopFailbackError)
-    pub fn stop_failback(&self) -> fluent_builders::StopFailback {
-                            fluent_builders::StopFailback::new(self.handle.clone())
+    pub fn stop_failback(&self) -> crate::client::fluent_builders::StopFailback {
+                            crate::client::fluent_builders::StopFailback::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopReplication`](crate::client::fluent_builders::StopReplication) operation.
                         ///
@@ -459,8 +459,8 @@ impl Client  {
                         /// - On success, responds with [`StopReplicationOutput`](crate::output::StopReplicationOutput) with field(s):
                         ///   - [`source_server(Option<SourceServer>)`](crate::output::StopReplicationOutput::source_server): <p>The Source Server that this action was targeted on.</p>
                         /// - On failure, responds with [`SdkError<StopReplicationError>`](crate::error::StopReplicationError)
-    pub fn stop_replication(&self) -> fluent_builders::StopReplication {
-                            fluent_builders::StopReplication::new(self.handle.clone())
+    pub fn stop_replication(&self) -> crate::client::fluent_builders::StopReplication {
+                            crate::client::fluent_builders::StopReplication::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -470,8 +470,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TerminateRecoveryInstances`](crate::client::fluent_builders::TerminateRecoveryInstances) operation.
                         ///
@@ -480,8 +480,8 @@ impl Client  {
                         /// - On success, responds with [`TerminateRecoveryInstancesOutput`](crate::output::TerminateRecoveryInstancesOutput) with field(s):
                         ///   - [`job(Option<Job>)`](crate::output::TerminateRecoveryInstancesOutput::job): <p>The Job for terminating the Recovery Instances.</p>
                         /// - On failure, responds with [`SdkError<TerminateRecoveryInstancesError>`](crate::error::TerminateRecoveryInstancesError)
-    pub fn terminate_recovery_instances(&self) -> fluent_builders::TerminateRecoveryInstances {
-                            fluent_builders::TerminateRecoveryInstances::new(self.handle.clone())
+    pub fn terminate_recovery_instances(&self) -> crate::client::fluent_builders::TerminateRecoveryInstances {
+                            crate::client::fluent_builders::TerminateRecoveryInstances::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -491,8 +491,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateFailbackReplicationConfiguration`](crate::client::fluent_builders::UpdateFailbackReplicationConfiguration) operation.
                         ///
@@ -504,8 +504,8 @@ impl Client  {
                         /// - On success, responds with [`UpdateFailbackReplicationConfigurationOutput`](crate::output::UpdateFailbackReplicationConfigurationOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdateFailbackReplicationConfigurationError>`](crate::error::UpdateFailbackReplicationConfigurationError)
-    pub fn update_failback_replication_configuration(&self) -> fluent_builders::UpdateFailbackReplicationConfiguration {
-                            fluent_builders::UpdateFailbackReplicationConfiguration::new(self.handle.clone())
+    pub fn update_failback_replication_configuration(&self) -> crate::client::fluent_builders::UpdateFailbackReplicationConfiguration {
+                            crate::client::fluent_builders::UpdateFailbackReplicationConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateLaunchConfiguration`](crate::client::fluent_builders::UpdateLaunchConfiguration) operation.
                         ///
@@ -527,8 +527,8 @@ impl Client  {
     ///   - [`copy_tags(Option<bool>)`](crate::output::UpdateLaunchConfigurationOutput::copy_tags): <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
     ///   - [`licensing(Option<Licensing>)`](crate::output::UpdateLaunchConfigurationOutput::licensing): <p>The licensing configuration to be used for this launch configuration.</p>
                         /// - On failure, responds with [`SdkError<UpdateLaunchConfigurationError>`](crate::error::UpdateLaunchConfigurationError)
-    pub fn update_launch_configuration(&self) -> fluent_builders::UpdateLaunchConfiguration {
-                            fluent_builders::UpdateLaunchConfiguration::new(self.handle.clone())
+    pub fn update_launch_configuration(&self) -> crate::client::fluent_builders::UpdateLaunchConfiguration {
+                            crate::client::fluent_builders::UpdateLaunchConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateReplicationConfiguration`](crate::client::fluent_builders::UpdateReplicationConfiguration) operation.
                         ///
@@ -567,8 +567,8 @@ impl Client  {
     ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::output::UpdateReplicationConfigurationOutput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
     ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::output::UpdateReplicationConfigurationOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
                         /// - On failure, responds with [`SdkError<UpdateReplicationConfigurationError>`](crate::error::UpdateReplicationConfigurationError)
-    pub fn update_replication_configuration(&self) -> fluent_builders::UpdateReplicationConfiguration {
-                            fluent_builders::UpdateReplicationConfiguration::new(self.handle.clone())
+    pub fn update_replication_configuration(&self) -> crate::client::fluent_builders::UpdateReplicationConfiguration {
+                            crate::client::fluent_builders::UpdateReplicationConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateReplicationConfigurationTemplate`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate) operation.
                         ///
@@ -606,2802 +606,9 @@ impl Client  {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::tags): <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
     ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
                         /// - On failure, responds with [`SdkError<UpdateReplicationConfigurationTemplateError>`](crate::error::UpdateReplicationConfigurationTemplateError)
-    pub fn update_replication_configuration_template(&self) -> fluent_builders::UpdateReplicationConfigurationTemplate {
-                            fluent_builders::UpdateReplicationConfigurationTemplate::new(self.handle.clone())
+    pub fn update_replication_configuration_template(&self) -> crate::client::fluent_builders::UpdateReplicationConfigurationTemplate {
+                            crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateExtendedSourceServer`.
-                        ///
-    /// <p>Create an extended source server in the target Account based on the source server in staging account.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateExtendedSourceServer {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_extended_source_server_input::Builder
-                        }
-    impl CreateExtendedSourceServer  {
-        /// Creates a new `CreateExtendedSourceServer`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateExtendedSourceServer, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateExtendedSourceServerError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateExtendedSourceServerOutput, aws_smithy_http::result::SdkError<crate::error::CreateExtendedSourceServerError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
-        pub fn source_server_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_arn(input.into());
-            self
-        }
-        /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
-        pub fn set_source_server_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A list of tags associated with the extended source server.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>A list of tags associated with the extended source server.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateReplicationConfigurationTemplate`.
-                        ///
-    /// <p>Creates a new ReplicationConfigurationTemplate.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateReplicationConfigurationTemplate {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_replication_configuration_template_input::Builder
-                        }
-    impl CreateReplicationConfigurationTemplate  {
-        /// Creates a new `CreateReplicationConfigurationTemplate`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateReplicationConfigurationTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateReplicationConfigurationTemplateError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateReplicationConfigurationTemplateOutput, aws_smithy_http::result::SdkError<crate::error::CreateReplicationConfigurationTemplateError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(input.into());
-            self
-        }
-        /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn set_staging_area_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_staging_area_subnet_id(input);
-            self
-        }
-        /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-        pub fn associate_default_security_group(mut self, input: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(input);
-            self
-        }
-        /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-        pub fn set_associate_default_security_group(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_associate_default_security_group(input);
-            self
-        }
-        /// Appends an item to `replicationServersSecurityGroupsIDs`.
-        ///
-        /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
-        ///
-        /// <p>The security group IDs that will be used by the replication server.</p>
-        pub fn replication_servers_security_groups_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_servers_security_groups_i_ds(input.into());
-            self
-        }
-        /// <p>The security group IDs that will be used by the replication server.</p>
-        pub fn set_replication_servers_security_groups_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_replication_servers_security_groups_i_ds(input);
-            self
-        }
-        /// <p>The instance type to be used for the replication server.</p>
-        pub fn replication_server_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_server_instance_type(input.into());
-            self
-        }
-        /// <p>The instance type to be used for the replication server.</p>
-        pub fn set_replication_server_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_replication_server_instance_type(input);
-            self
-        }
-        /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(input);
-            self
-        }
-        /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn set_use_dedicated_replication_server(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_use_dedicated_replication_server(input);
-            self
-        }
-        /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-        pub fn default_large_staging_disk_type(mut self, input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(input);
-            self
-        }
-        /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-        pub fn set_default_large_staging_disk_type(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
-            self.inner = self.inner.set_default_large_staging_disk_type(input);
-            self
-        }
-        /// <p>The type of EBS encryption to be used during replication.</p>
-        pub fn ebs_encryption(mut self, input: crate::model::ReplicationConfigurationEbsEncryption) -> Self {
-            self.inner = self.inner.ebs_encryption(input);
-            self
-        }
-        /// <p>The type of EBS encryption to be used during replication.</p>
-        pub fn set_ebs_encryption(mut self, input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>) -> Self {
-            self.inner = self.inner.set_ebs_encryption(input);
-            self
-        }
-        /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn set_ebs_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_ebs_encryption_key_arn(input);
-            self
-        }
-        /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(input);
-            self
-        }
-        /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_bandwidth_throttling(input);
-            self
-        }
-        /// <p>The data plane routing mechanism that will be used for replication.</p>
-        pub fn data_plane_routing(mut self, input: crate::model::ReplicationConfigurationDataPlaneRouting) -> Self {
-            self.inner = self.inner.data_plane_routing(input);
-            self
-        }
-        /// <p>The data plane routing mechanism that will be used for replication.</p>
-        pub fn set_data_plane_routing(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>) -> Self {
-            self.inner = self.inner.set_data_plane_routing(input);
-            self
-        }
-        /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn create_public_ip(mut self, input: bool) -> Self {
-            self.inner = self.inner.create_public_ip(input);
-            self
-        }
-        /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_create_public_ip(input);
-            self
-        }
-        /// Adds a key-value pair to `stagingAreaTags`.
-        ///
-        /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
-        ///
-        /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-        pub fn staging_area_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_tags(k.into(), v.into());
-            self
-        }
-        /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-        pub fn set_staging_area_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_staging_area_tags(input);
-            self
-        }
-        /// Appends an item to `pitPolicy`.
-        ///
-        /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
-        ///
-        /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
-            self.inner = self.inner.pit_policy(input);
-            self
-        }
-        /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn set_pit_policy(mut self, input: std::option::Option<std::vec::Vec<crate::model::PitPolicyRule>>) -> Self {
-            self.inner = self.inner.set_pit_policy(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteJob`.
-                        ///
-    /// <p>Deletes a single Job by ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteJob {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_job_input::Builder
-                        }
-    impl DeleteJob  {
-        /// Creates a new `DeleteJob`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteJobError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteJobOutput, aws_smithy_http::result::SdkError<crate::error::DeleteJobError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Job to be deleted.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The ID of the Job to be deleted.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteRecoveryInstance`.
-                        ///
-    /// <p>Deletes a single Recovery Instance by ID. This deletes the Recovery Instance resource from Elastic Disaster Recovery. The Recovery Instance must be disconnected first in order to delete it.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteRecoveryInstance {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_recovery_instance_input::Builder
-                        }
-    impl DeleteRecoveryInstance  {
-        /// Creates a new `DeleteRecoveryInstance`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteRecoveryInstance, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteRecoveryInstanceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteRecoveryInstanceOutput, aws_smithy_http::result::SdkError<crate::error::DeleteRecoveryInstanceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Recovery Instance to be deleted.</p>
-        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(input.into());
-            self
-        }
-        /// <p>The ID of the Recovery Instance to be deleted.</p>
-        pub fn set_recovery_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_recovery_instance_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteReplicationConfigurationTemplate`.
-                        ///
-    /// <p>Deletes a single Replication Configuration Template by ID</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteReplicationConfigurationTemplate {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_replication_configuration_template_input::Builder
-                        }
-    impl DeleteReplicationConfigurationTemplate  {
-        /// Creates a new `DeleteReplicationConfigurationTemplate`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteReplicationConfigurationTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteReplicationConfigurationTemplateError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteReplicationConfigurationTemplateOutput, aws_smithy_http::result::SdkError<crate::error::DeleteReplicationConfigurationTemplateError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Replication Configuration Template to be deleted.</p>
-        pub fn replication_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_configuration_template_id(input.into());
-            self
-        }
-        /// <p>The ID of the Replication Configuration Template to be deleted.</p>
-        pub fn set_replication_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_replication_configuration_template_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteSourceServer`.
-                        ///
-    /// <p>Deletes a single Source Server by ID. The Source Server must be disconnected first.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteSourceServer {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_source_server_input::Builder
-                        }
-    impl DeleteSourceServer  {
-        /// Creates a new `DeleteSourceServer`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteSourceServer, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteSourceServerError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteSourceServerOutput, aws_smithy_http::result::SdkError<crate::error::DeleteSourceServerError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Source Server to be deleted.</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(input.into());
-            self
-        }
-        /// <p>The ID of the Source Server to be deleted.</p>
-        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeJobLogItems`.
-                        ///
-    /// <p>Retrieves a detailed Job log with pagination.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeJobLogItems {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_job_log_items_input::Builder
-                        }
-    impl DescribeJobLogItems  {
-        /// Creates a new `DescribeJobLogItems`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeJobLogItems, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeJobLogItemsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeJobLogItemsOutput, aws_smithy_http::result::SdkError<crate::error::DescribeJobLogItemsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeJobLogItemsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeJobLogItemsPaginator {
-                                        crate::paginator::DescribeJobLogItemsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The ID of the Job for which Job log items will be retrieved.</p>
-        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(input.into());
-            self
-        }
-        /// <p>The ID of the Job for which Job log items will be retrieved.</p>
-        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(input);
-            self
-        }
-        /// <p>Maximum number of Job log items to retrieve.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Maximum number of Job log items to retrieve.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token of the next Job log items to retrieve.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token of the next Job log items to retrieve.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeJobs`.
-                        ///
-    /// <p>Returns a list of Jobs. Use the JobsID and fromDate and toDate filters to limit which jobs are returned. The response is sorted by creationDataTime - latest date first. Jobs are created by the StartRecovery, TerminateRecoveryInstances and StartFailbackLaunch APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances, which are APIs available only to *Support* and only used in response to relevant support tickets.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeJobs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_jobs_input::Builder
-                        }
-    impl DescribeJobs  {
-        /// Creates a new `DescribeJobs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeJobsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeJobsOutput, aws_smithy_http::result::SdkError<crate::error::DescribeJobsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeJobsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeJobsPaginator {
-                                        crate::paginator::DescribeJobsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>A set of filters by which to return Jobs.</p>
-        pub fn filters(mut self, input: crate::model::DescribeJobsRequestFilters) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>A set of filters by which to return Jobs.</p>
-        pub fn set_filters(mut self, input: std::option::Option<crate::model::DescribeJobsRequestFilters>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// <p>Maximum number of Jobs to retrieve.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Maximum number of Jobs to retrieve.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token of the next Job to retrieve.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token of the next Job to retrieve.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeRecoveryInstances`.
-                        ///
-    /// <p>Lists all Recovery Instances or multiple Recovery Instances by ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeRecoveryInstances {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_recovery_instances_input::Builder
-                        }
-    impl DescribeRecoveryInstances  {
-        /// Creates a new `DescribeRecoveryInstances`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeRecoveryInstances, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeRecoveryInstancesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeRecoveryInstancesOutput, aws_smithy_http::result::SdkError<crate::error::DescribeRecoveryInstancesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRecoveryInstancesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeRecoveryInstancesPaginator {
-                                        crate::paginator::DescribeRecoveryInstancesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>A set of filters by which to return Recovery Instances.</p>
-        pub fn filters(mut self, input: crate::model::DescribeRecoveryInstancesRequestFilters) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>A set of filters by which to return Recovery Instances.</p>
-        pub fn set_filters(mut self, input: std::option::Option<crate::model::DescribeRecoveryInstancesRequestFilters>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// <p>Maximum number of Recovery Instances to retrieve.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Maximum number of Recovery Instances to retrieve.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token of the next Recovery Instance to retrieve.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token of the next Recovery Instance to retrieve.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeRecoverySnapshots`.
-                        ///
-    /// <p>Lists all Recovery Snapshots for a single Source Server.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeRecoverySnapshots {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_recovery_snapshots_input::Builder
-                        }
-    impl DescribeRecoverySnapshots  {
-        /// Creates a new `DescribeRecoverySnapshots`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeRecoverySnapshots, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeRecoverySnapshotsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeRecoverySnapshotsOutput, aws_smithy_http::result::SdkError<crate::error::DescribeRecoverySnapshotsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRecoverySnapshotsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeRecoverySnapshotsPaginator {
-                                        crate::paginator::DescribeRecoverySnapshotsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(input.into());
-            self
-        }
-        /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_id(input);
-            self
-        }
-        /// <p>A set of filters by which to return Recovery Snapshots.</p>
-        pub fn filters(mut self, input: crate::model::DescribeRecoverySnapshotsRequestFilters) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>A set of filters by which to return Recovery Snapshots.</p>
-        pub fn set_filters(mut self, input: std::option::Option<crate::model::DescribeRecoverySnapshotsRequestFilters>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
-        pub fn order(mut self, input: crate::model::RecoverySnapshotsOrder) -> Self {
-            self.inner = self.inner.order(input);
-            self
-        }
-        /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
-        pub fn set_order(mut self, input: std::option::Option<crate::model::RecoverySnapshotsOrder>) -> Self {
-            self.inner = self.inner.set_order(input);
-            self
-        }
-        /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token of the next Recovery Snapshot to retrieve.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token of the next Recovery Snapshot to retrieve.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeReplicationConfigurationTemplates`.
-                        ///
-    /// <p>Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeReplicationConfigurationTemplates {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_replication_configuration_templates_input::Builder
-                        }
-    impl DescribeReplicationConfigurationTemplates  {
-        /// Creates a new `DescribeReplicationConfigurationTemplates`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeReplicationConfigurationTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeReplicationConfigurationTemplatesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeReplicationConfigurationTemplatesOutput, aws_smithy_http::result::SdkError<crate::error::DescribeReplicationConfigurationTemplatesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReplicationConfigurationTemplatesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeReplicationConfigurationTemplatesPaginator {
-                                        crate::paginator::DescribeReplicationConfigurationTemplatesPaginator::new(self.handle, self.inner)
-                                    }
-        /// Appends an item to `replicationConfigurationTemplateIDs`.
-        ///
-        /// To override the contents of this collection use [`set_replication_configuration_template_i_ds`](Self::set_replication_configuration_template_i_ds).
-        ///
-        /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
-        pub fn replication_configuration_template_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_configuration_template_i_ds(input.into());
-            self
-        }
-        /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
-        pub fn set_replication_configuration_template_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_replication_configuration_template_i_ds(input);
-            self
-        }
-        /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token of the next Replication Configuration Template to retrieve.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token of the next Replication Configuration Template to retrieve.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeSourceServers`.
-                        ///
-    /// <p>Lists all Source Servers or multiple Source Servers filtered by ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeSourceServers {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_source_servers_input::Builder
-                        }
-    impl DescribeSourceServers  {
-        /// Creates a new `DescribeSourceServers`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeSourceServers, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeSourceServersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeSourceServersOutput, aws_smithy_http::result::SdkError<crate::error::DescribeSourceServersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::DescribeSourceServersPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::DescribeSourceServersPaginator {
-                                        crate::paginator::DescribeSourceServersPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>A set of filters by which to return Source Servers.</p>
-        pub fn filters(mut self, input: crate::model::DescribeSourceServersRequestFilters) -> Self {
-            self.inner = self.inner.filters(input);
-            self
-        }
-        /// <p>A set of filters by which to return Source Servers.</p>
-        pub fn set_filters(mut self, input: std::option::Option<crate::model::DescribeSourceServersRequestFilters>) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
-        /// <p>Maximum number of Source Servers to retrieve.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>Maximum number of Source Servers to retrieve.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token of the next Source Server to retrieve.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token of the next Source Server to retrieve.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisconnectRecoveryInstance`.
-                        ///
-    /// <p>Disconnect a Recovery Instance from Elastic Disaster Recovery. Data replication is stopped immediately. All AWS resources created by Elastic Disaster Recovery for enabling the replication of the Recovery Instance will be terminated / deleted within 90 minutes. If the agent on the Recovery Instance has not been prevented from communicating with the Elastic Disaster Recovery service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the Recovery Instance will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisconnectRecoveryInstance {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::disconnect_recovery_instance_input::Builder
-                        }
-    impl DisconnectRecoveryInstance  {
-        /// Creates a new `DisconnectRecoveryInstance`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DisconnectRecoveryInstance, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DisconnectRecoveryInstanceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DisconnectRecoveryInstanceOutput, aws_smithy_http::result::SdkError<crate::error::DisconnectRecoveryInstanceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Recovery Instance to disconnect.</p>
-        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(input.into());
-            self
-        }
-        /// <p>The ID of the Recovery Instance to disconnect.</p>
-        pub fn set_recovery_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_recovery_instance_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisconnectSourceServer`.
-                        ///
-    /// <p>Disconnects a specific Source Server from Elastic Disaster Recovery. Data replication is stopped immediately. All AWS resources created by Elastic Disaster Recovery for enabling the replication of the Source Server will be terminated / deleted within 90 minutes. You cannot disconnect a Source Server if it has a Recovery Instance. If the agent on the Source Server has not been prevented from communicating with the Elastic Disaster Recovery service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisconnectSourceServer {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::disconnect_source_server_input::Builder
-                        }
-    impl DisconnectSourceServer  {
-        /// Creates a new `DisconnectSourceServer`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DisconnectSourceServer, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DisconnectSourceServerError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DisconnectSourceServerOutput, aws_smithy_http::result::SdkError<crate::error::DisconnectSourceServerError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Source Server to disconnect.</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(input.into());
-            self
-        }
-        /// <p>The ID of the Source Server to disconnect.</p>
-        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetFailbackReplicationConfiguration`.
-                        ///
-    /// <p>Lists all Failback ReplicationConfigurations, filtered by Recovery Instance ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetFailbackReplicationConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_failback_replication_configuration_input::Builder
-                        }
-    impl GetFailbackReplicationConfiguration  {
-        /// Creates a new `GetFailbackReplicationConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetFailbackReplicationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetFailbackReplicationConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetFailbackReplicationConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::GetFailbackReplicationConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
-        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(input.into());
-            self
-        }
-        /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
-        pub fn set_recovery_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_recovery_instance_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetLaunchConfiguration`.
-                        ///
-    /// <p>Gets a LaunchConfiguration, filtered by Source Server IDs.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetLaunchConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_launch_configuration_input::Builder
-                        }
-    impl GetLaunchConfiguration  {
-        /// Creates a new `GetLaunchConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetLaunchConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetLaunchConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetLaunchConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::GetLaunchConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(input.into());
-            self
-        }
-        /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetReplicationConfiguration`.
-                        ///
-    /// <p>Gets a ReplicationConfiguration, filtered by Source Server ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetReplicationConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_replication_configuration_input::Builder
-                        }
-    impl GetReplicationConfiguration  {
-        /// Creates a new `GetReplicationConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetReplicationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetReplicationConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetReplicationConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::GetReplicationConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(input.into());
-            self
-        }
-        /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
-        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `InitializeService`.
-                        ///
-    /// <p>Initialize Elastic Disaster Recovery.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct InitializeService {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::initialize_service_input::Builder
-                        }
-    impl InitializeService  {
-        /// Creates a new `InitializeService`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::InitializeService, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::InitializeServiceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::InitializeServiceOutput, aws_smithy_http::result::SdkError<crate::error::InitializeServiceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-    }
-    /// Fluent builder constructing a request to `ListExtensibleSourceServers`.
-                        ///
-    /// <p>Returns a list of source servers on a staging account that are extensible, which means that: a. The source server is not already extended into this Account. b. The source server on the Account we’re reading from is not an extension of another source server. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListExtensibleSourceServers {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_extensible_source_servers_input::Builder
-                        }
-    impl ListExtensibleSourceServers  {
-        /// Creates a new `ListExtensibleSourceServers`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListExtensibleSourceServers, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListExtensibleSourceServersError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListExtensibleSourceServersOutput, aws_smithy_http::result::SdkError<crate::error::ListExtensibleSourceServersError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListExtensibleSourceServersPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListExtensibleSourceServersPaginator {
-                                        crate::paginator::ListExtensibleSourceServersPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-        pub fn staging_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_account_id(input.into());
-            self
-        }
-        /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-        pub fn set_staging_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_staging_account_id(input);
-            self
-        }
-        /// <p>The maximum number of extensible source servers to retrieve.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of extensible source servers to retrieve.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token of the next extensible source server to retrieve.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token of the next extensible source server to retrieve.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListStagingAccounts`.
-                        ///
-    /// <p>Returns an array of staging accounts for existing extended source servers.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListStagingAccounts {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_staging_accounts_input::Builder
-                        }
-    impl ListStagingAccounts  {
-        /// Creates a new `ListStagingAccounts`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListStagingAccounts, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListStagingAccountsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListStagingAccountsOutput, aws_smithy_http::result::SdkError<crate::error::ListStagingAccountsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListStagingAccountsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListStagingAccountsPaginator {
-                                        crate::paginator::ListStagingAccountsPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The maximum number of staging Accounts to retrieve.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of staging Accounts to retrieve.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>The token of the next staging Account to retrieve.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token of the next staging Account to retrieve.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// <p>List all tags for your Elastic Disaster Recovery resources.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the resource whose tags should be returned.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource whose tags should be returned.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `RetryDataReplication`.
-                        ///
-    /// <p>Causes the data replication initiation sequence to begin immediately upon next Handshake for the specified Source Server ID, regardless of when the previous initiation started. This command will work only if the Source Server is stalled or is in a DISCONNECTED or STOPPED state.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct RetryDataReplication {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::retry_data_replication_input::Builder
-                        }
-    impl RetryDataReplication  {
-        /// Creates a new `RetryDataReplication`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::RetryDataReplication, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::RetryDataReplicationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::RetryDataReplicationOutput, aws_smithy_http::result::SdkError<crate::error::RetryDataReplicationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Source Server whose data replication should be retried.</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(input.into());
-            self
-        }
-        /// <p>The ID of the Source Server whose data replication should be retried.</p>
-        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ReverseReplication`.
-                        ///
-    /// <p>Start replication to origin / target region - applies only to protected instances that originated in EC2. For recovery instances on target region - starts replication back to origin region. For failback instances on origin region - starts replication to target region to re-protect them. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ReverseReplication {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::reverse_replication_input::Builder
-                        }
-    impl ReverseReplication  {
-        /// Creates a new `ReverseReplication`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ReverseReplication, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ReverseReplicationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ReverseReplicationOutput, aws_smithy_http::result::SdkError<crate::error::ReverseReplicationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
-        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(input.into());
-            self
-        }
-        /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
-        pub fn set_recovery_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_recovery_instance_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartFailbackLaunch`.
-                        ///
-    /// <p>Initiates a Job for launching the machine that is being failed back to from the specified Recovery Instance. This will run conversion on the failback client and will reboot your machine, thus completing the failback process.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartFailbackLaunch {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_failback_launch_input::Builder
-                        }
-    impl StartFailbackLaunch  {
-        /// Creates a new `StartFailbackLaunch`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartFailbackLaunch, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartFailbackLaunchError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartFailbackLaunchOutput, aws_smithy_http::result::SdkError<crate::error::StartFailbackLaunchError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `recoveryInstanceIDs`.
-        ///
-        /// To override the contents of this collection use [`set_recovery_instance_i_ds`](Self::set_recovery_instance_i_ds).
-        ///
-        /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
-        pub fn recovery_instance_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_i_ds(input.into());
-            self
-        }
-        /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
-        pub fn set_recovery_instance_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_recovery_instance_i_ds(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to be associated with the failback launch Job.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The tags to be associated with the failback launch Job.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartRecovery`.
-                        ///
-    /// <p>Launches Recovery Instances for the specified Source Servers. For each Source Server you may choose a point in time snapshot to launch from, or use an on demand snapshot.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartRecovery {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_recovery_input::Builder
-                        }
-    impl StartRecovery  {
-        /// Creates a new `StartRecovery`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartRecovery, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartRecoveryError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartRecoveryOutput, aws_smithy_http::result::SdkError<crate::error::StartRecoveryError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `sourceServers`.
-        ///
-        /// To override the contents of this collection use [`set_source_servers`](Self::set_source_servers).
-        ///
-        /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-        pub fn source_servers(mut self, input: crate::model::StartRecoveryRequestSourceServer) -> Self {
-            self.inner = self.inner.source_servers(input);
-            self
-        }
-        /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-        pub fn set_source_servers(mut self, input: std::option::Option<std::vec::Vec<crate::model::StartRecoveryRequestSourceServer>>) -> Self {
-            self.inner = self.inner.set_source_servers(input);
-            self
-        }
-        /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
-        pub fn is_drill(mut self, input: bool) -> Self {
-            self.inner = self.inner.is_drill(input);
-            self
-        }
-        /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
-        pub fn set_is_drill(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_is_drill(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags to be associated with the Recovery Job.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>The tags to be associated with the Recovery Job.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartReplication`.
-                        ///
-    /// <p>Starts replication for a stopped Source Server. This action would make the Source Server protected again and restart billing for it.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartReplication {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_replication_input::Builder
-                        }
-    impl StartReplication  {
-        /// Creates a new `StartReplication`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartReplication, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartReplicationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartReplicationOutput, aws_smithy_http::result::SdkError<crate::error::StartReplicationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Source Server to start replication for.</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(input.into());
-            self
-        }
-        /// <p>The ID of the Source Server to start replication for.</p>
-        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopFailback`.
-                        ///
-    /// <p>Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery Instance back to FAILBACK_NOT_STARTED.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopFailback {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_failback_input::Builder
-                        }
-    impl StopFailback  {
-        /// Creates a new `StopFailback`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopFailback, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopFailbackError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopFailbackOutput, aws_smithy_http::result::SdkError<crate::error::StopFailbackError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
-        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(input.into());
-            self
-        }
-        /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
-        pub fn set_recovery_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_recovery_instance_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopReplication`.
-                        ///
-    /// <p>Stops replication for a Source Server. This action would make the Source Server unprotected, delete its existing snapshots and stop billing for it.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopReplication {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_replication_input::Builder
-                        }
-    impl StopReplication  {
-        /// Creates a new `StopReplication`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopReplication, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopReplicationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopReplicationOutput, aws_smithy_http::result::SdkError<crate::error::StopReplicationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Source Server to stop replication for.</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(input.into());
-            self
-        }
-        /// <p>The ID of the Source Server to stop replication for.</p>
-        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>Adds or overwrites only the specified tags for the specified Elastic Disaster Recovery resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>ARN of the resource for which tags are to be added or updated.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>ARN of the resource for which tags are to be added or updated.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>Array of tags to be added or updated.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// <p>Array of tags to be added or updated.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TerminateRecoveryInstances`.
-                        ///
-    /// <p>Initiates a Job for terminating the EC2 resources associated with the specified Recovery Instances, and then will delete the Recovery Instances from the Elastic Disaster Recovery service.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TerminateRecoveryInstances {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::terminate_recovery_instances_input::Builder
-                        }
-    impl TerminateRecoveryInstances  {
-        /// Creates a new `TerminateRecoveryInstances`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TerminateRecoveryInstances, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TerminateRecoveryInstancesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TerminateRecoveryInstancesOutput, aws_smithy_http::result::SdkError<crate::error::TerminateRecoveryInstancesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Appends an item to `recoveryInstanceIDs`.
-        ///
-        /// To override the contents of this collection use [`set_recovery_instance_i_ds`](Self::set_recovery_instance_i_ds).
-        ///
-        /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-        pub fn recovery_instance_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_i_ds(input.into());
-            self
-        }
-        /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-        pub fn set_recovery_instance_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_recovery_instance_i_ds(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>Deletes the specified set of tags from the specified set of Elastic Disaster Recovery resources.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>ARN of the resource for which tags are to be removed.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>ARN of the resource for which tags are to be removed.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `tagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>Array of tags to be removed.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>Array of tags to be removed.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateFailbackReplicationConfiguration`.
-                        ///
-    /// <p>Allows you to update the failback replication configuration of a Recovery Instance by ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateFailbackReplicationConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_failback_replication_configuration_input::Builder
-                        }
-    impl UpdateFailbackReplicationConfiguration  {
-        /// Creates a new `UpdateFailbackReplicationConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateFailbackReplicationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateFailbackReplicationConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateFailbackReplicationConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::UpdateFailbackReplicationConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Recovery Instance.</p>
-        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(input.into());
-            self
-        }
-        /// <p>The ID of the Recovery Instance.</p>
-        pub fn set_recovery_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_recovery_instance_id(input);
-            self
-        }
-        /// <p>The name of the Failback Replication Configuration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the Failback Replication Configuration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(input);
-            self
-        }
-        /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
-        pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_bandwidth_throttling(input);
-            self
-        }
-        /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
-        pub fn use_private_ip(mut self, input: bool) -> Self {
-            self.inner = self.inner.use_private_ip(input);
-            self
-        }
-        /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
-        pub fn set_use_private_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_use_private_ip(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateLaunchConfiguration`.
-                        ///
-    /// <p>Updates a LaunchConfiguration by Source Server ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateLaunchConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_launch_configuration_input::Builder
-                        }
-    impl UpdateLaunchConfiguration  {
-        /// Creates a new `UpdateLaunchConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateLaunchConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateLaunchConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateLaunchConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::UpdateLaunchConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(input.into());
-            self
-        }
-        /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_id(input);
-            self
-        }
-        /// <p>The name of the launch configuration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the launch configuration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-        pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
-            self.inner = self.inner.launch_disposition(input);
-            self
-        }
-        /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-        pub fn set_launch_disposition(mut self, input: std::option::Option<crate::model::LaunchDisposition>) -> Self {
-            self.inner = self.inner.set_launch_disposition(input);
-            self
-        }
-        /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-        pub fn target_instance_type_right_sizing_method(mut self, input: crate::model::TargetInstanceTypeRightSizingMethod) -> Self {
-            self.inner = self.inner.target_instance_type_right_sizing_method(input);
-            self
-        }
-        /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-        pub fn set_target_instance_type_right_sizing_method(mut self, input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>) -> Self {
-            self.inner = self.inner.set_target_instance_type_right_sizing_method(input);
-            self
-        }
-        /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
-        pub fn copy_private_ip(mut self, input: bool) -> Self {
-            self.inner = self.inner.copy_private_ip(input);
-            self
-        }
-        /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
-        pub fn set_copy_private_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_private_ip(input);
-            self
-        }
-        /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
-        pub fn copy_tags(mut self, input: bool) -> Self {
-            self.inner = self.inner.copy_tags(input);
-            self
-        }
-        /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
-        pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_copy_tags(input);
-            self
-        }
-        /// <p>The licensing configuration to be used for this launch configuration.</p>
-        pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
-            self.inner = self.inner.licensing(input);
-            self
-        }
-        /// <p>The licensing configuration to be used for this launch configuration.</p>
-        pub fn set_licensing(mut self, input: std::option::Option<crate::model::Licensing>) -> Self {
-            self.inner = self.inner.set_licensing(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateReplicationConfiguration`.
-                        ///
-    /// <p>Allows you to update a ReplicationConfiguration by Source Server ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateReplicationConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_replication_configuration_input::Builder
-                        }
-    impl UpdateReplicationConfiguration  {
-        /// Creates a new `UpdateReplicationConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateReplicationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateReplicationConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateReplicationConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::UpdateReplicationConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the Source Server for this Replication Configuration.</p>
-        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(input.into());
-            self
-        }
-        /// <p>The ID of the Source Server for this Replication Configuration.</p>
-        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_server_id(input);
-            self
-        }
-        /// <p>The name of the Replication Configuration.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p>The name of the Replication Configuration.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(input.into());
-            self
-        }
-        /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn set_staging_area_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_staging_area_subnet_id(input);
-            self
-        }
-        /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
-        pub fn associate_default_security_group(mut self, input: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(input);
-            self
-        }
-        /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
-        pub fn set_associate_default_security_group(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_associate_default_security_group(input);
-            self
-        }
-        /// Appends an item to `replicationServersSecurityGroupsIDs`.
-        ///
-        /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
-        ///
-        /// <p>The security group IDs that will be used by the replication server.</p>
-        pub fn replication_servers_security_groups_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_servers_security_groups_i_ds(input.into());
-            self
-        }
-        /// <p>The security group IDs that will be used by the replication server.</p>
-        pub fn set_replication_servers_security_groups_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_replication_servers_security_groups_i_ds(input);
-            self
-        }
-        /// <p>The instance type to be used for the replication server.</p>
-        pub fn replication_server_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_server_instance_type(input.into());
-            self
-        }
-        /// <p>The instance type to be used for the replication server.</p>
-        pub fn set_replication_server_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_replication_server_instance_type(input);
-            self
-        }
-        /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(input);
-            self
-        }
-        /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn set_use_dedicated_replication_server(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_use_dedicated_replication_server(input);
-            self
-        }
-        /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-        pub fn default_large_staging_disk_type(mut self, input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(input);
-            self
-        }
-        /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-        pub fn set_default_large_staging_disk_type(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
-            self.inner = self.inner.set_default_large_staging_disk_type(input);
-            self
-        }
-        /// Appends an item to `replicatedDisks`.
-        ///
-        /// To override the contents of this collection use [`set_replicated_disks`](Self::set_replicated_disks).
-        ///
-        /// <p>The configuration of the disks of the Source Server to be replicated.</p>
-        pub fn replicated_disks(mut self, input: crate::model::ReplicationConfigurationReplicatedDisk) -> Self {
-            self.inner = self.inner.replicated_disks(input);
-            self
-        }
-        /// <p>The configuration of the disks of the Source Server to be replicated.</p>
-        pub fn set_replicated_disks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>) -> Self {
-            self.inner = self.inner.set_replicated_disks(input);
-            self
-        }
-        /// <p>The type of EBS encryption to be used during replication.</p>
-        pub fn ebs_encryption(mut self, input: crate::model::ReplicationConfigurationEbsEncryption) -> Self {
-            self.inner = self.inner.ebs_encryption(input);
-            self
-        }
-        /// <p>The type of EBS encryption to be used during replication.</p>
-        pub fn set_ebs_encryption(mut self, input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>) -> Self {
-            self.inner = self.inner.set_ebs_encryption(input);
-            self
-        }
-        /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn set_ebs_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_ebs_encryption_key_arn(input);
-            self
-        }
-        /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(input);
-            self
-        }
-        /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_bandwidth_throttling(input);
-            self
-        }
-        /// <p>The data plane routing mechanism that will be used for replication.</p>
-        pub fn data_plane_routing(mut self, input: crate::model::ReplicationConfigurationDataPlaneRouting) -> Self {
-            self.inner = self.inner.data_plane_routing(input);
-            self
-        }
-        /// <p>The data plane routing mechanism that will be used for replication.</p>
-        pub fn set_data_plane_routing(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>) -> Self {
-            self.inner = self.inner.set_data_plane_routing(input);
-            self
-        }
-        /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn create_public_ip(mut self, input: bool) -> Self {
-            self.inner = self.inner.create_public_ip(input);
-            self
-        }
-        /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_create_public_ip(input);
-            self
-        }
-        /// Adds a key-value pair to `stagingAreaTags`.
-        ///
-        /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
-        ///
-        /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-        pub fn staging_area_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_tags(k.into(), v.into());
-            self
-        }
-        /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-        pub fn set_staging_area_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_staging_area_tags(input);
-            self
-        }
-        /// Appends an item to `pitPolicy`.
-        ///
-        /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
-        ///
-        /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
-            self.inner = self.inner.pit_policy(input);
-            self
-        }
-        /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn set_pit_policy(mut self, input: std::option::Option<std::vec::Vec<crate::model::PitPolicyRule>>) -> Self {
-            self.inner = self.inner.set_pit_policy(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateReplicationConfigurationTemplate`.
-                        ///
-    /// <p>Updates a ReplicationConfigurationTemplate by ID.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateReplicationConfigurationTemplate {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_replication_configuration_template_input::Builder
-                        }
-    impl UpdateReplicationConfigurationTemplate  {
-        /// Creates a new `UpdateReplicationConfigurationTemplate`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateReplicationConfigurationTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateReplicationConfigurationTemplateError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateReplicationConfigurationTemplateOutput, aws_smithy_http::result::SdkError<crate::error::UpdateReplicationConfigurationTemplateError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Replication Configuration Template ID.</p>
-        pub fn replication_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_configuration_template_id(input.into());
-            self
-        }
-        /// <p>The Replication Configuration Template ID.</p>
-        pub fn set_replication_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_replication_configuration_template_id(input);
-            self
-        }
-        /// <p>The Replication Configuration Template ARN.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(input.into());
-            self
-        }
-        /// <p>The Replication Configuration Template ARN.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(input);
-            self
-        }
-        /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(input.into());
-            self
-        }
-        /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn set_staging_area_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_staging_area_subnet_id(input);
-            self
-        }
-        /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-        pub fn associate_default_security_group(mut self, input: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(input);
-            self
-        }
-        /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-        pub fn set_associate_default_security_group(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_associate_default_security_group(input);
-            self
-        }
-        /// Appends an item to `replicationServersSecurityGroupsIDs`.
-        ///
-        /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
-        ///
-        /// <p>The security group IDs that will be used by the replication server.</p>
-        pub fn replication_servers_security_groups_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_servers_security_groups_i_ds(input.into());
-            self
-        }
-        /// <p>The security group IDs that will be used by the replication server.</p>
-        pub fn set_replication_servers_security_groups_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_replication_servers_security_groups_i_ds(input);
-            self
-        }
-        /// <p>The instance type to be used for the replication server.</p>
-        pub fn replication_server_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_server_instance_type(input.into());
-            self
-        }
-        /// <p>The instance type to be used for the replication server.</p>
-        pub fn set_replication_server_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_replication_server_instance_type(input);
-            self
-        }
-        /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(input);
-            self
-        }
-        /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn set_use_dedicated_replication_server(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_use_dedicated_replication_server(input);
-            self
-        }
-        /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-        pub fn default_large_staging_disk_type(mut self, input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(input);
-            self
-        }
-        /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-        pub fn set_default_large_staging_disk_type(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
-            self.inner = self.inner.set_default_large_staging_disk_type(input);
-            self
-        }
-        /// <p>The type of EBS encryption to be used during replication.</p>
-        pub fn ebs_encryption(mut self, input: crate::model::ReplicationConfigurationEbsEncryption) -> Self {
-            self.inner = self.inner.ebs_encryption(input);
-            self
-        }
-        /// <p>The type of EBS encryption to be used during replication.</p>
-        pub fn set_ebs_encryption(mut self, input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>) -> Self {
-            self.inner = self.inner.set_ebs_encryption(input);
-            self
-        }
-        /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn set_ebs_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_ebs_encryption_key_arn(input);
-            self
-        }
-        /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(input);
-            self
-        }
-        /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-            self.inner = self.inner.set_bandwidth_throttling(input);
-            self
-        }
-        /// <p>The data plane routing mechanism that will be used for replication.</p>
-        pub fn data_plane_routing(mut self, input: crate::model::ReplicationConfigurationDataPlaneRouting) -> Self {
-            self.inner = self.inner.data_plane_routing(input);
-            self
-        }
-        /// <p>The data plane routing mechanism that will be used for replication.</p>
-        pub fn set_data_plane_routing(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>) -> Self {
-            self.inner = self.inner.set_data_plane_routing(input);
-            self
-        }
-        /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn create_public_ip(mut self, input: bool) -> Self {
-            self.inner = self.inner.create_public_ip(input);
-            self
-        }
-        /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_create_public_ip(input);
-            self
-        }
-        /// Adds a key-value pair to `stagingAreaTags`.
-        ///
-        /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
-        ///
-        /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-        pub fn staging_area_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_tags(k.into(), v.into());
-            self
-        }
-        /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-        pub fn set_staging_area_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_staging_area_tags(input);
-            self
-        }
-        /// Appends an item to `pitPolicy`.
-        ///
-        /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
-        ///
-        /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
-            self.inner = self.inner.pit_policy(input);
-            self
-        }
-        /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn set_pit_policy(mut self, input: std::option::Option<std::vec::Vec<crate::model::PitPolicyRule>>) -> Self {
-            self.inner = self.inner.set_pit_policy(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -3472,4 +679,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

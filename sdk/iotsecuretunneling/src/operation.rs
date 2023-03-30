@@ -2,7 +2,7 @@
 /// Operation shape for `CloseTunnel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`close_tunnel`](crate::client::Client::close_tunnel).
+            /// [`close_tunnel`](crate::client::fluent_builders::CloseTunnel).
             ///
             /// `ParseStrictResponse` impl for `CloseTunnel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CloseTunnel {
 /// Operation shape for `DescribeTunnel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_tunnel`](crate::client::Client::describe_tunnel).
+            /// [`describe_tunnel`](crate::client::fluent_builders::DescribeTunnel).
             ///
             /// `ParseStrictResponse` impl for `DescribeTunnel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTunnel {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTunnels`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tunnels`](crate::client::Client::list_tunnels).
+            /// [`list_tunnels`](crate::client::fluent_builders::ListTunnels).
             ///
             /// `ParseStrictResponse` impl for `ListTunnels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTunnels {
 /// Operation shape for `OpenTunnel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`open_tunnel`](crate::client::Client::open_tunnel).
+            /// [`open_tunnel`](crate::client::fluent_builders::OpenTunnel).
             ///
             /// `ParseStrictResponse` impl for `OpenTunnel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OpenTunnel {
 /// Operation shape for `RotateTunnelAccessToken`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`rotate_tunnel_access_token`](crate::client::Client::rotate_tunnel_access_token).
+            /// [`rotate_tunnel_access_token`](crate::client::fluent_builders::RotateTunnelAccessToken).
             ///
             /// `ParseStrictResponse` impl for `RotateTunnelAccessToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateTunnelAccessToken 
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

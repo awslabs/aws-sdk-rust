@@ -2,7 +2,7 @@
 /// Operation shape for `BatchGetRecord`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_get_record`](crate::client::Client::batch_get_record).
+            /// [`batch_get_record`](crate::client::fluent_builders::BatchGetRecord).
             ///
             /// `ParseStrictResponse` impl for `BatchGetRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetRecord {
 /// Operation shape for `DeleteRecord`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_record`](crate::client::Client::delete_record).
+            /// [`delete_record`](crate::client::fluent_builders::DeleteRecord).
             ///
             /// `ParseStrictResponse` impl for `DeleteRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecord {
 /// Operation shape for `GetRecord`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_record`](crate::client::Client::get_record).
+            /// [`get_record`](crate::client::fluent_builders::GetRecord).
             ///
             /// `ParseStrictResponse` impl for `GetRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecord {
 /// Operation shape for `PutRecord`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_record`](crate::client::Client::put_record).
+            /// [`put_record`](crate::client::fluent_builders::PutRecord).
             ///
             /// `ParseStrictResponse` impl for `PutRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

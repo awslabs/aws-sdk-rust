@@ -2,7 +2,7 @@
 /// Operation shape for `CreateLifecyclePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_lifecycle_policy`](crate::client::Client::create_lifecycle_policy).
+            /// [`create_lifecycle_policy`](crate::client::fluent_builders::CreateLifecyclePolicy).
             ///
             /// `ParseStrictResponse` impl for `CreateLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLifecyclePolicy {
 /// Operation shape for `DeleteLifecyclePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_lifecycle_policy`](crate::client::Client::delete_lifecycle_policy).
+            /// [`delete_lifecycle_policy`](crate::client::fluent_builders::DeleteLifecyclePolicy).
             ///
             /// `ParseStrictResponse` impl for `DeleteLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLifecyclePolicy {
 /// Operation shape for `GetLifecyclePolicies`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_lifecycle_policies`](crate::client::Client::get_lifecycle_policies).
+            /// [`get_lifecycle_policies`](crate::client::fluent_builders::GetLifecyclePolicies).
             ///
             /// `ParseStrictResponse` impl for `GetLifecyclePolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicies {
 /// Operation shape for `GetLifecyclePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_lifecycle_policy`](crate::client::Client::get_lifecycle_policy).
+            /// [`get_lifecycle_policy`](crate::client::fluent_builders::GetLifecyclePolicy).
             ///
             /// `ParseStrictResponse` impl for `GetLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicy {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateLifecyclePolicy`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_lifecycle_policy`](crate::client::Client::update_lifecycle_policy).
+            /// [`update_lifecycle_policy`](crate::client::fluent_builders::UpdateLifecyclePolicy).
             ///
             /// `ParseStrictResponse` impl for `UpdateLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

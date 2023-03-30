@@ -2,7 +2,7 @@
 /// Operation shape for `BulkPublish`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`bulk_publish`](crate::client::Client::bulk_publish).
+            /// [`bulk_publish`](crate::client::fluent_builders::BulkPublish).
             ///
             /// `ParseStrictResponse` impl for `BulkPublish`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BulkPublish {
 /// Operation shape for `DeleteDataset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_dataset`](crate::client::Client::delete_dataset).
+            /// [`delete_dataset`](crate::client::fluent_builders::DeleteDataset).
             ///
             /// `ParseStrictResponse` impl for `DeleteDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
 /// Operation shape for `DescribeDataset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_dataset`](crate::client::Client::describe_dataset).
+            /// [`describe_dataset`](crate::client::fluent_builders::DescribeDataset).
             ///
             /// `ParseStrictResponse` impl for `DescribeDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataset {
 /// Operation shape for `DescribeIdentityPoolUsage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_identity_pool_usage`](crate::client::Client::describe_identity_pool_usage).
+            /// [`describe_identity_pool_usage`](crate::client::fluent_builders::DescribeIdentityPoolUsage).
             ///
             /// `ParseStrictResponse` impl for `DescribeIdentityPoolUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityPoolUsag
 /// Operation shape for `DescribeIdentityUsage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_identity_usage`](crate::client::Client::describe_identity_usage).
+            /// [`describe_identity_usage`](crate::client::fluent_builders::DescribeIdentityUsage).
             ///
             /// `ParseStrictResponse` impl for `DescribeIdentityUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityUsage {
 /// Operation shape for `GetBulkPublishDetails`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_bulk_publish_details`](crate::client::Client::get_bulk_publish_details).
+            /// [`get_bulk_publish_details`](crate::client::fluent_builders::GetBulkPublishDetails).
             ///
             /// `ParseStrictResponse` impl for `GetBulkPublishDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBulkPublishDetails {
 /// Operation shape for `GetCognitoEvents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_cognito_events`](crate::client::Client::get_cognito_events).
+            /// [`get_cognito_events`](crate::client::fluent_builders::GetCognitoEvents).
             ///
             /// `ParseStrictResponse` impl for `GetCognitoEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCognitoEvents {
 /// Operation shape for `GetIdentityPoolConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_identity_pool_configuration`](crate::client::Client::get_identity_pool_configuration).
+            /// [`get_identity_pool_configuration`](crate::client::fluent_builders::GetIdentityPoolConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetIdentityPoolConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityPoolConfigura
 /// Operation shape for `ListDatasets`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_datasets`](crate::client::Client::list_datasets).
+            /// [`list_datasets`](crate::client::fluent_builders::ListDatasets).
             ///
             /// `ParseStrictResponse` impl for `ListDatasets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasets {
 /// Operation shape for `ListIdentityPoolUsage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_identity_pool_usage`](crate::client::Client::list_identity_pool_usage).
+            /// [`list_identity_pool_usage`](crate::client::fluent_builders::ListIdentityPoolUsage).
             ///
             /// `ParseStrictResponse` impl for `ListIdentityPoolUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityPoolUsage {
 /// Operation shape for `ListRecords`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_records`](crate::client::Client::list_records).
+            /// [`list_records`](crate::client::fluent_builders::ListRecords).
             ///
             /// `ParseStrictResponse` impl for `ListRecords`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecords {
 /// Operation shape for `RegisterDevice`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`register_device`](crate::client::Client::register_device).
+            /// [`register_device`](crate::client::fluent_builders::RegisterDevice).
             ///
             /// `ParseStrictResponse` impl for `RegisterDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDevice {
 /// Operation shape for `SetCognitoEvents`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_cognito_events`](crate::client::Client::set_cognito_events).
+            /// [`set_cognito_events`](crate::client::fluent_builders::SetCognitoEvents).
             ///
             /// `ParseStrictResponse` impl for `SetCognitoEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetCognitoEvents {
 /// Operation shape for `SetIdentityPoolConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`set_identity_pool_configuration`](crate::client::Client::set_identity_pool_configuration).
+            /// [`set_identity_pool_configuration`](crate::client::fluent_builders::SetIdentityPoolConfiguration).
             ///
             /// `ParseStrictResponse` impl for `SetIdentityPoolConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityPoolConfigura
 /// Operation shape for `SubscribeToDataset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`subscribe_to_dataset`](crate::client::Client::subscribe_to_dataset).
+            /// [`subscribe_to_dataset`](crate::client::fluent_builders::SubscribeToDataset).
             ///
             /// `ParseStrictResponse` impl for `SubscribeToDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubscribeToDataset {
 /// Operation shape for `UnsubscribeFromDataset`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`unsubscribe_from_dataset`](crate::client::Client::unsubscribe_from_dataset).
+            /// [`unsubscribe_from_dataset`](crate::client::fluent_builders::UnsubscribeFromDataset).
             ///
             /// `ParseStrictResponse` impl for `UnsubscribeFromDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnsubscribeFromDataset {
 /// Operation shape for `UpdateRecords`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_records`](crate::client::Client::update_records).
+            /// [`update_records`](crate::client::fluent_builders::UpdateRecords).
             ///
             /// `ParseStrictResponse` impl for `UpdateRecords`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteReportDefinition`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_report_definition`](crate::client::Client::delete_report_definition).
+            /// [`delete_report_definition`](crate::client::fluent_builders::DeleteReportDefinition).
             ///
             /// `ParseStrictResponse` impl for `DeleteReportDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReportDefinition {
 /// Operation shape for `DescribeReportDefinitions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_report_definitions`](crate::client::Client::describe_report_definitions).
+            /// [`describe_report_definitions`](crate::client::fluent_builders::DescribeReportDefinitions).
             ///
             /// `ParseStrictResponse` impl for `DescribeReportDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReportDefinition
 /// Operation shape for `ModifyReportDefinition`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`modify_report_definition`](crate::client::Client::modify_report_definition).
+            /// [`modify_report_definition`](crate::client::fluent_builders::ModifyReportDefinition).
             ///
             /// `ParseStrictResponse` impl for `ModifyReportDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyReportDefinition {
 /// Operation shape for `PutReportDefinition`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_report_definition`](crate::client::Client::put_report_definition).
+            /// [`put_report_definition`](crate::client::fluent_builders::PutReportDefinition).
             ///
             /// `ParseStrictResponse` impl for `PutReportDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

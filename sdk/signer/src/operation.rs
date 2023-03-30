@@ -2,7 +2,7 @@
 /// Operation shape for `AddProfilePermission`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_profile_permission`](crate::client::Client::add_profile_permission).
+            /// [`add_profile_permission`](crate::client::fluent_builders::AddProfilePermission).
             ///
             /// `ParseStrictResponse` impl for `AddProfilePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddProfilePermission {
 /// Operation shape for `CancelSigningProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_signing_profile`](crate::client::Client::cancel_signing_profile).
+            /// [`cancel_signing_profile`](crate::client::fluent_builders::CancelSigningProfile).
             ///
             /// `ParseStrictResponse` impl for `CancelSigningProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSigningProfile {
 /// Operation shape for `DescribeSigningJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_signing_job`](crate::client::Client::describe_signing_job).
+            /// [`describe_signing_job`](crate::client::fluent_builders::DescribeSigningJob).
             ///
             /// `ParseStrictResponse` impl for `DescribeSigningJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSigningJob {
 /// Operation shape for `GetSigningPlatform`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_signing_platform`](crate::client::Client::get_signing_platform).
+            /// [`get_signing_platform`](crate::client::fluent_builders::GetSigningPlatform).
             ///
             /// `ParseStrictResponse` impl for `GetSigningPlatform`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSigningPlatform {
 /// Operation shape for `GetSigningProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_signing_profile`](crate::client::Client::get_signing_profile).
+            /// [`get_signing_profile`](crate::client::fluent_builders::GetSigningProfile).
             ///
             /// `ParseStrictResponse` impl for `GetSigningProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSigningProfile {
 /// Operation shape for `ListProfilePermissions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_profile_permissions`](crate::client::Client::list_profile_permissions).
+            /// [`list_profile_permissions`](crate::client::fluent_builders::ListProfilePermissions).
             ///
             /// `ParseStrictResponse` impl for `ListProfilePermissions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfilePermissions {
 /// Operation shape for `ListSigningJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_signing_jobs`](crate::client::Client::list_signing_jobs).
+            /// [`list_signing_jobs`](crate::client::fluent_builders::ListSigningJobs).
             ///
             /// `ParseStrictResponse` impl for `ListSigningJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSigningJobs {
 /// Operation shape for `ListSigningPlatforms`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_signing_platforms`](crate::client::Client::list_signing_platforms).
+            /// [`list_signing_platforms`](crate::client::fluent_builders::ListSigningPlatforms).
             ///
             /// `ParseStrictResponse` impl for `ListSigningPlatforms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSigningPlatforms {
 /// Operation shape for `ListSigningProfiles`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_signing_profiles`](crate::client::Client::list_signing_profiles).
+            /// [`list_signing_profiles`](crate::client::fluent_builders::ListSigningProfiles).
             ///
             /// `ParseStrictResponse` impl for `ListSigningProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSigningProfiles {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutSigningProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_signing_profile`](crate::client::Client::put_signing_profile).
+            /// [`put_signing_profile`](crate::client::fluent_builders::PutSigningProfile).
             ///
             /// `ParseStrictResponse` impl for `PutSigningProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSigningProfile {
 /// Operation shape for `RemoveProfilePermission`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`remove_profile_permission`](crate::client::Client::remove_profile_permission).
+            /// [`remove_profile_permission`](crate::client::fluent_builders::RemoveProfilePermission).
             ///
             /// `ParseStrictResponse` impl for `RemoveProfilePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveProfilePermission 
 /// Operation shape for `RevokeSignature`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`revoke_signature`](crate::client::Client::revoke_signature).
+            /// [`revoke_signature`](crate::client::fluent_builders::RevokeSignature).
             ///
             /// `ParseStrictResponse` impl for `RevokeSignature`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeSignature {
 /// Operation shape for `RevokeSigningProfile`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`revoke_signing_profile`](crate::client::Client::revoke_signing_profile).
+            /// [`revoke_signing_profile`](crate::client::fluent_builders::RevokeSigningProfile).
             ///
             /// `ParseStrictResponse` impl for `RevokeSigningProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeSigningProfile {
 /// Operation shape for `StartSigningJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_signing_job`](crate::client::Client::start_signing_job).
+            /// [`start_signing_job`](crate::client::fluent_builders::StartSigningJob).
             ///
             /// `ParseStrictResponse` impl for `StartSigningJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSigningJob {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

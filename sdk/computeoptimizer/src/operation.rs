@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteRecommendationPreferences`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_recommendation_preferences`](crate::client::Client::delete_recommendation_preferences).
+            /// [`delete_recommendation_preferences`](crate::client::fluent_builders::DeleteRecommendationPreferences).
             ///
             /// `ParseStrictResponse` impl for `DeleteRecommendationPreferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommendationPref
 /// Operation shape for `DescribeRecommendationExportJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_recommendation_export_jobs`](crate::client::Client::describe_recommendation_export_jobs).
+            /// [`describe_recommendation_export_jobs`](crate::client::fluent_builders::DescribeRecommendationExportJobs).
             ///
             /// `ParseStrictResponse` impl for `DescribeRecommendationExportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommendationEx
 /// Operation shape for `ExportAutoScalingGroupRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_auto_scaling_group_recommendations`](crate::client::Client::export_auto_scaling_group_recommendations).
+            /// [`export_auto_scaling_group_recommendations`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations).
             ///
             /// `ParseStrictResponse` impl for `ExportAutoScalingGroupRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportAutoScalingGroupRe
 /// Operation shape for `ExportEBSVolumeRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_ebs_volume_recommendations`](crate::client::Client::export_ebs_volume_recommendations).
+            /// [`export_ebs_volume_recommendations`](crate::client::fluent_builders::ExportEBSVolumeRecommendations).
             ///
             /// `ParseStrictResponse` impl for `ExportEBSVolumeRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportEBSVolumeRecommend
 /// Operation shape for `ExportEC2InstanceRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_ec2_instance_recommendations`](crate::client::Client::export_ec2_instance_recommendations).
+            /// [`export_ec2_instance_recommendations`](crate::client::fluent_builders::ExportEC2InstanceRecommendations).
             ///
             /// `ParseStrictResponse` impl for `ExportEC2InstanceRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportEC2InstanceRecomme
 /// Operation shape for `ExportECSServiceRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_ecs_service_recommendations`](crate::client::Client::export_ecs_service_recommendations).
+            /// [`export_ecs_service_recommendations`](crate::client::fluent_builders::ExportECSServiceRecommendations).
             ///
             /// `ParseStrictResponse` impl for `ExportECSServiceRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportECSServiceRecommen
 /// Operation shape for `ExportLambdaFunctionRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`export_lambda_function_recommendations`](crate::client::Client::export_lambda_function_recommendations).
+            /// [`export_lambda_function_recommendations`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations).
             ///
             /// `ParseStrictResponse` impl for `ExportLambdaFunctionRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportLambdaFunctionReco
 /// Operation shape for `GetAutoScalingGroupRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_auto_scaling_group_recommendations`](crate::client::Client::get_auto_scaling_group_recommendations).
+            /// [`get_auto_scaling_group_recommendations`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations).
             ///
             /// `ParseStrictResponse` impl for `GetAutoScalingGroupRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAutoScalingGroupRecom
 /// Operation shape for `GetEBSVolumeRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ebs_volume_recommendations`](crate::client::Client::get_ebs_volume_recommendations).
+            /// [`get_ebs_volume_recommendations`](crate::client::fluent_builders::GetEBSVolumeRecommendations).
             ///
             /// `ParseStrictResponse` impl for `GetEBSVolumeRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEBSVolumeRecommendati
 /// Operation shape for `GetEC2InstanceRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ec2_instance_recommendations`](crate::client::Client::get_ec2_instance_recommendations).
+            /// [`get_ec2_instance_recommendations`](crate::client::fluent_builders::GetEC2InstanceRecommendations).
             ///
             /// `ParseStrictResponse` impl for `GetEC2InstanceRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEC2InstanceRecommenda
 /// Operation shape for `GetEC2RecommendationProjectedMetrics`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ec2_recommendation_projected_metrics`](crate::client::Client::get_ec2_recommendation_projected_metrics).
+            /// [`get_ec2_recommendation_projected_metrics`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics).
             ///
             /// `ParseStrictResponse` impl for `GetEC2RecommendationProjectedMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEC2RecommendationProj
 /// Operation shape for `GetECSServiceRecommendationProjectedMetrics`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ecs_service_recommendation_projected_metrics`](crate::client::Client::get_ecs_service_recommendation_projected_metrics).
+            /// [`get_ecs_service_recommendation_projected_metrics`](crate::client::fluent_builders::GetECSServiceRecommendationProjectedMetrics).
             ///
             /// `ParseStrictResponse` impl for `GetECSServiceRecommendationProjectedMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetECSServiceRecommendat
 /// Operation shape for `GetECSServiceRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_ecs_service_recommendations`](crate::client::Client::get_ecs_service_recommendations).
+            /// [`get_ecs_service_recommendations`](crate::client::fluent_builders::GetECSServiceRecommendations).
             ///
             /// `ParseStrictResponse` impl for `GetECSServiceRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetECSServiceRecommendat
 /// Operation shape for `GetEffectiveRecommendationPreferences`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_effective_recommendation_preferences`](crate::client::Client::get_effective_recommendation_preferences).
+            /// [`get_effective_recommendation_preferences`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences).
             ///
             /// `ParseStrictResponse` impl for `GetEffectiveRecommendationPreferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEffectiveRecommendati
 /// Operation shape for `GetEnrollmentStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_enrollment_status`](crate::client::Client::get_enrollment_status).
+            /// [`get_enrollment_status`](crate::client::fluent_builders::GetEnrollmentStatus).
             ///
             /// `ParseStrictResponse` impl for `GetEnrollmentStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnrollmentStatus {
 /// Operation shape for `GetEnrollmentStatusesForOrganization`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_enrollment_statuses_for_organization`](crate::client::Client::get_enrollment_statuses_for_organization).
+            /// [`get_enrollment_statuses_for_organization`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization).
             ///
             /// `ParseStrictResponse` impl for `GetEnrollmentStatusesForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnrollmentStatusesFor
 /// Operation shape for `GetLambdaFunctionRecommendations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_lambda_function_recommendations`](crate::client::Client::get_lambda_function_recommendations).
+            /// [`get_lambda_function_recommendations`](crate::client::fluent_builders::GetLambdaFunctionRecommendations).
             ///
             /// `ParseStrictResponse` impl for `GetLambdaFunctionRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLambdaFunctionRecomme
 /// Operation shape for `GetRecommendationPreferences`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_recommendation_preferences`](crate::client::Client::get_recommendation_preferences).
+            /// [`get_recommendation_preferences`](crate::client::fluent_builders::GetRecommendationPreferences).
             ///
             /// `ParseStrictResponse` impl for `GetRecommendationPreferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendationPrefere
 /// Operation shape for `GetRecommendationSummaries`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_recommendation_summaries`](crate::client::Client::get_recommendation_summaries).
+            /// [`get_recommendation_summaries`](crate::client::fluent_builders::GetRecommendationSummaries).
             ///
             /// `ParseStrictResponse` impl for `GetRecommendationSummaries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendationSummari
 /// Operation shape for `PutRecommendationPreferences`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_recommendation_preferences`](crate::client::Client::put_recommendation_preferences).
+            /// [`put_recommendation_preferences`](crate::client::fluent_builders::PutRecommendationPreferences).
             ///
             /// `ParseStrictResponse` impl for `PutRecommendationPreferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecommendationPrefere
 /// Operation shape for `UpdateEnrollmentStatus`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_enrollment_status`](crate::client::Client::update_enrollment_status).
+            /// [`update_enrollment_status`](crate::client::fluent_builders::UpdateEnrollmentStatus).
             ///
             /// `ParseStrictResponse` impl for `UpdateEnrollmentStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

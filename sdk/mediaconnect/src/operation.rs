@@ -2,7 +2,7 @@
 /// Operation shape for `AddFlowMediaStreams`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_flow_media_streams`](crate::client::Client::add_flow_media_streams).
+            /// [`add_flow_media_streams`](crate::client::fluent_builders::AddFlowMediaStreams).
             ///
             /// `ParseStrictResponse` impl for `AddFlowMediaStreams`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddFlowMediaStreams {
 /// Operation shape for `AddFlowOutputs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_flow_outputs`](crate::client::Client::add_flow_outputs).
+            /// [`add_flow_outputs`](crate::client::fluent_builders::AddFlowOutputs).
             ///
             /// `ParseStrictResponse` impl for `AddFlowOutputs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddFlowOutputs {
 /// Operation shape for `AddFlowSources`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_flow_sources`](crate::client::Client::add_flow_sources).
+            /// [`add_flow_sources`](crate::client::fluent_builders::AddFlowSources).
             ///
             /// `ParseStrictResponse` impl for `AddFlowSources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddFlowSources {
 /// Operation shape for `AddFlowVpcInterfaces`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`add_flow_vpc_interfaces`](crate::client::Client::add_flow_vpc_interfaces).
+            /// [`add_flow_vpc_interfaces`](crate::client::fluent_builders::AddFlowVpcInterfaces).
             ///
             /// `ParseStrictResponse` impl for `AddFlowVpcInterfaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddFlowVpcInterfaces {
 /// Operation shape for `CreateFlow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_flow`](crate::client::Client::create_flow).
+            /// [`create_flow`](crate::client::fluent_builders::CreateFlow).
             ///
             /// `ParseStrictResponse` impl for `CreateFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFlow {
 /// Operation shape for `DeleteFlow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_flow`](crate::client::Client::delete_flow).
+            /// [`delete_flow`](crate::client::fluent_builders::DeleteFlow).
             ///
             /// `ParseStrictResponse` impl for `DeleteFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFlow {
 /// Operation shape for `DescribeFlow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_flow`](crate::client::Client::describe_flow).
+            /// [`describe_flow`](crate::client::fluent_builders::DescribeFlow).
             ///
             /// `ParseStrictResponse` impl for `DescribeFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFlow {
 /// Operation shape for `DescribeOffering`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_offering`](crate::client::Client::describe_offering).
+            /// [`describe_offering`](crate::client::fluent_builders::DescribeOffering).
             ///
             /// `ParseStrictResponse` impl for `DescribeOffering`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOffering {
 /// Operation shape for `DescribeReservation`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_reservation`](crate::client::Client::describe_reservation).
+            /// [`describe_reservation`](crate::client::fluent_builders::DescribeReservation).
             ///
             /// `ParseStrictResponse` impl for `DescribeReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservation {
 /// Operation shape for `GrantFlowEntitlements`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`grant_flow_entitlements`](crate::client::Client::grant_flow_entitlements).
+            /// [`grant_flow_entitlements`](crate::client::fluent_builders::GrantFlowEntitlements).
             ///
             /// `ParseStrictResponse` impl for `GrantFlowEntitlements`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GrantFlowEntitlements {
 /// Operation shape for `ListEntitlements`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_entitlements`](crate::client::Client::list_entitlements).
+            /// [`list_entitlements`](crate::client::fluent_builders::ListEntitlements).
             ///
             /// `ParseStrictResponse` impl for `ListEntitlements`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntitlements {
 /// Operation shape for `ListFlows`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_flows`](crate::client::Client::list_flows).
+            /// [`list_flows`](crate::client::fluent_builders::ListFlows).
             ///
             /// `ParseStrictResponse` impl for `ListFlows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFlows {
 /// Operation shape for `ListOfferings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_offerings`](crate::client::Client::list_offerings).
+            /// [`list_offerings`](crate::client::fluent_builders::ListOfferings).
             ///
             /// `ParseStrictResponse` impl for `ListOfferings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOfferings {
 /// Operation shape for `ListReservations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_reservations`](crate::client::Client::list_reservations).
+            /// [`list_reservations`](crate::client::fluent_builders::ListReservations).
             ///
             /// `ParseStrictResponse` impl for `ListReservations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReservations {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PurchaseOffering`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`purchase_offering`](crate::client::Client::purchase_offering).
+            /// [`purchase_offering`](crate::client::fluent_builders::PurchaseOffering).
             ///
             /// `ParseStrictResponse` impl for `PurchaseOffering`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseOffering {
 /// Operation shape for `RemoveFlowMediaStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`remove_flow_media_stream`](crate::client::Client::remove_flow_media_stream).
+            /// [`remove_flow_media_stream`](crate::client::fluent_builders::RemoveFlowMediaStream).
             ///
             /// `ParseStrictResponse` impl for `RemoveFlowMediaStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveFlowMediaStream {
 /// Operation shape for `RemoveFlowOutput`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`remove_flow_output`](crate::client::Client::remove_flow_output).
+            /// [`remove_flow_output`](crate::client::fluent_builders::RemoveFlowOutput).
             ///
             /// `ParseStrictResponse` impl for `RemoveFlowOutput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveFlowOutput {
 /// Operation shape for `RemoveFlowSource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`remove_flow_source`](crate::client::Client::remove_flow_source).
+            /// [`remove_flow_source`](crate::client::fluent_builders::RemoveFlowSource).
             ///
             /// `ParseStrictResponse` impl for `RemoveFlowSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveFlowSource {
 /// Operation shape for `RemoveFlowVpcInterface`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`remove_flow_vpc_interface`](crate::client::Client::remove_flow_vpc_interface).
+            /// [`remove_flow_vpc_interface`](crate::client::fluent_builders::RemoveFlowVpcInterface).
             ///
             /// `ParseStrictResponse` impl for `RemoveFlowVpcInterface`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveFlowVpcInterface {
 /// Operation shape for `RevokeFlowEntitlement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`revoke_flow_entitlement`](crate::client::Client::revoke_flow_entitlement).
+            /// [`revoke_flow_entitlement`](crate::client::fluent_builders::RevokeFlowEntitlement).
             ///
             /// `ParseStrictResponse` impl for `RevokeFlowEntitlement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeFlowEntitlement {
 /// Operation shape for `StartFlow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_flow`](crate::client::Client::start_flow).
+            /// [`start_flow`](crate::client::fluent_builders::StartFlow).
             ///
             /// `ParseStrictResponse` impl for `StartFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFlow {
 /// Operation shape for `StopFlow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_flow`](crate::client::Client::stop_flow).
+            /// [`stop_flow`](crate::client::fluent_builders::StopFlow).
             ///
             /// `ParseStrictResponse` impl for `StopFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopFlow {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateFlow`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_flow`](crate::client::Client::update_flow).
+            /// [`update_flow`](crate::client::fluent_builders::UpdateFlow).
             ///
             /// `ParseStrictResponse` impl for `UpdateFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFlow {
 /// Operation shape for `UpdateFlowEntitlement`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_flow_entitlement`](crate::client::Client::update_flow_entitlement).
+            /// [`update_flow_entitlement`](crate::client::fluent_builders::UpdateFlowEntitlement).
             ///
             /// `ParseStrictResponse` impl for `UpdateFlowEntitlement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowEntitlement {
 /// Operation shape for `UpdateFlowMediaStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_flow_media_stream`](crate::client::Client::update_flow_media_stream).
+            /// [`update_flow_media_stream`](crate::client::fluent_builders::UpdateFlowMediaStream).
             ///
             /// `ParseStrictResponse` impl for `UpdateFlowMediaStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowMediaStream {
 /// Operation shape for `UpdateFlowOutput`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_flow_output`](crate::client::Client::update_flow_output).
+            /// [`update_flow_output`](crate::client::fluent_builders::UpdateFlowOutput).
             ///
             /// `ParseStrictResponse` impl for `UpdateFlowOutput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowOutput {
 /// Operation shape for `UpdateFlowSource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_flow_source`](crate::client::Client::update_flow_source).
+            /// [`update_flow_source`](crate::client::fluent_builders::UpdateFlowSource).
             ///
             /// `ParseStrictResponse` impl for `UpdateFlowSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

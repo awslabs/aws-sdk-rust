@@ -83,8 +83,8 @@ impl Client  {
     ///   - [`id(Option<String>)`](crate::output::ConfigureLogsOutput::id): The ID of the PackagingGroup.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ConfigureLogsOutput::tags): A collection of tags associated with a resource
                         /// - On failure, responds with [`SdkError<ConfigureLogsError>`](crate::error::ConfigureLogsError)
-    pub fn configure_logs(&self) -> fluent_builders::ConfigureLogs {
-                            fluent_builders::ConfigureLogs::new(self.handle.clone())
+    pub fn configure_logs(&self) -> crate::client::fluent_builders::ConfigureLogs {
+                            crate::client::fluent_builders::ConfigureLogs::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateAsset`](crate::client::fluent_builders::CreateAsset) operation.
                         ///
@@ -106,8 +106,8 @@ impl Client  {
     ///   - [`source_role_arn(Option<String>)`](crate::output::CreateAssetOutput::source_role_arn): The IAM role_arn used to access the source S3 bucket.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateAssetOutput::tags): A collection of tags associated with a resource
                         /// - On failure, responds with [`SdkError<CreateAssetError>`](crate::error::CreateAssetError)
-    pub fn create_asset(&self) -> fluent_builders::CreateAsset {
-                            fluent_builders::CreateAsset::new(self.handle.clone())
+    pub fn create_asset(&self) -> crate::client::fluent_builders::CreateAsset {
+                            crate::client::fluent_builders::CreateAsset::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreatePackagingConfiguration`](crate::client::fluent_builders::CreatePackagingConfiguration) operation.
                         ///
@@ -129,8 +129,8 @@ impl Client  {
     ///   - [`packaging_group_id(Option<String>)`](crate::output::CreatePackagingConfigurationOutput::packaging_group_id): The ID of a PackagingGroup.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreatePackagingConfigurationOutput::tags): A collection of tags associated with a resource
                         /// - On failure, responds with [`SdkError<CreatePackagingConfigurationError>`](crate::error::CreatePackagingConfigurationError)
-    pub fn create_packaging_configuration(&self) -> fluent_builders::CreatePackagingConfiguration {
-                            fluent_builders::CreatePackagingConfiguration::new(self.handle.clone())
+    pub fn create_packaging_configuration(&self) -> crate::client::fluent_builders::CreatePackagingConfiguration {
+                            crate::client::fluent_builders::CreatePackagingConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreatePackagingGroup`](crate::client::fluent_builders::CreatePackagingGroup) operation.
                         ///
@@ -147,8 +147,8 @@ impl Client  {
     ///   - [`id(Option<String>)`](crate::output::CreatePackagingGroupOutput::id): The ID of the PackagingGroup.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreatePackagingGroupOutput::tags): A collection of tags associated with a resource
                         /// - On failure, responds with [`SdkError<CreatePackagingGroupError>`](crate::error::CreatePackagingGroupError)
-    pub fn create_packaging_group(&self) -> fluent_builders::CreatePackagingGroup {
-                            fluent_builders::CreatePackagingGroup::new(self.handle.clone())
+    pub fn create_packaging_group(&self) -> crate::client::fluent_builders::CreatePackagingGroup {
+                            crate::client::fluent_builders::CreatePackagingGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteAsset`](crate::client::fluent_builders::DeleteAsset) operation.
                         ///
@@ -157,8 +157,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteAssetOutput`](crate::output::DeleteAssetOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteAssetError>`](crate::error::DeleteAssetError)
-    pub fn delete_asset(&self) -> fluent_builders::DeleteAsset {
-                            fluent_builders::DeleteAsset::new(self.handle.clone())
+    pub fn delete_asset(&self) -> crate::client::fluent_builders::DeleteAsset {
+                            crate::client::fluent_builders::DeleteAsset::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeletePackagingConfiguration`](crate::client::fluent_builders::DeletePackagingConfiguration) operation.
                         ///
@@ -167,8 +167,8 @@ impl Client  {
                         /// - On success, responds with [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput)
                         
                         /// - On failure, responds with [`SdkError<DeletePackagingConfigurationError>`](crate::error::DeletePackagingConfigurationError)
-    pub fn delete_packaging_configuration(&self) -> fluent_builders::DeletePackagingConfiguration {
-                            fluent_builders::DeletePackagingConfiguration::new(self.handle.clone())
+    pub fn delete_packaging_configuration(&self) -> crate::client::fluent_builders::DeletePackagingConfiguration {
+                            crate::client::fluent_builders::DeletePackagingConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeletePackagingGroup`](crate::client::fluent_builders::DeletePackagingGroup) operation.
                         ///
@@ -177,8 +177,8 @@ impl Client  {
                         /// - On success, responds with [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput)
                         
                         /// - On failure, responds with [`SdkError<DeletePackagingGroupError>`](crate::error::DeletePackagingGroupError)
-    pub fn delete_packaging_group(&self) -> fluent_builders::DeletePackagingGroup {
-                            fluent_builders::DeletePackagingGroup::new(self.handle.clone())
+    pub fn delete_packaging_group(&self) -> crate::client::fluent_builders::DeletePackagingGroup {
+                            crate::client::fluent_builders::DeletePackagingGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribeAsset`](crate::client::fluent_builders::DescribeAsset) operation.
                         ///
@@ -195,8 +195,8 @@ impl Client  {
     ///   - [`source_role_arn(Option<String>)`](crate::output::DescribeAssetOutput::source_role_arn): The IAM role_arn used to access the source S3 bucket.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeAssetOutput::tags): A collection of tags associated with a resource
                         /// - On failure, responds with [`SdkError<DescribeAssetError>`](crate::error::DescribeAssetError)
-    pub fn describe_asset(&self) -> fluent_builders::DescribeAsset {
-                            fluent_builders::DescribeAsset::new(self.handle.clone())
+    pub fn describe_asset(&self) -> crate::client::fluent_builders::DescribeAsset {
+                            crate::client::fluent_builders::DescribeAsset::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribePackagingConfiguration`](crate::client::fluent_builders::DescribePackagingConfiguration) operation.
                         ///
@@ -212,8 +212,8 @@ impl Client  {
     ///   - [`packaging_group_id(Option<String>)`](crate::output::DescribePackagingConfigurationOutput::packaging_group_id): The ID of a PackagingGroup.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribePackagingConfigurationOutput::tags): A collection of tags associated with a resource
                         /// - On failure, responds with [`SdkError<DescribePackagingConfigurationError>`](crate::error::DescribePackagingConfigurationError)
-    pub fn describe_packaging_configuration(&self) -> fluent_builders::DescribePackagingConfiguration {
-                            fluent_builders::DescribePackagingConfiguration::new(self.handle.clone())
+    pub fn describe_packaging_configuration(&self) -> crate::client::fluent_builders::DescribePackagingConfiguration {
+                            crate::client::fluent_builders::DescribePackagingConfiguration::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DescribePackagingGroup`](crate::client::fluent_builders::DescribePackagingGroup) operation.
                         ///
@@ -228,8 +228,8 @@ impl Client  {
     ///   - [`id(Option<String>)`](crate::output::DescribePackagingGroupOutput::id): The ID of the PackagingGroup.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribePackagingGroupOutput::tags): A collection of tags associated with a resource
                         /// - On failure, responds with [`SdkError<DescribePackagingGroupError>`](crate::error::DescribePackagingGroupError)
-    pub fn describe_packaging_group(&self) -> fluent_builders::DescribePackagingGroup {
-                            fluent_builders::DescribePackagingGroup::new(self.handle.clone())
+    pub fn describe_packaging_group(&self) -> crate::client::fluent_builders::DescribePackagingGroup {
+                            crate::client::fluent_builders::DescribePackagingGroup::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListAssets`](crate::client::fluent_builders::ListAssets) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssets::into_paginator).
@@ -242,8 +242,8 @@ impl Client  {
                         ///   - [`assets(Option<Vec<AssetShallow>>)`](crate::output::ListAssetsOutput::assets): A list of MediaPackage VOD Asset resources.
     ///   - [`next_token(Option<String>)`](crate::output::ListAssetsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
                         /// - On failure, responds with [`SdkError<ListAssetsError>`](crate::error::ListAssetsError)
-    pub fn list_assets(&self) -> fluent_builders::ListAssets {
-                            fluent_builders::ListAssets::new(self.handle.clone())
+    pub fn list_assets(&self) -> crate::client::fluent_builders::ListAssets {
+                            crate::client::fluent_builders::ListAssets::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListPackagingConfigurations`](crate::client::fluent_builders::ListPackagingConfigurations) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPackagingConfigurations::into_paginator).
@@ -256,8 +256,8 @@ impl Client  {
                         ///   - [`next_token(Option<String>)`](crate::output::ListPackagingConfigurationsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`packaging_configurations(Option<Vec<PackagingConfiguration>>)`](crate::output::ListPackagingConfigurationsOutput::packaging_configurations): A list of MediaPackage VOD PackagingConfiguration resources.
                         /// - On failure, responds with [`SdkError<ListPackagingConfigurationsError>`](crate::error::ListPackagingConfigurationsError)
-    pub fn list_packaging_configurations(&self) -> fluent_builders::ListPackagingConfigurations {
-                            fluent_builders::ListPackagingConfigurations::new(self.handle.clone())
+    pub fn list_packaging_configurations(&self) -> crate::client::fluent_builders::ListPackagingConfigurations {
+                            crate::client::fluent_builders::ListPackagingConfigurations::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListPackagingGroups`](crate::client::fluent_builders::ListPackagingGroups) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPackagingGroups::into_paginator).
@@ -269,8 +269,8 @@ impl Client  {
                         ///   - [`next_token(Option<String>)`](crate::output::ListPackagingGroupsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`packaging_groups(Option<Vec<PackagingGroup>>)`](crate::output::ListPackagingGroupsOutput::packaging_groups): A list of MediaPackage VOD PackagingGroup resources.
                         /// - On failure, responds with [`SdkError<ListPackagingGroupsError>`](crate::error::ListPackagingGroupsError)
-    pub fn list_packaging_groups(&self) -> fluent_builders::ListPackagingGroups {
-                            fluent_builders::ListPackagingGroups::new(self.handle.clone())
+    pub fn list_packaging_groups(&self) -> crate::client::fluent_builders::ListPackagingGroups {
+                            crate::client::fluent_builders::ListPackagingGroups::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -279,8 +279,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): A collection of tags associated with a resource
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -290,8 +290,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -301,8 +301,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdatePackagingGroup`](crate::client::fluent_builders::UpdatePackagingGroup) operation.
                         ///
@@ -318,1222 +318,9 @@ impl Client  {
     ///   - [`id(Option<String>)`](crate::output::UpdatePackagingGroupOutput::id): The ID of the PackagingGroup.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdatePackagingGroupOutput::tags): A collection of tags associated with a resource
                         /// - On failure, responds with [`SdkError<UpdatePackagingGroupError>`](crate::error::UpdatePackagingGroupError)
-    pub fn update_packaging_group(&self) -> fluent_builders::UpdatePackagingGroup {
-                            fluent_builders::UpdatePackagingGroup::new(self.handle.clone())
+    pub fn update_packaging_group(&self) -> crate::client::fluent_builders::UpdatePackagingGroup {
+                            crate::client::fluent_builders::UpdatePackagingGroup::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `ConfigureLogs`.
-                        ///
-    /// Changes the packaging group's properities to configure log subscription
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ConfigureLogs {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::configure_logs_input::Builder
-                        }
-    impl ConfigureLogs  {
-        /// Creates a new `ConfigureLogs`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ConfigureLogs, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ConfigureLogsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ConfigureLogsOutput, aws_smithy_http::result::SdkError<crate::error::ConfigureLogsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Configure egress access logging.
-        pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
-            self.inner = self.inner.egress_access_logs(input);
-            self
-        }
-        /// Configure egress access logging.
-        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
-            self.inner = self.inner.set_egress_access_logs(input);
-            self
-        }
-        /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateAsset`.
-                        ///
-    /// Creates a new MediaPackage VOD Asset resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateAsset {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_asset_input::Builder
-                        }
-    impl CreateAsset  {
-        /// Creates a new `CreateAsset`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateAsset, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateAssetError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateAssetOutput, aws_smithy_http::result::SdkError<crate::error::CreateAssetError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// The unique identifier for the Asset.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The unique identifier for the Asset.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// The ID of the PackagingGroup for the Asset.
-        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(input.into());
-            self
-        }
-        /// The ID of the PackagingGroup for the Asset.
-        pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_packaging_group_id(input);
-            self
-        }
-        /// The resource ID to include in SPEKE key requests.
-        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(input.into());
-            self
-        }
-        /// The resource ID to include in SPEKE key requests.
-        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_id(input);
-            self
-        }
-        /// ARN of the source object in S3.
-        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(input.into());
-            self
-        }
-        /// ARN of the source object in S3.
-        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_arn(input);
-            self
-        }
-        /// The IAM role ARN used to access the source S3 bucket.
-        pub fn source_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_role_arn(input.into());
-            self
-        }
-        /// The IAM role ARN used to access the source S3 bucket.
-        pub fn set_source_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_role_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// A collection of tags associated with a resource
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// A collection of tags associated with a resource
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreatePackagingConfiguration`.
-                        ///
-    /// Creates a new MediaPackage VOD PackagingConfiguration resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreatePackagingConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_packaging_configuration_input::Builder
-                        }
-    impl CreatePackagingConfiguration  {
-        /// Creates a new `CreatePackagingConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreatePackagingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreatePackagingConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreatePackagingConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::CreatePackagingConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// A CMAF packaging configuration.
-        pub fn cmaf_package(mut self, input: crate::model::CmafPackage) -> Self {
-            self.inner = self.inner.cmaf_package(input);
-            self
-        }
-        /// A CMAF packaging configuration.
-        pub fn set_cmaf_package(mut self, input: std::option::Option<crate::model::CmafPackage>) -> Self {
-            self.inner = self.inner.set_cmaf_package(input);
-            self
-        }
-        /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
-            self.inner = self.inner.dash_package(input);
-            self
-        }
-        /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn set_dash_package(mut self, input: std::option::Option<crate::model::DashPackage>) -> Self {
-            self.inner = self.inner.set_dash_package(input);
-            self
-        }
-        /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
-            self.inner = self.inner.hls_package(input);
-            self
-        }
-        /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn set_hls_package(mut self, input: std::option::Option<crate::model::HlsPackage>) -> Self {
-            self.inner = self.inner.set_hls_package(input);
-            self
-        }
-        /// The ID of the PackagingConfiguration.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The ID of the PackagingConfiguration.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-        pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
-            self.inner = self.inner.mss_package(input);
-            self
-        }
-        /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-        pub fn set_mss_package(mut self, input: std::option::Option<crate::model::MssPackage>) -> Self {
-            self.inner = self.inner.set_mss_package(input);
-            self
-        }
-        /// The ID of a PackagingGroup.
-        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(input.into());
-            self
-        }
-        /// The ID of a PackagingGroup.
-        pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_packaging_group_id(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// A collection of tags associated with a resource
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// A collection of tags associated with a resource
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreatePackagingGroup`.
-                        ///
-    /// Creates a new MediaPackage VOD PackagingGroup resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreatePackagingGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_packaging_group_input::Builder
-                        }
-    impl CreatePackagingGroup  {
-        /// Creates a new `CreatePackagingGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreatePackagingGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreatePackagingGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreatePackagingGroupOutput, aws_smithy_http::result::SdkError<crate::error::CreatePackagingGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// CDN Authorization credentials
-        pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
-            self.inner = self.inner.authorization(input);
-            self
-        }
-        /// CDN Authorization credentials
-        pub fn set_authorization(mut self, input: std::option::Option<crate::model::Authorization>) -> Self {
-            self.inner = self.inner.set_authorization(input);
-            self
-        }
-        /// Configure egress access logging.
-        pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
-            self.inner = self.inner.egress_access_logs(input);
-            self
-        }
-        /// Configure egress access logging.
-        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
-            self.inner = self.inner.set_egress_access_logs(input);
-            self
-        }
-        /// The ID of the PackagingGroup.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The ID of the PackagingGroup.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// A collection of tags associated with a resource
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// A collection of tags associated with a resource
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteAsset`.
-                        ///
-    /// Deletes an existing MediaPackage VOD Asset resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteAsset {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_asset_input::Builder
-                        }
-    impl DeleteAsset  {
-        /// Creates a new `DeleteAsset`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteAsset, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteAssetError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteAssetOutput, aws_smithy_http::result::SdkError<crate::error::DeleteAssetError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// The ID of the MediaPackage VOD Asset resource to delete.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The ID of the MediaPackage VOD Asset resource to delete.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeletePackagingConfiguration`.
-                        ///
-    /// Deletes a MediaPackage VOD PackagingConfiguration resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeletePackagingConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_packaging_configuration_input::Builder
-                        }
-    impl DeletePackagingConfiguration  {
-        /// Creates a new `DeletePackagingConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeletePackagingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeletePackagingConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeletePackagingConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::DeletePackagingConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeletePackagingGroup`.
-                        ///
-    /// Deletes a MediaPackage VOD PackagingGroup resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeletePackagingGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_packaging_group_input::Builder
-                        }
-    impl DeletePackagingGroup  {
-        /// Creates a new `DeletePackagingGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeletePackagingGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeletePackagingGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeletePackagingGroupOutput, aws_smithy_http::result::SdkError<crate::error::DeletePackagingGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeAsset`.
-                        ///
-    /// Returns a description of a MediaPackage VOD Asset resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeAsset {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_asset_input::Builder
-                        }
-    impl DescribeAsset  {
-        /// Creates a new `DescribeAsset`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribeAsset, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribeAssetError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribeAssetOutput, aws_smithy_http::result::SdkError<crate::error::DescribeAssetError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// The ID of an MediaPackage VOD Asset resource.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The ID of an MediaPackage VOD Asset resource.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribePackagingConfiguration`.
-                        ///
-    /// Returns a description of a MediaPackage VOD PackagingConfiguration resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribePackagingConfiguration {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_packaging_configuration_input::Builder
-                        }
-    impl DescribePackagingConfiguration  {
-        /// Creates a new `DescribePackagingConfiguration`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribePackagingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribePackagingConfigurationError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribePackagingConfigurationOutput, aws_smithy_http::result::SdkError<crate::error::DescribePackagingConfigurationError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// The ID of a MediaPackage VOD PackagingConfiguration resource.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The ID of a MediaPackage VOD PackagingConfiguration resource.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribePackagingGroup`.
-                        ///
-    /// Returns a description of a MediaPackage VOD PackagingGroup resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribePackagingGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::describe_packaging_group_input::Builder
-                        }
-    impl DescribePackagingGroup  {
-        /// Creates a new `DescribePackagingGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DescribePackagingGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DescribePackagingGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DescribePackagingGroupOutput, aws_smithy_http::result::SdkError<crate::error::DescribePackagingGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAssets`.
-                        ///
-    /// Returns a collection of MediaPackage VOD Asset resources.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAssets {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_assets_input::Builder
-                        }
-    impl ListAssets  {
-        /// Creates a new `ListAssets`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListAssets, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListAssetsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListAssetsOutput, aws_smithy_http::result::SdkError<crate::error::ListAssetsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAssetsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListAssetsPaginator {
-                                        crate::paginator::ListAssetsPaginator::new(self.handle, self.inner)
-                                    }
-        /// Upper bound on number of records to return.
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// Upper bound on number of records to return.
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// A token used to resume pagination from the end of a previous request.
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// Returns Assets associated with the specified PackagingGroup.
-        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(input.into());
-            self
-        }
-        /// Returns Assets associated with the specified PackagingGroup.
-        pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_packaging_group_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListPackagingConfigurations`.
-                        ///
-    /// Returns a collection of MediaPackage VOD PackagingConfiguration resources.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListPackagingConfigurations {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_packaging_configurations_input::Builder
-                        }
-    impl ListPackagingConfigurations  {
-        /// Creates a new `ListPackagingConfigurations`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListPackagingConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListPackagingConfigurationsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListPackagingConfigurationsOutput, aws_smithy_http::result::SdkError<crate::error::ListPackagingConfigurationsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListPackagingConfigurationsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListPackagingConfigurationsPaginator {
-                                        crate::paginator::ListPackagingConfigurationsPaginator::new(self.handle, self.inner)
-                                    }
-        /// Upper bound on number of records to return.
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// Upper bound on number of records to return.
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// A token used to resume pagination from the end of a previous request.
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
-        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(input.into());
-            self
-        }
-        /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
-        pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_packaging_group_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListPackagingGroups`.
-                        ///
-    /// Returns a collection of MediaPackage VOD PackagingGroup resources.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListPackagingGroups {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_packaging_groups_input::Builder
-                        }
-    impl ListPackagingGroups  {
-        /// Creates a new `ListPackagingGroups`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListPackagingGroups, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListPackagingGroupsError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListPackagingGroupsOutput, aws_smithy_http::result::SdkError<crate::error::ListPackagingGroupsError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListPackagingGroupsPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListPackagingGroupsPaginator {
-                                        crate::paginator::ListPackagingGroupsPaginator::new(self.handle, self.inner)
-                                    }
-        /// Upper bound on number of records to return.
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// Upper bound on number of records to return.
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// A token used to resume pagination from the end of a previous request.
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// Returns a list of the tags assigned to the specified resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// Adds tags to the specified resource. You can specify one or more tags to add.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// A collection of tags associated with a resource
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// A collection of tags associated with a resource
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// Removes tags from the specified resource. You can specify one or more tags to remove.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// A comma-separated list of the tag keys to remove from the resource.
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// A comma-separated list of the tag keys to remove from the resource.
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdatePackagingGroup`.
-                        ///
-    /// Updates a specific packaging group. You can't change the id attribute or any other system-generated attributes.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdatePackagingGroup {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_packaging_group_input::Builder
-                        }
-    impl UpdatePackagingGroup  {
-        /// Creates a new `UpdatePackagingGroup`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdatePackagingGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdatePackagingGroupError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdatePackagingGroupOutput, aws_smithy_http::result::SdkError<crate::error::UpdatePackagingGroupError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// CDN Authorization credentials
-        pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
-            self.inner = self.inner.authorization(input);
-            self
-        }
-        /// CDN Authorization credentials
-        pub fn set_authorization(mut self, input: std::option::Option<crate::model::Authorization>) -> Self {
-            self.inner = self.inner.set_authorization(input);
-            self
-        }
-        /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(input.into());
-            self
-        }
-        /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_id(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -1604,4 +391,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

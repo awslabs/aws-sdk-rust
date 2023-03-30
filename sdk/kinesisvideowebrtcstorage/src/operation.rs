@@ -2,7 +2,7 @@
 /// Operation shape for `JoinStorageSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`join_storage_session`](crate::client::Client::join_storage_session).
+            /// [`join_storage_session`](crate::client::fluent_builders::JoinStorageSession).
             ///
             /// `ParseStrictResponse` impl for `JoinStorageSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -79,8 +79,8 @@ impl Client  {
                         ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::BatchCreateAttendeeOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
     ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::output::BatchCreateAttendeeOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
                         /// - On failure, responds with [`SdkError<BatchCreateAttendeeError>`](crate::error::BatchCreateAttendeeError)
-    pub fn batch_create_attendee(&self) -> fluent_builders::BatchCreateAttendee {
-                            fluent_builders::BatchCreateAttendee::new(self.handle.clone())
+    pub fn batch_create_attendee(&self) -> crate::client::fluent_builders::BatchCreateAttendee {
+                            crate::client::fluent_builders::BatchCreateAttendee::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`BatchUpdateAttendeeCapabilitiesExcept`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept) operation.
                         ///
@@ -91,8 +91,8 @@ impl Client  {
                         /// - On success, responds with [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput)
                         
                         /// - On failure, responds with [`SdkError<BatchUpdateAttendeeCapabilitiesExceptError>`](crate::error::BatchUpdateAttendeeCapabilitiesExceptError)
-    pub fn batch_update_attendee_capabilities_except(&self) -> fluent_builders::BatchUpdateAttendeeCapabilitiesExcept {
-                            fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::new(self.handle.clone())
+    pub fn batch_update_attendee_capabilities_except(&self) -> crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept {
+                            crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateAttendee`](crate::client::fluent_builders::CreateAttendee) operation.
                         ///
@@ -103,8 +103,8 @@ impl Client  {
                         /// - On success, responds with [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput) with field(s):
                         ///   - [`attendee(Option<Attendee>)`](crate::output::CreateAttendeeOutput::attendee): <p>The attendee information, including attendee ID and join token.</p>
                         /// - On failure, responds with [`SdkError<CreateAttendeeError>`](crate::error::CreateAttendeeError)
-    pub fn create_attendee(&self) -> fluent_builders::CreateAttendee {
-                            fluent_builders::CreateAttendee::new(self.handle.clone())
+    pub fn create_attendee(&self) -> crate::client::fluent_builders::CreateAttendee {
+                            crate::client::fluent_builders::CreateAttendee::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateMeeting`](crate::client::fluent_builders::CreateMeeting) operation.
                         ///
@@ -121,8 +121,8 @@ impl Client  {
                         /// - On success, responds with [`CreateMeetingOutput`](crate::output::CreateMeetingOutput) with field(s):
                         ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
                         /// - On failure, responds with [`SdkError<CreateMeetingError>`](crate::error::CreateMeetingError)
-    pub fn create_meeting(&self) -> fluent_builders::CreateMeeting {
-                            fluent_builders::CreateMeeting::new(self.handle.clone())
+    pub fn create_meeting(&self) -> crate::client::fluent_builders::CreateMeeting {
+                            crate::client::fluent_builders::CreateMeeting::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`CreateMeetingWithAttendees`](crate::client::fluent_builders::CreateMeetingWithAttendees) operation.
                         ///
@@ -142,8 +142,8 @@ impl Client  {
     ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::CreateMeetingWithAttendeesOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
     ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::output::CreateMeetingWithAttendeesOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
                         /// - On failure, responds with [`SdkError<CreateMeetingWithAttendeesError>`](crate::error::CreateMeetingWithAttendeesError)
-    pub fn create_meeting_with_attendees(&self) -> fluent_builders::CreateMeetingWithAttendees {
-                            fluent_builders::CreateMeetingWithAttendees::new(self.handle.clone())
+    pub fn create_meeting_with_attendees(&self) -> crate::client::fluent_builders::CreateMeetingWithAttendees {
+                            crate::client::fluent_builders::CreateMeetingWithAttendees::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteAttendee`](crate::client::fluent_builders::DeleteAttendee) operation.
                         ///
@@ -153,8 +153,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteAttendeeError>`](crate::error::DeleteAttendeeError)
-    pub fn delete_attendee(&self) -> fluent_builders::DeleteAttendee {
-                            fluent_builders::DeleteAttendee::new(self.handle.clone())
+    pub fn delete_attendee(&self) -> crate::client::fluent_builders::DeleteAttendee {
+                            crate::client::fluent_builders::DeleteAttendee::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`DeleteMeeting`](crate::client::fluent_builders::DeleteMeeting) operation.
                         ///
@@ -163,8 +163,8 @@ impl Client  {
                         /// - On success, responds with [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteMeetingError>`](crate::error::DeleteMeetingError)
-    pub fn delete_meeting(&self) -> fluent_builders::DeleteMeeting {
-                            fluent_builders::DeleteMeeting::new(self.handle.clone())
+    pub fn delete_meeting(&self) -> crate::client::fluent_builders::DeleteMeeting {
+                            crate::client::fluent_builders::DeleteMeeting::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetAttendee`](crate::client::fluent_builders::GetAttendee) operation.
                         ///
@@ -174,8 +174,8 @@ impl Client  {
                         /// - On success, responds with [`GetAttendeeOutput`](crate::output::GetAttendeeOutput) with field(s):
                         ///   - [`attendee(Option<Attendee>)`](crate::output::GetAttendeeOutput::attendee): <p>The Amazon Chime SDK attendee information.</p>
                         /// - On failure, responds with [`SdkError<GetAttendeeError>`](crate::error::GetAttendeeError)
-    pub fn get_attendee(&self) -> fluent_builders::GetAttendee {
-                            fluent_builders::GetAttendee::new(self.handle.clone())
+    pub fn get_attendee(&self) -> crate::client::fluent_builders::GetAttendee {
+                            crate::client::fluent_builders::GetAttendee::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`GetMeeting`](crate::client::fluent_builders::GetMeeting) operation.
                         ///
@@ -184,8 +184,8 @@ impl Client  {
                         /// - On success, responds with [`GetMeetingOutput`](crate::output::GetMeetingOutput) with field(s):
                         ///   - [`meeting(Option<Meeting>)`](crate::output::GetMeetingOutput::meeting): <p>The Amazon Chime SDK meeting information.</p>
                         /// - On failure, responds with [`SdkError<GetMeetingError>`](crate::error::GetMeetingError)
-    pub fn get_meeting(&self) -> fluent_builders::GetMeeting {
-                            fluent_builders::GetMeeting::new(self.handle.clone())
+    pub fn get_meeting(&self) -> crate::client::fluent_builders::GetMeeting {
+                            crate::client::fluent_builders::GetMeeting::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListAttendees`](crate::client::fluent_builders::ListAttendees) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttendees::into_paginator).
@@ -198,8 +198,8 @@ impl Client  {
                         ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::ListAttendeesOutput::attendees): <p>The Amazon Chime SDK attendee information.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAttendeesOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
                         /// - On failure, responds with [`SdkError<ListAttendeesError>`](crate::error::ListAttendeesError)
-    pub fn list_attendees(&self) -> fluent_builders::ListAttendees {
-                            fluent_builders::ListAttendees::new(self.handle.clone())
+    pub fn list_attendees(&self) -> crate::client::fluent_builders::ListAttendees {
+                            crate::client::fluent_builders::ListAttendees::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
                         ///
@@ -208,8 +208,8 @@ impl Client  {
                         /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
                         ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags requested for the specified resource.</p>
                         /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-                            fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+                            crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StartMeetingTranscription`](crate::client::fluent_builders::StartMeetingTranscription) operation.
                         ///
@@ -219,8 +219,8 @@ impl Client  {
                         /// - On success, responds with [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
                         
                         /// - On failure, responds with [`SdkError<StartMeetingTranscriptionError>`](crate::error::StartMeetingTranscriptionError)
-    pub fn start_meeting_transcription(&self) -> fluent_builders::StartMeetingTranscription {
-                            fluent_builders::StartMeetingTranscription::new(self.handle.clone())
+    pub fn start_meeting_transcription(&self) -> crate::client::fluent_builders::StartMeetingTranscription {
+                            crate::client::fluent_builders::StartMeetingTranscription::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`StopMeetingTranscription`](crate::client::fluent_builders::StopMeetingTranscription) operation.
                         ///
@@ -229,8 +229,8 @@ impl Client  {
                         /// - On success, responds with [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
                         
                         /// - On failure, responds with [`SdkError<StopMeetingTranscriptionError>`](crate::error::StopMeetingTranscriptionError)
-    pub fn stop_meeting_transcription(&self) -> fluent_builders::StopMeetingTranscription {
-                            fluent_builders::StopMeetingTranscription::new(self.handle.clone())
+    pub fn stop_meeting_transcription(&self) -> crate::client::fluent_builders::StopMeetingTranscription {
+                            crate::client::fluent_builders::StopMeetingTranscription::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
                         ///
@@ -240,8 +240,8 @@ impl Client  {
                         /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-                            fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+                            crate::client::fluent_builders::TagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
                         ///
@@ -251,8 +251,8 @@ impl Client  {
                         /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
                         
                         /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-                            fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+                            crate::client::fluent_builders::UntagResource::new(self.handle.clone())
                         }
     /// Constructs a fluent builder for the [`UpdateAttendeeCapabilities`](crate::client::fluent_builders::UpdateAttendeeCapabilities) operation.
                         ///
@@ -263,1327 +263,9 @@ impl Client  {
                         /// - On success, responds with [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput) with field(s):
                         ///   - [`attendee(Option<Attendee>)`](crate::output::UpdateAttendeeCapabilitiesOutput::attendee): <p>The updated attendee data.</p>
                         /// - On failure, responds with [`SdkError<UpdateAttendeeCapabilitiesError>`](crate::error::UpdateAttendeeCapabilitiesError)
-    pub fn update_attendee_capabilities(&self) -> fluent_builders::UpdateAttendeeCapabilities {
-                            fluent_builders::UpdateAttendeeCapabilities::new(self.handle.clone())
+    pub fn update_attendee_capabilities(&self) -> crate::client::fluent_builders::UpdateAttendeeCapabilities {
+                            crate::client::fluent_builders::UpdateAttendeeCapabilities::new(self.handle.clone())
                         }
-}
-pub mod fluent_builders {
-    
-    //! Utilities to ergonomically construct a request to the service.
-    //! 
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `BatchCreateAttendee`.
-                        ///
-    /// <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchCreateAttendee {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::batch_create_attendee_input::Builder
-                        }
-    impl BatchCreateAttendee  {
-        /// Creates a new `BatchCreateAttendee`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::BatchCreateAttendee, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::BatchCreateAttendeeError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::BatchCreateAttendeeOutput, aws_smithy_http::result::SdkError<crate::error::BatchCreateAttendeeError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-        /// Appends an item to `Attendees`.
-        ///
-        /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
-        ///
-        /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn attendees(mut self, input: crate::model::CreateAttendeeRequestItem) -> Self {
-            self.inner = self.inner.attendees(input);
-            self
-        }
-        /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn set_attendees(mut self, input: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>) -> Self {
-            self.inner = self.inner.set_attendees(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `BatchUpdateAttendeeCapabilitiesExcept`.
-                        ///
-    /// <p>Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code> table.</p> <note> 
-    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p> 
-    /// </note> 
-    /// <p>When using capabilities, be aware of these corner cases:</p> 
-    /// <ul> 
-    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li> 
-    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li> 
-    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li> 
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct BatchUpdateAttendeeCapabilitiesExcept {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::batch_update_attendee_capabilities_except_input::Builder
-                        }
-    impl BatchUpdateAttendeeCapabilitiesExcept  {
-        /// Creates a new `BatchUpdateAttendeeCapabilitiesExcept`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::BatchUpdateAttendeeCapabilitiesExcept, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::BatchUpdateAttendeeCapabilitiesExceptError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput, aws_smithy_http::result::SdkError<crate::error::BatchUpdateAttendeeCapabilitiesExceptError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the meeting associated with the update request.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The ID of the meeting associated with the update request.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-        /// Appends an item to `ExcludedAttendeeIds`.
-        ///
-        /// To override the contents of this collection use [`set_excluded_attendee_ids`](Self::set_excluded_attendee_ids).
-        ///
-        /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
-        pub fn excluded_attendee_ids(mut self, input: crate::model::AttendeeIdItem) -> Self {
-            self.inner = self.inner.excluded_attendee_ids(input);
-            self
-        }
-        /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
-        pub fn set_excluded_attendee_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttendeeIdItem>>) -> Self {
-            self.inner = self.inner.set_excluded_attendee_ids(input);
-            self
-        }
-        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
-        pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
-            self.inner = self.inner.capabilities(input);
-            self
-        }
-        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
-        pub fn set_capabilities(mut self, input: std::option::Option<crate::model::AttendeeCapabilities>) -> Self {
-            self.inner = self.inner.set_capabilities(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateAttendee`.
-                        ///
-    /// <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateAttendee {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_attendee_input::Builder
-                        }
-    impl CreateAttendee  {
-        /// Creates a new `CreateAttendee`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateAttendee, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateAttendeeError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateAttendeeOutput, aws_smithy_http::result::SdkError<crate::error::CreateAttendeeError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique ID of the meeting.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The unique ID of the meeting.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-        /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-        pub fn external_user_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_user_id(input.into());
-            self
-        }
-        /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-        pub fn set_external_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_external_user_id(input);
-            self
-        }
-        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note> 
-        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p> 
-        /// </note> 
-        /// <p>When using capabilities, be aware of these corner cases:</p> 
-        /// <ul> 
-        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li> 
-        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li> 
-        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li> 
-        /// </ul>
-        pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
-            self.inner = self.inner.capabilities(input);
-            self
-        }
-        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note> 
-        /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p> 
-        /// </note> 
-        /// <p>When using capabilities, be aware of these corner cases:</p> 
-        /// <ul> 
-        /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li> 
-        /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li> 
-        /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li> 
-        /// </ul>
-        pub fn set_capabilities(mut self, input: std::option::Option<crate::model::AttendeeCapabilities>) -> Self {
-            self.inner = self.inner.set_capabilities(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateMeeting`.
-                        ///
-    /// <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateMeeting {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_meeting_input::Builder
-                        }
-    impl CreateMeeting  {
-        /// Creates a new `CreateMeeting`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateMeeting, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateMeetingError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateMeetingOutput, aws_smithy_http::result::SdkError<crate::error::CreateMeetingError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// <p>The Region in which to create the meeting.</p> 
-        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
-        /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-        pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_region(input.into());
-            self
-        }
-        /// <p>The Region in which to create the meeting.</p> 
-        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
-        /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-        pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_media_region(input);
-            self
-        }
-        /// <p>Reserved.</p>
-        pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_host_id(input.into());
-            self
-        }
-        /// <p>Reserved.</p>
-        pub fn set_meeting_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_host_id(input);
-            self
-        }
-        /// <p>The external meeting ID.</p>
-        pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_meeting_id(input.into());
-            self
-        }
-        /// <p>The external meeting ID.</p>
-        pub fn set_external_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_external_meeting_id(input);
-            self
-        }
-        /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-        pub fn notifications_configuration(mut self, input: crate::model::NotificationsConfiguration) -> Self {
-            self.inner = self.inner.notifications_configuration(input);
-            self
-        }
-        /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-        pub fn set_notifications_configuration(mut self, input: std::option::Option<crate::model::NotificationsConfiguration>) -> Self {
-            self.inner = self.inner.set_notifications_configuration(input);
-            self
-        }
-        /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-        pub fn meeting_features(mut self, input: crate::model::MeetingFeaturesConfiguration) -> Self {
-            self.inner = self.inner.meeting_features(input);
-            self
-        }
-        /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-        pub fn set_meeting_features(mut self, input: std::option::Option<crate::model::MeetingFeaturesConfiguration>) -> Self {
-            self.inner = self.inner.set_meeting_features(input);
-            self
-        }
-        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-        pub fn primary_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.primary_meeting_id(input.into());
-            self
-        }
-        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-        pub fn set_primary_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_primary_meeting_id(input);
-            self
-        }
-        /// Appends an item to `TenantIds`.
-        ///
-        /// To override the contents of this collection use [`set_tenant_ids`](Self::set_tenant_ids).
-        ///
-        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-        pub fn tenant_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tenant_ids(input.into());
-            self
-        }
-        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-        pub fn set_tenant_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tenant_ids(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p> 
-        /// <ul> 
-        /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li> 
-        /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li> 
-        /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li> 
-        /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li> 
-        /// </ul> <important> 
-        /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p> 
-        /// </important> 
-        /// <p> <b>Minimum permissions</b> </p> 
-        /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p> 
-        /// <p> <code>tag:TagResources</code> </p> 
-        /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note> 
-        /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p> 
-        /// </note>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p> 
-        /// <ul> 
-        /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li> 
-        /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li> 
-        /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li> 
-        /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li> 
-        /// </ul> <important> 
-        /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p> 
-        /// </important> 
-        /// <p> <b>Minimum permissions</b> </p> 
-        /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p> 
-        /// <p> <code>tag:TagResources</code> </p> 
-        /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note> 
-        /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p> 
-        /// </note>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateMeetingWithAttendees`.
-                        ///
-    /// <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateMeetingWithAttendees {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::create_meeting_with_attendees_input::Builder
-                        }
-    impl CreateMeetingWithAttendees  {
-        /// Creates a new `CreateMeetingWithAttendees`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::CreateMeetingWithAttendees, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::CreateMeetingWithAttendeesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::CreateMeetingWithAttendeesOutput, aws_smithy_http::result::SdkError<crate::error::CreateMeetingWithAttendeesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(input.into());
-            self
-        }
-        /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_request_token(input);
-            self
-        }
-        /// <p>The Region in which to create the meeting.</p> 
-        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
-        /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-        pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_region(input.into());
-            self
-        }
-        /// <p>The Region in which to create the meeting.</p> 
-        /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
-        /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-        pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_media_region(input);
-            self
-        }
-        /// <p>Reserved.</p>
-        pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_host_id(input.into());
-            self
-        }
-        /// <p>Reserved.</p>
-        pub fn set_meeting_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_host_id(input);
-            self
-        }
-        /// <p>The external meeting ID.</p>
-        pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_meeting_id(input.into());
-            self
-        }
-        /// <p>The external meeting ID.</p>
-        pub fn set_external_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_external_meeting_id(input);
-            self
-        }
-        /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-        pub fn meeting_features(mut self, input: crate::model::MeetingFeaturesConfiguration) -> Self {
-            self.inner = self.inner.meeting_features(input);
-            self
-        }
-        /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-        pub fn set_meeting_features(mut self, input: std::option::Option<crate::model::MeetingFeaturesConfiguration>) -> Self {
-            self.inner = self.inner.set_meeting_features(input);
-            self
-        }
-        /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-        pub fn notifications_configuration(mut self, input: crate::model::NotificationsConfiguration) -> Self {
-            self.inner = self.inner.notifications_configuration(input);
-            self
-        }
-        /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-        pub fn set_notifications_configuration(mut self, input: std::option::Option<crate::model::NotificationsConfiguration>) -> Self {
-            self.inner = self.inner.set_notifications_configuration(input);
-            self
-        }
-        /// Appends an item to `Attendees`.
-        ///
-        /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
-        ///
-        /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn attendees(mut self, input: crate::model::CreateAttendeeRequestItem) -> Self {
-            self.inner = self.inner.attendees(input);
-            self
-        }
-        /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn set_attendees(mut self, input: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>) -> Self {
-            self.inner = self.inner.set_attendees(input);
-            self
-        }
-        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-        pub fn primary_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.primary_meeting_id(input.into());
-            self
-        }
-        /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-        pub fn set_primary_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_primary_meeting_id(input);
-            self
-        }
-        /// Appends an item to `TenantIds`.
-        ///
-        /// To override the contents of this collection use [`set_tenant_ids`](Self::set_tenant_ids).
-        ///
-        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-        pub fn tenant_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tenant_ids(input.into());
-            self
-        }
-        /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-        pub fn set_tenant_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tenant_ids(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags in the request.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags in the request.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteAttendee`.
-                        ///
-    /// <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteAttendee {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_attendee_input::Builder
-                        }
-    impl DeleteAttendee  {
-        /// Creates a new `DeleteAttendee`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteAttendee, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteAttendeeError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteAttendeeOutput, aws_smithy_http::result::SdkError<crate::error::DeleteAttendeeError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-        /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(input.into());
-            self
-        }
-        /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_attendee_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteMeeting`.
-                        ///
-    /// <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteMeeting {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::delete_meeting_input::Builder
-                        }
-    impl DeleteMeeting  {
-        /// Creates a new `DeleteMeeting`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::DeleteMeeting, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::DeleteMeetingError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::DeleteMeetingOutput, aws_smithy_http::result::SdkError<crate::error::DeleteMeetingError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetAttendee`.
-                        ///
-    /// <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetAttendee {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_attendee_input::Builder
-                        }
-    impl GetAttendee  {
-        /// Creates a new `GetAttendee`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetAttendee, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetAttendeeError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetAttendeeOutput, aws_smithy_http::result::SdkError<crate::error::GetAttendeeError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-        /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(input.into());
-            self
-        }
-        /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_attendee_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetMeeting`.
-                        ///
-    /// <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetMeeting {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::get_meeting_input::Builder
-                        }
-    impl GetMeeting  {
-        /// Creates a new `GetMeeting`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::GetMeeting, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::GetMeetingError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::GetMeetingOutput, aws_smithy_http::result::SdkError<crate::error::GetMeetingError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAttendees`.
-                        ///
-    /// <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAttendees {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_attendees_input::Builder
-                        }
-    impl ListAttendees  {
-        /// Creates a new `ListAttendees`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListAttendees, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListAttendeesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListAttendeesOutput, aws_smithy_http::result::SdkError<crate::error::ListAttendeesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// Create a paginator for this request
-                                    ///
-                                    /// Paginators are used by calling [`send().await`](crate::paginator::ListAttendeesPaginator::send) which returns a `Stream`.
-                                    pub fn into_paginator(self) -> crate::paginator::ListAttendeesPaginator {
-                                        crate::paginator::ListAttendeesPaginator::new(self.handle, self.inner)
-                                    }
-        /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-        /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return in a single call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-                        ///
-    /// <p>Returns a list of the tags available for the specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::list_tags_for_resource_input::Builder
-                        }
-    impl ListTagsForResource  {
-        /// Creates a new `ListTagsForResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::ListTagsForResourceOutput, aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StartMeetingTranscription`.
-                        ///
-    /// <p>Starts transcription for the specified <code>meetingId</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StartMeetingTranscription {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::start_meeting_transcription_input::Builder
-                        }
-    impl StartMeetingTranscription  {
-        /// Creates a new `StartMeetingTranscription`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StartMeetingTranscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StartMeetingTranscriptionOutput, aws_smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique ID of the meeting being transcribed.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The unique ID of the meeting being transcribed.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-        pub fn transcription_configuration(mut self, input: crate::model::TranscriptionConfiguration) -> Self {
-            self.inner = self.inner.transcription_configuration(input);
-            self
-        }
-        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-        pub fn set_transcription_configuration(mut self, input: std::option::Option<crate::model::TranscriptionConfiguration>) -> Self {
-            self.inner = self.inner.set_transcription_configuration(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `StopMeetingTranscription`.
-                        ///
-    /// <p>Stops transcription for the specified <code>meetingId</code>.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct StopMeetingTranscription {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::stop_meeting_transcription_input::Builder
-                        }
-    impl StopMeetingTranscription  {
-        /// Creates a new `StopMeetingTranscription`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::StopMeetingTranscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::StopMeetingTranscriptionError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::StopMeetingTranscriptionOutput, aws_smithy_http::result::SdkError<crate::error::StopMeetingTranscriptionError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The unique ID of the meeting for which you stop transcription.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The unique ID of the meeting for which you stop transcription.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-                        ///
-    /// <p>The resource that supports tags.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::tag_resource_input::Builder
-                        }
-    impl TagResource  {
-        /// Creates a new `TagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::TagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::TagResourceOutput, aws_smithy_http::result::SdkError<crate::error::TagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>Lists the requested tags.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>Lists the requested tags.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-                        ///
-    /// <p>Removes the specified tags from the specified resources. When you specify a tag key, the action removes both that key and its associated value. The operation succeeds even if you attempt to remove tags from a resource that were already removed. Note the following:</p> 
-    /// <ul> 
-    /// <li> <p>To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for removing tags. For more information, see the documentation for the service whose resource you want to untag.</p> </li> 
-    /// <li> <p>You can only tag resources that are located in the specified AWS Region for the calling AWS account.</p> </li> 
-    /// </ul> 
-    /// <p> <b>Minimum permissions</b> </p> 
-    /// <p>In addition to the <code>tag:UntagResources</code> permission required by this operation, you must also have the remove tags permission defined by the service that created the resource. For example, to remove the tags from an Amazon EC2 instance using the <code>UntagResources</code> operation, you must have both of the following permissions:</p> 
-    /// <p> <code>tag:UntagResource</code> </p> 
-    /// <p> <code>ChimeSDKMeetings:DeleteTags</code> </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::untag_resource_input::Builder
-                        }
-    impl UntagResource  {
-        /// Creates a new `UntagResource`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UntagResourceError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::error::UntagResourceError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ARN of the resource that you're removing tags from.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource that you're removing tags from.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The tag keys being removed from the resources.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The tag keys being removed from the resources.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateAttendeeCapabilities`.
-                        ///
-    /// <p>The capabilties that you want to update.</p> <note> 
-    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p> 
-    /// </note> 
-    /// <p>When using capabilities, be aware of these corner cases:</p> 
-    /// <ul> 
-    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li> 
-    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li> 
-    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li> 
-    /// </ul>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateAttendeeCapabilities {
-                            handle: std::sync::Arc<super::Handle>,
-                            inner: crate::input::update_attendee_capabilities_input::Builder
-                        }
-    impl UpdateAttendeeCapabilities  {
-        /// Creates a new `UpdateAttendeeCapabilities`.
-                                pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-                                    Self { handle, inner: Default::default() }
-                                }
-        
-                                /// Consume this builder, creating a customizable operation that can be modified before being
-                                /// sent. The operation's inner [http::Request] can be modified as well.
-                                pub async fn customize(self) -> std::result::Result<
-                                    crate::operation::customize::CustomizableOperation<crate::operation::UpdateAttendeeCapabilities, aws_http::retry::AwsResponseRetryClassifier,>,
-                                    aws_smithy_http::result::SdkError<crate::error::UpdateAttendeeCapabilitiesError>
-                                >  {
-                                    let handle = self.handle.clone();
-                                    let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-                                }
-        
-                                /// Sends the request and returns the response.
-                                ///
-                                /// If an error occurs, an `SdkError` will be returned with additional details that
-                                /// can be matched against.
-                                ///
-                                /// By default, any retryable failures will be retried twice. Retry behavior
-                                /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                                /// set when configuring the client.
-                                pub async fn send(self) -> std::result::Result<crate::output::UpdateAttendeeCapabilitiesOutput, aws_smithy_http::result::SdkError<crate::error::UpdateAttendeeCapabilitiesError>>
-                                 {
-                                    let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                                        .make_operation(&self.handle.conf)
-                                        .await
-                                        .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                                    self.handle.client.call(op).await
-                                }
-        /// <p>The ID of the meeting associated with the update request.</p>
-        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(input.into());
-            self
-        }
-        /// <p>The ID of the meeting associated with the update request.</p>
-        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_meeting_id(input);
-            self
-        }
-        /// <p>The ID of the attendee associated with the update request.</p>
-        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(input.into());
-            self
-        }
-        /// <p>The ID of the attendee associated with the update request.</p>
-        pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_attendee_id(input);
-            self
-        }
-        /// <p>The capabilties that you want to update.</p>
-        pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
-            self.inner = self.inner.capabilities(input);
-            self
-        }
-        /// <p>The capabilties that you want to update.</p>
-        pub fn set_capabilities(mut self, input: std::option::Option<crate::model::AttendeeCapabilities>) -> Self {
-            self.inner = self.inner.set_capabilities(input);
-            self
-        }
-    }
-    
-    
 }
 
 impl Client {
@@ -1654,4 +336,11 @@ impl Client {
                         Self { handle: std::sync::Arc::new(Handle { client, conf }) }
                     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+/// 
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;
 

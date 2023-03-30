@@ -2,7 +2,7 @@
 /// Operation shape for `CancelJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_job`](crate::client::Client::cancel_job).
+            /// [`cancel_job`](crate::client::fluent_builders::CancelJob).
             ///
             /// `ParseStrictResponse` impl for `CancelJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
 /// Operation shape for `CancelQuantumTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_quantum_task`](crate::client::Client::cancel_quantum_task).
+            /// [`cancel_quantum_task`](crate::client::fluent_builders::CancelQuantumTask).
             ///
             /// `ParseStrictResponse` impl for `CancelQuantumTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelQuantumTask {
 /// Operation shape for `CreateJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_job`](crate::client::Client::create_job).
+            /// [`create_job`](crate::client::fluent_builders::CreateJob).
             ///
             /// `ParseStrictResponse` impl for `CreateJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
 /// Operation shape for `CreateQuantumTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_quantum_task`](crate::client::Client::create_quantum_task).
+            /// [`create_quantum_task`](crate::client::fluent_builders::CreateQuantumTask).
             ///
             /// `ParseStrictResponse` impl for `CreateQuantumTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQuantumTask {
 /// Operation shape for `GetDevice`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_device`](crate::client::Client::get_device).
+            /// [`get_device`](crate::client::fluent_builders::GetDevice).
             ///
             /// `ParseStrictResponse` impl for `GetDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevice {
 /// Operation shape for `GetJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_job`](crate::client::Client::get_job).
+            /// [`get_job`](crate::client::fluent_builders::GetJob).
             ///
             /// `ParseStrictResponse` impl for `GetJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJob {
 /// Operation shape for `GetQuantumTask`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_quantum_task`](crate::client::Client::get_quantum_task).
+            /// [`get_quantum_task`](crate::client::fluent_builders::GetQuantumTask).
             ///
             /// `ParseStrictResponse` impl for `GetQuantumTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQuantumTask {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `SearchDevices`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_devices`](crate::client::Client::search_devices).
+            /// [`search_devices`](crate::client::fluent_builders::SearchDevices).
             ///
             /// `ParseStrictResponse` impl for `SearchDevices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchDevices {
 /// Operation shape for `SearchJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_jobs`](crate::client::Client::search_jobs).
+            /// [`search_jobs`](crate::client::fluent_builders::SearchJobs).
             ///
             /// `ParseStrictResponse` impl for `SearchJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchJobs {
 /// Operation shape for `SearchQuantumTasks`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`search_quantum_tasks`](crate::client::Client::search_quantum_tasks).
+            /// [`search_quantum_tasks`](crate::client::fluent_builders::SearchQuantumTasks).
             ///
             /// `ParseStrictResponse` impl for `SearchQuantumTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchQuantumTasks {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

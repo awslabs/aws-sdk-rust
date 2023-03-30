@@ -2,7 +2,7 @@
 /// Operation shape for `BatchGetChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_get_channel`](crate::client::Client::batch_get_channel).
+            /// [`batch_get_channel`](crate::client::fluent_builders::BatchGetChannel).
             ///
             /// `ParseStrictResponse` impl for `BatchGetChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetChannel {
 /// Operation shape for `BatchGetStreamKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`batch_get_stream_key`](crate::client::Client::batch_get_stream_key).
+            /// [`batch_get_stream_key`](crate::client::fluent_builders::BatchGetStreamKey).
             ///
             /// `ParseStrictResponse` impl for `BatchGetStreamKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetStreamKey {
 /// Operation shape for `CreateChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_channel`](crate::client::Client::create_channel).
+            /// [`create_channel`](crate::client::fluent_builders::CreateChannel).
             ///
             /// `ParseStrictResponse` impl for `CreateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
 /// Operation shape for `CreateRecordingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_recording_configuration`](crate::client::Client::create_recording_configuration).
+            /// [`create_recording_configuration`](crate::client::fluent_builders::CreateRecordingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `CreateRecordingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRecordingConfigura
 /// Operation shape for `CreateStreamKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_stream_key`](crate::client::Client::create_stream_key).
+            /// [`create_stream_key`](crate::client::fluent_builders::CreateStreamKey).
             ///
             /// `ParseStrictResponse` impl for `CreateStreamKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamKey {
 /// Operation shape for `DeleteChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_channel`](crate::client::Client::delete_channel).
+            /// [`delete_channel`](crate::client::fluent_builders::DeleteChannel).
             ///
             /// `ParseStrictResponse` impl for `DeleteChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
 /// Operation shape for `DeletePlaybackKeyPair`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_playback_key_pair`](crate::client::Client::delete_playback_key_pair).
+            /// [`delete_playback_key_pair`](crate::client::fluent_builders::DeletePlaybackKeyPair).
             ///
             /// `ParseStrictResponse` impl for `DeletePlaybackKeyPair`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlaybackKeyPair {
 /// Operation shape for `DeleteRecordingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_recording_configuration`](crate::client::Client::delete_recording_configuration).
+            /// [`delete_recording_configuration`](crate::client::fluent_builders::DeleteRecordingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `DeleteRecordingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecordingConfigura
 /// Operation shape for `DeleteStreamKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`delete_stream_key`](crate::client::Client::delete_stream_key).
+            /// [`delete_stream_key`](crate::client::fluent_builders::DeleteStreamKey).
             ///
             /// `ParseStrictResponse` impl for `DeleteStreamKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStreamKey {
 /// Operation shape for `GetChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_channel`](crate::client::Client::get_channel).
+            /// [`get_channel`](crate::client::fluent_builders::GetChannel).
             ///
             /// `ParseStrictResponse` impl for `GetChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannel {
 /// Operation shape for `GetPlaybackKeyPair`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_playback_key_pair`](crate::client::Client::get_playback_key_pair).
+            /// [`get_playback_key_pair`](crate::client::fluent_builders::GetPlaybackKeyPair).
             ///
             /// `ParseStrictResponse` impl for `GetPlaybackKeyPair`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPlaybackKeyPair {
 /// Operation shape for `GetRecordingConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_recording_configuration`](crate::client::Client::get_recording_configuration).
+            /// [`get_recording_configuration`](crate::client::fluent_builders::GetRecordingConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetRecordingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecordingConfiguratio
 /// Operation shape for `GetStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_stream`](crate::client::Client::get_stream).
+            /// [`get_stream`](crate::client::fluent_builders::GetStream).
             ///
             /// `ParseStrictResponse` impl for `GetStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStream {
 /// Operation shape for `GetStreamKey`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_stream_key`](crate::client::Client::get_stream_key).
+            /// [`get_stream_key`](crate::client::fluent_builders::GetStreamKey).
             ///
             /// `ParseStrictResponse` impl for `GetStreamKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamKey {
 /// Operation shape for `GetStreamSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_stream_session`](crate::client::Client::get_stream_session).
+            /// [`get_stream_session`](crate::client::fluent_builders::GetStreamSession).
             ///
             /// `ParseStrictResponse` impl for `GetStreamSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamSession {
 /// Operation shape for `ImportPlaybackKeyPair`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`import_playback_key_pair`](crate::client::Client::import_playback_key_pair).
+            /// [`import_playback_key_pair`](crate::client::fluent_builders::ImportPlaybackKeyPair).
             ///
             /// `ParseStrictResponse` impl for `ImportPlaybackKeyPair`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportPlaybackKeyPair {
 /// Operation shape for `ListChannels`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_channels`](crate::client::Client::list_channels).
+            /// [`list_channels`](crate::client::fluent_builders::ListChannels).
             ///
             /// `ParseStrictResponse` impl for `ListChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
 /// Operation shape for `ListPlaybackKeyPairs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_playback_key_pairs`](crate::client::Client::list_playback_key_pairs).
+            /// [`list_playback_key_pairs`](crate::client::fluent_builders::ListPlaybackKeyPairs).
             ///
             /// `ParseStrictResponse` impl for `ListPlaybackKeyPairs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlaybackKeyPairs {
 /// Operation shape for `ListRecordingConfigurations`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_recording_configurations`](crate::client::Client::list_recording_configurations).
+            /// [`list_recording_configurations`](crate::client::fluent_builders::ListRecordingConfigurations).
             ///
             /// `ParseStrictResponse` impl for `ListRecordingConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecordingConfigurati
 /// Operation shape for `ListStreamKeys`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_stream_keys`](crate::client::Client::list_stream_keys).
+            /// [`list_stream_keys`](crate::client::fluent_builders::ListStreamKeys).
             ///
             /// `ParseStrictResponse` impl for `ListStreamKeys`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamKeys {
 /// Operation shape for `ListStreams`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_streams`](crate::client::Client::list_streams).
+            /// [`list_streams`](crate::client::fluent_builders::ListStreams).
             ///
             /// `ParseStrictResponse` impl for `ListStreams`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreams {
 /// Operation shape for `ListStreamSessions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_stream_sessions`](crate::client::Client::list_stream_sessions).
+            /// [`list_stream_sessions`](crate::client::fluent_builders::ListStreamSessions).
             ///
             /// `ParseStrictResponse` impl for `ListStreamSessions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamSessions {
 /// Operation shape for `ListTagsForResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+            /// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
             ///
             /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutMetadata`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`put_metadata`](crate::client::Client::put_metadata).
+            /// [`put_metadata`](crate::client::fluent_builders::PutMetadata).
             ///
             /// `ParseStrictResponse` impl for `PutMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetadata {
 /// Operation shape for `StopStream`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`stop_stream`](crate::client::Client::stop_stream).
+            /// [`stop_stream`](crate::client::fluent_builders::StopStream).
             ///
             /// `ParseStrictResponse` impl for `StopStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopStream {
 /// Operation shape for `TagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`tag_resource`](crate::client::Client::tag_resource).
+            /// [`tag_resource`](crate::client::fluent_builders::TagResource).
             ///
             /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`untag_resource`](crate::client::Client::untag_resource).
+            /// [`untag_resource`](crate::client::fluent_builders::UntagResource).
             ///
             /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateChannel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_channel`](crate::client::Client::update_channel).
+            /// [`update_channel`](crate::client::fluent_builders::UpdateChannel).
             ///
             /// `ParseStrictResponse` impl for `UpdateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

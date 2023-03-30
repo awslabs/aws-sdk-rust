@@ -2,7 +2,7 @@
 /// Operation shape for `GetLatestConfiguration`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_latest_configuration`](crate::client::Client::get_latest_configuration).
+            /// [`get_latest_configuration`](crate::client::fluent_builders::GetLatestConfiguration).
             ///
             /// `ParseStrictResponse` impl for `GetLatestConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLatestConfiguration {
 /// Operation shape for `StartConfigurationSession`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`start_configuration_session`](crate::client::Client::start_configuration_session).
+            /// [`start_configuration_session`](crate::client::fluent_builders::StartConfigurationSession).
             ///
             /// `ParseStrictResponse` impl for `StartConfigurationSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

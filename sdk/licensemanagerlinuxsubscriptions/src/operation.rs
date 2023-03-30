@@ -2,7 +2,7 @@
 /// Operation shape for `GetServiceSettings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_service_settings`](crate::client::Client::get_service_settings).
+            /// [`get_service_settings`](crate::client::fluent_builders::GetServiceSettings).
             ///
             /// `ParseStrictResponse` impl for `GetServiceSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceSettings {
 /// Operation shape for `ListLinuxSubscriptionInstances`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_linux_subscription_instances`](crate::client::Client::list_linux_subscription_instances).
+            /// [`list_linux_subscription_instances`](crate::client::fluent_builders::ListLinuxSubscriptionInstances).
             ///
             /// `ParseStrictResponse` impl for `ListLinuxSubscriptionInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLinuxSubscriptionIns
 /// Operation shape for `ListLinuxSubscriptions`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_linux_subscriptions`](crate::client::Client::list_linux_subscriptions).
+            /// [`list_linux_subscriptions`](crate::client::fluent_builders::ListLinuxSubscriptions).
             ///
             /// `ParseStrictResponse` impl for `ListLinuxSubscriptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLinuxSubscriptions {
 /// Operation shape for `UpdateServiceSettings`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_service_settings`](crate::client::Client::update_service_settings).
+            /// [`update_service_settings`](crate::client::fluent_builders::UpdateServiceSettings).
             ///
             /// `ParseStrictResponse` impl for `UpdateServiceSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

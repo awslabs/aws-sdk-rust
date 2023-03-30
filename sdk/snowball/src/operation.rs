@@ -2,7 +2,7 @@
 /// Operation shape for `CancelCluster`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_cluster`](crate::client::Client::cancel_cluster).
+            /// [`cancel_cluster`](crate::client::fluent_builders::CancelCluster).
             ///
             /// `ParseStrictResponse` impl for `CancelCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelCluster {
 /// Operation shape for `CancelJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`cancel_job`](crate::client::Client::cancel_job).
+            /// [`cancel_job`](crate::client::fluent_builders::CancelJob).
             ///
             /// `ParseStrictResponse` impl for `CancelJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -66,7 +66,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
 /// Operation shape for `CreateAddress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_address`](crate::client::Client::create_address).
+            /// [`create_address`](crate::client::fluent_builders::CreateAddress).
             ///
             /// `ParseStrictResponse` impl for `CreateAddress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -98,7 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAddress {
 /// Operation shape for `CreateCluster`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_cluster`](crate::client::Client::create_cluster).
+            /// [`create_cluster`](crate::client::fluent_builders::CreateCluster).
             ///
             /// `ParseStrictResponse` impl for `CreateCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
 /// Operation shape for `CreateJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_job`](crate::client::Client::create_job).
+            /// [`create_job`](crate::client::fluent_builders::CreateJob).
             ///
             /// `ParseStrictResponse` impl for `CreateJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
 /// Operation shape for `CreateLongTermPricing`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_long_term_pricing`](crate::client::Client::create_long_term_pricing).
+            /// [`create_long_term_pricing`](crate::client::fluent_builders::CreateLongTermPricing).
             ///
             /// `ParseStrictResponse` impl for `CreateLongTermPricing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLongTermPricing {
 /// Operation shape for `CreateReturnShippingLabel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`create_return_shipping_label`](crate::client::Client::create_return_shipping_label).
+            /// [`create_return_shipping_label`](crate::client::fluent_builders::CreateReturnShippingLabel).
             ///
             /// `ParseStrictResponse` impl for `CreateReturnShippingLabel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReturnShippingLabe
 /// Operation shape for `DescribeAddress`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_address`](crate::client::Client::describe_address).
+            /// [`describe_address`](crate::client::fluent_builders::DescribeAddress).
             ///
             /// `ParseStrictResponse` impl for `DescribeAddress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAddress {
 /// Operation shape for `DescribeAddresses`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_addresses`](crate::client::Client::describe_addresses).
+            /// [`describe_addresses`](crate::client::fluent_builders::DescribeAddresses).
             ///
             /// `ParseStrictResponse` impl for `DescribeAddresses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAddresses {
 /// Operation shape for `DescribeCluster`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_cluster`](crate::client::Client::describe_cluster).
+            /// [`describe_cluster`](crate::client::fluent_builders::DescribeCluster).
             ///
             /// `ParseStrictResponse` impl for `DescribeCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCluster {
 /// Operation shape for `DescribeJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_job`](crate::client::Client::describe_job).
+            /// [`describe_job`](crate::client::fluent_builders::DescribeJob).
             ///
             /// `ParseStrictResponse` impl for `DescribeJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJob {
 /// Operation shape for `DescribeReturnShippingLabel`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`describe_return_shipping_label`](crate::client::Client::describe_return_shipping_label).
+            /// [`describe_return_shipping_label`](crate::client::fluent_builders::DescribeReturnShippingLabel).
             ///
             /// `ParseStrictResponse` impl for `DescribeReturnShippingLabel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReturnShippingLa
 /// Operation shape for `GetJobManifest`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_job_manifest`](crate::client::Client::get_job_manifest).
+            /// [`get_job_manifest`](crate::client::fluent_builders::GetJobManifest).
             ///
             /// `ParseStrictResponse` impl for `GetJobManifest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobManifest {
 /// Operation shape for `GetJobUnlockCode`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_job_unlock_code`](crate::client::Client::get_job_unlock_code).
+            /// [`get_job_unlock_code`](crate::client::fluent_builders::GetJobUnlockCode).
             ///
             /// `ParseStrictResponse` impl for `GetJobUnlockCode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobUnlockCode {
 /// Operation shape for `GetSnowballUsage`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_snowball_usage`](crate::client::Client::get_snowball_usage).
+            /// [`get_snowball_usage`](crate::client::fluent_builders::GetSnowballUsage).
             ///
             /// `ParseStrictResponse` impl for `GetSnowballUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSnowballUsage {
 /// Operation shape for `GetSoftwareUpdates`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`get_software_updates`](crate::client::Client::get_software_updates).
+            /// [`get_software_updates`](crate::client::fluent_builders::GetSoftwareUpdates).
             ///
             /// `ParseStrictResponse` impl for `GetSoftwareUpdates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSoftwareUpdates {
 /// Operation shape for `ListClusterJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_cluster_jobs`](crate::client::Client::list_cluster_jobs).
+            /// [`list_cluster_jobs`](crate::client::fluent_builders::ListClusterJobs).
             ///
             /// `ParseStrictResponse` impl for `ListClusterJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusterJobs {
 /// Operation shape for `ListClusters`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_clusters`](crate::client::Client::list_clusters).
+            /// [`list_clusters`](crate::client::fluent_builders::ListClusters).
             ///
             /// `ParseStrictResponse` impl for `ListClusters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusters {
 /// Operation shape for `ListCompatibleImages`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_compatible_images`](crate::client::Client::list_compatible_images).
+            /// [`list_compatible_images`](crate::client::fluent_builders::ListCompatibleImages).
             ///
             /// `ParseStrictResponse` impl for `ListCompatibleImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -610,7 +610,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCompatibleImages {
 /// Operation shape for `ListJobs`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_jobs`](crate::client::Client::list_jobs).
+            /// [`list_jobs`](crate::client::fluent_builders::ListJobs).
             ///
             /// `ParseStrictResponse` impl for `ListJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
 /// Operation shape for `ListLongTermPricing`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`list_long_term_pricing`](crate::client::Client::list_long_term_pricing).
+            /// [`list_long_term_pricing`](crate::client::fluent_builders::ListLongTermPricing).
             ///
             /// `ParseStrictResponse` impl for `ListLongTermPricing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLongTermPricing {
 /// Operation shape for `UpdateCluster`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_cluster`](crate::client::Client::update_cluster).
+            /// [`update_cluster`](crate::client::fluent_builders::UpdateCluster).
             ///
             /// `ParseStrictResponse` impl for `UpdateCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCluster {
 /// Operation shape for `UpdateJob`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_job`](crate::client::Client::update_job).
+            /// [`update_job`](crate::client::fluent_builders::UpdateJob).
             ///
             /// `ParseStrictResponse` impl for `UpdateJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJob {
 /// Operation shape for `UpdateJobShipmentState`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_job_shipment_state`](crate::client::Client::update_job_shipment_state).
+            /// [`update_job_shipment_state`](crate::client::fluent_builders::UpdateJobShipmentState).
             ///
             /// `ParseStrictResponse` impl for `UpdateJobShipmentState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobShipmentState {
 /// Operation shape for `UpdateLongTermPricing`.
             ///
             /// This is usually constructed for you using the the fluent builder returned by
-            /// [`update_long_term_pricing`](crate::client::Client::update_long_term_pricing).
+            /// [`update_long_term_pricing`](crate::client::fluent_builders::UpdateLongTermPricing).
             ///
             /// `ParseStrictResponse` impl for `UpdateLongTermPricing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
