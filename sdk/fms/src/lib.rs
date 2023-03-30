@@ -12,13 +12,61 @@
 #![allow(rustdoc::bare_urls)]
 
 #![warn(missing_docs)]
-//! <p>This is the <i>Firewall Manager API Reference</i>. This guide is for
-//! developers who need detailed information about the Firewall Manager API actions, data
-//! types, and errors. For detailed information about Firewall Manager features, see the
-//! <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">Firewall Manager Developer Guide</a>.</p>
-//! <p>Some API actions require explicit resource permissions. For information, see the developer guide topic
-//! <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required permissions for API actions</a>.
-//! </p>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
+//! 
+//! This is the _Firewall Manager API Reference_. This guide is for developers who need detailed information about the Firewall Manager API actions, data types, and errors. For detailed information about Firewall Manager features, see the [Firewall Manager Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html).
+//! 
+//! Some API actions require explicit resource permissions. For information, see the developer guide topic [Firewall Manager required permissions for API actions](https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html).
+//! 
+//! ## Getting Started
+//! 
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//! 
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-fms` to
+//! your project, add the following to your **Cargo.toml** file:
+//! 
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-fms = "0.25.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//! 
+//! Then in code, a client can be created with the following:
+//! 
+//! ```rust,no_run
+//! use aws_sdk_fms as fms;
+//! 
+//! #[tokio::main]
+//! async fn main() -> Result<(), fms::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = fms::Client::new(&config);
+//! 
+//!     // ... make some calls with the client
+//! 
+//!     Ok(())
+//! }
+//! ```
+//! 
+//! See the [client documentation](https://docs.rs/aws-sdk-fms/latest/aws_sdk_fms/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//! 
+//! ## Using the SDK
+//! 
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//! 
+//! ## Getting Help
+//! 
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//! 
 //! 
 //! # Crate Organization
 //! 

@@ -12,101 +12,90 @@
 #![allow(rustdoc::bare_urls)]
 
 #![warn(missing_docs)]
-//! <fullname>Key Management Service</fullname>
-//! <p>Key Management Service (KMS) is an encryption and key management web service. This guide describes
-//! the KMS operations that you can call programmatically. For general information about KMS,
-//! see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/">
-//! <i>Key Management Service Developer Guide</i>
-//! </a>.</p>
-//! <note>
-//! <p>KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping some variations of this term.</p>
-//! <p>Amazon Web Services provides SDKs that consist of libraries and sample code for various programming
-//! languages and platforms (Java, Ruby, .Net, macOS, Android, etc.). The SDKs provide a
-//! convenient way to create programmatic access to KMS and other Amazon Web Services services. For example,
-//! the SDKs take care of tasks such as signing requests (see below), managing errors, and
-//! retrying requests automatically. For more information about the Amazon Web Services SDKs, including how to
-//! download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
-//! Services</a>.</p>
-//! </note>
-//! <p>We recommend that you use the Amazon Web Services SDKs to make programmatic API calls to KMS.</p>
-//! <p>If you need to use FIPS 140-2 validated cryptographic modules when communicating with
-//! Amazon Web Services, use the FIPS endpoint in your preferred Amazon Web Services Region. For more information about the
-//! available FIPS endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">Service endpoints</a> in the Key Management Service topic of
-//! the <i>Amazon Web Services General Reference</i>.</p>
-//! <p>All KMS API calls must be signed and be transmitted using Transport Layer Security
-//! (TLS). KMS recommends you always use the latest supported TLS version. Clients must also
-//! support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman
-//! (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java 7
-//! and later support these modes.</p>
-//! <p>
-//! <b>Signing Requests</b>
-//! </p>
-//! <p>Requests must be signed by using an access key ID and a secret access key. We strongly
-//! recommend that you <i>do not</i> use your Amazon Web Services account (root) access key ID and
-//! secret access key for everyday work with KMS. Instead, use the access key ID and secret
-//! access key for an IAM user. You can also use the Amazon Web Services Security Token Service to generate
-//! temporary security credentials that you can use to sign requests.</p>
-//! <p>All KMS operations require <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-//! <p>
-//! <b>Logging API Requests</b>
-//! </p>
-//! <p>KMS supports CloudTrail, a service that logs Amazon Web Services API calls and related events for your
-//! Amazon Web Services account and delivers them to an Amazon S3 bucket that you specify. By using the
-//! information collected by CloudTrail, you can determine what requests were made to KMS, who made
-//! the request, when it was made, and so on. To learn more about CloudTrail, including how to turn it
-//! on and find your log files, see the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/">CloudTrail User Guide</a>.</p>
-//! <p>
-//! <b>Additional Resources</b>
-//! </p>
-//! <p>For more information about credentials and request signing, see the following:</p>
-//! <ul>
-//! <li>
-//! <p>
-//! <a href="https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">Amazon Web Services
-//! Security Credentials</a> - This topic provides general information about the types
-//! of credentials used to access Amazon Web Services.</p>
-//! </li>
-//! <li>
-//! <p>
-//! <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
-//! Security Credentials</a> - This section of the <i>IAM User Guide</i>
-//! describes how to create and use temporary security credentials.</p>
-//! </li>
-//! <li>
-//! <p>
-//! <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version
-//! 4 Signing Process</a> - This set of topics walks you through the process of signing
-//! a request using an access key ID and a secret access key.</p>
-//! </li>
-//! </ul>
-//! <p>
-//! <b>Commonly Used API Operations</b>
-//! </p>
-//! <p>Of the API operations discussed in this guide, the following will prove the most useful
-//! for most applications. You will likely perform operations other than these, such as creating
-//! keys and assigning policies, by using the console.</p>
-//! <ul>
-//! <li>
-//! <p>
-//! <a>Encrypt</a>
-//! </p>
-//! </li>
-//! <li>
-//! <p>
-//! <a>Decrypt</a>
-//! </p>
-//! </li>
-//! <li>
-//! <p>
-//! <a>GenerateDataKey</a>
-//! </p>
-//! </li>
-//! <li>
-//! <p>
-//! <a>GenerateDataKeyWithoutPlaintext</a>
-//! </p>
-//! </li>
-//! </ul>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
+//! 
+//! Key Management Service (KMS) is an encryption and key management web service. This guide describes the KMS operations that you can call programmatically. For general information about KMS, see the [_Key Management Service Developer Guide_](https://docs.aws.amazon.com/kms/latest/developerguide/).
+//! 
+//! We recommend that you use the Amazon Web Services SDKs to make programmatic API calls to KMS.
+//! 
+//! If you need to use FIPS 140-2 validated cryptographic modules when communicating with Amazon Web Services, use the FIPS endpoint in your preferred Amazon Web Services Region. For more information about the available FIPS endpoints, see [Service endpoints](https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region) in the Key Management Service topic of the _Amazon Web Services General Reference_.
+//! 
+//! All KMS API calls must be signed and be transmitted using Transport Layer Security (TLS). KMS recommends you always use the latest supported TLS version. Clients must also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java 7 and later support these modes.
+//! 
+//! __Signing Requests__
+//! 
+//! Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you _do not_ use your Amazon Web Services account (root) access key ID and secret access key for everyday work with KMS. Instead, use the access key ID and secret access key for an IAM user. You can also use the Amazon Web Services Security Token Service to generate temporary security credentials that you can use to sign requests.
+//! 
+//! All KMS operations require [Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html).
+//! 
+//! __Logging API Requests__
+//! 
+//! KMS supports CloudTrail, a service that logs Amazon Web Services API calls and related events for your Amazon Web Services account and delivers them to an Amazon S3 bucket that you specify. By using the information collected by CloudTrail, you can determine what requests were made to KMS, who made the request, when it was made, and so on. To learn more about CloudTrail, including how to turn it on and find your log files, see the [CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/).
+//! 
+//! __Additional Resources__
+//! 
+//! For more information about credentials and request signing, see the following:
+//!   - [Amazon Web Services Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html) - This topic provides general information about the types of credentials used to access Amazon Web Services.
+//!   - [Temporary Security Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) - This section of the _IAM User Guide_ describes how to create and use temporary security credentials.
+//!   - [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) - This set of topics walks you through the process of signing a request using an access key ID and a secret access key.
+//! 
+//! __Commonly Used API Operations__
+//! 
+//! Of the API operations discussed in this guide, the following will prove the most useful for most applications. You will likely perform operations other than these, such as creating keys and assigning policies, by using the console.
+//!   - Encrypt
+//!   - Decrypt
+//!   - GenerateDataKey
+//!   - GenerateDataKeyWithoutPlaintext
+//! 
+//! ## Getting Started
+//! 
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//! 
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-kms` to
+//! your project, add the following to your **Cargo.toml** file:
+//! 
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-kms = "0.25.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//! 
+//! Then in code, a client can be created with the following:
+//! 
+//! ```rust,no_run
+//! use aws_sdk_kms as kms;
+//! 
+//! #[tokio::main]
+//! async fn main() -> Result<(), kms::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = kms::Client::new(&config);
+//! 
+//!     // ... make some calls with the client
+//! 
+//!     Ok(())
+//! }
+//! ```
+//! 
+//! See the [client documentation](https://docs.rs/aws-sdk-kms/latest/aws_sdk_kms/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//! 
+//! ## Using the SDK
+//! 
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//! 
+//! ## Getting Help
+//! 
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//! 
 //! 
 //! # Crate Organization
 //! 

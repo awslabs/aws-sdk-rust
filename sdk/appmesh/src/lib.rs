@@ -12,21 +12,61 @@
 #![allow(rustdoc::bare_urls)]
 
 #![warn(missing_docs)]
-//! <p>App Mesh is a service mesh based on the Envoy proxy that makes it easy to
-//! monitor and control microservices. App Mesh standardizes how your microservices
-//! communicate, giving you end-to-end visibility and helping to ensure high availability for
-//! your applications.</p>
-//! <p>App Mesh gives you consistent visibility and network traffic controls for
-//! every microservice in an application. You can use App Mesh with Amazon Web Services Fargate, Amazon ECS, Amazon EKS, Kubernetes on Amazon Web Services, and
-//! Amazon EC2.</p>
-//! <note>
-//! <p>App Mesh supports microservice applications that use service discovery
-//! naming for their components. For more information about service discovery on Amazon ECS, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-//! Discovery</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes
-//! <code>kube-dns</code> and <code>coredns</code> are supported. For more information,
-//! see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
-//! for Services and Pods</a> in the Kubernetes documentation.</p>
-//! </note>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
+//! 
+//! App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor and control microservices. App Mesh standardizes how your microservices communicate, giving you end-to-end visibility and helping to ensure high availability for your applications.
+//! 
+//! App Mesh gives you consistent visibility and network traffic controls for every microservice in an application. You can use App Mesh with Amazon Web Services Fargate, Amazon ECS, Amazon EKS, Kubernetes on Amazon Web Services, and Amazon EC2.
+//! 
+//! ## Getting Started
+//! 
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//! 
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-appmesh` to
+//! your project, add the following to your **Cargo.toml** file:
+//! 
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-appmesh = "0.25.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//! 
+//! Then in code, a client can be created with the following:
+//! 
+//! ```rust,no_run
+//! use aws_sdk_appmesh as appmesh;
+//! 
+//! #[tokio::main]
+//! async fn main() -> Result<(), appmesh::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = appmesh::Client::new(&config);
+//! 
+//!     // ... make some calls with the client
+//! 
+//!     Ok(())
+//! }
+//! ```
+//! 
+//! See the [client documentation](https://docs.rs/aws-sdk-appmesh/latest/aws_sdk_appmesh/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//! 
+//! ## Using the SDK
+//! 
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//! 
+//! ## Getting Help
+//! 
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//! 
 //! 
 //! # Crate Organization
 //! 

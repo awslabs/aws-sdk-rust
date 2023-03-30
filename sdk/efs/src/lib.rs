@@ -12,11 +12,59 @@
 #![allow(rustdoc::bare_urls)]
 
 #![warn(missing_docs)]
-//! <fullname>Amazon Elastic File System</fullname>
-//! <p>Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for
-//! use with Amazon EC2 Linux and Mac instances in the Amazon Web Services Cloud. With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and
-//! remove files, so that your applications have the storage they need, when they need it. For
-//! more information, see the <a href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon Elastic File System API Reference</a> and the <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon Elastic File System User Guide</a>.</p>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
+//! 
+//! Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2 Linux and Mac instances in the Amazon Web Services Cloud. With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and remove files, so that your applications have the storage they need, when they need it. For more information, see the [Amazon Elastic File System API Reference](https://docs.aws.amazon.com/efs/latest/ug/api-reference.html) and the [Amazon Elastic File System User Guide](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html).
+//! 
+//! ## Getting Started
+//! 
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//! 
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-efs` to
+//! your project, add the following to your **Cargo.toml** file:
+//! 
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-efs = "0.25.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//! 
+//! Then in code, a client can be created with the following:
+//! 
+//! ```rust,no_run
+//! use aws_sdk_efs as efs;
+//! 
+//! #[tokio::main]
+//! async fn main() -> Result<(), efs::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = efs::Client::new(&config);
+//! 
+//!     // ... make some calls with the client
+//! 
+//!     Ok(())
+//! }
+//! ```
+//! 
+//! See the [client documentation](https://docs.rs/aws-sdk-efs/latest/aws_sdk_efs/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//! 
+//! ## Using the SDK
+//! 
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//! 
+//! ## Getting Help
+//! 
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//! 
 //! 
 //! # Crate Organization
 //! 

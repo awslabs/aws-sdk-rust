@@ -11,31 +11,70 @@
                     ///
                     /// Client for invoking operations on Elastic Load Balancing. Each operation on Elastic Load Balancing is a method on this
                     /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
-///
-                        /// # Examples
-                        /// **Constructing a client and invoking an operation**
-                        /// ```rust,no_run
-                        /// # async fn docs() {
-                        ///     // create a shared configuration. This can be used & shared between multiple service clients.
-                        ///     let shared_config = aws_config::load_from_env().await;
-                        ///     let client = aws_sdk_elasticloadbalancing::Client::new(&shared_config);
-                        ///     // invoke an operation
-                        ///     /* let rsp = client
-                        ///         .<operation_name>().
-                        ///         .<param>("some value")
-                        ///         .send().await; */
-                        /// # }
-                        /// ```
-                        /// **Constructing a client with custom configuration**
-                        /// ```rust,no_run
-                        /// use aws_config::retry::RetryConfig;
-                        /// # async fn docs() {
-                        /// let shared_config = aws_config::load_from_env().await;
-                        /// let config = aws_sdk_elasticloadbalancing::config::Builder::from(&shared_config)
-                        ///   .retry_config(RetryConfig::disabled())
-                        ///   .build();
-                        /// let client = aws_sdk_elasticloadbalancing::Client::from_conf(config);
-                        /// # }
+/// ## Constructing a `Client`
+/// 
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+/// 
+/// In the simplest case, creating a client looks as follows:
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_elasticloadbalancing::Client::new(&config);
+/// # }
+/// ```
+/// 
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+/// 
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_elasticloadbalancing::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
+/// # }
+/// ```
+/// 
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+/// 
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+/// 
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+/// 
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`ApplySecurityGroupsToLoadBalancer`](crate::operation) operation has
+/// a [`Client::apply_security_groups_to_load_balancer`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+/// 
+/// ```rust,ignore
+/// let result = client.apply_security_groups_to_load_balancer()
+///     .load_balancer_name("example")
+///     .call()
+///     .await;
+/// ```
+/// 
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
                 #[derive(std::fmt::Debug)]
                 pub struct Client {
                     handle: std::sync::Arc<Handle>

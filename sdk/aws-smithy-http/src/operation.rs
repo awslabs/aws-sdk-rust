@@ -11,6 +11,7 @@ use std::ops::{Deref, DerefMut};
 
 pub mod error;
 
+/// Metadata attached to an [`Operation`] that identifies the API being called.
 #[derive(Clone, Debug)]
 pub struct Metadata {
     operation: Cow<'static, str>,
@@ -18,14 +19,17 @@ pub struct Metadata {
 }
 
 impl Metadata {
+    /// Returns the operation name.
     pub fn name(&self) -> &str {
         &self.operation
     }
 
+    /// Returns the service name.
     pub fn service(&self) -> &str {
         &self.service
     }
 
+    /// Creates [`Metadata`].
     pub fn new(
         operation: impl Into<Cow<'static, str>>,
         service: impl Into<Cow<'static, str>>,
@@ -37,6 +41,11 @@ impl Metadata {
     }
 }
 
+/// Non-request parts of an [`Operation`].
+///
+/// Generics:
+/// - `H`: Response handler
+/// - `R`: Implementation of `ClassifyRetry`
 #[non_exhaustive]
 #[derive(Clone, Debug)]
 pub struct Parts<H, R> {
@@ -45,9 +54,12 @@ pub struct Parts<H, R> {
     pub metadata: Option<Metadata>,
 }
 
-// Generics:
-// - H: Response handler
-// - R: Implementation of `ClassifyRetry`
+/// An [`Operation`] is a request paired with a response handler, retry classifier,
+/// and metadata that identifies the API being called.
+///
+/// Generics:
+/// - `H`: Response handler
+/// - `R`: Implementation of `ClassifyRetry`
 #[derive(Debug)]
 pub struct Operation<H, R> {
     request: Request,
@@ -55,17 +67,22 @@ pub struct Operation<H, R> {
 }
 
 impl<H, R> Operation<H, R> {
+    /// Converts this operation into its parts.
     pub fn into_request_response(self) -> (Request, Parts<H, R>) {
         (self.request, self.parts)
     }
+
+    /// Constructs an [`Operation`] from a request and [`Parts`]
     pub fn from_parts(request: Request, parts: Parts<H, R>) -> Self {
         Self { request, parts }
     }
 
+    /// Returns a mutable reference to the request's property bag.
     pub fn properties_mut(&mut self) -> impl DerefMut<Target = PropertyBag> + '_ {
         self.request.properties_mut()
     }
 
+    /// Returns an immutable reference to the request's property bag.
     pub fn properties(&self) -> impl Deref<Target = PropertyBag> + '_ {
         self.request.properties()
     }
@@ -80,11 +97,13 @@ impl<H, R> Operation<H, R> {
         self.request.http()
     }
 
+    /// Attaches metadata to the operation.
     pub fn with_metadata(mut self, metadata: Metadata) -> Self {
         self.parts.metadata = Some(metadata);
         self
     }
 
+    /// Replaces the retry classifier on the operation.
     pub fn with_retry_classifier<R2>(self, retry_classifier: R2) -> Operation<H, R2> {
         Operation {
             request: self.request,
@@ -96,10 +115,14 @@ impl<H, R> Operation<H, R> {
         }
     }
 
+    /// Returns the retry classifier for this operation.
     pub fn retry_classifier(&self) -> &R {
         &self.parts.retry_classifier
     }
 
+    /// Attempts to clone the operation.
+    ///
+    /// Will return `None` if the request body is already consumed and can't be replayed.
     pub fn try_clone(&self) -> Option<Self>
     where
         H: Clone,
@@ -114,6 +137,7 @@ impl<H, R> Operation<H, R> {
 }
 
 impl<H> Operation<H, ()> {
+    /// Creates a new [`Operation`].
     pub fn new(
         request: Request,
         response_handler: H,
