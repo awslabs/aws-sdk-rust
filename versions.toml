@@ -1,4 +1,4 @@
-smithy_rs_revision = '10520d7fd7bdaff447482f28fba0b50acd7183c9'
+smithy_rs_revision = '1d1e68aeba46de72bfb516ec74377da3976b4f57'
 aws_doc_sdk_examples_revision = '97a177aab8c3d2fef97416cb66e4b4d0da840138'
 
 [manual_interventions]
@@ -1057,7 +1057,7 @@ model_hash = '9ec8a92782fbef7e2cf07fc9b5e656aa37b59668baff33acae10f270cfff4193'
 [crates.aws-sdk-kinesis]
 category = 'AwsSdk'
 version = '0.25.0'
-source_hash = '70a54b76036ed04d2eea6959225d739d460bf779d2098aa035ef2889c5b01881'
+source_hash = 'e9383baf03aef5a9ff9e07d2ea08824cd006951c90043b9d16dd5d559e2b41e9'
 model_hash = '5eaef8321cea414140d87258e714988d88f3e41d9cdf4b83a1417027cb702cb9'
 
 [crates.aws-sdk-kinesisanalytics]
@@ -1669,7 +1669,7 @@ model_hash = 'fb47cfd49cf2d9250063914599f703ed365b51be373988dc3f2cd64321c9583b'
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
 version = '0.25.0'
-source_hash = '283b8f7239cc0fcc3d15623d8e8e269e41fb37c90fd683a2b9f8933c40fb48a6'
+source_hash = 'a586f93e9369a2adfd2b06aeee4c38b6b249b181c289afb092cbc1e35dd7ac00'
 model_hash = '930bd33c05c393293591ae01cbdb6637fb5062ed3a3ad5e2dadddd8108cc8478'
 
 [crates.aws-sdk-s3outposts]
@@ -2046,7 +2046,7 @@ source_hash = '385afee77ec5fbd8b76fd9f5c3c46de0f373deaf6ab5b361d15e46728d0d7793'
 [crates.aws-sigv4]
 category = 'AwsRuntime'
 version = '0.0.0-smithy-rs-head'
-source_hash = '0f5df69a82dcd7ce2a20729483ff69c239f87ebfd035804b77c399311ba67acb'
+source_hash = '6878ff3b48f98d0ff217806379e07cd7e4df420fd3f780aa7a95195e546c715f'
 
 [crates.aws-smithy-async]
 category = 'SmithyRuntime'
@@ -2071,7 +2071,12 @@ source_hash = '9d878d4965ac985d6113bb6183b8ff6d7f082e5da112c767444379e4a495ce88'
 [crates.aws-smithy-http]
 category = 'SmithyRuntime'
 version = '0.0.0-smithy-rs-head'
-source_hash = '56db768ce91273fbe8ee83feda8624048ed74d8980815ece06a161b379df0018'
+source_hash = '1b84bc95e7e578f4ab2e609daa4496407fcd9d505cd93e072debd2566f8e9365'
+
+[crates.aws-smithy-http-auth]
+category = 'SmithyRuntime'
+version = '0.0.0-smithy-rs-head'
+source_hash = '5efb7d8a2c5798b21f04a4dadf4e5bbe72441428913e68b000ec72767585ed0c'
 
 [crates.aws-smithy-http-tower]
 category = 'SmithyRuntime'
@@ -2460,6 +2465,7 @@ aws-smithy-checksums = '0.0.0-smithy-rs-head'
 aws-smithy-client = '0.0.0-smithy-rs-head'
 aws-smithy-eventstream = '0.0.0-smithy-rs-head'
 aws-smithy-http = '0.0.0-smithy-rs-head'
+aws-smithy-http-auth = '0.0.0-smithy-rs-head'
 aws-smithy-http-tower = '0.0.0-smithy-rs-head'
 aws-smithy-json = '0.0.0-smithy-rs-head'
 aws-smithy-protocol-test = '0.0.0-smithy-rs-head'

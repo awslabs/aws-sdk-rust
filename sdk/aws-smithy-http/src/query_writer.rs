@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::http_request::url_escape::percent_encode_query;
+use crate::query::fmt_string as percent_encode_query;
 use http::Uri;
 
 /// Utility for updating the query string in a [`Uri`].
-pub(super) struct QueryWriter {
+pub struct QueryWriter {
     base_uri: Uri,
     new_path_and_query: String,
     prefix: Option<char>,
@@ -15,7 +15,7 @@ pub(super) struct QueryWriter {
 
 impl QueryWriter {
     /// Creates a new `QueryWriter` based off the given `uri`.
-    pub(super) fn new(uri: &Uri) -> Self {
+    pub fn new(uri: &Uri) -> Self {
         let new_path_and_query = uri
             .path_and_query()
             .map(|pq| pq.to_string())
@@ -35,7 +35,7 @@ impl QueryWriter {
     }
 
     /// Clears all query parameters.
-    pub(super) fn clear_params(&mut self) {
+    pub fn clear_params(&mut self) {
         if let Some(index) = self.new_path_and_query.find('?') {
             self.new_path_and_query.truncate(index);
             self.prefix = Some('?');
@@ -44,7 +44,7 @@ impl QueryWriter {
 
     /// Inserts a new query parameter. The key and value are percent encoded
     /// by `QueryWriter`. Passing in percent encoded values will result in double encoding.
-    pub(super) fn insert(&mut self, k: &str, v: &str) {
+    pub fn insert(&mut self, k: &str, v: &str) {
         if let Some(prefix) = self.prefix {
             self.new_path_and_query.push(prefix);
         }
@@ -56,12 +56,12 @@ impl QueryWriter {
     }
 
     /// Returns just the built query string.
-    pub(super) fn build_query(self) -> String {
+    pub fn build_query(self) -> String {
         self.build_uri().query().unwrap_or_default().to_string()
     }
 
     /// Returns a full [`Uri`] with the query string updated.
-    pub(super) fn build_uri(self) -> Uri {
+    pub fn build_uri(self) -> Uri {
         let mut parts = self.base_uri.into_parts();
         parts.path_and_query = Some(
             self.new_path_and_query

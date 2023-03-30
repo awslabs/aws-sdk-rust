@@ -28,6 +28,8 @@ pub mod middleware;
 pub mod operation;
 pub mod property_bag;
 pub mod query;
+#[doc(hidden)]
+pub mod query_writer;
 pub mod response;
 pub mod result;
 pub mod retry;
