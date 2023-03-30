@@ -10,7 +10,7 @@
                     }
                 }
 
-/// Generated endpoint tests
+/// 
 #[cfg(test)]
 mod test {
     
@@ -353,6 +353,5 @@ impl ParamsBuilder {
 
             impl std::error::Error for InvalidParams { }
 
-/// Endpoints internals
 mod internals;
 
