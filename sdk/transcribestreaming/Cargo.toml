@@ -108,6 +108,7 @@ version = "0.3.25"
 
 [dev-dependencies.futures-util]
 version = "0.3.25"
+default-features = false
 
 [dev-dependencies.hound]
 version = "3.4.0"

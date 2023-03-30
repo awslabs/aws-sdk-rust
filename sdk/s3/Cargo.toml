@@ -137,6 +137,7 @@ version = "1.8.0"
 
 [dev-dependencies.futures-util]
 version = "0.3.25"
+default-features = false
 
 [dev-dependencies.hdrhistogram]
 version = "7.5.2"
