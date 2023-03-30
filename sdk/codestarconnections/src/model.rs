@@ -405,15 +405,15 @@ pub enum ProviderType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProviderType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Bitbucket" => ProviderType::Bitbucket,
-            "GitHub" => ProviderType::Github,
-            "GitHubEnterpriseServer" => ProviderType::GithubEnterpriseServer,
-            other => ProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Bitbucket" => ProviderType::Bitbucket,
+"GitHub" => ProviderType::Github,
+"GitHubEnterpriseServer" => ProviderType::GithubEnterpriseServer,
+other => ProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ProviderType {
                 type Err = std::convert::Infallible;
 
@@ -422,27 +422,25 @@ impl std::str::FromStr for ProviderType {
                 }
             }
 impl ProviderType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProviderType::Bitbucket => "Bitbucket",
-            ProviderType::Github => "GitHub",
-            ProviderType::GithubEnterpriseServer => "GitHubEnterpriseServer",
-            ProviderType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Bitbucket", "GitHub", "GitHubEnterpriseServer"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ProviderType::Bitbucket => "Bitbucket",
+    ProviderType::Github => "GitHub",
+    ProviderType::GithubEnterpriseServer => "GitHubEnterpriseServer",
+    ProviderType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Bitbucket", "GitHub", "GitHubEnterpriseServer"]
+                }
+            }
 impl AsRef<str> for ProviderType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A resource that is used to connect third-party source providers with services like AWS CodePipeline.</p> 
 /// <p>Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.</p>
@@ -648,15 +646,15 @@ pub enum ConnectionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => ConnectionStatus::Available,
-            "ERROR" => ConnectionStatus::Error,
-            "PENDING" => ConnectionStatus::Pending,
-            other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => ConnectionStatus::Available,
+"ERROR" => ConnectionStatus::Error,
+"PENDING" => ConnectionStatus::Pending,
+other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConnectionStatus {
                 type Err = std::convert::Infallible;
 
@@ -665,25 +663,23 @@ impl std::str::FromStr for ConnectionStatus {
                 }
             }
 impl ConnectionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectionStatus::Available => "AVAILABLE",
-            ConnectionStatus::Error => "ERROR",
-            ConnectionStatus::Pending => "PENDING",
-            ConnectionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "ERROR", "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectionStatus::Available => "AVAILABLE",
+    ConnectionStatus::Error => "ERROR",
+    ConnectionStatus::Pending => "PENDING",
+    ConnectionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "ERROR", "PENDING"]
+                }
+            }
 impl AsRef<str> for ConnectionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

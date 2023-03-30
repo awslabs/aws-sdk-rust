@@ -47,14 +47,14 @@ pub enum DetailType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DetailType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BASIC" => DetailType::Basic,
-            "FULL" => DetailType::Full,
-            other => DetailType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BASIC" => DetailType::Basic,
+"FULL" => DetailType::Full,
+other => DetailType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DetailType {
                 type Err = std::convert::Infallible;
 
@@ -63,26 +63,24 @@ impl std::str::FromStr for DetailType {
                 }
             }
 impl DetailType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DetailType::Basic => "BASIC",
-            DetailType::Full => "FULL",
-            DetailType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BASIC", "FULL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DetailType::Basic => "BASIC",
+    DetailType::Full => "FULL",
+    DetailType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BASIC", "FULL"]
+                }
+            }
 impl AsRef<str> for DetailType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
 #[non_exhaustive]
@@ -232,14 +230,14 @@ pub enum NotificationRuleStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NotificationRuleStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => NotificationRuleStatus::Disabled,
-            "ENABLED" => NotificationRuleStatus::Enabled,
-            other => NotificationRuleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => NotificationRuleStatus::Disabled,
+"ENABLED" => NotificationRuleStatus::Enabled,
+other => NotificationRuleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NotificationRuleStatus {
                 type Err = std::convert::Infallible;
 
@@ -248,26 +246,24 @@ impl std::str::FromStr for NotificationRuleStatus {
                 }
             }
 impl NotificationRuleStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NotificationRuleStatus::Disabled => "DISABLED",
-            NotificationRuleStatus::Enabled => "ENABLED",
-            NotificationRuleStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED", "ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NotificationRuleStatus::Disabled => "DISABLED",
+    NotificationRuleStatus::Enabled => "ENABLED",
+    NotificationRuleStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "ENABLED"]
+                }
+            }
 impl AsRef<str> for NotificationRuleStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the targets specified for a notification rule.</p>
 #[non_exhaustive]
@@ -447,17 +443,17 @@ pub enum TargetStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => TargetStatus::Active,
-            "DEACTIVATED" => TargetStatus::Deactivated,
-            "INACTIVE" => TargetStatus::Inactive,
-            "PENDING" => TargetStatus::Pending,
-            "UNREACHABLE" => TargetStatus::Unreachable,
-            other => TargetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => TargetStatus::Active,
+"DEACTIVATED" => TargetStatus::Deactivated,
+"INACTIVE" => TargetStatus::Inactive,
+"PENDING" => TargetStatus::Pending,
+"UNREACHABLE" => TargetStatus::Unreachable,
+other => TargetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TargetStatus {
                 type Err = std::convert::Infallible;
 
@@ -466,29 +462,27 @@ impl std::str::FromStr for TargetStatus {
                 }
             }
 impl TargetStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TargetStatus::Active => "ACTIVE",
-            TargetStatus::Deactivated => "DEACTIVATED",
-            TargetStatus::Inactive => "INACTIVE",
-            TargetStatus::Pending => "PENDING",
-            TargetStatus::Unreachable => "UNREACHABLE",
-            TargetStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "DEACTIVATED", "INACTIVE", "PENDING", "UNREACHABLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TargetStatus::Active => "ACTIVE",
+    TargetStatus::Deactivated => "DEACTIVATED",
+    TargetStatus::Inactive => "INACTIVE",
+    TargetStatus::Pending => "PENDING",
+    TargetStatus::Unreachable => "UNREACHABLE",
+    TargetStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "DEACTIVATED", "INACTIVE", "PENDING", "UNREACHABLE"]
+                }
+            }
 impl AsRef<str> for TargetStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Chatbot topics as targets, you could specify a ListTargetsFilter Name as <code>TargetType</code> and a Value of <code>SNS</code>, and a Name of <code>TARGET_STATUS</code> and a Value of <code>ACTIVE</code>.</p>
 #[non_exhaustive]
@@ -609,15 +603,15 @@ pub enum ListTargetsFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListTargetsFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "TARGET_ADDRESS" => ListTargetsFilterName::TargetAddress,
-            "TARGET_STATUS" => ListTargetsFilterName::TargetStatus,
-            "TARGET_TYPE" => ListTargetsFilterName::TargetType,
-            other => ListTargetsFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "TARGET_ADDRESS" => ListTargetsFilterName::TargetAddress,
+"TARGET_STATUS" => ListTargetsFilterName::TargetStatus,
+"TARGET_TYPE" => ListTargetsFilterName::TargetType,
+other => ListTargetsFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ListTargetsFilterName {
                 type Err = std::convert::Infallible;
 
@@ -626,27 +620,25 @@ impl std::str::FromStr for ListTargetsFilterName {
                 }
             }
 impl ListTargetsFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ListTargetsFilterName::TargetAddress => "TARGET_ADDRESS",
-            ListTargetsFilterName::TargetStatus => "TARGET_STATUS",
-            ListTargetsFilterName::TargetType => "TARGET_TYPE",
-            ListTargetsFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "TARGET_ADDRESS", "TARGET_STATUS", "TARGET_TYPE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ListTargetsFilterName::TargetAddress => "TARGET_ADDRESS",
+    ListTargetsFilterName::TargetStatus => "TARGET_STATUS",
+    ListTargetsFilterName::TargetType => "TARGET_TYPE",
+    ListTargetsFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["TARGET_ADDRESS", "TARGET_STATUS", "TARGET_TYPE"]
+                }
+            }
 impl AsRef<str> for ListTargetsFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a specified notification rule.</p>
 #[non_exhaustive]
@@ -839,16 +831,16 @@ pub enum ListNotificationRulesFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListNotificationRulesFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED_BY" => ListNotificationRulesFilterName::CreatedBy,
-            "EVENT_TYPE_ID" => ListNotificationRulesFilterName::EventTypeId,
-            "RESOURCE" => ListNotificationRulesFilterName::Resource,
-            "TARGET_ADDRESS" => ListNotificationRulesFilterName::TargetAddress,
-            other => ListNotificationRulesFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATED_BY" => ListNotificationRulesFilterName::CreatedBy,
+"EVENT_TYPE_ID" => ListNotificationRulesFilterName::EventTypeId,
+"RESOURCE" => ListNotificationRulesFilterName::Resource,
+"TARGET_ADDRESS" => ListNotificationRulesFilterName::TargetAddress,
+other => ListNotificationRulesFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ListNotificationRulesFilterName {
                 type Err = std::convert::Infallible;
 
@@ -857,28 +849,26 @@ impl std::str::FromStr for ListNotificationRulesFilterName {
                 }
             }
 impl ListNotificationRulesFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ListNotificationRulesFilterName::CreatedBy => "CREATED_BY",
-            ListNotificationRulesFilterName::EventTypeId => "EVENT_TYPE_ID",
-            ListNotificationRulesFilterName::Resource => "RESOURCE",
-            ListNotificationRulesFilterName::TargetAddress => "TARGET_ADDRESS",
-            ListNotificationRulesFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED_BY", "EVENT_TYPE_ID", "RESOURCE", "TARGET_ADDRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ListNotificationRulesFilterName::CreatedBy => "CREATED_BY",
+    ListNotificationRulesFilterName::EventTypeId => "EVENT_TYPE_ID",
+    ListNotificationRulesFilterName::Resource => "RESOURCE",
+    ListNotificationRulesFilterName::TargetAddress => "TARGET_ADDRESS",
+    ListNotificationRulesFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED_BY", "EVENT_TYPE_ID", "RESOURCE", "TARGET_ADDRESS"]
+                }
+            }
 impl AsRef<str> for ListNotificationRulesFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Returns information about an event that has triggered a notification rule.</p>
 #[non_exhaustive]
@@ -1103,14 +1093,14 @@ pub enum ListEventTypesFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListEventTypesFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "RESOURCE_TYPE" => ListEventTypesFilterName::ResourceType,
-            "SERVICE_NAME" => ListEventTypesFilterName::ServiceName,
-            other => ListEventTypesFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "RESOURCE_TYPE" => ListEventTypesFilterName::ResourceType,
+"SERVICE_NAME" => ListEventTypesFilterName::ServiceName,
+other => ListEventTypesFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ListEventTypesFilterName {
                 type Err = std::convert::Infallible;
 
@@ -1119,24 +1109,22 @@ impl std::str::FromStr for ListEventTypesFilterName {
                 }
             }
 impl ListEventTypesFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ListEventTypesFilterName::ResourceType => "RESOURCE_TYPE",
-            ListEventTypesFilterName::ServiceName => "SERVICE_NAME",
-            ListEventTypesFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "RESOURCE_TYPE", "SERVICE_NAME"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ListEventTypesFilterName::ResourceType => "RESOURCE_TYPE",
+    ListEventTypesFilterName::ServiceName => "SERVICE_NAME",
+    ListEventTypesFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["RESOURCE_TYPE", "SERVICE_NAME"]
+                }
+            }
 impl AsRef<str> for ListEventTypesFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

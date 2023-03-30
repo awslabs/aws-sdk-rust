@@ -369,14 +369,14 @@ pub enum SavingsPlanOfferingPropertyKey {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanOfferingPropertyKey {
-    fn from(s: &str) -> Self {
-        match s {
-            "instanceFamily" => SavingsPlanOfferingPropertyKey::InstanceFamily,
-            "region" => SavingsPlanOfferingPropertyKey::Region,
-            other => SavingsPlanOfferingPropertyKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "instanceFamily" => SavingsPlanOfferingPropertyKey::InstanceFamily,
+"region" => SavingsPlanOfferingPropertyKey::Region,
+other => SavingsPlanOfferingPropertyKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanOfferingPropertyKey {
                 type Err = std::convert::Infallible;
 
@@ -385,26 +385,24 @@ impl std::str::FromStr for SavingsPlanOfferingPropertyKey {
                 }
             }
 impl SavingsPlanOfferingPropertyKey {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanOfferingPropertyKey::InstanceFamily => "instanceFamily",
-            SavingsPlanOfferingPropertyKey::Region => "region",
-            SavingsPlanOfferingPropertyKey::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "instanceFamily", "region"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanOfferingPropertyKey::InstanceFamily => "instanceFamily",
+    SavingsPlanOfferingPropertyKey::Region => "region",
+    SavingsPlanOfferingPropertyKey::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["instanceFamily", "region"]
+                }
+            }
 impl AsRef<str> for SavingsPlanOfferingPropertyKey {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CurrencyCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -453,14 +451,14 @@ pub enum CurrencyCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CurrencyCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CNY" => CurrencyCode::Cny,
-            "USD" => CurrencyCode::Usd,
-            other => CurrencyCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CNY" => CurrencyCode::Cny,
+"USD" => CurrencyCode::Usd,
+other => CurrencyCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CurrencyCode {
                 type Err = std::convert::Infallible;
 
@@ -469,26 +467,24 @@ impl std::str::FromStr for CurrencyCode {
                 }
             }
 impl CurrencyCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CurrencyCode::Cny => "CNY",
-            CurrencyCode::Usd => "USD",
-            CurrencyCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CNY", "USD"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CurrencyCode::Cny => "CNY",
+    CurrencyCode::Usd => "USD",
+    CurrencyCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CNY", "USD"]
+                }
+            }
 impl AsRef<str> for CurrencyCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SavingsPlanPaymentOption`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -540,15 +536,15 @@ pub enum SavingsPlanPaymentOption {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanPaymentOption {
-    fn from(s: &str) -> Self {
-        match s {
-            "All Upfront" => SavingsPlanPaymentOption::AllUpfront,
-            "No Upfront" => SavingsPlanPaymentOption::NoUpfront,
-            "Partial Upfront" => SavingsPlanPaymentOption::PartialUpfront,
-            other => SavingsPlanPaymentOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "All Upfront" => SavingsPlanPaymentOption::AllUpfront,
+"No Upfront" => SavingsPlanPaymentOption::NoUpfront,
+"Partial Upfront" => SavingsPlanPaymentOption::PartialUpfront,
+other => SavingsPlanPaymentOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanPaymentOption {
                 type Err = std::convert::Infallible;
 
@@ -557,27 +553,25 @@ impl std::str::FromStr for SavingsPlanPaymentOption {
                 }
             }
 impl SavingsPlanPaymentOption {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanPaymentOption::AllUpfront => "All Upfront",
-            SavingsPlanPaymentOption::NoUpfront => "No Upfront",
-            SavingsPlanPaymentOption::PartialUpfront => "Partial Upfront",
-            SavingsPlanPaymentOption::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "All Upfront", "No Upfront", "Partial Upfront"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanPaymentOption::AllUpfront => "All Upfront",
+    SavingsPlanPaymentOption::NoUpfront => "No Upfront",
+    SavingsPlanPaymentOption::PartialUpfront => "Partial Upfront",
+    SavingsPlanPaymentOption::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["All Upfront", "No Upfront", "Partial Upfront"]
+                }
+            }
 impl AsRef<str> for SavingsPlanPaymentOption {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SavingsPlanType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -629,15 +623,15 @@ pub enum SavingsPlanType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Compute" => SavingsPlanType::Compute,
-            "EC2Instance" => SavingsPlanType::Ec2Instance,
-            "SageMaker" => SavingsPlanType::Sagemaker,
-            other => SavingsPlanType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Compute" => SavingsPlanType::Compute,
+"EC2Instance" => SavingsPlanType::Ec2Instance,
+"SageMaker" => SavingsPlanType::Sagemaker,
+other => SavingsPlanType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanType {
                 type Err = std::convert::Infallible;
 
@@ -646,27 +640,25 @@ impl std::str::FromStr for SavingsPlanType {
                 }
             }
 impl SavingsPlanType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanType::Compute => "Compute",
-            SavingsPlanType::Ec2Instance => "EC2Instance",
-            SavingsPlanType::Sagemaker => "SageMaker",
-            SavingsPlanType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Compute", "EC2Instance", "SageMaker"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanType::Compute => "Compute",
+    SavingsPlanType::Ec2Instance => "EC2Instance",
+    SavingsPlanType::Sagemaker => "SageMaker",
+    SavingsPlanType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Compute", "EC2Instance", "SageMaker"]
+                }
+            }
 impl AsRef<str> for SavingsPlanType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SavingsPlanProductType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -721,16 +713,16 @@ pub enum SavingsPlanProductType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanProductType {
-    fn from(s: &str) -> Self {
-        match s {
-            "EC2" => SavingsPlanProductType::Ec2,
-            "Fargate" => SavingsPlanProductType::Fargate,
-            "Lambda" => SavingsPlanProductType::Lambda,
-            "SageMaker" => SavingsPlanProductType::Sagemaker,
-            other => SavingsPlanProductType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EC2" => SavingsPlanProductType::Ec2,
+"Fargate" => SavingsPlanProductType::Fargate,
+"Lambda" => SavingsPlanProductType::Lambda,
+"SageMaker" => SavingsPlanProductType::Sagemaker,
+other => SavingsPlanProductType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanProductType {
                 type Err = std::convert::Infallible;
 
@@ -739,28 +731,26 @@ impl std::str::FromStr for SavingsPlanProductType {
                 }
             }
 impl SavingsPlanProductType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanProductType::Ec2 => "EC2",
-            SavingsPlanProductType::Fargate => "Fargate",
-            SavingsPlanProductType::Lambda => "Lambda",
-            SavingsPlanProductType::Sagemaker => "SageMaker",
-            SavingsPlanProductType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EC2", "Fargate", "Lambda", "SageMaker"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanProductType::Ec2 => "EC2",
+    SavingsPlanProductType::Fargate => "Fargate",
+    SavingsPlanProductType::Lambda => "Lambda",
+    SavingsPlanProductType::Sagemaker => "SageMaker",
+    SavingsPlanProductType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EC2", "Fargate", "Lambda", "SageMaker"]
+                }
+            }
 impl AsRef<str> for SavingsPlanProductType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
@@ -884,14 +874,14 @@ pub enum SavingsPlanOfferingFilterAttribute {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanOfferingFilterAttribute {
-    fn from(s: &str) -> Self {
-        match s {
-            "instanceFamily" => SavingsPlanOfferingFilterAttribute::InstanceFamily,
-            "region" => SavingsPlanOfferingFilterAttribute::Region,
-            other => SavingsPlanOfferingFilterAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "instanceFamily" => SavingsPlanOfferingFilterAttribute::InstanceFamily,
+"region" => SavingsPlanOfferingFilterAttribute::Region,
+other => SavingsPlanOfferingFilterAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanOfferingFilterAttribute {
                 type Err = std::convert::Infallible;
 
@@ -900,26 +890,24 @@ impl std::str::FromStr for SavingsPlanOfferingFilterAttribute {
                 }
             }
 impl SavingsPlanOfferingFilterAttribute {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanOfferingFilterAttribute::InstanceFamily => "instanceFamily",
-            SavingsPlanOfferingFilterAttribute::Region => "region",
-            SavingsPlanOfferingFilterAttribute::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "instanceFamily", "region"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanOfferingFilterAttribute::InstanceFamily => "instanceFamily",
+    SavingsPlanOfferingFilterAttribute::Region => "region",
+    SavingsPlanOfferingFilterAttribute::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["instanceFamily", "region"]
+                }
+            }
 impl AsRef<str> for SavingsPlanOfferingFilterAttribute {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a Savings Plan offering rate.</p>
 #[non_exhaustive]
@@ -1235,17 +1223,17 @@ pub enum SavingsPlanRateServiceCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanRateServiceCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWSLambda" => SavingsPlanRateServiceCode::Lambda,
-            "AmazonEC2" => SavingsPlanRateServiceCode::Ec2,
-            "AmazonECS" => SavingsPlanRateServiceCode::Fargate,
-            "AmazonEKS" => SavingsPlanRateServiceCode::FargateEks,
-            "AmazonSageMaker" => SavingsPlanRateServiceCode::Sagemaker,
-            other => SavingsPlanRateServiceCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWSLambda" => SavingsPlanRateServiceCode::Lambda,
+"AmazonEC2" => SavingsPlanRateServiceCode::Ec2,
+"AmazonECS" => SavingsPlanRateServiceCode::Fargate,
+"AmazonEKS" => SavingsPlanRateServiceCode::FargateEks,
+"AmazonSageMaker" => SavingsPlanRateServiceCode::Sagemaker,
+other => SavingsPlanRateServiceCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanRateServiceCode {
                 type Err = std::convert::Infallible;
 
@@ -1254,29 +1242,27 @@ impl std::str::FromStr for SavingsPlanRateServiceCode {
                 }
             }
 impl SavingsPlanRateServiceCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanRateServiceCode::Lambda => "AWSLambda",
-            SavingsPlanRateServiceCode::Ec2 => "AmazonEC2",
-            SavingsPlanRateServiceCode::Fargate => "AmazonECS",
-            SavingsPlanRateServiceCode::FargateEks => "AmazonEKS",
-            SavingsPlanRateServiceCode::Sagemaker => "AmazonSageMaker",
-            SavingsPlanRateServiceCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWSLambda", "AmazonEC2", "AmazonECS", "AmazonEKS", "AmazonSageMaker"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanRateServiceCode::Lambda => "AWSLambda",
+    SavingsPlanRateServiceCode::Ec2 => "AmazonEC2",
+    SavingsPlanRateServiceCode::Fargate => "AmazonECS",
+    SavingsPlanRateServiceCode::FargateEks => "AmazonEKS",
+    SavingsPlanRateServiceCode::Sagemaker => "AmazonSageMaker",
+    SavingsPlanRateServiceCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWSLambda", "AmazonEC2", "AmazonECS", "AmazonEKS", "AmazonSageMaker"]
+                }
+            }
 impl AsRef<str> for SavingsPlanRateServiceCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SavingsPlanRateUnit`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1328,15 +1314,15 @@ pub enum SavingsPlanRateUnit {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanRateUnit {
-    fn from(s: &str) -> Self {
-        match s {
-            "Hrs" => SavingsPlanRateUnit::Hours,
-            "Lambda-GB-Second" => SavingsPlanRateUnit::LambdaGbSecond,
-            "Request" => SavingsPlanRateUnit::Request,
-            other => SavingsPlanRateUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Hrs" => SavingsPlanRateUnit::Hours,
+"Lambda-GB-Second" => SavingsPlanRateUnit::LambdaGbSecond,
+"Request" => SavingsPlanRateUnit::Request,
+other => SavingsPlanRateUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanRateUnit {
                 type Err = std::convert::Infallible;
 
@@ -1345,27 +1331,25 @@ impl std::str::FromStr for SavingsPlanRateUnit {
                 }
             }
 impl SavingsPlanRateUnit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanRateUnit::Hours => "Hrs",
-            SavingsPlanRateUnit::LambdaGbSecond => "Lambda-GB-Second",
-            SavingsPlanRateUnit::Request => "Request",
-            SavingsPlanRateUnit::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Hrs", "Lambda-GB-Second", "Request"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanRateUnit::Hours => "Hrs",
+    SavingsPlanRateUnit::LambdaGbSecond => "Lambda-GB-Second",
+    SavingsPlanRateUnit::Request => "Request",
+    SavingsPlanRateUnit::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Hrs", "Lambda-GB-Second", "Request"]
+                }
+            }
 impl AsRef<str> for SavingsPlanRateUnit {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a Savings Plan offering.</p>
 #[non_exhaustive]
@@ -1647,18 +1631,18 @@ pub enum SavingsPlanRateFilterAttribute {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanRateFilterAttribute {
-    fn from(s: &str) -> Self {
-        match s {
-            "instanceFamily" => SavingsPlanRateFilterAttribute::InstanceFamily,
-            "instanceType" => SavingsPlanRateFilterAttribute::InstanceType,
-            "productDescription" => SavingsPlanRateFilterAttribute::ProductDescription,
-            "productId" => SavingsPlanRateFilterAttribute::ProductId,
-            "region" => SavingsPlanRateFilterAttribute::Region,
-            "tenancy" => SavingsPlanRateFilterAttribute::Tenancy,
-            other => SavingsPlanRateFilterAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "instanceFamily" => SavingsPlanRateFilterAttribute::InstanceFamily,
+"instanceType" => SavingsPlanRateFilterAttribute::InstanceType,
+"productDescription" => SavingsPlanRateFilterAttribute::ProductDescription,
+"productId" => SavingsPlanRateFilterAttribute::ProductId,
+"region" => SavingsPlanRateFilterAttribute::Region,
+"tenancy" => SavingsPlanRateFilterAttribute::Tenancy,
+other => SavingsPlanRateFilterAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanRateFilterAttribute {
                 type Err = std::convert::Infallible;
 
@@ -1667,30 +1651,28 @@ impl std::str::FromStr for SavingsPlanRateFilterAttribute {
                 }
             }
 impl SavingsPlanRateFilterAttribute {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanRateFilterAttribute::InstanceFamily => "instanceFamily",
-            SavingsPlanRateFilterAttribute::InstanceType => "instanceType",
-            SavingsPlanRateFilterAttribute::ProductDescription => "productDescription",
-            SavingsPlanRateFilterAttribute::ProductId => "productId",
-            SavingsPlanRateFilterAttribute::Region => "region",
-            SavingsPlanRateFilterAttribute::Tenancy => "tenancy",
-            SavingsPlanRateFilterAttribute::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "instanceFamily", "instanceType", "productDescription", "productId", "region", "tenancy"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanRateFilterAttribute::InstanceFamily => "instanceFamily",
+    SavingsPlanRateFilterAttribute::InstanceType => "instanceType",
+    SavingsPlanRateFilterAttribute::ProductDescription => "productDescription",
+    SavingsPlanRateFilterAttribute::ProductId => "productId",
+    SavingsPlanRateFilterAttribute::Region => "region",
+    SavingsPlanRateFilterAttribute::Tenancy => "tenancy",
+    SavingsPlanRateFilterAttribute::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["instanceFamily", "instanceType", "productDescription", "productId", "region", "tenancy"]
+                }
+            }
 impl AsRef<str> for SavingsPlanRateFilterAttribute {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a Savings Plan.</p>
 #[non_exhaustive]
@@ -2137,18 +2119,18 @@ pub enum SavingsPlanState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanState {
-    fn from(s: &str) -> Self {
-        match s {
-            "active" => SavingsPlanState::Active,
-            "payment-failed" => SavingsPlanState::PaymentFailed,
-            "payment-pending" => SavingsPlanState::PaymentPending,
-            "queued" => SavingsPlanState::Queued,
-            "queued-deleted" => SavingsPlanState::QueuedDeleted,
-            "retired" => SavingsPlanState::Retired,
-            other => SavingsPlanState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "active" => SavingsPlanState::Active,
+"payment-failed" => SavingsPlanState::PaymentFailed,
+"payment-pending" => SavingsPlanState::PaymentPending,
+"queued" => SavingsPlanState::Queued,
+"queued-deleted" => SavingsPlanState::QueuedDeleted,
+"retired" => SavingsPlanState::Retired,
+other => SavingsPlanState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanState {
                 type Err = std::convert::Infallible;
 
@@ -2157,30 +2139,28 @@ impl std::str::FromStr for SavingsPlanState {
                 }
             }
 impl SavingsPlanState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanState::Active => "active",
-            SavingsPlanState::PaymentFailed => "payment-failed",
-            SavingsPlanState::PaymentPending => "payment-pending",
-            SavingsPlanState::Queued => "queued",
-            SavingsPlanState::QueuedDeleted => "queued-deleted",
-            SavingsPlanState::Retired => "retired",
-            SavingsPlanState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "active", "payment-failed", "payment-pending", "queued", "queued-deleted", "retired"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanState::Active => "active",
+    SavingsPlanState::PaymentFailed => "payment-failed",
+    SavingsPlanState::PaymentPending => "payment-pending",
+    SavingsPlanState::Queued => "queued",
+    SavingsPlanState::QueuedDeleted => "queued-deleted",
+    SavingsPlanState::Retired => "retired",
+    SavingsPlanState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["active", "payment-failed", "payment-pending", "queued", "queued-deleted", "retired"]
+                }
+            }
 impl AsRef<str> for SavingsPlanState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
@@ -2325,21 +2305,21 @@ pub enum SavingsPlansFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlansFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "commitment" => SavingsPlansFilterName::Commitment,
-            "ec2-instance-family" => SavingsPlansFilterName::Ec2InstanceFamily,
-            "end" => SavingsPlansFilterName::End,
-            "payment-option" => SavingsPlansFilterName::PaymentOption,
-            "region" => SavingsPlansFilterName::Region,
-            "savings-plan-type" => SavingsPlansFilterName::SavingsPlanType,
-            "start" => SavingsPlansFilterName::Start,
-            "term" => SavingsPlansFilterName::Term,
-            "upfront" => SavingsPlansFilterName::Upfront,
-            other => SavingsPlansFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "commitment" => SavingsPlansFilterName::Commitment,
+"ec2-instance-family" => SavingsPlansFilterName::Ec2InstanceFamily,
+"end" => SavingsPlansFilterName::End,
+"payment-option" => SavingsPlansFilterName::PaymentOption,
+"region" => SavingsPlansFilterName::Region,
+"savings-plan-type" => SavingsPlansFilterName::SavingsPlanType,
+"start" => SavingsPlansFilterName::Start,
+"term" => SavingsPlansFilterName::Term,
+"upfront" => SavingsPlansFilterName::Upfront,
+other => SavingsPlansFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlansFilterName {
                 type Err = std::convert::Infallible;
 
@@ -2348,33 +2328,31 @@ impl std::str::FromStr for SavingsPlansFilterName {
                 }
             }
 impl SavingsPlansFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlansFilterName::Commitment => "commitment",
-            SavingsPlansFilterName::Ec2InstanceFamily => "ec2-instance-family",
-            SavingsPlansFilterName::End => "end",
-            SavingsPlansFilterName::PaymentOption => "payment-option",
-            SavingsPlansFilterName::Region => "region",
-            SavingsPlansFilterName::SavingsPlanType => "savings-plan-type",
-            SavingsPlansFilterName::Start => "start",
-            SavingsPlansFilterName::Term => "term",
-            SavingsPlansFilterName::Upfront => "upfront",
-            SavingsPlansFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "commitment", "ec2-instance-family", "end", "payment-option", "region", "savings-plan-type", "start", "term", "upfront"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlansFilterName::Commitment => "commitment",
+    SavingsPlansFilterName::Ec2InstanceFamily => "ec2-instance-family",
+    SavingsPlansFilterName::End => "end",
+    SavingsPlansFilterName::PaymentOption => "payment-option",
+    SavingsPlansFilterName::Region => "region",
+    SavingsPlansFilterName::SavingsPlanType => "savings-plan-type",
+    SavingsPlansFilterName::Start => "start",
+    SavingsPlansFilterName::Term => "term",
+    SavingsPlansFilterName::Upfront => "upfront",
+    SavingsPlansFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["commitment", "ec2-instance-family", "end", "payment-option", "region", "savings-plan-type", "start", "term", "upfront"]
+                }
+            }
 impl AsRef<str> for SavingsPlansFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a Savings Plan rate.</p>
 #[non_exhaustive]
@@ -2690,17 +2668,17 @@ pub enum SavingsPlanRatePropertyKey {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanRatePropertyKey {
-    fn from(s: &str) -> Self {
-        match s {
-            "instanceFamily" => SavingsPlanRatePropertyKey::InstanceFamily,
-            "instanceType" => SavingsPlanRatePropertyKey::InstanceType,
-            "productDescription" => SavingsPlanRatePropertyKey::ProductDescription,
-            "region" => SavingsPlanRatePropertyKey::Region,
-            "tenancy" => SavingsPlanRatePropertyKey::Tenancy,
-            other => SavingsPlanRatePropertyKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "instanceFamily" => SavingsPlanRatePropertyKey::InstanceFamily,
+"instanceType" => SavingsPlanRatePropertyKey::InstanceType,
+"productDescription" => SavingsPlanRatePropertyKey::ProductDescription,
+"region" => SavingsPlanRatePropertyKey::Region,
+"tenancy" => SavingsPlanRatePropertyKey::Tenancy,
+other => SavingsPlanRatePropertyKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanRatePropertyKey {
                 type Err = std::convert::Infallible;
 
@@ -2709,29 +2687,27 @@ impl std::str::FromStr for SavingsPlanRatePropertyKey {
                 }
             }
 impl SavingsPlanRatePropertyKey {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanRatePropertyKey::InstanceFamily => "instanceFamily",
-            SavingsPlanRatePropertyKey::InstanceType => "instanceType",
-            SavingsPlanRatePropertyKey::ProductDescription => "productDescription",
-            SavingsPlanRatePropertyKey::Region => "region",
-            SavingsPlanRatePropertyKey::Tenancy => "tenancy",
-            SavingsPlanRatePropertyKey::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "instanceFamily", "instanceType", "productDescription", "region", "tenancy"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanRatePropertyKey::InstanceFamily => "instanceFamily",
+    SavingsPlanRatePropertyKey::InstanceType => "instanceType",
+    SavingsPlanRatePropertyKey::ProductDescription => "productDescription",
+    SavingsPlanRatePropertyKey::Region => "region",
+    SavingsPlanRatePropertyKey::Tenancy => "tenancy",
+    SavingsPlanRatePropertyKey::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["instanceFamily", "instanceType", "productDescription", "region", "tenancy"]
+                }
+            }
 impl AsRef<str> for SavingsPlanRatePropertyKey {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
@@ -2873,20 +2849,20 @@ pub enum SavingsPlanRateFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanRateFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "instanceType" => SavingsPlanRateFilterName::InstanceType,
-            "operation" => SavingsPlanRateFilterName::Operation,
-            "productDescription" => SavingsPlanRateFilterName::ProductDescription,
-            "productType" => SavingsPlanRateFilterName::ProductType,
-            "region" => SavingsPlanRateFilterName::Region,
-            "serviceCode" => SavingsPlanRateFilterName::ServiceCode,
-            "tenancy" => SavingsPlanRateFilterName::Tenancy,
-            "usageType" => SavingsPlanRateFilterName::UsageType,
-            other => SavingsPlanRateFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "instanceType" => SavingsPlanRateFilterName::InstanceType,
+"operation" => SavingsPlanRateFilterName::Operation,
+"productDescription" => SavingsPlanRateFilterName::ProductDescription,
+"productType" => SavingsPlanRateFilterName::ProductType,
+"region" => SavingsPlanRateFilterName::Region,
+"serviceCode" => SavingsPlanRateFilterName::ServiceCode,
+"tenancy" => SavingsPlanRateFilterName::Tenancy,
+"usageType" => SavingsPlanRateFilterName::UsageType,
+other => SavingsPlanRateFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlanRateFilterName {
                 type Err = std::convert::Infallible;
 
@@ -2895,30 +2871,28 @@ impl std::str::FromStr for SavingsPlanRateFilterName {
                 }
             }
 impl SavingsPlanRateFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanRateFilterName::InstanceType => "instanceType",
-            SavingsPlanRateFilterName::Operation => "operation",
-            SavingsPlanRateFilterName::ProductDescription => "productDescription",
-            SavingsPlanRateFilterName::ProductType => "productType",
-            SavingsPlanRateFilterName::Region => "region",
-            SavingsPlanRateFilterName::ServiceCode => "serviceCode",
-            SavingsPlanRateFilterName::Tenancy => "tenancy",
-            SavingsPlanRateFilterName::UsageType => "usageType",
-            SavingsPlanRateFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "instanceType", "operation", "productDescription", "productType", "region", "serviceCode", "tenancy", "usageType"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanRateFilterName::InstanceType => "instanceType",
+    SavingsPlanRateFilterName::Operation => "operation",
+    SavingsPlanRateFilterName::ProductDescription => "productDescription",
+    SavingsPlanRateFilterName::ProductType => "productType",
+    SavingsPlanRateFilterName::Region => "region",
+    SavingsPlanRateFilterName::ServiceCode => "serviceCode",
+    SavingsPlanRateFilterName::Tenancy => "tenancy",
+    SavingsPlanRateFilterName::UsageType => "usageType",
+    SavingsPlanRateFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["instanceType", "operation", "productDescription", "productType", "region", "serviceCode", "tenancy", "usageType"]
+                }
+            }
 impl AsRef<str> for SavingsPlanRateFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

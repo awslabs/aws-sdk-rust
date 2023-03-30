@@ -47,14 +47,14 @@ pub enum Origination {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Origination {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALLOW" => Origination::Allow,
-            "DENY" => Origination::Deny,
-            other => Origination::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALLOW" => Origination::Allow,
+"DENY" => Origination::Deny,
+other => Origination::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Origination {
                 type Err = std::convert::Infallible;
 
@@ -63,26 +63,24 @@ impl std::str::FromStr for Origination {
                 }
             }
 impl Origination {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Origination::Allow => "ALLOW",
-            Origination::Deny => "DENY",
-            Origination::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALLOW", "DENY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Origination::Allow => "ALLOW",
+    Origination::Deny => "DENY",
+    Origination::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALLOW", "DENY"]
+                }
+            }
 impl AsRef<str> for Origination {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// A Microsoft Smooth Streaming (MSS) packaging configuration.
 #[non_exhaustive]
@@ -333,15 +331,15 @@ pub enum StreamOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "ORIGINAL" => StreamOrder::Original,
-            "VIDEO_BITRATE_ASCENDING" => StreamOrder::VideoBitrateAscending,
-            "VIDEO_BITRATE_DESCENDING" => StreamOrder::VideoBitrateDescending,
-            other => StreamOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ORIGINAL" => StreamOrder::Original,
+"VIDEO_BITRATE_ASCENDING" => StreamOrder::VideoBitrateAscending,
+"VIDEO_BITRATE_DESCENDING" => StreamOrder::VideoBitrateDescending,
+other => StreamOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamOrder {
                 type Err = std::convert::Infallible;
 
@@ -350,27 +348,25 @@ impl std::str::FromStr for StreamOrder {
                 }
             }
 impl StreamOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamOrder::Original => "ORIGINAL",
-            StreamOrder::VideoBitrateAscending => "VIDEO_BITRATE_ASCENDING",
-            StreamOrder::VideoBitrateDescending => "VIDEO_BITRATE_DESCENDING",
-            StreamOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ORIGINAL", "VIDEO_BITRATE_ASCENDING", "VIDEO_BITRATE_DESCENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamOrder::Original => "ORIGINAL",
+    StreamOrder::VideoBitrateAscending => "VIDEO_BITRATE_ASCENDING",
+    StreamOrder::VideoBitrateDescending => "VIDEO_BITRATE_DESCENDING",
+    StreamOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ORIGINAL", "VIDEO_BITRATE_ASCENDING", "VIDEO_BITRATE_DESCENDING"]
+                }
+            }
 impl AsRef<str> for StreamOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// A Microsoft Smooth Streaming (MSS) encryption configuration.
 #[non_exhaustive]
@@ -713,22 +709,22 @@ pub enum PresetSpeke20Video {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PresetSpeke20Video {
-    fn from(s: &str) -> Self {
-        match s {
-            "PRESET-VIDEO-1" => PresetSpeke20Video::PresetVideo1,
-            "PRESET-VIDEO-2" => PresetSpeke20Video::PresetVideo2,
-            "PRESET-VIDEO-3" => PresetSpeke20Video::PresetVideo3,
-            "PRESET-VIDEO-4" => PresetSpeke20Video::PresetVideo4,
-            "PRESET-VIDEO-5" => PresetSpeke20Video::PresetVideo5,
-            "PRESET-VIDEO-6" => PresetSpeke20Video::PresetVideo6,
-            "PRESET-VIDEO-7" => PresetSpeke20Video::PresetVideo7,
-            "PRESET-VIDEO-8" => PresetSpeke20Video::PresetVideo8,
-            "SHARED" => PresetSpeke20Video::Shared,
-            "UNENCRYPTED" => PresetSpeke20Video::Unencrypted,
-            other => PresetSpeke20Video::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PRESET-VIDEO-1" => PresetSpeke20Video::PresetVideo1,
+"PRESET-VIDEO-2" => PresetSpeke20Video::PresetVideo2,
+"PRESET-VIDEO-3" => PresetSpeke20Video::PresetVideo3,
+"PRESET-VIDEO-4" => PresetSpeke20Video::PresetVideo4,
+"PRESET-VIDEO-5" => PresetSpeke20Video::PresetVideo5,
+"PRESET-VIDEO-6" => PresetSpeke20Video::PresetVideo6,
+"PRESET-VIDEO-7" => PresetSpeke20Video::PresetVideo7,
+"PRESET-VIDEO-8" => PresetSpeke20Video::PresetVideo8,
+"SHARED" => PresetSpeke20Video::Shared,
+"UNENCRYPTED" => PresetSpeke20Video::Unencrypted,
+other => PresetSpeke20Video::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PresetSpeke20Video {
                 type Err = std::convert::Infallible;
 
@@ -737,34 +733,32 @@ impl std::str::FromStr for PresetSpeke20Video {
                 }
             }
 impl PresetSpeke20Video {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PresetSpeke20Video::PresetVideo1 => "PRESET-VIDEO-1",
-            PresetSpeke20Video::PresetVideo2 => "PRESET-VIDEO-2",
-            PresetSpeke20Video::PresetVideo3 => "PRESET-VIDEO-3",
-            PresetSpeke20Video::PresetVideo4 => "PRESET-VIDEO-4",
-            PresetSpeke20Video::PresetVideo5 => "PRESET-VIDEO-5",
-            PresetSpeke20Video::PresetVideo6 => "PRESET-VIDEO-6",
-            PresetSpeke20Video::PresetVideo7 => "PRESET-VIDEO-7",
-            PresetSpeke20Video::PresetVideo8 => "PRESET-VIDEO-8",
-            PresetSpeke20Video::Shared => "SHARED",
-            PresetSpeke20Video::Unencrypted => "UNENCRYPTED",
-            PresetSpeke20Video::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PRESET-VIDEO-1", "PRESET-VIDEO-2", "PRESET-VIDEO-3", "PRESET-VIDEO-4", "PRESET-VIDEO-5", "PRESET-VIDEO-6", "PRESET-VIDEO-7", "PRESET-VIDEO-8", "SHARED", "UNENCRYPTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PresetSpeke20Video::PresetVideo1 => "PRESET-VIDEO-1",
+    PresetSpeke20Video::PresetVideo2 => "PRESET-VIDEO-2",
+    PresetSpeke20Video::PresetVideo3 => "PRESET-VIDEO-3",
+    PresetSpeke20Video::PresetVideo4 => "PRESET-VIDEO-4",
+    PresetSpeke20Video::PresetVideo5 => "PRESET-VIDEO-5",
+    PresetSpeke20Video::PresetVideo6 => "PRESET-VIDEO-6",
+    PresetSpeke20Video::PresetVideo7 => "PRESET-VIDEO-7",
+    PresetSpeke20Video::PresetVideo8 => "PRESET-VIDEO-8",
+    PresetSpeke20Video::Shared => "SHARED",
+    PresetSpeke20Video::Unencrypted => "UNENCRYPTED",
+    PresetSpeke20Video::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PRESET-VIDEO-1", "PRESET-VIDEO-2", "PRESET-VIDEO-3", "PRESET-VIDEO-4", "PRESET-VIDEO-5", "PRESET-VIDEO-6", "PRESET-VIDEO-7", "PRESET-VIDEO-8", "SHARED", "UNENCRYPTED"]
+                }
+            }
 impl AsRef<str> for PresetSpeke20Video {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PresetSpeke20Audio`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -822,17 +816,17 @@ pub enum PresetSpeke20Audio {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PresetSpeke20Audio {
-    fn from(s: &str) -> Self {
-        match s {
-            "PRESET-AUDIO-1" => PresetSpeke20Audio::PresetAudio1,
-            "PRESET-AUDIO-2" => PresetSpeke20Audio::PresetAudio2,
-            "PRESET-AUDIO-3" => PresetSpeke20Audio::PresetAudio3,
-            "SHARED" => PresetSpeke20Audio::Shared,
-            "UNENCRYPTED" => PresetSpeke20Audio::Unencrypted,
-            other => PresetSpeke20Audio::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PRESET-AUDIO-1" => PresetSpeke20Audio::PresetAudio1,
+"PRESET-AUDIO-2" => PresetSpeke20Audio::PresetAudio2,
+"PRESET-AUDIO-3" => PresetSpeke20Audio::PresetAudio3,
+"SHARED" => PresetSpeke20Audio::Shared,
+"UNENCRYPTED" => PresetSpeke20Audio::Unencrypted,
+other => PresetSpeke20Audio::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PresetSpeke20Audio {
                 type Err = std::convert::Infallible;
 
@@ -841,29 +835,27 @@ impl std::str::FromStr for PresetSpeke20Audio {
                 }
             }
 impl PresetSpeke20Audio {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PresetSpeke20Audio::PresetAudio1 => "PRESET-AUDIO-1",
-            PresetSpeke20Audio::PresetAudio2 => "PRESET-AUDIO-2",
-            PresetSpeke20Audio::PresetAudio3 => "PRESET-AUDIO-3",
-            PresetSpeke20Audio::Shared => "SHARED",
-            PresetSpeke20Audio::Unencrypted => "UNENCRYPTED",
-            PresetSpeke20Audio::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PRESET-AUDIO-1", "PRESET-AUDIO-2", "PRESET-AUDIO-3", "SHARED", "UNENCRYPTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PresetSpeke20Audio::PresetAudio1 => "PRESET-AUDIO-1",
+    PresetSpeke20Audio::PresetAudio2 => "PRESET-AUDIO-2",
+    PresetSpeke20Audio::PresetAudio3 => "PRESET-AUDIO-3",
+    PresetSpeke20Audio::Shared => "SHARED",
+    PresetSpeke20Audio::Unencrypted => "UNENCRYPTED",
+    PresetSpeke20Audio::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PRESET-AUDIO-1", "PRESET-AUDIO-2", "PRESET-AUDIO-3", "SHARED", "UNENCRYPTED"]
+                }
+            }
 impl AsRef<str> for PresetSpeke20Audio {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// An HTTP Live Streaming (HLS) packaging configuration.
 #[non_exhaustive]
@@ -1186,15 +1178,15 @@ pub enum PlaylistType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlaylistType {
-    fn from(s: &str) -> Self {
-        match s {
-            "EVENT" => PlaylistType::Event,
-            "NONE" => PlaylistType::None,
-            "VOD" => PlaylistType::Vod,
-            other => PlaylistType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EVENT" => PlaylistType::Event,
+"NONE" => PlaylistType::None,
+"VOD" => PlaylistType::Vod,
+other => PlaylistType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PlaylistType {
                 type Err = std::convert::Infallible;
 
@@ -1203,27 +1195,25 @@ impl std::str::FromStr for PlaylistType {
                 }
             }
 impl PlaylistType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PlaylistType::Event => "EVENT",
-            PlaylistType::None => "NONE",
-            PlaylistType::Vod => "VOD",
-            PlaylistType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EVENT", "NONE", "VOD"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PlaylistType::Event => "EVENT",
+    PlaylistType::None => "NONE",
+    PlaylistType::Vod => "VOD",
+    PlaylistType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EVENT", "NONE", "VOD"]
+                }
+            }
 impl AsRef<str> for PlaylistType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// An HTTP Live Streaming (HLS) encryption configuration.
 #[non_exhaustive]
@@ -1400,14 +1390,14 @@ pub enum EncryptionMethod {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "AES_128" => EncryptionMethod::Aes128,
-            "SAMPLE_AES" => EncryptionMethod::SampleAes,
-            other => EncryptionMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AES_128" => EncryptionMethod::Aes128,
+"SAMPLE_AES" => EncryptionMethod::SampleAes,
+other => EncryptionMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EncryptionMethod {
                 type Err = std::convert::Infallible;
 
@@ -1416,26 +1406,24 @@ impl std::str::FromStr for EncryptionMethod {
                 }
             }
 impl EncryptionMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EncryptionMethod::Aes128 => "AES_128",
-            EncryptionMethod::SampleAes => "SAMPLE_AES",
-            EncryptionMethod::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AES_128", "SAMPLE_AES"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EncryptionMethod::Aes128 => "AES_128",
+    EncryptionMethod::SampleAes => "SAMPLE_AES",
+    EncryptionMethod::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AES_128", "SAMPLE_AES"]
+                }
+            }
 impl AsRef<str> for EncryptionMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AdsOnDeliveryRestrictions`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1497,16 +1485,16 @@ pub enum AdsOnDeliveryRestrictions {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AdsOnDeliveryRestrictions {
-    fn from(s: &str) -> Self {
-        match s {
-            "BOTH" => AdsOnDeliveryRestrictions::Both,
-            "NONE" => AdsOnDeliveryRestrictions::None,
-            "RESTRICTED" => AdsOnDeliveryRestrictions::Restricted,
-            "UNRESTRICTED" => AdsOnDeliveryRestrictions::Unrestricted,
-            other => AdsOnDeliveryRestrictions::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BOTH" => AdsOnDeliveryRestrictions::Both,
+"NONE" => AdsOnDeliveryRestrictions::None,
+"RESTRICTED" => AdsOnDeliveryRestrictions::Restricted,
+"UNRESTRICTED" => AdsOnDeliveryRestrictions::Unrestricted,
+other => AdsOnDeliveryRestrictions::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AdsOnDeliveryRestrictions {
                 type Err = std::convert::Infallible;
 
@@ -1515,28 +1503,26 @@ impl std::str::FromStr for AdsOnDeliveryRestrictions {
                 }
             }
 impl AdsOnDeliveryRestrictions {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AdsOnDeliveryRestrictions::Both => "BOTH",
-            AdsOnDeliveryRestrictions::None => "NONE",
-            AdsOnDeliveryRestrictions::Restricted => "RESTRICTED",
-            AdsOnDeliveryRestrictions::Unrestricted => "UNRESTRICTED",
-            AdsOnDeliveryRestrictions::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BOTH", "NONE", "RESTRICTED", "UNRESTRICTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AdsOnDeliveryRestrictions::Both => "BOTH",
+    AdsOnDeliveryRestrictions::None => "NONE",
+    AdsOnDeliveryRestrictions::Restricted => "RESTRICTED",
+    AdsOnDeliveryRestrictions::Unrestricted => "UNRESTRICTED",
+    AdsOnDeliveryRestrictions::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BOTH", "NONE", "RESTRICTED", "UNRESTRICTED"]
+                }
+            }
 impl AsRef<str> for AdsOnDeliveryRestrictions {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AdTriggersElement`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1603,20 +1589,20 @@ pub enum AdTriggersElement {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AdTriggersElement {
-    fn from(s: &str) -> Self {
-        match s {
-            "BREAK" => AdTriggersElement::Break,
-            "DISTRIBUTOR_ADVERTISEMENT" => AdTriggersElement::DistributorAdvertisement,
-            "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY" => AdTriggersElement::DistributorOverlayPlacementOpportunity,
-            "DISTRIBUTOR_PLACEMENT_OPPORTUNITY" => AdTriggersElement::DistributorPlacementOpportunity,
-            "PROVIDER_ADVERTISEMENT" => AdTriggersElement::ProviderAdvertisement,
-            "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY" => AdTriggersElement::ProviderOverlayPlacementOpportunity,
-            "PROVIDER_PLACEMENT_OPPORTUNITY" => AdTriggersElement::ProviderPlacementOpportunity,
-            "SPLICE_INSERT" => AdTriggersElement::SpliceInsert,
-            other => AdTriggersElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BREAK" => AdTriggersElement::Break,
+"DISTRIBUTOR_ADVERTISEMENT" => AdTriggersElement::DistributorAdvertisement,
+"DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY" => AdTriggersElement::DistributorOverlayPlacementOpportunity,
+"DISTRIBUTOR_PLACEMENT_OPPORTUNITY" => AdTriggersElement::DistributorPlacementOpportunity,
+"PROVIDER_ADVERTISEMENT" => AdTriggersElement::ProviderAdvertisement,
+"PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY" => AdTriggersElement::ProviderOverlayPlacementOpportunity,
+"PROVIDER_PLACEMENT_OPPORTUNITY" => AdTriggersElement::ProviderPlacementOpportunity,
+"SPLICE_INSERT" => AdTriggersElement::SpliceInsert,
+other => AdTriggersElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AdTriggersElement {
                 type Err = std::convert::Infallible;
 
@@ -1625,32 +1611,30 @@ impl std::str::FromStr for AdTriggersElement {
                 }
             }
 impl AdTriggersElement {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AdTriggersElement::Break => "BREAK",
-            AdTriggersElement::DistributorAdvertisement => "DISTRIBUTOR_ADVERTISEMENT",
-            AdTriggersElement::DistributorOverlayPlacementOpportunity => "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY",
-            AdTriggersElement::DistributorPlacementOpportunity => "DISTRIBUTOR_PLACEMENT_OPPORTUNITY",
-            AdTriggersElement::ProviderAdvertisement => "PROVIDER_ADVERTISEMENT",
-            AdTriggersElement::ProviderOverlayPlacementOpportunity => "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY",
-            AdTriggersElement::ProviderPlacementOpportunity => "PROVIDER_PLACEMENT_OPPORTUNITY",
-            AdTriggersElement::SpliceInsert => "SPLICE_INSERT",
-            AdTriggersElement::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BREAK", "DISTRIBUTOR_ADVERTISEMENT", "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY", "DISTRIBUTOR_PLACEMENT_OPPORTUNITY", "PROVIDER_ADVERTISEMENT", "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY", "PROVIDER_PLACEMENT_OPPORTUNITY", "SPLICE_INSERT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AdTriggersElement::Break => "BREAK",
+    AdTriggersElement::DistributorAdvertisement => "DISTRIBUTOR_ADVERTISEMENT",
+    AdTriggersElement::DistributorOverlayPlacementOpportunity => "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY",
+    AdTriggersElement::DistributorPlacementOpportunity => "DISTRIBUTOR_PLACEMENT_OPPORTUNITY",
+    AdTriggersElement::ProviderAdvertisement => "PROVIDER_ADVERTISEMENT",
+    AdTriggersElement::ProviderOverlayPlacementOpportunity => "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY",
+    AdTriggersElement::ProviderPlacementOpportunity => "PROVIDER_PLACEMENT_OPPORTUNITY",
+    AdTriggersElement::SpliceInsert => "SPLICE_INSERT",
+    AdTriggersElement::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BREAK", "DISTRIBUTOR_ADVERTISEMENT", "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY", "DISTRIBUTOR_PLACEMENT_OPPORTUNITY", "PROVIDER_ADVERTISEMENT", "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY", "PROVIDER_PLACEMENT_OPPORTUNITY", "SPLICE_INSERT"]
+                }
+            }
 impl AsRef<str> for AdTriggersElement {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AdMarkers`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1705,16 +1689,16 @@ pub enum AdMarkers {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AdMarkers {
-    fn from(s: &str) -> Self {
-        match s {
-            "DATERANGE" => AdMarkers::Daterange,
-            "NONE" => AdMarkers::None,
-            "PASSTHROUGH" => AdMarkers::Passthrough,
-            "SCTE35_ENHANCED" => AdMarkers::Scte35Enhanced,
-            other => AdMarkers::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DATERANGE" => AdMarkers::Daterange,
+"NONE" => AdMarkers::None,
+"PASSTHROUGH" => AdMarkers::Passthrough,
+"SCTE35_ENHANCED" => AdMarkers::Scte35Enhanced,
+other => AdMarkers::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AdMarkers {
                 type Err = std::convert::Infallible;
 
@@ -1723,28 +1707,26 @@ impl std::str::FromStr for AdMarkers {
                 }
             }
 impl AdMarkers {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AdMarkers::Daterange => "DATERANGE",
-            AdMarkers::None => "NONE",
-            AdMarkers::Passthrough => "PASSTHROUGH",
-            AdMarkers::Scte35Enhanced => "SCTE35_ENHANCED",
-            AdMarkers::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DATERANGE", "NONE", "PASSTHROUGH", "SCTE35_ENHANCED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AdMarkers::Daterange => "DATERANGE",
+    AdMarkers::None => "NONE",
+    AdMarkers::Passthrough => "PASSTHROUGH",
+    AdMarkers::Scte35Enhanced => "SCTE35_ENHANCED",
+    AdMarkers::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DATERANGE", "NONE", "PASSTHROUGH", "SCTE35_ENHANCED"]
+                }
+            }
 impl AsRef<str> for AdMarkers {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
 #[non_exhaustive]
@@ -2152,16 +2134,16 @@ pub enum UtcTiming {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UtcTiming {
-    fn from(s: &str) -> Self {
-        match s {
-            "HTTP-HEAD" => UtcTiming::HttpHead,
-            "HTTP-ISO" => UtcTiming::HttpIso,
-            "HTTP-XSDATE" => UtcTiming::HttpXsdate,
-            "NONE" => UtcTiming::None,
-            other => UtcTiming::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "HTTP-HEAD" => UtcTiming::HttpHead,
+"HTTP-ISO" => UtcTiming::HttpIso,
+"HTTP-XSDATE" => UtcTiming::HttpXsdate,
+"NONE" => UtcTiming::None,
+other => UtcTiming::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UtcTiming {
                 type Err = std::convert::Infallible;
 
@@ -2170,28 +2152,26 @@ impl std::str::FromStr for UtcTiming {
                 }
             }
 impl UtcTiming {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UtcTiming::HttpHead => "HTTP-HEAD",
-            UtcTiming::HttpIso => "HTTP-ISO",
-            UtcTiming::HttpXsdate => "HTTP-XSDATE",
-            UtcTiming::None => "NONE",
-            UtcTiming::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "HTTP-HEAD", "HTTP-ISO", "HTTP-XSDATE", "NONE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UtcTiming::HttpHead => "HTTP-HEAD",
+    UtcTiming::HttpIso => "HTTP-ISO",
+    UtcTiming::HttpXsdate => "HTTP-XSDATE",
+    UtcTiming::None => "NONE",
+    UtcTiming::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["HTTP-HEAD", "HTTP-ISO", "HTTP-XSDATE", "NONE"]
+                }
+            }
 impl AsRef<str> for UtcTiming {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SegmentTemplateFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2243,15 +2223,15 @@ pub enum SegmentTemplateFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SegmentTemplateFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "NUMBER_WITH_DURATION" => SegmentTemplateFormat::NumberWithDuration,
-            "NUMBER_WITH_TIMELINE" => SegmentTemplateFormat::NumberWithTimeline,
-            "TIME_WITH_TIMELINE" => SegmentTemplateFormat::TimeWithTimeline,
-            other => SegmentTemplateFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NUMBER_WITH_DURATION" => SegmentTemplateFormat::NumberWithDuration,
+"NUMBER_WITH_TIMELINE" => SegmentTemplateFormat::NumberWithTimeline,
+"TIME_WITH_TIMELINE" => SegmentTemplateFormat::TimeWithTimeline,
+other => SegmentTemplateFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SegmentTemplateFormat {
                 type Err = std::convert::Infallible;
 
@@ -2260,27 +2240,25 @@ impl std::str::FromStr for SegmentTemplateFormat {
                 }
             }
 impl SegmentTemplateFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SegmentTemplateFormat::NumberWithDuration => "NUMBER_WITH_DURATION",
-            SegmentTemplateFormat::NumberWithTimeline => "NUMBER_WITH_TIMELINE",
-            SegmentTemplateFormat::TimeWithTimeline => "TIME_WITH_TIMELINE",
-            SegmentTemplateFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NUMBER_WITH_DURATION", "NUMBER_WITH_TIMELINE", "TIME_WITH_TIMELINE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SegmentTemplateFormat::NumberWithDuration => "NUMBER_WITH_DURATION",
+    SegmentTemplateFormat::NumberWithTimeline => "NUMBER_WITH_TIMELINE",
+    SegmentTemplateFormat::TimeWithTimeline => "TIME_WITH_TIMELINE",
+    SegmentTemplateFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NUMBER_WITH_DURATION", "NUMBER_WITH_TIMELINE", "TIME_WITH_TIMELINE"]
+                }
+            }
 impl AsRef<str> for SegmentTemplateFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Profile`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2335,16 +2313,16 @@ pub enum Profile {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Profile {
-    fn from(s: &str) -> Self {
-        match s {
-            "DVB_DASH_2014" => Profile::DvbDash2014,
-            "HBBTV_1_5" => Profile::Hbbtv15,
-            "HYBRIDCAST" => Profile::Hybridcast,
-            "NONE" => Profile::None,
-            other => Profile::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DVB_DASH_2014" => Profile::DvbDash2014,
+"HBBTV_1_5" => Profile::Hbbtv15,
+"HYBRIDCAST" => Profile::Hybridcast,
+"NONE" => Profile::None,
+other => Profile::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Profile {
                 type Err = std::convert::Infallible;
 
@@ -2353,28 +2331,26 @@ impl std::str::FromStr for Profile {
                 }
             }
 impl Profile {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Profile::DvbDash2014 => "DVB_DASH_2014",
-            Profile::Hbbtv15 => "HBBTV_1_5",
-            Profile::Hybridcast => "HYBRIDCAST",
-            Profile::None => "NONE",
-            Profile::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DVB_DASH_2014", "HBBTV_1_5", "HYBRIDCAST", "NONE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Profile::DvbDash2014 => "DVB_DASH_2014",
+    Profile::Hbbtv15 => "HBBTV_1_5",
+    Profile::Hybridcast => "HYBRIDCAST",
+    Profile::None => "NONE",
+    Profile::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DVB_DASH_2014", "HBBTV_1_5", "HYBRIDCAST", "NONE"]
+                }
+            }
 impl AsRef<str> for Profile {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PeriodTriggersElement`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2420,13 +2396,13 @@ pub enum PeriodTriggersElement {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PeriodTriggersElement {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADS" => PeriodTriggersElement::Ads,
-            other => PeriodTriggersElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADS" => PeriodTriggersElement::Ads,
+other => PeriodTriggersElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PeriodTriggersElement {
                 type Err = std::convert::Infallible;
 
@@ -2435,25 +2411,23 @@ impl std::str::FromStr for PeriodTriggersElement {
                 }
             }
 impl PeriodTriggersElement {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PeriodTriggersElement::Ads => "ADS",
-            PeriodTriggersElement::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PeriodTriggersElement::Ads => "ADS",
+    PeriodTriggersElement::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADS"]
+                }
+            }
 impl AsRef<str> for PeriodTriggersElement {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ManifestLayout`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2502,14 +2476,14 @@ pub enum ManifestLayout {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ManifestLayout {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPACT" => ManifestLayout::Compact,
-            "FULL" => ManifestLayout::Full,
-            other => ManifestLayout::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPACT" => ManifestLayout::Compact,
+"FULL" => ManifestLayout::Full,
+other => ManifestLayout::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ManifestLayout {
                 type Err = std::convert::Infallible;
 
@@ -2518,26 +2492,24 @@ impl std::str::FromStr for ManifestLayout {
                 }
             }
 impl ManifestLayout {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ManifestLayout::Compact => "COMPACT",
-            ManifestLayout::Full => "FULL",
-            ManifestLayout::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPACT", "FULL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ManifestLayout::Compact => "COMPACT",
+    ManifestLayout::Full => "FULL",
+    ManifestLayout::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPACT", "FULL"]
+                }
+            }
 impl AsRef<str> for ManifestLayout {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
 #[non_exhaustive]
@@ -3127,14 +3099,14 @@ pub enum CmafEncryptionMethod {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CmafEncryptionMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "AES_CTR" => CmafEncryptionMethod::AesCtr,
-            "SAMPLE_AES" => CmafEncryptionMethod::SampleAes,
-            other => CmafEncryptionMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AES_CTR" => CmafEncryptionMethod::AesCtr,
+"SAMPLE_AES" => CmafEncryptionMethod::SampleAes,
+other => CmafEncryptionMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CmafEncryptionMethod {
                 type Err = std::convert::Infallible;
 
@@ -3143,26 +3115,24 @@ impl std::str::FromStr for CmafEncryptionMethod {
                 }
             }
 impl CmafEncryptionMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CmafEncryptionMethod::AesCtr => "AES_CTR",
-            CmafEncryptionMethod::SampleAes => "SAMPLE_AES",
-            CmafEncryptionMethod::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AES_CTR", "SAMPLE_AES"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CmafEncryptionMethod::AesCtr => "AES_CTR",
+    CmafEncryptionMethod::SampleAes => "SAMPLE_AES",
+    CmafEncryptionMethod::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AES_CTR", "SAMPLE_AES"]
+                }
+            }
 impl AsRef<str> for CmafEncryptionMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// CDN Authorization credentials
 #[non_exhaustive]
@@ -4441,15 +4411,15 @@ pub enum Status {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => Status::Failed,
-            "IN_PROGRESS" => Status::InProgress,
-            "SUCCEEDED" => Status::Succeeded,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => Status::Failed,
+"IN_PROGRESS" => Status::InProgress,
+"SUCCEEDED" => Status::Succeeded,
+other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Status {
                 type Err = std::convert::Infallible;
 
@@ -4458,27 +4428,25 @@ impl std::str::FromStr for Status {
                 }
             }
 impl Status {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Status::Failed => "FAILED",
-            Status::InProgress => "IN_PROGRESS",
-            Status::Succeeded => "SUCCEEDED",
-            Status::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "IN_PROGRESS", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Status::Failed => "FAILED",
+    Status::InProgress => "IN_PROGRESS",
+    Status::Succeeded => "SUCCEEDED",
+    Status::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for Status {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Configuration parameters for where in an S3 bucket to place the harvested content
 #[non_exhaustive]

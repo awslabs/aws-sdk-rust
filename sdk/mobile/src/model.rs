@@ -373,15 +373,15 @@ pub enum ProjectState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProjectState {
-    fn from(s: &str) -> Self {
-        match s {
-            "IMPORTING" => ProjectState::Importing,
-            "NORMAL" => ProjectState::Normal,
-            "SYNCING" => ProjectState::Syncing,
-            other => ProjectState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "IMPORTING" => ProjectState::Importing,
+"NORMAL" => ProjectState::Normal,
+"SYNCING" => ProjectState::Syncing,
+other => ProjectState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ProjectState {
                 type Err = std::convert::Infallible;
 
@@ -390,27 +390,25 @@ impl std::str::FromStr for ProjectState {
                 }
             }
 impl ProjectState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProjectState::Importing => "IMPORTING",
-            ProjectState::Normal => "NORMAL",
-            ProjectState::Syncing => "SYNCING",
-            ProjectState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "IMPORTING", "NORMAL", "SYNCING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ProjectState::Importing => "IMPORTING",
+    ProjectState::Normal => "NORMAL",
+    ProjectState::Syncing => "SYNCING",
+    ProjectState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["IMPORTING", "NORMAL", "SYNCING"]
+                }
+            }
 impl AsRef<str> for ProjectState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Summary information about an AWS Mobile Hub project. </p>
 #[non_exhaustive]
@@ -696,19 +694,19 @@ pub enum Platform {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Platform {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANDROID" => Platform::Android,
-            "JAVASCRIPT" => Platform::Javascript,
-            "LINUX" => Platform::Linux,
-            "OBJC" => Platform::Objc,
-            "OSX" => Platform::Osx,
-            "SWIFT" => Platform::Swift,
-            "WINDOWS" => Platform::Windows,
-            other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ANDROID" => Platform::Android,
+"JAVASCRIPT" => Platform::Javascript,
+"LINUX" => Platform::Linux,
+"OBJC" => Platform::Objc,
+"OSX" => Platform::Osx,
+"SWIFT" => Platform::Swift,
+"WINDOWS" => Platform::Windows,
+other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Platform {
                 type Err = std::convert::Infallible;
 
@@ -717,29 +715,27 @@ impl std::str::FromStr for Platform {
                 }
             }
 impl Platform {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Platform::Android => "ANDROID",
-            Platform::Javascript => "JAVASCRIPT",
-            Platform::Linux => "LINUX",
-            Platform::Objc => "OBJC",
-            Platform::Osx => "OSX",
-            Platform::Swift => "SWIFT",
-            Platform::Windows => "WINDOWS",
-            Platform::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANDROID", "JAVASCRIPT", "LINUX", "OBJC", "OSX", "SWIFT", "WINDOWS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Platform::Android => "ANDROID",
+    Platform::Javascript => "JAVASCRIPT",
+    Platform::Linux => "LINUX",
+    Platform::Objc => "OBJC",
+    Platform::Osx => "OSX",
+    Platform::Swift => "SWIFT",
+    Platform::Windows => "WINDOWS",
+    Platform::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANDROID", "JAVASCRIPT", "LINUX", "OBJC", "OSX", "SWIFT", "WINDOWS"]
+                }
+            }
 impl AsRef<str> for Platform {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

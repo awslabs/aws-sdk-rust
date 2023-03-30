@@ -280,14 +280,14 @@ pub enum GetEntitlementFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GetEntitlementFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "CUSTOMER_IDENTIFIER" => GetEntitlementFilterName::CustomerIdentifier,
-            "DIMENSION" => GetEntitlementFilterName::Dimension,
-            other => GetEntitlementFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CUSTOMER_IDENTIFIER" => GetEntitlementFilterName::CustomerIdentifier,
+"DIMENSION" => GetEntitlementFilterName::Dimension,
+other => GetEntitlementFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GetEntitlementFilterName {
                 type Err = std::convert::Infallible;
 
@@ -296,24 +296,22 @@ impl std::str::FromStr for GetEntitlementFilterName {
                 }
             }
 impl GetEntitlementFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GetEntitlementFilterName::CustomerIdentifier => "CUSTOMER_IDENTIFIER",
-            GetEntitlementFilterName::Dimension => "DIMENSION",
-            GetEntitlementFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CUSTOMER_IDENTIFIER", "DIMENSION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GetEntitlementFilterName::CustomerIdentifier => "CUSTOMER_IDENTIFIER",
+    GetEntitlementFilterName::Dimension => "DIMENSION",
+    GetEntitlementFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CUSTOMER_IDENTIFIER", "DIMENSION"]
+                }
+            }
 impl AsRef<str> for GetEntitlementFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

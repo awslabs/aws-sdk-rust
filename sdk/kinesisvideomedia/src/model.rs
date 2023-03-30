@@ -207,18 +207,18 @@ pub enum StartSelectorType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StartSelectorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONTINUATION_TOKEN" => StartSelectorType::ContinuationToken,
-            "EARLIEST" => StartSelectorType::Earliest,
-            "FRAGMENT_NUMBER" => StartSelectorType::FragmentNumber,
-            "NOW" => StartSelectorType::Now,
-            "PRODUCER_TIMESTAMP" => StartSelectorType::ProducerTimestamp,
-            "SERVER_TIMESTAMP" => StartSelectorType::ServerTimestamp,
-            other => StartSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONTINUATION_TOKEN" => StartSelectorType::ContinuationToken,
+"EARLIEST" => StartSelectorType::Earliest,
+"FRAGMENT_NUMBER" => StartSelectorType::FragmentNumber,
+"NOW" => StartSelectorType::Now,
+"PRODUCER_TIMESTAMP" => StartSelectorType::ProducerTimestamp,
+"SERVER_TIMESTAMP" => StartSelectorType::ServerTimestamp,
+other => StartSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StartSelectorType {
                 type Err = std::convert::Infallible;
 
@@ -227,28 +227,26 @@ impl std::str::FromStr for StartSelectorType {
                 }
             }
 impl StartSelectorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StartSelectorType::ContinuationToken => "CONTINUATION_TOKEN",
-            StartSelectorType::Earliest => "EARLIEST",
-            StartSelectorType::FragmentNumber => "FRAGMENT_NUMBER",
-            StartSelectorType::Now => "NOW",
-            StartSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
-            StartSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            StartSelectorType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONTINUATION_TOKEN", "EARLIEST", "FRAGMENT_NUMBER", "NOW", "PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StartSelectorType::ContinuationToken => "CONTINUATION_TOKEN",
+    StartSelectorType::Earliest => "EARLIEST",
+    StartSelectorType::FragmentNumber => "FRAGMENT_NUMBER",
+    StartSelectorType::Now => "NOW",
+    StartSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
+    StartSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
+    StartSelectorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONTINUATION_TOKEN", "EARLIEST", "FRAGMENT_NUMBER", "NOW", "PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
+                }
+            }
 impl AsRef<str> for StartSelectorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

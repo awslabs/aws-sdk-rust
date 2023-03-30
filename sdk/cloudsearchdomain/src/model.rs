@@ -97,14 +97,14 @@ pub enum ContentType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "application/json" => ContentType::ApplicationJson,
-            "application/xml" => ContentType::ApplicationXml,
-            other => ContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "application/json" => ContentType::ApplicationJson,
+"application/xml" => ContentType::ApplicationXml,
+other => ContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ContentType {
                 type Err = std::convert::Infallible;
 
@@ -113,26 +113,24 @@ impl std::str::FromStr for ContentType {
                 }
             }
 impl ContentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ContentType::ApplicationJson => "application/json",
-            ContentType::ApplicationXml => "application/xml",
-            ContentType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "application/json", "application/xml"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ContentType::ApplicationJson => "application/json",
+    ContentType::ApplicationXml => "application/xml",
+    ContentType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["application/json", "application/xml"]
+                }
+            }
 impl AsRef<str> for ContentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Container for the suggestion information returned in a <code>SuggestResponse</code>.</p>
 #[non_exhaustive]
@@ -1077,16 +1075,16 @@ pub enum QueryParser {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueryParser {
-    fn from(s: &str) -> Self {
-        match s {
-            "dismax" => QueryParser::Dismax,
-            "lucene" => QueryParser::Lucene,
-            "simple" => QueryParser::Simple,
-            "structured" => QueryParser::Structured,
-            other => QueryParser::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "dismax" => QueryParser::Dismax,
+"lucene" => QueryParser::Lucene,
+"simple" => QueryParser::Simple,
+"structured" => QueryParser::Structured,
+other => QueryParser::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for QueryParser {
                 type Err = std::convert::Infallible;
 
@@ -1095,26 +1093,24 @@ impl std::str::FromStr for QueryParser {
                 }
             }
 impl QueryParser {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            QueryParser::Dismax => "dismax",
-            QueryParser::Lucene => "lucene",
-            QueryParser::Simple => "simple",
-            QueryParser::Structured => "structured",
-            QueryParser::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "dismax", "lucene", "simple", "structured"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    QueryParser::Dismax => "dismax",
+    QueryParser::Lucene => "lucene",
+    QueryParser::Simple => "simple",
+    QueryParser::Structured => "structured",
+    QueryParser::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["dismax", "lucene", "simple", "structured"]
+                }
+            }
 impl AsRef<str> for QueryParser {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

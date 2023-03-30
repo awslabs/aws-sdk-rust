@@ -293,14 +293,14 @@ pub enum EndpointAccessType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EndpointAccessType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CustomerOwnedIp" => EndpointAccessType::CustomerOwnedIp,
-            "Private" => EndpointAccessType::Private,
-            other => EndpointAccessType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CustomerOwnedIp" => EndpointAccessType::CustomerOwnedIp,
+"Private" => EndpointAccessType::Private,
+other => EndpointAccessType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EndpointAccessType {
                 type Err = std::convert::Infallible;
 
@@ -309,26 +309,24 @@ impl std::str::FromStr for EndpointAccessType {
                 }
             }
 impl EndpointAccessType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EndpointAccessType::CustomerOwnedIp => "CustomerOwnedIp",
-            EndpointAccessType::Private => "Private",
-            EndpointAccessType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CustomerOwnedIp", "Private"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EndpointAccessType::CustomerOwnedIp => "CustomerOwnedIp",
+    EndpointAccessType::Private => "Private",
+    EndpointAccessType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CustomerOwnedIp", "Private"]
+                }
+            }
 impl AsRef<str> for EndpointAccessType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The container for the network interface.</p>
 #[non_exhaustive]
@@ -430,15 +428,15 @@ pub enum EndpointStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EndpointStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Available" => EndpointStatus::Available,
-            "Deleting" => EndpointStatus::Deleting,
-            "Pending" => EndpointStatus::Pending,
-            other => EndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Available" => EndpointStatus::Available,
+"Deleting" => EndpointStatus::Deleting,
+"Pending" => EndpointStatus::Pending,
+other => EndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EndpointStatus {
                 type Err = std::convert::Infallible;
 
@@ -447,25 +445,23 @@ impl std::str::FromStr for EndpointStatus {
                 }
             }
 impl EndpointStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EndpointStatus::Available => "Available",
-            EndpointStatus::Deleting => "Deleting",
-            EndpointStatus::Pending => "Pending",
-            EndpointStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Available", "Deleting", "Pending"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EndpointStatus::Available => "Available",
+    EndpointStatus::Deleting => "Deleting",
+    EndpointStatus::Pending => "Pending",
+    EndpointStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Available", "Deleting", "Pending"]
+                }
+            }
 impl AsRef<str> for EndpointStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

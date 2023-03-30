@@ -74,22 +74,20 @@ impl ValidationExceptionField {
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct ValidationExceptionReason(String);
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CannotParse", "FieldValidationFailed", "Missing", "Other", "UnknownOperation"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for ValidationExceptionReason where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        ValidationExceptionReason(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CannotParse", "FieldValidationFailed", "Missing", "Other", "UnknownOperation"]
+                }
+            }
+impl<T> std::convert::From<T> for ValidationExceptionReason where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    ValidationExceptionReason(s.as_ref().to_owned())
+                }
+            }
 
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
@@ -644,22 +642,20 @@ impl BatchItemError {
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct BatchItemErrorCode(String);
 impl BatchItemErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDeniedError", "ConflictError", "InternalServerError", "ResourceNotFoundError", "ThrottlingError", "ValidationError"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for BatchItemErrorCode where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        BatchItemErrorCode(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDeniedError", "ConflictError", "InternalServerError", "ResourceNotFoundError", "ThrottlingError", "ValidationError"]
+                }
+            }
+impl<T> std::convert::From<T> for BatchItemErrorCode where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    BatchItemErrorCode(s.as_ref().to_owned())
+                }
+            }
 
 /// <p>Contains the position update details for a device.</p>
 #[non_exhaustive]
@@ -1121,44 +1117,40 @@ impl ListTrackersResponseEntry {
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct PricingPlan(String);
 impl PricingPlan {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MobileAssetManagement", "MobileAssetTracking", "RequestBasedUsage"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for PricingPlan where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        PricingPlan(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MobileAssetManagement", "MobileAssetTracking", "RequestBasedUsage"]
+                }
+            }
+impl<T> std::convert::From<T> for PricingPlan where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    PricingPlan(s.as_ref().to_owned())
+                }
+            }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct PositionFiltering(String);
 impl PositionFiltering {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccuracyBased", "DistanceBased", "TimeBased"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for PositionFiltering where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        PositionFiltering(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccuracyBased", "DistanceBased", "TimeBased"]
+                }
+            }
+impl<T> std::convert::From<T> for PositionFiltering where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    PositionFiltering(s.as_ref().to_owned())
+                }
+            }
 
 /// <p>A summary of the calculated route matrix.</p>
 #[non_exhaustive]
@@ -1296,22 +1288,20 @@ impl CalculateRouteMatrixSummary {
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct DistanceUnit(String);
 impl DistanceUnit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Kilometers", "Miles"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for DistanceUnit where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        DistanceUnit(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Kilometers", "Miles"]
+                }
+            }
+impl<T> std::convert::From<T> for DistanceUnit where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    DistanceUnit(s.as_ref().to_owned())
+                }
+            }
 
 /// <p>The result for the calculated route of one <code>DeparturePosition</code> <code>DestinationPosition</code> pair.</p>
 #[non_exhaustive]
@@ -1494,22 +1484,20 @@ impl RouteMatrixEntryError {
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct RouteMatrixErrorCode(String);
 impl RouteMatrixErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DeparturePositionNotFound", "DestinationPositionNotFound", "OtherValidationError", "PositionsNotFound", "RouteNotFound", "RouteTooLong"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for RouteMatrixErrorCode where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        RouteMatrixErrorCode(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DeparturePositionNotFound", "DestinationPositionNotFound", "OtherValidationError", "PositionsNotFound", "RouteNotFound", "RouteTooLong"]
+                }
+            }
+impl<T> std::convert::From<T> for RouteMatrixErrorCode where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    RouteMatrixErrorCode(s.as_ref().to_owned())
+                }
+            }
 
 /// <p>Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
@@ -1724,22 +1712,20 @@ impl TruckWeight {
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct VehicleWeightUnit(String);
 impl VehicleWeightUnit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Kilograms", "Pounds"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for VehicleWeightUnit where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        VehicleWeightUnit(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Kilograms", "Pounds"]
+                }
+            }
+impl<T> std::convert::From<T> for VehicleWeightUnit where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    VehicleWeightUnit(s.as_ref().to_owned())
+                }
+            }
 
 /// <p>Contains details about the truck dimensions in the unit of measurement that you specify. Used to filter out roads that can't support or allow the specified dimensions for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
@@ -1917,22 +1903,20 @@ impl TruckDimensions {
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct DimensionUnit(String);
 impl DimensionUnit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Feet", "Meters"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for DimensionUnit where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        DimensionUnit(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Feet", "Meters"]
+                }
+            }
+impl<T> std::convert::From<T> for DimensionUnit where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    DimensionUnit(s.as_ref().to_owned())
+                }
+            }
 
 /// <p>Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Car</code>.</p>
 #[non_exhaustive]
@@ -2024,22 +2008,20 @@ impl CalculateRouteCarModeOptions {
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct TravelMode(String);
 impl TravelMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Bicycle", "Car", "Motorcycle", "Truck", "Walking"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for TravelMode where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        TravelMode(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Bicycle", "Car", "Motorcycle", "Truck", "Walking"]
+                }
+            }
+impl<T> std::convert::From<T> for TravelMode where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    TravelMode(s.as_ref().to_owned())
+                }
+            }
 
 /// <p>A summary of the calculated route.</p>
 #[non_exhaustive]
@@ -4643,22 +4625,20 @@ impl DataSourceConfiguration {
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct IntendedUse(String);
 impl IntendedUse {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SingleUse", "Storage"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for IntendedUse where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        IntendedUse(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SingleUse", "Storage"]
+                }
+            }
+impl<T> std::convert::From<T> for IntendedUse where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    IntendedUse(s.as_ref().to_owned())
+                }
+            }
 
 /// <p>Contains details of an existing map resource in your AWS account.</p>
 #[non_exhaustive]

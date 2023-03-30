@@ -452,19 +452,19 @@ pub enum StatusString {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StatusString {
-    fn from(s: &str) -> Self {
-        match s {
-            "ABORTED" => StatusString::Aborted,
-            "ALL" => StatusString::All,
-            "FAILED" => StatusString::Failed,
-            "FINISHED" => StatusString::Finished,
-            "PICKED" => StatusString::Picked,
-            "STARTED" => StatusString::Started,
-            "SUBMITTED" => StatusString::Submitted,
-            other => StatusString::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ABORTED" => StatusString::Aborted,
+"ALL" => StatusString::All,
+"FAILED" => StatusString::Failed,
+"FINISHED" => StatusString::Finished,
+"PICKED" => StatusString::Picked,
+"STARTED" => StatusString::Started,
+"SUBMITTED" => StatusString::Submitted,
+other => StatusString::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StatusString {
                 type Err = std::convert::Infallible;
 
@@ -473,31 +473,29 @@ impl std::str::FromStr for StatusString {
                 }
             }
 impl StatusString {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StatusString::Aborted => "ABORTED",
-            StatusString::All => "ALL",
-            StatusString::Failed => "FAILED",
-            StatusString::Finished => "FINISHED",
-            StatusString::Picked => "PICKED",
-            StatusString::Started => "STARTED",
-            StatusString::Submitted => "SUBMITTED",
-            StatusString::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ABORTED", "ALL", "FAILED", "FINISHED", "PICKED", "STARTED", "SUBMITTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StatusString::Aborted => "ABORTED",
+    StatusString::All => "ALL",
+    StatusString::Failed => "FAILED",
+    StatusString::Finished => "FINISHED",
+    StatusString::Picked => "PICKED",
+    StatusString::Started => "STARTED",
+    StatusString::Submitted => "SUBMITTED",
+    StatusString::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ABORTED", "ALL", "FAILED", "FINISHED", "PICKED", "STARTED", "SUBMITTED"]
+                }
+            }
 impl AsRef<str> for StatusString {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The properties (metadata) of a column. </p>
 #[non_exhaustive]
@@ -1174,18 +1172,18 @@ pub enum StatementStatusString {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StatementStatusString {
-    fn from(s: &str) -> Self {
-        match s {
-            "ABORTED" => StatementStatusString::Aborted,
-            "FAILED" => StatementStatusString::Failed,
-            "FINISHED" => StatementStatusString::Finished,
-            "PICKED" => StatementStatusString::Picked,
-            "STARTED" => StatementStatusString::Started,
-            "SUBMITTED" => StatementStatusString::Submitted,
-            other => StatementStatusString::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ABORTED" => StatementStatusString::Aborted,
+"FAILED" => StatementStatusString::Failed,
+"FINISHED" => StatementStatusString::Finished,
+"PICKED" => StatementStatusString::Picked,
+"STARTED" => StatementStatusString::Started,
+"SUBMITTED" => StatementStatusString::Submitted,
+other => StatementStatusString::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StatementStatusString {
                 type Err = std::convert::Infallible;
 
@@ -1194,28 +1192,26 @@ impl std::str::FromStr for StatementStatusString {
                 }
             }
 impl StatementStatusString {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StatementStatusString::Aborted => "ABORTED",
-            StatementStatusString::Failed => "FAILED",
-            StatementStatusString::Finished => "FINISHED",
-            StatementStatusString::Picked => "PICKED",
-            StatementStatusString::Started => "STARTED",
-            StatementStatusString::Submitted => "SUBMITTED",
-            StatementStatusString::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ABORTED", "FAILED", "FINISHED", "PICKED", "STARTED", "SUBMITTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StatementStatusString::Aborted => "ABORTED",
+    StatementStatusString::Failed => "FAILED",
+    StatementStatusString::Finished => "FINISHED",
+    StatementStatusString::Picked => "PICKED",
+    StatementStatusString::Started => "STARTED",
+    StatementStatusString::Submitted => "SUBMITTED",
+    StatementStatusString::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ABORTED", "FAILED", "FINISHED", "PICKED", "STARTED", "SUBMITTED"]
+                }
+            }
 impl AsRef<str> for StatementStatusString {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

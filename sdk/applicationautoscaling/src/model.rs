@@ -189,32 +189,32 @@ pub enum ScalableDimension {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalableDimension {
-    fn from(s: &str) -> Self {
-        match s {
-            "appstream:fleet:DesiredCapacity" => ScalableDimension::AppstreamFleetDesiredCapacity,
-            "cassandra:table:ReadCapacityUnits" => ScalableDimension::CassandraTableReadCapacityUnits,
-            "cassandra:table:WriteCapacityUnits" => ScalableDimension::CassandraTableWriteCapacityUnits,
-            "comprehend:document-classifier-endpoint:DesiredInferenceUnits" => ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits,
-            "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits" => ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits,
-            "custom-resource:ResourceType:Property" => ScalableDimension::CustomResourceScalableDimension,
-            "dynamodb:index:ReadCapacityUnits" => ScalableDimension::DynamoDbIndexReadCapacityUnits,
-            "dynamodb:index:WriteCapacityUnits" => ScalableDimension::DynamoDbIndexWriteCapacityUnits,
-            "dynamodb:table:ReadCapacityUnits" => ScalableDimension::DynamoDbTableReadCapacityUnits,
-            "dynamodb:table:WriteCapacityUnits" => ScalableDimension::DynamoDbTableWriteCapacityUnits,
-            "ec2:spot-fleet-request:TargetCapacity" => ScalableDimension::Ec2SpotFleetRequestTargetCapacity,
-            "ecs:service:DesiredCount" => ScalableDimension::EcsServiceDesiredCount,
-            "elasticache:replication-group:NodeGroups" => ScalableDimension::ElastiCacheReplicationGroupNodeGroups,
-            "elasticache:replication-group:Replicas" => ScalableDimension::ElastiCacheReplicationGroupReplicas,
-            "elasticmapreduce:instancegroup:InstanceCount" => ScalableDimension::EmrInstanceGroupInstanceCount,
-            "kafka:broker-storage:VolumeSize" => ScalableDimension::KafkaBrokerStorageVolumeSize,
-            "lambda:function:ProvisionedConcurrency" => ScalableDimension::LambdaFunctionProvisionedConcurrency,
-            "neptune:cluster:ReadReplicaCount" => ScalableDimension::NeptuneClusterReadReplicaCount,
-            "rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
-            "sagemaker:variant:DesiredInstanceCount" => ScalableDimension::SageMakerVariantDesiredInstanceCount,
-            other => ScalableDimension::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "appstream:fleet:DesiredCapacity" => ScalableDimension::AppstreamFleetDesiredCapacity,
+"cassandra:table:ReadCapacityUnits" => ScalableDimension::CassandraTableReadCapacityUnits,
+"cassandra:table:WriteCapacityUnits" => ScalableDimension::CassandraTableWriteCapacityUnits,
+"comprehend:document-classifier-endpoint:DesiredInferenceUnits" => ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits,
+"comprehend:entity-recognizer-endpoint:DesiredInferenceUnits" => ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits,
+"custom-resource:ResourceType:Property" => ScalableDimension::CustomResourceScalableDimension,
+"dynamodb:index:ReadCapacityUnits" => ScalableDimension::DynamoDbIndexReadCapacityUnits,
+"dynamodb:index:WriteCapacityUnits" => ScalableDimension::DynamoDbIndexWriteCapacityUnits,
+"dynamodb:table:ReadCapacityUnits" => ScalableDimension::DynamoDbTableReadCapacityUnits,
+"dynamodb:table:WriteCapacityUnits" => ScalableDimension::DynamoDbTableWriteCapacityUnits,
+"ec2:spot-fleet-request:TargetCapacity" => ScalableDimension::Ec2SpotFleetRequestTargetCapacity,
+"ecs:service:DesiredCount" => ScalableDimension::EcsServiceDesiredCount,
+"elasticache:replication-group:NodeGroups" => ScalableDimension::ElastiCacheReplicationGroupNodeGroups,
+"elasticache:replication-group:Replicas" => ScalableDimension::ElastiCacheReplicationGroupReplicas,
+"elasticmapreduce:instancegroup:InstanceCount" => ScalableDimension::EmrInstanceGroupInstanceCount,
+"kafka:broker-storage:VolumeSize" => ScalableDimension::KafkaBrokerStorageVolumeSize,
+"lambda:function:ProvisionedConcurrency" => ScalableDimension::LambdaFunctionProvisionedConcurrency,
+"neptune:cluster:ReadReplicaCount" => ScalableDimension::NeptuneClusterReadReplicaCount,
+"rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
+"sagemaker:variant:DesiredInstanceCount" => ScalableDimension::SageMakerVariantDesiredInstanceCount,
+other => ScalableDimension::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScalableDimension {
                 type Err = std::convert::Infallible;
 
@@ -223,44 +223,42 @@ impl std::str::FromStr for ScalableDimension {
                 }
             }
 impl ScalableDimension {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalableDimension::AppstreamFleetDesiredCapacity => "appstream:fleet:DesiredCapacity",
-            ScalableDimension::CassandraTableReadCapacityUnits => "cassandra:table:ReadCapacityUnits",
-            ScalableDimension::CassandraTableWriteCapacityUnits => "cassandra:table:WriteCapacityUnits",
-            ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits => "comprehend:document-classifier-endpoint:DesiredInferenceUnits",
-            ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits => "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits",
-            ScalableDimension::CustomResourceScalableDimension => "custom-resource:ResourceType:Property",
-            ScalableDimension::DynamoDbIndexReadCapacityUnits => "dynamodb:index:ReadCapacityUnits",
-            ScalableDimension::DynamoDbIndexWriteCapacityUnits => "dynamodb:index:WriteCapacityUnits",
-            ScalableDimension::DynamoDbTableReadCapacityUnits => "dynamodb:table:ReadCapacityUnits",
-            ScalableDimension::DynamoDbTableWriteCapacityUnits => "dynamodb:table:WriteCapacityUnits",
-            ScalableDimension::Ec2SpotFleetRequestTargetCapacity => "ec2:spot-fleet-request:TargetCapacity",
-            ScalableDimension::EcsServiceDesiredCount => "ecs:service:DesiredCount",
-            ScalableDimension::ElastiCacheReplicationGroupNodeGroups => "elasticache:replication-group:NodeGroups",
-            ScalableDimension::ElastiCacheReplicationGroupReplicas => "elasticache:replication-group:Replicas",
-            ScalableDimension::EmrInstanceGroupInstanceCount => "elasticmapreduce:instancegroup:InstanceCount",
-            ScalableDimension::KafkaBrokerStorageVolumeSize => "kafka:broker-storage:VolumeSize",
-            ScalableDimension::LambdaFunctionProvisionedConcurrency => "lambda:function:ProvisionedConcurrency",
-            ScalableDimension::NeptuneClusterReadReplicaCount => "neptune:cluster:ReadReplicaCount",
-            ScalableDimension::RdsClusterReadReplicaCount => "rds:cluster:ReadReplicaCount",
-            ScalableDimension::SageMakerVariantDesiredInstanceCount => "sagemaker:variant:DesiredInstanceCount",
-            ScalableDimension::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "appstream:fleet:DesiredCapacity", "cassandra:table:ReadCapacityUnits", "cassandra:table:WriteCapacityUnits", "comprehend:document-classifier-endpoint:DesiredInferenceUnits", "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits", "custom-resource:ResourceType:Property", "dynamodb:index:ReadCapacityUnits", "dynamodb:index:WriteCapacityUnits", "dynamodb:table:ReadCapacityUnits", "dynamodb:table:WriteCapacityUnits", "ec2:spot-fleet-request:TargetCapacity", "ecs:service:DesiredCount", "elasticache:replication-group:NodeGroups", "elasticache:replication-group:Replicas", "elasticmapreduce:instancegroup:InstanceCount", "kafka:broker-storage:VolumeSize", "lambda:function:ProvisionedConcurrency", "neptune:cluster:ReadReplicaCount", "rds:cluster:ReadReplicaCount", "sagemaker:variant:DesiredInstanceCount"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalableDimension::AppstreamFleetDesiredCapacity => "appstream:fleet:DesiredCapacity",
+    ScalableDimension::CassandraTableReadCapacityUnits => "cassandra:table:ReadCapacityUnits",
+    ScalableDimension::CassandraTableWriteCapacityUnits => "cassandra:table:WriteCapacityUnits",
+    ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits => "comprehend:document-classifier-endpoint:DesiredInferenceUnits",
+    ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits => "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits",
+    ScalableDimension::CustomResourceScalableDimension => "custom-resource:ResourceType:Property",
+    ScalableDimension::DynamoDbIndexReadCapacityUnits => "dynamodb:index:ReadCapacityUnits",
+    ScalableDimension::DynamoDbIndexWriteCapacityUnits => "dynamodb:index:WriteCapacityUnits",
+    ScalableDimension::DynamoDbTableReadCapacityUnits => "dynamodb:table:ReadCapacityUnits",
+    ScalableDimension::DynamoDbTableWriteCapacityUnits => "dynamodb:table:WriteCapacityUnits",
+    ScalableDimension::Ec2SpotFleetRequestTargetCapacity => "ec2:spot-fleet-request:TargetCapacity",
+    ScalableDimension::EcsServiceDesiredCount => "ecs:service:DesiredCount",
+    ScalableDimension::ElastiCacheReplicationGroupNodeGroups => "elasticache:replication-group:NodeGroups",
+    ScalableDimension::ElastiCacheReplicationGroupReplicas => "elasticache:replication-group:Replicas",
+    ScalableDimension::EmrInstanceGroupInstanceCount => "elasticmapreduce:instancegroup:InstanceCount",
+    ScalableDimension::KafkaBrokerStorageVolumeSize => "kafka:broker-storage:VolumeSize",
+    ScalableDimension::LambdaFunctionProvisionedConcurrency => "lambda:function:ProvisionedConcurrency",
+    ScalableDimension::NeptuneClusterReadReplicaCount => "neptune:cluster:ReadReplicaCount",
+    ScalableDimension::RdsClusterReadReplicaCount => "rds:cluster:ReadReplicaCount",
+    ScalableDimension::SageMakerVariantDesiredInstanceCount => "sagemaker:variant:DesiredInstanceCount",
+    ScalableDimension::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["appstream:fleet:DesiredCapacity", "cassandra:table:ReadCapacityUnits", "cassandra:table:WriteCapacityUnits", "comprehend:document-classifier-endpoint:DesiredInferenceUnits", "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits", "custom-resource:ResourceType:Property", "dynamodb:index:ReadCapacityUnits", "dynamodb:index:WriteCapacityUnits", "dynamodb:table:ReadCapacityUnits", "dynamodb:table:WriteCapacityUnits", "ec2:spot-fleet-request:TargetCapacity", "ecs:service:DesiredCount", "elasticache:replication-group:NodeGroups", "elasticache:replication-group:Replicas", "elasticmapreduce:instancegroup:InstanceCount", "kafka:broker-storage:VolumeSize", "lambda:function:ProvisionedConcurrency", "neptune:cluster:ReadReplicaCount", "rds:cluster:ReadReplicaCount", "sagemaker:variant:DesiredInstanceCount"]
+                }
+            }
 impl AsRef<str> for ScalableDimension {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ServiceNamespace`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -345,26 +343,26 @@ pub enum ServiceNamespace {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceNamespace {
-    fn from(s: &str) -> Self {
-        match s {
-            "appstream" => ServiceNamespace::Appstream,
-            "cassandra" => ServiceNamespace::Cassandra,
-            "comprehend" => ServiceNamespace::Comprehend,
-            "custom-resource" => ServiceNamespace::CustomResource,
-            "dynamodb" => ServiceNamespace::Dynamodb,
-            "ec2" => ServiceNamespace::Ec2,
-            "ecs" => ServiceNamespace::Ecs,
-            "elasticache" => ServiceNamespace::Elasticache,
-            "elasticmapreduce" => ServiceNamespace::Emr,
-            "kafka" => ServiceNamespace::Kafka,
-            "lambda" => ServiceNamespace::Lambda,
-            "neptune" => ServiceNamespace::Neptune,
-            "rds" => ServiceNamespace::Rds,
-            "sagemaker" => ServiceNamespace::Sagemaker,
-            other => ServiceNamespace::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "appstream" => ServiceNamespace::Appstream,
+"cassandra" => ServiceNamespace::Cassandra,
+"comprehend" => ServiceNamespace::Comprehend,
+"custom-resource" => ServiceNamespace::CustomResource,
+"dynamodb" => ServiceNamespace::Dynamodb,
+"ec2" => ServiceNamespace::Ec2,
+"ecs" => ServiceNamespace::Ecs,
+"elasticache" => ServiceNamespace::Elasticache,
+"elasticmapreduce" => ServiceNamespace::Emr,
+"kafka" => ServiceNamespace::Kafka,
+"lambda" => ServiceNamespace::Lambda,
+"neptune" => ServiceNamespace::Neptune,
+"rds" => ServiceNamespace::Rds,
+"sagemaker" => ServiceNamespace::Sagemaker,
+other => ServiceNamespace::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ServiceNamespace {
                 type Err = std::convert::Infallible;
 
@@ -373,38 +371,36 @@ impl std::str::FromStr for ServiceNamespace {
                 }
             }
 impl ServiceNamespace {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceNamespace::Appstream => "appstream",
-            ServiceNamespace::Cassandra => "cassandra",
-            ServiceNamespace::Comprehend => "comprehend",
-            ServiceNamespace::CustomResource => "custom-resource",
-            ServiceNamespace::Dynamodb => "dynamodb",
-            ServiceNamespace::Ec2 => "ec2",
-            ServiceNamespace::Ecs => "ecs",
-            ServiceNamespace::Elasticache => "elasticache",
-            ServiceNamespace::Emr => "elasticmapreduce",
-            ServiceNamespace::Kafka => "kafka",
-            ServiceNamespace::Lambda => "lambda",
-            ServiceNamespace::Neptune => "neptune",
-            ServiceNamespace::Rds => "rds",
-            ServiceNamespace::Sagemaker => "sagemaker",
-            ServiceNamespace::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "appstream", "cassandra", "comprehend", "custom-resource", "dynamodb", "ec2", "ecs", "elasticache", "elasticmapreduce", "kafka", "lambda", "neptune", "rds", "sagemaker"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceNamespace::Appstream => "appstream",
+    ServiceNamespace::Cassandra => "cassandra",
+    ServiceNamespace::Comprehend => "comprehend",
+    ServiceNamespace::CustomResource => "custom-resource",
+    ServiceNamespace::Dynamodb => "dynamodb",
+    ServiceNamespace::Ec2 => "ec2",
+    ServiceNamespace::Ecs => "ecs",
+    ServiceNamespace::Elasticache => "elasticache",
+    ServiceNamespace::Emr => "elasticmapreduce",
+    ServiceNamespace::Kafka => "kafka",
+    ServiceNamespace::Lambda => "lambda",
+    ServiceNamespace::Neptune => "neptune",
+    ServiceNamespace::Rds => "rds",
+    ServiceNamespace::Sagemaker => "sagemaker",
+    ServiceNamespace::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["appstream", "cassandra", "comprehend", "custom-resource", "dynamodb", "ec2", "ecs", "elasticache", "elasticmapreduce", "kafka", "lambda", "neptune", "rds", "sagemaker"]
+                }
+            }
 impl AsRef<str> for ServiceNamespace {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents the minimum and maximum capacity for a scheduled action.</p>
 #[non_exhaustive]
@@ -1065,17 +1061,17 @@ pub enum MetricStatistic {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricStatistic {
-    fn from(s: &str) -> Self {
-        match s {
-            "Average" => MetricStatistic::Average,
-            "Maximum" => MetricStatistic::Maximum,
-            "Minimum" => MetricStatistic::Minimum,
-            "SampleCount" => MetricStatistic::SampleCount,
-            "Sum" => MetricStatistic::Sum,
-            other => MetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Average" => MetricStatistic::Average,
+"Maximum" => MetricStatistic::Maximum,
+"Minimum" => MetricStatistic::Minimum,
+"SampleCount" => MetricStatistic::SampleCount,
+"Sum" => MetricStatistic::Sum,
+other => MetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricStatistic {
                 type Err = std::convert::Infallible;
 
@@ -1084,29 +1080,27 @@ impl std::str::FromStr for MetricStatistic {
                 }
             }
 impl MetricStatistic {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricStatistic::Average => "Average",
-            MetricStatistic::Maximum => "Maximum",
-            MetricStatistic::Minimum => "Minimum",
-            MetricStatistic::SampleCount => "SampleCount",
-            MetricStatistic::Sum => "Sum",
-            MetricStatistic::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Average", "Maximum", "Minimum", "SampleCount", "Sum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricStatistic::Average => "Average",
+    MetricStatistic::Maximum => "Maximum",
+    MetricStatistic::Minimum => "Minimum",
+    MetricStatistic::SampleCount => "SampleCount",
+    MetricStatistic::Sum => "Sum",
+    MetricStatistic::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
+                }
+            }
 impl AsRef<str> for MetricStatistic {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the dimension names and values associated with a metric.</p>
 #[non_exhaustive]
@@ -1423,33 +1417,33 @@ pub enum MetricType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALBRequestCountPerTarget" => MetricType::AlbRequestCountPerTarget,
-            "AppStreamAverageCapacityUtilization" => MetricType::AppStreamAverageCapacityUtilization,
-            "CassandraReadCapacityUtilization" => MetricType::CassandraReadCapacityUtilization,
-            "CassandraWriteCapacityUtilization" => MetricType::CassandraWriteCapacityUtilization,
-            "ComprehendInferenceUtilization" => MetricType::ComprehendInferenceUtilization,
-            "DynamoDBReadCapacityUtilization" => MetricType::DynamoDbReadCapacityUtilization,
-            "DynamoDBWriteCapacityUtilization" => MetricType::DynamoDbWriteCapacityUtilization,
-            "EC2SpotFleetRequestAverageCPUUtilization" => MetricType::Ec2SpotFleetRequestAverageCpuUtilization,
-            "EC2SpotFleetRequestAverageNetworkIn" => MetricType::Ec2SpotFleetRequestAverageNetworkIn,
-            "EC2SpotFleetRequestAverageNetworkOut" => MetricType::Ec2SpotFleetRequestAverageNetworkOut,
-            "ECSServiceAverageCPUUtilization" => MetricType::EcsServiceAverageCpuUtilization,
-            "ECSServiceAverageMemoryUtilization" => MetricType::EcsServiceAverageMemoryUtilization,
-            "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage" => MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
-            "ElastiCachePrimaryEngineCPUUtilization" => MetricType::ElastiCachePrimaryEngineCpuUtilization,
-            "ElastiCacheReplicaEngineCPUUtilization" => MetricType::ElastiCacheReplicaEngineCpuUtilization,
-            "KafkaBrokerStorageUtilization" => MetricType::KafkaBrokerStorageUtilization,
-            "LambdaProvisionedConcurrencyUtilization" => MetricType::LambdaProvisionedConcurrencyUtilization,
-            "NeptuneReaderAverageCPUUtilization" => MetricType::NeptuneReaderAverageCpuUtilization,
-            "RDSReaderAverageCPUUtilization" => MetricType::RdsReaderAverageCpuUtilization,
-            "RDSReaderAverageDatabaseConnections" => MetricType::RdsReaderAverageDatabaseConnections,
-            "SageMakerVariantInvocationsPerInstance" => MetricType::SageMakerVariantInvocationsPerInstance,
-            other => MetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALBRequestCountPerTarget" => MetricType::AlbRequestCountPerTarget,
+"AppStreamAverageCapacityUtilization" => MetricType::AppStreamAverageCapacityUtilization,
+"CassandraReadCapacityUtilization" => MetricType::CassandraReadCapacityUtilization,
+"CassandraWriteCapacityUtilization" => MetricType::CassandraWriteCapacityUtilization,
+"ComprehendInferenceUtilization" => MetricType::ComprehendInferenceUtilization,
+"DynamoDBReadCapacityUtilization" => MetricType::DynamoDbReadCapacityUtilization,
+"DynamoDBWriteCapacityUtilization" => MetricType::DynamoDbWriteCapacityUtilization,
+"EC2SpotFleetRequestAverageCPUUtilization" => MetricType::Ec2SpotFleetRequestAverageCpuUtilization,
+"EC2SpotFleetRequestAverageNetworkIn" => MetricType::Ec2SpotFleetRequestAverageNetworkIn,
+"EC2SpotFleetRequestAverageNetworkOut" => MetricType::Ec2SpotFleetRequestAverageNetworkOut,
+"ECSServiceAverageCPUUtilization" => MetricType::EcsServiceAverageCpuUtilization,
+"ECSServiceAverageMemoryUtilization" => MetricType::EcsServiceAverageMemoryUtilization,
+"ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage" => MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
+"ElastiCachePrimaryEngineCPUUtilization" => MetricType::ElastiCachePrimaryEngineCpuUtilization,
+"ElastiCacheReplicaEngineCPUUtilization" => MetricType::ElastiCacheReplicaEngineCpuUtilization,
+"KafkaBrokerStorageUtilization" => MetricType::KafkaBrokerStorageUtilization,
+"LambdaProvisionedConcurrencyUtilization" => MetricType::LambdaProvisionedConcurrencyUtilization,
+"NeptuneReaderAverageCPUUtilization" => MetricType::NeptuneReaderAverageCpuUtilization,
+"RDSReaderAverageCPUUtilization" => MetricType::RdsReaderAverageCpuUtilization,
+"RDSReaderAverageDatabaseConnections" => MetricType::RdsReaderAverageDatabaseConnections,
+"SageMakerVariantInvocationsPerInstance" => MetricType::SageMakerVariantInvocationsPerInstance,
+other => MetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricType {
                 type Err = std::convert::Infallible;
 
@@ -1458,45 +1452,43 @@ impl std::str::FromStr for MetricType {
                 }
             }
 impl MetricType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricType::AlbRequestCountPerTarget => "ALBRequestCountPerTarget",
-            MetricType::AppStreamAverageCapacityUtilization => "AppStreamAverageCapacityUtilization",
-            MetricType::CassandraReadCapacityUtilization => "CassandraReadCapacityUtilization",
-            MetricType::CassandraWriteCapacityUtilization => "CassandraWriteCapacityUtilization",
-            MetricType::ComprehendInferenceUtilization => "ComprehendInferenceUtilization",
-            MetricType::DynamoDbReadCapacityUtilization => "DynamoDBReadCapacityUtilization",
-            MetricType::DynamoDbWriteCapacityUtilization => "DynamoDBWriteCapacityUtilization",
-            MetricType::Ec2SpotFleetRequestAverageCpuUtilization => "EC2SpotFleetRequestAverageCPUUtilization",
-            MetricType::Ec2SpotFleetRequestAverageNetworkIn => "EC2SpotFleetRequestAverageNetworkIn",
-            MetricType::Ec2SpotFleetRequestAverageNetworkOut => "EC2SpotFleetRequestAverageNetworkOut",
-            MetricType::EcsServiceAverageCpuUtilization => "ECSServiceAverageCPUUtilization",
-            MetricType::EcsServiceAverageMemoryUtilization => "ECSServiceAverageMemoryUtilization",
-            MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage",
-            MetricType::ElastiCachePrimaryEngineCpuUtilization => "ElastiCachePrimaryEngineCPUUtilization",
-            MetricType::ElastiCacheReplicaEngineCpuUtilization => "ElastiCacheReplicaEngineCPUUtilization",
-            MetricType::KafkaBrokerStorageUtilization => "KafkaBrokerStorageUtilization",
-            MetricType::LambdaProvisionedConcurrencyUtilization => "LambdaProvisionedConcurrencyUtilization",
-            MetricType::NeptuneReaderAverageCpuUtilization => "NeptuneReaderAverageCPUUtilization",
-            MetricType::RdsReaderAverageCpuUtilization => "RDSReaderAverageCPUUtilization",
-            MetricType::RdsReaderAverageDatabaseConnections => "RDSReaderAverageDatabaseConnections",
-            MetricType::SageMakerVariantInvocationsPerInstance => "SageMakerVariantInvocationsPerInstance",
-            MetricType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALBRequestCountPerTarget", "AppStreamAverageCapacityUtilization", "CassandraReadCapacityUtilization", "CassandraWriteCapacityUtilization", "ComprehendInferenceUtilization", "DynamoDBReadCapacityUtilization", "DynamoDBWriteCapacityUtilization", "EC2SpotFleetRequestAverageCPUUtilization", "EC2SpotFleetRequestAverageNetworkIn", "EC2SpotFleetRequestAverageNetworkOut", "ECSServiceAverageCPUUtilization", "ECSServiceAverageMemoryUtilization", "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage", "ElastiCachePrimaryEngineCPUUtilization", "ElastiCacheReplicaEngineCPUUtilization", "KafkaBrokerStorageUtilization", "LambdaProvisionedConcurrencyUtilization", "NeptuneReaderAverageCPUUtilization", "RDSReaderAverageCPUUtilization", "RDSReaderAverageDatabaseConnections", "SageMakerVariantInvocationsPerInstance"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricType::AlbRequestCountPerTarget => "ALBRequestCountPerTarget",
+    MetricType::AppStreamAverageCapacityUtilization => "AppStreamAverageCapacityUtilization",
+    MetricType::CassandraReadCapacityUtilization => "CassandraReadCapacityUtilization",
+    MetricType::CassandraWriteCapacityUtilization => "CassandraWriteCapacityUtilization",
+    MetricType::ComprehendInferenceUtilization => "ComprehendInferenceUtilization",
+    MetricType::DynamoDbReadCapacityUtilization => "DynamoDBReadCapacityUtilization",
+    MetricType::DynamoDbWriteCapacityUtilization => "DynamoDBWriteCapacityUtilization",
+    MetricType::Ec2SpotFleetRequestAverageCpuUtilization => "EC2SpotFleetRequestAverageCPUUtilization",
+    MetricType::Ec2SpotFleetRequestAverageNetworkIn => "EC2SpotFleetRequestAverageNetworkIn",
+    MetricType::Ec2SpotFleetRequestAverageNetworkOut => "EC2SpotFleetRequestAverageNetworkOut",
+    MetricType::EcsServiceAverageCpuUtilization => "ECSServiceAverageCPUUtilization",
+    MetricType::EcsServiceAverageMemoryUtilization => "ECSServiceAverageMemoryUtilization",
+    MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage",
+    MetricType::ElastiCachePrimaryEngineCpuUtilization => "ElastiCachePrimaryEngineCPUUtilization",
+    MetricType::ElastiCacheReplicaEngineCpuUtilization => "ElastiCacheReplicaEngineCPUUtilization",
+    MetricType::KafkaBrokerStorageUtilization => "KafkaBrokerStorageUtilization",
+    MetricType::LambdaProvisionedConcurrencyUtilization => "LambdaProvisionedConcurrencyUtilization",
+    MetricType::NeptuneReaderAverageCpuUtilization => "NeptuneReaderAverageCPUUtilization",
+    MetricType::RdsReaderAverageCpuUtilization => "RDSReaderAverageCPUUtilization",
+    MetricType::RdsReaderAverageDatabaseConnections => "RDSReaderAverageDatabaseConnections",
+    MetricType::SageMakerVariantInvocationsPerInstance => "SageMakerVariantInvocationsPerInstance",
+    MetricType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALBRequestCountPerTarget", "AppStreamAverageCapacityUtilization", "CassandraReadCapacityUtilization", "CassandraWriteCapacityUtilization", "ComprehendInferenceUtilization", "DynamoDBReadCapacityUtilization", "DynamoDBWriteCapacityUtilization", "EC2SpotFleetRequestAverageCPUUtilization", "EC2SpotFleetRequestAverageNetworkIn", "EC2SpotFleetRequestAverageNetworkOut", "ECSServiceAverageCPUUtilization", "ECSServiceAverageMemoryUtilization", "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage", "ElastiCachePrimaryEngineCPUUtilization", "ElastiCacheReplicaEngineCPUUtilization", "KafkaBrokerStorageUtilization", "LambdaProvisionedConcurrencyUtilization", "NeptuneReaderAverageCPUUtilization", "RDSReaderAverageCPUUtilization", "RDSReaderAverageDatabaseConnections", "SageMakerVariantInvocationsPerInstance"]
+                }
+            }
 impl AsRef<str> for MetricType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a step scaling policy configuration to use with Application Auto Scaling.</p>
 #[non_exhaustive]
@@ -1772,15 +1764,15 @@ pub enum MetricAggregationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricAggregationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Average" => MetricAggregationType::Average,
-            "Maximum" => MetricAggregationType::Maximum,
-            "Minimum" => MetricAggregationType::Minimum,
-            other => MetricAggregationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Average" => MetricAggregationType::Average,
+"Maximum" => MetricAggregationType::Maximum,
+"Minimum" => MetricAggregationType::Minimum,
+other => MetricAggregationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricAggregationType {
                 type Err = std::convert::Infallible;
 
@@ -1789,27 +1781,25 @@ impl std::str::FromStr for MetricAggregationType {
                 }
             }
 impl MetricAggregationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricAggregationType::Average => "Average",
-            MetricAggregationType::Maximum => "Maximum",
-            MetricAggregationType::Minimum => "Minimum",
-            MetricAggregationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Average", "Maximum", "Minimum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricAggregationType::Average => "Average",
+    MetricAggregationType::Maximum => "Maximum",
+    MetricAggregationType::Minimum => "Minimum",
+    MetricAggregationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Average", "Maximum", "Minimum"]
+                }
+            }
 impl AsRef<str> for MetricAggregationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a step adjustment for a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm. </p> 
 /// <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p> 
@@ -1965,15 +1955,15 @@ pub enum AdjustmentType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AdjustmentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ChangeInCapacity" => AdjustmentType::ChangeInCapacity,
-            "ExactCapacity" => AdjustmentType::ExactCapacity,
-            "PercentChangeInCapacity" => AdjustmentType::PercentChangeInCapacity,
-            other => AdjustmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ChangeInCapacity" => AdjustmentType::ChangeInCapacity,
+"ExactCapacity" => AdjustmentType::ExactCapacity,
+"PercentChangeInCapacity" => AdjustmentType::PercentChangeInCapacity,
+other => AdjustmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AdjustmentType {
                 type Err = std::convert::Infallible;
 
@@ -1982,27 +1972,25 @@ impl std::str::FromStr for AdjustmentType {
                 }
             }
 impl AdjustmentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AdjustmentType::ChangeInCapacity => "ChangeInCapacity",
-            AdjustmentType::ExactCapacity => "ExactCapacity",
-            AdjustmentType::PercentChangeInCapacity => "PercentChangeInCapacity",
-            AdjustmentType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ChangeInCapacity", "ExactCapacity", "PercentChangeInCapacity"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AdjustmentType::ChangeInCapacity => "ChangeInCapacity",
+    AdjustmentType::ExactCapacity => "ExactCapacity",
+    AdjustmentType::PercentChangeInCapacity => "PercentChangeInCapacity",
+    AdjustmentType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ChangeInCapacity", "ExactCapacity", "PercentChangeInCapacity"]
+                }
+            }
 impl AsRef<str> for AdjustmentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PolicyType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2051,14 +2039,14 @@ pub enum PolicyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PolicyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "StepScaling" => PolicyType::StepScaling,
-            "TargetTrackingScaling" => PolicyType::TargetTrackingScaling,
-            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "StepScaling" => PolicyType::StepScaling,
+"TargetTrackingScaling" => PolicyType::TargetTrackingScaling,
+other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PolicyType {
                 type Err = std::convert::Infallible;
 
@@ -2067,26 +2055,24 @@ impl std::str::FromStr for PolicyType {
                 }
             }
 impl PolicyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PolicyType::StepScaling => "StepScaling",
-            PolicyType::TargetTrackingScaling => "TargetTrackingScaling",
-            PolicyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "StepScaling", "TargetTrackingScaling"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PolicyType::StepScaling => "StepScaling",
+    PolicyType::TargetTrackingScaling => "TargetTrackingScaling",
+    PolicyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["StepScaling", "TargetTrackingScaling"]
+                }
+            }
 impl AsRef<str> for PolicyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a scheduled action.</p>
 #[non_exhaustive]
@@ -3551,18 +3537,18 @@ pub enum ScalingActivityStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalingActivityStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "Failed" => ScalingActivityStatusCode::Failed,
-            "InProgress" => ScalingActivityStatusCode::InProgress,
-            "Overridden" => ScalingActivityStatusCode::Overridden,
-            "Pending" => ScalingActivityStatusCode::Pending,
-            "Successful" => ScalingActivityStatusCode::Successful,
-            "Unfulfilled" => ScalingActivityStatusCode::Unfulfilled,
-            other => ScalingActivityStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Failed" => ScalingActivityStatusCode::Failed,
+"InProgress" => ScalingActivityStatusCode::InProgress,
+"Overridden" => ScalingActivityStatusCode::Overridden,
+"Pending" => ScalingActivityStatusCode::Pending,
+"Successful" => ScalingActivityStatusCode::Successful,
+"Unfulfilled" => ScalingActivityStatusCode::Unfulfilled,
+other => ScalingActivityStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScalingActivityStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -3571,30 +3557,28 @@ impl std::str::FromStr for ScalingActivityStatusCode {
                 }
             }
 impl ScalingActivityStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalingActivityStatusCode::Failed => "Failed",
-            ScalingActivityStatusCode::InProgress => "InProgress",
-            ScalingActivityStatusCode::Overridden => "Overridden",
-            ScalingActivityStatusCode::Pending => "Pending",
-            ScalingActivityStatusCode::Successful => "Successful",
-            ScalingActivityStatusCode::Unfulfilled => "Unfulfilled",
-            ScalingActivityStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Failed", "InProgress", "Overridden", "Pending", "Successful", "Unfulfilled"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalingActivityStatusCode::Failed => "Failed",
+    ScalingActivityStatusCode::InProgress => "InProgress",
+    ScalingActivityStatusCode::Overridden => "Overridden",
+    ScalingActivityStatusCode::Pending => "Pending",
+    ScalingActivityStatusCode::Successful => "Successful",
+    ScalingActivityStatusCode::Unfulfilled => "Unfulfilled",
+    ScalingActivityStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Failed", "InProgress", "Overridden", "Pending", "Successful", "Unfulfilled"]
+                }
+            }
 impl AsRef<str> for ScalingActivityStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a scalable target.</p>
 #[non_exhaustive]

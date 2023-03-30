@@ -530,14 +530,14 @@ pub enum IndexType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IndexType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AGGREGATOR" => IndexType::Aggregator,
-            "LOCAL" => IndexType::Local,
-            other => IndexType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AGGREGATOR" => IndexType::Aggregator,
+"LOCAL" => IndexType::Local,
+other => IndexType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for IndexType {
                 type Err = std::convert::Infallible;
 
@@ -546,26 +546,24 @@ impl std::str::FromStr for IndexType {
                 }
             }
 impl IndexType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IndexType::Aggregator => "AGGREGATOR",
-            IndexType::Local => "LOCAL",
-            IndexType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AGGREGATOR", "LOCAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IndexType::Aggregator => "AGGREGATOR",
+    IndexType::Local => "LOCAL",
+    IndexType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AGGREGATOR", "LOCAL"]
+                }
+            }
 impl AsRef<str> for IndexType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `IndexState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -623,17 +621,17 @@ pub enum IndexState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IndexState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => IndexState::Active,
-            "CREATING" => IndexState::Creating,
-            "DELETED" => IndexState::Deleted,
-            "DELETING" => IndexState::Deleting,
-            "UPDATING" => IndexState::Updating,
-            other => IndexState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => IndexState::Active,
+"CREATING" => IndexState::Creating,
+"DELETED" => IndexState::Deleted,
+"DELETING" => IndexState::Deleting,
+"UPDATING" => IndexState::Updating,
+other => IndexState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for IndexState {
                 type Err = std::convert::Infallible;
 
@@ -642,29 +640,27 @@ impl std::str::FromStr for IndexState {
                 }
             }
 impl IndexState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IndexState::Active => "ACTIVE",
-            IndexState::Creating => "CREATING",
-            IndexState::Deleted => "DELETED",
-            IndexState::Deleting => "DELETING",
-            IndexState::Updating => "UPDATING",
-            IndexState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETED", "DELETING", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IndexState::Active => "ACTIVE",
+    IndexState::Creating => "CREATING",
+    IndexState::Deleted => "DELETED",
+    IndexState::Deleting => "DELETING",
+    IndexState::Updating => "UPDATING",
+    IndexState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETED", "DELETING", "UPDATING"]
+                }
+            }
 impl AsRef<str> for IndexState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the number of results that match the query. At this time, Amazon Web Services Resource Explorer doesn't count more than 1,000 matches for any query. This structure provides information about whether the query exceeded this limit.</p> 
 /// <p>This field is included in every page when you paginate the results.</p>

@@ -1302,29 +1302,29 @@ pub enum BackupVaultEvent {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BackupVaultEvent {
-    fn from(s: &str) -> Self {
-        match s {
-            "BACKUP_JOB_COMPLETED" => BackupVaultEvent::BackupJobCompleted,
-            "BACKUP_JOB_EXPIRED" => BackupVaultEvent::BackupJobExpired,
-            "BACKUP_JOB_FAILED" => BackupVaultEvent::BackupJobFailed,
-            "BACKUP_JOB_STARTED" => BackupVaultEvent::BackupJobStarted,
-            "BACKUP_JOB_SUCCESSFUL" => BackupVaultEvent::BackupJobSuccessful,
-            "BACKUP_PLAN_CREATED" => BackupVaultEvent::BackupPlanCreated,
-            "BACKUP_PLAN_MODIFIED" => BackupVaultEvent::BackupPlanModified,
-            "COPY_JOB_FAILED" => BackupVaultEvent::CopyJobFailed,
-            "COPY_JOB_STARTED" => BackupVaultEvent::CopyJobStarted,
-            "COPY_JOB_SUCCESSFUL" => BackupVaultEvent::CopyJobSuccessful,
-            "RECOVERY_POINT_MODIFIED" => BackupVaultEvent::RecoveryPointModified,
-            "RESTORE_JOB_COMPLETED" => BackupVaultEvent::RestoreJobCompleted,
-            "RESTORE_JOB_FAILED" => BackupVaultEvent::RestoreJobFailed,
-            "RESTORE_JOB_STARTED" => BackupVaultEvent::RestoreJobStarted,
-            "RESTORE_JOB_SUCCESSFUL" => BackupVaultEvent::RestoreJobSuccessful,
-            "S3_BACKUP_OBJECT_FAILED" => BackupVaultEvent::S3BackupObjectFailed,
-            "S3_RESTORE_OBJECT_FAILED" => BackupVaultEvent::S3RestoreObjectFailed,
-            other => BackupVaultEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BACKUP_JOB_COMPLETED" => BackupVaultEvent::BackupJobCompleted,
+"BACKUP_JOB_EXPIRED" => BackupVaultEvent::BackupJobExpired,
+"BACKUP_JOB_FAILED" => BackupVaultEvent::BackupJobFailed,
+"BACKUP_JOB_STARTED" => BackupVaultEvent::BackupJobStarted,
+"BACKUP_JOB_SUCCESSFUL" => BackupVaultEvent::BackupJobSuccessful,
+"BACKUP_PLAN_CREATED" => BackupVaultEvent::BackupPlanCreated,
+"BACKUP_PLAN_MODIFIED" => BackupVaultEvent::BackupPlanModified,
+"COPY_JOB_FAILED" => BackupVaultEvent::CopyJobFailed,
+"COPY_JOB_STARTED" => BackupVaultEvent::CopyJobStarted,
+"COPY_JOB_SUCCESSFUL" => BackupVaultEvent::CopyJobSuccessful,
+"RECOVERY_POINT_MODIFIED" => BackupVaultEvent::RecoveryPointModified,
+"RESTORE_JOB_COMPLETED" => BackupVaultEvent::RestoreJobCompleted,
+"RESTORE_JOB_FAILED" => BackupVaultEvent::RestoreJobFailed,
+"RESTORE_JOB_STARTED" => BackupVaultEvent::RestoreJobStarted,
+"RESTORE_JOB_SUCCESSFUL" => BackupVaultEvent::RestoreJobSuccessful,
+"S3_BACKUP_OBJECT_FAILED" => BackupVaultEvent::S3BackupObjectFailed,
+"S3_RESTORE_OBJECT_FAILED" => BackupVaultEvent::S3RestoreObjectFailed,
+other => BackupVaultEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BackupVaultEvent {
                 type Err = std::convert::Infallible;
 
@@ -1333,41 +1333,39 @@ impl std::str::FromStr for BackupVaultEvent {
                 }
             }
 impl BackupVaultEvent {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BackupVaultEvent::BackupJobCompleted => "BACKUP_JOB_COMPLETED",
-            BackupVaultEvent::BackupJobExpired => "BACKUP_JOB_EXPIRED",
-            BackupVaultEvent::BackupJobFailed => "BACKUP_JOB_FAILED",
-            BackupVaultEvent::BackupJobStarted => "BACKUP_JOB_STARTED",
-            BackupVaultEvent::BackupJobSuccessful => "BACKUP_JOB_SUCCESSFUL",
-            BackupVaultEvent::BackupPlanCreated => "BACKUP_PLAN_CREATED",
-            BackupVaultEvent::BackupPlanModified => "BACKUP_PLAN_MODIFIED",
-            BackupVaultEvent::CopyJobFailed => "COPY_JOB_FAILED",
-            BackupVaultEvent::CopyJobStarted => "COPY_JOB_STARTED",
-            BackupVaultEvent::CopyJobSuccessful => "COPY_JOB_SUCCESSFUL",
-            BackupVaultEvent::RecoveryPointModified => "RECOVERY_POINT_MODIFIED",
-            BackupVaultEvent::RestoreJobCompleted => "RESTORE_JOB_COMPLETED",
-            BackupVaultEvent::RestoreJobFailed => "RESTORE_JOB_FAILED",
-            BackupVaultEvent::RestoreJobStarted => "RESTORE_JOB_STARTED",
-            BackupVaultEvent::RestoreJobSuccessful => "RESTORE_JOB_SUCCESSFUL",
-            BackupVaultEvent::S3BackupObjectFailed => "S3_BACKUP_OBJECT_FAILED",
-            BackupVaultEvent::S3RestoreObjectFailed => "S3_RESTORE_OBJECT_FAILED",
-            BackupVaultEvent::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BACKUP_JOB_COMPLETED", "BACKUP_JOB_EXPIRED", "BACKUP_JOB_FAILED", "BACKUP_JOB_STARTED", "BACKUP_JOB_SUCCESSFUL", "BACKUP_PLAN_CREATED", "BACKUP_PLAN_MODIFIED", "COPY_JOB_FAILED", "COPY_JOB_STARTED", "COPY_JOB_SUCCESSFUL", "RECOVERY_POINT_MODIFIED", "RESTORE_JOB_COMPLETED", "RESTORE_JOB_FAILED", "RESTORE_JOB_STARTED", "RESTORE_JOB_SUCCESSFUL", "S3_BACKUP_OBJECT_FAILED", "S3_RESTORE_OBJECT_FAILED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BackupVaultEvent::BackupJobCompleted => "BACKUP_JOB_COMPLETED",
+    BackupVaultEvent::BackupJobExpired => "BACKUP_JOB_EXPIRED",
+    BackupVaultEvent::BackupJobFailed => "BACKUP_JOB_FAILED",
+    BackupVaultEvent::BackupJobStarted => "BACKUP_JOB_STARTED",
+    BackupVaultEvent::BackupJobSuccessful => "BACKUP_JOB_SUCCESSFUL",
+    BackupVaultEvent::BackupPlanCreated => "BACKUP_PLAN_CREATED",
+    BackupVaultEvent::BackupPlanModified => "BACKUP_PLAN_MODIFIED",
+    BackupVaultEvent::CopyJobFailed => "COPY_JOB_FAILED",
+    BackupVaultEvent::CopyJobStarted => "COPY_JOB_STARTED",
+    BackupVaultEvent::CopyJobSuccessful => "COPY_JOB_SUCCESSFUL",
+    BackupVaultEvent::RecoveryPointModified => "RECOVERY_POINT_MODIFIED",
+    BackupVaultEvent::RestoreJobCompleted => "RESTORE_JOB_COMPLETED",
+    BackupVaultEvent::RestoreJobFailed => "RESTORE_JOB_FAILED",
+    BackupVaultEvent::RestoreJobStarted => "RESTORE_JOB_STARTED",
+    BackupVaultEvent::RestoreJobSuccessful => "RESTORE_JOB_SUCCESSFUL",
+    BackupVaultEvent::S3BackupObjectFailed => "S3_BACKUP_OBJECT_FAILED",
+    BackupVaultEvent::S3RestoreObjectFailed => "S3_RESTORE_OBJECT_FAILED",
+    BackupVaultEvent::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BACKUP_JOB_COMPLETED", "BACKUP_JOB_EXPIRED", "BACKUP_JOB_FAILED", "BACKUP_JOB_STARTED", "BACKUP_JOB_SUCCESSFUL", "BACKUP_PLAN_CREATED", "BACKUP_PLAN_MODIFIED", "COPY_JOB_FAILED", "COPY_JOB_STARTED", "COPY_JOB_SUCCESSFUL", "RECOVERY_POINT_MODIFIED", "RESTORE_JOB_COMPLETED", "RESTORE_JOB_FAILED", "RESTORE_JOB_STARTED", "RESTORE_JOB_SUCCESSFUL", "S3_BACKUP_OBJECT_FAILED", "S3_RESTORE_OBJECT_FAILED"]
+                }
+            }
 impl AsRef<str> for BackupVaultEvent {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains metadata about a restore job.</p>
 #[non_exhaustive]
@@ -1703,17 +1701,17 @@ pub enum RestoreJobStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RestoreJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ABORTED" => RestoreJobStatus::Aborted,
-            "COMPLETED" => RestoreJobStatus::Completed,
-            "FAILED" => RestoreJobStatus::Failed,
-            "PENDING" => RestoreJobStatus::Pending,
-            "RUNNING" => RestoreJobStatus::Running,
-            other => RestoreJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ABORTED" => RestoreJobStatus::Aborted,
+"COMPLETED" => RestoreJobStatus::Completed,
+"FAILED" => RestoreJobStatus::Failed,
+"PENDING" => RestoreJobStatus::Pending,
+"RUNNING" => RestoreJobStatus::Running,
+other => RestoreJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RestoreJobStatus {
                 type Err = std::convert::Infallible;
 
@@ -1722,29 +1720,27 @@ impl std::str::FromStr for RestoreJobStatus {
                 }
             }
 impl RestoreJobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RestoreJobStatus::Aborted => "ABORTED",
-            RestoreJobStatus::Completed => "COMPLETED",
-            RestoreJobStatus::Failed => "FAILED",
-            RestoreJobStatus::Pending => "PENDING",
-            RestoreJobStatus::Running => "RUNNING",
-            RestoreJobStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ABORTED", "COMPLETED", "FAILED", "PENDING", "RUNNING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RestoreJobStatus::Aborted => "ABORTED",
+    RestoreJobStatus::Completed => "COMPLETED",
+    RestoreJobStatus::Failed => "FAILED",
+    RestoreJobStatus::Pending => "PENDING",
+    RestoreJobStatus::Running => "RUNNING",
+    RestoreJobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ABORTED", "COMPLETED", "FAILED", "PENDING", "RUNNING"]
+                }
+            }
 impl AsRef<str> for RestoreJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains detailed information about a report plan.</p>
 #[non_exhaustive]
@@ -2486,16 +2482,16 @@ pub enum RecoveryPointStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecoveryPointStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => RecoveryPointStatus::Completed,
-            "DELETING" => RecoveryPointStatus::Deleting,
-            "EXPIRED" => RecoveryPointStatus::Expired,
-            "PARTIAL" => RecoveryPointStatus::Partial,
-            other => RecoveryPointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => RecoveryPointStatus::Completed,
+"DELETING" => RecoveryPointStatus::Deleting,
+"EXPIRED" => RecoveryPointStatus::Expired,
+"PARTIAL" => RecoveryPointStatus::Partial,
+other => RecoveryPointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecoveryPointStatus {
                 type Err = std::convert::Infallible;
 
@@ -2504,28 +2500,26 @@ impl std::str::FromStr for RecoveryPointStatus {
                 }
             }
 impl RecoveryPointStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecoveryPointStatus::Completed => "COMPLETED",
-            RecoveryPointStatus::Deleting => "DELETING",
-            RecoveryPointStatus::Expired => "EXPIRED",
-            RecoveryPointStatus::Partial => "PARTIAL",
-            RecoveryPointStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "DELETING", "EXPIRED", "PARTIAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecoveryPointStatus::Completed => "COMPLETED",
+    RecoveryPointStatus::Deleting => "DELETING",
+    RecoveryPointStatus::Expired => "EXPIRED",
+    RecoveryPointStatus::Partial => "PARTIAL",
+    RecoveryPointStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "DELETING", "EXPIRED", "PARTIAL"]
+                }
+            }
 impl AsRef<str> for RecoveryPointStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This is a recovery point which is a child (nested) recovery point of a parent (composite) recovery point. These recovery points can be disassociated from their parent (composite) recovery point, in which case they will no longer be a member.</p>
 #[non_exhaustive]
@@ -3429,16 +3423,16 @@ pub enum LegalHoldStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LegalHoldStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => LegalHoldStatus::Active,
-            "CANCELED" => LegalHoldStatus::Canceled,
-            "CANCELING" => LegalHoldStatus::Canceling,
-            "CREATING" => LegalHoldStatus::Creating,
-            other => LegalHoldStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => LegalHoldStatus::Active,
+"CANCELED" => LegalHoldStatus::Canceled,
+"CANCELING" => LegalHoldStatus::Canceling,
+"CREATING" => LegalHoldStatus::Creating,
+other => LegalHoldStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LegalHoldStatus {
                 type Err = std::convert::Infallible;
 
@@ -3447,28 +3441,26 @@ impl std::str::FromStr for LegalHoldStatus {
                 }
             }
 impl LegalHoldStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LegalHoldStatus::Active => "ACTIVE",
-            LegalHoldStatus::Canceled => "CANCELED",
-            LegalHoldStatus::Canceling => "CANCELING",
-            LegalHoldStatus::Creating => "CREATING",
-            LegalHoldStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CANCELED", "CANCELING", "CREATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LegalHoldStatus::Active => "ACTIVE",
+    LegalHoldStatus::Canceled => "CANCELED",
+    LegalHoldStatus::Canceling => "CANCELING",
+    LegalHoldStatus::Creating => "CREATING",
+    LegalHoldStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CANCELED", "CANCELING", "CREATING"]
+                }
+            }
 impl AsRef<str> for LegalHoldStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains detailed information about a framework. Frameworks contain controls, which evaluate and report on your backup events and resources. Frameworks generate daily compliance results.</p>
 #[non_exhaustive]
@@ -4094,17 +4086,17 @@ pub enum CopyJobState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CopyJobState {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => CopyJobState::Completed,
-            "CREATED" => CopyJobState::Created,
-            "FAILED" => CopyJobState::Failed,
-            "PARTIAL" => CopyJobState::Partial,
-            "RUNNING" => CopyJobState::Running,
-            other => CopyJobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => CopyJobState::Completed,
+"CREATED" => CopyJobState::Created,
+"FAILED" => CopyJobState::Failed,
+"PARTIAL" => CopyJobState::Partial,
+"RUNNING" => CopyJobState::Running,
+other => CopyJobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CopyJobState {
                 type Err = std::convert::Infallible;
 
@@ -4113,29 +4105,27 @@ impl std::str::FromStr for CopyJobState {
                 }
             }
 impl CopyJobState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CopyJobState::Completed => "COMPLETED",
-            CopyJobState::Created => "CREATED",
-            CopyJobState::Failed => "FAILED",
-            CopyJobState::Partial => "PARTIAL",
-            CopyJobState::Running => "RUNNING",
-            CopyJobState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "CREATED", "FAILED", "PARTIAL", "RUNNING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CopyJobState::Completed => "COMPLETED",
+    CopyJobState::Created => "CREATED",
+    CopyJobState::Failed => "FAILED",
+    CopyJobState::Partial => "PARTIAL",
+    CopyJobState::Running => "RUNNING",
+    CopyJobState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "CREATED", "FAILED", "PARTIAL", "RUNNING"]
+                }
+            }
 impl AsRef<str> for CopyJobState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains metadata about a backup vault.</p>
 #[non_exhaustive]
@@ -5341,21 +5331,21 @@ pub enum BackupJobState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BackupJobState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ABORTED" => BackupJobState::Aborted,
-            "ABORTING" => BackupJobState::Aborting,
-            "COMPLETED" => BackupJobState::Completed,
-            "CREATED" => BackupJobState::Created,
-            "EXPIRED" => BackupJobState::Expired,
-            "FAILED" => BackupJobState::Failed,
-            "PARTIAL" => BackupJobState::Partial,
-            "PENDING" => BackupJobState::Pending,
-            "RUNNING" => BackupJobState::Running,
-            other => BackupJobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ABORTED" => BackupJobState::Aborted,
+"ABORTING" => BackupJobState::Aborting,
+"COMPLETED" => BackupJobState::Completed,
+"CREATED" => BackupJobState::Created,
+"EXPIRED" => BackupJobState::Expired,
+"FAILED" => BackupJobState::Failed,
+"PARTIAL" => BackupJobState::Partial,
+"PENDING" => BackupJobState::Pending,
+"RUNNING" => BackupJobState::Running,
+other => BackupJobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BackupJobState {
                 type Err = std::convert::Infallible;
 
@@ -5364,33 +5354,31 @@ impl std::str::FromStr for BackupJobState {
                 }
             }
 impl BackupJobState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BackupJobState::Aborted => "ABORTED",
-            BackupJobState::Aborting => "ABORTING",
-            BackupJobState::Completed => "COMPLETED",
-            BackupJobState::Created => "CREATED",
-            BackupJobState::Expired => "EXPIRED",
-            BackupJobState::Failed => "FAILED",
-            BackupJobState::Partial => "PARTIAL",
-            BackupJobState::Pending => "PENDING",
-            BackupJobState::Running => "RUNNING",
-            BackupJobState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ABORTED", "ABORTING", "COMPLETED", "CREATED", "EXPIRED", "FAILED", "PARTIAL", "PENDING", "RUNNING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BackupJobState::Aborted => "ABORTED",
+    BackupJobState::Aborting => "ABORTING",
+    BackupJobState::Completed => "COMPLETED",
+    BackupJobState::Created => "CREATED",
+    BackupJobState::Expired => "EXPIRED",
+    BackupJobState::Failed => "FAILED",
+    BackupJobState::Partial => "PARTIAL",
+    BackupJobState::Pending => "PENDING",
+    BackupJobState::Running => "RUNNING",
+    BackupJobState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ABORTED", "ABORTING", "COMPLETED", "CREATED", "EXPIRED", "FAILED", "PARTIAL", "PENDING", "RUNNING"]
+                }
+            }
 impl AsRef<str> for BackupJobState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
 #[non_exhaustive]
@@ -6118,13 +6106,13 @@ pub enum ConditionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConditionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "STRINGEQUALS" => ConditionType::Stringequals,
-            other => ConditionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "STRINGEQUALS" => ConditionType::Stringequals,
+other => ConditionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConditionType {
                 type Err = std::convert::Infallible;
 
@@ -6133,25 +6121,23 @@ impl std::str::FromStr for ConditionType {
                 }
             }
 impl ConditionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConditionType::Stringequals => "STRINGEQUALS",
-            ConditionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "STRINGEQUALS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConditionType::Stringequals => "STRINGEQUALS",
+    ConditionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["STRINGEQUALS"]
+                }
+            }
 impl AsRef<str> for ConditionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of Amazon Web Services resources.</p>
 #[non_exhaustive]
@@ -6576,15 +6562,15 @@ pub enum StorageClass {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StorageClass {
-    fn from(s: &str) -> Self {
-        match s {
-            "COLD" => StorageClass::Cold,
-            "DELETED" => StorageClass::Deleted,
-            "WARM" => StorageClass::Warm,
-            other => StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COLD" => StorageClass::Cold,
+"DELETED" => StorageClass::Deleted,
+"WARM" => StorageClass::Warm,
+other => StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StorageClass {
                 type Err = std::convert::Infallible;
 
@@ -6593,25 +6579,23 @@ impl std::str::FromStr for StorageClass {
                 }
             }
 impl StorageClass {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StorageClass::Cold => "COLD",
-            StorageClass::Deleted => "DELETED",
-            StorageClass::Warm => "WARM",
-            StorageClass::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COLD", "DELETED", "WARM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StorageClass::Cold => "COLD",
+    StorageClass::Deleted => "DELETED",
+    StorageClass::Warm => "WARM",
+    StorageClass::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COLD", "DELETED", "WARM"]
+                }
+            }
 impl AsRef<str> for StorageClass {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

@@ -604,15 +604,15 @@ pub enum LocationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LocationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "availability-zone" => LocationType::AvailabilityZone,
-            "availability-zone-id" => LocationType::AvailabilityZoneId,
-            "region" => LocationType::Region,
-            other => LocationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "availability-zone" => LocationType::AvailabilityZone,
+"availability-zone-id" => LocationType::AvailabilityZoneId,
+"region" => LocationType::Region,
+other => LocationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LocationType {
                 type Err = std::convert::Infallible;
 
@@ -621,25 +621,23 @@ impl std::str::FromStr for LocationType {
                 }
             }
 impl LocationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LocationType::AvailabilityZone => "availability-zone",
-            LocationType::AvailabilityZoneId => "availability-zone-id",
-            LocationType::Region => "region",
-            LocationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "availability-zone", "availability-zone-id", "region"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LocationType::AvailabilityZone => "availability-zone",
+    LocationType::AvailabilityZoneId => "availability-zone-id",
+    LocationType::Region => "region",
+    LocationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["availability-zone", "availability-zone-id", "region"]
+                }
+            }
 impl AsRef<str> for LocationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

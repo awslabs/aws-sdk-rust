@@ -412,16 +412,16 @@ pub enum MappingRuleMatchType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MappingRuleMatchType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Contains" => MappingRuleMatchType::Contains,
-            "Equals" => MappingRuleMatchType::Equals,
-            "NotEqual" => MappingRuleMatchType::NotEqual,
-            "StartsWith" => MappingRuleMatchType::StartsWith,
-            other => MappingRuleMatchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Contains" => MappingRuleMatchType::Contains,
+"Equals" => MappingRuleMatchType::Equals,
+"NotEqual" => MappingRuleMatchType::NotEqual,
+"StartsWith" => MappingRuleMatchType::StartsWith,
+other => MappingRuleMatchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MappingRuleMatchType {
                 type Err = std::convert::Infallible;
 
@@ -430,28 +430,26 @@ impl std::str::FromStr for MappingRuleMatchType {
                 }
             }
 impl MappingRuleMatchType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MappingRuleMatchType::Contains => "Contains",
-            MappingRuleMatchType::Equals => "Equals",
-            MappingRuleMatchType::NotEqual => "NotEqual",
-            MappingRuleMatchType::StartsWith => "StartsWith",
-            MappingRuleMatchType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Contains", "Equals", "NotEqual", "StartsWith"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MappingRuleMatchType::Contains => "Contains",
+    MappingRuleMatchType::Equals => "Equals",
+    MappingRuleMatchType::NotEqual => "NotEqual",
+    MappingRuleMatchType::StartsWith => "StartsWith",
+    MappingRuleMatchType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Contains", "Equals", "NotEqual", "StartsWith"]
+                }
+            }
 impl AsRef<str> for MappingRuleMatchType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AmbiguousRoleResolutionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -500,14 +498,14 @@ pub enum AmbiguousRoleResolutionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AmbiguousRoleResolutionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AuthenticatedRole" => AmbiguousRoleResolutionType::AuthenticatedRole,
-            "Deny" => AmbiguousRoleResolutionType::Deny,
-            other => AmbiguousRoleResolutionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AuthenticatedRole" => AmbiguousRoleResolutionType::AuthenticatedRole,
+"Deny" => AmbiguousRoleResolutionType::Deny,
+other => AmbiguousRoleResolutionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AmbiguousRoleResolutionType {
                 type Err = std::convert::Infallible;
 
@@ -516,26 +514,24 @@ impl std::str::FromStr for AmbiguousRoleResolutionType {
                 }
             }
 impl AmbiguousRoleResolutionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AmbiguousRoleResolutionType::AuthenticatedRole => "AuthenticatedRole",
-            AmbiguousRoleResolutionType::Deny => "Deny",
-            AmbiguousRoleResolutionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AuthenticatedRole", "Deny"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AmbiguousRoleResolutionType::AuthenticatedRole => "AuthenticatedRole",
+    AmbiguousRoleResolutionType::Deny => "Deny",
+    AmbiguousRoleResolutionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AuthenticatedRole", "Deny"]
+                }
+            }
 impl AsRef<str> for AmbiguousRoleResolutionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RoleMappingType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -584,14 +580,14 @@ pub enum RoleMappingType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RoleMappingType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Rules" => RoleMappingType::Rules,
-            "Token" => RoleMappingType::Token,
-            other => RoleMappingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Rules" => RoleMappingType::Rules,
+"Token" => RoleMappingType::Token,
+other => RoleMappingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RoleMappingType {
                 type Err = std::convert::Infallible;
 
@@ -600,26 +596,24 @@ impl std::str::FromStr for RoleMappingType {
                 }
             }
 impl RoleMappingType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RoleMappingType::Rules => "Rules",
-            RoleMappingType::Token => "Token",
-            RoleMappingType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Rules", "Token"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RoleMappingType::Rules => "Rules",
+    RoleMappingType::Token => "Token",
+    RoleMappingType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Rules", "Token"]
+                }
+            }
 impl AsRef<str> for RoleMappingType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A description of the identity pool.</p>
 #[non_exhaustive]
@@ -1026,14 +1020,14 @@ pub enum ErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => ErrorCode::AccessDenied,
-            "InternalServerError" => ErrorCode::InternalServerError,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDenied" => ErrorCode::AccessDenied,
+"InternalServerError" => ErrorCode::InternalServerError,
+other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -1042,24 +1036,22 @@ impl std::str::FromStr for ErrorCode {
                 }
             }
 impl ErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ErrorCode::AccessDenied => "AccessDenied",
-            ErrorCode::InternalServerError => "InternalServerError",
-            ErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied", "InternalServerError"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ErrorCode::AccessDenied => "AccessDenied",
+    ErrorCode::InternalServerError => "InternalServerError",
+    ErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "InternalServerError"]
+                }
+            }
 impl AsRef<str> for ErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

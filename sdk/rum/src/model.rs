@@ -325,14 +325,14 @@ pub enum MetricDestination {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricDestination {
-    fn from(s: &str) -> Self {
-        match s {
-            "CloudWatch" => MetricDestination::CloudWatch,
-            "Evidently" => MetricDestination::Evidently,
-            other => MetricDestination::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CloudWatch" => MetricDestination::CloudWatch,
+"Evidently" => MetricDestination::Evidently,
+other => MetricDestination::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricDestination {
                 type Err = std::convert::Infallible;
 
@@ -341,26 +341,24 @@ impl std::str::FromStr for MetricDestination {
                 }
             }
 impl MetricDestination {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricDestination::CloudWatch => "CloudWatch",
-            MetricDestination::Evidently => "Evidently",
-            MetricDestination::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CloudWatch", "Evidently"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricDestination::CloudWatch => "CloudWatch",
+    MetricDestination::Evidently => "Evidently",
+    MetricDestination::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CloudWatch", "Evidently"]
+                }
+            }
 impl AsRef<str> for MetricDestination {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure that displays information about one destination that CloudWatch RUM sends extended metrics to.</p>
 #[non_exhaustive]
@@ -699,14 +697,14 @@ pub enum CustomEventsStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomEventsStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => CustomEventsStatus::Disabled,
-            "ENABLED" => CustomEventsStatus::Enabled,
-            other => CustomEventsStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => CustomEventsStatus::Disabled,
+"ENABLED" => CustomEventsStatus::Enabled,
+other => CustomEventsStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CustomEventsStatus {
                 type Err = std::convert::Infallible;
 
@@ -715,26 +713,24 @@ impl std::str::FromStr for CustomEventsStatus {
                 }
             }
 impl CustomEventsStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CustomEventsStatus::Disabled => "DISABLED",
-            CustomEventsStatus::Enabled => "ENABLED",
-            CustomEventsStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED", "ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CustomEventsStatus::Disabled => "DISABLED",
+    CustomEventsStatus::Enabled => "ENABLED",
+    CustomEventsStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "ENABLED"]
+                }
+            }
 impl AsRef<str> for CustomEventsStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This structure contains much of the configuration data for the app monitor.</p>
 #[non_exhaustive]
@@ -1049,15 +1045,15 @@ pub enum Telemetry {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Telemetry {
-    fn from(s: &str) -> Self {
-        match s {
-            "errors" => Telemetry::Errors,
-            "http" => Telemetry::Http,
-            "performance" => Telemetry::Performance,
-            other => Telemetry::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "errors" => Telemetry::Errors,
+"http" => Telemetry::Http,
+"performance" => Telemetry::Performance,
+other => Telemetry::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Telemetry {
                 type Err = std::convert::Infallible;
 
@@ -1066,27 +1062,25 @@ impl std::str::FromStr for Telemetry {
                 }
             }
 impl Telemetry {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Telemetry::Errors => "errors",
-            Telemetry::Http => "http",
-            Telemetry::Performance => "performance",
-            Telemetry::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "errors", "http", "performance"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Telemetry::Errors => "errors",
+    Telemetry::Http => "http",
+    Telemetry::Performance => "performance",
+    Telemetry::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["errors", "http", "performance"]
+                }
+            }
 impl AsRef<str> for Telemetry {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure that displays the definition of one extended metric that RUM sends to CloudWatch or CloudWatch Evidently. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html"> Additional metrics that you can send to CloudWatch and CloudWatch Evidently</a>.</p>
 #[non_exhaustive]
@@ -1595,15 +1589,15 @@ pub enum StateEnum {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StateEnum {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => StateEnum::Active,
-            "CREATED" => StateEnum::Created,
-            "DELETING" => StateEnum::Deleting,
-            other => StateEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => StateEnum::Active,
+"CREATED" => StateEnum::Created,
+"DELETING" => StateEnum::Deleting,
+other => StateEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StateEnum {
                 type Err = std::convert::Infallible;
 
@@ -1612,27 +1606,25 @@ impl std::str::FromStr for StateEnum {
                 }
             }
 impl StateEnum {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StateEnum::Active => "ACTIVE",
-            StateEnum::Created => "CREATED",
-            StateEnum::Deleting => "DELETING",
-            StateEnum::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATED", "DELETING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StateEnum::Active => "ACTIVE",
+    StateEnum::Created => "CREATED",
+    StateEnum::Deleting => "DELETING",
+    StateEnum::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATED", "DELETING"]
+                }
+            }
 impl AsRef<str> for StateEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A RUM app monitor collects telemetry data from your application and sends that data to RUM. The data includes performance and reliability information such as page load time, client-side errors, and user behavior.</p>
 #[non_exhaustive]

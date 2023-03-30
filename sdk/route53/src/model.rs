@@ -362,25 +362,25 @@ pub enum RrType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RrType {
-    fn from(s: &str) -> Self {
-        match s {
-            "A" => RrType::A,
-            "AAAA" => RrType::Aaaa,
-            "CAA" => RrType::Caa,
-            "CNAME" => RrType::Cname,
-            "DS" => RrType::Ds,
-            "MX" => RrType::Mx,
-            "NAPTR" => RrType::Naptr,
-            "NS" => RrType::Ns,
-            "PTR" => RrType::Ptr,
-            "SOA" => RrType::Soa,
-            "SPF" => RrType::Spf,
-            "SRV" => RrType::Srv,
-            "TXT" => RrType::Txt,
-            other => RrType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "A" => RrType::A,
+"AAAA" => RrType::Aaaa,
+"CAA" => RrType::Caa,
+"CNAME" => RrType::Cname,
+"DS" => RrType::Ds,
+"MX" => RrType::Mx,
+"NAPTR" => RrType::Naptr,
+"NS" => RrType::Ns,
+"PTR" => RrType::Ptr,
+"SOA" => RrType::Soa,
+"SPF" => RrType::Spf,
+"SRV" => RrType::Srv,
+"TXT" => RrType::Txt,
+other => RrType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RrType {
                 type Err = std::convert::Infallible;
 
@@ -389,37 +389,35 @@ impl std::str::FromStr for RrType {
                 }
             }
 impl RrType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RrType::A => "A",
-            RrType::Aaaa => "AAAA",
-            RrType::Caa => "CAA",
-            RrType::Cname => "CNAME",
-            RrType::Ds => "DS",
-            RrType::Mx => "MX",
-            RrType::Naptr => "NAPTR",
-            RrType::Ns => "NS",
-            RrType::Ptr => "PTR",
-            RrType::Soa => "SOA",
-            RrType::Spf => "SPF",
-            RrType::Srv => "SRV",
-            RrType::Txt => "TXT",
-            RrType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "A", "AAAA", "CAA", "CNAME", "DS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV", "TXT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RrType::A => "A",
+    RrType::Aaaa => "AAAA",
+    RrType::Caa => "CAA",
+    RrType::Cname => "CNAME",
+    RrType::Ds => "DS",
+    RrType::Mx => "MX",
+    RrType::Naptr => "NAPTR",
+    RrType::Ns => "NS",
+    RrType::Ptr => "PTR",
+    RrType::Soa => "SOA",
+    RrType::Spf => "SPF",
+    RrType::Srv => "SRV",
+    RrType::Txt => "TXT",
+    RrType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["A", "AAAA", "CAA", "CNAME", "DS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV", "TXT"]
+                }
+            }
 impl AsRef<str> for RrType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that contains settings for a traffic policy.</p>
 #[non_exhaustive]
@@ -1313,17 +1311,17 @@ pub enum Statistic {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Statistic {
-    fn from(s: &str) -> Self {
-        match s {
-            "Average" => Statistic::Average,
-            "Maximum" => Statistic::Maximum,
-            "Minimum" => Statistic::Minimum,
-            "SampleCount" => Statistic::SampleCount,
-            "Sum" => Statistic::Sum,
-            other => Statistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Average" => Statistic::Average,
+"Maximum" => Statistic::Maximum,
+"Minimum" => Statistic::Minimum,
+"SampleCount" => Statistic::SampleCount,
+"Sum" => Statistic::Sum,
+other => Statistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Statistic {
                 type Err = std::convert::Infallible;
 
@@ -1332,29 +1330,27 @@ impl std::str::FromStr for Statistic {
                 }
             }
 impl Statistic {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Statistic::Average => "Average",
-            Statistic::Maximum => "Maximum",
-            Statistic::Minimum => "Minimum",
-            Statistic::SampleCount => "SampleCount",
-            Statistic::Sum => "Sum",
-            Statistic::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Average", "Maximum", "Minimum", "SampleCount", "Sum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Statistic::Average => "Average",
+    Statistic::Maximum => "Maximum",
+    Statistic::Minimum => "Minimum",
+    Statistic::SampleCount => "SampleCount",
+    Statistic::Sum => "Sum",
+    Statistic::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
+                }
+            }
 impl AsRef<str> for Statistic {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ComparisonOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1409,16 +1405,16 @@ pub enum ComparisonOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComparisonOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "GreaterThanOrEqualToThreshold" => ComparisonOperator::GreaterThanOrEqualToThreshold,
-            "GreaterThanThreshold" => ComparisonOperator::GreaterThanThreshold,
-            "LessThanOrEqualToThreshold" => ComparisonOperator::LessThanOrEqualToThreshold,
-            "LessThanThreshold" => ComparisonOperator::LessThanThreshold,
-            other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "GreaterThanOrEqualToThreshold" => ComparisonOperator::GreaterThanOrEqualToThreshold,
+"GreaterThanThreshold" => ComparisonOperator::GreaterThanThreshold,
+"LessThanOrEqualToThreshold" => ComparisonOperator::LessThanOrEqualToThreshold,
+"LessThanThreshold" => ComparisonOperator::LessThanThreshold,
+other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ComparisonOperator {
                 type Err = std::convert::Infallible;
 
@@ -1427,28 +1423,26 @@ impl std::str::FromStr for ComparisonOperator {
                 }
             }
 impl ComparisonOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComparisonOperator::GreaterThanOrEqualToThreshold => "GreaterThanOrEqualToThreshold",
-            ComparisonOperator::GreaterThanThreshold => "GreaterThanThreshold",
-            ComparisonOperator::LessThanOrEqualToThreshold => "LessThanOrEqualToThreshold",
-            ComparisonOperator::LessThanThreshold => "LessThanThreshold",
-            ComparisonOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "GreaterThanOrEqualToThreshold", "GreaterThanThreshold", "LessThanOrEqualToThreshold", "LessThanThreshold"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComparisonOperator::GreaterThanOrEqualToThreshold => "GreaterThanOrEqualToThreshold",
+    ComparisonOperator::GreaterThanThreshold => "GreaterThanThreshold",
+    ComparisonOperator::LessThanOrEqualToThreshold => "LessThanOrEqualToThreshold",
+    ComparisonOperator::LessThanThreshold => "LessThanThreshold",
+    ComparisonOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GreaterThanOrEqualToThreshold", "GreaterThanThreshold", "LessThanOrEqualToThreshold", "LessThanThreshold"]
+                }
+            }
 impl AsRef<str> for ComparisonOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that contains information about the health check.</p>
 #[non_exhaustive]
@@ -2197,15 +2191,15 @@ pub enum InsufficientDataHealthStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InsufficientDataHealthStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Healthy" => InsufficientDataHealthStatus::Healthy,
-            "LastKnownStatus" => InsufficientDataHealthStatus::LastKnownStatus,
-            "Unhealthy" => InsufficientDataHealthStatus::Unhealthy,
-            other => InsufficientDataHealthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Healthy" => InsufficientDataHealthStatus::Healthy,
+"LastKnownStatus" => InsufficientDataHealthStatus::LastKnownStatus,
+"Unhealthy" => InsufficientDataHealthStatus::Unhealthy,
+other => InsufficientDataHealthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InsufficientDataHealthStatus {
                 type Err = std::convert::Infallible;
 
@@ -2214,27 +2208,25 @@ impl std::str::FromStr for InsufficientDataHealthStatus {
                 }
             }
 impl InsufficientDataHealthStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InsufficientDataHealthStatus::Healthy => "Healthy",
-            InsufficientDataHealthStatus::LastKnownStatus => "LastKnownStatus",
-            InsufficientDataHealthStatus::Unhealthy => "Unhealthy",
-            InsufficientDataHealthStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Healthy", "LastKnownStatus", "Unhealthy"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InsufficientDataHealthStatus::Healthy => "Healthy",
+    InsufficientDataHealthStatus::LastKnownStatus => "LastKnownStatus",
+    InsufficientDataHealthStatus::Unhealthy => "Unhealthy",
+    InsufficientDataHealthStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Healthy", "LastKnownStatus", "Unhealthy"]
+                }
+            }
 impl AsRef<str> for InsufficientDataHealthStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
 #[non_exhaustive]
@@ -2476,46 +2468,46 @@ pub enum CloudWatchRegion {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudWatchRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "af-south-1" => CloudWatchRegion::AfSouth1,
-            "ap-east-1" => CloudWatchRegion::ApEast1,
-            "ap-northeast-1" => CloudWatchRegion::ApNortheast1,
-            "ap-northeast-2" => CloudWatchRegion::ApNortheast2,
-            "ap-northeast-3" => CloudWatchRegion::ApNortheast3,
-            "ap-south-1" => CloudWatchRegion::ApSouth1,
-            "ap-south-2" => CloudWatchRegion::ApSouth2,
-            "ap-southeast-1" => CloudWatchRegion::ApSoutheast1,
-            "ap-southeast-2" => CloudWatchRegion::ApSoutheast2,
-            "ap-southeast-3" => CloudWatchRegion::ApSoutheast3,
-            "ap-southeast-4" => CloudWatchRegion::ApSoutheast4,
-            "ca-central-1" => CloudWatchRegion::CaCentral1,
-            "cn-north-1" => CloudWatchRegion::CnNorth1,
-            "cn-northwest-1" => CloudWatchRegion::CnNorthwest1,
-            "eu-central-1" => CloudWatchRegion::EuCentral1,
-            "eu-central-2" => CloudWatchRegion::EuCentral2,
-            "eu-north-1" => CloudWatchRegion::EuNorth1,
-            "eu-south-1" => CloudWatchRegion::EuSouth1,
-            "eu-south-2" => CloudWatchRegion::EuSouth2,
-            "eu-west-1" => CloudWatchRegion::EuWest1,
-            "eu-west-2" => CloudWatchRegion::EuWest2,
-            "eu-west-3" => CloudWatchRegion::EuWest3,
-            "me-central-1" => CloudWatchRegion::MeCentral1,
-            "me-south-1" => CloudWatchRegion::MeSouth1,
-            "sa-east-1" => CloudWatchRegion::SaEast1,
-            "us-east-1" => CloudWatchRegion::UsEast1,
-            "us-east-2" => CloudWatchRegion::UsEast2,
-            "us-gov-east-1" => CloudWatchRegion::UsGovEast1,
-            "us-gov-west-1" => CloudWatchRegion::UsGovWest1,
-            "us-iso-east-1" => CloudWatchRegion::UsIsoEast1,
-            "us-iso-west-1" => CloudWatchRegion::UsIsoWest1,
-            "us-isob-east-1" => CloudWatchRegion::UsIsobEast1,
-            "us-west-1" => CloudWatchRegion::UsWest1,
-            "us-west-2" => CloudWatchRegion::UsWest2,
-            other => CloudWatchRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "af-south-1" => CloudWatchRegion::AfSouth1,
+"ap-east-1" => CloudWatchRegion::ApEast1,
+"ap-northeast-1" => CloudWatchRegion::ApNortheast1,
+"ap-northeast-2" => CloudWatchRegion::ApNortheast2,
+"ap-northeast-3" => CloudWatchRegion::ApNortheast3,
+"ap-south-1" => CloudWatchRegion::ApSouth1,
+"ap-south-2" => CloudWatchRegion::ApSouth2,
+"ap-southeast-1" => CloudWatchRegion::ApSoutheast1,
+"ap-southeast-2" => CloudWatchRegion::ApSoutheast2,
+"ap-southeast-3" => CloudWatchRegion::ApSoutheast3,
+"ap-southeast-4" => CloudWatchRegion::ApSoutheast4,
+"ca-central-1" => CloudWatchRegion::CaCentral1,
+"cn-north-1" => CloudWatchRegion::CnNorth1,
+"cn-northwest-1" => CloudWatchRegion::CnNorthwest1,
+"eu-central-1" => CloudWatchRegion::EuCentral1,
+"eu-central-2" => CloudWatchRegion::EuCentral2,
+"eu-north-1" => CloudWatchRegion::EuNorth1,
+"eu-south-1" => CloudWatchRegion::EuSouth1,
+"eu-south-2" => CloudWatchRegion::EuSouth2,
+"eu-west-1" => CloudWatchRegion::EuWest1,
+"eu-west-2" => CloudWatchRegion::EuWest2,
+"eu-west-3" => CloudWatchRegion::EuWest3,
+"me-central-1" => CloudWatchRegion::MeCentral1,
+"me-south-1" => CloudWatchRegion::MeSouth1,
+"sa-east-1" => CloudWatchRegion::SaEast1,
+"us-east-1" => CloudWatchRegion::UsEast1,
+"us-east-2" => CloudWatchRegion::UsEast2,
+"us-gov-east-1" => CloudWatchRegion::UsGovEast1,
+"us-gov-west-1" => CloudWatchRegion::UsGovWest1,
+"us-iso-east-1" => CloudWatchRegion::UsIsoEast1,
+"us-iso-west-1" => CloudWatchRegion::UsIsoWest1,
+"us-isob-east-1" => CloudWatchRegion::UsIsobEast1,
+"us-west-1" => CloudWatchRegion::UsWest1,
+"us-west-2" => CloudWatchRegion::UsWest2,
+other => CloudWatchRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CloudWatchRegion {
                 type Err = std::convert::Infallible;
 
@@ -2524,58 +2516,56 @@ impl std::str::FromStr for CloudWatchRegion {
                 }
             }
 impl CloudWatchRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CloudWatchRegion::AfSouth1 => "af-south-1",
-            CloudWatchRegion::ApEast1 => "ap-east-1",
-            CloudWatchRegion::ApNortheast1 => "ap-northeast-1",
-            CloudWatchRegion::ApNortheast2 => "ap-northeast-2",
-            CloudWatchRegion::ApNortheast3 => "ap-northeast-3",
-            CloudWatchRegion::ApSouth1 => "ap-south-1",
-            CloudWatchRegion::ApSouth2 => "ap-south-2",
-            CloudWatchRegion::ApSoutheast1 => "ap-southeast-1",
-            CloudWatchRegion::ApSoutheast2 => "ap-southeast-2",
-            CloudWatchRegion::ApSoutheast3 => "ap-southeast-3",
-            CloudWatchRegion::ApSoutheast4 => "ap-southeast-4",
-            CloudWatchRegion::CaCentral1 => "ca-central-1",
-            CloudWatchRegion::CnNorth1 => "cn-north-1",
-            CloudWatchRegion::CnNorthwest1 => "cn-northwest-1",
-            CloudWatchRegion::EuCentral1 => "eu-central-1",
-            CloudWatchRegion::EuCentral2 => "eu-central-2",
-            CloudWatchRegion::EuNorth1 => "eu-north-1",
-            CloudWatchRegion::EuSouth1 => "eu-south-1",
-            CloudWatchRegion::EuSouth2 => "eu-south-2",
-            CloudWatchRegion::EuWest1 => "eu-west-1",
-            CloudWatchRegion::EuWest2 => "eu-west-2",
-            CloudWatchRegion::EuWest3 => "eu-west-3",
-            CloudWatchRegion::MeCentral1 => "me-central-1",
-            CloudWatchRegion::MeSouth1 => "me-south-1",
-            CloudWatchRegion::SaEast1 => "sa-east-1",
-            CloudWatchRegion::UsEast1 => "us-east-1",
-            CloudWatchRegion::UsEast2 => "us-east-2",
-            CloudWatchRegion::UsGovEast1 => "us-gov-east-1",
-            CloudWatchRegion::UsGovWest1 => "us-gov-west-1",
-            CloudWatchRegion::UsIsoEast1 => "us-iso-east-1",
-            CloudWatchRegion::UsIsoWest1 => "us-iso-west-1",
-            CloudWatchRegion::UsIsobEast1 => "us-isob-east-1",
-            CloudWatchRegion::UsWest1 => "us-west-1",
-            CloudWatchRegion::UsWest2 => "us-west-2",
-            CloudWatchRegion::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-gov-east-1", "us-gov-west-1", "us-iso-east-1", "us-iso-west-1", "us-isob-east-1", "us-west-1", "us-west-2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CloudWatchRegion::AfSouth1 => "af-south-1",
+    CloudWatchRegion::ApEast1 => "ap-east-1",
+    CloudWatchRegion::ApNortheast1 => "ap-northeast-1",
+    CloudWatchRegion::ApNortheast2 => "ap-northeast-2",
+    CloudWatchRegion::ApNortheast3 => "ap-northeast-3",
+    CloudWatchRegion::ApSouth1 => "ap-south-1",
+    CloudWatchRegion::ApSouth2 => "ap-south-2",
+    CloudWatchRegion::ApSoutheast1 => "ap-southeast-1",
+    CloudWatchRegion::ApSoutheast2 => "ap-southeast-2",
+    CloudWatchRegion::ApSoutheast3 => "ap-southeast-3",
+    CloudWatchRegion::ApSoutheast4 => "ap-southeast-4",
+    CloudWatchRegion::CaCentral1 => "ca-central-1",
+    CloudWatchRegion::CnNorth1 => "cn-north-1",
+    CloudWatchRegion::CnNorthwest1 => "cn-northwest-1",
+    CloudWatchRegion::EuCentral1 => "eu-central-1",
+    CloudWatchRegion::EuCentral2 => "eu-central-2",
+    CloudWatchRegion::EuNorth1 => "eu-north-1",
+    CloudWatchRegion::EuSouth1 => "eu-south-1",
+    CloudWatchRegion::EuSouth2 => "eu-south-2",
+    CloudWatchRegion::EuWest1 => "eu-west-1",
+    CloudWatchRegion::EuWest2 => "eu-west-2",
+    CloudWatchRegion::EuWest3 => "eu-west-3",
+    CloudWatchRegion::MeCentral1 => "me-central-1",
+    CloudWatchRegion::MeSouth1 => "me-south-1",
+    CloudWatchRegion::SaEast1 => "sa-east-1",
+    CloudWatchRegion::UsEast1 => "us-east-1",
+    CloudWatchRegion::UsEast2 => "us-east-2",
+    CloudWatchRegion::UsGovEast1 => "us-gov-east-1",
+    CloudWatchRegion::UsGovWest1 => "us-gov-west-1",
+    CloudWatchRegion::UsIsoEast1 => "us-iso-east-1",
+    CloudWatchRegion::UsIsoWest1 => "us-iso-west-1",
+    CloudWatchRegion::UsIsobEast1 => "us-isob-east-1",
+    CloudWatchRegion::UsWest1 => "us-west-1",
+    CloudWatchRegion::UsWest2 => "us-west-2",
+    CloudWatchRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-gov-east-1", "us-gov-west-1", "us-iso-east-1", "us-iso-west-1", "us-isob-east-1", "us-west-1", "us-west-2"]
+                }
+            }
 impl AsRef<str> for CloudWatchRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `HealthCheckRegion`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2642,20 +2632,20 @@ pub enum HealthCheckRegion {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HealthCheckRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "ap-northeast-1" => HealthCheckRegion::ApNortheast1,
-            "ap-southeast-1" => HealthCheckRegion::ApSoutheast1,
-            "ap-southeast-2" => HealthCheckRegion::ApSoutheast2,
-            "eu-west-1" => HealthCheckRegion::EuWest1,
-            "sa-east-1" => HealthCheckRegion::SaEast1,
-            "us-east-1" => HealthCheckRegion::UsEast1,
-            "us-west-1" => HealthCheckRegion::UsWest1,
-            "us-west-2" => HealthCheckRegion::UsWest2,
-            other => HealthCheckRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ap-northeast-1" => HealthCheckRegion::ApNortheast1,
+"ap-southeast-1" => HealthCheckRegion::ApSoutheast1,
+"ap-southeast-2" => HealthCheckRegion::ApSoutheast2,
+"eu-west-1" => HealthCheckRegion::EuWest1,
+"sa-east-1" => HealthCheckRegion::SaEast1,
+"us-east-1" => HealthCheckRegion::UsEast1,
+"us-west-1" => HealthCheckRegion::UsWest1,
+"us-west-2" => HealthCheckRegion::UsWest2,
+other => HealthCheckRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HealthCheckRegion {
                 type Err = std::convert::Infallible;
 
@@ -2664,32 +2654,30 @@ impl std::str::FromStr for HealthCheckRegion {
                 }
             }
 impl HealthCheckRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HealthCheckRegion::ApNortheast1 => "ap-northeast-1",
-            HealthCheckRegion::ApSoutheast1 => "ap-southeast-1",
-            HealthCheckRegion::ApSoutheast2 => "ap-southeast-2",
-            HealthCheckRegion::EuWest1 => "eu-west-1",
-            HealthCheckRegion::SaEast1 => "sa-east-1",
-            HealthCheckRegion::UsEast1 => "us-east-1",
-            HealthCheckRegion::UsWest1 => "us-west-1",
-            HealthCheckRegion::UsWest2 => "us-west-2",
-            HealthCheckRegion::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "eu-west-1", "sa-east-1", "us-east-1", "us-west-1", "us-west-2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HealthCheckRegion::ApNortheast1 => "ap-northeast-1",
+    HealthCheckRegion::ApSoutheast1 => "ap-southeast-1",
+    HealthCheckRegion::ApSoutheast2 => "ap-southeast-2",
+    HealthCheckRegion::EuWest1 => "eu-west-1",
+    HealthCheckRegion::SaEast1 => "sa-east-1",
+    HealthCheckRegion::UsEast1 => "us-east-1",
+    HealthCheckRegion::UsWest1 => "us-west-1",
+    HealthCheckRegion::UsWest2 => "us-west-2",
+    HealthCheckRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "eu-west-1", "sa-east-1", "us-east-1", "us-west-1", "us-west-2"]
+                }
+            }
 impl AsRef<str> for HealthCheckRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `HealthCheckType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2756,20 +2744,20 @@ pub enum HealthCheckType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HealthCheckType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CALCULATED" => HealthCheckType::Calculated,
-            "CLOUDWATCH_METRIC" => HealthCheckType::CloudwatchMetric,
-            "HTTP" => HealthCheckType::Http,
-            "HTTPS" => HealthCheckType::Https,
-            "HTTPS_STR_MATCH" => HealthCheckType::HttpsStrMatch,
-            "HTTP_STR_MATCH" => HealthCheckType::HttpStrMatch,
-            "RECOVERY_CONTROL" => HealthCheckType::RecoveryControl,
-            "TCP" => HealthCheckType::Tcp,
-            other => HealthCheckType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CALCULATED" => HealthCheckType::Calculated,
+"CLOUDWATCH_METRIC" => HealthCheckType::CloudwatchMetric,
+"HTTP" => HealthCheckType::Http,
+"HTTPS" => HealthCheckType::Https,
+"HTTPS_STR_MATCH" => HealthCheckType::HttpsStrMatch,
+"HTTP_STR_MATCH" => HealthCheckType::HttpStrMatch,
+"RECOVERY_CONTROL" => HealthCheckType::RecoveryControl,
+"TCP" => HealthCheckType::Tcp,
+other => HealthCheckType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HealthCheckType {
                 type Err = std::convert::Infallible;
 
@@ -2778,32 +2766,30 @@ impl std::str::FromStr for HealthCheckType {
                 }
             }
 impl HealthCheckType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HealthCheckType::Calculated => "CALCULATED",
-            HealthCheckType::CloudwatchMetric => "CLOUDWATCH_METRIC",
-            HealthCheckType::Http => "HTTP",
-            HealthCheckType::Https => "HTTPS",
-            HealthCheckType::HttpsStrMatch => "HTTPS_STR_MATCH",
-            HealthCheckType::HttpStrMatch => "HTTP_STR_MATCH",
-            HealthCheckType::RecoveryControl => "RECOVERY_CONTROL",
-            HealthCheckType::Tcp => "TCP",
-            HealthCheckType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CALCULATED", "CLOUDWATCH_METRIC", "HTTP", "HTTPS", "HTTPS_STR_MATCH", "HTTP_STR_MATCH", "RECOVERY_CONTROL", "TCP"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HealthCheckType::Calculated => "CALCULATED",
+    HealthCheckType::CloudwatchMetric => "CLOUDWATCH_METRIC",
+    HealthCheckType::Http => "HTTP",
+    HealthCheckType::Https => "HTTPS",
+    HealthCheckType::HttpsStrMatch => "HTTPS_STR_MATCH",
+    HealthCheckType::HttpStrMatch => "HTTP_STR_MATCH",
+    HealthCheckType::RecoveryControl => "RECOVERY_CONTROL",
+    HealthCheckType::Tcp => "TCP",
+    HealthCheckType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CALCULATED", "CLOUDWATCH_METRIC", "HTTP", "HTTPS", "HTTPS_STR_MATCH", "HTTP_STR_MATCH", "RECOVERY_CONTROL", "TCP"]
+                }
+            }
 impl AsRef<str> for HealthCheckType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ResettableElementName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2858,16 +2844,16 @@ pub enum ResettableElementName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResettableElementName {
-    fn from(s: &str) -> Self {
-        match s {
-            "ChildHealthChecks" => ResettableElementName::ChildHealthChecks,
-            "FullyQualifiedDomainName" => ResettableElementName::FullyQualifiedDomainName,
-            "Regions" => ResettableElementName::Regions,
-            "ResourcePath" => ResettableElementName::ResourcePath,
-            other => ResettableElementName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ChildHealthChecks" => ResettableElementName::ChildHealthChecks,
+"FullyQualifiedDomainName" => ResettableElementName::FullyQualifiedDomainName,
+"Regions" => ResettableElementName::Regions,
+"ResourcePath" => ResettableElementName::ResourcePath,
+other => ResettableElementName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResettableElementName {
                 type Err = std::convert::Infallible;
 
@@ -2876,28 +2862,26 @@ impl std::str::FromStr for ResettableElementName {
                 }
             }
 impl ResettableElementName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResettableElementName::ChildHealthChecks => "ChildHealthChecks",
-            ResettableElementName::FullyQualifiedDomainName => "FullyQualifiedDomainName",
-            ResettableElementName::Regions => "Regions",
-            ResettableElementName::ResourcePath => "ResourcePath",
-            ResettableElementName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ChildHealthChecks", "FullyQualifiedDomainName", "Regions", "ResourcePath"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResettableElementName::ChildHealthChecks => "ChildHealthChecks",
+    ResettableElementName::FullyQualifiedDomainName => "FullyQualifiedDomainName",
+    ResettableElementName::Regions => "Regions",
+    ResettableElementName::ResourcePath => "ResourcePath",
+    ResettableElementName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ChildHealthChecks", "FullyQualifiedDomainName", "Regions", "ResourcePath"]
+                }
+            }
 impl AsRef<str> for ResettableElementName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>(Private hosted zones only) A complex type that contains information about an Amazon VPC.</p> 
 /// <p>If you associate a private hosted zone with an Amazon VPC when you make a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a> request, the following parameters are also required.</p>
@@ -3109,45 +3093,45 @@ pub enum VpcRegion {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VpcRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "af-south-1" => VpcRegion::AfSouth1,
-            "ap-east-1" => VpcRegion::ApEast1,
-            "ap-northeast-1" => VpcRegion::ApNortheast1,
-            "ap-northeast-2" => VpcRegion::ApNortheast2,
-            "ap-northeast-3" => VpcRegion::ApNortheast3,
-            "ap-south-1" => VpcRegion::ApSouth1,
-            "ap-south-2" => VpcRegion::ApSouth2,
-            "ap-southeast-1" => VpcRegion::ApSoutheast1,
-            "ap-southeast-2" => VpcRegion::ApSoutheast2,
-            "ap-southeast-3" => VpcRegion::ApSoutheast3,
-            "ap-southeast-4" => VpcRegion::ApSoutheast4,
-            "ca-central-1" => VpcRegion::CaCentral1,
-            "cn-north-1" => VpcRegion::CnNorth1,
-            "eu-central-1" => VpcRegion::EuCentral1,
-            "eu-central-2" => VpcRegion::EuCentral2,
-            "eu-north-1" => VpcRegion::EuNorth1,
-            "eu-south-1" => VpcRegion::EuSouth1,
-            "eu-south-2" => VpcRegion::EuSouth2,
-            "eu-west-1" => VpcRegion::EuWest1,
-            "eu-west-2" => VpcRegion::EuWest2,
-            "eu-west-3" => VpcRegion::EuWest3,
-            "me-central-1" => VpcRegion::MeCentral1,
-            "me-south-1" => VpcRegion::MeSouth1,
-            "sa-east-1" => VpcRegion::SaEast1,
-            "us-east-1" => VpcRegion::UsEast1,
-            "us-east-2" => VpcRegion::UsEast2,
-            "us-gov-east-1" => VpcRegion::UsGovEast1,
-            "us-gov-west-1" => VpcRegion::UsGovWest1,
-            "us-iso-east-1" => VpcRegion::UsIsoEast1,
-            "us-iso-west-1" => VpcRegion::UsIsoWest1,
-            "us-isob-east-1" => VpcRegion::UsIsobEast1,
-            "us-west-1" => VpcRegion::UsWest1,
-            "us-west-2" => VpcRegion::UsWest2,
-            other => VpcRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "af-south-1" => VpcRegion::AfSouth1,
+"ap-east-1" => VpcRegion::ApEast1,
+"ap-northeast-1" => VpcRegion::ApNortheast1,
+"ap-northeast-2" => VpcRegion::ApNortheast2,
+"ap-northeast-3" => VpcRegion::ApNortheast3,
+"ap-south-1" => VpcRegion::ApSouth1,
+"ap-south-2" => VpcRegion::ApSouth2,
+"ap-southeast-1" => VpcRegion::ApSoutheast1,
+"ap-southeast-2" => VpcRegion::ApSoutheast2,
+"ap-southeast-3" => VpcRegion::ApSoutheast3,
+"ap-southeast-4" => VpcRegion::ApSoutheast4,
+"ca-central-1" => VpcRegion::CaCentral1,
+"cn-north-1" => VpcRegion::CnNorth1,
+"eu-central-1" => VpcRegion::EuCentral1,
+"eu-central-2" => VpcRegion::EuCentral2,
+"eu-north-1" => VpcRegion::EuNorth1,
+"eu-south-1" => VpcRegion::EuSouth1,
+"eu-south-2" => VpcRegion::EuSouth2,
+"eu-west-1" => VpcRegion::EuWest1,
+"eu-west-2" => VpcRegion::EuWest2,
+"eu-west-3" => VpcRegion::EuWest3,
+"me-central-1" => VpcRegion::MeCentral1,
+"me-south-1" => VpcRegion::MeSouth1,
+"sa-east-1" => VpcRegion::SaEast1,
+"us-east-1" => VpcRegion::UsEast1,
+"us-east-2" => VpcRegion::UsEast2,
+"us-gov-east-1" => VpcRegion::UsGovEast1,
+"us-gov-west-1" => VpcRegion::UsGovWest1,
+"us-iso-east-1" => VpcRegion::UsIsoEast1,
+"us-iso-west-1" => VpcRegion::UsIsoWest1,
+"us-isob-east-1" => VpcRegion::UsIsobEast1,
+"us-west-1" => VpcRegion::UsWest1,
+"us-west-2" => VpcRegion::UsWest2,
+other => VpcRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for VpcRegion {
                 type Err = std::convert::Infallible;
 
@@ -3156,57 +3140,55 @@ impl std::str::FromStr for VpcRegion {
                 }
             }
 impl VpcRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VpcRegion::AfSouth1 => "af-south-1",
-            VpcRegion::ApEast1 => "ap-east-1",
-            VpcRegion::ApNortheast1 => "ap-northeast-1",
-            VpcRegion::ApNortheast2 => "ap-northeast-2",
-            VpcRegion::ApNortheast3 => "ap-northeast-3",
-            VpcRegion::ApSouth1 => "ap-south-1",
-            VpcRegion::ApSouth2 => "ap-south-2",
-            VpcRegion::ApSoutheast1 => "ap-southeast-1",
-            VpcRegion::ApSoutheast2 => "ap-southeast-2",
-            VpcRegion::ApSoutheast3 => "ap-southeast-3",
-            VpcRegion::ApSoutheast4 => "ap-southeast-4",
-            VpcRegion::CaCentral1 => "ca-central-1",
-            VpcRegion::CnNorth1 => "cn-north-1",
-            VpcRegion::EuCentral1 => "eu-central-1",
-            VpcRegion::EuCentral2 => "eu-central-2",
-            VpcRegion::EuNorth1 => "eu-north-1",
-            VpcRegion::EuSouth1 => "eu-south-1",
-            VpcRegion::EuSouth2 => "eu-south-2",
-            VpcRegion::EuWest1 => "eu-west-1",
-            VpcRegion::EuWest2 => "eu-west-2",
-            VpcRegion::EuWest3 => "eu-west-3",
-            VpcRegion::MeCentral1 => "me-central-1",
-            VpcRegion::MeSouth1 => "me-south-1",
-            VpcRegion::SaEast1 => "sa-east-1",
-            VpcRegion::UsEast1 => "us-east-1",
-            VpcRegion::UsEast2 => "us-east-2",
-            VpcRegion::UsGovEast1 => "us-gov-east-1",
-            VpcRegion::UsGovWest1 => "us-gov-west-1",
-            VpcRegion::UsIsoEast1 => "us-iso-east-1",
-            VpcRegion::UsIsoWest1 => "us-iso-west-1",
-            VpcRegion::UsIsobEast1 => "us-isob-east-1",
-            VpcRegion::UsWest1 => "us-west-1",
-            VpcRegion::UsWest2 => "us-west-2",
-            VpcRegion::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-gov-east-1", "us-gov-west-1", "us-iso-east-1", "us-iso-west-1", "us-isob-east-1", "us-west-1", "us-west-2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VpcRegion::AfSouth1 => "af-south-1",
+    VpcRegion::ApEast1 => "ap-east-1",
+    VpcRegion::ApNortheast1 => "ap-northeast-1",
+    VpcRegion::ApNortheast2 => "ap-northeast-2",
+    VpcRegion::ApNortheast3 => "ap-northeast-3",
+    VpcRegion::ApSouth1 => "ap-south-1",
+    VpcRegion::ApSouth2 => "ap-south-2",
+    VpcRegion::ApSoutheast1 => "ap-southeast-1",
+    VpcRegion::ApSoutheast2 => "ap-southeast-2",
+    VpcRegion::ApSoutheast3 => "ap-southeast-3",
+    VpcRegion::ApSoutheast4 => "ap-southeast-4",
+    VpcRegion::CaCentral1 => "ca-central-1",
+    VpcRegion::CnNorth1 => "cn-north-1",
+    VpcRegion::EuCentral1 => "eu-central-1",
+    VpcRegion::EuCentral2 => "eu-central-2",
+    VpcRegion::EuNorth1 => "eu-north-1",
+    VpcRegion::EuSouth1 => "eu-south-1",
+    VpcRegion::EuSouth2 => "eu-south-2",
+    VpcRegion::EuWest1 => "eu-west-1",
+    VpcRegion::EuWest2 => "eu-west-2",
+    VpcRegion::EuWest3 => "eu-west-3",
+    VpcRegion::MeCentral1 => "me-central-1",
+    VpcRegion::MeSouth1 => "me-south-1",
+    VpcRegion::SaEast1 => "sa-east-1",
+    VpcRegion::UsEast1 => "us-east-1",
+    VpcRegion::UsEast2 => "us-east-2",
+    VpcRegion::UsGovEast1 => "us-gov-east-1",
+    VpcRegion::UsGovWest1 => "us-gov-west-1",
+    VpcRegion::UsIsoEast1 => "us-iso-east-1",
+    VpcRegion::UsIsoWest1 => "us-iso-west-1",
+    VpcRegion::UsIsobEast1 => "us-isob-east-1",
+    VpcRegion::UsWest1 => "us-west-1",
+    VpcRegion::UsWest2 => "us-west-2",
+    VpcRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-gov-east-1", "us-gov-west-1", "us-iso-east-1", "us-iso-west-1", "us-isob-east-1", "us-west-1", "us-west-2"]
+                }
+            }
 impl AsRef<str> for VpcRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that contains information about the latest version of one traffic policy that is associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -3600,14 +3582,14 @@ pub enum TagResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TagResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "healthcheck" => TagResourceType::Healthcheck,
-            "hostedzone" => TagResourceType::Hostedzone,
-            other => TagResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "healthcheck" => TagResourceType::Healthcheck,
+"hostedzone" => TagResourceType::Hostedzone,
+other => TagResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TagResourceType {
                 type Err = std::convert::Infallible;
 
@@ -3616,26 +3598,24 @@ impl std::str::FromStr for TagResourceType {
                 }
             }
 impl TagResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TagResourceType::Healthcheck => "healthcheck",
-            TagResourceType::Hostedzone => "hostedzone",
-            TagResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "healthcheck", "hostedzone"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TagResourceType::Healthcheck => "healthcheck",
+    TagResourceType::Hostedzone => "hostedzone",
+    TagResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["healthcheck", "hostedzone"]
+                }
+            }
 impl AsRef<str> for TagResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.</p>
 #[non_exhaustive]
@@ -5652,14 +5632,14 @@ pub enum ResourceRecordSetFailover {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceRecordSetFailover {
-    fn from(s: &str) -> Self {
-        match s {
-            "PRIMARY" => ResourceRecordSetFailover::Primary,
-            "SECONDARY" => ResourceRecordSetFailover::Secondary,
-            other => ResourceRecordSetFailover::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PRIMARY" => ResourceRecordSetFailover::Primary,
+"SECONDARY" => ResourceRecordSetFailover::Secondary,
+other => ResourceRecordSetFailover::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceRecordSetFailover {
                 type Err = std::convert::Infallible;
 
@@ -5668,26 +5648,24 @@ impl std::str::FromStr for ResourceRecordSetFailover {
                 }
             }
 impl ResourceRecordSetFailover {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceRecordSetFailover::Primary => "PRIMARY",
-            ResourceRecordSetFailover::Secondary => "SECONDARY",
-            ResourceRecordSetFailover::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PRIMARY", "SECONDARY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceRecordSetFailover::Primary => "PRIMARY",
+    ResourceRecordSetFailover::Secondary => "SECONDARY",
+    ResourceRecordSetFailover::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PRIMARY", "SECONDARY"]
+                }
+            }
 impl AsRef<str> for ResourceRecordSetFailover {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that contains information about a geographic location.</p>
 #[non_exhaustive]
@@ -5957,41 +5935,41 @@ pub enum ResourceRecordSetRegion {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceRecordSetRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "af-south-1" => ResourceRecordSetRegion::AfSouth1,
-            "ap-east-1" => ResourceRecordSetRegion::ApEast1,
-            "ap-northeast-1" => ResourceRecordSetRegion::ApNortheast1,
-            "ap-northeast-2" => ResourceRecordSetRegion::ApNortheast2,
-            "ap-northeast-3" => ResourceRecordSetRegion::ApNortheast3,
-            "ap-south-1" => ResourceRecordSetRegion::ApSouth1,
-            "ap-south-2" => ResourceRecordSetRegion::ApSouth2,
-            "ap-southeast-1" => ResourceRecordSetRegion::ApSoutheast1,
-            "ap-southeast-2" => ResourceRecordSetRegion::ApSoutheast2,
-            "ap-southeast-3" => ResourceRecordSetRegion::ApSoutheast3,
-            "ap-southeast-4" => ResourceRecordSetRegion::ApSoutheast4,
-            "ca-central-1" => ResourceRecordSetRegion::CaCentral1,
-            "cn-north-1" => ResourceRecordSetRegion::CnNorth1,
-            "cn-northwest-1" => ResourceRecordSetRegion::CnNorthwest1,
-            "eu-central-1" => ResourceRecordSetRegion::EuCentral1,
-            "eu-central-2" => ResourceRecordSetRegion::EuCentral2,
-            "eu-north-1" => ResourceRecordSetRegion::EuNorth1,
-            "eu-south-1" => ResourceRecordSetRegion::EuSouth1,
-            "eu-south-2" => ResourceRecordSetRegion::EuSouth2,
-            "eu-west-1" => ResourceRecordSetRegion::EuWest1,
-            "eu-west-2" => ResourceRecordSetRegion::EuWest2,
-            "eu-west-3" => ResourceRecordSetRegion::EuWest3,
-            "me-central-1" => ResourceRecordSetRegion::MeCentral1,
-            "me-south-1" => ResourceRecordSetRegion::MeSouth1,
-            "sa-east-1" => ResourceRecordSetRegion::SaEast1,
-            "us-east-1" => ResourceRecordSetRegion::UsEast1,
-            "us-east-2" => ResourceRecordSetRegion::UsEast2,
-            "us-west-1" => ResourceRecordSetRegion::UsWest1,
-            "us-west-2" => ResourceRecordSetRegion::UsWest2,
-            other => ResourceRecordSetRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "af-south-1" => ResourceRecordSetRegion::AfSouth1,
+"ap-east-1" => ResourceRecordSetRegion::ApEast1,
+"ap-northeast-1" => ResourceRecordSetRegion::ApNortheast1,
+"ap-northeast-2" => ResourceRecordSetRegion::ApNortheast2,
+"ap-northeast-3" => ResourceRecordSetRegion::ApNortheast3,
+"ap-south-1" => ResourceRecordSetRegion::ApSouth1,
+"ap-south-2" => ResourceRecordSetRegion::ApSouth2,
+"ap-southeast-1" => ResourceRecordSetRegion::ApSoutheast1,
+"ap-southeast-2" => ResourceRecordSetRegion::ApSoutheast2,
+"ap-southeast-3" => ResourceRecordSetRegion::ApSoutheast3,
+"ap-southeast-4" => ResourceRecordSetRegion::ApSoutheast4,
+"ca-central-1" => ResourceRecordSetRegion::CaCentral1,
+"cn-north-1" => ResourceRecordSetRegion::CnNorth1,
+"cn-northwest-1" => ResourceRecordSetRegion::CnNorthwest1,
+"eu-central-1" => ResourceRecordSetRegion::EuCentral1,
+"eu-central-2" => ResourceRecordSetRegion::EuCentral2,
+"eu-north-1" => ResourceRecordSetRegion::EuNorth1,
+"eu-south-1" => ResourceRecordSetRegion::EuSouth1,
+"eu-south-2" => ResourceRecordSetRegion::EuSouth2,
+"eu-west-1" => ResourceRecordSetRegion::EuWest1,
+"eu-west-2" => ResourceRecordSetRegion::EuWest2,
+"eu-west-3" => ResourceRecordSetRegion::EuWest3,
+"me-central-1" => ResourceRecordSetRegion::MeCentral1,
+"me-south-1" => ResourceRecordSetRegion::MeSouth1,
+"sa-east-1" => ResourceRecordSetRegion::SaEast1,
+"us-east-1" => ResourceRecordSetRegion::UsEast1,
+"us-east-2" => ResourceRecordSetRegion::UsEast2,
+"us-west-1" => ResourceRecordSetRegion::UsWest1,
+"us-west-2" => ResourceRecordSetRegion::UsWest2,
+other => ResourceRecordSetRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceRecordSetRegion {
                 type Err = std::convert::Infallible;
 
@@ -6000,53 +5978,51 @@ impl std::str::FromStr for ResourceRecordSetRegion {
                 }
             }
 impl ResourceRecordSetRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceRecordSetRegion::AfSouth1 => "af-south-1",
-            ResourceRecordSetRegion::ApEast1 => "ap-east-1",
-            ResourceRecordSetRegion::ApNortheast1 => "ap-northeast-1",
-            ResourceRecordSetRegion::ApNortheast2 => "ap-northeast-2",
-            ResourceRecordSetRegion::ApNortheast3 => "ap-northeast-3",
-            ResourceRecordSetRegion::ApSouth1 => "ap-south-1",
-            ResourceRecordSetRegion::ApSouth2 => "ap-south-2",
-            ResourceRecordSetRegion::ApSoutheast1 => "ap-southeast-1",
-            ResourceRecordSetRegion::ApSoutheast2 => "ap-southeast-2",
-            ResourceRecordSetRegion::ApSoutheast3 => "ap-southeast-3",
-            ResourceRecordSetRegion::ApSoutheast4 => "ap-southeast-4",
-            ResourceRecordSetRegion::CaCentral1 => "ca-central-1",
-            ResourceRecordSetRegion::CnNorth1 => "cn-north-1",
-            ResourceRecordSetRegion::CnNorthwest1 => "cn-northwest-1",
-            ResourceRecordSetRegion::EuCentral1 => "eu-central-1",
-            ResourceRecordSetRegion::EuCentral2 => "eu-central-2",
-            ResourceRecordSetRegion::EuNorth1 => "eu-north-1",
-            ResourceRecordSetRegion::EuSouth1 => "eu-south-1",
-            ResourceRecordSetRegion::EuSouth2 => "eu-south-2",
-            ResourceRecordSetRegion::EuWest1 => "eu-west-1",
-            ResourceRecordSetRegion::EuWest2 => "eu-west-2",
-            ResourceRecordSetRegion::EuWest3 => "eu-west-3",
-            ResourceRecordSetRegion::MeCentral1 => "me-central-1",
-            ResourceRecordSetRegion::MeSouth1 => "me-south-1",
-            ResourceRecordSetRegion::SaEast1 => "sa-east-1",
-            ResourceRecordSetRegion::UsEast1 => "us-east-1",
-            ResourceRecordSetRegion::UsEast2 => "us-east-2",
-            ResourceRecordSetRegion::UsWest1 => "us-west-1",
-            ResourceRecordSetRegion::UsWest2 => "us-west-2",
-            ResourceRecordSetRegion::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-west-1", "us-west-2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceRecordSetRegion::AfSouth1 => "af-south-1",
+    ResourceRecordSetRegion::ApEast1 => "ap-east-1",
+    ResourceRecordSetRegion::ApNortheast1 => "ap-northeast-1",
+    ResourceRecordSetRegion::ApNortheast2 => "ap-northeast-2",
+    ResourceRecordSetRegion::ApNortheast3 => "ap-northeast-3",
+    ResourceRecordSetRegion::ApSouth1 => "ap-south-1",
+    ResourceRecordSetRegion::ApSouth2 => "ap-south-2",
+    ResourceRecordSetRegion::ApSoutheast1 => "ap-southeast-1",
+    ResourceRecordSetRegion::ApSoutheast2 => "ap-southeast-2",
+    ResourceRecordSetRegion::ApSoutheast3 => "ap-southeast-3",
+    ResourceRecordSetRegion::ApSoutheast4 => "ap-southeast-4",
+    ResourceRecordSetRegion::CaCentral1 => "ca-central-1",
+    ResourceRecordSetRegion::CnNorth1 => "cn-north-1",
+    ResourceRecordSetRegion::CnNorthwest1 => "cn-northwest-1",
+    ResourceRecordSetRegion::EuCentral1 => "eu-central-1",
+    ResourceRecordSetRegion::EuCentral2 => "eu-central-2",
+    ResourceRecordSetRegion::EuNorth1 => "eu-north-1",
+    ResourceRecordSetRegion::EuSouth1 => "eu-south-1",
+    ResourceRecordSetRegion::EuSouth2 => "eu-south-2",
+    ResourceRecordSetRegion::EuWest1 => "eu-west-1",
+    ResourceRecordSetRegion::EuWest2 => "eu-west-2",
+    ResourceRecordSetRegion::EuWest3 => "eu-west-3",
+    ResourceRecordSetRegion::MeCentral1 => "me-central-1",
+    ResourceRecordSetRegion::MeSouth1 => "me-south-1",
+    ResourceRecordSetRegion::SaEast1 => "sa-east-1",
+    ResourceRecordSetRegion::UsEast1 => "us-east-1",
+    ResourceRecordSetRegion::UsEast2 => "us-east-2",
+    ResourceRecordSetRegion::UsWest1 => "us-west-1",
+    ResourceRecordSetRegion::UsWest2 => "us-west-2",
+    ResourceRecordSetRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-west-1", "us-west-2"]
+                }
+            }
 impl AsRef<str> for ResourceRecordSetRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that contains information about a configuration for DNS query logging.</p>
 #[non_exhaustive]
@@ -6778,13 +6754,13 @@ pub enum ReusableDelegationSetLimitType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReusableDelegationSetLimitType {
-    fn from(s: &str) -> Self {
-        match s {
-            "MAX_ZONES_BY_REUSABLE_DELEGATION_SET" => ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet,
-            other => ReusableDelegationSetLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MAX_ZONES_BY_REUSABLE_DELEGATION_SET" => ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet,
+other => ReusableDelegationSetLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ReusableDelegationSetLimitType {
                 type Err = std::convert::Infallible;
 
@@ -6793,25 +6769,23 @@ impl std::str::FromStr for ReusableDelegationSetLimitType {
                 }
             }
 impl ReusableDelegationSetLimitType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet => "MAX_ZONES_BY_REUSABLE_DELEGATION_SET",
-            ReusableDelegationSetLimitType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MAX_ZONES_BY_REUSABLE_DELEGATION_SET"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet => "MAX_ZONES_BY_REUSABLE_DELEGATION_SET",
+    ReusableDelegationSetLimitType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MAX_ZONES_BY_REUSABLE_DELEGATION_SET"]
+                }
+            }
 impl AsRef<str> for ReusableDelegationSetLimitType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
@@ -6946,14 +6920,14 @@ pub enum HostedZoneLimitType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HostedZoneLimitType {
-    fn from(s: &str) -> Self {
-        match s {
-            "MAX_RRSETS_BY_ZONE" => HostedZoneLimitType::MaxRrsetsByZone,
-            "MAX_VPCS_ASSOCIATED_BY_ZONE" => HostedZoneLimitType::MaxVpcsAssociatedByZone,
-            other => HostedZoneLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MAX_RRSETS_BY_ZONE" => HostedZoneLimitType::MaxRrsetsByZone,
+"MAX_VPCS_ASSOCIATED_BY_ZONE" => HostedZoneLimitType::MaxVpcsAssociatedByZone,
+other => HostedZoneLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HostedZoneLimitType {
                 type Err = std::convert::Infallible;
 
@@ -6962,26 +6936,24 @@ impl std::str::FromStr for HostedZoneLimitType {
                 }
             }
 impl HostedZoneLimitType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HostedZoneLimitType::MaxRrsetsByZone => "MAX_RRSETS_BY_ZONE",
-            HostedZoneLimitType::MaxVpcsAssociatedByZone => "MAX_VPCS_ASSOCIATED_BY_ZONE",
-            HostedZoneLimitType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MAX_RRSETS_BY_ZONE", "MAX_VPCS_ASSOCIATED_BY_ZONE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HostedZoneLimitType::MaxRrsetsByZone => "MAX_RRSETS_BY_ZONE",
+    HostedZoneLimitType::MaxVpcsAssociatedByZone => "MAX_VPCS_ASSOCIATED_BY_ZONE",
+    HostedZoneLimitType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MAX_RRSETS_BY_ZONE", "MAX_VPCS_ASSOCIATED_BY_ZONE"]
+                }
+            }
 impl AsRef<str> for HostedZoneLimitType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker.</p>
 #[non_exhaustive]
@@ -8114,14 +8086,14 @@ pub enum ChangeStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "INSYNC" => ChangeStatus::Insync,
-            "PENDING" => ChangeStatus::Pending,
-            other => ChangeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "INSYNC" => ChangeStatus::Insync,
+"PENDING" => ChangeStatus::Pending,
+other => ChangeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ChangeStatus {
                 type Err = std::convert::Infallible;
 
@@ -8130,26 +8102,24 @@ impl std::str::FromStr for ChangeStatus {
                 }
             }
 impl ChangeStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChangeStatus::Insync => "INSYNC",
-            ChangeStatus::Pending => "PENDING",
-            ChangeStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "INSYNC", "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChangeStatus::Insync => "INSYNC",
+    ChangeStatus::Pending => "PENDING",
+    ChangeStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INSYNC", "PENDING"]
+                }
+            }
 impl AsRef<str> for ChangeStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
@@ -8305,17 +8275,17 @@ pub enum AccountLimitType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountLimitType {
-    fn from(s: &str) -> Self {
-        match s {
-            "MAX_HEALTH_CHECKS_BY_OWNER" => AccountLimitType::MaxHealthChecksByOwner,
-            "MAX_HOSTED_ZONES_BY_OWNER" => AccountLimitType::MaxHostedZonesByOwner,
-            "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" => AccountLimitType::MaxReusableDelegationSetsByOwner,
-            "MAX_TRAFFIC_POLICIES_BY_OWNER" => AccountLimitType::MaxTrafficPoliciesByOwner,
-            "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" => AccountLimitType::MaxTrafficPolicyInstancesByOwner,
-            other => AccountLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MAX_HEALTH_CHECKS_BY_OWNER" => AccountLimitType::MaxHealthChecksByOwner,
+"MAX_HOSTED_ZONES_BY_OWNER" => AccountLimitType::MaxHostedZonesByOwner,
+"MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" => AccountLimitType::MaxReusableDelegationSetsByOwner,
+"MAX_TRAFFIC_POLICIES_BY_OWNER" => AccountLimitType::MaxTrafficPoliciesByOwner,
+"MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" => AccountLimitType::MaxTrafficPolicyInstancesByOwner,
+other => AccountLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AccountLimitType {
                 type Err = std::convert::Infallible;
 
@@ -8324,29 +8294,27 @@ impl std::str::FromStr for AccountLimitType {
                 }
             }
 impl AccountLimitType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccountLimitType::MaxHealthChecksByOwner => "MAX_HEALTH_CHECKS_BY_OWNER",
-            AccountLimitType::MaxHostedZonesByOwner => "MAX_HOSTED_ZONES_BY_OWNER",
-            AccountLimitType::MaxReusableDelegationSetsByOwner => "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER",
-            AccountLimitType::MaxTrafficPoliciesByOwner => "MAX_TRAFFIC_POLICIES_BY_OWNER",
-            AccountLimitType::MaxTrafficPolicyInstancesByOwner => "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER",
-            AccountLimitType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MAX_HEALTH_CHECKS_BY_OWNER", "MAX_HOSTED_ZONES_BY_OWNER", "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER", "MAX_TRAFFIC_POLICIES_BY_OWNER", "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccountLimitType::MaxHealthChecksByOwner => "MAX_HEALTH_CHECKS_BY_OWNER",
+    AccountLimitType::MaxHostedZonesByOwner => "MAX_HOSTED_ZONES_BY_OWNER",
+    AccountLimitType::MaxReusableDelegationSetsByOwner => "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER",
+    AccountLimitType::MaxTrafficPoliciesByOwner => "MAX_TRAFFIC_POLICIES_BY_OWNER",
+    AccountLimitType::MaxTrafficPolicyInstancesByOwner => "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER",
+    AccountLimitType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MAX_HEALTH_CHECKS_BY_OWNER", "MAX_HOSTED_ZONES_BY_OWNER", "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER", "MAX_TRAFFIC_POLICIES_BY_OWNER", "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"]
+                }
+            }
 impl AsRef<str> for AccountLimitType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that identifies a CIDR collection.</p>
 #[non_exhaustive]
@@ -8677,15 +8645,15 @@ pub enum ChangeAction {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE" => ChangeAction::Create,
-            "DELETE" => ChangeAction::Delete,
-            "UPSERT" => ChangeAction::Upsert,
-            other => ChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE" => ChangeAction::Create,
+"DELETE" => ChangeAction::Delete,
+"UPSERT" => ChangeAction::Upsert,
+other => ChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ChangeAction {
                 type Err = std::convert::Infallible;
 
@@ -8694,27 +8662,25 @@ impl std::str::FromStr for ChangeAction {
                 }
             }
 impl ChangeAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChangeAction::Create => "CREATE",
-            ChangeAction::Delete => "DELETE",
-            ChangeAction::Upsert => "UPSERT",
-            ChangeAction::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE", "DELETE", "UPSERT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChangeAction::Create => "CREATE",
+    ChangeAction::Delete => "DELETE",
+    ChangeAction::Upsert => "UPSERT",
+    ChangeAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE", "DELETE", "UPSERT"]
+                }
+            }
 impl AsRef<str> for ChangeAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that contains information about the CIDR collection change.</p>
 #[non_exhaustive]
@@ -8857,14 +8823,14 @@ pub enum CidrCollectionChangeAction {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CidrCollectionChangeAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETE_IF_EXISTS" => CidrCollectionChangeAction::DeleteIfExists,
-            "PUT" => CidrCollectionChangeAction::Put,
-            other => CidrCollectionChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DELETE_IF_EXISTS" => CidrCollectionChangeAction::DeleteIfExists,
+"PUT" => CidrCollectionChangeAction::Put,
+other => CidrCollectionChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CidrCollectionChangeAction {
                 type Err = std::convert::Infallible;
 
@@ -8873,24 +8839,22 @@ impl std::str::FromStr for CidrCollectionChangeAction {
                 }
             }
 impl CidrCollectionChangeAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CidrCollectionChangeAction::DeleteIfExists => "DELETE_IF_EXISTS",
-            CidrCollectionChangeAction::Put => "PUT",
-            CidrCollectionChangeAction::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELETE_IF_EXISTS", "PUT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CidrCollectionChangeAction::DeleteIfExists => "DELETE_IF_EXISTS",
+    CidrCollectionChangeAction::Put => "PUT",
+    CidrCollectionChangeAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELETE_IF_EXISTS", "PUT"]
+                }
+            }
 impl AsRef<str> for CidrCollectionChangeAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

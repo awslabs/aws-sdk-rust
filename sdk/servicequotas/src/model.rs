@@ -423,17 +423,17 @@ pub enum RequestStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RequestStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "APPROVED" => RequestStatus::Approved,
-            "CASE_CLOSED" => RequestStatus::CaseClosed,
-            "CASE_OPENED" => RequestStatus::CaseOpened,
-            "DENIED" => RequestStatus::Denied,
-            "PENDING" => RequestStatus::Pending,
-            other => RequestStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "APPROVED" => RequestStatus::Approved,
+"CASE_CLOSED" => RequestStatus::CaseClosed,
+"CASE_OPENED" => RequestStatus::CaseOpened,
+"DENIED" => RequestStatus::Denied,
+"PENDING" => RequestStatus::Pending,
+other => RequestStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RequestStatus {
                 type Err = std::convert::Infallible;
 
@@ -442,29 +442,27 @@ impl std::str::FromStr for RequestStatus {
                 }
             }
 impl RequestStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RequestStatus::Approved => "APPROVED",
-            RequestStatus::CaseClosed => "CASE_CLOSED",
-            RequestStatus::CaseOpened => "CASE_OPENED",
-            RequestStatus::Denied => "DENIED",
-            RequestStatus::Pending => "PENDING",
-            RequestStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPROVED", "CASE_CLOSED", "CASE_OPENED", "DENIED", "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RequestStatus::Approved => "APPROVED",
+    RequestStatus::CaseClosed => "CASE_CLOSED",
+    RequestStatus::CaseOpened => "CASE_OPENED",
+    RequestStatus::Denied => "DENIED",
+    RequestStatus::Pending => "PENDING",
+    RequestStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["APPROVED", "CASE_CLOSED", "CASE_OPENED", "DENIED", "PENDING"]
+                }
+            }
 impl AsRef<str> for RequestStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a quota increase request.</p>
 #[non_exhaustive]
@@ -1126,16 +1124,16 @@ pub enum ErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEPENDENCY_ACCESS_DENIED_ERROR" => ErrorCode::DependencyAccessDeniedError,
-            "DEPENDENCY_SERVICE_ERROR" => ErrorCode::DependencyServiceError,
-            "DEPENDENCY_THROTTLING_ERROR" => ErrorCode::DependencyThrottlingError,
-            "SERVICE_QUOTA_NOT_AVAILABLE_ERROR" => ErrorCode::ServiceQuotaNotAvailableError,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DEPENDENCY_ACCESS_DENIED_ERROR" => ErrorCode::DependencyAccessDeniedError,
+"DEPENDENCY_SERVICE_ERROR" => ErrorCode::DependencyServiceError,
+"DEPENDENCY_THROTTLING_ERROR" => ErrorCode::DependencyThrottlingError,
+"SERVICE_QUOTA_NOT_AVAILABLE_ERROR" => ErrorCode::ServiceQuotaNotAvailableError,
+other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -1144,28 +1142,26 @@ impl std::str::FromStr for ErrorCode {
                 }
             }
 impl ErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ErrorCode::DependencyAccessDeniedError => "DEPENDENCY_ACCESS_DENIED_ERROR",
-            ErrorCode::DependencyServiceError => "DEPENDENCY_SERVICE_ERROR",
-            ErrorCode::DependencyThrottlingError => "DEPENDENCY_THROTTLING_ERROR",
-            ErrorCode::ServiceQuotaNotAvailableError => "SERVICE_QUOTA_NOT_AVAILABLE_ERROR",
-            ErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEPENDENCY_ACCESS_DENIED_ERROR", "DEPENDENCY_SERVICE_ERROR", "DEPENDENCY_THROTTLING_ERROR", "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ErrorCode::DependencyAccessDeniedError => "DEPENDENCY_ACCESS_DENIED_ERROR",
+    ErrorCode::DependencyServiceError => "DEPENDENCY_SERVICE_ERROR",
+    ErrorCode::DependencyThrottlingError => "DEPENDENCY_THROTTLING_ERROR",
+    ErrorCode::ServiceQuotaNotAvailableError => "SERVICE_QUOTA_NOT_AVAILABLE_ERROR",
+    ErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEPENDENCY_ACCESS_DENIED_ERROR", "DEPENDENCY_SERVICE_ERROR", "DEPENDENCY_THROTTLING_ERROR", "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"]
+                }
+            }
 impl AsRef<str> for ErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the quota period.</p>
 #[non_exhaustive]
@@ -1298,19 +1294,19 @@ pub enum PeriodUnit {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PeriodUnit {
-    fn from(s: &str) -> Self {
-        match s {
-            "DAY" => PeriodUnit::Day,
-            "HOUR" => PeriodUnit::Hour,
-            "MICROSECOND" => PeriodUnit::Microsecond,
-            "MILLISECOND" => PeriodUnit::Millisecond,
-            "MINUTE" => PeriodUnit::Minute,
-            "SECOND" => PeriodUnit::Second,
-            "WEEK" => PeriodUnit::Week,
-            other => PeriodUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DAY" => PeriodUnit::Day,
+"HOUR" => PeriodUnit::Hour,
+"MICROSECOND" => PeriodUnit::Microsecond,
+"MILLISECOND" => PeriodUnit::Millisecond,
+"MINUTE" => PeriodUnit::Minute,
+"SECOND" => PeriodUnit::Second,
+"WEEK" => PeriodUnit::Week,
+other => PeriodUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PeriodUnit {
                 type Err = std::convert::Infallible;
 
@@ -1319,31 +1315,29 @@ impl std::str::FromStr for PeriodUnit {
                 }
             }
 impl PeriodUnit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PeriodUnit::Day => "DAY",
-            PeriodUnit::Hour => "HOUR",
-            PeriodUnit::Microsecond => "MICROSECOND",
-            PeriodUnit::Millisecond => "MILLISECOND",
-            PeriodUnit::Minute => "MINUTE",
-            PeriodUnit::Second => "SECOND",
-            PeriodUnit::Week => "WEEK",
-            PeriodUnit::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DAY", "HOUR", "MICROSECOND", "MILLISECOND", "MINUTE", "SECOND", "WEEK"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PeriodUnit::Day => "DAY",
+    PeriodUnit::Hour => "HOUR",
+    PeriodUnit::Microsecond => "MICROSECOND",
+    PeriodUnit::Millisecond => "MILLISECOND",
+    PeriodUnit::Minute => "MINUTE",
+    PeriodUnit::Second => "SECOND",
+    PeriodUnit::Week => "WEEK",
+    PeriodUnit::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DAY", "HOUR", "MICROSECOND", "MILLISECOND", "MINUTE", "SECOND", "WEEK"]
+                }
+            }
 impl AsRef<str> for PeriodUnit {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the CloudWatch metric that reflects quota usage.</p>
 #[non_exhaustive]
@@ -1505,14 +1499,14 @@ pub enum ServiceQuotaTemplateAssociationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceQuotaTemplateAssociationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSOCIATED" => ServiceQuotaTemplateAssociationStatus::Associated,
-            "DISASSOCIATED" => ServiceQuotaTemplateAssociationStatus::Disassociated,
-            other => ServiceQuotaTemplateAssociationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSOCIATED" => ServiceQuotaTemplateAssociationStatus::Associated,
+"DISASSOCIATED" => ServiceQuotaTemplateAssociationStatus::Disassociated,
+other => ServiceQuotaTemplateAssociationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ServiceQuotaTemplateAssociationStatus {
                 type Err = std::convert::Infallible;
 
@@ -1521,24 +1515,22 @@ impl std::str::FromStr for ServiceQuotaTemplateAssociationStatus {
                 }
             }
 impl ServiceQuotaTemplateAssociationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceQuotaTemplateAssociationStatus::Associated => "ASSOCIATED",
-            ServiceQuotaTemplateAssociationStatus::Disassociated => "DISASSOCIATED",
-            ServiceQuotaTemplateAssociationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSOCIATED", "DISASSOCIATED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceQuotaTemplateAssociationStatus::Associated => "ASSOCIATED",
+    ServiceQuotaTemplateAssociationStatus::Disassociated => "DISASSOCIATED",
+    ServiceQuotaTemplateAssociationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSOCIATED", "DISASSOCIATED"]
+                }
+            }
 impl AsRef<str> for ServiceQuotaTemplateAssociationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

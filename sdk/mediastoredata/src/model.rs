@@ -44,13 +44,13 @@ pub enum StorageClass {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StorageClass {
-    fn from(s: &str) -> Self {
-        match s {
-            "TEMPORAL" => StorageClass::Temporal,
-            other => StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "TEMPORAL" => StorageClass::Temporal,
+other => StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StorageClass {
                 type Err = std::convert::Infallible;
 
@@ -59,25 +59,23 @@ impl std::str::FromStr for StorageClass {
                 }
             }
 impl StorageClass {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StorageClass::Temporal => "TEMPORAL",
-            StorageClass::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "TEMPORAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StorageClass::Temporal => "TEMPORAL",
+    StorageClass::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["TEMPORAL"]
+                }
+            }
 impl AsRef<str> for StorageClass {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `UploadAvailability`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -126,14 +124,14 @@ pub enum UploadAvailability {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UploadAvailability {
-    fn from(s: &str) -> Self {
-        match s {
-            "STANDARD" => UploadAvailability::Standard,
-            "STREAMING" => UploadAvailability::Streaming,
-            other => UploadAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "STANDARD" => UploadAvailability::Standard,
+"STREAMING" => UploadAvailability::Streaming,
+other => UploadAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UploadAvailability {
                 type Err = std::convert::Infallible;
 
@@ -142,26 +140,24 @@ impl std::str::FromStr for UploadAvailability {
                 }
             }
 impl UploadAvailability {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UploadAvailability::Standard => "STANDARD",
-            UploadAvailability::Streaming => "STREAMING",
-            UploadAvailability::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "STANDARD", "STREAMING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UploadAvailability::Standard => "STANDARD",
+    UploadAvailability::Streaming => "STREAMING",
+    UploadAvailability::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["STANDARD", "STREAMING"]
+                }
+            }
 impl AsRef<str> for UploadAvailability {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A metadata entry for a folder or object.</p>
 #[non_exhaustive]
@@ -355,14 +351,14 @@ pub enum ItemType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ItemType {
-    fn from(s: &str) -> Self {
-        match s {
-            "FOLDER" => ItemType::Folder,
-            "OBJECT" => ItemType::Object,
-            other => ItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FOLDER" => ItemType::Folder,
+"OBJECT" => ItemType::Object,
+other => ItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ItemType {
                 type Err = std::convert::Infallible;
 
@@ -371,24 +367,22 @@ impl std::str::FromStr for ItemType {
                 }
             }
 impl ItemType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ItemType::Folder => "FOLDER",
-            ItemType::Object => "OBJECT",
-            ItemType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FOLDER", "OBJECT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ItemType::Folder => "FOLDER",
+    ItemType::Object => "OBJECT",
+    ItemType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FOLDER", "OBJECT"]
+                }
+            }
 impl AsRef<str> for ItemType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

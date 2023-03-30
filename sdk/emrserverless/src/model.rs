@@ -324,20 +324,20 @@ pub enum JobRunState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobRunState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => JobRunState::Cancelled,
-            "CANCELLING" => JobRunState::Cancelling,
-            "FAILED" => JobRunState::Failed,
-            "PENDING" => JobRunState::Pending,
-            "RUNNING" => JobRunState::Running,
-            "SCHEDULED" => JobRunState::Scheduled,
-            "SUBMITTED" => JobRunState::Submitted,
-            "SUCCESS" => JobRunState::Success,
-            other => JobRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => JobRunState::Cancelled,
+"CANCELLING" => JobRunState::Cancelling,
+"FAILED" => JobRunState::Failed,
+"PENDING" => JobRunState::Pending,
+"RUNNING" => JobRunState::Running,
+"SCHEDULED" => JobRunState::Scheduled,
+"SUBMITTED" => JobRunState::Submitted,
+"SUCCESS" => JobRunState::Success,
+other => JobRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobRunState {
                 type Err = std::convert::Infallible;
 
@@ -346,32 +346,30 @@ impl std::str::FromStr for JobRunState {
                 }
             }
 impl JobRunState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobRunState::Cancelled => "CANCELLED",
-            JobRunState::Cancelling => "CANCELLING",
-            JobRunState::Failed => "FAILED",
-            JobRunState::Pending => "PENDING",
-            JobRunState::Running => "RUNNING",
-            JobRunState::Scheduled => "SCHEDULED",
-            JobRunState::Submitted => "SUBMITTED",
-            JobRunState::Success => "SUCCESS",
-            JobRunState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "CANCELLING", "FAILED", "PENDING", "RUNNING", "SCHEDULED", "SUBMITTED", "SUCCESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobRunState::Cancelled => "CANCELLED",
+    JobRunState::Cancelling => "CANCELLING",
+    JobRunState::Failed => "FAILED",
+    JobRunState::Pending => "PENDING",
+    JobRunState::Running => "RUNNING",
+    JobRunState::Scheduled => "SCHEDULED",
+    JobRunState::Submitted => "SUBMITTED",
+    JobRunState::Success => "SUCCESS",
+    JobRunState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "CANCELLING", "FAILED", "PENDING", "RUNNING", "SCHEDULED", "SUBMITTED", "SUCCESS"]
+                }
+            }
 impl AsRef<str> for JobRunState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A configuration specification to be used to override existing configurations.</p>
 #[non_exhaustive]
@@ -1831,14 +1829,14 @@ pub enum Architecture {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Architecture {
-    fn from(s: &str) -> Self {
-        match s {
-            "ARM64" => Architecture::Arm64,
-            "X86_64" => Architecture::X8664,
-            other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ARM64" => Architecture::Arm64,
+"X86_64" => Architecture::X8664,
+other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Architecture {
                 type Err = std::convert::Infallible;
 
@@ -1847,26 +1845,24 @@ impl std::str::FromStr for Architecture {
                 }
             }
 impl Architecture {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Architecture::Arm64 => "ARM64",
-            Architecture::X8664 => "X86_64",
-            Architecture::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ARM64", "X86_64"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Architecture::Arm64 => "ARM64",
+    Architecture::X8664 => "X86_64",
+    Architecture::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ARM64", "X86_64"]
+                }
+            }
 impl AsRef<str> for Architecture {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ApplicationState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1930,19 +1926,19 @@ pub enum ApplicationState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED" => ApplicationState::Created,
-            "CREATING" => ApplicationState::Creating,
-            "STARTED" => ApplicationState::Started,
-            "STARTING" => ApplicationState::Starting,
-            "STOPPED" => ApplicationState::Stopped,
-            "STOPPING" => ApplicationState::Stopping,
-            "TERMINATED" => ApplicationState::Terminated,
-            other => ApplicationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATED" => ApplicationState::Created,
+"CREATING" => ApplicationState::Creating,
+"STARTED" => ApplicationState::Started,
+"STARTING" => ApplicationState::Starting,
+"STOPPED" => ApplicationState::Stopped,
+"STOPPING" => ApplicationState::Stopping,
+"TERMINATED" => ApplicationState::Terminated,
+other => ApplicationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ApplicationState {
                 type Err = std::convert::Infallible;
 
@@ -1951,31 +1947,29 @@ impl std::str::FromStr for ApplicationState {
                 }
             }
 impl ApplicationState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ApplicationState::Created => "CREATED",
-            ApplicationState::Creating => "CREATING",
-            ApplicationState::Started => "STARTED",
-            ApplicationState::Starting => "STARTING",
-            ApplicationState::Stopped => "STOPPED",
-            ApplicationState::Stopping => "STOPPING",
-            ApplicationState::Terminated => "TERMINATED",
-            ApplicationState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED", "CREATING", "STARTED", "STARTING", "STOPPED", "STOPPING", "TERMINATED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ApplicationState::Created => "CREATED",
+    ApplicationState::Creating => "CREATING",
+    ApplicationState::Started => "STARTED",
+    ApplicationState::Starting => "STARTING",
+    ApplicationState::Stopped => "STOPPED",
+    ApplicationState::Stopping => "STOPPING",
+    ApplicationState::Terminated => "TERMINATED",
+    ApplicationState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED", "CREATING", "STARTED", "STARTING", "STOPPED", "STOPPING", "TERMINATED"]
+                }
+            }
 impl AsRef<str> for ApplicationState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The specifications for a worker type.</p>
 #[non_exhaustive]

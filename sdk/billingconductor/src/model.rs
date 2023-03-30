@@ -269,65 +269,65 @@ pub enum ValidationExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNTS_ALREADY_ASSOCIATED" => ValidationExceptionReason::AccountsAlreadyAssociated,
-            "ACCOUNTS_NOT_ASSOCIATED" => ValidationExceptionReason::AccountsNotAssociated,
-            "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
-            "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS" => ValidationExceptionReason::CustomLineItemAssociationExists,
-            "DUPLICATE_ACCOUNT" => ValidationExceptionReason::DuplicateAccount,
-            "DUPLICATE_PRICINGRULE_ARNS" => ValidationExceptionReason::DuplicatePricingruleArns,
-            "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
-            "ILLEGAL_ACCOUNTS" => ValidationExceptionReason::IllegalAccounts,
-            "ILLEGAL_BILLING_ENTITY" => ValidationExceptionReason::IllegalBillingEntity,
-            "ILLEGAL_BILLING_PERIOD" => ValidationExceptionReason::IllegalBillingPeriod,
-            "ILLEGAL_BILLING_PERIOD_RANGE" => ValidationExceptionReason::IllegalBillingPeriodRange,
-            "ILLEGAL_CHARGE_DETAILS" => ValidationExceptionReason::IllegalChargeDetails,
-            "ILLEGAL_CHILD_ASSOCIATE_RESOURCE" => ValidationExceptionReason::IllegalChildAssociateResource,
-            "ILLEGAL_CUSTOMLINEITEM" => ValidationExceptionReason::IllegalCustomlineitem,
-            "ILLEGAL_CUSTOMLINEITEM_MODIFICATION" => ValidationExceptionReason::IllegalCustomlineitemModification,
-            "ILLEGAL_CUSTOMLINEITEM_UPDATE" => ValidationExceptionReason::IllegalCustomlineitemUpdate,
-            "ILLEGAL_ENDED_BILLINGGROUP" => ValidationExceptionReason::IllegalEndedBillinggroup,
-            "ILLEGAL_EXPRESSION" => ValidationExceptionReason::IllegalExpression,
-            "ILLEGAL_MODIFIER_PERCENTAGE" => ValidationExceptionReason::IllegalModifierPercentage,
-            "ILLEGAL_PRIMARY_ACCOUNT" => ValidationExceptionReason::IllegalPrimaryAccount,
-            "ILLEGAL_RESOURCE_ARNS" => ValidationExceptionReason::IllegalResourceArns,
-            "ILLEGAL_SCOPE" => ValidationExceptionReason::IllegalScope,
-            "ILLEGAL_SERVICE" => ValidationExceptionReason::IllegalService,
-            "ILLEGAL_TIERING_INPUT" => ValidationExceptionReason::IllegalTieringInput,
-            "ILLEGAL_TYPE" => ValidationExceptionReason::IllegalType,
-            "ILLEGAL_UPDATE_CHARGE_DETAILS" => ValidationExceptionReason::IllegalUpdateChargeDetails,
-            "INVALID_ARN" => ValidationExceptionReason::InvalidArn,
-            "INVALID_BILLINGVIEW_ARN" => ValidationExceptionReason::InvalidBillingviewArn,
-            "INVALID_BILLING_GROUP" => ValidationExceptionReason::InvalidBillingGroup,
-            "INVALID_BILLING_GROUP_STATUS" => ValidationExceptionReason::InvalidBillingGroupStatus,
-            "INVALID_BILLING_PERIOD_FOR_OPERATION" => ValidationExceptionReason::InvalidBillingPeriodForOperation,
-            "INVALID_TIME_RANGE" => ValidationExceptionReason::InvalidTimeRange,
-            "MISMATCHED_BILLINGGROUP_ARN" => ValidationExceptionReason::MismatchedBillinggroupArn,
-            "MISMATCHED_BILLINGVIEW_ARN" => ValidationExceptionReason::MismatchedBillingviewArn,
-            "MISMATCHED_CUSTOMLINEITEM_ARN" => ValidationExceptionReason::MismatchedCustomlineitemArn,
-            "MISMATCHED_PRICINGPLAN_ARN" => ValidationExceptionReason::MismatchedPricingplanArn,
-            "MISMATCHED_PRICINGRULE_ARN" => ValidationExceptionReason::MismatchedPricingruleArn,
-            "MISSING_BILLINGGROUP" => ValidationExceptionReason::MissingBillinggroup,
-            "MISSING_CUSTOMLINEITEM" => ValidationExceptionReason::MissingCustomlineitem,
-            "MISSING_LINKED_ACCOUNT_IDS" => ValidationExceptionReason::MissingLinkedAccountIds,
-            "MISSING_PRICINGPLAN" => ValidationExceptionReason::MissingPricingplan,
-            "MISSING_PRICING_PLAN_ARN" => ValidationExceptionReason::MissingPricingPlanArn,
-            "MULTIPLE_LINKED_ACCOUNT_IDS" => ValidationExceptionReason::MultipleLinkedAccountIds,
-            "MULTIPLE_PRICING_PLAN_ARN" => ValidationExceptionReason::MultiplePricingPlanArn,
-            "OTHER" => ValidationExceptionReason::Other,
-            "PRICINGRULES_ALREADY_ASSOCIATED" => ValidationExceptionReason::PricingrulesAlreadyAssociated,
-            "PRICINGRULES_NOT_ASSOCIATED" => ValidationExceptionReason::PricingrulesNotAssociated,
-            "PRICINGRULES_NOT_EXIST" => ValidationExceptionReason::PricingrulesNotExist,
-            "PRIMARY_CANNOT_DISASSOCIATE" => ValidationExceptionReason::PrimaryCannotDisassociate,
-            "PRIMARY_NOT_ASSOCIATED" => ValidationExceptionReason::PrimaryNotAssociated,
-            "TOO_MANY_ACCOUNTS_IN_REQUEST" => ValidationExceptionReason::TooManyAccountsInRequest,
-            "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST" => ValidationExceptionReason::TooManyCustomlineitemsInRequest,
-            "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNTS_ALREADY_ASSOCIATED" => ValidationExceptionReason::AccountsAlreadyAssociated,
+"ACCOUNTS_NOT_ASSOCIATED" => ValidationExceptionReason::AccountsNotAssociated,
+"CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
+"CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS" => ValidationExceptionReason::CustomLineItemAssociationExists,
+"DUPLICATE_ACCOUNT" => ValidationExceptionReason::DuplicateAccount,
+"DUPLICATE_PRICINGRULE_ARNS" => ValidationExceptionReason::DuplicatePricingruleArns,
+"FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
+"ILLEGAL_ACCOUNTS" => ValidationExceptionReason::IllegalAccounts,
+"ILLEGAL_BILLING_ENTITY" => ValidationExceptionReason::IllegalBillingEntity,
+"ILLEGAL_BILLING_PERIOD" => ValidationExceptionReason::IllegalBillingPeriod,
+"ILLEGAL_BILLING_PERIOD_RANGE" => ValidationExceptionReason::IllegalBillingPeriodRange,
+"ILLEGAL_CHARGE_DETAILS" => ValidationExceptionReason::IllegalChargeDetails,
+"ILLEGAL_CHILD_ASSOCIATE_RESOURCE" => ValidationExceptionReason::IllegalChildAssociateResource,
+"ILLEGAL_CUSTOMLINEITEM" => ValidationExceptionReason::IllegalCustomlineitem,
+"ILLEGAL_CUSTOMLINEITEM_MODIFICATION" => ValidationExceptionReason::IllegalCustomlineitemModification,
+"ILLEGAL_CUSTOMLINEITEM_UPDATE" => ValidationExceptionReason::IllegalCustomlineitemUpdate,
+"ILLEGAL_ENDED_BILLINGGROUP" => ValidationExceptionReason::IllegalEndedBillinggroup,
+"ILLEGAL_EXPRESSION" => ValidationExceptionReason::IllegalExpression,
+"ILLEGAL_MODIFIER_PERCENTAGE" => ValidationExceptionReason::IllegalModifierPercentage,
+"ILLEGAL_PRIMARY_ACCOUNT" => ValidationExceptionReason::IllegalPrimaryAccount,
+"ILLEGAL_RESOURCE_ARNS" => ValidationExceptionReason::IllegalResourceArns,
+"ILLEGAL_SCOPE" => ValidationExceptionReason::IllegalScope,
+"ILLEGAL_SERVICE" => ValidationExceptionReason::IllegalService,
+"ILLEGAL_TIERING_INPUT" => ValidationExceptionReason::IllegalTieringInput,
+"ILLEGAL_TYPE" => ValidationExceptionReason::IllegalType,
+"ILLEGAL_UPDATE_CHARGE_DETAILS" => ValidationExceptionReason::IllegalUpdateChargeDetails,
+"INVALID_ARN" => ValidationExceptionReason::InvalidArn,
+"INVALID_BILLINGVIEW_ARN" => ValidationExceptionReason::InvalidBillingviewArn,
+"INVALID_BILLING_GROUP" => ValidationExceptionReason::InvalidBillingGroup,
+"INVALID_BILLING_GROUP_STATUS" => ValidationExceptionReason::InvalidBillingGroupStatus,
+"INVALID_BILLING_PERIOD_FOR_OPERATION" => ValidationExceptionReason::InvalidBillingPeriodForOperation,
+"INVALID_TIME_RANGE" => ValidationExceptionReason::InvalidTimeRange,
+"MISMATCHED_BILLINGGROUP_ARN" => ValidationExceptionReason::MismatchedBillinggroupArn,
+"MISMATCHED_BILLINGVIEW_ARN" => ValidationExceptionReason::MismatchedBillingviewArn,
+"MISMATCHED_CUSTOMLINEITEM_ARN" => ValidationExceptionReason::MismatchedCustomlineitemArn,
+"MISMATCHED_PRICINGPLAN_ARN" => ValidationExceptionReason::MismatchedPricingplanArn,
+"MISMATCHED_PRICINGRULE_ARN" => ValidationExceptionReason::MismatchedPricingruleArn,
+"MISSING_BILLINGGROUP" => ValidationExceptionReason::MissingBillinggroup,
+"MISSING_CUSTOMLINEITEM" => ValidationExceptionReason::MissingCustomlineitem,
+"MISSING_LINKED_ACCOUNT_IDS" => ValidationExceptionReason::MissingLinkedAccountIds,
+"MISSING_PRICINGPLAN" => ValidationExceptionReason::MissingPricingplan,
+"MISSING_PRICING_PLAN_ARN" => ValidationExceptionReason::MissingPricingPlanArn,
+"MULTIPLE_LINKED_ACCOUNT_IDS" => ValidationExceptionReason::MultipleLinkedAccountIds,
+"MULTIPLE_PRICING_PLAN_ARN" => ValidationExceptionReason::MultiplePricingPlanArn,
+"OTHER" => ValidationExceptionReason::Other,
+"PRICINGRULES_ALREADY_ASSOCIATED" => ValidationExceptionReason::PricingrulesAlreadyAssociated,
+"PRICINGRULES_NOT_ASSOCIATED" => ValidationExceptionReason::PricingrulesNotAssociated,
+"PRICINGRULES_NOT_EXIST" => ValidationExceptionReason::PricingrulesNotExist,
+"PRIMARY_CANNOT_DISASSOCIATE" => ValidationExceptionReason::PrimaryCannotDisassociate,
+"PRIMARY_NOT_ASSOCIATED" => ValidationExceptionReason::PrimaryNotAssociated,
+"TOO_MANY_ACCOUNTS_IN_REQUEST" => ValidationExceptionReason::TooManyAccountsInRequest,
+"TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST" => ValidationExceptionReason::TooManyCustomlineitemsInRequest,
+"UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
+other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ValidationExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -336,77 +336,75 @@ impl std::str::FromStr for ValidationExceptionReason {
                 }
             }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::AccountsAlreadyAssociated => "ACCOUNTS_ALREADY_ASSOCIATED",
-            ValidationExceptionReason::AccountsNotAssociated => "ACCOUNTS_NOT_ASSOCIATED",
-            ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
-            ValidationExceptionReason::CustomLineItemAssociationExists => "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS",
-            ValidationExceptionReason::DuplicateAccount => "DUPLICATE_ACCOUNT",
-            ValidationExceptionReason::DuplicatePricingruleArns => "DUPLICATE_PRICINGRULE_ARNS",
-            ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
-            ValidationExceptionReason::IllegalAccounts => "ILLEGAL_ACCOUNTS",
-            ValidationExceptionReason::IllegalBillingEntity => "ILLEGAL_BILLING_ENTITY",
-            ValidationExceptionReason::IllegalBillingPeriod => "ILLEGAL_BILLING_PERIOD",
-            ValidationExceptionReason::IllegalBillingPeriodRange => "ILLEGAL_BILLING_PERIOD_RANGE",
-            ValidationExceptionReason::IllegalChargeDetails => "ILLEGAL_CHARGE_DETAILS",
-            ValidationExceptionReason::IllegalChildAssociateResource => "ILLEGAL_CHILD_ASSOCIATE_RESOURCE",
-            ValidationExceptionReason::IllegalCustomlineitem => "ILLEGAL_CUSTOMLINEITEM",
-            ValidationExceptionReason::IllegalCustomlineitemModification => "ILLEGAL_CUSTOMLINEITEM_MODIFICATION",
-            ValidationExceptionReason::IllegalCustomlineitemUpdate => "ILLEGAL_CUSTOMLINEITEM_UPDATE",
-            ValidationExceptionReason::IllegalEndedBillinggroup => "ILLEGAL_ENDED_BILLINGGROUP",
-            ValidationExceptionReason::IllegalExpression => "ILLEGAL_EXPRESSION",
-            ValidationExceptionReason::IllegalModifierPercentage => "ILLEGAL_MODIFIER_PERCENTAGE",
-            ValidationExceptionReason::IllegalPrimaryAccount => "ILLEGAL_PRIMARY_ACCOUNT",
-            ValidationExceptionReason::IllegalResourceArns => "ILLEGAL_RESOURCE_ARNS",
-            ValidationExceptionReason::IllegalScope => "ILLEGAL_SCOPE",
-            ValidationExceptionReason::IllegalService => "ILLEGAL_SERVICE",
-            ValidationExceptionReason::IllegalTieringInput => "ILLEGAL_TIERING_INPUT",
-            ValidationExceptionReason::IllegalType => "ILLEGAL_TYPE",
-            ValidationExceptionReason::IllegalUpdateChargeDetails => "ILLEGAL_UPDATE_CHARGE_DETAILS",
-            ValidationExceptionReason::InvalidArn => "INVALID_ARN",
-            ValidationExceptionReason::InvalidBillingviewArn => "INVALID_BILLINGVIEW_ARN",
-            ValidationExceptionReason::InvalidBillingGroup => "INVALID_BILLING_GROUP",
-            ValidationExceptionReason::InvalidBillingGroupStatus => "INVALID_BILLING_GROUP_STATUS",
-            ValidationExceptionReason::InvalidBillingPeriodForOperation => "INVALID_BILLING_PERIOD_FOR_OPERATION",
-            ValidationExceptionReason::InvalidTimeRange => "INVALID_TIME_RANGE",
-            ValidationExceptionReason::MismatchedBillinggroupArn => "MISMATCHED_BILLINGGROUP_ARN",
-            ValidationExceptionReason::MismatchedBillingviewArn => "MISMATCHED_BILLINGVIEW_ARN",
-            ValidationExceptionReason::MismatchedCustomlineitemArn => "MISMATCHED_CUSTOMLINEITEM_ARN",
-            ValidationExceptionReason::MismatchedPricingplanArn => "MISMATCHED_PRICINGPLAN_ARN",
-            ValidationExceptionReason::MismatchedPricingruleArn => "MISMATCHED_PRICINGRULE_ARN",
-            ValidationExceptionReason::MissingBillinggroup => "MISSING_BILLINGGROUP",
-            ValidationExceptionReason::MissingCustomlineitem => "MISSING_CUSTOMLINEITEM",
-            ValidationExceptionReason::MissingLinkedAccountIds => "MISSING_LINKED_ACCOUNT_IDS",
-            ValidationExceptionReason::MissingPricingplan => "MISSING_PRICINGPLAN",
-            ValidationExceptionReason::MissingPricingPlanArn => "MISSING_PRICING_PLAN_ARN",
-            ValidationExceptionReason::MultipleLinkedAccountIds => "MULTIPLE_LINKED_ACCOUNT_IDS",
-            ValidationExceptionReason::MultiplePricingPlanArn => "MULTIPLE_PRICING_PLAN_ARN",
-            ValidationExceptionReason::Other => "OTHER",
-            ValidationExceptionReason::PricingrulesAlreadyAssociated => "PRICINGRULES_ALREADY_ASSOCIATED",
-            ValidationExceptionReason::PricingrulesNotAssociated => "PRICINGRULES_NOT_ASSOCIATED",
-            ValidationExceptionReason::PricingrulesNotExist => "PRICINGRULES_NOT_EXIST",
-            ValidationExceptionReason::PrimaryCannotDisassociate => "PRIMARY_CANNOT_DISASSOCIATE",
-            ValidationExceptionReason::PrimaryNotAssociated => "PRIMARY_NOT_ASSOCIATED",
-            ValidationExceptionReason::TooManyAccountsInRequest => "TOO_MANY_ACCOUNTS_IN_REQUEST",
-            ValidationExceptionReason::TooManyCustomlineitemsInRequest => "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST",
-            ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNTS_ALREADY_ASSOCIATED", "ACCOUNTS_NOT_ASSOCIATED", "CANNOT_PARSE", "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS", "DUPLICATE_ACCOUNT", "DUPLICATE_PRICINGRULE_ARNS", "FIELD_VALIDATION_FAILED", "ILLEGAL_ACCOUNTS", "ILLEGAL_BILLING_ENTITY", "ILLEGAL_BILLING_PERIOD", "ILLEGAL_BILLING_PERIOD_RANGE", "ILLEGAL_CHARGE_DETAILS", "ILLEGAL_CHILD_ASSOCIATE_RESOURCE", "ILLEGAL_CUSTOMLINEITEM", "ILLEGAL_CUSTOMLINEITEM_MODIFICATION", "ILLEGAL_CUSTOMLINEITEM_UPDATE", "ILLEGAL_ENDED_BILLINGGROUP", "ILLEGAL_EXPRESSION", "ILLEGAL_MODIFIER_PERCENTAGE", "ILLEGAL_PRIMARY_ACCOUNT", "ILLEGAL_RESOURCE_ARNS", "ILLEGAL_SCOPE", "ILLEGAL_SERVICE", "ILLEGAL_TIERING_INPUT", "ILLEGAL_TYPE", "ILLEGAL_UPDATE_CHARGE_DETAILS", "INVALID_ARN", "INVALID_BILLINGVIEW_ARN", "INVALID_BILLING_GROUP", "INVALID_BILLING_GROUP_STATUS", "INVALID_BILLING_PERIOD_FOR_OPERATION", "INVALID_TIME_RANGE", "MISMATCHED_BILLINGGROUP_ARN", "MISMATCHED_BILLINGVIEW_ARN", "MISMATCHED_CUSTOMLINEITEM_ARN", "MISMATCHED_PRICINGPLAN_ARN", "MISMATCHED_PRICINGRULE_ARN", "MISSING_BILLINGGROUP", "MISSING_CUSTOMLINEITEM", "MISSING_LINKED_ACCOUNT_IDS", "MISSING_PRICINGPLAN", "MISSING_PRICING_PLAN_ARN", "MULTIPLE_LINKED_ACCOUNT_IDS", "MULTIPLE_PRICING_PLAN_ARN", "OTHER", "PRICINGRULES_ALREADY_ASSOCIATED", "PRICINGRULES_NOT_ASSOCIATED", "PRICINGRULES_NOT_EXIST", "PRIMARY_CANNOT_DISASSOCIATE", "PRIMARY_NOT_ASSOCIATED", "TOO_MANY_ACCOUNTS_IN_REQUEST", "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST", "UNKNOWN_OPERATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::AccountsAlreadyAssociated => "ACCOUNTS_ALREADY_ASSOCIATED",
+    ValidationExceptionReason::AccountsNotAssociated => "ACCOUNTS_NOT_ASSOCIATED",
+    ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
+    ValidationExceptionReason::CustomLineItemAssociationExists => "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS",
+    ValidationExceptionReason::DuplicateAccount => "DUPLICATE_ACCOUNT",
+    ValidationExceptionReason::DuplicatePricingruleArns => "DUPLICATE_PRICINGRULE_ARNS",
+    ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
+    ValidationExceptionReason::IllegalAccounts => "ILLEGAL_ACCOUNTS",
+    ValidationExceptionReason::IllegalBillingEntity => "ILLEGAL_BILLING_ENTITY",
+    ValidationExceptionReason::IllegalBillingPeriod => "ILLEGAL_BILLING_PERIOD",
+    ValidationExceptionReason::IllegalBillingPeriodRange => "ILLEGAL_BILLING_PERIOD_RANGE",
+    ValidationExceptionReason::IllegalChargeDetails => "ILLEGAL_CHARGE_DETAILS",
+    ValidationExceptionReason::IllegalChildAssociateResource => "ILLEGAL_CHILD_ASSOCIATE_RESOURCE",
+    ValidationExceptionReason::IllegalCustomlineitem => "ILLEGAL_CUSTOMLINEITEM",
+    ValidationExceptionReason::IllegalCustomlineitemModification => "ILLEGAL_CUSTOMLINEITEM_MODIFICATION",
+    ValidationExceptionReason::IllegalCustomlineitemUpdate => "ILLEGAL_CUSTOMLINEITEM_UPDATE",
+    ValidationExceptionReason::IllegalEndedBillinggroup => "ILLEGAL_ENDED_BILLINGGROUP",
+    ValidationExceptionReason::IllegalExpression => "ILLEGAL_EXPRESSION",
+    ValidationExceptionReason::IllegalModifierPercentage => "ILLEGAL_MODIFIER_PERCENTAGE",
+    ValidationExceptionReason::IllegalPrimaryAccount => "ILLEGAL_PRIMARY_ACCOUNT",
+    ValidationExceptionReason::IllegalResourceArns => "ILLEGAL_RESOURCE_ARNS",
+    ValidationExceptionReason::IllegalScope => "ILLEGAL_SCOPE",
+    ValidationExceptionReason::IllegalService => "ILLEGAL_SERVICE",
+    ValidationExceptionReason::IllegalTieringInput => "ILLEGAL_TIERING_INPUT",
+    ValidationExceptionReason::IllegalType => "ILLEGAL_TYPE",
+    ValidationExceptionReason::IllegalUpdateChargeDetails => "ILLEGAL_UPDATE_CHARGE_DETAILS",
+    ValidationExceptionReason::InvalidArn => "INVALID_ARN",
+    ValidationExceptionReason::InvalidBillingviewArn => "INVALID_BILLINGVIEW_ARN",
+    ValidationExceptionReason::InvalidBillingGroup => "INVALID_BILLING_GROUP",
+    ValidationExceptionReason::InvalidBillingGroupStatus => "INVALID_BILLING_GROUP_STATUS",
+    ValidationExceptionReason::InvalidBillingPeriodForOperation => "INVALID_BILLING_PERIOD_FOR_OPERATION",
+    ValidationExceptionReason::InvalidTimeRange => "INVALID_TIME_RANGE",
+    ValidationExceptionReason::MismatchedBillinggroupArn => "MISMATCHED_BILLINGGROUP_ARN",
+    ValidationExceptionReason::MismatchedBillingviewArn => "MISMATCHED_BILLINGVIEW_ARN",
+    ValidationExceptionReason::MismatchedCustomlineitemArn => "MISMATCHED_CUSTOMLINEITEM_ARN",
+    ValidationExceptionReason::MismatchedPricingplanArn => "MISMATCHED_PRICINGPLAN_ARN",
+    ValidationExceptionReason::MismatchedPricingruleArn => "MISMATCHED_PRICINGRULE_ARN",
+    ValidationExceptionReason::MissingBillinggroup => "MISSING_BILLINGGROUP",
+    ValidationExceptionReason::MissingCustomlineitem => "MISSING_CUSTOMLINEITEM",
+    ValidationExceptionReason::MissingLinkedAccountIds => "MISSING_LINKED_ACCOUNT_IDS",
+    ValidationExceptionReason::MissingPricingplan => "MISSING_PRICINGPLAN",
+    ValidationExceptionReason::MissingPricingPlanArn => "MISSING_PRICING_PLAN_ARN",
+    ValidationExceptionReason::MultipleLinkedAccountIds => "MULTIPLE_LINKED_ACCOUNT_IDS",
+    ValidationExceptionReason::MultiplePricingPlanArn => "MULTIPLE_PRICING_PLAN_ARN",
+    ValidationExceptionReason::Other => "OTHER",
+    ValidationExceptionReason::PricingrulesAlreadyAssociated => "PRICINGRULES_ALREADY_ASSOCIATED",
+    ValidationExceptionReason::PricingrulesNotAssociated => "PRICINGRULES_NOT_ASSOCIATED",
+    ValidationExceptionReason::PricingrulesNotExist => "PRICINGRULES_NOT_EXIST",
+    ValidationExceptionReason::PrimaryCannotDisassociate => "PRIMARY_CANNOT_DISASSOCIATE",
+    ValidationExceptionReason::PrimaryNotAssociated => "PRIMARY_NOT_ASSOCIATED",
+    ValidationExceptionReason::TooManyAccountsInRequest => "TOO_MANY_ACCOUNTS_IN_REQUEST",
+    ValidationExceptionReason::TooManyCustomlineitemsInRequest => "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST",
+    ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNTS_ALREADY_ASSOCIATED", "ACCOUNTS_NOT_ASSOCIATED", "CANNOT_PARSE", "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS", "DUPLICATE_ACCOUNT", "DUPLICATE_PRICINGRULE_ARNS", "FIELD_VALIDATION_FAILED", "ILLEGAL_ACCOUNTS", "ILLEGAL_BILLING_ENTITY", "ILLEGAL_BILLING_PERIOD", "ILLEGAL_BILLING_PERIOD_RANGE", "ILLEGAL_CHARGE_DETAILS", "ILLEGAL_CHILD_ASSOCIATE_RESOURCE", "ILLEGAL_CUSTOMLINEITEM", "ILLEGAL_CUSTOMLINEITEM_MODIFICATION", "ILLEGAL_CUSTOMLINEITEM_UPDATE", "ILLEGAL_ENDED_BILLINGGROUP", "ILLEGAL_EXPRESSION", "ILLEGAL_MODIFIER_PERCENTAGE", "ILLEGAL_PRIMARY_ACCOUNT", "ILLEGAL_RESOURCE_ARNS", "ILLEGAL_SCOPE", "ILLEGAL_SERVICE", "ILLEGAL_TIERING_INPUT", "ILLEGAL_TYPE", "ILLEGAL_UPDATE_CHARGE_DETAILS", "INVALID_ARN", "INVALID_BILLINGVIEW_ARN", "INVALID_BILLING_GROUP", "INVALID_BILLING_GROUP_STATUS", "INVALID_BILLING_PERIOD_FOR_OPERATION", "INVALID_TIME_RANGE", "MISMATCHED_BILLINGGROUP_ARN", "MISMATCHED_BILLINGVIEW_ARN", "MISMATCHED_CUSTOMLINEITEM_ARN", "MISMATCHED_PRICINGPLAN_ARN", "MISMATCHED_PRICINGRULE_ARN", "MISSING_BILLINGGROUP", "MISSING_CUSTOMLINEITEM", "MISSING_LINKED_ACCOUNT_IDS", "MISSING_PRICINGPLAN", "MISSING_PRICING_PLAN_ARN", "MULTIPLE_LINKED_ACCOUNT_IDS", "MULTIPLE_PRICING_PLAN_ARN", "OTHER", "PRICINGRULES_ALREADY_ASSOCIATED", "PRICINGRULES_NOT_ASSOCIATED", "PRICINGRULES_NOT_EXIST", "PRIMARY_CANNOT_DISASSOCIATE", "PRIMARY_NOT_ASSOCIATED", "TOO_MANY_ACCOUNTS_IN_REQUEST", "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST", "UNKNOWN_OPERATION"]
+                }
+            }
 impl AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> A representation of a pricing rule. </p>
 #[non_exhaustive]
@@ -856,15 +854,15 @@ pub enum PricingRuleType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PricingRuleType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISCOUNT" => PricingRuleType::Discount,
-            "MARKUP" => PricingRuleType::Markup,
-            "TIERING" => PricingRuleType::Tiering,
-            other => PricingRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISCOUNT" => PricingRuleType::Discount,
+"MARKUP" => PricingRuleType::Markup,
+"TIERING" => PricingRuleType::Tiering,
+other => PricingRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PricingRuleType {
                 type Err = std::convert::Infallible;
 
@@ -873,27 +871,25 @@ impl std::str::FromStr for PricingRuleType {
                 }
             }
 impl PricingRuleType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PricingRuleType::Discount => "DISCOUNT",
-            PricingRuleType::Markup => "MARKUP",
-            PricingRuleType::Tiering => "TIERING",
-            PricingRuleType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISCOUNT", "MARKUP", "TIERING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PricingRuleType::Discount => "DISCOUNT",
+    PricingRuleType::Markup => "MARKUP",
+    PricingRuleType::Tiering => "TIERING",
+    PricingRuleType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISCOUNT", "MARKUP", "TIERING"]
+                }
+            }
 impl AsRef<str> for PricingRuleType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PricingRuleScope`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -945,15 +941,15 @@ pub enum PricingRuleScope {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PricingRuleScope {
-    fn from(s: &str) -> Self {
-        match s {
-            "BILLING_ENTITY" => PricingRuleScope::BillingEntity,
-            "GLOBAL" => PricingRuleScope::Global,
-            "SERVICE" => PricingRuleScope::Service,
-            other => PricingRuleScope::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BILLING_ENTITY" => PricingRuleScope::BillingEntity,
+"GLOBAL" => PricingRuleScope::Global,
+"SERVICE" => PricingRuleScope::Service,
+other => PricingRuleScope::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PricingRuleScope {
                 type Err = std::convert::Infallible;
 
@@ -962,27 +958,25 @@ impl std::str::FromStr for PricingRuleScope {
                 }
             }
 impl PricingRuleScope {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PricingRuleScope::BillingEntity => "BILLING_ENTITY",
-            PricingRuleScope::Global => "GLOBAL",
-            PricingRuleScope::Service => "SERVICE",
-            PricingRuleScope::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BILLING_ENTITY", "GLOBAL", "SERVICE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PricingRuleScope::BillingEntity => "BILLING_ENTITY",
+    PricingRuleScope::Global => "GLOBAL",
+    PricingRuleScope::Service => "SERVICE",
+    PricingRuleScope::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BILLING_ENTITY", "GLOBAL", "SERVICE"]
+                }
+            }
 impl AsRef<str> for PricingRuleScope {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The filter that specifies criteria that the pricing rules returned by the <code>ListPricingRules</code> API will adhere to. </p>
 #[non_exhaustive]
@@ -1096,17 +1090,17 @@ pub enum ConflictExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT" => ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict,
-            "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT" => ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict,
-            "PRICING_RULE_IN_PRICING_PLAN_CONFLICT" => ConflictExceptionReason::PricingRuleInPricingPlanConflict,
-            "RESOURCE_NAME_CONFLICT" => ConflictExceptionReason::ResourceNameConflict,
-            "WRITE_CONFLICT_RETRY" => ConflictExceptionReason::WriteConflictRetry,
-            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT" => ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict,
+"PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT" => ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict,
+"PRICING_RULE_IN_PRICING_PLAN_CONFLICT" => ConflictExceptionReason::PricingRuleInPricingPlanConflict,
+"RESOURCE_NAME_CONFLICT" => ConflictExceptionReason::ResourceNameConflict,
+"WRITE_CONFLICT_RETRY" => ConflictExceptionReason::WriteConflictRetry,
+other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConflictExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -1115,29 +1109,27 @@ impl std::str::FromStr for ConflictExceptionReason {
                 }
             }
 impl ConflictExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict => "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT",
-            ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict => "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT",
-            ConflictExceptionReason::PricingRuleInPricingPlanConflict => "PRICING_RULE_IN_PRICING_PLAN_CONFLICT",
-            ConflictExceptionReason::ResourceNameConflict => "RESOURCE_NAME_CONFLICT",
-            ConflictExceptionReason::WriteConflictRetry => "WRITE_CONFLICT_RETRY",
-            ConflictExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT", "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT", "PRICING_RULE_IN_PRICING_PLAN_CONFLICT", "RESOURCE_NAME_CONFLICT", "WRITE_CONFLICT_RETRY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict => "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT",
+    ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict => "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT",
+    ConflictExceptionReason::PricingRuleInPricingPlanConflict => "PRICING_RULE_IN_PRICING_PLAN_CONFLICT",
+    ConflictExceptionReason::ResourceNameConflict => "RESOURCE_NAME_CONFLICT",
+    ConflictExceptionReason::WriteConflictRetry => "WRITE_CONFLICT_RETRY",
+    ConflictExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT", "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT", "PRICING_RULE_IN_PRICING_PLAN_CONFLICT", "RESOURCE_NAME_CONFLICT", "WRITE_CONFLICT_RETRY"]
+                }
+            }
 impl AsRef<str> for ConflictExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The set of tiering configurations for the pricing rule. </p>
 #[non_exhaustive]
@@ -1702,14 +1694,14 @@ pub enum CustomLineItemRelationship {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomLineItemRelationship {
-    fn from(s: &str) -> Self {
-        match s {
-            "CHILD" => CustomLineItemRelationship::Child,
-            "PARENT" => CustomLineItemRelationship::Parent,
-            other => CustomLineItemRelationship::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CHILD" => CustomLineItemRelationship::Child,
+"PARENT" => CustomLineItemRelationship::Parent,
+other => CustomLineItemRelationship::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CustomLineItemRelationship {
                 type Err = std::convert::Infallible;
 
@@ -1718,26 +1710,24 @@ impl std::str::FromStr for CustomLineItemRelationship {
                 }
             }
 impl CustomLineItemRelationship {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CustomLineItemRelationship::Child => "CHILD",
-            CustomLineItemRelationship::Parent => "PARENT",
-            CustomLineItemRelationship::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CHILD", "PARENT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CustomLineItemRelationship::Child => "CHILD",
+    CustomLineItemRelationship::Parent => "PARENT",
+    CustomLineItemRelationship::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CHILD", "PARENT"]
+                }
+            }
 impl AsRef<str> for CustomLineItemRelationship {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> A filter that specifies the type of resource associations that should be retrieved for a custom line item. </p>
 #[non_exhaustive]
@@ -2113,14 +2103,14 @@ pub enum CurrencyCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CurrencyCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CNY" => CurrencyCode::Cny,
-            "USD" => CurrencyCode::Usd,
-            other => CurrencyCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CNY" => CurrencyCode::Cny,
+"USD" => CurrencyCode::Usd,
+other => CurrencyCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CurrencyCode {
                 type Err = std::convert::Infallible;
 
@@ -2129,26 +2119,24 @@ impl std::str::FromStr for CurrencyCode {
                 }
             }
 impl CurrencyCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CurrencyCode::Cny => "CNY",
-            CurrencyCode::Usd => "USD",
-            CurrencyCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CNY", "USD"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CurrencyCode::Cny => "CNY",
+    CurrencyCode::Usd => "USD",
+    CurrencyCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CNY", "USD"]
+                }
+            }
 impl AsRef<str> for CurrencyCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> A representation of the charge details of a custom line item. </p>
 #[non_exhaustive]
@@ -2285,14 +2273,14 @@ pub enum CustomLineItemType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomLineItemType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREDIT" => CustomLineItemType::Credit,
-            "FEE" => CustomLineItemType::Fee,
-            other => CustomLineItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREDIT" => CustomLineItemType::Credit,
+"FEE" => CustomLineItemType::Fee,
+other => CustomLineItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CustomLineItemType {
                 type Err = std::convert::Infallible;
 
@@ -2301,26 +2289,24 @@ impl std::str::FromStr for CustomLineItemType {
                 }
             }
 impl CustomLineItemType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CustomLineItemType::Credit => "CREDIT",
-            CustomLineItemType::Fee => "FEE",
-            CustomLineItemType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREDIT", "FEE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CustomLineItemType::Credit => "CREDIT",
+    CustomLineItemType::Fee => "FEE",
+    CustomLineItemType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREDIT", "FEE"]
+                }
+            }
 impl AsRef<str> for CustomLineItemType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> A representation of the charge details that are associated with a percentage custom line item. </p>
 #[non_exhaustive]
@@ -2735,17 +2721,17 @@ pub enum AssociateResourceErrorReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssociateResourceErrorReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ILLEGAL_CUSTOMLINEITEM" => AssociateResourceErrorReason::IllegalCustomlineitem,
-            "INTERNAL_SERVER_EXCEPTION" => AssociateResourceErrorReason::InternalServerException,
-            "INVALID_ARN" => AssociateResourceErrorReason::InvalidArn,
-            "INVALID_BILLING_PERIOD_RANGE" => AssociateResourceErrorReason::InvalidBillingPeriodRange,
-            "SERVICE_LIMIT_EXCEEDED" => AssociateResourceErrorReason::ServiceLimitExceeded,
-            other => AssociateResourceErrorReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ILLEGAL_CUSTOMLINEITEM" => AssociateResourceErrorReason::IllegalCustomlineitem,
+"INTERNAL_SERVER_EXCEPTION" => AssociateResourceErrorReason::InternalServerException,
+"INVALID_ARN" => AssociateResourceErrorReason::InvalidArn,
+"INVALID_BILLING_PERIOD_RANGE" => AssociateResourceErrorReason::InvalidBillingPeriodRange,
+"SERVICE_LIMIT_EXCEEDED" => AssociateResourceErrorReason::ServiceLimitExceeded,
+other => AssociateResourceErrorReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AssociateResourceErrorReason {
                 type Err = std::convert::Infallible;
 
@@ -2754,29 +2740,27 @@ impl std::str::FromStr for AssociateResourceErrorReason {
                 }
             }
 impl AssociateResourceErrorReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AssociateResourceErrorReason::IllegalCustomlineitem => "ILLEGAL_CUSTOMLINEITEM",
-            AssociateResourceErrorReason::InternalServerException => "INTERNAL_SERVER_EXCEPTION",
-            AssociateResourceErrorReason::InvalidArn => "INVALID_ARN",
-            AssociateResourceErrorReason::InvalidBillingPeriodRange => "INVALID_BILLING_PERIOD_RANGE",
-            AssociateResourceErrorReason::ServiceLimitExceeded => "SERVICE_LIMIT_EXCEEDED",
-            AssociateResourceErrorReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ILLEGAL_CUSTOMLINEITEM", "INTERNAL_SERVER_EXCEPTION", "INVALID_ARN", "INVALID_BILLING_PERIOD_RANGE", "SERVICE_LIMIT_EXCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AssociateResourceErrorReason::IllegalCustomlineitem => "ILLEGAL_CUSTOMLINEITEM",
+    AssociateResourceErrorReason::InternalServerException => "INTERNAL_SERVER_EXCEPTION",
+    AssociateResourceErrorReason::InvalidArn => "INVALID_ARN",
+    AssociateResourceErrorReason::InvalidBillingPeriodRange => "INVALID_BILLING_PERIOD_RANGE",
+    AssociateResourceErrorReason::ServiceLimitExceeded => "SERVICE_LIMIT_EXCEEDED",
+    AssociateResourceErrorReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ILLEGAL_CUSTOMLINEITEM", "INTERNAL_SERVER_EXCEPTION", "INVALID_ARN", "INVALID_BILLING_PERIOD_RANGE", "SERVICE_LIMIT_EXCEEDED"]
+                }
+            }
 impl AsRef<str> for AssociateResourceErrorReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The billing period range in which the custom line item request will be applied. </p>
 #[non_exhaustive]
@@ -3963,14 +3947,14 @@ pub enum BillingGroupStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BillingGroupStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => BillingGroupStatus::Active,
-            "PRIMARY_ACCOUNT_MISSING" => BillingGroupStatus::PrimaryAccountMissing,
-            other => BillingGroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => BillingGroupStatus::Active,
+"PRIMARY_ACCOUNT_MISSING" => BillingGroupStatus::PrimaryAccountMissing,
+other => BillingGroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BillingGroupStatus {
                 type Err = std::convert::Infallible;
 
@@ -3979,26 +3963,24 @@ impl std::str::FromStr for BillingGroupStatus {
                 }
             }
 impl BillingGroupStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BillingGroupStatus::Active => "ACTIVE",
-            BillingGroupStatus::PrimaryAccountMissing => "PRIMARY_ACCOUNT_MISSING",
-            BillingGroupStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "PRIMARY_ACCOUNT_MISSING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BillingGroupStatus::Active => "ACTIVE",
+    BillingGroupStatus::PrimaryAccountMissing => "PRIMARY_ACCOUNT_MISSING",
+    BillingGroupStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "PRIMARY_ACCOUNT_MISSING"]
+                }
+            }
 impl AsRef<str> for BillingGroupStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
 #[non_exhaustive]

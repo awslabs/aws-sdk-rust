@@ -53,16 +53,16 @@ pub enum MacAlgorithmSpec {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MacAlgorithmSpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "HMAC_SHA_224" => MacAlgorithmSpec::HmacSha224,
-            "HMAC_SHA_256" => MacAlgorithmSpec::HmacSha256,
-            "HMAC_SHA_384" => MacAlgorithmSpec::HmacSha384,
-            "HMAC_SHA_512" => MacAlgorithmSpec::HmacSha512,
-            other => MacAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "HMAC_SHA_224" => MacAlgorithmSpec::HmacSha224,
+"HMAC_SHA_256" => MacAlgorithmSpec::HmacSha256,
+"HMAC_SHA_384" => MacAlgorithmSpec::HmacSha384,
+"HMAC_SHA_512" => MacAlgorithmSpec::HmacSha512,
+other => MacAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MacAlgorithmSpec {
                 type Err = std::convert::Infallible;
 
@@ -71,28 +71,26 @@ impl std::str::FromStr for MacAlgorithmSpec {
                 }
             }
 impl MacAlgorithmSpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MacAlgorithmSpec::HmacSha224 => "HMAC_SHA_224",
-            MacAlgorithmSpec::HmacSha256 => "HMAC_SHA_256",
-            MacAlgorithmSpec::HmacSha384 => "HMAC_SHA_384",
-            MacAlgorithmSpec::HmacSha512 => "HMAC_SHA_512",
-            MacAlgorithmSpec::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "HMAC_SHA_224", "HMAC_SHA_256", "HMAC_SHA_384", "HMAC_SHA_512"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MacAlgorithmSpec::HmacSha224 => "HMAC_SHA_224",
+    MacAlgorithmSpec::HmacSha256 => "HMAC_SHA_256",
+    MacAlgorithmSpec::HmacSha384 => "HMAC_SHA_384",
+    MacAlgorithmSpec::HmacSha512 => "HMAC_SHA_512",
+    MacAlgorithmSpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["HMAC_SHA_224", "HMAC_SHA_256", "HMAC_SHA_384", "HMAC_SHA_512"]
+                }
+            }
 impl AsRef<str> for MacAlgorithmSpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SigningAlgorithmSpec`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -165,22 +163,22 @@ pub enum SigningAlgorithmSpec {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SigningAlgorithmSpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "ECDSA_SHA_256" => SigningAlgorithmSpec::EcdsaSha256,
-            "ECDSA_SHA_384" => SigningAlgorithmSpec::EcdsaSha384,
-            "ECDSA_SHA_512" => SigningAlgorithmSpec::EcdsaSha512,
-            "RSASSA_PKCS1_V1_5_SHA_256" => SigningAlgorithmSpec::RsassaPkcs1V15Sha256,
-            "RSASSA_PKCS1_V1_5_SHA_384" => SigningAlgorithmSpec::RsassaPkcs1V15Sha384,
-            "RSASSA_PKCS1_V1_5_SHA_512" => SigningAlgorithmSpec::RsassaPkcs1V15Sha512,
-            "RSASSA_PSS_SHA_256" => SigningAlgorithmSpec::RsassaPssSha256,
-            "RSASSA_PSS_SHA_384" => SigningAlgorithmSpec::RsassaPssSha384,
-            "RSASSA_PSS_SHA_512" => SigningAlgorithmSpec::RsassaPssSha512,
-            "SM2DSA" => SigningAlgorithmSpec::Sm2Dsa,
-            other => SigningAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ECDSA_SHA_256" => SigningAlgorithmSpec::EcdsaSha256,
+"ECDSA_SHA_384" => SigningAlgorithmSpec::EcdsaSha384,
+"ECDSA_SHA_512" => SigningAlgorithmSpec::EcdsaSha512,
+"RSASSA_PKCS1_V1_5_SHA_256" => SigningAlgorithmSpec::RsassaPkcs1V15Sha256,
+"RSASSA_PKCS1_V1_5_SHA_384" => SigningAlgorithmSpec::RsassaPkcs1V15Sha384,
+"RSASSA_PKCS1_V1_5_SHA_512" => SigningAlgorithmSpec::RsassaPkcs1V15Sha512,
+"RSASSA_PSS_SHA_256" => SigningAlgorithmSpec::RsassaPssSha256,
+"RSASSA_PSS_SHA_384" => SigningAlgorithmSpec::RsassaPssSha384,
+"RSASSA_PSS_SHA_512" => SigningAlgorithmSpec::RsassaPssSha512,
+"SM2DSA" => SigningAlgorithmSpec::Sm2Dsa,
+other => SigningAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SigningAlgorithmSpec {
                 type Err = std::convert::Infallible;
 
@@ -189,34 +187,32 @@ impl std::str::FromStr for SigningAlgorithmSpec {
                 }
             }
 impl SigningAlgorithmSpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SigningAlgorithmSpec::EcdsaSha256 => "ECDSA_SHA_256",
-            SigningAlgorithmSpec::EcdsaSha384 => "ECDSA_SHA_384",
-            SigningAlgorithmSpec::EcdsaSha512 => "ECDSA_SHA_512",
-            SigningAlgorithmSpec::RsassaPkcs1V15Sha256 => "RSASSA_PKCS1_V1_5_SHA_256",
-            SigningAlgorithmSpec::RsassaPkcs1V15Sha384 => "RSASSA_PKCS1_V1_5_SHA_384",
-            SigningAlgorithmSpec::RsassaPkcs1V15Sha512 => "RSASSA_PKCS1_V1_5_SHA_512",
-            SigningAlgorithmSpec::RsassaPssSha256 => "RSASSA_PSS_SHA_256",
-            SigningAlgorithmSpec::RsassaPssSha384 => "RSASSA_PSS_SHA_384",
-            SigningAlgorithmSpec::RsassaPssSha512 => "RSASSA_PSS_SHA_512",
-            SigningAlgorithmSpec::Sm2Dsa => "SM2DSA",
-            SigningAlgorithmSpec::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ECDSA_SHA_256", "ECDSA_SHA_384", "ECDSA_SHA_512", "RSASSA_PKCS1_V1_5_SHA_256", "RSASSA_PKCS1_V1_5_SHA_384", "RSASSA_PKCS1_V1_5_SHA_512", "RSASSA_PSS_SHA_256", "RSASSA_PSS_SHA_384", "RSASSA_PSS_SHA_512", "SM2DSA"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SigningAlgorithmSpec::EcdsaSha256 => "ECDSA_SHA_256",
+    SigningAlgorithmSpec::EcdsaSha384 => "ECDSA_SHA_384",
+    SigningAlgorithmSpec::EcdsaSha512 => "ECDSA_SHA_512",
+    SigningAlgorithmSpec::RsassaPkcs1V15Sha256 => "RSASSA_PKCS1_V1_5_SHA_256",
+    SigningAlgorithmSpec::RsassaPkcs1V15Sha384 => "RSASSA_PKCS1_V1_5_SHA_384",
+    SigningAlgorithmSpec::RsassaPkcs1V15Sha512 => "RSASSA_PKCS1_V1_5_SHA_512",
+    SigningAlgorithmSpec::RsassaPssSha256 => "RSASSA_PSS_SHA_256",
+    SigningAlgorithmSpec::RsassaPssSha384 => "RSASSA_PSS_SHA_384",
+    SigningAlgorithmSpec::RsassaPssSha512 => "RSASSA_PSS_SHA_512",
+    SigningAlgorithmSpec::Sm2Dsa => "SM2DSA",
+    SigningAlgorithmSpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ECDSA_SHA_256", "ECDSA_SHA_384", "ECDSA_SHA_512", "RSASSA_PKCS1_V1_5_SHA_256", "RSASSA_PKCS1_V1_5_SHA_384", "RSASSA_PKCS1_V1_5_SHA_512", "RSASSA_PSS_SHA_256", "RSASSA_PSS_SHA_384", "RSASSA_PSS_SHA_512", "SM2DSA"]
+                }
+            }
 impl AsRef<str> for SigningAlgorithmSpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `MessageType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -265,14 +261,14 @@ pub enum MessageType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MessageType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DIGEST" => MessageType::Digest,
-            "RAW" => MessageType::Raw,
-            other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DIGEST" => MessageType::Digest,
+"RAW" => MessageType::Raw,
+other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MessageType {
                 type Err = std::convert::Infallible;
 
@@ -281,26 +277,24 @@ impl std::str::FromStr for MessageType {
                 }
             }
 impl MessageType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MessageType::Digest => "DIGEST",
-            MessageType::Raw => "RAW",
-            MessageType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DIGEST", "RAW"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MessageType::Digest => "DIGEST",
+    MessageType::Raw => "RAW",
+    MessageType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DIGEST", "RAW"]
+                }
+            }
 impl AsRef<str> for MessageType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `XksProxyConnectivityType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -349,14 +343,14 @@ pub enum XksProxyConnectivityType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for XksProxyConnectivityType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PUBLIC_ENDPOINT" => XksProxyConnectivityType::PublicEndpoint,
-            "VPC_ENDPOINT_SERVICE" => XksProxyConnectivityType::VpcEndpointService,
-            other => XksProxyConnectivityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PUBLIC_ENDPOINT" => XksProxyConnectivityType::PublicEndpoint,
+"VPC_ENDPOINT_SERVICE" => XksProxyConnectivityType::VpcEndpointService,
+other => XksProxyConnectivityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for XksProxyConnectivityType {
                 type Err = std::convert::Infallible;
 
@@ -365,26 +359,24 @@ impl std::str::FromStr for XksProxyConnectivityType {
                 }
             }
 impl XksProxyConnectivityType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            XksProxyConnectivityType::PublicEndpoint => "PUBLIC_ENDPOINT",
-            XksProxyConnectivityType::VpcEndpointService => "VPC_ENDPOINT_SERVICE",
-            XksProxyConnectivityType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PUBLIC_ENDPOINT", "VPC_ENDPOINT_SERVICE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    XksProxyConnectivityType::PublicEndpoint => "PUBLIC_ENDPOINT",
+    XksProxyConnectivityType::VpcEndpointService => "VPC_ENDPOINT_SERVICE",
+    XksProxyConnectivityType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PUBLIC_ENDPOINT", "VPC_ENDPOINT_SERVICE"]
+                }
+            }
 impl AsRef<str> for XksProxyConnectivityType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>KMS uses the authentication credential to sign requests that it sends to the external key store proxy (XKS proxy) on your behalf. You establish these credentials on your external key store proxy and report them to KMS.</p> 
 /// <p>The <code>XksProxyAuthenticationCredential</code> includes two required elements.</p>
@@ -607,20 +599,20 @@ pub enum KeyState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeyState {
-    fn from(s: &str) -> Self {
-        match s {
-            "Creating" => KeyState::Creating,
-            "Disabled" => KeyState::Disabled,
-            "Enabled" => KeyState::Enabled,
-            "PendingDeletion" => KeyState::PendingDeletion,
-            "PendingImport" => KeyState::PendingImport,
-            "PendingReplicaDeletion" => KeyState::PendingReplicaDeletion,
-            "Unavailable" => KeyState::Unavailable,
-            "Updating" => KeyState::Updating,
-            other => KeyState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Creating" => KeyState::Creating,
+"Disabled" => KeyState::Disabled,
+"Enabled" => KeyState::Enabled,
+"PendingDeletion" => KeyState::PendingDeletion,
+"PendingImport" => KeyState::PendingImport,
+"PendingReplicaDeletion" => KeyState::PendingReplicaDeletion,
+"Unavailable" => KeyState::Unavailable,
+"Updating" => KeyState::Updating,
+other => KeyState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for KeyState {
                 type Err = std::convert::Infallible;
 
@@ -629,32 +621,30 @@ impl std::str::FromStr for KeyState {
                 }
             }
 impl KeyState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyState::Creating => "Creating",
-            KeyState::Disabled => "Disabled",
-            KeyState::Enabled => "Enabled",
-            KeyState::PendingDeletion => "PendingDeletion",
-            KeyState::PendingImport => "PendingImport",
-            KeyState::PendingReplicaDeletion => "PendingReplicaDeletion",
-            KeyState::Unavailable => "Unavailable",
-            KeyState::Updating => "Updating",
-            KeyState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Creating", "Disabled", "Enabled", "PendingDeletion", "PendingImport", "PendingReplicaDeletion", "Unavailable", "Updating"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeyState::Creating => "Creating",
+    KeyState::Disabled => "Disabled",
+    KeyState::Enabled => "Enabled",
+    KeyState::PendingDeletion => "PendingDeletion",
+    KeyState::PendingImport => "PendingImport",
+    KeyState::PendingReplicaDeletion => "PendingReplicaDeletion",
+    KeyState::Unavailable => "Unavailable",
+    KeyState::Updating => "Updating",
+    KeyState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Creating", "Disabled", "Enabled", "PendingDeletion", "PendingImport", "PendingReplicaDeletion", "Unavailable", "Updating"]
+                }
+            }
 impl AsRef<str> for KeyState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains metadata about a KMS key.</p> 
 /// <p>This data type is used as a response element for the <code>CreateKey</code>, <code>DescribeKey</code>, and <code>ReplicateKey</code> operations.</p>
@@ -1490,14 +1480,14 @@ pub enum MultiRegionKeyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MultiRegionKeyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PRIMARY" => MultiRegionKeyType::Primary,
-            "REPLICA" => MultiRegionKeyType::Replica,
-            other => MultiRegionKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PRIMARY" => MultiRegionKeyType::Primary,
+"REPLICA" => MultiRegionKeyType::Replica,
+other => MultiRegionKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MultiRegionKeyType {
                 type Err = std::convert::Infallible;
 
@@ -1506,26 +1496,24 @@ impl std::str::FromStr for MultiRegionKeyType {
                 }
             }
 impl MultiRegionKeyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MultiRegionKeyType::Primary => "PRIMARY",
-            MultiRegionKeyType::Replica => "REPLICA",
-            MultiRegionKeyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PRIMARY", "REPLICA"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MultiRegionKeyType::Primary => "PRIMARY",
+    MultiRegionKeyType::Replica => "REPLICA",
+    MultiRegionKeyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PRIMARY", "REPLICA"]
+                }
+            }
 impl AsRef<str> for MultiRegionKeyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EncryptionAlgorithmSpec`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1580,16 +1568,16 @@ pub enum EncryptionAlgorithmSpec {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionAlgorithmSpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "RSAES_OAEP_SHA_1" => EncryptionAlgorithmSpec::RsaesOaepSha1,
-            "RSAES_OAEP_SHA_256" => EncryptionAlgorithmSpec::RsaesOaepSha256,
-            "SM2PKE" => EncryptionAlgorithmSpec::Sm2Pke,
-            "SYMMETRIC_DEFAULT" => EncryptionAlgorithmSpec::SymmetricDefault,
-            other => EncryptionAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "RSAES_OAEP_SHA_1" => EncryptionAlgorithmSpec::RsaesOaepSha1,
+"RSAES_OAEP_SHA_256" => EncryptionAlgorithmSpec::RsaesOaepSha256,
+"SM2PKE" => EncryptionAlgorithmSpec::Sm2Pke,
+"SYMMETRIC_DEFAULT" => EncryptionAlgorithmSpec::SymmetricDefault,
+other => EncryptionAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EncryptionAlgorithmSpec {
                 type Err = std::convert::Infallible;
 
@@ -1598,28 +1586,26 @@ impl std::str::FromStr for EncryptionAlgorithmSpec {
                 }
             }
 impl EncryptionAlgorithmSpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EncryptionAlgorithmSpec::RsaesOaepSha1 => "RSAES_OAEP_SHA_1",
-            EncryptionAlgorithmSpec::RsaesOaepSha256 => "RSAES_OAEP_SHA_256",
-            EncryptionAlgorithmSpec::Sm2Pke => "SM2PKE",
-            EncryptionAlgorithmSpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
-            EncryptionAlgorithmSpec::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "SM2PKE", "SYMMETRIC_DEFAULT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EncryptionAlgorithmSpec::RsaesOaepSha1 => "RSAES_OAEP_SHA_1",
+    EncryptionAlgorithmSpec::RsaesOaepSha256 => "RSAES_OAEP_SHA_256",
+    EncryptionAlgorithmSpec::Sm2Pke => "SM2PKE",
+    EncryptionAlgorithmSpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
+    EncryptionAlgorithmSpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "SM2PKE", "SYMMETRIC_DEFAULT"]
+                }
+            }
 impl AsRef<str> for EncryptionAlgorithmSpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `KeySpec`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1701,25 +1687,25 @@ pub enum KeySpec {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeySpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "ECC_NIST_P256" => KeySpec::EccNistP256,
-            "ECC_NIST_P384" => KeySpec::EccNistP384,
-            "ECC_NIST_P521" => KeySpec::EccNistP521,
-            "ECC_SECG_P256K1" => KeySpec::EccSecgP256K1,
-            "HMAC_224" => KeySpec::Hmac224,
-            "HMAC_256" => KeySpec::Hmac256,
-            "HMAC_384" => KeySpec::Hmac384,
-            "HMAC_512" => KeySpec::Hmac512,
-            "RSA_2048" => KeySpec::Rsa2048,
-            "RSA_3072" => KeySpec::Rsa3072,
-            "RSA_4096" => KeySpec::Rsa4096,
-            "SM2" => KeySpec::Sm2,
-            "SYMMETRIC_DEFAULT" => KeySpec::SymmetricDefault,
-            other => KeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ECC_NIST_P256" => KeySpec::EccNistP256,
+"ECC_NIST_P384" => KeySpec::EccNistP384,
+"ECC_NIST_P521" => KeySpec::EccNistP521,
+"ECC_SECG_P256K1" => KeySpec::EccSecgP256K1,
+"HMAC_224" => KeySpec::Hmac224,
+"HMAC_256" => KeySpec::Hmac256,
+"HMAC_384" => KeySpec::Hmac384,
+"HMAC_512" => KeySpec::Hmac512,
+"RSA_2048" => KeySpec::Rsa2048,
+"RSA_3072" => KeySpec::Rsa3072,
+"RSA_4096" => KeySpec::Rsa4096,
+"SM2" => KeySpec::Sm2,
+"SYMMETRIC_DEFAULT" => KeySpec::SymmetricDefault,
+other => KeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for KeySpec {
                 type Err = std::convert::Infallible;
 
@@ -1728,37 +1714,35 @@ impl std::str::FromStr for KeySpec {
                 }
             }
 impl KeySpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeySpec::EccNistP256 => "ECC_NIST_P256",
-            KeySpec::EccNistP384 => "ECC_NIST_P384",
-            KeySpec::EccNistP521 => "ECC_NIST_P521",
-            KeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
-            KeySpec::Hmac224 => "HMAC_224",
-            KeySpec::Hmac256 => "HMAC_256",
-            KeySpec::Hmac384 => "HMAC_384",
-            KeySpec::Hmac512 => "HMAC_512",
-            KeySpec::Rsa2048 => "RSA_2048",
-            KeySpec::Rsa3072 => "RSA_3072",
-            KeySpec::Rsa4096 => "RSA_4096",
-            KeySpec::Sm2 => "SM2",
-            KeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
-            KeySpec::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "HMAC_224", "HMAC_256", "HMAC_384", "HMAC_512", "RSA_2048", "RSA_3072", "RSA_4096", "SM2", "SYMMETRIC_DEFAULT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeySpec::EccNistP256 => "ECC_NIST_P256",
+    KeySpec::EccNistP384 => "ECC_NIST_P384",
+    KeySpec::EccNistP521 => "ECC_NIST_P521",
+    KeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
+    KeySpec::Hmac224 => "HMAC_224",
+    KeySpec::Hmac256 => "HMAC_256",
+    KeySpec::Hmac384 => "HMAC_384",
+    KeySpec::Hmac512 => "HMAC_512",
+    KeySpec::Rsa2048 => "RSA_2048",
+    KeySpec::Rsa3072 => "RSA_3072",
+    KeySpec::Rsa4096 => "RSA_4096",
+    KeySpec::Sm2 => "SM2",
+    KeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
+    KeySpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "HMAC_224", "HMAC_256", "HMAC_384", "HMAC_512", "RSA_2048", "RSA_3072", "RSA_4096", "SM2", "SYMMETRIC_DEFAULT"]
+                }
+            }
 impl AsRef<str> for KeySpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CustomerMasterKeySpec`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1841,25 +1825,25 @@ pub enum CustomerMasterKeySpec {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomerMasterKeySpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "ECC_NIST_P256" => CustomerMasterKeySpec::EccNistP256,
-            "ECC_NIST_P384" => CustomerMasterKeySpec::EccNistP384,
-            "ECC_NIST_P521" => CustomerMasterKeySpec::EccNistP521,
-            "ECC_SECG_P256K1" => CustomerMasterKeySpec::EccSecgP256K1,
-            "HMAC_224" => CustomerMasterKeySpec::Hmac224,
-            "HMAC_256" => CustomerMasterKeySpec::Hmac256,
-            "HMAC_384" => CustomerMasterKeySpec::Hmac384,
-            "HMAC_512" => CustomerMasterKeySpec::Hmac512,
-            "RSA_2048" => CustomerMasterKeySpec::Rsa2048,
-            "RSA_3072" => CustomerMasterKeySpec::Rsa3072,
-            "RSA_4096" => CustomerMasterKeySpec::Rsa4096,
-            "SM2" => CustomerMasterKeySpec::Sm2,
-            "SYMMETRIC_DEFAULT" => CustomerMasterKeySpec::SymmetricDefault,
-            other => CustomerMasterKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ECC_NIST_P256" => CustomerMasterKeySpec::EccNistP256,
+"ECC_NIST_P384" => CustomerMasterKeySpec::EccNistP384,
+"ECC_NIST_P521" => CustomerMasterKeySpec::EccNistP521,
+"ECC_SECG_P256K1" => CustomerMasterKeySpec::EccSecgP256K1,
+"HMAC_224" => CustomerMasterKeySpec::Hmac224,
+"HMAC_256" => CustomerMasterKeySpec::Hmac256,
+"HMAC_384" => CustomerMasterKeySpec::Hmac384,
+"HMAC_512" => CustomerMasterKeySpec::Hmac512,
+"RSA_2048" => CustomerMasterKeySpec::Rsa2048,
+"RSA_3072" => CustomerMasterKeySpec::Rsa3072,
+"RSA_4096" => CustomerMasterKeySpec::Rsa4096,
+"SM2" => CustomerMasterKeySpec::Sm2,
+"SYMMETRIC_DEFAULT" => CustomerMasterKeySpec::SymmetricDefault,
+other => CustomerMasterKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CustomerMasterKeySpec {
                 type Err = std::convert::Infallible;
 
@@ -1868,37 +1852,35 @@ impl std::str::FromStr for CustomerMasterKeySpec {
                 }
             }
 impl CustomerMasterKeySpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CustomerMasterKeySpec::EccNistP256 => "ECC_NIST_P256",
-            CustomerMasterKeySpec::EccNistP384 => "ECC_NIST_P384",
-            CustomerMasterKeySpec::EccNistP521 => "ECC_NIST_P521",
-            CustomerMasterKeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
-            CustomerMasterKeySpec::Hmac224 => "HMAC_224",
-            CustomerMasterKeySpec::Hmac256 => "HMAC_256",
-            CustomerMasterKeySpec::Hmac384 => "HMAC_384",
-            CustomerMasterKeySpec::Hmac512 => "HMAC_512",
-            CustomerMasterKeySpec::Rsa2048 => "RSA_2048",
-            CustomerMasterKeySpec::Rsa3072 => "RSA_3072",
-            CustomerMasterKeySpec::Rsa4096 => "RSA_4096",
-            CustomerMasterKeySpec::Sm2 => "SM2",
-            CustomerMasterKeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
-            CustomerMasterKeySpec::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "HMAC_224", "HMAC_256", "HMAC_384", "HMAC_512", "RSA_2048", "RSA_3072", "RSA_4096", "SM2", "SYMMETRIC_DEFAULT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CustomerMasterKeySpec::EccNistP256 => "ECC_NIST_P256",
+    CustomerMasterKeySpec::EccNistP384 => "ECC_NIST_P384",
+    CustomerMasterKeySpec::EccNistP521 => "ECC_NIST_P521",
+    CustomerMasterKeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
+    CustomerMasterKeySpec::Hmac224 => "HMAC_224",
+    CustomerMasterKeySpec::Hmac256 => "HMAC_256",
+    CustomerMasterKeySpec::Hmac384 => "HMAC_384",
+    CustomerMasterKeySpec::Hmac512 => "HMAC_512",
+    CustomerMasterKeySpec::Rsa2048 => "RSA_2048",
+    CustomerMasterKeySpec::Rsa3072 => "RSA_3072",
+    CustomerMasterKeySpec::Rsa4096 => "RSA_4096",
+    CustomerMasterKeySpec::Sm2 => "SM2",
+    CustomerMasterKeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
+    CustomerMasterKeySpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "HMAC_224", "HMAC_256", "HMAC_384", "HMAC_512", "RSA_2048", "RSA_3072", "RSA_4096", "SM2", "SYMMETRIC_DEFAULT"]
+                }
+            }
 impl AsRef<str> for CustomerMasterKeySpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `KeyManagerType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1947,14 +1929,14 @@ pub enum KeyManagerType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeyManagerType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS" => KeyManagerType::Aws,
-            "CUSTOMER" => KeyManagerType::Customer,
-            other => KeyManagerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS" => KeyManagerType::Aws,
+"CUSTOMER" => KeyManagerType::Customer,
+other => KeyManagerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for KeyManagerType {
                 type Err = std::convert::Infallible;
 
@@ -1963,26 +1945,24 @@ impl std::str::FromStr for KeyManagerType {
                 }
             }
 impl KeyManagerType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyManagerType::Aws => "AWS",
-            KeyManagerType::Customer => "CUSTOMER",
-            KeyManagerType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS", "CUSTOMER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeyManagerType::Aws => "AWS",
+    KeyManagerType::Customer => "CUSTOMER",
+    KeyManagerType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS", "CUSTOMER"]
+                }
+            }
 impl AsRef<str> for KeyManagerType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ExpirationModelType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2031,14 +2011,14 @@ pub enum ExpirationModelType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExpirationModelType {
-    fn from(s: &str) -> Self {
-        match s {
-            "KEY_MATERIAL_DOES_NOT_EXPIRE" => ExpirationModelType::KeyMaterialDoesNotExpire,
-            "KEY_MATERIAL_EXPIRES" => ExpirationModelType::KeyMaterialExpires,
-            other => ExpirationModelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "KEY_MATERIAL_DOES_NOT_EXPIRE" => ExpirationModelType::KeyMaterialDoesNotExpire,
+"KEY_MATERIAL_EXPIRES" => ExpirationModelType::KeyMaterialExpires,
+other => ExpirationModelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExpirationModelType {
                 type Err = std::convert::Infallible;
 
@@ -2047,26 +2027,24 @@ impl std::str::FromStr for ExpirationModelType {
                 }
             }
 impl ExpirationModelType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExpirationModelType::KeyMaterialDoesNotExpire => "KEY_MATERIAL_DOES_NOT_EXPIRE",
-            ExpirationModelType::KeyMaterialExpires => "KEY_MATERIAL_EXPIRES",
-            ExpirationModelType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "KEY_MATERIAL_DOES_NOT_EXPIRE", "KEY_MATERIAL_EXPIRES"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExpirationModelType::KeyMaterialDoesNotExpire => "KEY_MATERIAL_DOES_NOT_EXPIRE",
+    ExpirationModelType::KeyMaterialExpires => "KEY_MATERIAL_EXPIRES",
+    ExpirationModelType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["KEY_MATERIAL_DOES_NOT_EXPIRE", "KEY_MATERIAL_EXPIRES"]
+                }
+            }
 impl AsRef<str> for ExpirationModelType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `OriginType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2121,16 +2099,16 @@ pub enum OriginType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OriginType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS_CLOUDHSM" => OriginType::AwsCloudhsm,
-            "AWS_KMS" => OriginType::AwsKms,
-            "EXTERNAL" => OriginType::External,
-            "EXTERNAL_KEY_STORE" => OriginType::ExternalKeyStore,
-            other => OriginType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS_CLOUDHSM" => OriginType::AwsCloudhsm,
+"AWS_KMS" => OriginType::AwsKms,
+"EXTERNAL" => OriginType::External,
+"EXTERNAL_KEY_STORE" => OriginType::ExternalKeyStore,
+other => OriginType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OriginType {
                 type Err = std::convert::Infallible;
 
@@ -2139,28 +2117,26 @@ impl std::str::FromStr for OriginType {
                 }
             }
 impl OriginType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OriginType::AwsCloudhsm => "AWS_CLOUDHSM",
-            OriginType::AwsKms => "AWS_KMS",
-            OriginType::External => "EXTERNAL",
-            OriginType::ExternalKeyStore => "EXTERNAL_KEY_STORE",
-            OriginType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_CLOUDHSM", "AWS_KMS", "EXTERNAL", "EXTERNAL_KEY_STORE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OriginType::AwsCloudhsm => "AWS_CLOUDHSM",
+    OriginType::AwsKms => "AWS_KMS",
+    OriginType::External => "EXTERNAL",
+    OriginType::ExternalKeyStore => "EXTERNAL_KEY_STORE",
+    OriginType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS_CLOUDHSM", "AWS_KMS", "EXTERNAL", "EXTERNAL_KEY_STORE"]
+                }
+            }
 impl AsRef<str> for OriginType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `KeyUsageType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2212,15 +2188,15 @@ pub enum KeyUsageType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeyUsageType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENCRYPT_DECRYPT" => KeyUsageType::EncryptDecrypt,
-            "GENERATE_VERIFY_MAC" => KeyUsageType::GenerateVerifyMac,
-            "SIGN_VERIFY" => KeyUsageType::SignVerify,
-            other => KeyUsageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ENCRYPT_DECRYPT" => KeyUsageType::EncryptDecrypt,
+"GENERATE_VERIFY_MAC" => KeyUsageType::GenerateVerifyMac,
+"SIGN_VERIFY" => KeyUsageType::SignVerify,
+other => KeyUsageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for KeyUsageType {
                 type Err = std::convert::Infallible;
 
@@ -2229,27 +2205,25 @@ impl std::str::FromStr for KeyUsageType {
                 }
             }
 impl KeyUsageType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyUsageType::EncryptDecrypt => "ENCRYPT_DECRYPT",
-            KeyUsageType::GenerateVerifyMac => "GENERATE_VERIFY_MAC",
-            KeyUsageType::SignVerify => "SIGN_VERIFY",
-            KeyUsageType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENCRYPT_DECRYPT", "GENERATE_VERIFY_MAC", "SIGN_VERIFY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeyUsageType::EncryptDecrypt => "ENCRYPT_DECRYPT",
+    KeyUsageType::GenerateVerifyMac => "GENERATE_VERIFY_MAC",
+    KeyUsageType::SignVerify => "SIGN_VERIFY",
+    KeyUsageType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENCRYPT_DECRYPT", "GENERATE_VERIFY_MAC", "SIGN_VERIFY"]
+                }
+            }
 impl AsRef<str> for KeyUsageType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about a grant.</p>
 #[non_exhaustive]
@@ -2638,28 +2612,28 @@ pub enum GrantOperation {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GrantOperation {
-    fn from(s: &str) -> Self {
-        match s {
-            "CreateGrant" => GrantOperation::CreateGrant,
-            "Decrypt" => GrantOperation::Decrypt,
-            "DescribeKey" => GrantOperation::DescribeKey,
-            "Encrypt" => GrantOperation::Encrypt,
-            "GenerateDataKey" => GrantOperation::GenerateDataKey,
-            "GenerateDataKeyPair" => GrantOperation::GenerateDataKeyPair,
-            "GenerateDataKeyPairWithoutPlaintext" => GrantOperation::GenerateDataKeyPairWithoutPlaintext,
-            "GenerateDataKeyWithoutPlaintext" => GrantOperation::GenerateDataKeyWithoutPlaintext,
-            "GenerateMac" => GrantOperation::GenerateMac,
-            "GetPublicKey" => GrantOperation::GetPublicKey,
-            "ReEncryptFrom" => GrantOperation::ReEncryptFrom,
-            "ReEncryptTo" => GrantOperation::ReEncryptTo,
-            "RetireGrant" => GrantOperation::RetireGrant,
-            "Sign" => GrantOperation::Sign,
-            "Verify" => GrantOperation::Verify,
-            "VerifyMac" => GrantOperation::VerifyMac,
-            other => GrantOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CreateGrant" => GrantOperation::CreateGrant,
+"Decrypt" => GrantOperation::Decrypt,
+"DescribeKey" => GrantOperation::DescribeKey,
+"Encrypt" => GrantOperation::Encrypt,
+"GenerateDataKey" => GrantOperation::GenerateDataKey,
+"GenerateDataKeyPair" => GrantOperation::GenerateDataKeyPair,
+"GenerateDataKeyPairWithoutPlaintext" => GrantOperation::GenerateDataKeyPairWithoutPlaintext,
+"GenerateDataKeyWithoutPlaintext" => GrantOperation::GenerateDataKeyWithoutPlaintext,
+"GenerateMac" => GrantOperation::GenerateMac,
+"GetPublicKey" => GrantOperation::GetPublicKey,
+"ReEncryptFrom" => GrantOperation::ReEncryptFrom,
+"ReEncryptTo" => GrantOperation::ReEncryptTo,
+"RetireGrant" => GrantOperation::RetireGrant,
+"Sign" => GrantOperation::Sign,
+"Verify" => GrantOperation::Verify,
+"VerifyMac" => GrantOperation::VerifyMac,
+other => GrantOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GrantOperation {
                 type Err = std::convert::Infallible;
 
@@ -2668,40 +2642,38 @@ impl std::str::FromStr for GrantOperation {
                 }
             }
 impl GrantOperation {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GrantOperation::CreateGrant => "CreateGrant",
-            GrantOperation::Decrypt => "Decrypt",
-            GrantOperation::DescribeKey => "DescribeKey",
-            GrantOperation::Encrypt => "Encrypt",
-            GrantOperation::GenerateDataKey => "GenerateDataKey",
-            GrantOperation::GenerateDataKeyPair => "GenerateDataKeyPair",
-            GrantOperation::GenerateDataKeyPairWithoutPlaintext => "GenerateDataKeyPairWithoutPlaintext",
-            GrantOperation::GenerateDataKeyWithoutPlaintext => "GenerateDataKeyWithoutPlaintext",
-            GrantOperation::GenerateMac => "GenerateMac",
-            GrantOperation::GetPublicKey => "GetPublicKey",
-            GrantOperation::ReEncryptFrom => "ReEncryptFrom",
-            GrantOperation::ReEncryptTo => "ReEncryptTo",
-            GrantOperation::RetireGrant => "RetireGrant",
-            GrantOperation::Sign => "Sign",
-            GrantOperation::Verify => "Verify",
-            GrantOperation::VerifyMac => "VerifyMac",
-            GrantOperation::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CreateGrant", "Decrypt", "DescribeKey", "Encrypt", "GenerateDataKey", "GenerateDataKeyPair", "GenerateDataKeyPairWithoutPlaintext", "GenerateDataKeyWithoutPlaintext", "GenerateMac", "GetPublicKey", "ReEncryptFrom", "ReEncryptTo", "RetireGrant", "Sign", "Verify", "VerifyMac"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GrantOperation::CreateGrant => "CreateGrant",
+    GrantOperation::Decrypt => "Decrypt",
+    GrantOperation::DescribeKey => "DescribeKey",
+    GrantOperation::Encrypt => "Encrypt",
+    GrantOperation::GenerateDataKey => "GenerateDataKey",
+    GrantOperation::GenerateDataKeyPair => "GenerateDataKeyPair",
+    GrantOperation::GenerateDataKeyPairWithoutPlaintext => "GenerateDataKeyPairWithoutPlaintext",
+    GrantOperation::GenerateDataKeyWithoutPlaintext => "GenerateDataKeyWithoutPlaintext",
+    GrantOperation::GenerateMac => "GenerateMac",
+    GrantOperation::GetPublicKey => "GetPublicKey",
+    GrantOperation::ReEncryptFrom => "ReEncryptFrom",
+    GrantOperation::ReEncryptTo => "ReEncryptTo",
+    GrantOperation::RetireGrant => "RetireGrant",
+    GrantOperation::Sign => "Sign",
+    GrantOperation::Verify => "Verify",
+    GrantOperation::VerifyMac => "VerifyMac",
+    GrantOperation::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CreateGrant", "Decrypt", "DescribeKey", "Encrypt", "GenerateDataKey", "GenerateDataKeyPair", "GenerateDataKeyPairWithoutPlaintext", "GenerateDataKeyWithoutPlaintext", "GenerateMac", "GetPublicKey", "ReEncryptFrom", "ReEncryptTo", "RetireGrant", "Sign", "Verify", "VerifyMac"]
+                }
+            }
 impl AsRef<str> for GrantOperation {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about each entry in the key list.</p>
 #[non_exhaustive]
@@ -2942,13 +2914,13 @@ pub enum WrappingKeySpec {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WrappingKeySpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "RSA_2048" => WrappingKeySpec::Rsa2048,
-            other => WrappingKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "RSA_2048" => WrappingKeySpec::Rsa2048,
+other => WrappingKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WrappingKeySpec {
                 type Err = std::convert::Infallible;
 
@@ -2957,25 +2929,23 @@ impl std::str::FromStr for WrappingKeySpec {
                 }
             }
 impl WrappingKeySpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WrappingKeySpec::Rsa2048 => "RSA_2048",
-            WrappingKeySpec::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "RSA_2048"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WrappingKeySpec::Rsa2048 => "RSA_2048",
+    WrappingKeySpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["RSA_2048"]
+                }
+            }
 impl AsRef<str> for WrappingKeySpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AlgorithmSpec`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3027,15 +2997,15 @@ pub enum AlgorithmSpec {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlgorithmSpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "RSAES_OAEP_SHA_1" => AlgorithmSpec::RsaesOaepSha1,
-            "RSAES_OAEP_SHA_256" => AlgorithmSpec::RsaesOaepSha256,
-            "RSAES_PKCS1_V1_5" => AlgorithmSpec::RsaesPkcs1V15,
-            other => AlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "RSAES_OAEP_SHA_1" => AlgorithmSpec::RsaesOaepSha1,
+"RSAES_OAEP_SHA_256" => AlgorithmSpec::RsaesOaepSha256,
+"RSAES_PKCS1_V1_5" => AlgorithmSpec::RsaesPkcs1V15,
+other => AlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AlgorithmSpec {
                 type Err = std::convert::Infallible;
 
@@ -3044,27 +3014,25 @@ impl std::str::FromStr for AlgorithmSpec {
                 }
             }
 impl AlgorithmSpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AlgorithmSpec::RsaesOaepSha1 => "RSAES_OAEP_SHA_1",
-            AlgorithmSpec::RsaesOaepSha256 => "RSAES_OAEP_SHA_256",
-            AlgorithmSpec::RsaesPkcs1V15 => "RSAES_PKCS1_V1_5",
-            AlgorithmSpec::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "RSAES_PKCS1_V1_5"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AlgorithmSpec::RsaesOaepSha1 => "RSAES_OAEP_SHA_1",
+    AlgorithmSpec::RsaesOaepSha256 => "RSAES_OAEP_SHA_256",
+    AlgorithmSpec::RsaesPkcs1V15 => "RSAES_PKCS1_V1_5",
+    AlgorithmSpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "RSAES_PKCS1_V1_5"]
+                }
+            }
 impl AsRef<str> for AlgorithmSpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DataKeySpec`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3113,14 +3081,14 @@ pub enum DataKeySpec {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataKeySpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "AES_128" => DataKeySpec::Aes128,
-            "AES_256" => DataKeySpec::Aes256,
-            other => DataKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AES_128" => DataKeySpec::Aes128,
+"AES_256" => DataKeySpec::Aes256,
+other => DataKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DataKeySpec {
                 type Err = std::convert::Infallible;
 
@@ -3129,26 +3097,24 @@ impl std::str::FromStr for DataKeySpec {
                 }
             }
 impl DataKeySpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataKeySpec::Aes128 => "AES_128",
-            DataKeySpec::Aes256 => "AES_256",
-            DataKeySpec::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AES_128", "AES_256"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataKeySpec::Aes128 => "AES_128",
+    DataKeySpec::Aes256 => "AES_256",
+    DataKeySpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AES_128", "AES_256"]
+                }
+            }
 impl AsRef<str> for DataKeySpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DataKeyPairSpec`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3215,20 +3181,20 @@ pub enum DataKeyPairSpec {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataKeyPairSpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "ECC_NIST_P256" => DataKeyPairSpec::EccNistP256,
-            "ECC_NIST_P384" => DataKeyPairSpec::EccNistP384,
-            "ECC_NIST_P521" => DataKeyPairSpec::EccNistP521,
-            "ECC_SECG_P256K1" => DataKeyPairSpec::EccSecgP256K1,
-            "RSA_2048" => DataKeyPairSpec::Rsa2048,
-            "RSA_3072" => DataKeyPairSpec::Rsa3072,
-            "RSA_4096" => DataKeyPairSpec::Rsa4096,
-            "SM2" => DataKeyPairSpec::Sm2,
-            other => DataKeyPairSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ECC_NIST_P256" => DataKeyPairSpec::EccNistP256,
+"ECC_NIST_P384" => DataKeyPairSpec::EccNistP384,
+"ECC_NIST_P521" => DataKeyPairSpec::EccNistP521,
+"ECC_SECG_P256K1" => DataKeyPairSpec::EccSecgP256K1,
+"RSA_2048" => DataKeyPairSpec::Rsa2048,
+"RSA_3072" => DataKeyPairSpec::Rsa3072,
+"RSA_4096" => DataKeyPairSpec::Rsa4096,
+"SM2" => DataKeyPairSpec::Sm2,
+other => DataKeyPairSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DataKeyPairSpec {
                 type Err = std::convert::Infallible;
 
@@ -3237,32 +3203,30 @@ impl std::str::FromStr for DataKeyPairSpec {
                 }
             }
 impl DataKeyPairSpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataKeyPairSpec::EccNistP256 => "ECC_NIST_P256",
-            DataKeyPairSpec::EccNistP384 => "ECC_NIST_P384",
-            DataKeyPairSpec::EccNistP521 => "ECC_NIST_P521",
-            DataKeyPairSpec::EccSecgP256K1 => "ECC_SECG_P256K1",
-            DataKeyPairSpec::Rsa2048 => "RSA_2048",
-            DataKeyPairSpec::Rsa3072 => "RSA_3072",
-            DataKeyPairSpec::Rsa4096 => "RSA_4096",
-            DataKeyPairSpec::Sm2 => "SM2",
-            DataKeyPairSpec::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "RSA_2048", "RSA_3072", "RSA_4096", "SM2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataKeyPairSpec::EccNistP256 => "ECC_NIST_P256",
+    DataKeyPairSpec::EccNistP384 => "ECC_NIST_P384",
+    DataKeyPairSpec::EccNistP521 => "ECC_NIST_P521",
+    DataKeyPairSpec::EccSecgP256K1 => "ECC_SECG_P256K1",
+    DataKeyPairSpec::Rsa2048 => "RSA_2048",
+    DataKeyPairSpec::Rsa3072 => "RSA_3072",
+    DataKeyPairSpec::Rsa4096 => "RSA_4096",
+    DataKeyPairSpec::Sm2 => "SM2",
+    DataKeyPairSpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "RSA_2048", "RSA_3072", "RSA_4096", "SM2"]
+                }
+            }
 impl AsRef<str> for DataKeyPairSpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about each custom key store in the custom key store list.</p>
 #[non_exhaustive]
@@ -3853,14 +3817,14 @@ pub enum CustomKeyStoreType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomKeyStoreType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS_CLOUDHSM" => CustomKeyStoreType::AwsCloudhsm,
-            "EXTERNAL_KEY_STORE" => CustomKeyStoreType::ExternalKeyStore,
-            other => CustomKeyStoreType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS_CLOUDHSM" => CustomKeyStoreType::AwsCloudhsm,
+"EXTERNAL_KEY_STORE" => CustomKeyStoreType::ExternalKeyStore,
+other => CustomKeyStoreType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CustomKeyStoreType {
                 type Err = std::convert::Infallible;
 
@@ -3869,26 +3833,24 @@ impl std::str::FromStr for CustomKeyStoreType {
                 }
             }
 impl CustomKeyStoreType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CustomKeyStoreType::AwsCloudhsm => "AWS_CLOUDHSM",
-            CustomKeyStoreType::ExternalKeyStore => "EXTERNAL_KEY_STORE",
-            CustomKeyStoreType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_CLOUDHSM", "EXTERNAL_KEY_STORE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CustomKeyStoreType::AwsCloudhsm => "AWS_CLOUDHSM",
+    CustomKeyStoreType::ExternalKeyStore => "EXTERNAL_KEY_STORE",
+    CustomKeyStoreType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS_CLOUDHSM", "EXTERNAL_KEY_STORE"]
+                }
+            }
 impl AsRef<str> for CustomKeyStoreType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ConnectionErrorCodeType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3985,30 +3947,30 @@ pub enum ConnectionErrorCodeType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionErrorCodeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLUSTER_NOT_FOUND" => ConnectionErrorCodeType::ClusterNotFound,
-            "INSUFFICIENT_CLOUDHSM_HSMS" => ConnectionErrorCodeType::InsufficientCloudhsmHsms,
-            "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET" => ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet,
-            "INTERNAL_ERROR" => ConnectionErrorCodeType::InternalError,
-            "INVALID_CREDENTIALS" => ConnectionErrorCodeType::InvalidCredentials,
-            "NETWORK_ERRORS" => ConnectionErrorCodeType::NetworkErrors,
-            "SUBNET_NOT_FOUND" => ConnectionErrorCodeType::SubnetNotFound,
-            "USER_LOCKED_OUT" => ConnectionErrorCodeType::UserLockedOut,
-            "USER_LOGGED_IN" => ConnectionErrorCodeType::UserLoggedIn,
-            "USER_NOT_FOUND" => ConnectionErrorCodeType::UserNotFound,
-            "XKS_PROXY_ACCESS_DENIED" => ConnectionErrorCodeType::XksProxyAccessDenied,
-            "XKS_PROXY_INVALID_CONFIGURATION" => ConnectionErrorCodeType::XksProxyInvalidConfiguration,
-            "XKS_PROXY_INVALID_RESPONSE" => ConnectionErrorCodeType::XksProxyInvalidResponse,
-            "XKS_PROXY_INVALID_TLS_CONFIGURATION" => ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration,
-            "XKS_PROXY_NOT_REACHABLE" => ConnectionErrorCodeType::XksProxyNotReachable,
-            "XKS_PROXY_TIMED_OUT" => ConnectionErrorCodeType::XksProxyTimedOut,
-            "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION" => ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration,
-            "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND" => ConnectionErrorCodeType::XksVpcEndpointServiceNotFound,
-            other => ConnectionErrorCodeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLUSTER_NOT_FOUND" => ConnectionErrorCodeType::ClusterNotFound,
+"INSUFFICIENT_CLOUDHSM_HSMS" => ConnectionErrorCodeType::InsufficientCloudhsmHsms,
+"INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET" => ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet,
+"INTERNAL_ERROR" => ConnectionErrorCodeType::InternalError,
+"INVALID_CREDENTIALS" => ConnectionErrorCodeType::InvalidCredentials,
+"NETWORK_ERRORS" => ConnectionErrorCodeType::NetworkErrors,
+"SUBNET_NOT_FOUND" => ConnectionErrorCodeType::SubnetNotFound,
+"USER_LOCKED_OUT" => ConnectionErrorCodeType::UserLockedOut,
+"USER_LOGGED_IN" => ConnectionErrorCodeType::UserLoggedIn,
+"USER_NOT_FOUND" => ConnectionErrorCodeType::UserNotFound,
+"XKS_PROXY_ACCESS_DENIED" => ConnectionErrorCodeType::XksProxyAccessDenied,
+"XKS_PROXY_INVALID_CONFIGURATION" => ConnectionErrorCodeType::XksProxyInvalidConfiguration,
+"XKS_PROXY_INVALID_RESPONSE" => ConnectionErrorCodeType::XksProxyInvalidResponse,
+"XKS_PROXY_INVALID_TLS_CONFIGURATION" => ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration,
+"XKS_PROXY_NOT_REACHABLE" => ConnectionErrorCodeType::XksProxyNotReachable,
+"XKS_PROXY_TIMED_OUT" => ConnectionErrorCodeType::XksProxyTimedOut,
+"XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION" => ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration,
+"XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND" => ConnectionErrorCodeType::XksVpcEndpointServiceNotFound,
+other => ConnectionErrorCodeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConnectionErrorCodeType {
                 type Err = std::convert::Infallible;
 
@@ -4017,42 +3979,40 @@ impl std::str::FromStr for ConnectionErrorCodeType {
                 }
             }
 impl ConnectionErrorCodeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectionErrorCodeType::ClusterNotFound => "CLUSTER_NOT_FOUND",
-            ConnectionErrorCodeType::InsufficientCloudhsmHsms => "INSUFFICIENT_CLOUDHSM_HSMS",
-            ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet => "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET",
-            ConnectionErrorCodeType::InternalError => "INTERNAL_ERROR",
-            ConnectionErrorCodeType::InvalidCredentials => "INVALID_CREDENTIALS",
-            ConnectionErrorCodeType::NetworkErrors => "NETWORK_ERRORS",
-            ConnectionErrorCodeType::SubnetNotFound => "SUBNET_NOT_FOUND",
-            ConnectionErrorCodeType::UserLockedOut => "USER_LOCKED_OUT",
-            ConnectionErrorCodeType::UserLoggedIn => "USER_LOGGED_IN",
-            ConnectionErrorCodeType::UserNotFound => "USER_NOT_FOUND",
-            ConnectionErrorCodeType::XksProxyAccessDenied => "XKS_PROXY_ACCESS_DENIED",
-            ConnectionErrorCodeType::XksProxyInvalidConfiguration => "XKS_PROXY_INVALID_CONFIGURATION",
-            ConnectionErrorCodeType::XksProxyInvalidResponse => "XKS_PROXY_INVALID_RESPONSE",
-            ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration => "XKS_PROXY_INVALID_TLS_CONFIGURATION",
-            ConnectionErrorCodeType::XksProxyNotReachable => "XKS_PROXY_NOT_REACHABLE",
-            ConnectionErrorCodeType::XksProxyTimedOut => "XKS_PROXY_TIMED_OUT",
-            ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration => "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION",
-            ConnectionErrorCodeType::XksVpcEndpointServiceNotFound => "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND",
-            ConnectionErrorCodeType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLUSTER_NOT_FOUND", "INSUFFICIENT_CLOUDHSM_HSMS", "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET", "INTERNAL_ERROR", "INVALID_CREDENTIALS", "NETWORK_ERRORS", "SUBNET_NOT_FOUND", "USER_LOCKED_OUT", "USER_LOGGED_IN", "USER_NOT_FOUND", "XKS_PROXY_ACCESS_DENIED", "XKS_PROXY_INVALID_CONFIGURATION", "XKS_PROXY_INVALID_RESPONSE", "XKS_PROXY_INVALID_TLS_CONFIGURATION", "XKS_PROXY_NOT_REACHABLE", "XKS_PROXY_TIMED_OUT", "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION", "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectionErrorCodeType::ClusterNotFound => "CLUSTER_NOT_FOUND",
+    ConnectionErrorCodeType::InsufficientCloudhsmHsms => "INSUFFICIENT_CLOUDHSM_HSMS",
+    ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet => "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET",
+    ConnectionErrorCodeType::InternalError => "INTERNAL_ERROR",
+    ConnectionErrorCodeType::InvalidCredentials => "INVALID_CREDENTIALS",
+    ConnectionErrorCodeType::NetworkErrors => "NETWORK_ERRORS",
+    ConnectionErrorCodeType::SubnetNotFound => "SUBNET_NOT_FOUND",
+    ConnectionErrorCodeType::UserLockedOut => "USER_LOCKED_OUT",
+    ConnectionErrorCodeType::UserLoggedIn => "USER_LOGGED_IN",
+    ConnectionErrorCodeType::UserNotFound => "USER_NOT_FOUND",
+    ConnectionErrorCodeType::XksProxyAccessDenied => "XKS_PROXY_ACCESS_DENIED",
+    ConnectionErrorCodeType::XksProxyInvalidConfiguration => "XKS_PROXY_INVALID_CONFIGURATION",
+    ConnectionErrorCodeType::XksProxyInvalidResponse => "XKS_PROXY_INVALID_RESPONSE",
+    ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration => "XKS_PROXY_INVALID_TLS_CONFIGURATION",
+    ConnectionErrorCodeType::XksProxyNotReachable => "XKS_PROXY_NOT_REACHABLE",
+    ConnectionErrorCodeType::XksProxyTimedOut => "XKS_PROXY_TIMED_OUT",
+    ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration => "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION",
+    ConnectionErrorCodeType::XksVpcEndpointServiceNotFound => "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND",
+    ConnectionErrorCodeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLUSTER_NOT_FOUND", "INSUFFICIENT_CLOUDHSM_HSMS", "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET", "INTERNAL_ERROR", "INVALID_CREDENTIALS", "NETWORK_ERRORS", "SUBNET_NOT_FOUND", "USER_LOCKED_OUT", "USER_LOGGED_IN", "USER_NOT_FOUND", "XKS_PROXY_ACCESS_DENIED", "XKS_PROXY_INVALID_CONFIGURATION", "XKS_PROXY_INVALID_RESPONSE", "XKS_PROXY_INVALID_TLS_CONFIGURATION", "XKS_PROXY_NOT_REACHABLE", "XKS_PROXY_TIMED_OUT", "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION", "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND"]
+                }
+            }
 impl AsRef<str> for ConnectionErrorCodeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ConnectionStateType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4110,17 +4070,17 @@ pub enum ConnectionStateType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionStateType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONNECTED" => ConnectionStateType::Connected,
-            "CONNECTING" => ConnectionStateType::Connecting,
-            "DISCONNECTED" => ConnectionStateType::Disconnected,
-            "DISCONNECTING" => ConnectionStateType::Disconnecting,
-            "FAILED" => ConnectionStateType::Failed,
-            other => ConnectionStateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONNECTED" => ConnectionStateType::Connected,
+"CONNECTING" => ConnectionStateType::Connecting,
+"DISCONNECTED" => ConnectionStateType::Disconnected,
+"DISCONNECTING" => ConnectionStateType::Disconnecting,
+"FAILED" => ConnectionStateType::Failed,
+other => ConnectionStateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConnectionStateType {
                 type Err = std::convert::Infallible;
 
@@ -4129,27 +4089,25 @@ impl std::str::FromStr for ConnectionStateType {
                 }
             }
 impl ConnectionStateType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectionStateType::Connected => "CONNECTED",
-            ConnectionStateType::Connecting => "CONNECTING",
-            ConnectionStateType::Disconnected => "DISCONNECTED",
-            ConnectionStateType::Disconnecting => "DISCONNECTING",
-            ConnectionStateType::Failed => "FAILED",
-            ConnectionStateType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONNECTED", "CONNECTING", "DISCONNECTED", "DISCONNECTING", "FAILED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectionStateType::Connected => "CONNECTED",
+    ConnectionStateType::Connecting => "CONNECTING",
+    ConnectionStateType::Disconnected => "DISCONNECTED",
+    ConnectionStateType::Disconnecting => "DISCONNECTING",
+    ConnectionStateType::Failed => "FAILED",
+    ConnectionStateType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONNECTED", "CONNECTING", "DISCONNECTED", "DISCONNECTING", "FAILED"]
+                }
+            }
 impl AsRef<str> for ConnectionStateType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

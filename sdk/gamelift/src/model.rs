@@ -941,14 +941,14 @@ pub enum FlexMatchMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FlexMatchMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "STANDALONE" => FlexMatchMode::Standalone,
-            "WITH_QUEUE" => FlexMatchMode::WithQueue,
-            other => FlexMatchMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "STANDALONE" => FlexMatchMode::Standalone,
+"WITH_QUEUE" => FlexMatchMode::WithQueue,
+other => FlexMatchMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FlexMatchMode {
                 type Err = std::convert::Infallible;
 
@@ -957,26 +957,24 @@ impl std::str::FromStr for FlexMatchMode {
                 }
             }
 impl FlexMatchMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FlexMatchMode::Standalone => "STANDALONE",
-            FlexMatchMode::WithQueue => "WITH_QUEUE",
-            FlexMatchMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "STANDALONE", "WITH_QUEUE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FlexMatchMode::Standalone => "STANDALONE",
+    FlexMatchMode::WithQueue => "WITH_QUEUE",
+    FlexMatchMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["STANDALONE", "WITH_QUEUE"]
+                }
+            }
 impl AsRef<str> for FlexMatchMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `BackfillMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1025,14 +1023,14 @@ pub enum BackfillMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BackfillMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTOMATIC" => BackfillMode::Automatic,
-            "MANUAL" => BackfillMode::Manual,
-            other => BackfillMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUTOMATIC" => BackfillMode::Automatic,
+"MANUAL" => BackfillMode::Manual,
+other => BackfillMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BackfillMode {
                 type Err = std::convert::Infallible;
 
@@ -1041,26 +1039,24 @@ impl std::str::FromStr for BackfillMode {
                 }
             }
 impl BackfillMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BackfillMode::Automatic => "AUTOMATIC",
-            BackfillMode::Manual => "MANUAL",
-            BackfillMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTOMATIC", "MANUAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BackfillMode::Automatic => "AUTOMATIC",
+    BackfillMode::Manual => "MANUAL",
+    BackfillMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTOMATIC", "MANUAL"]
+                }
+            }
 impl AsRef<str> for BackfillMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"> GameLift Developer Guide</a>.</p>
 #[non_exhaustive]
@@ -1524,16 +1520,16 @@ pub enum PriorityType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PriorityType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COST" => PriorityType::Cost,
-            "DESTINATION" => PriorityType::Destination,
-            "LATENCY" => PriorityType::Latency,
-            "LOCATION" => PriorityType::Location,
-            other => PriorityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COST" => PriorityType::Cost,
+"DESTINATION" => PriorityType::Destination,
+"LATENCY" => PriorityType::Latency,
+"LOCATION" => PriorityType::Location,
+other => PriorityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PriorityType {
                 type Err = std::convert::Infallible;
 
@@ -1542,28 +1538,26 @@ impl std::str::FromStr for PriorityType {
                 }
             }
 impl PriorityType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PriorityType::Cost => "COST",
-            PriorityType::Destination => "DESTINATION",
-            PriorityType::Latency => "LATENCY",
-            PriorityType::Location => "LOCATION",
-            PriorityType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COST", "DESTINATION", "LATENCY", "LOCATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PriorityType::Cost => "COST",
+    PriorityType::Destination => "DESTINATION",
+    PriorityType::Latency => "LATENCY",
+    PriorityType::Location => "LOCATION",
+    PriorityType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COST", "DESTINATION", "LATENCY", "LOCATION"]
+                }
+            }
 impl AsRef<str> for PriorityType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations.</p>
 #[non_exhaustive]
@@ -2272,14 +2266,14 @@ pub enum PlayerSessionCreationPolicy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlayerSessionCreationPolicy {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCEPT_ALL" => PlayerSessionCreationPolicy::AcceptAll,
-            "DENY_ALL" => PlayerSessionCreationPolicy::DenyAll,
-            other => PlayerSessionCreationPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCEPT_ALL" => PlayerSessionCreationPolicy::AcceptAll,
+"DENY_ALL" => PlayerSessionCreationPolicy::DenyAll,
+other => PlayerSessionCreationPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PlayerSessionCreationPolicy {
                 type Err = std::convert::Infallible;
 
@@ -2288,26 +2282,24 @@ impl std::str::FromStr for PlayerSessionCreationPolicy {
                 }
             }
 impl PlayerSessionCreationPolicy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PlayerSessionCreationPolicy::AcceptAll => "ACCEPT_ALL",
-            PlayerSessionCreationPolicy::DenyAll => "DENY_ALL",
-            PlayerSessionCreationPolicy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCEPT_ALL", "DENY_ALL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PlayerSessionCreationPolicy::AcceptAll => "ACCEPT_ALL",
+    PlayerSessionCreationPolicy::DenyAll => "DENY_ALL",
+    PlayerSessionCreationPolicy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCEPT_ALL", "DENY_ALL"]
+                }
+            }
 impl AsRef<str> for PlayerSessionCreationPolicy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `GameSessionStatusReason`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2353,13 +2345,13 @@ pub enum GameSessionStatusReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameSessionStatusReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "INTERRUPTED" => GameSessionStatusReason::Interrupted,
-            other => GameSessionStatusReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "INTERRUPTED" => GameSessionStatusReason::Interrupted,
+other => GameSessionStatusReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameSessionStatusReason {
                 type Err = std::convert::Infallible;
 
@@ -2368,25 +2360,23 @@ impl std::str::FromStr for GameSessionStatusReason {
                 }
             }
 impl GameSessionStatusReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameSessionStatusReason::Interrupted => "INTERRUPTED",
-            GameSessionStatusReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "INTERRUPTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameSessionStatusReason::Interrupted => "INTERRUPTED",
+    GameSessionStatusReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INTERRUPTED"]
+                }
+            }
 impl AsRef<str> for GameSessionStatusReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `GameSessionStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2444,17 +2434,17 @@ pub enum GameSessionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameSessionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVATING" => GameSessionStatus::Activating,
-            "ACTIVE" => GameSessionStatus::Active,
-            "ERROR" => GameSessionStatus::Error,
-            "TERMINATED" => GameSessionStatus::Terminated,
-            "TERMINATING" => GameSessionStatus::Terminating,
-            other => GameSessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVATING" => GameSessionStatus::Activating,
+"ACTIVE" => GameSessionStatus::Active,
+"ERROR" => GameSessionStatus::Error,
+"TERMINATED" => GameSessionStatus::Terminated,
+"TERMINATING" => GameSessionStatus::Terminating,
+other => GameSessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameSessionStatus {
                 type Err = std::convert::Infallible;
 
@@ -2463,29 +2453,27 @@ impl std::str::FromStr for GameSessionStatus {
                 }
             }
 impl GameSessionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameSessionStatus::Activating => "ACTIVATING",
-            GameSessionStatus::Active => "ACTIVE",
-            GameSessionStatus::Error => "ERROR",
-            GameSessionStatus::Terminated => "TERMINATED",
-            GameSessionStatus::Terminating => "TERMINATING",
-            GameSessionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVATING", "ACTIVE", "ERROR", "TERMINATED", "TERMINATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameSessionStatus::Activating => "ACTIVATING",
+    GameSessionStatus::Active => "ACTIVE",
+    GameSessionStatus::Error => "ERROR",
+    GameSessionStatus::Terminated => "TERMINATED",
+    GameSessionStatus::Terminating => "TERMINATING",
+    GameSessionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVATING", "ACTIVE", "ERROR", "TERMINATED", "TERMINATING"]
+                }
+            }
 impl AsRef<str> for GameSessionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ProtectionPolicy`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2534,14 +2522,14 @@ pub enum ProtectionPolicy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProtectionPolicy {
-    fn from(s: &str) -> Self {
-        match s {
-            "FullProtection" => ProtectionPolicy::FullProtection,
-            "NoProtection" => ProtectionPolicy::NoProtection,
-            other => ProtectionPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FullProtection" => ProtectionPolicy::FullProtection,
+"NoProtection" => ProtectionPolicy::NoProtection,
+other => ProtectionPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ProtectionPolicy {
                 type Err = std::convert::Infallible;
 
@@ -2550,26 +2538,24 @@ impl std::str::FromStr for ProtectionPolicy {
                 }
             }
 impl ProtectionPolicy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProtectionPolicy::FullProtection => "FullProtection",
-            ProtectionPolicy::NoProtection => "NoProtection",
-            ProtectionPolicy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FullProtection", "NoProtection"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ProtectionPolicy::FullProtection => "FullProtection",
+    ProtectionPolicy::NoProtection => "NoProtection",
+    ProtectionPolicy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FullProtection", "NoProtection"]
+                }
+            }
 impl AsRef<str> for ProtectionPolicy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p> 
 /// <p>Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding Amazon EC2 Auto Scaling group. </p> 
@@ -2944,13 +2930,13 @@ pub enum GameServerGroupAction {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameServerGroupAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "REPLACE_INSTANCE_TYPES" => GameServerGroupAction::ReplaceInstanceTypes,
-            other => GameServerGroupAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "REPLACE_INSTANCE_TYPES" => GameServerGroupAction::ReplaceInstanceTypes,
+other => GameServerGroupAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameServerGroupAction {
                 type Err = std::convert::Infallible;
 
@@ -2959,25 +2945,23 @@ impl std::str::FromStr for GameServerGroupAction {
                 }
             }
 impl GameServerGroupAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameServerGroupAction::ReplaceInstanceTypes => "REPLACE_INSTANCE_TYPES",
-            GameServerGroupAction::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "REPLACE_INSTANCE_TYPES"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameServerGroupAction::ReplaceInstanceTypes => "REPLACE_INSTANCE_TYPES",
+    GameServerGroupAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["REPLACE_INSTANCE_TYPES"]
+                }
+            }
 impl AsRef<str> for GameServerGroupAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `GameServerGroupStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3041,19 +3025,19 @@ pub enum GameServerGroupStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameServerGroupStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVATING" => GameServerGroupStatus::Activating,
-            "ACTIVE" => GameServerGroupStatus::Active,
-            "DELETED" => GameServerGroupStatus::Deleted,
-            "DELETE_SCHEDULED" => GameServerGroupStatus::DeleteScheduled,
-            "DELETING" => GameServerGroupStatus::Deleting,
-            "ERROR" => GameServerGroupStatus::Error,
-            "NEW" => GameServerGroupStatus::New,
-            other => GameServerGroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVATING" => GameServerGroupStatus::Activating,
+"ACTIVE" => GameServerGroupStatus::Active,
+"DELETED" => GameServerGroupStatus::Deleted,
+"DELETE_SCHEDULED" => GameServerGroupStatus::DeleteScheduled,
+"DELETING" => GameServerGroupStatus::Deleting,
+"ERROR" => GameServerGroupStatus::Error,
+"NEW" => GameServerGroupStatus::New,
+other => GameServerGroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameServerGroupStatus {
                 type Err = std::convert::Infallible;
 
@@ -3062,31 +3046,29 @@ impl std::str::FromStr for GameServerGroupStatus {
                 }
             }
 impl GameServerGroupStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameServerGroupStatus::Activating => "ACTIVATING",
-            GameServerGroupStatus::Active => "ACTIVE",
-            GameServerGroupStatus::Deleted => "DELETED",
-            GameServerGroupStatus::DeleteScheduled => "DELETE_SCHEDULED",
-            GameServerGroupStatus::Deleting => "DELETING",
-            GameServerGroupStatus::Error => "ERROR",
-            GameServerGroupStatus::New => "NEW",
-            GameServerGroupStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVATING", "ACTIVE", "DELETED", "DELETE_SCHEDULED", "DELETING", "ERROR", "NEW"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameServerGroupStatus::Activating => "ACTIVATING",
+    GameServerGroupStatus::Active => "ACTIVE",
+    GameServerGroupStatus::Deleted => "DELETED",
+    GameServerGroupStatus::DeleteScheduled => "DELETE_SCHEDULED",
+    GameServerGroupStatus::Deleting => "DELETING",
+    GameServerGroupStatus::Error => "ERROR",
+    GameServerGroupStatus::New => "NEW",
+    GameServerGroupStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVATING", "ACTIVE", "DELETED", "DELETE_SCHEDULED", "DELETING", "ERROR", "NEW"]
+                }
+            }
 impl AsRef<str> for GameServerGroupStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `GameServerProtectionPolicy`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3135,14 +3117,14 @@ pub enum GameServerProtectionPolicy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameServerProtectionPolicy {
-    fn from(s: &str) -> Self {
-        match s {
-            "FULL_PROTECTION" => GameServerProtectionPolicy::FullProtection,
-            "NO_PROTECTION" => GameServerProtectionPolicy::NoProtection,
-            other => GameServerProtectionPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FULL_PROTECTION" => GameServerProtectionPolicy::FullProtection,
+"NO_PROTECTION" => GameServerProtectionPolicy::NoProtection,
+other => GameServerProtectionPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameServerProtectionPolicy {
                 type Err = std::convert::Infallible;
 
@@ -3151,26 +3133,24 @@ impl std::str::FromStr for GameServerProtectionPolicy {
                 }
             }
 impl GameServerProtectionPolicy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameServerProtectionPolicy::FullProtection => "FULL_PROTECTION",
-            GameServerProtectionPolicy::NoProtection => "NO_PROTECTION",
-            GameServerProtectionPolicy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FULL_PROTECTION", "NO_PROTECTION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameServerProtectionPolicy::FullProtection => "FULL_PROTECTION",
+    GameServerProtectionPolicy::NoProtection => "NO_PROTECTION",
+    GameServerProtectionPolicy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FULL_PROTECTION", "NO_PROTECTION"]
+                }
+            }
 impl AsRef<str> for GameServerProtectionPolicy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `BalancingStrategy`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3222,15 +3202,15 @@ pub enum BalancingStrategy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BalancingStrategy {
-    fn from(s: &str) -> Self {
-        match s {
-            "ON_DEMAND_ONLY" => BalancingStrategy::OnDemandOnly,
-            "SPOT_ONLY" => BalancingStrategy::SpotOnly,
-            "SPOT_PREFERRED" => BalancingStrategy::SpotPreferred,
-            other => BalancingStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ON_DEMAND_ONLY" => BalancingStrategy::OnDemandOnly,
+"SPOT_ONLY" => BalancingStrategy::SpotOnly,
+"SPOT_PREFERRED" => BalancingStrategy::SpotPreferred,
+other => BalancingStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BalancingStrategy {
                 type Err = std::convert::Infallible;
 
@@ -3239,27 +3219,25 @@ impl std::str::FromStr for BalancingStrategy {
                 }
             }
 impl BalancingStrategy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BalancingStrategy::OnDemandOnly => "ON_DEMAND_ONLY",
-            BalancingStrategy::SpotOnly => "SPOT_ONLY",
-            BalancingStrategy::SpotPreferred => "SPOT_PREFERRED",
-            BalancingStrategy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ON_DEMAND_ONLY", "SPOT_ONLY", "SPOT_PREFERRED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BalancingStrategy::OnDemandOnly => "ON_DEMAND_ONLY",
+    BalancingStrategy::SpotOnly => "SPOT_ONLY",
+    BalancingStrategy::SpotPreferred => "SPOT_PREFERRED",
+    BalancingStrategy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ON_DEMAND_ONLY", "SPOT_ONLY", "SPOT_PREFERRED"]
+                }
+            }
 impl AsRef<str> for BalancingStrategy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p> 
 /// <p>An allowed instance type for a game server group. All game server groups must have at least two instance types defined for it. GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.</p>
@@ -3636,100 +3614,100 @@ pub enum GameServerGroupInstanceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameServerGroupInstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "c4.2xlarge" => GameServerGroupInstanceType::C42xlarge,
-            "c4.4xlarge" => GameServerGroupInstanceType::C44xlarge,
-            "c4.8xlarge" => GameServerGroupInstanceType::C48xlarge,
-            "c4.large" => GameServerGroupInstanceType::C4Large,
-            "c4.xlarge" => GameServerGroupInstanceType::C4Xlarge,
-            "c5.12xlarge" => GameServerGroupInstanceType::C512xlarge,
-            "c5.18xlarge" => GameServerGroupInstanceType::C518xlarge,
-            "c5.24xlarge" => GameServerGroupInstanceType::C524xlarge,
-            "c5.2xlarge" => GameServerGroupInstanceType::C52xlarge,
-            "c5.4xlarge" => GameServerGroupInstanceType::C54xlarge,
-            "c5.9xlarge" => GameServerGroupInstanceType::C59xlarge,
-            "c5.large" => GameServerGroupInstanceType::C5Large,
-            "c5.xlarge" => GameServerGroupInstanceType::C5Xlarge,
-            "c5a.12xlarge" => GameServerGroupInstanceType::C5a12xlarge,
-            "c5a.16xlarge" => GameServerGroupInstanceType::C5a16xlarge,
-            "c5a.24xlarge" => GameServerGroupInstanceType::C5a24xlarge,
-            "c5a.2xlarge" => GameServerGroupInstanceType::C5a2xlarge,
-            "c5a.4xlarge" => GameServerGroupInstanceType::C5a4xlarge,
-            "c5a.8xlarge" => GameServerGroupInstanceType::C5a8xlarge,
-            "c5a.large" => GameServerGroupInstanceType::C5aLarge,
-            "c5a.xlarge" => GameServerGroupInstanceType::C5aXlarge,
-            "c6g.12xlarge" => GameServerGroupInstanceType::C6g12xlarge,
-            "c6g.16xlarge" => GameServerGroupInstanceType::C6g16xlarge,
-            "c6g.2xlarge" => GameServerGroupInstanceType::C6g2xlarge,
-            "c6g.4xlarge" => GameServerGroupInstanceType::C6g4xlarge,
-            "c6g.8xlarge" => GameServerGroupInstanceType::C6g8xlarge,
-            "c6g.large" => GameServerGroupInstanceType::C6gLarge,
-            "c6g.medium" => GameServerGroupInstanceType::C6gMedium,
-            "c6g.xlarge" => GameServerGroupInstanceType::C6gXlarge,
-            "m4.10xlarge" => GameServerGroupInstanceType::M410xlarge,
-            "m4.2xlarge" => GameServerGroupInstanceType::M42xlarge,
-            "m4.4xlarge" => GameServerGroupInstanceType::M44xlarge,
-            "m4.large" => GameServerGroupInstanceType::M4Large,
-            "m4.xlarge" => GameServerGroupInstanceType::M4Xlarge,
-            "m5.12xlarge" => GameServerGroupInstanceType::M512xlarge,
-            "m5.16xlarge" => GameServerGroupInstanceType::M516xlarge,
-            "m5.24xlarge" => GameServerGroupInstanceType::M524xlarge,
-            "m5.2xlarge" => GameServerGroupInstanceType::M52xlarge,
-            "m5.4xlarge" => GameServerGroupInstanceType::M54xlarge,
-            "m5.8xlarge" => GameServerGroupInstanceType::M58xlarge,
-            "m5.large" => GameServerGroupInstanceType::M5Large,
-            "m5.xlarge" => GameServerGroupInstanceType::M5Xlarge,
-            "m5a.12xlarge" => GameServerGroupInstanceType::M5a12xlarge,
-            "m5a.16xlarge" => GameServerGroupInstanceType::M5a16xlarge,
-            "m5a.24xlarge" => GameServerGroupInstanceType::M5a24xlarge,
-            "m5a.2xlarge" => GameServerGroupInstanceType::M5a2xlarge,
-            "m5a.4xlarge" => GameServerGroupInstanceType::M5a4xlarge,
-            "m5a.8xlarge" => GameServerGroupInstanceType::M5a8xlarge,
-            "m5a.large" => GameServerGroupInstanceType::M5aLarge,
-            "m5a.xlarge" => GameServerGroupInstanceType::M5aXlarge,
-            "m6g.12xlarge" => GameServerGroupInstanceType::M6g12xlarge,
-            "m6g.16xlarge" => GameServerGroupInstanceType::M6g16xlarge,
-            "m6g.2xlarge" => GameServerGroupInstanceType::M6g2xlarge,
-            "m6g.4xlarge" => GameServerGroupInstanceType::M6g4xlarge,
-            "m6g.8xlarge" => GameServerGroupInstanceType::M6g8xlarge,
-            "m6g.large" => GameServerGroupInstanceType::M6gLarge,
-            "m6g.medium" => GameServerGroupInstanceType::M6gMedium,
-            "m6g.xlarge" => GameServerGroupInstanceType::M6gXlarge,
-            "r4.16xlarge" => GameServerGroupInstanceType::R416xlarge,
-            "r4.2xlarge" => GameServerGroupInstanceType::R42xlarge,
-            "r4.4xlarge" => GameServerGroupInstanceType::R44xlarge,
-            "r4.8xlarge" => GameServerGroupInstanceType::R48xlarge,
-            "r4.large" => GameServerGroupInstanceType::R4Large,
-            "r4.xlarge" => GameServerGroupInstanceType::R4Xlarge,
-            "r5.12xlarge" => GameServerGroupInstanceType::R512xlarge,
-            "r5.16xlarge" => GameServerGroupInstanceType::R516xlarge,
-            "r5.24xlarge" => GameServerGroupInstanceType::R524xlarge,
-            "r5.2xlarge" => GameServerGroupInstanceType::R52xlarge,
-            "r5.4xlarge" => GameServerGroupInstanceType::R54xlarge,
-            "r5.8xlarge" => GameServerGroupInstanceType::R58xlarge,
-            "r5.large" => GameServerGroupInstanceType::R5Large,
-            "r5.xlarge" => GameServerGroupInstanceType::R5Xlarge,
-            "r5a.12xlarge" => GameServerGroupInstanceType::R5a12xlarge,
-            "r5a.16xlarge" => GameServerGroupInstanceType::R5a16xlarge,
-            "r5a.24xlarge" => GameServerGroupInstanceType::R5a24xlarge,
-            "r5a.2xlarge" => GameServerGroupInstanceType::R5a2xlarge,
-            "r5a.4xlarge" => GameServerGroupInstanceType::R5a4xlarge,
-            "r5a.8xlarge" => GameServerGroupInstanceType::R5a8xlarge,
-            "r5a.large" => GameServerGroupInstanceType::R5aLarge,
-            "r5a.xlarge" => GameServerGroupInstanceType::R5aXlarge,
-            "r6g.12xlarge" => GameServerGroupInstanceType::R6g12xlarge,
-            "r6g.16xlarge" => GameServerGroupInstanceType::R6g16xlarge,
-            "r6g.2xlarge" => GameServerGroupInstanceType::R6g2xlarge,
-            "r6g.4xlarge" => GameServerGroupInstanceType::R6g4xlarge,
-            "r6g.8xlarge" => GameServerGroupInstanceType::R6g8xlarge,
-            "r6g.large" => GameServerGroupInstanceType::R6gLarge,
-            "r6g.medium" => GameServerGroupInstanceType::R6gMedium,
-            "r6g.xlarge" => GameServerGroupInstanceType::R6gXlarge,
-            other => GameServerGroupInstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "c4.2xlarge" => GameServerGroupInstanceType::C42xlarge,
+"c4.4xlarge" => GameServerGroupInstanceType::C44xlarge,
+"c4.8xlarge" => GameServerGroupInstanceType::C48xlarge,
+"c4.large" => GameServerGroupInstanceType::C4Large,
+"c4.xlarge" => GameServerGroupInstanceType::C4Xlarge,
+"c5.12xlarge" => GameServerGroupInstanceType::C512xlarge,
+"c5.18xlarge" => GameServerGroupInstanceType::C518xlarge,
+"c5.24xlarge" => GameServerGroupInstanceType::C524xlarge,
+"c5.2xlarge" => GameServerGroupInstanceType::C52xlarge,
+"c5.4xlarge" => GameServerGroupInstanceType::C54xlarge,
+"c5.9xlarge" => GameServerGroupInstanceType::C59xlarge,
+"c5.large" => GameServerGroupInstanceType::C5Large,
+"c5.xlarge" => GameServerGroupInstanceType::C5Xlarge,
+"c5a.12xlarge" => GameServerGroupInstanceType::C5a12xlarge,
+"c5a.16xlarge" => GameServerGroupInstanceType::C5a16xlarge,
+"c5a.24xlarge" => GameServerGroupInstanceType::C5a24xlarge,
+"c5a.2xlarge" => GameServerGroupInstanceType::C5a2xlarge,
+"c5a.4xlarge" => GameServerGroupInstanceType::C5a4xlarge,
+"c5a.8xlarge" => GameServerGroupInstanceType::C5a8xlarge,
+"c5a.large" => GameServerGroupInstanceType::C5aLarge,
+"c5a.xlarge" => GameServerGroupInstanceType::C5aXlarge,
+"c6g.12xlarge" => GameServerGroupInstanceType::C6g12xlarge,
+"c6g.16xlarge" => GameServerGroupInstanceType::C6g16xlarge,
+"c6g.2xlarge" => GameServerGroupInstanceType::C6g2xlarge,
+"c6g.4xlarge" => GameServerGroupInstanceType::C6g4xlarge,
+"c6g.8xlarge" => GameServerGroupInstanceType::C6g8xlarge,
+"c6g.large" => GameServerGroupInstanceType::C6gLarge,
+"c6g.medium" => GameServerGroupInstanceType::C6gMedium,
+"c6g.xlarge" => GameServerGroupInstanceType::C6gXlarge,
+"m4.10xlarge" => GameServerGroupInstanceType::M410xlarge,
+"m4.2xlarge" => GameServerGroupInstanceType::M42xlarge,
+"m4.4xlarge" => GameServerGroupInstanceType::M44xlarge,
+"m4.large" => GameServerGroupInstanceType::M4Large,
+"m4.xlarge" => GameServerGroupInstanceType::M4Xlarge,
+"m5.12xlarge" => GameServerGroupInstanceType::M512xlarge,
+"m5.16xlarge" => GameServerGroupInstanceType::M516xlarge,
+"m5.24xlarge" => GameServerGroupInstanceType::M524xlarge,
+"m5.2xlarge" => GameServerGroupInstanceType::M52xlarge,
+"m5.4xlarge" => GameServerGroupInstanceType::M54xlarge,
+"m5.8xlarge" => GameServerGroupInstanceType::M58xlarge,
+"m5.large" => GameServerGroupInstanceType::M5Large,
+"m5.xlarge" => GameServerGroupInstanceType::M5Xlarge,
+"m5a.12xlarge" => GameServerGroupInstanceType::M5a12xlarge,
+"m5a.16xlarge" => GameServerGroupInstanceType::M5a16xlarge,
+"m5a.24xlarge" => GameServerGroupInstanceType::M5a24xlarge,
+"m5a.2xlarge" => GameServerGroupInstanceType::M5a2xlarge,
+"m5a.4xlarge" => GameServerGroupInstanceType::M5a4xlarge,
+"m5a.8xlarge" => GameServerGroupInstanceType::M5a8xlarge,
+"m5a.large" => GameServerGroupInstanceType::M5aLarge,
+"m5a.xlarge" => GameServerGroupInstanceType::M5aXlarge,
+"m6g.12xlarge" => GameServerGroupInstanceType::M6g12xlarge,
+"m6g.16xlarge" => GameServerGroupInstanceType::M6g16xlarge,
+"m6g.2xlarge" => GameServerGroupInstanceType::M6g2xlarge,
+"m6g.4xlarge" => GameServerGroupInstanceType::M6g4xlarge,
+"m6g.8xlarge" => GameServerGroupInstanceType::M6g8xlarge,
+"m6g.large" => GameServerGroupInstanceType::M6gLarge,
+"m6g.medium" => GameServerGroupInstanceType::M6gMedium,
+"m6g.xlarge" => GameServerGroupInstanceType::M6gXlarge,
+"r4.16xlarge" => GameServerGroupInstanceType::R416xlarge,
+"r4.2xlarge" => GameServerGroupInstanceType::R42xlarge,
+"r4.4xlarge" => GameServerGroupInstanceType::R44xlarge,
+"r4.8xlarge" => GameServerGroupInstanceType::R48xlarge,
+"r4.large" => GameServerGroupInstanceType::R4Large,
+"r4.xlarge" => GameServerGroupInstanceType::R4Xlarge,
+"r5.12xlarge" => GameServerGroupInstanceType::R512xlarge,
+"r5.16xlarge" => GameServerGroupInstanceType::R516xlarge,
+"r5.24xlarge" => GameServerGroupInstanceType::R524xlarge,
+"r5.2xlarge" => GameServerGroupInstanceType::R52xlarge,
+"r5.4xlarge" => GameServerGroupInstanceType::R54xlarge,
+"r5.8xlarge" => GameServerGroupInstanceType::R58xlarge,
+"r5.large" => GameServerGroupInstanceType::R5Large,
+"r5.xlarge" => GameServerGroupInstanceType::R5Xlarge,
+"r5a.12xlarge" => GameServerGroupInstanceType::R5a12xlarge,
+"r5a.16xlarge" => GameServerGroupInstanceType::R5a16xlarge,
+"r5a.24xlarge" => GameServerGroupInstanceType::R5a24xlarge,
+"r5a.2xlarge" => GameServerGroupInstanceType::R5a2xlarge,
+"r5a.4xlarge" => GameServerGroupInstanceType::R5a4xlarge,
+"r5a.8xlarge" => GameServerGroupInstanceType::R5a8xlarge,
+"r5a.large" => GameServerGroupInstanceType::R5aLarge,
+"r5a.xlarge" => GameServerGroupInstanceType::R5aXlarge,
+"r6g.12xlarge" => GameServerGroupInstanceType::R6g12xlarge,
+"r6g.16xlarge" => GameServerGroupInstanceType::R6g16xlarge,
+"r6g.2xlarge" => GameServerGroupInstanceType::R6g2xlarge,
+"r6g.4xlarge" => GameServerGroupInstanceType::R6g4xlarge,
+"r6g.8xlarge" => GameServerGroupInstanceType::R6g8xlarge,
+"r6g.large" => GameServerGroupInstanceType::R6gLarge,
+"r6g.medium" => GameServerGroupInstanceType::R6gMedium,
+"r6g.xlarge" => GameServerGroupInstanceType::R6gXlarge,
+other => GameServerGroupInstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameServerGroupInstanceType {
                 type Err = std::convert::Infallible;
 
@@ -3738,112 +3716,110 @@ impl std::str::FromStr for GameServerGroupInstanceType {
                 }
             }
 impl GameServerGroupInstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameServerGroupInstanceType::C42xlarge => "c4.2xlarge",
-            GameServerGroupInstanceType::C44xlarge => "c4.4xlarge",
-            GameServerGroupInstanceType::C48xlarge => "c4.8xlarge",
-            GameServerGroupInstanceType::C4Large => "c4.large",
-            GameServerGroupInstanceType::C4Xlarge => "c4.xlarge",
-            GameServerGroupInstanceType::C512xlarge => "c5.12xlarge",
-            GameServerGroupInstanceType::C518xlarge => "c5.18xlarge",
-            GameServerGroupInstanceType::C524xlarge => "c5.24xlarge",
-            GameServerGroupInstanceType::C52xlarge => "c5.2xlarge",
-            GameServerGroupInstanceType::C54xlarge => "c5.4xlarge",
-            GameServerGroupInstanceType::C59xlarge => "c5.9xlarge",
-            GameServerGroupInstanceType::C5Large => "c5.large",
-            GameServerGroupInstanceType::C5Xlarge => "c5.xlarge",
-            GameServerGroupInstanceType::C5a12xlarge => "c5a.12xlarge",
-            GameServerGroupInstanceType::C5a16xlarge => "c5a.16xlarge",
-            GameServerGroupInstanceType::C5a24xlarge => "c5a.24xlarge",
-            GameServerGroupInstanceType::C5a2xlarge => "c5a.2xlarge",
-            GameServerGroupInstanceType::C5a4xlarge => "c5a.4xlarge",
-            GameServerGroupInstanceType::C5a8xlarge => "c5a.8xlarge",
-            GameServerGroupInstanceType::C5aLarge => "c5a.large",
-            GameServerGroupInstanceType::C5aXlarge => "c5a.xlarge",
-            GameServerGroupInstanceType::C6g12xlarge => "c6g.12xlarge",
-            GameServerGroupInstanceType::C6g16xlarge => "c6g.16xlarge",
-            GameServerGroupInstanceType::C6g2xlarge => "c6g.2xlarge",
-            GameServerGroupInstanceType::C6g4xlarge => "c6g.4xlarge",
-            GameServerGroupInstanceType::C6g8xlarge => "c6g.8xlarge",
-            GameServerGroupInstanceType::C6gLarge => "c6g.large",
-            GameServerGroupInstanceType::C6gMedium => "c6g.medium",
-            GameServerGroupInstanceType::C6gXlarge => "c6g.xlarge",
-            GameServerGroupInstanceType::M410xlarge => "m4.10xlarge",
-            GameServerGroupInstanceType::M42xlarge => "m4.2xlarge",
-            GameServerGroupInstanceType::M44xlarge => "m4.4xlarge",
-            GameServerGroupInstanceType::M4Large => "m4.large",
-            GameServerGroupInstanceType::M4Xlarge => "m4.xlarge",
-            GameServerGroupInstanceType::M512xlarge => "m5.12xlarge",
-            GameServerGroupInstanceType::M516xlarge => "m5.16xlarge",
-            GameServerGroupInstanceType::M524xlarge => "m5.24xlarge",
-            GameServerGroupInstanceType::M52xlarge => "m5.2xlarge",
-            GameServerGroupInstanceType::M54xlarge => "m5.4xlarge",
-            GameServerGroupInstanceType::M58xlarge => "m5.8xlarge",
-            GameServerGroupInstanceType::M5Large => "m5.large",
-            GameServerGroupInstanceType::M5Xlarge => "m5.xlarge",
-            GameServerGroupInstanceType::M5a12xlarge => "m5a.12xlarge",
-            GameServerGroupInstanceType::M5a16xlarge => "m5a.16xlarge",
-            GameServerGroupInstanceType::M5a24xlarge => "m5a.24xlarge",
-            GameServerGroupInstanceType::M5a2xlarge => "m5a.2xlarge",
-            GameServerGroupInstanceType::M5a4xlarge => "m5a.4xlarge",
-            GameServerGroupInstanceType::M5a8xlarge => "m5a.8xlarge",
-            GameServerGroupInstanceType::M5aLarge => "m5a.large",
-            GameServerGroupInstanceType::M5aXlarge => "m5a.xlarge",
-            GameServerGroupInstanceType::M6g12xlarge => "m6g.12xlarge",
-            GameServerGroupInstanceType::M6g16xlarge => "m6g.16xlarge",
-            GameServerGroupInstanceType::M6g2xlarge => "m6g.2xlarge",
-            GameServerGroupInstanceType::M6g4xlarge => "m6g.4xlarge",
-            GameServerGroupInstanceType::M6g8xlarge => "m6g.8xlarge",
-            GameServerGroupInstanceType::M6gLarge => "m6g.large",
-            GameServerGroupInstanceType::M6gMedium => "m6g.medium",
-            GameServerGroupInstanceType::M6gXlarge => "m6g.xlarge",
-            GameServerGroupInstanceType::R416xlarge => "r4.16xlarge",
-            GameServerGroupInstanceType::R42xlarge => "r4.2xlarge",
-            GameServerGroupInstanceType::R44xlarge => "r4.4xlarge",
-            GameServerGroupInstanceType::R48xlarge => "r4.8xlarge",
-            GameServerGroupInstanceType::R4Large => "r4.large",
-            GameServerGroupInstanceType::R4Xlarge => "r4.xlarge",
-            GameServerGroupInstanceType::R512xlarge => "r5.12xlarge",
-            GameServerGroupInstanceType::R516xlarge => "r5.16xlarge",
-            GameServerGroupInstanceType::R524xlarge => "r5.24xlarge",
-            GameServerGroupInstanceType::R52xlarge => "r5.2xlarge",
-            GameServerGroupInstanceType::R54xlarge => "r5.4xlarge",
-            GameServerGroupInstanceType::R58xlarge => "r5.8xlarge",
-            GameServerGroupInstanceType::R5Large => "r5.large",
-            GameServerGroupInstanceType::R5Xlarge => "r5.xlarge",
-            GameServerGroupInstanceType::R5a12xlarge => "r5a.12xlarge",
-            GameServerGroupInstanceType::R5a16xlarge => "r5a.16xlarge",
-            GameServerGroupInstanceType::R5a24xlarge => "r5a.24xlarge",
-            GameServerGroupInstanceType::R5a2xlarge => "r5a.2xlarge",
-            GameServerGroupInstanceType::R5a4xlarge => "r5a.4xlarge",
-            GameServerGroupInstanceType::R5a8xlarge => "r5a.8xlarge",
-            GameServerGroupInstanceType::R5aLarge => "r5a.large",
-            GameServerGroupInstanceType::R5aXlarge => "r5a.xlarge",
-            GameServerGroupInstanceType::R6g12xlarge => "r6g.12xlarge",
-            GameServerGroupInstanceType::R6g16xlarge => "r6g.16xlarge",
-            GameServerGroupInstanceType::R6g2xlarge => "r6g.2xlarge",
-            GameServerGroupInstanceType::R6g4xlarge => "r6g.4xlarge",
-            GameServerGroupInstanceType::R6g8xlarge => "r6g.8xlarge",
-            GameServerGroupInstanceType::R6gLarge => "r6g.large",
-            GameServerGroupInstanceType::R6gMedium => "r6g.medium",
-            GameServerGroupInstanceType::R6gXlarge => "r6g.xlarge",
-            GameServerGroupInstanceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "c4.2xlarge", "c4.4xlarge", "c4.8xlarge", "c4.large", "c4.xlarge", "c5.12xlarge", "c5.18xlarge", "c5.24xlarge", "c5.2xlarge", "c5.4xlarge", "c5.9xlarge", "c5.large", "c5.xlarge", "c5a.12xlarge", "c5a.16xlarge", "c5a.24xlarge", "c5a.2xlarge", "c5a.4xlarge", "c5a.8xlarge", "c5a.large", "c5a.xlarge", "c6g.12xlarge", "c6g.16xlarge", "c6g.2xlarge", "c6g.4xlarge", "c6g.8xlarge", "c6g.large", "c6g.medium", "c6g.xlarge", "m4.10xlarge", "m4.2xlarge", "m4.4xlarge", "m4.large", "m4.xlarge", "m5.12xlarge", "m5.16xlarge", "m5.24xlarge", "m5.2xlarge", "m5.4xlarge", "m5.8xlarge", "m5.large", "m5.xlarge", "m5a.12xlarge", "m5a.16xlarge", "m5a.24xlarge", "m5a.2xlarge", "m5a.4xlarge", "m5a.8xlarge", "m5a.large", "m5a.xlarge", "m6g.12xlarge", "m6g.16xlarge", "m6g.2xlarge", "m6g.4xlarge", "m6g.8xlarge", "m6g.large", "m6g.medium", "m6g.xlarge", "r4.16xlarge", "r4.2xlarge", "r4.4xlarge", "r4.8xlarge", "r4.large", "r4.xlarge", "r5.12xlarge", "r5.16xlarge", "r5.24xlarge", "r5.2xlarge", "r5.4xlarge", "r5.8xlarge", "r5.large", "r5.xlarge", "r5a.12xlarge", "r5a.16xlarge", "r5a.24xlarge", "r5a.2xlarge", "r5a.4xlarge", "r5a.8xlarge", "r5a.large", "r5a.xlarge", "r6g.12xlarge", "r6g.16xlarge", "r6g.2xlarge", "r6g.4xlarge", "r6g.8xlarge", "r6g.large", "r6g.medium", "r6g.xlarge"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameServerGroupInstanceType::C42xlarge => "c4.2xlarge",
+    GameServerGroupInstanceType::C44xlarge => "c4.4xlarge",
+    GameServerGroupInstanceType::C48xlarge => "c4.8xlarge",
+    GameServerGroupInstanceType::C4Large => "c4.large",
+    GameServerGroupInstanceType::C4Xlarge => "c4.xlarge",
+    GameServerGroupInstanceType::C512xlarge => "c5.12xlarge",
+    GameServerGroupInstanceType::C518xlarge => "c5.18xlarge",
+    GameServerGroupInstanceType::C524xlarge => "c5.24xlarge",
+    GameServerGroupInstanceType::C52xlarge => "c5.2xlarge",
+    GameServerGroupInstanceType::C54xlarge => "c5.4xlarge",
+    GameServerGroupInstanceType::C59xlarge => "c5.9xlarge",
+    GameServerGroupInstanceType::C5Large => "c5.large",
+    GameServerGroupInstanceType::C5Xlarge => "c5.xlarge",
+    GameServerGroupInstanceType::C5a12xlarge => "c5a.12xlarge",
+    GameServerGroupInstanceType::C5a16xlarge => "c5a.16xlarge",
+    GameServerGroupInstanceType::C5a24xlarge => "c5a.24xlarge",
+    GameServerGroupInstanceType::C5a2xlarge => "c5a.2xlarge",
+    GameServerGroupInstanceType::C5a4xlarge => "c5a.4xlarge",
+    GameServerGroupInstanceType::C5a8xlarge => "c5a.8xlarge",
+    GameServerGroupInstanceType::C5aLarge => "c5a.large",
+    GameServerGroupInstanceType::C5aXlarge => "c5a.xlarge",
+    GameServerGroupInstanceType::C6g12xlarge => "c6g.12xlarge",
+    GameServerGroupInstanceType::C6g16xlarge => "c6g.16xlarge",
+    GameServerGroupInstanceType::C6g2xlarge => "c6g.2xlarge",
+    GameServerGroupInstanceType::C6g4xlarge => "c6g.4xlarge",
+    GameServerGroupInstanceType::C6g8xlarge => "c6g.8xlarge",
+    GameServerGroupInstanceType::C6gLarge => "c6g.large",
+    GameServerGroupInstanceType::C6gMedium => "c6g.medium",
+    GameServerGroupInstanceType::C6gXlarge => "c6g.xlarge",
+    GameServerGroupInstanceType::M410xlarge => "m4.10xlarge",
+    GameServerGroupInstanceType::M42xlarge => "m4.2xlarge",
+    GameServerGroupInstanceType::M44xlarge => "m4.4xlarge",
+    GameServerGroupInstanceType::M4Large => "m4.large",
+    GameServerGroupInstanceType::M4Xlarge => "m4.xlarge",
+    GameServerGroupInstanceType::M512xlarge => "m5.12xlarge",
+    GameServerGroupInstanceType::M516xlarge => "m5.16xlarge",
+    GameServerGroupInstanceType::M524xlarge => "m5.24xlarge",
+    GameServerGroupInstanceType::M52xlarge => "m5.2xlarge",
+    GameServerGroupInstanceType::M54xlarge => "m5.4xlarge",
+    GameServerGroupInstanceType::M58xlarge => "m5.8xlarge",
+    GameServerGroupInstanceType::M5Large => "m5.large",
+    GameServerGroupInstanceType::M5Xlarge => "m5.xlarge",
+    GameServerGroupInstanceType::M5a12xlarge => "m5a.12xlarge",
+    GameServerGroupInstanceType::M5a16xlarge => "m5a.16xlarge",
+    GameServerGroupInstanceType::M5a24xlarge => "m5a.24xlarge",
+    GameServerGroupInstanceType::M5a2xlarge => "m5a.2xlarge",
+    GameServerGroupInstanceType::M5a4xlarge => "m5a.4xlarge",
+    GameServerGroupInstanceType::M5a8xlarge => "m5a.8xlarge",
+    GameServerGroupInstanceType::M5aLarge => "m5a.large",
+    GameServerGroupInstanceType::M5aXlarge => "m5a.xlarge",
+    GameServerGroupInstanceType::M6g12xlarge => "m6g.12xlarge",
+    GameServerGroupInstanceType::M6g16xlarge => "m6g.16xlarge",
+    GameServerGroupInstanceType::M6g2xlarge => "m6g.2xlarge",
+    GameServerGroupInstanceType::M6g4xlarge => "m6g.4xlarge",
+    GameServerGroupInstanceType::M6g8xlarge => "m6g.8xlarge",
+    GameServerGroupInstanceType::M6gLarge => "m6g.large",
+    GameServerGroupInstanceType::M6gMedium => "m6g.medium",
+    GameServerGroupInstanceType::M6gXlarge => "m6g.xlarge",
+    GameServerGroupInstanceType::R416xlarge => "r4.16xlarge",
+    GameServerGroupInstanceType::R42xlarge => "r4.2xlarge",
+    GameServerGroupInstanceType::R44xlarge => "r4.4xlarge",
+    GameServerGroupInstanceType::R48xlarge => "r4.8xlarge",
+    GameServerGroupInstanceType::R4Large => "r4.large",
+    GameServerGroupInstanceType::R4Xlarge => "r4.xlarge",
+    GameServerGroupInstanceType::R512xlarge => "r5.12xlarge",
+    GameServerGroupInstanceType::R516xlarge => "r5.16xlarge",
+    GameServerGroupInstanceType::R524xlarge => "r5.24xlarge",
+    GameServerGroupInstanceType::R52xlarge => "r5.2xlarge",
+    GameServerGroupInstanceType::R54xlarge => "r5.4xlarge",
+    GameServerGroupInstanceType::R58xlarge => "r5.8xlarge",
+    GameServerGroupInstanceType::R5Large => "r5.large",
+    GameServerGroupInstanceType::R5Xlarge => "r5.xlarge",
+    GameServerGroupInstanceType::R5a12xlarge => "r5a.12xlarge",
+    GameServerGroupInstanceType::R5a16xlarge => "r5a.16xlarge",
+    GameServerGroupInstanceType::R5a24xlarge => "r5a.24xlarge",
+    GameServerGroupInstanceType::R5a2xlarge => "r5a.2xlarge",
+    GameServerGroupInstanceType::R5a4xlarge => "r5a.4xlarge",
+    GameServerGroupInstanceType::R5a8xlarge => "r5a.8xlarge",
+    GameServerGroupInstanceType::R5aLarge => "r5a.large",
+    GameServerGroupInstanceType::R5aXlarge => "r5a.xlarge",
+    GameServerGroupInstanceType::R6g12xlarge => "r6g.12xlarge",
+    GameServerGroupInstanceType::R6g16xlarge => "r6g.16xlarge",
+    GameServerGroupInstanceType::R6g2xlarge => "r6g.2xlarge",
+    GameServerGroupInstanceType::R6g4xlarge => "r6g.4xlarge",
+    GameServerGroupInstanceType::R6g8xlarge => "r6g.8xlarge",
+    GameServerGroupInstanceType::R6gLarge => "r6g.large",
+    GameServerGroupInstanceType::R6gMedium => "r6g.medium",
+    GameServerGroupInstanceType::R6gXlarge => "r6g.xlarge",
+    GameServerGroupInstanceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["c4.2xlarge", "c4.4xlarge", "c4.8xlarge", "c4.large", "c4.xlarge", "c5.12xlarge", "c5.18xlarge", "c5.24xlarge", "c5.2xlarge", "c5.4xlarge", "c5.9xlarge", "c5.large", "c5.xlarge", "c5a.12xlarge", "c5a.16xlarge", "c5a.24xlarge", "c5a.2xlarge", "c5a.4xlarge", "c5a.8xlarge", "c5a.large", "c5a.xlarge", "c6g.12xlarge", "c6g.16xlarge", "c6g.2xlarge", "c6g.4xlarge", "c6g.8xlarge", "c6g.large", "c6g.medium", "c6g.xlarge", "m4.10xlarge", "m4.2xlarge", "m4.4xlarge", "m4.large", "m4.xlarge", "m5.12xlarge", "m5.16xlarge", "m5.24xlarge", "m5.2xlarge", "m5.4xlarge", "m5.8xlarge", "m5.large", "m5.xlarge", "m5a.12xlarge", "m5a.16xlarge", "m5a.24xlarge", "m5a.2xlarge", "m5a.4xlarge", "m5a.8xlarge", "m5a.large", "m5a.xlarge", "m6g.12xlarge", "m6g.16xlarge", "m6g.2xlarge", "m6g.4xlarge", "m6g.8xlarge", "m6g.large", "m6g.medium", "m6g.xlarge", "r4.16xlarge", "r4.2xlarge", "r4.4xlarge", "r4.8xlarge", "r4.large", "r4.xlarge", "r5.12xlarge", "r5.16xlarge", "r5.24xlarge", "r5.2xlarge", "r5.4xlarge", "r5.8xlarge", "r5.large", "r5.xlarge", "r5a.12xlarge", "r5a.16xlarge", "r5a.24xlarge", "r5a.2xlarge", "r5a.4xlarge", "r5a.8xlarge", "r5a.large", "r5a.xlarge", "r6g.12xlarge", "r6g.16xlarge", "r6g.2xlarge", "r6g.4xlarge", "r6g.8xlarge", "r6g.large", "r6g.medium", "r6g.xlarge"]
+                }
+            }
 impl AsRef<str> for GameServerGroupInstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p> 
 /// <p>Properties describing a game server that is running on an instance in a game server group. </p> 
@@ -4150,14 +4126,14 @@ pub enum GameServerUtilizationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameServerUtilizationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => GameServerUtilizationStatus::Available,
-            "UTILIZED" => GameServerUtilizationStatus::Utilized,
-            other => GameServerUtilizationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => GameServerUtilizationStatus::Available,
+"UTILIZED" => GameServerUtilizationStatus::Utilized,
+other => GameServerUtilizationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameServerUtilizationStatus {
                 type Err = std::convert::Infallible;
 
@@ -4166,26 +4142,24 @@ impl std::str::FromStr for GameServerUtilizationStatus {
                 }
             }
 impl GameServerUtilizationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameServerUtilizationStatus::Available => "AVAILABLE",
-            GameServerUtilizationStatus::Utilized => "UTILIZED",
-            GameServerUtilizationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "UTILIZED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameServerUtilizationStatus::Available => "AVAILABLE",
+    GameServerUtilizationStatus::Utilized => "UTILIZED",
+    GameServerUtilizationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "UTILIZED"]
+                }
+            }
 impl AsRef<str> for GameServerUtilizationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `GameServerClaimStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4231,13 +4205,13 @@ pub enum GameServerClaimStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameServerClaimStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLAIMED" => GameServerClaimStatus::Claimed,
-            other => GameServerClaimStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLAIMED" => GameServerClaimStatus::Claimed,
+other => GameServerClaimStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameServerClaimStatus {
                 type Err = std::convert::Infallible;
 
@@ -4246,25 +4220,23 @@ impl std::str::FromStr for GameServerClaimStatus {
                 }
             }
 impl GameServerClaimStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameServerClaimStatus::Claimed => "CLAIMED",
-            GameServerClaimStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLAIMED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameServerClaimStatus::Claimed => "CLAIMED",
+    GameServerClaimStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLAIMED"]
+                }
+            }
 impl AsRef<str> for GameServerClaimStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `GameServerHealthCheck`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4310,13 +4282,13 @@ pub enum GameServerHealthCheck {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameServerHealthCheck {
-    fn from(s: &str) -> Self {
-        match s {
-            "HEALTHY" => GameServerHealthCheck::Healthy,
-            other => GameServerHealthCheck::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "HEALTHY" => GameServerHealthCheck::Healthy,
+other => GameServerHealthCheck::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameServerHealthCheck {
                 type Err = std::convert::Infallible;
 
@@ -4325,25 +4297,23 @@ impl std::str::FromStr for GameServerHealthCheck {
                 }
             }
 impl GameServerHealthCheck {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameServerHealthCheck::Healthy => "HEALTHY",
-            GameServerHealthCheck::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "HEALTHY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameServerHealthCheck::Healthy => "HEALTHY",
+    GameServerHealthCheck::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["HEALTHY"]
+                }
+            }
 impl AsRef<str> for GameServerHealthCheck {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an instance in a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets, GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.</p>
 #[non_exhaustive]
@@ -4507,14 +4477,14 @@ pub enum IpProtocol {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IpProtocol {
-    fn from(s: &str) -> Self {
-        match s {
-            "TCP" => IpProtocol::Tcp,
-            "UDP" => IpProtocol::Udp,
-            other => IpProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "TCP" => IpProtocol::Tcp,
+"UDP" => IpProtocol::Udp,
+other => IpProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for IpProtocol {
                 type Err = std::convert::Infallible;
 
@@ -4523,26 +4493,24 @@ impl std::str::FromStr for IpProtocol {
                 }
             }
 impl IpProtocol {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IpProtocol::Tcp => "TCP",
-            IpProtocol::Udp => "UDP",
-            IpProtocol::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "TCP", "UDP"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IpProtocol::Tcp => "TCP",
+    IpProtocol::Udp => "UDP",
+    IpProtocol::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["TCP", "UDP"]
+                }
+            }
 impl AsRef<str> for IpProtocol {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>GameLift Anywhere configuration options for your Anywhere fleets.</p>
 #[non_exhaustive]
@@ -4957,15 +4925,15 @@ pub enum OperatingSystem {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperatingSystem {
-    fn from(s: &str) -> Self {
-        match s {
-            "AMAZON_LINUX" => OperatingSystem::AmazonLinux,
-            "AMAZON_LINUX_2" => OperatingSystem::AmazonLinux2,
-            "WINDOWS_2012" => OperatingSystem::Windows2012,
-            other => OperatingSystem::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AMAZON_LINUX" => OperatingSystem::AmazonLinux,
+"AMAZON_LINUX_2" => OperatingSystem::AmazonLinux2,
+"WINDOWS_2012" => OperatingSystem::Windows2012,
+other => OperatingSystem::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OperatingSystem {
                 type Err = std::convert::Infallible;
 
@@ -4974,27 +4942,25 @@ impl std::str::FromStr for OperatingSystem {
                 }
             }
 impl OperatingSystem {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OperatingSystem::AmazonLinux => "AMAZON_LINUX",
-            OperatingSystem::AmazonLinux2 => "AMAZON_LINUX_2",
-            OperatingSystem::Windows2012 => "WINDOWS_2012",
-            OperatingSystem::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AMAZON_LINUX", "AMAZON_LINUX_2", "WINDOWS_2012"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OperatingSystem::AmazonLinux => "AMAZON_LINUX",
+    OperatingSystem::AmazonLinux2 => "AMAZON_LINUX_2",
+    OperatingSystem::Windows2012 => "WINDOWS_2012",
+    OperatingSystem::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AMAZON_LINUX", "AMAZON_LINUX_2", "WINDOWS_2012"]
+                }
+            }
 impl AsRef<str> for OperatingSystem {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `BuildStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5046,15 +5012,15 @@ pub enum BuildStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BuildStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => BuildStatus::Failed,
-            "INITIALIZED" => BuildStatus::Initialized,
-            "READY" => BuildStatus::Ready,
-            other => BuildStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => BuildStatus::Failed,
+"INITIALIZED" => BuildStatus::Initialized,
+"READY" => BuildStatus::Ready,
+other => BuildStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BuildStatus {
                 type Err = std::convert::Infallible;
 
@@ -5063,27 +5029,25 @@ impl std::str::FromStr for BuildStatus {
                 }
             }
 impl BuildStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BuildStatus::Failed => "FAILED",
-            BuildStatus::Initialized => "INITIALIZED",
-            BuildStatus::Ready => "READY",
-            BuildStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "INITIALIZED", "READY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BuildStatus::Failed => "FAILED",
+    BuildStatus::Initialized => "INITIALIZED",
+    BuildStatus::Ready => "READY",
+    BuildStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "INITIALIZED", "READY"]
+                }
+            }
 impl AsRef<str> for BuildStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Properties that describe an alias resource.</p> 
 /// <p> <b>Related actions</b> </p> 
@@ -5420,14 +5384,14 @@ pub enum RoutingStrategyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RoutingStrategyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "SIMPLE" => RoutingStrategyType::Simple,
-            "TERMINAL" => RoutingStrategyType::Terminal,
-            other => RoutingStrategyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SIMPLE" => RoutingStrategyType::Simple,
+"TERMINAL" => RoutingStrategyType::Terminal,
+other => RoutingStrategyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RoutingStrategyType {
                 type Err = std::convert::Infallible;
 
@@ -5436,26 +5400,24 @@ impl std::str::FromStr for RoutingStrategyType {
                 }
             }
 impl RoutingStrategyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RoutingStrategyType::Simple => "SIMPLE",
-            RoutingStrategyType::Terminal => "TERMINAL",
-            RoutingStrategyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SIMPLE", "TERMINAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RoutingStrategyType::Simple => "SIMPLE",
+    RoutingStrategyType::Terminal => "TERMINAL",
+    RoutingStrategyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SIMPLE", "TERMINAL"]
+                }
+            }
 impl AsRef<str> for RoutingStrategyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A label that can be assigned to a GameLift resource. </p> 
 /// <p> <b>Learn more</b> </p> 
@@ -6220,17 +6182,17 @@ pub enum GameSessionPlacementState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameSessionPlacementState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => GameSessionPlacementState::Cancelled,
-            "FAILED" => GameSessionPlacementState::Failed,
-            "FULFILLED" => GameSessionPlacementState::Fulfilled,
-            "PENDING" => GameSessionPlacementState::Pending,
-            "TIMED_OUT" => GameSessionPlacementState::TimedOut,
-            other => GameSessionPlacementState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => GameSessionPlacementState::Cancelled,
+"FAILED" => GameSessionPlacementState::Failed,
+"FULFILLED" => GameSessionPlacementState::Fulfilled,
+"PENDING" => GameSessionPlacementState::Pending,
+"TIMED_OUT" => GameSessionPlacementState::TimedOut,
+other => GameSessionPlacementState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameSessionPlacementState {
                 type Err = std::convert::Infallible;
 
@@ -6239,29 +6201,27 @@ impl std::str::FromStr for GameSessionPlacementState {
                 }
             }
 impl GameSessionPlacementState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameSessionPlacementState::Cancelled => "CANCELLED",
-            GameSessionPlacementState::Failed => "FAILED",
-            GameSessionPlacementState::Fulfilled => "FULFILLED",
-            GameSessionPlacementState::Pending => "PENDING",
-            GameSessionPlacementState::TimedOut => "TIMED_OUT",
-            GameSessionPlacementState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "FAILED", "FULFILLED", "PENDING", "TIMED_OUT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameSessionPlacementState::Cancelled => "CANCELLED",
+    GameSessionPlacementState::Failed => "FAILED",
+    GameSessionPlacementState::Fulfilled => "FULFILLED",
+    GameSessionPlacementState::Pending => "PENDING",
+    GameSessionPlacementState::TimedOut => "TIMED_OUT",
+    GameSessionPlacementState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "FAILED", "FULFILLED", "PENDING", "TIMED_OUT"]
+                }
+            }
 impl AsRef<str> for GameSessionPlacementState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `FleetAction`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6307,13 +6267,13 @@ pub enum FleetAction {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FleetAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTO_SCALING" => FleetAction::AutoScaling,
-            other => FleetAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUTO_SCALING" => FleetAction::AutoScaling,
+other => FleetAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FleetAction {
                 type Err = std::convert::Infallible;
 
@@ -6322,25 +6282,23 @@ impl std::str::FromStr for FleetAction {
                 }
             }
 impl FleetAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FleetAction::AutoScaling => "AUTO_SCALING",
-            FleetAction::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTO_SCALING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FleetAction::AutoScaling => "AUTO_SCALING",
+    FleetAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTO_SCALING"]
+                }
+            }
 impl AsRef<str> for FleetAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request.</p>
 #[non_exhaustive]
@@ -7205,20 +7163,20 @@ pub enum MatchmakingConfigurationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MatchmakingConfigurationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => MatchmakingConfigurationStatus::Cancelled,
-            "COMPLETED" => MatchmakingConfigurationStatus::Completed,
-            "FAILED" => MatchmakingConfigurationStatus::Failed,
-            "PLACING" => MatchmakingConfigurationStatus::Placing,
-            "QUEUED" => MatchmakingConfigurationStatus::Queued,
-            "REQUIRES_ACCEPTANCE" => MatchmakingConfigurationStatus::RequiresAcceptance,
-            "SEARCHING" => MatchmakingConfigurationStatus::Searching,
-            "TIMED_OUT" => MatchmakingConfigurationStatus::TimedOut,
-            other => MatchmakingConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => MatchmakingConfigurationStatus::Cancelled,
+"COMPLETED" => MatchmakingConfigurationStatus::Completed,
+"FAILED" => MatchmakingConfigurationStatus::Failed,
+"PLACING" => MatchmakingConfigurationStatus::Placing,
+"QUEUED" => MatchmakingConfigurationStatus::Queued,
+"REQUIRES_ACCEPTANCE" => MatchmakingConfigurationStatus::RequiresAcceptance,
+"SEARCHING" => MatchmakingConfigurationStatus::Searching,
+"TIMED_OUT" => MatchmakingConfigurationStatus::TimedOut,
+other => MatchmakingConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MatchmakingConfigurationStatus {
                 type Err = std::convert::Infallible;
 
@@ -7227,32 +7185,30 @@ impl std::str::FromStr for MatchmakingConfigurationStatus {
                 }
             }
 impl MatchmakingConfigurationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MatchmakingConfigurationStatus::Cancelled => "CANCELLED",
-            MatchmakingConfigurationStatus::Completed => "COMPLETED",
-            MatchmakingConfigurationStatus::Failed => "FAILED",
-            MatchmakingConfigurationStatus::Placing => "PLACING",
-            MatchmakingConfigurationStatus::Queued => "QUEUED",
-            MatchmakingConfigurationStatus::RequiresAcceptance => "REQUIRES_ACCEPTANCE",
-            MatchmakingConfigurationStatus::Searching => "SEARCHING",
-            MatchmakingConfigurationStatus::TimedOut => "TIMED_OUT",
-            MatchmakingConfigurationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "COMPLETED", "FAILED", "PLACING", "QUEUED", "REQUIRES_ACCEPTANCE", "SEARCHING", "TIMED_OUT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MatchmakingConfigurationStatus::Cancelled => "CANCELLED",
+    MatchmakingConfigurationStatus::Completed => "COMPLETED",
+    MatchmakingConfigurationStatus::Failed => "FAILED",
+    MatchmakingConfigurationStatus::Placing => "PLACING",
+    MatchmakingConfigurationStatus::Queued => "QUEUED",
+    MatchmakingConfigurationStatus::RequiresAcceptance => "REQUIRES_ACCEPTANCE",
+    MatchmakingConfigurationStatus::Searching => "SEARCHING",
+    MatchmakingConfigurationStatus::TimedOut => "TIMED_OUT",
+    MatchmakingConfigurationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "COMPLETED", "FAILED", "PLACING", "QUEUED", "REQUIRES_ACCEPTANCE", "SEARCHING", "TIMED_OUT"]
+                }
+            }
 impl AsRef<str> for MatchmakingConfigurationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Player information for use when creating player sessions using a game session placement request.</p>
 #[non_exhaustive]
@@ -8071,126 +8027,126 @@ pub enum Ec2InstanceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Ec2InstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "c3.2xlarge" => Ec2InstanceType::C32xlarge,
-            "c3.4xlarge" => Ec2InstanceType::C34xlarge,
-            "c3.8xlarge" => Ec2InstanceType::C38xlarge,
-            "c3.large" => Ec2InstanceType::C3Large,
-            "c3.xlarge" => Ec2InstanceType::C3Xlarge,
-            "c4.2xlarge" => Ec2InstanceType::C42xlarge,
-            "c4.4xlarge" => Ec2InstanceType::C44xlarge,
-            "c4.8xlarge" => Ec2InstanceType::C48xlarge,
-            "c4.large" => Ec2InstanceType::C4Large,
-            "c4.xlarge" => Ec2InstanceType::C4Xlarge,
-            "c5.12xlarge" => Ec2InstanceType::C512xlarge,
-            "c5.18xlarge" => Ec2InstanceType::C518xlarge,
-            "c5.24xlarge" => Ec2InstanceType::C524xlarge,
-            "c5.2xlarge" => Ec2InstanceType::C52xlarge,
-            "c5.4xlarge" => Ec2InstanceType::C54xlarge,
-            "c5.9xlarge" => Ec2InstanceType::C59xlarge,
-            "c5.large" => Ec2InstanceType::C5Large,
-            "c5.xlarge" => Ec2InstanceType::C5Xlarge,
-            "c5a.12xlarge" => Ec2InstanceType::C5a12xlarge,
-            "c5a.16xlarge" => Ec2InstanceType::C5a16xlarge,
-            "c5a.24xlarge" => Ec2InstanceType::C5a24xlarge,
-            "c5a.2xlarge" => Ec2InstanceType::C5a2xlarge,
-            "c5a.4xlarge" => Ec2InstanceType::C5a4xlarge,
-            "c5a.8xlarge" => Ec2InstanceType::C5a8xlarge,
-            "c5a.large" => Ec2InstanceType::C5aLarge,
-            "c5a.xlarge" => Ec2InstanceType::C5aXlarge,
-            "c5d.12xlarge" => Ec2InstanceType::C5d12xlarge,
-            "c5d.18xlarge" => Ec2InstanceType::C5d18xlarge,
-            "c5d.24xlarge" => Ec2InstanceType::C5d24xlarge,
-            "c5d.2xlarge" => Ec2InstanceType::C5d2xlarge,
-            "c5d.4xlarge" => Ec2InstanceType::C5d4xlarge,
-            "c5d.9xlarge" => Ec2InstanceType::C5d9xlarge,
-            "c5d.large" => Ec2InstanceType::C5dLarge,
-            "c5d.xlarge" => Ec2InstanceType::C5dXlarge,
-            "c6a.12xlarge" => Ec2InstanceType::C6a12xlarge,
-            "c6a.16xlarge" => Ec2InstanceType::C6a16xlarge,
-            "c6a.24xlarge" => Ec2InstanceType::C6a24xlarge,
-            "c6a.2xlarge" => Ec2InstanceType::C6a2xlarge,
-            "c6a.4xlarge" => Ec2InstanceType::C6a4xlarge,
-            "c6a.8xlarge" => Ec2InstanceType::C6a8xlarge,
-            "c6a.large" => Ec2InstanceType::C6aLarge,
-            "c6a.xlarge" => Ec2InstanceType::C6aXlarge,
-            "c6i.12xlarge" => Ec2InstanceType::C6i12xlarge,
-            "c6i.16xlarge" => Ec2InstanceType::C6i16xlarge,
-            "c6i.24xlarge" => Ec2InstanceType::C6i24xlarge,
-            "c6i.2xlarge" => Ec2InstanceType::C6i2xlarge,
-            "c6i.4xlarge" => Ec2InstanceType::C6i4xlarge,
-            "c6i.8xlarge" => Ec2InstanceType::C6i8xlarge,
-            "c6i.large" => Ec2InstanceType::C6iLarge,
-            "c6i.xlarge" => Ec2InstanceType::C6iXlarge,
-            "m3.2xlarge" => Ec2InstanceType::M32xlarge,
-            "m3.large" => Ec2InstanceType::M3Large,
-            "m3.medium" => Ec2InstanceType::M3Medium,
-            "m3.xlarge" => Ec2InstanceType::M3Xlarge,
-            "m4.10xlarge" => Ec2InstanceType::M410xlarge,
-            "m4.2xlarge" => Ec2InstanceType::M42xlarge,
-            "m4.4xlarge" => Ec2InstanceType::M44xlarge,
-            "m4.large" => Ec2InstanceType::M4Large,
-            "m4.xlarge" => Ec2InstanceType::M4Xlarge,
-            "m5.12xlarge" => Ec2InstanceType::M512xlarge,
-            "m5.16xlarge" => Ec2InstanceType::M516xlarge,
-            "m5.24xlarge" => Ec2InstanceType::M524xlarge,
-            "m5.2xlarge" => Ec2InstanceType::M52xlarge,
-            "m5.4xlarge" => Ec2InstanceType::M54xlarge,
-            "m5.8xlarge" => Ec2InstanceType::M58xlarge,
-            "m5.large" => Ec2InstanceType::M5Large,
-            "m5.xlarge" => Ec2InstanceType::M5Xlarge,
-            "m5a.12xlarge" => Ec2InstanceType::M5a12xlarge,
-            "m5a.16xlarge" => Ec2InstanceType::M5a16xlarge,
-            "m5a.24xlarge" => Ec2InstanceType::M5a24xlarge,
-            "m5a.2xlarge" => Ec2InstanceType::M5a2xlarge,
-            "m5a.4xlarge" => Ec2InstanceType::M5a4xlarge,
-            "m5a.8xlarge" => Ec2InstanceType::M5a8xlarge,
-            "m5a.large" => Ec2InstanceType::M5aLarge,
-            "m5a.xlarge" => Ec2InstanceType::M5aXlarge,
-            "r3.2xlarge" => Ec2InstanceType::R32xlarge,
-            "r3.4xlarge" => Ec2InstanceType::R34xlarge,
-            "r3.8xlarge" => Ec2InstanceType::R38xlarge,
-            "r3.large" => Ec2InstanceType::R3Large,
-            "r3.xlarge" => Ec2InstanceType::R3Xlarge,
-            "r4.16xlarge" => Ec2InstanceType::R416xlarge,
-            "r4.2xlarge" => Ec2InstanceType::R42xlarge,
-            "r4.4xlarge" => Ec2InstanceType::R44xlarge,
-            "r4.8xlarge" => Ec2InstanceType::R48xlarge,
-            "r4.large" => Ec2InstanceType::R4Large,
-            "r4.xlarge" => Ec2InstanceType::R4Xlarge,
-            "r5.12xlarge" => Ec2InstanceType::R512xlarge,
-            "r5.16xlarge" => Ec2InstanceType::R516xlarge,
-            "r5.24xlarge" => Ec2InstanceType::R524xlarge,
-            "r5.2xlarge" => Ec2InstanceType::R52xlarge,
-            "r5.4xlarge" => Ec2InstanceType::R54xlarge,
-            "r5.8xlarge" => Ec2InstanceType::R58xlarge,
-            "r5.large" => Ec2InstanceType::R5Large,
-            "r5.xlarge" => Ec2InstanceType::R5Xlarge,
-            "r5a.12xlarge" => Ec2InstanceType::R5a12xlarge,
-            "r5a.16xlarge" => Ec2InstanceType::R5a16xlarge,
-            "r5a.24xlarge" => Ec2InstanceType::R5a24xlarge,
-            "r5a.2xlarge" => Ec2InstanceType::R5a2xlarge,
-            "r5a.4xlarge" => Ec2InstanceType::R5a4xlarge,
-            "r5a.8xlarge" => Ec2InstanceType::R5a8xlarge,
-            "r5a.large" => Ec2InstanceType::R5aLarge,
-            "r5a.xlarge" => Ec2InstanceType::R5aXlarge,
-            "r5d.12xlarge" => Ec2InstanceType::R5d12xlarge,
-            "r5d.16xlarge" => Ec2InstanceType::R5d16xlarge,
-            "r5d.24xlarge" => Ec2InstanceType::R5d24xlarge,
-            "r5d.2xlarge" => Ec2InstanceType::R5d2xlarge,
-            "r5d.4xlarge" => Ec2InstanceType::R5d4xlarge,
-            "r5d.8xlarge" => Ec2InstanceType::R5d8xlarge,
-            "r5d.large" => Ec2InstanceType::R5dLarge,
-            "r5d.xlarge" => Ec2InstanceType::R5dXlarge,
-            "t2.large" => Ec2InstanceType::T2Large,
-            "t2.medium" => Ec2InstanceType::T2Medium,
-            "t2.micro" => Ec2InstanceType::T2Micro,
-            "t2.small" => Ec2InstanceType::T2Small,
-            other => Ec2InstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "c3.2xlarge" => Ec2InstanceType::C32xlarge,
+"c3.4xlarge" => Ec2InstanceType::C34xlarge,
+"c3.8xlarge" => Ec2InstanceType::C38xlarge,
+"c3.large" => Ec2InstanceType::C3Large,
+"c3.xlarge" => Ec2InstanceType::C3Xlarge,
+"c4.2xlarge" => Ec2InstanceType::C42xlarge,
+"c4.4xlarge" => Ec2InstanceType::C44xlarge,
+"c4.8xlarge" => Ec2InstanceType::C48xlarge,
+"c4.large" => Ec2InstanceType::C4Large,
+"c4.xlarge" => Ec2InstanceType::C4Xlarge,
+"c5.12xlarge" => Ec2InstanceType::C512xlarge,
+"c5.18xlarge" => Ec2InstanceType::C518xlarge,
+"c5.24xlarge" => Ec2InstanceType::C524xlarge,
+"c5.2xlarge" => Ec2InstanceType::C52xlarge,
+"c5.4xlarge" => Ec2InstanceType::C54xlarge,
+"c5.9xlarge" => Ec2InstanceType::C59xlarge,
+"c5.large" => Ec2InstanceType::C5Large,
+"c5.xlarge" => Ec2InstanceType::C5Xlarge,
+"c5a.12xlarge" => Ec2InstanceType::C5a12xlarge,
+"c5a.16xlarge" => Ec2InstanceType::C5a16xlarge,
+"c5a.24xlarge" => Ec2InstanceType::C5a24xlarge,
+"c5a.2xlarge" => Ec2InstanceType::C5a2xlarge,
+"c5a.4xlarge" => Ec2InstanceType::C5a4xlarge,
+"c5a.8xlarge" => Ec2InstanceType::C5a8xlarge,
+"c5a.large" => Ec2InstanceType::C5aLarge,
+"c5a.xlarge" => Ec2InstanceType::C5aXlarge,
+"c5d.12xlarge" => Ec2InstanceType::C5d12xlarge,
+"c5d.18xlarge" => Ec2InstanceType::C5d18xlarge,
+"c5d.24xlarge" => Ec2InstanceType::C5d24xlarge,
+"c5d.2xlarge" => Ec2InstanceType::C5d2xlarge,
+"c5d.4xlarge" => Ec2InstanceType::C5d4xlarge,
+"c5d.9xlarge" => Ec2InstanceType::C5d9xlarge,
+"c5d.large" => Ec2InstanceType::C5dLarge,
+"c5d.xlarge" => Ec2InstanceType::C5dXlarge,
+"c6a.12xlarge" => Ec2InstanceType::C6a12xlarge,
+"c6a.16xlarge" => Ec2InstanceType::C6a16xlarge,
+"c6a.24xlarge" => Ec2InstanceType::C6a24xlarge,
+"c6a.2xlarge" => Ec2InstanceType::C6a2xlarge,
+"c6a.4xlarge" => Ec2InstanceType::C6a4xlarge,
+"c6a.8xlarge" => Ec2InstanceType::C6a8xlarge,
+"c6a.large" => Ec2InstanceType::C6aLarge,
+"c6a.xlarge" => Ec2InstanceType::C6aXlarge,
+"c6i.12xlarge" => Ec2InstanceType::C6i12xlarge,
+"c6i.16xlarge" => Ec2InstanceType::C6i16xlarge,
+"c6i.24xlarge" => Ec2InstanceType::C6i24xlarge,
+"c6i.2xlarge" => Ec2InstanceType::C6i2xlarge,
+"c6i.4xlarge" => Ec2InstanceType::C6i4xlarge,
+"c6i.8xlarge" => Ec2InstanceType::C6i8xlarge,
+"c6i.large" => Ec2InstanceType::C6iLarge,
+"c6i.xlarge" => Ec2InstanceType::C6iXlarge,
+"m3.2xlarge" => Ec2InstanceType::M32xlarge,
+"m3.large" => Ec2InstanceType::M3Large,
+"m3.medium" => Ec2InstanceType::M3Medium,
+"m3.xlarge" => Ec2InstanceType::M3Xlarge,
+"m4.10xlarge" => Ec2InstanceType::M410xlarge,
+"m4.2xlarge" => Ec2InstanceType::M42xlarge,
+"m4.4xlarge" => Ec2InstanceType::M44xlarge,
+"m4.large" => Ec2InstanceType::M4Large,
+"m4.xlarge" => Ec2InstanceType::M4Xlarge,
+"m5.12xlarge" => Ec2InstanceType::M512xlarge,
+"m5.16xlarge" => Ec2InstanceType::M516xlarge,
+"m5.24xlarge" => Ec2InstanceType::M524xlarge,
+"m5.2xlarge" => Ec2InstanceType::M52xlarge,
+"m5.4xlarge" => Ec2InstanceType::M54xlarge,
+"m5.8xlarge" => Ec2InstanceType::M58xlarge,
+"m5.large" => Ec2InstanceType::M5Large,
+"m5.xlarge" => Ec2InstanceType::M5Xlarge,
+"m5a.12xlarge" => Ec2InstanceType::M5a12xlarge,
+"m5a.16xlarge" => Ec2InstanceType::M5a16xlarge,
+"m5a.24xlarge" => Ec2InstanceType::M5a24xlarge,
+"m5a.2xlarge" => Ec2InstanceType::M5a2xlarge,
+"m5a.4xlarge" => Ec2InstanceType::M5a4xlarge,
+"m5a.8xlarge" => Ec2InstanceType::M5a8xlarge,
+"m5a.large" => Ec2InstanceType::M5aLarge,
+"m5a.xlarge" => Ec2InstanceType::M5aXlarge,
+"r3.2xlarge" => Ec2InstanceType::R32xlarge,
+"r3.4xlarge" => Ec2InstanceType::R34xlarge,
+"r3.8xlarge" => Ec2InstanceType::R38xlarge,
+"r3.large" => Ec2InstanceType::R3Large,
+"r3.xlarge" => Ec2InstanceType::R3Xlarge,
+"r4.16xlarge" => Ec2InstanceType::R416xlarge,
+"r4.2xlarge" => Ec2InstanceType::R42xlarge,
+"r4.4xlarge" => Ec2InstanceType::R44xlarge,
+"r4.8xlarge" => Ec2InstanceType::R48xlarge,
+"r4.large" => Ec2InstanceType::R4Large,
+"r4.xlarge" => Ec2InstanceType::R4Xlarge,
+"r5.12xlarge" => Ec2InstanceType::R512xlarge,
+"r5.16xlarge" => Ec2InstanceType::R516xlarge,
+"r5.24xlarge" => Ec2InstanceType::R524xlarge,
+"r5.2xlarge" => Ec2InstanceType::R52xlarge,
+"r5.4xlarge" => Ec2InstanceType::R54xlarge,
+"r5.8xlarge" => Ec2InstanceType::R58xlarge,
+"r5.large" => Ec2InstanceType::R5Large,
+"r5.xlarge" => Ec2InstanceType::R5Xlarge,
+"r5a.12xlarge" => Ec2InstanceType::R5a12xlarge,
+"r5a.16xlarge" => Ec2InstanceType::R5a16xlarge,
+"r5a.24xlarge" => Ec2InstanceType::R5a24xlarge,
+"r5a.2xlarge" => Ec2InstanceType::R5a2xlarge,
+"r5a.4xlarge" => Ec2InstanceType::R5a4xlarge,
+"r5a.8xlarge" => Ec2InstanceType::R5a8xlarge,
+"r5a.large" => Ec2InstanceType::R5aLarge,
+"r5a.xlarge" => Ec2InstanceType::R5aXlarge,
+"r5d.12xlarge" => Ec2InstanceType::R5d12xlarge,
+"r5d.16xlarge" => Ec2InstanceType::R5d16xlarge,
+"r5d.24xlarge" => Ec2InstanceType::R5d24xlarge,
+"r5d.2xlarge" => Ec2InstanceType::R5d2xlarge,
+"r5d.4xlarge" => Ec2InstanceType::R5d4xlarge,
+"r5d.8xlarge" => Ec2InstanceType::R5d8xlarge,
+"r5d.large" => Ec2InstanceType::R5dLarge,
+"r5d.xlarge" => Ec2InstanceType::R5dXlarge,
+"t2.large" => Ec2InstanceType::T2Large,
+"t2.medium" => Ec2InstanceType::T2Medium,
+"t2.micro" => Ec2InstanceType::T2Micro,
+"t2.small" => Ec2InstanceType::T2Small,
+other => Ec2InstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Ec2InstanceType {
                 type Err = std::convert::Infallible;
 
@@ -8199,138 +8155,136 @@ impl std::str::FromStr for Ec2InstanceType {
                 }
             }
 impl Ec2InstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Ec2InstanceType::C32xlarge => "c3.2xlarge",
-            Ec2InstanceType::C34xlarge => "c3.4xlarge",
-            Ec2InstanceType::C38xlarge => "c3.8xlarge",
-            Ec2InstanceType::C3Large => "c3.large",
-            Ec2InstanceType::C3Xlarge => "c3.xlarge",
-            Ec2InstanceType::C42xlarge => "c4.2xlarge",
-            Ec2InstanceType::C44xlarge => "c4.4xlarge",
-            Ec2InstanceType::C48xlarge => "c4.8xlarge",
-            Ec2InstanceType::C4Large => "c4.large",
-            Ec2InstanceType::C4Xlarge => "c4.xlarge",
-            Ec2InstanceType::C512xlarge => "c5.12xlarge",
-            Ec2InstanceType::C518xlarge => "c5.18xlarge",
-            Ec2InstanceType::C524xlarge => "c5.24xlarge",
-            Ec2InstanceType::C52xlarge => "c5.2xlarge",
-            Ec2InstanceType::C54xlarge => "c5.4xlarge",
-            Ec2InstanceType::C59xlarge => "c5.9xlarge",
-            Ec2InstanceType::C5Large => "c5.large",
-            Ec2InstanceType::C5Xlarge => "c5.xlarge",
-            Ec2InstanceType::C5a12xlarge => "c5a.12xlarge",
-            Ec2InstanceType::C5a16xlarge => "c5a.16xlarge",
-            Ec2InstanceType::C5a24xlarge => "c5a.24xlarge",
-            Ec2InstanceType::C5a2xlarge => "c5a.2xlarge",
-            Ec2InstanceType::C5a4xlarge => "c5a.4xlarge",
-            Ec2InstanceType::C5a8xlarge => "c5a.8xlarge",
-            Ec2InstanceType::C5aLarge => "c5a.large",
-            Ec2InstanceType::C5aXlarge => "c5a.xlarge",
-            Ec2InstanceType::C5d12xlarge => "c5d.12xlarge",
-            Ec2InstanceType::C5d18xlarge => "c5d.18xlarge",
-            Ec2InstanceType::C5d24xlarge => "c5d.24xlarge",
-            Ec2InstanceType::C5d2xlarge => "c5d.2xlarge",
-            Ec2InstanceType::C5d4xlarge => "c5d.4xlarge",
-            Ec2InstanceType::C5d9xlarge => "c5d.9xlarge",
-            Ec2InstanceType::C5dLarge => "c5d.large",
-            Ec2InstanceType::C5dXlarge => "c5d.xlarge",
-            Ec2InstanceType::C6a12xlarge => "c6a.12xlarge",
-            Ec2InstanceType::C6a16xlarge => "c6a.16xlarge",
-            Ec2InstanceType::C6a24xlarge => "c6a.24xlarge",
-            Ec2InstanceType::C6a2xlarge => "c6a.2xlarge",
-            Ec2InstanceType::C6a4xlarge => "c6a.4xlarge",
-            Ec2InstanceType::C6a8xlarge => "c6a.8xlarge",
-            Ec2InstanceType::C6aLarge => "c6a.large",
-            Ec2InstanceType::C6aXlarge => "c6a.xlarge",
-            Ec2InstanceType::C6i12xlarge => "c6i.12xlarge",
-            Ec2InstanceType::C6i16xlarge => "c6i.16xlarge",
-            Ec2InstanceType::C6i24xlarge => "c6i.24xlarge",
-            Ec2InstanceType::C6i2xlarge => "c6i.2xlarge",
-            Ec2InstanceType::C6i4xlarge => "c6i.4xlarge",
-            Ec2InstanceType::C6i8xlarge => "c6i.8xlarge",
-            Ec2InstanceType::C6iLarge => "c6i.large",
-            Ec2InstanceType::C6iXlarge => "c6i.xlarge",
-            Ec2InstanceType::M32xlarge => "m3.2xlarge",
-            Ec2InstanceType::M3Large => "m3.large",
-            Ec2InstanceType::M3Medium => "m3.medium",
-            Ec2InstanceType::M3Xlarge => "m3.xlarge",
-            Ec2InstanceType::M410xlarge => "m4.10xlarge",
-            Ec2InstanceType::M42xlarge => "m4.2xlarge",
-            Ec2InstanceType::M44xlarge => "m4.4xlarge",
-            Ec2InstanceType::M4Large => "m4.large",
-            Ec2InstanceType::M4Xlarge => "m4.xlarge",
-            Ec2InstanceType::M512xlarge => "m5.12xlarge",
-            Ec2InstanceType::M516xlarge => "m5.16xlarge",
-            Ec2InstanceType::M524xlarge => "m5.24xlarge",
-            Ec2InstanceType::M52xlarge => "m5.2xlarge",
-            Ec2InstanceType::M54xlarge => "m5.4xlarge",
-            Ec2InstanceType::M58xlarge => "m5.8xlarge",
-            Ec2InstanceType::M5Large => "m5.large",
-            Ec2InstanceType::M5Xlarge => "m5.xlarge",
-            Ec2InstanceType::M5a12xlarge => "m5a.12xlarge",
-            Ec2InstanceType::M5a16xlarge => "m5a.16xlarge",
-            Ec2InstanceType::M5a24xlarge => "m5a.24xlarge",
-            Ec2InstanceType::M5a2xlarge => "m5a.2xlarge",
-            Ec2InstanceType::M5a4xlarge => "m5a.4xlarge",
-            Ec2InstanceType::M5a8xlarge => "m5a.8xlarge",
-            Ec2InstanceType::M5aLarge => "m5a.large",
-            Ec2InstanceType::M5aXlarge => "m5a.xlarge",
-            Ec2InstanceType::R32xlarge => "r3.2xlarge",
-            Ec2InstanceType::R34xlarge => "r3.4xlarge",
-            Ec2InstanceType::R38xlarge => "r3.8xlarge",
-            Ec2InstanceType::R3Large => "r3.large",
-            Ec2InstanceType::R3Xlarge => "r3.xlarge",
-            Ec2InstanceType::R416xlarge => "r4.16xlarge",
-            Ec2InstanceType::R42xlarge => "r4.2xlarge",
-            Ec2InstanceType::R44xlarge => "r4.4xlarge",
-            Ec2InstanceType::R48xlarge => "r4.8xlarge",
-            Ec2InstanceType::R4Large => "r4.large",
-            Ec2InstanceType::R4Xlarge => "r4.xlarge",
-            Ec2InstanceType::R512xlarge => "r5.12xlarge",
-            Ec2InstanceType::R516xlarge => "r5.16xlarge",
-            Ec2InstanceType::R524xlarge => "r5.24xlarge",
-            Ec2InstanceType::R52xlarge => "r5.2xlarge",
-            Ec2InstanceType::R54xlarge => "r5.4xlarge",
-            Ec2InstanceType::R58xlarge => "r5.8xlarge",
-            Ec2InstanceType::R5Large => "r5.large",
-            Ec2InstanceType::R5Xlarge => "r5.xlarge",
-            Ec2InstanceType::R5a12xlarge => "r5a.12xlarge",
-            Ec2InstanceType::R5a16xlarge => "r5a.16xlarge",
-            Ec2InstanceType::R5a24xlarge => "r5a.24xlarge",
-            Ec2InstanceType::R5a2xlarge => "r5a.2xlarge",
-            Ec2InstanceType::R5a4xlarge => "r5a.4xlarge",
-            Ec2InstanceType::R5a8xlarge => "r5a.8xlarge",
-            Ec2InstanceType::R5aLarge => "r5a.large",
-            Ec2InstanceType::R5aXlarge => "r5a.xlarge",
-            Ec2InstanceType::R5d12xlarge => "r5d.12xlarge",
-            Ec2InstanceType::R5d16xlarge => "r5d.16xlarge",
-            Ec2InstanceType::R5d24xlarge => "r5d.24xlarge",
-            Ec2InstanceType::R5d2xlarge => "r5d.2xlarge",
-            Ec2InstanceType::R5d4xlarge => "r5d.4xlarge",
-            Ec2InstanceType::R5d8xlarge => "r5d.8xlarge",
-            Ec2InstanceType::R5dLarge => "r5d.large",
-            Ec2InstanceType::R5dXlarge => "r5d.xlarge",
-            Ec2InstanceType::T2Large => "t2.large",
-            Ec2InstanceType::T2Medium => "t2.medium",
-            Ec2InstanceType::T2Micro => "t2.micro",
-            Ec2InstanceType::T2Small => "t2.small",
-            Ec2InstanceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "c3.2xlarge", "c3.4xlarge", "c3.8xlarge", "c3.large", "c3.xlarge", "c4.2xlarge", "c4.4xlarge", "c4.8xlarge", "c4.large", "c4.xlarge", "c5.12xlarge", "c5.18xlarge", "c5.24xlarge", "c5.2xlarge", "c5.4xlarge", "c5.9xlarge", "c5.large", "c5.xlarge", "c5a.12xlarge", "c5a.16xlarge", "c5a.24xlarge", "c5a.2xlarge", "c5a.4xlarge", "c5a.8xlarge", "c5a.large", "c5a.xlarge", "c5d.12xlarge", "c5d.18xlarge", "c5d.24xlarge", "c5d.2xlarge", "c5d.4xlarge", "c5d.9xlarge", "c5d.large", "c5d.xlarge", "c6a.12xlarge", "c6a.16xlarge", "c6a.24xlarge", "c6a.2xlarge", "c6a.4xlarge", "c6a.8xlarge", "c6a.large", "c6a.xlarge", "c6i.12xlarge", "c6i.16xlarge", "c6i.24xlarge", "c6i.2xlarge", "c6i.4xlarge", "c6i.8xlarge", "c6i.large", "c6i.xlarge", "m3.2xlarge", "m3.large", "m3.medium", "m3.xlarge", "m4.10xlarge", "m4.2xlarge", "m4.4xlarge", "m4.large", "m4.xlarge", "m5.12xlarge", "m5.16xlarge", "m5.24xlarge", "m5.2xlarge", "m5.4xlarge", "m5.8xlarge", "m5.large", "m5.xlarge", "m5a.12xlarge", "m5a.16xlarge", "m5a.24xlarge", "m5a.2xlarge", "m5a.4xlarge", "m5a.8xlarge", "m5a.large", "m5a.xlarge", "r3.2xlarge", "r3.4xlarge", "r3.8xlarge", "r3.large", "r3.xlarge", "r4.16xlarge", "r4.2xlarge", "r4.4xlarge", "r4.8xlarge", "r4.large", "r4.xlarge", "r5.12xlarge", "r5.16xlarge", "r5.24xlarge", "r5.2xlarge", "r5.4xlarge", "r5.8xlarge", "r5.large", "r5.xlarge", "r5a.12xlarge", "r5a.16xlarge", "r5a.24xlarge", "r5a.2xlarge", "r5a.4xlarge", "r5a.8xlarge", "r5a.large", "r5a.xlarge", "r5d.12xlarge", "r5d.16xlarge", "r5d.24xlarge", "r5d.2xlarge", "r5d.4xlarge", "r5d.8xlarge", "r5d.large", "r5d.xlarge", "t2.large", "t2.medium", "t2.micro", "t2.small"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Ec2InstanceType::C32xlarge => "c3.2xlarge",
+    Ec2InstanceType::C34xlarge => "c3.4xlarge",
+    Ec2InstanceType::C38xlarge => "c3.8xlarge",
+    Ec2InstanceType::C3Large => "c3.large",
+    Ec2InstanceType::C3Xlarge => "c3.xlarge",
+    Ec2InstanceType::C42xlarge => "c4.2xlarge",
+    Ec2InstanceType::C44xlarge => "c4.4xlarge",
+    Ec2InstanceType::C48xlarge => "c4.8xlarge",
+    Ec2InstanceType::C4Large => "c4.large",
+    Ec2InstanceType::C4Xlarge => "c4.xlarge",
+    Ec2InstanceType::C512xlarge => "c5.12xlarge",
+    Ec2InstanceType::C518xlarge => "c5.18xlarge",
+    Ec2InstanceType::C524xlarge => "c5.24xlarge",
+    Ec2InstanceType::C52xlarge => "c5.2xlarge",
+    Ec2InstanceType::C54xlarge => "c5.4xlarge",
+    Ec2InstanceType::C59xlarge => "c5.9xlarge",
+    Ec2InstanceType::C5Large => "c5.large",
+    Ec2InstanceType::C5Xlarge => "c5.xlarge",
+    Ec2InstanceType::C5a12xlarge => "c5a.12xlarge",
+    Ec2InstanceType::C5a16xlarge => "c5a.16xlarge",
+    Ec2InstanceType::C5a24xlarge => "c5a.24xlarge",
+    Ec2InstanceType::C5a2xlarge => "c5a.2xlarge",
+    Ec2InstanceType::C5a4xlarge => "c5a.4xlarge",
+    Ec2InstanceType::C5a8xlarge => "c5a.8xlarge",
+    Ec2InstanceType::C5aLarge => "c5a.large",
+    Ec2InstanceType::C5aXlarge => "c5a.xlarge",
+    Ec2InstanceType::C5d12xlarge => "c5d.12xlarge",
+    Ec2InstanceType::C5d18xlarge => "c5d.18xlarge",
+    Ec2InstanceType::C5d24xlarge => "c5d.24xlarge",
+    Ec2InstanceType::C5d2xlarge => "c5d.2xlarge",
+    Ec2InstanceType::C5d4xlarge => "c5d.4xlarge",
+    Ec2InstanceType::C5d9xlarge => "c5d.9xlarge",
+    Ec2InstanceType::C5dLarge => "c5d.large",
+    Ec2InstanceType::C5dXlarge => "c5d.xlarge",
+    Ec2InstanceType::C6a12xlarge => "c6a.12xlarge",
+    Ec2InstanceType::C6a16xlarge => "c6a.16xlarge",
+    Ec2InstanceType::C6a24xlarge => "c6a.24xlarge",
+    Ec2InstanceType::C6a2xlarge => "c6a.2xlarge",
+    Ec2InstanceType::C6a4xlarge => "c6a.4xlarge",
+    Ec2InstanceType::C6a8xlarge => "c6a.8xlarge",
+    Ec2InstanceType::C6aLarge => "c6a.large",
+    Ec2InstanceType::C6aXlarge => "c6a.xlarge",
+    Ec2InstanceType::C6i12xlarge => "c6i.12xlarge",
+    Ec2InstanceType::C6i16xlarge => "c6i.16xlarge",
+    Ec2InstanceType::C6i24xlarge => "c6i.24xlarge",
+    Ec2InstanceType::C6i2xlarge => "c6i.2xlarge",
+    Ec2InstanceType::C6i4xlarge => "c6i.4xlarge",
+    Ec2InstanceType::C6i8xlarge => "c6i.8xlarge",
+    Ec2InstanceType::C6iLarge => "c6i.large",
+    Ec2InstanceType::C6iXlarge => "c6i.xlarge",
+    Ec2InstanceType::M32xlarge => "m3.2xlarge",
+    Ec2InstanceType::M3Large => "m3.large",
+    Ec2InstanceType::M3Medium => "m3.medium",
+    Ec2InstanceType::M3Xlarge => "m3.xlarge",
+    Ec2InstanceType::M410xlarge => "m4.10xlarge",
+    Ec2InstanceType::M42xlarge => "m4.2xlarge",
+    Ec2InstanceType::M44xlarge => "m4.4xlarge",
+    Ec2InstanceType::M4Large => "m4.large",
+    Ec2InstanceType::M4Xlarge => "m4.xlarge",
+    Ec2InstanceType::M512xlarge => "m5.12xlarge",
+    Ec2InstanceType::M516xlarge => "m5.16xlarge",
+    Ec2InstanceType::M524xlarge => "m5.24xlarge",
+    Ec2InstanceType::M52xlarge => "m5.2xlarge",
+    Ec2InstanceType::M54xlarge => "m5.4xlarge",
+    Ec2InstanceType::M58xlarge => "m5.8xlarge",
+    Ec2InstanceType::M5Large => "m5.large",
+    Ec2InstanceType::M5Xlarge => "m5.xlarge",
+    Ec2InstanceType::M5a12xlarge => "m5a.12xlarge",
+    Ec2InstanceType::M5a16xlarge => "m5a.16xlarge",
+    Ec2InstanceType::M5a24xlarge => "m5a.24xlarge",
+    Ec2InstanceType::M5a2xlarge => "m5a.2xlarge",
+    Ec2InstanceType::M5a4xlarge => "m5a.4xlarge",
+    Ec2InstanceType::M5a8xlarge => "m5a.8xlarge",
+    Ec2InstanceType::M5aLarge => "m5a.large",
+    Ec2InstanceType::M5aXlarge => "m5a.xlarge",
+    Ec2InstanceType::R32xlarge => "r3.2xlarge",
+    Ec2InstanceType::R34xlarge => "r3.4xlarge",
+    Ec2InstanceType::R38xlarge => "r3.8xlarge",
+    Ec2InstanceType::R3Large => "r3.large",
+    Ec2InstanceType::R3Xlarge => "r3.xlarge",
+    Ec2InstanceType::R416xlarge => "r4.16xlarge",
+    Ec2InstanceType::R42xlarge => "r4.2xlarge",
+    Ec2InstanceType::R44xlarge => "r4.4xlarge",
+    Ec2InstanceType::R48xlarge => "r4.8xlarge",
+    Ec2InstanceType::R4Large => "r4.large",
+    Ec2InstanceType::R4Xlarge => "r4.xlarge",
+    Ec2InstanceType::R512xlarge => "r5.12xlarge",
+    Ec2InstanceType::R516xlarge => "r5.16xlarge",
+    Ec2InstanceType::R524xlarge => "r5.24xlarge",
+    Ec2InstanceType::R52xlarge => "r5.2xlarge",
+    Ec2InstanceType::R54xlarge => "r5.4xlarge",
+    Ec2InstanceType::R58xlarge => "r5.8xlarge",
+    Ec2InstanceType::R5Large => "r5.large",
+    Ec2InstanceType::R5Xlarge => "r5.xlarge",
+    Ec2InstanceType::R5a12xlarge => "r5a.12xlarge",
+    Ec2InstanceType::R5a16xlarge => "r5a.16xlarge",
+    Ec2InstanceType::R5a24xlarge => "r5a.24xlarge",
+    Ec2InstanceType::R5a2xlarge => "r5a.2xlarge",
+    Ec2InstanceType::R5a4xlarge => "r5a.4xlarge",
+    Ec2InstanceType::R5a8xlarge => "r5a.8xlarge",
+    Ec2InstanceType::R5aLarge => "r5a.large",
+    Ec2InstanceType::R5aXlarge => "r5a.xlarge",
+    Ec2InstanceType::R5d12xlarge => "r5d.12xlarge",
+    Ec2InstanceType::R5d16xlarge => "r5d.16xlarge",
+    Ec2InstanceType::R5d24xlarge => "r5d.24xlarge",
+    Ec2InstanceType::R5d2xlarge => "r5d.2xlarge",
+    Ec2InstanceType::R5d4xlarge => "r5d.4xlarge",
+    Ec2InstanceType::R5d8xlarge => "r5d.8xlarge",
+    Ec2InstanceType::R5dLarge => "r5d.large",
+    Ec2InstanceType::R5dXlarge => "r5d.xlarge",
+    Ec2InstanceType::T2Large => "t2.large",
+    Ec2InstanceType::T2Medium => "t2.medium",
+    Ec2InstanceType::T2Micro => "t2.micro",
+    Ec2InstanceType::T2Small => "t2.small",
+    Ec2InstanceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["c3.2xlarge", "c3.4xlarge", "c3.8xlarge", "c3.large", "c3.xlarge", "c4.2xlarge", "c4.4xlarge", "c4.8xlarge", "c4.large", "c4.xlarge", "c5.12xlarge", "c5.18xlarge", "c5.24xlarge", "c5.2xlarge", "c5.4xlarge", "c5.9xlarge", "c5.large", "c5.xlarge", "c5a.12xlarge", "c5a.16xlarge", "c5a.24xlarge", "c5a.2xlarge", "c5a.4xlarge", "c5a.8xlarge", "c5a.large", "c5a.xlarge", "c5d.12xlarge", "c5d.18xlarge", "c5d.24xlarge", "c5d.2xlarge", "c5d.4xlarge", "c5d.9xlarge", "c5d.large", "c5d.xlarge", "c6a.12xlarge", "c6a.16xlarge", "c6a.24xlarge", "c6a.2xlarge", "c6a.4xlarge", "c6a.8xlarge", "c6a.large", "c6a.xlarge", "c6i.12xlarge", "c6i.16xlarge", "c6i.24xlarge", "c6i.2xlarge", "c6i.4xlarge", "c6i.8xlarge", "c6i.large", "c6i.xlarge", "m3.2xlarge", "m3.large", "m3.medium", "m3.xlarge", "m4.10xlarge", "m4.2xlarge", "m4.4xlarge", "m4.large", "m4.xlarge", "m5.12xlarge", "m5.16xlarge", "m5.24xlarge", "m5.2xlarge", "m5.4xlarge", "m5.8xlarge", "m5.large", "m5.xlarge", "m5a.12xlarge", "m5a.16xlarge", "m5a.24xlarge", "m5a.2xlarge", "m5a.4xlarge", "m5a.8xlarge", "m5a.large", "m5a.xlarge", "r3.2xlarge", "r3.4xlarge", "r3.8xlarge", "r3.large", "r3.xlarge", "r4.16xlarge", "r4.2xlarge", "r4.4xlarge", "r4.8xlarge", "r4.large", "r4.xlarge", "r5.12xlarge", "r5.16xlarge", "r5.24xlarge", "r5.2xlarge", "r5.4xlarge", "r5.8xlarge", "r5.large", "r5.xlarge", "r5a.12xlarge", "r5a.16xlarge", "r5a.24xlarge", "r5a.2xlarge", "r5a.4xlarge", "r5a.8xlarge", "r5a.large", "r5a.xlarge", "r5d.12xlarge", "r5d.16xlarge", "r5d.24xlarge", "r5d.2xlarge", "r5d.4xlarge", "r5d.8xlarge", "r5d.large", "r5d.xlarge", "t2.large", "t2.medium", "t2.micro", "t2.small"]
+                }
+            }
 impl AsRef<str> for Ec2InstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ComputeStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8382,15 +8336,15 @@ pub enum ComputeStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComputeStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ComputeStatus::Active,
-            "PENDING" => ComputeStatus::Pending,
-            "TERMINATING" => ComputeStatus::Terminating,
-            other => ComputeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ComputeStatus::Active,
+"PENDING" => ComputeStatus::Pending,
+"TERMINATING" => ComputeStatus::Terminating,
+other => ComputeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ComputeStatus {
                 type Err = std::convert::Infallible;
 
@@ -8399,27 +8353,25 @@ impl std::str::FromStr for ComputeStatus {
                 }
             }
 impl ComputeStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComputeStatus::Active => "ACTIVE",
-            ComputeStatus::Pending => "PENDING",
-            ComputeStatus::Terminating => "TERMINATING",
-            ComputeStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "PENDING", "TERMINATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComputeStatus::Active => "ACTIVE",
+    ComputeStatus::Pending => "PENDING",
+    ComputeStatus::Terminating => "TERMINATING",
+    ComputeStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "PENDING", "TERMINATING"]
+                }
+            }
 impl AsRef<str> for ComputeStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Settings for a target-based scaling policy. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. </p>
 #[non_exhaustive]
@@ -8519,14 +8471,14 @@ pub enum PolicyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PolicyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "RuleBased" => PolicyType::RuleBased,
-            "TargetBased" => PolicyType::TargetBased,
-            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "RuleBased" => PolicyType::RuleBased,
+"TargetBased" => PolicyType::TargetBased,
+other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PolicyType {
                 type Err = std::convert::Infallible;
 
@@ -8535,26 +8487,24 @@ impl std::str::FromStr for PolicyType {
                 }
             }
 impl PolicyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PolicyType::RuleBased => "RuleBased",
-            PolicyType::TargetBased => "TargetBased",
-            PolicyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "RuleBased", "TargetBased"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PolicyType::RuleBased => "RuleBased",
+    PolicyType::TargetBased => "TargetBased",
+    PolicyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["RuleBased", "TargetBased"]
+                }
+            }
 impl AsRef<str> for PolicyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `MetricName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8633,24 +8583,24 @@ pub enum MetricName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricName {
-    fn from(s: &str) -> Self {
-        match s {
-            "ActivatingGameSessions" => MetricName::ActivatingGameSessions,
-            "ActiveGameSessions" => MetricName::ActiveGameSessions,
-            "ActiveInstances" => MetricName::ActiveInstances,
-            "AvailableGameSessions" => MetricName::AvailableGameSessions,
-            "AvailablePlayerSessions" => MetricName::AvailablePlayerSessions,
-            "ConcurrentActivatableGameSessions" => MetricName::ConcurrentActivatableGameSessions,
-            "CurrentPlayerSessions" => MetricName::CurrentPlayerSessions,
-            "IdleInstances" => MetricName::IdleInstances,
-            "PercentAvailableGameSessions" => MetricName::PercentAvailableGameSessions,
-            "PercentIdleInstances" => MetricName::PercentIdleInstances,
-            "QueueDepth" => MetricName::QueueDepth,
-            "WaitTime" => MetricName::WaitTime,
-            other => MetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ActivatingGameSessions" => MetricName::ActivatingGameSessions,
+"ActiveGameSessions" => MetricName::ActiveGameSessions,
+"ActiveInstances" => MetricName::ActiveInstances,
+"AvailableGameSessions" => MetricName::AvailableGameSessions,
+"AvailablePlayerSessions" => MetricName::AvailablePlayerSessions,
+"ConcurrentActivatableGameSessions" => MetricName::ConcurrentActivatableGameSessions,
+"CurrentPlayerSessions" => MetricName::CurrentPlayerSessions,
+"IdleInstances" => MetricName::IdleInstances,
+"PercentAvailableGameSessions" => MetricName::PercentAvailableGameSessions,
+"PercentIdleInstances" => MetricName::PercentIdleInstances,
+"QueueDepth" => MetricName::QueueDepth,
+"WaitTime" => MetricName::WaitTime,
+other => MetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricName {
                 type Err = std::convert::Infallible;
 
@@ -8659,36 +8609,34 @@ impl std::str::FromStr for MetricName {
                 }
             }
 impl MetricName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricName::ActivatingGameSessions => "ActivatingGameSessions",
-            MetricName::ActiveGameSessions => "ActiveGameSessions",
-            MetricName::ActiveInstances => "ActiveInstances",
-            MetricName::AvailableGameSessions => "AvailableGameSessions",
-            MetricName::AvailablePlayerSessions => "AvailablePlayerSessions",
-            MetricName::ConcurrentActivatableGameSessions => "ConcurrentActivatableGameSessions",
-            MetricName::CurrentPlayerSessions => "CurrentPlayerSessions",
-            MetricName::IdleInstances => "IdleInstances",
-            MetricName::PercentAvailableGameSessions => "PercentAvailableGameSessions",
-            MetricName::PercentIdleInstances => "PercentIdleInstances",
-            MetricName::QueueDepth => "QueueDepth",
-            MetricName::WaitTime => "WaitTime",
-            MetricName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ActivatingGameSessions", "ActiveGameSessions", "ActiveInstances", "AvailableGameSessions", "AvailablePlayerSessions", "ConcurrentActivatableGameSessions", "CurrentPlayerSessions", "IdleInstances", "PercentAvailableGameSessions", "PercentIdleInstances", "QueueDepth", "WaitTime"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricName::ActivatingGameSessions => "ActivatingGameSessions",
+    MetricName::ActiveGameSessions => "ActiveGameSessions",
+    MetricName::ActiveInstances => "ActiveInstances",
+    MetricName::AvailableGameSessions => "AvailableGameSessions",
+    MetricName::AvailablePlayerSessions => "AvailablePlayerSessions",
+    MetricName::ConcurrentActivatableGameSessions => "ConcurrentActivatableGameSessions",
+    MetricName::CurrentPlayerSessions => "CurrentPlayerSessions",
+    MetricName::IdleInstances => "IdleInstances",
+    MetricName::PercentAvailableGameSessions => "PercentAvailableGameSessions",
+    MetricName::PercentIdleInstances => "PercentIdleInstances",
+    MetricName::QueueDepth => "QueueDepth",
+    MetricName::WaitTime => "WaitTime",
+    MetricName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ActivatingGameSessions", "ActiveGameSessions", "ActiveInstances", "AvailableGameSessions", "AvailablePlayerSessions", "ConcurrentActivatableGameSessions", "CurrentPlayerSessions", "IdleInstances", "PercentAvailableGameSessions", "PercentIdleInstances", "QueueDepth", "WaitTime"]
+                }
+            }
 impl AsRef<str> for MetricName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ComparisonOperatorType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8743,16 +8691,16 @@ pub enum ComparisonOperatorType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComparisonOperatorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "GreaterThanOrEqualToThreshold" => ComparisonOperatorType::GreaterThanOrEqualToThreshold,
-            "GreaterThanThreshold" => ComparisonOperatorType::GreaterThanThreshold,
-            "LessThanOrEqualToThreshold" => ComparisonOperatorType::LessThanOrEqualToThreshold,
-            "LessThanThreshold" => ComparisonOperatorType::LessThanThreshold,
-            other => ComparisonOperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "GreaterThanOrEqualToThreshold" => ComparisonOperatorType::GreaterThanOrEqualToThreshold,
+"GreaterThanThreshold" => ComparisonOperatorType::GreaterThanThreshold,
+"LessThanOrEqualToThreshold" => ComparisonOperatorType::LessThanOrEqualToThreshold,
+"LessThanThreshold" => ComparisonOperatorType::LessThanThreshold,
+other => ComparisonOperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ComparisonOperatorType {
                 type Err = std::convert::Infallible;
 
@@ -8761,28 +8709,26 @@ impl std::str::FromStr for ComparisonOperatorType {
                 }
             }
 impl ComparisonOperatorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComparisonOperatorType::GreaterThanOrEqualToThreshold => "GreaterThanOrEqualToThreshold",
-            ComparisonOperatorType::GreaterThanThreshold => "GreaterThanThreshold",
-            ComparisonOperatorType::LessThanOrEqualToThreshold => "LessThanOrEqualToThreshold",
-            ComparisonOperatorType::LessThanThreshold => "LessThanThreshold",
-            ComparisonOperatorType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "GreaterThanOrEqualToThreshold", "GreaterThanThreshold", "LessThanOrEqualToThreshold", "LessThanThreshold"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComparisonOperatorType::GreaterThanOrEqualToThreshold => "GreaterThanOrEqualToThreshold",
+    ComparisonOperatorType::GreaterThanThreshold => "GreaterThanThreshold",
+    ComparisonOperatorType::LessThanOrEqualToThreshold => "LessThanOrEqualToThreshold",
+    ComparisonOperatorType::LessThanThreshold => "LessThanThreshold",
+    ComparisonOperatorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GreaterThanOrEqualToThreshold", "GreaterThanThreshold", "LessThanOrEqualToThreshold", "LessThanThreshold"]
+                }
+            }
 impl AsRef<str> for ComparisonOperatorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ScalingAdjustmentType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8834,15 +8780,15 @@ pub enum ScalingAdjustmentType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalingAdjustmentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ChangeInCapacity" => ScalingAdjustmentType::ChangeInCapacity,
-            "ExactCapacity" => ScalingAdjustmentType::ExactCapacity,
-            "PercentChangeInCapacity" => ScalingAdjustmentType::PercentChangeInCapacity,
-            other => ScalingAdjustmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ChangeInCapacity" => ScalingAdjustmentType::ChangeInCapacity,
+"ExactCapacity" => ScalingAdjustmentType::ExactCapacity,
+"PercentChangeInCapacity" => ScalingAdjustmentType::PercentChangeInCapacity,
+other => ScalingAdjustmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScalingAdjustmentType {
                 type Err = std::convert::Infallible;
 
@@ -8851,27 +8797,25 @@ impl std::str::FromStr for ScalingAdjustmentType {
                 }
             }
 impl ScalingAdjustmentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalingAdjustmentType::ChangeInCapacity => "ChangeInCapacity",
-            ScalingAdjustmentType::ExactCapacity => "ExactCapacity",
-            ScalingAdjustmentType::PercentChangeInCapacity => "PercentChangeInCapacity",
-            ScalingAdjustmentType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ChangeInCapacity", "ExactCapacity", "PercentChangeInCapacity"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalingAdjustmentType::ChangeInCapacity => "ChangeInCapacity",
+    ScalingAdjustmentType::ExactCapacity => "ExactCapacity",
+    ScalingAdjustmentType::PercentChangeInCapacity => "PercentChangeInCapacity",
+    ScalingAdjustmentType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ChangeInCapacity", "ExactCapacity", "PercentChangeInCapacity"]
+                }
+            }
 impl AsRef<str> for ScalingAdjustmentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Properties of a location</p>
 #[non_exhaustive]
@@ -9001,14 +8945,14 @@ pub enum LocationFilter {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LocationFilter {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS" => LocationFilter::Aws,
-            "CUSTOM" => LocationFilter::Custom,
-            other => LocationFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS" => LocationFilter::Aws,
+"CUSTOM" => LocationFilter::Custom,
+other => LocationFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LocationFilter {
                 type Err = std::convert::Infallible;
 
@@ -9017,26 +8961,24 @@ impl std::str::FromStr for LocationFilter {
                 }
             }
 impl LocationFilter {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LocationFilter::Aws => "AWS",
-            LocationFilter::Custom => "CUSTOM",
-            LocationFilter::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS", "CUSTOM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LocationFilter::Aws => "AWS",
+    LocationFilter::Custom => "CUSTOM",
+    LocationFilter::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS", "CUSTOM"]
+                }
+            }
 impl AsRef<str> for LocationFilter {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -9085,14 +9027,14 @@ pub enum SortOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASCENDING" => SortOrder::Ascending,
-            "DESCENDING" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASCENDING" => SortOrder::Ascending,
+"DESCENDING" => SortOrder::Descending,
+other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortOrder {
                 type Err = std::convert::Infallible;
 
@@ -9101,26 +9043,24 @@ impl std::str::FromStr for SortOrder {
                 }
             }
 impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Ascending => "ASCENDING",
-            SortOrder::Descending => "DESCENDING",
-            SortOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASCENDING", "DESCENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortOrder::Ascending => "ASCENDING",
+    SortOrder::Descending => "DESCENDING",
+    SortOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASCENDING", "DESCENDING"]
+                }
+            }
 impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information required to remotely connect to a fleet instance. </p>
 #[non_exhaustive]
@@ -10181,13 +10121,13 @@ pub enum LocationUpdateStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LocationUpdateStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "PENDING_UPDATE" => LocationUpdateStatus::PendingUpdate,
-            other => LocationUpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PENDING_UPDATE" => LocationUpdateStatus::PendingUpdate,
+other => LocationUpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LocationUpdateStatus {
                 type Err = std::convert::Infallible;
 
@@ -10196,25 +10136,23 @@ impl std::str::FromStr for LocationUpdateStatus {
                 }
             }
 impl LocationUpdateStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LocationUpdateStatus::PendingUpdate => "PENDING_UPDATE",
-            LocationUpdateStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PENDING_UPDATE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LocationUpdateStatus::PendingUpdate => "PENDING_UPDATE",
+    LocationUpdateStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PENDING_UPDATE"]
+                }
+            }
 impl AsRef<str> for LocationUpdateStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ScalingStatusType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -10278,19 +10216,19 @@ pub enum ScalingStatusType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalingStatusType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ScalingStatusType::Active,
-            "DELETED" => ScalingStatusType::Deleted,
-            "DELETE_REQUESTED" => ScalingStatusType::DeleteRequested,
-            "DELETING" => ScalingStatusType::Deleting,
-            "ERROR" => ScalingStatusType::Error,
-            "UPDATE_REQUESTED" => ScalingStatusType::UpdateRequested,
-            "UPDATING" => ScalingStatusType::Updating,
-            other => ScalingStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ScalingStatusType::Active,
+"DELETED" => ScalingStatusType::Deleted,
+"DELETE_REQUESTED" => ScalingStatusType::DeleteRequested,
+"DELETING" => ScalingStatusType::Deleting,
+"ERROR" => ScalingStatusType::Error,
+"UPDATE_REQUESTED" => ScalingStatusType::UpdateRequested,
+"UPDATING" => ScalingStatusType::Updating,
+other => ScalingStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScalingStatusType {
                 type Err = std::convert::Infallible;
 
@@ -10299,31 +10237,29 @@ impl std::str::FromStr for ScalingStatusType {
                 }
             }
 impl ScalingStatusType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalingStatusType::Active => "ACTIVE",
-            ScalingStatusType::Deleted => "DELETED",
-            ScalingStatusType::DeleteRequested => "DELETE_REQUESTED",
-            ScalingStatusType::Deleting => "DELETING",
-            ScalingStatusType::Error => "ERROR",
-            ScalingStatusType::UpdateRequested => "UPDATE_REQUESTED",
-            ScalingStatusType::Updating => "UPDATING",
-            ScalingStatusType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "DELETED", "DELETE_REQUESTED", "DELETING", "ERROR", "UPDATE_REQUESTED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalingStatusType::Active => "ACTIVE",
+    ScalingStatusType::Deleted => "DELETED",
+    ScalingStatusType::DeleteRequested => "DELETE_REQUESTED",
+    ScalingStatusType::Deleting => "DELETING",
+    ScalingStatusType::Error => "ERROR",
+    ScalingStatusType::UpdateRequested => "UPDATE_REQUESTED",
+    ScalingStatusType::Updating => "UPDATING",
+    ScalingStatusType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "DELETED", "DELETE_REQUESTED", "DELETING", "ERROR", "UPDATE_REQUESTED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for ScalingStatusType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a player session. Player sessions are created either for a specific game session, or as part of a game session placement or matchmaking request. A player session can represents a reserved player slot in a game session (when status is <code>RESERVED</code>) or actual player activity in a game session (when status is <code>ACTIVE</code>). A player session object, including player data, is automatically passed to a game session when the player connects to the game session and is validated. After the game session ends, player sessions information is retained for 30 days and then removed.</p> 
 /// <p> <b>Related actions</b> </p> 
@@ -10723,16 +10659,16 @@ pub enum PlayerSessionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlayerSessionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => PlayerSessionStatus::Active,
-            "COMPLETED" => PlayerSessionStatus::Completed,
-            "RESERVED" => PlayerSessionStatus::Reserved,
-            "TIMEDOUT" => PlayerSessionStatus::Timedout,
-            other => PlayerSessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => PlayerSessionStatus::Active,
+"COMPLETED" => PlayerSessionStatus::Completed,
+"RESERVED" => PlayerSessionStatus::Reserved,
+"TIMEDOUT" => PlayerSessionStatus::Timedout,
+other => PlayerSessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PlayerSessionStatus {
                 type Err = std::convert::Infallible;
 
@@ -10741,28 +10677,26 @@ impl std::str::FromStr for PlayerSessionStatus {
                 }
             }
 impl PlayerSessionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PlayerSessionStatus::Active => "ACTIVE",
-            PlayerSessionStatus::Completed => "COMPLETED",
-            PlayerSessionStatus::Reserved => "RESERVED",
-            PlayerSessionStatus::Timedout => "TIMEDOUT",
-            PlayerSessionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "COMPLETED", "RESERVED", "TIMEDOUT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PlayerSessionStatus::Active => "ACTIVE",
+    PlayerSessionStatus::Completed => "COMPLETED",
+    PlayerSessionStatus::Reserved => "RESERVED",
+    PlayerSessionStatus::Timedout => "TIMEDOUT",
+    PlayerSessionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "COMPLETED", "RESERVED", "TIMEDOUT"]
+                }
+            }
 impl AsRef<str> for PlayerSessionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches.</p> 
 /// <p>A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a FlexMatch rule set</a>. </p> 
@@ -11254,15 +11188,15 @@ pub enum InstanceStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => InstanceStatus::Active,
-            "PENDING" => InstanceStatus::Pending,
-            "TERMINATING" => InstanceStatus::Terminating,
-            other => InstanceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => InstanceStatus::Active,
+"PENDING" => InstanceStatus::Pending,
+"TERMINATING" => InstanceStatus::Terminating,
+other => InstanceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InstanceStatus {
                 type Err = std::convert::Infallible;
 
@@ -11271,27 +11205,25 @@ impl std::str::FromStr for InstanceStatus {
                 }
             }
 impl InstanceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceStatus::Active => "ACTIVE",
-            InstanceStatus::Pending => "PENDING",
-            InstanceStatus::Terminating => "TERMINATING",
-            InstanceStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "PENDING", "TERMINATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceStatus::Active => "ACTIVE",
+    InstanceStatus::Pending => "PENDING",
+    InstanceStatus::Terminating => "TERMINATING",
+    InstanceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "PENDING", "TERMINATING"]
+                }
+            }
 impl AsRef<str> for InstanceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A game session's properties plus the protection policy currently in force.</p>
 #[non_exhaustive]
@@ -11537,15 +11469,15 @@ pub enum GameServerInstanceStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameServerInstanceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => GameServerInstanceStatus::Active,
-            "DRAINING" => GameServerInstanceStatus::Draining,
-            "SPOT_TERMINATING" => GameServerInstanceStatus::SpotTerminating,
-            other => GameServerInstanceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => GameServerInstanceStatus::Active,
+"DRAINING" => GameServerInstanceStatus::Draining,
+"SPOT_TERMINATING" => GameServerInstanceStatus::SpotTerminating,
+other => GameServerInstanceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameServerInstanceStatus {
                 type Err = std::convert::Infallible;
 
@@ -11554,27 +11486,25 @@ impl std::str::FromStr for GameServerInstanceStatus {
                 }
             }
 impl GameServerInstanceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameServerInstanceStatus::Active => "ACTIVE",
-            GameServerInstanceStatus::Draining => "DRAINING",
-            GameServerInstanceStatus::SpotTerminating => "SPOT_TERMINATING",
-            GameServerInstanceStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "DRAINING", "SPOT_TERMINATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameServerInstanceStatus::Active => "ACTIVE",
+    GameServerInstanceStatus::Draining => "DRAINING",
+    GameServerInstanceStatus::SpotTerminating => "SPOT_TERMINATING",
+    GameServerInstanceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "DRAINING", "SPOT_TERMINATING"]
+                }
+            }
 impl AsRef<str> for GameServerInstanceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Current resource utilization statistics in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region.</p> 
 /// <p> <b>Related actions</b> </p>
@@ -12300,22 +12230,22 @@ pub enum FleetStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FleetStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVATING" => FleetStatus::Activating,
-            "ACTIVE" => FleetStatus::Active,
-            "BUILDING" => FleetStatus::Building,
-            "DELETING" => FleetStatus::Deleting,
-            "DOWNLOADING" => FleetStatus::Downloading,
-            "ERROR" => FleetStatus::Error,
-            "NEW" => FleetStatus::New,
-            "NOT_FOUND" => FleetStatus::NotFound,
-            "TERMINATED" => FleetStatus::Terminated,
-            "VALIDATING" => FleetStatus::Validating,
-            other => FleetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVATING" => FleetStatus::Activating,
+"ACTIVE" => FleetStatus::Active,
+"BUILDING" => FleetStatus::Building,
+"DELETING" => FleetStatus::Deleting,
+"DOWNLOADING" => FleetStatus::Downloading,
+"ERROR" => FleetStatus::Error,
+"NEW" => FleetStatus::New,
+"NOT_FOUND" => FleetStatus::NotFound,
+"TERMINATED" => FleetStatus::Terminated,
+"VALIDATING" => FleetStatus::Validating,
+other => FleetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FleetStatus {
                 type Err = std::convert::Infallible;
 
@@ -12324,34 +12254,32 @@ impl std::str::FromStr for FleetStatus {
                 }
             }
 impl FleetStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FleetStatus::Activating => "ACTIVATING",
-            FleetStatus::Active => "ACTIVE",
-            FleetStatus::Building => "BUILDING",
-            FleetStatus::Deleting => "DELETING",
-            FleetStatus::Downloading => "DOWNLOADING",
-            FleetStatus::Error => "ERROR",
-            FleetStatus::New => "NEW",
-            FleetStatus::NotFound => "NOT_FOUND",
-            FleetStatus::Terminated => "TERMINATED",
-            FleetStatus::Validating => "VALIDATING",
-            FleetStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVATING", "ACTIVE", "BUILDING", "DELETING", "DOWNLOADING", "ERROR", "NEW", "NOT_FOUND", "TERMINATED", "VALIDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FleetStatus::Activating => "ACTIVATING",
+    FleetStatus::Active => "ACTIVE",
+    FleetStatus::Building => "BUILDING",
+    FleetStatus::Deleting => "DELETING",
+    FleetStatus::Downloading => "DOWNLOADING",
+    FleetStatus::Error => "ERROR",
+    FleetStatus::New => "NEW",
+    FleetStatus::NotFound => "NOT_FOUND",
+    FleetStatus::Terminated => "TERMINATED",
+    FleetStatus::Validating => "VALIDATING",
+    FleetStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVATING", "ACTIVE", "BUILDING", "DELETING", "DOWNLOADING", "ERROR", "NEW", "NOT_FOUND", "TERMINATED", "VALIDATING"]
+                }
+            }
 impl AsRef<str> for FleetStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Log entry describing an event that involves GameLift resources (such as a fleet). In addition to tracking activity, event codes and messages can provide additional information for troubleshooting and debugging problems.</p>
 #[non_exhaustive]
@@ -12857,46 +12785,46 @@ pub enum EventCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "FLEET_ACTIVATION_FAILED" => EventCode::FleetActivationFailed,
-            "FLEET_ACTIVATION_FAILED_NO_INSTANCES" => EventCode::FleetActivationFailedNoInstances,
-            "FLEET_BINARY_DOWNLOAD_FAILED" => EventCode::FleetBinaryDownloadFailed,
-            "FLEET_CREATED" => EventCode::FleetCreated,
-            "FLEET_CREATION_EXTRACTING_BUILD" => EventCode::FleetCreationExtractingBuild,
-            "FLEET_CREATION_RUNNING_INSTALLER" => EventCode::FleetCreationRunningInstaller,
-            "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG" => EventCode::FleetCreationValidatingRuntimeConfig,
-            "FLEET_DELETED" => EventCode::FleetDeleted,
-            "FLEET_INITIALIZATION_FAILED" => EventCode::FleetInitializationFailed,
-            "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED" => EventCode::FleetNewGameSessionProtectionPolicyUpdated,
-            "FLEET_SCALING_EVENT" => EventCode::FleetScalingEvent,
-            "FLEET_STATE_ACTIVATING" => EventCode::FleetStateActivating,
-            "FLEET_STATE_ACTIVE" => EventCode::FleetStateActive,
-            "FLEET_STATE_BUILDING" => EventCode::FleetStateBuilding,
-            "FLEET_STATE_DOWNLOADING" => EventCode::FleetStateDownloading,
-            "FLEET_STATE_ERROR" => EventCode::FleetStateError,
-            "FLEET_STATE_VALIDATING" => EventCode::FleetStateValidating,
-            "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE" => EventCode::FleetValidationExecutableRuntimeFailure,
-            "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND" => EventCode::FleetValidationLaunchPathNotFound,
-            "FLEET_VALIDATION_TIMED_OUT" => EventCode::FleetValidationTimedOut,
-            "FLEET_VPC_PEERING_DELETED" => EventCode::FleetVpcPeeringDeleted,
-            "FLEET_VPC_PEERING_FAILED" => EventCode::FleetVpcPeeringFailed,
-            "FLEET_VPC_PEERING_SUCCEEDED" => EventCode::FleetVpcPeeringSucceeded,
-            "GAME_SESSION_ACTIVATION_TIMEOUT" => EventCode::GameSessionActivationTimeout,
-            "GENERIC_EVENT" => EventCode::GenericEvent,
-            "INSTANCE_INTERRUPTED" => EventCode::InstanceInterrupted,
-            "INSTANCE_RECYCLED" => EventCode::InstanceRecycled,
-            "SERVER_PROCESS_CRASHED" => EventCode::ServerProcessCrashed,
-            "SERVER_PROCESS_FORCE_TERMINATED" => EventCode::ServerProcessForceTerminated,
-            "SERVER_PROCESS_INVALID_PATH" => EventCode::ServerProcessInvalidPath,
-            "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT" => EventCode::ServerProcessProcessExitTimeout,
-            "SERVER_PROCESS_PROCESS_READY_TIMEOUT" => EventCode::ServerProcessProcessReadyTimeout,
-            "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT" => EventCode::ServerProcessSdkInitializationTimeout,
-            "SERVER_PROCESS_TERMINATED_UNHEALTHY" => EventCode::ServerProcessTerminatedUnhealthy,
-            other => EventCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FLEET_ACTIVATION_FAILED" => EventCode::FleetActivationFailed,
+"FLEET_ACTIVATION_FAILED_NO_INSTANCES" => EventCode::FleetActivationFailedNoInstances,
+"FLEET_BINARY_DOWNLOAD_FAILED" => EventCode::FleetBinaryDownloadFailed,
+"FLEET_CREATED" => EventCode::FleetCreated,
+"FLEET_CREATION_EXTRACTING_BUILD" => EventCode::FleetCreationExtractingBuild,
+"FLEET_CREATION_RUNNING_INSTALLER" => EventCode::FleetCreationRunningInstaller,
+"FLEET_CREATION_VALIDATING_RUNTIME_CONFIG" => EventCode::FleetCreationValidatingRuntimeConfig,
+"FLEET_DELETED" => EventCode::FleetDeleted,
+"FLEET_INITIALIZATION_FAILED" => EventCode::FleetInitializationFailed,
+"FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED" => EventCode::FleetNewGameSessionProtectionPolicyUpdated,
+"FLEET_SCALING_EVENT" => EventCode::FleetScalingEvent,
+"FLEET_STATE_ACTIVATING" => EventCode::FleetStateActivating,
+"FLEET_STATE_ACTIVE" => EventCode::FleetStateActive,
+"FLEET_STATE_BUILDING" => EventCode::FleetStateBuilding,
+"FLEET_STATE_DOWNLOADING" => EventCode::FleetStateDownloading,
+"FLEET_STATE_ERROR" => EventCode::FleetStateError,
+"FLEET_STATE_VALIDATING" => EventCode::FleetStateValidating,
+"FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE" => EventCode::FleetValidationExecutableRuntimeFailure,
+"FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND" => EventCode::FleetValidationLaunchPathNotFound,
+"FLEET_VALIDATION_TIMED_OUT" => EventCode::FleetValidationTimedOut,
+"FLEET_VPC_PEERING_DELETED" => EventCode::FleetVpcPeeringDeleted,
+"FLEET_VPC_PEERING_FAILED" => EventCode::FleetVpcPeeringFailed,
+"FLEET_VPC_PEERING_SUCCEEDED" => EventCode::FleetVpcPeeringSucceeded,
+"GAME_SESSION_ACTIVATION_TIMEOUT" => EventCode::GameSessionActivationTimeout,
+"GENERIC_EVENT" => EventCode::GenericEvent,
+"INSTANCE_INTERRUPTED" => EventCode::InstanceInterrupted,
+"INSTANCE_RECYCLED" => EventCode::InstanceRecycled,
+"SERVER_PROCESS_CRASHED" => EventCode::ServerProcessCrashed,
+"SERVER_PROCESS_FORCE_TERMINATED" => EventCode::ServerProcessForceTerminated,
+"SERVER_PROCESS_INVALID_PATH" => EventCode::ServerProcessInvalidPath,
+"SERVER_PROCESS_PROCESS_EXIT_TIMEOUT" => EventCode::ServerProcessProcessExitTimeout,
+"SERVER_PROCESS_PROCESS_READY_TIMEOUT" => EventCode::ServerProcessProcessReadyTimeout,
+"SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT" => EventCode::ServerProcessSdkInitializationTimeout,
+"SERVER_PROCESS_TERMINATED_UNHEALTHY" => EventCode::ServerProcessTerminatedUnhealthy,
+other => EventCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EventCode {
                 type Err = std::convert::Infallible;
 
@@ -12905,58 +12833,56 @@ impl std::str::FromStr for EventCode {
                 }
             }
 impl EventCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventCode::FleetActivationFailed => "FLEET_ACTIVATION_FAILED",
-            EventCode::FleetActivationFailedNoInstances => "FLEET_ACTIVATION_FAILED_NO_INSTANCES",
-            EventCode::FleetBinaryDownloadFailed => "FLEET_BINARY_DOWNLOAD_FAILED",
-            EventCode::FleetCreated => "FLEET_CREATED",
-            EventCode::FleetCreationExtractingBuild => "FLEET_CREATION_EXTRACTING_BUILD",
-            EventCode::FleetCreationRunningInstaller => "FLEET_CREATION_RUNNING_INSTALLER",
-            EventCode::FleetCreationValidatingRuntimeConfig => "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG",
-            EventCode::FleetDeleted => "FLEET_DELETED",
-            EventCode::FleetInitializationFailed => "FLEET_INITIALIZATION_FAILED",
-            EventCode::FleetNewGameSessionProtectionPolicyUpdated => "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED",
-            EventCode::FleetScalingEvent => "FLEET_SCALING_EVENT",
-            EventCode::FleetStateActivating => "FLEET_STATE_ACTIVATING",
-            EventCode::FleetStateActive => "FLEET_STATE_ACTIVE",
-            EventCode::FleetStateBuilding => "FLEET_STATE_BUILDING",
-            EventCode::FleetStateDownloading => "FLEET_STATE_DOWNLOADING",
-            EventCode::FleetStateError => "FLEET_STATE_ERROR",
-            EventCode::FleetStateValidating => "FLEET_STATE_VALIDATING",
-            EventCode::FleetValidationExecutableRuntimeFailure => "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE",
-            EventCode::FleetValidationLaunchPathNotFound => "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND",
-            EventCode::FleetValidationTimedOut => "FLEET_VALIDATION_TIMED_OUT",
-            EventCode::FleetVpcPeeringDeleted => "FLEET_VPC_PEERING_DELETED",
-            EventCode::FleetVpcPeeringFailed => "FLEET_VPC_PEERING_FAILED",
-            EventCode::FleetVpcPeeringSucceeded => "FLEET_VPC_PEERING_SUCCEEDED",
-            EventCode::GameSessionActivationTimeout => "GAME_SESSION_ACTIVATION_TIMEOUT",
-            EventCode::GenericEvent => "GENERIC_EVENT",
-            EventCode::InstanceInterrupted => "INSTANCE_INTERRUPTED",
-            EventCode::InstanceRecycled => "INSTANCE_RECYCLED",
-            EventCode::ServerProcessCrashed => "SERVER_PROCESS_CRASHED",
-            EventCode::ServerProcessForceTerminated => "SERVER_PROCESS_FORCE_TERMINATED",
-            EventCode::ServerProcessInvalidPath => "SERVER_PROCESS_INVALID_PATH",
-            EventCode::ServerProcessProcessExitTimeout => "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT",
-            EventCode::ServerProcessProcessReadyTimeout => "SERVER_PROCESS_PROCESS_READY_TIMEOUT",
-            EventCode::ServerProcessSdkInitializationTimeout => "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT",
-            EventCode::ServerProcessTerminatedUnhealthy => "SERVER_PROCESS_TERMINATED_UNHEALTHY",
-            EventCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FLEET_ACTIVATION_FAILED", "FLEET_ACTIVATION_FAILED_NO_INSTANCES", "FLEET_BINARY_DOWNLOAD_FAILED", "FLEET_CREATED", "FLEET_CREATION_EXTRACTING_BUILD", "FLEET_CREATION_RUNNING_INSTALLER", "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG", "FLEET_DELETED", "FLEET_INITIALIZATION_FAILED", "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED", "FLEET_SCALING_EVENT", "FLEET_STATE_ACTIVATING", "FLEET_STATE_ACTIVE", "FLEET_STATE_BUILDING", "FLEET_STATE_DOWNLOADING", "FLEET_STATE_ERROR", "FLEET_STATE_VALIDATING", "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE", "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND", "FLEET_VALIDATION_TIMED_OUT", "FLEET_VPC_PEERING_DELETED", "FLEET_VPC_PEERING_FAILED", "FLEET_VPC_PEERING_SUCCEEDED", "GAME_SESSION_ACTIVATION_TIMEOUT", "GENERIC_EVENT", "INSTANCE_INTERRUPTED", "INSTANCE_RECYCLED", "SERVER_PROCESS_CRASHED", "SERVER_PROCESS_FORCE_TERMINATED", "SERVER_PROCESS_INVALID_PATH", "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT", "SERVER_PROCESS_PROCESS_READY_TIMEOUT", "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT", "SERVER_PROCESS_TERMINATED_UNHEALTHY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventCode::FleetActivationFailed => "FLEET_ACTIVATION_FAILED",
+    EventCode::FleetActivationFailedNoInstances => "FLEET_ACTIVATION_FAILED_NO_INSTANCES",
+    EventCode::FleetBinaryDownloadFailed => "FLEET_BINARY_DOWNLOAD_FAILED",
+    EventCode::FleetCreated => "FLEET_CREATED",
+    EventCode::FleetCreationExtractingBuild => "FLEET_CREATION_EXTRACTING_BUILD",
+    EventCode::FleetCreationRunningInstaller => "FLEET_CREATION_RUNNING_INSTALLER",
+    EventCode::FleetCreationValidatingRuntimeConfig => "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG",
+    EventCode::FleetDeleted => "FLEET_DELETED",
+    EventCode::FleetInitializationFailed => "FLEET_INITIALIZATION_FAILED",
+    EventCode::FleetNewGameSessionProtectionPolicyUpdated => "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED",
+    EventCode::FleetScalingEvent => "FLEET_SCALING_EVENT",
+    EventCode::FleetStateActivating => "FLEET_STATE_ACTIVATING",
+    EventCode::FleetStateActive => "FLEET_STATE_ACTIVE",
+    EventCode::FleetStateBuilding => "FLEET_STATE_BUILDING",
+    EventCode::FleetStateDownloading => "FLEET_STATE_DOWNLOADING",
+    EventCode::FleetStateError => "FLEET_STATE_ERROR",
+    EventCode::FleetStateValidating => "FLEET_STATE_VALIDATING",
+    EventCode::FleetValidationExecutableRuntimeFailure => "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE",
+    EventCode::FleetValidationLaunchPathNotFound => "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND",
+    EventCode::FleetValidationTimedOut => "FLEET_VALIDATION_TIMED_OUT",
+    EventCode::FleetVpcPeeringDeleted => "FLEET_VPC_PEERING_DELETED",
+    EventCode::FleetVpcPeeringFailed => "FLEET_VPC_PEERING_FAILED",
+    EventCode::FleetVpcPeeringSucceeded => "FLEET_VPC_PEERING_SUCCEEDED",
+    EventCode::GameSessionActivationTimeout => "GAME_SESSION_ACTIVATION_TIMEOUT",
+    EventCode::GenericEvent => "GENERIC_EVENT",
+    EventCode::InstanceInterrupted => "INSTANCE_INTERRUPTED",
+    EventCode::InstanceRecycled => "INSTANCE_RECYCLED",
+    EventCode::ServerProcessCrashed => "SERVER_PROCESS_CRASHED",
+    EventCode::ServerProcessForceTerminated => "SERVER_PROCESS_FORCE_TERMINATED",
+    EventCode::ServerProcessInvalidPath => "SERVER_PROCESS_INVALID_PATH",
+    EventCode::ServerProcessProcessExitTimeout => "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT",
+    EventCode::ServerProcessProcessReadyTimeout => "SERVER_PROCESS_PROCESS_READY_TIMEOUT",
+    EventCode::ServerProcessSdkInitializationTimeout => "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT",
+    EventCode::ServerProcessTerminatedUnhealthy => "SERVER_PROCESS_TERMINATED_UNHEALTHY",
+    EventCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FLEET_ACTIVATION_FAILED", "FLEET_ACTIVATION_FAILED_NO_INSTANCES", "FLEET_BINARY_DOWNLOAD_FAILED", "FLEET_CREATED", "FLEET_CREATION_EXTRACTING_BUILD", "FLEET_CREATION_RUNNING_INSTALLER", "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG", "FLEET_DELETED", "FLEET_INITIALIZATION_FAILED", "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED", "FLEET_SCALING_EVENT", "FLEET_STATE_ACTIVATING", "FLEET_STATE_ACTIVE", "FLEET_STATE_BUILDING", "FLEET_STATE_DOWNLOADING", "FLEET_STATE_ERROR", "FLEET_STATE_VALIDATING", "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE", "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND", "FLEET_VALIDATION_TIMED_OUT", "FLEET_VPC_PEERING_DELETED", "FLEET_VPC_PEERING_FAILED", "FLEET_VPC_PEERING_SUCCEEDED", "GAME_SESSION_ACTIVATION_TIMEOUT", "GENERIC_EVENT", "INSTANCE_INTERRUPTED", "INSTANCE_RECYCLED", "SERVER_PROCESS_CRASHED", "SERVER_PROCESS_FORCE_TERMINATED", "SERVER_PROCESS_INVALID_PATH", "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT", "SERVER_PROCESS_PROCESS_READY_TIMEOUT", "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT", "SERVER_PROCESS_TERMINATED_UNHEALTHY"]
+                }
+            }
 impl AsRef<str> for EventCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a GameLift fleet of game hosting resources.</p> 
 /// <p> <b>Related actions</b> </p>
@@ -13594,14 +13520,14 @@ pub enum ComputeType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComputeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANYWHERE" => ComputeType::Anywhere,
-            "EC2" => ComputeType::Ec2,
-            other => ComputeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ANYWHERE" => ComputeType::Anywhere,
+"EC2" => ComputeType::Ec2,
+other => ComputeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ComputeType {
                 type Err = std::convert::Infallible;
 
@@ -13610,26 +13536,24 @@ impl std::str::FromStr for ComputeType {
                 }
             }
 impl ComputeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComputeType::Anywhere => "ANYWHERE",
-            ComputeType::Ec2 => "EC2",
-            ComputeType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANYWHERE", "EC2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComputeType::Anywhere => "ANYWHERE",
+    ComputeType::Ec2 => "EC2",
+    ComputeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANYWHERE", "EC2"]
+                }
+            }
 impl AsRef<str> for ComputeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
 #[non_exhaustive]
@@ -13748,14 +13672,14 @@ pub enum CertificateType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CertificateType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => CertificateType::Disabled,
-            "GENERATED" => CertificateType::Generated,
-            other => CertificateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => CertificateType::Disabled,
+"GENERATED" => CertificateType::Generated,
+other => CertificateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CertificateType {
                 type Err = std::convert::Infallible;
 
@@ -13764,26 +13688,24 @@ impl std::str::FromStr for CertificateType {
                 }
             }
 impl CertificateType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CertificateType::Disabled => "DISABLED",
-            CertificateType::Generated => "GENERATED",
-            CertificateType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED", "GENERATED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CertificateType::Disabled => "DISABLED",
+    CertificateType::Generated => "GENERATED",
+    CertificateType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "GENERATED"]
+                }
+            }
 impl AsRef<str> for CertificateType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `FleetType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -13832,14 +13754,14 @@ pub enum FleetType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FleetType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ON_DEMAND" => FleetType::OnDemand,
-            "SPOT" => FleetType::Spot,
-            other => FleetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ON_DEMAND" => FleetType::OnDemand,
+"SPOT" => FleetType::Spot,
+other => FleetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FleetType {
                 type Err = std::convert::Infallible;
 
@@ -13848,26 +13770,24 @@ impl std::str::FromStr for FleetType {
                 }
             }
 impl FleetType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FleetType::OnDemand => "ON_DEMAND",
-            FleetType::Spot => "SPOT",
-            FleetType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ON_DEMAND", "SPOT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FleetType::OnDemand => "ON_DEMAND",
+    FleetType::Spot => "SPOT",
+    FleetType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ON_DEMAND", "SPOT"]
+                }
+            }
 impl AsRef<str> for FleetType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The GameLift service limits for an Amazon EC2 instance type and current utilization. GameLift allows Amazon Web Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or location, for use with GameLift. You can request an limit increase for your account by using the <b>Service limits</b> page in the GameLift console.</p>
 #[non_exhaustive]
@@ -14026,15 +13946,15 @@ pub enum GameServerGroupDeleteOption {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameServerGroupDeleteOption {
-    fn from(s: &str) -> Self {
-        match s {
-            "FORCE_DELETE" => GameServerGroupDeleteOption::ForceDelete,
-            "RETAIN" => GameServerGroupDeleteOption::Retain,
-            "SAFE_DELETE" => GameServerGroupDeleteOption::SafeDelete,
-            other => GameServerGroupDeleteOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FORCE_DELETE" => GameServerGroupDeleteOption::ForceDelete,
+"RETAIN" => GameServerGroupDeleteOption::Retain,
+"SAFE_DELETE" => GameServerGroupDeleteOption::SafeDelete,
+other => GameServerGroupDeleteOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GameServerGroupDeleteOption {
                 type Err = std::convert::Infallible;
 
@@ -14043,27 +13963,25 @@ impl std::str::FromStr for GameServerGroupDeleteOption {
                 }
             }
 impl GameServerGroupDeleteOption {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GameServerGroupDeleteOption::ForceDelete => "FORCE_DELETE",
-            GameServerGroupDeleteOption::Retain => "RETAIN",
-            GameServerGroupDeleteOption::SafeDelete => "SAFE_DELETE",
-            GameServerGroupDeleteOption::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FORCE_DELETE", "RETAIN", "SAFE_DELETE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GameServerGroupDeleteOption::ForceDelete => "FORCE_DELETE",
+    GameServerGroupDeleteOption::Retain => "RETAIN",
+    GameServerGroupDeleteOption::SafeDelete => "SAFE_DELETE",
+    GameServerGroupDeleteOption::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FORCE_DELETE", "RETAIN", "SAFE_DELETE"]
+                }
+            }
 impl AsRef<str> for GameServerGroupDeleteOption {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p> 
 /// <p>Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an Auto Scaling policy when creating the corresponding Auto Scaling group. After the Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done directly on the Auto Scaling group. </p>
@@ -14372,14 +14290,14 @@ pub enum AcceptanceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AcceptanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCEPT" => AcceptanceType::Accept,
-            "REJECT" => AcceptanceType::Reject,
-            other => AcceptanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCEPT" => AcceptanceType::Accept,
+"REJECT" => AcceptanceType::Reject,
+other => AcceptanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AcceptanceType {
                 type Err = std::convert::Infallible;
 
@@ -14388,24 +14306,22 @@ impl std::str::FromStr for AcceptanceType {
                 }
             }
 impl AcceptanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AcceptanceType::Accept => "ACCEPT",
-            AcceptanceType::Reject => "REJECT",
-            AcceptanceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCEPT", "REJECT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AcceptanceType::Accept => "ACCEPT",
+    AcceptanceType::Reject => "REJECT",
+    AcceptanceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCEPT", "REJECT"]
+                }
+            }
 impl AsRef<str> for AcceptanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

@@ -639,15 +639,15 @@ pub enum SentimentValue {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SentimentValue {
-    fn from(s: &str) -> Self {
-        match s {
-            "NEGATIVE" => SentimentValue::Negative,
-            "NEUTRAL" => SentimentValue::Neutral,
-            "POSITIVE" => SentimentValue::Positive,
-            other => SentimentValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NEGATIVE" => SentimentValue::Negative,
+"NEUTRAL" => SentimentValue::Neutral,
+"POSITIVE" => SentimentValue::Positive,
+other => SentimentValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SentimentValue {
                 type Err = std::convert::Infallible;
 
@@ -656,25 +656,23 @@ impl std::str::FromStr for SentimentValue {
                 }
             }
 impl SentimentValue {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SentimentValue::Negative => "NEGATIVE",
-            SentimentValue::Neutral => "NEUTRAL",
-            SentimentValue::Positive => "POSITIVE",
-            SentimentValue::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NEGATIVE", "NEUTRAL", "POSITIVE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SentimentValue::Negative => "NEGATIVE",
+    SentimentValue::Neutral => "NEUTRAL",
+    SentimentValue::Positive => "POSITIVE",
+    SentimentValue::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NEGATIVE", "NEUTRAL", "POSITIVE"]
+                }
+            }
 impl AsRef<str> for SentimentValue {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

@@ -147,16 +147,16 @@ pub enum PutMetricsErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PutMetricsErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONFLICT_ERROR" => PutMetricsErrorCode::ConflictError,
-            "INTERNAL_ERROR" => PutMetricsErrorCode::InternalError,
-            "METRIC_LIMIT_EXCEEDED" => PutMetricsErrorCode::MetricLimitExceeded,
-            "VALIDATION_ERROR" => PutMetricsErrorCode::ValidationError,
-            other => PutMetricsErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONFLICT_ERROR" => PutMetricsErrorCode::ConflictError,
+"INTERNAL_ERROR" => PutMetricsErrorCode::InternalError,
+"METRIC_LIMIT_EXCEEDED" => PutMetricsErrorCode::MetricLimitExceeded,
+"VALIDATION_ERROR" => PutMetricsErrorCode::ValidationError,
+other => PutMetricsErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PutMetricsErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -165,28 +165,26 @@ impl std::str::FromStr for PutMetricsErrorCode {
                 }
             }
 impl PutMetricsErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PutMetricsErrorCode::ConflictError => "CONFLICT_ERROR",
-            PutMetricsErrorCode::InternalError => "INTERNAL_ERROR",
-            PutMetricsErrorCode::MetricLimitExceeded => "METRIC_LIMIT_EXCEEDED",
-            PutMetricsErrorCode::ValidationError => "VALIDATION_ERROR",
-            PutMetricsErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONFLICT_ERROR", "INTERNAL_ERROR", "METRIC_LIMIT_EXCEEDED", "VALIDATION_ERROR"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PutMetricsErrorCode::ConflictError => "CONFLICT_ERROR",
+    PutMetricsErrorCode::InternalError => "INTERNAL_ERROR",
+    PutMetricsErrorCode::MetricLimitExceeded => "METRIC_LIMIT_EXCEEDED",
+    PutMetricsErrorCode::ValidationError => "VALIDATION_ERROR",
+    PutMetricsErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONFLICT_ERROR", "INTERNAL_ERROR", "METRIC_LIMIT_EXCEEDED", "VALIDATION_ERROR"]
+                }
+            }
 impl AsRef<str> for PutMetricsErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The raw metric data to associate with the resource.</p>
 #[non_exhaustive]

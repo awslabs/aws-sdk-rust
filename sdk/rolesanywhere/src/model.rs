@@ -326,15 +326,15 @@ pub enum TrustAnchorType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TrustAnchorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS_ACM_PCA" => TrustAnchorType::AwsAcmPca,
-            "CERTIFICATE_BUNDLE" => TrustAnchorType::CertificateBundle,
-            "SELF_SIGNED_REPOSITORY" => TrustAnchorType::SelfSignedRepository,
-            other => TrustAnchorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS_ACM_PCA" => TrustAnchorType::AwsAcmPca,
+"CERTIFICATE_BUNDLE" => TrustAnchorType::CertificateBundle,
+"SELF_SIGNED_REPOSITORY" => TrustAnchorType::SelfSignedRepository,
+other => TrustAnchorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TrustAnchorType {
                 type Err = std::convert::Infallible;
 
@@ -343,27 +343,25 @@ impl std::str::FromStr for TrustAnchorType {
                 }
             }
 impl TrustAnchorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TrustAnchorType::AwsAcmPca => "AWS_ACM_PCA",
-            TrustAnchorType::CertificateBundle => "CERTIFICATE_BUNDLE",
-            TrustAnchorType::SelfSignedRepository => "SELF_SIGNED_REPOSITORY",
-            TrustAnchorType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_ACM_PCA", "CERTIFICATE_BUNDLE", "SELF_SIGNED_REPOSITORY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TrustAnchorType::AwsAcmPca => "AWS_ACM_PCA",
+    TrustAnchorType::CertificateBundle => "CERTIFICATE_BUNDLE",
+    TrustAnchorType::SelfSignedRepository => "SELF_SIGNED_REPOSITORY",
+    TrustAnchorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS_ACM_PCA", "CERTIFICATE_BUNDLE", "SELF_SIGNED_REPOSITORY"]
+                }
+            }
 impl AsRef<str> for TrustAnchorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A label that consists of a key and value you define. </p>
 #[non_exhaustive]

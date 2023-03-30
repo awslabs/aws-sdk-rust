@@ -272,14 +272,14 @@ pub enum ChannelType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChannelType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BASIC" => ChannelType::BasicChannelType,
-            "STANDARD" => ChannelType::StandardChannelType,
-            other => ChannelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BASIC" => ChannelType::BasicChannelType,
+"STANDARD" => ChannelType::StandardChannelType,
+other => ChannelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ChannelType {
                 type Err = std::convert::Infallible;
 
@@ -288,26 +288,24 @@ impl std::str::FromStr for ChannelType {
                 }
             }
 impl ChannelType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChannelType::BasicChannelType => "BASIC",
-            ChannelType::StandardChannelType => "STANDARD",
-            ChannelType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BASIC", "STANDARD"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChannelType::BasicChannelType => "BASIC",
+    ChannelType::StandardChannelType => "STANDARD",
+    ChannelType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BASIC", "STANDARD"]
+                }
+            }
 impl AsRef<str> for ChannelType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ChannelLatencyMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -356,14 +354,14 @@ pub enum ChannelLatencyMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChannelLatencyMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "LOW" => ChannelLatencyMode::LowLatency,
-            "NORMAL" => ChannelLatencyMode::NormalLatency,
-            other => ChannelLatencyMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "LOW" => ChannelLatencyMode::LowLatency,
+"NORMAL" => ChannelLatencyMode::NormalLatency,
+other => ChannelLatencyMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ChannelLatencyMode {
                 type Err = std::convert::Infallible;
 
@@ -372,26 +370,24 @@ impl std::str::FromStr for ChannelLatencyMode {
                 }
             }
 impl ChannelLatencyMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChannelLatencyMode::LowLatency => "LOW",
-            ChannelLatencyMode::NormalLatency => "NORMAL",
-            ChannelLatencyMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LOW", "NORMAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChannelLatencyMode::LowLatency => "LOW",
+    ChannelLatencyMode::NormalLatency => "NORMAL",
+    ChannelLatencyMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LOW", "NORMAL"]
+                }
+            }
 impl AsRef<str> for ChannelLatencyMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summary information about a stream session.</p>
 #[non_exhaustive]
@@ -697,15 +693,15 @@ pub enum StreamHealth {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamHealth {
-    fn from(s: &str) -> Self {
-        match s {
-            "HEALTHY" => StreamHealth::StreamHealthy,
-            "STARVING" => StreamHealth::Starving,
-            "UNKNOWN" => StreamHealth::UnknownValue,
-            other => StreamHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "HEALTHY" => StreamHealth::StreamHealthy,
+"STARVING" => StreamHealth::Starving,
+"UNKNOWN" => StreamHealth::UnknownValue,
+other => StreamHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamHealth {
                 type Err = std::convert::Infallible;
 
@@ -714,27 +710,25 @@ impl std::str::FromStr for StreamHealth {
                 }
             }
 impl StreamHealth {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamHealth::StreamHealthy => "HEALTHY",
-            StreamHealth::Starving => "STARVING",
-            StreamHealth::UnknownValue => "UNKNOWN",
-            StreamHealth::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "HEALTHY", "STARVING", "UNKNOWN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamHealth::StreamHealthy => "HEALTHY",
+    StreamHealth::Starving => "STARVING",
+    StreamHealth::UnknownValue => "UNKNOWN",
+    StreamHealth::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["HEALTHY", "STARVING", "UNKNOWN"]
+                }
+            }
 impl AsRef<str> for StreamHealth {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StreamState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -783,14 +777,14 @@ pub enum StreamState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamState {
-    fn from(s: &str) -> Self {
-        match s {
-            "LIVE" => StreamState::StreamLive,
-            "OFFLINE" => StreamState::StreamOffline,
-            other => StreamState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "LIVE" => StreamState::StreamLive,
+"OFFLINE" => StreamState::StreamOffline,
+other => StreamState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamState {
                 type Err = std::convert::Infallible;
 
@@ -799,26 +793,24 @@ impl std::str::FromStr for StreamState {
                 }
             }
 impl StreamState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamState::StreamLive => "LIVE",
-            StreamState::StreamOffline => "OFFLINE",
-            StreamState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LIVE", "OFFLINE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamState::StreamLive => "LIVE",
+    StreamState::StreamOffline => "OFFLINE",
+    StreamState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LIVE", "OFFLINE"]
+                }
+            }
 impl AsRef<str> for StreamState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Object specifying the stream attribute on which to filter.</p>
 #[non_exhaustive]
@@ -1146,15 +1138,15 @@ pub enum RecordingConfigurationState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecordingConfigurationState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => RecordingConfigurationState::Active,
-            "CREATE_FAILED" => RecordingConfigurationState::CreateFailed,
-            "CREATING" => RecordingConfigurationState::Creating,
-            other => RecordingConfigurationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => RecordingConfigurationState::Active,
+"CREATE_FAILED" => RecordingConfigurationState::CreateFailed,
+"CREATING" => RecordingConfigurationState::Creating,
+other => RecordingConfigurationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecordingConfigurationState {
                 type Err = std::convert::Infallible;
 
@@ -1163,27 +1155,25 @@ impl std::str::FromStr for RecordingConfigurationState {
                 }
             }
 impl RecordingConfigurationState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecordingConfigurationState::Active => "ACTIVE",
-            RecordingConfigurationState::CreateFailed => "CREATE_FAILED",
-            RecordingConfigurationState::Creating => "CREATING",
-            RecordingConfigurationState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATE_FAILED", "CREATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecordingConfigurationState::Active => "ACTIVE",
+    RecordingConfigurationState::CreateFailed => "CREATE_FAILED",
+    RecordingConfigurationState::Creating => "CREATING",
+    RecordingConfigurationState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_FAILED", "CREATING"]
+                }
+            }
 impl AsRef<str> for RecordingConfigurationState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.</p>
 #[non_exhaustive]
@@ -2194,14 +2184,14 @@ pub enum RecordingMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecordingMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => RecordingMode::Disabled,
-            "INTERVAL" => RecordingMode::Interval,
-            other => RecordingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => RecordingMode::Disabled,
+"INTERVAL" => RecordingMode::Interval,
+other => RecordingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecordingMode {
                 type Err = std::convert::Infallible;
 
@@ -2210,26 +2200,24 @@ impl std::str::FromStr for RecordingMode {
                 }
             }
 impl RecordingMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecordingMode::Disabled => "DISABLED",
-            RecordingMode::Interval => "INTERVAL",
-            RecordingMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED", "INTERVAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecordingMode::Disabled => "DISABLED",
+    RecordingMode::Interval => "INTERVAL",
+    RecordingMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "INTERVAL"]
+                }
+            }
 impl AsRef<str> for RecordingMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Object specifying the ingest configuration set up by the broadcaster, usually in an encoder.</p>
 #[non_exhaustive]

@@ -318,14 +318,14 @@ pub enum ReportVersioning {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportVersioning {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_NEW_REPORT" => ReportVersioning::CreateNewReport,
-            "OVERWRITE_REPORT" => ReportVersioning::OverwriteReport,
-            other => ReportVersioning::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_NEW_REPORT" => ReportVersioning::CreateNewReport,
+"OVERWRITE_REPORT" => ReportVersioning::OverwriteReport,
+other => ReportVersioning::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ReportVersioning {
                 type Err = std::convert::Infallible;
 
@@ -334,26 +334,24 @@ impl std::str::FromStr for ReportVersioning {
                 }
             }
 impl ReportVersioning {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReportVersioning::CreateNewReport => "CREATE_NEW_REPORT",
-            ReportVersioning::OverwriteReport => "OVERWRITE_REPORT",
-            ReportVersioning::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_NEW_REPORT", "OVERWRITE_REPORT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ReportVersioning::CreateNewReport => "CREATE_NEW_REPORT",
+    ReportVersioning::OverwriteReport => "OVERWRITE_REPORT",
+    ReportVersioning::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_NEW_REPORT", "OVERWRITE_REPORT"]
+                }
+            }
 impl AsRef<str> for ReportVersioning {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AdditionalArtifact`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -405,15 +403,15 @@ pub enum AdditionalArtifact {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AdditionalArtifact {
-    fn from(s: &str) -> Self {
-        match s {
-            "ATHENA" => AdditionalArtifact::Athena,
-            "QUICKSIGHT" => AdditionalArtifact::Quicksight,
-            "REDSHIFT" => AdditionalArtifact::Redshift,
-            other => AdditionalArtifact::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ATHENA" => AdditionalArtifact::Athena,
+"QUICKSIGHT" => AdditionalArtifact::Quicksight,
+"REDSHIFT" => AdditionalArtifact::Redshift,
+other => AdditionalArtifact::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AdditionalArtifact {
                 type Err = std::convert::Infallible;
 
@@ -422,27 +420,25 @@ impl std::str::FromStr for AdditionalArtifact {
                 }
             }
 impl AdditionalArtifact {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AdditionalArtifact::Athena => "ATHENA",
-            AdditionalArtifact::Quicksight => "QUICKSIGHT",
-            AdditionalArtifact::Redshift => "REDSHIFT",
-            AdditionalArtifact::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ATHENA", "QUICKSIGHT", "REDSHIFT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AdditionalArtifact::Athena => "ATHENA",
+    AdditionalArtifact::Quicksight => "QUICKSIGHT",
+    AdditionalArtifact::Redshift => "REDSHIFT",
+    AdditionalArtifact::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ATHENA", "QUICKSIGHT", "REDSHIFT"]
+                }
+            }
 impl AsRef<str> for AdditionalArtifact {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AwsRegion`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -563,38 +559,38 @@ pub enum AwsRegion {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AwsRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "af-south-1" => AwsRegion::CapeTown,
-            "ap-east-1" => AwsRegion::HongKong,
-            "ap-northeast-1" => AwsRegion::Tokyo,
-            "ap-northeast-2" => AwsRegion::Seoul,
-            "ap-northeast-3" => AwsRegion::Osaka,
-            "ap-south-1" => AwsRegion::Mumbai,
-            "ap-southeast-1" => AwsRegion::Singapore,
-            "ap-southeast-2" => AwsRegion::Sydney,
-            "ap-southeast-3" => AwsRegion::Jakarta,
-            "ca-central-1" => AwsRegion::CanadaCentral,
-            "cn-north-1" => AwsRegion::Beijing,
-            "cn-northwest-1" => AwsRegion::Ningxia,
-            "eu-central-1" => AwsRegion::Frankfurt,
-            "eu-north-1" => AwsRegion::Stockholm,
-            "eu-south-1" => AwsRegion::Milano,
-            "eu-south-2" => AwsRegion::Spain,
-            "eu-west-1" => AwsRegion::Ireland,
-            "eu-west-2" => AwsRegion::London,
-            "eu-west-3" => AwsRegion::Paris,
-            "me-central-1" => AwsRegion::Uae,
-            "me-south-1" => AwsRegion::Bahrain,
-            "sa-east-1" => AwsRegion::SaoPaulo,
-            "us-east-1" => AwsRegion::UsStandard,
-            "us-east-2" => AwsRegion::Ohio,
-            "us-west-1" => AwsRegion::NorthernCalifornia,
-            "us-west-2" => AwsRegion::Oregon,
-            other => AwsRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "af-south-1" => AwsRegion::CapeTown,
+"ap-east-1" => AwsRegion::HongKong,
+"ap-northeast-1" => AwsRegion::Tokyo,
+"ap-northeast-2" => AwsRegion::Seoul,
+"ap-northeast-3" => AwsRegion::Osaka,
+"ap-south-1" => AwsRegion::Mumbai,
+"ap-southeast-1" => AwsRegion::Singapore,
+"ap-southeast-2" => AwsRegion::Sydney,
+"ap-southeast-3" => AwsRegion::Jakarta,
+"ca-central-1" => AwsRegion::CanadaCentral,
+"cn-north-1" => AwsRegion::Beijing,
+"cn-northwest-1" => AwsRegion::Ningxia,
+"eu-central-1" => AwsRegion::Frankfurt,
+"eu-north-1" => AwsRegion::Stockholm,
+"eu-south-1" => AwsRegion::Milano,
+"eu-south-2" => AwsRegion::Spain,
+"eu-west-1" => AwsRegion::Ireland,
+"eu-west-2" => AwsRegion::London,
+"eu-west-3" => AwsRegion::Paris,
+"me-central-1" => AwsRegion::Uae,
+"me-south-1" => AwsRegion::Bahrain,
+"sa-east-1" => AwsRegion::SaoPaulo,
+"us-east-1" => AwsRegion::UsStandard,
+"us-east-2" => AwsRegion::Ohio,
+"us-west-1" => AwsRegion::NorthernCalifornia,
+"us-west-2" => AwsRegion::Oregon,
+other => AwsRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AwsRegion {
                 type Err = std::convert::Infallible;
 
@@ -603,50 +599,48 @@ impl std::str::FromStr for AwsRegion {
                 }
             }
 impl AwsRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AwsRegion::CapeTown => "af-south-1",
-            AwsRegion::HongKong => "ap-east-1",
-            AwsRegion::Tokyo => "ap-northeast-1",
-            AwsRegion::Seoul => "ap-northeast-2",
-            AwsRegion::Osaka => "ap-northeast-3",
-            AwsRegion::Mumbai => "ap-south-1",
-            AwsRegion::Singapore => "ap-southeast-1",
-            AwsRegion::Sydney => "ap-southeast-2",
-            AwsRegion::Jakarta => "ap-southeast-3",
-            AwsRegion::CanadaCentral => "ca-central-1",
-            AwsRegion::Beijing => "cn-north-1",
-            AwsRegion::Ningxia => "cn-northwest-1",
-            AwsRegion::Frankfurt => "eu-central-1",
-            AwsRegion::Stockholm => "eu-north-1",
-            AwsRegion::Milano => "eu-south-1",
-            AwsRegion::Spain => "eu-south-2",
-            AwsRegion::Ireland => "eu-west-1",
-            AwsRegion::London => "eu-west-2",
-            AwsRegion::Paris => "eu-west-3",
-            AwsRegion::Uae => "me-central-1",
-            AwsRegion::Bahrain => "me-south-1",
-            AwsRegion::SaoPaulo => "sa-east-1",
-            AwsRegion::UsStandard => "us-east-1",
-            AwsRegion::Ohio => "us-east-2",
-            AwsRegion::NorthernCalifornia => "us-west-1",
-            AwsRegion::Oregon => "us-west-2",
-            AwsRegion::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-west-1", "us-west-2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AwsRegion::CapeTown => "af-south-1",
+    AwsRegion::HongKong => "ap-east-1",
+    AwsRegion::Tokyo => "ap-northeast-1",
+    AwsRegion::Seoul => "ap-northeast-2",
+    AwsRegion::Osaka => "ap-northeast-3",
+    AwsRegion::Mumbai => "ap-south-1",
+    AwsRegion::Singapore => "ap-southeast-1",
+    AwsRegion::Sydney => "ap-southeast-2",
+    AwsRegion::Jakarta => "ap-southeast-3",
+    AwsRegion::CanadaCentral => "ca-central-1",
+    AwsRegion::Beijing => "cn-north-1",
+    AwsRegion::Ningxia => "cn-northwest-1",
+    AwsRegion::Frankfurt => "eu-central-1",
+    AwsRegion::Stockholm => "eu-north-1",
+    AwsRegion::Milano => "eu-south-1",
+    AwsRegion::Spain => "eu-south-2",
+    AwsRegion::Ireland => "eu-west-1",
+    AwsRegion::London => "eu-west-2",
+    AwsRegion::Paris => "eu-west-3",
+    AwsRegion::Uae => "me-central-1",
+    AwsRegion::Bahrain => "me-south-1",
+    AwsRegion::SaoPaulo => "sa-east-1",
+    AwsRegion::UsStandard => "us-east-1",
+    AwsRegion::Ohio => "us-east-2",
+    AwsRegion::NorthernCalifornia => "us-west-1",
+    AwsRegion::Oregon => "us-west-2",
+    AwsRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-west-1", "us-west-2"]
+                }
+            }
 impl AsRef<str> for AwsRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SchemaElement`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -692,13 +686,13 @@ pub enum SchemaElement {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SchemaElement {
-    fn from(s: &str) -> Self {
-        match s {
-            "RESOURCES" => SchemaElement::Resources,
-            other => SchemaElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "RESOURCES" => SchemaElement::Resources,
+other => SchemaElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SchemaElement {
                 type Err = std::convert::Infallible;
 
@@ -707,25 +701,23 @@ impl std::str::FromStr for SchemaElement {
                 }
             }
 impl SchemaElement {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SchemaElement::Resources => "RESOURCES",
-            SchemaElement::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "RESOURCES"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SchemaElement::Resources => "RESOURCES",
+    SchemaElement::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["RESOURCES"]
+                }
+            }
 impl AsRef<str> for SchemaElement {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CompressionFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -777,15 +769,15 @@ pub enum CompressionFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CompressionFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "GZIP" => CompressionFormat::Gzip,
-            "Parquet" => CompressionFormat::Parquet,
-            "ZIP" => CompressionFormat::Zip,
-            other => CompressionFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "GZIP" => CompressionFormat::Gzip,
+"Parquet" => CompressionFormat::Parquet,
+"ZIP" => CompressionFormat::Zip,
+other => CompressionFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CompressionFormat {
                 type Err = std::convert::Infallible;
 
@@ -794,27 +786,25 @@ impl std::str::FromStr for CompressionFormat {
                 }
             }
 impl CompressionFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CompressionFormat::Gzip => "GZIP",
-            CompressionFormat::Parquet => "Parquet",
-            CompressionFormat::Zip => "ZIP",
-            CompressionFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "GZIP", "Parquet", "ZIP"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CompressionFormat::Gzip => "GZIP",
+    CompressionFormat::Parquet => "Parquet",
+    CompressionFormat::Zip => "ZIP",
+    CompressionFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GZIP", "Parquet", "ZIP"]
+                }
+            }
 impl AsRef<str> for CompressionFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ReportFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -863,14 +853,14 @@ pub enum ReportFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "Parquet" => ReportFormat::Parquet,
-            "textORcsv" => ReportFormat::Csv,
-            other => ReportFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Parquet" => ReportFormat::Parquet,
+"textORcsv" => ReportFormat::Csv,
+other => ReportFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ReportFormat {
                 type Err = std::convert::Infallible;
 
@@ -879,26 +869,24 @@ impl std::str::FromStr for ReportFormat {
                 }
             }
 impl ReportFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReportFormat::Parquet => "Parquet",
-            ReportFormat::Csv => "textORcsv",
-            ReportFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Parquet", "textORcsv"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ReportFormat::Parquet => "Parquet",
+    ReportFormat::Csv => "textORcsv",
+    ReportFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Parquet", "textORcsv"]
+                }
+            }
 impl AsRef<str> for ReportFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TimeUnit`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -950,15 +938,15 @@ pub enum TimeUnit {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TimeUnit {
-    fn from(s: &str) -> Self {
-        match s {
-            "DAILY" => TimeUnit::Daily,
-            "HOURLY" => TimeUnit::Hourly,
-            "MONTHLY" => TimeUnit::Monthly,
-            other => TimeUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DAILY" => TimeUnit::Daily,
+"HOURLY" => TimeUnit::Hourly,
+"MONTHLY" => TimeUnit::Monthly,
+other => TimeUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TimeUnit {
                 type Err = std::convert::Infallible;
 
@@ -967,25 +955,23 @@ impl std::str::FromStr for TimeUnit {
                 }
             }
 impl TimeUnit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TimeUnit::Daily => "DAILY",
-            TimeUnit::Hourly => "HOURLY",
-            TimeUnit::Monthly => "MONTHLY",
-            TimeUnit::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DAILY", "HOURLY", "MONTHLY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TimeUnit::Daily => "DAILY",
+    TimeUnit::Hourly => "HOURLY",
+    TimeUnit::Monthly => "MONTHLY",
+    TimeUnit::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DAILY", "HOURLY", "MONTHLY"]
+                }
+            }
 impl AsRef<str> for TimeUnit {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

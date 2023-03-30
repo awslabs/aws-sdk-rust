@@ -116,14 +116,14 @@ pub enum UpdateActionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateActionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_OR_UPDATE" => UpdateActionType::CreateOrUpdate,
-            "DELETE" => UpdateActionType::Delete,
-            other => UpdateActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_OR_UPDATE" => UpdateActionType::CreateOrUpdate,
+"DELETE" => UpdateActionType::Delete,
+other => UpdateActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UpdateActionType {
                 type Err = std::convert::Infallible;
 
@@ -132,26 +132,24 @@ impl std::str::FromStr for UpdateActionType {
                 }
             }
 impl UpdateActionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateActionType::CreateOrUpdate => "CREATE_OR_UPDATE",
-            UpdateActionType::Delete => "DELETE",
-            UpdateActionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_OR_UPDATE", "DELETE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UpdateActionType::CreateOrUpdate => "CREATE_OR_UPDATE",
+    UpdateActionType::Delete => "DELETE",
+    UpdateActionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_OR_UPDATE", "DELETE"]
+                }
+            }
 impl AsRef<str> for UpdateActionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A typed link attribute definition.</p>
 #[non_exhaustive]
@@ -352,14 +350,14 @@ pub enum RequiredAttributeBehavior {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RequiredAttributeBehavior {
-    fn from(s: &str) -> Self {
-        match s {
-            "NOT_REQUIRED" => RequiredAttributeBehavior::NotRequired,
-            "REQUIRED_ALWAYS" => RequiredAttributeBehavior::RequiredAlways,
-            other => RequiredAttributeBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NOT_REQUIRED" => RequiredAttributeBehavior::NotRequired,
+"REQUIRED_ALWAYS" => RequiredAttributeBehavior::RequiredAlways,
+other => RequiredAttributeBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RequiredAttributeBehavior {
                 type Err = std::convert::Infallible;
 
@@ -368,26 +366,24 @@ impl std::str::FromStr for RequiredAttributeBehavior {
                 }
             }
 impl RequiredAttributeBehavior {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RequiredAttributeBehavior::NotRequired => "NOT_REQUIRED",
-            RequiredAttributeBehavior::RequiredAlways => "REQUIRED_ALWAYS",
-            RequiredAttributeBehavior::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NOT_REQUIRED", "REQUIRED_ALWAYS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RequiredAttributeBehavior::NotRequired => "NOT_REQUIRED",
+    RequiredAttributeBehavior::RequiredAlways => "REQUIRED_ALWAYS",
+    RequiredAttributeBehavior::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NOT_REQUIRED", "REQUIRED_ALWAYS"]
+                }
+            }
 impl AsRef<str> for RequiredAttributeBehavior {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.</p>
 #[non_exhaustive]
@@ -517,16 +513,16 @@ pub enum RuleType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuleType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BINARY_LENGTH" => RuleType::BinaryLength,
-            "NUMBER_COMPARISON" => RuleType::NumberComparison,
-            "STRING_FROM_SET" => RuleType::StringFromSet,
-            "STRING_LENGTH" => RuleType::StringLength,
-            other => RuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BINARY_LENGTH" => RuleType::BinaryLength,
+"NUMBER_COMPARISON" => RuleType::NumberComparison,
+"STRING_FROM_SET" => RuleType::StringFromSet,
+"STRING_LENGTH" => RuleType::StringLength,
+other => RuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RuleType {
                 type Err = std::convert::Infallible;
 
@@ -535,28 +531,26 @@ impl std::str::FromStr for RuleType {
                 }
             }
 impl RuleType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RuleType::BinaryLength => "BINARY_LENGTH",
-            RuleType::NumberComparison => "NUMBER_COMPARISON",
-            RuleType::StringFromSet => "STRING_FROM_SET",
-            RuleType::StringLength => "STRING_LENGTH",
-            RuleType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BINARY_LENGTH", "NUMBER_COMPARISON", "STRING_FROM_SET", "STRING_LENGTH"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RuleType::BinaryLength => "BINARY_LENGTH",
+    RuleType::NumberComparison => "NUMBER_COMPARISON",
+    RuleType::StringFromSet => "STRING_FROM_SET",
+    RuleType::StringLength => "STRING_LENGTH",
+    RuleType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BINARY_LENGTH", "NUMBER_COMPARISON", "STRING_FROM_SET", "STRING_LENGTH"]
+                }
+            }
 impl AsRef<str> for RuleType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value.</p>
 #[non_exhaustive]
@@ -693,18 +687,18 @@ pub enum FacetAttributeType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FacetAttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BINARY" => FacetAttributeType::Binary,
-            "BOOLEAN" => FacetAttributeType::Boolean,
-            "DATETIME" => FacetAttributeType::Datetime,
-            "NUMBER" => FacetAttributeType::Number,
-            "STRING" => FacetAttributeType::String,
-            "VARIANT" => FacetAttributeType::Variant,
-            other => FacetAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BINARY" => FacetAttributeType::Binary,
+"BOOLEAN" => FacetAttributeType::Boolean,
+"DATETIME" => FacetAttributeType::Datetime,
+"NUMBER" => FacetAttributeType::Number,
+"STRING" => FacetAttributeType::String,
+"VARIANT" => FacetAttributeType::Variant,
+other => FacetAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FacetAttributeType {
                 type Err = std::convert::Infallible;
 
@@ -713,30 +707,28 @@ impl std::str::FromStr for FacetAttributeType {
                 }
             }
 impl FacetAttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FacetAttributeType::Binary => "BINARY",
-            FacetAttributeType::Boolean => "BOOLEAN",
-            FacetAttributeType::Datetime => "DATETIME",
-            FacetAttributeType::Number => "NUMBER",
-            FacetAttributeType::String => "STRING",
-            FacetAttributeType::Variant => "VARIANT",
-            FacetAttributeType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BINARY", "BOOLEAN", "DATETIME", "NUMBER", "STRING", "VARIANT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FacetAttributeType::Binary => "BINARY",
+    FacetAttributeType::Boolean => "BOOLEAN",
+    FacetAttributeType::Datetime => "DATETIME",
+    FacetAttributeType::Number => "NUMBER",
+    FacetAttributeType::String => "STRING",
+    FacetAttributeType::Variant => "VARIANT",
+    FacetAttributeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BINARY", "BOOLEAN", "DATETIME", "NUMBER", "STRING", "VARIANT"]
+                }
+            }
 impl AsRef<str> for FacetAttributeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Structure that contains attribute update information.</p>
 #[non_exhaustive]
@@ -1476,16 +1468,16 @@ pub enum ObjectType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectType {
-    fn from(s: &str) -> Self {
-        match s {
-            "INDEX" => ObjectType::Index,
-            "LEAF_NODE" => ObjectType::LeafNode,
-            "NODE" => ObjectType::Node,
-            "POLICY" => ObjectType::Policy,
-            other => ObjectType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "INDEX" => ObjectType::Index,
+"LEAF_NODE" => ObjectType::LeafNode,
+"NODE" => ObjectType::Node,
+"POLICY" => ObjectType::Policy,
+other => ObjectType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ObjectType {
                 type Err = std::convert::Infallible;
 
@@ -1494,28 +1486,26 @@ impl std::str::FromStr for ObjectType {
                 }
             }
 impl ObjectType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ObjectType::Index => "INDEX",
-            ObjectType::LeafNode => "LEAF_NODE",
-            ObjectType::Node => "NODE",
-            ObjectType::Policy => "POLICY",
-            ObjectType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "INDEX", "LEAF_NODE", "NODE", "POLICY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ObjectType::Index => "INDEX",
+    ObjectType::LeafNode => "LEAF_NODE",
+    ObjectType::Node => "NODE",
+    ObjectType::Policy => "POLICY",
+    ObjectType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INDEX", "LEAF_NODE", "NODE", "POLICY"]
+                }
+            }
 impl AsRef<str> for ObjectType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure that contains information used to update an attribute.</p>
 #[non_exhaustive]
@@ -2224,14 +2214,14 @@ pub enum ConsistencyLevel {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConsistencyLevel {
-    fn from(s: &str) -> Self {
-        match s {
-            "EVENTUAL" => ConsistencyLevel::Eventual,
-            "SERIALIZABLE" => ConsistencyLevel::Serializable,
-            other => ConsistencyLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EVENTUAL" => ConsistencyLevel::Eventual,
+"SERIALIZABLE" => ConsistencyLevel::Serializable,
+other => ConsistencyLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConsistencyLevel {
                 type Err = std::convert::Infallible;
 
@@ -2240,26 +2230,24 @@ impl std::str::FromStr for ConsistencyLevel {
                 }
             }
 impl ConsistencyLevel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConsistencyLevel::Eventual => "EVENTUAL",
-            ConsistencyLevel::Serializable => "SERIALIZABLE",
-            ConsistencyLevel::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EVENTUAL", "SERIALIZABLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConsistencyLevel::Eventual => "EVENTUAL",
+    ConsistencyLevel::Serializable => "SERIALIZABLE",
+    ConsistencyLevel::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EVENTUAL", "SERIALIZABLE"]
+                }
+            }
 impl AsRef<str> for ConsistencyLevel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Identifies the range of attributes that are used by a specified filter.</p>
 #[non_exhaustive]
@@ -2493,17 +2481,17 @@ pub enum RangeMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RangeMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXCLUSIVE" => RangeMode::Exclusive,
-            "FIRST" => RangeMode::First,
-            "INCLUSIVE" => RangeMode::Inclusive,
-            "LAST" => RangeMode::Last,
-            "LAST_BEFORE_MISSING_VALUES" => RangeMode::LastBeforeMissingValues,
-            other => RangeMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EXCLUSIVE" => RangeMode::Exclusive,
+"FIRST" => RangeMode::First,
+"INCLUSIVE" => RangeMode::Inclusive,
+"LAST" => RangeMode::Last,
+"LAST_BEFORE_MISSING_VALUES" => RangeMode::LastBeforeMissingValues,
+other => RangeMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RangeMode {
                 type Err = std::convert::Infallible;
 
@@ -2512,29 +2500,27 @@ impl std::str::FromStr for RangeMode {
                 }
             }
 impl RangeMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RangeMode::Exclusive => "EXCLUSIVE",
-            RangeMode::First => "FIRST",
-            RangeMode::Inclusive => "INCLUSIVE",
-            RangeMode::Last => "LAST",
-            RangeMode::LastBeforeMissingValues => "LAST_BEFORE_MISSING_VALUES",
-            RangeMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EXCLUSIVE", "FIRST", "INCLUSIVE", "LAST", "LAST_BEFORE_MISSING_VALUES"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RangeMode::Exclusive => "EXCLUSIVE",
+    RangeMode::First => "FIRST",
+    RangeMode::Inclusive => "INCLUSIVE",
+    RangeMode::Last => "LAST",
+    RangeMode::LastBeforeMissingValues => "LAST_BEFORE_MISSING_VALUES",
+    RangeMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXCLUSIVE", "FIRST", "INCLUSIVE", "LAST", "LAST_BEFORE_MISSING_VALUES"]
+                }
+            }
 impl AsRef<str> for RangeMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A pair of ObjectIdentifier and LinkName.</p>
 #[non_exhaustive]
@@ -3050,15 +3036,15 @@ pub enum DirectoryState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectoryState {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETED" => DirectoryState::Deleted,
-            "DISABLED" => DirectoryState::Disabled,
-            "ENABLED" => DirectoryState::Enabled,
-            other => DirectoryState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DELETED" => DirectoryState::Deleted,
+"DISABLED" => DirectoryState::Disabled,
+"ENABLED" => DirectoryState::Enabled,
+other => DirectoryState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DirectoryState {
                 type Err = std::convert::Infallible;
 
@@ -3067,27 +3053,25 @@ impl std::str::FromStr for DirectoryState {
                 }
             }
 impl DirectoryState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DirectoryState::Deleted => "DELETED",
-            DirectoryState::Disabled => "DISABLED",
-            DirectoryState::Enabled => "ENABLED",
-            DirectoryState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELETED", "DISABLED", "ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DirectoryState::Deleted => "DELETED",
+    DirectoryState::Disabled => "DISABLED",
+    DirectoryState::Enabled => "ENABLED",
+    DirectoryState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELETED", "DISABLED", "ENABLED"]
+                }
+            }
 impl AsRef<str> for DirectoryState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <code>Rule</code>s</code>, and <code>ObjectTypes</code>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a> for more information.</p>
 #[non_exhaustive]
@@ -3224,14 +3208,14 @@ pub enum FacetStyle {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FacetStyle {
-    fn from(s: &str) -> Self {
-        match s {
-            "DYNAMIC" => FacetStyle::Dynamic,
-            "STATIC" => FacetStyle::Static,
-            other => FacetStyle::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DYNAMIC" => FacetStyle::Dynamic,
+"STATIC" => FacetStyle::Static,
+other => FacetStyle::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FacetStyle {
                 type Err = std::convert::Infallible;
 
@@ -3240,26 +3224,24 @@ impl std::str::FromStr for FacetStyle {
                 }
             }
 impl FacetStyle {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FacetStyle::Dynamic => "DYNAMIC",
-            FacetStyle::Static => "STATIC",
-            FacetStyle::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DYNAMIC", "STATIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FacetStyle::Dynamic => "DYNAMIC",
+    FacetStyle::Static => "STATIC",
+    FacetStyle::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DYNAMIC", "STATIC"]
+                }
+            }
 impl AsRef<str> for FacetStyle {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Defines the typed links structure and its attributes. To create a typed link facet, use the <code>CreateTypedLinkFacet</code> API.</p>
 #[non_exhaustive]
@@ -3456,30 +3438,30 @@ pub enum BatchWriteExceptionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchWriteExceptionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDeniedException" => BatchWriteExceptionType::AccessDeniedException,
-            "DirectoryNotEnabledException" => BatchWriteExceptionType::DirectoryNotEnabledException,
-            "FacetValidationException" => BatchWriteExceptionType::FacetValidationException,
-            "IndexedAttributeMissingException" => BatchWriteExceptionType::IndexedAttributeMissingException,
-            "InternalServiceException" => BatchWriteExceptionType::InternalServiceException,
-            "InvalidArnException" => BatchWriteExceptionType::InvalidArnException,
-            "InvalidAttachmentException" => BatchWriteExceptionType::InvalidAttachmentException,
-            "LimitExceededException" => BatchWriteExceptionType::LimitExceededException,
-            "LinkNameAlreadyInUseException" => BatchWriteExceptionType::LinkNameAlreadyInUseException,
-            "NotIndexException" => BatchWriteExceptionType::NotIndexException,
-            "NotNodeException" => BatchWriteExceptionType::NotNodeException,
-            "NotPolicyException" => BatchWriteExceptionType::NotPolicyException,
-            "ObjectAlreadyDetachedException" => BatchWriteExceptionType::ObjectAlreadyDetachedException,
-            "ObjectNotDetachedException" => BatchWriteExceptionType::ObjectNotDetachedException,
-            "ResourceNotFoundException" => BatchWriteExceptionType::ResourceNotFoundException,
-            "StillContainsLinksException" => BatchWriteExceptionType::StillContainsLinksException,
-            "UnsupportedIndexTypeException" => BatchWriteExceptionType::UnsupportedIndexTypeException,
-            "ValidationException" => BatchWriteExceptionType::ValidationException,
-            other => BatchWriteExceptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDeniedException" => BatchWriteExceptionType::AccessDeniedException,
+"DirectoryNotEnabledException" => BatchWriteExceptionType::DirectoryNotEnabledException,
+"FacetValidationException" => BatchWriteExceptionType::FacetValidationException,
+"IndexedAttributeMissingException" => BatchWriteExceptionType::IndexedAttributeMissingException,
+"InternalServiceException" => BatchWriteExceptionType::InternalServiceException,
+"InvalidArnException" => BatchWriteExceptionType::InvalidArnException,
+"InvalidAttachmentException" => BatchWriteExceptionType::InvalidAttachmentException,
+"LimitExceededException" => BatchWriteExceptionType::LimitExceededException,
+"LinkNameAlreadyInUseException" => BatchWriteExceptionType::LinkNameAlreadyInUseException,
+"NotIndexException" => BatchWriteExceptionType::NotIndexException,
+"NotNodeException" => BatchWriteExceptionType::NotNodeException,
+"NotPolicyException" => BatchWriteExceptionType::NotPolicyException,
+"ObjectAlreadyDetachedException" => BatchWriteExceptionType::ObjectAlreadyDetachedException,
+"ObjectNotDetachedException" => BatchWriteExceptionType::ObjectNotDetachedException,
+"ResourceNotFoundException" => BatchWriteExceptionType::ResourceNotFoundException,
+"StillContainsLinksException" => BatchWriteExceptionType::StillContainsLinksException,
+"UnsupportedIndexTypeException" => BatchWriteExceptionType::UnsupportedIndexTypeException,
+"ValidationException" => BatchWriteExceptionType::ValidationException,
+other => BatchWriteExceptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BatchWriteExceptionType {
                 type Err = std::convert::Infallible;
 
@@ -3488,42 +3470,40 @@ impl std::str::FromStr for BatchWriteExceptionType {
                 }
             }
 impl BatchWriteExceptionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BatchWriteExceptionType::AccessDeniedException => "AccessDeniedException",
-            BatchWriteExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
-            BatchWriteExceptionType::FacetValidationException => "FacetValidationException",
-            BatchWriteExceptionType::IndexedAttributeMissingException => "IndexedAttributeMissingException",
-            BatchWriteExceptionType::InternalServiceException => "InternalServiceException",
-            BatchWriteExceptionType::InvalidArnException => "InvalidArnException",
-            BatchWriteExceptionType::InvalidAttachmentException => "InvalidAttachmentException",
-            BatchWriteExceptionType::LimitExceededException => "LimitExceededException",
-            BatchWriteExceptionType::LinkNameAlreadyInUseException => "LinkNameAlreadyInUseException",
-            BatchWriteExceptionType::NotIndexException => "NotIndexException",
-            BatchWriteExceptionType::NotNodeException => "NotNodeException",
-            BatchWriteExceptionType::NotPolicyException => "NotPolicyException",
-            BatchWriteExceptionType::ObjectAlreadyDetachedException => "ObjectAlreadyDetachedException",
-            BatchWriteExceptionType::ObjectNotDetachedException => "ObjectNotDetachedException",
-            BatchWriteExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
-            BatchWriteExceptionType::StillContainsLinksException => "StillContainsLinksException",
-            BatchWriteExceptionType::UnsupportedIndexTypeException => "UnsupportedIndexTypeException",
-            BatchWriteExceptionType::ValidationException => "ValidationException",
-            BatchWriteExceptionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDeniedException", "DirectoryNotEnabledException", "FacetValidationException", "IndexedAttributeMissingException", "InternalServiceException", "InvalidArnException", "InvalidAttachmentException", "LimitExceededException", "LinkNameAlreadyInUseException", "NotIndexException", "NotNodeException", "NotPolicyException", "ObjectAlreadyDetachedException", "ObjectNotDetachedException", "ResourceNotFoundException", "StillContainsLinksException", "UnsupportedIndexTypeException", "ValidationException"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BatchWriteExceptionType::AccessDeniedException => "AccessDeniedException",
+    BatchWriteExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
+    BatchWriteExceptionType::FacetValidationException => "FacetValidationException",
+    BatchWriteExceptionType::IndexedAttributeMissingException => "IndexedAttributeMissingException",
+    BatchWriteExceptionType::InternalServiceException => "InternalServiceException",
+    BatchWriteExceptionType::InvalidArnException => "InvalidArnException",
+    BatchWriteExceptionType::InvalidAttachmentException => "InvalidAttachmentException",
+    BatchWriteExceptionType::LimitExceededException => "LimitExceededException",
+    BatchWriteExceptionType::LinkNameAlreadyInUseException => "LinkNameAlreadyInUseException",
+    BatchWriteExceptionType::NotIndexException => "NotIndexException",
+    BatchWriteExceptionType::NotNodeException => "NotNodeException",
+    BatchWriteExceptionType::NotPolicyException => "NotPolicyException",
+    BatchWriteExceptionType::ObjectAlreadyDetachedException => "ObjectAlreadyDetachedException",
+    BatchWriteExceptionType::ObjectNotDetachedException => "ObjectNotDetachedException",
+    BatchWriteExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
+    BatchWriteExceptionType::StillContainsLinksException => "StillContainsLinksException",
+    BatchWriteExceptionType::UnsupportedIndexTypeException => "UnsupportedIndexTypeException",
+    BatchWriteExceptionType::ValidationException => "ValidationException",
+    BatchWriteExceptionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDeniedException", "DirectoryNotEnabledException", "FacetValidationException", "IndexedAttributeMissingException", "InternalServiceException", "InvalidArnException", "InvalidAttachmentException", "LimitExceededException", "LinkNameAlreadyInUseException", "NotIndexException", "NotNodeException", "NotPolicyException", "ObjectAlreadyDetachedException", "ObjectNotDetachedException", "ResourceNotFoundException", "StillContainsLinksException", "UnsupportedIndexTypeException", "ValidationException"]
+                }
+            }
 impl AsRef<str> for BatchWriteExceptionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
 #[non_exhaustive]
@@ -6227,25 +6207,25 @@ pub enum BatchReadExceptionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchReadExceptionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDeniedException" => BatchReadExceptionType::AccessDeniedException,
-            "CannotListParentOfRootException" => BatchReadExceptionType::CannotListParentOfRootException,
-            "DirectoryNotEnabledException" => BatchReadExceptionType::DirectoryNotEnabledException,
-            "FacetValidationException" => BatchReadExceptionType::FacetValidationException,
-            "InternalServiceException" => BatchReadExceptionType::InternalServiceException,
-            "InvalidArnException" => BatchReadExceptionType::InvalidArnException,
-            "InvalidNextTokenException" => BatchReadExceptionType::InvalidNextTokenException,
-            "LimitExceededException" => BatchReadExceptionType::LimitExceededException,
-            "NotIndexException" => BatchReadExceptionType::NotIndexException,
-            "NotNodeException" => BatchReadExceptionType::NotNodeException,
-            "NotPolicyException" => BatchReadExceptionType::NotPolicyException,
-            "ResourceNotFoundException" => BatchReadExceptionType::ResourceNotFoundException,
-            "ValidationException" => BatchReadExceptionType::ValidationException,
-            other => BatchReadExceptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDeniedException" => BatchReadExceptionType::AccessDeniedException,
+"CannotListParentOfRootException" => BatchReadExceptionType::CannotListParentOfRootException,
+"DirectoryNotEnabledException" => BatchReadExceptionType::DirectoryNotEnabledException,
+"FacetValidationException" => BatchReadExceptionType::FacetValidationException,
+"InternalServiceException" => BatchReadExceptionType::InternalServiceException,
+"InvalidArnException" => BatchReadExceptionType::InvalidArnException,
+"InvalidNextTokenException" => BatchReadExceptionType::InvalidNextTokenException,
+"LimitExceededException" => BatchReadExceptionType::LimitExceededException,
+"NotIndexException" => BatchReadExceptionType::NotIndexException,
+"NotNodeException" => BatchReadExceptionType::NotNodeException,
+"NotPolicyException" => BatchReadExceptionType::NotPolicyException,
+"ResourceNotFoundException" => BatchReadExceptionType::ResourceNotFoundException,
+"ValidationException" => BatchReadExceptionType::ValidationException,
+other => BatchReadExceptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BatchReadExceptionType {
                 type Err = std::convert::Infallible;
 
@@ -6254,37 +6234,35 @@ impl std::str::FromStr for BatchReadExceptionType {
                 }
             }
 impl BatchReadExceptionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BatchReadExceptionType::AccessDeniedException => "AccessDeniedException",
-            BatchReadExceptionType::CannotListParentOfRootException => "CannotListParentOfRootException",
-            BatchReadExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
-            BatchReadExceptionType::FacetValidationException => "FacetValidationException",
-            BatchReadExceptionType::InternalServiceException => "InternalServiceException",
-            BatchReadExceptionType::InvalidArnException => "InvalidArnException",
-            BatchReadExceptionType::InvalidNextTokenException => "InvalidNextTokenException",
-            BatchReadExceptionType::LimitExceededException => "LimitExceededException",
-            BatchReadExceptionType::NotIndexException => "NotIndexException",
-            BatchReadExceptionType::NotNodeException => "NotNodeException",
-            BatchReadExceptionType::NotPolicyException => "NotPolicyException",
-            BatchReadExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
-            BatchReadExceptionType::ValidationException => "ValidationException",
-            BatchReadExceptionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDeniedException", "CannotListParentOfRootException", "DirectoryNotEnabledException", "FacetValidationException", "InternalServiceException", "InvalidArnException", "InvalidNextTokenException", "LimitExceededException", "NotIndexException", "NotNodeException", "NotPolicyException", "ResourceNotFoundException", "ValidationException"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BatchReadExceptionType::AccessDeniedException => "AccessDeniedException",
+    BatchReadExceptionType::CannotListParentOfRootException => "CannotListParentOfRootException",
+    BatchReadExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
+    BatchReadExceptionType::FacetValidationException => "FacetValidationException",
+    BatchReadExceptionType::InternalServiceException => "InternalServiceException",
+    BatchReadExceptionType::InvalidArnException => "InvalidArnException",
+    BatchReadExceptionType::InvalidNextTokenException => "InvalidNextTokenException",
+    BatchReadExceptionType::LimitExceededException => "LimitExceededException",
+    BatchReadExceptionType::NotIndexException => "NotIndexException",
+    BatchReadExceptionType::NotNodeException => "NotNodeException",
+    BatchReadExceptionType::NotPolicyException => "NotPolicyException",
+    BatchReadExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
+    BatchReadExceptionType::ValidationException => "ValidationException",
+    BatchReadExceptionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDeniedException", "CannotListParentOfRootException", "DirectoryNotEnabledException", "FacetValidationException", "InternalServiceException", "InvalidArnException", "InvalidNextTokenException", "LimitExceededException", "NotIndexException", "NotNodeException", "NotPolicyException", "ResourceNotFoundException", "ValidationException"]
+                }
+            }
 impl AsRef<str> for BatchReadExceptionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents the output of a <code>BatchRead</code> success response operation.</p>
 #[non_exhaustive]

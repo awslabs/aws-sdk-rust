@@ -309,16 +309,16 @@ pub enum MediaCapabilities {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MediaCapabilities {
-    fn from(s: &str) -> Self {
-        match s {
-            "None" => MediaCapabilities::None,
-            "Receive" => MediaCapabilities::Receive,
-            "Send" => MediaCapabilities::Send,
-            "SendReceive" => MediaCapabilities::SendReceive,
-            other => MediaCapabilities::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "None" => MediaCapabilities::None,
+"Receive" => MediaCapabilities::Receive,
+"Send" => MediaCapabilities::Send,
+"SendReceive" => MediaCapabilities::SendReceive,
+other => MediaCapabilities::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MediaCapabilities {
                 type Err = std::convert::Infallible;
 
@@ -327,28 +327,26 @@ impl std::str::FromStr for MediaCapabilities {
                 }
             }
 impl MediaCapabilities {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MediaCapabilities::None => "None",
-            MediaCapabilities::Receive => "Receive",
-            MediaCapabilities::Send => "Send",
-            MediaCapabilities::SendReceive => "SendReceive",
-            MediaCapabilities::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "None", "Receive", "Send", "SendReceive"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MediaCapabilities::None => "None",
+    MediaCapabilities::Receive => "Receive",
+    MediaCapabilities::Send => "Send",
+    MediaCapabilities::SendReceive => "SendReceive",
+    MediaCapabilities::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["None", "Receive", "Send", "SendReceive"]
+                }
+            }
 impl AsRef<str> for MediaCapabilities {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A key-value pair that you define.</p>
 #[non_exhaustive]
@@ -677,13 +675,13 @@ pub enum TranscribeMedicalContentIdentificationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeMedicalContentIdentificationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PHI" => TranscribeMedicalContentIdentificationType::Phi,
-            other => TranscribeMedicalContentIdentificationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PHI" => TranscribeMedicalContentIdentificationType::Phi,
+other => TranscribeMedicalContentIdentificationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeMedicalContentIdentificationType {
                 type Err = std::convert::Infallible;
 
@@ -692,25 +690,23 @@ impl std::str::FromStr for TranscribeMedicalContentIdentificationType {
                 }
             }
 impl TranscribeMedicalContentIdentificationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeMedicalContentIdentificationType::Phi => "PHI",
-            TranscribeMedicalContentIdentificationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PHI"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeMedicalContentIdentificationType::Phi => "PHI",
+    TranscribeMedicalContentIdentificationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PHI"]
+                }
+            }
 impl AsRef<str> for TranscribeMedicalContentIdentificationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TranscribeMedicalRegion`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -774,19 +770,19 @@ pub enum TranscribeMedicalRegion {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeMedicalRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "ap-southeast-2" => TranscribeMedicalRegion::ApSoutheast2,
-            "auto" => TranscribeMedicalRegion::Auto,
-            "ca-central-1" => TranscribeMedicalRegion::CaCentral1,
-            "eu-west-1" => TranscribeMedicalRegion::EuWest1,
-            "us-east-1" => TranscribeMedicalRegion::UsEast1,
-            "us-east-2" => TranscribeMedicalRegion::UsEast2,
-            "us-west-2" => TranscribeMedicalRegion::UsWest2,
-            other => TranscribeMedicalRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ap-southeast-2" => TranscribeMedicalRegion::ApSoutheast2,
+"auto" => TranscribeMedicalRegion::Auto,
+"ca-central-1" => TranscribeMedicalRegion::CaCentral1,
+"eu-west-1" => TranscribeMedicalRegion::EuWest1,
+"us-east-1" => TranscribeMedicalRegion::UsEast1,
+"us-east-2" => TranscribeMedicalRegion::UsEast2,
+"us-west-2" => TranscribeMedicalRegion::UsWest2,
+other => TranscribeMedicalRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeMedicalRegion {
                 type Err = std::convert::Infallible;
 
@@ -795,31 +791,29 @@ impl std::str::FromStr for TranscribeMedicalRegion {
                 }
             }
 impl TranscribeMedicalRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeMedicalRegion::ApSoutheast2 => "ap-southeast-2",
-            TranscribeMedicalRegion::Auto => "auto",
-            TranscribeMedicalRegion::CaCentral1 => "ca-central-1",
-            TranscribeMedicalRegion::EuWest1 => "eu-west-1",
-            TranscribeMedicalRegion::UsEast1 => "us-east-1",
-            TranscribeMedicalRegion::UsEast2 => "us-east-2",
-            TranscribeMedicalRegion::UsWest2 => "us-west-2",
-            TranscribeMedicalRegion::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ap-southeast-2", "auto", "ca-central-1", "eu-west-1", "us-east-1", "us-east-2", "us-west-2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeMedicalRegion::ApSoutheast2 => "ap-southeast-2",
+    TranscribeMedicalRegion::Auto => "auto",
+    TranscribeMedicalRegion::CaCentral1 => "ca-central-1",
+    TranscribeMedicalRegion::EuWest1 => "eu-west-1",
+    TranscribeMedicalRegion::UsEast1 => "us-east-1",
+    TranscribeMedicalRegion::UsEast2 => "us-east-2",
+    TranscribeMedicalRegion::UsWest2 => "us-west-2",
+    TranscribeMedicalRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ap-southeast-2", "auto", "ca-central-1", "eu-west-1", "us-east-1", "us-east-2", "us-west-2"]
+                }
+            }
 impl AsRef<str> for TranscribeMedicalRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TranscribeMedicalType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -868,14 +862,14 @@ pub enum TranscribeMedicalType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeMedicalType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONVERSATION" => TranscribeMedicalType::Conversation,
-            "DICTATION" => TranscribeMedicalType::Dictation,
-            other => TranscribeMedicalType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONVERSATION" => TranscribeMedicalType::Conversation,
+"DICTATION" => TranscribeMedicalType::Dictation,
+other => TranscribeMedicalType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeMedicalType {
                 type Err = std::convert::Infallible;
 
@@ -884,26 +878,24 @@ impl std::str::FromStr for TranscribeMedicalType {
                 }
             }
 impl TranscribeMedicalType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeMedicalType::Conversation => "CONVERSATION",
-            TranscribeMedicalType::Dictation => "DICTATION",
-            TranscribeMedicalType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONVERSATION", "DICTATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeMedicalType::Conversation => "CONVERSATION",
+    TranscribeMedicalType::Dictation => "DICTATION",
+    TranscribeMedicalType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONVERSATION", "DICTATION"]
+                }
+            }
 impl AsRef<str> for TranscribeMedicalType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TranscribeMedicalSpecialty`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -964,18 +956,18 @@ pub enum TranscribeMedicalSpecialty {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeMedicalSpecialty {
-    fn from(s: &str) -> Self {
-        match s {
-            "CARDIOLOGY" => TranscribeMedicalSpecialty::Cardiology,
-            "NEUROLOGY" => TranscribeMedicalSpecialty::Neurology,
-            "ONCOLOGY" => TranscribeMedicalSpecialty::Oncology,
-            "PRIMARYCARE" => TranscribeMedicalSpecialty::Primarycare,
-            "RADIOLOGY" => TranscribeMedicalSpecialty::Radiology,
-            "UROLOGY" => TranscribeMedicalSpecialty::Urology,
-            other => TranscribeMedicalSpecialty::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CARDIOLOGY" => TranscribeMedicalSpecialty::Cardiology,
+"NEUROLOGY" => TranscribeMedicalSpecialty::Neurology,
+"ONCOLOGY" => TranscribeMedicalSpecialty::Oncology,
+"PRIMARYCARE" => TranscribeMedicalSpecialty::Primarycare,
+"RADIOLOGY" => TranscribeMedicalSpecialty::Radiology,
+"UROLOGY" => TranscribeMedicalSpecialty::Urology,
+other => TranscribeMedicalSpecialty::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeMedicalSpecialty {
                 type Err = std::convert::Infallible;
 
@@ -984,30 +976,28 @@ impl std::str::FromStr for TranscribeMedicalSpecialty {
                 }
             }
 impl TranscribeMedicalSpecialty {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeMedicalSpecialty::Cardiology => "CARDIOLOGY",
-            TranscribeMedicalSpecialty::Neurology => "NEUROLOGY",
-            TranscribeMedicalSpecialty::Oncology => "ONCOLOGY",
-            TranscribeMedicalSpecialty::Primarycare => "PRIMARYCARE",
-            TranscribeMedicalSpecialty::Radiology => "RADIOLOGY",
-            TranscribeMedicalSpecialty::Urology => "UROLOGY",
-            TranscribeMedicalSpecialty::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CARDIOLOGY", "NEUROLOGY", "ONCOLOGY", "PRIMARYCARE", "RADIOLOGY", "UROLOGY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeMedicalSpecialty::Cardiology => "CARDIOLOGY",
+    TranscribeMedicalSpecialty::Neurology => "NEUROLOGY",
+    TranscribeMedicalSpecialty::Oncology => "ONCOLOGY",
+    TranscribeMedicalSpecialty::Primarycare => "PRIMARYCARE",
+    TranscribeMedicalSpecialty::Radiology => "RADIOLOGY",
+    TranscribeMedicalSpecialty::Urology => "UROLOGY",
+    TranscribeMedicalSpecialty::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CARDIOLOGY", "NEUROLOGY", "ONCOLOGY", "PRIMARYCARE", "RADIOLOGY", "UROLOGY"]
+                }
+            }
 impl AsRef<str> for TranscribeMedicalSpecialty {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TranscribeMedicalLanguageCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1053,13 +1043,13 @@ pub enum TranscribeMedicalLanguageCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeMedicalLanguageCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "en-US" => TranscribeMedicalLanguageCode::EnUs,
-            other => TranscribeMedicalLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "en-US" => TranscribeMedicalLanguageCode::EnUs,
+other => TranscribeMedicalLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeMedicalLanguageCode {
                 type Err = std::convert::Infallible;
 
@@ -1068,25 +1058,23 @@ impl std::str::FromStr for TranscribeMedicalLanguageCode {
                 }
             }
 impl TranscribeMedicalLanguageCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeMedicalLanguageCode::EnUs => "en-US",
-            TranscribeMedicalLanguageCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "en-US"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeMedicalLanguageCode::EnUs => "en-US",
+    TranscribeMedicalLanguageCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["en-US"]
+                }
+            }
 impl AsRef<str> for TranscribeMedicalLanguageCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Settings specific to the Amazon Transcribe engine.</p>
 #[non_exhaustive]
@@ -1476,24 +1464,24 @@ pub enum TranscribeLanguageCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeLanguageCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "de-DE" => TranscribeLanguageCode::DeDe,
-            "en-AU" => TranscribeLanguageCode::EnAu,
-            "en-GB" => TranscribeLanguageCode::EnGb,
-            "en-US" => TranscribeLanguageCode::EnUs,
-            "es-US" => TranscribeLanguageCode::EsUs,
-            "fr-CA" => TranscribeLanguageCode::FrCa,
-            "fr-FR" => TranscribeLanguageCode::FrFr,
-            "it-IT" => TranscribeLanguageCode::ItIt,
-            "ja-JP" => TranscribeLanguageCode::JaJp,
-            "ko-KR" => TranscribeLanguageCode::KoKr,
-            "pt-BR" => TranscribeLanguageCode::PtBr,
-            "zh-CN" => TranscribeLanguageCode::ZhCn,
-            other => TranscribeLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "de-DE" => TranscribeLanguageCode::DeDe,
+"en-AU" => TranscribeLanguageCode::EnAu,
+"en-GB" => TranscribeLanguageCode::EnGb,
+"en-US" => TranscribeLanguageCode::EnUs,
+"es-US" => TranscribeLanguageCode::EsUs,
+"fr-CA" => TranscribeLanguageCode::FrCa,
+"fr-FR" => TranscribeLanguageCode::FrFr,
+"it-IT" => TranscribeLanguageCode::ItIt,
+"ja-JP" => TranscribeLanguageCode::JaJp,
+"ko-KR" => TranscribeLanguageCode::KoKr,
+"pt-BR" => TranscribeLanguageCode::PtBr,
+"zh-CN" => TranscribeLanguageCode::ZhCn,
+other => TranscribeLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeLanguageCode {
                 type Err = std::convert::Infallible;
 
@@ -1502,36 +1490,34 @@ impl std::str::FromStr for TranscribeLanguageCode {
                 }
             }
 impl TranscribeLanguageCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeLanguageCode::DeDe => "de-DE",
-            TranscribeLanguageCode::EnAu => "en-AU",
-            TranscribeLanguageCode::EnGb => "en-GB",
-            TranscribeLanguageCode::EnUs => "en-US",
-            TranscribeLanguageCode::EsUs => "es-US",
-            TranscribeLanguageCode::FrCa => "fr-CA",
-            TranscribeLanguageCode::FrFr => "fr-FR",
-            TranscribeLanguageCode::ItIt => "it-IT",
-            TranscribeLanguageCode::JaJp => "ja-JP",
-            TranscribeLanguageCode::KoKr => "ko-KR",
-            TranscribeLanguageCode::PtBr => "pt-BR",
-            TranscribeLanguageCode::ZhCn => "zh-CN",
-            TranscribeLanguageCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pt-BR", "zh-CN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeLanguageCode::DeDe => "de-DE",
+    TranscribeLanguageCode::EnAu => "en-AU",
+    TranscribeLanguageCode::EnGb => "en-GB",
+    TranscribeLanguageCode::EnUs => "en-US",
+    TranscribeLanguageCode::EsUs => "es-US",
+    TranscribeLanguageCode::FrCa => "fr-CA",
+    TranscribeLanguageCode::FrFr => "fr-FR",
+    TranscribeLanguageCode::ItIt => "it-IT",
+    TranscribeLanguageCode::JaJp => "ja-JP",
+    TranscribeLanguageCode::KoKr => "ko-KR",
+    TranscribeLanguageCode::PtBr => "pt-BR",
+    TranscribeLanguageCode::ZhCn => "zh-CN",
+    TranscribeLanguageCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pt-BR", "zh-CN"]
+                }
+            }
 impl AsRef<str> for TranscribeLanguageCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TranscribeContentRedactionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1577,13 +1563,13 @@ pub enum TranscribeContentRedactionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeContentRedactionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PII" => TranscribeContentRedactionType::Pii,
-            other => TranscribeContentRedactionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PII" => TranscribeContentRedactionType::Pii,
+other => TranscribeContentRedactionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeContentRedactionType {
                 type Err = std::convert::Infallible;
 
@@ -1592,25 +1578,23 @@ impl std::str::FromStr for TranscribeContentRedactionType {
                 }
             }
 impl TranscribeContentRedactionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeContentRedactionType::Pii => "PII",
-            TranscribeContentRedactionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PII"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeContentRedactionType::Pii => "PII",
+    TranscribeContentRedactionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PII"]
+                }
+            }
 impl AsRef<str> for TranscribeContentRedactionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TranscribeContentIdentificationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1656,13 +1640,13 @@ pub enum TranscribeContentIdentificationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeContentIdentificationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PII" => TranscribeContentIdentificationType::Pii,
-            other => TranscribeContentIdentificationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PII" => TranscribeContentIdentificationType::Pii,
+other => TranscribeContentIdentificationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeContentIdentificationType {
                 type Err = std::convert::Infallible;
 
@@ -1671,25 +1655,23 @@ impl std::str::FromStr for TranscribeContentIdentificationType {
                 }
             }
 impl TranscribeContentIdentificationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeContentIdentificationType::Pii => "PII",
-            TranscribeContentIdentificationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PII"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeContentIdentificationType::Pii => "PII",
+    TranscribeContentIdentificationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PII"]
+                }
+            }
 impl AsRef<str> for TranscribeContentIdentificationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TranscribePartialResultsStability`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1741,15 +1723,15 @@ pub enum TranscribePartialResultsStability {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribePartialResultsStability {
-    fn from(s: &str) -> Self {
-        match s {
-            "high" => TranscribePartialResultsStability::High,
-            "low" => TranscribePartialResultsStability::Low,
-            "medium" => TranscribePartialResultsStability::Medium,
-            other => TranscribePartialResultsStability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "high" => TranscribePartialResultsStability::High,
+"low" => TranscribePartialResultsStability::Low,
+"medium" => TranscribePartialResultsStability::Medium,
+other => TranscribePartialResultsStability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribePartialResultsStability {
                 type Err = std::convert::Infallible;
 
@@ -1758,27 +1740,25 @@ impl std::str::FromStr for TranscribePartialResultsStability {
                 }
             }
 impl TranscribePartialResultsStability {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribePartialResultsStability::High => "high",
-            TranscribePartialResultsStability::Low => "low",
-            TranscribePartialResultsStability::Medium => "medium",
-            TranscribePartialResultsStability::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "high", "low", "medium"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribePartialResultsStability::High => "high",
+    TranscribePartialResultsStability::Low => "low",
+    TranscribePartialResultsStability::Medium => "medium",
+    TranscribePartialResultsStability::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["high", "low", "medium"]
+                }
+            }
 impl AsRef<str> for TranscribePartialResultsStability {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TranscribeRegion`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1860,25 +1840,25 @@ pub enum TranscribeRegion {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "ap-northeast-1" => TranscribeRegion::ApNortheast1,
-            "ap-northeast-2" => TranscribeRegion::ApNortheast2,
-            "ap-southeast-2" => TranscribeRegion::ApSoutheast2,
-            "auto" => TranscribeRegion::Auto,
-            "ca-central-1" => TranscribeRegion::CaCentral1,
-            "eu-central-1" => TranscribeRegion::EuCentral1,
-            "eu-west-1" => TranscribeRegion::EuWest1,
-            "eu-west-2" => TranscribeRegion::EuWest2,
-            "sa-east-1" => TranscribeRegion::SaEast1,
-            "us-east-1" => TranscribeRegion::UsEast1,
-            "us-east-2" => TranscribeRegion::UsEast2,
-            "us-gov-west-1" => TranscribeRegion::UsGovWest1,
-            "us-west-2" => TranscribeRegion::UsWest2,
-            other => TranscribeRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ap-northeast-1" => TranscribeRegion::ApNortheast1,
+"ap-northeast-2" => TranscribeRegion::ApNortheast2,
+"ap-southeast-2" => TranscribeRegion::ApSoutheast2,
+"auto" => TranscribeRegion::Auto,
+"ca-central-1" => TranscribeRegion::CaCentral1,
+"eu-central-1" => TranscribeRegion::EuCentral1,
+"eu-west-1" => TranscribeRegion::EuWest1,
+"eu-west-2" => TranscribeRegion::EuWest2,
+"sa-east-1" => TranscribeRegion::SaEast1,
+"us-east-1" => TranscribeRegion::UsEast1,
+"us-east-2" => TranscribeRegion::UsEast2,
+"us-gov-west-1" => TranscribeRegion::UsGovWest1,
+"us-west-2" => TranscribeRegion::UsWest2,
+other => TranscribeRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeRegion {
                 type Err = std::convert::Infallible;
 
@@ -1887,37 +1867,35 @@ impl std::str::FromStr for TranscribeRegion {
                 }
             }
 impl TranscribeRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeRegion::ApNortheast1 => "ap-northeast-1",
-            TranscribeRegion::ApNortheast2 => "ap-northeast-2",
-            TranscribeRegion::ApSoutheast2 => "ap-southeast-2",
-            TranscribeRegion::Auto => "auto",
-            TranscribeRegion::CaCentral1 => "ca-central-1",
-            TranscribeRegion::EuCentral1 => "eu-central-1",
-            TranscribeRegion::EuWest1 => "eu-west-1",
-            TranscribeRegion::EuWest2 => "eu-west-2",
-            TranscribeRegion::SaEast1 => "sa-east-1",
-            TranscribeRegion::UsEast1 => "us-east-1",
-            TranscribeRegion::UsEast2 => "us-east-2",
-            TranscribeRegion::UsGovWest1 => "us-gov-west-1",
-            TranscribeRegion::UsWest2 => "us-west-2",
-            TranscribeRegion::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ap-northeast-1", "ap-northeast-2", "ap-southeast-2", "auto", "ca-central-1", "eu-central-1", "eu-west-1", "eu-west-2", "sa-east-1", "us-east-1", "us-east-2", "us-gov-west-1", "us-west-2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeRegion::ApNortheast1 => "ap-northeast-1",
+    TranscribeRegion::ApNortheast2 => "ap-northeast-2",
+    TranscribeRegion::ApSoutheast2 => "ap-southeast-2",
+    TranscribeRegion::Auto => "auto",
+    TranscribeRegion::CaCentral1 => "ca-central-1",
+    TranscribeRegion::EuCentral1 => "eu-central-1",
+    TranscribeRegion::EuWest1 => "eu-west-1",
+    TranscribeRegion::EuWest2 => "eu-west-2",
+    TranscribeRegion::SaEast1 => "sa-east-1",
+    TranscribeRegion::UsEast1 => "us-east-1",
+    TranscribeRegion::UsEast2 => "us-east-2",
+    TranscribeRegion::UsGovWest1 => "us-gov-west-1",
+    TranscribeRegion::UsWest2 => "us-west-2",
+    TranscribeRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ap-northeast-1", "ap-northeast-2", "ap-southeast-2", "auto", "ca-central-1", "eu-central-1", "eu-west-1", "eu-west-2", "sa-east-1", "us-east-1", "us-east-2", "us-gov-west-1", "us-west-2"]
+                }
+            }
 impl AsRef<str> for TranscribeRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TranscribeVocabularyFilterMethod`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1969,15 +1947,15 @@ pub enum TranscribeVocabularyFilterMethod {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscribeVocabularyFilterMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "mask" => TranscribeVocabularyFilterMethod::Mask,
-            "remove" => TranscribeVocabularyFilterMethod::Remove,
-            "tag" => TranscribeVocabularyFilterMethod::Tag,
-            other => TranscribeVocabularyFilterMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "mask" => TranscribeVocabularyFilterMethod::Mask,
+"remove" => TranscribeVocabularyFilterMethod::Remove,
+"tag" => TranscribeVocabularyFilterMethod::Tag,
+other => TranscribeVocabularyFilterMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TranscribeVocabularyFilterMethod {
                 type Err = std::convert::Infallible;
 
@@ -1986,27 +1964,25 @@ impl std::str::FromStr for TranscribeVocabularyFilterMethod {
                 }
             }
 impl TranscribeVocabularyFilterMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TranscribeVocabularyFilterMethod::Mask => "mask",
-            TranscribeVocabularyFilterMethod::Remove => "remove",
-            TranscribeVocabularyFilterMethod::Tag => "tag",
-            TranscribeVocabularyFilterMethod::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "mask", "remove", "tag"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TranscribeVocabularyFilterMethod::Mask => "mask",
+    TranscribeVocabularyFilterMethod::Remove => "remove",
+    TranscribeVocabularyFilterMethod::Tag => "tag",
+    TranscribeVocabularyFilterMethod::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["mask", "remove", "tag"]
+                }
+            }
 impl AsRef<str> for TranscribeVocabularyFilterMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A meeting created using the Amazon Chime SDK.</p>
 #[non_exhaustive]
@@ -2397,14 +2373,14 @@ pub enum MeetingFeatureStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MeetingFeatureStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => MeetingFeatureStatus::Available,
-            "UNAVAILABLE" => MeetingFeatureStatus::Unavailable,
-            other => MeetingFeatureStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => MeetingFeatureStatus::Available,
+"UNAVAILABLE" => MeetingFeatureStatus::Unavailable,
+other => MeetingFeatureStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MeetingFeatureStatus {
                 type Err = std::convert::Infallible;
 
@@ -2413,26 +2389,24 @@ impl std::str::FromStr for MeetingFeatureStatus {
                 }
             }
 impl MeetingFeatureStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MeetingFeatureStatus::Available => "AVAILABLE",
-            MeetingFeatureStatus::Unavailable => "UNAVAILABLE",
-            MeetingFeatureStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "UNAVAILABLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MeetingFeatureStatus::Available => "AVAILABLE",
+    MeetingFeatureStatus::Unavailable => "UNAVAILABLE",
+    MeetingFeatureStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "UNAVAILABLE"]
+                }
+            }
 impl AsRef<str> for MeetingFeatureStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A set of endpoints used by clients to connect to the media service group for an Amazon Chime SDK meeting.</p>
 #[non_exhaustive]

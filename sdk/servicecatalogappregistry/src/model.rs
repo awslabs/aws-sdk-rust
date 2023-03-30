@@ -387,14 +387,14 @@ pub enum SyncAction {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SyncAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "NO_ACTION" => SyncAction::NoAction,
-            "START_SYNC" => SyncAction::StartSync,
-            other => SyncAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NO_ACTION" => SyncAction::NoAction,
+"START_SYNC" => SyncAction::StartSync,
+other => SyncAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SyncAction {
                 type Err = std::convert::Infallible;
 
@@ -403,26 +403,24 @@ impl std::str::FromStr for SyncAction {
                 }
             }
 impl SyncAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SyncAction::NoAction => "NO_ACTION",
-            SyncAction::StartSync => "START_SYNC",
-            SyncAction::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NO_ACTION", "START_SYNC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SyncAction::NoAction => "NO_ACTION",
+    SyncAction::StartSync => "START_SYNC",
+    SyncAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NO_ACTION", "START_SYNC"]
+                }
+            }
 impl AsRef<str> for SyncAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ResourceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -471,14 +469,14 @@ pub enum ResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CFN_STACK" => ResourceType::CfnStack,
-            "RESOURCE_TAG_VALUE" => ResourceType::ResourceTagValue,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CFN_STACK" => ResourceType::CfnStack,
+"RESOURCE_TAG_VALUE" => ResourceType::ResourceTagValue,
+other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceType {
                 type Err = std::convert::Infallible;
 
@@ -487,26 +485,24 @@ impl std::str::FromStr for ResourceType {
                 }
             }
 impl ResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceType::CfnStack => "CFN_STACK",
-            ResourceType::ResourceTagValue => "RESOURCE_TAG_VALUE",
-            ResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CFN_STACK", "RESOURCE_TAG_VALUE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceType::CfnStack => "CFN_STACK",
+    ResourceType::ResourceTagValue => "RESOURCE_TAG_VALUE",
+    ResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CFN_STACK", "RESOURCE_TAG_VALUE"]
+                }
+            }
 impl AsRef<str> for ResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Includes all of the Service Catalog AppRegistry settings. </p>
 #[non_exhaustive]
@@ -1487,18 +1483,18 @@ pub enum ResourceGroupState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceGroupState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_COMPLETE" => ResourceGroupState::CreateComplete,
-            "CREATE_FAILED" => ResourceGroupState::CreateFailed,
-            "CREATING" => ResourceGroupState::Creating,
-            "UPDATE_COMPLETE" => ResourceGroupState::UpdateComplete,
-            "UPDATE_FAILED" => ResourceGroupState::UpdateFailed,
-            "UPDATING" => ResourceGroupState::Updating,
-            other => ResourceGroupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_COMPLETE" => ResourceGroupState::CreateComplete,
+"CREATE_FAILED" => ResourceGroupState::CreateFailed,
+"CREATING" => ResourceGroupState::Creating,
+"UPDATE_COMPLETE" => ResourceGroupState::UpdateComplete,
+"UPDATE_FAILED" => ResourceGroupState::UpdateFailed,
+"UPDATING" => ResourceGroupState::Updating,
+other => ResourceGroupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceGroupState {
                 type Err = std::convert::Infallible;
 
@@ -1507,30 +1503,28 @@ impl std::str::FromStr for ResourceGroupState {
                 }
             }
 impl ResourceGroupState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceGroupState::CreateComplete => "CREATE_COMPLETE",
-            ResourceGroupState::CreateFailed => "CREATE_FAILED",
-            ResourceGroupState::Creating => "CREATING",
-            ResourceGroupState::UpdateComplete => "UPDATE_COMPLETE",
-            ResourceGroupState::UpdateFailed => "UPDATE_FAILED",
-            ResourceGroupState::Updating => "UPDATING",
-            ResourceGroupState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_COMPLETE", "CREATE_FAILED", "CREATING", "UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceGroupState::CreateComplete => "CREATE_COMPLETE",
+    ResourceGroupState::CreateFailed => "CREATE_FAILED",
+    ResourceGroupState::Creating => "CREATING",
+    ResourceGroupState::UpdateComplete => "UPDATE_COMPLETE",
+    ResourceGroupState::UpdateFailed => "UPDATE_FAILED",
+    ResourceGroupState::Updating => "UPDATING",
+    ResourceGroupState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_COMPLETE", "CREATE_FAILED", "CREATING", "UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for ResourceGroupState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The information about the service integration.</p>
 #[non_exhaustive]

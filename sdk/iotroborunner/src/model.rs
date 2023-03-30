@@ -504,15 +504,15 @@ pub enum DestinationState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DestinationState {
-    fn from(s: &str) -> Self {
-        match s {
-            "DECOMMISSIONED" => DestinationState::Decommissioned,
-            "DISABLED" => DestinationState::Disabled,
-            "ENABLED" => DestinationState::Enabled,
-            other => DestinationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DECOMMISSIONED" => DestinationState::Decommissioned,
+"DISABLED" => DestinationState::Disabled,
+"ENABLED" => DestinationState::Enabled,
+other => DestinationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DestinationState {
                 type Err = std::convert::Infallible;
 
@@ -521,27 +521,25 @@ impl std::str::FromStr for DestinationState {
                 }
             }
 impl DestinationState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DestinationState::Decommissioned => "DECOMMISSIONED",
-            DestinationState::Disabled => "DISABLED",
-            DestinationState::Enabled => "ENABLED",
-            DestinationState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DECOMMISSIONED", "DISABLED", "ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DestinationState::Decommissioned => "DECOMMISSIONED",
+    DestinationState::Disabled => "DISABLED",
+    DestinationState::Enabled => "ENABLED",
+    DestinationState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DECOMMISSIONED", "DISABLED", "ENABLED"]
+                }
+            }
 impl AsRef<str> for DestinationState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Supported coordinates for worker position.
 #[non_exhaustive]

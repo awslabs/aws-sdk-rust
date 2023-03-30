@@ -144,13 +144,13 @@ pub enum FilterType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FilterType {
-    fn from(s: &str) -> Self {
-        match s {
-            "TERM_MATCH" => FilterType::TermMatch,
-            other => FilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "TERM_MATCH" => FilterType::TermMatch,
+other => FilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FilterType {
                 type Err = std::convert::Infallible;
 
@@ -159,25 +159,23 @@ impl std::str::FromStr for FilterType {
                 }
             }
 impl FilterType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FilterType::TermMatch => "TERM_MATCH",
-            FilterType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "TERM_MATCH"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FilterType::TermMatch => "TERM_MATCH",
+    FilterType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["TERM_MATCH"]
+                }
+            }
 impl AsRef<str> for FilterType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.</p>
 #[non_exhaustive]

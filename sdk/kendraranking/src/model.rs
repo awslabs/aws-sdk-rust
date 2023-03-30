@@ -550,17 +550,17 @@ pub enum RescoreExecutionPlanStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RescoreExecutionPlanStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => RescoreExecutionPlanStatus::Active,
-            "CREATING" => RescoreExecutionPlanStatus::Creating,
-            "DELETING" => RescoreExecutionPlanStatus::Deleting,
-            "FAILED" => RescoreExecutionPlanStatus::Failed,
-            "UPDATING" => RescoreExecutionPlanStatus::Updating,
-            other => RescoreExecutionPlanStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => RescoreExecutionPlanStatus::Active,
+"CREATING" => RescoreExecutionPlanStatus::Creating,
+"DELETING" => RescoreExecutionPlanStatus::Deleting,
+"FAILED" => RescoreExecutionPlanStatus::Failed,
+"UPDATING" => RescoreExecutionPlanStatus::Updating,
+other => RescoreExecutionPlanStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RescoreExecutionPlanStatus {
                 type Err = std::convert::Infallible;
 
@@ -569,27 +569,25 @@ impl std::str::FromStr for RescoreExecutionPlanStatus {
                 }
             }
 impl RescoreExecutionPlanStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RescoreExecutionPlanStatus::Active => "ACTIVE",
-            RescoreExecutionPlanStatus::Creating => "CREATING",
-            RescoreExecutionPlanStatus::Deleting => "DELETING",
-            RescoreExecutionPlanStatus::Failed => "FAILED",
-            RescoreExecutionPlanStatus::Updating => "UPDATING",
-            RescoreExecutionPlanStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RescoreExecutionPlanStatus::Active => "ACTIVE",
+    RescoreExecutionPlanStatus::Creating => "CREATING",
+    RescoreExecutionPlanStatus::Deleting => "DELETING",
+    RescoreExecutionPlanStatus::Failed => "FAILED",
+    RescoreExecutionPlanStatus::Updating => "UPDATING",
+    RescoreExecutionPlanStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for RescoreExecutionPlanStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

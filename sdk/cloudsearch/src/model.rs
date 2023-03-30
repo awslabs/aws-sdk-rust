@@ -279,16 +279,16 @@ pub enum OptionState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OptionState {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => OptionState::Active,
-            "FailedToValidate" => OptionState::FailedToValidate,
-            "Processing" => OptionState::Processing,
-            "RequiresIndexDocuments" => OptionState::RequiresIndexDocuments,
-            other => OptionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => OptionState::Active,
+"FailedToValidate" => OptionState::FailedToValidate,
+"Processing" => OptionState::Processing,
+"RequiresIndexDocuments" => OptionState::RequiresIndexDocuments,
+other => OptionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OptionState {
                 type Err = std::convert::Infallible;
 
@@ -297,28 +297,26 @@ impl std::str::FromStr for OptionState {
                 }
             }
 impl OptionState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OptionState::Active => "Active",
-            OptionState::FailedToValidate => "FailedToValidate",
-            OptionState::Processing => "Processing",
-            OptionState::RequiresIndexDocuments => "RequiresIndexDocuments",
-            OptionState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "FailedToValidate", "Processing", "RequiresIndexDocuments"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OptionState::Active => "Active",
+    OptionState::FailedToValidate => "FailedToValidate",
+    OptionState::Processing => "Processing",
+    OptionState::RequiresIndexDocuments => "RequiresIndexDocuments",
+    OptionState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "FailedToValidate", "Processing", "RequiresIndexDocuments"]
+                }
+            }
 impl AsRef<str> for OptionState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The status and configuration of a search domain's scaling parameters. </p>
 #[non_exhaustive]
@@ -571,29 +569,29 @@ pub enum PartitionInstanceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PartitionInstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "search.2xlarge" => PartitionInstanceType::Search2xlarge,
-            "search.large" => PartitionInstanceType::SearchLarge,
-            "search.m1.large" => PartitionInstanceType::SearchM1Large,
-            "search.m1.small" => PartitionInstanceType::SearchM1Small,
-            "search.m2.2xlarge" => PartitionInstanceType::SearchM22xlarge,
-            "search.m2.xlarge" => PartitionInstanceType::SearchM2Xlarge,
-            "search.m3.2xlarge" => PartitionInstanceType::SearchM32xlarge,
-            "search.m3.large" => PartitionInstanceType::SearchM3Large,
-            "search.m3.medium" => PartitionInstanceType::SearchM3Medium,
-            "search.m3.xlarge" => PartitionInstanceType::SearchM3Xlarge,
-            "search.medium" => PartitionInstanceType::SearchMedium,
-            "search.previousgeneration.2xlarge" => PartitionInstanceType::SearchPreviousgeneration2xlarge,
-            "search.previousgeneration.large" => PartitionInstanceType::SearchPreviousgenerationLarge,
-            "search.previousgeneration.small" => PartitionInstanceType::SearchPreviousgenerationSmall,
-            "search.previousgeneration.xlarge" => PartitionInstanceType::SearchPreviousgenerationXlarge,
-            "search.small" => PartitionInstanceType::SearchSmall,
-            "search.xlarge" => PartitionInstanceType::SearchXlarge,
-            other => PartitionInstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "search.2xlarge" => PartitionInstanceType::Search2xlarge,
+"search.large" => PartitionInstanceType::SearchLarge,
+"search.m1.large" => PartitionInstanceType::SearchM1Large,
+"search.m1.small" => PartitionInstanceType::SearchM1Small,
+"search.m2.2xlarge" => PartitionInstanceType::SearchM22xlarge,
+"search.m2.xlarge" => PartitionInstanceType::SearchM2Xlarge,
+"search.m3.2xlarge" => PartitionInstanceType::SearchM32xlarge,
+"search.m3.large" => PartitionInstanceType::SearchM3Large,
+"search.m3.medium" => PartitionInstanceType::SearchM3Medium,
+"search.m3.xlarge" => PartitionInstanceType::SearchM3Xlarge,
+"search.medium" => PartitionInstanceType::SearchMedium,
+"search.previousgeneration.2xlarge" => PartitionInstanceType::SearchPreviousgeneration2xlarge,
+"search.previousgeneration.large" => PartitionInstanceType::SearchPreviousgenerationLarge,
+"search.previousgeneration.small" => PartitionInstanceType::SearchPreviousgenerationSmall,
+"search.previousgeneration.xlarge" => PartitionInstanceType::SearchPreviousgenerationXlarge,
+"search.small" => PartitionInstanceType::SearchSmall,
+"search.xlarge" => PartitionInstanceType::SearchXlarge,
+other => PartitionInstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PartitionInstanceType {
                 type Err = std::convert::Infallible;
 
@@ -602,41 +600,39 @@ impl std::str::FromStr for PartitionInstanceType {
                 }
             }
 impl PartitionInstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PartitionInstanceType::Search2xlarge => "search.2xlarge",
-            PartitionInstanceType::SearchLarge => "search.large",
-            PartitionInstanceType::SearchM1Large => "search.m1.large",
-            PartitionInstanceType::SearchM1Small => "search.m1.small",
-            PartitionInstanceType::SearchM22xlarge => "search.m2.2xlarge",
-            PartitionInstanceType::SearchM2Xlarge => "search.m2.xlarge",
-            PartitionInstanceType::SearchM32xlarge => "search.m3.2xlarge",
-            PartitionInstanceType::SearchM3Large => "search.m3.large",
-            PartitionInstanceType::SearchM3Medium => "search.m3.medium",
-            PartitionInstanceType::SearchM3Xlarge => "search.m3.xlarge",
-            PartitionInstanceType::SearchMedium => "search.medium",
-            PartitionInstanceType::SearchPreviousgeneration2xlarge => "search.previousgeneration.2xlarge",
-            PartitionInstanceType::SearchPreviousgenerationLarge => "search.previousgeneration.large",
-            PartitionInstanceType::SearchPreviousgenerationSmall => "search.previousgeneration.small",
-            PartitionInstanceType::SearchPreviousgenerationXlarge => "search.previousgeneration.xlarge",
-            PartitionInstanceType::SearchSmall => "search.small",
-            PartitionInstanceType::SearchXlarge => "search.xlarge",
-            PartitionInstanceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "search.2xlarge", "search.large", "search.m1.large", "search.m1.small", "search.m2.2xlarge", "search.m2.xlarge", "search.m3.2xlarge", "search.m3.large", "search.m3.medium", "search.m3.xlarge", "search.medium", "search.previousgeneration.2xlarge", "search.previousgeneration.large", "search.previousgeneration.small", "search.previousgeneration.xlarge", "search.small", "search.xlarge"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PartitionInstanceType::Search2xlarge => "search.2xlarge",
+    PartitionInstanceType::SearchLarge => "search.large",
+    PartitionInstanceType::SearchM1Large => "search.m1.large",
+    PartitionInstanceType::SearchM1Small => "search.m1.small",
+    PartitionInstanceType::SearchM22xlarge => "search.m2.2xlarge",
+    PartitionInstanceType::SearchM2Xlarge => "search.m2.xlarge",
+    PartitionInstanceType::SearchM32xlarge => "search.m3.2xlarge",
+    PartitionInstanceType::SearchM3Large => "search.m3.large",
+    PartitionInstanceType::SearchM3Medium => "search.m3.medium",
+    PartitionInstanceType::SearchM3Xlarge => "search.m3.xlarge",
+    PartitionInstanceType::SearchMedium => "search.medium",
+    PartitionInstanceType::SearchPreviousgeneration2xlarge => "search.previousgeneration.2xlarge",
+    PartitionInstanceType::SearchPreviousgenerationLarge => "search.previousgeneration.large",
+    PartitionInstanceType::SearchPreviousgenerationSmall => "search.previousgeneration.small",
+    PartitionInstanceType::SearchPreviousgenerationXlarge => "search.previousgeneration.xlarge",
+    PartitionInstanceType::SearchSmall => "search.small",
+    PartitionInstanceType::SearchXlarge => "search.xlarge",
+    PartitionInstanceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["search.2xlarge", "search.large", "search.m1.large", "search.m1.small", "search.m2.2xlarge", "search.m2.xlarge", "search.m3.2xlarge", "search.m3.large", "search.m3.medium", "search.m3.xlarge", "search.medium", "search.previousgeneration.2xlarge", "search.previousgeneration.large", "search.previousgeneration.small", "search.previousgeneration.xlarge", "search.small", "search.xlarge"]
+                }
+            }
 impl AsRef<str> for PartitionInstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The configuration and status of the domain's endpoint options.</p>
 #[non_exhaustive]
@@ -823,14 +819,14 @@ pub enum TlsSecurityPolicy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TlsSecurityPolicy {
-    fn from(s: &str) -> Self {
-        match s {
-            "Policy-Min-TLS-1-0-2019-07" => TlsSecurityPolicy::PolicyMinTls10201907,
-            "Policy-Min-TLS-1-2-2019-07" => TlsSecurityPolicy::PolicyMinTls12201907,
-            other => TlsSecurityPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Policy-Min-TLS-1-0-2019-07" => TlsSecurityPolicy::PolicyMinTls10201907,
+"Policy-Min-TLS-1-2-2019-07" => TlsSecurityPolicy::PolicyMinTls12201907,
+other => TlsSecurityPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TlsSecurityPolicy {
                 type Err = std::convert::Infallible;
 
@@ -839,26 +835,24 @@ impl std::str::FromStr for TlsSecurityPolicy {
                 }
             }
 impl TlsSecurityPolicy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TlsSecurityPolicy::PolicyMinTls10201907 => "Policy-Min-TLS-1-0-2019-07",
-            TlsSecurityPolicy::PolicyMinTls12201907 => "Policy-Min-TLS-1-2-2019-07",
-            TlsSecurityPolicy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Policy-Min-TLS-1-0-2019-07", "Policy-Min-TLS-1-2-2019-07"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TlsSecurityPolicy::PolicyMinTls10201907 => "Policy-Min-TLS-1-0-2019-07",
+    TlsSecurityPolicy::PolicyMinTls12201907 => "Policy-Min-TLS-1-2-2019-07",
+    TlsSecurityPolicy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Policy-Min-TLS-1-0-2019-07", "Policy-Min-TLS-1-2-2019-07"]
+                }
+            }
 impl AsRef<str> for TlsSecurityPolicy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The status and configuration of the domain's availability options.</p>
 #[non_exhaustive]
@@ -1206,15 +1200,15 @@ pub enum SuggesterFuzzyMatching {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SuggesterFuzzyMatching {
-    fn from(s: &str) -> Self {
-        match s {
-            "high" => SuggesterFuzzyMatching::High,
-            "low" => SuggesterFuzzyMatching::Low,
-            "none" => SuggesterFuzzyMatching::None,
-            other => SuggesterFuzzyMatching::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "high" => SuggesterFuzzyMatching::High,
+"low" => SuggesterFuzzyMatching::Low,
+"none" => SuggesterFuzzyMatching::None,
+other => SuggesterFuzzyMatching::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SuggesterFuzzyMatching {
                 type Err = std::convert::Infallible;
 
@@ -1223,27 +1217,25 @@ impl std::str::FromStr for SuggesterFuzzyMatching {
                 }
             }
 impl SuggesterFuzzyMatching {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SuggesterFuzzyMatching::High => "high",
-            SuggesterFuzzyMatching::Low => "low",
-            SuggesterFuzzyMatching::None => "none",
-            SuggesterFuzzyMatching::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "high", "low", "none"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SuggesterFuzzyMatching::High => "high",
+    SuggesterFuzzyMatching::Low => "low",
+    SuggesterFuzzyMatching::None => "none",
+    SuggesterFuzzyMatching::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["high", "low", "none"]
+                }
+            }
 impl AsRef<str> for SuggesterFuzzyMatching {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The value of an <code>IndexField</code> and its current status.</p>
 #[non_exhaustive]
@@ -3206,23 +3198,23 @@ pub enum IndexFieldType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IndexFieldType {
-    fn from(s: &str) -> Self {
-        match s {
-            "date" => IndexFieldType::Date,
-            "date-array" => IndexFieldType::DateArray,
-            "double" => IndexFieldType::Double,
-            "double-array" => IndexFieldType::DoubleArray,
-            "int" => IndexFieldType::Int,
-            "int-array" => IndexFieldType::IntArray,
-            "latlon" => IndexFieldType::Latlon,
-            "literal" => IndexFieldType::Literal,
-            "literal-array" => IndexFieldType::LiteralArray,
-            "text" => IndexFieldType::Text,
-            "text-array" => IndexFieldType::TextArray,
-            other => IndexFieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "date" => IndexFieldType::Date,
+"date-array" => IndexFieldType::DateArray,
+"double" => IndexFieldType::Double,
+"double-array" => IndexFieldType::DoubleArray,
+"int" => IndexFieldType::Int,
+"int-array" => IndexFieldType::IntArray,
+"latlon" => IndexFieldType::Latlon,
+"literal" => IndexFieldType::Literal,
+"literal-array" => IndexFieldType::LiteralArray,
+"text" => IndexFieldType::Text,
+"text-array" => IndexFieldType::TextArray,
+other => IndexFieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for IndexFieldType {
                 type Err = std::convert::Infallible;
 
@@ -3231,35 +3223,33 @@ impl std::str::FromStr for IndexFieldType {
                 }
             }
 impl IndexFieldType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IndexFieldType::Date => "date",
-            IndexFieldType::DateArray => "date-array",
-            IndexFieldType::Double => "double",
-            IndexFieldType::DoubleArray => "double-array",
-            IndexFieldType::Int => "int",
-            IndexFieldType::IntArray => "int-array",
-            IndexFieldType::Latlon => "latlon",
-            IndexFieldType::Literal => "literal",
-            IndexFieldType::LiteralArray => "literal-array",
-            IndexFieldType::Text => "text",
-            IndexFieldType::TextArray => "text-array",
-            IndexFieldType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "date", "date-array", "double", "double-array", "int", "int-array", "latlon", "literal", "literal-array", "text", "text-array"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IndexFieldType::Date => "date",
+    IndexFieldType::DateArray => "date-array",
+    IndexFieldType::Double => "double",
+    IndexFieldType::DoubleArray => "double-array",
+    IndexFieldType::Int => "int",
+    IndexFieldType::IntArray => "int-array",
+    IndexFieldType::Latlon => "latlon",
+    IndexFieldType::Literal => "literal",
+    IndexFieldType::LiteralArray => "literal-array",
+    IndexFieldType::Text => "text",
+    IndexFieldType::TextArray => "text-array",
+    IndexFieldType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["date", "date-array", "double", "double-array", "int", "int-array", "latlon", "literal", "literal-array", "text", "text-array"]
+                }
+            }
 impl AsRef<str> for IndexFieldType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The value of an <code>Expression</code> and its current status.</p>
 #[non_exhaustive]
@@ -4136,16 +4126,16 @@ pub enum AlgorithmicStemming {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlgorithmicStemming {
-    fn from(s: &str) -> Self {
-        match s {
-            "full" => AlgorithmicStemming::Full,
-            "light" => AlgorithmicStemming::Light,
-            "minimal" => AlgorithmicStemming::Minimal,
-            "none" => AlgorithmicStemming::None,
-            other => AlgorithmicStemming::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "full" => AlgorithmicStemming::Full,
+"light" => AlgorithmicStemming::Light,
+"minimal" => AlgorithmicStemming::Minimal,
+"none" => AlgorithmicStemming::None,
+other => AlgorithmicStemming::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AlgorithmicStemming {
                 type Err = std::convert::Infallible;
 
@@ -4154,28 +4144,26 @@ impl std::str::FromStr for AlgorithmicStemming {
                 }
             }
 impl AlgorithmicStemming {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AlgorithmicStemming::Full => "full",
-            AlgorithmicStemming::Light => "light",
-            AlgorithmicStemming::Minimal => "minimal",
-            AlgorithmicStemming::None => "none",
-            AlgorithmicStemming::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "full", "light", "minimal", "none"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AlgorithmicStemming::Full => "full",
+    AlgorithmicStemming::Light => "light",
+    AlgorithmicStemming::Minimal => "minimal",
+    AlgorithmicStemming::None => "none",
+    AlgorithmicStemming::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["full", "light", "minimal", "none"]
+                }
+            }
 impl AsRef<str> for AlgorithmicStemming {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AnalysisSchemeLanguage`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4323,47 +4311,47 @@ pub enum AnalysisSchemeLanguage {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnalysisSchemeLanguage {
-    fn from(s: &str) -> Self {
-        match s {
-            "ar" => AnalysisSchemeLanguage::Ar,
-            "bg" => AnalysisSchemeLanguage::Bg,
-            "ca" => AnalysisSchemeLanguage::Ca,
-            "cs" => AnalysisSchemeLanguage::Cs,
-            "da" => AnalysisSchemeLanguage::Da,
-            "de" => AnalysisSchemeLanguage::De,
-            "el" => AnalysisSchemeLanguage::El,
-            "en" => AnalysisSchemeLanguage::En,
-            "es" => AnalysisSchemeLanguage::Es,
-            "eu" => AnalysisSchemeLanguage::Eu,
-            "fa" => AnalysisSchemeLanguage::Fa,
-            "fi" => AnalysisSchemeLanguage::Fi,
-            "fr" => AnalysisSchemeLanguage::Fr,
-            "ga" => AnalysisSchemeLanguage::Ga,
-            "gl" => AnalysisSchemeLanguage::Gl,
-            "he" => AnalysisSchemeLanguage::He,
-            "hi" => AnalysisSchemeLanguage::Hi,
-            "hu" => AnalysisSchemeLanguage::Hu,
-            "hy" => AnalysisSchemeLanguage::Hy,
-            "id" => AnalysisSchemeLanguage::Id,
-            "it" => AnalysisSchemeLanguage::It,
-            "ja" => AnalysisSchemeLanguage::Ja,
-            "ko" => AnalysisSchemeLanguage::Ko,
-            "lv" => AnalysisSchemeLanguage::Lv,
-            "mul" => AnalysisSchemeLanguage::Mul,
-            "nl" => AnalysisSchemeLanguage::Nl,
-            "no" => AnalysisSchemeLanguage::No,
-            "pt" => AnalysisSchemeLanguage::Pt,
-            "ro" => AnalysisSchemeLanguage::Ro,
-            "ru" => AnalysisSchemeLanguage::Ru,
-            "sv" => AnalysisSchemeLanguage::Sv,
-            "th" => AnalysisSchemeLanguage::Th,
-            "tr" => AnalysisSchemeLanguage::Tr,
-            "zh-Hans" => AnalysisSchemeLanguage::ZhHans,
-            "zh-Hant" => AnalysisSchemeLanguage::ZhHant,
-            other => AnalysisSchemeLanguage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ar" => AnalysisSchemeLanguage::Ar,
+"bg" => AnalysisSchemeLanguage::Bg,
+"ca" => AnalysisSchemeLanguage::Ca,
+"cs" => AnalysisSchemeLanguage::Cs,
+"da" => AnalysisSchemeLanguage::Da,
+"de" => AnalysisSchemeLanguage::De,
+"el" => AnalysisSchemeLanguage::El,
+"en" => AnalysisSchemeLanguage::En,
+"es" => AnalysisSchemeLanguage::Es,
+"eu" => AnalysisSchemeLanguage::Eu,
+"fa" => AnalysisSchemeLanguage::Fa,
+"fi" => AnalysisSchemeLanguage::Fi,
+"fr" => AnalysisSchemeLanguage::Fr,
+"ga" => AnalysisSchemeLanguage::Ga,
+"gl" => AnalysisSchemeLanguage::Gl,
+"he" => AnalysisSchemeLanguage::He,
+"hi" => AnalysisSchemeLanguage::Hi,
+"hu" => AnalysisSchemeLanguage::Hu,
+"hy" => AnalysisSchemeLanguage::Hy,
+"id" => AnalysisSchemeLanguage::Id,
+"it" => AnalysisSchemeLanguage::It,
+"ja" => AnalysisSchemeLanguage::Ja,
+"ko" => AnalysisSchemeLanguage::Ko,
+"lv" => AnalysisSchemeLanguage::Lv,
+"mul" => AnalysisSchemeLanguage::Mul,
+"nl" => AnalysisSchemeLanguage::Nl,
+"no" => AnalysisSchemeLanguage::No,
+"pt" => AnalysisSchemeLanguage::Pt,
+"ro" => AnalysisSchemeLanguage::Ro,
+"ru" => AnalysisSchemeLanguage::Ru,
+"sv" => AnalysisSchemeLanguage::Sv,
+"th" => AnalysisSchemeLanguage::Th,
+"tr" => AnalysisSchemeLanguage::Tr,
+"zh-Hans" => AnalysisSchemeLanguage::ZhHans,
+"zh-Hant" => AnalysisSchemeLanguage::ZhHant,
+other => AnalysisSchemeLanguage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AnalysisSchemeLanguage {
                 type Err = std::convert::Infallible;
 
@@ -4372,57 +4360,55 @@ impl std::str::FromStr for AnalysisSchemeLanguage {
                 }
             }
 impl AnalysisSchemeLanguage {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AnalysisSchemeLanguage::Ar => "ar",
-            AnalysisSchemeLanguage::Bg => "bg",
-            AnalysisSchemeLanguage::Ca => "ca",
-            AnalysisSchemeLanguage::Cs => "cs",
-            AnalysisSchemeLanguage::Da => "da",
-            AnalysisSchemeLanguage::De => "de",
-            AnalysisSchemeLanguage::El => "el",
-            AnalysisSchemeLanguage::En => "en",
-            AnalysisSchemeLanguage::Es => "es",
-            AnalysisSchemeLanguage::Eu => "eu",
-            AnalysisSchemeLanguage::Fa => "fa",
-            AnalysisSchemeLanguage::Fi => "fi",
-            AnalysisSchemeLanguage::Fr => "fr",
-            AnalysisSchemeLanguage::Ga => "ga",
-            AnalysisSchemeLanguage::Gl => "gl",
-            AnalysisSchemeLanguage::He => "he",
-            AnalysisSchemeLanguage::Hi => "hi",
-            AnalysisSchemeLanguage::Hu => "hu",
-            AnalysisSchemeLanguage::Hy => "hy",
-            AnalysisSchemeLanguage::Id => "id",
-            AnalysisSchemeLanguage::It => "it",
-            AnalysisSchemeLanguage::Ja => "ja",
-            AnalysisSchemeLanguage::Ko => "ko",
-            AnalysisSchemeLanguage::Lv => "lv",
-            AnalysisSchemeLanguage::Mul => "mul",
-            AnalysisSchemeLanguage::Nl => "nl",
-            AnalysisSchemeLanguage::No => "no",
-            AnalysisSchemeLanguage::Pt => "pt",
-            AnalysisSchemeLanguage::Ro => "ro",
-            AnalysisSchemeLanguage::Ru => "ru",
-            AnalysisSchemeLanguage::Sv => "sv",
-            AnalysisSchemeLanguage::Th => "th",
-            AnalysisSchemeLanguage::Tr => "tr",
-            AnalysisSchemeLanguage::ZhHans => "zh-Hans",
-            AnalysisSchemeLanguage::ZhHant => "zh-Hant",
-            AnalysisSchemeLanguage::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga", "gl", "he", "hi", "hu", "hy", "id", "it", "ja", "ko", "lv", "mul", "nl", "no", "pt", "ro", "ru", "sv", "th", "tr", "zh-Hans", "zh-Hant"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AnalysisSchemeLanguage::Ar => "ar",
+    AnalysisSchemeLanguage::Bg => "bg",
+    AnalysisSchemeLanguage::Ca => "ca",
+    AnalysisSchemeLanguage::Cs => "cs",
+    AnalysisSchemeLanguage::Da => "da",
+    AnalysisSchemeLanguage::De => "de",
+    AnalysisSchemeLanguage::El => "el",
+    AnalysisSchemeLanguage::En => "en",
+    AnalysisSchemeLanguage::Es => "es",
+    AnalysisSchemeLanguage::Eu => "eu",
+    AnalysisSchemeLanguage::Fa => "fa",
+    AnalysisSchemeLanguage::Fi => "fi",
+    AnalysisSchemeLanguage::Fr => "fr",
+    AnalysisSchemeLanguage::Ga => "ga",
+    AnalysisSchemeLanguage::Gl => "gl",
+    AnalysisSchemeLanguage::He => "he",
+    AnalysisSchemeLanguage::Hi => "hi",
+    AnalysisSchemeLanguage::Hu => "hu",
+    AnalysisSchemeLanguage::Hy => "hy",
+    AnalysisSchemeLanguage::Id => "id",
+    AnalysisSchemeLanguage::It => "it",
+    AnalysisSchemeLanguage::Ja => "ja",
+    AnalysisSchemeLanguage::Ko => "ko",
+    AnalysisSchemeLanguage::Lv => "lv",
+    AnalysisSchemeLanguage::Mul => "mul",
+    AnalysisSchemeLanguage::Nl => "nl",
+    AnalysisSchemeLanguage::No => "no",
+    AnalysisSchemeLanguage::Pt => "pt",
+    AnalysisSchemeLanguage::Ro => "ro",
+    AnalysisSchemeLanguage::Ru => "ru",
+    AnalysisSchemeLanguage::Sv => "sv",
+    AnalysisSchemeLanguage::Th => "th",
+    AnalysisSchemeLanguage::Tr => "tr",
+    AnalysisSchemeLanguage::ZhHans => "zh-Hans",
+    AnalysisSchemeLanguage::ZhHant => "zh-Hant",
+    AnalysisSchemeLanguage::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga", "gl", "he", "hi", "hu", "hy", "id", "it", "ja", "ko", "lv", "mul", "nl", "no", "pt", "ro", "ru", "sv", "th", "tr", "zh-Hans", "zh-Hant"]
+                }
+            }
 impl AsRef<str> for AnalysisSchemeLanguage {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

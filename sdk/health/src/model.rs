@@ -143,16 +143,16 @@ pub enum EventTypeCategory {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventTypeCategory {
-    fn from(s: &str) -> Self {
-        match s {
-            "accountNotification" => EventTypeCategory::AccountNotification,
-            "investigation" => EventTypeCategory::Investigation,
-            "issue" => EventTypeCategory::Issue,
-            "scheduledChange" => EventTypeCategory::ScheduledChange,
-            other => EventTypeCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "accountNotification" => EventTypeCategory::AccountNotification,
+"investigation" => EventTypeCategory::Investigation,
+"issue" => EventTypeCategory::Issue,
+"scheduledChange" => EventTypeCategory::ScheduledChange,
+other => EventTypeCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EventTypeCategory {
                 type Err = std::convert::Infallible;
 
@@ -161,28 +161,26 @@ impl std::str::FromStr for EventTypeCategory {
                 }
             }
 impl EventTypeCategory {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventTypeCategory::AccountNotification => "accountNotification",
-            EventTypeCategory::Investigation => "investigation",
-            EventTypeCategory::Issue => "issue",
-            EventTypeCategory::ScheduledChange => "scheduledChange",
-            EventTypeCategory::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "accountNotification", "investigation", "issue", "scheduledChange"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventTypeCategory::AccountNotification => "accountNotification",
+    EventTypeCategory::Investigation => "investigation",
+    EventTypeCategory::Issue => "issue",
+    EventTypeCategory::ScheduledChange => "scheduledChange",
+    EventTypeCategory::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["accountNotification", "investigation", "issue", "scheduledChange"]
+                }
+            }
 impl AsRef<str> for EventTypeCategory {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html">DescribeEventTypes</a> operation.</p>
 #[non_exhaustive]
@@ -589,15 +587,15 @@ pub enum EventStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "closed" => EventStatusCode::Closed,
-            "open" => EventStatusCode::Open,
-            "upcoming" => EventStatusCode::Upcoming,
-            other => EventStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "closed" => EventStatusCode::Closed,
+"open" => EventStatusCode::Open,
+"upcoming" => EventStatusCode::Upcoming,
+other => EventStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EventStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -606,27 +604,25 @@ impl std::str::FromStr for EventStatusCode {
                 }
             }
 impl EventStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventStatusCode::Closed => "closed",
-            EventStatusCode::Open => "open",
-            EventStatusCode::Upcoming => "upcoming",
-            EventStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "closed", "open", "upcoming"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventStatusCode::Closed => "closed",
+    EventStatusCode::Open => "open",
+    EventStatusCode::Upcoming => "upcoming",
+    EventStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["closed", "open", "upcoming"]
+                }
+            }
 impl AsRef<str> for EventStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EventScopeCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -678,15 +674,15 @@ pub enum EventScopeCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventScopeCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_SPECIFIC" => EventScopeCode::AccountSpecific,
-            "NONE" => EventScopeCode::None,
-            "PUBLIC" => EventScopeCode::Public,
-            other => EventScopeCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT_SPECIFIC" => EventScopeCode::AccountSpecific,
+"NONE" => EventScopeCode::None,
+"PUBLIC" => EventScopeCode::Public,
+other => EventScopeCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EventScopeCode {
                 type Err = std::convert::Infallible;
 
@@ -695,27 +691,25 @@ impl std::str::FromStr for EventScopeCode {
                 }
             }
 impl EventScopeCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventScopeCode::AccountSpecific => "ACCOUNT_SPECIFIC",
-            EventScopeCode::None => "NONE",
-            EventScopeCode::Public => "PUBLIC",
-            EventScopeCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_SPECIFIC", "NONE", "PUBLIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventScopeCode::AccountSpecific => "ACCOUNT_SPECIFIC",
+    EventScopeCode::None => "NONE",
+    EventScopeCode::Public => "PUBLIC",
+    EventScopeCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_SPECIFIC", "NONE", "PUBLIC"]
+                }
+            }
 impl AsRef<str> for EventScopeCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The values to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a> operation.</p>
 #[non_exhaustive]
@@ -2419,13 +2413,13 @@ pub enum EventAggregateField {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventAggregateField {
-    fn from(s: &str) -> Self {
-        match s {
-            "eventTypeCategory" => EventAggregateField::EventTypeCategory,
-            other => EventAggregateField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "eventTypeCategory" => EventAggregateField::EventTypeCategory,
+other => EventAggregateField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EventAggregateField {
                 type Err = std::convert::Infallible;
 
@@ -2434,25 +2428,23 @@ impl std::str::FromStr for EventAggregateField {
                 }
             }
 impl EventAggregateField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventAggregateField::EventTypeCategory => "eventTypeCategory",
-            EventAggregateField::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "eventTypeCategory"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventAggregateField::EventTypeCategory => "eventTypeCategory",
+    EventAggregateField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["eventTypeCategory"]
+                }
+            }
 impl AsRef<str> for EventAggregateField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The number of entities that are affected by one or more events. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a> operation.</p>
 #[non_exhaustive]
@@ -2902,15 +2894,15 @@ pub enum EntityStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntityStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "IMPAIRED" => EntityStatusCode::Impaired,
-            "UNIMPAIRED" => EntityStatusCode::Unimpaired,
-            "UNKNOWN" => EntityStatusCode::UnknownValue,
-            other => EntityStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "IMPAIRED" => EntityStatusCode::Impaired,
+"UNIMPAIRED" => EntityStatusCode::Unimpaired,
+"UNKNOWN" => EntityStatusCode::UnknownValue,
+other => EntityStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EntityStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -2919,27 +2911,25 @@ impl std::str::FromStr for EntityStatusCode {
                 }
             }
 impl EntityStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EntityStatusCode::Impaired => "IMPAIRED",
-            EntityStatusCode::Unimpaired => "UNIMPAIRED",
-            EntityStatusCode::UnknownValue => "UNKNOWN",
-            EntityStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "IMPAIRED", "UNIMPAIRED", "UNKNOWN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EntityStatusCode::Impaired => "IMPAIRED",
+    EntityStatusCode::Unimpaired => "UNIMPAIRED",
+    EntityStatusCode::UnknownValue => "UNKNOWN",
+    EntityStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["IMPAIRED", "UNIMPAIRED", "UNKNOWN"]
+                }
+            }
 impl AsRef<str> for EntityStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a> operation.</p>
 #[non_exhaustive]

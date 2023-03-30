@@ -270,19 +270,19 @@ pub enum QuantumTaskStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QuantumTaskStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => QuantumTaskStatus::Cancelled,
-            "CANCELLING" => QuantumTaskStatus::Cancelling,
-            "COMPLETED" => QuantumTaskStatus::Completed,
-            "CREATED" => QuantumTaskStatus::Created,
-            "FAILED" => QuantumTaskStatus::Failed,
-            "QUEUED" => QuantumTaskStatus::Queued,
-            "RUNNING" => QuantumTaskStatus::Running,
-            other => QuantumTaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => QuantumTaskStatus::Cancelled,
+"CANCELLING" => QuantumTaskStatus::Cancelling,
+"COMPLETED" => QuantumTaskStatus::Completed,
+"CREATED" => QuantumTaskStatus::Created,
+"FAILED" => QuantumTaskStatus::Failed,
+"QUEUED" => QuantumTaskStatus::Queued,
+"RUNNING" => QuantumTaskStatus::Running,
+other => QuantumTaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for QuantumTaskStatus {
                 type Err = std::convert::Infallible;
 
@@ -291,31 +291,29 @@ impl std::str::FromStr for QuantumTaskStatus {
                 }
             }
 impl QuantumTaskStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            QuantumTaskStatus::Cancelled => "CANCELLED",
-            QuantumTaskStatus::Cancelling => "CANCELLING",
-            QuantumTaskStatus::Completed => "COMPLETED",
-            QuantumTaskStatus::Created => "CREATED",
-            QuantumTaskStatus::Failed => "FAILED",
-            QuantumTaskStatus::Queued => "QUEUED",
-            QuantumTaskStatus::Running => "RUNNING",
-            QuantumTaskStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "CANCELLING", "COMPLETED", "CREATED", "FAILED", "QUEUED", "RUNNING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    QuantumTaskStatus::Cancelled => "CANCELLED",
+    QuantumTaskStatus::Cancelling => "CANCELLING",
+    QuantumTaskStatus::Completed => "COMPLETED",
+    QuantumTaskStatus::Created => "CREATED",
+    QuantumTaskStatus::Failed => "FAILED",
+    QuantumTaskStatus::Queued => "QUEUED",
+    QuantumTaskStatus::Running => "RUNNING",
+    QuantumTaskStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "CANCELLING", "COMPLETED", "CREATED", "FAILED", "QUEUED", "RUNNING"]
+                }
+            }
 impl AsRef<str> for QuantumTaskStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A filter to use to search for tasks.</p>
 #[non_exhaustive]
@@ -470,18 +468,18 @@ pub enum SearchQuantumTasksFilterOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SearchQuantumTasksFilterOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "BETWEEN" => SearchQuantumTasksFilterOperator::Between,
-            "EQUAL" => SearchQuantumTasksFilterOperator::Equal,
-            "GT" => SearchQuantumTasksFilterOperator::Gt,
-            "GTE" => SearchQuantumTasksFilterOperator::Gte,
-            "LT" => SearchQuantumTasksFilterOperator::Lt,
-            "LTE" => SearchQuantumTasksFilterOperator::Lte,
-            other => SearchQuantumTasksFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BETWEEN" => SearchQuantumTasksFilterOperator::Between,
+"EQUAL" => SearchQuantumTasksFilterOperator::Equal,
+"GT" => SearchQuantumTasksFilterOperator::Gt,
+"GTE" => SearchQuantumTasksFilterOperator::Gte,
+"LT" => SearchQuantumTasksFilterOperator::Lt,
+"LTE" => SearchQuantumTasksFilterOperator::Lte,
+other => SearchQuantumTasksFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SearchQuantumTasksFilterOperator {
                 type Err = std::convert::Infallible;
 
@@ -490,30 +488,28 @@ impl std::str::FromStr for SearchQuantumTasksFilterOperator {
                 }
             }
 impl SearchQuantumTasksFilterOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SearchQuantumTasksFilterOperator::Between => "BETWEEN",
-            SearchQuantumTasksFilterOperator::Equal => "EQUAL",
-            SearchQuantumTasksFilterOperator::Gt => "GT",
-            SearchQuantumTasksFilterOperator::Gte => "GTE",
-            SearchQuantumTasksFilterOperator::Lt => "LT",
-            SearchQuantumTasksFilterOperator::Lte => "LTE",
-            SearchQuantumTasksFilterOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BETWEEN", "EQUAL", "GT", "GTE", "LT", "LTE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SearchQuantumTasksFilterOperator::Between => "BETWEEN",
+    SearchQuantumTasksFilterOperator::Equal => "EQUAL",
+    SearchQuantumTasksFilterOperator::Gt => "GT",
+    SearchQuantumTasksFilterOperator::Gte => "GTE",
+    SearchQuantumTasksFilterOperator::Lt => "LT",
+    SearchQuantumTasksFilterOperator::Lte => "LTE",
+    SearchQuantumTasksFilterOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BETWEEN", "EQUAL", "GT", "GTE", "LT", "LTE"]
+                }
+            }
 impl AsRef<str> for SearchQuantumTasksFilterOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CancellationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -562,14 +558,14 @@ pub enum CancellationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CancellationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => CancellationStatus::Cancelled,
-            "CANCELLING" => CancellationStatus::Cancelling,
-            other => CancellationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => CancellationStatus::Cancelled,
+"CANCELLING" => CancellationStatus::Cancelling,
+other => CancellationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CancellationStatus {
                 type Err = std::convert::Infallible;
 
@@ -578,26 +574,24 @@ impl std::str::FromStr for CancellationStatus {
                 }
             }
 impl CancellationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CancellationStatus::Cancelled => "CANCELLED",
-            CancellationStatus::Cancelling => "CANCELLING",
-            CancellationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "CANCELLING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CancellationStatus::Cancelled => "CANCELLED",
+    CancellationStatus::Cancelling => "CANCELLING",
+    CancellationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "CANCELLING"]
+                }
+            }
 impl AsRef<str> for CancellationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Provides summary information about an Amazon Braket job.</p>
 #[non_exhaustive]
@@ -847,18 +841,18 @@ pub enum JobPrimaryStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobPrimaryStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => JobPrimaryStatus::Cancelled,
-            "CANCELLING" => JobPrimaryStatus::Cancelling,
-            "COMPLETED" => JobPrimaryStatus::Completed,
-            "FAILED" => JobPrimaryStatus::Failed,
-            "QUEUED" => JobPrimaryStatus::Queued,
-            "RUNNING" => JobPrimaryStatus::Running,
-            other => JobPrimaryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => JobPrimaryStatus::Cancelled,
+"CANCELLING" => JobPrimaryStatus::Cancelling,
+"COMPLETED" => JobPrimaryStatus::Completed,
+"FAILED" => JobPrimaryStatus::Failed,
+"QUEUED" => JobPrimaryStatus::Queued,
+"RUNNING" => JobPrimaryStatus::Running,
+other => JobPrimaryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobPrimaryStatus {
                 type Err = std::convert::Infallible;
 
@@ -867,30 +861,28 @@ impl std::str::FromStr for JobPrimaryStatus {
                 }
             }
 impl JobPrimaryStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobPrimaryStatus::Cancelled => "CANCELLED",
-            JobPrimaryStatus::Cancelling => "CANCELLING",
-            JobPrimaryStatus::Completed => "COMPLETED",
-            JobPrimaryStatus::Failed => "FAILED",
-            JobPrimaryStatus::Queued => "QUEUED",
-            JobPrimaryStatus::Running => "RUNNING",
-            JobPrimaryStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "CANCELLING", "COMPLETED", "FAILED", "QUEUED", "RUNNING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobPrimaryStatus::Cancelled => "CANCELLED",
+    JobPrimaryStatus::Cancelling => "CANCELLING",
+    JobPrimaryStatus::Completed => "COMPLETED",
+    JobPrimaryStatus::Failed => "FAILED",
+    JobPrimaryStatus::Queued => "QUEUED",
+    JobPrimaryStatus::Running => "RUNNING",
+    JobPrimaryStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "CANCELLING", "COMPLETED", "FAILED", "QUEUED", "RUNNING"]
+                }
+            }
 impl AsRef<str> for JobPrimaryStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A filter used to search for Amazon Braket jobs.</p>
 #[non_exhaustive]
@@ -1048,19 +1040,19 @@ pub enum SearchJobsFilterOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SearchJobsFilterOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "BETWEEN" => SearchJobsFilterOperator::Between,
-            "CONTAINS" => SearchJobsFilterOperator::Contains,
-            "EQUAL" => SearchJobsFilterOperator::Equal,
-            "GT" => SearchJobsFilterOperator::Gt,
-            "GTE" => SearchJobsFilterOperator::Gte,
-            "LT" => SearchJobsFilterOperator::Lt,
-            "LTE" => SearchJobsFilterOperator::Lte,
-            other => SearchJobsFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BETWEEN" => SearchJobsFilterOperator::Between,
+"CONTAINS" => SearchJobsFilterOperator::Contains,
+"EQUAL" => SearchJobsFilterOperator::Equal,
+"GT" => SearchJobsFilterOperator::Gt,
+"GTE" => SearchJobsFilterOperator::Gte,
+"LT" => SearchJobsFilterOperator::Lt,
+"LTE" => SearchJobsFilterOperator::Lte,
+other => SearchJobsFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SearchJobsFilterOperator {
                 type Err = std::convert::Infallible;
 
@@ -1069,31 +1061,29 @@ impl std::str::FromStr for SearchJobsFilterOperator {
                 }
             }
 impl SearchJobsFilterOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SearchJobsFilterOperator::Between => "BETWEEN",
-            SearchJobsFilterOperator::Contains => "CONTAINS",
-            SearchJobsFilterOperator::Equal => "EQUAL",
-            SearchJobsFilterOperator::Gt => "GT",
-            SearchJobsFilterOperator::Gte => "GTE",
-            SearchJobsFilterOperator::Lt => "LT",
-            SearchJobsFilterOperator::Lte => "LTE",
-            SearchJobsFilterOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BETWEEN", "CONTAINS", "EQUAL", "GT", "GTE", "LT", "LTE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SearchJobsFilterOperator::Between => "BETWEEN",
+    SearchJobsFilterOperator::Contains => "CONTAINS",
+    SearchJobsFilterOperator::Equal => "EQUAL",
+    SearchJobsFilterOperator::Gt => "GT",
+    SearchJobsFilterOperator::Gte => "GTE",
+    SearchJobsFilterOperator::Lt => "LT",
+    SearchJobsFilterOperator::Lte => "LTE",
+    SearchJobsFilterOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BETWEEN", "CONTAINS", "EQUAL", "GT", "GTE", "LT", "LTE"]
+                }
+            }
 impl AsRef<str> for SearchJobsFilterOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Configures the quantum processing units (QPUs) or simulator used to create and run an Amazon Braket job.</p>
 #[non_exhaustive]
@@ -1391,51 +1381,51 @@ pub enum InstanceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ml.c4.2xlarge" => InstanceType::MlC42Xlarge,
-            "ml.c4.4xlarge" => InstanceType::MlC44Xlarge,
-            "ml.c4.8xlarge" => InstanceType::MlC48Xlarge,
-            "ml.c4.xlarge" => InstanceType::MlC4Xlarge,
-            "ml.c5.18xlarge" => InstanceType::MlC518Xlarge,
-            "ml.c5.2xlarge" => InstanceType::MlC52Xlarge,
-            "ml.c5.4xlarge" => InstanceType::MlC54Xlarge,
-            "ml.c5.9xlarge" => InstanceType::MlC59Xlarge,
-            "ml.c5.xlarge" => InstanceType::MlC5Xlarge,
-            "ml.c5n.18xlarge" => InstanceType::MlC5N18Xlarge,
-            "ml.c5n.2xlarge" => InstanceType::MlC5N2Xlarge,
-            "ml.c5n.4xlarge" => InstanceType::MlC5N4Xlarge,
-            "ml.c5n.9xlarge" => InstanceType::MlC5N9Xlarge,
-            "ml.c5n.xlarge" => InstanceType::MlC5NXlarge,
-            "ml.g4dn.12xlarge" => InstanceType::MlG4Dn12Xlarge,
-            "ml.g4dn.16xlarge" => InstanceType::MlG4Dn16Xlarge,
-            "ml.g4dn.2xlarge" => InstanceType::MlG4Dn2Xlarge,
-            "ml.g4dn.4xlarge" => InstanceType::MlG4Dn4Xlarge,
-            "ml.g4dn.8xlarge" => InstanceType::MlG4Dn8Xlarge,
-            "ml.g4dn.xlarge" => InstanceType::MlG4DnXlarge,
-            "ml.m4.10xlarge" => InstanceType::MlM410Xlarge,
-            "ml.m4.16xlarge" => InstanceType::MlM416Xlarge,
-            "ml.m4.2xlarge" => InstanceType::MlM42Xlarge,
-            "ml.m4.4xlarge" => InstanceType::MlM44Xlarge,
-            "ml.m4.xlarge" => InstanceType::MlM4Xlarge,
-            "ml.m5.12xlarge" => InstanceType::MlM512Xlarge,
-            "ml.m5.24xlarge" => InstanceType::MlM524Xlarge,
-            "ml.m5.2xlarge" => InstanceType::MlM52Xlarge,
-            "ml.m5.4xlarge" => InstanceType::MlM54Xlarge,
-            "ml.m5.large" => InstanceType::MlM5Large,
-            "ml.m5.xlarge" => InstanceType::MlM5Xlarge,
-            "ml.p2.16xlarge" => InstanceType::MlP216Xlarge,
-            "ml.p2.8xlarge" => InstanceType::MlP28Xlarge,
-            "ml.p2.xlarge" => InstanceType::MlP2Xlarge,
-            "ml.p3.16xlarge" => InstanceType::MlP316Xlarge,
-            "ml.p3.2xlarge" => InstanceType::MlP32Xlarge,
-            "ml.p3.8xlarge" => InstanceType::MlP38Xlarge,
-            "ml.p3dn.24xlarge" => InstanceType::MlP3Dn24Xlarge,
-            "ml.p4d.24xlarge" => InstanceType::MlP4D24Xlarge,
-            other => InstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ml.c4.2xlarge" => InstanceType::MlC42Xlarge,
+"ml.c4.4xlarge" => InstanceType::MlC44Xlarge,
+"ml.c4.8xlarge" => InstanceType::MlC48Xlarge,
+"ml.c4.xlarge" => InstanceType::MlC4Xlarge,
+"ml.c5.18xlarge" => InstanceType::MlC518Xlarge,
+"ml.c5.2xlarge" => InstanceType::MlC52Xlarge,
+"ml.c5.4xlarge" => InstanceType::MlC54Xlarge,
+"ml.c5.9xlarge" => InstanceType::MlC59Xlarge,
+"ml.c5.xlarge" => InstanceType::MlC5Xlarge,
+"ml.c5n.18xlarge" => InstanceType::MlC5N18Xlarge,
+"ml.c5n.2xlarge" => InstanceType::MlC5N2Xlarge,
+"ml.c5n.4xlarge" => InstanceType::MlC5N4Xlarge,
+"ml.c5n.9xlarge" => InstanceType::MlC5N9Xlarge,
+"ml.c5n.xlarge" => InstanceType::MlC5NXlarge,
+"ml.g4dn.12xlarge" => InstanceType::MlG4Dn12Xlarge,
+"ml.g4dn.16xlarge" => InstanceType::MlG4Dn16Xlarge,
+"ml.g4dn.2xlarge" => InstanceType::MlG4Dn2Xlarge,
+"ml.g4dn.4xlarge" => InstanceType::MlG4Dn4Xlarge,
+"ml.g4dn.8xlarge" => InstanceType::MlG4Dn8Xlarge,
+"ml.g4dn.xlarge" => InstanceType::MlG4DnXlarge,
+"ml.m4.10xlarge" => InstanceType::MlM410Xlarge,
+"ml.m4.16xlarge" => InstanceType::MlM416Xlarge,
+"ml.m4.2xlarge" => InstanceType::MlM42Xlarge,
+"ml.m4.4xlarge" => InstanceType::MlM44Xlarge,
+"ml.m4.xlarge" => InstanceType::MlM4Xlarge,
+"ml.m5.12xlarge" => InstanceType::MlM512Xlarge,
+"ml.m5.24xlarge" => InstanceType::MlM524Xlarge,
+"ml.m5.2xlarge" => InstanceType::MlM52Xlarge,
+"ml.m5.4xlarge" => InstanceType::MlM54Xlarge,
+"ml.m5.large" => InstanceType::MlM5Large,
+"ml.m5.xlarge" => InstanceType::MlM5Xlarge,
+"ml.p2.16xlarge" => InstanceType::MlP216Xlarge,
+"ml.p2.8xlarge" => InstanceType::MlP28Xlarge,
+"ml.p2.xlarge" => InstanceType::MlP2Xlarge,
+"ml.p3.16xlarge" => InstanceType::MlP316Xlarge,
+"ml.p3.2xlarge" => InstanceType::MlP32Xlarge,
+"ml.p3.8xlarge" => InstanceType::MlP38Xlarge,
+"ml.p3dn.24xlarge" => InstanceType::MlP3Dn24Xlarge,
+"ml.p4d.24xlarge" => InstanceType::MlP4D24Xlarge,
+other => InstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InstanceType {
                 type Err = std::convert::Infallible;
 
@@ -1444,63 +1434,61 @@ impl std::str::FromStr for InstanceType {
                 }
             }
 impl InstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceType::MlC42Xlarge => "ml.c4.2xlarge",
-            InstanceType::MlC44Xlarge => "ml.c4.4xlarge",
-            InstanceType::MlC48Xlarge => "ml.c4.8xlarge",
-            InstanceType::MlC4Xlarge => "ml.c4.xlarge",
-            InstanceType::MlC518Xlarge => "ml.c5.18xlarge",
-            InstanceType::MlC52Xlarge => "ml.c5.2xlarge",
-            InstanceType::MlC54Xlarge => "ml.c5.4xlarge",
-            InstanceType::MlC59Xlarge => "ml.c5.9xlarge",
-            InstanceType::MlC5Xlarge => "ml.c5.xlarge",
-            InstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
-            InstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
-            InstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
-            InstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
-            InstanceType::MlC5NXlarge => "ml.c5n.xlarge",
-            InstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
-            InstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
-            InstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
-            InstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
-            InstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
-            InstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
-            InstanceType::MlM410Xlarge => "ml.m4.10xlarge",
-            InstanceType::MlM416Xlarge => "ml.m4.16xlarge",
-            InstanceType::MlM42Xlarge => "ml.m4.2xlarge",
-            InstanceType::MlM44Xlarge => "ml.m4.4xlarge",
-            InstanceType::MlM4Xlarge => "ml.m4.xlarge",
-            InstanceType::MlM512Xlarge => "ml.m5.12xlarge",
-            InstanceType::MlM524Xlarge => "ml.m5.24xlarge",
-            InstanceType::MlM52Xlarge => "ml.m5.2xlarge",
-            InstanceType::MlM54Xlarge => "ml.m5.4xlarge",
-            InstanceType::MlM5Large => "ml.m5.large",
-            InstanceType::MlM5Xlarge => "ml.m5.xlarge",
-            InstanceType::MlP216Xlarge => "ml.p2.16xlarge",
-            InstanceType::MlP28Xlarge => "ml.p2.8xlarge",
-            InstanceType::MlP2Xlarge => "ml.p2.xlarge",
-            InstanceType::MlP316Xlarge => "ml.p3.16xlarge",
-            InstanceType::MlP32Xlarge => "ml.p3.2xlarge",
-            InstanceType::MlP38Xlarge => "ml.p3.8xlarge",
-            InstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
-            InstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
-            InstanceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ml.c4.2xlarge", "ml.c4.4xlarge", "ml.c4.8xlarge", "ml.c4.xlarge", "ml.c5.18xlarge", "ml.c5.2xlarge", "ml.c5.4xlarge", "ml.c5.9xlarge", "ml.c5.xlarge", "ml.c5n.18xlarge", "ml.c5n.2xlarge", "ml.c5n.4xlarge", "ml.c5n.9xlarge", "ml.c5n.xlarge", "ml.g4dn.12xlarge", "ml.g4dn.16xlarge", "ml.g4dn.2xlarge", "ml.g4dn.4xlarge", "ml.g4dn.8xlarge", "ml.g4dn.xlarge", "ml.m4.10xlarge", "ml.m4.16xlarge", "ml.m4.2xlarge", "ml.m4.4xlarge", "ml.m4.xlarge", "ml.m5.12xlarge", "ml.m5.24xlarge", "ml.m5.2xlarge", "ml.m5.4xlarge", "ml.m5.large", "ml.m5.xlarge", "ml.p2.16xlarge", "ml.p2.8xlarge", "ml.p2.xlarge", "ml.p3.16xlarge", "ml.p3.2xlarge", "ml.p3.8xlarge", "ml.p3dn.24xlarge", "ml.p4d.24xlarge"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceType::MlC42Xlarge => "ml.c4.2xlarge",
+    InstanceType::MlC44Xlarge => "ml.c4.4xlarge",
+    InstanceType::MlC48Xlarge => "ml.c4.8xlarge",
+    InstanceType::MlC4Xlarge => "ml.c4.xlarge",
+    InstanceType::MlC518Xlarge => "ml.c5.18xlarge",
+    InstanceType::MlC52Xlarge => "ml.c5.2xlarge",
+    InstanceType::MlC54Xlarge => "ml.c5.4xlarge",
+    InstanceType::MlC59Xlarge => "ml.c5.9xlarge",
+    InstanceType::MlC5Xlarge => "ml.c5.xlarge",
+    InstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
+    InstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
+    InstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
+    InstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
+    InstanceType::MlC5NXlarge => "ml.c5n.xlarge",
+    InstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+    InstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+    InstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+    InstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+    InstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+    InstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+    InstanceType::MlM410Xlarge => "ml.m4.10xlarge",
+    InstanceType::MlM416Xlarge => "ml.m4.16xlarge",
+    InstanceType::MlM42Xlarge => "ml.m4.2xlarge",
+    InstanceType::MlM44Xlarge => "ml.m4.4xlarge",
+    InstanceType::MlM4Xlarge => "ml.m4.xlarge",
+    InstanceType::MlM512Xlarge => "ml.m5.12xlarge",
+    InstanceType::MlM524Xlarge => "ml.m5.24xlarge",
+    InstanceType::MlM52Xlarge => "ml.m5.2xlarge",
+    InstanceType::MlM54Xlarge => "ml.m5.4xlarge",
+    InstanceType::MlM5Large => "ml.m5.large",
+    InstanceType::MlM5Xlarge => "ml.m5.xlarge",
+    InstanceType::MlP216Xlarge => "ml.p2.16xlarge",
+    InstanceType::MlP28Xlarge => "ml.p2.8xlarge",
+    InstanceType::MlP2Xlarge => "ml.p2.xlarge",
+    InstanceType::MlP316Xlarge => "ml.p3.16xlarge",
+    InstanceType::MlP32Xlarge => "ml.p3.2xlarge",
+    InstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+    InstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
+    InstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+    InstanceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ml.c4.2xlarge", "ml.c4.4xlarge", "ml.c4.8xlarge", "ml.c4.xlarge", "ml.c5.18xlarge", "ml.c5.2xlarge", "ml.c5.4xlarge", "ml.c5.9xlarge", "ml.c5.xlarge", "ml.c5n.18xlarge", "ml.c5n.2xlarge", "ml.c5n.4xlarge", "ml.c5n.9xlarge", "ml.c5n.xlarge", "ml.g4dn.12xlarge", "ml.g4dn.16xlarge", "ml.g4dn.2xlarge", "ml.g4dn.4xlarge", "ml.g4dn.8xlarge", "ml.g4dn.xlarge", "ml.m4.10xlarge", "ml.m4.16xlarge", "ml.m4.2xlarge", "ml.m4.4xlarge", "ml.m4.xlarge", "ml.m5.12xlarge", "ml.m5.24xlarge", "ml.m5.2xlarge", "ml.m5.4xlarge", "ml.m5.large", "ml.m5.xlarge", "ml.p2.16xlarge", "ml.p2.8xlarge", "ml.p2.xlarge", "ml.p3.16xlarge", "ml.p3.2xlarge", "ml.p3.8xlarge", "ml.p3dn.24xlarge", "ml.p4d.24xlarge"]
+                }
+            }
 impl AsRef<str> for InstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Specifies limits for how long an Amazon Braket job can run. </p>
 #[non_exhaustive]
@@ -2132,14 +2120,14 @@ pub enum CompressionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CompressionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "GZIP" => CompressionType::Gzip,
-            "NONE" => CompressionType::None,
-            other => CompressionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "GZIP" => CompressionType::Gzip,
+"NONE" => CompressionType::None,
+other => CompressionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CompressionType {
                 type Err = std::convert::Infallible;
 
@@ -2148,26 +2136,24 @@ impl std::str::FromStr for CompressionType {
                 }
             }
 impl CompressionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CompressionType::Gzip => "GZIP",
-            CompressionType::None => "NONE",
-            CompressionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "GZIP", "NONE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CompressionType::Gzip => "GZIP",
+    CompressionType::None => "NONE",
+    CompressionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GZIP", "NONE"]
+                }
+            }
 impl AsRef<str> for CompressionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
 #[non_exhaustive]
@@ -2331,23 +2317,23 @@ pub enum JobEventType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobEventType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => JobEventType::Cancelled,
-            "COMPLETED" => JobEventType::Completed,
-            "DEPRIORITIZED_DUE_TO_INACTIVITY" => JobEventType::DeprioritizedDueToInactivity,
-            "DOWNLOADING_DATA" => JobEventType::DownloadingData,
-            "FAILED" => JobEventType::Failed,
-            "MAX_RUNTIME_EXCEEDED" => JobEventType::MaxRuntimeExceeded,
-            "QUEUED_FOR_EXECUTION" => JobEventType::QueuedForExecution,
-            "RUNNING" => JobEventType::Running,
-            "STARTING_INSTANCE" => JobEventType::StartingInstance,
-            "UPLOADING_RESULTS" => JobEventType::UploadingResults,
-            "WAITING_FOR_PRIORITY" => JobEventType::WaitingForPriority,
-            other => JobEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => JobEventType::Cancelled,
+"COMPLETED" => JobEventType::Completed,
+"DEPRIORITIZED_DUE_TO_INACTIVITY" => JobEventType::DeprioritizedDueToInactivity,
+"DOWNLOADING_DATA" => JobEventType::DownloadingData,
+"FAILED" => JobEventType::Failed,
+"MAX_RUNTIME_EXCEEDED" => JobEventType::MaxRuntimeExceeded,
+"QUEUED_FOR_EXECUTION" => JobEventType::QueuedForExecution,
+"RUNNING" => JobEventType::Running,
+"STARTING_INSTANCE" => JobEventType::StartingInstance,
+"UPLOADING_RESULTS" => JobEventType::UploadingResults,
+"WAITING_FOR_PRIORITY" => JobEventType::WaitingForPriority,
+other => JobEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobEventType {
                 type Err = std::convert::Infallible;
 
@@ -2356,35 +2342,33 @@ impl std::str::FromStr for JobEventType {
                 }
             }
 impl JobEventType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobEventType::Cancelled => "CANCELLED",
-            JobEventType::Completed => "COMPLETED",
-            JobEventType::DeprioritizedDueToInactivity => "DEPRIORITIZED_DUE_TO_INACTIVITY",
-            JobEventType::DownloadingData => "DOWNLOADING_DATA",
-            JobEventType::Failed => "FAILED",
-            JobEventType::MaxRuntimeExceeded => "MAX_RUNTIME_EXCEEDED",
-            JobEventType::QueuedForExecution => "QUEUED_FOR_EXECUTION",
-            JobEventType::Running => "RUNNING",
-            JobEventType::StartingInstance => "STARTING_INSTANCE",
-            JobEventType::UploadingResults => "UPLOADING_RESULTS",
-            JobEventType::WaitingForPriority => "WAITING_FOR_PRIORITY",
-            JobEventType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "COMPLETED", "DEPRIORITIZED_DUE_TO_INACTIVITY", "DOWNLOADING_DATA", "FAILED", "MAX_RUNTIME_EXCEEDED", "QUEUED_FOR_EXECUTION", "RUNNING", "STARTING_INSTANCE", "UPLOADING_RESULTS", "WAITING_FOR_PRIORITY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobEventType::Cancelled => "CANCELLED",
+    JobEventType::Completed => "COMPLETED",
+    JobEventType::DeprioritizedDueToInactivity => "DEPRIORITIZED_DUE_TO_INACTIVITY",
+    JobEventType::DownloadingData => "DOWNLOADING_DATA",
+    JobEventType::Failed => "FAILED",
+    JobEventType::MaxRuntimeExceeded => "MAX_RUNTIME_EXCEEDED",
+    JobEventType::QueuedForExecution => "QUEUED_FOR_EXECUTION",
+    JobEventType::Running => "RUNNING",
+    JobEventType::StartingInstance => "STARTING_INSTANCE",
+    JobEventType::UploadingResults => "UPLOADING_RESULTS",
+    JobEventType::WaitingForPriority => "WAITING_FOR_PRIORITY",
+    JobEventType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "COMPLETED", "DEPRIORITIZED_DUE_TO_INACTIVITY", "DOWNLOADING_DATA", "FAILED", "MAX_RUNTIME_EXCEEDED", "QUEUED_FOR_EXECUTION", "RUNNING", "STARTING_INSTANCE", "UPLOADING_RESULTS", "WAITING_FOR_PRIORITY"]
+                }
+            }
 impl AsRef<str> for JobEventType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Includes information about the device.</p>
 #[non_exhaustive]
@@ -2562,15 +2546,15 @@ pub enum DeviceStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "OFFLINE" => DeviceStatus::Offline,
-            "ONLINE" => DeviceStatus::Online,
-            "RETIRED" => DeviceStatus::Retired,
-            other => DeviceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "OFFLINE" => DeviceStatus::Offline,
+"ONLINE" => DeviceStatus::Online,
+"RETIRED" => DeviceStatus::Retired,
+other => DeviceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeviceStatus {
                 type Err = std::convert::Infallible;
 
@@ -2579,27 +2563,25 @@ impl std::str::FromStr for DeviceStatus {
                 }
             }
 impl DeviceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeviceStatus::Offline => "OFFLINE",
-            DeviceStatus::Online => "ONLINE",
-            DeviceStatus::Retired => "RETIRED",
-            DeviceStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "OFFLINE", "ONLINE", "RETIRED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeviceStatus::Offline => "OFFLINE",
+    DeviceStatus::Online => "ONLINE",
+    DeviceStatus::Retired => "RETIRED",
+    DeviceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OFFLINE", "ONLINE", "RETIRED"]
+                }
+            }
 impl AsRef<str> for DeviceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DeviceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2648,14 +2630,14 @@ pub enum DeviceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "QPU" => DeviceType::Qpu,
-            "SIMULATOR" => DeviceType::Simulator,
-            other => DeviceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "QPU" => DeviceType::Qpu,
+"SIMULATOR" => DeviceType::Simulator,
+other => DeviceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeviceType {
                 type Err = std::convert::Infallible;
 
@@ -2664,26 +2646,24 @@ impl std::str::FromStr for DeviceType {
                 }
             }
 impl DeviceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeviceType::Qpu => "QPU",
-            DeviceType::Simulator => "SIMULATOR",
-            DeviceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "QPU", "SIMULATOR"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeviceType::Qpu => "QPU",
+    DeviceType::Simulator => "SIMULATOR",
+    DeviceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["QPU", "SIMULATOR"]
+                }
+            }
 impl AsRef<str> for DeviceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The filter to use for searching devices.</p>
 #[non_exhaustive]

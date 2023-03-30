@@ -834,14 +834,14 @@ pub enum RecordFormatType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecordFormatType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CSV" => RecordFormatType::Csv,
-            "JSON" => RecordFormatType::Json,
-            other => RecordFormatType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CSV" => RecordFormatType::Csv,
+"JSON" => RecordFormatType::Json,
+other => RecordFormatType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecordFormatType {
                 type Err = std::convert::Infallible;
 
@@ -850,26 +850,24 @@ impl std::str::FromStr for RecordFormatType {
                 }
             }
 impl RecordFormatType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecordFormatType::Csv => "CSV",
-            RecordFormatType::Json => "JSON",
-            RecordFormatType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CSV", "JSON"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecordFormatType::Csv => "CSV",
+    RecordFormatType::Json => "JSON",
+    RecordFormatType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CSV", "JSON"]
+                }
+            }
 impl AsRef<str> for RecordFormatType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
 #[non_exhaustive]
@@ -2200,15 +2198,15 @@ pub enum InputStartingPosition {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InputStartingPosition {
-    fn from(s: &str) -> Self {
-        match s {
-            "LAST_STOPPED_POINT" => InputStartingPosition::LastStoppedPoint,
-            "NOW" => InputStartingPosition::Now,
-            "TRIM_HORIZON" => InputStartingPosition::TrimHorizon,
-            other => InputStartingPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "LAST_STOPPED_POINT" => InputStartingPosition::LastStoppedPoint,
+"NOW" => InputStartingPosition::Now,
+"TRIM_HORIZON" => InputStartingPosition::TrimHorizon,
+other => InputStartingPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InputStartingPosition {
                 type Err = std::convert::Infallible;
 
@@ -2217,27 +2215,25 @@ impl std::str::FromStr for InputStartingPosition {
                 }
             }
 impl InputStartingPosition {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InputStartingPosition::LastStoppedPoint => "LAST_STOPPED_POINT",
-            InputStartingPosition::Now => "NOW",
-            InputStartingPosition::TrimHorizon => "TRIM_HORIZON",
-            InputStartingPosition::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LAST_STOPPED_POINT", "NOW", "TRIM_HORIZON"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InputStartingPosition::LastStoppedPoint => "LAST_STOPPED_POINT",
+    InputStartingPosition::Now => "NOW",
+    InputStartingPosition::TrimHorizon => "TRIM_HORIZON",
+    InputStartingPosition::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LAST_STOPPED_POINT", "NOW", "TRIM_HORIZON"]
+                }
+            }
 impl AsRef<str> for InputStartingPosition {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p> 
@@ -2389,18 +2385,18 @@ pub enum ApplicationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETING" => ApplicationStatus::Deleting,
-            "READY" => ApplicationStatus::Ready,
-            "RUNNING" => ApplicationStatus::Running,
-            "STARTING" => ApplicationStatus::Starting,
-            "STOPPING" => ApplicationStatus::Stopping,
-            "UPDATING" => ApplicationStatus::Updating,
-            other => ApplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DELETING" => ApplicationStatus::Deleting,
+"READY" => ApplicationStatus::Ready,
+"RUNNING" => ApplicationStatus::Running,
+"STARTING" => ApplicationStatus::Starting,
+"STOPPING" => ApplicationStatus::Stopping,
+"UPDATING" => ApplicationStatus::Updating,
+other => ApplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ApplicationStatus {
                 type Err = std::convert::Infallible;
 
@@ -2409,30 +2405,28 @@ impl std::str::FromStr for ApplicationStatus {
                 }
             }
 impl ApplicationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ApplicationStatus::Deleting => "DELETING",
-            ApplicationStatus::Ready => "READY",
-            ApplicationStatus::Running => "RUNNING",
-            ApplicationStatus::Starting => "STARTING",
-            ApplicationStatus::Stopping => "STOPPING",
-            ApplicationStatus::Updating => "UPDATING",
-            ApplicationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELETING", "READY", "RUNNING", "STARTING", "STOPPING", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ApplicationStatus::Deleting => "DELETING",
+    ApplicationStatus::Ready => "READY",
+    ApplicationStatus::Running => "RUNNING",
+    ApplicationStatus::Starting => "STARTING",
+    ApplicationStatus::Stopping => "STOPPING",
+    ApplicationStatus::Updating => "UPDATING",
+    ApplicationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELETING", "READY", "RUNNING", "STARTING", "STOPPING", "UPDATING"]
+                }
+            }
 impl AsRef<str> for ApplicationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.</p>
 #[non_exhaustive]

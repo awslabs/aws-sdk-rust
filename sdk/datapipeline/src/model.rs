@@ -595,15 +595,15 @@ pub enum TaskStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TaskStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => TaskStatus::Failed,
-            "FALSE" => TaskStatus::False,
-            "FINISHED" => TaskStatus::Finished,
-            other => TaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => TaskStatus::Failed,
+"FALSE" => TaskStatus::False,
+"FINISHED" => TaskStatus::Finished,
+other => TaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TaskStatus {
                 type Err = std::convert::Infallible;
 
@@ -612,27 +612,25 @@ impl std::str::FromStr for TaskStatus {
                 }
             }
 impl TaskStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TaskStatus::Failed => "FAILED",
-            TaskStatus::False => "FALSE",
-            TaskStatus::Finished => "FINISHED",
-            TaskStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "FALSE", "FINISHED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TaskStatus::Failed => "FAILED",
+    TaskStatus::False => "FALSE",
+    TaskStatus::Finished => "FINISHED",
+    TaskStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "FALSE", "FINISHED"]
+                }
+            }
 impl AsRef<str> for TaskStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Defines the query to run against an object.</p>
 #[non_exhaustive]
@@ -974,17 +972,17 @@ pub enum OperatorType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperatorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BETWEEN" => OperatorType::Between,
-            "EQ" => OperatorType::Equal,
-            "GE" => OperatorType::GreaterThanOrEqual,
-            "LE" => OperatorType::LessThanOrEqual,
-            "REF_EQ" => OperatorType::ReferenceEqual,
-            other => OperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BETWEEN" => OperatorType::Between,
+"EQ" => OperatorType::Equal,
+"GE" => OperatorType::GreaterThanOrEqual,
+"LE" => OperatorType::LessThanOrEqual,
+"REF_EQ" => OperatorType::ReferenceEqual,
+other => OperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OperatorType {
                 type Err = std::convert::Infallible;
 
@@ -993,29 +991,27 @@ impl std::str::FromStr for OperatorType {
                 }
             }
 impl OperatorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OperatorType::Between => "BETWEEN",
-            OperatorType::Equal => "EQ",
-            OperatorType::GreaterThanOrEqual => "GE",
-            OperatorType::LessThanOrEqual => "LE",
-            OperatorType::ReferenceEqual => "REF_EQ",
-            OperatorType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BETWEEN", "EQ", "GE", "LE", "REF_EQ"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OperatorType::Between => "BETWEEN",
+    OperatorType::Equal => "EQ",
+    OperatorType::GreaterThanOrEqual => "GE",
+    OperatorType::LessThanOrEqual => "LE",
+    OperatorType::ReferenceEqual => "REF_EQ",
+    OperatorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BETWEEN", "EQ", "GE", "LE", "REF_EQ"]
+                }
+            }
 impl AsRef<str> for OperatorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about a pipeline task that is assigned to a task runner.</p>
 #[non_exhaustive]

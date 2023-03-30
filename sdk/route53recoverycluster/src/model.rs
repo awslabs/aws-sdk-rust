@@ -122,16 +122,16 @@ pub enum ValidationExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "cannotParse" => ValidationExceptionReason::CannotParse,
-            "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
-            "other" => ValidationExceptionReason::Other,
-            "unknownOperation" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "cannotParse" => ValidationExceptionReason::CannotParse,
+"fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
+"other" => ValidationExceptionReason::Other,
+"unknownOperation" => ValidationExceptionReason::UnknownOperation,
+other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ValidationExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -140,28 +140,26 @@ impl std::str::FromStr for ValidationExceptionReason {
                 }
             }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::CannotParse => "cannotParse",
-            ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
-            ValidationExceptionReason::Other => "other",
-            ValidationExceptionReason::UnknownOperation => "unknownOperation",
-            ValidationExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "cannotParse", "fieldValidationFailed", "other", "unknownOperation"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::CannotParse => "cannotParse",
+    ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
+    ValidationExceptionReason::Other => "other",
+    ValidationExceptionReason::UnknownOperation => "unknownOperation",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["cannotParse", "fieldValidationFailed", "other", "unknownOperation"]
+                }
+            }
 impl AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A routing control state entry.</p>
 #[non_exhaustive]
@@ -279,14 +277,14 @@ pub enum RoutingControlState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RoutingControlState {
-    fn from(s: &str) -> Self {
-        match s {
-            "Off" => RoutingControlState::Off,
-            "On" => RoutingControlState::On,
-            other => RoutingControlState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Off" => RoutingControlState::Off,
+"On" => RoutingControlState::On,
+other => RoutingControlState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RoutingControlState {
                 type Err = std::convert::Infallible;
 
@@ -295,26 +293,24 @@ impl std::str::FromStr for RoutingControlState {
                 }
             }
 impl RoutingControlState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RoutingControlState::Off => "Off",
-            RoutingControlState::On => "On",
-            RoutingControlState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Off", "On"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RoutingControlState::Off => "Off",
+    RoutingControlState::On => "On",
+    RoutingControlState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Off", "On"]
+                }
+            }
 impl AsRef<str> for RoutingControlState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A routing control, which is a simple on/off switch that you can use to route traffic to cells. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>
 #[non_exhaustive]

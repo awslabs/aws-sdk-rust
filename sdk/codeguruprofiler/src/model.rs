@@ -47,14 +47,14 @@ pub enum FeedbackType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FeedbackType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Negative" => FeedbackType::Negative,
-            "Positive" => FeedbackType::Positive,
-            other => FeedbackType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Negative" => FeedbackType::Negative,
+"Positive" => FeedbackType::Positive,
+other => FeedbackType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FeedbackType {
                 type Err = std::convert::Infallible;
 
@@ -63,26 +63,24 @@ impl std::str::FromStr for FeedbackType {
                 }
             }
 impl FeedbackType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FeedbackType::Negative => "Negative",
-            FeedbackType::Positive => "Positive",
-            FeedbackType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Negative", "Positive"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FeedbackType::Negative => "Negative",
+    FeedbackType::Positive => "Positive",
+    FeedbackType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Negative", "Positive"]
+                }
+            }
 impl AsRef<str> for FeedbackType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ActionGroup`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -128,13 +126,13 @@ pub enum ActionGroup {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionGroup {
-    fn from(s: &str) -> Self {
-        match s {
-            "agentPermissions" => ActionGroup::AgentPermissions,
-            other => ActionGroup::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "agentPermissions" => ActionGroup::AgentPermissions,
+other => ActionGroup::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ActionGroup {
                 type Err = std::convert::Infallible;
 
@@ -143,25 +141,23 @@ impl std::str::FromStr for ActionGroup {
                 }
             }
 impl ActionGroup {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ActionGroup::AgentPermissions => "agentPermissions",
-            ActionGroup::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "agentPermissions"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ActionGroup::AgentPermissions => "agentPermissions",
+    ActionGroup::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["agentPermissions"]
+                }
+            }
 impl AsRef<str> for ActionGroup {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The configuration for notifications stored for each profiling group. This includes up to to two channels and a list of event publishers associated with each channel.</p>
 #[non_exhaustive]
@@ -357,13 +353,13 @@ pub enum EventPublisher {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventPublisher {
-    fn from(s: &str) -> Self {
-        match s {
-            "AnomalyDetection" => EventPublisher::AnomalyDetection,
-            other => EventPublisher::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AnomalyDetection" => EventPublisher::AnomalyDetection,
+other => EventPublisher::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EventPublisher {
                 type Err = std::convert::Infallible;
 
@@ -372,25 +368,23 @@ impl std::str::FromStr for EventPublisher {
                 }
             }
 impl EventPublisher {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventPublisher::AnomalyDetection => "AnomalyDetection",
-            EventPublisher::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AnomalyDetection"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventPublisher::AnomalyDetection => "AnomalyDetection",
+    EventPublisher::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AnomalyDetection"]
+                }
+            }
 impl AsRef<str> for EventPublisher {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Contains the start time of a profile. </p>
 #[non_exhaustive]
@@ -489,14 +483,14 @@ pub enum OrderBy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderBy {
-    fn from(s: &str) -> Self {
-        match s {
-            "TimestampAscending" => OrderBy::TimestampAscending,
-            "TimestampDescending" => OrderBy::TimestampDescending,
-            other => OrderBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "TimestampAscending" => OrderBy::TimestampAscending,
+"TimestampDescending" => OrderBy::TimestampDescending,
+other => OrderBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OrderBy {
                 type Err = std::convert::Infallible;
 
@@ -505,26 +499,24 @@ impl std::str::FromStr for OrderBy {
                 }
             }
 impl OrderBy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OrderBy::TimestampAscending => "TimestampAscending",
-            OrderBy::TimestampDescending => "TimestampDescending",
-            OrderBy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "TimestampAscending", "TimestampDescending"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OrderBy::TimestampAscending => "TimestampAscending",
+    OrderBy::TimestampDescending => "TimestampDescending",
+    OrderBy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["TimestampAscending", "TimestampDescending"]
+                }
+            }
 impl AsRef<str> for OrderBy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AggregationPeriod`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -576,15 +568,15 @@ pub enum AggregationPeriod {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregationPeriod {
-    fn from(s: &str) -> Self {
-        match s {
-            "P1D" => AggregationPeriod::P1D,
-            "PT1H" => AggregationPeriod::Pt1H,
-            "PT5M" => AggregationPeriod::Pt5M,
-            other => AggregationPeriod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "P1D" => AggregationPeriod::P1D,
+"PT1H" => AggregationPeriod::Pt1H,
+"PT5M" => AggregationPeriod::Pt5M,
+other => AggregationPeriod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AggregationPeriod {
                 type Err = std::convert::Infallible;
 
@@ -593,27 +585,25 @@ impl std::str::FromStr for AggregationPeriod {
                 }
             }
 impl AggregationPeriod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AggregationPeriod::P1D => "P1D",
-            AggregationPeriod::Pt1H => "PT1H",
-            AggregationPeriod::Pt5M => "PT5M",
-            AggregationPeriod::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "P1D", "PT1H", "PT5M"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AggregationPeriod::P1D => "P1D",
+    AggregationPeriod::Pt1H => "PT1H",
+    AggregationPeriod::Pt5M => "PT5M",
+    AggregationPeriod::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["P1D", "PT1H", "PT5M"]
+                }
+            }
 impl AsRef<str> for AggregationPeriod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Information about potential recommendations that might be created from the analysis of profiling data. </p>
 #[non_exhaustive]
@@ -1130,13 +1120,13 @@ pub enum MetricType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AggregatedRelativeTotalTime" => MetricType::AggregatedRelativeTotalTime,
-            other => MetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AggregatedRelativeTotalTime" => MetricType::AggregatedRelativeTotalTime,
+other => MetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricType {
                 type Err = std::convert::Infallible;
 
@@ -1145,25 +1135,23 @@ impl std::str::FromStr for MetricType {
                 }
             }
 impl MetricType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricType::AggregatedRelativeTotalTime => "AggregatedRelativeTotalTime",
-            MetricType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AggregatedRelativeTotalTime"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricType::AggregatedRelativeTotalTime => "AggregatedRelativeTotalTime",
+    MetricType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AggregatedRelativeTotalTime"]
+                }
+            }
 impl AsRef<str> for MetricType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A potential improvement that was found from analyzing the profiling data.</p>
 #[non_exhaustive]
@@ -1759,17 +1747,17 @@ pub enum AgentParameterField {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AgentParameterField {
-    fn from(s: &str) -> Self {
-        match s {
-            "MaxStackDepth" => AgentParameterField::MaxStackDepth,
-            "MemoryUsageLimitPercent" => AgentParameterField::MemoryUsageLimitPercent,
-            "MinimumTimeForReportingInMilliseconds" => AgentParameterField::MinimumTimeForReportingInMilliseconds,
-            "ReportingIntervalInMilliseconds" => AgentParameterField::ReportingIntervalInMilliseconds,
-            "SamplingIntervalInMilliseconds" => AgentParameterField::SamplingIntervalInMilliseconds,
-            other => AgentParameterField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MaxStackDepth" => AgentParameterField::MaxStackDepth,
+"MemoryUsageLimitPercent" => AgentParameterField::MemoryUsageLimitPercent,
+"MinimumTimeForReportingInMilliseconds" => AgentParameterField::MinimumTimeForReportingInMilliseconds,
+"ReportingIntervalInMilliseconds" => AgentParameterField::ReportingIntervalInMilliseconds,
+"SamplingIntervalInMilliseconds" => AgentParameterField::SamplingIntervalInMilliseconds,
+other => AgentParameterField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AgentParameterField {
                 type Err = std::convert::Infallible;
 
@@ -1778,29 +1766,27 @@ impl std::str::FromStr for AgentParameterField {
                 }
             }
 impl AgentParameterField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AgentParameterField::MaxStackDepth => "MaxStackDepth",
-            AgentParameterField::MemoryUsageLimitPercent => "MemoryUsageLimitPercent",
-            AgentParameterField::MinimumTimeForReportingInMilliseconds => "MinimumTimeForReportingInMilliseconds",
-            AgentParameterField::ReportingIntervalInMilliseconds => "ReportingIntervalInMilliseconds",
-            AgentParameterField::SamplingIntervalInMilliseconds => "SamplingIntervalInMilliseconds",
-            AgentParameterField::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MaxStackDepth", "MemoryUsageLimitPercent", "MinimumTimeForReportingInMilliseconds", "ReportingIntervalInMilliseconds", "SamplingIntervalInMilliseconds"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AgentParameterField::MaxStackDepth => "MaxStackDepth",
+    AgentParameterField::MemoryUsageLimitPercent => "MemoryUsageLimitPercent",
+    AgentParameterField::MinimumTimeForReportingInMilliseconds => "MinimumTimeForReportingInMilliseconds",
+    AgentParameterField::ReportingIntervalInMilliseconds => "ReportingIntervalInMilliseconds",
+    AgentParameterField::SamplingIntervalInMilliseconds => "SamplingIntervalInMilliseconds",
+    AgentParameterField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MaxStackDepth", "MemoryUsageLimitPercent", "MinimumTimeForReportingInMilliseconds", "ReportingIntervalInMilliseconds", "SamplingIntervalInMilliseconds"]
+                }
+            }
 impl AsRef<str> for AgentParameterField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `MetadataField`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1870,21 +1856,21 @@ pub enum MetadataField {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetadataField {
-    fn from(s: &str) -> Self {
-        match s {
-            "AgentId" => MetadataField::AgentId,
-            "AwsRequestId" => MetadataField::AwsRequestId,
-            "ComputePlatform" => MetadataField::ComputePlatform,
-            "ExecutionEnvironment" => MetadataField::ExecutionEnvironment,
-            "LambdaFunctionArn" => MetadataField::LambdaFunctionArn,
-            "LambdaMemoryLimitInMB" => MetadataField::LambdaMemoryLimitInMb,
-            "LambdaPreviousExecutionTimeInMilliseconds" => MetadataField::LambdaPreviousExecutionTimeInMilliseconds,
-            "LambdaRemainingTimeInMilliseconds" => MetadataField::LambdaRemainingTimeInMilliseconds,
-            "LambdaTimeGapBetweenInvokesInMilliseconds" => MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds,
-            other => MetadataField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AgentId" => MetadataField::AgentId,
+"AwsRequestId" => MetadataField::AwsRequestId,
+"ComputePlatform" => MetadataField::ComputePlatform,
+"ExecutionEnvironment" => MetadataField::ExecutionEnvironment,
+"LambdaFunctionArn" => MetadataField::LambdaFunctionArn,
+"LambdaMemoryLimitInMB" => MetadataField::LambdaMemoryLimitInMb,
+"LambdaPreviousExecutionTimeInMilliseconds" => MetadataField::LambdaPreviousExecutionTimeInMilliseconds,
+"LambdaRemainingTimeInMilliseconds" => MetadataField::LambdaRemainingTimeInMilliseconds,
+"LambdaTimeGapBetweenInvokesInMilliseconds" => MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds,
+other => MetadataField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetadataField {
                 type Err = std::convert::Infallible;
 
@@ -1893,33 +1879,31 @@ impl std::str::FromStr for MetadataField {
                 }
             }
 impl MetadataField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetadataField::AgentId => "AgentId",
-            MetadataField::AwsRequestId => "AwsRequestId",
-            MetadataField::ComputePlatform => "ComputePlatform",
-            MetadataField::ExecutionEnvironment => "ExecutionEnvironment",
-            MetadataField::LambdaFunctionArn => "LambdaFunctionArn",
-            MetadataField::LambdaMemoryLimitInMb => "LambdaMemoryLimitInMB",
-            MetadataField::LambdaPreviousExecutionTimeInMilliseconds => "LambdaPreviousExecutionTimeInMilliseconds",
-            MetadataField::LambdaRemainingTimeInMilliseconds => "LambdaRemainingTimeInMilliseconds",
-            MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds => "LambdaTimeGapBetweenInvokesInMilliseconds",
-            MetadataField::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AgentId", "AwsRequestId", "ComputePlatform", "ExecutionEnvironment", "LambdaFunctionArn", "LambdaMemoryLimitInMB", "LambdaPreviousExecutionTimeInMilliseconds", "LambdaRemainingTimeInMilliseconds", "LambdaTimeGapBetweenInvokesInMilliseconds"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetadataField::AgentId => "AgentId",
+    MetadataField::AwsRequestId => "AwsRequestId",
+    MetadataField::ComputePlatform => "ComputePlatform",
+    MetadataField::ExecutionEnvironment => "ExecutionEnvironment",
+    MetadataField::LambdaFunctionArn => "LambdaFunctionArn",
+    MetadataField::LambdaMemoryLimitInMb => "LambdaMemoryLimitInMB",
+    MetadataField::LambdaPreviousExecutionTimeInMilliseconds => "LambdaPreviousExecutionTimeInMilliseconds",
+    MetadataField::LambdaRemainingTimeInMilliseconds => "LambdaRemainingTimeInMilliseconds",
+    MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds => "LambdaTimeGapBetweenInvokesInMilliseconds",
+    MetadataField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AgentId", "AwsRequestId", "ComputePlatform", "ExecutionEnvironment", "LambdaFunctionArn", "LambdaMemoryLimitInMB", "LambdaPreviousExecutionTimeInMilliseconds", "LambdaRemainingTimeInMilliseconds", "LambdaTimeGapBetweenInvokesInMilliseconds"]
+                }
+            }
 impl AsRef<str> for MetadataField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Information about a frame metric and its values. </p>
 #[non_exhaustive]
@@ -2376,14 +2360,14 @@ pub enum ComputePlatform {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComputePlatform {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWSLambda" => ComputePlatform::Awslambda,
-            "Default" => ComputePlatform::Default,
-            other => ComputePlatform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWSLambda" => ComputePlatform::Awslambda,
+"Default" => ComputePlatform::Default,
+other => ComputePlatform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ComputePlatform {
                 type Err = std::convert::Infallible;
 
@@ -2392,26 +2376,24 @@ impl std::str::FromStr for ComputePlatform {
                 }
             }
 impl ComputePlatform {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComputePlatform::Awslambda => "AWSLambda",
-            ComputePlatform::Default => "Default",
-            ComputePlatform::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWSLambda", "Default"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComputePlatform::Awslambda => "AWSLambda",
+    ComputePlatform::Default => "Default",
+    ComputePlatform::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWSLambda", "Default"]
+                }
+            }
 impl AsRef<str> for ComputePlatform {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Profiling status includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile. </p>
 #[non_exhaustive]

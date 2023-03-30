@@ -226,30 +226,30 @@ pub enum OperationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADD_DNSSEC" => OperationType::AddDnssec,
-            "CHANGE_DOMAIN_OWNER" => OperationType::ChangeDomainOwner,
-            "CHANGE_PRIVACY_PROTECTION" => OperationType::ChangePrivacyProtection,
-            "DELETE_DOMAIN" => OperationType::DeleteDomain,
-            "DISABLE_AUTORENEW" => OperationType::DisableAutorenew,
-            "DOMAIN_LOCK" => OperationType::DomainLock,
-            "ENABLE_AUTORENEW" => OperationType::EnableAutorenew,
-            "EXPIRE_DOMAIN" => OperationType::ExpireDomain,
-            "INTERNAL_TRANSFER_IN_DOMAIN" => OperationType::InternalTransferInDomain,
-            "INTERNAL_TRANSFER_OUT_DOMAIN" => OperationType::InternalTransferOutDomain,
-            "PUSH_DOMAIN" => OperationType::PushDomain,
-            "REGISTER_DOMAIN" => OperationType::RegisterDomain,
-            "REMOVE_DNSSEC" => OperationType::RemoveDnssec,
-            "RENEW_DOMAIN" => OperationType::RenewDomain,
-            "TRANSFER_IN_DOMAIN" => OperationType::TransferInDomain,
-            "TRANSFER_OUT_DOMAIN" => OperationType::TransferOutDomain,
-            "UPDATE_DOMAIN_CONTACT" => OperationType::UpdateDomainContact,
-            "UPDATE_NAMESERVER" => OperationType::UpdateNameserver,
-            other => OperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADD_DNSSEC" => OperationType::AddDnssec,
+"CHANGE_DOMAIN_OWNER" => OperationType::ChangeDomainOwner,
+"CHANGE_PRIVACY_PROTECTION" => OperationType::ChangePrivacyProtection,
+"DELETE_DOMAIN" => OperationType::DeleteDomain,
+"DISABLE_AUTORENEW" => OperationType::DisableAutorenew,
+"DOMAIN_LOCK" => OperationType::DomainLock,
+"ENABLE_AUTORENEW" => OperationType::EnableAutorenew,
+"EXPIRE_DOMAIN" => OperationType::ExpireDomain,
+"INTERNAL_TRANSFER_IN_DOMAIN" => OperationType::InternalTransferInDomain,
+"INTERNAL_TRANSFER_OUT_DOMAIN" => OperationType::InternalTransferOutDomain,
+"PUSH_DOMAIN" => OperationType::PushDomain,
+"REGISTER_DOMAIN" => OperationType::RegisterDomain,
+"REMOVE_DNSSEC" => OperationType::RemoveDnssec,
+"RENEW_DOMAIN" => OperationType::RenewDomain,
+"TRANSFER_IN_DOMAIN" => OperationType::TransferInDomain,
+"TRANSFER_OUT_DOMAIN" => OperationType::TransferOutDomain,
+"UPDATE_DOMAIN_CONTACT" => OperationType::UpdateDomainContact,
+"UPDATE_NAMESERVER" => OperationType::UpdateNameserver,
+other => OperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OperationType {
                 type Err = std::convert::Infallible;
 
@@ -258,42 +258,40 @@ impl std::str::FromStr for OperationType {
                 }
             }
 impl OperationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OperationType::AddDnssec => "ADD_DNSSEC",
-            OperationType::ChangeDomainOwner => "CHANGE_DOMAIN_OWNER",
-            OperationType::ChangePrivacyProtection => "CHANGE_PRIVACY_PROTECTION",
-            OperationType::DeleteDomain => "DELETE_DOMAIN",
-            OperationType::DisableAutorenew => "DISABLE_AUTORENEW",
-            OperationType::DomainLock => "DOMAIN_LOCK",
-            OperationType::EnableAutorenew => "ENABLE_AUTORENEW",
-            OperationType::ExpireDomain => "EXPIRE_DOMAIN",
-            OperationType::InternalTransferInDomain => "INTERNAL_TRANSFER_IN_DOMAIN",
-            OperationType::InternalTransferOutDomain => "INTERNAL_TRANSFER_OUT_DOMAIN",
-            OperationType::PushDomain => "PUSH_DOMAIN",
-            OperationType::RegisterDomain => "REGISTER_DOMAIN",
-            OperationType::RemoveDnssec => "REMOVE_DNSSEC",
-            OperationType::RenewDomain => "RENEW_DOMAIN",
-            OperationType::TransferInDomain => "TRANSFER_IN_DOMAIN",
-            OperationType::TransferOutDomain => "TRANSFER_OUT_DOMAIN",
-            OperationType::UpdateDomainContact => "UPDATE_DOMAIN_CONTACT",
-            OperationType::UpdateNameserver => "UPDATE_NAMESERVER",
-            OperationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADD_DNSSEC", "CHANGE_DOMAIN_OWNER", "CHANGE_PRIVACY_PROTECTION", "DELETE_DOMAIN", "DISABLE_AUTORENEW", "DOMAIN_LOCK", "ENABLE_AUTORENEW", "EXPIRE_DOMAIN", "INTERNAL_TRANSFER_IN_DOMAIN", "INTERNAL_TRANSFER_OUT_DOMAIN", "PUSH_DOMAIN", "REGISTER_DOMAIN", "REMOVE_DNSSEC", "RENEW_DOMAIN", "TRANSFER_IN_DOMAIN", "TRANSFER_OUT_DOMAIN", "UPDATE_DOMAIN_CONTACT", "UPDATE_NAMESERVER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OperationType::AddDnssec => "ADD_DNSSEC",
+    OperationType::ChangeDomainOwner => "CHANGE_DOMAIN_OWNER",
+    OperationType::ChangePrivacyProtection => "CHANGE_PRIVACY_PROTECTION",
+    OperationType::DeleteDomain => "DELETE_DOMAIN",
+    OperationType::DisableAutorenew => "DISABLE_AUTORENEW",
+    OperationType::DomainLock => "DOMAIN_LOCK",
+    OperationType::EnableAutorenew => "ENABLE_AUTORENEW",
+    OperationType::ExpireDomain => "EXPIRE_DOMAIN",
+    OperationType::InternalTransferInDomain => "INTERNAL_TRANSFER_IN_DOMAIN",
+    OperationType::InternalTransferOutDomain => "INTERNAL_TRANSFER_OUT_DOMAIN",
+    OperationType::PushDomain => "PUSH_DOMAIN",
+    OperationType::RegisterDomain => "REGISTER_DOMAIN",
+    OperationType::RemoveDnssec => "REMOVE_DNSSEC",
+    OperationType::RenewDomain => "RENEW_DOMAIN",
+    OperationType::TransferInDomain => "TRANSFER_IN_DOMAIN",
+    OperationType::TransferOutDomain => "TRANSFER_OUT_DOMAIN",
+    OperationType::UpdateDomainContact => "UPDATE_DOMAIN_CONTACT",
+    OperationType::UpdateNameserver => "UPDATE_NAMESERVER",
+    OperationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADD_DNSSEC", "CHANGE_DOMAIN_OWNER", "CHANGE_PRIVACY_PROTECTION", "DELETE_DOMAIN", "DISABLE_AUTORENEW", "DOMAIN_LOCK", "ENABLE_AUTORENEW", "EXPIRE_DOMAIN", "INTERNAL_TRANSFER_IN_DOMAIN", "INTERNAL_TRANSFER_OUT_DOMAIN", "PUSH_DOMAIN", "REGISTER_DOMAIN", "REMOVE_DNSSEC", "RENEW_DOMAIN", "TRANSFER_IN_DOMAIN", "TRANSFER_OUT_DOMAIN", "UPDATE_DOMAIN_CONTACT", "UPDATE_NAMESERVER"]
+                }
+            }
 impl AsRef<str> for OperationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Each tag includes the following elements.</p>
 #[non_exhaustive]
@@ -2203,43 +2201,43 @@ pub enum ExtraParamName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExtraParamName {
-    fn from(s: &str) -> Self {
-        match s {
-            "AU_ID_NUMBER" => ExtraParamName::AuIdNumber,
-            "AU_ID_TYPE" => ExtraParamName::AuIdType,
-            "AU_PRIORITY_TOKEN" => ExtraParamName::AuPriorityToken,
-            "BIRTH_CITY" => ExtraParamName::BirthCity,
-            "BIRTH_COUNTRY" => ExtraParamName::BirthCountry,
-            "BIRTH_DATE_IN_YYYY_MM_DD" => ExtraParamName::BirthDateInYyyyMmDd,
-            "BIRTH_DEPARTMENT" => ExtraParamName::BirthDepartment,
-            "BRAND_NUMBER" => ExtraParamName::BrandNumber,
-            "CA_BUSINESS_ENTITY_TYPE" => ExtraParamName::CaBusinessEntityType,
-            "CA_LEGAL_REPRESENTATIVE" => ExtraParamName::CaLegalRepresentative,
-            "CA_LEGAL_REPRESENTATIVE_CAPACITY" => ExtraParamName::CaLegalRepresentativeCapacity,
-            "CA_LEGAL_TYPE" => ExtraParamName::CaLegalType,
-            "DOCUMENT_NUMBER" => ExtraParamName::DocumentNumber,
-            "DUNS_NUMBER" => ExtraParamName::DunsNumber,
-            "ES_IDENTIFICATION" => ExtraParamName::EsIdentification,
-            "ES_IDENTIFICATION_TYPE" => ExtraParamName::EsIdentificationType,
-            "ES_LEGAL_FORM" => ExtraParamName::EsLegalForm,
-            "EU_COUNTRY_OF_CITIZENSHIP" => ExtraParamName::EuCountryOfCitizenship,
-            "FI_BUSINESS_NUMBER" => ExtraParamName::FiBusinessNumber,
-            "FI_ID_NUMBER" => ExtraParamName::OnwerFiIdNumber,
-            "FI_NATIONALITY" => ExtraParamName::FiNationality,
-            "FI_ORGANIZATION_TYPE" => ExtraParamName::FiOrganizationType,
-            "IT_NATIONALITY" => ExtraParamName::ItNationality,
-            "IT_PIN" => ExtraParamName::ItPin,
-            "IT_REGISTRANT_ENTITY_TYPE" => ExtraParamName::ItRegistrantEntityType,
-            "RU_PASSPORT_DATA" => ExtraParamName::RuPassportData,
-            "SE_ID_NUMBER" => ExtraParamName::SeIdNumber,
-            "SG_ID_NUMBER" => ExtraParamName::SgIdNumber,
-            "UK_COMPANY_NUMBER" => ExtraParamName::UkCompanyNumber,
-            "UK_CONTACT_TYPE" => ExtraParamName::UkContactType,
-            "VAT_NUMBER" => ExtraParamName::VatNumber,
-            other => ExtraParamName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AU_ID_NUMBER" => ExtraParamName::AuIdNumber,
+"AU_ID_TYPE" => ExtraParamName::AuIdType,
+"AU_PRIORITY_TOKEN" => ExtraParamName::AuPriorityToken,
+"BIRTH_CITY" => ExtraParamName::BirthCity,
+"BIRTH_COUNTRY" => ExtraParamName::BirthCountry,
+"BIRTH_DATE_IN_YYYY_MM_DD" => ExtraParamName::BirthDateInYyyyMmDd,
+"BIRTH_DEPARTMENT" => ExtraParamName::BirthDepartment,
+"BRAND_NUMBER" => ExtraParamName::BrandNumber,
+"CA_BUSINESS_ENTITY_TYPE" => ExtraParamName::CaBusinessEntityType,
+"CA_LEGAL_REPRESENTATIVE" => ExtraParamName::CaLegalRepresentative,
+"CA_LEGAL_REPRESENTATIVE_CAPACITY" => ExtraParamName::CaLegalRepresentativeCapacity,
+"CA_LEGAL_TYPE" => ExtraParamName::CaLegalType,
+"DOCUMENT_NUMBER" => ExtraParamName::DocumentNumber,
+"DUNS_NUMBER" => ExtraParamName::DunsNumber,
+"ES_IDENTIFICATION" => ExtraParamName::EsIdentification,
+"ES_IDENTIFICATION_TYPE" => ExtraParamName::EsIdentificationType,
+"ES_LEGAL_FORM" => ExtraParamName::EsLegalForm,
+"EU_COUNTRY_OF_CITIZENSHIP" => ExtraParamName::EuCountryOfCitizenship,
+"FI_BUSINESS_NUMBER" => ExtraParamName::FiBusinessNumber,
+"FI_ID_NUMBER" => ExtraParamName::OnwerFiIdNumber,
+"FI_NATIONALITY" => ExtraParamName::FiNationality,
+"FI_ORGANIZATION_TYPE" => ExtraParamName::FiOrganizationType,
+"IT_NATIONALITY" => ExtraParamName::ItNationality,
+"IT_PIN" => ExtraParamName::ItPin,
+"IT_REGISTRANT_ENTITY_TYPE" => ExtraParamName::ItRegistrantEntityType,
+"RU_PASSPORT_DATA" => ExtraParamName::RuPassportData,
+"SE_ID_NUMBER" => ExtraParamName::SeIdNumber,
+"SG_ID_NUMBER" => ExtraParamName::SgIdNumber,
+"UK_COMPANY_NUMBER" => ExtraParamName::UkCompanyNumber,
+"UK_CONTACT_TYPE" => ExtraParamName::UkContactType,
+"VAT_NUMBER" => ExtraParamName::VatNumber,
+other => ExtraParamName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExtraParamName {
                 type Err = std::convert::Infallible;
 
@@ -2248,55 +2246,53 @@ impl std::str::FromStr for ExtraParamName {
                 }
             }
 impl ExtraParamName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExtraParamName::AuIdNumber => "AU_ID_NUMBER",
-            ExtraParamName::AuIdType => "AU_ID_TYPE",
-            ExtraParamName::AuPriorityToken => "AU_PRIORITY_TOKEN",
-            ExtraParamName::BirthCity => "BIRTH_CITY",
-            ExtraParamName::BirthCountry => "BIRTH_COUNTRY",
-            ExtraParamName::BirthDateInYyyyMmDd => "BIRTH_DATE_IN_YYYY_MM_DD",
-            ExtraParamName::BirthDepartment => "BIRTH_DEPARTMENT",
-            ExtraParamName::BrandNumber => "BRAND_NUMBER",
-            ExtraParamName::CaBusinessEntityType => "CA_BUSINESS_ENTITY_TYPE",
-            ExtraParamName::CaLegalRepresentative => "CA_LEGAL_REPRESENTATIVE",
-            ExtraParamName::CaLegalRepresentativeCapacity => "CA_LEGAL_REPRESENTATIVE_CAPACITY",
-            ExtraParamName::CaLegalType => "CA_LEGAL_TYPE",
-            ExtraParamName::DocumentNumber => "DOCUMENT_NUMBER",
-            ExtraParamName::DunsNumber => "DUNS_NUMBER",
-            ExtraParamName::EsIdentification => "ES_IDENTIFICATION",
-            ExtraParamName::EsIdentificationType => "ES_IDENTIFICATION_TYPE",
-            ExtraParamName::EsLegalForm => "ES_LEGAL_FORM",
-            ExtraParamName::EuCountryOfCitizenship => "EU_COUNTRY_OF_CITIZENSHIP",
-            ExtraParamName::FiBusinessNumber => "FI_BUSINESS_NUMBER",
-            ExtraParamName::OnwerFiIdNumber => "FI_ID_NUMBER",
-            ExtraParamName::FiNationality => "FI_NATIONALITY",
-            ExtraParamName::FiOrganizationType => "FI_ORGANIZATION_TYPE",
-            ExtraParamName::ItNationality => "IT_NATIONALITY",
-            ExtraParamName::ItPin => "IT_PIN",
-            ExtraParamName::ItRegistrantEntityType => "IT_REGISTRANT_ENTITY_TYPE",
-            ExtraParamName::RuPassportData => "RU_PASSPORT_DATA",
-            ExtraParamName::SeIdNumber => "SE_ID_NUMBER",
-            ExtraParamName::SgIdNumber => "SG_ID_NUMBER",
-            ExtraParamName::UkCompanyNumber => "UK_COMPANY_NUMBER",
-            ExtraParamName::UkContactType => "UK_CONTACT_TYPE",
-            ExtraParamName::VatNumber => "VAT_NUMBER",
-            ExtraParamName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AU_ID_NUMBER", "AU_ID_TYPE", "AU_PRIORITY_TOKEN", "BIRTH_CITY", "BIRTH_COUNTRY", "BIRTH_DATE_IN_YYYY_MM_DD", "BIRTH_DEPARTMENT", "BRAND_NUMBER", "CA_BUSINESS_ENTITY_TYPE", "CA_LEGAL_REPRESENTATIVE", "CA_LEGAL_REPRESENTATIVE_CAPACITY", "CA_LEGAL_TYPE", "DOCUMENT_NUMBER", "DUNS_NUMBER", "ES_IDENTIFICATION", "ES_IDENTIFICATION_TYPE", "ES_LEGAL_FORM", "EU_COUNTRY_OF_CITIZENSHIP", "FI_BUSINESS_NUMBER", "FI_ID_NUMBER", "FI_NATIONALITY", "FI_ORGANIZATION_TYPE", "IT_NATIONALITY", "IT_PIN", "IT_REGISTRANT_ENTITY_TYPE", "RU_PASSPORT_DATA", "SE_ID_NUMBER", "SG_ID_NUMBER", "UK_COMPANY_NUMBER", "UK_CONTACT_TYPE", "VAT_NUMBER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExtraParamName::AuIdNumber => "AU_ID_NUMBER",
+    ExtraParamName::AuIdType => "AU_ID_TYPE",
+    ExtraParamName::AuPriorityToken => "AU_PRIORITY_TOKEN",
+    ExtraParamName::BirthCity => "BIRTH_CITY",
+    ExtraParamName::BirthCountry => "BIRTH_COUNTRY",
+    ExtraParamName::BirthDateInYyyyMmDd => "BIRTH_DATE_IN_YYYY_MM_DD",
+    ExtraParamName::BirthDepartment => "BIRTH_DEPARTMENT",
+    ExtraParamName::BrandNumber => "BRAND_NUMBER",
+    ExtraParamName::CaBusinessEntityType => "CA_BUSINESS_ENTITY_TYPE",
+    ExtraParamName::CaLegalRepresentative => "CA_LEGAL_REPRESENTATIVE",
+    ExtraParamName::CaLegalRepresentativeCapacity => "CA_LEGAL_REPRESENTATIVE_CAPACITY",
+    ExtraParamName::CaLegalType => "CA_LEGAL_TYPE",
+    ExtraParamName::DocumentNumber => "DOCUMENT_NUMBER",
+    ExtraParamName::DunsNumber => "DUNS_NUMBER",
+    ExtraParamName::EsIdentification => "ES_IDENTIFICATION",
+    ExtraParamName::EsIdentificationType => "ES_IDENTIFICATION_TYPE",
+    ExtraParamName::EsLegalForm => "ES_LEGAL_FORM",
+    ExtraParamName::EuCountryOfCitizenship => "EU_COUNTRY_OF_CITIZENSHIP",
+    ExtraParamName::FiBusinessNumber => "FI_BUSINESS_NUMBER",
+    ExtraParamName::OnwerFiIdNumber => "FI_ID_NUMBER",
+    ExtraParamName::FiNationality => "FI_NATIONALITY",
+    ExtraParamName::FiOrganizationType => "FI_ORGANIZATION_TYPE",
+    ExtraParamName::ItNationality => "IT_NATIONALITY",
+    ExtraParamName::ItPin => "IT_PIN",
+    ExtraParamName::ItRegistrantEntityType => "IT_REGISTRANT_ENTITY_TYPE",
+    ExtraParamName::RuPassportData => "RU_PASSPORT_DATA",
+    ExtraParamName::SeIdNumber => "SE_ID_NUMBER",
+    ExtraParamName::SgIdNumber => "SG_ID_NUMBER",
+    ExtraParamName::UkCompanyNumber => "UK_COMPANY_NUMBER",
+    ExtraParamName::UkContactType => "UK_CONTACT_TYPE",
+    ExtraParamName::VatNumber => "VAT_NUMBER",
+    ExtraParamName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AU_ID_NUMBER", "AU_ID_TYPE", "AU_PRIORITY_TOKEN", "BIRTH_CITY", "BIRTH_COUNTRY", "BIRTH_DATE_IN_YYYY_MM_DD", "BIRTH_DEPARTMENT", "BRAND_NUMBER", "CA_BUSINESS_ENTITY_TYPE", "CA_LEGAL_REPRESENTATIVE", "CA_LEGAL_REPRESENTATIVE_CAPACITY", "CA_LEGAL_TYPE", "DOCUMENT_NUMBER", "DUNS_NUMBER", "ES_IDENTIFICATION", "ES_IDENTIFICATION_TYPE", "ES_LEGAL_FORM", "EU_COUNTRY_OF_CITIZENSHIP", "FI_BUSINESS_NUMBER", "FI_ID_NUMBER", "FI_NATIONALITY", "FI_ORGANIZATION_TYPE", "IT_NATIONALITY", "IT_PIN", "IT_REGISTRANT_ENTITY_TYPE", "RU_PASSPORT_DATA", "SE_ID_NUMBER", "SG_ID_NUMBER", "UK_COMPANY_NUMBER", "UK_CONTACT_TYPE", "VAT_NUMBER"]
+                }
+            }
 impl AsRef<str> for ExtraParamName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CountryCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3092,263 +3088,263 @@ pub enum CountryCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CountryCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AC" => CountryCode::Ac,
-            "AD" => CountryCode::Ad,
-            "AE" => CountryCode::Ae,
-            "AF" => CountryCode::Af,
-            "AG" => CountryCode::Ag,
-            "AI" => CountryCode::Ai,
-            "AL" => CountryCode::Al,
-            "AM" => CountryCode::Am,
-            "AN" => CountryCode::An,
-            "AO" => CountryCode::Ao,
-            "AQ" => CountryCode::Aq,
-            "AR" => CountryCode::Ar,
-            "AS" => CountryCode::As,
-            "AT" => CountryCode::At,
-            "AU" => CountryCode::Au,
-            "AW" => CountryCode::Aw,
-            "AX" => CountryCode::Ax,
-            "AZ" => CountryCode::Az,
-            "BA" => CountryCode::Ba,
-            "BB" => CountryCode::Bb,
-            "BD" => CountryCode::Bd,
-            "BE" => CountryCode::Be,
-            "BF" => CountryCode::Bf,
-            "BG" => CountryCode::Bg,
-            "BH" => CountryCode::Bh,
-            "BI" => CountryCode::Bi,
-            "BJ" => CountryCode::Bj,
-            "BL" => CountryCode::Bl,
-            "BM" => CountryCode::Bm,
-            "BN" => CountryCode::Bn,
-            "BO" => CountryCode::Bo,
-            "BQ" => CountryCode::Bq,
-            "BR" => CountryCode::Br,
-            "BS" => CountryCode::Bs,
-            "BT" => CountryCode::Bt,
-            "BV" => CountryCode::Bv,
-            "BW" => CountryCode::Bw,
-            "BY" => CountryCode::By,
-            "BZ" => CountryCode::Bz,
-            "CA" => CountryCode::Ca,
-            "CC" => CountryCode::Cc,
-            "CD" => CountryCode::Cd,
-            "CF" => CountryCode::Cf,
-            "CG" => CountryCode::Cg,
-            "CH" => CountryCode::Ch,
-            "CI" => CountryCode::Ci,
-            "CK" => CountryCode::Ck,
-            "CL" => CountryCode::Cl,
-            "CM" => CountryCode::Cm,
-            "CN" => CountryCode::Cn,
-            "CO" => CountryCode::Co,
-            "CR" => CountryCode::Cr,
-            "CU" => CountryCode::Cu,
-            "CV" => CountryCode::Cv,
-            "CW" => CountryCode::Cw,
-            "CX" => CountryCode::Cx,
-            "CY" => CountryCode::Cy,
-            "CZ" => CountryCode::Cz,
-            "DE" => CountryCode::De,
-            "DJ" => CountryCode::Dj,
-            "DK" => CountryCode::Dk,
-            "DM" => CountryCode::Dm,
-            "DO" => CountryCode::Do,
-            "DZ" => CountryCode::Dz,
-            "EC" => CountryCode::Ec,
-            "EE" => CountryCode::Ee,
-            "EG" => CountryCode::Eg,
-            "EH" => CountryCode::Eh,
-            "ER" => CountryCode::Er,
-            "ES" => CountryCode::Es,
-            "ET" => CountryCode::Et,
-            "FI" => CountryCode::Fi,
-            "FJ" => CountryCode::Fj,
-            "FK" => CountryCode::Fk,
-            "FM" => CountryCode::Fm,
-            "FO" => CountryCode::Fo,
-            "FR" => CountryCode::Fr,
-            "GA" => CountryCode::Ga,
-            "GB" => CountryCode::Gb,
-            "GD" => CountryCode::Gd,
-            "GE" => CountryCode::Ge,
-            "GF" => CountryCode::Gf,
-            "GG" => CountryCode::Gg,
-            "GH" => CountryCode::Gh,
-            "GI" => CountryCode::Gi,
-            "GL" => CountryCode::Gl,
-            "GM" => CountryCode::Gm,
-            "GN" => CountryCode::Gn,
-            "GP" => CountryCode::Gp,
-            "GQ" => CountryCode::Gq,
-            "GR" => CountryCode::Gr,
-            "GS" => CountryCode::Gs,
-            "GT" => CountryCode::Gt,
-            "GU" => CountryCode::Gu,
-            "GW" => CountryCode::Gw,
-            "GY" => CountryCode::Gy,
-            "HK" => CountryCode::Hk,
-            "HM" => CountryCode::Hm,
-            "HN" => CountryCode::Hn,
-            "HR" => CountryCode::Hr,
-            "HT" => CountryCode::Ht,
-            "HU" => CountryCode::Hu,
-            "ID" => CountryCode::Id,
-            "IE" => CountryCode::Ie,
-            "IL" => CountryCode::Il,
-            "IM" => CountryCode::Im,
-            "IN" => CountryCode::In,
-            "IO" => CountryCode::Io,
-            "IQ" => CountryCode::Iq,
-            "IR" => CountryCode::Ir,
-            "IS" => CountryCode::Is,
-            "IT" => CountryCode::It,
-            "JE" => CountryCode::Je,
-            "JM" => CountryCode::Jm,
-            "JO" => CountryCode::Jo,
-            "JP" => CountryCode::Jp,
-            "KE" => CountryCode::Ke,
-            "KG" => CountryCode::Kg,
-            "KH" => CountryCode::Kh,
-            "KI" => CountryCode::Ki,
-            "KM" => CountryCode::Km,
-            "KN" => CountryCode::Kn,
-            "KP" => CountryCode::Kp,
-            "KR" => CountryCode::Kr,
-            "KW" => CountryCode::Kw,
-            "KY" => CountryCode::Ky,
-            "KZ" => CountryCode::Kz,
-            "LA" => CountryCode::La,
-            "LB" => CountryCode::Lb,
-            "LC" => CountryCode::Lc,
-            "LI" => CountryCode::Li,
-            "LK" => CountryCode::Lk,
-            "LR" => CountryCode::Lr,
-            "LS" => CountryCode::Ls,
-            "LT" => CountryCode::Lt,
-            "LU" => CountryCode::Lu,
-            "LV" => CountryCode::Lv,
-            "LY" => CountryCode::Ly,
-            "MA" => CountryCode::Ma,
-            "MC" => CountryCode::Mc,
-            "MD" => CountryCode::Md,
-            "ME" => CountryCode::Me,
-            "MF" => CountryCode::Mf,
-            "MG" => CountryCode::Mg,
-            "MH" => CountryCode::Mh,
-            "MK" => CountryCode::Mk,
-            "ML" => CountryCode::Ml,
-            "MM" => CountryCode::Mm,
-            "MN" => CountryCode::Mn,
-            "MO" => CountryCode::Mo,
-            "MP" => CountryCode::Mp,
-            "MQ" => CountryCode::Mq,
-            "MR" => CountryCode::Mr,
-            "MS" => CountryCode::Ms,
-            "MT" => CountryCode::Mt,
-            "MU" => CountryCode::Mu,
-            "MV" => CountryCode::Mv,
-            "MW" => CountryCode::Mw,
-            "MX" => CountryCode::Mx,
-            "MY" => CountryCode::My,
-            "MZ" => CountryCode::Mz,
-            "NA" => CountryCode::Na,
-            "NC" => CountryCode::Nc,
-            "NE" => CountryCode::Ne,
-            "NF" => CountryCode::Nf,
-            "NG" => CountryCode::Ng,
-            "NI" => CountryCode::Ni,
-            "NL" => CountryCode::Nl,
-            "NO" => CountryCode::No,
-            "NP" => CountryCode::Np,
-            "NR" => CountryCode::Nr,
-            "NU" => CountryCode::Nu,
-            "NZ" => CountryCode::Nz,
-            "OM" => CountryCode::Om,
-            "PA" => CountryCode::Pa,
-            "PE" => CountryCode::Pe,
-            "PF" => CountryCode::Pf,
-            "PG" => CountryCode::Pg,
-            "PH" => CountryCode::Ph,
-            "PK" => CountryCode::Pk,
-            "PL" => CountryCode::Pl,
-            "PM" => CountryCode::Pm,
-            "PN" => CountryCode::Pn,
-            "PR" => CountryCode::Pr,
-            "PS" => CountryCode::Ps,
-            "PT" => CountryCode::Pt,
-            "PW" => CountryCode::Pw,
-            "PY" => CountryCode::Py,
-            "QA" => CountryCode::Qa,
-            "RE" => CountryCode::Re,
-            "RO" => CountryCode::Ro,
-            "RS" => CountryCode::Rs,
-            "RU" => CountryCode::Ru,
-            "RW" => CountryCode::Rw,
-            "SA" => CountryCode::Sa,
-            "SB" => CountryCode::Sb,
-            "SC" => CountryCode::Sc,
-            "SD" => CountryCode::Sd,
-            "SE" => CountryCode::Se,
-            "SG" => CountryCode::Sg,
-            "SH" => CountryCode::Sh,
-            "SI" => CountryCode::Si,
-            "SJ" => CountryCode::Sj,
-            "SK" => CountryCode::Sk,
-            "SL" => CountryCode::Sl,
-            "SM" => CountryCode::Sm,
-            "SN" => CountryCode::Sn,
-            "SO" => CountryCode::So,
-            "SR" => CountryCode::Sr,
-            "SS" => CountryCode::Ss,
-            "ST" => CountryCode::St,
-            "SV" => CountryCode::Sv,
-            "SX" => CountryCode::Sx,
-            "SY" => CountryCode::Sy,
-            "SZ" => CountryCode::Sz,
-            "TC" => CountryCode::Tc,
-            "TD" => CountryCode::Td,
-            "TF" => CountryCode::Tf,
-            "TG" => CountryCode::Tg,
-            "TH" => CountryCode::Th,
-            "TJ" => CountryCode::Tj,
-            "TK" => CountryCode::Tk,
-            "TL" => CountryCode::Tl,
-            "TM" => CountryCode::Tm,
-            "TN" => CountryCode::Tn,
-            "TO" => CountryCode::To,
-            "TP" => CountryCode::Tp,
-            "TR" => CountryCode::Tr,
-            "TT" => CountryCode::Tt,
-            "TV" => CountryCode::Tv,
-            "TW" => CountryCode::Tw,
-            "TZ" => CountryCode::Tz,
-            "UA" => CountryCode::Ua,
-            "UG" => CountryCode::Ug,
-            "US" => CountryCode::Us,
-            "UY" => CountryCode::Uy,
-            "UZ" => CountryCode::Uz,
-            "VA" => CountryCode::Va,
-            "VC" => CountryCode::Vc,
-            "VE" => CountryCode::Ve,
-            "VG" => CountryCode::Vg,
-            "VI" => CountryCode::Vi,
-            "VN" => CountryCode::Vn,
-            "VU" => CountryCode::Vu,
-            "WF" => CountryCode::Wf,
-            "WS" => CountryCode::Ws,
-            "YE" => CountryCode::Ye,
-            "YT" => CountryCode::Yt,
-            "ZA" => CountryCode::Za,
-            "ZM" => CountryCode::Zm,
-            "ZW" => CountryCode::Zw,
-            other => CountryCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AC" => CountryCode::Ac,
+"AD" => CountryCode::Ad,
+"AE" => CountryCode::Ae,
+"AF" => CountryCode::Af,
+"AG" => CountryCode::Ag,
+"AI" => CountryCode::Ai,
+"AL" => CountryCode::Al,
+"AM" => CountryCode::Am,
+"AN" => CountryCode::An,
+"AO" => CountryCode::Ao,
+"AQ" => CountryCode::Aq,
+"AR" => CountryCode::Ar,
+"AS" => CountryCode::As,
+"AT" => CountryCode::At,
+"AU" => CountryCode::Au,
+"AW" => CountryCode::Aw,
+"AX" => CountryCode::Ax,
+"AZ" => CountryCode::Az,
+"BA" => CountryCode::Ba,
+"BB" => CountryCode::Bb,
+"BD" => CountryCode::Bd,
+"BE" => CountryCode::Be,
+"BF" => CountryCode::Bf,
+"BG" => CountryCode::Bg,
+"BH" => CountryCode::Bh,
+"BI" => CountryCode::Bi,
+"BJ" => CountryCode::Bj,
+"BL" => CountryCode::Bl,
+"BM" => CountryCode::Bm,
+"BN" => CountryCode::Bn,
+"BO" => CountryCode::Bo,
+"BQ" => CountryCode::Bq,
+"BR" => CountryCode::Br,
+"BS" => CountryCode::Bs,
+"BT" => CountryCode::Bt,
+"BV" => CountryCode::Bv,
+"BW" => CountryCode::Bw,
+"BY" => CountryCode::By,
+"BZ" => CountryCode::Bz,
+"CA" => CountryCode::Ca,
+"CC" => CountryCode::Cc,
+"CD" => CountryCode::Cd,
+"CF" => CountryCode::Cf,
+"CG" => CountryCode::Cg,
+"CH" => CountryCode::Ch,
+"CI" => CountryCode::Ci,
+"CK" => CountryCode::Ck,
+"CL" => CountryCode::Cl,
+"CM" => CountryCode::Cm,
+"CN" => CountryCode::Cn,
+"CO" => CountryCode::Co,
+"CR" => CountryCode::Cr,
+"CU" => CountryCode::Cu,
+"CV" => CountryCode::Cv,
+"CW" => CountryCode::Cw,
+"CX" => CountryCode::Cx,
+"CY" => CountryCode::Cy,
+"CZ" => CountryCode::Cz,
+"DE" => CountryCode::De,
+"DJ" => CountryCode::Dj,
+"DK" => CountryCode::Dk,
+"DM" => CountryCode::Dm,
+"DO" => CountryCode::Do,
+"DZ" => CountryCode::Dz,
+"EC" => CountryCode::Ec,
+"EE" => CountryCode::Ee,
+"EG" => CountryCode::Eg,
+"EH" => CountryCode::Eh,
+"ER" => CountryCode::Er,
+"ES" => CountryCode::Es,
+"ET" => CountryCode::Et,
+"FI" => CountryCode::Fi,
+"FJ" => CountryCode::Fj,
+"FK" => CountryCode::Fk,
+"FM" => CountryCode::Fm,
+"FO" => CountryCode::Fo,
+"FR" => CountryCode::Fr,
+"GA" => CountryCode::Ga,
+"GB" => CountryCode::Gb,
+"GD" => CountryCode::Gd,
+"GE" => CountryCode::Ge,
+"GF" => CountryCode::Gf,
+"GG" => CountryCode::Gg,
+"GH" => CountryCode::Gh,
+"GI" => CountryCode::Gi,
+"GL" => CountryCode::Gl,
+"GM" => CountryCode::Gm,
+"GN" => CountryCode::Gn,
+"GP" => CountryCode::Gp,
+"GQ" => CountryCode::Gq,
+"GR" => CountryCode::Gr,
+"GS" => CountryCode::Gs,
+"GT" => CountryCode::Gt,
+"GU" => CountryCode::Gu,
+"GW" => CountryCode::Gw,
+"GY" => CountryCode::Gy,
+"HK" => CountryCode::Hk,
+"HM" => CountryCode::Hm,
+"HN" => CountryCode::Hn,
+"HR" => CountryCode::Hr,
+"HT" => CountryCode::Ht,
+"HU" => CountryCode::Hu,
+"ID" => CountryCode::Id,
+"IE" => CountryCode::Ie,
+"IL" => CountryCode::Il,
+"IM" => CountryCode::Im,
+"IN" => CountryCode::In,
+"IO" => CountryCode::Io,
+"IQ" => CountryCode::Iq,
+"IR" => CountryCode::Ir,
+"IS" => CountryCode::Is,
+"IT" => CountryCode::It,
+"JE" => CountryCode::Je,
+"JM" => CountryCode::Jm,
+"JO" => CountryCode::Jo,
+"JP" => CountryCode::Jp,
+"KE" => CountryCode::Ke,
+"KG" => CountryCode::Kg,
+"KH" => CountryCode::Kh,
+"KI" => CountryCode::Ki,
+"KM" => CountryCode::Km,
+"KN" => CountryCode::Kn,
+"KP" => CountryCode::Kp,
+"KR" => CountryCode::Kr,
+"KW" => CountryCode::Kw,
+"KY" => CountryCode::Ky,
+"KZ" => CountryCode::Kz,
+"LA" => CountryCode::La,
+"LB" => CountryCode::Lb,
+"LC" => CountryCode::Lc,
+"LI" => CountryCode::Li,
+"LK" => CountryCode::Lk,
+"LR" => CountryCode::Lr,
+"LS" => CountryCode::Ls,
+"LT" => CountryCode::Lt,
+"LU" => CountryCode::Lu,
+"LV" => CountryCode::Lv,
+"LY" => CountryCode::Ly,
+"MA" => CountryCode::Ma,
+"MC" => CountryCode::Mc,
+"MD" => CountryCode::Md,
+"ME" => CountryCode::Me,
+"MF" => CountryCode::Mf,
+"MG" => CountryCode::Mg,
+"MH" => CountryCode::Mh,
+"MK" => CountryCode::Mk,
+"ML" => CountryCode::Ml,
+"MM" => CountryCode::Mm,
+"MN" => CountryCode::Mn,
+"MO" => CountryCode::Mo,
+"MP" => CountryCode::Mp,
+"MQ" => CountryCode::Mq,
+"MR" => CountryCode::Mr,
+"MS" => CountryCode::Ms,
+"MT" => CountryCode::Mt,
+"MU" => CountryCode::Mu,
+"MV" => CountryCode::Mv,
+"MW" => CountryCode::Mw,
+"MX" => CountryCode::Mx,
+"MY" => CountryCode::My,
+"MZ" => CountryCode::Mz,
+"NA" => CountryCode::Na,
+"NC" => CountryCode::Nc,
+"NE" => CountryCode::Ne,
+"NF" => CountryCode::Nf,
+"NG" => CountryCode::Ng,
+"NI" => CountryCode::Ni,
+"NL" => CountryCode::Nl,
+"NO" => CountryCode::No,
+"NP" => CountryCode::Np,
+"NR" => CountryCode::Nr,
+"NU" => CountryCode::Nu,
+"NZ" => CountryCode::Nz,
+"OM" => CountryCode::Om,
+"PA" => CountryCode::Pa,
+"PE" => CountryCode::Pe,
+"PF" => CountryCode::Pf,
+"PG" => CountryCode::Pg,
+"PH" => CountryCode::Ph,
+"PK" => CountryCode::Pk,
+"PL" => CountryCode::Pl,
+"PM" => CountryCode::Pm,
+"PN" => CountryCode::Pn,
+"PR" => CountryCode::Pr,
+"PS" => CountryCode::Ps,
+"PT" => CountryCode::Pt,
+"PW" => CountryCode::Pw,
+"PY" => CountryCode::Py,
+"QA" => CountryCode::Qa,
+"RE" => CountryCode::Re,
+"RO" => CountryCode::Ro,
+"RS" => CountryCode::Rs,
+"RU" => CountryCode::Ru,
+"RW" => CountryCode::Rw,
+"SA" => CountryCode::Sa,
+"SB" => CountryCode::Sb,
+"SC" => CountryCode::Sc,
+"SD" => CountryCode::Sd,
+"SE" => CountryCode::Se,
+"SG" => CountryCode::Sg,
+"SH" => CountryCode::Sh,
+"SI" => CountryCode::Si,
+"SJ" => CountryCode::Sj,
+"SK" => CountryCode::Sk,
+"SL" => CountryCode::Sl,
+"SM" => CountryCode::Sm,
+"SN" => CountryCode::Sn,
+"SO" => CountryCode::So,
+"SR" => CountryCode::Sr,
+"SS" => CountryCode::Ss,
+"ST" => CountryCode::St,
+"SV" => CountryCode::Sv,
+"SX" => CountryCode::Sx,
+"SY" => CountryCode::Sy,
+"SZ" => CountryCode::Sz,
+"TC" => CountryCode::Tc,
+"TD" => CountryCode::Td,
+"TF" => CountryCode::Tf,
+"TG" => CountryCode::Tg,
+"TH" => CountryCode::Th,
+"TJ" => CountryCode::Tj,
+"TK" => CountryCode::Tk,
+"TL" => CountryCode::Tl,
+"TM" => CountryCode::Tm,
+"TN" => CountryCode::Tn,
+"TO" => CountryCode::To,
+"TP" => CountryCode::Tp,
+"TR" => CountryCode::Tr,
+"TT" => CountryCode::Tt,
+"TV" => CountryCode::Tv,
+"TW" => CountryCode::Tw,
+"TZ" => CountryCode::Tz,
+"UA" => CountryCode::Ua,
+"UG" => CountryCode::Ug,
+"US" => CountryCode::Us,
+"UY" => CountryCode::Uy,
+"UZ" => CountryCode::Uz,
+"VA" => CountryCode::Va,
+"VC" => CountryCode::Vc,
+"VE" => CountryCode::Ve,
+"VG" => CountryCode::Vg,
+"VI" => CountryCode::Vi,
+"VN" => CountryCode::Vn,
+"VU" => CountryCode::Vu,
+"WF" => CountryCode::Wf,
+"WS" => CountryCode::Ws,
+"YE" => CountryCode::Ye,
+"YT" => CountryCode::Yt,
+"ZA" => CountryCode::Za,
+"ZM" => CountryCode::Zm,
+"ZW" => CountryCode::Zw,
+other => CountryCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CountryCode {
                 type Err = std::convert::Infallible;
 
@@ -3357,275 +3353,273 @@ impl std::str::FromStr for CountryCode {
                 }
             }
 impl CountryCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CountryCode::Ac => "AC",
-            CountryCode::Ad => "AD",
-            CountryCode::Ae => "AE",
-            CountryCode::Af => "AF",
-            CountryCode::Ag => "AG",
-            CountryCode::Ai => "AI",
-            CountryCode::Al => "AL",
-            CountryCode::Am => "AM",
-            CountryCode::An => "AN",
-            CountryCode::Ao => "AO",
-            CountryCode::Aq => "AQ",
-            CountryCode::Ar => "AR",
-            CountryCode::As => "AS",
-            CountryCode::At => "AT",
-            CountryCode::Au => "AU",
-            CountryCode::Aw => "AW",
-            CountryCode::Ax => "AX",
-            CountryCode::Az => "AZ",
-            CountryCode::Ba => "BA",
-            CountryCode::Bb => "BB",
-            CountryCode::Bd => "BD",
-            CountryCode::Be => "BE",
-            CountryCode::Bf => "BF",
-            CountryCode::Bg => "BG",
-            CountryCode::Bh => "BH",
-            CountryCode::Bi => "BI",
-            CountryCode::Bj => "BJ",
-            CountryCode::Bl => "BL",
-            CountryCode::Bm => "BM",
-            CountryCode::Bn => "BN",
-            CountryCode::Bo => "BO",
-            CountryCode::Bq => "BQ",
-            CountryCode::Br => "BR",
-            CountryCode::Bs => "BS",
-            CountryCode::Bt => "BT",
-            CountryCode::Bv => "BV",
-            CountryCode::Bw => "BW",
-            CountryCode::By => "BY",
-            CountryCode::Bz => "BZ",
-            CountryCode::Ca => "CA",
-            CountryCode::Cc => "CC",
-            CountryCode::Cd => "CD",
-            CountryCode::Cf => "CF",
-            CountryCode::Cg => "CG",
-            CountryCode::Ch => "CH",
-            CountryCode::Ci => "CI",
-            CountryCode::Ck => "CK",
-            CountryCode::Cl => "CL",
-            CountryCode::Cm => "CM",
-            CountryCode::Cn => "CN",
-            CountryCode::Co => "CO",
-            CountryCode::Cr => "CR",
-            CountryCode::Cu => "CU",
-            CountryCode::Cv => "CV",
-            CountryCode::Cw => "CW",
-            CountryCode::Cx => "CX",
-            CountryCode::Cy => "CY",
-            CountryCode::Cz => "CZ",
-            CountryCode::De => "DE",
-            CountryCode::Dj => "DJ",
-            CountryCode::Dk => "DK",
-            CountryCode::Dm => "DM",
-            CountryCode::Do => "DO",
-            CountryCode::Dz => "DZ",
-            CountryCode::Ec => "EC",
-            CountryCode::Ee => "EE",
-            CountryCode::Eg => "EG",
-            CountryCode::Eh => "EH",
-            CountryCode::Er => "ER",
-            CountryCode::Es => "ES",
-            CountryCode::Et => "ET",
-            CountryCode::Fi => "FI",
-            CountryCode::Fj => "FJ",
-            CountryCode::Fk => "FK",
-            CountryCode::Fm => "FM",
-            CountryCode::Fo => "FO",
-            CountryCode::Fr => "FR",
-            CountryCode::Ga => "GA",
-            CountryCode::Gb => "GB",
-            CountryCode::Gd => "GD",
-            CountryCode::Ge => "GE",
-            CountryCode::Gf => "GF",
-            CountryCode::Gg => "GG",
-            CountryCode::Gh => "GH",
-            CountryCode::Gi => "GI",
-            CountryCode::Gl => "GL",
-            CountryCode::Gm => "GM",
-            CountryCode::Gn => "GN",
-            CountryCode::Gp => "GP",
-            CountryCode::Gq => "GQ",
-            CountryCode::Gr => "GR",
-            CountryCode::Gs => "GS",
-            CountryCode::Gt => "GT",
-            CountryCode::Gu => "GU",
-            CountryCode::Gw => "GW",
-            CountryCode::Gy => "GY",
-            CountryCode::Hk => "HK",
-            CountryCode::Hm => "HM",
-            CountryCode::Hn => "HN",
-            CountryCode::Hr => "HR",
-            CountryCode::Ht => "HT",
-            CountryCode::Hu => "HU",
-            CountryCode::Id => "ID",
-            CountryCode::Ie => "IE",
-            CountryCode::Il => "IL",
-            CountryCode::Im => "IM",
-            CountryCode::In => "IN",
-            CountryCode::Io => "IO",
-            CountryCode::Iq => "IQ",
-            CountryCode::Ir => "IR",
-            CountryCode::Is => "IS",
-            CountryCode::It => "IT",
-            CountryCode::Je => "JE",
-            CountryCode::Jm => "JM",
-            CountryCode::Jo => "JO",
-            CountryCode::Jp => "JP",
-            CountryCode::Ke => "KE",
-            CountryCode::Kg => "KG",
-            CountryCode::Kh => "KH",
-            CountryCode::Ki => "KI",
-            CountryCode::Km => "KM",
-            CountryCode::Kn => "KN",
-            CountryCode::Kp => "KP",
-            CountryCode::Kr => "KR",
-            CountryCode::Kw => "KW",
-            CountryCode::Ky => "KY",
-            CountryCode::Kz => "KZ",
-            CountryCode::La => "LA",
-            CountryCode::Lb => "LB",
-            CountryCode::Lc => "LC",
-            CountryCode::Li => "LI",
-            CountryCode::Lk => "LK",
-            CountryCode::Lr => "LR",
-            CountryCode::Ls => "LS",
-            CountryCode::Lt => "LT",
-            CountryCode::Lu => "LU",
-            CountryCode::Lv => "LV",
-            CountryCode::Ly => "LY",
-            CountryCode::Ma => "MA",
-            CountryCode::Mc => "MC",
-            CountryCode::Md => "MD",
-            CountryCode::Me => "ME",
-            CountryCode::Mf => "MF",
-            CountryCode::Mg => "MG",
-            CountryCode::Mh => "MH",
-            CountryCode::Mk => "MK",
-            CountryCode::Ml => "ML",
-            CountryCode::Mm => "MM",
-            CountryCode::Mn => "MN",
-            CountryCode::Mo => "MO",
-            CountryCode::Mp => "MP",
-            CountryCode::Mq => "MQ",
-            CountryCode::Mr => "MR",
-            CountryCode::Ms => "MS",
-            CountryCode::Mt => "MT",
-            CountryCode::Mu => "MU",
-            CountryCode::Mv => "MV",
-            CountryCode::Mw => "MW",
-            CountryCode::Mx => "MX",
-            CountryCode::My => "MY",
-            CountryCode::Mz => "MZ",
-            CountryCode::Na => "NA",
-            CountryCode::Nc => "NC",
-            CountryCode::Ne => "NE",
-            CountryCode::Nf => "NF",
-            CountryCode::Ng => "NG",
-            CountryCode::Ni => "NI",
-            CountryCode::Nl => "NL",
-            CountryCode::No => "NO",
-            CountryCode::Np => "NP",
-            CountryCode::Nr => "NR",
-            CountryCode::Nu => "NU",
-            CountryCode::Nz => "NZ",
-            CountryCode::Om => "OM",
-            CountryCode::Pa => "PA",
-            CountryCode::Pe => "PE",
-            CountryCode::Pf => "PF",
-            CountryCode::Pg => "PG",
-            CountryCode::Ph => "PH",
-            CountryCode::Pk => "PK",
-            CountryCode::Pl => "PL",
-            CountryCode::Pm => "PM",
-            CountryCode::Pn => "PN",
-            CountryCode::Pr => "PR",
-            CountryCode::Ps => "PS",
-            CountryCode::Pt => "PT",
-            CountryCode::Pw => "PW",
-            CountryCode::Py => "PY",
-            CountryCode::Qa => "QA",
-            CountryCode::Re => "RE",
-            CountryCode::Ro => "RO",
-            CountryCode::Rs => "RS",
-            CountryCode::Ru => "RU",
-            CountryCode::Rw => "RW",
-            CountryCode::Sa => "SA",
-            CountryCode::Sb => "SB",
-            CountryCode::Sc => "SC",
-            CountryCode::Sd => "SD",
-            CountryCode::Se => "SE",
-            CountryCode::Sg => "SG",
-            CountryCode::Sh => "SH",
-            CountryCode::Si => "SI",
-            CountryCode::Sj => "SJ",
-            CountryCode::Sk => "SK",
-            CountryCode::Sl => "SL",
-            CountryCode::Sm => "SM",
-            CountryCode::Sn => "SN",
-            CountryCode::So => "SO",
-            CountryCode::Sr => "SR",
-            CountryCode::Ss => "SS",
-            CountryCode::St => "ST",
-            CountryCode::Sv => "SV",
-            CountryCode::Sx => "SX",
-            CountryCode::Sy => "SY",
-            CountryCode::Sz => "SZ",
-            CountryCode::Tc => "TC",
-            CountryCode::Td => "TD",
-            CountryCode::Tf => "TF",
-            CountryCode::Tg => "TG",
-            CountryCode::Th => "TH",
-            CountryCode::Tj => "TJ",
-            CountryCode::Tk => "TK",
-            CountryCode::Tl => "TL",
-            CountryCode::Tm => "TM",
-            CountryCode::Tn => "TN",
-            CountryCode::To => "TO",
-            CountryCode::Tp => "TP",
-            CountryCode::Tr => "TR",
-            CountryCode::Tt => "TT",
-            CountryCode::Tv => "TV",
-            CountryCode::Tw => "TW",
-            CountryCode::Tz => "TZ",
-            CountryCode::Ua => "UA",
-            CountryCode::Ug => "UG",
-            CountryCode::Us => "US",
-            CountryCode::Uy => "UY",
-            CountryCode::Uz => "UZ",
-            CountryCode::Va => "VA",
-            CountryCode::Vc => "VC",
-            CountryCode::Ve => "VE",
-            CountryCode::Vg => "VG",
-            CountryCode::Vi => "VI",
-            CountryCode::Vn => "VN",
-            CountryCode::Vu => "VU",
-            CountryCode::Wf => "WF",
-            CountryCode::Ws => "WS",
-            CountryCode::Ye => "YE",
-            CountryCode::Yt => "YT",
-            CountryCode::Za => "ZA",
-            CountryCode::Zm => "ZM",
-            CountryCode::Zw => "ZW",
-            CountryCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TP", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CountryCode::Ac => "AC",
+    CountryCode::Ad => "AD",
+    CountryCode::Ae => "AE",
+    CountryCode::Af => "AF",
+    CountryCode::Ag => "AG",
+    CountryCode::Ai => "AI",
+    CountryCode::Al => "AL",
+    CountryCode::Am => "AM",
+    CountryCode::An => "AN",
+    CountryCode::Ao => "AO",
+    CountryCode::Aq => "AQ",
+    CountryCode::Ar => "AR",
+    CountryCode::As => "AS",
+    CountryCode::At => "AT",
+    CountryCode::Au => "AU",
+    CountryCode::Aw => "AW",
+    CountryCode::Ax => "AX",
+    CountryCode::Az => "AZ",
+    CountryCode::Ba => "BA",
+    CountryCode::Bb => "BB",
+    CountryCode::Bd => "BD",
+    CountryCode::Be => "BE",
+    CountryCode::Bf => "BF",
+    CountryCode::Bg => "BG",
+    CountryCode::Bh => "BH",
+    CountryCode::Bi => "BI",
+    CountryCode::Bj => "BJ",
+    CountryCode::Bl => "BL",
+    CountryCode::Bm => "BM",
+    CountryCode::Bn => "BN",
+    CountryCode::Bo => "BO",
+    CountryCode::Bq => "BQ",
+    CountryCode::Br => "BR",
+    CountryCode::Bs => "BS",
+    CountryCode::Bt => "BT",
+    CountryCode::Bv => "BV",
+    CountryCode::Bw => "BW",
+    CountryCode::By => "BY",
+    CountryCode::Bz => "BZ",
+    CountryCode::Ca => "CA",
+    CountryCode::Cc => "CC",
+    CountryCode::Cd => "CD",
+    CountryCode::Cf => "CF",
+    CountryCode::Cg => "CG",
+    CountryCode::Ch => "CH",
+    CountryCode::Ci => "CI",
+    CountryCode::Ck => "CK",
+    CountryCode::Cl => "CL",
+    CountryCode::Cm => "CM",
+    CountryCode::Cn => "CN",
+    CountryCode::Co => "CO",
+    CountryCode::Cr => "CR",
+    CountryCode::Cu => "CU",
+    CountryCode::Cv => "CV",
+    CountryCode::Cw => "CW",
+    CountryCode::Cx => "CX",
+    CountryCode::Cy => "CY",
+    CountryCode::Cz => "CZ",
+    CountryCode::De => "DE",
+    CountryCode::Dj => "DJ",
+    CountryCode::Dk => "DK",
+    CountryCode::Dm => "DM",
+    CountryCode::Do => "DO",
+    CountryCode::Dz => "DZ",
+    CountryCode::Ec => "EC",
+    CountryCode::Ee => "EE",
+    CountryCode::Eg => "EG",
+    CountryCode::Eh => "EH",
+    CountryCode::Er => "ER",
+    CountryCode::Es => "ES",
+    CountryCode::Et => "ET",
+    CountryCode::Fi => "FI",
+    CountryCode::Fj => "FJ",
+    CountryCode::Fk => "FK",
+    CountryCode::Fm => "FM",
+    CountryCode::Fo => "FO",
+    CountryCode::Fr => "FR",
+    CountryCode::Ga => "GA",
+    CountryCode::Gb => "GB",
+    CountryCode::Gd => "GD",
+    CountryCode::Ge => "GE",
+    CountryCode::Gf => "GF",
+    CountryCode::Gg => "GG",
+    CountryCode::Gh => "GH",
+    CountryCode::Gi => "GI",
+    CountryCode::Gl => "GL",
+    CountryCode::Gm => "GM",
+    CountryCode::Gn => "GN",
+    CountryCode::Gp => "GP",
+    CountryCode::Gq => "GQ",
+    CountryCode::Gr => "GR",
+    CountryCode::Gs => "GS",
+    CountryCode::Gt => "GT",
+    CountryCode::Gu => "GU",
+    CountryCode::Gw => "GW",
+    CountryCode::Gy => "GY",
+    CountryCode::Hk => "HK",
+    CountryCode::Hm => "HM",
+    CountryCode::Hn => "HN",
+    CountryCode::Hr => "HR",
+    CountryCode::Ht => "HT",
+    CountryCode::Hu => "HU",
+    CountryCode::Id => "ID",
+    CountryCode::Ie => "IE",
+    CountryCode::Il => "IL",
+    CountryCode::Im => "IM",
+    CountryCode::In => "IN",
+    CountryCode::Io => "IO",
+    CountryCode::Iq => "IQ",
+    CountryCode::Ir => "IR",
+    CountryCode::Is => "IS",
+    CountryCode::It => "IT",
+    CountryCode::Je => "JE",
+    CountryCode::Jm => "JM",
+    CountryCode::Jo => "JO",
+    CountryCode::Jp => "JP",
+    CountryCode::Ke => "KE",
+    CountryCode::Kg => "KG",
+    CountryCode::Kh => "KH",
+    CountryCode::Ki => "KI",
+    CountryCode::Km => "KM",
+    CountryCode::Kn => "KN",
+    CountryCode::Kp => "KP",
+    CountryCode::Kr => "KR",
+    CountryCode::Kw => "KW",
+    CountryCode::Ky => "KY",
+    CountryCode::Kz => "KZ",
+    CountryCode::La => "LA",
+    CountryCode::Lb => "LB",
+    CountryCode::Lc => "LC",
+    CountryCode::Li => "LI",
+    CountryCode::Lk => "LK",
+    CountryCode::Lr => "LR",
+    CountryCode::Ls => "LS",
+    CountryCode::Lt => "LT",
+    CountryCode::Lu => "LU",
+    CountryCode::Lv => "LV",
+    CountryCode::Ly => "LY",
+    CountryCode::Ma => "MA",
+    CountryCode::Mc => "MC",
+    CountryCode::Md => "MD",
+    CountryCode::Me => "ME",
+    CountryCode::Mf => "MF",
+    CountryCode::Mg => "MG",
+    CountryCode::Mh => "MH",
+    CountryCode::Mk => "MK",
+    CountryCode::Ml => "ML",
+    CountryCode::Mm => "MM",
+    CountryCode::Mn => "MN",
+    CountryCode::Mo => "MO",
+    CountryCode::Mp => "MP",
+    CountryCode::Mq => "MQ",
+    CountryCode::Mr => "MR",
+    CountryCode::Ms => "MS",
+    CountryCode::Mt => "MT",
+    CountryCode::Mu => "MU",
+    CountryCode::Mv => "MV",
+    CountryCode::Mw => "MW",
+    CountryCode::Mx => "MX",
+    CountryCode::My => "MY",
+    CountryCode::Mz => "MZ",
+    CountryCode::Na => "NA",
+    CountryCode::Nc => "NC",
+    CountryCode::Ne => "NE",
+    CountryCode::Nf => "NF",
+    CountryCode::Ng => "NG",
+    CountryCode::Ni => "NI",
+    CountryCode::Nl => "NL",
+    CountryCode::No => "NO",
+    CountryCode::Np => "NP",
+    CountryCode::Nr => "NR",
+    CountryCode::Nu => "NU",
+    CountryCode::Nz => "NZ",
+    CountryCode::Om => "OM",
+    CountryCode::Pa => "PA",
+    CountryCode::Pe => "PE",
+    CountryCode::Pf => "PF",
+    CountryCode::Pg => "PG",
+    CountryCode::Ph => "PH",
+    CountryCode::Pk => "PK",
+    CountryCode::Pl => "PL",
+    CountryCode::Pm => "PM",
+    CountryCode::Pn => "PN",
+    CountryCode::Pr => "PR",
+    CountryCode::Ps => "PS",
+    CountryCode::Pt => "PT",
+    CountryCode::Pw => "PW",
+    CountryCode::Py => "PY",
+    CountryCode::Qa => "QA",
+    CountryCode::Re => "RE",
+    CountryCode::Ro => "RO",
+    CountryCode::Rs => "RS",
+    CountryCode::Ru => "RU",
+    CountryCode::Rw => "RW",
+    CountryCode::Sa => "SA",
+    CountryCode::Sb => "SB",
+    CountryCode::Sc => "SC",
+    CountryCode::Sd => "SD",
+    CountryCode::Se => "SE",
+    CountryCode::Sg => "SG",
+    CountryCode::Sh => "SH",
+    CountryCode::Si => "SI",
+    CountryCode::Sj => "SJ",
+    CountryCode::Sk => "SK",
+    CountryCode::Sl => "SL",
+    CountryCode::Sm => "SM",
+    CountryCode::Sn => "SN",
+    CountryCode::So => "SO",
+    CountryCode::Sr => "SR",
+    CountryCode::Ss => "SS",
+    CountryCode::St => "ST",
+    CountryCode::Sv => "SV",
+    CountryCode::Sx => "SX",
+    CountryCode::Sy => "SY",
+    CountryCode::Sz => "SZ",
+    CountryCode::Tc => "TC",
+    CountryCode::Td => "TD",
+    CountryCode::Tf => "TF",
+    CountryCode::Tg => "TG",
+    CountryCode::Th => "TH",
+    CountryCode::Tj => "TJ",
+    CountryCode::Tk => "TK",
+    CountryCode::Tl => "TL",
+    CountryCode::Tm => "TM",
+    CountryCode::Tn => "TN",
+    CountryCode::To => "TO",
+    CountryCode::Tp => "TP",
+    CountryCode::Tr => "TR",
+    CountryCode::Tt => "TT",
+    CountryCode::Tv => "TV",
+    CountryCode::Tw => "TW",
+    CountryCode::Tz => "TZ",
+    CountryCode::Ua => "UA",
+    CountryCode::Ug => "UG",
+    CountryCode::Us => "US",
+    CountryCode::Uy => "UY",
+    CountryCode::Uz => "UZ",
+    CountryCode::Va => "VA",
+    CountryCode::Vc => "VC",
+    CountryCode::Ve => "VE",
+    CountryCode::Vg => "VG",
+    CountryCode::Vi => "VI",
+    CountryCode::Vn => "VN",
+    CountryCode::Vu => "VU",
+    CountryCode::Wf => "WF",
+    CountryCode::Ws => "WS",
+    CountryCode::Ye => "YE",
+    CountryCode::Yt => "YT",
+    CountryCode::Za => "ZA",
+    CountryCode::Zm => "ZM",
+    CountryCode::Zw => "ZW",
+    CountryCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TP", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"]
+                }
+            }
 impl AsRef<str> for CountryCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ContactType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3683,17 +3677,17 @@ pub enum ContactType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContactType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSOCIATION" => ContactType::Association,
-            "COMPANY" => ContactType::Company,
-            "PERSON" => ContactType::Person,
-            "PUBLIC_BODY" => ContactType::PublicBody,
-            "RESELLER" => ContactType::Reseller,
-            other => ContactType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSOCIATION" => ContactType::Association,
+"COMPANY" => ContactType::Company,
+"PERSON" => ContactType::Person,
+"PUBLIC_BODY" => ContactType::PublicBody,
+"RESELLER" => ContactType::Reseller,
+other => ContactType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ContactType {
                 type Err = std::convert::Infallible;
 
@@ -3702,29 +3696,27 @@ impl std::str::FromStr for ContactType {
                 }
             }
 impl ContactType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ContactType::Association => "ASSOCIATION",
-            ContactType::Company => "COMPANY",
-            ContactType::Person => "PERSON",
-            ContactType::PublicBody => "PUBLIC_BODY",
-            ContactType::Reseller => "RESELLER",
-            ContactType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSOCIATION", "COMPANY", "PERSON", "PUBLIC_BODY", "RESELLER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ContactType::Association => "ASSOCIATION",
+    ContactType::Company => "COMPANY",
+    ContactType::Person => "PERSON",
+    ContactType::PublicBody => "PUBLIC_BODY",
+    ContactType::Reseller => "RESELLER",
+    ContactType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSOCIATION", "COMPANY", "PERSON", "PUBLIC_BODY", "RESELLER"]
+                }
+            }
 impl AsRef<str> for ContactType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the domain price associated with a TLD.</p>
 #[non_exhaustive]
@@ -4212,17 +4204,17 @@ pub enum StatusFlag {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StatusFlag {
-    fn from(s: &str) -> Self {
-        match s {
-            "PENDING_ACCEPTANCE" => StatusFlag::PendingAcceptance,
-            "PENDING_AUTHORIZATION" => StatusFlag::PendingAuthorization,
-            "PENDING_CUSTOMER_ACTION" => StatusFlag::PendingCustomerAction,
-            "PENDING_PAYMENT_VERIFICATION" => StatusFlag::PendingPaymentVerification,
-            "PENDING_SUPPORT_CASE" => StatusFlag::PendingSupportCase,
-            other => StatusFlag::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PENDING_ACCEPTANCE" => StatusFlag::PendingAcceptance,
+"PENDING_AUTHORIZATION" => StatusFlag::PendingAuthorization,
+"PENDING_CUSTOMER_ACTION" => StatusFlag::PendingCustomerAction,
+"PENDING_PAYMENT_VERIFICATION" => StatusFlag::PendingPaymentVerification,
+"PENDING_SUPPORT_CASE" => StatusFlag::PendingSupportCase,
+other => StatusFlag::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StatusFlag {
                 type Err = std::convert::Infallible;
 
@@ -4231,29 +4223,27 @@ impl std::str::FromStr for StatusFlag {
                 }
             }
 impl StatusFlag {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StatusFlag::PendingAcceptance => "PENDING_ACCEPTANCE",
-            StatusFlag::PendingAuthorization => "PENDING_AUTHORIZATION",
-            StatusFlag::PendingCustomerAction => "PENDING_CUSTOMER_ACTION",
-            StatusFlag::PendingPaymentVerification => "PENDING_PAYMENT_VERIFICATION",
-            StatusFlag::PendingSupportCase => "PENDING_SUPPORT_CASE",
-            StatusFlag::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PENDING_ACCEPTANCE", "PENDING_AUTHORIZATION", "PENDING_CUSTOMER_ACTION", "PENDING_PAYMENT_VERIFICATION", "PENDING_SUPPORT_CASE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StatusFlag::PendingAcceptance => "PENDING_ACCEPTANCE",
+    StatusFlag::PendingAuthorization => "PENDING_AUTHORIZATION",
+    StatusFlag::PendingCustomerAction => "PENDING_CUSTOMER_ACTION",
+    StatusFlag::PendingPaymentVerification => "PENDING_PAYMENT_VERIFICATION",
+    StatusFlag::PendingSupportCase => "PENDING_SUPPORT_CASE",
+    StatusFlag::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PENDING_ACCEPTANCE", "PENDING_AUTHORIZATION", "PENDING_CUSTOMER_ACTION", "PENDING_PAYMENT_VERIFICATION", "PENDING_SUPPORT_CASE"]
+                }
+            }
 impl AsRef<str> for StatusFlag {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `OperationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4311,17 +4301,17 @@ pub enum OperationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ERROR" => OperationStatus::Error,
-            "FAILED" => OperationStatus::Failed,
-            "IN_PROGRESS" => OperationStatus::InProgress,
-            "SUBMITTED" => OperationStatus::Submitted,
-            "SUCCESSFUL" => OperationStatus::Successful,
-            other => OperationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ERROR" => OperationStatus::Error,
+"FAILED" => OperationStatus::Failed,
+"IN_PROGRESS" => OperationStatus::InProgress,
+"SUBMITTED" => OperationStatus::Submitted,
+"SUCCESSFUL" => OperationStatus::Successful,
+other => OperationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OperationStatus {
                 type Err = std::convert::Infallible;
 
@@ -4330,29 +4320,27 @@ impl std::str::FromStr for OperationStatus {
                 }
             }
 impl OperationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OperationStatus::Error => "ERROR",
-            OperationStatus::Failed => "FAILED",
-            OperationStatus::InProgress => "IN_PROGRESS",
-            OperationStatus::Submitted => "SUBMITTED",
-            OperationStatus::Successful => "SUCCESSFUL",
-            OperationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ERROR", "FAILED", "IN_PROGRESS", "SUBMITTED", "SUCCESSFUL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OperationStatus::Error => "ERROR",
+    OperationStatus::Failed => "FAILED",
+    OperationStatus::InProgress => "IN_PROGRESS",
+    OperationStatus::Submitted => "SUBMITTED",
+    OperationStatus::Successful => "SUCCESSFUL",
+    OperationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ERROR", "FAILED", "IN_PROGRESS", "SUBMITTED", "SUCCESSFUL"]
+                }
+            }
 impl AsRef<str> for OperationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4401,14 +4389,14 @@ pub enum SortOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASC" => SortOrder::Asc,
-            "DESC" => SortOrder::Desc,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASC" => SortOrder::Asc,
+"DESC" => SortOrder::Desc,
+other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortOrder {
                 type Err = std::convert::Infallible;
 
@@ -4417,26 +4405,24 @@ impl std::str::FromStr for SortOrder {
                 }
             }
 impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Asc => "ASC",
-            SortOrder::Desc => "DESC",
-            SortOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASC", "DESC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortOrder::Asc => "ASC",
+    SortOrder::Desc => "DESC",
+    SortOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASC", "DESC"]
+                }
+            }
 impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ListOperationsSortAttributeName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4482,13 +4468,13 @@ pub enum ListOperationsSortAttributeName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListOperationsSortAttributeName {
-    fn from(s: &str) -> Self {
-        match s {
-            "SubmittedDate" => ListOperationsSortAttributeName::SubmittedDate,
-            other => ListOperationsSortAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SubmittedDate" => ListOperationsSortAttributeName::SubmittedDate,
+other => ListOperationsSortAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ListOperationsSortAttributeName {
                 type Err = std::convert::Infallible;
 
@@ -4497,25 +4483,23 @@ impl std::str::FromStr for ListOperationsSortAttributeName {
                 }
             }
 impl ListOperationsSortAttributeName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ListOperationsSortAttributeName::SubmittedDate => "SubmittedDate",
-            ListOperationsSortAttributeName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SubmittedDate"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ListOperationsSortAttributeName::SubmittedDate => "SubmittedDate",
+    ListOperationsSortAttributeName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SubmittedDate"]
+                }
+            }
 impl AsRef<str> for ListOperationsSortAttributeName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summary information about one domain.</p>
 #[non_exhaustive]
@@ -4740,14 +4724,14 @@ pub enum ListDomainsAttributeName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListDomainsAttributeName {
-    fn from(s: &str) -> Self {
-        match s {
-            "DomainName" => ListDomainsAttributeName::DomainName,
-            "Expiry" => ListDomainsAttributeName::Expiry,
-            other => ListDomainsAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DomainName" => ListDomainsAttributeName::DomainName,
+"Expiry" => ListDomainsAttributeName::Expiry,
+other => ListDomainsAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ListDomainsAttributeName {
                 type Err = std::convert::Infallible;
 
@@ -4756,26 +4740,24 @@ impl std::str::FromStr for ListDomainsAttributeName {
                 }
             }
 impl ListDomainsAttributeName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ListDomainsAttributeName::DomainName => "DomainName",
-            ListDomainsAttributeName::Expiry => "Expiry",
-            ListDomainsAttributeName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DomainName", "Expiry"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ListDomainsAttributeName::DomainName => "DomainName",
+    ListDomainsAttributeName::Expiry => "Expiry",
+    ListDomainsAttributeName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DomainName", "Expiry"]
+                }
+            }
 impl AsRef<str> for ListDomainsAttributeName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information for the filtering of a list of domains returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a>.</p>
 #[non_exhaustive]
@@ -4941,15 +4923,15 @@ pub enum Operator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Operator {
-    fn from(s: &str) -> Self {
-        match s {
-            "BEGINS_WITH" => Operator::BeginsWith,
-            "GE" => Operator::Ge,
-            "LE" => Operator::Le,
-            other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BEGINS_WITH" => Operator::BeginsWith,
+"GE" => Operator::Ge,
+"LE" => Operator::Le,
+other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Operator {
                 type Err = std::convert::Infallible;
 
@@ -4958,27 +4940,25 @@ impl std::str::FromStr for Operator {
                 }
             }
 impl Operator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Operator::BeginsWith => "BEGINS_WITH",
-            Operator::Ge => "GE",
-            Operator::Le => "LE",
-            Operator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BEGINS_WITH", "GE", "LE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Operator::BeginsWith => "BEGINS_WITH",
+    Operator::Ge => "GE",
+    Operator::Le => "LE",
+    Operator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BEGINS_WITH", "GE", "LE"]
+                }
+            }
 impl AsRef<str> for Operator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about one suggested domain name.</p>
 #[non_exhaustive]
@@ -5520,15 +5500,15 @@ pub enum ReachabilityStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReachabilityStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DONE" => ReachabilityStatus::Done,
-            "EXPIRED" => ReachabilityStatus::Expired,
-            "PENDING" => ReachabilityStatus::Pending,
-            other => ReachabilityStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DONE" => ReachabilityStatus::Done,
+"EXPIRED" => ReachabilityStatus::Expired,
+"PENDING" => ReachabilityStatus::Pending,
+other => ReachabilityStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ReachabilityStatus {
                 type Err = std::convert::Infallible;
 
@@ -5537,27 +5517,25 @@ impl std::str::FromStr for ReachabilityStatus {
                 }
             }
 impl ReachabilityStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReachabilityStatus::Done => "DONE",
-            ReachabilityStatus::Expired => "EXPIRED",
-            ReachabilityStatus::Pending => "PENDING",
-            ReachabilityStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DONE", "EXPIRED", "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ReachabilityStatus::Done => "DONE",
+    ReachabilityStatus::Expired => "EXPIRED",
+    ReachabilityStatus::Pending => "PENDING",
+    ReachabilityStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DONE", "EXPIRED", "PENDING"]
+                }
+            }
 impl AsRef<str> for ReachabilityStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
 #[non_exhaustive]
@@ -5863,18 +5841,18 @@ pub enum Transferable {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Transferable {
-    fn from(s: &str) -> Self {
-        match s {
-            "DOMAIN_IN_ANOTHER_ACCOUNT" => Transferable::DomainInAnotherAccount,
-            "DOMAIN_IN_OWN_ACCOUNT" => Transferable::DomainInOwnAccount,
-            "DONT_KNOW" => Transferable::DontKnow,
-            "PREMIUM_DOMAIN" => Transferable::PremiumDomain,
-            "TRANSFERABLE" => Transferable::Transferable,
-            "UNTRANSFERABLE" => Transferable::Untransferable,
-            other => Transferable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DOMAIN_IN_ANOTHER_ACCOUNT" => Transferable::DomainInAnotherAccount,
+"DOMAIN_IN_OWN_ACCOUNT" => Transferable::DomainInOwnAccount,
+"DONT_KNOW" => Transferable::DontKnow,
+"PREMIUM_DOMAIN" => Transferable::PremiumDomain,
+"TRANSFERABLE" => Transferable::Transferable,
+"UNTRANSFERABLE" => Transferable::Untransferable,
+other => Transferable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Transferable {
                 type Err = std::convert::Infallible;
 
@@ -5883,30 +5861,28 @@ impl std::str::FromStr for Transferable {
                 }
             }
 impl Transferable {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Transferable::DomainInAnotherAccount => "DOMAIN_IN_ANOTHER_ACCOUNT",
-            Transferable::DomainInOwnAccount => "DOMAIN_IN_OWN_ACCOUNT",
-            Transferable::DontKnow => "DONT_KNOW",
-            Transferable::PremiumDomain => "PREMIUM_DOMAIN",
-            Transferable::Transferable => "TRANSFERABLE",
-            Transferable::Untransferable => "UNTRANSFERABLE",
-            Transferable::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DOMAIN_IN_ANOTHER_ACCOUNT", "DOMAIN_IN_OWN_ACCOUNT", "DONT_KNOW", "PREMIUM_DOMAIN", "TRANSFERABLE", "UNTRANSFERABLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Transferable::DomainInAnotherAccount => "DOMAIN_IN_ANOTHER_ACCOUNT",
+    Transferable::DomainInOwnAccount => "DOMAIN_IN_OWN_ACCOUNT",
+    Transferable::DontKnow => "DONT_KNOW",
+    Transferable::PremiumDomain => "PREMIUM_DOMAIN",
+    Transferable::Transferable => "TRANSFERABLE",
+    Transferable::Untransferable => "UNTRANSFERABLE",
+    Transferable::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DOMAIN_IN_ANOTHER_ACCOUNT", "DOMAIN_IN_OWN_ACCOUNT", "DONT_KNOW", "PREMIUM_DOMAIN", "TRANSFERABLE", "UNTRANSFERABLE"]
+                }
+            }
 impl AsRef<str> for Transferable {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DomainAvailability`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5973,20 +5949,20 @@ pub enum DomainAvailability {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainAvailability {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => DomainAvailability::Available,
-            "AVAILABLE_PREORDER" => DomainAvailability::AvailablePreorder,
-            "AVAILABLE_RESERVED" => DomainAvailability::AvailableReserved,
-            "DONT_KNOW" => DomainAvailability::DontKnow,
-            "RESERVED" => DomainAvailability::Reserved,
-            "UNAVAILABLE" => DomainAvailability::Unavailable,
-            "UNAVAILABLE_PREMIUM" => DomainAvailability::UnavailablePremium,
-            "UNAVAILABLE_RESTRICTED" => DomainAvailability::UnavailableRestricted,
-            other => DomainAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => DomainAvailability::Available,
+"AVAILABLE_PREORDER" => DomainAvailability::AvailablePreorder,
+"AVAILABLE_RESERVED" => DomainAvailability::AvailableReserved,
+"DONT_KNOW" => DomainAvailability::DontKnow,
+"RESERVED" => DomainAvailability::Reserved,
+"UNAVAILABLE" => DomainAvailability::Unavailable,
+"UNAVAILABLE_PREMIUM" => DomainAvailability::UnavailablePremium,
+"UNAVAILABLE_RESTRICTED" => DomainAvailability::UnavailableRestricted,
+other => DomainAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DomainAvailability {
                 type Err = std::convert::Infallible;
 
@@ -5995,32 +5971,30 @@ impl std::str::FromStr for DomainAvailability {
                 }
             }
 impl DomainAvailability {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DomainAvailability::Available => "AVAILABLE",
-            DomainAvailability::AvailablePreorder => "AVAILABLE_PREORDER",
-            DomainAvailability::AvailableReserved => "AVAILABLE_RESERVED",
-            DomainAvailability::DontKnow => "DONT_KNOW",
-            DomainAvailability::Reserved => "RESERVED",
-            DomainAvailability::Unavailable => "UNAVAILABLE",
-            DomainAvailability::UnavailablePremium => "UNAVAILABLE_PREMIUM",
-            DomainAvailability::UnavailableRestricted => "UNAVAILABLE_RESTRICTED",
-            DomainAvailability::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "AVAILABLE_PREORDER", "AVAILABLE_RESERVED", "DONT_KNOW", "RESERVED", "UNAVAILABLE", "UNAVAILABLE_PREMIUM", "UNAVAILABLE_RESTRICTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DomainAvailability::Available => "AVAILABLE",
+    DomainAvailability::AvailablePreorder => "AVAILABLE_PREORDER",
+    DomainAvailability::AvailableReserved => "AVAILABLE_RESERVED",
+    DomainAvailability::DontKnow => "DONT_KNOW",
+    DomainAvailability::Reserved => "RESERVED",
+    DomainAvailability::Unavailable => "UNAVAILABLE",
+    DomainAvailability::UnavailablePremium => "UNAVAILABLE_PREMIUM",
+    DomainAvailability::UnavailableRestricted => "UNAVAILABLE_RESTRICTED",
+    DomainAvailability::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "AVAILABLE_PREORDER", "AVAILABLE_RESERVED", "DONT_KNOW", "RESERVED", "UNAVAILABLE", "UNAVAILABLE_PREMIUM", "UNAVAILABLE_RESTRICTED"]
+                }
+            }
 impl AsRef<str> for DomainAvailability {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a delegation signer (DS) record that was created in the registry by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
 #[non_exhaustive]

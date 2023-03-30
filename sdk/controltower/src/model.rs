@@ -226,15 +226,15 @@ pub enum ControlOperationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ControlOperationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => ControlOperationStatus::Failed,
-            "IN_PROGRESS" => ControlOperationStatus::InProgress,
-            "SUCCEEDED" => ControlOperationStatus::Succeeded,
-            other => ControlOperationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => ControlOperationStatus::Failed,
+"IN_PROGRESS" => ControlOperationStatus::InProgress,
+"SUCCEEDED" => ControlOperationStatus::Succeeded,
+other => ControlOperationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ControlOperationStatus {
                 type Err = std::convert::Infallible;
 
@@ -243,27 +243,25 @@ impl std::str::FromStr for ControlOperationStatus {
                 }
             }
 impl ControlOperationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ControlOperationStatus::Failed => "FAILED",
-            ControlOperationStatus::InProgress => "IN_PROGRESS",
-            ControlOperationStatus::Succeeded => "SUCCEEDED",
-            ControlOperationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "IN_PROGRESS", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ControlOperationStatus::Failed => "FAILED",
+    ControlOperationStatus::InProgress => "IN_PROGRESS",
+    ControlOperationStatus::Succeeded => "SUCCEEDED",
+    ControlOperationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for ControlOperationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ControlOperationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -312,14 +310,14 @@ pub enum ControlOperationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ControlOperationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLE_CONTROL" => ControlOperationType::DisableControl,
-            "ENABLE_CONTROL" => ControlOperationType::EnableControl,
-            other => ControlOperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLE_CONTROL" => ControlOperationType::DisableControl,
+"ENABLE_CONTROL" => ControlOperationType::EnableControl,
+other => ControlOperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ControlOperationType {
                 type Err = std::convert::Infallible;
 
@@ -328,24 +326,22 @@ impl std::str::FromStr for ControlOperationType {
                 }
             }
 impl ControlOperationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ControlOperationType::DisableControl => "DISABLE_CONTROL",
-            ControlOperationType::EnableControl => "ENABLE_CONTROL",
-            ControlOperationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLE_CONTROL", "ENABLE_CONTROL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ControlOperationType::DisableControl => "DISABLE_CONTROL",
+    ControlOperationType::EnableControl => "ENABLE_CONTROL",
+    ControlOperationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLE_CONTROL", "ENABLE_CONTROL"]
+                }
+            }
 impl AsRef<str> for ControlOperationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

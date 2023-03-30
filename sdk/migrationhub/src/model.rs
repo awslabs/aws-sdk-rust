@@ -169,22 +169,22 @@ pub enum ResourceAttributeType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceAttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BIOS_ID" => ResourceAttributeType::BiosId,
-            "FQDN" => ResourceAttributeType::Fqdn,
-            "IPV4_ADDRESS" => ResourceAttributeType::Ipv4Address,
-            "IPV6_ADDRESS" => ResourceAttributeType::Ipv6Address,
-            "MAC_ADDRESS" => ResourceAttributeType::MacAddress,
-            "MOTHERBOARD_SERIAL_NUMBER" => ResourceAttributeType::MotherboardSerialNumber,
-            "VM_MANAGED_OBJECT_REFERENCE" => ResourceAttributeType::VmManagedObjectReference,
-            "VM_MANAGER_ID" => ResourceAttributeType::VmManagerId,
-            "VM_NAME" => ResourceAttributeType::VmName,
-            "VM_PATH" => ResourceAttributeType::VmPath,
-            other => ResourceAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BIOS_ID" => ResourceAttributeType::BiosId,
+"FQDN" => ResourceAttributeType::Fqdn,
+"IPV4_ADDRESS" => ResourceAttributeType::Ipv4Address,
+"IPV6_ADDRESS" => ResourceAttributeType::Ipv6Address,
+"MAC_ADDRESS" => ResourceAttributeType::MacAddress,
+"MOTHERBOARD_SERIAL_NUMBER" => ResourceAttributeType::MotherboardSerialNumber,
+"VM_MANAGED_OBJECT_REFERENCE" => ResourceAttributeType::VmManagedObjectReference,
+"VM_MANAGER_ID" => ResourceAttributeType::VmManagerId,
+"VM_NAME" => ResourceAttributeType::VmName,
+"VM_PATH" => ResourceAttributeType::VmPath,
+other => ResourceAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceAttributeType {
                 type Err = std::convert::Infallible;
 
@@ -193,34 +193,32 @@ impl std::str::FromStr for ResourceAttributeType {
                 }
             }
 impl ResourceAttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceAttributeType::BiosId => "BIOS_ID",
-            ResourceAttributeType::Fqdn => "FQDN",
-            ResourceAttributeType::Ipv4Address => "IPV4_ADDRESS",
-            ResourceAttributeType::Ipv6Address => "IPV6_ADDRESS",
-            ResourceAttributeType::MacAddress => "MAC_ADDRESS",
-            ResourceAttributeType::MotherboardSerialNumber => "MOTHERBOARD_SERIAL_NUMBER",
-            ResourceAttributeType::VmManagedObjectReference => "VM_MANAGED_OBJECT_REFERENCE",
-            ResourceAttributeType::VmManagerId => "VM_MANAGER_ID",
-            ResourceAttributeType::VmName => "VM_NAME",
-            ResourceAttributeType::VmPath => "VM_PATH",
-            ResourceAttributeType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BIOS_ID", "FQDN", "IPV4_ADDRESS", "IPV6_ADDRESS", "MAC_ADDRESS", "MOTHERBOARD_SERIAL_NUMBER", "VM_MANAGED_OBJECT_REFERENCE", "VM_MANAGER_ID", "VM_NAME", "VM_PATH"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceAttributeType::BiosId => "BIOS_ID",
+    ResourceAttributeType::Fqdn => "FQDN",
+    ResourceAttributeType::Ipv4Address => "IPV4_ADDRESS",
+    ResourceAttributeType::Ipv6Address => "IPV6_ADDRESS",
+    ResourceAttributeType::MacAddress => "MAC_ADDRESS",
+    ResourceAttributeType::MotherboardSerialNumber => "MOTHERBOARD_SERIAL_NUMBER",
+    ResourceAttributeType::VmManagedObjectReference => "VM_MANAGED_OBJECT_REFERENCE",
+    ResourceAttributeType::VmManagerId => "VM_MANAGER_ID",
+    ResourceAttributeType::VmName => "VM_NAME",
+    ResourceAttributeType::VmPath => "VM_PATH",
+    ResourceAttributeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BIOS_ID", "FQDN", "IPV4_ADDRESS", "IPV6_ADDRESS", "MAC_ADDRESS", "MOTHERBOARD_SERIAL_NUMBER", "VM_MANAGED_OBJECT_REFERENCE", "VM_MANAGER_ID", "VM_NAME", "VM_PATH"]
+                }
+            }
 impl AsRef<str> for ResourceAttributeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Task object encapsulating task information.</p>
 #[non_exhaustive]
@@ -363,16 +361,16 @@ pub enum Status {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => Status::Completed,
-            "FAILED" => Status::Failed,
-            "IN_PROGRESS" => Status::InProgress,
-            "NOT_STARTED" => Status::NotStarted,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => Status::Completed,
+"FAILED" => Status::Failed,
+"IN_PROGRESS" => Status::InProgress,
+"NOT_STARTED" => Status::NotStarted,
+other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Status {
                 type Err = std::convert::Infallible;
 
@@ -381,28 +379,26 @@ impl std::str::FromStr for Status {
                 }
             }
 impl Status {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Status::Completed => "COMPLETED",
-            Status::Failed => "FAILED",
-            Status::InProgress => "IN_PROGRESS",
-            Status::NotStarted => "NOT_STARTED",
-            Status::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "FAILED", "IN_PROGRESS", "NOT_STARTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Status::Completed => "COMPLETED",
+    Status::Failed => "FAILED",
+    Status::InProgress => "IN_PROGRESS",
+    Status::NotStarted => "NOT_STARTED",
+    Status::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "FAILED", "IN_PROGRESS", "NOT_STARTED"]
+                }
+            }
 impl AsRef<str> for Status {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ApplicationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -454,15 +450,15 @@ pub enum ApplicationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => ApplicationStatus::Completed,
-            "IN_PROGRESS" => ApplicationStatus::InProgress,
-            "NOT_STARTED" => ApplicationStatus::NotStarted,
-            other => ApplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => ApplicationStatus::Completed,
+"IN_PROGRESS" => ApplicationStatus::InProgress,
+"NOT_STARTED" => ApplicationStatus::NotStarted,
+other => ApplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ApplicationStatus {
                 type Err = std::convert::Infallible;
 
@@ -471,27 +467,25 @@ impl std::str::FromStr for ApplicationStatus {
                 }
             }
 impl ApplicationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ApplicationStatus::Completed => "COMPLETED",
-            ApplicationStatus::InProgress => "IN_PROGRESS",
-            ApplicationStatus::NotStarted => "NOT_STARTED",
-            ApplicationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "IN_PROGRESS", "NOT_STARTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ApplicationStatus::Completed => "COMPLETED",
+    ApplicationStatus::InProgress => "IN_PROGRESS",
+    ApplicationStatus::NotStarted => "NOT_STARTED",
+    ApplicationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "IN_PROGRESS", "NOT_STARTED"]
+                }
+            }
 impl AsRef<str> for ApplicationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summary of the AWS resource used for access control that is implicitly linked to your AWS account.</p>
 #[non_exhaustive]

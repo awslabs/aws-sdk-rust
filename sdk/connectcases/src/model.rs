@@ -154,14 +154,14 @@ pub enum TemplateStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TemplateStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => TemplateStatus::Active,
-            "Inactive" => TemplateStatus::Inactive,
-            other => TemplateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => TemplateStatus::Active,
+"Inactive" => TemplateStatus::Inactive,
+other => TemplateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TemplateStatus {
                 type Err = std::convert::Infallible;
 
@@ -170,26 +170,24 @@ impl std::str::FromStr for TemplateStatus {
                 }
             }
 impl TemplateStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TemplateStatus::Active => "Active",
-            TemplateStatus::Inactive => "Inactive",
-            TemplateStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "Inactive"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TemplateStatus::Active => "Active",
+    TemplateStatus::Inactive => "Inactive",
+    TemplateStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Inactive"]
+                }
+            }
 impl AsRef<str> for TemplateStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>List of fields that must have a value provided to create a case.</p>
 #[non_exhaustive]
@@ -1176,14 +1174,14 @@ pub enum FieldNamespace {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FieldNamespace {
-    fn from(s: &str) -> Self {
-        match s {
-            "Custom" => FieldNamespace::Custom,
-            "System" => FieldNamespace::System,
-            other => FieldNamespace::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Custom" => FieldNamespace::Custom,
+"System" => FieldNamespace::System,
+other => FieldNamespace::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FieldNamespace {
                 type Err = std::convert::Infallible;
 
@@ -1192,26 +1190,24 @@ impl std::str::FromStr for FieldNamespace {
                 }
             }
 impl FieldNamespace {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FieldNamespace::Custom => "Custom",
-            FieldNamespace::System => "System",
-            FieldNamespace::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Custom", "System"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FieldNamespace::Custom => "Custom",
+    FieldNamespace::System => "System",
+    FieldNamespace::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Custom", "System"]
+                }
+            }
 impl AsRef<str> for FieldNamespace {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `FieldType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1269,17 +1265,17 @@ pub enum FieldType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FieldType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Boolean" => FieldType::Boolean,
-            "DateTime" => FieldType::DateTime,
-            "Number" => FieldType::Number,
-            "SingleSelect" => FieldType::SingleSelect,
-            "Text" => FieldType::Text,
-            other => FieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Boolean" => FieldType::Boolean,
+"DateTime" => FieldType::DateTime,
+"Number" => FieldType::Number,
+"SingleSelect" => FieldType::SingleSelect,
+"Text" => FieldType::Text,
+other => FieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FieldType {
                 type Err = std::convert::Infallible;
 
@@ -1288,29 +1284,27 @@ impl std::str::FromStr for FieldType {
                 }
             }
 impl FieldType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FieldType::Boolean => "Boolean",
-            FieldType::DateTime => "DateTime",
-            FieldType::Number => "Number",
-            FieldType::SingleSelect => "SingleSelect",
-            FieldType::Text => "Text",
-            FieldType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Boolean", "DateTime", "Number", "SingleSelect", "Text"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FieldType::Boolean => "Boolean",
+    FieldType::DateTime => "DateTime",
+    FieldType::Number => "Number",
+    FieldType::SingleSelect => "SingleSelect",
+    FieldType::Text => "Text",
+    FieldType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Boolean", "DateTime", "Number", "SingleSelect", "Text"]
+                }
+            }
 impl AsRef<str> for FieldType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Object for unique identifier of a field.</p>
 #[non_exhaustive]
@@ -1870,15 +1864,15 @@ pub enum DomainStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => DomainStatus::Active,
-            "CreationFailed" => DomainStatus::CreationFailed,
-            "CreationInProgress" => DomainStatus::CreationInProgress,
-            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => DomainStatus::Active,
+"CreationFailed" => DomainStatus::CreationFailed,
+"CreationInProgress" => DomainStatus::CreationInProgress,
+other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DomainStatus {
                 type Err = std::convert::Infallible;
 
@@ -1887,27 +1881,25 @@ impl std::str::FromStr for DomainStatus {
                 }
             }
 impl DomainStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DomainStatus::Active => "Active",
-            DomainStatus::CreationFailed => "CreationFailed",
-            DomainStatus::CreationInProgress => "CreationInProgress",
-            DomainStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "CreationFailed", "CreationInProgress"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DomainStatus::Active => "Active",
+    DomainStatus::CreationFailed => "CreationFailed",
+    DomainStatus::CreationInProgress => "CreationInProgress",
+    DomainStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "CreationFailed", "CreationInProgress"]
+                }
+            }
 impl AsRef<str> for DomainStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A list of items that represent cases.</p>
 #[non_exhaustive]
@@ -2267,14 +2259,14 @@ pub enum Order {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Order {
-    fn from(s: &str) -> Self {
-        match s {
-            "Asc" => Order::Ascending,
-            "Desc" => Order::Descending,
-            other => Order::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Asc" => Order::Ascending,
+"Desc" => Order::Descending,
+other => Order::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Order {
                 type Err = std::convert::Infallible;
 
@@ -2283,26 +2275,24 @@ impl std::str::FromStr for Order {
                 }
             }
 impl Order {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Order::Ascending => "Asc",
-            Order::Descending => "Desc",
-            Order::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Asc", "Desc"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Order::Ascending => "Asc",
+    Order::Descending => "Desc",
+    Order::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Asc", "Desc"]
+                }
+            }
 impl AsRef<str> for Order {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A filter for cases. Only one value can be provided.</p>
 #[non_exhaustive]
@@ -2802,13 +2792,13 @@ pub enum CommentBodyTextType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CommentBodyTextType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Text/Plain" => CommentBodyTextType::Plaintext,
-            other => CommentBodyTextType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Text/Plain" => CommentBodyTextType::Plaintext,
+other => CommentBodyTextType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CommentBodyTextType {
                 type Err = std::convert::Infallible;
 
@@ -2817,25 +2807,23 @@ impl std::str::FromStr for CommentBodyTextType {
                 }
             }
 impl CommentBodyTextType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CommentBodyTextType::Plaintext => "Text/Plain",
-            CommentBodyTextType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Text/Plain"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CommentBodyTextType::Plaintext => "Text/Plain",
+    CommentBodyTextType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Text/Plain"]
+                }
+            }
 impl AsRef<str> for CommentBodyTextType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object that represents a content of an Amazon Connect contact object.</p>
 #[non_exhaustive]
@@ -2972,14 +2960,14 @@ pub enum RelatedItemType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RelatedItemType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Comment" => RelatedItemType::Comment,
-            "Contact" => RelatedItemType::Contact,
-            other => RelatedItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Comment" => RelatedItemType::Comment,
+"Contact" => RelatedItemType::Contact,
+other => RelatedItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RelatedItemType {
                 type Err = std::convert::Infallible;
 
@@ -2988,26 +2976,24 @@ impl std::str::FromStr for RelatedItemType {
                 }
             }
 impl RelatedItemType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RelatedItemType::Comment => "Comment",
-            RelatedItemType::Contact => "Contact",
-            RelatedItemType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Comment", "Contact"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RelatedItemType::Comment => "Comment",
+    RelatedItemType::Contact => "Contact",
+    RelatedItemType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Comment", "Contact"]
+                }
+            }
 impl AsRef<str> for RelatedItemType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The list of types of related items and their parameters to use for filtering.</p>
 #[non_exhaustive]

@@ -345,15 +345,15 @@ pub enum AlternateContactType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlternateContactType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BILLING" => AlternateContactType::Billing,
-            "OPERATIONS" => AlternateContactType::Operations,
-            "SECURITY" => AlternateContactType::Security,
-            other => AlternateContactType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BILLING" => AlternateContactType::Billing,
+"OPERATIONS" => AlternateContactType::Operations,
+"SECURITY" => AlternateContactType::Security,
+other => AlternateContactType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AlternateContactType {
                 type Err = std::convert::Infallible;
 
@@ -362,27 +362,25 @@ impl std::str::FromStr for AlternateContactType {
                 }
             }
 impl AlternateContactType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AlternateContactType::Billing => "BILLING",
-            AlternateContactType::Operations => "OPERATIONS",
-            AlternateContactType::Security => "SECURITY",
-            AlternateContactType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BILLING", "OPERATIONS", "SECURITY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AlternateContactType::Billing => "BILLING",
+    AlternateContactType::Operations => "OPERATIONS",
+    AlternateContactType::Security => "SECURITY",
+    AlternateContactType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BILLING", "OPERATIONS", "SECURITY"]
+                }
+            }
 impl AsRef<str> for AlternateContactType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure that contains the details of an alternate contact associated with an Amazon Web Services account</p>
 #[non_exhaustive]

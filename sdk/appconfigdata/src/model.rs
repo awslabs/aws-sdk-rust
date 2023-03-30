@@ -56,17 +56,17 @@ pub enum ResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Application" => ResourceType::Application,
-            "Configuration" => ResourceType::Configuration,
-            "ConfigurationProfile" => ResourceType::ConfigurationProfile,
-            "Deployment" => ResourceType::Deployment,
-            "Environment" => ResourceType::Environment,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Application" => ResourceType::Application,
+"Configuration" => ResourceType::Configuration,
+"ConfigurationProfile" => ResourceType::ConfigurationProfile,
+"Deployment" => ResourceType::Deployment,
+"Environment" => ResourceType::Environment,
+other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceType {
                 type Err = std::convert::Infallible;
 
@@ -75,29 +75,27 @@ impl std::str::FromStr for ResourceType {
                 }
             }
 impl ResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceType::Application => "Application",
-            ResourceType::Configuration => "Configuration",
-            ResourceType::ConfigurationProfile => "ConfigurationProfile",
-            ResourceType::Deployment => "Deployment",
-            ResourceType::Environment => "Environment",
-            ResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Application", "Configuration", "ConfigurationProfile", "Deployment", "Environment"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceType::Application => "Application",
+    ResourceType::Configuration => "Configuration",
+    ResourceType::ConfigurationProfile => "ConfigurationProfile",
+    ResourceType::Deployment => "Deployment",
+    ResourceType::Environment => "Environment",
+    ResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Application", "Configuration", "ConfigurationProfile", "Deployment", "Environment"]
+                }
+            }
 impl AsRef<str> for ResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Detailed information about the input that failed to satisfy the constraints specified by a call.</p>
 #[non_exhaustive]
@@ -232,15 +230,15 @@ pub enum InvalidParameterProblem {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvalidParameterProblem {
-    fn from(s: &str) -> Self {
-        match s {
-            "Corrupted" => InvalidParameterProblem::Corrupted,
-            "Expired" => InvalidParameterProblem::Expired,
-            "PollIntervalNotSatisfied" => InvalidParameterProblem::PollIntervalNotSatisfied,
-            other => InvalidParameterProblem::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Corrupted" => InvalidParameterProblem::Corrupted,
+"Expired" => InvalidParameterProblem::Expired,
+"PollIntervalNotSatisfied" => InvalidParameterProblem::PollIntervalNotSatisfied,
+other => InvalidParameterProblem::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InvalidParameterProblem {
                 type Err = std::convert::Infallible;
 
@@ -249,27 +247,25 @@ impl std::str::FromStr for InvalidParameterProblem {
                 }
             }
 impl InvalidParameterProblem {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InvalidParameterProblem::Corrupted => "Corrupted",
-            InvalidParameterProblem::Expired => "Expired",
-            InvalidParameterProblem::PollIntervalNotSatisfied => "PollIntervalNotSatisfied",
-            InvalidParameterProblem::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Corrupted", "Expired", "PollIntervalNotSatisfied"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InvalidParameterProblem::Corrupted => "Corrupted",
+    InvalidParameterProblem::Expired => "Expired",
+    InvalidParameterProblem::PollIntervalNotSatisfied => "PollIntervalNotSatisfied",
+    InvalidParameterProblem::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Corrupted", "Expired", "PollIntervalNotSatisfied"]
+                }
+            }
 impl AsRef<str> for InvalidParameterProblem {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `BadRequestReason`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -316,13 +312,13 @@ pub enum BadRequestReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BadRequestReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "InvalidParameters" => BadRequestReason::InvalidParameters,
-            other => BadRequestReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "InvalidParameters" => BadRequestReason::InvalidParameters,
+other => BadRequestReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BadRequestReason {
                 type Err = std::convert::Infallible;
 
@@ -331,23 +327,21 @@ impl std::str::FromStr for BadRequestReason {
                 }
             }
 impl BadRequestReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BadRequestReason::InvalidParameters => "InvalidParameters",
-            BadRequestReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "InvalidParameters"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BadRequestReason::InvalidParameters => "InvalidParameters",
+    BadRequestReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["InvalidParameters"]
+                }
+            }
 impl AsRef<str> for BadRequestReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

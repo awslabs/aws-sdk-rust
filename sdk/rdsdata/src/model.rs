@@ -527,14 +527,14 @@ pub enum RecordsFormatType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecordsFormatType {
-    fn from(s: &str) -> Self {
-        match s {
-            "JSON" => RecordsFormatType::Json,
-            "NONE" => RecordsFormatType::None,
-            other => RecordsFormatType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "JSON" => RecordsFormatType::Json,
+"NONE" => RecordsFormatType::None,
+other => RecordsFormatType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecordsFormatType {
                 type Err = std::convert::Infallible;
 
@@ -543,26 +543,24 @@ impl std::str::FromStr for RecordsFormatType {
                 }
             }
 impl RecordsFormatType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecordsFormatType::Json => "JSON",
-            RecordsFormatType::None => "NONE",
-            RecordsFormatType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "JSON", "NONE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecordsFormatType::Json => "JSON",
+    RecordsFormatType::None => "NONE",
+    RecordsFormatType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["JSON", "NONE"]
+                }
+            }
 impl AsRef<str> for RecordsFormatType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Options that control how the result set is returned.</p>
 #[non_exhaustive]
@@ -688,14 +686,14 @@ pub enum LongReturnType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LongReturnType {
-    fn from(s: &str) -> Self {
-        match s {
-            "LONG" => LongReturnType::Long,
-            "STRING" => LongReturnType::String,
-            other => LongReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "LONG" => LongReturnType::Long,
+"STRING" => LongReturnType::String,
+other => LongReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LongReturnType {
                 type Err = std::convert::Infallible;
 
@@ -704,26 +702,24 @@ impl std::str::FromStr for LongReturnType {
                 }
             }
 impl LongReturnType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LongReturnType::Long => "LONG",
-            LongReturnType::String => "STRING",
-            LongReturnType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LONG", "STRING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LongReturnType::Long => "LONG",
+    LongReturnType::String => "STRING",
+    LongReturnType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LONG", "STRING"]
+                }
+            }
 impl AsRef<str> for LongReturnType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DecimalReturnType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -772,14 +768,14 @@ pub enum DecimalReturnType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DecimalReturnType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DOUBLE_OR_LONG" => DecimalReturnType::DoubleOrLong,
-            "STRING" => DecimalReturnType::String,
-            other => DecimalReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DOUBLE_OR_LONG" => DecimalReturnType::DoubleOrLong,
+"STRING" => DecimalReturnType::String,
+other => DecimalReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DecimalReturnType {
                 type Err = std::convert::Infallible;
 
@@ -788,26 +784,24 @@ impl std::str::FromStr for DecimalReturnType {
                 }
             }
 impl DecimalReturnType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DecimalReturnType::DoubleOrLong => "DOUBLE_OR_LONG",
-            DecimalReturnType::String => "STRING",
-            DecimalReturnType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DOUBLE_OR_LONG", "STRING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DecimalReturnType::DoubleOrLong => "DOUBLE_OR_LONG",
+    DecimalReturnType::String => "STRING",
+    DecimalReturnType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DOUBLE_OR_LONG", "STRING"]
+                }
+            }
 impl AsRef<str> for DecimalReturnType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A parameter used in a SQL statement.</p>
 #[non_exhaustive]
@@ -988,18 +982,18 @@ pub enum TypeHint {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TypeHint {
-    fn from(s: &str) -> Self {
-        match s {
-            "DATE" => TypeHint::Date,
-            "DECIMAL" => TypeHint::Decimal,
-            "JSON" => TypeHint::Json,
-            "TIME" => TypeHint::Time,
-            "TIMESTAMP" => TypeHint::Timestamp,
-            "UUID" => TypeHint::Uuid,
-            other => TypeHint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DATE" => TypeHint::Date,
+"DECIMAL" => TypeHint::Decimal,
+"JSON" => TypeHint::Json,
+"TIME" => TypeHint::Time,
+"TIMESTAMP" => TypeHint::Timestamp,
+"UUID" => TypeHint::Uuid,
+other => TypeHint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TypeHint {
                 type Err = std::convert::Infallible;
 
@@ -1008,30 +1002,28 @@ impl std::str::FromStr for TypeHint {
                 }
             }
 impl TypeHint {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TypeHint::Date => "DATE",
-            TypeHint::Decimal => "DECIMAL",
-            TypeHint::Json => "JSON",
-            TypeHint::Time => "TIME",
-            TypeHint::Timestamp => "TIMESTAMP",
-            TypeHint::Uuid => "UUID",
-            TypeHint::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DATE", "DECIMAL", "JSON", "TIME", "TIMESTAMP", "UUID"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TypeHint::Date => "DATE",
+    TypeHint::Decimal => "DECIMAL",
+    TypeHint::Json => "JSON",
+    TypeHint::Time => "TIME",
+    TypeHint::Timestamp => "TIMESTAMP",
+    TypeHint::Uuid => "UUID",
+    TypeHint::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DATE", "DECIMAL", "JSON", "TIME", "TIMESTAMP", "UUID"]
+                }
+            }
 impl AsRef<str> for TypeHint {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The result of a SQL statement.</p> <note> 
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p> 

@@ -245,19 +245,19 @@ pub enum EventType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANSWERED" => EventType::Answered,
-            "BUSY" => EventType::Busy,
-            "COMPLETED_CALL" => EventType::CompletedCall,
-            "FAILED" => EventType::Failed,
-            "INITIATED_CALL" => EventType::InitiatedCall,
-            "NO_ANSWER" => EventType::NoAnswer,
-            "RINGING" => EventType::Ringing,
-            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ANSWERED" => EventType::Answered,
+"BUSY" => EventType::Busy,
+"COMPLETED_CALL" => EventType::CompletedCall,
+"FAILED" => EventType::Failed,
+"INITIATED_CALL" => EventType::InitiatedCall,
+"NO_ANSWER" => EventType::NoAnswer,
+"RINGING" => EventType::Ringing,
+other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EventType {
                 type Err = std::convert::Infallible;
 
@@ -266,31 +266,29 @@ impl std::str::FromStr for EventType {
                 }
             }
 impl EventType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventType::Answered => "ANSWERED",
-            EventType::Busy => "BUSY",
-            EventType::CompletedCall => "COMPLETED_CALL",
-            EventType::Failed => "FAILED",
-            EventType::InitiatedCall => "INITIATED_CALL",
-            EventType::NoAnswer => "NO_ANSWER",
-            EventType::Ringing => "RINGING",
-            EventType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANSWERED", "BUSY", "COMPLETED_CALL", "FAILED", "INITIATED_CALL", "NO_ANSWER", "RINGING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventType::Answered => "ANSWERED",
+    EventType::Busy => "BUSY",
+    EventType::CompletedCall => "COMPLETED_CALL",
+    EventType::Failed => "FAILED",
+    EventType::InitiatedCall => "INITIATED_CALL",
+    EventType::NoAnswer => "NO_ANSWER",
+    EventType::Ringing => "RINGING",
+    EventType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANSWERED", "BUSY", "COMPLETED_CALL", "FAILED", "INITIATED_CALL", "NO_ANSWER", "RINGING"]
+                }
+            }
 impl AsRef<str> for EventType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
 #[non_exhaustive]

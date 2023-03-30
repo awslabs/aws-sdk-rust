@@ -122,16 +122,16 @@ pub enum ValidationExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "cannotParse" => ValidationExceptionReason::CannotParse,
-            "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
-            "other" => ValidationExceptionReason::Other,
-            "unknownOperation" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "cannotParse" => ValidationExceptionReason::CannotParse,
+"fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
+"other" => ValidationExceptionReason::Other,
+"unknownOperation" => ValidationExceptionReason::UnknownOperation,
+other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ValidationExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -140,28 +140,26 @@ impl std::str::FromStr for ValidationExceptionReason {
                 }
             }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::CannotParse => "cannotParse",
-            ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
-            ValidationExceptionReason::Other => "other",
-            ValidationExceptionReason::UnknownOperation => "unknownOperation",
-            ValidationExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "cannotParse", "fieldValidationFailed", "other", "unknownOperation"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::CannotParse => "cannotParse",
+    ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
+    ValidationExceptionReason::Other => "other",
+    ValidationExceptionReason::UnknownOperation => "unknownOperation",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["cannotParse", "fieldValidationFailed", "other", "unknownOperation"]
+                }
+            }
 impl AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A user settings resource that can be associated with a web portal. Once associated with a web portal, user settings control how users can transfer data between a streaming session and the their local devices. </p>
 #[non_exhaustive]
@@ -418,14 +416,14 @@ pub enum EnabledType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnabledType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Disabled" => EnabledType::Disabled,
-            "Enabled" => EnabledType::Enabled,
-            other => EnabledType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Disabled" => EnabledType::Disabled,
+"Enabled" => EnabledType::Enabled,
+other => EnabledType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EnabledType {
                 type Err = std::convert::Infallible;
 
@@ -434,26 +432,24 @@ impl std::str::FromStr for EnabledType {
                 }
             }
 impl EnabledType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnabledType::Disabled => "Disabled",
-            EnabledType::Enabled => "Enabled",
-            EnabledType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Disabled", "Enabled"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnabledType::Disabled => "Disabled",
+    EnabledType::Enabled => "Enabled",
+    EnabledType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Disabled", "Enabled"]
+                }
+            }
 impl AsRef<str> for EnabledType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A user access logging settings resource that can be associated with a web portal.</p>
 #[non_exhaustive]
@@ -941,14 +937,14 @@ pub enum AuthenticationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthenticationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "IAM_Identity_Center" => AuthenticationType::IamIdentityCenter,
-            "Standard" => AuthenticationType::Standard,
-            other => AuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "IAM_Identity_Center" => AuthenticationType::IamIdentityCenter,
+"Standard" => AuthenticationType::Standard,
+other => AuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AuthenticationType {
                 type Err = std::convert::Infallible;
 
@@ -957,26 +953,24 @@ impl std::str::FromStr for AuthenticationType {
                 }
             }
 impl AuthenticationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AuthenticationType::IamIdentityCenter => "IAM_Identity_Center",
-            AuthenticationType::Standard => "Standard",
-            AuthenticationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "IAM_Identity_Center", "Standard"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AuthenticationType::IamIdentityCenter => "IAM_Identity_Center",
+    AuthenticationType::Standard => "Standard",
+    AuthenticationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["IAM_Identity_Center", "Standard"]
+                }
+            }
 impl AsRef<str> for AuthenticationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PortalStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1028,15 +1022,15 @@ pub enum PortalStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PortalStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => PortalStatus::Active,
-            "Incomplete" => PortalStatus::Incomplete,
-            "Pending" => PortalStatus::Pending,
-            other => PortalStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => PortalStatus::Active,
+"Incomplete" => PortalStatus::Incomplete,
+"Pending" => PortalStatus::Pending,
+other => PortalStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PortalStatus {
                 type Err = std::convert::Infallible;
 
@@ -1045,27 +1039,25 @@ impl std::str::FromStr for PortalStatus {
                 }
             }
 impl PortalStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PortalStatus::Active => "Active",
-            PortalStatus::Incomplete => "Incomplete",
-            PortalStatus::Pending => "Pending",
-            PortalStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "Incomplete", "Pending"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PortalStatus::Active => "Active",
+    PortalStatus::Incomplete => "Incomplete",
+    PortalStatus::Pending => "Pending",
+    PortalStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Incomplete", "Pending"]
+                }
+            }
 impl AsRef<str> for PortalStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `BrowserType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1111,13 +1103,13 @@ pub enum BrowserType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BrowserType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Chrome" => BrowserType::Chrome,
-            other => BrowserType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Chrome" => BrowserType::Chrome,
+other => BrowserType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BrowserType {
                 type Err = std::convert::Infallible;
 
@@ -1126,25 +1118,23 @@ impl std::str::FromStr for BrowserType {
                 }
             }
 impl BrowserType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BrowserType::Chrome => "Chrome",
-            BrowserType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Chrome"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BrowserType::Chrome => "Chrome",
+    BrowserType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Chrome"]
+                }
+            }
 impl AsRef<str> for BrowserType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RendererType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1190,13 +1180,13 @@ pub enum RendererType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RendererType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AppStream" => RendererType::Appstream,
-            other => RendererType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AppStream" => RendererType::Appstream,
+other => RendererType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RendererType {
                 type Err = std::convert::Infallible;
 
@@ -1205,25 +1195,23 @@ impl std::str::FromStr for RendererType {
                 }
             }
 impl RendererType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RendererType::Appstream => "AppStream",
-            RendererType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AppStream"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RendererType::Appstream => "AppStream",
+    RendererType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AppStream"]
+                }
+            }
 impl AsRef<str> for RendererType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A network settings resource that can be associated with a web portal. Once associated with a web portal, network settings define how streaming instances will connect with your specified VPC. </p>
 #[non_exhaustive]
@@ -1721,18 +1709,18 @@ pub enum IdentityProviderType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IdentityProviderType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Facebook" => IdentityProviderType::Facebook,
-            "Google" => IdentityProviderType::Google,
-            "LoginWithAmazon" => IdentityProviderType::LoginWithAmazon,
-            "OIDC" => IdentityProviderType::Oidc,
-            "SAML" => IdentityProviderType::Saml,
-            "SignInWithApple" => IdentityProviderType::SignInWithApple,
-            other => IdentityProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Facebook" => IdentityProviderType::Facebook,
+"Google" => IdentityProviderType::Google,
+"LoginWithAmazon" => IdentityProviderType::LoginWithAmazon,
+"OIDC" => IdentityProviderType::Oidc,
+"SAML" => IdentityProviderType::Saml,
+"SignInWithApple" => IdentityProviderType::SignInWithApple,
+other => IdentityProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for IdentityProviderType {
                 type Err = std::convert::Infallible;
 
@@ -1741,30 +1729,28 @@ impl std::str::FromStr for IdentityProviderType {
                 }
             }
 impl IdentityProviderType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IdentityProviderType::Facebook => "Facebook",
-            IdentityProviderType::Google => "Google",
-            IdentityProviderType::LoginWithAmazon => "LoginWithAmazon",
-            IdentityProviderType::Oidc => "OIDC",
-            IdentityProviderType::Saml => "SAML",
-            IdentityProviderType::SignInWithApple => "SignInWithApple",
-            IdentityProviderType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Facebook", "Google", "LoginWithAmazon", "OIDC", "SAML", "SignInWithApple"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IdentityProviderType::Facebook => "Facebook",
+    IdentityProviderType::Google => "Google",
+    IdentityProviderType::LoginWithAmazon => "LoginWithAmazon",
+    IdentityProviderType::Oidc => "OIDC",
+    IdentityProviderType::Saml => "SAML",
+    IdentityProviderType::SignInWithApple => "SignInWithApple",
+    IdentityProviderType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Facebook", "Google", "LoginWithAmazon", "OIDC", "SAML", "SignInWithApple"]
+                }
+            }
 impl AsRef<str> for IdentityProviderType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The browser settings resource that can be associated with a web portal. Once associated with a web portal, browser settings control how the browser will behave once a user starts a streaming session for the web portal. </p>
 #[non_exhaustive]

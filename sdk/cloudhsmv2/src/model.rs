@@ -368,16 +368,16 @@ pub enum BackupState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BackupState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_IN_PROGRESS" => BackupState::CreateInProgress,
-            "DELETED" => BackupState::Deleted,
-            "PENDING_DELETION" => BackupState::PendingDeletion,
-            "READY" => BackupState::Ready,
-            other => BackupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_IN_PROGRESS" => BackupState::CreateInProgress,
+"DELETED" => BackupState::Deleted,
+"PENDING_DELETION" => BackupState::PendingDeletion,
+"READY" => BackupState::Ready,
+other => BackupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BackupState {
                 type Err = std::convert::Infallible;
 
@@ -386,28 +386,26 @@ impl std::str::FromStr for BackupState {
                 }
             }
 impl BackupState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BackupState::CreateInProgress => "CREATE_IN_PROGRESS",
-            BackupState::Deleted => "DELETED",
-            BackupState::PendingDeletion => "PENDING_DELETION",
-            BackupState::Ready => "READY",
-            BackupState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_IN_PROGRESS", "DELETED", "PENDING_DELETION", "READY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BackupState::CreateInProgress => "CREATE_IN_PROGRESS",
+    BackupState::Deleted => "DELETED",
+    BackupState::PendingDeletion => "PENDING_DELETION",
+    BackupState::Ready => "READY",
+    BackupState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_IN_PROGRESS", "DELETED", "PENDING_DELETION", "READY"]
+                }
+            }
 impl AsRef<str> for BackupState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
@@ -937,21 +935,21 @@ pub enum ClusterState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClusterState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ClusterState::Active,
-            "CREATE_IN_PROGRESS" => ClusterState::CreateInProgress,
-            "DEGRADED" => ClusterState::Degraded,
-            "DELETED" => ClusterState::Deleted,
-            "DELETE_IN_PROGRESS" => ClusterState::DeleteInProgress,
-            "INITIALIZED" => ClusterState::Initialized,
-            "INITIALIZE_IN_PROGRESS" => ClusterState::InitializeInProgress,
-            "UNINITIALIZED" => ClusterState::Uninitialized,
-            "UPDATE_IN_PROGRESS" => ClusterState::UpdateInProgress,
-            other => ClusterState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ClusterState::Active,
+"CREATE_IN_PROGRESS" => ClusterState::CreateInProgress,
+"DEGRADED" => ClusterState::Degraded,
+"DELETED" => ClusterState::Deleted,
+"DELETE_IN_PROGRESS" => ClusterState::DeleteInProgress,
+"INITIALIZED" => ClusterState::Initialized,
+"INITIALIZE_IN_PROGRESS" => ClusterState::InitializeInProgress,
+"UNINITIALIZED" => ClusterState::Uninitialized,
+"UPDATE_IN_PROGRESS" => ClusterState::UpdateInProgress,
+other => ClusterState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ClusterState {
                 type Err = std::convert::Infallible;
 
@@ -960,33 +958,31 @@ impl std::str::FromStr for ClusterState {
                 }
             }
 impl ClusterState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ClusterState::Active => "ACTIVE",
-            ClusterState::CreateInProgress => "CREATE_IN_PROGRESS",
-            ClusterState::Degraded => "DEGRADED",
-            ClusterState::Deleted => "DELETED",
-            ClusterState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            ClusterState::Initialized => "INITIALIZED",
-            ClusterState::InitializeInProgress => "INITIALIZE_IN_PROGRESS",
-            ClusterState::Uninitialized => "UNINITIALIZED",
-            ClusterState::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            ClusterState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATE_IN_PROGRESS", "DEGRADED", "DELETED", "DELETE_IN_PROGRESS", "INITIALIZED", "INITIALIZE_IN_PROGRESS", "UNINITIALIZED", "UPDATE_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ClusterState::Active => "ACTIVE",
+    ClusterState::CreateInProgress => "CREATE_IN_PROGRESS",
+    ClusterState::Degraded => "DEGRADED",
+    ClusterState::Deleted => "DELETED",
+    ClusterState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    ClusterState::Initialized => "INITIALIZED",
+    ClusterState::InitializeInProgress => "INITIALIZE_IN_PROGRESS",
+    ClusterState::Uninitialized => "UNINITIALIZED",
+    ClusterState::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    ClusterState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_IN_PROGRESS", "DEGRADED", "DELETED", "DELETE_IN_PROGRESS", "INITIALIZED", "INITIALIZE_IN_PROGRESS", "UNINITIALIZED", "UPDATE_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for ClusterState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
@@ -1227,17 +1223,17 @@ pub enum HsmState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HsmState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => HsmState::Active,
-            "CREATE_IN_PROGRESS" => HsmState::CreateInProgress,
-            "DEGRADED" => HsmState::Degraded,
-            "DELETED" => HsmState::Deleted,
-            "DELETE_IN_PROGRESS" => HsmState::DeleteInProgress,
-            other => HsmState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => HsmState::Active,
+"CREATE_IN_PROGRESS" => HsmState::CreateInProgress,
+"DEGRADED" => HsmState::Degraded,
+"DELETED" => HsmState::Deleted,
+"DELETE_IN_PROGRESS" => HsmState::DeleteInProgress,
+other => HsmState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HsmState {
                 type Err = std::convert::Infallible;
 
@@ -1246,29 +1242,27 @@ impl std::str::FromStr for HsmState {
                 }
             }
 impl HsmState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HsmState::Active => "ACTIVE",
-            HsmState::CreateInProgress => "CREATE_IN_PROGRESS",
-            HsmState::Degraded => "DEGRADED",
-            HsmState::Deleted => "DELETED",
-            HsmState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            HsmState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATE_IN_PROGRESS", "DEGRADED", "DELETED", "DELETE_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HsmState::Active => "ACTIVE",
+    HsmState::CreateInProgress => "CREATE_IN_PROGRESS",
+    HsmState::Degraded => "DEGRADED",
+    HsmState::Deleted => "DELETED",
+    HsmState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    HsmState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_IN_PROGRESS", "DEGRADED", "DELETED", "DELETE_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for HsmState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A policy that defines the number of days to retain backups.</p>
 #[non_exhaustive]
@@ -1383,13 +1377,13 @@ pub enum BackupRetentionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BackupRetentionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DAYS" => BackupRetentionType::Days,
-            other => BackupRetentionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DAYS" => BackupRetentionType::Days,
+other => BackupRetentionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BackupRetentionType {
                 type Err = std::convert::Infallible;
 
@@ -1398,25 +1392,23 @@ impl std::str::FromStr for BackupRetentionType {
                 }
             }
 impl BackupRetentionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BackupRetentionType::Days => "DAYS",
-            BackupRetentionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DAYS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BackupRetentionType::Days => "DAYS",
+    BackupRetentionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DAYS"]
+                }
+            }
 impl AsRef<str> for BackupRetentionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `BackupPolicy`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1462,13 +1454,13 @@ pub enum BackupPolicy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BackupPolicy {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEFAULT" => BackupPolicy::Default,
-            other => BackupPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DEFAULT" => BackupPolicy::Default,
+other => BackupPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BackupPolicy {
                 type Err = std::convert::Infallible;
 
@@ -1477,25 +1469,23 @@ impl std::str::FromStr for BackupPolicy {
                 }
             }
 impl BackupPolicy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BackupPolicy::Default => "DEFAULT",
-            BackupPolicy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEFAULT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BackupPolicy::Default => "DEFAULT",
+    BackupPolicy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEFAULT"]
+                }
+            }
 impl AsRef<str> for BackupPolicy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about the backup that will be copied and created by the <code>CopyBackupToRegion</code> operation.</p>
 #[non_exhaustive]

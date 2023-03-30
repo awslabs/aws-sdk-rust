@@ -318,14 +318,14 @@ pub enum Operation {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Operation {
-    fn from(s: &str) -> Self {
-        match s {
-            "remove" => Operation::Remove,
-            "replace" => Operation::Replace,
-            other => Operation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "remove" => Operation::Remove,
+"replace" => Operation::Replace,
+other => Operation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Operation {
                 type Err = std::convert::Infallible;
 
@@ -334,26 +334,24 @@ impl std::str::FromStr for Operation {
                 }
             }
 impl Operation {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Operation::Remove => "remove",
-            Operation::Replace => "replace",
-            Operation::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "remove", "replace"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Operation::Remove => "remove",
+    Operation::Replace => "replace",
+    Operation::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["remove", "replace"]
+                }
+            }
 impl AsRef<str> for Operation {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Configuration options for configure Cognito streams.
 #[non_exhaustive]
@@ -498,14 +496,14 @@ pub enum StreamingStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => StreamingStatus::Disabled,
-            "ENABLED" => StreamingStatus::Enabled,
-            other => StreamingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => StreamingStatus::Disabled,
+"ENABLED" => StreamingStatus::Enabled,
+other => StreamingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingStatus {
                 type Err = std::convert::Infallible;
 
@@ -514,26 +512,24 @@ impl std::str::FromStr for StreamingStatus {
                 }
             }
 impl StreamingStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingStatus::Disabled => "DISABLED",
-            StreamingStatus::Enabled => "ENABLED",
-            StreamingStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED", "ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingStatus::Disabled => "DISABLED",
+    StreamingStatus::Enabled => "ENABLED",
+    StreamingStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "ENABLED"]
+                }
+            }
 impl AsRef<str> for StreamingStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Configuration options to be applied to the identity pool.</p>
 #[non_exhaustive]
@@ -663,16 +659,16 @@ pub enum Platform {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Platform {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADM" => Platform::Adm,
-            "APNS" => Platform::Apns,
-            "APNS_SANDBOX" => Platform::ApnsSandbox,
-            "GCM" => Platform::Gcm,
-            other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADM" => Platform::Adm,
+"APNS" => Platform::Apns,
+"APNS_SANDBOX" => Platform::ApnsSandbox,
+"GCM" => Platform::Gcm,
+other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Platform {
                 type Err = std::convert::Infallible;
 
@@ -681,28 +677,26 @@ impl std::str::FromStr for Platform {
                 }
             }
 impl Platform {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Platform::Adm => "ADM",
-            Platform::Apns => "APNS",
-            Platform::ApnsSandbox => "APNS_SANDBOX",
-            Platform::Gcm => "GCM",
-            Platform::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADM", "APNS", "APNS_SANDBOX", "GCM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Platform::Adm => "ADM",
+    Platform::Apns => "APNS",
+    Platform::ApnsSandbox => "APNS_SANDBOX",
+    Platform::Gcm => "GCM",
+    Platform::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADM", "APNS", "APNS_SANDBOX", "GCM"]
+                }
+            }
 impl AsRef<str> for Platform {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Usage information for the identity pool.
 #[non_exhaustive]
@@ -1028,16 +1022,16 @@ pub enum BulkPublishStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BulkPublishStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => BulkPublishStatus::Failed,
-            "IN_PROGRESS" => BulkPublishStatus::InProgress,
-            "NOT_STARTED" => BulkPublishStatus::NotStarted,
-            "SUCCEEDED" => BulkPublishStatus::Succeeded,
-            other => BulkPublishStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => BulkPublishStatus::Failed,
+"IN_PROGRESS" => BulkPublishStatus::InProgress,
+"NOT_STARTED" => BulkPublishStatus::NotStarted,
+"SUCCEEDED" => BulkPublishStatus::Succeeded,
+other => BulkPublishStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BulkPublishStatus {
                 type Err = std::convert::Infallible;
 
@@ -1046,28 +1040,26 @@ impl std::str::FromStr for BulkPublishStatus {
                 }
             }
 impl BulkPublishStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BulkPublishStatus::Failed => "FAILED",
-            BulkPublishStatus::InProgress => "IN_PROGRESS",
-            BulkPublishStatus::NotStarted => "NOT_STARTED",
-            BulkPublishStatus::Succeeded => "SUCCEEDED",
-            BulkPublishStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BulkPublishStatus::Failed => "FAILED",
+    BulkPublishStatus::InProgress => "IN_PROGRESS",
+    BulkPublishStatus::NotStarted => "NOT_STARTED",
+    BulkPublishStatus::Succeeded => "SUCCEEDED",
+    BulkPublishStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for BulkPublishStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Usage information for the identity.
 #[non_exhaustive]

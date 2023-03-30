@@ -107,14 +107,14 @@ pub enum ContentClassifier {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContentClassifier {
-    fn from(s: &str) -> Self {
-        match s {
-            "FreeOfAdultContent" => ContentClassifier::FreeOfAdultContent,
-            "FreeOfPersonallyIdentifiableInformation" => ContentClassifier::FreeOfPersonallyIdentifiableInformation,
-            other => ContentClassifier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FreeOfAdultContent" => ContentClassifier::FreeOfAdultContent,
+"FreeOfPersonallyIdentifiableInformation" => ContentClassifier::FreeOfPersonallyIdentifiableInformation,
+other => ContentClassifier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ContentClassifier {
                 type Err = std::convert::Infallible;
 
@@ -123,26 +123,24 @@ impl std::str::FromStr for ContentClassifier {
                 }
             }
 impl ContentClassifier {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ContentClassifier::FreeOfAdultContent => "FreeOfAdultContent",
-            ContentClassifier::FreeOfPersonallyIdentifiableInformation => "FreeOfPersonallyIdentifiableInformation",
-            ContentClassifier::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FreeOfAdultContent", "FreeOfPersonallyIdentifiableInformation"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ContentClassifier::FreeOfAdultContent => "FreeOfAdultContent",
+    ContentClassifier::FreeOfPersonallyIdentifiableInformation => "FreeOfPersonallyIdentifiableInformation",
+    ContentClassifier::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FreeOfAdultContent", "FreeOfPersonallyIdentifiableInformation"]
+                }
+            }
 impl AsRef<str> for ContentClassifier {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object containing the human loop input in JSON format.</p>
 #[non_exhaustive]
@@ -376,17 +374,17 @@ pub enum HumanLoopStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HumanLoopStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Completed" => HumanLoopStatus::Completed,
-            "Failed" => HumanLoopStatus::Failed,
-            "InProgress" => HumanLoopStatus::InProgress,
-            "Stopped" => HumanLoopStatus::Stopped,
-            "Stopping" => HumanLoopStatus::Stopping,
-            other => HumanLoopStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Completed" => HumanLoopStatus::Completed,
+"Failed" => HumanLoopStatus::Failed,
+"InProgress" => HumanLoopStatus::InProgress,
+"Stopped" => HumanLoopStatus::Stopped,
+"Stopping" => HumanLoopStatus::Stopping,
+other => HumanLoopStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HumanLoopStatus {
                 type Err = std::convert::Infallible;
 
@@ -395,29 +393,27 @@ impl std::str::FromStr for HumanLoopStatus {
                 }
             }
 impl HumanLoopStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HumanLoopStatus::Completed => "Completed",
-            HumanLoopStatus::Failed => "Failed",
-            HumanLoopStatus::InProgress => "InProgress",
-            HumanLoopStatus::Stopped => "Stopped",
-            HumanLoopStatus::Stopping => "Stopping",
-            HumanLoopStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Completed", "Failed", "InProgress", "Stopped", "Stopping"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HumanLoopStatus::Completed => "Completed",
+    HumanLoopStatus::Failed => "Failed",
+    HumanLoopStatus::InProgress => "InProgress",
+    HumanLoopStatus::Stopped => "Stopped",
+    HumanLoopStatus::Stopping => "Stopping",
+    HumanLoopStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+                }
+            }
 impl AsRef<str> for HumanLoopStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -466,14 +462,14 @@ pub enum SortOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "Ascending" => SortOrder::Ascending,
-            "Descending" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Ascending" => SortOrder::Ascending,
+"Descending" => SortOrder::Descending,
+other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortOrder {
                 type Err = std::convert::Infallible;
 
@@ -482,26 +478,24 @@ impl std::str::FromStr for SortOrder {
                 }
             }
 impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Ascending => "Ascending",
-            SortOrder::Descending => "Descending",
-            SortOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Ascending", "Descending"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortOrder::Ascending => "Ascending",
+    SortOrder::Descending => "Descending",
+    SortOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Ascending", "Descending"]
+                }
+            }
 impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about where the human output will be stored.</p>
 #[non_exhaustive]

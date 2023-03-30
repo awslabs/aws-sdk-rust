@@ -460,15 +460,15 @@ pub enum UsageRecordResultStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageRecordResultStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CustomerNotSubscribed" => UsageRecordResultStatus::CustomerNotSubscribed,
-            "DuplicateRecord" => UsageRecordResultStatus::DuplicateRecord,
-            "Success" => UsageRecordResultStatus::Success,
-            other => UsageRecordResultStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CustomerNotSubscribed" => UsageRecordResultStatus::CustomerNotSubscribed,
+"DuplicateRecord" => UsageRecordResultStatus::DuplicateRecord,
+"Success" => UsageRecordResultStatus::Success,
+other => UsageRecordResultStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UsageRecordResultStatus {
                 type Err = std::convert::Infallible;
 
@@ -477,25 +477,23 @@ impl std::str::FromStr for UsageRecordResultStatus {
                 }
             }
 impl UsageRecordResultStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UsageRecordResultStatus::CustomerNotSubscribed => "CustomerNotSubscribed",
-            UsageRecordResultStatus::DuplicateRecord => "DuplicateRecord",
-            UsageRecordResultStatus::Success => "Success",
-            UsageRecordResultStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CustomerNotSubscribed", "DuplicateRecord", "Success"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UsageRecordResultStatus::CustomerNotSubscribed => "CustomerNotSubscribed",
+    UsageRecordResultStatus::DuplicateRecord => "DuplicateRecord",
+    UsageRecordResultStatus::Success => "Success",
+    UsageRecordResultStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CustomerNotSubscribed", "DuplicateRecord", "Success"]
+                }
+            }
 impl AsRef<str> for UsageRecordResultStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

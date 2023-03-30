@@ -122,16 +122,16 @@ pub enum ValidationExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "cannotParse" => ValidationExceptionReason::CannotParse,
-            "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
-            "other" => ValidationExceptionReason::Other,
-            "unknownOperation" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "cannotParse" => ValidationExceptionReason::CannotParse,
+"fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
+"other" => ValidationExceptionReason::Other,
+"unknownOperation" => ValidationExceptionReason::UnknownOperation,
+other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ValidationExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -140,28 +140,26 @@ impl std::str::FromStr for ValidationExceptionReason {
                 }
             }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::CannotParse => "cannotParse",
-            ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
-            ValidationExceptionReason::Other => "other",
-            ValidationExceptionReason::UnknownOperation => "unknownOperation",
-            ValidationExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "cannotParse", "fieldValidationFailed", "other", "unknownOperation"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::CannotParse => "cannotParse",
+    ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
+    ValidationExceptionReason::Other => "other",
+    ValidationExceptionReason::UnknownOperation => "unknownOperation",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["cannotParse", "fieldValidationFailed", "other", "unknownOperation"]
+                }
+            }
 impl AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Returns information about a specific Elastic DocumentDB cluster.</p>
 #[non_exhaustive]
@@ -504,14 +502,14 @@ pub enum Auth {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Auth {
-    fn from(s: &str) -> Self {
-        match s {
-            "PLAIN_TEXT" => Auth::PlainText,
-            "SECRET_ARN" => Auth::SecretArn,
-            other => Auth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PLAIN_TEXT" => Auth::PlainText,
+"SECRET_ARN" => Auth::SecretArn,
+other => Auth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Auth {
                 type Err = std::convert::Infallible;
 
@@ -520,26 +518,24 @@ impl std::str::FromStr for Auth {
                 }
             }
 impl Auth {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Auth::PlainText => "PLAIN_TEXT",
-            Auth::SecretArn => "SECRET_ARN",
-            Auth::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PLAIN_TEXT", "SECRET_ARN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Auth::PlainText => "PLAIN_TEXT",
+    Auth::SecretArn => "SECRET_ARN",
+    Auth::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PLAIN_TEXT", "SECRET_ARN"]
+                }
+            }
 impl AsRef<str> for Auth {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Status`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -609,21 +605,21 @@ pub enum Status {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => Status::Active,
-            "CREATING" => Status::Creating,
-            "DELETING" => Status::Deleting,
-            "INACCESSIBLE_ENCRYPTION_CREDS" => Status::InaccessibleEncryptionCreds,
-            "INVALID_SECURITY_GROUP_ID" => Status::InvalidSecurityGroupId,
-            "INVALID_SUBNET_ID" => Status::InvalidSubnetId,
-            "IP_ADDRESS_LIMIT_EXCEEDED" => Status::IpAddressLimitExceeded,
-            "UPDATING" => Status::Updating,
-            "VPC_ENDPOINT_LIMIT_EXCEEDED" => Status::VpcEndpointLimitExceeded,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => Status::Active,
+"CREATING" => Status::Creating,
+"DELETING" => Status::Deleting,
+"INACCESSIBLE_ENCRYPTION_CREDS" => Status::InaccessibleEncryptionCreds,
+"INVALID_SECURITY_GROUP_ID" => Status::InvalidSecurityGroupId,
+"INVALID_SUBNET_ID" => Status::InvalidSubnetId,
+"IP_ADDRESS_LIMIT_EXCEEDED" => Status::IpAddressLimitExceeded,
+"UPDATING" => Status::Updating,
+"VPC_ENDPOINT_LIMIT_EXCEEDED" => Status::VpcEndpointLimitExceeded,
+other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Status {
                 type Err = std::convert::Infallible;
 
@@ -632,33 +628,31 @@ impl std::str::FromStr for Status {
                 }
             }
 impl Status {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Status::Active => "ACTIVE",
-            Status::Creating => "CREATING",
-            Status::Deleting => "DELETING",
-            Status::InaccessibleEncryptionCreds => "INACCESSIBLE_ENCRYPTION_CREDS",
-            Status::InvalidSecurityGroupId => "INVALID_SECURITY_GROUP_ID",
-            Status::InvalidSubnetId => "INVALID_SUBNET_ID",
-            Status::IpAddressLimitExceeded => "IP_ADDRESS_LIMIT_EXCEEDED",
-            Status::Updating => "UPDATING",
-            Status::VpcEndpointLimitExceeded => "VPC_ENDPOINT_LIMIT_EXCEEDED",
-            Status::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETING", "INACCESSIBLE_ENCRYPTION_CREDS", "INVALID_SECURITY_GROUP_ID", "INVALID_SUBNET_ID", "IP_ADDRESS_LIMIT_EXCEEDED", "UPDATING", "VPC_ENDPOINT_LIMIT_EXCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Status::Active => "ACTIVE",
+    Status::Creating => "CREATING",
+    Status::Deleting => "DELETING",
+    Status::InaccessibleEncryptionCreds => "INACCESSIBLE_ENCRYPTION_CREDS",
+    Status::InvalidSecurityGroupId => "INVALID_SECURITY_GROUP_ID",
+    Status::InvalidSubnetId => "INVALID_SUBNET_ID",
+    Status::IpAddressLimitExceeded => "IP_ADDRESS_LIMIT_EXCEEDED",
+    Status::Updating => "UPDATING",
+    Status::VpcEndpointLimitExceeded => "VPC_ENDPOINT_LIMIT_EXCEEDED",
+    Status::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETING", "INACCESSIBLE_ENCRYPTION_CREDS", "INVALID_SECURITY_GROUP_ID", "INVALID_SUBNET_ID", "IP_ADDRESS_LIMIT_EXCEEDED", "UPDATING", "VPC_ENDPOINT_LIMIT_EXCEEDED"]
+                }
+            }
 impl AsRef<str> for Status {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A list of Elastic DocumentDB snapshots.</p>
 #[non_exhaustive]

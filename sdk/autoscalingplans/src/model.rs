@@ -486,14 +486,14 @@ pub enum ScalingPolicyUpdateBehavior {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalingPolicyUpdateBehavior {
-    fn from(s: &str) -> Self {
-        match s {
-            "KeepExternalPolicies" => ScalingPolicyUpdateBehavior::KeepExternalPolicies,
-            "ReplaceExternalPolicies" => ScalingPolicyUpdateBehavior::ReplaceExternalPolicies,
-            other => ScalingPolicyUpdateBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "KeepExternalPolicies" => ScalingPolicyUpdateBehavior::KeepExternalPolicies,
+"ReplaceExternalPolicies" => ScalingPolicyUpdateBehavior::ReplaceExternalPolicies,
+other => ScalingPolicyUpdateBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScalingPolicyUpdateBehavior {
                 type Err = std::convert::Infallible;
 
@@ -502,26 +502,24 @@ impl std::str::FromStr for ScalingPolicyUpdateBehavior {
                 }
             }
 impl ScalingPolicyUpdateBehavior {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalingPolicyUpdateBehavior::KeepExternalPolicies => "KeepExternalPolicies",
-            ScalingPolicyUpdateBehavior::ReplaceExternalPolicies => "ReplaceExternalPolicies",
-            ScalingPolicyUpdateBehavior::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "KeepExternalPolicies", "ReplaceExternalPolicies"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalingPolicyUpdateBehavior::KeepExternalPolicies => "KeepExternalPolicies",
+    ScalingPolicyUpdateBehavior::ReplaceExternalPolicies => "ReplaceExternalPolicies",
+    ScalingPolicyUpdateBehavior::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["KeepExternalPolicies", "ReplaceExternalPolicies"]
+                }
+            }
 impl AsRef<str> for ScalingPolicyUpdateBehavior {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PredictiveScalingMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -570,14 +568,14 @@ pub enum PredictiveScalingMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PredictiveScalingMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ForecastAndScale" => PredictiveScalingMode::ForecastAndScale,
-            "ForecastOnly" => PredictiveScalingMode::ForecastOnly,
-            other => PredictiveScalingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ForecastAndScale" => PredictiveScalingMode::ForecastAndScale,
+"ForecastOnly" => PredictiveScalingMode::ForecastOnly,
+other => PredictiveScalingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PredictiveScalingMode {
                 type Err = std::convert::Infallible;
 
@@ -586,26 +584,24 @@ impl std::str::FromStr for PredictiveScalingMode {
                 }
             }
 impl PredictiveScalingMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PredictiveScalingMode::ForecastAndScale => "ForecastAndScale",
-            PredictiveScalingMode::ForecastOnly => "ForecastOnly",
-            PredictiveScalingMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ForecastAndScale", "ForecastOnly"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PredictiveScalingMode::ForecastAndScale => "ForecastAndScale",
+    PredictiveScalingMode::ForecastOnly => "ForecastOnly",
+    PredictiveScalingMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ForecastAndScale", "ForecastOnly"]
+                }
+            }
 impl AsRef<str> for PredictiveScalingMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PredictiveScalingMaxCapacityBehavior`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -657,15 +653,15 @@ pub enum PredictiveScalingMaxCapacityBehavior {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PredictiveScalingMaxCapacityBehavior {
-    fn from(s: &str) -> Self {
-        match s {
-            "SetForecastCapacityToMaxCapacity" => PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity,
-            "SetMaxCapacityAboveForecastCapacity" => PredictiveScalingMaxCapacityBehavior::SetMaxCapacityAboveForecastCapacity,
-            "SetMaxCapacityToForecastCapacity" => PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity,
-            other => PredictiveScalingMaxCapacityBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SetForecastCapacityToMaxCapacity" => PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity,
+"SetMaxCapacityAboveForecastCapacity" => PredictiveScalingMaxCapacityBehavior::SetMaxCapacityAboveForecastCapacity,
+"SetMaxCapacityToForecastCapacity" => PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity,
+other => PredictiveScalingMaxCapacityBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PredictiveScalingMaxCapacityBehavior {
                 type Err = std::convert::Infallible;
 
@@ -674,27 +670,25 @@ impl std::str::FromStr for PredictiveScalingMaxCapacityBehavior {
                 }
             }
 impl PredictiveScalingMaxCapacityBehavior {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity => "SetForecastCapacityToMaxCapacity",
-            PredictiveScalingMaxCapacityBehavior::SetMaxCapacityAboveForecastCapacity => "SetMaxCapacityAboveForecastCapacity",
-            PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity => "SetMaxCapacityToForecastCapacity",
-            PredictiveScalingMaxCapacityBehavior::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SetForecastCapacityToMaxCapacity", "SetMaxCapacityAboveForecastCapacity", "SetMaxCapacityToForecastCapacity"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity => "SetForecastCapacityToMaxCapacity",
+    PredictiveScalingMaxCapacityBehavior::SetMaxCapacityAboveForecastCapacity => "SetMaxCapacityAboveForecastCapacity",
+    PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity => "SetMaxCapacityToForecastCapacity",
+    PredictiveScalingMaxCapacityBehavior::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SetForecastCapacityToMaxCapacity", "SetMaxCapacityAboveForecastCapacity", "SetMaxCapacityToForecastCapacity"]
+                }
+            }
 impl AsRef<str> for PredictiveScalingMaxCapacityBehavior {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a CloudWatch metric of your choosing that can be used for predictive scaling. </p> 
 /// <p>For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data.</p> 
@@ -893,17 +887,17 @@ pub enum MetricStatistic {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricStatistic {
-    fn from(s: &str) -> Self {
-        match s {
-            "Average" => MetricStatistic::Average,
-            "Maximum" => MetricStatistic::Maximum,
-            "Minimum" => MetricStatistic::Minimum,
-            "SampleCount" => MetricStatistic::SampleCount,
-            "Sum" => MetricStatistic::Sum,
-            other => MetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Average" => MetricStatistic::Average,
+"Maximum" => MetricStatistic::Maximum,
+"Minimum" => MetricStatistic::Minimum,
+"SampleCount" => MetricStatistic::SampleCount,
+"Sum" => MetricStatistic::Sum,
+other => MetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricStatistic {
                 type Err = std::convert::Infallible;
 
@@ -912,29 +906,27 @@ impl std::str::FromStr for MetricStatistic {
                 }
             }
 impl MetricStatistic {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricStatistic::Average => "Average",
-            MetricStatistic::Maximum => "Maximum",
-            MetricStatistic::Minimum => "Minimum",
-            MetricStatistic::SampleCount => "SampleCount",
-            MetricStatistic::Sum => "Sum",
-            MetricStatistic::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Average", "Maximum", "Minimum", "SampleCount", "Sum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricStatistic::Average => "Average",
+    MetricStatistic::Maximum => "Maximum",
+    MetricStatistic::Minimum => "Minimum",
+    MetricStatistic::SampleCount => "SampleCount",
+    MetricStatistic::Sum => "Sum",
+    MetricStatistic::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
+                }
+            }
 impl AsRef<str> for MetricStatistic {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a dimension for a customized metric.</p>
 #[non_exhaustive]
@@ -1240,16 +1232,16 @@ pub enum LoadMetricType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LoadMetricType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALBTargetGroupRequestCount" => LoadMetricType::AlbTargetGroupRequestCount,
-            "ASGTotalCPUUtilization" => LoadMetricType::AsgTotalCpuUtilization,
-            "ASGTotalNetworkIn" => LoadMetricType::AsgTotalNetworkIn,
-            "ASGTotalNetworkOut" => LoadMetricType::AsgTotalNetworkOut,
-            other => LoadMetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALBTargetGroupRequestCount" => LoadMetricType::AlbTargetGroupRequestCount,
+"ASGTotalCPUUtilization" => LoadMetricType::AsgTotalCpuUtilization,
+"ASGTotalNetworkIn" => LoadMetricType::AsgTotalNetworkIn,
+"ASGTotalNetworkOut" => LoadMetricType::AsgTotalNetworkOut,
+other => LoadMetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LoadMetricType {
                 type Err = std::convert::Infallible;
 
@@ -1258,28 +1250,26 @@ impl std::str::FromStr for LoadMetricType {
                 }
             }
 impl LoadMetricType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LoadMetricType::AlbTargetGroupRequestCount => "ALBTargetGroupRequestCount",
-            LoadMetricType::AsgTotalCpuUtilization => "ASGTotalCPUUtilization",
-            LoadMetricType::AsgTotalNetworkIn => "ASGTotalNetworkIn",
-            LoadMetricType::AsgTotalNetworkOut => "ASGTotalNetworkOut",
-            LoadMetricType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALBTargetGroupRequestCount", "ASGTotalCPUUtilization", "ASGTotalNetworkIn", "ASGTotalNetworkOut"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LoadMetricType::AlbTargetGroupRequestCount => "ALBTargetGroupRequestCount",
+    LoadMetricType::AsgTotalCpuUtilization => "ASGTotalCPUUtilization",
+    LoadMetricType::AsgTotalNetworkIn => "ASGTotalNetworkIn",
+    LoadMetricType::AsgTotalNetworkOut => "ASGTotalNetworkOut",
+    LoadMetricType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALBTargetGroupRequestCount", "ASGTotalCPUUtilization", "ASGTotalNetworkIn", "ASGTotalNetworkOut"]
+                }
+            }
 impl AsRef<str> for LoadMetricType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a target tracking configuration to use with AWS Auto Scaling. Used with <code>ScalingInstruction</code> and <code>ScalingPolicy</code>.</p>
 #[non_exhaustive]
@@ -1860,25 +1850,25 @@ pub enum ScalingMetricType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalingMetricType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALBRequestCountPerTarget" => ScalingMetricType::AlbRequestCountPerTarget,
-            "ASGAverageCPUUtilization" => ScalingMetricType::AsgAverageCpuUtilization,
-            "ASGAverageNetworkIn" => ScalingMetricType::AsgAverageNetworkIn,
-            "ASGAverageNetworkOut" => ScalingMetricType::AsgAverageNetworkOut,
-            "DynamoDBReadCapacityUtilization" => ScalingMetricType::DynamoDbReadCapacityUtilization,
-            "DynamoDBWriteCapacityUtilization" => ScalingMetricType::DynamoDbWriteCapacityUtilization,
-            "EC2SpotFleetRequestAverageCPUUtilization" => ScalingMetricType::Ec2SpotFleetRequestAverageCpuUtilization,
-            "EC2SpotFleetRequestAverageNetworkIn" => ScalingMetricType::Ec2SpotFleetRequestAverageNetworkIn,
-            "EC2SpotFleetRequestAverageNetworkOut" => ScalingMetricType::Ec2SpotFleetRequestAverageNetworkOut,
-            "ECSServiceAverageCPUUtilization" => ScalingMetricType::EcsServiceAverageCpuUtilization,
-            "ECSServiceAverageMemoryUtilization" => ScalingMetricType::EcsServiceAverageMemoryUtilization,
-            "RDSReaderAverageCPUUtilization" => ScalingMetricType::RdsReaderAverageCpuUtilization,
-            "RDSReaderAverageDatabaseConnections" => ScalingMetricType::RdsReaderAverageDatabaseConnections,
-            other => ScalingMetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALBRequestCountPerTarget" => ScalingMetricType::AlbRequestCountPerTarget,
+"ASGAverageCPUUtilization" => ScalingMetricType::AsgAverageCpuUtilization,
+"ASGAverageNetworkIn" => ScalingMetricType::AsgAverageNetworkIn,
+"ASGAverageNetworkOut" => ScalingMetricType::AsgAverageNetworkOut,
+"DynamoDBReadCapacityUtilization" => ScalingMetricType::DynamoDbReadCapacityUtilization,
+"DynamoDBWriteCapacityUtilization" => ScalingMetricType::DynamoDbWriteCapacityUtilization,
+"EC2SpotFleetRequestAverageCPUUtilization" => ScalingMetricType::Ec2SpotFleetRequestAverageCpuUtilization,
+"EC2SpotFleetRequestAverageNetworkIn" => ScalingMetricType::Ec2SpotFleetRequestAverageNetworkIn,
+"EC2SpotFleetRequestAverageNetworkOut" => ScalingMetricType::Ec2SpotFleetRequestAverageNetworkOut,
+"ECSServiceAverageCPUUtilization" => ScalingMetricType::EcsServiceAverageCpuUtilization,
+"ECSServiceAverageMemoryUtilization" => ScalingMetricType::EcsServiceAverageMemoryUtilization,
+"RDSReaderAverageCPUUtilization" => ScalingMetricType::RdsReaderAverageCpuUtilization,
+"RDSReaderAverageDatabaseConnections" => ScalingMetricType::RdsReaderAverageDatabaseConnections,
+other => ScalingMetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScalingMetricType {
                 type Err = std::convert::Infallible;
 
@@ -1887,37 +1877,35 @@ impl std::str::FromStr for ScalingMetricType {
                 }
             }
 impl ScalingMetricType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalingMetricType::AlbRequestCountPerTarget => "ALBRequestCountPerTarget",
-            ScalingMetricType::AsgAverageCpuUtilization => "ASGAverageCPUUtilization",
-            ScalingMetricType::AsgAverageNetworkIn => "ASGAverageNetworkIn",
-            ScalingMetricType::AsgAverageNetworkOut => "ASGAverageNetworkOut",
-            ScalingMetricType::DynamoDbReadCapacityUtilization => "DynamoDBReadCapacityUtilization",
-            ScalingMetricType::DynamoDbWriteCapacityUtilization => "DynamoDBWriteCapacityUtilization",
-            ScalingMetricType::Ec2SpotFleetRequestAverageCpuUtilization => "EC2SpotFleetRequestAverageCPUUtilization",
-            ScalingMetricType::Ec2SpotFleetRequestAverageNetworkIn => "EC2SpotFleetRequestAverageNetworkIn",
-            ScalingMetricType::Ec2SpotFleetRequestAverageNetworkOut => "EC2SpotFleetRequestAverageNetworkOut",
-            ScalingMetricType::EcsServiceAverageCpuUtilization => "ECSServiceAverageCPUUtilization",
-            ScalingMetricType::EcsServiceAverageMemoryUtilization => "ECSServiceAverageMemoryUtilization",
-            ScalingMetricType::RdsReaderAverageCpuUtilization => "RDSReaderAverageCPUUtilization",
-            ScalingMetricType::RdsReaderAverageDatabaseConnections => "RDSReaderAverageDatabaseConnections",
-            ScalingMetricType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALBRequestCountPerTarget", "ASGAverageCPUUtilization", "ASGAverageNetworkIn", "ASGAverageNetworkOut", "DynamoDBReadCapacityUtilization", "DynamoDBWriteCapacityUtilization", "EC2SpotFleetRequestAverageCPUUtilization", "EC2SpotFleetRequestAverageNetworkIn", "EC2SpotFleetRequestAverageNetworkOut", "ECSServiceAverageCPUUtilization", "ECSServiceAverageMemoryUtilization", "RDSReaderAverageCPUUtilization", "RDSReaderAverageDatabaseConnections"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalingMetricType::AlbRequestCountPerTarget => "ALBRequestCountPerTarget",
+    ScalingMetricType::AsgAverageCpuUtilization => "ASGAverageCPUUtilization",
+    ScalingMetricType::AsgAverageNetworkIn => "ASGAverageNetworkIn",
+    ScalingMetricType::AsgAverageNetworkOut => "ASGAverageNetworkOut",
+    ScalingMetricType::DynamoDbReadCapacityUtilization => "DynamoDBReadCapacityUtilization",
+    ScalingMetricType::DynamoDbWriteCapacityUtilization => "DynamoDBWriteCapacityUtilization",
+    ScalingMetricType::Ec2SpotFleetRequestAverageCpuUtilization => "EC2SpotFleetRequestAverageCPUUtilization",
+    ScalingMetricType::Ec2SpotFleetRequestAverageNetworkIn => "EC2SpotFleetRequestAverageNetworkIn",
+    ScalingMetricType::Ec2SpotFleetRequestAverageNetworkOut => "EC2SpotFleetRequestAverageNetworkOut",
+    ScalingMetricType::EcsServiceAverageCpuUtilization => "ECSServiceAverageCPUUtilization",
+    ScalingMetricType::EcsServiceAverageMemoryUtilization => "ECSServiceAverageMemoryUtilization",
+    ScalingMetricType::RdsReaderAverageCpuUtilization => "RDSReaderAverageCPUUtilization",
+    ScalingMetricType::RdsReaderAverageDatabaseConnections => "RDSReaderAverageDatabaseConnections",
+    ScalingMetricType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALBRequestCountPerTarget", "ASGAverageCPUUtilization", "ASGAverageNetworkIn", "ASGAverageNetworkOut", "DynamoDBReadCapacityUtilization", "DynamoDBWriteCapacityUtilization", "EC2SpotFleetRequestAverageCPUUtilization", "EC2SpotFleetRequestAverageNetworkIn", "EC2SpotFleetRequestAverageNetworkOut", "ECSServiceAverageCPUUtilization", "ECSServiceAverageMemoryUtilization", "RDSReaderAverageCPUUtilization", "RDSReaderAverageDatabaseConnections"]
+                }
+            }
 impl AsRef<str> for ScalingMetricType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ScalableDimension`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1984,20 +1972,20 @@ pub enum ScalableDimension {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalableDimension {
-    fn from(s: &str) -> Self {
-        match s {
-            "autoscaling:autoScalingGroup:DesiredCapacity" => ScalableDimension::AutoScalingGroupDesiredCapacity,
-            "dynamodb:index:ReadCapacityUnits" => ScalableDimension::DynamoDbIndexReadCapacityUnits,
-            "dynamodb:index:WriteCapacityUnits" => ScalableDimension::DynamoDbIndexWriteCapacityUnits,
-            "dynamodb:table:ReadCapacityUnits" => ScalableDimension::DynamoDbTableReadCapacityUnits,
-            "dynamodb:table:WriteCapacityUnits" => ScalableDimension::DynamoDbTableWriteCapacityUnits,
-            "ec2:spot-fleet-request:TargetCapacity" => ScalableDimension::Ec2SpotFleetRequestTargetCapacity,
-            "ecs:service:DesiredCount" => ScalableDimension::EcsServiceDesiredCount,
-            "rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
-            other => ScalableDimension::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "autoscaling:autoScalingGroup:DesiredCapacity" => ScalableDimension::AutoScalingGroupDesiredCapacity,
+"dynamodb:index:ReadCapacityUnits" => ScalableDimension::DynamoDbIndexReadCapacityUnits,
+"dynamodb:index:WriteCapacityUnits" => ScalableDimension::DynamoDbIndexWriteCapacityUnits,
+"dynamodb:table:ReadCapacityUnits" => ScalableDimension::DynamoDbTableReadCapacityUnits,
+"dynamodb:table:WriteCapacityUnits" => ScalableDimension::DynamoDbTableWriteCapacityUnits,
+"ec2:spot-fleet-request:TargetCapacity" => ScalableDimension::Ec2SpotFleetRequestTargetCapacity,
+"ecs:service:DesiredCount" => ScalableDimension::EcsServiceDesiredCount,
+"rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
+other => ScalableDimension::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScalableDimension {
                 type Err = std::convert::Infallible;
 
@@ -2006,32 +1994,30 @@ impl std::str::FromStr for ScalableDimension {
                 }
             }
 impl ScalableDimension {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalableDimension::AutoScalingGroupDesiredCapacity => "autoscaling:autoScalingGroup:DesiredCapacity",
-            ScalableDimension::DynamoDbIndexReadCapacityUnits => "dynamodb:index:ReadCapacityUnits",
-            ScalableDimension::DynamoDbIndexWriteCapacityUnits => "dynamodb:index:WriteCapacityUnits",
-            ScalableDimension::DynamoDbTableReadCapacityUnits => "dynamodb:table:ReadCapacityUnits",
-            ScalableDimension::DynamoDbTableWriteCapacityUnits => "dynamodb:table:WriteCapacityUnits",
-            ScalableDimension::Ec2SpotFleetRequestTargetCapacity => "ec2:spot-fleet-request:TargetCapacity",
-            ScalableDimension::EcsServiceDesiredCount => "ecs:service:DesiredCount",
-            ScalableDimension::RdsClusterReadReplicaCount => "rds:cluster:ReadReplicaCount",
-            ScalableDimension::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "autoscaling:autoScalingGroup:DesiredCapacity", "dynamodb:index:ReadCapacityUnits", "dynamodb:index:WriteCapacityUnits", "dynamodb:table:ReadCapacityUnits", "dynamodb:table:WriteCapacityUnits", "ec2:spot-fleet-request:TargetCapacity", "ecs:service:DesiredCount", "rds:cluster:ReadReplicaCount"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalableDimension::AutoScalingGroupDesiredCapacity => "autoscaling:autoScalingGroup:DesiredCapacity",
+    ScalableDimension::DynamoDbIndexReadCapacityUnits => "dynamodb:index:ReadCapacityUnits",
+    ScalableDimension::DynamoDbIndexWriteCapacityUnits => "dynamodb:index:WriteCapacityUnits",
+    ScalableDimension::DynamoDbTableReadCapacityUnits => "dynamodb:table:ReadCapacityUnits",
+    ScalableDimension::DynamoDbTableWriteCapacityUnits => "dynamodb:table:WriteCapacityUnits",
+    ScalableDimension::Ec2SpotFleetRequestTargetCapacity => "ec2:spot-fleet-request:TargetCapacity",
+    ScalableDimension::EcsServiceDesiredCount => "ecs:service:DesiredCount",
+    ScalableDimension::RdsClusterReadReplicaCount => "rds:cluster:ReadReplicaCount",
+    ScalableDimension::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["autoscaling:autoScalingGroup:DesiredCapacity", "dynamodb:index:ReadCapacityUnits", "dynamodb:index:WriteCapacityUnits", "dynamodb:table:ReadCapacityUnits", "dynamodb:table:WriteCapacityUnits", "ec2:spot-fleet-request:TargetCapacity", "ecs:service:DesiredCount", "rds:cluster:ReadReplicaCount"]
+                }
+            }
 impl AsRef<str> for ScalableDimension {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ServiceNamespace`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2089,17 +2075,17 @@ pub enum ServiceNamespace {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceNamespace {
-    fn from(s: &str) -> Self {
-        match s {
-            "autoscaling" => ServiceNamespace::Autoscaling,
-            "dynamodb" => ServiceNamespace::Dynamodb,
-            "ec2" => ServiceNamespace::Ec2,
-            "ecs" => ServiceNamespace::Ecs,
-            "rds" => ServiceNamespace::Rds,
-            other => ServiceNamespace::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "autoscaling" => ServiceNamespace::Autoscaling,
+"dynamodb" => ServiceNamespace::Dynamodb,
+"ec2" => ServiceNamespace::Ec2,
+"ecs" => ServiceNamespace::Ecs,
+"rds" => ServiceNamespace::Rds,
+other => ServiceNamespace::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ServiceNamespace {
                 type Err = std::convert::Infallible;
 
@@ -2108,29 +2094,27 @@ impl std::str::FromStr for ServiceNamespace {
                 }
             }
 impl ServiceNamespace {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceNamespace::Autoscaling => "autoscaling",
-            ServiceNamespace::Dynamodb => "dynamodb",
-            ServiceNamespace::Ec2 => "ec2",
-            ServiceNamespace::Ecs => "ecs",
-            ServiceNamespace::Rds => "rds",
-            ServiceNamespace::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "autoscaling", "dynamodb", "ec2", "ecs", "rds"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceNamespace::Autoscaling => "autoscaling",
+    ServiceNamespace::Dynamodb => "dynamodb",
+    ServiceNamespace::Ec2 => "ec2",
+    ServiceNamespace::Ecs => "ecs",
+    ServiceNamespace::Rds => "rds",
+    ServiceNamespace::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["autoscaling", "dynamodb", "ec2", "ecs", "rds"]
+                }
+            }
 impl AsRef<str> for ServiceNamespace {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents an application source.</p>
 #[non_exhaustive]
@@ -2404,16 +2388,16 @@ pub enum ForecastDataType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ForecastDataType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CapacityForecast" => ForecastDataType::CapacityForecast,
-            "LoadForecast" => ForecastDataType::LoadForecast,
-            "ScheduledActionMaxCapacity" => ForecastDataType::ScheduledActionMaxCapacity,
-            "ScheduledActionMinCapacity" => ForecastDataType::ScheduledActionMinCapacity,
-            other => ForecastDataType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CapacityForecast" => ForecastDataType::CapacityForecast,
+"LoadForecast" => ForecastDataType::LoadForecast,
+"ScheduledActionMaxCapacity" => ForecastDataType::ScheduledActionMaxCapacity,
+"ScheduledActionMinCapacity" => ForecastDataType::ScheduledActionMinCapacity,
+other => ForecastDataType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ForecastDataType {
                 type Err = std::convert::Infallible;
 
@@ -2422,28 +2406,26 @@ impl std::str::FromStr for ForecastDataType {
                 }
             }
 impl ForecastDataType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ForecastDataType::CapacityForecast => "CapacityForecast",
-            ForecastDataType::LoadForecast => "LoadForecast",
-            ForecastDataType::ScheduledActionMaxCapacity => "ScheduledActionMaxCapacity",
-            ForecastDataType::ScheduledActionMinCapacity => "ScheduledActionMinCapacity",
-            ForecastDataType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CapacityForecast", "LoadForecast", "ScheduledActionMaxCapacity", "ScheduledActionMinCapacity"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ForecastDataType::CapacityForecast => "CapacityForecast",
+    ForecastDataType::LoadForecast => "LoadForecast",
+    ForecastDataType::ScheduledActionMaxCapacity => "ScheduledActionMaxCapacity",
+    ForecastDataType::ScheduledActionMinCapacity => "ScheduledActionMinCapacity",
+    ForecastDataType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CapacityForecast", "LoadForecast", "ScheduledActionMaxCapacity", "ScheduledActionMinCapacity"]
+                }
+            }
 impl AsRef<str> for ForecastDataType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a scaling plan.</p>
 #[non_exhaustive]
@@ -2739,20 +2721,20 @@ pub enum ScalingPlanStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalingPlanStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => ScalingPlanStatusCode::Active,
-            "ActiveWithProblems" => ScalingPlanStatusCode::ActiveWithProblems,
-            "CreationFailed" => ScalingPlanStatusCode::CreationFailed,
-            "CreationInProgress" => ScalingPlanStatusCode::CreationInProgress,
-            "DeletionFailed" => ScalingPlanStatusCode::DeletionFailed,
-            "DeletionInProgress" => ScalingPlanStatusCode::DeletionInProgress,
-            "UpdateFailed" => ScalingPlanStatusCode::UpdateFailed,
-            "UpdateInProgress" => ScalingPlanStatusCode::UpdateInProgress,
-            other => ScalingPlanStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => ScalingPlanStatusCode::Active,
+"ActiveWithProblems" => ScalingPlanStatusCode::ActiveWithProblems,
+"CreationFailed" => ScalingPlanStatusCode::CreationFailed,
+"CreationInProgress" => ScalingPlanStatusCode::CreationInProgress,
+"DeletionFailed" => ScalingPlanStatusCode::DeletionFailed,
+"DeletionInProgress" => ScalingPlanStatusCode::DeletionInProgress,
+"UpdateFailed" => ScalingPlanStatusCode::UpdateFailed,
+"UpdateInProgress" => ScalingPlanStatusCode::UpdateInProgress,
+other => ScalingPlanStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScalingPlanStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -2761,32 +2743,30 @@ impl std::str::FromStr for ScalingPlanStatusCode {
                 }
             }
 impl ScalingPlanStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalingPlanStatusCode::Active => "Active",
-            ScalingPlanStatusCode::ActiveWithProblems => "ActiveWithProblems",
-            ScalingPlanStatusCode::CreationFailed => "CreationFailed",
-            ScalingPlanStatusCode::CreationInProgress => "CreationInProgress",
-            ScalingPlanStatusCode::DeletionFailed => "DeletionFailed",
-            ScalingPlanStatusCode::DeletionInProgress => "DeletionInProgress",
-            ScalingPlanStatusCode::UpdateFailed => "UpdateFailed",
-            ScalingPlanStatusCode::UpdateInProgress => "UpdateInProgress",
-            ScalingPlanStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "ActiveWithProblems", "CreationFailed", "CreationInProgress", "DeletionFailed", "DeletionInProgress", "UpdateFailed", "UpdateInProgress"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalingPlanStatusCode::Active => "Active",
+    ScalingPlanStatusCode::ActiveWithProblems => "ActiveWithProblems",
+    ScalingPlanStatusCode::CreationFailed => "CreationFailed",
+    ScalingPlanStatusCode::CreationInProgress => "CreationInProgress",
+    ScalingPlanStatusCode::DeletionFailed => "DeletionFailed",
+    ScalingPlanStatusCode::DeletionInProgress => "DeletionInProgress",
+    ScalingPlanStatusCode::UpdateFailed => "UpdateFailed",
+    ScalingPlanStatusCode::UpdateInProgress => "UpdateInProgress",
+    ScalingPlanStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "ActiveWithProblems", "CreationFailed", "CreationInProgress", "DeletionFailed", "DeletionInProgress", "UpdateFailed", "UpdateInProgress"]
+                }
+            }
 impl AsRef<str> for ScalingPlanStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a scalable resource.</p>
 #[non_exhaustive]
@@ -3119,15 +3099,15 @@ pub enum ScalingStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalingStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => ScalingStatusCode::Active,
-            "Inactive" => ScalingStatusCode::Inactive,
-            "PartiallyActive" => ScalingStatusCode::PartiallyActive,
-            other => ScalingStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => ScalingStatusCode::Active,
+"Inactive" => ScalingStatusCode::Inactive,
+"PartiallyActive" => ScalingStatusCode::PartiallyActive,
+other => ScalingStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScalingStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -3136,27 +3116,25 @@ impl std::str::FromStr for ScalingStatusCode {
                 }
             }
 impl ScalingStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScalingStatusCode::Active => "Active",
-            ScalingStatusCode::Inactive => "Inactive",
-            ScalingStatusCode::PartiallyActive => "PartiallyActive",
-            ScalingStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "Inactive", "PartiallyActive"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScalingStatusCode::Active => "Active",
+    ScalingStatusCode::Inactive => "Inactive",
+    ScalingStatusCode::PartiallyActive => "PartiallyActive",
+    ScalingStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Inactive", "PartiallyActive"]
+                }
+            }
 impl AsRef<str> for ScalingStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a scaling policy.</p>
 #[non_exhaustive]
@@ -3290,13 +3268,13 @@ pub enum PolicyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PolicyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "TargetTrackingScaling" => PolicyType::TargetTrackingScaling,
-            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "TargetTrackingScaling" => PolicyType::TargetTrackingScaling,
+other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PolicyType {
                 type Err = std::convert::Infallible;
 
@@ -3305,23 +3283,21 @@ impl std::str::FromStr for PolicyType {
                 }
             }
 impl PolicyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PolicyType::TargetTrackingScaling => "TargetTrackingScaling",
-            PolicyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "TargetTrackingScaling"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PolicyType::TargetTrackingScaling => "TargetTrackingScaling",
+    PolicyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["TargetTrackingScaling"]
+                }
+            }
 impl AsRef<str> for PolicyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

@@ -56,17 +56,17 @@ pub enum ParallelDataStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParallelDataStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ParallelDataStatus::Active,
-            "CREATING" => ParallelDataStatus::Creating,
-            "DELETING" => ParallelDataStatus::Deleting,
-            "FAILED" => ParallelDataStatus::Failed,
-            "UPDATING" => ParallelDataStatus::Updating,
-            other => ParallelDataStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ParallelDataStatus::Active,
+"CREATING" => ParallelDataStatus::Creating,
+"DELETING" => ParallelDataStatus::Deleting,
+"FAILED" => ParallelDataStatus::Failed,
+"UPDATING" => ParallelDataStatus::Updating,
+other => ParallelDataStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ParallelDataStatus {
                 type Err = std::convert::Infallible;
 
@@ -75,29 +75,27 @@ impl std::str::FromStr for ParallelDataStatus {
                 }
             }
 impl ParallelDataStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ParallelDataStatus::Active => "ACTIVE",
-            ParallelDataStatus::Creating => "CREATING",
-            ParallelDataStatus::Deleting => "DELETING",
-            ParallelDataStatus::Failed => "FAILED",
-            ParallelDataStatus::Updating => "UPDATING",
-            ParallelDataStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ParallelDataStatus::Active => "ACTIVE",
+    ParallelDataStatus::Creating => "CREATING",
+    ParallelDataStatus::Deleting => "DELETING",
+    ParallelDataStatus::Failed => "FAILED",
+    ParallelDataStatus::Updating => "UPDATING",
+    ParallelDataStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for ParallelDataStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Specifies the format and S3 location of the parallel data input file.</p>
 #[non_exhaustive]
@@ -218,15 +216,15 @@ pub enum ParallelDataFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParallelDataFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "CSV" => ParallelDataFormat::Csv,
-            "TMX" => ParallelDataFormat::Tmx,
-            "TSV" => ParallelDataFormat::Tsv,
-            other => ParallelDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CSV" => ParallelDataFormat::Csv,
+"TMX" => ParallelDataFormat::Tmx,
+"TSV" => ParallelDataFormat::Tsv,
+other => ParallelDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ParallelDataFormat {
                 type Err = std::convert::Infallible;
 
@@ -235,27 +233,25 @@ impl std::str::FromStr for ParallelDataFormat {
                 }
             }
 impl ParallelDataFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ParallelDataFormat::Csv => "CSV",
-            ParallelDataFormat::Tmx => "TMX",
-            ParallelDataFormat::Tsv => "TSV",
-            ParallelDataFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CSV", "TMX", "TSV"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ParallelDataFormat::Csv => "CSV",
+    ParallelDataFormat::Tmx => "TMX",
+    ParallelDataFormat::Tsv => "TSV",
+    ParallelDataFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CSV", "TMX", "TSV"]
+                }
+            }
 impl AsRef<str> for ParallelDataFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Optional settings that configure the translation output. Use these settings for real time translations and asynchronous translation jobs.</p>
 #[non_exhaustive]
@@ -390,13 +386,13 @@ pub enum Profanity {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Profanity {
-    fn from(s: &str) -> Self {
-        match s {
-            "MASK" => Profanity::Mask,
-            other => Profanity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MASK" => Profanity::Mask,
+other => Profanity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Profanity {
                 type Err = std::convert::Infallible;
 
@@ -405,25 +401,23 @@ impl std::str::FromStr for Profanity {
                 }
             }
 impl Profanity {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Profanity::Mask => "MASK",
-            Profanity::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MASK"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Profanity::Mask => "MASK",
+    Profanity::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MASK"]
+                }
+            }
 impl AsRef<str> for Profanity {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Formality`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -472,14 +466,14 @@ pub enum Formality {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Formality {
-    fn from(s: &str) -> Self {
-        match s {
-            "FORMAL" => Formality::Formal,
-            "INFORMAL" => Formality::Informal,
-            other => Formality::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FORMAL" => Formality::Formal,
+"INFORMAL" => Formality::Informal,
+other => Formality::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Formality {
                 type Err = std::convert::Infallible;
 
@@ -488,26 +482,24 @@ impl std::str::FromStr for Formality {
                 }
             }
 impl Formality {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Formality::Formal => "FORMAL",
-            Formality::Informal => "INFORMAL",
-            Formality::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FORMAL", "INFORMAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Formality::Formal => "FORMAL",
+    Formality::Informal => "INFORMAL",
+    Formality::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FORMAL", "INFORMAL"]
+                }
+            }
 impl AsRef<str> for Formality {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request.</p>
 #[non_exhaustive]
@@ -784,19 +776,19 @@ pub enum JobStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => JobStatus::Completed,
-            "COMPLETED_WITH_ERROR" => JobStatus::CompletedWithError,
-            "FAILED" => JobStatus::Failed,
-            "IN_PROGRESS" => JobStatus::InProgress,
-            "STOPPED" => JobStatus::Stopped,
-            "STOP_REQUESTED" => JobStatus::StopRequested,
-            "SUBMITTED" => JobStatus::Submitted,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => JobStatus::Completed,
+"COMPLETED_WITH_ERROR" => JobStatus::CompletedWithError,
+"FAILED" => JobStatus::Failed,
+"IN_PROGRESS" => JobStatus::InProgress,
+"STOPPED" => JobStatus::Stopped,
+"STOP_REQUESTED" => JobStatus::StopRequested,
+"SUBMITTED" => JobStatus::Submitted,
+other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobStatus {
                 type Err = std::convert::Infallible;
 
@@ -805,31 +797,29 @@ impl std::str::FromStr for JobStatus {
                 }
             }
 impl JobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobStatus::Completed => "COMPLETED",
-            JobStatus::CompletedWithError => "COMPLETED_WITH_ERROR",
-            JobStatus::Failed => "FAILED",
-            JobStatus::InProgress => "IN_PROGRESS",
-            JobStatus::Stopped => "STOPPED",
-            JobStatus::StopRequested => "STOP_REQUESTED",
-            JobStatus::Submitted => "SUBMITTED",
-            JobStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "COMPLETED_WITH_ERROR", "FAILED", "IN_PROGRESS", "STOPPED", "STOP_REQUESTED", "SUBMITTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobStatus::Completed => "COMPLETED",
+    JobStatus::CompletedWithError => "COMPLETED_WITH_ERROR",
+    JobStatus::Failed => "FAILED",
+    JobStatus::InProgress => "IN_PROGRESS",
+    JobStatus::Stopped => "STOPPED",
+    JobStatus::StopRequested => "STOP_REQUESTED",
+    JobStatus::Submitted => "SUBMITTED",
+    JobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "COMPLETED_WITH_ERROR", "FAILED", "IN_PROGRESS", "STOPPED", "STOP_REQUESTED", "SUBMITTED"]
+                }
+            }
 impl AsRef<str> for JobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The output configuration properties for a batch translation job.</p>
 #[non_exhaustive]
@@ -1013,13 +1003,13 @@ pub enum EncryptionKeyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionKeyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "KMS" => EncryptionKeyType::Kms,
-            other => EncryptionKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "KMS" => EncryptionKeyType::Kms,
+other => EncryptionKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EncryptionKeyType {
                 type Err = std::convert::Infallible;
 
@@ -1028,25 +1018,23 @@ impl std::str::FromStr for EncryptionKeyType {
                 }
             }
 impl EncryptionKeyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EncryptionKeyType::Kms => "KMS",
-            EncryptionKeyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "KMS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EncryptionKeyType::Kms => "KMS",
+    EncryptionKeyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["KMS"]
+                }
+            }
 impl AsRef<str> for EncryptionKeyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The input configuration properties for requesting a batch translation job.</p>
 #[non_exhaustive]
@@ -2095,15 +2083,15 @@ pub enum TerminologyDataFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TerminologyDataFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "CSV" => TerminologyDataFormat::Csv,
-            "TMX" => TerminologyDataFormat::Tmx,
-            "TSV" => TerminologyDataFormat::Tsv,
-            other => TerminologyDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CSV" => TerminologyDataFormat::Csv,
+"TMX" => TerminologyDataFormat::Tmx,
+"TSV" => TerminologyDataFormat::Tsv,
+other => TerminologyDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TerminologyDataFormat {
                 type Err = std::convert::Infallible;
 
@@ -2112,27 +2100,25 @@ impl std::str::FromStr for TerminologyDataFormat {
                 }
             }
 impl TerminologyDataFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TerminologyDataFormat::Csv => "CSV",
-            TerminologyDataFormat::Tmx => "TMX",
-            TerminologyDataFormat::Tsv => "TSV",
-            TerminologyDataFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CSV", "TMX", "TSV"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TerminologyDataFormat::Csv => "CSV",
+    TerminologyDataFormat::Tmx => "TMX",
+    TerminologyDataFormat::Tsv => "TSV",
+    TerminologyDataFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CSV", "TMX", "TSV"]
+                }
+            }
 impl AsRef<str> for TerminologyDataFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Directionality`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2181,14 +2167,14 @@ pub enum Directionality {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Directionality {
-    fn from(s: &str) -> Self {
-        match s {
-            "MULTI" => Directionality::Multi,
-            "UNI" => Directionality::Uni,
-            other => Directionality::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MULTI" => Directionality::Multi,
+"UNI" => Directionality::Uni,
+other => Directionality::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Directionality {
                 type Err = std::convert::Infallible;
 
@@ -2197,26 +2183,24 @@ impl std::str::FromStr for Directionality {
                 }
             }
 impl Directionality {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Directionality::Multi => "MULTI",
-            Directionality::Uni => "UNI",
-            Directionality::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MULTI", "UNI"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Directionality::Multi => "MULTI",
+    Directionality::Uni => "UNI",
+    Directionality::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MULTI", "UNI"]
+                }
+            }
 impl AsRef<str> for Directionality {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The properties of a parallel data resource.</p>
 #[non_exhaustive]
@@ -2649,22 +2633,22 @@ pub enum DisplayLanguageCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DisplayLanguageCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "de" => DisplayLanguageCode::De,
-            "en" => DisplayLanguageCode::En,
-            "es" => DisplayLanguageCode::Es,
-            "fr" => DisplayLanguageCode::Fr,
-            "it" => DisplayLanguageCode::It,
-            "ja" => DisplayLanguageCode::Ja,
-            "ko" => DisplayLanguageCode::Ko,
-            "pt" => DisplayLanguageCode::Pt,
-            "zh" => DisplayLanguageCode::Zh,
-            "zh-TW" => DisplayLanguageCode::ZhTw,
-            other => DisplayLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "de" => DisplayLanguageCode::De,
+"en" => DisplayLanguageCode::En,
+"es" => DisplayLanguageCode::Es,
+"fr" => DisplayLanguageCode::Fr,
+"it" => DisplayLanguageCode::It,
+"ja" => DisplayLanguageCode::Ja,
+"ko" => DisplayLanguageCode::Ko,
+"pt" => DisplayLanguageCode::Pt,
+"zh" => DisplayLanguageCode::Zh,
+"zh-TW" => DisplayLanguageCode::ZhTw,
+other => DisplayLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DisplayLanguageCode {
                 type Err = std::convert::Infallible;
 
@@ -2673,34 +2657,32 @@ impl std::str::FromStr for DisplayLanguageCode {
                 }
             }
 impl DisplayLanguageCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DisplayLanguageCode::De => "de",
-            DisplayLanguageCode::En => "en",
-            DisplayLanguageCode::Es => "es",
-            DisplayLanguageCode::Fr => "fr",
-            DisplayLanguageCode::It => "it",
-            DisplayLanguageCode::Ja => "ja",
-            DisplayLanguageCode::Ko => "ko",
-            DisplayLanguageCode::Pt => "pt",
-            DisplayLanguageCode::Zh => "zh",
-            DisplayLanguageCode::ZhTw => "zh-TW",
-            DisplayLanguageCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "de", "en", "es", "fr", "it", "ja", "ko", "pt", "zh", "zh-TW"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DisplayLanguageCode::De => "de",
+    DisplayLanguageCode::En => "en",
+    DisplayLanguageCode::Es => "es",
+    DisplayLanguageCode::Fr => "fr",
+    DisplayLanguageCode::It => "it",
+    DisplayLanguageCode::Ja => "ja",
+    DisplayLanguageCode::Ko => "ko",
+    DisplayLanguageCode::Pt => "pt",
+    DisplayLanguageCode::Zh => "zh",
+    DisplayLanguageCode::ZhTw => "zh-TW",
+    DisplayLanguageCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["de", "en", "es", "fr", "it", "ja", "ko", "pt", "zh", "zh-TW"]
+                }
+            }
 impl AsRef<str> for DisplayLanguageCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A supported language.</p>
 #[non_exhaustive]
@@ -3066,13 +3048,13 @@ pub enum MergeStrategy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MergeStrategy {
-    fn from(s: &str) -> Self {
-        match s {
-            "OVERWRITE" => MergeStrategy::Overwrite,
-            other => MergeStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "OVERWRITE" => MergeStrategy::Overwrite,
+other => MergeStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MergeStrategy {
                 type Err = std::convert::Infallible;
 
@@ -3081,25 +3063,23 @@ impl std::str::FromStr for MergeStrategy {
                 }
             }
 impl MergeStrategy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MergeStrategy::Overwrite => "OVERWRITE",
-            MergeStrategy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "OVERWRITE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MergeStrategy::Overwrite => "OVERWRITE",
+    MergeStrategy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OVERWRITE"]
+                }
+            }
 impl AsRef<str> for MergeStrategy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The location of the most recent parallel data input file that was successfully imported into Amazon Translate.</p>
 #[non_exhaustive]

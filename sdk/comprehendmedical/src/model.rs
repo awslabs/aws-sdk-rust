@@ -44,13 +44,13 @@ pub enum LanguageCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LanguageCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "en" => LanguageCode::En,
-            other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "en" => LanguageCode::En,
+other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LanguageCode {
                 type Err = std::convert::Infallible;
 
@@ -59,25 +59,23 @@ impl std::str::FromStr for LanguageCode {
                 }
             }
 impl LanguageCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LanguageCode::En => "en",
-            LanguageCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "en"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LanguageCode::En => "en",
+    LanguageCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["en"]
+                }
+            }
 impl AsRef<str> for LanguageCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The output properties for a detection job.</p>
 #[non_exhaustive]
@@ -580,19 +578,19 @@ pub enum JobStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => JobStatus::Completed,
-            "FAILED" => JobStatus::Failed,
-            "IN_PROGRESS" => JobStatus::InProgress,
-            "PARTIAL_SUCCESS" => JobStatus::PartialSuccess,
-            "STOPPED" => JobStatus::Stopped,
-            "STOP_REQUESTED" => JobStatus::StopRequested,
-            "SUBMITTED" => JobStatus::Submitted,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => JobStatus::Completed,
+"FAILED" => JobStatus::Failed,
+"IN_PROGRESS" => JobStatus::InProgress,
+"PARTIAL_SUCCESS" => JobStatus::PartialSuccess,
+"STOPPED" => JobStatus::Stopped,
+"STOP_REQUESTED" => JobStatus::StopRequested,
+"SUBMITTED" => JobStatus::Submitted,
+other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobStatus {
                 type Err = std::convert::Infallible;
 
@@ -601,31 +599,29 @@ impl std::str::FromStr for JobStatus {
                 }
             }
 impl JobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobStatus::Completed => "COMPLETED",
-            JobStatus::Failed => "FAILED",
-            JobStatus::InProgress => "IN_PROGRESS",
-            JobStatus::PartialSuccess => "PARTIAL_SUCCESS",
-            JobStatus::Stopped => "STOPPED",
-            JobStatus::StopRequested => "STOP_REQUESTED",
-            JobStatus::Submitted => "SUBMITTED",
-            JobStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "FAILED", "IN_PROGRESS", "PARTIAL_SUCCESS", "STOPPED", "STOP_REQUESTED", "SUBMITTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobStatus::Completed => "COMPLETED",
+    JobStatus::Failed => "FAILED",
+    JobStatus::InProgress => "IN_PROGRESS",
+    JobStatus::PartialSuccess => "PARTIAL_SUCCESS",
+    JobStatus::Stopped => "STOPPED",
+    JobStatus::StopRequested => "STOP_REQUESTED",
+    JobStatus::Submitted => "SUBMITTED",
+    JobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "FAILED", "IN_PROGRESS", "PARTIAL_SUCCESS", "STOPPED", "STOP_REQUESTED", "SUBMITTED"]
+                }
+            }
 impl AsRef<str> for JobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Provides information for filtering a list of detection jobs.</p>
 #[non_exhaustive]
@@ -1336,21 +1332,21 @@ pub enum SnomedctTraitName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnomedctTraitName {
-    fn from(s: &str) -> Self {
-        match s {
-            "DIAGNOSIS" => SnomedctTraitName::Diagnosis,
-            "FUTURE" => SnomedctTraitName::Future,
-            "HYPOTHETICAL" => SnomedctTraitName::Hypothetical,
-            "LOW_CONFIDENCE" => SnomedctTraitName::LowConfidence,
-            "NEGATION" => SnomedctTraitName::Negation,
-            "PAST_HISTORY" => SnomedctTraitName::PastHistory,
-            "PERTAINS_TO_FAMILY" => SnomedctTraitName::PertainsToFamily,
-            "SIGN" => SnomedctTraitName::Sign,
-            "SYMPTOM" => SnomedctTraitName::Symptom,
-            other => SnomedctTraitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DIAGNOSIS" => SnomedctTraitName::Diagnosis,
+"FUTURE" => SnomedctTraitName::Future,
+"HYPOTHETICAL" => SnomedctTraitName::Hypothetical,
+"LOW_CONFIDENCE" => SnomedctTraitName::LowConfidence,
+"NEGATION" => SnomedctTraitName::Negation,
+"PAST_HISTORY" => SnomedctTraitName::PastHistory,
+"PERTAINS_TO_FAMILY" => SnomedctTraitName::PertainsToFamily,
+"SIGN" => SnomedctTraitName::Sign,
+"SYMPTOM" => SnomedctTraitName::Symptom,
+other => SnomedctTraitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SnomedctTraitName {
                 type Err = std::convert::Infallible;
 
@@ -1359,33 +1355,31 @@ impl std::str::FromStr for SnomedctTraitName {
                 }
             }
 impl SnomedctTraitName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SnomedctTraitName::Diagnosis => "DIAGNOSIS",
-            SnomedctTraitName::Future => "FUTURE",
-            SnomedctTraitName::Hypothetical => "HYPOTHETICAL",
-            SnomedctTraitName::LowConfidence => "LOW_CONFIDENCE",
-            SnomedctTraitName::Negation => "NEGATION",
-            SnomedctTraitName::PastHistory => "PAST_HISTORY",
-            SnomedctTraitName::PertainsToFamily => "PERTAINS_TO_FAMILY",
-            SnomedctTraitName::Sign => "SIGN",
-            SnomedctTraitName::Symptom => "SYMPTOM",
-            SnomedctTraitName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DIAGNOSIS", "FUTURE", "HYPOTHETICAL", "LOW_CONFIDENCE", "NEGATION", "PAST_HISTORY", "PERTAINS_TO_FAMILY", "SIGN", "SYMPTOM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SnomedctTraitName::Diagnosis => "DIAGNOSIS",
+    SnomedctTraitName::Future => "FUTURE",
+    SnomedctTraitName::Hypothetical => "HYPOTHETICAL",
+    SnomedctTraitName::LowConfidence => "LOW_CONFIDENCE",
+    SnomedctTraitName::Negation => "NEGATION",
+    SnomedctTraitName::PastHistory => "PAST_HISTORY",
+    SnomedctTraitName::PertainsToFamily => "PERTAINS_TO_FAMILY",
+    SnomedctTraitName::Sign => "SIGN",
+    SnomedctTraitName::Symptom => "SYMPTOM",
+    SnomedctTraitName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DIAGNOSIS", "FUTURE", "HYPOTHETICAL", "LOW_CONFIDENCE", "NEGATION", "PAST_HISTORY", "PERTAINS_TO_FAMILY", "SIGN", "SYMPTOM"]
+                }
+            }
 impl AsRef<str> for SnomedctTraitName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The extracted attributes that relate to an entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
 #[non_exhaustive]
@@ -1698,18 +1692,18 @@ pub enum SnomedctRelationshipType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnomedctRelationshipType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACUITY" => SnomedctRelationshipType::Acuity,
-            "DIRECTION" => SnomedctRelationshipType::Direction,
-            "QUALITY" => SnomedctRelationshipType::Quality,
-            "SYSTEM_ORGAN_SITE" => SnomedctRelationshipType::SystemOrganSite,
-            "TEST_UNITS" => SnomedctRelationshipType::TestUnits,
-            "TEST_VALUE" => SnomedctRelationshipType::TestValue,
-            other => SnomedctRelationshipType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACUITY" => SnomedctRelationshipType::Acuity,
+"DIRECTION" => SnomedctRelationshipType::Direction,
+"QUALITY" => SnomedctRelationshipType::Quality,
+"SYSTEM_ORGAN_SITE" => SnomedctRelationshipType::SystemOrganSite,
+"TEST_UNITS" => SnomedctRelationshipType::TestUnits,
+"TEST_VALUE" => SnomedctRelationshipType::TestValue,
+other => SnomedctRelationshipType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SnomedctRelationshipType {
                 type Err = std::convert::Infallible;
 
@@ -1718,30 +1712,28 @@ impl std::str::FromStr for SnomedctRelationshipType {
                 }
             }
 impl SnomedctRelationshipType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SnomedctRelationshipType::Acuity => "ACUITY",
-            SnomedctRelationshipType::Direction => "DIRECTION",
-            SnomedctRelationshipType::Quality => "QUALITY",
-            SnomedctRelationshipType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
-            SnomedctRelationshipType::TestUnits => "TEST_UNITS",
-            SnomedctRelationshipType::TestValue => "TEST_VALUE",
-            SnomedctRelationshipType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACUITY", "DIRECTION", "QUALITY", "SYSTEM_ORGAN_SITE", "TEST_UNITS", "TEST_VALUE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SnomedctRelationshipType::Acuity => "ACUITY",
+    SnomedctRelationshipType::Direction => "DIRECTION",
+    SnomedctRelationshipType::Quality => "QUALITY",
+    SnomedctRelationshipType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+    SnomedctRelationshipType::TestUnits => "TEST_UNITS",
+    SnomedctRelationshipType::TestValue => "TEST_VALUE",
+    SnomedctRelationshipType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACUITY", "DIRECTION", "QUALITY", "SYSTEM_ORGAN_SITE", "TEST_UNITS", "TEST_VALUE"]
+                }
+            }
 impl AsRef<str> for SnomedctRelationshipType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SnomedctAttributeType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1802,18 +1794,18 @@ pub enum SnomedctAttributeType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnomedctAttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACUITY" => SnomedctAttributeType::Acuity,
-            "DIRECTION" => SnomedctAttributeType::Direction,
-            "QUALITY" => SnomedctAttributeType::Quality,
-            "SYSTEM_ORGAN_SITE" => SnomedctAttributeType::SystemOrganSite,
-            "TEST_UNIT" => SnomedctAttributeType::TestUnit,
-            "TEST_VALUE" => SnomedctAttributeType::TestValue,
-            other => SnomedctAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACUITY" => SnomedctAttributeType::Acuity,
+"DIRECTION" => SnomedctAttributeType::Direction,
+"QUALITY" => SnomedctAttributeType::Quality,
+"SYSTEM_ORGAN_SITE" => SnomedctAttributeType::SystemOrganSite,
+"TEST_UNIT" => SnomedctAttributeType::TestUnit,
+"TEST_VALUE" => SnomedctAttributeType::TestValue,
+other => SnomedctAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SnomedctAttributeType {
                 type Err = std::convert::Infallible;
 
@@ -1822,30 +1814,28 @@ impl std::str::FromStr for SnomedctAttributeType {
                 }
             }
 impl SnomedctAttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SnomedctAttributeType::Acuity => "ACUITY",
-            SnomedctAttributeType::Direction => "DIRECTION",
-            SnomedctAttributeType::Quality => "QUALITY",
-            SnomedctAttributeType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
-            SnomedctAttributeType::TestUnit => "TEST_UNIT",
-            SnomedctAttributeType::TestValue => "TEST_VALUE",
-            SnomedctAttributeType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACUITY", "DIRECTION", "QUALITY", "SYSTEM_ORGAN_SITE", "TEST_UNIT", "TEST_VALUE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SnomedctAttributeType::Acuity => "ACUITY",
+    SnomedctAttributeType::Direction => "DIRECTION",
+    SnomedctAttributeType::Quality => "QUALITY",
+    SnomedctAttributeType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+    SnomedctAttributeType::TestUnit => "TEST_UNIT",
+    SnomedctAttributeType::TestValue => "TEST_VALUE",
+    SnomedctAttributeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACUITY", "DIRECTION", "QUALITY", "SYSTEM_ORGAN_SITE", "TEST_UNIT", "TEST_VALUE"]
+                }
+            }
 impl AsRef<str> for SnomedctAttributeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SnomedctEntityCategory`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1897,15 +1887,15 @@ pub enum SnomedctEntityCategory {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnomedctEntityCategory {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANATOMY" => SnomedctEntityCategory::Anatomy,
-            "MEDICAL_CONDITION" => SnomedctEntityCategory::MedicalCondition,
-            "TEST_TREATMENT_PROCEDURE" => SnomedctEntityCategory::TestTreatmentProcedure,
-            other => SnomedctEntityCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ANATOMY" => SnomedctEntityCategory::Anatomy,
+"MEDICAL_CONDITION" => SnomedctEntityCategory::MedicalCondition,
+"TEST_TREATMENT_PROCEDURE" => SnomedctEntityCategory::TestTreatmentProcedure,
+other => SnomedctEntityCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SnomedctEntityCategory {
                 type Err = std::convert::Infallible;
 
@@ -1914,27 +1904,25 @@ impl std::str::FromStr for SnomedctEntityCategory {
                 }
             }
 impl SnomedctEntityCategory {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SnomedctEntityCategory::Anatomy => "ANATOMY",
-            SnomedctEntityCategory::MedicalCondition => "MEDICAL_CONDITION",
-            SnomedctEntityCategory::TestTreatmentProcedure => "TEST_TREATMENT_PROCEDURE",
-            SnomedctEntityCategory::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANATOMY", "MEDICAL_CONDITION", "TEST_TREATMENT_PROCEDURE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SnomedctEntityCategory::Anatomy => "ANATOMY",
+    SnomedctEntityCategory::MedicalCondition => "MEDICAL_CONDITION",
+    SnomedctEntityCategory::TestTreatmentProcedure => "TEST_TREATMENT_PROCEDURE",
+    SnomedctEntityCategory::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANATOMY", "MEDICAL_CONDITION", "TEST_TREATMENT_PROCEDURE"]
+                }
+            }
 impl AsRef<str> for SnomedctEntityCategory {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SnomedctEntityType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1989,16 +1977,16 @@ pub enum SnomedctEntityType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnomedctEntityType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DX_NAME" => SnomedctEntityType::DxName,
-            "PROCEDURE_NAME" => SnomedctEntityType::ProcedureName,
-            "TEST_NAME" => SnomedctEntityType::TestName,
-            "TREATMENT_NAME" => SnomedctEntityType::TreatmentName,
-            other => SnomedctEntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DX_NAME" => SnomedctEntityType::DxName,
+"PROCEDURE_NAME" => SnomedctEntityType::ProcedureName,
+"TEST_NAME" => SnomedctEntityType::TestName,
+"TREATMENT_NAME" => SnomedctEntityType::TreatmentName,
+other => SnomedctEntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SnomedctEntityType {
                 type Err = std::convert::Infallible;
 
@@ -2007,28 +1995,26 @@ impl std::str::FromStr for SnomedctEntityType {
                 }
             }
 impl SnomedctEntityType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SnomedctEntityType::DxName => "DX_NAME",
-            SnomedctEntityType::ProcedureName => "PROCEDURE_NAME",
-            SnomedctEntityType::TestName => "TEST_NAME",
-            SnomedctEntityType::TreatmentName => "TREATMENT_NAME",
-            SnomedctEntityType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DX_NAME", "PROCEDURE_NAME", "TEST_NAME", "TREATMENT_NAME"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SnomedctEntityType::DxName => "DX_NAME",
+    SnomedctEntityType::ProcedureName => "PROCEDURE_NAME",
+    SnomedctEntityType::TestName => "TEST_NAME",
+    SnomedctEntityType::TreatmentName => "TREATMENT_NAME",
+    SnomedctEntityType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DX_NAME", "PROCEDURE_NAME", "TEST_NAME", "TREATMENT_NAME"]
+                }
+            }
 impl AsRef<str> for SnomedctEntityType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
 #[non_exhaustive]
@@ -2470,13 +2456,13 @@ pub enum RxNormTraitName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RxNormTraitName {
-    fn from(s: &str) -> Self {
-        match s {
-            "NEGATION" => RxNormTraitName::Negation,
-            other => RxNormTraitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NEGATION" => RxNormTraitName::Negation,
+other => RxNormTraitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RxNormTraitName {
                 type Err = std::convert::Infallible;
 
@@ -2485,25 +2471,23 @@ impl std::str::FromStr for RxNormTraitName {
                 }
             }
 impl RxNormTraitName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RxNormTraitName::Negation => "NEGATION",
-            RxNormTraitName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NEGATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RxNormTraitName::Negation => "NEGATION",
+    RxNormTraitName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NEGATION"]
+                }
+            }
 impl AsRef<str> for RxNormTraitName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The extracted attributes that relate to this entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>.</p>
 #[non_exhaustive]
@@ -2756,19 +2740,19 @@ pub enum RxNormAttributeType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RxNormAttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DOSAGE" => RxNormAttributeType::Dosage,
-            "DURATION" => RxNormAttributeType::Duration,
-            "FORM" => RxNormAttributeType::Form,
-            "FREQUENCY" => RxNormAttributeType::Frequency,
-            "RATE" => RxNormAttributeType::Rate,
-            "ROUTE_OR_MODE" => RxNormAttributeType::RouteOrMode,
-            "STRENGTH" => RxNormAttributeType::Strength,
-            other => RxNormAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DOSAGE" => RxNormAttributeType::Dosage,
+"DURATION" => RxNormAttributeType::Duration,
+"FORM" => RxNormAttributeType::Form,
+"FREQUENCY" => RxNormAttributeType::Frequency,
+"RATE" => RxNormAttributeType::Rate,
+"ROUTE_OR_MODE" => RxNormAttributeType::RouteOrMode,
+"STRENGTH" => RxNormAttributeType::Strength,
+other => RxNormAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RxNormAttributeType {
                 type Err = std::convert::Infallible;
 
@@ -2777,31 +2761,29 @@ impl std::str::FromStr for RxNormAttributeType {
                 }
             }
 impl RxNormAttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RxNormAttributeType::Dosage => "DOSAGE",
-            RxNormAttributeType::Duration => "DURATION",
-            RxNormAttributeType::Form => "FORM",
-            RxNormAttributeType::Frequency => "FREQUENCY",
-            RxNormAttributeType::Rate => "RATE",
-            RxNormAttributeType::RouteOrMode => "ROUTE_OR_MODE",
-            RxNormAttributeType::Strength => "STRENGTH",
-            RxNormAttributeType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DOSAGE", "DURATION", "FORM", "FREQUENCY", "RATE", "ROUTE_OR_MODE", "STRENGTH"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RxNormAttributeType::Dosage => "DOSAGE",
+    RxNormAttributeType::Duration => "DURATION",
+    RxNormAttributeType::Form => "FORM",
+    RxNormAttributeType::Frequency => "FREQUENCY",
+    RxNormAttributeType::Rate => "RATE",
+    RxNormAttributeType::RouteOrMode => "ROUTE_OR_MODE",
+    RxNormAttributeType::Strength => "STRENGTH",
+    RxNormAttributeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DOSAGE", "DURATION", "FORM", "FREQUENCY", "RATE", "ROUTE_OR_MODE", "STRENGTH"]
+                }
+            }
 impl AsRef<str> for RxNormAttributeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RxNormEntityType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2850,14 +2832,14 @@ pub enum RxNormEntityType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RxNormEntityType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BRAND_NAME" => RxNormEntityType::BrandName,
-            "GENERIC_NAME" => RxNormEntityType::GenericName,
-            other => RxNormEntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BRAND_NAME" => RxNormEntityType::BrandName,
+"GENERIC_NAME" => RxNormEntityType::GenericName,
+other => RxNormEntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RxNormEntityType {
                 type Err = std::convert::Infallible;
 
@@ -2866,26 +2848,24 @@ impl std::str::FromStr for RxNormEntityType {
                 }
             }
 impl RxNormEntityType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RxNormEntityType::BrandName => "BRAND_NAME",
-            RxNormEntityType::GenericName => "GENERIC_NAME",
-            RxNormEntityType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BRAND_NAME", "GENERIC_NAME"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RxNormEntityType::BrandName => "BRAND_NAME",
+    RxNormEntityType::GenericName => "GENERIC_NAME",
+    RxNormEntityType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BRAND_NAME", "GENERIC_NAME"]
+                }
+            }
 impl AsRef<str> for RxNormEntityType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RxNormEntityCategory`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2931,13 +2911,13 @@ pub enum RxNormEntityCategory {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RxNormEntityCategory {
-    fn from(s: &str) -> Self {
-        match s {
-            "MEDICATION" => RxNormEntityCategory::Medication,
-            other => RxNormEntityCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MEDICATION" => RxNormEntityCategory::Medication,
+other => RxNormEntityCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RxNormEntityCategory {
                 type Err = std::convert::Infallible;
 
@@ -2946,25 +2926,23 @@ impl std::str::FromStr for RxNormEntityCategory {
                 }
             }
 impl RxNormEntityCategory {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RxNormEntityCategory::Medication => "MEDICATION",
-            RxNormEntityCategory::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MEDICATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RxNormEntityCategory::Medication => "MEDICATION",
+    RxNormEntityCategory::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MEDICATION"]
+                }
+            }
 impl AsRef<str> for RxNormEntityCategory {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
 #[non_exhaustive]
@@ -3424,19 +3402,19 @@ pub enum Icd10CmTraitName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Icd10CmTraitName {
-    fn from(s: &str) -> Self {
-        match s {
-            "DIAGNOSIS" => Icd10CmTraitName::Diagnosis,
-            "HYPOTHETICAL" => Icd10CmTraitName::Hypothetical,
-            "LOW_CONFIDENCE" => Icd10CmTraitName::LowConfidence,
-            "NEGATION" => Icd10CmTraitName::Negation,
-            "PERTAINS_TO_FAMILY" => Icd10CmTraitName::PertainsToFamily,
-            "SIGN" => Icd10CmTraitName::Sign,
-            "SYMPTOM" => Icd10CmTraitName::Symptom,
-            other => Icd10CmTraitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DIAGNOSIS" => Icd10CmTraitName::Diagnosis,
+"HYPOTHETICAL" => Icd10CmTraitName::Hypothetical,
+"LOW_CONFIDENCE" => Icd10CmTraitName::LowConfidence,
+"NEGATION" => Icd10CmTraitName::Negation,
+"PERTAINS_TO_FAMILY" => Icd10CmTraitName::PertainsToFamily,
+"SIGN" => Icd10CmTraitName::Sign,
+"SYMPTOM" => Icd10CmTraitName::Symptom,
+other => Icd10CmTraitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Icd10CmTraitName {
                 type Err = std::convert::Infallible;
 
@@ -3445,31 +3423,29 @@ impl std::str::FromStr for Icd10CmTraitName {
                 }
             }
 impl Icd10CmTraitName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Icd10CmTraitName::Diagnosis => "DIAGNOSIS",
-            Icd10CmTraitName::Hypothetical => "HYPOTHETICAL",
-            Icd10CmTraitName::LowConfidence => "LOW_CONFIDENCE",
-            Icd10CmTraitName::Negation => "NEGATION",
-            Icd10CmTraitName::PertainsToFamily => "PERTAINS_TO_FAMILY",
-            Icd10CmTraitName::Sign => "SIGN",
-            Icd10CmTraitName::Symptom => "SYMPTOM",
-            Icd10CmTraitName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DIAGNOSIS", "HYPOTHETICAL", "LOW_CONFIDENCE", "NEGATION", "PERTAINS_TO_FAMILY", "SIGN", "SYMPTOM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Icd10CmTraitName::Diagnosis => "DIAGNOSIS",
+    Icd10CmTraitName::Hypothetical => "HYPOTHETICAL",
+    Icd10CmTraitName::LowConfidence => "LOW_CONFIDENCE",
+    Icd10CmTraitName::Negation => "NEGATION",
+    Icd10CmTraitName::PertainsToFamily => "PERTAINS_TO_FAMILY",
+    Icd10CmTraitName::Sign => "SIGN",
+    Icd10CmTraitName::Symptom => "SYMPTOM",
+    Icd10CmTraitName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DIAGNOSIS", "HYPOTHETICAL", "LOW_CONFIDENCE", "NEGATION", "PERTAINS_TO_FAMILY", "SIGN", "SYMPTOM"]
+                }
+            }
 impl AsRef<str> for Icd10CmTraitName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The detected attributes that relate to an entity. This includes an extracted segment of the text that is an attribute of an entity, or otherwise related to an entity. InferICD10CM detects the following attributes: <code>Direction</code>, <code>System, Organ or Site</code>, and <code>Acuity</code>.</p>
 #[non_exhaustive]
@@ -3745,14 +3721,14 @@ pub enum Icd10CmRelationshipType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Icd10CmRelationshipType {
-    fn from(s: &str) -> Self {
-        match s {
-            "OVERLAP" => Icd10CmRelationshipType::Overlap,
-            "SYSTEM_ORGAN_SITE" => Icd10CmRelationshipType::SystemOrganSite,
-            other => Icd10CmRelationshipType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "OVERLAP" => Icd10CmRelationshipType::Overlap,
+"SYSTEM_ORGAN_SITE" => Icd10CmRelationshipType::SystemOrganSite,
+other => Icd10CmRelationshipType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Icd10CmRelationshipType {
                 type Err = std::convert::Infallible;
 
@@ -3761,26 +3737,24 @@ impl std::str::FromStr for Icd10CmRelationshipType {
                 }
             }
 impl Icd10CmRelationshipType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Icd10CmRelationshipType::Overlap => "OVERLAP",
-            Icd10CmRelationshipType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
-            Icd10CmRelationshipType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "OVERLAP", "SYSTEM_ORGAN_SITE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Icd10CmRelationshipType::Overlap => "OVERLAP",
+    Icd10CmRelationshipType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+    Icd10CmRelationshipType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OVERLAP", "SYSTEM_ORGAN_SITE"]
+                }
+            }
 impl AsRef<str> for Icd10CmRelationshipType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Icd10CmEntityType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3829,14 +3803,14 @@ pub enum Icd10CmEntityType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Icd10CmEntityType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DX_NAME" => Icd10CmEntityType::DxName,
-            "TIME_EXPRESSION" => Icd10CmEntityType::TimeExpression,
-            other => Icd10CmEntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DX_NAME" => Icd10CmEntityType::DxName,
+"TIME_EXPRESSION" => Icd10CmEntityType::TimeExpression,
+other => Icd10CmEntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Icd10CmEntityType {
                 type Err = std::convert::Infallible;
 
@@ -3845,26 +3819,24 @@ impl std::str::FromStr for Icd10CmEntityType {
                 }
             }
 impl Icd10CmEntityType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Icd10CmEntityType::DxName => "DX_NAME",
-            Icd10CmEntityType::TimeExpression => "TIME_EXPRESSION",
-            Icd10CmEntityType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DX_NAME", "TIME_EXPRESSION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Icd10CmEntityType::DxName => "DX_NAME",
+    Icd10CmEntityType::TimeExpression => "TIME_EXPRESSION",
+    Icd10CmEntityType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DX_NAME", "TIME_EXPRESSION"]
+                }
+            }
 impl AsRef<str> for Icd10CmEntityType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Icd10CmAttributeType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3928,19 +3900,19 @@ pub enum Icd10CmAttributeType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Icd10CmAttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACUITY" => Icd10CmAttributeType::Acuity,
-            "DIRECTION" => Icd10CmAttributeType::Direction,
-            "QUALITY" => Icd10CmAttributeType::Quality,
-            "QUANTITY" => Icd10CmAttributeType::Quantity,
-            "SYSTEM_ORGAN_SITE" => Icd10CmAttributeType::SystemOrganSite,
-            "TIME_EXPRESSION" => Icd10CmAttributeType::TimeExpression,
-            "TIME_TO_DX_NAME" => Icd10CmAttributeType::TimeToDxName,
-            other => Icd10CmAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACUITY" => Icd10CmAttributeType::Acuity,
+"DIRECTION" => Icd10CmAttributeType::Direction,
+"QUALITY" => Icd10CmAttributeType::Quality,
+"QUANTITY" => Icd10CmAttributeType::Quantity,
+"SYSTEM_ORGAN_SITE" => Icd10CmAttributeType::SystemOrganSite,
+"TIME_EXPRESSION" => Icd10CmAttributeType::TimeExpression,
+"TIME_TO_DX_NAME" => Icd10CmAttributeType::TimeToDxName,
+other => Icd10CmAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Icd10CmAttributeType {
                 type Err = std::convert::Infallible;
 
@@ -3949,31 +3921,29 @@ impl std::str::FromStr for Icd10CmAttributeType {
                 }
             }
 impl Icd10CmAttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Icd10CmAttributeType::Acuity => "ACUITY",
-            Icd10CmAttributeType::Direction => "DIRECTION",
-            Icd10CmAttributeType::Quality => "QUALITY",
-            Icd10CmAttributeType::Quantity => "QUANTITY",
-            Icd10CmAttributeType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
-            Icd10CmAttributeType::TimeExpression => "TIME_EXPRESSION",
-            Icd10CmAttributeType::TimeToDxName => "TIME_TO_DX_NAME",
-            Icd10CmAttributeType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACUITY", "DIRECTION", "QUALITY", "QUANTITY", "SYSTEM_ORGAN_SITE", "TIME_EXPRESSION", "TIME_TO_DX_NAME"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Icd10CmAttributeType::Acuity => "ACUITY",
+    Icd10CmAttributeType::Direction => "DIRECTION",
+    Icd10CmAttributeType::Quality => "QUALITY",
+    Icd10CmAttributeType::Quantity => "QUANTITY",
+    Icd10CmAttributeType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+    Icd10CmAttributeType::TimeExpression => "TIME_EXPRESSION",
+    Icd10CmAttributeType::TimeToDxName => "TIME_TO_DX_NAME",
+    Icd10CmAttributeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACUITY", "DIRECTION", "QUALITY", "QUANTITY", "SYSTEM_ORGAN_SITE", "TIME_EXPRESSION", "TIME_TO_DX_NAME"]
+                }
+            }
 impl AsRef<str> for Icd10CmAttributeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Icd10CmEntityCategory`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4019,13 +3989,13 @@ pub enum Icd10CmEntityCategory {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Icd10CmEntityCategory {
-    fn from(s: &str) -> Self {
-        match s {
-            "MEDICAL_CONDITION" => Icd10CmEntityCategory::MedicalCondition,
-            other => Icd10CmEntityCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MEDICAL_CONDITION" => Icd10CmEntityCategory::MedicalCondition,
+other => Icd10CmEntityCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Icd10CmEntityCategory {
                 type Err = std::convert::Infallible;
 
@@ -4034,25 +4004,23 @@ impl std::str::FromStr for Icd10CmEntityCategory {
                 }
             }
 impl Icd10CmEntityCategory {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Icd10CmEntityCategory::MedicalCondition => "MEDICAL_CONDITION",
-            Icd10CmEntityCategory::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MEDICAL_CONDITION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Icd10CmEntityCategory::MedicalCondition => "MEDICAL_CONDITION",
+    Icd10CmEntityCategory::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MEDICAL_CONDITION"]
+                }
+            }
 impl AsRef<str> for Icd10CmEntityCategory {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Provides information about an extracted medical entity.</p>
 #[non_exhaustive]
@@ -4632,21 +4600,21 @@ pub enum AttributeName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AttributeName {
-    fn from(s: &str) -> Self {
-        match s {
-            "DIAGNOSIS" => AttributeName::Diagnosis,
-            "FUTURE" => AttributeName::Future,
-            "HYPOTHETICAL" => AttributeName::Hypothetical,
-            "LOW_CONFIDENCE" => AttributeName::LowConfidence,
-            "NEGATION" => AttributeName::Negation,
-            "PAST_HISTORY" => AttributeName::PastHistory,
-            "PERTAINS_TO_FAMILY" => AttributeName::PertainsToFamily,
-            "SIGN" => AttributeName::Sign,
-            "SYMPTOM" => AttributeName::Symptom,
-            other => AttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DIAGNOSIS" => AttributeName::Diagnosis,
+"FUTURE" => AttributeName::Future,
+"HYPOTHETICAL" => AttributeName::Hypothetical,
+"LOW_CONFIDENCE" => AttributeName::LowConfidence,
+"NEGATION" => AttributeName::Negation,
+"PAST_HISTORY" => AttributeName::PastHistory,
+"PERTAINS_TO_FAMILY" => AttributeName::PertainsToFamily,
+"SIGN" => AttributeName::Sign,
+"SYMPTOM" => AttributeName::Symptom,
+other => AttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AttributeName {
                 type Err = std::convert::Infallible;
 
@@ -4655,33 +4623,31 @@ impl std::str::FromStr for AttributeName {
                 }
             }
 impl AttributeName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AttributeName::Diagnosis => "DIAGNOSIS",
-            AttributeName::Future => "FUTURE",
-            AttributeName::Hypothetical => "HYPOTHETICAL",
-            AttributeName::LowConfidence => "LOW_CONFIDENCE",
-            AttributeName::Negation => "NEGATION",
-            AttributeName::PastHistory => "PAST_HISTORY",
-            AttributeName::PertainsToFamily => "PERTAINS_TO_FAMILY",
-            AttributeName::Sign => "SIGN",
-            AttributeName::Symptom => "SYMPTOM",
-            AttributeName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DIAGNOSIS", "FUTURE", "HYPOTHETICAL", "LOW_CONFIDENCE", "NEGATION", "PAST_HISTORY", "PERTAINS_TO_FAMILY", "SIGN", "SYMPTOM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AttributeName::Diagnosis => "DIAGNOSIS",
+    AttributeName::Future => "FUTURE",
+    AttributeName::Hypothetical => "HYPOTHETICAL",
+    AttributeName::LowConfidence => "LOW_CONFIDENCE",
+    AttributeName::Negation => "NEGATION",
+    AttributeName::PastHistory => "PAST_HISTORY",
+    AttributeName::PertainsToFamily => "PERTAINS_TO_FAMILY",
+    AttributeName::Sign => "SIGN",
+    AttributeName::Symptom => "SYMPTOM",
+    AttributeName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DIAGNOSIS", "FUTURE", "HYPOTHETICAL", "LOW_CONFIDENCE", "NEGATION", "PAST_HISTORY", "PERTAINS_TO_FAMILY", "SIGN", "SYMPTOM"]
+                }
+            }
 impl AsRef<str> for AttributeName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EntityType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4745,19 +4711,19 @@ pub enum EntityType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntityType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANATOMY" => EntityType::Anatomy,
-            "BEHAVIORAL_ENVIRONMENTAL_SOCIAL" => EntityType::BehavioralEnvironmentalSocial,
-            "MEDICAL_CONDITION" => EntityType::MedicalCondition,
-            "MEDICATION" => EntityType::Medication,
-            "PROTECTED_HEALTH_INFORMATION" => EntityType::ProtectedHealthInformation,
-            "TEST_TREATMENT_PROCEDURE" => EntityType::TestTreatmentProcedure,
-            "TIME_EXPRESSION" => EntityType::TimeExpression,
-            other => EntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ANATOMY" => EntityType::Anatomy,
+"BEHAVIORAL_ENVIRONMENTAL_SOCIAL" => EntityType::BehavioralEnvironmentalSocial,
+"MEDICAL_CONDITION" => EntityType::MedicalCondition,
+"MEDICATION" => EntityType::Medication,
+"PROTECTED_HEALTH_INFORMATION" => EntityType::ProtectedHealthInformation,
+"TEST_TREATMENT_PROCEDURE" => EntityType::TestTreatmentProcedure,
+"TIME_EXPRESSION" => EntityType::TimeExpression,
+other => EntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EntityType {
                 type Err = std::convert::Infallible;
 
@@ -4766,31 +4732,29 @@ impl std::str::FromStr for EntityType {
                 }
             }
 impl EntityType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EntityType::Anatomy => "ANATOMY",
-            EntityType::BehavioralEnvironmentalSocial => "BEHAVIORAL_ENVIRONMENTAL_SOCIAL",
-            EntityType::MedicalCondition => "MEDICAL_CONDITION",
-            EntityType::Medication => "MEDICATION",
-            EntityType::ProtectedHealthInformation => "PROTECTED_HEALTH_INFORMATION",
-            EntityType::TestTreatmentProcedure => "TEST_TREATMENT_PROCEDURE",
-            EntityType::TimeExpression => "TIME_EXPRESSION",
-            EntityType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANATOMY", "BEHAVIORAL_ENVIRONMENTAL_SOCIAL", "MEDICAL_CONDITION", "MEDICATION", "PROTECTED_HEALTH_INFORMATION", "TEST_TREATMENT_PROCEDURE", "TIME_EXPRESSION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EntityType::Anatomy => "ANATOMY",
+    EntityType::BehavioralEnvironmentalSocial => "BEHAVIORAL_ENVIRONMENTAL_SOCIAL",
+    EntityType::MedicalCondition => "MEDICAL_CONDITION",
+    EntityType::Medication => "MEDICATION",
+    EntityType::ProtectedHealthInformation => "PROTECTED_HEALTH_INFORMATION",
+    EntityType::TestTreatmentProcedure => "TEST_TREATMENT_PROCEDURE",
+    EntityType::TimeExpression => "TIME_EXPRESSION",
+    EntityType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANATOMY", "BEHAVIORAL_ENVIRONMENTAL_SOCIAL", "MEDICAL_CONDITION", "MEDICATION", "PROTECTED_HEALTH_INFORMATION", "TEST_TREATMENT_PROCEDURE", "TIME_EXPRESSION"]
+                }
+            }
 impl AsRef<str> for EntityType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RelationshipType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4893,32 +4857,32 @@ pub enum RelationshipType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RelationshipType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACUITY" => RelationshipType::Acuity,
-            "ADMINISTERED_VIA" => RelationshipType::AdministeredVia,
-            "AMOUNT" => RelationshipType::Amount,
-            "DIRECTION" => RelationshipType::Direction,
-            "DOSAGE" => RelationshipType::Dosage,
-            "DURATION" => RelationshipType::Duration,
-            "EVERY" => RelationshipType::Every,
-            "FOR" => RelationshipType::For,
-            "FORM" => RelationshipType::Form,
-            "FREQUENCY" => RelationshipType::Frequency,
-            "NEGATIVE" => RelationshipType::Negative,
-            "OVERLAP" => RelationshipType::Overlap,
-            "RATE" => RelationshipType::Rate,
-            "ROUTE_OR_MODE" => RelationshipType::RouteOrMode,
-            "STRENGTH" => RelationshipType::Strength,
-            "SYSTEM_ORGAN_SITE" => RelationshipType::SystemOrganSite,
-            "TEST_UNIT" => RelationshipType::TestUnit,
-            "TEST_UNITS" => RelationshipType::TestUnits,
-            "TEST_VALUE" => RelationshipType::TestValue,
-            "WITH_DOSAGE" => RelationshipType::WithDosage,
-            other => RelationshipType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACUITY" => RelationshipType::Acuity,
+"ADMINISTERED_VIA" => RelationshipType::AdministeredVia,
+"AMOUNT" => RelationshipType::Amount,
+"DIRECTION" => RelationshipType::Direction,
+"DOSAGE" => RelationshipType::Dosage,
+"DURATION" => RelationshipType::Duration,
+"EVERY" => RelationshipType::Every,
+"FOR" => RelationshipType::For,
+"FORM" => RelationshipType::Form,
+"FREQUENCY" => RelationshipType::Frequency,
+"NEGATIVE" => RelationshipType::Negative,
+"OVERLAP" => RelationshipType::Overlap,
+"RATE" => RelationshipType::Rate,
+"ROUTE_OR_MODE" => RelationshipType::RouteOrMode,
+"STRENGTH" => RelationshipType::Strength,
+"SYSTEM_ORGAN_SITE" => RelationshipType::SystemOrganSite,
+"TEST_UNIT" => RelationshipType::TestUnit,
+"TEST_UNITS" => RelationshipType::TestUnits,
+"TEST_VALUE" => RelationshipType::TestValue,
+"WITH_DOSAGE" => RelationshipType::WithDosage,
+other => RelationshipType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RelationshipType {
                 type Err = std::convert::Infallible;
 
@@ -4927,44 +4891,42 @@ impl std::str::FromStr for RelationshipType {
                 }
             }
 impl RelationshipType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RelationshipType::Acuity => "ACUITY",
-            RelationshipType::AdministeredVia => "ADMINISTERED_VIA",
-            RelationshipType::Amount => "AMOUNT",
-            RelationshipType::Direction => "DIRECTION",
-            RelationshipType::Dosage => "DOSAGE",
-            RelationshipType::Duration => "DURATION",
-            RelationshipType::Every => "EVERY",
-            RelationshipType::For => "FOR",
-            RelationshipType::Form => "FORM",
-            RelationshipType::Frequency => "FREQUENCY",
-            RelationshipType::Negative => "NEGATIVE",
-            RelationshipType::Overlap => "OVERLAP",
-            RelationshipType::Rate => "RATE",
-            RelationshipType::RouteOrMode => "ROUTE_OR_MODE",
-            RelationshipType::Strength => "STRENGTH",
-            RelationshipType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
-            RelationshipType::TestUnit => "TEST_UNIT",
-            RelationshipType::TestUnits => "TEST_UNITS",
-            RelationshipType::TestValue => "TEST_VALUE",
-            RelationshipType::WithDosage => "WITH_DOSAGE",
-            RelationshipType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACUITY", "ADMINISTERED_VIA", "AMOUNT", "DIRECTION", "DOSAGE", "DURATION", "EVERY", "FOR", "FORM", "FREQUENCY", "NEGATIVE", "OVERLAP", "RATE", "ROUTE_OR_MODE", "STRENGTH", "SYSTEM_ORGAN_SITE", "TEST_UNIT", "TEST_UNITS", "TEST_VALUE", "WITH_DOSAGE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RelationshipType::Acuity => "ACUITY",
+    RelationshipType::AdministeredVia => "ADMINISTERED_VIA",
+    RelationshipType::Amount => "AMOUNT",
+    RelationshipType::Direction => "DIRECTION",
+    RelationshipType::Dosage => "DOSAGE",
+    RelationshipType::Duration => "DURATION",
+    RelationshipType::Every => "EVERY",
+    RelationshipType::For => "FOR",
+    RelationshipType::Form => "FORM",
+    RelationshipType::Frequency => "FREQUENCY",
+    RelationshipType::Negative => "NEGATIVE",
+    RelationshipType::Overlap => "OVERLAP",
+    RelationshipType::Rate => "RATE",
+    RelationshipType::RouteOrMode => "ROUTE_OR_MODE",
+    RelationshipType::Strength => "STRENGTH",
+    RelationshipType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+    RelationshipType::TestUnit => "TEST_UNIT",
+    RelationshipType::TestUnits => "TEST_UNITS",
+    RelationshipType::TestValue => "TEST_VALUE",
+    RelationshipType::WithDosage => "WITH_DOSAGE",
+    RelationshipType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACUITY", "ADMINISTERED_VIA", "AMOUNT", "DIRECTION", "DOSAGE", "DURATION", "EVERY", "FOR", "FORM", "FREQUENCY", "NEGATIVE", "OVERLAP", "RATE", "ROUTE_OR_MODE", "STRENGTH", "SYSTEM_ORGAN_SITE", "TEST_UNIT", "TEST_UNITS", "TEST_VALUE", "WITH_DOSAGE"]
+                }
+            }
 impl AsRef<str> for RelationshipType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EntitySubType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5142,57 +5104,57 @@ pub enum EntitySubType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntitySubType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACUITY" => EntitySubType::Acuity,
-            "ADDRESS" => EntitySubType::Address,
-            "AGE" => EntitySubType::Age,
-            "ALCOHOL_CONSUMPTION" => EntitySubType::AlcoholConsumption,
-            "ALLERGIES" => EntitySubType::Allergies,
-            "AMOUNT" => EntitySubType::Amount,
-            "BRAND_NAME" => EntitySubType::BrandName,
-            "CONTACT_POINT" => EntitySubType::ContactPoint,
-            "DATE" => EntitySubType::Date,
-            "DIRECTION" => EntitySubType::Direction,
-            "DOSAGE" => EntitySubType::Dosage,
-            "DURATION" => EntitySubType::Duration,
-            "DX_NAME" => EntitySubType::DxName,
-            "EMAIL" => EntitySubType::Email,
-            "FORM" => EntitySubType::Form,
-            "FREQUENCY" => EntitySubType::Frequency,
-            "GENDER" => EntitySubType::Gender,
-            "GENERIC_NAME" => EntitySubType::GenericName,
-            "ID" => EntitySubType::Id,
-            "IDENTIFIER" => EntitySubType::Identifier,
-            "NAME" => EntitySubType::Name,
-            "PHONE_OR_FAX" => EntitySubType::PhoneOrFax,
-            "PROCEDURE_NAME" => EntitySubType::ProcedureName,
-            "PROFESSION" => EntitySubType::Profession,
-            "QUALITY" => EntitySubType::Quality,
-            "QUANTITY" => EntitySubType::Quantity,
-            "RACE_ETHNICITY" => EntitySubType::RaceEthnicity,
-            "RATE" => EntitySubType::Rate,
-            "REC_DRUG_USE" => EntitySubType::RecDrugUse,
-            "ROUTE_OR_MODE" => EntitySubType::RouteOrMode,
-            "STRENGTH" => EntitySubType::Strength,
-            "SYSTEM_ORGAN_SITE" => EntitySubType::SystemOrganSite,
-            "TEST_NAME" => EntitySubType::TestName,
-            "TEST_UNIT" => EntitySubType::TestUnit,
-            "TEST_UNITS" => EntitySubType::TestUnits,
-            "TEST_VALUE" => EntitySubType::TestValue,
-            "TIME_EXPRESSION" => EntitySubType::TimeExpression,
-            "TIME_TO_DX_NAME" => EntitySubType::TimeToDxName,
-            "TIME_TO_MEDICATION_NAME" => EntitySubType::TimeToMedicationName,
-            "TIME_TO_PROCEDURE_NAME" => EntitySubType::TimeToProcedureName,
-            "TIME_TO_TEST_NAME" => EntitySubType::TimeToTestName,
-            "TIME_TO_TREATMENT_NAME" => EntitySubType::TimeToTreatmentName,
-            "TOBACCO_USE" => EntitySubType::TobaccoUse,
-            "TREATMENT_NAME" => EntitySubType::TreatmentName,
-            "URL" => EntitySubType::Url,
-            other => EntitySubType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACUITY" => EntitySubType::Acuity,
+"ADDRESS" => EntitySubType::Address,
+"AGE" => EntitySubType::Age,
+"ALCOHOL_CONSUMPTION" => EntitySubType::AlcoholConsumption,
+"ALLERGIES" => EntitySubType::Allergies,
+"AMOUNT" => EntitySubType::Amount,
+"BRAND_NAME" => EntitySubType::BrandName,
+"CONTACT_POINT" => EntitySubType::ContactPoint,
+"DATE" => EntitySubType::Date,
+"DIRECTION" => EntitySubType::Direction,
+"DOSAGE" => EntitySubType::Dosage,
+"DURATION" => EntitySubType::Duration,
+"DX_NAME" => EntitySubType::DxName,
+"EMAIL" => EntitySubType::Email,
+"FORM" => EntitySubType::Form,
+"FREQUENCY" => EntitySubType::Frequency,
+"GENDER" => EntitySubType::Gender,
+"GENERIC_NAME" => EntitySubType::GenericName,
+"ID" => EntitySubType::Id,
+"IDENTIFIER" => EntitySubType::Identifier,
+"NAME" => EntitySubType::Name,
+"PHONE_OR_FAX" => EntitySubType::PhoneOrFax,
+"PROCEDURE_NAME" => EntitySubType::ProcedureName,
+"PROFESSION" => EntitySubType::Profession,
+"QUALITY" => EntitySubType::Quality,
+"QUANTITY" => EntitySubType::Quantity,
+"RACE_ETHNICITY" => EntitySubType::RaceEthnicity,
+"RATE" => EntitySubType::Rate,
+"REC_DRUG_USE" => EntitySubType::RecDrugUse,
+"ROUTE_OR_MODE" => EntitySubType::RouteOrMode,
+"STRENGTH" => EntitySubType::Strength,
+"SYSTEM_ORGAN_SITE" => EntitySubType::SystemOrganSite,
+"TEST_NAME" => EntitySubType::TestName,
+"TEST_UNIT" => EntitySubType::TestUnit,
+"TEST_UNITS" => EntitySubType::TestUnits,
+"TEST_VALUE" => EntitySubType::TestValue,
+"TIME_EXPRESSION" => EntitySubType::TimeExpression,
+"TIME_TO_DX_NAME" => EntitySubType::TimeToDxName,
+"TIME_TO_MEDICATION_NAME" => EntitySubType::TimeToMedicationName,
+"TIME_TO_PROCEDURE_NAME" => EntitySubType::TimeToProcedureName,
+"TIME_TO_TEST_NAME" => EntitySubType::TimeToTestName,
+"TIME_TO_TREATMENT_NAME" => EntitySubType::TimeToTreatmentName,
+"TOBACCO_USE" => EntitySubType::TobaccoUse,
+"TREATMENT_NAME" => EntitySubType::TreatmentName,
+"URL" => EntitySubType::Url,
+other => EntitySubType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EntitySubType {
                 type Err = std::convert::Infallible;
 
@@ -5201,69 +5163,67 @@ impl std::str::FromStr for EntitySubType {
                 }
             }
 impl EntitySubType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EntitySubType::Acuity => "ACUITY",
-            EntitySubType::Address => "ADDRESS",
-            EntitySubType::Age => "AGE",
-            EntitySubType::AlcoholConsumption => "ALCOHOL_CONSUMPTION",
-            EntitySubType::Allergies => "ALLERGIES",
-            EntitySubType::Amount => "AMOUNT",
-            EntitySubType::BrandName => "BRAND_NAME",
-            EntitySubType::ContactPoint => "CONTACT_POINT",
-            EntitySubType::Date => "DATE",
-            EntitySubType::Direction => "DIRECTION",
-            EntitySubType::Dosage => "DOSAGE",
-            EntitySubType::Duration => "DURATION",
-            EntitySubType::DxName => "DX_NAME",
-            EntitySubType::Email => "EMAIL",
-            EntitySubType::Form => "FORM",
-            EntitySubType::Frequency => "FREQUENCY",
-            EntitySubType::Gender => "GENDER",
-            EntitySubType::GenericName => "GENERIC_NAME",
-            EntitySubType::Id => "ID",
-            EntitySubType::Identifier => "IDENTIFIER",
-            EntitySubType::Name => "NAME",
-            EntitySubType::PhoneOrFax => "PHONE_OR_FAX",
-            EntitySubType::ProcedureName => "PROCEDURE_NAME",
-            EntitySubType::Profession => "PROFESSION",
-            EntitySubType::Quality => "QUALITY",
-            EntitySubType::Quantity => "QUANTITY",
-            EntitySubType::RaceEthnicity => "RACE_ETHNICITY",
-            EntitySubType::Rate => "RATE",
-            EntitySubType::RecDrugUse => "REC_DRUG_USE",
-            EntitySubType::RouteOrMode => "ROUTE_OR_MODE",
-            EntitySubType::Strength => "STRENGTH",
-            EntitySubType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
-            EntitySubType::TestName => "TEST_NAME",
-            EntitySubType::TestUnit => "TEST_UNIT",
-            EntitySubType::TestUnits => "TEST_UNITS",
-            EntitySubType::TestValue => "TEST_VALUE",
-            EntitySubType::TimeExpression => "TIME_EXPRESSION",
-            EntitySubType::TimeToDxName => "TIME_TO_DX_NAME",
-            EntitySubType::TimeToMedicationName => "TIME_TO_MEDICATION_NAME",
-            EntitySubType::TimeToProcedureName => "TIME_TO_PROCEDURE_NAME",
-            EntitySubType::TimeToTestName => "TIME_TO_TEST_NAME",
-            EntitySubType::TimeToTreatmentName => "TIME_TO_TREATMENT_NAME",
-            EntitySubType::TobaccoUse => "TOBACCO_USE",
-            EntitySubType::TreatmentName => "TREATMENT_NAME",
-            EntitySubType::Url => "URL",
-            EntitySubType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACUITY", "ADDRESS", "AGE", "ALCOHOL_CONSUMPTION", "ALLERGIES", "AMOUNT", "BRAND_NAME", "CONTACT_POINT", "DATE", "DIRECTION", "DOSAGE", "DURATION", "DX_NAME", "EMAIL", "FORM", "FREQUENCY", "GENDER", "GENERIC_NAME", "ID", "IDENTIFIER", "NAME", "PHONE_OR_FAX", "PROCEDURE_NAME", "PROFESSION", "QUALITY", "QUANTITY", "RACE_ETHNICITY", "RATE", "REC_DRUG_USE", "ROUTE_OR_MODE", "STRENGTH", "SYSTEM_ORGAN_SITE", "TEST_NAME", "TEST_UNIT", "TEST_UNITS", "TEST_VALUE", "TIME_EXPRESSION", "TIME_TO_DX_NAME", "TIME_TO_MEDICATION_NAME", "TIME_TO_PROCEDURE_NAME", "TIME_TO_TEST_NAME", "TIME_TO_TREATMENT_NAME", "TOBACCO_USE", "TREATMENT_NAME", "URL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EntitySubType::Acuity => "ACUITY",
+    EntitySubType::Address => "ADDRESS",
+    EntitySubType::Age => "AGE",
+    EntitySubType::AlcoholConsumption => "ALCOHOL_CONSUMPTION",
+    EntitySubType::Allergies => "ALLERGIES",
+    EntitySubType::Amount => "AMOUNT",
+    EntitySubType::BrandName => "BRAND_NAME",
+    EntitySubType::ContactPoint => "CONTACT_POINT",
+    EntitySubType::Date => "DATE",
+    EntitySubType::Direction => "DIRECTION",
+    EntitySubType::Dosage => "DOSAGE",
+    EntitySubType::Duration => "DURATION",
+    EntitySubType::DxName => "DX_NAME",
+    EntitySubType::Email => "EMAIL",
+    EntitySubType::Form => "FORM",
+    EntitySubType::Frequency => "FREQUENCY",
+    EntitySubType::Gender => "GENDER",
+    EntitySubType::GenericName => "GENERIC_NAME",
+    EntitySubType::Id => "ID",
+    EntitySubType::Identifier => "IDENTIFIER",
+    EntitySubType::Name => "NAME",
+    EntitySubType::PhoneOrFax => "PHONE_OR_FAX",
+    EntitySubType::ProcedureName => "PROCEDURE_NAME",
+    EntitySubType::Profession => "PROFESSION",
+    EntitySubType::Quality => "QUALITY",
+    EntitySubType::Quantity => "QUANTITY",
+    EntitySubType::RaceEthnicity => "RACE_ETHNICITY",
+    EntitySubType::Rate => "RATE",
+    EntitySubType::RecDrugUse => "REC_DRUG_USE",
+    EntitySubType::RouteOrMode => "ROUTE_OR_MODE",
+    EntitySubType::Strength => "STRENGTH",
+    EntitySubType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+    EntitySubType::TestName => "TEST_NAME",
+    EntitySubType::TestUnit => "TEST_UNIT",
+    EntitySubType::TestUnits => "TEST_UNITS",
+    EntitySubType::TestValue => "TEST_VALUE",
+    EntitySubType::TimeExpression => "TIME_EXPRESSION",
+    EntitySubType::TimeToDxName => "TIME_TO_DX_NAME",
+    EntitySubType::TimeToMedicationName => "TIME_TO_MEDICATION_NAME",
+    EntitySubType::TimeToProcedureName => "TIME_TO_PROCEDURE_NAME",
+    EntitySubType::TimeToTestName => "TIME_TO_TEST_NAME",
+    EntitySubType::TimeToTreatmentName => "TIME_TO_TREATMENT_NAME",
+    EntitySubType::TobaccoUse => "TOBACCO_USE",
+    EntitySubType::TreatmentName => "TREATMENT_NAME",
+    EntitySubType::Url => "URL",
+    EntitySubType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACUITY", "ADDRESS", "AGE", "ALCOHOL_CONSUMPTION", "ALLERGIES", "AMOUNT", "BRAND_NAME", "CONTACT_POINT", "DATE", "DIRECTION", "DOSAGE", "DURATION", "DX_NAME", "EMAIL", "FORM", "FREQUENCY", "GENDER", "GENERIC_NAME", "ID", "IDENTIFIER", "NAME", "PHONE_OR_FAX", "PROCEDURE_NAME", "PROFESSION", "QUALITY", "QUANTITY", "RACE_ETHNICITY", "RATE", "REC_DRUG_USE", "ROUTE_OR_MODE", "STRENGTH", "SYSTEM_ORGAN_SITE", "TEST_NAME", "TEST_UNIT", "TEST_UNITS", "TEST_VALUE", "TIME_EXPRESSION", "TIME_TO_DX_NAME", "TIME_TO_MEDICATION_NAME", "TIME_TO_PROCEDURE_NAME", "TIME_TO_TEST_NAME", "TIME_TO_TREATMENT_NAME", "TOBACCO_USE", "TREATMENT_NAME", "URL"]
+                }
+            }
 impl AsRef<str> for EntitySubType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> An attribute that was extracted, but Comprehend Medical; was unable to relate to an entity. </p>
 #[non_exhaustive]

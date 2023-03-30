@@ -1285,13 +1285,13 @@ pub enum FixedPosition {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FixedPosition {
-    fn from(s: &str) -> Self {
-        match s {
-            "first" => FixedPosition::First,
-            other => FixedPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "first" => FixedPosition::First,
+other => FixedPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FixedPosition {
                 type Err = std::convert::Infallible;
 
@@ -1300,25 +1300,23 @@ impl std::str::FromStr for FixedPosition {
                 }
             }
 impl FixedPosition {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FixedPosition::First => "first",
-            FixedPosition::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "first"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FixedPosition::First => "first",
+    FixedPosition::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["first"]
+                }
+            }
 impl AsRef<str> for FixedPosition {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `FormButtonsPosition`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1370,15 +1368,15 @@ pub enum FormButtonsPosition {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FormButtonsPosition {
-    fn from(s: &str) -> Self {
-        match s {
-            "bottom" => FormButtonsPosition::Bottom,
-            "top" => FormButtonsPosition::Top,
-            "top_and_bottom" => FormButtonsPosition::TopAndBottom,
-            other => FormButtonsPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "bottom" => FormButtonsPosition::Bottom,
+"top" => FormButtonsPosition::Top,
+"top_and_bottom" => FormButtonsPosition::TopAndBottom,
+other => FormButtonsPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FormButtonsPosition {
                 type Err = std::convert::Infallible;
 
@@ -1387,27 +1385,25 @@ impl std::str::FromStr for FormButtonsPosition {
                 }
             }
 impl FormButtonsPosition {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FormButtonsPosition::Bottom => "bottom",
-            FormButtonsPosition::Top => "top",
-            FormButtonsPosition::TopAndBottom => "top_and_bottom",
-            FormButtonsPosition::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "bottom", "top", "top_and_bottom"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FormButtonsPosition::Bottom => "bottom",
+    FormButtonsPosition::Top => "top",
+    FormButtonsPosition::TopAndBottom => "top_and_bottom",
+    FormButtonsPosition::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["bottom", "top", "top_and_bottom"]
+                }
+            }
 impl AsRef<str> for FormButtonsPosition {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Stores the configuration information for a visual helper element for a form. A sectional element can be a header, a text block, or a divider. These elements are static and not associated with any data.</p>
 #[non_exhaustive]
@@ -2393,14 +2389,14 @@ pub enum FormDataSourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FormDataSourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Custom" => FormDataSourceType::Custom,
-            "DataStore" => FormDataSourceType::Datastore,
-            other => FormDataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Custom" => FormDataSourceType::Custom,
+"DataStore" => FormDataSourceType::Datastore,
+other => FormDataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FormDataSourceType {
                 type Err = std::convert::Infallible;
 
@@ -2409,26 +2405,24 @@ impl std::str::FromStr for FormDataSourceType {
                 }
             }
 impl FormDataSourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FormDataSourceType::Custom => "Custom",
-            FormDataSourceType::Datastore => "DataStore",
-            FormDataSourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Custom", "DataStore"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FormDataSourceType::Custom => "Custom",
+    FormDataSourceType::Datastore => "DataStore",
+    FormDataSourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Custom", "DataStore"]
+                }
+            }
 impl AsRef<str> for FormDataSourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the configuration for the form's style.</p>
 #[non_exhaustive]
@@ -2608,14 +2602,14 @@ pub enum FormActionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FormActionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "create" => FormActionType::Create,
-            "update" => FormActionType::Update,
-            other => FormActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "create" => FormActionType::Create,
+"update" => FormActionType::Update,
+other => FormActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FormActionType {
                 type Err = std::convert::Infallible;
 
@@ -2624,26 +2618,24 @@ impl std::str::FromStr for FormActionType {
                 }
             }
 impl FormActionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FormActionType::Create => "create",
-            FormActionType::Update => "update",
-            FormActionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "create", "update"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FormActionType::Create => "create",
+    FormActionType::Update => "update",
+    FormActionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["create", "update"]
+                }
+            }
 impl AsRef<str> for FormActionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the basic information about a form.</p>
 #[non_exhaustive]
@@ -4956,22 +4948,20 @@ impl SortProperty {
 #[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct SortDirection(String);
 impl SortDirection {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASC", "DESC"
-        ]
-    }
-}
-impl <T> std::convert::From<T> for SortDirection where T: std::convert::AsRef<str> {
-    fn from(s: T) -> Self {
-        SortDirection(s.as_ref().to_owned())
-    }
-}
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    &self.0
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASC", "DESC"]
+                }
+            }
+impl<T> std::convert::From<T> for SortDirection where T: std::convert::AsRef<str> {
+                fn from(s: T) -> Self {
+                    SortDirection(s.as_ref().to_owned())
+                }
+            }
 
 /// <p>Represents the data binding configuration for a component at runtime. You can use <code>ComponentBindingPropertiesValue</code> to add exposed properties to a component to allow different values to be entered when a component is reused in different places in an app.</p>
 #[non_exhaustive]
@@ -6336,13 +6326,13 @@ pub enum TokenProviders {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TokenProviders {
-    fn from(s: &str) -> Self {
-        match s {
-            "figma" => TokenProviders::Figma,
-            other => TokenProviders::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "figma" => TokenProviders::Figma,
+other => TokenProviders::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TokenProviders {
                 type Err = std::convert::Infallible;
 
@@ -6351,25 +6341,23 @@ impl std::str::FromStr for TokenProviders {
                 }
             }
 impl TokenProviders {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TokenProviders::Figma => "figma",
-            TokenProviders::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "figma"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TokenProviders::Figma => "figma",
+    TokenProviders::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["figma"]
+                }
+            }
 impl AsRef<str> for TokenProviders {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Stores the metadata information about a feature on a form or view.</p>
 #[non_exhaustive]

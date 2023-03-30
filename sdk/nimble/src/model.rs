@@ -506,14 +506,14 @@ pub enum StudioEncryptionConfigurationKeyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StudioEncryptionConfigurationKeyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS_OWNED_KEY" => StudioEncryptionConfigurationKeyType::AwsOwnedKey,
-            "CUSTOMER_MANAGED_KEY" => StudioEncryptionConfigurationKeyType::CustomerManagedKey,
-            other => StudioEncryptionConfigurationKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS_OWNED_KEY" => StudioEncryptionConfigurationKeyType::AwsOwnedKey,
+"CUSTOMER_MANAGED_KEY" => StudioEncryptionConfigurationKeyType::CustomerManagedKey,
+other => StudioEncryptionConfigurationKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StudioEncryptionConfigurationKeyType {
                 type Err = std::convert::Infallible;
 
@@ -522,26 +522,24 @@ impl std::str::FromStr for StudioEncryptionConfigurationKeyType {
                 }
             }
 impl StudioEncryptionConfigurationKeyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioEncryptionConfigurationKeyType::AwsOwnedKey => "AWS_OWNED_KEY",
-            StudioEncryptionConfigurationKeyType::CustomerManagedKey => "CUSTOMER_MANAGED_KEY",
-            StudioEncryptionConfigurationKeyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_OWNED_KEY", "CUSTOMER_MANAGED_KEY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioEncryptionConfigurationKeyType::AwsOwnedKey => "AWS_OWNED_KEY",
+    StudioEncryptionConfigurationKeyType::CustomerManagedKey => "CUSTOMER_MANAGED_KEY",
+    StudioEncryptionConfigurationKeyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS_OWNED_KEY", "CUSTOMER_MANAGED_KEY"]
+                }
+            }
 impl AsRef<str> for StudioEncryptionConfigurationKeyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StudioStatusCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -641,31 +639,31 @@ pub enum StudioStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StudioStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS_SSO_ACCESS_DENIED" => StudioStatusCode::AwsSsoAccessDenied,
-            "AWS_SSO_CONFIGURATION_REPAIRED" => StudioStatusCode::AwsSsoConfigurationRepaired,
-            "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS" => StudioStatusCode::AwsSsoConfigurationRepairInProgress,
-            "AWS_SSO_NOT_ENABLED" => StudioStatusCode::AwsSsoNotEnabled,
-            "AWS_STS_REGION_DISABLED" => StudioStatusCode::AwsStsRegionDisabled,
-            "ENCRYPTION_KEY_ACCESS_DENIED" => StudioStatusCode::EncryptionKeyAccessDenied,
-            "ENCRYPTION_KEY_NOT_FOUND" => StudioStatusCode::EncryptionKeyNotFound,
-            "INTERNAL_ERROR" => StudioStatusCode::InternalError,
-            "ROLE_COULD_NOT_BE_ASSUMED" => StudioStatusCode::RoleCouldNotBeAssumed,
-            "ROLE_NOT_OWNED_BY_STUDIO_OWNER" => StudioStatusCode::RoleNotOwnedByStudioOwner,
-            "STUDIO_CREATED" => StudioStatusCode::StudioCreated,
-            "STUDIO_CREATE_IN_PROGRESS" => StudioStatusCode::StudioCreateInProgress,
-            "STUDIO_DELETED" => StudioStatusCode::StudioDeleted,
-            "STUDIO_DELETE_IN_PROGRESS" => StudioStatusCode::StudioDeleteInProgress,
-            "STUDIO_UPDATED" => StudioStatusCode::StudioUpdated,
-            "STUDIO_UPDATE_IN_PROGRESS" => StudioStatusCode::StudioUpdateInProgress,
-            "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED" => StudioStatusCode::StudioWithLaunchProfilesNotDeleted,
-            "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED" => StudioStatusCode::StudioWithStreamingImagesNotDeleted,
-            "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED" => StudioStatusCode::StudioWithStudioComponentsNotDeleted,
-            other => StudioStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS_SSO_ACCESS_DENIED" => StudioStatusCode::AwsSsoAccessDenied,
+"AWS_SSO_CONFIGURATION_REPAIRED" => StudioStatusCode::AwsSsoConfigurationRepaired,
+"AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS" => StudioStatusCode::AwsSsoConfigurationRepairInProgress,
+"AWS_SSO_NOT_ENABLED" => StudioStatusCode::AwsSsoNotEnabled,
+"AWS_STS_REGION_DISABLED" => StudioStatusCode::AwsStsRegionDisabled,
+"ENCRYPTION_KEY_ACCESS_DENIED" => StudioStatusCode::EncryptionKeyAccessDenied,
+"ENCRYPTION_KEY_NOT_FOUND" => StudioStatusCode::EncryptionKeyNotFound,
+"INTERNAL_ERROR" => StudioStatusCode::InternalError,
+"ROLE_COULD_NOT_BE_ASSUMED" => StudioStatusCode::RoleCouldNotBeAssumed,
+"ROLE_NOT_OWNED_BY_STUDIO_OWNER" => StudioStatusCode::RoleNotOwnedByStudioOwner,
+"STUDIO_CREATED" => StudioStatusCode::StudioCreated,
+"STUDIO_CREATE_IN_PROGRESS" => StudioStatusCode::StudioCreateInProgress,
+"STUDIO_DELETED" => StudioStatusCode::StudioDeleted,
+"STUDIO_DELETE_IN_PROGRESS" => StudioStatusCode::StudioDeleteInProgress,
+"STUDIO_UPDATED" => StudioStatusCode::StudioUpdated,
+"STUDIO_UPDATE_IN_PROGRESS" => StudioStatusCode::StudioUpdateInProgress,
+"STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED" => StudioStatusCode::StudioWithLaunchProfilesNotDeleted,
+"STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED" => StudioStatusCode::StudioWithStreamingImagesNotDeleted,
+"STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED" => StudioStatusCode::StudioWithStudioComponentsNotDeleted,
+other => StudioStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StudioStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -674,43 +672,41 @@ impl std::str::FromStr for StudioStatusCode {
                 }
             }
 impl StudioStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioStatusCode::AwsSsoAccessDenied => "AWS_SSO_ACCESS_DENIED",
-            StudioStatusCode::AwsSsoConfigurationRepaired => "AWS_SSO_CONFIGURATION_REPAIRED",
-            StudioStatusCode::AwsSsoConfigurationRepairInProgress => "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS",
-            StudioStatusCode::AwsSsoNotEnabled => "AWS_SSO_NOT_ENABLED",
-            StudioStatusCode::AwsStsRegionDisabled => "AWS_STS_REGION_DISABLED",
-            StudioStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
-            StudioStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
-            StudioStatusCode::InternalError => "INTERNAL_ERROR",
-            StudioStatusCode::RoleCouldNotBeAssumed => "ROLE_COULD_NOT_BE_ASSUMED",
-            StudioStatusCode::RoleNotOwnedByStudioOwner => "ROLE_NOT_OWNED_BY_STUDIO_OWNER",
-            StudioStatusCode::StudioCreated => "STUDIO_CREATED",
-            StudioStatusCode::StudioCreateInProgress => "STUDIO_CREATE_IN_PROGRESS",
-            StudioStatusCode::StudioDeleted => "STUDIO_DELETED",
-            StudioStatusCode::StudioDeleteInProgress => "STUDIO_DELETE_IN_PROGRESS",
-            StudioStatusCode::StudioUpdated => "STUDIO_UPDATED",
-            StudioStatusCode::StudioUpdateInProgress => "STUDIO_UPDATE_IN_PROGRESS",
-            StudioStatusCode::StudioWithLaunchProfilesNotDeleted => "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED",
-            StudioStatusCode::StudioWithStreamingImagesNotDeleted => "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED",
-            StudioStatusCode::StudioWithStudioComponentsNotDeleted => "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED",
-            StudioStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_SSO_ACCESS_DENIED", "AWS_SSO_CONFIGURATION_REPAIRED", "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS", "AWS_SSO_NOT_ENABLED", "AWS_STS_REGION_DISABLED", "ENCRYPTION_KEY_ACCESS_DENIED", "ENCRYPTION_KEY_NOT_FOUND", "INTERNAL_ERROR", "ROLE_COULD_NOT_BE_ASSUMED", "ROLE_NOT_OWNED_BY_STUDIO_OWNER", "STUDIO_CREATED", "STUDIO_CREATE_IN_PROGRESS", "STUDIO_DELETED", "STUDIO_DELETE_IN_PROGRESS", "STUDIO_UPDATED", "STUDIO_UPDATE_IN_PROGRESS", "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED", "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED", "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioStatusCode::AwsSsoAccessDenied => "AWS_SSO_ACCESS_DENIED",
+    StudioStatusCode::AwsSsoConfigurationRepaired => "AWS_SSO_CONFIGURATION_REPAIRED",
+    StudioStatusCode::AwsSsoConfigurationRepairInProgress => "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS",
+    StudioStatusCode::AwsSsoNotEnabled => "AWS_SSO_NOT_ENABLED",
+    StudioStatusCode::AwsStsRegionDisabled => "AWS_STS_REGION_DISABLED",
+    StudioStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
+    StudioStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
+    StudioStatusCode::InternalError => "INTERNAL_ERROR",
+    StudioStatusCode::RoleCouldNotBeAssumed => "ROLE_COULD_NOT_BE_ASSUMED",
+    StudioStatusCode::RoleNotOwnedByStudioOwner => "ROLE_NOT_OWNED_BY_STUDIO_OWNER",
+    StudioStatusCode::StudioCreated => "STUDIO_CREATED",
+    StudioStatusCode::StudioCreateInProgress => "STUDIO_CREATE_IN_PROGRESS",
+    StudioStatusCode::StudioDeleted => "STUDIO_DELETED",
+    StudioStatusCode::StudioDeleteInProgress => "STUDIO_DELETE_IN_PROGRESS",
+    StudioStatusCode::StudioUpdated => "STUDIO_UPDATED",
+    StudioStatusCode::StudioUpdateInProgress => "STUDIO_UPDATE_IN_PROGRESS",
+    StudioStatusCode::StudioWithLaunchProfilesNotDeleted => "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED",
+    StudioStatusCode::StudioWithStreamingImagesNotDeleted => "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED",
+    StudioStatusCode::StudioWithStudioComponentsNotDeleted => "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED",
+    StudioStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS_SSO_ACCESS_DENIED", "AWS_SSO_CONFIGURATION_REPAIRED", "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS", "AWS_SSO_NOT_ENABLED", "AWS_STS_REGION_DISABLED", "ENCRYPTION_KEY_ACCESS_DENIED", "ENCRYPTION_KEY_NOT_FOUND", "INTERNAL_ERROR", "ROLE_COULD_NOT_BE_ASSUMED", "ROLE_NOT_OWNED_BY_STUDIO_OWNER", "STUDIO_CREATED", "STUDIO_CREATE_IN_PROGRESS", "STUDIO_DELETED", "STUDIO_DELETE_IN_PROGRESS", "STUDIO_UPDATED", "STUDIO_UPDATE_IN_PROGRESS", "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED", "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED", "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED"]
+                }
+            }
 impl AsRef<str> for StudioStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StudioState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -777,20 +773,20 @@ pub enum StudioState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StudioState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => StudioState::CreateFailed,
-            "CREATE_IN_PROGRESS" => StudioState::CreateInProgress,
-            "DELETED" => StudioState::Deleted,
-            "DELETE_FAILED" => StudioState::DeleteFailed,
-            "DELETE_IN_PROGRESS" => StudioState::DeleteInProgress,
-            "READY" => StudioState::Ready,
-            "UPDATE_FAILED" => StudioState::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => StudioState::UpdateInProgress,
-            other => StudioState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => StudioState::CreateFailed,
+"CREATE_IN_PROGRESS" => StudioState::CreateInProgress,
+"DELETED" => StudioState::Deleted,
+"DELETE_FAILED" => StudioState::DeleteFailed,
+"DELETE_IN_PROGRESS" => StudioState::DeleteInProgress,
+"READY" => StudioState::Ready,
+"UPDATE_FAILED" => StudioState::UpdateFailed,
+"UPDATE_IN_PROGRESS" => StudioState::UpdateInProgress,
+other => StudioState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StudioState {
                 type Err = std::convert::Infallible;
 
@@ -799,32 +795,30 @@ impl std::str::FromStr for StudioState {
                 }
             }
 impl StudioState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioState::CreateFailed => "CREATE_FAILED",
-            StudioState::CreateInProgress => "CREATE_IN_PROGRESS",
-            StudioState::Deleted => "DELETED",
-            StudioState::DeleteFailed => "DELETE_FAILED",
-            StudioState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            StudioState::Ready => "READY",
-            StudioState::UpdateFailed => "UPDATE_FAILED",
-            StudioState::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            StudioState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioState::CreateFailed => "CREATE_FAILED",
+    StudioState::CreateInProgress => "CREATE_IN_PROGRESS",
+    StudioState::Deleted => "DELETED",
+    StudioState::DeleteFailed => "DELETE_FAILED",
+    StudioState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    StudioState::Ready => "READY",
+    StudioState::UpdateFailed => "UPDATE_FAILED",
+    StudioState::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    StudioState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for StudioState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A new studio user's membership.</p>
 #[non_exhaustive]
@@ -939,13 +933,13 @@ pub enum StudioPersona {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StudioPersona {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADMINISTRATOR" => StudioPersona::Administrator,
-            other => StudioPersona::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADMINISTRATOR" => StudioPersona::Administrator,
+other => StudioPersona::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StudioPersona {
                 type Err = std::convert::Infallible;
 
@@ -954,25 +948,23 @@ impl std::str::FromStr for StudioPersona {
                 }
             }
 impl StudioPersona {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioPersona::Administrator => "ADMINISTRATOR",
-            StudioPersona::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADMINISTRATOR"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioPersona::Administrator => "ADMINISTRATOR",
+    StudioPersona::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADMINISTRATOR"]
+                }
+            }
 impl AsRef<str> for StudioPersona {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A studio member is an association of a user from your studio identity source to elevated permissions that they are granted in the studio.</p> 
 /// <p>When you add a user to your studio using the Nimble Studio console, they are given access to the studio's IAM Identity Center application and are given access to log in to the Nimble Studio portal. These users have the permissions provided by the studio's user IAM role and do not appear in the studio membership collection. Only studio admins appear in studio membership.</p> 
@@ -1628,17 +1620,17 @@ pub enum StudioComponentType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StudioComponentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE_DIRECTORY" => StudioComponentType::ActiveDirectory,
-            "COMPUTE_FARM" => StudioComponentType::ComputeFarm,
-            "CUSTOM" => StudioComponentType::Custom,
-            "LICENSE_SERVICE" => StudioComponentType::LicenseService,
-            "SHARED_FILE_SYSTEM" => StudioComponentType::SharedFileSystem,
-            other => StudioComponentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE_DIRECTORY" => StudioComponentType::ActiveDirectory,
+"COMPUTE_FARM" => StudioComponentType::ComputeFarm,
+"CUSTOM" => StudioComponentType::Custom,
+"LICENSE_SERVICE" => StudioComponentType::LicenseService,
+"SHARED_FILE_SYSTEM" => StudioComponentType::SharedFileSystem,
+other => StudioComponentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StudioComponentType {
                 type Err = std::convert::Infallible;
 
@@ -1647,29 +1639,27 @@ impl std::str::FromStr for StudioComponentType {
                 }
             }
 impl StudioComponentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioComponentType::ActiveDirectory => "ACTIVE_DIRECTORY",
-            StudioComponentType::ComputeFarm => "COMPUTE_FARM",
-            StudioComponentType::Custom => "CUSTOM",
-            StudioComponentType::LicenseService => "LICENSE_SERVICE",
-            StudioComponentType::SharedFileSystem => "SHARED_FILE_SYSTEM",
-            StudioComponentType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE_DIRECTORY", "COMPUTE_FARM", "CUSTOM", "LICENSE_SERVICE", "SHARED_FILE_SYSTEM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioComponentType::ActiveDirectory => "ACTIVE_DIRECTORY",
+    StudioComponentType::ComputeFarm => "COMPUTE_FARM",
+    StudioComponentType::Custom => "CUSTOM",
+    StudioComponentType::LicenseService => "LICENSE_SERVICE",
+    StudioComponentType::SharedFileSystem => "SHARED_FILE_SYSTEM",
+    StudioComponentType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE_DIRECTORY", "COMPUTE_FARM", "CUSTOM", "LICENSE_SERVICE", "SHARED_FILE_SYSTEM"]
+                }
+            }
 impl AsRef<str> for StudioComponentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StudioComponentSubtype`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1724,16 +1714,16 @@ pub enum StudioComponentSubtype {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StudioComponentSubtype {
-    fn from(s: &str) -> Self {
-        match s {
-            "AMAZON_FSX_FOR_LUSTRE" => StudioComponentSubtype::AmazonFsxForLustre,
-            "AMAZON_FSX_FOR_WINDOWS" => StudioComponentSubtype::AmazonFsxForWindows,
-            "AWS_MANAGED_MICROSOFT_AD" => StudioComponentSubtype::AwsManagedMicrosoftAd,
-            "CUSTOM" => StudioComponentSubtype::Custom,
-            other => StudioComponentSubtype::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AMAZON_FSX_FOR_LUSTRE" => StudioComponentSubtype::AmazonFsxForLustre,
+"AMAZON_FSX_FOR_WINDOWS" => StudioComponentSubtype::AmazonFsxForWindows,
+"AWS_MANAGED_MICROSOFT_AD" => StudioComponentSubtype::AwsManagedMicrosoftAd,
+"CUSTOM" => StudioComponentSubtype::Custom,
+other => StudioComponentSubtype::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StudioComponentSubtype {
                 type Err = std::convert::Infallible;
 
@@ -1742,28 +1732,26 @@ impl std::str::FromStr for StudioComponentSubtype {
                 }
             }
 impl StudioComponentSubtype {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioComponentSubtype::AmazonFsxForLustre => "AMAZON_FSX_FOR_LUSTRE",
-            StudioComponentSubtype::AmazonFsxForWindows => "AMAZON_FSX_FOR_WINDOWS",
-            StudioComponentSubtype::AwsManagedMicrosoftAd => "AWS_MANAGED_MICROSOFT_AD",
-            StudioComponentSubtype::Custom => "CUSTOM",
-            StudioComponentSubtype::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AMAZON_FSX_FOR_LUSTRE", "AMAZON_FSX_FOR_WINDOWS", "AWS_MANAGED_MICROSOFT_AD", "CUSTOM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioComponentSubtype::AmazonFsxForLustre => "AMAZON_FSX_FOR_LUSTRE",
+    StudioComponentSubtype::AmazonFsxForWindows => "AMAZON_FSX_FOR_WINDOWS",
+    StudioComponentSubtype::AwsManagedMicrosoftAd => "AWS_MANAGED_MICROSOFT_AD",
+    StudioComponentSubtype::Custom => "CUSTOM",
+    StudioComponentSubtype::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AMAZON_FSX_FOR_LUSTRE", "AMAZON_FSX_FOR_WINDOWS", "AWS_MANAGED_MICROSOFT_AD", "CUSTOM"]
+                }
+            }
 impl AsRef<str> for StudioComponentSubtype {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StudioComponentStatusCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1841,22 +1829,22 @@ pub enum StudioComponentStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StudioComponentStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE_DIRECTORY_ALREADY_EXISTS" => StudioComponentStatusCode::ActiveDirectoryAlreadyExists,
-            "ENCRYPTION_KEY_ACCESS_DENIED" => StudioComponentStatusCode::EncryptionKeyAccessDenied,
-            "ENCRYPTION_KEY_NOT_FOUND" => StudioComponentStatusCode::EncryptionKeyNotFound,
-            "INTERNAL_ERROR" => StudioComponentStatusCode::InternalError,
-            "STUDIO_COMPONENT_CREATED" => StudioComponentStatusCode::StudioComponentCreated,
-            "STUDIO_COMPONENT_CREATE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentCreateInProgress,
-            "STUDIO_COMPONENT_DELETED" => StudioComponentStatusCode::StudioComponentDeleted,
-            "STUDIO_COMPONENT_DELETE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentDeleteInProgress,
-            "STUDIO_COMPONENT_UPDATED" => StudioComponentStatusCode::StudioComponentUpdated,
-            "STUDIO_COMPONENT_UPDATE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentUpdateInProgress,
-            other => StudioComponentStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE_DIRECTORY_ALREADY_EXISTS" => StudioComponentStatusCode::ActiveDirectoryAlreadyExists,
+"ENCRYPTION_KEY_ACCESS_DENIED" => StudioComponentStatusCode::EncryptionKeyAccessDenied,
+"ENCRYPTION_KEY_NOT_FOUND" => StudioComponentStatusCode::EncryptionKeyNotFound,
+"INTERNAL_ERROR" => StudioComponentStatusCode::InternalError,
+"STUDIO_COMPONENT_CREATED" => StudioComponentStatusCode::StudioComponentCreated,
+"STUDIO_COMPONENT_CREATE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentCreateInProgress,
+"STUDIO_COMPONENT_DELETED" => StudioComponentStatusCode::StudioComponentDeleted,
+"STUDIO_COMPONENT_DELETE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentDeleteInProgress,
+"STUDIO_COMPONENT_UPDATED" => StudioComponentStatusCode::StudioComponentUpdated,
+"STUDIO_COMPONENT_UPDATE_IN_PROGRESS" => StudioComponentStatusCode::StudioComponentUpdateInProgress,
+other => StudioComponentStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StudioComponentStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -1865,34 +1853,32 @@ impl std::str::FromStr for StudioComponentStatusCode {
                 }
             }
 impl StudioComponentStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioComponentStatusCode::ActiveDirectoryAlreadyExists => "ACTIVE_DIRECTORY_ALREADY_EXISTS",
-            StudioComponentStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
-            StudioComponentStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
-            StudioComponentStatusCode::InternalError => "INTERNAL_ERROR",
-            StudioComponentStatusCode::StudioComponentCreated => "STUDIO_COMPONENT_CREATED",
-            StudioComponentStatusCode::StudioComponentCreateInProgress => "STUDIO_COMPONENT_CREATE_IN_PROGRESS",
-            StudioComponentStatusCode::StudioComponentDeleted => "STUDIO_COMPONENT_DELETED",
-            StudioComponentStatusCode::StudioComponentDeleteInProgress => "STUDIO_COMPONENT_DELETE_IN_PROGRESS",
-            StudioComponentStatusCode::StudioComponentUpdated => "STUDIO_COMPONENT_UPDATED",
-            StudioComponentStatusCode::StudioComponentUpdateInProgress => "STUDIO_COMPONENT_UPDATE_IN_PROGRESS",
-            StudioComponentStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE_DIRECTORY_ALREADY_EXISTS", "ENCRYPTION_KEY_ACCESS_DENIED", "ENCRYPTION_KEY_NOT_FOUND", "INTERNAL_ERROR", "STUDIO_COMPONENT_CREATED", "STUDIO_COMPONENT_CREATE_IN_PROGRESS", "STUDIO_COMPONENT_DELETED", "STUDIO_COMPONENT_DELETE_IN_PROGRESS", "STUDIO_COMPONENT_UPDATED", "STUDIO_COMPONENT_UPDATE_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioComponentStatusCode::ActiveDirectoryAlreadyExists => "ACTIVE_DIRECTORY_ALREADY_EXISTS",
+    StudioComponentStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
+    StudioComponentStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
+    StudioComponentStatusCode::InternalError => "INTERNAL_ERROR",
+    StudioComponentStatusCode::StudioComponentCreated => "STUDIO_COMPONENT_CREATED",
+    StudioComponentStatusCode::StudioComponentCreateInProgress => "STUDIO_COMPONENT_CREATE_IN_PROGRESS",
+    StudioComponentStatusCode::StudioComponentDeleted => "STUDIO_COMPONENT_DELETED",
+    StudioComponentStatusCode::StudioComponentDeleteInProgress => "STUDIO_COMPONENT_DELETE_IN_PROGRESS",
+    StudioComponentStatusCode::StudioComponentUpdated => "STUDIO_COMPONENT_UPDATED",
+    StudioComponentStatusCode::StudioComponentUpdateInProgress => "STUDIO_COMPONENT_UPDATE_IN_PROGRESS",
+    StudioComponentStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE_DIRECTORY_ALREADY_EXISTS", "ENCRYPTION_KEY_ACCESS_DENIED", "ENCRYPTION_KEY_NOT_FOUND", "INTERNAL_ERROR", "STUDIO_COMPONENT_CREATED", "STUDIO_COMPONENT_CREATE_IN_PROGRESS", "STUDIO_COMPONENT_DELETED", "STUDIO_COMPONENT_DELETE_IN_PROGRESS", "STUDIO_COMPONENT_UPDATED", "STUDIO_COMPONENT_UPDATE_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for StudioComponentStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StudioComponentState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1981,20 +1967,20 @@ pub enum StudioComponentState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StudioComponentState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => StudioComponentState::CreateFailed,
-            "CREATE_IN_PROGRESS" => StudioComponentState::CreateInProgress,
-            "DELETED" => StudioComponentState::Deleted,
-            "DELETE_FAILED" => StudioComponentState::DeleteFailed,
-            "DELETE_IN_PROGRESS" => StudioComponentState::DeleteInProgress,
-            "READY" => StudioComponentState::Ready,
-            "UPDATE_FAILED" => StudioComponentState::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => StudioComponentState::UpdateInProgress,
-            other => StudioComponentState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => StudioComponentState::CreateFailed,
+"CREATE_IN_PROGRESS" => StudioComponentState::CreateInProgress,
+"DELETED" => StudioComponentState::Deleted,
+"DELETE_FAILED" => StudioComponentState::DeleteFailed,
+"DELETE_IN_PROGRESS" => StudioComponentState::DeleteInProgress,
+"READY" => StudioComponentState::Ready,
+"UPDATE_FAILED" => StudioComponentState::UpdateFailed,
+"UPDATE_IN_PROGRESS" => StudioComponentState::UpdateInProgress,
+other => StudioComponentState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StudioComponentState {
                 type Err = std::convert::Infallible;
 
@@ -2003,32 +1989,30 @@ impl std::str::FromStr for StudioComponentState {
                 }
             }
 impl StudioComponentState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioComponentState::CreateFailed => "CREATE_FAILED",
-            StudioComponentState::CreateInProgress => "CREATE_IN_PROGRESS",
-            StudioComponentState::Deleted => "DELETED",
-            StudioComponentState::DeleteFailed => "DELETE_FAILED",
-            StudioComponentState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            StudioComponentState::Ready => "READY",
-            StudioComponentState::UpdateFailed => "UPDATE_FAILED",
-            StudioComponentState::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            StudioComponentState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioComponentState::CreateFailed => "CREATE_FAILED",
+    StudioComponentState::CreateInProgress => "CREATE_IN_PROGRESS",
+    StudioComponentState::Deleted => "DELETED",
+    StudioComponentState::DeleteFailed => "DELETE_FAILED",
+    StudioComponentState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    StudioComponentState::Ready => "READY",
+    StudioComponentState::UpdateFailed => "UPDATE_FAILED",
+    StudioComponentState::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    StudioComponentState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for StudioComponentState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A parameter for a studio component script, in the form of a key-value pair.</p>
 #[non_exhaustive]
@@ -2273,14 +2257,14 @@ pub enum StudioComponentInitializationScriptRunContext {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StudioComponentInitializationScriptRunContext {
-    fn from(s: &str) -> Self {
-        match s {
-            "SYSTEM_INITIALIZATION" => StudioComponentInitializationScriptRunContext::SystemInitialization,
-            "USER_INITIALIZATION" => StudioComponentInitializationScriptRunContext::UserInitialization,
-            other => StudioComponentInitializationScriptRunContext::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SYSTEM_INITIALIZATION" => StudioComponentInitializationScriptRunContext::SystemInitialization,
+"USER_INITIALIZATION" => StudioComponentInitializationScriptRunContext::UserInitialization,
+other => StudioComponentInitializationScriptRunContext::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StudioComponentInitializationScriptRunContext {
                 type Err = std::convert::Infallible;
 
@@ -2289,26 +2273,24 @@ impl std::str::FromStr for StudioComponentInitializationScriptRunContext {
                 }
             }
 impl StudioComponentInitializationScriptRunContext {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioComponentInitializationScriptRunContext::SystemInitialization => "SYSTEM_INITIALIZATION",
-            StudioComponentInitializationScriptRunContext::UserInitialization => "USER_INITIALIZATION",
-            StudioComponentInitializationScriptRunContext::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SYSTEM_INITIALIZATION", "USER_INITIALIZATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioComponentInitializationScriptRunContext::SystemInitialization => "SYSTEM_INITIALIZATION",
+    StudioComponentInitializationScriptRunContext::UserInitialization => "USER_INITIALIZATION",
+    StudioComponentInitializationScriptRunContext::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SYSTEM_INITIALIZATION", "USER_INITIALIZATION"]
+                }
+            }
 impl AsRef<str> for StudioComponentInitializationScriptRunContext {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LaunchProfilePlatform`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2357,14 +2339,14 @@ pub enum LaunchProfilePlatform {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchProfilePlatform {
-    fn from(s: &str) -> Self {
-        match s {
-            "LINUX" => LaunchProfilePlatform::Linux,
-            "WINDOWS" => LaunchProfilePlatform::Windows,
-            other => LaunchProfilePlatform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "LINUX" => LaunchProfilePlatform::Linux,
+"WINDOWS" => LaunchProfilePlatform::Windows,
+other => LaunchProfilePlatform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LaunchProfilePlatform {
                 type Err = std::convert::Infallible;
 
@@ -2373,26 +2355,24 @@ impl std::str::FromStr for LaunchProfilePlatform {
                 }
             }
 impl LaunchProfilePlatform {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LaunchProfilePlatform::Linux => "LINUX",
-            LaunchProfilePlatform::Windows => "WINDOWS",
-            LaunchProfilePlatform::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LINUX", "WINDOWS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LaunchProfilePlatform::Linux => "LINUX",
+    LaunchProfilePlatform::Windows => "WINDOWS",
+    LaunchProfilePlatform::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LINUX", "WINDOWS"]
+                }
+            }
 impl AsRef<str> for LaunchProfilePlatform {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The configuration of the studio component, based on component type.</p>
 #[non_exhaustive]
@@ -3559,14 +3539,14 @@ pub enum AutomaticTerminationMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AutomaticTerminationMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVATED" => AutomaticTerminationMode::Activated,
-            "DEACTIVATED" => AutomaticTerminationMode::Deactivated,
-            other => AutomaticTerminationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVATED" => AutomaticTerminationMode::Activated,
+"DEACTIVATED" => AutomaticTerminationMode::Deactivated,
+other => AutomaticTerminationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AutomaticTerminationMode {
                 type Err = std::convert::Infallible;
 
@@ -3575,26 +3555,24 @@ impl std::str::FromStr for AutomaticTerminationMode {
                 }
             }
 impl AutomaticTerminationMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AutomaticTerminationMode::Activated => "ACTIVATED",
-            AutomaticTerminationMode::Deactivated => "DEACTIVATED",
-            AutomaticTerminationMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVATED", "DEACTIVATED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AutomaticTerminationMode::Activated => "ACTIVATED",
+    AutomaticTerminationMode::Deactivated => "DEACTIVATED",
+    AutomaticTerminationMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVATED", "DEACTIVATED"]
+                }
+            }
 impl AsRef<str> for AutomaticTerminationMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p> 
 /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
@@ -3732,14 +3710,14 @@ pub enum SessionPersistenceMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SessionPersistenceMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVATED" => SessionPersistenceMode::Activated,
-            "DEACTIVATED" => SessionPersistenceMode::Deactivated,
-            other => SessionPersistenceMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVATED" => SessionPersistenceMode::Activated,
+"DEACTIVATED" => SessionPersistenceMode::Deactivated,
+other => SessionPersistenceMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SessionPersistenceMode {
                 type Err = std::convert::Infallible;
 
@@ -3748,26 +3726,24 @@ impl std::str::FromStr for SessionPersistenceMode {
                 }
             }
 impl SessionPersistenceMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SessionPersistenceMode::Activated => "ACTIVATED",
-            SessionPersistenceMode::Deactivated => "DEACTIVATED",
-            SessionPersistenceMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVATED", "DEACTIVATED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SessionPersistenceMode::Activated => "ACTIVATED",
+    SessionPersistenceMode::Deactivated => "DEACTIVATED",
+    SessionPersistenceMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVATED", "DEACTIVATED"]
+                }
+            }
 impl AsRef<str> for SessionPersistenceMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `VolumeRetentionMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3816,14 +3792,14 @@ pub enum VolumeRetentionMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VolumeRetentionMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETE" => VolumeRetentionMode::Delete,
-            "RETAIN" => VolumeRetentionMode::Retain,
-            other => VolumeRetentionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DELETE" => VolumeRetentionMode::Delete,
+"RETAIN" => VolumeRetentionMode::Retain,
+other => VolumeRetentionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for VolumeRetentionMode {
                 type Err = std::convert::Infallible;
 
@@ -3832,26 +3808,24 @@ impl std::str::FromStr for VolumeRetentionMode {
                 }
             }
 impl VolumeRetentionMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VolumeRetentionMode::Delete => "DELETE",
-            VolumeRetentionMode::Retain => "RETAIN",
-            VolumeRetentionMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELETE", "RETAIN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VolumeRetentionMode::Delete => "DELETE",
+    VolumeRetentionMode::Retain => "RETAIN",
+    VolumeRetentionMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELETE", "RETAIN"]
+                }
+            }
 impl AsRef<str> for VolumeRetentionMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SessionBackupMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3900,14 +3874,14 @@ pub enum SessionBackupMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SessionBackupMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTOMATIC" => SessionBackupMode::Automatic,
-            "DEACTIVATED" => SessionBackupMode::Deactivated,
-            other => SessionBackupMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUTOMATIC" => SessionBackupMode::Automatic,
+"DEACTIVATED" => SessionBackupMode::Deactivated,
+other => SessionBackupMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SessionBackupMode {
                 type Err = std::convert::Infallible;
 
@@ -3916,26 +3890,24 @@ impl std::str::FromStr for SessionBackupMode {
                 }
             }
 impl SessionBackupMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SessionBackupMode::Automatic => "AUTOMATIC",
-            SessionBackupMode::Deactivated => "DEACTIVATED",
-            SessionBackupMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTOMATIC", "DEACTIVATED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SessionBackupMode::Automatic => "AUTOMATIC",
+    SessionBackupMode::Deactivated => "DEACTIVATED",
+    SessionBackupMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTOMATIC", "DEACTIVATED"]
+                }
+            }
 impl AsRef<str> for SessionBackupMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StreamingSessionStatusCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4026,28 +3998,28 @@ pub enum StreamingSessionStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingSessionStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR" => StreamingSessionStatusCode::ActiveDirectoryDomainJoinError,
-            "AMI_VALIDATION_ERROR" => StreamingSessionStatusCode::AmiValidationError,
-            "DECRYPT_STREAMING_IMAGE_ERROR" => StreamingSessionStatusCode::DecryptStreamingImageError,
-            "INITIALIZATION_SCRIPT_ERROR" => StreamingSessionStatusCode::InitializationScriptError,
-            "INSUFFICIENT_CAPACITY" => StreamingSessionStatusCode::InsufficientCapacity,
-            "INTERNAL_ERROR" => StreamingSessionStatusCode::InternalError,
-            "NETWORK_CONNECTION_ERROR" => StreamingSessionStatusCode::NetworkConnectionError,
-            "NETWORK_INTERFACE_ERROR" => StreamingSessionStatusCode::NetworkInterfaceError,
-            "STREAMING_SESSION_CREATE_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionCreateInProgress,
-            "STREAMING_SESSION_DELETED" => StreamingSessionStatusCode::StreamingSessionDeleted,
-            "STREAMING_SESSION_DELETE_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionDeleteInProgress,
-            "STREAMING_SESSION_READY" => StreamingSessionStatusCode::StreamingSessionReady,
-            "STREAMING_SESSION_STARTED" => StreamingSessionStatusCode::StreamingSessionStarted,
-            "STREAMING_SESSION_START_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionStartInProgress,
-            "STREAMING_SESSION_STOPPED" => StreamingSessionStatusCode::StreamingSessionStopped,
-            "STREAMING_SESSION_STOP_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionStopInProgress,
-            other => StreamingSessionStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR" => StreamingSessionStatusCode::ActiveDirectoryDomainJoinError,
+"AMI_VALIDATION_ERROR" => StreamingSessionStatusCode::AmiValidationError,
+"DECRYPT_STREAMING_IMAGE_ERROR" => StreamingSessionStatusCode::DecryptStreamingImageError,
+"INITIALIZATION_SCRIPT_ERROR" => StreamingSessionStatusCode::InitializationScriptError,
+"INSUFFICIENT_CAPACITY" => StreamingSessionStatusCode::InsufficientCapacity,
+"INTERNAL_ERROR" => StreamingSessionStatusCode::InternalError,
+"NETWORK_CONNECTION_ERROR" => StreamingSessionStatusCode::NetworkConnectionError,
+"NETWORK_INTERFACE_ERROR" => StreamingSessionStatusCode::NetworkInterfaceError,
+"STREAMING_SESSION_CREATE_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionCreateInProgress,
+"STREAMING_SESSION_DELETED" => StreamingSessionStatusCode::StreamingSessionDeleted,
+"STREAMING_SESSION_DELETE_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionDeleteInProgress,
+"STREAMING_SESSION_READY" => StreamingSessionStatusCode::StreamingSessionReady,
+"STREAMING_SESSION_STARTED" => StreamingSessionStatusCode::StreamingSessionStarted,
+"STREAMING_SESSION_START_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionStartInProgress,
+"STREAMING_SESSION_STOPPED" => StreamingSessionStatusCode::StreamingSessionStopped,
+"STREAMING_SESSION_STOP_IN_PROGRESS" => StreamingSessionStatusCode::StreamingSessionStopInProgress,
+other => StreamingSessionStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingSessionStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -4056,40 +4028,38 @@ impl std::str::FromStr for StreamingSessionStatusCode {
                 }
             }
 impl StreamingSessionStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingSessionStatusCode::ActiveDirectoryDomainJoinError => "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR",
-            StreamingSessionStatusCode::AmiValidationError => "AMI_VALIDATION_ERROR",
-            StreamingSessionStatusCode::DecryptStreamingImageError => "DECRYPT_STREAMING_IMAGE_ERROR",
-            StreamingSessionStatusCode::InitializationScriptError => "INITIALIZATION_SCRIPT_ERROR",
-            StreamingSessionStatusCode::InsufficientCapacity => "INSUFFICIENT_CAPACITY",
-            StreamingSessionStatusCode::InternalError => "INTERNAL_ERROR",
-            StreamingSessionStatusCode::NetworkConnectionError => "NETWORK_CONNECTION_ERROR",
-            StreamingSessionStatusCode::NetworkInterfaceError => "NETWORK_INTERFACE_ERROR",
-            StreamingSessionStatusCode::StreamingSessionCreateInProgress => "STREAMING_SESSION_CREATE_IN_PROGRESS",
-            StreamingSessionStatusCode::StreamingSessionDeleted => "STREAMING_SESSION_DELETED",
-            StreamingSessionStatusCode::StreamingSessionDeleteInProgress => "STREAMING_SESSION_DELETE_IN_PROGRESS",
-            StreamingSessionStatusCode::StreamingSessionReady => "STREAMING_SESSION_READY",
-            StreamingSessionStatusCode::StreamingSessionStarted => "STREAMING_SESSION_STARTED",
-            StreamingSessionStatusCode::StreamingSessionStartInProgress => "STREAMING_SESSION_START_IN_PROGRESS",
-            StreamingSessionStatusCode::StreamingSessionStopped => "STREAMING_SESSION_STOPPED",
-            StreamingSessionStatusCode::StreamingSessionStopInProgress => "STREAMING_SESSION_STOP_IN_PROGRESS",
-            StreamingSessionStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR", "AMI_VALIDATION_ERROR", "DECRYPT_STREAMING_IMAGE_ERROR", "INITIALIZATION_SCRIPT_ERROR", "INSUFFICIENT_CAPACITY", "INTERNAL_ERROR", "NETWORK_CONNECTION_ERROR", "NETWORK_INTERFACE_ERROR", "STREAMING_SESSION_CREATE_IN_PROGRESS", "STREAMING_SESSION_DELETED", "STREAMING_SESSION_DELETE_IN_PROGRESS", "STREAMING_SESSION_READY", "STREAMING_SESSION_STARTED", "STREAMING_SESSION_START_IN_PROGRESS", "STREAMING_SESSION_STOPPED", "STREAMING_SESSION_STOP_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingSessionStatusCode::ActiveDirectoryDomainJoinError => "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR",
+    StreamingSessionStatusCode::AmiValidationError => "AMI_VALIDATION_ERROR",
+    StreamingSessionStatusCode::DecryptStreamingImageError => "DECRYPT_STREAMING_IMAGE_ERROR",
+    StreamingSessionStatusCode::InitializationScriptError => "INITIALIZATION_SCRIPT_ERROR",
+    StreamingSessionStatusCode::InsufficientCapacity => "INSUFFICIENT_CAPACITY",
+    StreamingSessionStatusCode::InternalError => "INTERNAL_ERROR",
+    StreamingSessionStatusCode::NetworkConnectionError => "NETWORK_CONNECTION_ERROR",
+    StreamingSessionStatusCode::NetworkInterfaceError => "NETWORK_INTERFACE_ERROR",
+    StreamingSessionStatusCode::StreamingSessionCreateInProgress => "STREAMING_SESSION_CREATE_IN_PROGRESS",
+    StreamingSessionStatusCode::StreamingSessionDeleted => "STREAMING_SESSION_DELETED",
+    StreamingSessionStatusCode::StreamingSessionDeleteInProgress => "STREAMING_SESSION_DELETE_IN_PROGRESS",
+    StreamingSessionStatusCode::StreamingSessionReady => "STREAMING_SESSION_READY",
+    StreamingSessionStatusCode::StreamingSessionStarted => "STREAMING_SESSION_STARTED",
+    StreamingSessionStatusCode::StreamingSessionStartInProgress => "STREAMING_SESSION_START_IN_PROGRESS",
+    StreamingSessionStatusCode::StreamingSessionStopped => "STREAMING_SESSION_STOPPED",
+    StreamingSessionStatusCode::StreamingSessionStopInProgress => "STREAMING_SESSION_STOP_IN_PROGRESS",
+    StreamingSessionStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR", "AMI_VALIDATION_ERROR", "DECRYPT_STREAMING_IMAGE_ERROR", "INITIALIZATION_SCRIPT_ERROR", "INSUFFICIENT_CAPACITY", "INTERNAL_ERROR", "NETWORK_CONNECTION_ERROR", "NETWORK_INTERFACE_ERROR", "STREAMING_SESSION_CREATE_IN_PROGRESS", "STREAMING_SESSION_DELETED", "STREAMING_SESSION_DELETE_IN_PROGRESS", "STREAMING_SESSION_READY", "STREAMING_SESSION_STARTED", "STREAMING_SESSION_START_IN_PROGRESS", "STREAMING_SESSION_STOPPED", "STREAMING_SESSION_STOP_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for StreamingSessionStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StreamingSessionState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4165,23 +4135,23 @@ pub enum StreamingSessionState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingSessionState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => StreamingSessionState::CreateFailed,
-            "CREATE_IN_PROGRESS" => StreamingSessionState::CreateInProgress,
-            "DELETED" => StreamingSessionState::Deleted,
-            "DELETE_FAILED" => StreamingSessionState::DeleteFailed,
-            "DELETE_IN_PROGRESS" => StreamingSessionState::DeleteInProgress,
-            "READY" => StreamingSessionState::Ready,
-            "START_FAILED" => StreamingSessionState::StartFailed,
-            "START_IN_PROGRESS" => StreamingSessionState::StartInProgress,
-            "STOPPED" => StreamingSessionState::Stopped,
-            "STOP_FAILED" => StreamingSessionState::StopFailed,
-            "STOP_IN_PROGRESS" => StreamingSessionState::StopInProgress,
-            other => StreamingSessionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => StreamingSessionState::CreateFailed,
+"CREATE_IN_PROGRESS" => StreamingSessionState::CreateInProgress,
+"DELETED" => StreamingSessionState::Deleted,
+"DELETE_FAILED" => StreamingSessionState::DeleteFailed,
+"DELETE_IN_PROGRESS" => StreamingSessionState::DeleteInProgress,
+"READY" => StreamingSessionState::Ready,
+"START_FAILED" => StreamingSessionState::StartFailed,
+"START_IN_PROGRESS" => StreamingSessionState::StartInProgress,
+"STOPPED" => StreamingSessionState::Stopped,
+"STOP_FAILED" => StreamingSessionState::StopFailed,
+"STOP_IN_PROGRESS" => StreamingSessionState::StopInProgress,
+other => StreamingSessionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingSessionState {
                 type Err = std::convert::Infallible;
 
@@ -4190,35 +4160,33 @@ impl std::str::FromStr for StreamingSessionState {
                 }
             }
 impl StreamingSessionState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingSessionState::CreateFailed => "CREATE_FAILED",
-            StreamingSessionState::CreateInProgress => "CREATE_IN_PROGRESS",
-            StreamingSessionState::Deleted => "DELETED",
-            StreamingSessionState::DeleteFailed => "DELETE_FAILED",
-            StreamingSessionState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            StreamingSessionState::Ready => "READY",
-            StreamingSessionState::StartFailed => "START_FAILED",
-            StreamingSessionState::StartInProgress => "START_IN_PROGRESS",
-            StreamingSessionState::Stopped => "STOPPED",
-            StreamingSessionState::StopFailed => "STOP_FAILED",
-            StreamingSessionState::StopInProgress => "STOP_IN_PROGRESS",
-            StreamingSessionState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "START_FAILED", "START_IN_PROGRESS", "STOPPED", "STOP_FAILED", "STOP_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingSessionState::CreateFailed => "CREATE_FAILED",
+    StreamingSessionState::CreateInProgress => "CREATE_IN_PROGRESS",
+    StreamingSessionState::Deleted => "DELETED",
+    StreamingSessionState::DeleteFailed => "DELETE_FAILED",
+    StreamingSessionState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    StreamingSessionState::Ready => "READY",
+    StreamingSessionState::StartFailed => "START_FAILED",
+    StreamingSessionState::StartInProgress => "START_IN_PROGRESS",
+    StreamingSessionState::Stopped => "STOPPED",
+    StreamingSessionState::StopFailed => "STOP_FAILED",
+    StreamingSessionState::StopInProgress => "STOP_IN_PROGRESS",
+    StreamingSessionState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "START_FAILED", "START_IN_PROGRESS", "STOPPED", "STOP_FAILED", "STOP_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for StreamingSessionState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A stream is an active connection to a streaming session, enabling a studio user to control the streaming session using a compatible client. Streaming session streams are compatible with the NICE DCV web client, included in the Nimble Studio portal, or the NICE DCV desktop client.</p>
 #[non_exhaustive]
@@ -4490,18 +4458,18 @@ pub enum StreamingSessionStreamStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingSessionStreamStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "INTERNAL_ERROR" => StreamingSessionStreamStatusCode::InternalError,
-            "NETWORK_CONNECTION_ERROR" => StreamingSessionStreamStatusCode::NetworkConnectionError,
-            "STREAM_CREATE_IN_PROGRESS" => StreamingSessionStreamStatusCode::StreamCreateInProgress,
-            "STREAM_DELETED" => StreamingSessionStreamStatusCode::StreamDeleted,
-            "STREAM_DELETE_IN_PROGRESS" => StreamingSessionStreamStatusCode::StreamDeleteInProgress,
-            "STREAM_READY" => StreamingSessionStreamStatusCode::StreamReady,
-            other => StreamingSessionStreamStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "INTERNAL_ERROR" => StreamingSessionStreamStatusCode::InternalError,
+"NETWORK_CONNECTION_ERROR" => StreamingSessionStreamStatusCode::NetworkConnectionError,
+"STREAM_CREATE_IN_PROGRESS" => StreamingSessionStreamStatusCode::StreamCreateInProgress,
+"STREAM_DELETED" => StreamingSessionStreamStatusCode::StreamDeleted,
+"STREAM_DELETE_IN_PROGRESS" => StreamingSessionStreamStatusCode::StreamDeleteInProgress,
+"STREAM_READY" => StreamingSessionStreamStatusCode::StreamReady,
+other => StreamingSessionStreamStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingSessionStreamStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -4510,30 +4478,28 @@ impl std::str::FromStr for StreamingSessionStreamStatusCode {
                 }
             }
 impl StreamingSessionStreamStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingSessionStreamStatusCode::InternalError => "INTERNAL_ERROR",
-            StreamingSessionStreamStatusCode::NetworkConnectionError => "NETWORK_CONNECTION_ERROR",
-            StreamingSessionStreamStatusCode::StreamCreateInProgress => "STREAM_CREATE_IN_PROGRESS",
-            StreamingSessionStreamStatusCode::StreamDeleted => "STREAM_DELETED",
-            StreamingSessionStreamStatusCode::StreamDeleteInProgress => "STREAM_DELETE_IN_PROGRESS",
-            StreamingSessionStreamStatusCode::StreamReady => "STREAM_READY",
-            StreamingSessionStreamStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "INTERNAL_ERROR", "NETWORK_CONNECTION_ERROR", "STREAM_CREATE_IN_PROGRESS", "STREAM_DELETED", "STREAM_DELETE_IN_PROGRESS", "STREAM_READY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingSessionStreamStatusCode::InternalError => "INTERNAL_ERROR",
+    StreamingSessionStreamStatusCode::NetworkConnectionError => "NETWORK_CONNECTION_ERROR",
+    StreamingSessionStreamStatusCode::StreamCreateInProgress => "STREAM_CREATE_IN_PROGRESS",
+    StreamingSessionStreamStatusCode::StreamDeleted => "STREAM_DELETED",
+    StreamingSessionStreamStatusCode::StreamDeleteInProgress => "STREAM_DELETE_IN_PROGRESS",
+    StreamingSessionStreamStatusCode::StreamReady => "STREAM_READY",
+    StreamingSessionStreamStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INTERNAL_ERROR", "NETWORK_CONNECTION_ERROR", "STREAM_CREATE_IN_PROGRESS", "STREAM_DELETED", "STREAM_DELETE_IN_PROGRESS", "STREAM_READY"]
+                }
+            }
 impl AsRef<str> for StreamingSessionStreamStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StreamingSessionStreamState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4594,18 +4560,18 @@ pub enum StreamingSessionStreamState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingSessionStreamState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => StreamingSessionStreamState::CreateFailed,
-            "CREATE_IN_PROGRESS" => StreamingSessionStreamState::CreateInProgress,
-            "DELETED" => StreamingSessionStreamState::Deleted,
-            "DELETE_FAILED" => StreamingSessionStreamState::DeleteFailed,
-            "DELETE_IN_PROGRESS" => StreamingSessionStreamState::DeleteInProgress,
-            "READY" => StreamingSessionStreamState::Ready,
-            other => StreamingSessionStreamState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => StreamingSessionStreamState::CreateFailed,
+"CREATE_IN_PROGRESS" => StreamingSessionStreamState::CreateInProgress,
+"DELETED" => StreamingSessionStreamState::Deleted,
+"DELETE_FAILED" => StreamingSessionStreamState::DeleteFailed,
+"DELETE_IN_PROGRESS" => StreamingSessionStreamState::DeleteInProgress,
+"READY" => StreamingSessionStreamState::Ready,
+other => StreamingSessionStreamState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingSessionStreamState {
                 type Err = std::convert::Infallible;
 
@@ -4614,30 +4580,28 @@ impl std::str::FromStr for StreamingSessionStreamState {
                 }
             }
 impl StreamingSessionStreamState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingSessionStreamState::CreateFailed => "CREATE_FAILED",
-            StreamingSessionStreamState::CreateInProgress => "CREATE_IN_PROGRESS",
-            StreamingSessionStreamState::Deleted => "DELETED",
-            StreamingSessionStreamState::DeleteFailed => "DELETE_FAILED",
-            StreamingSessionStreamState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            StreamingSessionStreamState::Ready => "READY",
-            StreamingSessionStreamState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingSessionStreamState::CreateFailed => "CREATE_FAILED",
+    StreamingSessionStreamState::CreateInProgress => "CREATE_IN_PROGRESS",
+    StreamingSessionStreamState::Deleted => "DELETED",
+    StreamingSessionStreamState::DeleteFailed => "DELETE_FAILED",
+    StreamingSessionStreamState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    StreamingSessionStreamState::Ready => "READY",
+    StreamingSessionStreamState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY"]
+                }
+            }
 impl AsRef<str> for StreamingSessionStreamState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StreamingInstanceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4719,25 +4683,25 @@ pub enum StreamingInstanceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingInstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "g3.4xlarge" => StreamingInstanceType::G34xlarge,
-            "g3s.xlarge" => StreamingInstanceType::G3sXlarge,
-            "g4dn.12xlarge" => StreamingInstanceType::G4dn12xlarge,
-            "g4dn.16xlarge" => StreamingInstanceType::G4dn16xlarge,
-            "g4dn.2xlarge" => StreamingInstanceType::G4dn2xlarge,
-            "g4dn.4xlarge" => StreamingInstanceType::G4dn4xlarge,
-            "g4dn.8xlarge" => StreamingInstanceType::G4dn8xlarge,
-            "g4dn.xlarge" => StreamingInstanceType::G4dnXlarge,
-            "g5.16xlarge" => StreamingInstanceType::G516xlarge,
-            "g5.2xlarge" => StreamingInstanceType::G52xlarge,
-            "g5.4xlarge" => StreamingInstanceType::G54xlarge,
-            "g5.8xlarge" => StreamingInstanceType::G58xlarge,
-            "g5.xlarge" => StreamingInstanceType::G5Xlarge,
-            other => StreamingInstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "g3.4xlarge" => StreamingInstanceType::G34xlarge,
+"g3s.xlarge" => StreamingInstanceType::G3sXlarge,
+"g4dn.12xlarge" => StreamingInstanceType::G4dn12xlarge,
+"g4dn.16xlarge" => StreamingInstanceType::G4dn16xlarge,
+"g4dn.2xlarge" => StreamingInstanceType::G4dn2xlarge,
+"g4dn.4xlarge" => StreamingInstanceType::G4dn4xlarge,
+"g4dn.8xlarge" => StreamingInstanceType::G4dn8xlarge,
+"g4dn.xlarge" => StreamingInstanceType::G4dnXlarge,
+"g5.16xlarge" => StreamingInstanceType::G516xlarge,
+"g5.2xlarge" => StreamingInstanceType::G52xlarge,
+"g5.4xlarge" => StreamingInstanceType::G54xlarge,
+"g5.8xlarge" => StreamingInstanceType::G58xlarge,
+"g5.xlarge" => StreamingInstanceType::G5Xlarge,
+other => StreamingInstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingInstanceType {
                 type Err = std::convert::Infallible;
 
@@ -4746,37 +4710,35 @@ impl std::str::FromStr for StreamingInstanceType {
                 }
             }
 impl StreamingInstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingInstanceType::G34xlarge => "g3.4xlarge",
-            StreamingInstanceType::G3sXlarge => "g3s.xlarge",
-            StreamingInstanceType::G4dn12xlarge => "g4dn.12xlarge",
-            StreamingInstanceType::G4dn16xlarge => "g4dn.16xlarge",
-            StreamingInstanceType::G4dn2xlarge => "g4dn.2xlarge",
-            StreamingInstanceType::G4dn4xlarge => "g4dn.4xlarge",
-            StreamingInstanceType::G4dn8xlarge => "g4dn.8xlarge",
-            StreamingInstanceType::G4dnXlarge => "g4dn.xlarge",
-            StreamingInstanceType::G516xlarge => "g5.16xlarge",
-            StreamingInstanceType::G52xlarge => "g5.2xlarge",
-            StreamingInstanceType::G54xlarge => "g5.4xlarge",
-            StreamingInstanceType::G58xlarge => "g5.8xlarge",
-            StreamingInstanceType::G5Xlarge => "g5.xlarge",
-            StreamingInstanceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "g3.4xlarge", "g3s.xlarge", "g4dn.12xlarge", "g4dn.16xlarge", "g4dn.2xlarge", "g4dn.4xlarge", "g4dn.8xlarge", "g4dn.xlarge", "g5.16xlarge", "g5.2xlarge", "g5.4xlarge", "g5.8xlarge", "g5.xlarge"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingInstanceType::G34xlarge => "g3.4xlarge",
+    StreamingInstanceType::G3sXlarge => "g3s.xlarge",
+    StreamingInstanceType::G4dn12xlarge => "g4dn.12xlarge",
+    StreamingInstanceType::G4dn16xlarge => "g4dn.16xlarge",
+    StreamingInstanceType::G4dn2xlarge => "g4dn.2xlarge",
+    StreamingInstanceType::G4dn4xlarge => "g4dn.4xlarge",
+    StreamingInstanceType::G4dn8xlarge => "g4dn.8xlarge",
+    StreamingInstanceType::G4dnXlarge => "g4dn.xlarge",
+    StreamingInstanceType::G516xlarge => "g5.16xlarge",
+    StreamingInstanceType::G52xlarge => "g5.2xlarge",
+    StreamingInstanceType::G54xlarge => "g5.4xlarge",
+    StreamingInstanceType::G58xlarge => "g5.8xlarge",
+    StreamingInstanceType::G5Xlarge => "g5.xlarge",
+    StreamingInstanceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["g3.4xlarge", "g3s.xlarge", "g4dn.12xlarge", "g4dn.16xlarge", "g4dn.2xlarge", "g4dn.4xlarge", "g4dn.8xlarge", "g4dn.xlarge", "g5.16xlarge", "g5.2xlarge", "g5.4xlarge", "g5.8xlarge", "g5.xlarge"]
+                }
+            }
 impl AsRef<str> for StreamingInstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the streaming session backup.</p>
 #[non_exhaustive]
@@ -5398,19 +5360,19 @@ pub enum StreamingImageStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingImageStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => StreamingImageStatusCode::AccessDenied,
-            "INTERNAL_ERROR" => StreamingImageStatusCode::InternalError,
-            "STREAMING_IMAGE_CREATE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageCreateInProgress,
-            "STREAMING_IMAGE_DELETED" => StreamingImageStatusCode::StreamingImageDeleted,
-            "STREAMING_IMAGE_DELETE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageDeleteInProgress,
-            "STREAMING_IMAGE_READY" => StreamingImageStatusCode::StreamingImageReady,
-            "STREAMING_IMAGE_UPDATE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageUpdateInProgress,
-            other => StreamingImageStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED" => StreamingImageStatusCode::AccessDenied,
+"INTERNAL_ERROR" => StreamingImageStatusCode::InternalError,
+"STREAMING_IMAGE_CREATE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageCreateInProgress,
+"STREAMING_IMAGE_DELETED" => StreamingImageStatusCode::StreamingImageDeleted,
+"STREAMING_IMAGE_DELETE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageDeleteInProgress,
+"STREAMING_IMAGE_READY" => StreamingImageStatusCode::StreamingImageReady,
+"STREAMING_IMAGE_UPDATE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageUpdateInProgress,
+other => StreamingImageStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingImageStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -5419,31 +5381,29 @@ impl std::str::FromStr for StreamingImageStatusCode {
                 }
             }
 impl StreamingImageStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingImageStatusCode::AccessDenied => "ACCESS_DENIED",
-            StreamingImageStatusCode::InternalError => "INTERNAL_ERROR",
-            StreamingImageStatusCode::StreamingImageCreateInProgress => "STREAMING_IMAGE_CREATE_IN_PROGRESS",
-            StreamingImageStatusCode::StreamingImageDeleted => "STREAMING_IMAGE_DELETED",
-            StreamingImageStatusCode::StreamingImageDeleteInProgress => "STREAMING_IMAGE_DELETE_IN_PROGRESS",
-            StreamingImageStatusCode::StreamingImageReady => "STREAMING_IMAGE_READY",
-            StreamingImageStatusCode::StreamingImageUpdateInProgress => "STREAMING_IMAGE_UPDATE_IN_PROGRESS",
-            StreamingImageStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED", "INTERNAL_ERROR", "STREAMING_IMAGE_CREATE_IN_PROGRESS", "STREAMING_IMAGE_DELETED", "STREAMING_IMAGE_DELETE_IN_PROGRESS", "STREAMING_IMAGE_READY", "STREAMING_IMAGE_UPDATE_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingImageStatusCode::AccessDenied => "ACCESS_DENIED",
+    StreamingImageStatusCode::InternalError => "INTERNAL_ERROR",
+    StreamingImageStatusCode::StreamingImageCreateInProgress => "STREAMING_IMAGE_CREATE_IN_PROGRESS",
+    StreamingImageStatusCode::StreamingImageDeleted => "STREAMING_IMAGE_DELETED",
+    StreamingImageStatusCode::StreamingImageDeleteInProgress => "STREAMING_IMAGE_DELETE_IN_PROGRESS",
+    StreamingImageStatusCode::StreamingImageReady => "STREAMING_IMAGE_READY",
+    StreamingImageStatusCode::StreamingImageUpdateInProgress => "STREAMING_IMAGE_UPDATE_IN_PROGRESS",
+    StreamingImageStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "INTERNAL_ERROR", "STREAMING_IMAGE_CREATE_IN_PROGRESS", "STREAMING_IMAGE_DELETED", "STREAMING_IMAGE_DELETE_IN_PROGRESS", "STREAMING_IMAGE_READY", "STREAMING_IMAGE_UPDATE_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for StreamingImageStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StreamingImageState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5510,20 +5470,20 @@ pub enum StreamingImageState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingImageState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => StreamingImageState::CreateFailed,
-            "CREATE_IN_PROGRESS" => StreamingImageState::CreateInProgress,
-            "DELETED" => StreamingImageState::Deleted,
-            "DELETE_FAILED" => StreamingImageState::DeleteFailed,
-            "DELETE_IN_PROGRESS" => StreamingImageState::DeleteInProgress,
-            "READY" => StreamingImageState::Ready,
-            "UPDATE_FAILED" => StreamingImageState::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => StreamingImageState::UpdateInProgress,
-            other => StreamingImageState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => StreamingImageState::CreateFailed,
+"CREATE_IN_PROGRESS" => StreamingImageState::CreateInProgress,
+"DELETED" => StreamingImageState::Deleted,
+"DELETE_FAILED" => StreamingImageState::DeleteFailed,
+"DELETE_IN_PROGRESS" => StreamingImageState::DeleteInProgress,
+"READY" => StreamingImageState::Ready,
+"UPDATE_FAILED" => StreamingImageState::UpdateFailed,
+"UPDATE_IN_PROGRESS" => StreamingImageState::UpdateInProgress,
+other => StreamingImageState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingImageState {
                 type Err = std::convert::Infallible;
 
@@ -5532,32 +5492,30 @@ impl std::str::FromStr for StreamingImageState {
                 }
             }
 impl StreamingImageState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingImageState::CreateFailed => "CREATE_FAILED",
-            StreamingImageState::CreateInProgress => "CREATE_IN_PROGRESS",
-            StreamingImageState::Deleted => "DELETED",
-            StreamingImageState::DeleteFailed => "DELETE_FAILED",
-            StreamingImageState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            StreamingImageState::Ready => "READY",
-            StreamingImageState::UpdateFailed => "UPDATE_FAILED",
-            StreamingImageState::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            StreamingImageState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingImageState::CreateFailed => "CREATE_FAILED",
+    StreamingImageState::CreateInProgress => "CREATE_IN_PROGRESS",
+    StreamingImageState::Deleted => "DELETED",
+    StreamingImageState::DeleteFailed => "DELETE_FAILED",
+    StreamingImageState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    StreamingImageState::Ready => "READY",
+    StreamingImageState::UpdateFailed => "UPDATE_FAILED",
+    StreamingImageState::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    StreamingImageState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for StreamingImageState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Specifies how a streaming image is encrypted.</p>
 #[non_exhaustive]
@@ -5672,13 +5630,13 @@ pub enum StreamingImageEncryptionConfigurationKeyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingImageEncryptionConfigurationKeyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CUSTOMER_MANAGED_KEY" => StreamingImageEncryptionConfigurationKeyType::CustomerManagedKey,
-            other => StreamingImageEncryptionConfigurationKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CUSTOMER_MANAGED_KEY" => StreamingImageEncryptionConfigurationKeyType::CustomerManagedKey,
+other => StreamingImageEncryptionConfigurationKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingImageEncryptionConfigurationKeyType {
                 type Err = std::convert::Infallible;
 
@@ -5687,25 +5645,23 @@ impl std::str::FromStr for StreamingImageEncryptionConfigurationKeyType {
                 }
             }
 impl StreamingImageEncryptionConfigurationKeyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingImageEncryptionConfigurationKeyType::CustomerManagedKey => "CUSTOMER_MANAGED_KEY",
-            StreamingImageEncryptionConfigurationKeyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CUSTOMER_MANAGED_KEY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingImageEncryptionConfigurationKeyType::CustomerManagedKey => "CUSTOMER_MANAGED_KEY",
+    StreamingImageEncryptionConfigurationKeyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CUSTOMER_MANAGED_KEY"]
+                }
+            }
 impl AsRef<str> for StreamingImageEncryptionConfigurationKeyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Studio admins can use launch profile membership to delegate launch profile access to studio users in the Nimble Studio portal without writing or maintaining complex IAM policies. A launch profile member is a user association from your studio identity source who is granted permissions to a launch profile.</p> 
 /// <p>A launch profile member (type USER) provides the following permissions to that launch profile:</p> 
@@ -5867,13 +5823,13 @@ pub enum LaunchProfilePersona {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchProfilePersona {
-    fn from(s: &str) -> Self {
-        match s {
-            "USER" => LaunchProfilePersona::User,
-            other => LaunchProfilePersona::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "USER" => LaunchProfilePersona::User,
+other => LaunchProfilePersona::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LaunchProfilePersona {
                 type Err = std::convert::Infallible;
 
@@ -5882,25 +5838,23 @@ impl std::str::FromStr for LaunchProfilePersona {
                 }
             }
 impl LaunchProfilePersona {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LaunchProfilePersona::User => "USER",
-            LaunchProfilePersona::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "USER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LaunchProfilePersona::User => "USER",
+    LaunchProfilePersona::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["USER"]
+                }
+            }
 impl AsRef<str> for LaunchProfilePersona {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A new member that is added to a launch profile.</p>
 #[non_exhaustive]
@@ -7410,21 +7364,21 @@ pub enum LaunchProfileValidationStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchProfileValidationStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationStatusCode::ValidationFailedInternalServerError,
-            "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY" => LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory,
-            "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation,
-            "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation,
-            "VALIDATION_FAILED_SUBNET_NOT_FOUND" => LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound,
-            "VALIDATION_FAILED_UNAUTHORIZED" => LaunchProfileValidationStatusCode::ValidationFailedUnauthorized,
-            "VALIDATION_IN_PROGRESS" => LaunchProfileValidationStatusCode::ValidationInProgress,
-            "VALIDATION_NOT_STARTED" => LaunchProfileValidationStatusCode::ValidationNotStarted,
-            "VALIDATION_SUCCESS" => LaunchProfileValidationStatusCode::ValidationSuccess,
-            other => LaunchProfileValidationStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationStatusCode::ValidationFailedInternalServerError,
+"VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY" => LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory,
+"VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation,
+"VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation,
+"VALIDATION_FAILED_SUBNET_NOT_FOUND" => LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound,
+"VALIDATION_FAILED_UNAUTHORIZED" => LaunchProfileValidationStatusCode::ValidationFailedUnauthorized,
+"VALIDATION_IN_PROGRESS" => LaunchProfileValidationStatusCode::ValidationInProgress,
+"VALIDATION_NOT_STARTED" => LaunchProfileValidationStatusCode::ValidationNotStarted,
+"VALIDATION_SUCCESS" => LaunchProfileValidationStatusCode::ValidationSuccess,
+other => LaunchProfileValidationStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LaunchProfileValidationStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -7433,33 +7387,31 @@ impl std::str::FromStr for LaunchProfileValidationStatusCode {
                 }
             }
 impl LaunchProfileValidationStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LaunchProfileValidationStatusCode::ValidationFailedInternalServerError => "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
-            LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory => "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY",
-            LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation => "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION",
-            LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation => "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION",
-            LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound => "VALIDATION_FAILED_SUBNET_NOT_FOUND",
-            LaunchProfileValidationStatusCode::ValidationFailedUnauthorized => "VALIDATION_FAILED_UNAUTHORIZED",
-            LaunchProfileValidationStatusCode::ValidationInProgress => "VALIDATION_IN_PROGRESS",
-            LaunchProfileValidationStatusCode::ValidationNotStarted => "VALIDATION_NOT_STARTED",
-            LaunchProfileValidationStatusCode::ValidationSuccess => "VALIDATION_SUCCESS",
-            LaunchProfileValidationStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR", "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY", "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION", "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION", "VALIDATION_FAILED_SUBNET_NOT_FOUND", "VALIDATION_FAILED_UNAUTHORIZED", "VALIDATION_IN_PROGRESS", "VALIDATION_NOT_STARTED", "VALIDATION_SUCCESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LaunchProfileValidationStatusCode::ValidationFailedInternalServerError => "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
+    LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory => "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY",
+    LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation => "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION",
+    LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation => "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION",
+    LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound => "VALIDATION_FAILED_SUBNET_NOT_FOUND",
+    LaunchProfileValidationStatusCode::ValidationFailedUnauthorized => "VALIDATION_FAILED_UNAUTHORIZED",
+    LaunchProfileValidationStatusCode::ValidationInProgress => "VALIDATION_IN_PROGRESS",
+    LaunchProfileValidationStatusCode::ValidationNotStarted => "VALIDATION_NOT_STARTED",
+    LaunchProfileValidationStatusCode::ValidationSuccess => "VALIDATION_SUCCESS",
+    LaunchProfileValidationStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["VALIDATION_FAILED_INTERNAL_SERVER_ERROR", "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY", "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION", "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION", "VALIDATION_FAILED_SUBNET_NOT_FOUND", "VALIDATION_FAILED_UNAUTHORIZED", "VALIDATION_IN_PROGRESS", "VALIDATION_NOT_STARTED", "VALIDATION_SUCCESS"]
+                }
+            }
 impl AsRef<str> for LaunchProfileValidationStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LaunchProfileValidationState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7517,17 +7469,17 @@ pub enum LaunchProfileValidationState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchProfileValidationState {
-    fn from(s: &str) -> Self {
-        match s {
-            "VALIDATION_FAILED" => LaunchProfileValidationState::ValidationFailed,
-            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationState::ValidationFailedInternalServerError,
-            "VALIDATION_IN_PROGRESS" => LaunchProfileValidationState::ValidationInProgress,
-            "VALIDATION_NOT_STARTED" => LaunchProfileValidationState::ValidationNotStarted,
-            "VALIDATION_SUCCESS" => LaunchProfileValidationState::ValidationSuccess,
-            other => LaunchProfileValidationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "VALIDATION_FAILED" => LaunchProfileValidationState::ValidationFailed,
+"VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationState::ValidationFailedInternalServerError,
+"VALIDATION_IN_PROGRESS" => LaunchProfileValidationState::ValidationInProgress,
+"VALIDATION_NOT_STARTED" => LaunchProfileValidationState::ValidationNotStarted,
+"VALIDATION_SUCCESS" => LaunchProfileValidationState::ValidationSuccess,
+other => LaunchProfileValidationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LaunchProfileValidationState {
                 type Err = std::convert::Infallible;
 
@@ -7536,29 +7488,27 @@ impl std::str::FromStr for LaunchProfileValidationState {
                 }
             }
 impl LaunchProfileValidationState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LaunchProfileValidationState::ValidationFailed => "VALIDATION_FAILED",
-            LaunchProfileValidationState::ValidationFailedInternalServerError => "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
-            LaunchProfileValidationState::ValidationInProgress => "VALIDATION_IN_PROGRESS",
-            LaunchProfileValidationState::ValidationNotStarted => "VALIDATION_NOT_STARTED",
-            LaunchProfileValidationState::ValidationSuccess => "VALIDATION_SUCCESS",
-            LaunchProfileValidationState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "VALIDATION_FAILED", "VALIDATION_FAILED_INTERNAL_SERVER_ERROR", "VALIDATION_IN_PROGRESS", "VALIDATION_NOT_STARTED", "VALIDATION_SUCCESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LaunchProfileValidationState::ValidationFailed => "VALIDATION_FAILED",
+    LaunchProfileValidationState::ValidationFailedInternalServerError => "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
+    LaunchProfileValidationState::ValidationInProgress => "VALIDATION_IN_PROGRESS",
+    LaunchProfileValidationState::ValidationNotStarted => "VALIDATION_NOT_STARTED",
+    LaunchProfileValidationState::ValidationSuccess => "VALIDATION_SUCCESS",
+    LaunchProfileValidationState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["VALIDATION_FAILED", "VALIDATION_FAILED_INTERNAL_SERVER_ERROR", "VALIDATION_IN_PROGRESS", "VALIDATION_NOT_STARTED", "VALIDATION_SUCCESS"]
+                }
+            }
 impl AsRef<str> for LaunchProfileValidationState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LaunchProfileValidationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7613,16 +7563,16 @@ pub enum LaunchProfileValidationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchProfileValidationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT" => LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent,
-            "VALIDATE_NETWORK_ACL_ASSOCIATION" => LaunchProfileValidationType::ValidateNetworkAclAssociation,
-            "VALIDATE_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationType::ValidateSecurityGroupAssociation,
-            "VALIDATE_SUBNET_ASSOCIATION" => LaunchProfileValidationType::ValidateSubnetAssociation,
-            other => LaunchProfileValidationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT" => LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent,
+"VALIDATE_NETWORK_ACL_ASSOCIATION" => LaunchProfileValidationType::ValidateNetworkAclAssociation,
+"VALIDATE_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationType::ValidateSecurityGroupAssociation,
+"VALIDATE_SUBNET_ASSOCIATION" => LaunchProfileValidationType::ValidateSubnetAssociation,
+other => LaunchProfileValidationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LaunchProfileValidationType {
                 type Err = std::convert::Infallible;
 
@@ -7631,28 +7581,26 @@ impl std::str::FromStr for LaunchProfileValidationType {
                 }
             }
 impl LaunchProfileValidationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent => "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT",
-            LaunchProfileValidationType::ValidateNetworkAclAssociation => "VALIDATE_NETWORK_ACL_ASSOCIATION",
-            LaunchProfileValidationType::ValidateSecurityGroupAssociation => "VALIDATE_SECURITY_GROUP_ASSOCIATION",
-            LaunchProfileValidationType::ValidateSubnetAssociation => "VALIDATE_SUBNET_ASSOCIATION",
-            LaunchProfileValidationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT", "VALIDATE_NETWORK_ACL_ASSOCIATION", "VALIDATE_SECURITY_GROUP_ASSOCIATION", "VALIDATE_SUBNET_ASSOCIATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent => "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT",
+    LaunchProfileValidationType::ValidateNetworkAclAssociation => "VALIDATE_NETWORK_ACL_ASSOCIATION",
+    LaunchProfileValidationType::ValidateSecurityGroupAssociation => "VALIDATE_SECURITY_GROUP_ASSOCIATION",
+    LaunchProfileValidationType::ValidateSubnetAssociation => "VALIDATE_SUBNET_ASSOCIATION",
+    LaunchProfileValidationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT", "VALIDATE_NETWORK_ACL_ASSOCIATION", "VALIDATE_SECURITY_GROUP_ASSOCIATION", "VALIDATE_SUBNET_ASSOCIATION"]
+                }
+            }
 impl AsRef<str> for LaunchProfileValidationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A configuration for a streaming session.</p>
 #[non_exhaustive]
@@ -8117,13 +8065,13 @@ pub enum StreamingSessionStorageMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingSessionStorageMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "UPLOAD" => StreamingSessionStorageMode::Upload,
-            other => StreamingSessionStorageMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "UPLOAD" => StreamingSessionStorageMode::Upload,
+other => StreamingSessionStorageMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingSessionStorageMode {
                 type Err = std::convert::Infallible;
 
@@ -8132,25 +8080,23 @@ impl std::str::FromStr for StreamingSessionStorageMode {
                 }
             }
 impl StreamingSessionStorageMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingSessionStorageMode::Upload => "UPLOAD",
-            StreamingSessionStorageMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "UPLOAD"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingSessionStorageMode::Upload => "UPLOAD",
+    StreamingSessionStorageMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["UPLOAD"]
+                }
+            }
 impl AsRef<str> for StreamingSessionStorageMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The upload storage root location (folder) on streaming workstations where files are uploaded.</p>
 #[non_exhaustive]
@@ -8284,14 +8230,14 @@ pub enum StreamingClipboardMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingClipboardMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => StreamingClipboardMode::Disabled,
-            "ENABLED" => StreamingClipboardMode::Enabled,
-            other => StreamingClipboardMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => StreamingClipboardMode::Disabled,
+"ENABLED" => StreamingClipboardMode::Enabled,
+other => StreamingClipboardMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamingClipboardMode {
                 type Err = std::convert::Infallible;
 
@@ -8300,26 +8246,24 @@ impl std::str::FromStr for StreamingClipboardMode {
                 }
             }
 impl StreamingClipboardMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamingClipboardMode::Disabled => "DISABLED",
-            StreamingClipboardMode::Enabled => "ENABLED",
-            StreamingClipboardMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED", "ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamingClipboardMode::Disabled => "DISABLED",
+    StreamingClipboardMode::Enabled => "ENABLED",
+    StreamingClipboardMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "ENABLED"]
+                }
+            }
 impl AsRef<str> for StreamingClipboardMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LaunchProfileStatusCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8407,27 +8351,27 @@ pub enum LaunchProfileStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchProfileStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENCRYPTION_KEY_ACCESS_DENIED" => LaunchProfileStatusCode::EncryptionKeyAccessDenied,
-            "ENCRYPTION_KEY_NOT_FOUND" => LaunchProfileStatusCode::EncryptionKeyNotFound,
-            "INTERNAL_ERROR" => LaunchProfileStatusCode::InternalError,
-            "INVALID_INSTANCE_TYPES_PROVIDED" => LaunchProfileStatusCode::InvalidInstanceTypesProvided,
-            "INVALID_SUBNETS_COMBINATION" => LaunchProfileStatusCode::InvalidSubnetsCombination,
-            "INVALID_SUBNETS_PROVIDED" => LaunchProfileStatusCode::InvalidSubnetsProvided,
-            "LAUNCH_PROFILE_CREATED" => LaunchProfileStatusCode::LaunchProfileCreated,
-            "LAUNCH_PROFILE_CREATE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileCreateInProgress,
-            "LAUNCH_PROFILE_DELETED" => LaunchProfileStatusCode::LaunchProfileDeleted,
-            "LAUNCH_PROFILE_DELETE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileDeleteInProgress,
-            "LAUNCH_PROFILE_UPDATED" => LaunchProfileStatusCode::LaunchProfileUpdated,
-            "LAUNCH_PROFILE_UPDATE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileUpdateInProgress,
-            "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED" => LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted,
-            "STREAMING_IMAGE_NOT_FOUND" => LaunchProfileStatusCode::StreamingImageNotFound,
-            "STREAMING_IMAGE_NOT_READY" => LaunchProfileStatusCode::StreamingImageNotReady,
-            other => LaunchProfileStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ENCRYPTION_KEY_ACCESS_DENIED" => LaunchProfileStatusCode::EncryptionKeyAccessDenied,
+"ENCRYPTION_KEY_NOT_FOUND" => LaunchProfileStatusCode::EncryptionKeyNotFound,
+"INTERNAL_ERROR" => LaunchProfileStatusCode::InternalError,
+"INVALID_INSTANCE_TYPES_PROVIDED" => LaunchProfileStatusCode::InvalidInstanceTypesProvided,
+"INVALID_SUBNETS_COMBINATION" => LaunchProfileStatusCode::InvalidSubnetsCombination,
+"INVALID_SUBNETS_PROVIDED" => LaunchProfileStatusCode::InvalidSubnetsProvided,
+"LAUNCH_PROFILE_CREATED" => LaunchProfileStatusCode::LaunchProfileCreated,
+"LAUNCH_PROFILE_CREATE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileCreateInProgress,
+"LAUNCH_PROFILE_DELETED" => LaunchProfileStatusCode::LaunchProfileDeleted,
+"LAUNCH_PROFILE_DELETE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileDeleteInProgress,
+"LAUNCH_PROFILE_UPDATED" => LaunchProfileStatusCode::LaunchProfileUpdated,
+"LAUNCH_PROFILE_UPDATE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileUpdateInProgress,
+"LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED" => LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted,
+"STREAMING_IMAGE_NOT_FOUND" => LaunchProfileStatusCode::StreamingImageNotFound,
+"STREAMING_IMAGE_NOT_READY" => LaunchProfileStatusCode::StreamingImageNotReady,
+other => LaunchProfileStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LaunchProfileStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -8436,39 +8380,37 @@ impl std::str::FromStr for LaunchProfileStatusCode {
                 }
             }
 impl LaunchProfileStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LaunchProfileStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
-            LaunchProfileStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
-            LaunchProfileStatusCode::InternalError => "INTERNAL_ERROR",
-            LaunchProfileStatusCode::InvalidInstanceTypesProvided => "INVALID_INSTANCE_TYPES_PROVIDED",
-            LaunchProfileStatusCode::InvalidSubnetsCombination => "INVALID_SUBNETS_COMBINATION",
-            LaunchProfileStatusCode::InvalidSubnetsProvided => "INVALID_SUBNETS_PROVIDED",
-            LaunchProfileStatusCode::LaunchProfileCreated => "LAUNCH_PROFILE_CREATED",
-            LaunchProfileStatusCode::LaunchProfileCreateInProgress => "LAUNCH_PROFILE_CREATE_IN_PROGRESS",
-            LaunchProfileStatusCode::LaunchProfileDeleted => "LAUNCH_PROFILE_DELETED",
-            LaunchProfileStatusCode::LaunchProfileDeleteInProgress => "LAUNCH_PROFILE_DELETE_IN_PROGRESS",
-            LaunchProfileStatusCode::LaunchProfileUpdated => "LAUNCH_PROFILE_UPDATED",
-            LaunchProfileStatusCode::LaunchProfileUpdateInProgress => "LAUNCH_PROFILE_UPDATE_IN_PROGRESS",
-            LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted => "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED",
-            LaunchProfileStatusCode::StreamingImageNotFound => "STREAMING_IMAGE_NOT_FOUND",
-            LaunchProfileStatusCode::StreamingImageNotReady => "STREAMING_IMAGE_NOT_READY",
-            LaunchProfileStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENCRYPTION_KEY_ACCESS_DENIED", "ENCRYPTION_KEY_NOT_FOUND", "INTERNAL_ERROR", "INVALID_INSTANCE_TYPES_PROVIDED", "INVALID_SUBNETS_COMBINATION", "INVALID_SUBNETS_PROVIDED", "LAUNCH_PROFILE_CREATED", "LAUNCH_PROFILE_CREATE_IN_PROGRESS", "LAUNCH_PROFILE_DELETED", "LAUNCH_PROFILE_DELETE_IN_PROGRESS", "LAUNCH_PROFILE_UPDATED", "LAUNCH_PROFILE_UPDATE_IN_PROGRESS", "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED", "STREAMING_IMAGE_NOT_FOUND", "STREAMING_IMAGE_NOT_READY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LaunchProfileStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
+    LaunchProfileStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
+    LaunchProfileStatusCode::InternalError => "INTERNAL_ERROR",
+    LaunchProfileStatusCode::InvalidInstanceTypesProvided => "INVALID_INSTANCE_TYPES_PROVIDED",
+    LaunchProfileStatusCode::InvalidSubnetsCombination => "INVALID_SUBNETS_COMBINATION",
+    LaunchProfileStatusCode::InvalidSubnetsProvided => "INVALID_SUBNETS_PROVIDED",
+    LaunchProfileStatusCode::LaunchProfileCreated => "LAUNCH_PROFILE_CREATED",
+    LaunchProfileStatusCode::LaunchProfileCreateInProgress => "LAUNCH_PROFILE_CREATE_IN_PROGRESS",
+    LaunchProfileStatusCode::LaunchProfileDeleted => "LAUNCH_PROFILE_DELETED",
+    LaunchProfileStatusCode::LaunchProfileDeleteInProgress => "LAUNCH_PROFILE_DELETE_IN_PROGRESS",
+    LaunchProfileStatusCode::LaunchProfileUpdated => "LAUNCH_PROFILE_UPDATED",
+    LaunchProfileStatusCode::LaunchProfileUpdateInProgress => "LAUNCH_PROFILE_UPDATE_IN_PROGRESS",
+    LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted => "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED",
+    LaunchProfileStatusCode::StreamingImageNotFound => "STREAMING_IMAGE_NOT_FOUND",
+    LaunchProfileStatusCode::StreamingImageNotReady => "STREAMING_IMAGE_NOT_READY",
+    LaunchProfileStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENCRYPTION_KEY_ACCESS_DENIED", "ENCRYPTION_KEY_NOT_FOUND", "INTERNAL_ERROR", "INVALID_INSTANCE_TYPES_PROVIDED", "INVALID_SUBNETS_COMBINATION", "INVALID_SUBNETS_PROVIDED", "LAUNCH_PROFILE_CREATED", "LAUNCH_PROFILE_CREATE_IN_PROGRESS", "LAUNCH_PROFILE_DELETED", "LAUNCH_PROFILE_DELETE_IN_PROGRESS", "LAUNCH_PROFILE_UPDATED", "LAUNCH_PROFILE_UPDATE_IN_PROGRESS", "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED", "STREAMING_IMAGE_NOT_FOUND", "STREAMING_IMAGE_NOT_READY"]
+                }
+            }
 impl AsRef<str> for LaunchProfileStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LaunchProfileState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8535,20 +8477,20 @@ pub enum LaunchProfileState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchProfileState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => LaunchProfileState::CreateFailed,
-            "CREATE_IN_PROGRESS" => LaunchProfileState::CreateInProgress,
-            "DELETED" => LaunchProfileState::Deleted,
-            "DELETE_FAILED" => LaunchProfileState::DeleteFailed,
-            "DELETE_IN_PROGRESS" => LaunchProfileState::DeleteInProgress,
-            "READY" => LaunchProfileState::Ready,
-            "UPDATE_FAILED" => LaunchProfileState::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => LaunchProfileState::UpdateInProgress,
-            other => LaunchProfileState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => LaunchProfileState::CreateFailed,
+"CREATE_IN_PROGRESS" => LaunchProfileState::CreateInProgress,
+"DELETED" => LaunchProfileState::Deleted,
+"DELETE_FAILED" => LaunchProfileState::DeleteFailed,
+"DELETE_IN_PROGRESS" => LaunchProfileState::DeleteInProgress,
+"READY" => LaunchProfileState::Ready,
+"UPDATE_FAILED" => LaunchProfileState::UpdateFailed,
+"UPDATE_IN_PROGRESS" => LaunchProfileState::UpdateInProgress,
+other => LaunchProfileState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LaunchProfileState {
                 type Err = std::convert::Infallible;
 
@@ -8557,32 +8499,30 @@ impl std::str::FromStr for LaunchProfileState {
                 }
             }
 impl LaunchProfileState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LaunchProfileState::CreateFailed => "CREATE_FAILED",
-            LaunchProfileState::CreateInProgress => "CREATE_IN_PROGRESS",
-            LaunchProfileState::Deleted => "DELETED",
-            LaunchProfileState::DeleteFailed => "DELETE_FAILED",
-            LaunchProfileState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            LaunchProfileState::Ready => "READY",
-            LaunchProfileState::UpdateFailed => "UPDATE_FAILED",
-            LaunchProfileState::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            LaunchProfileState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LaunchProfileState::CreateFailed => "CREATE_FAILED",
+    LaunchProfileState::CreateInProgress => "CREATE_IN_PROGRESS",
+    LaunchProfileState::Deleted => "DELETED",
+    LaunchProfileState::DeleteFailed => "DELETE_FAILED",
+    LaunchProfileState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    LaunchProfileState::Ready => "READY",
+    LaunchProfileState::UpdateFailed => "UPDATE_FAILED",
+    LaunchProfileState::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    LaunchProfileState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for LaunchProfileState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Configuration for streaming workstations created using this launch profile.</p>
 #[non_exhaustive]

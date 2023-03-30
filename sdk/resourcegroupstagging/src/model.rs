@@ -142,14 +142,14 @@ pub enum ErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "InternalServiceException" => ErrorCode::InternalServiceException,
-            "InvalidParameterException" => ErrorCode::InvalidParameterException,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "InternalServiceException" => ErrorCode::InternalServiceException,
+"InvalidParameterException" => ErrorCode::InvalidParameterException,
+other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -158,26 +158,24 @@ impl std::str::FromStr for ErrorCode {
                 }
             }
 impl ErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ErrorCode::InternalServiceException => "InternalServiceException",
-            ErrorCode::InvalidParameterException => "InvalidParameterException",
-            ErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "InternalServiceException", "InvalidParameterException"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ErrorCode::InternalServiceException => "InternalServiceException",
+    ErrorCode::InvalidParameterException => "InvalidParameterException",
+    ErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["InternalServiceException", "InvalidParameterException"]
+                }
+            }
 impl AsRef<str> for ErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A list of resource ARNs and the tags (keys and values) that are associated with each.</p>
 #[non_exhaustive]
@@ -713,15 +711,15 @@ pub enum TargetIdType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetIdType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT" => TargetIdType::Account,
-            "OU" => TargetIdType::Ou,
-            "ROOT" => TargetIdType::Root,
-            other => TargetIdType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT" => TargetIdType::Account,
+"OU" => TargetIdType::Ou,
+"ROOT" => TargetIdType::Root,
+other => TargetIdType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TargetIdType {
                 type Err = std::convert::Infallible;
 
@@ -730,27 +728,25 @@ impl std::str::FromStr for TargetIdType {
                 }
             }
 impl TargetIdType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TargetIdType::Account => "ACCOUNT",
-            TargetIdType::Ou => "OU",
-            TargetIdType::Root => "ROOT",
-            TargetIdType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT", "OU", "ROOT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TargetIdType::Account => "ACCOUNT",
+    TargetIdType::Ou => "OU",
+    TargetIdType::Root => "ROOT",
+    TargetIdType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT", "OU", "ROOT"]
+                }
+            }
 impl AsRef<str> for TargetIdType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `GroupByAttribute`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -802,15 +798,15 @@ pub enum GroupByAttribute {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GroupByAttribute {
-    fn from(s: &str) -> Self {
-        match s {
-            "REGION" => GroupByAttribute::Region,
-            "RESOURCE_TYPE" => GroupByAttribute::ResourceType,
-            "TARGET_ID" => GroupByAttribute::TargetId,
-            other => GroupByAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "REGION" => GroupByAttribute::Region,
+"RESOURCE_TYPE" => GroupByAttribute::ResourceType,
+"TARGET_ID" => GroupByAttribute::TargetId,
+other => GroupByAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GroupByAttribute {
                 type Err = std::convert::Infallible;
 
@@ -819,25 +815,23 @@ impl std::str::FromStr for GroupByAttribute {
                 }
             }
 impl GroupByAttribute {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GroupByAttribute::Region => "REGION",
-            GroupByAttribute::ResourceType => "RESOURCE_TYPE",
-            GroupByAttribute::TargetId => "TARGET_ID",
-            GroupByAttribute::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "REGION", "RESOURCE_TYPE", "TARGET_ID"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GroupByAttribute::Region => "REGION",
+    GroupByAttribute::ResourceType => "RESOURCE_TYPE",
+    GroupByAttribute::TargetId => "TARGET_ID",
+    GroupByAttribute::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["REGION", "RESOURCE_TYPE", "TARGET_ID"]
+                }
+            }
 impl AsRef<str> for GroupByAttribute {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

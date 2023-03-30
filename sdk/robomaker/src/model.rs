@@ -232,13 +232,13 @@ pub enum RenderingEngineType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RenderingEngineType {
-    fn from(s: &str) -> Self {
-        match s {
-            "OGRE" => RenderingEngineType::Ogre,
-            other => RenderingEngineType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "OGRE" => RenderingEngineType::Ogre,
+other => RenderingEngineType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RenderingEngineType {
                 type Err = std::convert::Infallible;
 
@@ -247,25 +247,23 @@ impl std::str::FromStr for RenderingEngineType {
                 }
             }
 impl RenderingEngineType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RenderingEngineType::Ogre => "OGRE",
-            RenderingEngineType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "OGRE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RenderingEngineType::Ogre => "OGRE",
+    RenderingEngineType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OGRE"]
+                }
+            }
 impl AsRef<str> for RenderingEngineType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a robot software suite (ROS distribution).</p>
 #[non_exhaustive]
@@ -389,16 +387,16 @@ pub enum RobotSoftwareSuiteVersionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RobotSoftwareSuiteVersionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Dashing" => RobotSoftwareSuiteVersionType::Dashing,
-            "Foxy" => RobotSoftwareSuiteVersionType::Foxy,
-            "Kinetic" => RobotSoftwareSuiteVersionType::Kinetic,
-            "Melodic" => RobotSoftwareSuiteVersionType::Melodic,
-            other => RobotSoftwareSuiteVersionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Dashing" => RobotSoftwareSuiteVersionType::Dashing,
+"Foxy" => RobotSoftwareSuiteVersionType::Foxy,
+"Kinetic" => RobotSoftwareSuiteVersionType::Kinetic,
+"Melodic" => RobotSoftwareSuiteVersionType::Melodic,
+other => RobotSoftwareSuiteVersionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RobotSoftwareSuiteVersionType {
                 type Err = std::convert::Infallible;
 
@@ -407,28 +405,26 @@ impl std::str::FromStr for RobotSoftwareSuiteVersionType {
                 }
             }
 impl RobotSoftwareSuiteVersionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RobotSoftwareSuiteVersionType::Dashing => "Dashing",
-            RobotSoftwareSuiteVersionType::Foxy => "Foxy",
-            RobotSoftwareSuiteVersionType::Kinetic => "Kinetic",
-            RobotSoftwareSuiteVersionType::Melodic => "Melodic",
-            RobotSoftwareSuiteVersionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Dashing", "Foxy", "Kinetic", "Melodic"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RobotSoftwareSuiteVersionType::Dashing => "Dashing",
+    RobotSoftwareSuiteVersionType::Foxy => "Foxy",
+    RobotSoftwareSuiteVersionType::Kinetic => "Kinetic",
+    RobotSoftwareSuiteVersionType::Melodic => "Melodic",
+    RobotSoftwareSuiteVersionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Dashing", "Foxy", "Kinetic", "Melodic"]
+                }
+            }
 impl AsRef<str> for RobotSoftwareSuiteVersionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RobotSoftwareSuiteType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -480,15 +476,15 @@ pub enum RobotSoftwareSuiteType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RobotSoftwareSuiteType {
-    fn from(s: &str) -> Self {
-        match s {
-            "General" => RobotSoftwareSuiteType::General,
-            "ROS" => RobotSoftwareSuiteType::Ros,
-            "ROS2" => RobotSoftwareSuiteType::Ros2,
-            other => RobotSoftwareSuiteType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "General" => RobotSoftwareSuiteType::General,
+"ROS" => RobotSoftwareSuiteType::Ros,
+"ROS2" => RobotSoftwareSuiteType::Ros2,
+other => RobotSoftwareSuiteType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RobotSoftwareSuiteType {
                 type Err = std::convert::Infallible;
 
@@ -497,27 +493,25 @@ impl std::str::FromStr for RobotSoftwareSuiteType {
                 }
             }
 impl RobotSoftwareSuiteType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RobotSoftwareSuiteType::General => "General",
-            RobotSoftwareSuiteType::Ros => "ROS",
-            RobotSoftwareSuiteType::Ros2 => "ROS2",
-            RobotSoftwareSuiteType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "General", "ROS", "ROS2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RobotSoftwareSuiteType::General => "General",
+    RobotSoftwareSuiteType::Ros => "ROS",
+    RobotSoftwareSuiteType::Ros2 => "ROS2",
+    RobotSoftwareSuiteType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["General", "ROS", "ROS2"]
+                }
+            }
 impl AsRef<str> for RobotSoftwareSuiteType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a simulation software suite.</p>
 #[non_exhaustive]
@@ -638,15 +632,15 @@ pub enum SimulationSoftwareSuiteType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationSoftwareSuiteType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Gazebo" => SimulationSoftwareSuiteType::Gazebo,
-            "RosbagPlay" => SimulationSoftwareSuiteType::RosbagPlay,
-            "SimulationRuntime" => SimulationSoftwareSuiteType::SimulationRuntime,
-            other => SimulationSoftwareSuiteType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Gazebo" => SimulationSoftwareSuiteType::Gazebo,
+"RosbagPlay" => SimulationSoftwareSuiteType::RosbagPlay,
+"SimulationRuntime" => SimulationSoftwareSuiteType::SimulationRuntime,
+other => SimulationSoftwareSuiteType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SimulationSoftwareSuiteType {
                 type Err = std::convert::Infallible;
 
@@ -655,27 +649,25 @@ impl std::str::FromStr for SimulationSoftwareSuiteType {
                 }
             }
 impl SimulationSoftwareSuiteType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SimulationSoftwareSuiteType::Gazebo => "Gazebo",
-            SimulationSoftwareSuiteType::RosbagPlay => "RosbagPlay",
-            SimulationSoftwareSuiteType::SimulationRuntime => "SimulationRuntime",
-            SimulationSoftwareSuiteType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Gazebo", "RosbagPlay", "SimulationRuntime"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SimulationSoftwareSuiteType::Gazebo => "Gazebo",
+    SimulationSoftwareSuiteType::RosbagPlay => "RosbagPlay",
+    SimulationSoftwareSuiteType::SimulationRuntime => "SimulationRuntime",
+    SimulationSoftwareSuiteType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Gazebo", "RosbagPlay", "SimulationRuntime"]
+                }
+            }
 impl AsRef<str> for SimulationSoftwareSuiteType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a source.</p>
 #[non_exhaustive]
@@ -834,15 +826,15 @@ pub enum Architecture {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Architecture {
-    fn from(s: &str) -> Self {
-        match s {
-            "ARM64" => Architecture::Arm64,
-            "ARMHF" => Architecture::Armhf,
-            "X86_64" => Architecture::X8664,
-            other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ARM64" => Architecture::Arm64,
+"ARMHF" => Architecture::Armhf,
+"X86_64" => Architecture::X8664,
+other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Architecture {
                 type Err = std::convert::Infallible;
 
@@ -851,27 +843,25 @@ impl std::str::FromStr for Architecture {
                 }
             }
 impl Architecture {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Architecture::Arm64 => "ARM64",
-            Architecture::Armhf => "ARMHF",
-            Architecture::X8664 => "X86_64",
-            Architecture::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ARM64", "ARMHF", "X86_64"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Architecture::Arm64 => "ARM64",
+    Architecture::Armhf => "ARMHF",
+    Architecture::X8664 => "X86_64",
+    Architecture::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ARM64", "ARMHF", "X86_64"]
+                }
+            }
 impl AsRef<str> for Architecture {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a source configuration.</p>
 #[non_exhaustive]
@@ -1074,36 +1064,36 @@ pub enum DeploymentJobErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentJobErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "BadLambdaAssociated" => DeploymentJobErrorCode::BadLambdaAssociated,
-            "BadPermissionError" => DeploymentJobErrorCode::BadPermissionError,
-            "DeploymentFleetDoesNotExist" => DeploymentJobErrorCode::DeploymentFleetDoesNotExist,
-            "DownloadConditionFailed" => DeploymentJobErrorCode::DownloadConditionFailed,
-            "EnvironmentSetupError" => DeploymentJobErrorCode::EnvironmentSetupError,
-            "EtagMismatch" => DeploymentJobErrorCode::EtagMismatch,
-            "ExtractingBundleFailure" => DeploymentJobErrorCode::ExtractingBundleFailure,
-            "FailureThresholdBreached" => DeploymentJobErrorCode::FailureThresholdBreached,
-            "FleetDeploymentTimeout" => DeploymentJobErrorCode::FleetDeploymentTimeout,
-            "GreengrassDeploymentFailed" => DeploymentJobErrorCode::GreengrassDeploymentFailed,
-            "GreengrassGroupVersionDoesNotExist" => DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist,
-            "InternalServerError" => DeploymentJobErrorCode::InternalServerError,
-            "InvalidGreengrassGroup" => DeploymentJobErrorCode::InvalidGreengrassGroup,
-            "LambdaDeleted" => DeploymentJobErrorCode::LambdaDeleted,
-            "MissingRobotApplicationArchitecture" => DeploymentJobErrorCode::MissingRobotApplicationArchitecture,
-            "MissingRobotArchitecture" => DeploymentJobErrorCode::MissingRobotArchitecture,
-            "MissingRobotDeploymentResource" => DeploymentJobErrorCode::MissingRobotDeploymentResource,
-            "PostLaunchFileFailure" => DeploymentJobErrorCode::PostLaunchFileFailure,
-            "PreLaunchFileFailure" => DeploymentJobErrorCode::PreLaunchFileFailure,
-            "ResourceNotFound" => DeploymentJobErrorCode::ResourceNotFound,
-            "RobotAgentConnectionTimeout" => DeploymentJobErrorCode::RobotAgentConnectionTimeout,
-            "RobotApplicationDoesNotExist" => DeploymentJobErrorCode::RobotApplicationDoesNotExist,
-            "RobotDeploymentAborted" => DeploymentJobErrorCode::RobotDeploymentAborted,
-            "RobotDeploymentNoResponse" => DeploymentJobErrorCode::RobotDeploymentNoResponse,
-            other => DeploymentJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BadLambdaAssociated" => DeploymentJobErrorCode::BadLambdaAssociated,
+"BadPermissionError" => DeploymentJobErrorCode::BadPermissionError,
+"DeploymentFleetDoesNotExist" => DeploymentJobErrorCode::DeploymentFleetDoesNotExist,
+"DownloadConditionFailed" => DeploymentJobErrorCode::DownloadConditionFailed,
+"EnvironmentSetupError" => DeploymentJobErrorCode::EnvironmentSetupError,
+"EtagMismatch" => DeploymentJobErrorCode::EtagMismatch,
+"ExtractingBundleFailure" => DeploymentJobErrorCode::ExtractingBundleFailure,
+"FailureThresholdBreached" => DeploymentJobErrorCode::FailureThresholdBreached,
+"FleetDeploymentTimeout" => DeploymentJobErrorCode::FleetDeploymentTimeout,
+"GreengrassDeploymentFailed" => DeploymentJobErrorCode::GreengrassDeploymentFailed,
+"GreengrassGroupVersionDoesNotExist" => DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist,
+"InternalServerError" => DeploymentJobErrorCode::InternalServerError,
+"InvalidGreengrassGroup" => DeploymentJobErrorCode::InvalidGreengrassGroup,
+"LambdaDeleted" => DeploymentJobErrorCode::LambdaDeleted,
+"MissingRobotApplicationArchitecture" => DeploymentJobErrorCode::MissingRobotApplicationArchitecture,
+"MissingRobotArchitecture" => DeploymentJobErrorCode::MissingRobotArchitecture,
+"MissingRobotDeploymentResource" => DeploymentJobErrorCode::MissingRobotDeploymentResource,
+"PostLaunchFileFailure" => DeploymentJobErrorCode::PostLaunchFileFailure,
+"PreLaunchFileFailure" => DeploymentJobErrorCode::PreLaunchFileFailure,
+"ResourceNotFound" => DeploymentJobErrorCode::ResourceNotFound,
+"RobotAgentConnectionTimeout" => DeploymentJobErrorCode::RobotAgentConnectionTimeout,
+"RobotApplicationDoesNotExist" => DeploymentJobErrorCode::RobotApplicationDoesNotExist,
+"RobotDeploymentAborted" => DeploymentJobErrorCode::RobotDeploymentAborted,
+"RobotDeploymentNoResponse" => DeploymentJobErrorCode::RobotDeploymentNoResponse,
+other => DeploymentJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeploymentJobErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -1112,48 +1102,46 @@ impl std::str::FromStr for DeploymentJobErrorCode {
                 }
             }
 impl DeploymentJobErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeploymentJobErrorCode::BadLambdaAssociated => "BadLambdaAssociated",
-            DeploymentJobErrorCode::BadPermissionError => "BadPermissionError",
-            DeploymentJobErrorCode::DeploymentFleetDoesNotExist => "DeploymentFleetDoesNotExist",
-            DeploymentJobErrorCode::DownloadConditionFailed => "DownloadConditionFailed",
-            DeploymentJobErrorCode::EnvironmentSetupError => "EnvironmentSetupError",
-            DeploymentJobErrorCode::EtagMismatch => "EtagMismatch",
-            DeploymentJobErrorCode::ExtractingBundleFailure => "ExtractingBundleFailure",
-            DeploymentJobErrorCode::FailureThresholdBreached => "FailureThresholdBreached",
-            DeploymentJobErrorCode::FleetDeploymentTimeout => "FleetDeploymentTimeout",
-            DeploymentJobErrorCode::GreengrassDeploymentFailed => "GreengrassDeploymentFailed",
-            DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => "GreengrassGroupVersionDoesNotExist",
-            DeploymentJobErrorCode::InternalServerError => "InternalServerError",
-            DeploymentJobErrorCode::InvalidGreengrassGroup => "InvalidGreengrassGroup",
-            DeploymentJobErrorCode::LambdaDeleted => "LambdaDeleted",
-            DeploymentJobErrorCode::MissingRobotApplicationArchitecture => "MissingRobotApplicationArchitecture",
-            DeploymentJobErrorCode::MissingRobotArchitecture => "MissingRobotArchitecture",
-            DeploymentJobErrorCode::MissingRobotDeploymentResource => "MissingRobotDeploymentResource",
-            DeploymentJobErrorCode::PostLaunchFileFailure => "PostLaunchFileFailure",
-            DeploymentJobErrorCode::PreLaunchFileFailure => "PreLaunchFileFailure",
-            DeploymentJobErrorCode::ResourceNotFound => "ResourceNotFound",
-            DeploymentJobErrorCode::RobotAgentConnectionTimeout => "RobotAgentConnectionTimeout",
-            DeploymentJobErrorCode::RobotApplicationDoesNotExist => "RobotApplicationDoesNotExist",
-            DeploymentJobErrorCode::RobotDeploymentAborted => "RobotDeploymentAborted",
-            DeploymentJobErrorCode::RobotDeploymentNoResponse => "RobotDeploymentNoResponse",
-            DeploymentJobErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BadLambdaAssociated", "BadPermissionError", "DeploymentFleetDoesNotExist", "DownloadConditionFailed", "EnvironmentSetupError", "EtagMismatch", "ExtractingBundleFailure", "FailureThresholdBreached", "FleetDeploymentTimeout", "GreengrassDeploymentFailed", "GreengrassGroupVersionDoesNotExist", "InternalServerError", "InvalidGreengrassGroup", "LambdaDeleted", "MissingRobotApplicationArchitecture", "MissingRobotArchitecture", "MissingRobotDeploymentResource", "PostLaunchFileFailure", "PreLaunchFileFailure", "ResourceNotFound", "RobotAgentConnectionTimeout", "RobotApplicationDoesNotExist", "RobotDeploymentAborted", "RobotDeploymentNoResponse"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeploymentJobErrorCode::BadLambdaAssociated => "BadLambdaAssociated",
+    DeploymentJobErrorCode::BadPermissionError => "BadPermissionError",
+    DeploymentJobErrorCode::DeploymentFleetDoesNotExist => "DeploymentFleetDoesNotExist",
+    DeploymentJobErrorCode::DownloadConditionFailed => "DownloadConditionFailed",
+    DeploymentJobErrorCode::EnvironmentSetupError => "EnvironmentSetupError",
+    DeploymentJobErrorCode::EtagMismatch => "EtagMismatch",
+    DeploymentJobErrorCode::ExtractingBundleFailure => "ExtractingBundleFailure",
+    DeploymentJobErrorCode::FailureThresholdBreached => "FailureThresholdBreached",
+    DeploymentJobErrorCode::FleetDeploymentTimeout => "FleetDeploymentTimeout",
+    DeploymentJobErrorCode::GreengrassDeploymentFailed => "GreengrassDeploymentFailed",
+    DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => "GreengrassGroupVersionDoesNotExist",
+    DeploymentJobErrorCode::InternalServerError => "InternalServerError",
+    DeploymentJobErrorCode::InvalidGreengrassGroup => "InvalidGreengrassGroup",
+    DeploymentJobErrorCode::LambdaDeleted => "LambdaDeleted",
+    DeploymentJobErrorCode::MissingRobotApplicationArchitecture => "MissingRobotApplicationArchitecture",
+    DeploymentJobErrorCode::MissingRobotArchitecture => "MissingRobotArchitecture",
+    DeploymentJobErrorCode::MissingRobotDeploymentResource => "MissingRobotDeploymentResource",
+    DeploymentJobErrorCode::PostLaunchFileFailure => "PostLaunchFileFailure",
+    DeploymentJobErrorCode::PreLaunchFileFailure => "PreLaunchFileFailure",
+    DeploymentJobErrorCode::ResourceNotFound => "ResourceNotFound",
+    DeploymentJobErrorCode::RobotAgentConnectionTimeout => "RobotAgentConnectionTimeout",
+    DeploymentJobErrorCode::RobotApplicationDoesNotExist => "RobotApplicationDoesNotExist",
+    DeploymentJobErrorCode::RobotDeploymentAborted => "RobotDeploymentAborted",
+    DeploymentJobErrorCode::RobotDeploymentNoResponse => "RobotDeploymentNoResponse",
+    DeploymentJobErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BadLambdaAssociated", "BadPermissionError", "DeploymentFleetDoesNotExist", "DownloadConditionFailed", "EnvironmentSetupError", "EtagMismatch", "ExtractingBundleFailure", "FailureThresholdBreached", "FleetDeploymentTimeout", "GreengrassDeploymentFailed", "GreengrassGroupVersionDoesNotExist", "InternalServerError", "InvalidGreengrassGroup", "LambdaDeleted", "MissingRobotApplicationArchitecture", "MissingRobotArchitecture", "MissingRobotDeploymentResource", "PostLaunchFileFailure", "PreLaunchFileFailure", "ResourceNotFound", "RobotAgentConnectionTimeout", "RobotApplicationDoesNotExist", "RobotDeploymentAborted", "RobotDeploymentNoResponse"]
+                }
+            }
 impl AsRef<str> for DeploymentJobErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a deployment application configuration.</p>
 #[non_exhaustive]
@@ -1629,18 +1617,18 @@ pub enum DeploymentStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Canceled" => DeploymentStatus::Canceled,
-            "Failed" => DeploymentStatus::Failed,
-            "InProgress" => DeploymentStatus::InProgress,
-            "Pending" => DeploymentStatus::Pending,
-            "Preparing" => DeploymentStatus::Preparing,
-            "Succeeded" => DeploymentStatus::Succeeded,
-            other => DeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Canceled" => DeploymentStatus::Canceled,
+"Failed" => DeploymentStatus::Failed,
+"InProgress" => DeploymentStatus::InProgress,
+"Pending" => DeploymentStatus::Pending,
+"Preparing" => DeploymentStatus::Preparing,
+"Succeeded" => DeploymentStatus::Succeeded,
+other => DeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeploymentStatus {
                 type Err = std::convert::Infallible;
 
@@ -1649,30 +1637,28 @@ impl std::str::FromStr for DeploymentStatus {
                 }
             }
 impl DeploymentStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeploymentStatus::Canceled => "Canceled",
-            DeploymentStatus::Failed => "Failed",
-            DeploymentStatus::InProgress => "InProgress",
-            DeploymentStatus::Pending => "Pending",
-            DeploymentStatus::Preparing => "Preparing",
-            DeploymentStatus::Succeeded => "Succeeded",
-            DeploymentStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Canceled", "Failed", "InProgress", "Pending", "Preparing", "Succeeded"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeploymentStatus::Canceled => "Canceled",
+    DeploymentStatus::Failed => "Failed",
+    DeploymentStatus::InProgress => "InProgress",
+    DeploymentStatus::Pending => "Pending",
+    DeploymentStatus::Preparing => "Preparing",
+    DeploymentStatus::Succeeded => "Succeeded",
+    DeploymentStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Canceled", "Failed", "InProgress", "Pending", "Preparing", "Succeeded"]
+                }
+            }
 impl AsRef<str> for DeploymentStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summary information for a simulation job.</p>
 #[non_exhaustive]
@@ -1922,14 +1908,14 @@ pub enum ComputeType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComputeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CPU" => ComputeType::Cpu,
-            "GPU_AND_CPU" => ComputeType::GpuAndCpu,
-            other => ComputeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CPU" => ComputeType::Cpu,
+"GPU_AND_CPU" => ComputeType::GpuAndCpu,
+other => ComputeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ComputeType {
                 type Err = std::convert::Infallible;
 
@@ -1938,26 +1924,24 @@ impl std::str::FromStr for ComputeType {
                 }
             }
 impl ComputeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComputeType::Cpu => "CPU",
-            ComputeType::GpuAndCpu => "GPU_AND_CPU",
-            ComputeType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CPU", "GPU_AND_CPU"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComputeType::Cpu => "CPU",
+    ComputeType::GpuAndCpu => "GPU_AND_CPU",
+    ComputeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CPU", "GPU_AND_CPU"]
+                }
+            }
 impl AsRef<str> for ComputeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SimulationJobStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2030,22 +2014,22 @@ pub enum SimulationJobStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Canceled" => SimulationJobStatus::Canceled,
-            "Completed" => SimulationJobStatus::Completed,
-            "Failed" => SimulationJobStatus::Failed,
-            "Pending" => SimulationJobStatus::Pending,
-            "Preparing" => SimulationJobStatus::Preparing,
-            "Restarting" => SimulationJobStatus::Restarting,
-            "Running" => SimulationJobStatus::Running,
-            "RunningFailed" => SimulationJobStatus::RunningFailed,
-            "Terminated" => SimulationJobStatus::Terminated,
-            "Terminating" => SimulationJobStatus::Terminating,
-            other => SimulationJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Canceled" => SimulationJobStatus::Canceled,
+"Completed" => SimulationJobStatus::Completed,
+"Failed" => SimulationJobStatus::Failed,
+"Pending" => SimulationJobStatus::Pending,
+"Preparing" => SimulationJobStatus::Preparing,
+"Restarting" => SimulationJobStatus::Restarting,
+"Running" => SimulationJobStatus::Running,
+"RunningFailed" => SimulationJobStatus::RunningFailed,
+"Terminated" => SimulationJobStatus::Terminated,
+"Terminating" => SimulationJobStatus::Terminating,
+other => SimulationJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SimulationJobStatus {
                 type Err = std::convert::Infallible;
 
@@ -2054,34 +2038,32 @@ impl std::str::FromStr for SimulationJobStatus {
                 }
             }
 impl SimulationJobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SimulationJobStatus::Canceled => "Canceled",
-            SimulationJobStatus::Completed => "Completed",
-            SimulationJobStatus::Failed => "Failed",
-            SimulationJobStatus::Pending => "Pending",
-            SimulationJobStatus::Preparing => "Preparing",
-            SimulationJobStatus::Restarting => "Restarting",
-            SimulationJobStatus::Running => "Running",
-            SimulationJobStatus::RunningFailed => "RunningFailed",
-            SimulationJobStatus::Terminated => "Terminated",
-            SimulationJobStatus::Terminating => "Terminating",
-            SimulationJobStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Canceled", "Completed", "Failed", "Pending", "Preparing", "Restarting", "Running", "RunningFailed", "Terminated", "Terminating"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SimulationJobStatus::Canceled => "Canceled",
+    SimulationJobStatus::Completed => "Completed",
+    SimulationJobStatus::Failed => "Failed",
+    SimulationJobStatus::Pending => "Pending",
+    SimulationJobStatus::Preparing => "Preparing",
+    SimulationJobStatus::Restarting => "Restarting",
+    SimulationJobStatus::Running => "Running",
+    SimulationJobStatus::RunningFailed => "RunningFailed",
+    SimulationJobStatus::Terminated => "Terminated",
+    SimulationJobStatus::Terminating => "Terminating",
+    SimulationJobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Canceled", "Completed", "Failed", "Pending", "Preparing", "Restarting", "Running", "RunningFailed", "Terminated", "Terminating"]
+                }
+            }
 impl AsRef<str> for SimulationJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a simulation job request.</p>
 #[non_exhaustive]
@@ -2818,15 +2800,15 @@ pub enum DataSourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataSourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Archive" => DataSourceType::Archive,
-            "File" => DataSourceType::File,
-            "Prefix" => DataSourceType::Prefix,
-            other => DataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Archive" => DataSourceType::Archive,
+"File" => DataSourceType::File,
+"Prefix" => DataSourceType::Prefix,
+other => DataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DataSourceType {
                 type Err = std::convert::Infallible;
 
@@ -2835,27 +2817,25 @@ impl std::str::FromStr for DataSourceType {
                 }
             }
 impl DataSourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataSourceType::Archive => "Archive",
-            DataSourceType::File => "File",
-            DataSourceType::Prefix => "Prefix",
-            DataSourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Archive", "File", "Prefix"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataSourceType::Archive => "Archive",
+    DataSourceType::File => "File",
+    DataSourceType::Prefix => "Prefix",
+    DataSourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Archive", "File", "Prefix"]
+                }
+            }
 impl AsRef<str> for DataSourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a simulation application configuration.</p>
 #[non_exhaustive]
@@ -3259,14 +3239,14 @@ pub enum ExitBehavior {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExitBehavior {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAIL" => ExitBehavior::Fail,
-            "RESTART" => ExitBehavior::Restart,
-            other => ExitBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAIL" => ExitBehavior::Fail,
+"RESTART" => ExitBehavior::Restart,
+other => ExitBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExitBehavior {
                 type Err = std::convert::Infallible;
 
@@ -3275,26 +3255,24 @@ impl std::str::FromStr for ExitBehavior {
                 }
             }
 impl ExitBehavior {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExitBehavior::Fail => "FAIL",
-            ExitBehavior::Restart => "RESTART",
-            ExitBehavior::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAIL", "RESTART"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExitBehavior::Fail => "FAIL",
+    ExitBehavior::Restart => "RESTART",
+    ExitBehavior::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAIL", "RESTART"]
+                }
+            }
 impl AsRef<str> for ExitBehavior {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Configuration information for a world.</p>
 #[non_exhaustive]
@@ -3569,14 +3547,14 @@ pub enum UploadBehavior {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UploadBehavior {
-    fn from(s: &str) -> Self {
-        match s {
-            "UPLOAD_ON_TERMINATE" => UploadBehavior::UploadOnTerminate,
-            "UPLOAD_ROLLING_AUTO_REMOVE" => UploadBehavior::UploadRollingAutoRemove,
-            other => UploadBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "UPLOAD_ON_TERMINATE" => UploadBehavior::UploadOnTerminate,
+"UPLOAD_ROLLING_AUTO_REMOVE" => UploadBehavior::UploadRollingAutoRemove,
+other => UploadBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UploadBehavior {
                 type Err = std::convert::Infallible;
 
@@ -3585,26 +3563,24 @@ impl std::str::FromStr for UploadBehavior {
                 }
             }
 impl UploadBehavior {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UploadBehavior::UploadOnTerminate => "UPLOAD_ON_TERMINATE",
-            UploadBehavior::UploadRollingAutoRemove => "UPLOAD_ROLLING_AUTO_REMOVE",
-            UploadBehavior::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "UPLOAD_ON_TERMINATE", "UPLOAD_ROLLING_AUTO_REMOVE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UploadBehavior::UploadOnTerminate => "UPLOAD_ON_TERMINATE",
+    UploadBehavior::UploadRollingAutoRemove => "UPLOAD_ROLLING_AUTO_REMOVE",
+    UploadBehavior::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["UPLOAD_ON_TERMINATE", "UPLOAD_ROLLING_AUTO_REMOVE"]
+                }
+            }
 impl AsRef<str> for UploadBehavior {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a launch configuration.</p>
 #[non_exhaustive]
@@ -4166,14 +4142,14 @@ pub enum FailureBehavior {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailureBehavior {
-    fn from(s: &str) -> Self {
-        match s {
-            "Continue" => FailureBehavior::Continue,
-            "Fail" => FailureBehavior::Fail,
-            other => FailureBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Continue" => FailureBehavior::Continue,
+"Fail" => FailureBehavior::Fail,
+other => FailureBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FailureBehavior {
                 type Err = std::convert::Infallible;
 
@@ -4182,26 +4158,24 @@ impl std::str::FromStr for FailureBehavior {
                 }
             }
 impl FailureBehavior {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailureBehavior::Continue => "Continue",
-            FailureBehavior::Fail => "Fail",
-            FailureBehavior::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Continue", "Fail"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FailureBehavior::Continue => "Continue",
+    FailureBehavior::Fail => "Fail",
+    FailureBehavior::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Continue", "Fail"]
+                }
+            }
 impl AsRef<str> for FailureBehavior {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The logging configuration.</p>
 #[non_exhaustive]
@@ -4575,43 +4549,43 @@ pub enum SimulationJobErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationJobErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "BadPermissionsCloudwatchLogs" => SimulationJobErrorCode::BadPermissionsCloudwatchLogs,
-            "BadPermissionsRobotApplication" => SimulationJobErrorCode::BadPermissionsRobotApplication,
-            "BadPermissionsS3Object" => SimulationJobErrorCode::BadPermissionsS3Object,
-            "BadPermissionsS3Output" => SimulationJobErrorCode::BadPermissionsS3Output,
-            "BadPermissionsSimulationApplication" => SimulationJobErrorCode::BadPermissionsSimulationApplication,
-            "BadPermissionsUserCredentials" => SimulationJobErrorCode::BadPermissionsUserCredentials,
-            "BatchCanceled" => SimulationJobErrorCode::BatchCanceled,
-            "BatchTimedOut" => SimulationJobErrorCode::BatchTimedOut,
-            "ENILimitExceeded" => SimulationJobErrorCode::EniLimitExceeded,
-            "InternalServiceError" => SimulationJobErrorCode::InternalServiceError,
-            "InvalidBundleRobotApplication" => SimulationJobErrorCode::InvalidBundleRobotApplication,
-            "InvalidBundleSimulationApplication" => SimulationJobErrorCode::InvalidBundleSimulationApplication,
-            "InvalidInput" => SimulationJobErrorCode::InvalidInput,
-            "InvalidS3Resource" => SimulationJobErrorCode::InvalidS3Resource,
-            "LimitExceeded" => SimulationJobErrorCode::LimitExceeded,
-            "MismatchedEtag" => SimulationJobErrorCode::MismatchedEtag,
-            "RequestThrottled" => SimulationJobErrorCode::RequestThrottled,
-            "ResourceNotFound" => SimulationJobErrorCode::ResourceNotFound,
-            "RobotApplicationCrash" => SimulationJobErrorCode::RobotApplicationCrash,
-            "RobotApplicationHealthCheckFailure" => SimulationJobErrorCode::RobotApplicationHealthCheckFailure,
-            "RobotApplicationVersionMismatchedEtag" => SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag,
-            "SimulationApplicationCrash" => SimulationJobErrorCode::SimulationApplicationCrash,
-            "SimulationApplicationHealthCheckFailure" => SimulationJobErrorCode::SimulationApplicationHealthCheckFailure,
-            "SimulationApplicationVersionMismatchedEtag" => SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag,
-            "SubnetIpLimitExceeded" => SimulationJobErrorCode::SubnetIpLimitExceeded,
-            "ThrottlingError" => SimulationJobErrorCode::ThrottlingError,
-            "UploadContentMismatchError" => SimulationJobErrorCode::UploadContentMismatchError,
-            "WrongRegionRobotApplication" => SimulationJobErrorCode::WrongRegionRobotApplication,
-            "WrongRegionS3Bucket" => SimulationJobErrorCode::WrongRegionS3Bucket,
-            "WrongRegionS3Output" => SimulationJobErrorCode::WrongRegionS3Output,
-            "WrongRegionSimulationApplication" => SimulationJobErrorCode::WrongRegionSimulationApplication,
-            other => SimulationJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BadPermissionsCloudwatchLogs" => SimulationJobErrorCode::BadPermissionsCloudwatchLogs,
+"BadPermissionsRobotApplication" => SimulationJobErrorCode::BadPermissionsRobotApplication,
+"BadPermissionsS3Object" => SimulationJobErrorCode::BadPermissionsS3Object,
+"BadPermissionsS3Output" => SimulationJobErrorCode::BadPermissionsS3Output,
+"BadPermissionsSimulationApplication" => SimulationJobErrorCode::BadPermissionsSimulationApplication,
+"BadPermissionsUserCredentials" => SimulationJobErrorCode::BadPermissionsUserCredentials,
+"BatchCanceled" => SimulationJobErrorCode::BatchCanceled,
+"BatchTimedOut" => SimulationJobErrorCode::BatchTimedOut,
+"ENILimitExceeded" => SimulationJobErrorCode::EniLimitExceeded,
+"InternalServiceError" => SimulationJobErrorCode::InternalServiceError,
+"InvalidBundleRobotApplication" => SimulationJobErrorCode::InvalidBundleRobotApplication,
+"InvalidBundleSimulationApplication" => SimulationJobErrorCode::InvalidBundleSimulationApplication,
+"InvalidInput" => SimulationJobErrorCode::InvalidInput,
+"InvalidS3Resource" => SimulationJobErrorCode::InvalidS3Resource,
+"LimitExceeded" => SimulationJobErrorCode::LimitExceeded,
+"MismatchedEtag" => SimulationJobErrorCode::MismatchedEtag,
+"RequestThrottled" => SimulationJobErrorCode::RequestThrottled,
+"ResourceNotFound" => SimulationJobErrorCode::ResourceNotFound,
+"RobotApplicationCrash" => SimulationJobErrorCode::RobotApplicationCrash,
+"RobotApplicationHealthCheckFailure" => SimulationJobErrorCode::RobotApplicationHealthCheckFailure,
+"RobotApplicationVersionMismatchedEtag" => SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag,
+"SimulationApplicationCrash" => SimulationJobErrorCode::SimulationApplicationCrash,
+"SimulationApplicationHealthCheckFailure" => SimulationJobErrorCode::SimulationApplicationHealthCheckFailure,
+"SimulationApplicationVersionMismatchedEtag" => SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag,
+"SubnetIpLimitExceeded" => SimulationJobErrorCode::SubnetIpLimitExceeded,
+"ThrottlingError" => SimulationJobErrorCode::ThrottlingError,
+"UploadContentMismatchError" => SimulationJobErrorCode::UploadContentMismatchError,
+"WrongRegionRobotApplication" => SimulationJobErrorCode::WrongRegionRobotApplication,
+"WrongRegionS3Bucket" => SimulationJobErrorCode::WrongRegionS3Bucket,
+"WrongRegionS3Output" => SimulationJobErrorCode::WrongRegionS3Output,
+"WrongRegionSimulationApplication" => SimulationJobErrorCode::WrongRegionSimulationApplication,
+other => SimulationJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SimulationJobErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -4620,55 +4594,53 @@ impl std::str::FromStr for SimulationJobErrorCode {
                 }
             }
 impl SimulationJobErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SimulationJobErrorCode::BadPermissionsCloudwatchLogs => "BadPermissionsCloudwatchLogs",
-            SimulationJobErrorCode::BadPermissionsRobotApplication => "BadPermissionsRobotApplication",
-            SimulationJobErrorCode::BadPermissionsS3Object => "BadPermissionsS3Object",
-            SimulationJobErrorCode::BadPermissionsS3Output => "BadPermissionsS3Output",
-            SimulationJobErrorCode::BadPermissionsSimulationApplication => "BadPermissionsSimulationApplication",
-            SimulationJobErrorCode::BadPermissionsUserCredentials => "BadPermissionsUserCredentials",
-            SimulationJobErrorCode::BatchCanceled => "BatchCanceled",
-            SimulationJobErrorCode::BatchTimedOut => "BatchTimedOut",
-            SimulationJobErrorCode::EniLimitExceeded => "ENILimitExceeded",
-            SimulationJobErrorCode::InternalServiceError => "InternalServiceError",
-            SimulationJobErrorCode::InvalidBundleRobotApplication => "InvalidBundleRobotApplication",
-            SimulationJobErrorCode::InvalidBundleSimulationApplication => "InvalidBundleSimulationApplication",
-            SimulationJobErrorCode::InvalidInput => "InvalidInput",
-            SimulationJobErrorCode::InvalidS3Resource => "InvalidS3Resource",
-            SimulationJobErrorCode::LimitExceeded => "LimitExceeded",
-            SimulationJobErrorCode::MismatchedEtag => "MismatchedEtag",
-            SimulationJobErrorCode::RequestThrottled => "RequestThrottled",
-            SimulationJobErrorCode::ResourceNotFound => "ResourceNotFound",
-            SimulationJobErrorCode::RobotApplicationCrash => "RobotApplicationCrash",
-            SimulationJobErrorCode::RobotApplicationHealthCheckFailure => "RobotApplicationHealthCheckFailure",
-            SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => "RobotApplicationVersionMismatchedEtag",
-            SimulationJobErrorCode::SimulationApplicationCrash => "SimulationApplicationCrash",
-            SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => "SimulationApplicationHealthCheckFailure",
-            SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => "SimulationApplicationVersionMismatchedEtag",
-            SimulationJobErrorCode::SubnetIpLimitExceeded => "SubnetIpLimitExceeded",
-            SimulationJobErrorCode::ThrottlingError => "ThrottlingError",
-            SimulationJobErrorCode::UploadContentMismatchError => "UploadContentMismatchError",
-            SimulationJobErrorCode::WrongRegionRobotApplication => "WrongRegionRobotApplication",
-            SimulationJobErrorCode::WrongRegionS3Bucket => "WrongRegionS3Bucket",
-            SimulationJobErrorCode::WrongRegionS3Output => "WrongRegionS3Output",
-            SimulationJobErrorCode::WrongRegionSimulationApplication => "WrongRegionSimulationApplication",
-            SimulationJobErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BadPermissionsCloudwatchLogs", "BadPermissionsRobotApplication", "BadPermissionsS3Object", "BadPermissionsS3Output", "BadPermissionsSimulationApplication", "BadPermissionsUserCredentials", "BatchCanceled", "BatchTimedOut", "ENILimitExceeded", "InternalServiceError", "InvalidBundleRobotApplication", "InvalidBundleSimulationApplication", "InvalidInput", "InvalidS3Resource", "LimitExceeded", "MismatchedEtag", "RequestThrottled", "ResourceNotFound", "RobotApplicationCrash", "RobotApplicationHealthCheckFailure", "RobotApplicationVersionMismatchedEtag", "SimulationApplicationCrash", "SimulationApplicationHealthCheckFailure", "SimulationApplicationVersionMismatchedEtag", "SubnetIpLimitExceeded", "ThrottlingError", "UploadContentMismatchError", "WrongRegionRobotApplication", "WrongRegionS3Bucket", "WrongRegionS3Output", "WrongRegionSimulationApplication"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SimulationJobErrorCode::BadPermissionsCloudwatchLogs => "BadPermissionsCloudwatchLogs",
+    SimulationJobErrorCode::BadPermissionsRobotApplication => "BadPermissionsRobotApplication",
+    SimulationJobErrorCode::BadPermissionsS3Object => "BadPermissionsS3Object",
+    SimulationJobErrorCode::BadPermissionsS3Output => "BadPermissionsS3Output",
+    SimulationJobErrorCode::BadPermissionsSimulationApplication => "BadPermissionsSimulationApplication",
+    SimulationJobErrorCode::BadPermissionsUserCredentials => "BadPermissionsUserCredentials",
+    SimulationJobErrorCode::BatchCanceled => "BatchCanceled",
+    SimulationJobErrorCode::BatchTimedOut => "BatchTimedOut",
+    SimulationJobErrorCode::EniLimitExceeded => "ENILimitExceeded",
+    SimulationJobErrorCode::InternalServiceError => "InternalServiceError",
+    SimulationJobErrorCode::InvalidBundleRobotApplication => "InvalidBundleRobotApplication",
+    SimulationJobErrorCode::InvalidBundleSimulationApplication => "InvalidBundleSimulationApplication",
+    SimulationJobErrorCode::InvalidInput => "InvalidInput",
+    SimulationJobErrorCode::InvalidS3Resource => "InvalidS3Resource",
+    SimulationJobErrorCode::LimitExceeded => "LimitExceeded",
+    SimulationJobErrorCode::MismatchedEtag => "MismatchedEtag",
+    SimulationJobErrorCode::RequestThrottled => "RequestThrottled",
+    SimulationJobErrorCode::ResourceNotFound => "ResourceNotFound",
+    SimulationJobErrorCode::RobotApplicationCrash => "RobotApplicationCrash",
+    SimulationJobErrorCode::RobotApplicationHealthCheckFailure => "RobotApplicationHealthCheckFailure",
+    SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => "RobotApplicationVersionMismatchedEtag",
+    SimulationJobErrorCode::SimulationApplicationCrash => "SimulationApplicationCrash",
+    SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => "SimulationApplicationHealthCheckFailure",
+    SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => "SimulationApplicationVersionMismatchedEtag",
+    SimulationJobErrorCode::SubnetIpLimitExceeded => "SubnetIpLimitExceeded",
+    SimulationJobErrorCode::ThrottlingError => "ThrottlingError",
+    SimulationJobErrorCode::UploadContentMismatchError => "UploadContentMismatchError",
+    SimulationJobErrorCode::WrongRegionRobotApplication => "WrongRegionRobotApplication",
+    SimulationJobErrorCode::WrongRegionS3Bucket => "WrongRegionS3Bucket",
+    SimulationJobErrorCode::WrongRegionS3Output => "WrongRegionS3Output",
+    SimulationJobErrorCode::WrongRegionSimulationApplication => "WrongRegionSimulationApplication",
+    SimulationJobErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BadPermissionsCloudwatchLogs", "BadPermissionsRobotApplication", "BadPermissionsS3Object", "BadPermissionsS3Output", "BadPermissionsSimulationApplication", "BadPermissionsUserCredentials", "BatchCanceled", "BatchTimedOut", "ENILimitExceeded", "InternalServiceError", "InvalidBundleRobotApplication", "InvalidBundleSimulationApplication", "InvalidInput", "InvalidS3Resource", "LimitExceeded", "MismatchedEtag", "RequestThrottled", "ResourceNotFound", "RobotApplicationCrash", "RobotApplicationHealthCheckFailure", "RobotApplicationVersionMismatchedEtag", "SimulationApplicationCrash", "SimulationApplicationHealthCheckFailure", "SimulationApplicationVersionMismatchedEtag", "SubnetIpLimitExceeded", "ThrottlingError", "UploadContentMismatchError", "WrongRegionRobotApplication", "WrongRegionS3Bucket", "WrongRegionS3Output", "WrongRegionSimulationApplication"]
+                }
+            }
 impl AsRef<str> for SimulationJobErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SimulationJobBatchErrorCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4714,13 +4686,13 @@ pub enum SimulationJobBatchErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationJobBatchErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "InternalServiceError" => SimulationJobBatchErrorCode::InternalServiceError,
-            other => SimulationJobBatchErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "InternalServiceError" => SimulationJobBatchErrorCode::InternalServiceError,
+other => SimulationJobBatchErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SimulationJobBatchErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -4729,25 +4701,23 @@ impl std::str::FromStr for SimulationJobBatchErrorCode {
                 }
             }
 impl SimulationJobBatchErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SimulationJobBatchErrorCode::InternalServiceError => "InternalServiceError",
-            SimulationJobBatchErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "InternalServiceError"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SimulationJobBatchErrorCode::InternalServiceError => "InternalServiceError",
+    SimulationJobBatchErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["InternalServiceError"]
+                }
+            }
 impl AsRef<str> for SimulationJobBatchErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the batch policy.</p>
 #[non_exhaustive]
@@ -4894,21 +4864,21 @@ pub enum SimulationJobBatchStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationJobBatchStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Canceled" => SimulationJobBatchStatus::Canceled,
-            "Canceling" => SimulationJobBatchStatus::Canceling,
-            "Completed" => SimulationJobBatchStatus::Completed,
-            "Completing" => SimulationJobBatchStatus::Completing,
-            "Failed" => SimulationJobBatchStatus::Failed,
-            "InProgress" => SimulationJobBatchStatus::InProgress,
-            "Pending" => SimulationJobBatchStatus::Pending,
-            "TimedOut" => SimulationJobBatchStatus::TimedOut,
-            "TimingOut" => SimulationJobBatchStatus::TimingOut,
-            other => SimulationJobBatchStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Canceled" => SimulationJobBatchStatus::Canceled,
+"Canceling" => SimulationJobBatchStatus::Canceling,
+"Completed" => SimulationJobBatchStatus::Completed,
+"Completing" => SimulationJobBatchStatus::Completing,
+"Failed" => SimulationJobBatchStatus::Failed,
+"InProgress" => SimulationJobBatchStatus::InProgress,
+"Pending" => SimulationJobBatchStatus::Pending,
+"TimedOut" => SimulationJobBatchStatus::TimedOut,
+"TimingOut" => SimulationJobBatchStatus::TimingOut,
+other => SimulationJobBatchStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SimulationJobBatchStatus {
                 type Err = std::convert::Infallible;
 
@@ -4917,33 +4887,31 @@ impl std::str::FromStr for SimulationJobBatchStatus {
                 }
             }
 impl SimulationJobBatchStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SimulationJobBatchStatus::Canceled => "Canceled",
-            SimulationJobBatchStatus::Canceling => "Canceling",
-            SimulationJobBatchStatus::Completed => "Completed",
-            SimulationJobBatchStatus::Completing => "Completing",
-            SimulationJobBatchStatus::Failed => "Failed",
-            SimulationJobBatchStatus::InProgress => "InProgress",
-            SimulationJobBatchStatus::Pending => "Pending",
-            SimulationJobBatchStatus::TimedOut => "TimedOut",
-            SimulationJobBatchStatus::TimingOut => "TimingOut",
-            SimulationJobBatchStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Canceled", "Canceling", "Completed", "Completing", "Failed", "InProgress", "Pending", "TimedOut", "TimingOut"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SimulationJobBatchStatus::Canceled => "Canceled",
+    SimulationJobBatchStatus::Canceling => "Canceling",
+    SimulationJobBatchStatus::Completed => "Completed",
+    SimulationJobBatchStatus::Completing => "Completing",
+    SimulationJobBatchStatus::Failed => "Failed",
+    SimulationJobBatchStatus::InProgress => "InProgress",
+    SimulationJobBatchStatus::Pending => "Pending",
+    SimulationJobBatchStatus::TimedOut => "TimedOut",
+    SimulationJobBatchStatus::TimingOut => "TimingOut",
+    SimulationJobBatchStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Canceled", "Canceling", "Completed", "Completing", "Failed", "InProgress", "Pending", "TimedOut", "TimingOut"]
+                }
+            }
 impl AsRef<str> for SimulationJobBatchStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summary information for a template.</p>
 #[non_exhaustive]
@@ -5727,19 +5695,19 @@ pub enum WorldGenerationJobStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorldGenerationJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Canceled" => WorldGenerationJobStatus::Canceled,
-            "Canceling" => WorldGenerationJobStatus::Canceling,
-            "Completed" => WorldGenerationJobStatus::Completed,
-            "Failed" => WorldGenerationJobStatus::Failed,
-            "PartialFailed" => WorldGenerationJobStatus::PartialFailed,
-            "Pending" => WorldGenerationJobStatus::Pending,
-            "Running" => WorldGenerationJobStatus::Running,
-            other => WorldGenerationJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Canceled" => WorldGenerationJobStatus::Canceled,
+"Canceling" => WorldGenerationJobStatus::Canceling,
+"Completed" => WorldGenerationJobStatus::Completed,
+"Failed" => WorldGenerationJobStatus::Failed,
+"PartialFailed" => WorldGenerationJobStatus::PartialFailed,
+"Pending" => WorldGenerationJobStatus::Pending,
+"Running" => WorldGenerationJobStatus::Running,
+other => WorldGenerationJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WorldGenerationJobStatus {
                 type Err = std::convert::Infallible;
 
@@ -5748,31 +5716,29 @@ impl std::str::FromStr for WorldGenerationJobStatus {
                 }
             }
 impl WorldGenerationJobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorldGenerationJobStatus::Canceled => "Canceled",
-            WorldGenerationJobStatus::Canceling => "Canceling",
-            WorldGenerationJobStatus::Completed => "Completed",
-            WorldGenerationJobStatus::Failed => "Failed",
-            WorldGenerationJobStatus::PartialFailed => "PartialFailed",
-            WorldGenerationJobStatus::Pending => "Pending",
-            WorldGenerationJobStatus::Running => "Running",
-            WorldGenerationJobStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Canceled", "Canceling", "Completed", "Failed", "PartialFailed", "Pending", "Running"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorldGenerationJobStatus::Canceled => "Canceled",
+    WorldGenerationJobStatus::Canceling => "Canceling",
+    WorldGenerationJobStatus::Completed => "Completed",
+    WorldGenerationJobStatus::Failed => "Failed",
+    WorldGenerationJobStatus::PartialFailed => "PartialFailed",
+    WorldGenerationJobStatus::Pending => "Pending",
+    WorldGenerationJobStatus::Running => "Running",
+    WorldGenerationJobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Canceled", "Canceling", "Completed", "Failed", "PartialFailed", "Pending", "Running"]
+                }
+            }
 impl AsRef<str> for WorldGenerationJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a world export job.</p>
 #[non_exhaustive]
@@ -6117,18 +6083,18 @@ pub enum WorldExportJobStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorldExportJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Canceled" => WorldExportJobStatus::Canceled,
-            "Canceling" => WorldExportJobStatus::Canceling,
-            "Completed" => WorldExportJobStatus::Completed,
-            "Failed" => WorldExportJobStatus::Failed,
-            "Pending" => WorldExportJobStatus::Pending,
-            "Running" => WorldExportJobStatus::Running,
-            other => WorldExportJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Canceled" => WorldExportJobStatus::Canceled,
+"Canceling" => WorldExportJobStatus::Canceling,
+"Completed" => WorldExportJobStatus::Completed,
+"Failed" => WorldExportJobStatus::Failed,
+"Pending" => WorldExportJobStatus::Pending,
+"Running" => WorldExportJobStatus::Running,
+other => WorldExportJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WorldExportJobStatus {
                 type Err = std::convert::Infallible;
 
@@ -6137,30 +6103,28 @@ impl std::str::FromStr for WorldExportJobStatus {
                 }
             }
 impl WorldExportJobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorldExportJobStatus::Canceled => "Canceled",
-            WorldExportJobStatus::Canceling => "Canceling",
-            WorldExportJobStatus::Completed => "Completed",
-            WorldExportJobStatus::Failed => "Failed",
-            WorldExportJobStatus::Pending => "Pending",
-            WorldExportJobStatus::Running => "Running",
-            WorldExportJobStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Canceled", "Canceling", "Completed", "Failed", "Pending", "Running"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorldExportJobStatus::Canceled => "Canceled",
+    WorldExportJobStatus::Canceling => "Canceling",
+    WorldExportJobStatus::Completed => "Completed",
+    WorldExportJobStatus::Failed => "Failed",
+    WorldExportJobStatus::Pending => "Pending",
+    WorldExportJobStatus::Running => "Running",
+    WorldExportJobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Canceled", "Canceling", "Completed", "Failed", "Pending", "Running"]
+                }
+            }
 impl AsRef<str> for WorldExportJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a simulation job batch.</p>
 #[non_exhaustive]
@@ -6966,19 +6930,19 @@ pub enum RobotStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RobotStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Available" => RobotStatus::Available,
-            "Deploying" => RobotStatus::Deploying,
-            "Failed" => RobotStatus::Failed,
-            "InSync" => RobotStatus::InSync,
-            "NoResponse" => RobotStatus::NoResponse,
-            "PendingNewDeployment" => RobotStatus::PendingNewDeployment,
-            "Registered" => RobotStatus::Registered,
-            other => RobotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Available" => RobotStatus::Available,
+"Deploying" => RobotStatus::Deploying,
+"Failed" => RobotStatus::Failed,
+"InSync" => RobotStatus::InSync,
+"NoResponse" => RobotStatus::NoResponse,
+"PendingNewDeployment" => RobotStatus::PendingNewDeployment,
+"Registered" => RobotStatus::Registered,
+other => RobotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RobotStatus {
                 type Err = std::convert::Infallible;
 
@@ -6987,31 +6951,29 @@ impl std::str::FromStr for RobotStatus {
                 }
             }
 impl RobotStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RobotStatus::Available => "Available",
-            RobotStatus::Deploying => "Deploying",
-            RobotStatus::Failed => "Failed",
-            RobotStatus::InSync => "InSync",
-            RobotStatus::NoResponse => "NoResponse",
-            RobotStatus::PendingNewDeployment => "PendingNewDeployment",
-            RobotStatus::Registered => "Registered",
-            RobotStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Available", "Deploying", "Failed", "InSync", "NoResponse", "PendingNewDeployment", "Registered"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RobotStatus::Available => "Available",
+    RobotStatus::Deploying => "Deploying",
+    RobotStatus::Failed => "Failed",
+    RobotStatus::InSync => "InSync",
+    RobotStatus::NoResponse => "NoResponse",
+    RobotStatus::PendingNewDeployment => "PendingNewDeployment",
+    RobotStatus::Registered => "Registered",
+    RobotStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Available", "Deploying", "Failed", "InSync", "NoResponse", "PendingNewDeployment", "Registered"]
+                }
+            }
 impl AsRef<str> for RobotStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summary information for a robot application.</p>
 #[non_exhaustive]
@@ -7920,18 +7882,18 @@ pub enum WorldGenerationJobErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorldGenerationJobErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AllWorldGenerationFailed" => WorldGenerationJobErrorCode::AllWorldGenerationFailed,
-            "InternalServiceError" => WorldGenerationJobErrorCode::InternalServiceError,
-            "InvalidInput" => WorldGenerationJobErrorCode::InvalidInput,
-            "LimitExceeded" => WorldGenerationJobErrorCode::LimitExceeded,
-            "RequestThrottled" => WorldGenerationJobErrorCode::RequestThrottled,
-            "ResourceNotFound" => WorldGenerationJobErrorCode::ResourceNotFound,
-            other => WorldGenerationJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AllWorldGenerationFailed" => WorldGenerationJobErrorCode::AllWorldGenerationFailed,
+"InternalServiceError" => WorldGenerationJobErrorCode::InternalServiceError,
+"InvalidInput" => WorldGenerationJobErrorCode::InvalidInput,
+"LimitExceeded" => WorldGenerationJobErrorCode::LimitExceeded,
+"RequestThrottled" => WorldGenerationJobErrorCode::RequestThrottled,
+"ResourceNotFound" => WorldGenerationJobErrorCode::ResourceNotFound,
+other => WorldGenerationJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WorldGenerationJobErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -7940,30 +7902,28 @@ impl std::str::FromStr for WorldGenerationJobErrorCode {
                 }
             }
 impl WorldGenerationJobErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorldGenerationJobErrorCode::AllWorldGenerationFailed => "AllWorldGenerationFailed",
-            WorldGenerationJobErrorCode::InternalServiceError => "InternalServiceError",
-            WorldGenerationJobErrorCode::InvalidInput => "InvalidInput",
-            WorldGenerationJobErrorCode::LimitExceeded => "LimitExceeded",
-            WorldGenerationJobErrorCode::RequestThrottled => "RequestThrottled",
-            WorldGenerationJobErrorCode::ResourceNotFound => "ResourceNotFound",
-            WorldGenerationJobErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AllWorldGenerationFailed", "InternalServiceError", "InvalidInput", "LimitExceeded", "RequestThrottled", "ResourceNotFound"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorldGenerationJobErrorCode::AllWorldGenerationFailed => "AllWorldGenerationFailed",
+    WorldGenerationJobErrorCode::InternalServiceError => "InternalServiceError",
+    WorldGenerationJobErrorCode::InvalidInput => "InvalidInput",
+    WorldGenerationJobErrorCode::LimitExceeded => "LimitExceeded",
+    WorldGenerationJobErrorCode::RequestThrottled => "RequestThrottled",
+    WorldGenerationJobErrorCode::ResourceNotFound => "ResourceNotFound",
+    WorldGenerationJobErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AllWorldGenerationFailed", "InternalServiceError", "InvalidInput", "LimitExceeded", "RequestThrottled", "ResourceNotFound"]
+                }
+            }
 impl AsRef<str> for WorldGenerationJobErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `WorldExportJobErrorCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8024,18 +7984,18 @@ pub enum WorldExportJobErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorldExportJobErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => WorldExportJobErrorCode::AccessDenied,
-            "InternalServiceError" => WorldExportJobErrorCode::InternalServiceError,
-            "InvalidInput" => WorldExportJobErrorCode::InvalidInput,
-            "LimitExceeded" => WorldExportJobErrorCode::LimitExceeded,
-            "RequestThrottled" => WorldExportJobErrorCode::RequestThrottled,
-            "ResourceNotFound" => WorldExportJobErrorCode::ResourceNotFound,
-            other => WorldExportJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDenied" => WorldExportJobErrorCode::AccessDenied,
+"InternalServiceError" => WorldExportJobErrorCode::InternalServiceError,
+"InvalidInput" => WorldExportJobErrorCode::InvalidInput,
+"LimitExceeded" => WorldExportJobErrorCode::LimitExceeded,
+"RequestThrottled" => WorldExportJobErrorCode::RequestThrottled,
+"ResourceNotFound" => WorldExportJobErrorCode::ResourceNotFound,
+other => WorldExportJobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WorldExportJobErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -8044,30 +8004,28 @@ impl std::str::FromStr for WorldExportJobErrorCode {
                 }
             }
 impl WorldExportJobErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorldExportJobErrorCode::AccessDenied => "AccessDenied",
-            WorldExportJobErrorCode::InternalServiceError => "InternalServiceError",
-            WorldExportJobErrorCode::InvalidInput => "InvalidInput",
-            WorldExportJobErrorCode::LimitExceeded => "LimitExceeded",
-            WorldExportJobErrorCode::RequestThrottled => "RequestThrottled",
-            WorldExportJobErrorCode::ResourceNotFound => "ResourceNotFound",
-            WorldExportJobErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied", "InternalServiceError", "InvalidInput", "LimitExceeded", "RequestThrottled", "ResourceNotFound"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorldExportJobErrorCode::AccessDenied => "AccessDenied",
+    WorldExportJobErrorCode::InternalServiceError => "InternalServiceError",
+    WorldExportJobErrorCode::InvalidInput => "InvalidInput",
+    WorldExportJobErrorCode::LimitExceeded => "LimitExceeded",
+    WorldExportJobErrorCode::RequestThrottled => "RequestThrottled",
+    WorldExportJobErrorCode::ResourceNotFound => "ResourceNotFound",
+    WorldExportJobErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "InternalServiceError", "InvalidInput", "LimitExceeded", "RequestThrottled", "ResourceNotFound"]
+                }
+            }
 impl AsRef<str> for WorldExportJobErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Compute information for the simulation job</p>
 #[non_exhaustive]
@@ -9067,19 +9025,19 @@ pub enum RobotDeploymentStep {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RobotDeploymentStep {
-    fn from(s: &str) -> Self {
-        match s {
-            "DownloadingExtracting" => RobotDeploymentStep::DownloadingExtractingStep,
-            "ExecutingDownloadCondition" => RobotDeploymentStep::ExecutingDownloadCondition,
-            "ExecutingPostLaunch" => RobotDeploymentStep::PostLaunchStep,
-            "ExecutingPreLaunch" => RobotDeploymentStep::PreLaunchStep,
-            "Finished" => RobotDeploymentStep::FinishedStep,
-            "Launching" => RobotDeploymentStep::LaunchingStep,
-            "Validating" => RobotDeploymentStep::ValidatingStep,
-            other => RobotDeploymentStep::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DownloadingExtracting" => RobotDeploymentStep::DownloadingExtractingStep,
+"ExecutingDownloadCondition" => RobotDeploymentStep::ExecutingDownloadCondition,
+"ExecutingPostLaunch" => RobotDeploymentStep::PostLaunchStep,
+"ExecutingPreLaunch" => RobotDeploymentStep::PreLaunchStep,
+"Finished" => RobotDeploymentStep::FinishedStep,
+"Launching" => RobotDeploymentStep::LaunchingStep,
+"Validating" => RobotDeploymentStep::ValidatingStep,
+other => RobotDeploymentStep::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RobotDeploymentStep {
                 type Err = std::convert::Infallible;
 
@@ -9088,31 +9046,29 @@ impl std::str::FromStr for RobotDeploymentStep {
                 }
             }
 impl RobotDeploymentStep {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RobotDeploymentStep::DownloadingExtractingStep => "DownloadingExtracting",
-            RobotDeploymentStep::ExecutingDownloadCondition => "ExecutingDownloadCondition",
-            RobotDeploymentStep::PostLaunchStep => "ExecutingPostLaunch",
-            RobotDeploymentStep::PreLaunchStep => "ExecutingPreLaunch",
-            RobotDeploymentStep::FinishedStep => "Finished",
-            RobotDeploymentStep::LaunchingStep => "Launching",
-            RobotDeploymentStep::ValidatingStep => "Validating",
-            RobotDeploymentStep::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DownloadingExtracting", "ExecutingDownloadCondition", "ExecutingPostLaunch", "ExecutingPreLaunch", "Finished", "Launching", "Validating"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RobotDeploymentStep::DownloadingExtractingStep => "DownloadingExtracting",
+    RobotDeploymentStep::ExecutingDownloadCondition => "ExecutingDownloadCondition",
+    RobotDeploymentStep::PostLaunchStep => "ExecutingPostLaunch",
+    RobotDeploymentStep::PreLaunchStep => "ExecutingPreLaunch",
+    RobotDeploymentStep::FinishedStep => "Finished",
+    RobotDeploymentStep::LaunchingStep => "Launching",
+    RobotDeploymentStep::ValidatingStep => "Validating",
+    RobotDeploymentStep::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DownloadingExtracting", "ExecutingDownloadCondition", "ExecutingPostLaunch", "ExecutingPreLaunch", "Finished", "Launching", "Validating"]
+                }
+            }
 impl AsRef<str> for RobotDeploymentStep {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a simulation job.</p>
 #[non_exhaustive]

@@ -47,14 +47,14 @@ pub enum RootDeviceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RootDeviceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ebs" => RootDeviceType::Ebs,
-            "instance-store" => RootDeviceType::InstanceStore,
-            other => RootDeviceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ebs" => RootDeviceType::Ebs,
+"instance-store" => RootDeviceType::InstanceStore,
+other => RootDeviceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RootDeviceType {
                 type Err = std::convert::Infallible;
 
@@ -63,26 +63,24 @@ impl std::str::FromStr for RootDeviceType {
                 }
             }
 impl RootDeviceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RootDeviceType::Ebs => "ebs",
-            RootDeviceType::InstanceStore => "instance-store",
-            RootDeviceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ebs", "instance-store"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RootDeviceType::Ebs => "ebs",
+    RootDeviceType::InstanceStore => "instance-store",
+    RootDeviceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ebs", "instance-store"]
+                }
+            }
 impl AsRef<str> for RootDeviceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.</p>
 #[non_exhaustive]
@@ -326,16 +324,16 @@ pub enum SourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "archive" => SourceType::Archive,
-            "git" => SourceType::Git,
-            "s3" => SourceType::S3,
-            "svn" => SourceType::Svn,
-            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "archive" => SourceType::Archive,
+"git" => SourceType::Git,
+"s3" => SourceType::S3,
+"svn" => SourceType::Svn,
+other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SourceType {
                 type Err = std::convert::Infallible;
 
@@ -344,28 +342,26 @@ impl std::str::FromStr for SourceType {
                 }
             }
 impl SourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SourceType::Archive => "archive",
-            SourceType::Git => "git",
-            SourceType::S3 => "s3",
-            SourceType::Svn => "svn",
-            SourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "archive", "git", "s3", "svn"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SourceType::Archive => "archive",
+    SourceType::Git => "git",
+    SourceType::S3 => "s3",
+    SourceType::Svn => "svn",
+    SourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["archive", "git", "s3", "svn"]
+                }
+            }
 impl AsRef<str> for SourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the Chef configuration.</p>
 #[non_exhaustive]
@@ -549,13 +545,13 @@ pub enum StackAttributesKeys {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StackAttributesKeys {
-    fn from(s: &str) -> Self {
-        match s {
-            "Color" => StackAttributesKeys::Color,
-            other => StackAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Color" => StackAttributesKeys::Color,
+other => StackAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StackAttributesKeys {
                 type Err = std::convert::Infallible;
 
@@ -564,25 +560,23 @@ impl std::str::FromStr for StackAttributesKeys {
                 }
             }
 impl StackAttributesKeys {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StackAttributesKeys::Color => "Color",
-            StackAttributesKeys::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Color"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StackAttributesKeys::Color => "Color",
+    StackAttributesKeys::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Color"]
+                }
+            }
 impl AsRef<str> for StackAttributesKeys {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Specifies the lifecycle event configuration</p>
 #[non_exhaustive]
@@ -1692,104 +1686,104 @@ pub enum CloudWatchLogsEncoding {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudWatchLogsEncoding {
-    fn from(s: &str) -> Self {
-        match s {
-            "ascii" => CloudWatchLogsEncoding::Ascii,
-            "big5" => CloudWatchLogsEncoding::Big5,
-            "big5hkscs" => CloudWatchLogsEncoding::Big5hkscs,
-            "cp037" => CloudWatchLogsEncoding::Cp037,
-            "cp1006" => CloudWatchLogsEncoding::Cp1006,
-            "cp1026" => CloudWatchLogsEncoding::Cp1026,
-            "cp1140" => CloudWatchLogsEncoding::Cp1140,
-            "cp1250" => CloudWatchLogsEncoding::Cp1250,
-            "cp1251" => CloudWatchLogsEncoding::Cp1251,
-            "cp1252" => CloudWatchLogsEncoding::Cp1252,
-            "cp1253" => CloudWatchLogsEncoding::Cp1253,
-            "cp1254" => CloudWatchLogsEncoding::Cp1254,
-            "cp1255" => CloudWatchLogsEncoding::Cp1255,
-            "cp1256" => CloudWatchLogsEncoding::Cp1256,
-            "cp1257" => CloudWatchLogsEncoding::Cp1257,
-            "cp1258" => CloudWatchLogsEncoding::Cp1258,
-            "cp424" => CloudWatchLogsEncoding::Cp424,
-            "cp437" => CloudWatchLogsEncoding::Cp437,
-            "cp500" => CloudWatchLogsEncoding::Cp500,
-            "cp720" => CloudWatchLogsEncoding::Cp720,
-            "cp737" => CloudWatchLogsEncoding::Cp737,
-            "cp775" => CloudWatchLogsEncoding::Cp775,
-            "cp850" => CloudWatchLogsEncoding::Cp850,
-            "cp852" => CloudWatchLogsEncoding::Cp852,
-            "cp855" => CloudWatchLogsEncoding::Cp855,
-            "cp856" => CloudWatchLogsEncoding::Cp856,
-            "cp857" => CloudWatchLogsEncoding::Cp857,
-            "cp858" => CloudWatchLogsEncoding::Cp858,
-            "cp860" => CloudWatchLogsEncoding::Cp860,
-            "cp861" => CloudWatchLogsEncoding::Cp861,
-            "cp862" => CloudWatchLogsEncoding::Cp862,
-            "cp863" => CloudWatchLogsEncoding::Cp863,
-            "cp864" => CloudWatchLogsEncoding::Cp864,
-            "cp865" => CloudWatchLogsEncoding::Cp865,
-            "cp866" => CloudWatchLogsEncoding::Cp866,
-            "cp869" => CloudWatchLogsEncoding::Cp869,
-            "cp874" => CloudWatchLogsEncoding::Cp874,
-            "cp875" => CloudWatchLogsEncoding::Cp875,
-            "cp932" => CloudWatchLogsEncoding::Cp932,
-            "cp949" => CloudWatchLogsEncoding::Cp949,
-            "cp950" => CloudWatchLogsEncoding::Cp950,
-            "euc_jis_2004" => CloudWatchLogsEncoding::EucJis2004,
-            "euc_jisx0213" => CloudWatchLogsEncoding::EucJisx0213,
-            "euc_jp" => CloudWatchLogsEncoding::EucJp,
-            "euc_kr" => CloudWatchLogsEncoding::EucKr,
-            "gb18030" => CloudWatchLogsEncoding::Gb18030,
-            "gb2312" => CloudWatchLogsEncoding::Gb2312,
-            "gbk" => CloudWatchLogsEncoding::Gbk,
-            "hz" => CloudWatchLogsEncoding::Hz,
-            "iso2022_jp" => CloudWatchLogsEncoding::Iso2022Jp,
-            "iso2022_jp_1" => CloudWatchLogsEncoding::Iso2022Jp1,
-            "iso2022_jp_2" => CloudWatchLogsEncoding::Iso2022Jp2,
-            "iso2022_jp_2004" => CloudWatchLogsEncoding::Iso2022Jp2004,
-            "iso2022_jp_3" => CloudWatchLogsEncoding::Iso2022Jp3,
-            "iso2022_jp_ext" => CloudWatchLogsEncoding::Iso2022JpExt,
-            "iso2022_kr" => CloudWatchLogsEncoding::Iso2022Kr,
-            "iso8859_10" => CloudWatchLogsEncoding::Iso885910,
-            "iso8859_13" => CloudWatchLogsEncoding::Iso885913,
-            "iso8859_14" => CloudWatchLogsEncoding::Iso885914,
-            "iso8859_15" => CloudWatchLogsEncoding::Iso885915,
-            "iso8859_16" => CloudWatchLogsEncoding::Iso885916,
-            "iso8859_2" => CloudWatchLogsEncoding::Iso88592,
-            "iso8859_3" => CloudWatchLogsEncoding::Iso88593,
-            "iso8859_4" => CloudWatchLogsEncoding::Iso88594,
-            "iso8859_5" => CloudWatchLogsEncoding::Iso88595,
-            "iso8859_6" => CloudWatchLogsEncoding::Iso88596,
-            "iso8859_7" => CloudWatchLogsEncoding::Iso88597,
-            "iso8859_8" => CloudWatchLogsEncoding::Iso88598,
-            "iso8859_9" => CloudWatchLogsEncoding::Iso88599,
-            "johab" => CloudWatchLogsEncoding::Johab,
-            "koi8_r" => CloudWatchLogsEncoding::Koi8R,
-            "koi8_u" => CloudWatchLogsEncoding::Koi8U,
-            "latin_1" => CloudWatchLogsEncoding::Latin1,
-            "mac_cyrillic" => CloudWatchLogsEncoding::MacCyrillic,
-            "mac_greek" => CloudWatchLogsEncoding::MacGreek,
-            "mac_iceland" => CloudWatchLogsEncoding::MacIceland,
-            "mac_latin2" => CloudWatchLogsEncoding::MacLatin2,
-            "mac_roman" => CloudWatchLogsEncoding::MacRoman,
-            "mac_turkish" => CloudWatchLogsEncoding::MacTurkish,
-            "ptcp154" => CloudWatchLogsEncoding::Ptcp154,
-            "shift_jis" => CloudWatchLogsEncoding::ShiftJis,
-            "shift_jis_2004" => CloudWatchLogsEncoding::ShiftJis2004,
-            "shift_jisx0213" => CloudWatchLogsEncoding::ShiftJisx0213,
-            "utf_16" => CloudWatchLogsEncoding::Utf16,
-            "utf_16_be" => CloudWatchLogsEncoding::Utf16Be,
-            "utf_16_le" => CloudWatchLogsEncoding::Utf16Le,
-            "utf_32" => CloudWatchLogsEncoding::Utf32,
-            "utf_32_be" => CloudWatchLogsEncoding::Utf32Be,
-            "utf_32_le" => CloudWatchLogsEncoding::Utf32Le,
-            "utf_7" => CloudWatchLogsEncoding::Utf7,
-            "utf_8" => CloudWatchLogsEncoding::Utf8,
-            "utf_8_sig" => CloudWatchLogsEncoding::Utf8Sig,
-            other => CloudWatchLogsEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ascii" => CloudWatchLogsEncoding::Ascii,
+"big5" => CloudWatchLogsEncoding::Big5,
+"big5hkscs" => CloudWatchLogsEncoding::Big5hkscs,
+"cp037" => CloudWatchLogsEncoding::Cp037,
+"cp1006" => CloudWatchLogsEncoding::Cp1006,
+"cp1026" => CloudWatchLogsEncoding::Cp1026,
+"cp1140" => CloudWatchLogsEncoding::Cp1140,
+"cp1250" => CloudWatchLogsEncoding::Cp1250,
+"cp1251" => CloudWatchLogsEncoding::Cp1251,
+"cp1252" => CloudWatchLogsEncoding::Cp1252,
+"cp1253" => CloudWatchLogsEncoding::Cp1253,
+"cp1254" => CloudWatchLogsEncoding::Cp1254,
+"cp1255" => CloudWatchLogsEncoding::Cp1255,
+"cp1256" => CloudWatchLogsEncoding::Cp1256,
+"cp1257" => CloudWatchLogsEncoding::Cp1257,
+"cp1258" => CloudWatchLogsEncoding::Cp1258,
+"cp424" => CloudWatchLogsEncoding::Cp424,
+"cp437" => CloudWatchLogsEncoding::Cp437,
+"cp500" => CloudWatchLogsEncoding::Cp500,
+"cp720" => CloudWatchLogsEncoding::Cp720,
+"cp737" => CloudWatchLogsEncoding::Cp737,
+"cp775" => CloudWatchLogsEncoding::Cp775,
+"cp850" => CloudWatchLogsEncoding::Cp850,
+"cp852" => CloudWatchLogsEncoding::Cp852,
+"cp855" => CloudWatchLogsEncoding::Cp855,
+"cp856" => CloudWatchLogsEncoding::Cp856,
+"cp857" => CloudWatchLogsEncoding::Cp857,
+"cp858" => CloudWatchLogsEncoding::Cp858,
+"cp860" => CloudWatchLogsEncoding::Cp860,
+"cp861" => CloudWatchLogsEncoding::Cp861,
+"cp862" => CloudWatchLogsEncoding::Cp862,
+"cp863" => CloudWatchLogsEncoding::Cp863,
+"cp864" => CloudWatchLogsEncoding::Cp864,
+"cp865" => CloudWatchLogsEncoding::Cp865,
+"cp866" => CloudWatchLogsEncoding::Cp866,
+"cp869" => CloudWatchLogsEncoding::Cp869,
+"cp874" => CloudWatchLogsEncoding::Cp874,
+"cp875" => CloudWatchLogsEncoding::Cp875,
+"cp932" => CloudWatchLogsEncoding::Cp932,
+"cp949" => CloudWatchLogsEncoding::Cp949,
+"cp950" => CloudWatchLogsEncoding::Cp950,
+"euc_jis_2004" => CloudWatchLogsEncoding::EucJis2004,
+"euc_jisx0213" => CloudWatchLogsEncoding::EucJisx0213,
+"euc_jp" => CloudWatchLogsEncoding::EucJp,
+"euc_kr" => CloudWatchLogsEncoding::EucKr,
+"gb18030" => CloudWatchLogsEncoding::Gb18030,
+"gb2312" => CloudWatchLogsEncoding::Gb2312,
+"gbk" => CloudWatchLogsEncoding::Gbk,
+"hz" => CloudWatchLogsEncoding::Hz,
+"iso2022_jp" => CloudWatchLogsEncoding::Iso2022Jp,
+"iso2022_jp_1" => CloudWatchLogsEncoding::Iso2022Jp1,
+"iso2022_jp_2" => CloudWatchLogsEncoding::Iso2022Jp2,
+"iso2022_jp_2004" => CloudWatchLogsEncoding::Iso2022Jp2004,
+"iso2022_jp_3" => CloudWatchLogsEncoding::Iso2022Jp3,
+"iso2022_jp_ext" => CloudWatchLogsEncoding::Iso2022JpExt,
+"iso2022_kr" => CloudWatchLogsEncoding::Iso2022Kr,
+"iso8859_10" => CloudWatchLogsEncoding::Iso885910,
+"iso8859_13" => CloudWatchLogsEncoding::Iso885913,
+"iso8859_14" => CloudWatchLogsEncoding::Iso885914,
+"iso8859_15" => CloudWatchLogsEncoding::Iso885915,
+"iso8859_16" => CloudWatchLogsEncoding::Iso885916,
+"iso8859_2" => CloudWatchLogsEncoding::Iso88592,
+"iso8859_3" => CloudWatchLogsEncoding::Iso88593,
+"iso8859_4" => CloudWatchLogsEncoding::Iso88594,
+"iso8859_5" => CloudWatchLogsEncoding::Iso88595,
+"iso8859_6" => CloudWatchLogsEncoding::Iso88596,
+"iso8859_7" => CloudWatchLogsEncoding::Iso88597,
+"iso8859_8" => CloudWatchLogsEncoding::Iso88598,
+"iso8859_9" => CloudWatchLogsEncoding::Iso88599,
+"johab" => CloudWatchLogsEncoding::Johab,
+"koi8_r" => CloudWatchLogsEncoding::Koi8R,
+"koi8_u" => CloudWatchLogsEncoding::Koi8U,
+"latin_1" => CloudWatchLogsEncoding::Latin1,
+"mac_cyrillic" => CloudWatchLogsEncoding::MacCyrillic,
+"mac_greek" => CloudWatchLogsEncoding::MacGreek,
+"mac_iceland" => CloudWatchLogsEncoding::MacIceland,
+"mac_latin2" => CloudWatchLogsEncoding::MacLatin2,
+"mac_roman" => CloudWatchLogsEncoding::MacRoman,
+"mac_turkish" => CloudWatchLogsEncoding::MacTurkish,
+"ptcp154" => CloudWatchLogsEncoding::Ptcp154,
+"shift_jis" => CloudWatchLogsEncoding::ShiftJis,
+"shift_jis_2004" => CloudWatchLogsEncoding::ShiftJis2004,
+"shift_jisx0213" => CloudWatchLogsEncoding::ShiftJisx0213,
+"utf_16" => CloudWatchLogsEncoding::Utf16,
+"utf_16_be" => CloudWatchLogsEncoding::Utf16Be,
+"utf_16_le" => CloudWatchLogsEncoding::Utf16Le,
+"utf_32" => CloudWatchLogsEncoding::Utf32,
+"utf_32_be" => CloudWatchLogsEncoding::Utf32Be,
+"utf_32_le" => CloudWatchLogsEncoding::Utf32Le,
+"utf_7" => CloudWatchLogsEncoding::Utf7,
+"utf_8" => CloudWatchLogsEncoding::Utf8,
+"utf_8_sig" => CloudWatchLogsEncoding::Utf8Sig,
+other => CloudWatchLogsEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CloudWatchLogsEncoding {
                 type Err = std::convert::Infallible;
 
@@ -1798,116 +1792,114 @@ impl std::str::FromStr for CloudWatchLogsEncoding {
                 }
             }
 impl CloudWatchLogsEncoding {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CloudWatchLogsEncoding::Ascii => "ascii",
-            CloudWatchLogsEncoding::Big5 => "big5",
-            CloudWatchLogsEncoding::Big5hkscs => "big5hkscs",
-            CloudWatchLogsEncoding::Cp037 => "cp037",
-            CloudWatchLogsEncoding::Cp1006 => "cp1006",
-            CloudWatchLogsEncoding::Cp1026 => "cp1026",
-            CloudWatchLogsEncoding::Cp1140 => "cp1140",
-            CloudWatchLogsEncoding::Cp1250 => "cp1250",
-            CloudWatchLogsEncoding::Cp1251 => "cp1251",
-            CloudWatchLogsEncoding::Cp1252 => "cp1252",
-            CloudWatchLogsEncoding::Cp1253 => "cp1253",
-            CloudWatchLogsEncoding::Cp1254 => "cp1254",
-            CloudWatchLogsEncoding::Cp1255 => "cp1255",
-            CloudWatchLogsEncoding::Cp1256 => "cp1256",
-            CloudWatchLogsEncoding::Cp1257 => "cp1257",
-            CloudWatchLogsEncoding::Cp1258 => "cp1258",
-            CloudWatchLogsEncoding::Cp424 => "cp424",
-            CloudWatchLogsEncoding::Cp437 => "cp437",
-            CloudWatchLogsEncoding::Cp500 => "cp500",
-            CloudWatchLogsEncoding::Cp720 => "cp720",
-            CloudWatchLogsEncoding::Cp737 => "cp737",
-            CloudWatchLogsEncoding::Cp775 => "cp775",
-            CloudWatchLogsEncoding::Cp850 => "cp850",
-            CloudWatchLogsEncoding::Cp852 => "cp852",
-            CloudWatchLogsEncoding::Cp855 => "cp855",
-            CloudWatchLogsEncoding::Cp856 => "cp856",
-            CloudWatchLogsEncoding::Cp857 => "cp857",
-            CloudWatchLogsEncoding::Cp858 => "cp858",
-            CloudWatchLogsEncoding::Cp860 => "cp860",
-            CloudWatchLogsEncoding::Cp861 => "cp861",
-            CloudWatchLogsEncoding::Cp862 => "cp862",
-            CloudWatchLogsEncoding::Cp863 => "cp863",
-            CloudWatchLogsEncoding::Cp864 => "cp864",
-            CloudWatchLogsEncoding::Cp865 => "cp865",
-            CloudWatchLogsEncoding::Cp866 => "cp866",
-            CloudWatchLogsEncoding::Cp869 => "cp869",
-            CloudWatchLogsEncoding::Cp874 => "cp874",
-            CloudWatchLogsEncoding::Cp875 => "cp875",
-            CloudWatchLogsEncoding::Cp932 => "cp932",
-            CloudWatchLogsEncoding::Cp949 => "cp949",
-            CloudWatchLogsEncoding::Cp950 => "cp950",
-            CloudWatchLogsEncoding::EucJis2004 => "euc_jis_2004",
-            CloudWatchLogsEncoding::EucJisx0213 => "euc_jisx0213",
-            CloudWatchLogsEncoding::EucJp => "euc_jp",
-            CloudWatchLogsEncoding::EucKr => "euc_kr",
-            CloudWatchLogsEncoding::Gb18030 => "gb18030",
-            CloudWatchLogsEncoding::Gb2312 => "gb2312",
-            CloudWatchLogsEncoding::Gbk => "gbk",
-            CloudWatchLogsEncoding::Hz => "hz",
-            CloudWatchLogsEncoding::Iso2022Jp => "iso2022_jp",
-            CloudWatchLogsEncoding::Iso2022Jp1 => "iso2022_jp_1",
-            CloudWatchLogsEncoding::Iso2022Jp2 => "iso2022_jp_2",
-            CloudWatchLogsEncoding::Iso2022Jp2004 => "iso2022_jp_2004",
-            CloudWatchLogsEncoding::Iso2022Jp3 => "iso2022_jp_3",
-            CloudWatchLogsEncoding::Iso2022JpExt => "iso2022_jp_ext",
-            CloudWatchLogsEncoding::Iso2022Kr => "iso2022_kr",
-            CloudWatchLogsEncoding::Iso885910 => "iso8859_10",
-            CloudWatchLogsEncoding::Iso885913 => "iso8859_13",
-            CloudWatchLogsEncoding::Iso885914 => "iso8859_14",
-            CloudWatchLogsEncoding::Iso885915 => "iso8859_15",
-            CloudWatchLogsEncoding::Iso885916 => "iso8859_16",
-            CloudWatchLogsEncoding::Iso88592 => "iso8859_2",
-            CloudWatchLogsEncoding::Iso88593 => "iso8859_3",
-            CloudWatchLogsEncoding::Iso88594 => "iso8859_4",
-            CloudWatchLogsEncoding::Iso88595 => "iso8859_5",
-            CloudWatchLogsEncoding::Iso88596 => "iso8859_6",
-            CloudWatchLogsEncoding::Iso88597 => "iso8859_7",
-            CloudWatchLogsEncoding::Iso88598 => "iso8859_8",
-            CloudWatchLogsEncoding::Iso88599 => "iso8859_9",
-            CloudWatchLogsEncoding::Johab => "johab",
-            CloudWatchLogsEncoding::Koi8R => "koi8_r",
-            CloudWatchLogsEncoding::Koi8U => "koi8_u",
-            CloudWatchLogsEncoding::Latin1 => "latin_1",
-            CloudWatchLogsEncoding::MacCyrillic => "mac_cyrillic",
-            CloudWatchLogsEncoding::MacGreek => "mac_greek",
-            CloudWatchLogsEncoding::MacIceland => "mac_iceland",
-            CloudWatchLogsEncoding::MacLatin2 => "mac_latin2",
-            CloudWatchLogsEncoding::MacRoman => "mac_roman",
-            CloudWatchLogsEncoding::MacTurkish => "mac_turkish",
-            CloudWatchLogsEncoding::Ptcp154 => "ptcp154",
-            CloudWatchLogsEncoding::ShiftJis => "shift_jis",
-            CloudWatchLogsEncoding::ShiftJis2004 => "shift_jis_2004",
-            CloudWatchLogsEncoding::ShiftJisx0213 => "shift_jisx0213",
-            CloudWatchLogsEncoding::Utf16 => "utf_16",
-            CloudWatchLogsEncoding::Utf16Be => "utf_16_be",
-            CloudWatchLogsEncoding::Utf16Le => "utf_16_le",
-            CloudWatchLogsEncoding::Utf32 => "utf_32",
-            CloudWatchLogsEncoding::Utf32Be => "utf_32_be",
-            CloudWatchLogsEncoding::Utf32Le => "utf_32_le",
-            CloudWatchLogsEncoding::Utf7 => "utf_7",
-            CloudWatchLogsEncoding::Utf8 => "utf_8",
-            CloudWatchLogsEncoding::Utf8Sig => "utf_8_sig",
-            CloudWatchLogsEncoding::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ascii", "big5", "big5hkscs", "cp037", "cp1006", "cp1026", "cp1140", "cp1250", "cp1251", "cp1252", "cp1253", "cp1254", "cp1255", "cp1256", "cp1257", "cp1258", "cp424", "cp437", "cp500", "cp720", "cp737", "cp775", "cp850", "cp852", "cp855", "cp856", "cp857", "cp858", "cp860", "cp861", "cp862", "cp863", "cp864", "cp865", "cp866", "cp869", "cp874", "cp875", "cp932", "cp949", "cp950", "euc_jis_2004", "euc_jisx0213", "euc_jp", "euc_kr", "gb18030", "gb2312", "gbk", "hz", "iso2022_jp", "iso2022_jp_1", "iso2022_jp_2", "iso2022_jp_2004", "iso2022_jp_3", "iso2022_jp_ext", "iso2022_kr", "iso8859_10", "iso8859_13", "iso8859_14", "iso8859_15", "iso8859_16", "iso8859_2", "iso8859_3", "iso8859_4", "iso8859_5", "iso8859_6", "iso8859_7", "iso8859_8", "iso8859_9", "johab", "koi8_r", "koi8_u", "latin_1", "mac_cyrillic", "mac_greek", "mac_iceland", "mac_latin2", "mac_roman", "mac_turkish", "ptcp154", "shift_jis", "shift_jis_2004", "shift_jisx0213", "utf_16", "utf_16_be", "utf_16_le", "utf_32", "utf_32_be", "utf_32_le", "utf_7", "utf_8", "utf_8_sig"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CloudWatchLogsEncoding::Ascii => "ascii",
+    CloudWatchLogsEncoding::Big5 => "big5",
+    CloudWatchLogsEncoding::Big5hkscs => "big5hkscs",
+    CloudWatchLogsEncoding::Cp037 => "cp037",
+    CloudWatchLogsEncoding::Cp1006 => "cp1006",
+    CloudWatchLogsEncoding::Cp1026 => "cp1026",
+    CloudWatchLogsEncoding::Cp1140 => "cp1140",
+    CloudWatchLogsEncoding::Cp1250 => "cp1250",
+    CloudWatchLogsEncoding::Cp1251 => "cp1251",
+    CloudWatchLogsEncoding::Cp1252 => "cp1252",
+    CloudWatchLogsEncoding::Cp1253 => "cp1253",
+    CloudWatchLogsEncoding::Cp1254 => "cp1254",
+    CloudWatchLogsEncoding::Cp1255 => "cp1255",
+    CloudWatchLogsEncoding::Cp1256 => "cp1256",
+    CloudWatchLogsEncoding::Cp1257 => "cp1257",
+    CloudWatchLogsEncoding::Cp1258 => "cp1258",
+    CloudWatchLogsEncoding::Cp424 => "cp424",
+    CloudWatchLogsEncoding::Cp437 => "cp437",
+    CloudWatchLogsEncoding::Cp500 => "cp500",
+    CloudWatchLogsEncoding::Cp720 => "cp720",
+    CloudWatchLogsEncoding::Cp737 => "cp737",
+    CloudWatchLogsEncoding::Cp775 => "cp775",
+    CloudWatchLogsEncoding::Cp850 => "cp850",
+    CloudWatchLogsEncoding::Cp852 => "cp852",
+    CloudWatchLogsEncoding::Cp855 => "cp855",
+    CloudWatchLogsEncoding::Cp856 => "cp856",
+    CloudWatchLogsEncoding::Cp857 => "cp857",
+    CloudWatchLogsEncoding::Cp858 => "cp858",
+    CloudWatchLogsEncoding::Cp860 => "cp860",
+    CloudWatchLogsEncoding::Cp861 => "cp861",
+    CloudWatchLogsEncoding::Cp862 => "cp862",
+    CloudWatchLogsEncoding::Cp863 => "cp863",
+    CloudWatchLogsEncoding::Cp864 => "cp864",
+    CloudWatchLogsEncoding::Cp865 => "cp865",
+    CloudWatchLogsEncoding::Cp866 => "cp866",
+    CloudWatchLogsEncoding::Cp869 => "cp869",
+    CloudWatchLogsEncoding::Cp874 => "cp874",
+    CloudWatchLogsEncoding::Cp875 => "cp875",
+    CloudWatchLogsEncoding::Cp932 => "cp932",
+    CloudWatchLogsEncoding::Cp949 => "cp949",
+    CloudWatchLogsEncoding::Cp950 => "cp950",
+    CloudWatchLogsEncoding::EucJis2004 => "euc_jis_2004",
+    CloudWatchLogsEncoding::EucJisx0213 => "euc_jisx0213",
+    CloudWatchLogsEncoding::EucJp => "euc_jp",
+    CloudWatchLogsEncoding::EucKr => "euc_kr",
+    CloudWatchLogsEncoding::Gb18030 => "gb18030",
+    CloudWatchLogsEncoding::Gb2312 => "gb2312",
+    CloudWatchLogsEncoding::Gbk => "gbk",
+    CloudWatchLogsEncoding::Hz => "hz",
+    CloudWatchLogsEncoding::Iso2022Jp => "iso2022_jp",
+    CloudWatchLogsEncoding::Iso2022Jp1 => "iso2022_jp_1",
+    CloudWatchLogsEncoding::Iso2022Jp2 => "iso2022_jp_2",
+    CloudWatchLogsEncoding::Iso2022Jp2004 => "iso2022_jp_2004",
+    CloudWatchLogsEncoding::Iso2022Jp3 => "iso2022_jp_3",
+    CloudWatchLogsEncoding::Iso2022JpExt => "iso2022_jp_ext",
+    CloudWatchLogsEncoding::Iso2022Kr => "iso2022_kr",
+    CloudWatchLogsEncoding::Iso885910 => "iso8859_10",
+    CloudWatchLogsEncoding::Iso885913 => "iso8859_13",
+    CloudWatchLogsEncoding::Iso885914 => "iso8859_14",
+    CloudWatchLogsEncoding::Iso885915 => "iso8859_15",
+    CloudWatchLogsEncoding::Iso885916 => "iso8859_16",
+    CloudWatchLogsEncoding::Iso88592 => "iso8859_2",
+    CloudWatchLogsEncoding::Iso88593 => "iso8859_3",
+    CloudWatchLogsEncoding::Iso88594 => "iso8859_4",
+    CloudWatchLogsEncoding::Iso88595 => "iso8859_5",
+    CloudWatchLogsEncoding::Iso88596 => "iso8859_6",
+    CloudWatchLogsEncoding::Iso88597 => "iso8859_7",
+    CloudWatchLogsEncoding::Iso88598 => "iso8859_8",
+    CloudWatchLogsEncoding::Iso88599 => "iso8859_9",
+    CloudWatchLogsEncoding::Johab => "johab",
+    CloudWatchLogsEncoding::Koi8R => "koi8_r",
+    CloudWatchLogsEncoding::Koi8U => "koi8_u",
+    CloudWatchLogsEncoding::Latin1 => "latin_1",
+    CloudWatchLogsEncoding::MacCyrillic => "mac_cyrillic",
+    CloudWatchLogsEncoding::MacGreek => "mac_greek",
+    CloudWatchLogsEncoding::MacIceland => "mac_iceland",
+    CloudWatchLogsEncoding::MacLatin2 => "mac_latin2",
+    CloudWatchLogsEncoding::MacRoman => "mac_roman",
+    CloudWatchLogsEncoding::MacTurkish => "mac_turkish",
+    CloudWatchLogsEncoding::Ptcp154 => "ptcp154",
+    CloudWatchLogsEncoding::ShiftJis => "shift_jis",
+    CloudWatchLogsEncoding::ShiftJis2004 => "shift_jis_2004",
+    CloudWatchLogsEncoding::ShiftJisx0213 => "shift_jisx0213",
+    CloudWatchLogsEncoding::Utf16 => "utf_16",
+    CloudWatchLogsEncoding::Utf16Be => "utf_16_be",
+    CloudWatchLogsEncoding::Utf16Le => "utf_16_le",
+    CloudWatchLogsEncoding::Utf32 => "utf_32",
+    CloudWatchLogsEncoding::Utf32Be => "utf_32_be",
+    CloudWatchLogsEncoding::Utf32Le => "utf_32_le",
+    CloudWatchLogsEncoding::Utf7 => "utf_7",
+    CloudWatchLogsEncoding::Utf8 => "utf_8",
+    CloudWatchLogsEncoding::Utf8Sig => "utf_8_sig",
+    CloudWatchLogsEncoding::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ascii", "big5", "big5hkscs", "cp037", "cp1006", "cp1026", "cp1140", "cp1250", "cp1251", "cp1252", "cp1253", "cp1254", "cp1255", "cp1256", "cp1257", "cp1258", "cp424", "cp437", "cp500", "cp720", "cp737", "cp775", "cp850", "cp852", "cp855", "cp856", "cp857", "cp858", "cp860", "cp861", "cp862", "cp863", "cp864", "cp865", "cp866", "cp869", "cp874", "cp875", "cp932", "cp949", "cp950", "euc_jis_2004", "euc_jisx0213", "euc_jp", "euc_kr", "gb18030", "gb2312", "gbk", "hz", "iso2022_jp", "iso2022_jp_1", "iso2022_jp_2", "iso2022_jp_2004", "iso2022_jp_3", "iso2022_jp_ext", "iso2022_kr", "iso8859_10", "iso8859_13", "iso8859_14", "iso8859_15", "iso8859_16", "iso8859_2", "iso8859_3", "iso8859_4", "iso8859_5", "iso8859_6", "iso8859_7", "iso8859_8", "iso8859_9", "johab", "koi8_r", "koi8_u", "latin_1", "mac_cyrillic", "mac_greek", "mac_iceland", "mac_latin2", "mac_roman", "mac_turkish", "ptcp154", "shift_jis", "shift_jis_2004", "shift_jisx0213", "utf_16", "utf_16_be", "utf_16_le", "utf_32", "utf_32_be", "utf_32_le", "utf_7", "utf_8", "utf_8_sig"]
+                }
+            }
 impl AsRef<str> for CloudWatchLogsEncoding {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CloudWatchLogsInitialPosition`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1956,14 +1948,14 @@ pub enum CloudWatchLogsInitialPosition {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudWatchLogsInitialPosition {
-    fn from(s: &str) -> Self {
-        match s {
-            "end_of_file" => CloudWatchLogsInitialPosition::EndOfFile,
-            "start_of_file" => CloudWatchLogsInitialPosition::StartOfFile,
-            other => CloudWatchLogsInitialPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "end_of_file" => CloudWatchLogsInitialPosition::EndOfFile,
+"start_of_file" => CloudWatchLogsInitialPosition::StartOfFile,
+other => CloudWatchLogsInitialPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CloudWatchLogsInitialPosition {
                 type Err = std::convert::Infallible;
 
@@ -1972,26 +1964,24 @@ impl std::str::FromStr for CloudWatchLogsInitialPosition {
                 }
             }
 impl CloudWatchLogsInitialPosition {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CloudWatchLogsInitialPosition::EndOfFile => "end_of_file",
-            CloudWatchLogsInitialPosition::StartOfFile => "start_of_file",
-            CloudWatchLogsInitialPosition::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "end_of_file", "start_of_file"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CloudWatchLogsInitialPosition::EndOfFile => "end_of_file",
+    CloudWatchLogsInitialPosition::StartOfFile => "start_of_file",
+    CloudWatchLogsInitialPosition::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["end_of_file", "start_of_file"]
+                }
+            }
 impl AsRef<str> for CloudWatchLogsInitialPosition {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CloudWatchLogsTimeZone`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2040,14 +2030,14 @@ pub enum CloudWatchLogsTimeZone {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudWatchLogsTimeZone {
-    fn from(s: &str) -> Self {
-        match s {
-            "LOCAL" => CloudWatchLogsTimeZone::Local,
-            "UTC" => CloudWatchLogsTimeZone::Utc,
-            other => CloudWatchLogsTimeZone::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "LOCAL" => CloudWatchLogsTimeZone::Local,
+"UTC" => CloudWatchLogsTimeZone::Utc,
+other => CloudWatchLogsTimeZone::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CloudWatchLogsTimeZone {
                 type Err = std::convert::Infallible;
 
@@ -2056,26 +2046,24 @@ impl std::str::FromStr for CloudWatchLogsTimeZone {
                 }
             }
 impl CloudWatchLogsTimeZone {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CloudWatchLogsTimeZone::Local => "LOCAL",
-            CloudWatchLogsTimeZone::Utc => "UTC",
-            CloudWatchLogsTimeZone::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LOCAL", "UTC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CloudWatchLogsTimeZone::Local => "LOCAL",
+    CloudWatchLogsTimeZone::Utc => "UTC",
+    CloudWatchLogsTimeZone::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LOCAL", "UTC"]
+                }
+            }
 impl AsRef<str> for CloudWatchLogsTimeZone {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LayerAttributesKeys`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2193,37 +2181,37 @@ pub enum LayerAttributesKeys {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LayerAttributesKeys {
-    fn from(s: &str) -> Self {
-        match s {
-            "BundlerVersion" => LayerAttributesKeys::BundlerVersion,
-            "EcsClusterArn" => LayerAttributesKeys::EcsClusterArn,
-            "EnableHaproxyStats" => LayerAttributesKeys::EnableHaproxyStats,
-            "GangliaPassword" => LayerAttributesKeys::GangliaPassword,
-            "GangliaUrl" => LayerAttributesKeys::GangliaUrl,
-            "GangliaUser" => LayerAttributesKeys::GangliaUser,
-            "HaproxyHealthCheckMethod" => LayerAttributesKeys::HaproxyHealthCheckMethod,
-            "HaproxyHealthCheckUrl" => LayerAttributesKeys::HaproxyHealthCheckUrl,
-            "HaproxyStatsPassword" => LayerAttributesKeys::HaproxyStatsPassword,
-            "HaproxyStatsUrl" => LayerAttributesKeys::HaproxyStatsUrl,
-            "HaproxyStatsUser" => LayerAttributesKeys::HaproxyStatsUser,
-            "JavaAppServer" => LayerAttributesKeys::JavaAppServer,
-            "JavaAppServerVersion" => LayerAttributesKeys::JavaAppServerVersion,
-            "Jvm" => LayerAttributesKeys::Jvm,
-            "JvmOptions" => LayerAttributesKeys::JvmOptions,
-            "JvmVersion" => LayerAttributesKeys::JvmVersion,
-            "ManageBundler" => LayerAttributesKeys::ManageBundler,
-            "MemcachedMemory" => LayerAttributesKeys::MemcachedMemory,
-            "MysqlRootPassword" => LayerAttributesKeys::MysqlRootPassword,
-            "MysqlRootPasswordUbiquitous" => LayerAttributesKeys::MysqlRootPasswordUbiquitous,
-            "NodejsVersion" => LayerAttributesKeys::NodejsVersion,
-            "PassengerVersion" => LayerAttributesKeys::PassengerVersion,
-            "RailsStack" => LayerAttributesKeys::RailsStack,
-            "RubyVersion" => LayerAttributesKeys::RubyVersion,
-            "RubygemsVersion" => LayerAttributesKeys::RubygemsVersion,
-            other => LayerAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BundlerVersion" => LayerAttributesKeys::BundlerVersion,
+"EcsClusterArn" => LayerAttributesKeys::EcsClusterArn,
+"EnableHaproxyStats" => LayerAttributesKeys::EnableHaproxyStats,
+"GangliaPassword" => LayerAttributesKeys::GangliaPassword,
+"GangliaUrl" => LayerAttributesKeys::GangliaUrl,
+"GangliaUser" => LayerAttributesKeys::GangliaUser,
+"HaproxyHealthCheckMethod" => LayerAttributesKeys::HaproxyHealthCheckMethod,
+"HaproxyHealthCheckUrl" => LayerAttributesKeys::HaproxyHealthCheckUrl,
+"HaproxyStatsPassword" => LayerAttributesKeys::HaproxyStatsPassword,
+"HaproxyStatsUrl" => LayerAttributesKeys::HaproxyStatsUrl,
+"HaproxyStatsUser" => LayerAttributesKeys::HaproxyStatsUser,
+"JavaAppServer" => LayerAttributesKeys::JavaAppServer,
+"JavaAppServerVersion" => LayerAttributesKeys::JavaAppServerVersion,
+"Jvm" => LayerAttributesKeys::Jvm,
+"JvmOptions" => LayerAttributesKeys::JvmOptions,
+"JvmVersion" => LayerAttributesKeys::JvmVersion,
+"ManageBundler" => LayerAttributesKeys::ManageBundler,
+"MemcachedMemory" => LayerAttributesKeys::MemcachedMemory,
+"MysqlRootPassword" => LayerAttributesKeys::MysqlRootPassword,
+"MysqlRootPasswordUbiquitous" => LayerAttributesKeys::MysqlRootPasswordUbiquitous,
+"NodejsVersion" => LayerAttributesKeys::NodejsVersion,
+"PassengerVersion" => LayerAttributesKeys::PassengerVersion,
+"RailsStack" => LayerAttributesKeys::RailsStack,
+"RubyVersion" => LayerAttributesKeys::RubyVersion,
+"RubygemsVersion" => LayerAttributesKeys::RubygemsVersion,
+other => LayerAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LayerAttributesKeys {
                 type Err = std::convert::Infallible;
 
@@ -2232,49 +2220,47 @@ impl std::str::FromStr for LayerAttributesKeys {
                 }
             }
 impl LayerAttributesKeys {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LayerAttributesKeys::BundlerVersion => "BundlerVersion",
-            LayerAttributesKeys::EcsClusterArn => "EcsClusterArn",
-            LayerAttributesKeys::EnableHaproxyStats => "EnableHaproxyStats",
-            LayerAttributesKeys::GangliaPassword => "GangliaPassword",
-            LayerAttributesKeys::GangliaUrl => "GangliaUrl",
-            LayerAttributesKeys::GangliaUser => "GangliaUser",
-            LayerAttributesKeys::HaproxyHealthCheckMethod => "HaproxyHealthCheckMethod",
-            LayerAttributesKeys::HaproxyHealthCheckUrl => "HaproxyHealthCheckUrl",
-            LayerAttributesKeys::HaproxyStatsPassword => "HaproxyStatsPassword",
-            LayerAttributesKeys::HaproxyStatsUrl => "HaproxyStatsUrl",
-            LayerAttributesKeys::HaproxyStatsUser => "HaproxyStatsUser",
-            LayerAttributesKeys::JavaAppServer => "JavaAppServer",
-            LayerAttributesKeys::JavaAppServerVersion => "JavaAppServerVersion",
-            LayerAttributesKeys::Jvm => "Jvm",
-            LayerAttributesKeys::JvmOptions => "JvmOptions",
-            LayerAttributesKeys::JvmVersion => "JvmVersion",
-            LayerAttributesKeys::ManageBundler => "ManageBundler",
-            LayerAttributesKeys::MemcachedMemory => "MemcachedMemory",
-            LayerAttributesKeys::MysqlRootPassword => "MysqlRootPassword",
-            LayerAttributesKeys::MysqlRootPasswordUbiquitous => "MysqlRootPasswordUbiquitous",
-            LayerAttributesKeys::NodejsVersion => "NodejsVersion",
-            LayerAttributesKeys::PassengerVersion => "PassengerVersion",
-            LayerAttributesKeys::RailsStack => "RailsStack",
-            LayerAttributesKeys::RubyVersion => "RubyVersion",
-            LayerAttributesKeys::RubygemsVersion => "RubygemsVersion",
-            LayerAttributesKeys::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BundlerVersion", "EcsClusterArn", "EnableHaproxyStats", "GangliaPassword", "GangliaUrl", "GangliaUser", "HaproxyHealthCheckMethod", "HaproxyHealthCheckUrl", "HaproxyStatsPassword", "HaproxyStatsUrl", "HaproxyStatsUser", "JavaAppServer", "JavaAppServerVersion", "Jvm", "JvmOptions", "JvmVersion", "ManageBundler", "MemcachedMemory", "MysqlRootPassword", "MysqlRootPasswordUbiquitous", "NodejsVersion", "PassengerVersion", "RailsStack", "RubyVersion", "RubygemsVersion"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LayerAttributesKeys::BundlerVersion => "BundlerVersion",
+    LayerAttributesKeys::EcsClusterArn => "EcsClusterArn",
+    LayerAttributesKeys::EnableHaproxyStats => "EnableHaproxyStats",
+    LayerAttributesKeys::GangliaPassword => "GangliaPassword",
+    LayerAttributesKeys::GangliaUrl => "GangliaUrl",
+    LayerAttributesKeys::GangliaUser => "GangliaUser",
+    LayerAttributesKeys::HaproxyHealthCheckMethod => "HaproxyHealthCheckMethod",
+    LayerAttributesKeys::HaproxyHealthCheckUrl => "HaproxyHealthCheckUrl",
+    LayerAttributesKeys::HaproxyStatsPassword => "HaproxyStatsPassword",
+    LayerAttributesKeys::HaproxyStatsUrl => "HaproxyStatsUrl",
+    LayerAttributesKeys::HaproxyStatsUser => "HaproxyStatsUser",
+    LayerAttributesKeys::JavaAppServer => "JavaAppServer",
+    LayerAttributesKeys::JavaAppServerVersion => "JavaAppServerVersion",
+    LayerAttributesKeys::Jvm => "Jvm",
+    LayerAttributesKeys::JvmOptions => "JvmOptions",
+    LayerAttributesKeys::JvmVersion => "JvmVersion",
+    LayerAttributesKeys::ManageBundler => "ManageBundler",
+    LayerAttributesKeys::MemcachedMemory => "MemcachedMemory",
+    LayerAttributesKeys::MysqlRootPassword => "MysqlRootPassword",
+    LayerAttributesKeys::MysqlRootPasswordUbiquitous => "MysqlRootPasswordUbiquitous",
+    LayerAttributesKeys::NodejsVersion => "NodejsVersion",
+    LayerAttributesKeys::PassengerVersion => "PassengerVersion",
+    LayerAttributesKeys::RailsStack => "RailsStack",
+    LayerAttributesKeys::RubyVersion => "RubyVersion",
+    LayerAttributesKeys::RubygemsVersion => "RubygemsVersion",
+    LayerAttributesKeys::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BundlerVersion", "EcsClusterArn", "EnableHaproxyStats", "GangliaPassword", "GangliaUrl", "GangliaUser", "HaproxyHealthCheckMethod", "HaproxyHealthCheckUrl", "HaproxyStatsPassword", "HaproxyStatsUrl", "HaproxyStatsUser", "JavaAppServer", "JavaAppServerVersion", "Jvm", "JvmOptions", "JvmVersion", "ManageBundler", "MemcachedMemory", "MysqlRootPassword", "MysqlRootPasswordUbiquitous", "NodejsVersion", "PassengerVersion", "RailsStack", "RubyVersion", "RubygemsVersion"]
+                }
+            }
 impl AsRef<str> for LayerAttributesKeys {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Architecture`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2323,14 +2309,14 @@ pub enum Architecture {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Architecture {
-    fn from(s: &str) -> Self {
-        match s {
-            "i386" => Architecture::I386,
-            "x86_64" => Architecture::X8664,
-            other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "i386" => Architecture::I386,
+"x86_64" => Architecture::X8664,
+other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Architecture {
                 type Err = std::convert::Infallible;
 
@@ -2339,26 +2325,24 @@ impl std::str::FromStr for Architecture {
                 }
             }
 impl Architecture {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Architecture::I386 => "i386",
-            Architecture::X8664 => "x86_64",
-            Architecture::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "i386", "x86_64"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Architecture::I386 => "i386",
+    Architecture::X8664 => "x86_64",
+    Architecture::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["i386", "x86_64"]
+                }
+            }
 impl AsRef<str> for Architecture {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AutoScalingType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2407,14 +2391,14 @@ pub enum AutoScalingType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AutoScalingType {
-    fn from(s: &str) -> Self {
-        match s {
-            "load" => AutoScalingType::Load,
-            "timer" => AutoScalingType::Timer,
-            other => AutoScalingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "load" => AutoScalingType::Load,
+"timer" => AutoScalingType::Timer,
+other => AutoScalingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AutoScalingType {
                 type Err = std::convert::Infallible;
 
@@ -2423,26 +2407,24 @@ impl std::str::FromStr for AutoScalingType {
                 }
             }
 impl AutoScalingType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AutoScalingType::Load => "load",
-            AutoScalingType::Timer => "timer",
-            AutoScalingType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "load", "timer"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AutoScalingType::Load => "load",
+    AutoScalingType::Timer => "timer",
+    AutoScalingType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["load", "timer"]
+                }
+            }
 impl AsRef<str> for AutoScalingType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents an app's environment variable.</p>
 #[non_exhaustive]
@@ -2585,16 +2567,16 @@ pub enum AppAttributesKeys {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppAttributesKeys {
-    fn from(s: &str) -> Self {
-        match s {
-            "AutoBundleOnDeploy" => AppAttributesKeys::AutoBundleOnDeploy,
-            "AwsFlowRubySettings" => AppAttributesKeys::AwsFlowRubySettings,
-            "DocumentRoot" => AppAttributesKeys::DocumentRoot,
-            "RailsEnv" => AppAttributesKeys::RailsEnv,
-            other => AppAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AutoBundleOnDeploy" => AppAttributesKeys::AutoBundleOnDeploy,
+"AwsFlowRubySettings" => AppAttributesKeys::AwsFlowRubySettings,
+"DocumentRoot" => AppAttributesKeys::DocumentRoot,
+"RailsEnv" => AppAttributesKeys::RailsEnv,
+other => AppAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AppAttributesKeys {
                 type Err = std::convert::Infallible;
 
@@ -2603,28 +2585,26 @@ impl std::str::FromStr for AppAttributesKeys {
                 }
             }
 impl AppAttributesKeys {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AppAttributesKeys::AutoBundleOnDeploy => "AutoBundleOnDeploy",
-            AppAttributesKeys::AwsFlowRubySettings => "AwsFlowRubySettings",
-            AppAttributesKeys::DocumentRoot => "DocumentRoot",
-            AppAttributesKeys::RailsEnv => "RailsEnv",
-            AppAttributesKeys::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AutoBundleOnDeploy", "AwsFlowRubySettings", "DocumentRoot", "RailsEnv"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AppAttributesKeys::AutoBundleOnDeploy => "AutoBundleOnDeploy",
+    AppAttributesKeys::AwsFlowRubySettings => "AwsFlowRubySettings",
+    AppAttributesKeys::DocumentRoot => "DocumentRoot",
+    AppAttributesKeys::RailsEnv => "RailsEnv",
+    AppAttributesKeys::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AutoBundleOnDeploy", "AwsFlowRubySettings", "DocumentRoot", "RailsEnv"]
+                }
+            }
 impl AsRef<str> for AppAttributesKeys {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes an app's SSL configuration.</p>
 #[non_exhaustive]
@@ -2776,19 +2756,19 @@ pub enum AppType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppType {
-    fn from(s: &str) -> Self {
-        match s {
-            "aws-flow-ruby" => AppType::AwsFlowRuby,
-            "java" => AppType::Java,
-            "nodejs" => AppType::Nodejs,
-            "other" => AppType::Other,
-            "php" => AppType::Php,
-            "rails" => AppType::Rails,
-            "static" => AppType::Static,
-            other => AppType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "aws-flow-ruby" => AppType::AwsFlowRuby,
+"java" => AppType::Java,
+"nodejs" => AppType::Nodejs,
+"other" => AppType::Other,
+"php" => AppType::Php,
+"rails" => AppType::Rails,
+"static" => AppType::Static,
+other => AppType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AppType {
                 type Err = std::convert::Infallible;
 
@@ -2797,31 +2777,29 @@ impl std::str::FromStr for AppType {
                 }
             }
 impl AppType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AppType::AwsFlowRuby => "aws-flow-ruby",
-            AppType::Java => "java",
-            AppType::Nodejs => "nodejs",
-            AppType::Other => "other",
-            AppType::Php => "php",
-            AppType::Rails => "rails",
-            AppType::Static => "static",
-            AppType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "aws-flow-ruby", "java", "nodejs", "other", "php", "rails", "static"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AppType::AwsFlowRuby => "aws-flow-ruby",
+    AppType::Java => "java",
+    AppType::Nodejs => "nodejs",
+    AppType::Other => "other",
+    AppType::Php => "php",
+    AppType::Rails => "rails",
+    AppType::Static => "static",
+    AppType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["aws-flow-ruby", "java", "nodejs", "other", "php", "rails", "static"]
+                }
+            }
 impl AsRef<str> for AppType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes an app's data source.</p>
 #[non_exhaustive]
@@ -6848,24 +6826,24 @@ pub enum LayerType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LayerType {
-    fn from(s: &str) -> Self {
-        match s {
-            "aws-flow-ruby" => LayerType::AwsFlowRuby,
-            "custom" => LayerType::Custom,
-            "db-master" => LayerType::DbMaster,
-            "ecs-cluster" => LayerType::EcsCluster,
-            "java-app" => LayerType::JavaApp,
-            "lb" => LayerType::Lb,
-            "memcached" => LayerType::Memcached,
-            "monitoring-master" => LayerType::MonitoringMaster,
-            "nodejs-app" => LayerType::NodejsApp,
-            "php-app" => LayerType::PhpApp,
-            "rails-app" => LayerType::RailsApp,
-            "web" => LayerType::Web,
-            other => LayerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "aws-flow-ruby" => LayerType::AwsFlowRuby,
+"custom" => LayerType::Custom,
+"db-master" => LayerType::DbMaster,
+"ecs-cluster" => LayerType::EcsCluster,
+"java-app" => LayerType::JavaApp,
+"lb" => LayerType::Lb,
+"memcached" => LayerType::Memcached,
+"monitoring-master" => LayerType::MonitoringMaster,
+"nodejs-app" => LayerType::NodejsApp,
+"php-app" => LayerType::PhpApp,
+"rails-app" => LayerType::RailsApp,
+"web" => LayerType::Web,
+other => LayerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LayerType {
                 type Err = std::convert::Infallible;
 
@@ -6874,36 +6852,34 @@ impl std::str::FromStr for LayerType {
                 }
             }
 impl LayerType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LayerType::AwsFlowRuby => "aws-flow-ruby",
-            LayerType::Custom => "custom",
-            LayerType::DbMaster => "db-master",
-            LayerType::EcsCluster => "ecs-cluster",
-            LayerType::JavaApp => "java-app",
-            LayerType::Lb => "lb",
-            LayerType::Memcached => "memcached",
-            LayerType::MonitoringMaster => "monitoring-master",
-            LayerType::NodejsApp => "nodejs-app",
-            LayerType::PhpApp => "php-app",
-            LayerType::RailsApp => "rails-app",
-            LayerType::Web => "web",
-            LayerType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "aws-flow-ruby", "custom", "db-master", "ecs-cluster", "java-app", "lb", "memcached", "monitoring-master", "nodejs-app", "php-app", "rails-app", "web"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LayerType::AwsFlowRuby => "aws-flow-ruby",
+    LayerType::Custom => "custom",
+    LayerType::DbMaster => "db-master",
+    LayerType::EcsCluster => "ecs-cluster",
+    LayerType::JavaApp => "java-app",
+    LayerType::Lb => "lb",
+    LayerType::Memcached => "memcached",
+    LayerType::MonitoringMaster => "monitoring-master",
+    LayerType::NodejsApp => "nodejs-app",
+    LayerType::PhpApp => "php-app",
+    LayerType::RailsApp => "rails-app",
+    LayerType::Web => "web",
+    LayerType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["aws-flow-ruby", "custom", "db-master", "ecs-cluster", "java-app", "lb", "memcached", "monitoring-master", "nodejs-app", "php-app", "rails-app", "web"]
+                }
+            }
 impl AsRef<str> for LayerType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes an instance.</p>
 #[non_exhaustive]
@@ -7856,14 +7832,14 @@ pub enum VirtualizationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VirtualizationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "hvm" => VirtualizationType::Hvm,
-            "paravirtual" => VirtualizationType::Paravirtual,
-            other => VirtualizationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "hvm" => VirtualizationType::Hvm,
+"paravirtual" => VirtualizationType::Paravirtual,
+other => VirtualizationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for VirtualizationType {
                 type Err = std::convert::Infallible;
 
@@ -7872,26 +7848,24 @@ impl std::str::FromStr for VirtualizationType {
                 }
             }
 impl VirtualizationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VirtualizationType::Hvm => "hvm",
-            VirtualizationType::Paravirtual => "paravirtual",
-            VirtualizationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "hvm", "paravirtual"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VirtualizationType::Hvm => "hvm",
+    VirtualizationType::Paravirtual => "paravirtual",
+    VirtualizationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["hvm", "paravirtual"]
+                }
+            }
 impl AsRef<str> for VirtualizationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A registered instance's reported operating system.</p>
 #[non_exhaustive]
@@ -8268,15 +8242,15 @@ pub enum VolumeType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VolumeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "gp2" => VolumeType::Gp2,
-            "io1" => VolumeType::Io1,
-            "standard" => VolumeType::Standard,
-            other => VolumeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "gp2" => VolumeType::Gp2,
+"io1" => VolumeType::Io1,
+"standard" => VolumeType::Standard,
+other => VolumeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for VolumeType {
                 type Err = std::convert::Infallible;
 
@@ -8285,27 +8259,25 @@ impl std::str::FromStr for VolumeType {
                 }
             }
 impl VolumeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VolumeType::Gp2 => "gp2",
-            VolumeType::Io1 => "io1",
-            VolumeType::Standard => "standard",
-            VolumeType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "gp2", "io1", "standard"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VolumeType::Gp2 => "gp2",
+    VolumeType::Io1 => "io1",
+    VolumeType::Standard => "standard",
+    VolumeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["gp2", "io1", "standard"]
+                }
+            }
 impl AsRef<str> for VolumeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes an Elastic Load Balancing instance.</p>
 #[non_exhaustive]
@@ -9309,24 +9281,24 @@ pub enum DeploymentCommandName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentCommandName {
-    fn from(s: &str) -> Self {
-        match s {
-            "configure" => DeploymentCommandName::Configure,
-            "deploy" => DeploymentCommandName::Deploy,
-            "execute_recipes" => DeploymentCommandName::ExecuteRecipes,
-            "install_dependencies" => DeploymentCommandName::InstallDependencies,
-            "restart" => DeploymentCommandName::Restart,
-            "rollback" => DeploymentCommandName::Rollback,
-            "setup" => DeploymentCommandName::Setup,
-            "start" => DeploymentCommandName::Start,
-            "stop" => DeploymentCommandName::Stop,
-            "undeploy" => DeploymentCommandName::Undeploy,
-            "update_custom_cookbooks" => DeploymentCommandName::UpdateCustomCookbooks,
-            "update_dependencies" => DeploymentCommandName::UpdateDependencies,
-            other => DeploymentCommandName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "configure" => DeploymentCommandName::Configure,
+"deploy" => DeploymentCommandName::Deploy,
+"execute_recipes" => DeploymentCommandName::ExecuteRecipes,
+"install_dependencies" => DeploymentCommandName::InstallDependencies,
+"restart" => DeploymentCommandName::Restart,
+"rollback" => DeploymentCommandName::Rollback,
+"setup" => DeploymentCommandName::Setup,
+"start" => DeploymentCommandName::Start,
+"stop" => DeploymentCommandName::Stop,
+"undeploy" => DeploymentCommandName::Undeploy,
+"update_custom_cookbooks" => DeploymentCommandName::UpdateCustomCookbooks,
+"update_dependencies" => DeploymentCommandName::UpdateDependencies,
+other => DeploymentCommandName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeploymentCommandName {
                 type Err = std::convert::Infallible;
 
@@ -9335,36 +9307,34 @@ impl std::str::FromStr for DeploymentCommandName {
                 }
             }
 impl DeploymentCommandName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeploymentCommandName::Configure => "configure",
-            DeploymentCommandName::Deploy => "deploy",
-            DeploymentCommandName::ExecuteRecipes => "execute_recipes",
-            DeploymentCommandName::InstallDependencies => "install_dependencies",
-            DeploymentCommandName::Restart => "restart",
-            DeploymentCommandName::Rollback => "rollback",
-            DeploymentCommandName::Setup => "setup",
-            DeploymentCommandName::Start => "start",
-            DeploymentCommandName::Stop => "stop",
-            DeploymentCommandName::Undeploy => "undeploy",
-            DeploymentCommandName::UpdateCustomCookbooks => "update_custom_cookbooks",
-            DeploymentCommandName::UpdateDependencies => "update_dependencies",
-            DeploymentCommandName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "configure", "deploy", "execute_recipes", "install_dependencies", "restart", "rollback", "setup", "start", "stop", "undeploy", "update_custom_cookbooks", "update_dependencies"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeploymentCommandName::Configure => "configure",
+    DeploymentCommandName::Deploy => "deploy",
+    DeploymentCommandName::ExecuteRecipes => "execute_recipes",
+    DeploymentCommandName::InstallDependencies => "install_dependencies",
+    DeploymentCommandName::Restart => "restart",
+    DeploymentCommandName::Rollback => "rollback",
+    DeploymentCommandName::Setup => "setup",
+    DeploymentCommandName::Start => "start",
+    DeploymentCommandName::Stop => "stop",
+    DeploymentCommandName::Undeploy => "undeploy",
+    DeploymentCommandName::UpdateCustomCookbooks => "update_custom_cookbooks",
+    DeploymentCommandName::UpdateDependencies => "update_dependencies",
+    DeploymentCommandName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["configure", "deploy", "execute_recipes", "install_dependencies", "restart", "rollback", "setup", "start", "stop", "undeploy", "update_custom_cookbooks", "update_dependencies"]
+                }
+            }
 impl AsRef<str> for DeploymentCommandName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a command.</p>
 #[non_exhaustive]

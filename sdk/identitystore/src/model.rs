@@ -53,16 +53,16 @@ pub enum ResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "GROUP" => ResourceType::Group,
-            "GROUP_MEMBERSHIP" => ResourceType::GroupMembership,
-            "IDENTITY_STORE" => ResourceType::IdentityStore,
-            "USER" => ResourceType::User,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "GROUP" => ResourceType::Group,
+"GROUP_MEMBERSHIP" => ResourceType::GroupMembership,
+"IDENTITY_STORE" => ResourceType::IdentityStore,
+"USER" => ResourceType::User,
+other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceType {
                 type Err = std::convert::Infallible;
 
@@ -71,28 +71,26 @@ impl std::str::FromStr for ResourceType {
                 }
             }
 impl ResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceType::Group => "GROUP",
-            ResourceType::GroupMembership => "GROUP_MEMBERSHIP",
-            ResourceType::IdentityStore => "IDENTITY_STORE",
-            ResourceType::User => "USER",
-            ResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "GROUP", "GROUP_MEMBERSHIP", "IDENTITY_STORE", "USER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceType::Group => "GROUP",
+    ResourceType::GroupMembership => "GROUP_MEMBERSHIP",
+    ResourceType::IdentityStore => "IDENTITY_STORE",
+    ResourceType::User => "USER",
+    ResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GROUP", "GROUP_MEMBERSHIP", "IDENTITY_STORE", "USER"]
+                }
+            }
 impl AsRef<str> for ResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A user object that contains a specified user’s metadata and attributes.</p>
 #[non_exhaustive]
@@ -1309,14 +1307,14 @@ pub enum ConflictExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONCURRENT_MODIFICATION" => ConflictExceptionReason::ConcurrentModification,
-            "UNIQUENESS_CONSTRAINT_VIOLATION" => ConflictExceptionReason::UniquenessConstraintViolation,
-            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONCURRENT_MODIFICATION" => ConflictExceptionReason::ConcurrentModification,
+"UNIQUENESS_CONSTRAINT_VIOLATION" => ConflictExceptionReason::UniquenessConstraintViolation,
+other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConflictExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -1325,26 +1323,24 @@ impl std::str::FromStr for ConflictExceptionReason {
                 }
             }
 impl ConflictExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConflictExceptionReason::ConcurrentModification => "CONCURRENT_MODIFICATION",
-            ConflictExceptionReason::UniquenessConstraintViolation => "UNIQUENESS_CONSTRAINT_VIOLATION",
-            ConflictExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONCURRENT_MODIFICATION", "UNIQUENESS_CONSTRAINT_VIOLATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConflictExceptionReason::ConcurrentModification => "CONCURRENT_MODIFICATION",
+    ConflictExceptionReason::UniquenessConstraintViolation => "UNIQUENESS_CONSTRAINT_VIOLATION",
+    ConflictExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONCURRENT_MODIFICATION", "UNIQUENESS_CONSTRAINT_VIOLATION"]
+                }
+            }
 impl AsRef<str> for ConflictExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An operation that applies to the requested group. This operation might add, replace, or remove an attribute.</p>
 #[non_exhaustive]

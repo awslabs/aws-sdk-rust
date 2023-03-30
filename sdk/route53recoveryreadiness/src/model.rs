@@ -1157,16 +1157,16 @@ pub enum Readiness {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Readiness {
-    fn from(s: &str) -> Self {
-        match s {
-            "NOT_AUTHORIZED" => Readiness::NotAuthorized,
-            "NOT_READY" => Readiness::NotReady,
-            "READY" => Readiness::Ready,
-            "UNKNOWN" => Readiness::UnknownValue,
-            other => Readiness::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NOT_AUTHORIZED" => Readiness::NotAuthorized,
+"NOT_READY" => Readiness::NotReady,
+"READY" => Readiness::Ready,
+"UNKNOWN" => Readiness::UnknownValue,
+other => Readiness::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Readiness {
                 type Err = std::convert::Infallible;
 
@@ -1175,28 +1175,26 @@ impl std::str::FromStr for Readiness {
                 }
             }
 impl Readiness {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Readiness::NotAuthorized => "NOT_AUTHORIZED",
-            Readiness::NotReady => "NOT_READY",
-            Readiness::Ready => "READY",
-            Readiness::UnknownValue => "UNKNOWN",
-            Readiness::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NOT_AUTHORIZED", "NOT_READY", "READY", "UNKNOWN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Readiness::NotAuthorized => "NOT_AUTHORIZED",
+    Readiness::NotReady => "NOT_READY",
+    Readiness::Ready => "READY",
+    Readiness::UnknownValue => "UNKNOWN",
+    Readiness::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NOT_AUTHORIZED", "NOT_READY", "READY", "UNKNOWN"]
+                }
+            }
 impl AsRef<str> for Readiness {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The result of a successful Resource request, with status for an individual resource.</p>
 #[non_exhaustive]

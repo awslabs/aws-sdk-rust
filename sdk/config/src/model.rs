@@ -116,14 +116,14 @@ pub enum EvaluationMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EvaluationMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "DETECTIVE" => EvaluationMode::Detective,
-            "PROACTIVE" => EvaluationMode::Proactive,
-            other => EvaluationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DETECTIVE" => EvaluationMode::Detective,
+"PROACTIVE" => EvaluationMode::Proactive,
+other => EvaluationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EvaluationMode {
                 type Err = std::convert::Infallible;
 
@@ -132,26 +132,24 @@ impl std::str::FromStr for EvaluationMode {
                 }
             }
 impl EvaluationMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EvaluationMode::Detective => "DETECTIVE",
-            EvaluationMode::Proactive => "PROACTIVE",
-            EvaluationMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DETECTIVE", "PROACTIVE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EvaluationMode::Detective => "DETECTIVE",
+    EvaluationMode::Proactive => "PROACTIVE",
+    EvaluationMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DETECTIVE", "PROACTIVE"]
+                }
+            }
 impl AsRef<str> for EvaluationMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Use EvaluationContext to group independently initiated proactive resource evaluations. For example, CFN Stack. If you want to check just a resource definition, you do not need to provide evaluation context.</p>
 #[non_exhaustive]
@@ -354,13 +352,13 @@ pub enum ResourceConfigurationSchemaType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceConfigurationSchemaType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CFN_RESOURCE_SCHEMA" => ResourceConfigurationSchemaType::CfnResourceSchema,
-            other => ResourceConfigurationSchemaType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CFN_RESOURCE_SCHEMA" => ResourceConfigurationSchemaType::CfnResourceSchema,
+other => ResourceConfigurationSchemaType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceConfigurationSchemaType {
                 type Err = std::convert::Infallible;
 
@@ -369,25 +367,23 @@ impl std::str::FromStr for ResourceConfigurationSchemaType {
                 }
             }
 impl ResourceConfigurationSchemaType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceConfigurationSchemaType::CfnResourceSchema => "CFN_RESOURCE_SCHEMA",
-            ResourceConfigurationSchemaType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CFN_RESOURCE_SCHEMA"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceConfigurationSchemaType::CfnResourceSchema => "CFN_RESOURCE_SCHEMA",
+    ResourceConfigurationSchemaType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CFN_RESOURCE_SCHEMA"]
+                }
+            }
 impl AsRef<str> for ResourceConfigurationSchemaType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
 #[non_exhaustive]
@@ -991,176 +987,176 @@ pub enum ResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS::ACM::Certificate" => ResourceType::Certificate,
-            "AWS::AccessAnalyzer::Analyzer" => ResourceType::AccessAnalyzerAnalyzer,
-            "AWS::ApiGateway::RestApi" => ResourceType::RestApi,
-            "AWS::ApiGateway::Stage" => ResourceType::Stage,
-            "AWS::ApiGatewayV2::Api" => ResourceType::Api,
-            "AWS::ApiGatewayV2::Stage" => ResourceType::StageV2,
-            "AWS::AppConfig::Application" => ResourceType::AppConfigApplication,
-            "AWS::AppSync::GraphQLApi" => ResourceType::AppSyncGraphQlApi,
-            "AWS::Athena::DataCatalog" => ResourceType::AthenaDataCatalog,
-            "AWS::Athena::WorkGroup" => ResourceType::AthenaWorkGroup,
-            "AWS::AutoScaling::AutoScalingGroup" => ResourceType::AutoScalingGroup,
-            "AWS::AutoScaling::LaunchConfiguration" => ResourceType::LaunchConfiguration,
-            "AWS::AutoScaling::ScalingPolicy" => ResourceType::ScalingPolicy,
-            "AWS::AutoScaling::ScheduledAction" => ResourceType::ScheduledAction,
-            "AWS::Backup::BackupPlan" => ResourceType::BackupPlan,
-            "AWS::Backup::BackupSelection" => ResourceType::BackupSelection,
-            "AWS::Backup::BackupVault" => ResourceType::BackupVault,
-            "AWS::Backup::RecoveryPoint" => ResourceType::BackupRecoveryPoint,
-            "AWS::Batch::ComputeEnvironment" => ResourceType::BatchComputeEnvironment,
-            "AWS::Batch::JobQueue" => ResourceType::BatchJobQueue,
-            "AWS::CloudFormation::Stack" => ResourceType::Stack,
-            "AWS::CloudFront::Distribution" => ResourceType::Distribution,
-            "AWS::CloudFront::StreamingDistribution" => ResourceType::StreamingDistribution,
-            "AWS::CloudTrail::Trail" => ResourceType::Trail,
-            "AWS::CloudWatch::Alarm" => ResourceType::Alarm,
-            "AWS::CodeBuild::Project" => ResourceType::Project,
-            "AWS::CodeDeploy::Application" => ResourceType::CodeDeployApplication,
-            "AWS::CodeDeploy::DeploymentConfig" => ResourceType::CodeDeployDeploymentConfig,
-            "AWS::CodeDeploy::DeploymentGroup" => ResourceType::CodeDeployDeploymentGroup,
-            "AWS::CodePipeline::Pipeline" => ResourceType::Pipeline,
-            "AWS::Config::ConformancePackCompliance" => ResourceType::ConformancePackCompliance,
-            "AWS::Config::ResourceCompliance" => ResourceType::ResourceCompliance,
-            "AWS::DMS::Certificate" => ResourceType::DmsCertificate,
-            "AWS::DMS::EventSubscription" => ResourceType::DmsEventSubscription,
-            "AWS::DMS::ReplicationSubnetGroup" => ResourceType::DmsReplicationSubnetGroup,
-            "AWS::DataSync::LocationEFS" => ResourceType::DataSyncLocationEfs,
-            "AWS::DataSync::LocationFSxLustre" => ResourceType::DataSyncLocationFSxLustre,
-            "AWS::DataSync::LocationNFS" => ResourceType::DataSyncLocationNfs,
-            "AWS::DataSync::LocationS3" => ResourceType::DataSyncLocationS3,
-            "AWS::DataSync::LocationSMB" => ResourceType::DataSyncLocationSmb,
-            "AWS::DataSync::Task" => ResourceType::DataSyncTask,
-            "AWS::Detective::Graph" => ResourceType::DetectiveGraph,
-            "AWS::DynamoDB::Table" => ResourceType::Table,
-            "AWS::EC2::CustomerGateway" => ResourceType::CustomerGateway,
-            "AWS::EC2::EIP" => ResourceType::Eip,
-            "AWS::EC2::EgressOnlyInternetGateway" => ResourceType::EgressOnlyInternetGateway,
-            "AWS::EC2::FlowLog" => ResourceType::FlowLog,
-            "AWS::EC2::Host" => ResourceType::Host,
-            "AWS::EC2::Instance" => ResourceType::Instance,
-            "AWS::EC2::InternetGateway" => ResourceType::InternetGateway,
-            "AWS::EC2::LaunchTemplate" => ResourceType::LaunchTemplate,
-            "AWS::EC2::NatGateway" => ResourceType::NatGateway,
-            "AWS::EC2::NetworkAcl" => ResourceType::NetworkAcl,
-            "AWS::EC2::NetworkInsightsAccessScopeAnalysis" => ResourceType::NetworkInsightsAccessScopeAnalysis,
-            "AWS::EC2::NetworkInterface" => ResourceType::NetworkInterface,
-            "AWS::EC2::RegisteredHAInstance" => ResourceType::RegisteredHaInstance,
-            "AWS::EC2::RouteTable" => ResourceType::RouteTable,
-            "AWS::EC2::SecurityGroup" => ResourceType::SecurityGroup,
-            "AWS::EC2::Subnet" => ResourceType::Subnet,
-            "AWS::EC2::TransitGateway" => ResourceType::TransitGateway,
-            "AWS::EC2::TransitGatewayAttachment" => ResourceType::TransitGatewayAttachment,
-            "AWS::EC2::TransitGatewayRouteTable" => ResourceType::TransitGatewayRouteTable,
-            "AWS::EC2::VPC" => ResourceType::Vpc,
-            "AWS::EC2::VPCEndpoint" => ResourceType::VpcEndpoint,
-            "AWS::EC2::VPCEndpointService" => ResourceType::VpcEndpointService,
-            "AWS::EC2::VPCPeeringConnection" => ResourceType::VpcPeeringConnection,
-            "AWS::EC2::VPNConnection" => ResourceType::VpnConnection,
-            "AWS::EC2::VPNGateway" => ResourceType::VpnGateway,
-            "AWS::EC2::Volume" => ResourceType::Volume,
-            "AWS::ECR::PublicRepository" => ResourceType::EcrPublicRepository,
-            "AWS::ECR::Repository" => ResourceType::EcrRepository,
-            "AWS::ECS::Cluster" => ResourceType::EcsCluster,
-            "AWS::ECS::Service" => ResourceType::EcsService,
-            "AWS::ECS::TaskDefinition" => ResourceType::EcsTaskDefinition,
-            "AWS::EFS::AccessPoint" => ResourceType::EfsAccessPoint,
-            "AWS::EFS::FileSystem" => ResourceType::EfsFileSystem,
-            "AWS::EKS::Cluster" => ResourceType::EksCluster,
-            "AWS::EKS::FargateProfile" => ResourceType::EksFargateProfile,
-            "AWS::EMR::SecurityConfiguration" => ResourceType::EmrSecurityConfiguration,
-            "AWS::ElasticBeanstalk::Application" => ResourceType::Application,
-            "AWS::ElasticBeanstalk::ApplicationVersion" => ResourceType::ApplicationVersion,
-            "AWS::ElasticBeanstalk::Environment" => ResourceType::Environment,
-            "AWS::ElasticLoadBalancing::LoadBalancer" => ResourceType::LoadBalancer,
-            "AWS::ElasticLoadBalancingV2::Listener" => ResourceType::ListenerV2,
-            "AWS::ElasticLoadBalancingV2::LoadBalancer" => ResourceType::LoadBalancerV2,
-            "AWS::Elasticsearch::Domain" => ResourceType::Domain,
-            "AWS::GlobalAccelerator::Accelerator" => ResourceType::GlobalAcceleratorAccelerator,
-            "AWS::GlobalAccelerator::EndpointGroup" => ResourceType::GlobalAcceleratorEndpointGroup,
-            "AWS::GlobalAccelerator::Listener" => ResourceType::GlobalAcceleratorListener,
-            "AWS::Glue::Job" => ResourceType::GlueJob,
-            "AWS::GuardDuty::Detector" => ResourceType::GuardDutyDetector,
-            "AWS::GuardDuty::IPSet" => ResourceType::GuardDutyIpSet,
-            "AWS::GuardDuty::ThreatIntelSet" => ResourceType::GuardDutyThreatIntelSet,
-            "AWS::IAM::Group" => ResourceType::Group,
-            "AWS::IAM::Policy" => ResourceType::Policy,
-            "AWS::IAM::Role" => ResourceType::Role,
-            "AWS::IAM::User" => ResourceType::User,
-            "AWS::KMS::Key" => ResourceType::Key,
-            "AWS::Kinesis::Stream" => ResourceType::KinesisStream,
-            "AWS::Kinesis::StreamConsumer" => ResourceType::KinesisStreamConsumer,
-            "AWS::Lambda::Function" => ResourceType::Function,
-            "AWS::MSK::Cluster" => ResourceType::MskCluster,
-            "AWS::NetworkFirewall::Firewall" => ResourceType::NetworkFirewallFirewall,
-            "AWS::NetworkFirewall::FirewallPolicy" => ResourceType::NetworkFirewallFirewallPolicy,
-            "AWS::NetworkFirewall::RuleGroup" => ResourceType::NetworkFirewallRuleGroup,
-            "AWS::OpenSearch::Domain" => ResourceType::OpenSearchDomain,
-            "AWS::QLDB::Ledger" => ResourceType::QldbLedger,
-            "AWS::RDS::DBCluster" => ResourceType::DbCluster,
-            "AWS::RDS::DBClusterSnapshot" => ResourceType::DbClusterSnapshot,
-            "AWS::RDS::DBInstance" => ResourceType::DbInstance,
-            "AWS::RDS::DBSecurityGroup" => ResourceType::DbSecurityGroup,
-            "AWS::RDS::DBSnapshot" => ResourceType::DbSnapshot,
-            "AWS::RDS::DBSubnetGroup" => ResourceType::DbSubnetGroup,
-            "AWS::RDS::EventSubscription" => ResourceType::EventSubscription,
-            "AWS::Redshift::Cluster" => ResourceType::Cluster,
-            "AWS::Redshift::ClusterParameterGroup" => ResourceType::ClusterParameterGroup,
-            "AWS::Redshift::ClusterSecurityGroup" => ResourceType::ClusterSecurityGroup,
-            "AWS::Redshift::ClusterSnapshot" => ResourceType::ClusterSnapshot,
-            "AWS::Redshift::ClusterSubnetGroup" => ResourceType::ClusterSubnetGroup,
-            "AWS::Redshift::EventSubscription" => ResourceType::RedshiftEventSubscription,
-            "AWS::Route53::HostedZone" => ResourceType::Route53HostedZone,
-            "AWS::Route53Resolver::ResolverEndpoint" => ResourceType::Route53ResolverResolverEndpoint,
-            "AWS::Route53Resolver::ResolverRule" => ResourceType::Route53ResolverResolverRule,
-            "AWS::Route53Resolver::ResolverRuleAssociation" => ResourceType::Route53ResolverResolverRuleAssociation,
-            "AWS::S3::AccountPublicAccessBlock" => ResourceType::AccountPublicAccessBlock,
-            "AWS::S3::Bucket" => ResourceType::Bucket,
-            "AWS::SES::ConfigurationSet" => ResourceType::SesConfigurationSet,
-            "AWS::SES::ContactList" => ResourceType::SesContactList,
-            "AWS::SNS::Topic" => ResourceType::Topic,
-            "AWS::SQS::Queue" => ResourceType::Queue,
-            "AWS::SSM::AssociationCompliance" => ResourceType::AssociationCompliance,
-            "AWS::SSM::FileData" => ResourceType::FileData,
-            "AWS::SSM::ManagedInstanceInventory" => ResourceType::ManagedInstanceInventory,
-            "AWS::SSM::PatchCompliance" => ResourceType::PatchCompliance,
-            "AWS::SageMaker::CodeRepository" => ResourceType::SageMakerCodeRepository,
-            "AWS::SageMaker::Model" => ResourceType::SageMakerModel,
-            "AWS::SageMaker::NotebookInstanceLifecycleConfig" => ResourceType::SageMakerNotebookInstanceLifecycleConfig,
-            "AWS::SageMaker::Workteam" => ResourceType::SageMakerWorkteam,
-            "AWS::SecretsManager::Secret" => ResourceType::Secret,
-            "AWS::ServiceCatalog::CloudFormationProduct" => ResourceType::CloudFormationProduct,
-            "AWS::ServiceCatalog::CloudFormationProvisionedProduct" => ResourceType::CloudFormationProvisionedProduct,
-            "AWS::ServiceCatalog::Portfolio" => ResourceType::Portfolio,
-            "AWS::ServiceDiscovery::PublicDnsNamespace" => ResourceType::ServiceDiscoveryPublicDnsNamespace,
-            "AWS::ServiceDiscovery::Service" => ResourceType::ServiceDiscoveryService,
-            "AWS::Shield::Protection" => ResourceType::Protection,
-            "AWS::ShieldRegional::Protection" => ResourceType::RegionalProtection,
-            "AWS::StepFunctions::Activity" => ResourceType::StepFunctionsActivity,
-            "AWS::StepFunctions::StateMachine" => ResourceType::StepFunctionsStateMachine,
-            "AWS::WAF::RateBasedRule" => ResourceType::RateBasedRule,
-            "AWS::WAF::Rule" => ResourceType::Rule,
-            "AWS::WAF::RuleGroup" => ResourceType::RuleGroup,
-            "AWS::WAF::WebACL" => ResourceType::WebAcl,
-            "AWS::WAFRegional::RateBasedRule" => ResourceType::RegionalRateBasedRule,
-            "AWS::WAFRegional::Rule" => ResourceType::RegionalRule,
-            "AWS::WAFRegional::RuleGroup" => ResourceType::RegionalRuleGroup,
-            "AWS::WAFRegional::WebACL" => ResourceType::RegionalWebAcl,
-            "AWS::WAFv2::IPSet" => ResourceType::IpSetV2,
-            "AWS::WAFv2::ManagedRuleSet" => ResourceType::ManagedRuleSetV2,
-            "AWS::WAFv2::RegexPatternSet" => ResourceType::RegexPatternSetV2,
-            "AWS::WAFv2::RuleGroup" => ResourceType::RuleGroupV2,
-            "AWS::WAFv2::WebACL" => ResourceType::WebAclv2,
-            "AWS::WorkSpaces::ConnectionAlias" => ResourceType::WorkSpacesConnectionAlias,
-            "AWS::WorkSpaces::Workspace" => ResourceType::WorkSpacesWorkspace,
-            "AWS::XRay::EncryptionConfig" => ResourceType::EncryptionConfig,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS::ACM::Certificate" => ResourceType::Certificate,
+"AWS::AccessAnalyzer::Analyzer" => ResourceType::AccessAnalyzerAnalyzer,
+"AWS::ApiGateway::RestApi" => ResourceType::RestApi,
+"AWS::ApiGateway::Stage" => ResourceType::Stage,
+"AWS::ApiGatewayV2::Api" => ResourceType::Api,
+"AWS::ApiGatewayV2::Stage" => ResourceType::StageV2,
+"AWS::AppConfig::Application" => ResourceType::AppConfigApplication,
+"AWS::AppSync::GraphQLApi" => ResourceType::AppSyncGraphQlApi,
+"AWS::Athena::DataCatalog" => ResourceType::AthenaDataCatalog,
+"AWS::Athena::WorkGroup" => ResourceType::AthenaWorkGroup,
+"AWS::AutoScaling::AutoScalingGroup" => ResourceType::AutoScalingGroup,
+"AWS::AutoScaling::LaunchConfiguration" => ResourceType::LaunchConfiguration,
+"AWS::AutoScaling::ScalingPolicy" => ResourceType::ScalingPolicy,
+"AWS::AutoScaling::ScheduledAction" => ResourceType::ScheduledAction,
+"AWS::Backup::BackupPlan" => ResourceType::BackupPlan,
+"AWS::Backup::BackupSelection" => ResourceType::BackupSelection,
+"AWS::Backup::BackupVault" => ResourceType::BackupVault,
+"AWS::Backup::RecoveryPoint" => ResourceType::BackupRecoveryPoint,
+"AWS::Batch::ComputeEnvironment" => ResourceType::BatchComputeEnvironment,
+"AWS::Batch::JobQueue" => ResourceType::BatchJobQueue,
+"AWS::CloudFormation::Stack" => ResourceType::Stack,
+"AWS::CloudFront::Distribution" => ResourceType::Distribution,
+"AWS::CloudFront::StreamingDistribution" => ResourceType::StreamingDistribution,
+"AWS::CloudTrail::Trail" => ResourceType::Trail,
+"AWS::CloudWatch::Alarm" => ResourceType::Alarm,
+"AWS::CodeBuild::Project" => ResourceType::Project,
+"AWS::CodeDeploy::Application" => ResourceType::CodeDeployApplication,
+"AWS::CodeDeploy::DeploymentConfig" => ResourceType::CodeDeployDeploymentConfig,
+"AWS::CodeDeploy::DeploymentGroup" => ResourceType::CodeDeployDeploymentGroup,
+"AWS::CodePipeline::Pipeline" => ResourceType::Pipeline,
+"AWS::Config::ConformancePackCompliance" => ResourceType::ConformancePackCompliance,
+"AWS::Config::ResourceCompliance" => ResourceType::ResourceCompliance,
+"AWS::DMS::Certificate" => ResourceType::DmsCertificate,
+"AWS::DMS::EventSubscription" => ResourceType::DmsEventSubscription,
+"AWS::DMS::ReplicationSubnetGroup" => ResourceType::DmsReplicationSubnetGroup,
+"AWS::DataSync::LocationEFS" => ResourceType::DataSyncLocationEfs,
+"AWS::DataSync::LocationFSxLustre" => ResourceType::DataSyncLocationFSxLustre,
+"AWS::DataSync::LocationNFS" => ResourceType::DataSyncLocationNfs,
+"AWS::DataSync::LocationS3" => ResourceType::DataSyncLocationS3,
+"AWS::DataSync::LocationSMB" => ResourceType::DataSyncLocationSmb,
+"AWS::DataSync::Task" => ResourceType::DataSyncTask,
+"AWS::Detective::Graph" => ResourceType::DetectiveGraph,
+"AWS::DynamoDB::Table" => ResourceType::Table,
+"AWS::EC2::CustomerGateway" => ResourceType::CustomerGateway,
+"AWS::EC2::EIP" => ResourceType::Eip,
+"AWS::EC2::EgressOnlyInternetGateway" => ResourceType::EgressOnlyInternetGateway,
+"AWS::EC2::FlowLog" => ResourceType::FlowLog,
+"AWS::EC2::Host" => ResourceType::Host,
+"AWS::EC2::Instance" => ResourceType::Instance,
+"AWS::EC2::InternetGateway" => ResourceType::InternetGateway,
+"AWS::EC2::LaunchTemplate" => ResourceType::LaunchTemplate,
+"AWS::EC2::NatGateway" => ResourceType::NatGateway,
+"AWS::EC2::NetworkAcl" => ResourceType::NetworkAcl,
+"AWS::EC2::NetworkInsightsAccessScopeAnalysis" => ResourceType::NetworkInsightsAccessScopeAnalysis,
+"AWS::EC2::NetworkInterface" => ResourceType::NetworkInterface,
+"AWS::EC2::RegisteredHAInstance" => ResourceType::RegisteredHaInstance,
+"AWS::EC2::RouteTable" => ResourceType::RouteTable,
+"AWS::EC2::SecurityGroup" => ResourceType::SecurityGroup,
+"AWS::EC2::Subnet" => ResourceType::Subnet,
+"AWS::EC2::TransitGateway" => ResourceType::TransitGateway,
+"AWS::EC2::TransitGatewayAttachment" => ResourceType::TransitGatewayAttachment,
+"AWS::EC2::TransitGatewayRouteTable" => ResourceType::TransitGatewayRouteTable,
+"AWS::EC2::VPC" => ResourceType::Vpc,
+"AWS::EC2::VPCEndpoint" => ResourceType::VpcEndpoint,
+"AWS::EC2::VPCEndpointService" => ResourceType::VpcEndpointService,
+"AWS::EC2::VPCPeeringConnection" => ResourceType::VpcPeeringConnection,
+"AWS::EC2::VPNConnection" => ResourceType::VpnConnection,
+"AWS::EC2::VPNGateway" => ResourceType::VpnGateway,
+"AWS::EC2::Volume" => ResourceType::Volume,
+"AWS::ECR::PublicRepository" => ResourceType::EcrPublicRepository,
+"AWS::ECR::Repository" => ResourceType::EcrRepository,
+"AWS::ECS::Cluster" => ResourceType::EcsCluster,
+"AWS::ECS::Service" => ResourceType::EcsService,
+"AWS::ECS::TaskDefinition" => ResourceType::EcsTaskDefinition,
+"AWS::EFS::AccessPoint" => ResourceType::EfsAccessPoint,
+"AWS::EFS::FileSystem" => ResourceType::EfsFileSystem,
+"AWS::EKS::Cluster" => ResourceType::EksCluster,
+"AWS::EKS::FargateProfile" => ResourceType::EksFargateProfile,
+"AWS::EMR::SecurityConfiguration" => ResourceType::EmrSecurityConfiguration,
+"AWS::ElasticBeanstalk::Application" => ResourceType::Application,
+"AWS::ElasticBeanstalk::ApplicationVersion" => ResourceType::ApplicationVersion,
+"AWS::ElasticBeanstalk::Environment" => ResourceType::Environment,
+"AWS::ElasticLoadBalancing::LoadBalancer" => ResourceType::LoadBalancer,
+"AWS::ElasticLoadBalancingV2::Listener" => ResourceType::ListenerV2,
+"AWS::ElasticLoadBalancingV2::LoadBalancer" => ResourceType::LoadBalancerV2,
+"AWS::Elasticsearch::Domain" => ResourceType::Domain,
+"AWS::GlobalAccelerator::Accelerator" => ResourceType::GlobalAcceleratorAccelerator,
+"AWS::GlobalAccelerator::EndpointGroup" => ResourceType::GlobalAcceleratorEndpointGroup,
+"AWS::GlobalAccelerator::Listener" => ResourceType::GlobalAcceleratorListener,
+"AWS::Glue::Job" => ResourceType::GlueJob,
+"AWS::GuardDuty::Detector" => ResourceType::GuardDutyDetector,
+"AWS::GuardDuty::IPSet" => ResourceType::GuardDutyIpSet,
+"AWS::GuardDuty::ThreatIntelSet" => ResourceType::GuardDutyThreatIntelSet,
+"AWS::IAM::Group" => ResourceType::Group,
+"AWS::IAM::Policy" => ResourceType::Policy,
+"AWS::IAM::Role" => ResourceType::Role,
+"AWS::IAM::User" => ResourceType::User,
+"AWS::KMS::Key" => ResourceType::Key,
+"AWS::Kinesis::Stream" => ResourceType::KinesisStream,
+"AWS::Kinesis::StreamConsumer" => ResourceType::KinesisStreamConsumer,
+"AWS::Lambda::Function" => ResourceType::Function,
+"AWS::MSK::Cluster" => ResourceType::MskCluster,
+"AWS::NetworkFirewall::Firewall" => ResourceType::NetworkFirewallFirewall,
+"AWS::NetworkFirewall::FirewallPolicy" => ResourceType::NetworkFirewallFirewallPolicy,
+"AWS::NetworkFirewall::RuleGroup" => ResourceType::NetworkFirewallRuleGroup,
+"AWS::OpenSearch::Domain" => ResourceType::OpenSearchDomain,
+"AWS::QLDB::Ledger" => ResourceType::QldbLedger,
+"AWS::RDS::DBCluster" => ResourceType::DbCluster,
+"AWS::RDS::DBClusterSnapshot" => ResourceType::DbClusterSnapshot,
+"AWS::RDS::DBInstance" => ResourceType::DbInstance,
+"AWS::RDS::DBSecurityGroup" => ResourceType::DbSecurityGroup,
+"AWS::RDS::DBSnapshot" => ResourceType::DbSnapshot,
+"AWS::RDS::DBSubnetGroup" => ResourceType::DbSubnetGroup,
+"AWS::RDS::EventSubscription" => ResourceType::EventSubscription,
+"AWS::Redshift::Cluster" => ResourceType::Cluster,
+"AWS::Redshift::ClusterParameterGroup" => ResourceType::ClusterParameterGroup,
+"AWS::Redshift::ClusterSecurityGroup" => ResourceType::ClusterSecurityGroup,
+"AWS::Redshift::ClusterSnapshot" => ResourceType::ClusterSnapshot,
+"AWS::Redshift::ClusterSubnetGroup" => ResourceType::ClusterSubnetGroup,
+"AWS::Redshift::EventSubscription" => ResourceType::RedshiftEventSubscription,
+"AWS::Route53::HostedZone" => ResourceType::Route53HostedZone,
+"AWS::Route53Resolver::ResolverEndpoint" => ResourceType::Route53ResolverResolverEndpoint,
+"AWS::Route53Resolver::ResolverRule" => ResourceType::Route53ResolverResolverRule,
+"AWS::Route53Resolver::ResolverRuleAssociation" => ResourceType::Route53ResolverResolverRuleAssociation,
+"AWS::S3::AccountPublicAccessBlock" => ResourceType::AccountPublicAccessBlock,
+"AWS::S3::Bucket" => ResourceType::Bucket,
+"AWS::SES::ConfigurationSet" => ResourceType::SesConfigurationSet,
+"AWS::SES::ContactList" => ResourceType::SesContactList,
+"AWS::SNS::Topic" => ResourceType::Topic,
+"AWS::SQS::Queue" => ResourceType::Queue,
+"AWS::SSM::AssociationCompliance" => ResourceType::AssociationCompliance,
+"AWS::SSM::FileData" => ResourceType::FileData,
+"AWS::SSM::ManagedInstanceInventory" => ResourceType::ManagedInstanceInventory,
+"AWS::SSM::PatchCompliance" => ResourceType::PatchCompliance,
+"AWS::SageMaker::CodeRepository" => ResourceType::SageMakerCodeRepository,
+"AWS::SageMaker::Model" => ResourceType::SageMakerModel,
+"AWS::SageMaker::NotebookInstanceLifecycleConfig" => ResourceType::SageMakerNotebookInstanceLifecycleConfig,
+"AWS::SageMaker::Workteam" => ResourceType::SageMakerWorkteam,
+"AWS::SecretsManager::Secret" => ResourceType::Secret,
+"AWS::ServiceCatalog::CloudFormationProduct" => ResourceType::CloudFormationProduct,
+"AWS::ServiceCatalog::CloudFormationProvisionedProduct" => ResourceType::CloudFormationProvisionedProduct,
+"AWS::ServiceCatalog::Portfolio" => ResourceType::Portfolio,
+"AWS::ServiceDiscovery::PublicDnsNamespace" => ResourceType::ServiceDiscoveryPublicDnsNamespace,
+"AWS::ServiceDiscovery::Service" => ResourceType::ServiceDiscoveryService,
+"AWS::Shield::Protection" => ResourceType::Protection,
+"AWS::ShieldRegional::Protection" => ResourceType::RegionalProtection,
+"AWS::StepFunctions::Activity" => ResourceType::StepFunctionsActivity,
+"AWS::StepFunctions::StateMachine" => ResourceType::StepFunctionsStateMachine,
+"AWS::WAF::RateBasedRule" => ResourceType::RateBasedRule,
+"AWS::WAF::Rule" => ResourceType::Rule,
+"AWS::WAF::RuleGroup" => ResourceType::RuleGroup,
+"AWS::WAF::WebACL" => ResourceType::WebAcl,
+"AWS::WAFRegional::RateBasedRule" => ResourceType::RegionalRateBasedRule,
+"AWS::WAFRegional::Rule" => ResourceType::RegionalRule,
+"AWS::WAFRegional::RuleGroup" => ResourceType::RegionalRuleGroup,
+"AWS::WAFRegional::WebACL" => ResourceType::RegionalWebAcl,
+"AWS::WAFv2::IPSet" => ResourceType::IpSetV2,
+"AWS::WAFv2::ManagedRuleSet" => ResourceType::ManagedRuleSetV2,
+"AWS::WAFv2::RegexPatternSet" => ResourceType::RegexPatternSetV2,
+"AWS::WAFv2::RuleGroup" => ResourceType::RuleGroupV2,
+"AWS::WAFv2::WebACL" => ResourceType::WebAclv2,
+"AWS::WorkSpaces::ConnectionAlias" => ResourceType::WorkSpacesConnectionAlias,
+"AWS::WorkSpaces::Workspace" => ResourceType::WorkSpacesWorkspace,
+"AWS::XRay::EncryptionConfig" => ResourceType::EncryptionConfig,
+other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceType {
                 type Err = std::convert::Infallible;
 
@@ -1169,188 +1165,186 @@ impl std::str::FromStr for ResourceType {
                 }
             }
 impl ResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceType::Certificate => "AWS::ACM::Certificate",
-            ResourceType::AccessAnalyzerAnalyzer => "AWS::AccessAnalyzer::Analyzer",
-            ResourceType::RestApi => "AWS::ApiGateway::RestApi",
-            ResourceType::Stage => "AWS::ApiGateway::Stage",
-            ResourceType::Api => "AWS::ApiGatewayV2::Api",
-            ResourceType::StageV2 => "AWS::ApiGatewayV2::Stage",
-            ResourceType::AppConfigApplication => "AWS::AppConfig::Application",
-            ResourceType::AppSyncGraphQlApi => "AWS::AppSync::GraphQLApi",
-            ResourceType::AthenaDataCatalog => "AWS::Athena::DataCatalog",
-            ResourceType::AthenaWorkGroup => "AWS::Athena::WorkGroup",
-            ResourceType::AutoScalingGroup => "AWS::AutoScaling::AutoScalingGroup",
-            ResourceType::LaunchConfiguration => "AWS::AutoScaling::LaunchConfiguration",
-            ResourceType::ScalingPolicy => "AWS::AutoScaling::ScalingPolicy",
-            ResourceType::ScheduledAction => "AWS::AutoScaling::ScheduledAction",
-            ResourceType::BackupPlan => "AWS::Backup::BackupPlan",
-            ResourceType::BackupSelection => "AWS::Backup::BackupSelection",
-            ResourceType::BackupVault => "AWS::Backup::BackupVault",
-            ResourceType::BackupRecoveryPoint => "AWS::Backup::RecoveryPoint",
-            ResourceType::BatchComputeEnvironment => "AWS::Batch::ComputeEnvironment",
-            ResourceType::BatchJobQueue => "AWS::Batch::JobQueue",
-            ResourceType::Stack => "AWS::CloudFormation::Stack",
-            ResourceType::Distribution => "AWS::CloudFront::Distribution",
-            ResourceType::StreamingDistribution => "AWS::CloudFront::StreamingDistribution",
-            ResourceType::Trail => "AWS::CloudTrail::Trail",
-            ResourceType::Alarm => "AWS::CloudWatch::Alarm",
-            ResourceType::Project => "AWS::CodeBuild::Project",
-            ResourceType::CodeDeployApplication => "AWS::CodeDeploy::Application",
-            ResourceType::CodeDeployDeploymentConfig => "AWS::CodeDeploy::DeploymentConfig",
-            ResourceType::CodeDeployDeploymentGroup => "AWS::CodeDeploy::DeploymentGroup",
-            ResourceType::Pipeline => "AWS::CodePipeline::Pipeline",
-            ResourceType::ConformancePackCompliance => "AWS::Config::ConformancePackCompliance",
-            ResourceType::ResourceCompliance => "AWS::Config::ResourceCompliance",
-            ResourceType::DmsCertificate => "AWS::DMS::Certificate",
-            ResourceType::DmsEventSubscription => "AWS::DMS::EventSubscription",
-            ResourceType::DmsReplicationSubnetGroup => "AWS::DMS::ReplicationSubnetGroup",
-            ResourceType::DataSyncLocationEfs => "AWS::DataSync::LocationEFS",
-            ResourceType::DataSyncLocationFSxLustre => "AWS::DataSync::LocationFSxLustre",
-            ResourceType::DataSyncLocationNfs => "AWS::DataSync::LocationNFS",
-            ResourceType::DataSyncLocationS3 => "AWS::DataSync::LocationS3",
-            ResourceType::DataSyncLocationSmb => "AWS::DataSync::LocationSMB",
-            ResourceType::DataSyncTask => "AWS::DataSync::Task",
-            ResourceType::DetectiveGraph => "AWS::Detective::Graph",
-            ResourceType::Table => "AWS::DynamoDB::Table",
-            ResourceType::CustomerGateway => "AWS::EC2::CustomerGateway",
-            ResourceType::Eip => "AWS::EC2::EIP",
-            ResourceType::EgressOnlyInternetGateway => "AWS::EC2::EgressOnlyInternetGateway",
-            ResourceType::FlowLog => "AWS::EC2::FlowLog",
-            ResourceType::Host => "AWS::EC2::Host",
-            ResourceType::Instance => "AWS::EC2::Instance",
-            ResourceType::InternetGateway => "AWS::EC2::InternetGateway",
-            ResourceType::LaunchTemplate => "AWS::EC2::LaunchTemplate",
-            ResourceType::NatGateway => "AWS::EC2::NatGateway",
-            ResourceType::NetworkAcl => "AWS::EC2::NetworkAcl",
-            ResourceType::NetworkInsightsAccessScopeAnalysis => "AWS::EC2::NetworkInsightsAccessScopeAnalysis",
-            ResourceType::NetworkInterface => "AWS::EC2::NetworkInterface",
-            ResourceType::RegisteredHaInstance => "AWS::EC2::RegisteredHAInstance",
-            ResourceType::RouteTable => "AWS::EC2::RouteTable",
-            ResourceType::SecurityGroup => "AWS::EC2::SecurityGroup",
-            ResourceType::Subnet => "AWS::EC2::Subnet",
-            ResourceType::TransitGateway => "AWS::EC2::TransitGateway",
-            ResourceType::TransitGatewayAttachment => "AWS::EC2::TransitGatewayAttachment",
-            ResourceType::TransitGatewayRouteTable => "AWS::EC2::TransitGatewayRouteTable",
-            ResourceType::Vpc => "AWS::EC2::VPC",
-            ResourceType::VpcEndpoint => "AWS::EC2::VPCEndpoint",
-            ResourceType::VpcEndpointService => "AWS::EC2::VPCEndpointService",
-            ResourceType::VpcPeeringConnection => "AWS::EC2::VPCPeeringConnection",
-            ResourceType::VpnConnection => "AWS::EC2::VPNConnection",
-            ResourceType::VpnGateway => "AWS::EC2::VPNGateway",
-            ResourceType::Volume => "AWS::EC2::Volume",
-            ResourceType::EcrPublicRepository => "AWS::ECR::PublicRepository",
-            ResourceType::EcrRepository => "AWS::ECR::Repository",
-            ResourceType::EcsCluster => "AWS::ECS::Cluster",
-            ResourceType::EcsService => "AWS::ECS::Service",
-            ResourceType::EcsTaskDefinition => "AWS::ECS::TaskDefinition",
-            ResourceType::EfsAccessPoint => "AWS::EFS::AccessPoint",
-            ResourceType::EfsFileSystem => "AWS::EFS::FileSystem",
-            ResourceType::EksCluster => "AWS::EKS::Cluster",
-            ResourceType::EksFargateProfile => "AWS::EKS::FargateProfile",
-            ResourceType::EmrSecurityConfiguration => "AWS::EMR::SecurityConfiguration",
-            ResourceType::Application => "AWS::ElasticBeanstalk::Application",
-            ResourceType::ApplicationVersion => "AWS::ElasticBeanstalk::ApplicationVersion",
-            ResourceType::Environment => "AWS::ElasticBeanstalk::Environment",
-            ResourceType::LoadBalancer => "AWS::ElasticLoadBalancing::LoadBalancer",
-            ResourceType::ListenerV2 => "AWS::ElasticLoadBalancingV2::Listener",
-            ResourceType::LoadBalancerV2 => "AWS::ElasticLoadBalancingV2::LoadBalancer",
-            ResourceType::Domain => "AWS::Elasticsearch::Domain",
-            ResourceType::GlobalAcceleratorAccelerator => "AWS::GlobalAccelerator::Accelerator",
-            ResourceType::GlobalAcceleratorEndpointGroup => "AWS::GlobalAccelerator::EndpointGroup",
-            ResourceType::GlobalAcceleratorListener => "AWS::GlobalAccelerator::Listener",
-            ResourceType::GlueJob => "AWS::Glue::Job",
-            ResourceType::GuardDutyDetector => "AWS::GuardDuty::Detector",
-            ResourceType::GuardDutyIpSet => "AWS::GuardDuty::IPSet",
-            ResourceType::GuardDutyThreatIntelSet => "AWS::GuardDuty::ThreatIntelSet",
-            ResourceType::Group => "AWS::IAM::Group",
-            ResourceType::Policy => "AWS::IAM::Policy",
-            ResourceType::Role => "AWS::IAM::Role",
-            ResourceType::User => "AWS::IAM::User",
-            ResourceType::Key => "AWS::KMS::Key",
-            ResourceType::KinesisStream => "AWS::Kinesis::Stream",
-            ResourceType::KinesisStreamConsumer => "AWS::Kinesis::StreamConsumer",
-            ResourceType::Function => "AWS::Lambda::Function",
-            ResourceType::MskCluster => "AWS::MSK::Cluster",
-            ResourceType::NetworkFirewallFirewall => "AWS::NetworkFirewall::Firewall",
-            ResourceType::NetworkFirewallFirewallPolicy => "AWS::NetworkFirewall::FirewallPolicy",
-            ResourceType::NetworkFirewallRuleGroup => "AWS::NetworkFirewall::RuleGroup",
-            ResourceType::OpenSearchDomain => "AWS::OpenSearch::Domain",
-            ResourceType::QldbLedger => "AWS::QLDB::Ledger",
-            ResourceType::DbCluster => "AWS::RDS::DBCluster",
-            ResourceType::DbClusterSnapshot => "AWS::RDS::DBClusterSnapshot",
-            ResourceType::DbInstance => "AWS::RDS::DBInstance",
-            ResourceType::DbSecurityGroup => "AWS::RDS::DBSecurityGroup",
-            ResourceType::DbSnapshot => "AWS::RDS::DBSnapshot",
-            ResourceType::DbSubnetGroup => "AWS::RDS::DBSubnetGroup",
-            ResourceType::EventSubscription => "AWS::RDS::EventSubscription",
-            ResourceType::Cluster => "AWS::Redshift::Cluster",
-            ResourceType::ClusterParameterGroup => "AWS::Redshift::ClusterParameterGroup",
-            ResourceType::ClusterSecurityGroup => "AWS::Redshift::ClusterSecurityGroup",
-            ResourceType::ClusterSnapshot => "AWS::Redshift::ClusterSnapshot",
-            ResourceType::ClusterSubnetGroup => "AWS::Redshift::ClusterSubnetGroup",
-            ResourceType::RedshiftEventSubscription => "AWS::Redshift::EventSubscription",
-            ResourceType::Route53HostedZone => "AWS::Route53::HostedZone",
-            ResourceType::Route53ResolverResolverEndpoint => "AWS::Route53Resolver::ResolverEndpoint",
-            ResourceType::Route53ResolverResolverRule => "AWS::Route53Resolver::ResolverRule",
-            ResourceType::Route53ResolverResolverRuleAssociation => "AWS::Route53Resolver::ResolverRuleAssociation",
-            ResourceType::AccountPublicAccessBlock => "AWS::S3::AccountPublicAccessBlock",
-            ResourceType::Bucket => "AWS::S3::Bucket",
-            ResourceType::SesConfigurationSet => "AWS::SES::ConfigurationSet",
-            ResourceType::SesContactList => "AWS::SES::ContactList",
-            ResourceType::Topic => "AWS::SNS::Topic",
-            ResourceType::Queue => "AWS::SQS::Queue",
-            ResourceType::AssociationCompliance => "AWS::SSM::AssociationCompliance",
-            ResourceType::FileData => "AWS::SSM::FileData",
-            ResourceType::ManagedInstanceInventory => "AWS::SSM::ManagedInstanceInventory",
-            ResourceType::PatchCompliance => "AWS::SSM::PatchCompliance",
-            ResourceType::SageMakerCodeRepository => "AWS::SageMaker::CodeRepository",
-            ResourceType::SageMakerModel => "AWS::SageMaker::Model",
-            ResourceType::SageMakerNotebookInstanceLifecycleConfig => "AWS::SageMaker::NotebookInstanceLifecycleConfig",
-            ResourceType::SageMakerWorkteam => "AWS::SageMaker::Workteam",
-            ResourceType::Secret => "AWS::SecretsManager::Secret",
-            ResourceType::CloudFormationProduct => "AWS::ServiceCatalog::CloudFormationProduct",
-            ResourceType::CloudFormationProvisionedProduct => "AWS::ServiceCatalog::CloudFormationProvisionedProduct",
-            ResourceType::Portfolio => "AWS::ServiceCatalog::Portfolio",
-            ResourceType::ServiceDiscoveryPublicDnsNamespace => "AWS::ServiceDiscovery::PublicDnsNamespace",
-            ResourceType::ServiceDiscoveryService => "AWS::ServiceDiscovery::Service",
-            ResourceType::Protection => "AWS::Shield::Protection",
-            ResourceType::RegionalProtection => "AWS::ShieldRegional::Protection",
-            ResourceType::StepFunctionsActivity => "AWS::StepFunctions::Activity",
-            ResourceType::StepFunctionsStateMachine => "AWS::StepFunctions::StateMachine",
-            ResourceType::RateBasedRule => "AWS::WAF::RateBasedRule",
-            ResourceType::Rule => "AWS::WAF::Rule",
-            ResourceType::RuleGroup => "AWS::WAF::RuleGroup",
-            ResourceType::WebAcl => "AWS::WAF::WebACL",
-            ResourceType::RegionalRateBasedRule => "AWS::WAFRegional::RateBasedRule",
-            ResourceType::RegionalRule => "AWS::WAFRegional::Rule",
-            ResourceType::RegionalRuleGroup => "AWS::WAFRegional::RuleGroup",
-            ResourceType::RegionalWebAcl => "AWS::WAFRegional::WebACL",
-            ResourceType::IpSetV2 => "AWS::WAFv2::IPSet",
-            ResourceType::ManagedRuleSetV2 => "AWS::WAFv2::ManagedRuleSet",
-            ResourceType::RegexPatternSetV2 => "AWS::WAFv2::RegexPatternSet",
-            ResourceType::RuleGroupV2 => "AWS::WAFv2::RuleGroup",
-            ResourceType::WebAclv2 => "AWS::WAFv2::WebACL",
-            ResourceType::WorkSpacesConnectionAlias => "AWS::WorkSpaces::ConnectionAlias",
-            ResourceType::WorkSpacesWorkspace => "AWS::WorkSpaces::Workspace",
-            ResourceType::EncryptionConfig => "AWS::XRay::EncryptionConfig",
-            ResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS::ACM::Certificate", "AWS::AccessAnalyzer::Analyzer", "AWS::ApiGateway::RestApi", "AWS::ApiGateway::Stage", "AWS::ApiGatewayV2::Api", "AWS::ApiGatewayV2::Stage", "AWS::AppConfig::Application", "AWS::AppSync::GraphQLApi", "AWS::Athena::DataCatalog", "AWS::Athena::WorkGroup", "AWS::AutoScaling::AutoScalingGroup", "AWS::AutoScaling::LaunchConfiguration", "AWS::AutoScaling::ScalingPolicy", "AWS::AutoScaling::ScheduledAction", "AWS::Backup::BackupPlan", "AWS::Backup::BackupSelection", "AWS::Backup::BackupVault", "AWS::Backup::RecoveryPoint", "AWS::Batch::ComputeEnvironment", "AWS::Batch::JobQueue", "AWS::CloudFormation::Stack", "AWS::CloudFront::Distribution", "AWS::CloudFront::StreamingDistribution", "AWS::CloudTrail::Trail", "AWS::CloudWatch::Alarm", "AWS::CodeBuild::Project", "AWS::CodeDeploy::Application", "AWS::CodeDeploy::DeploymentConfig", "AWS::CodeDeploy::DeploymentGroup", "AWS::CodePipeline::Pipeline", "AWS::Config::ConformancePackCompliance", "AWS::Config::ResourceCompliance", "AWS::DMS::Certificate", "AWS::DMS::EventSubscription", "AWS::DMS::ReplicationSubnetGroup", "AWS::DataSync::LocationEFS", "AWS::DataSync::LocationFSxLustre", "AWS::DataSync::LocationNFS", "AWS::DataSync::LocationS3", "AWS::DataSync::LocationSMB", "AWS::DataSync::Task", "AWS::Detective::Graph", "AWS::DynamoDB::Table", "AWS::EC2::CustomerGateway", "AWS::EC2::EIP", "AWS::EC2::EgressOnlyInternetGateway", "AWS::EC2::FlowLog", "AWS::EC2::Host", "AWS::EC2::Instance", "AWS::EC2::InternetGateway", "AWS::EC2::LaunchTemplate", "AWS::EC2::NatGateway", "AWS::EC2::NetworkAcl", "AWS::EC2::NetworkInsightsAccessScopeAnalysis", "AWS::EC2::NetworkInterface", "AWS::EC2::RegisteredHAInstance", "AWS::EC2::RouteTable", "AWS::EC2::SecurityGroup", "AWS::EC2::Subnet", "AWS::EC2::TransitGateway", "AWS::EC2::TransitGatewayAttachment", "AWS::EC2::TransitGatewayRouteTable", "AWS::EC2::VPC", "AWS::EC2::VPCEndpoint", "AWS::EC2::VPCEndpointService", "AWS::EC2::VPCPeeringConnection", "AWS::EC2::VPNConnection", "AWS::EC2::VPNGateway", "AWS::EC2::Volume", "AWS::ECR::PublicRepository", "AWS::ECR::Repository", "AWS::ECS::Cluster", "AWS::ECS::Service", "AWS::ECS::TaskDefinition", "AWS::EFS::AccessPoint", "AWS::EFS::FileSystem", "AWS::EKS::Cluster", "AWS::EKS::FargateProfile", "AWS::EMR::SecurityConfiguration", "AWS::ElasticBeanstalk::Application", "AWS::ElasticBeanstalk::ApplicationVersion", "AWS::ElasticBeanstalk::Environment", "AWS::ElasticLoadBalancing::LoadBalancer", "AWS::ElasticLoadBalancingV2::Listener", "AWS::ElasticLoadBalancingV2::LoadBalancer", "AWS::Elasticsearch::Domain", "AWS::GlobalAccelerator::Accelerator", "AWS::GlobalAccelerator::EndpointGroup", "AWS::GlobalAccelerator::Listener", "AWS::Glue::Job", "AWS::GuardDuty::Detector", "AWS::GuardDuty::IPSet", "AWS::GuardDuty::ThreatIntelSet", "AWS::IAM::Group", "AWS::IAM::Policy", "AWS::IAM::Role", "AWS::IAM::User", "AWS::KMS::Key", "AWS::Kinesis::Stream", "AWS::Kinesis::StreamConsumer", "AWS::Lambda::Function", "AWS::MSK::Cluster", "AWS::NetworkFirewall::Firewall", "AWS::NetworkFirewall::FirewallPolicy", "AWS::NetworkFirewall::RuleGroup", "AWS::OpenSearch::Domain", "AWS::QLDB::Ledger", "AWS::RDS::DBCluster", "AWS::RDS::DBClusterSnapshot", "AWS::RDS::DBInstance", "AWS::RDS::DBSecurityGroup", "AWS::RDS::DBSnapshot", "AWS::RDS::DBSubnetGroup", "AWS::RDS::EventSubscription", "AWS::Redshift::Cluster", "AWS::Redshift::ClusterParameterGroup", "AWS::Redshift::ClusterSecurityGroup", "AWS::Redshift::ClusterSnapshot", "AWS::Redshift::ClusterSubnetGroup", "AWS::Redshift::EventSubscription", "AWS::Route53::HostedZone", "AWS::Route53Resolver::ResolverEndpoint", "AWS::Route53Resolver::ResolverRule", "AWS::Route53Resolver::ResolverRuleAssociation", "AWS::S3::AccountPublicAccessBlock", "AWS::S3::Bucket", "AWS::SES::ConfigurationSet", "AWS::SES::ContactList", "AWS::SNS::Topic", "AWS::SQS::Queue", "AWS::SSM::AssociationCompliance", "AWS::SSM::FileData", "AWS::SSM::ManagedInstanceInventory", "AWS::SSM::PatchCompliance", "AWS::SageMaker::CodeRepository", "AWS::SageMaker::Model", "AWS::SageMaker::NotebookInstanceLifecycleConfig", "AWS::SageMaker::Workteam", "AWS::SecretsManager::Secret", "AWS::ServiceCatalog::CloudFormationProduct", "AWS::ServiceCatalog::CloudFormationProvisionedProduct", "AWS::ServiceCatalog::Portfolio", "AWS::ServiceDiscovery::PublicDnsNamespace", "AWS::ServiceDiscovery::Service", "AWS::Shield::Protection", "AWS::ShieldRegional::Protection", "AWS::StepFunctions::Activity", "AWS::StepFunctions::StateMachine", "AWS::WAF::RateBasedRule", "AWS::WAF::Rule", "AWS::WAF::RuleGroup", "AWS::WAF::WebACL", "AWS::WAFRegional::RateBasedRule", "AWS::WAFRegional::Rule", "AWS::WAFRegional::RuleGroup", "AWS::WAFRegional::WebACL", "AWS::WAFv2::IPSet", "AWS::WAFv2::ManagedRuleSet", "AWS::WAFv2::RegexPatternSet", "AWS::WAFv2::RuleGroup", "AWS::WAFv2::WebACL", "AWS::WorkSpaces::ConnectionAlias", "AWS::WorkSpaces::Workspace", "AWS::XRay::EncryptionConfig"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceType::Certificate => "AWS::ACM::Certificate",
+    ResourceType::AccessAnalyzerAnalyzer => "AWS::AccessAnalyzer::Analyzer",
+    ResourceType::RestApi => "AWS::ApiGateway::RestApi",
+    ResourceType::Stage => "AWS::ApiGateway::Stage",
+    ResourceType::Api => "AWS::ApiGatewayV2::Api",
+    ResourceType::StageV2 => "AWS::ApiGatewayV2::Stage",
+    ResourceType::AppConfigApplication => "AWS::AppConfig::Application",
+    ResourceType::AppSyncGraphQlApi => "AWS::AppSync::GraphQLApi",
+    ResourceType::AthenaDataCatalog => "AWS::Athena::DataCatalog",
+    ResourceType::AthenaWorkGroup => "AWS::Athena::WorkGroup",
+    ResourceType::AutoScalingGroup => "AWS::AutoScaling::AutoScalingGroup",
+    ResourceType::LaunchConfiguration => "AWS::AutoScaling::LaunchConfiguration",
+    ResourceType::ScalingPolicy => "AWS::AutoScaling::ScalingPolicy",
+    ResourceType::ScheduledAction => "AWS::AutoScaling::ScheduledAction",
+    ResourceType::BackupPlan => "AWS::Backup::BackupPlan",
+    ResourceType::BackupSelection => "AWS::Backup::BackupSelection",
+    ResourceType::BackupVault => "AWS::Backup::BackupVault",
+    ResourceType::BackupRecoveryPoint => "AWS::Backup::RecoveryPoint",
+    ResourceType::BatchComputeEnvironment => "AWS::Batch::ComputeEnvironment",
+    ResourceType::BatchJobQueue => "AWS::Batch::JobQueue",
+    ResourceType::Stack => "AWS::CloudFormation::Stack",
+    ResourceType::Distribution => "AWS::CloudFront::Distribution",
+    ResourceType::StreamingDistribution => "AWS::CloudFront::StreamingDistribution",
+    ResourceType::Trail => "AWS::CloudTrail::Trail",
+    ResourceType::Alarm => "AWS::CloudWatch::Alarm",
+    ResourceType::Project => "AWS::CodeBuild::Project",
+    ResourceType::CodeDeployApplication => "AWS::CodeDeploy::Application",
+    ResourceType::CodeDeployDeploymentConfig => "AWS::CodeDeploy::DeploymentConfig",
+    ResourceType::CodeDeployDeploymentGroup => "AWS::CodeDeploy::DeploymentGroup",
+    ResourceType::Pipeline => "AWS::CodePipeline::Pipeline",
+    ResourceType::ConformancePackCompliance => "AWS::Config::ConformancePackCompliance",
+    ResourceType::ResourceCompliance => "AWS::Config::ResourceCompliance",
+    ResourceType::DmsCertificate => "AWS::DMS::Certificate",
+    ResourceType::DmsEventSubscription => "AWS::DMS::EventSubscription",
+    ResourceType::DmsReplicationSubnetGroup => "AWS::DMS::ReplicationSubnetGroup",
+    ResourceType::DataSyncLocationEfs => "AWS::DataSync::LocationEFS",
+    ResourceType::DataSyncLocationFSxLustre => "AWS::DataSync::LocationFSxLustre",
+    ResourceType::DataSyncLocationNfs => "AWS::DataSync::LocationNFS",
+    ResourceType::DataSyncLocationS3 => "AWS::DataSync::LocationS3",
+    ResourceType::DataSyncLocationSmb => "AWS::DataSync::LocationSMB",
+    ResourceType::DataSyncTask => "AWS::DataSync::Task",
+    ResourceType::DetectiveGraph => "AWS::Detective::Graph",
+    ResourceType::Table => "AWS::DynamoDB::Table",
+    ResourceType::CustomerGateway => "AWS::EC2::CustomerGateway",
+    ResourceType::Eip => "AWS::EC2::EIP",
+    ResourceType::EgressOnlyInternetGateway => "AWS::EC2::EgressOnlyInternetGateway",
+    ResourceType::FlowLog => "AWS::EC2::FlowLog",
+    ResourceType::Host => "AWS::EC2::Host",
+    ResourceType::Instance => "AWS::EC2::Instance",
+    ResourceType::InternetGateway => "AWS::EC2::InternetGateway",
+    ResourceType::LaunchTemplate => "AWS::EC2::LaunchTemplate",
+    ResourceType::NatGateway => "AWS::EC2::NatGateway",
+    ResourceType::NetworkAcl => "AWS::EC2::NetworkAcl",
+    ResourceType::NetworkInsightsAccessScopeAnalysis => "AWS::EC2::NetworkInsightsAccessScopeAnalysis",
+    ResourceType::NetworkInterface => "AWS::EC2::NetworkInterface",
+    ResourceType::RegisteredHaInstance => "AWS::EC2::RegisteredHAInstance",
+    ResourceType::RouteTable => "AWS::EC2::RouteTable",
+    ResourceType::SecurityGroup => "AWS::EC2::SecurityGroup",
+    ResourceType::Subnet => "AWS::EC2::Subnet",
+    ResourceType::TransitGateway => "AWS::EC2::TransitGateway",
+    ResourceType::TransitGatewayAttachment => "AWS::EC2::TransitGatewayAttachment",
+    ResourceType::TransitGatewayRouteTable => "AWS::EC2::TransitGatewayRouteTable",
+    ResourceType::Vpc => "AWS::EC2::VPC",
+    ResourceType::VpcEndpoint => "AWS::EC2::VPCEndpoint",
+    ResourceType::VpcEndpointService => "AWS::EC2::VPCEndpointService",
+    ResourceType::VpcPeeringConnection => "AWS::EC2::VPCPeeringConnection",
+    ResourceType::VpnConnection => "AWS::EC2::VPNConnection",
+    ResourceType::VpnGateway => "AWS::EC2::VPNGateway",
+    ResourceType::Volume => "AWS::EC2::Volume",
+    ResourceType::EcrPublicRepository => "AWS::ECR::PublicRepository",
+    ResourceType::EcrRepository => "AWS::ECR::Repository",
+    ResourceType::EcsCluster => "AWS::ECS::Cluster",
+    ResourceType::EcsService => "AWS::ECS::Service",
+    ResourceType::EcsTaskDefinition => "AWS::ECS::TaskDefinition",
+    ResourceType::EfsAccessPoint => "AWS::EFS::AccessPoint",
+    ResourceType::EfsFileSystem => "AWS::EFS::FileSystem",
+    ResourceType::EksCluster => "AWS::EKS::Cluster",
+    ResourceType::EksFargateProfile => "AWS::EKS::FargateProfile",
+    ResourceType::EmrSecurityConfiguration => "AWS::EMR::SecurityConfiguration",
+    ResourceType::Application => "AWS::ElasticBeanstalk::Application",
+    ResourceType::ApplicationVersion => "AWS::ElasticBeanstalk::ApplicationVersion",
+    ResourceType::Environment => "AWS::ElasticBeanstalk::Environment",
+    ResourceType::LoadBalancer => "AWS::ElasticLoadBalancing::LoadBalancer",
+    ResourceType::ListenerV2 => "AWS::ElasticLoadBalancingV2::Listener",
+    ResourceType::LoadBalancerV2 => "AWS::ElasticLoadBalancingV2::LoadBalancer",
+    ResourceType::Domain => "AWS::Elasticsearch::Domain",
+    ResourceType::GlobalAcceleratorAccelerator => "AWS::GlobalAccelerator::Accelerator",
+    ResourceType::GlobalAcceleratorEndpointGroup => "AWS::GlobalAccelerator::EndpointGroup",
+    ResourceType::GlobalAcceleratorListener => "AWS::GlobalAccelerator::Listener",
+    ResourceType::GlueJob => "AWS::Glue::Job",
+    ResourceType::GuardDutyDetector => "AWS::GuardDuty::Detector",
+    ResourceType::GuardDutyIpSet => "AWS::GuardDuty::IPSet",
+    ResourceType::GuardDutyThreatIntelSet => "AWS::GuardDuty::ThreatIntelSet",
+    ResourceType::Group => "AWS::IAM::Group",
+    ResourceType::Policy => "AWS::IAM::Policy",
+    ResourceType::Role => "AWS::IAM::Role",
+    ResourceType::User => "AWS::IAM::User",
+    ResourceType::Key => "AWS::KMS::Key",
+    ResourceType::KinesisStream => "AWS::Kinesis::Stream",
+    ResourceType::KinesisStreamConsumer => "AWS::Kinesis::StreamConsumer",
+    ResourceType::Function => "AWS::Lambda::Function",
+    ResourceType::MskCluster => "AWS::MSK::Cluster",
+    ResourceType::NetworkFirewallFirewall => "AWS::NetworkFirewall::Firewall",
+    ResourceType::NetworkFirewallFirewallPolicy => "AWS::NetworkFirewall::FirewallPolicy",
+    ResourceType::NetworkFirewallRuleGroup => "AWS::NetworkFirewall::RuleGroup",
+    ResourceType::OpenSearchDomain => "AWS::OpenSearch::Domain",
+    ResourceType::QldbLedger => "AWS::QLDB::Ledger",
+    ResourceType::DbCluster => "AWS::RDS::DBCluster",
+    ResourceType::DbClusterSnapshot => "AWS::RDS::DBClusterSnapshot",
+    ResourceType::DbInstance => "AWS::RDS::DBInstance",
+    ResourceType::DbSecurityGroup => "AWS::RDS::DBSecurityGroup",
+    ResourceType::DbSnapshot => "AWS::RDS::DBSnapshot",
+    ResourceType::DbSubnetGroup => "AWS::RDS::DBSubnetGroup",
+    ResourceType::EventSubscription => "AWS::RDS::EventSubscription",
+    ResourceType::Cluster => "AWS::Redshift::Cluster",
+    ResourceType::ClusterParameterGroup => "AWS::Redshift::ClusterParameterGroup",
+    ResourceType::ClusterSecurityGroup => "AWS::Redshift::ClusterSecurityGroup",
+    ResourceType::ClusterSnapshot => "AWS::Redshift::ClusterSnapshot",
+    ResourceType::ClusterSubnetGroup => "AWS::Redshift::ClusterSubnetGroup",
+    ResourceType::RedshiftEventSubscription => "AWS::Redshift::EventSubscription",
+    ResourceType::Route53HostedZone => "AWS::Route53::HostedZone",
+    ResourceType::Route53ResolverResolverEndpoint => "AWS::Route53Resolver::ResolverEndpoint",
+    ResourceType::Route53ResolverResolverRule => "AWS::Route53Resolver::ResolverRule",
+    ResourceType::Route53ResolverResolverRuleAssociation => "AWS::Route53Resolver::ResolverRuleAssociation",
+    ResourceType::AccountPublicAccessBlock => "AWS::S3::AccountPublicAccessBlock",
+    ResourceType::Bucket => "AWS::S3::Bucket",
+    ResourceType::SesConfigurationSet => "AWS::SES::ConfigurationSet",
+    ResourceType::SesContactList => "AWS::SES::ContactList",
+    ResourceType::Topic => "AWS::SNS::Topic",
+    ResourceType::Queue => "AWS::SQS::Queue",
+    ResourceType::AssociationCompliance => "AWS::SSM::AssociationCompliance",
+    ResourceType::FileData => "AWS::SSM::FileData",
+    ResourceType::ManagedInstanceInventory => "AWS::SSM::ManagedInstanceInventory",
+    ResourceType::PatchCompliance => "AWS::SSM::PatchCompliance",
+    ResourceType::SageMakerCodeRepository => "AWS::SageMaker::CodeRepository",
+    ResourceType::SageMakerModel => "AWS::SageMaker::Model",
+    ResourceType::SageMakerNotebookInstanceLifecycleConfig => "AWS::SageMaker::NotebookInstanceLifecycleConfig",
+    ResourceType::SageMakerWorkteam => "AWS::SageMaker::Workteam",
+    ResourceType::Secret => "AWS::SecretsManager::Secret",
+    ResourceType::CloudFormationProduct => "AWS::ServiceCatalog::CloudFormationProduct",
+    ResourceType::CloudFormationProvisionedProduct => "AWS::ServiceCatalog::CloudFormationProvisionedProduct",
+    ResourceType::Portfolio => "AWS::ServiceCatalog::Portfolio",
+    ResourceType::ServiceDiscoveryPublicDnsNamespace => "AWS::ServiceDiscovery::PublicDnsNamespace",
+    ResourceType::ServiceDiscoveryService => "AWS::ServiceDiscovery::Service",
+    ResourceType::Protection => "AWS::Shield::Protection",
+    ResourceType::RegionalProtection => "AWS::ShieldRegional::Protection",
+    ResourceType::StepFunctionsActivity => "AWS::StepFunctions::Activity",
+    ResourceType::StepFunctionsStateMachine => "AWS::StepFunctions::StateMachine",
+    ResourceType::RateBasedRule => "AWS::WAF::RateBasedRule",
+    ResourceType::Rule => "AWS::WAF::Rule",
+    ResourceType::RuleGroup => "AWS::WAF::RuleGroup",
+    ResourceType::WebAcl => "AWS::WAF::WebACL",
+    ResourceType::RegionalRateBasedRule => "AWS::WAFRegional::RateBasedRule",
+    ResourceType::RegionalRule => "AWS::WAFRegional::Rule",
+    ResourceType::RegionalRuleGroup => "AWS::WAFRegional::RuleGroup",
+    ResourceType::RegionalWebAcl => "AWS::WAFRegional::WebACL",
+    ResourceType::IpSetV2 => "AWS::WAFv2::IPSet",
+    ResourceType::ManagedRuleSetV2 => "AWS::WAFv2::ManagedRuleSet",
+    ResourceType::RegexPatternSetV2 => "AWS::WAFv2::RegexPatternSet",
+    ResourceType::RuleGroupV2 => "AWS::WAFv2::RuleGroup",
+    ResourceType::WebAclv2 => "AWS::WAFv2::WebACL",
+    ResourceType::WorkSpacesConnectionAlias => "AWS::WorkSpaces::ConnectionAlias",
+    ResourceType::WorkSpacesWorkspace => "AWS::WorkSpaces::Workspace",
+    ResourceType::EncryptionConfig => "AWS::XRay::EncryptionConfig",
+    ResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS::ACM::Certificate", "AWS::AccessAnalyzer::Analyzer", "AWS::ApiGateway::RestApi", "AWS::ApiGateway::Stage", "AWS::ApiGatewayV2::Api", "AWS::ApiGatewayV2::Stage", "AWS::AppConfig::Application", "AWS::AppSync::GraphQLApi", "AWS::Athena::DataCatalog", "AWS::Athena::WorkGroup", "AWS::AutoScaling::AutoScalingGroup", "AWS::AutoScaling::LaunchConfiguration", "AWS::AutoScaling::ScalingPolicy", "AWS::AutoScaling::ScheduledAction", "AWS::Backup::BackupPlan", "AWS::Backup::BackupSelection", "AWS::Backup::BackupVault", "AWS::Backup::RecoveryPoint", "AWS::Batch::ComputeEnvironment", "AWS::Batch::JobQueue", "AWS::CloudFormation::Stack", "AWS::CloudFront::Distribution", "AWS::CloudFront::StreamingDistribution", "AWS::CloudTrail::Trail", "AWS::CloudWatch::Alarm", "AWS::CodeBuild::Project", "AWS::CodeDeploy::Application", "AWS::CodeDeploy::DeploymentConfig", "AWS::CodeDeploy::DeploymentGroup", "AWS::CodePipeline::Pipeline", "AWS::Config::ConformancePackCompliance", "AWS::Config::ResourceCompliance", "AWS::DMS::Certificate", "AWS::DMS::EventSubscription", "AWS::DMS::ReplicationSubnetGroup", "AWS::DataSync::LocationEFS", "AWS::DataSync::LocationFSxLustre", "AWS::DataSync::LocationNFS", "AWS::DataSync::LocationS3", "AWS::DataSync::LocationSMB", "AWS::DataSync::Task", "AWS::Detective::Graph", "AWS::DynamoDB::Table", "AWS::EC2::CustomerGateway", "AWS::EC2::EIP", "AWS::EC2::EgressOnlyInternetGateway", "AWS::EC2::FlowLog", "AWS::EC2::Host", "AWS::EC2::Instance", "AWS::EC2::InternetGateway", "AWS::EC2::LaunchTemplate", "AWS::EC2::NatGateway", "AWS::EC2::NetworkAcl", "AWS::EC2::NetworkInsightsAccessScopeAnalysis", "AWS::EC2::NetworkInterface", "AWS::EC2::RegisteredHAInstance", "AWS::EC2::RouteTable", "AWS::EC2::SecurityGroup", "AWS::EC2::Subnet", "AWS::EC2::TransitGateway", "AWS::EC2::TransitGatewayAttachment", "AWS::EC2::TransitGatewayRouteTable", "AWS::EC2::VPC", "AWS::EC2::VPCEndpoint", "AWS::EC2::VPCEndpointService", "AWS::EC2::VPCPeeringConnection", "AWS::EC2::VPNConnection", "AWS::EC2::VPNGateway", "AWS::EC2::Volume", "AWS::ECR::PublicRepository", "AWS::ECR::Repository", "AWS::ECS::Cluster", "AWS::ECS::Service", "AWS::ECS::TaskDefinition", "AWS::EFS::AccessPoint", "AWS::EFS::FileSystem", "AWS::EKS::Cluster", "AWS::EKS::FargateProfile", "AWS::EMR::SecurityConfiguration", "AWS::ElasticBeanstalk::Application", "AWS::ElasticBeanstalk::ApplicationVersion", "AWS::ElasticBeanstalk::Environment", "AWS::ElasticLoadBalancing::LoadBalancer", "AWS::ElasticLoadBalancingV2::Listener", "AWS::ElasticLoadBalancingV2::LoadBalancer", "AWS::Elasticsearch::Domain", "AWS::GlobalAccelerator::Accelerator", "AWS::GlobalAccelerator::EndpointGroup", "AWS::GlobalAccelerator::Listener", "AWS::Glue::Job", "AWS::GuardDuty::Detector", "AWS::GuardDuty::IPSet", "AWS::GuardDuty::ThreatIntelSet", "AWS::IAM::Group", "AWS::IAM::Policy", "AWS::IAM::Role", "AWS::IAM::User", "AWS::KMS::Key", "AWS::Kinesis::Stream", "AWS::Kinesis::StreamConsumer", "AWS::Lambda::Function", "AWS::MSK::Cluster", "AWS::NetworkFirewall::Firewall", "AWS::NetworkFirewall::FirewallPolicy", "AWS::NetworkFirewall::RuleGroup", "AWS::OpenSearch::Domain", "AWS::QLDB::Ledger", "AWS::RDS::DBCluster", "AWS::RDS::DBClusterSnapshot", "AWS::RDS::DBInstance", "AWS::RDS::DBSecurityGroup", "AWS::RDS::DBSnapshot", "AWS::RDS::DBSubnetGroup", "AWS::RDS::EventSubscription", "AWS::Redshift::Cluster", "AWS::Redshift::ClusterParameterGroup", "AWS::Redshift::ClusterSecurityGroup", "AWS::Redshift::ClusterSnapshot", "AWS::Redshift::ClusterSubnetGroup", "AWS::Redshift::EventSubscription", "AWS::Route53::HostedZone", "AWS::Route53Resolver::ResolverEndpoint", "AWS::Route53Resolver::ResolverRule", "AWS::Route53Resolver::ResolverRuleAssociation", "AWS::S3::AccountPublicAccessBlock", "AWS::S3::Bucket", "AWS::SES::ConfigurationSet", "AWS::SES::ContactList", "AWS::SNS::Topic", "AWS::SQS::Queue", "AWS::SSM::AssociationCompliance", "AWS::SSM::FileData", "AWS::SSM::ManagedInstanceInventory", "AWS::SSM::PatchCompliance", "AWS::SageMaker::CodeRepository", "AWS::SageMaker::Model", "AWS::SageMaker::NotebookInstanceLifecycleConfig", "AWS::SageMaker::Workteam", "AWS::SecretsManager::Secret", "AWS::ServiceCatalog::CloudFormationProduct", "AWS::ServiceCatalog::CloudFormationProvisionedProduct", "AWS::ServiceCatalog::Portfolio", "AWS::ServiceDiscovery::PublicDnsNamespace", "AWS::ServiceDiscovery::Service", "AWS::Shield::Protection", "AWS::ShieldRegional::Protection", "AWS::StepFunctions::Activity", "AWS::StepFunctions::StateMachine", "AWS::WAF::RateBasedRule", "AWS::WAF::Rule", "AWS::WAF::RuleGroup", "AWS::WAF::WebACL", "AWS::WAFRegional::RateBasedRule", "AWS::WAFRegional::Rule", "AWS::WAFRegional::RuleGroup", "AWS::WAFRegional::WebACL", "AWS::WAFv2::IPSet", "AWS::WAFv2::ManagedRuleSet", "AWS::WAFv2::RegexPatternSet", "AWS::WAFv2::RuleGroup", "AWS::WAFv2::WebACL", "AWS::WorkSpaces::ConnectionAlias", "AWS::WorkSpaces::Workspace", "AWS::XRay::EncryptionConfig"]
+                }
+            }
 impl AsRef<str> for ResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details about the query.</p>
 #[non_exhaustive]
@@ -2627,13 +2621,13 @@ pub enum ResourceValueType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceValueType {
-    fn from(s: &str) -> Self {
-        match s {
-            "RESOURCE_ID" => ResourceValueType::ResourceId,
-            other => ResourceValueType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "RESOURCE_ID" => ResourceValueType::ResourceId,
+other => ResourceValueType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceValueType {
                 type Err = std::convert::Infallible;
 
@@ -2642,25 +2636,23 @@ impl std::str::FromStr for ResourceValueType {
                 }
             }
 impl ResourceValueType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceValueType::ResourceId => "RESOURCE_ID",
-            ResourceValueType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "RESOURCE_ID"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceValueType::ResourceId => "RESOURCE_ID",
+    ResourceValueType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["RESOURCE_ID"]
+                }
+            }
 impl AsRef<str> for ResourceValueType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RemediationTargetType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2706,13 +2698,13 @@ pub enum RemediationTargetType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RemediationTargetType {
-    fn from(s: &str) -> Self {
-        match s {
-            "SSM_DOCUMENT" => RemediationTargetType::SsmDocument,
-            other => RemediationTargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SSM_DOCUMENT" => RemediationTargetType::SsmDocument,
+other => RemediationTargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RemediationTargetType {
                 type Err = std::convert::Infallible;
 
@@ -2721,25 +2713,23 @@ impl std::str::FromStr for RemediationTargetType {
                 }
             }
 impl RemediationTargetType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RemediationTargetType::SsmDocument => "SSM_DOCUMENT",
-            RemediationTargetType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SSM_DOCUMENT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RemediationTargetType::SsmDocument => "SSM_DOCUMENT",
+    RemediationTargetType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SSM_DOCUMENT"]
+                }
+            }
 impl AsRef<str> for RemediationTargetType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Input parameters in the form of key-value pairs for the conformance pack, both of which you define. Keys can have a maximum character length of 255 characters, and values can have a maximum length of 4096 characters.</p>
 #[non_exhaustive]
@@ -3140,17 +3130,17 @@ pub enum MaximumExecutionFrequency {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MaximumExecutionFrequency {
-    fn from(s: &str) -> Self {
-        match s {
-            "One_Hour" => MaximumExecutionFrequency::OneHour,
-            "Six_Hours" => MaximumExecutionFrequency::SixHours,
-            "Three_Hours" => MaximumExecutionFrequency::ThreeHours,
-            "Twelve_Hours" => MaximumExecutionFrequency::TwelveHours,
-            "TwentyFour_Hours" => MaximumExecutionFrequency::TwentyFourHours,
-            other => MaximumExecutionFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "One_Hour" => MaximumExecutionFrequency::OneHour,
+"Six_Hours" => MaximumExecutionFrequency::SixHours,
+"Three_Hours" => MaximumExecutionFrequency::ThreeHours,
+"Twelve_Hours" => MaximumExecutionFrequency::TwelveHours,
+"TwentyFour_Hours" => MaximumExecutionFrequency::TwentyFourHours,
+other => MaximumExecutionFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MaximumExecutionFrequency {
                 type Err = std::convert::Infallible;
 
@@ -3159,29 +3149,27 @@ impl std::str::FromStr for MaximumExecutionFrequency {
                 }
             }
 impl MaximumExecutionFrequency {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MaximumExecutionFrequency::OneHour => "One_Hour",
-            MaximumExecutionFrequency::SixHours => "Six_Hours",
-            MaximumExecutionFrequency::ThreeHours => "Three_Hours",
-            MaximumExecutionFrequency::TwelveHours => "Twelve_Hours",
-            MaximumExecutionFrequency::TwentyFourHours => "TwentyFour_Hours",
-            MaximumExecutionFrequency::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "One_Hour", "Six_Hours", "Three_Hours", "Twelve_Hours", "TwentyFour_Hours"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MaximumExecutionFrequency::OneHour => "One_Hour",
+    MaximumExecutionFrequency::SixHours => "Six_Hours",
+    MaximumExecutionFrequency::ThreeHours => "Three_Hours",
+    MaximumExecutionFrequency::TwelveHours => "Twelve_Hours",
+    MaximumExecutionFrequency::TwentyFourHours => "TwentyFour_Hours",
+    MaximumExecutionFrequency::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["One_Hour", "Six_Hours", "Three_Hours", "Twelve_Hours", "TwentyFour_Hours"]
+                }
+            }
 impl AsRef<str> for MaximumExecutionFrequency {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `OrganizationConfigRuleTriggerTypeNoSn`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3230,14 +3218,14 @@ pub enum OrganizationConfigRuleTriggerTypeNoSn {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrganizationConfigRuleTriggerTypeNoSn {
-    fn from(s: &str) -> Self {
-        match s {
-            "ConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification,
-            "OversizedConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation,
-            other => OrganizationConfigRuleTriggerTypeNoSn::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification,
+"OversizedConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation,
+other => OrganizationConfigRuleTriggerTypeNoSn::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OrganizationConfigRuleTriggerTypeNoSn {
                 type Err = std::convert::Infallible;
 
@@ -3246,26 +3234,24 @@ impl std::str::FromStr for OrganizationConfigRuleTriggerTypeNoSn {
                 }
             }
 impl OrganizationConfigRuleTriggerTypeNoSn {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification => "ConfigurationItemChangeNotification",
-            OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation => "OversizedConfigurationItemChangeNotification",
-            OrganizationConfigRuleTriggerTypeNoSn::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ConfigurationItemChangeNotification", "OversizedConfigurationItemChangeNotification"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification => "ConfigurationItemChangeNotification",
+    OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation => "OversizedConfigurationItemChangeNotification",
+    OrganizationConfigRuleTriggerTypeNoSn::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ConfigurationItemChangeNotification", "OversizedConfigurationItemChangeNotification"]
+                }
+            }
 impl AsRef<str> for OrganizationConfigRuleTriggerTypeNoSn {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object that specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
 #[non_exhaustive]
@@ -3559,15 +3545,15 @@ pub enum OrganizationConfigRuleTriggerType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrganizationConfigRuleTriggerType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification,
-            "OversizedConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerType::OversizedConfigurationItemChangeNotifcation,
-            "ScheduledNotification" => OrganizationConfigRuleTriggerType::ScheduledNotification,
-            other => OrganizationConfigRuleTriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification,
+"OversizedConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerType::OversizedConfigurationItemChangeNotifcation,
+"ScheduledNotification" => OrganizationConfigRuleTriggerType::ScheduledNotification,
+other => OrganizationConfigRuleTriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OrganizationConfigRuleTriggerType {
                 type Err = std::convert::Infallible;
 
@@ -3576,27 +3562,25 @@ impl std::str::FromStr for OrganizationConfigRuleTriggerType {
                 }
             }
 impl OrganizationConfigRuleTriggerType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification => "ConfigurationItemChangeNotification",
-            OrganizationConfigRuleTriggerType::OversizedConfigurationItemChangeNotifcation => "OversizedConfigurationItemChangeNotification",
-            OrganizationConfigRuleTriggerType::ScheduledNotification => "ScheduledNotification",
-            OrganizationConfigRuleTriggerType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ConfigurationItemChangeNotification", "OversizedConfigurationItemChangeNotification", "ScheduledNotification"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification => "ConfigurationItemChangeNotification",
+    OrganizationConfigRuleTriggerType::OversizedConfigurationItemChangeNotifcation => "OversizedConfigurationItemChangeNotification",
+    OrganizationConfigRuleTriggerType::ScheduledNotification => "ScheduledNotification",
+    OrganizationConfigRuleTriggerType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ConfigurationItemChangeNotification", "OversizedConfigurationItemChangeNotification", "ScheduledNotification"]
+                }
+            }
 impl AsRef<str> for OrganizationConfigRuleTriggerType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object that specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
 #[non_exhaustive]
@@ -3974,16 +3958,16 @@ pub enum ComplianceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComplianceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLIANT" => ComplianceType::Compliant,
-            "INSUFFICIENT_DATA" => ComplianceType::InsufficientData,
-            "NON_COMPLIANT" => ComplianceType::NonCompliant,
-            "NOT_APPLICABLE" => ComplianceType::NotApplicable,
-            other => ComplianceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLIANT" => ComplianceType::Compliant,
+"INSUFFICIENT_DATA" => ComplianceType::InsufficientData,
+"NON_COMPLIANT" => ComplianceType::NonCompliant,
+"NOT_APPLICABLE" => ComplianceType::NotApplicable,
+other => ComplianceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ComplianceType {
                 type Err = std::convert::Infallible;
 
@@ -3992,28 +3976,26 @@ impl std::str::FromStr for ComplianceType {
                 }
             }
 impl ComplianceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComplianceType::Compliant => "COMPLIANT",
-            ComplianceType::InsufficientData => "INSUFFICIENT_DATA",
-            ComplianceType::NonCompliant => "NON_COMPLIANT",
-            ComplianceType::NotApplicable => "NOT_APPLICABLE",
-            ComplianceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLIANT", "INSUFFICIENT_DATA", "NON_COMPLIANT", "NOT_APPLICABLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComplianceType::Compliant => "COMPLIANT",
+    ComplianceType::InsufficientData => "INSUFFICIENT_DATA",
+    ComplianceType::NonCompliant => "NON_COMPLIANT",
+    ComplianceType::NotApplicable => "NOT_APPLICABLE",
+    ComplianceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLIANT", "INSUFFICIENT_DATA", "NON_COMPLIANT", "NOT_APPLICABLE"]
+                }
+            }
 impl AsRef<str> for ComplianceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.</p>
 #[non_exhaustive]
@@ -5448,16 +5430,16 @@ pub enum ConfigRuleState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigRuleState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ConfigRuleState::Active,
-            "DELETING" => ConfigRuleState::Deleting,
-            "DELETING_RESULTS" => ConfigRuleState::DeletingResults,
-            "EVALUATING" => ConfigRuleState::Evaluating,
-            other => ConfigRuleState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ConfigRuleState::Active,
+"DELETING" => ConfigRuleState::Deleting,
+"DELETING_RESULTS" => ConfigRuleState::DeletingResults,
+"EVALUATING" => ConfigRuleState::Evaluating,
+other => ConfigRuleState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConfigRuleState {
                 type Err = std::convert::Infallible;
 
@@ -5466,28 +5448,26 @@ impl std::str::FromStr for ConfigRuleState {
                 }
             }
 impl ConfigRuleState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConfigRuleState::Active => "ACTIVE",
-            ConfigRuleState::Deleting => "DELETING",
-            ConfigRuleState::DeletingResults => "DELETING_RESULTS",
-            ConfigRuleState::Evaluating => "EVALUATING",
-            ConfigRuleState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "DELETING", "DELETING_RESULTS", "EVALUATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConfigRuleState::Active => "ACTIVE",
+    ConfigRuleState::Deleting => "DELETING",
+    ConfigRuleState::DeletingResults => "DELETING_RESULTS",
+    ConfigRuleState::Evaluating => "EVALUATING",
+    ConfigRuleState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "DELETING", "DELETING_RESULTS", "EVALUATING"]
+                }
+            }
 impl AsRef<str> for ConfigRuleState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Provides the CustomPolicyDetails, the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the events that cause the evaluation of your Amazon Web Services resources.</p>
 #[non_exhaustive]
@@ -5892,16 +5872,16 @@ pub enum MessageType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MessageType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ConfigurationItemChangeNotification" => MessageType::ConfigurationItemChangeNotification,
-            "ConfigurationSnapshotDeliveryCompleted" => MessageType::ConfigurationSnapshotDeliveryCompleted,
-            "OversizedConfigurationItemChangeNotification" => MessageType::OversizedConfigurationItemChangeNotification,
-            "ScheduledNotification" => MessageType::ScheduledNotification,
-            other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ConfigurationItemChangeNotification" => MessageType::ConfigurationItemChangeNotification,
+"ConfigurationSnapshotDeliveryCompleted" => MessageType::ConfigurationSnapshotDeliveryCompleted,
+"OversizedConfigurationItemChangeNotification" => MessageType::OversizedConfigurationItemChangeNotification,
+"ScheduledNotification" => MessageType::ScheduledNotification,
+other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MessageType {
                 type Err = std::convert::Infallible;
 
@@ -5910,28 +5890,26 @@ impl std::str::FromStr for MessageType {
                 }
             }
 impl MessageType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MessageType::ConfigurationItemChangeNotification => "ConfigurationItemChangeNotification",
-            MessageType::ConfigurationSnapshotDeliveryCompleted => "ConfigurationSnapshotDeliveryCompleted",
-            MessageType::OversizedConfigurationItemChangeNotification => "OversizedConfigurationItemChangeNotification",
-            MessageType::ScheduledNotification => "ScheduledNotification",
-            MessageType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ConfigurationItemChangeNotification", "ConfigurationSnapshotDeliveryCompleted", "OversizedConfigurationItemChangeNotification", "ScheduledNotification"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MessageType::ConfigurationItemChangeNotification => "ConfigurationItemChangeNotification",
+    MessageType::ConfigurationSnapshotDeliveryCompleted => "ConfigurationSnapshotDeliveryCompleted",
+    MessageType::OversizedConfigurationItemChangeNotification => "OversizedConfigurationItemChangeNotification",
+    MessageType::ScheduledNotification => "ScheduledNotification",
+    MessageType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ConfigurationItemChangeNotification", "ConfigurationSnapshotDeliveryCompleted", "OversizedConfigurationItemChangeNotification", "ScheduledNotification"]
+                }
+            }
 impl AsRef<str> for MessageType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EventSource`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5977,13 +5955,13 @@ pub enum EventSource {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventSource {
-    fn from(s: &str) -> Self {
-        match s {
-            "aws.config" => EventSource::AwsConfig,
-            other => EventSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "aws.config" => EventSource::AwsConfig,
+other => EventSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EventSource {
                 type Err = std::convert::Infallible;
 
@@ -5992,25 +5970,23 @@ impl std::str::FromStr for EventSource {
                 }
             }
 impl EventSource {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventSource::AwsConfig => "aws.config",
-            EventSource::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "aws.config"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventSource::AwsConfig => "aws.config",
+    EventSource::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["aws.config"]
+                }
+            }
 impl AsRef<str> for EventSource {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Owner`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6062,15 +6038,15 @@ pub enum Owner {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Owner {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS" => Owner::Aws,
-            "CUSTOM_LAMBDA" => Owner::CustomLambda,
-            "CUSTOM_POLICY" => Owner::CustomPolicy,
-            other => Owner::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS" => Owner::Aws,
+"CUSTOM_LAMBDA" => Owner::CustomLambda,
+"CUSTOM_POLICY" => Owner::CustomPolicy,
+other => Owner::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Owner {
                 type Err = std::convert::Infallible;
 
@@ -6079,27 +6055,25 @@ impl std::str::FromStr for Owner {
                 }
             }
 impl Owner {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Owner::Aws => "AWS",
-            Owner::CustomLambda => "CUSTOM_LAMBDA",
-            Owner::CustomPolicy => "CUSTOM_POLICY",
-            Owner::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS", "CUSTOM_LAMBDA", "CUSTOM_POLICY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Owner::Aws => "AWS",
+    Owner::CustomLambda => "CUSTOM_LAMBDA",
+    Owner::CustomPolicy => "CUSTOM_POLICY",
+    Owner::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS", "CUSTOM_LAMBDA", "CUSTOM_POLICY"]
+                }
+            }
 impl AsRef<str> for Owner {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Defines which resources trigger an evaluation for an Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.</p>
 #[non_exhaustive]
@@ -6912,13 +6886,13 @@ pub enum SortBy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortBy {
-    fn from(s: &str) -> Self {
-        match s {
-            "SCORE" => SortBy::Score,
-            other => SortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SCORE" => SortBy::Score,
+other => SortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortBy {
                 type Err = std::convert::Infallible;
 
@@ -6927,25 +6901,23 @@ impl std::str::FromStr for SortBy {
                 }
             }
 impl SortBy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortBy::Score => "SCORE",
-            SortBy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SCORE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortBy::Score => "SCORE",
+    SortBy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SCORE"]
+                }
+            }
 impl AsRef<str> for SortBy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6994,14 +6966,14 @@ pub enum SortOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASCENDING" => SortOrder::Ascending,
-            "DESCENDING" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASCENDING" => SortOrder::Ascending,
+"DESCENDING" => SortOrder::Descending,
+other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortOrder {
                 type Err = std::convert::Infallible;
 
@@ -7010,26 +6982,24 @@ impl std::str::FromStr for SortOrder {
                 }
             }
 impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Ascending => "ASCENDING",
-            SortOrder::Descending => "DESCENDING",
-            SortOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASCENDING", "DESCENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortOrder::Ascending => "ASCENDING",
+    SortOrder::Descending => "DESCENDING",
+    SortOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASCENDING", "DESCENDING"]
+                }
+            }
 impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A list of filters to apply to the conformance pack compliance score result set. </p>
 #[non_exhaustive]
@@ -7439,15 +7409,15 @@ pub enum ResourceEvaluationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceEvaluationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => ResourceEvaluationStatus::Failed,
-            "IN_PROGRESS" => ResourceEvaluationStatus::InProgress,
-            "SUCCEEDED" => ResourceEvaluationStatus::Succeeded,
-            other => ResourceEvaluationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => ResourceEvaluationStatus::Failed,
+"IN_PROGRESS" => ResourceEvaluationStatus::InProgress,
+"SUCCEEDED" => ResourceEvaluationStatus::Succeeded,
+other => ResourceEvaluationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceEvaluationStatus {
                 type Err = std::convert::Infallible;
 
@@ -7456,27 +7426,25 @@ impl std::str::FromStr for ResourceEvaluationStatus {
                 }
             }
 impl ResourceEvaluationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceEvaluationStatus::Failed => "FAILED",
-            ResourceEvaluationStatus::InProgress => "IN_PROGRESS",
-            ResourceEvaluationStatus::Succeeded => "SUCCEEDED",
-            ResourceEvaluationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "IN_PROGRESS", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceEvaluationStatus::Failed => "FAILED",
+    ResourceEvaluationStatus::InProgress => "IN_PROGRESS",
+    ResourceEvaluationStatus::Succeeded => "SUCCEEDED",
+    ResourceEvaluationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for ResourceEvaluationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A list that contains detailed configurations of a specified resource.</p>
 #[non_exhaustive]
@@ -8086,17 +8054,17 @@ pub enum ConfigurationItemStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigurationItemStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "OK" => ConfigurationItemStatus::Ok,
-            "ResourceDeleted" => ConfigurationItemStatus::ResourceDeleted,
-            "ResourceDeletedNotRecorded" => ConfigurationItemStatus::ResourceDeletedNotRecorded,
-            "ResourceDiscovered" => ConfigurationItemStatus::ResourceDiscovered,
-            "ResourceNotRecorded" => ConfigurationItemStatus::ResourceNotRecorded,
-            other => ConfigurationItemStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "OK" => ConfigurationItemStatus::Ok,
+"ResourceDeleted" => ConfigurationItemStatus::ResourceDeleted,
+"ResourceDeletedNotRecorded" => ConfigurationItemStatus::ResourceDeletedNotRecorded,
+"ResourceDiscovered" => ConfigurationItemStatus::ResourceDiscovered,
+"ResourceNotRecorded" => ConfigurationItemStatus::ResourceNotRecorded,
+other => ConfigurationItemStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConfigurationItemStatus {
                 type Err = std::convert::Infallible;
 
@@ -8105,29 +8073,27 @@ impl std::str::FromStr for ConfigurationItemStatus {
                 }
             }
 impl ConfigurationItemStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConfigurationItemStatus::Ok => "OK",
-            ConfigurationItemStatus::ResourceDeleted => "ResourceDeleted",
-            ConfigurationItemStatus::ResourceDeletedNotRecorded => "ResourceDeletedNotRecorded",
-            ConfigurationItemStatus::ResourceDiscovered => "ResourceDiscovered",
-            ConfigurationItemStatus::ResourceNotRecorded => "ResourceNotRecorded",
-            ConfigurationItemStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "OK", "ResourceDeleted", "ResourceDeletedNotRecorded", "ResourceDiscovered", "ResourceNotRecorded"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConfigurationItemStatus::Ok => "OK",
+    ConfigurationItemStatus::ResourceDeleted => "ResourceDeleted",
+    ConfigurationItemStatus::ResourceDeletedNotRecorded => "ResourceDeletedNotRecorded",
+    ConfigurationItemStatus::ResourceDiscovered => "ResourceDiscovered",
+    ConfigurationItemStatus::ResourceNotRecorded => "ResourceNotRecorded",
+    ConfigurationItemStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OK", "ResourceDeleted", "ResourceDeletedNotRecorded", "ResourceDiscovered", "ResourceNotRecorded"]
+                }
+            }
 impl AsRef<str> for ConfigurationItemStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ChronologicalOrder`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8176,14 +8142,14 @@ pub enum ChronologicalOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChronologicalOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "Forward" => ChronologicalOrder::Forward,
-            "Reverse" => ChronologicalOrder::Reverse,
-            other => ChronologicalOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Forward" => ChronologicalOrder::Forward,
+"Reverse" => ChronologicalOrder::Reverse,
+other => ChronologicalOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ChronologicalOrder {
                 type Err = std::convert::Infallible;
 
@@ -8192,26 +8158,24 @@ impl std::str::FromStr for ChronologicalOrder {
                 }
             }
 impl ChronologicalOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChronologicalOrder::Forward => "Forward",
-            ChronologicalOrder::Reverse => "Reverse",
-            ChronologicalOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Forward", "Reverse"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChronologicalOrder::Forward => "Forward",
+    ChronologicalOrder::Reverse => "Reverse",
+    ChronologicalOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Forward", "Reverse"]
+                }
+            }
 impl AsRef<str> for ChronologicalOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Organization conformance pack creation or deletion status in each member account. This includes the name of the conformance pack, the status, error code and error message when the conformance pack creation or deletion failed. </p>
 #[non_exhaustive]
@@ -8474,21 +8438,21 @@ pub enum OrganizationResourceDetailedStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrganizationResourceDetailedStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => OrganizationResourceDetailedStatus::CreateFailed,
-            "CREATE_IN_PROGRESS" => OrganizationResourceDetailedStatus::CreateInProgress,
-            "CREATE_SUCCESSFUL" => OrganizationResourceDetailedStatus::CreateSuccessful,
-            "DELETE_FAILED" => OrganizationResourceDetailedStatus::DeleteFailed,
-            "DELETE_IN_PROGRESS" => OrganizationResourceDetailedStatus::DeleteInProgress,
-            "DELETE_SUCCESSFUL" => OrganizationResourceDetailedStatus::DeleteSuccessful,
-            "UPDATE_FAILED" => OrganizationResourceDetailedStatus::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => OrganizationResourceDetailedStatus::UpdateInProgress,
-            "UPDATE_SUCCESSFUL" => OrganizationResourceDetailedStatus::UpdateSuccessful,
-            other => OrganizationResourceDetailedStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => OrganizationResourceDetailedStatus::CreateFailed,
+"CREATE_IN_PROGRESS" => OrganizationResourceDetailedStatus::CreateInProgress,
+"CREATE_SUCCESSFUL" => OrganizationResourceDetailedStatus::CreateSuccessful,
+"DELETE_FAILED" => OrganizationResourceDetailedStatus::DeleteFailed,
+"DELETE_IN_PROGRESS" => OrganizationResourceDetailedStatus::DeleteInProgress,
+"DELETE_SUCCESSFUL" => OrganizationResourceDetailedStatus::DeleteSuccessful,
+"UPDATE_FAILED" => OrganizationResourceDetailedStatus::UpdateFailed,
+"UPDATE_IN_PROGRESS" => OrganizationResourceDetailedStatus::UpdateInProgress,
+"UPDATE_SUCCESSFUL" => OrganizationResourceDetailedStatus::UpdateSuccessful,
+other => OrganizationResourceDetailedStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OrganizationResourceDetailedStatus {
                 type Err = std::convert::Infallible;
 
@@ -8497,33 +8461,31 @@ impl std::str::FromStr for OrganizationResourceDetailedStatus {
                 }
             }
 impl OrganizationResourceDetailedStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OrganizationResourceDetailedStatus::CreateFailed => "CREATE_FAILED",
-            OrganizationResourceDetailedStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-            OrganizationResourceDetailedStatus::CreateSuccessful => "CREATE_SUCCESSFUL",
-            OrganizationResourceDetailedStatus::DeleteFailed => "DELETE_FAILED",
-            OrganizationResourceDetailedStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            OrganizationResourceDetailedStatus::DeleteSuccessful => "DELETE_SUCCESSFUL",
-            OrganizationResourceDetailedStatus::UpdateFailed => "UPDATE_FAILED",
-            OrganizationResourceDetailedStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            OrganizationResourceDetailedStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
-            OrganizationResourceDetailedStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_SUCCESSFUL", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_SUCCESSFUL", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_SUCCESSFUL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OrganizationResourceDetailedStatus::CreateFailed => "CREATE_FAILED",
+    OrganizationResourceDetailedStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+    OrganizationResourceDetailedStatus::CreateSuccessful => "CREATE_SUCCESSFUL",
+    OrganizationResourceDetailedStatus::DeleteFailed => "DELETE_FAILED",
+    OrganizationResourceDetailedStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    OrganizationResourceDetailedStatus::DeleteSuccessful => "DELETE_SUCCESSFUL",
+    OrganizationResourceDetailedStatus::UpdateFailed => "UPDATE_FAILED",
+    OrganizationResourceDetailedStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    OrganizationResourceDetailedStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
+    OrganizationResourceDetailedStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_SUCCESSFUL", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_SUCCESSFUL", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_SUCCESSFUL"]
+                }
+            }
 impl AsRef<str> for OrganizationResourceDetailedStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Status filter object to filter results based on specific member account ID or status type for an organization conformance pack.</p>
 #[non_exhaustive]
@@ -8903,21 +8865,21 @@ pub enum MemberAccountRuleStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MemberAccountRuleStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => MemberAccountRuleStatus::CreateFailed,
-            "CREATE_IN_PROGRESS" => MemberAccountRuleStatus::CreateInProgress,
-            "CREATE_SUCCESSFUL" => MemberAccountRuleStatus::CreateSuccessful,
-            "DELETE_FAILED" => MemberAccountRuleStatus::DeleteFailed,
-            "DELETE_IN_PROGRESS" => MemberAccountRuleStatus::DeleteInProgress,
-            "DELETE_SUCCESSFUL" => MemberAccountRuleStatus::DeleteSuccessful,
-            "UPDATE_FAILED" => MemberAccountRuleStatus::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => MemberAccountRuleStatus::UpdateInProgress,
-            "UPDATE_SUCCESSFUL" => MemberAccountRuleStatus::UpdateSuccessful,
-            other => MemberAccountRuleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => MemberAccountRuleStatus::CreateFailed,
+"CREATE_IN_PROGRESS" => MemberAccountRuleStatus::CreateInProgress,
+"CREATE_SUCCESSFUL" => MemberAccountRuleStatus::CreateSuccessful,
+"DELETE_FAILED" => MemberAccountRuleStatus::DeleteFailed,
+"DELETE_IN_PROGRESS" => MemberAccountRuleStatus::DeleteInProgress,
+"DELETE_SUCCESSFUL" => MemberAccountRuleStatus::DeleteSuccessful,
+"UPDATE_FAILED" => MemberAccountRuleStatus::UpdateFailed,
+"UPDATE_IN_PROGRESS" => MemberAccountRuleStatus::UpdateInProgress,
+"UPDATE_SUCCESSFUL" => MemberAccountRuleStatus::UpdateSuccessful,
+other => MemberAccountRuleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MemberAccountRuleStatus {
                 type Err = std::convert::Infallible;
 
@@ -8926,33 +8888,31 @@ impl std::str::FromStr for MemberAccountRuleStatus {
                 }
             }
 impl MemberAccountRuleStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MemberAccountRuleStatus::CreateFailed => "CREATE_FAILED",
-            MemberAccountRuleStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-            MemberAccountRuleStatus::CreateSuccessful => "CREATE_SUCCESSFUL",
-            MemberAccountRuleStatus::DeleteFailed => "DELETE_FAILED",
-            MemberAccountRuleStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            MemberAccountRuleStatus::DeleteSuccessful => "DELETE_SUCCESSFUL",
-            MemberAccountRuleStatus::UpdateFailed => "UPDATE_FAILED",
-            MemberAccountRuleStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            MemberAccountRuleStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
-            MemberAccountRuleStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_SUCCESSFUL", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_SUCCESSFUL", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_SUCCESSFUL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MemberAccountRuleStatus::CreateFailed => "CREATE_FAILED",
+    MemberAccountRuleStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+    MemberAccountRuleStatus::CreateSuccessful => "CREATE_SUCCESSFUL",
+    MemberAccountRuleStatus::DeleteFailed => "DELETE_FAILED",
+    MemberAccountRuleStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    MemberAccountRuleStatus::DeleteSuccessful => "DELETE_SUCCESSFUL",
+    MemberAccountRuleStatus::UpdateFailed => "UPDATE_FAILED",
+    MemberAccountRuleStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    MemberAccountRuleStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
+    MemberAccountRuleStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_SUCCESSFUL", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_SUCCESSFUL", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_SUCCESSFUL"]
+                }
+            }
 impl AsRef<str> for MemberAccountRuleStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Status filter object to filter results based on specific member account ID or status type for an organization Config rule. </p>
 #[non_exhaustive]
@@ -9260,15 +9220,15 @@ pub enum ConformancePackComplianceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConformancePackComplianceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLIANT" => ConformancePackComplianceType::Compliant,
-            "INSUFFICIENT_DATA" => ConformancePackComplianceType::InsufficientData,
-            "NON_COMPLIANT" => ConformancePackComplianceType::NonCompliant,
-            other => ConformancePackComplianceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLIANT" => ConformancePackComplianceType::Compliant,
+"INSUFFICIENT_DATA" => ConformancePackComplianceType::InsufficientData,
+"NON_COMPLIANT" => ConformancePackComplianceType::NonCompliant,
+other => ConformancePackComplianceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConformancePackComplianceType {
                 type Err = std::convert::Infallible;
 
@@ -9277,27 +9237,25 @@ impl std::str::FromStr for ConformancePackComplianceType {
                 }
             }
 impl ConformancePackComplianceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConformancePackComplianceType::Compliant => "COMPLIANT",
-            ConformancePackComplianceType::InsufficientData => "INSUFFICIENT_DATA",
-            ConformancePackComplianceType::NonCompliant => "NON_COMPLIANT",
-            ConformancePackComplianceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLIANT", "INSUFFICIENT_DATA", "NON_COMPLIANT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConformancePackComplianceType::Compliant => "COMPLIANT",
+    ConformancePackComplianceType::InsufficientData => "INSUFFICIENT_DATA",
+    ConformancePackComplianceType::NonCompliant => "NON_COMPLIANT",
+    ConformancePackComplianceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLIANT", "INSUFFICIENT_DATA", "NON_COMPLIANT"]
+                }
+            }
 impl AsRef<str> for ConformancePackComplianceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The details of a conformance pack evaluation. Provides Config rule and Amazon Web Services resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information. </p>
 #[non_exhaustive]
@@ -10248,15 +10206,15 @@ pub enum ResourceCountGroupKey {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceCountGroupKey {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_ID" => ResourceCountGroupKey::AccountId,
-            "AWS_REGION" => ResourceCountGroupKey::AwsRegion,
-            "RESOURCE_TYPE" => ResourceCountGroupKey::ResourceType,
-            other => ResourceCountGroupKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT_ID" => ResourceCountGroupKey::AccountId,
+"AWS_REGION" => ResourceCountGroupKey::AwsRegion,
+"RESOURCE_TYPE" => ResourceCountGroupKey::ResourceType,
+other => ResourceCountGroupKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceCountGroupKey {
                 type Err = std::convert::Infallible;
 
@@ -10265,27 +10223,25 @@ impl std::str::FromStr for ResourceCountGroupKey {
                 }
             }
 impl ResourceCountGroupKey {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceCountGroupKey::AccountId => "ACCOUNT_ID",
-            ResourceCountGroupKey::AwsRegion => "AWS_REGION",
-            ResourceCountGroupKey::ResourceType => "RESOURCE_TYPE",
-            ResourceCountGroupKey::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_ID", "AWS_REGION", "RESOURCE_TYPE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceCountGroupKey::AccountId => "ACCOUNT_ID",
+    ResourceCountGroupKey::AwsRegion => "AWS_REGION",
+    ResourceCountGroupKey::ResourceType => "RESOURCE_TYPE",
+    ResourceCountGroupKey::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_ID", "AWS_REGION", "RESOURCE_TYPE"]
+                }
+            }
 impl AsRef<str> for ResourceCountGroupKey {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Filters the resource count based on account ID, region, and resource type.</p>
 #[non_exhaustive]
@@ -10562,14 +10518,14 @@ pub enum AggregateConformancePackComplianceSummaryGroupKey {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregateConformancePackComplianceSummaryGroupKey {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_ID" => AggregateConformancePackComplianceSummaryGroupKey::AccountId,
-            "AWS_REGION" => AggregateConformancePackComplianceSummaryGroupKey::AwsRegion,
-            other => AggregateConformancePackComplianceSummaryGroupKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT_ID" => AggregateConformancePackComplianceSummaryGroupKey::AccountId,
+"AWS_REGION" => AggregateConformancePackComplianceSummaryGroupKey::AwsRegion,
+other => AggregateConformancePackComplianceSummaryGroupKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AggregateConformancePackComplianceSummaryGroupKey {
                 type Err = std::convert::Infallible;
 
@@ -10578,26 +10534,24 @@ impl std::str::FromStr for AggregateConformancePackComplianceSummaryGroupKey {
                 }
             }
 impl AggregateConformancePackComplianceSummaryGroupKey {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AggregateConformancePackComplianceSummaryGroupKey::AccountId => "ACCOUNT_ID",
-            AggregateConformancePackComplianceSummaryGroupKey::AwsRegion => "AWS_REGION",
-            AggregateConformancePackComplianceSummaryGroupKey::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_ID", "AWS_REGION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AggregateConformancePackComplianceSummaryGroupKey::AccountId => "ACCOUNT_ID",
+    AggregateConformancePackComplianceSummaryGroupKey::AwsRegion => "AWS_REGION",
+    AggregateConformancePackComplianceSummaryGroupKey::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_ID", "AWS_REGION"]
+                }
+            }
 impl AsRef<str> for AggregateConformancePackComplianceSummaryGroupKey {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Filters the results based on account ID and region. </p>
 #[non_exhaustive]
@@ -10784,14 +10738,14 @@ pub enum ConfigRuleComplianceSummaryGroupKey {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigRuleComplianceSummaryGroupKey {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_ID" => ConfigRuleComplianceSummaryGroupKey::AccountId,
-            "AWS_REGION" => ConfigRuleComplianceSummaryGroupKey::AwsRegion,
-            other => ConfigRuleComplianceSummaryGroupKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT_ID" => ConfigRuleComplianceSummaryGroupKey::AccountId,
+"AWS_REGION" => ConfigRuleComplianceSummaryGroupKey::AwsRegion,
+other => ConfigRuleComplianceSummaryGroupKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConfigRuleComplianceSummaryGroupKey {
                 type Err = std::convert::Infallible;
 
@@ -10800,26 +10754,24 @@ impl std::str::FromStr for ConfigRuleComplianceSummaryGroupKey {
                 }
             }
 impl ConfigRuleComplianceSummaryGroupKey {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConfigRuleComplianceSummaryGroupKey::AccountId => "ACCOUNT_ID",
-            ConfigRuleComplianceSummaryGroupKey::AwsRegion => "AWS_REGION",
-            ConfigRuleComplianceSummaryGroupKey::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_ID", "AWS_REGION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConfigRuleComplianceSummaryGroupKey::AccountId => "ACCOUNT_ID",
+    ConfigRuleComplianceSummaryGroupKey::AwsRegion => "AWS_REGION",
+    ConfigRuleComplianceSummaryGroupKey::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_ID", "AWS_REGION"]
+                }
+            }
 impl AsRef<str> for ConfigRuleComplianceSummaryGroupKey {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Filters the results based on the account IDs and regions.</p>
 #[non_exhaustive]
@@ -11366,15 +11318,15 @@ pub enum RemediationExecutionStepState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RemediationExecutionStepState {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => RemediationExecutionStepState::Failed,
-            "PENDING" => RemediationExecutionStepState::Pending,
-            "SUCCEEDED" => RemediationExecutionStepState::Succeeded,
-            other => RemediationExecutionStepState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => RemediationExecutionStepState::Failed,
+"PENDING" => RemediationExecutionStepState::Pending,
+"SUCCEEDED" => RemediationExecutionStepState::Succeeded,
+other => RemediationExecutionStepState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RemediationExecutionStepState {
                 type Err = std::convert::Infallible;
 
@@ -11383,27 +11335,25 @@ impl std::str::FromStr for RemediationExecutionStepState {
                 }
             }
 impl RemediationExecutionStepState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RemediationExecutionStepState::Failed => "FAILED",
-            RemediationExecutionStepState::Pending => "PENDING",
-            RemediationExecutionStepState::Succeeded => "SUCCEEDED",
-            RemediationExecutionStepState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "PENDING", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RemediationExecutionStepState::Failed => "FAILED",
+    RemediationExecutionStepState::Pending => "PENDING",
+    RemediationExecutionStepState::Succeeded => "SUCCEEDED",
+    RemediationExecutionStepState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "PENDING", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for RemediationExecutionStepState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RemediationExecutionState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -11458,16 +11408,16 @@ pub enum RemediationExecutionState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RemediationExecutionState {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => RemediationExecutionState::Failed,
-            "IN_PROGRESS" => RemediationExecutionState::InProgress,
-            "QUEUED" => RemediationExecutionState::Queued,
-            "SUCCEEDED" => RemediationExecutionState::Succeeded,
-            other => RemediationExecutionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => RemediationExecutionState::Failed,
+"IN_PROGRESS" => RemediationExecutionState::InProgress,
+"QUEUED" => RemediationExecutionState::Queued,
+"SUCCEEDED" => RemediationExecutionState::Succeeded,
+other => RemediationExecutionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RemediationExecutionState {
                 type Err = std::convert::Infallible;
 
@@ -11476,28 +11426,26 @@ impl std::str::FromStr for RemediationExecutionState {
                 }
             }
 impl RemediationExecutionState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RemediationExecutionState::Failed => "FAILED",
-            RemediationExecutionState::InProgress => "IN_PROGRESS",
-            RemediationExecutionState::Queued => "QUEUED",
-            RemediationExecutionState::Succeeded => "SUCCEEDED",
-            RemediationExecutionState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "IN_PROGRESS", "QUEUED", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RemediationExecutionState::Failed => "FAILED",
+    RemediationExecutionState::InProgress => "IN_PROGRESS",
+    RemediationExecutionState::Queued => "QUEUED",
+    RemediationExecutionState::Succeeded => "SUCCEEDED",
+    RemediationExecutionState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "IN_PROGRESS", "QUEUED", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for RemediationExecutionState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object that represents the account ID and region of an aggregator account that is requesting authorization but is not yet authorized.</p>
 #[non_exhaustive]
@@ -11810,21 +11758,21 @@ pub enum OrganizationResourceStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrganizationResourceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => OrganizationResourceStatus::CreateFailed,
-            "CREATE_IN_PROGRESS" => OrganizationResourceStatus::CreateInProgress,
-            "CREATE_SUCCESSFUL" => OrganizationResourceStatus::CreateSuccessful,
-            "DELETE_FAILED" => OrganizationResourceStatus::DeleteFailed,
-            "DELETE_IN_PROGRESS" => OrganizationResourceStatus::DeleteInProgress,
-            "DELETE_SUCCESSFUL" => OrganizationResourceStatus::DeleteSuccessful,
-            "UPDATE_FAILED" => OrganizationResourceStatus::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => OrganizationResourceStatus::UpdateInProgress,
-            "UPDATE_SUCCESSFUL" => OrganizationResourceStatus::UpdateSuccessful,
-            other => OrganizationResourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => OrganizationResourceStatus::CreateFailed,
+"CREATE_IN_PROGRESS" => OrganizationResourceStatus::CreateInProgress,
+"CREATE_SUCCESSFUL" => OrganizationResourceStatus::CreateSuccessful,
+"DELETE_FAILED" => OrganizationResourceStatus::DeleteFailed,
+"DELETE_IN_PROGRESS" => OrganizationResourceStatus::DeleteInProgress,
+"DELETE_SUCCESSFUL" => OrganizationResourceStatus::DeleteSuccessful,
+"UPDATE_FAILED" => OrganizationResourceStatus::UpdateFailed,
+"UPDATE_IN_PROGRESS" => OrganizationResourceStatus::UpdateInProgress,
+"UPDATE_SUCCESSFUL" => OrganizationResourceStatus::UpdateSuccessful,
+other => OrganizationResourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OrganizationResourceStatus {
                 type Err = std::convert::Infallible;
 
@@ -11833,33 +11781,31 @@ impl std::str::FromStr for OrganizationResourceStatus {
                 }
             }
 impl OrganizationResourceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OrganizationResourceStatus::CreateFailed => "CREATE_FAILED",
-            OrganizationResourceStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-            OrganizationResourceStatus::CreateSuccessful => "CREATE_SUCCESSFUL",
-            OrganizationResourceStatus::DeleteFailed => "DELETE_FAILED",
-            OrganizationResourceStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            OrganizationResourceStatus::DeleteSuccessful => "DELETE_SUCCESSFUL",
-            OrganizationResourceStatus::UpdateFailed => "UPDATE_FAILED",
-            OrganizationResourceStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            OrganizationResourceStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
-            OrganizationResourceStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_SUCCESSFUL", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_SUCCESSFUL", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_SUCCESSFUL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OrganizationResourceStatus::CreateFailed => "CREATE_FAILED",
+    OrganizationResourceStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+    OrganizationResourceStatus::CreateSuccessful => "CREATE_SUCCESSFUL",
+    OrganizationResourceStatus::DeleteFailed => "DELETE_FAILED",
+    OrganizationResourceStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    OrganizationResourceStatus::DeleteSuccessful => "DELETE_SUCCESSFUL",
+    OrganizationResourceStatus::UpdateFailed => "UPDATE_FAILED",
+    OrganizationResourceStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    OrganizationResourceStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
+    OrganizationResourceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_SUCCESSFUL", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_SUCCESSFUL", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_SUCCESSFUL"]
+                }
+            }
 impl AsRef<str> for OrganizationResourceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An organization conformance pack that has information about conformance packs that Config creates in member accounts. </p>
 #[non_exhaustive]
@@ -12295,21 +12241,21 @@ pub enum OrganizationRuleStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrganizationRuleStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => OrganizationRuleStatus::CreateFailed,
-            "CREATE_IN_PROGRESS" => OrganizationRuleStatus::CreateInProgress,
-            "CREATE_SUCCESSFUL" => OrganizationRuleStatus::CreateSuccessful,
-            "DELETE_FAILED" => OrganizationRuleStatus::DeleteFailed,
-            "DELETE_IN_PROGRESS" => OrganizationRuleStatus::DeleteInProgress,
-            "DELETE_SUCCESSFUL" => OrganizationRuleStatus::DeleteSuccessful,
-            "UPDATE_FAILED" => OrganizationRuleStatus::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => OrganizationRuleStatus::UpdateInProgress,
-            "UPDATE_SUCCESSFUL" => OrganizationRuleStatus::UpdateSuccessful,
-            other => OrganizationRuleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => OrganizationRuleStatus::CreateFailed,
+"CREATE_IN_PROGRESS" => OrganizationRuleStatus::CreateInProgress,
+"CREATE_SUCCESSFUL" => OrganizationRuleStatus::CreateSuccessful,
+"DELETE_FAILED" => OrganizationRuleStatus::DeleteFailed,
+"DELETE_IN_PROGRESS" => OrganizationRuleStatus::DeleteInProgress,
+"DELETE_SUCCESSFUL" => OrganizationRuleStatus::DeleteSuccessful,
+"UPDATE_FAILED" => OrganizationRuleStatus::UpdateFailed,
+"UPDATE_IN_PROGRESS" => OrganizationRuleStatus::UpdateInProgress,
+"UPDATE_SUCCESSFUL" => OrganizationRuleStatus::UpdateSuccessful,
+other => OrganizationRuleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OrganizationRuleStatus {
                 type Err = std::convert::Infallible;
 
@@ -12318,33 +12264,31 @@ impl std::str::FromStr for OrganizationRuleStatus {
                 }
             }
 impl OrganizationRuleStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OrganizationRuleStatus::CreateFailed => "CREATE_FAILED",
-            OrganizationRuleStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-            OrganizationRuleStatus::CreateSuccessful => "CREATE_SUCCESSFUL",
-            OrganizationRuleStatus::DeleteFailed => "DELETE_FAILED",
-            OrganizationRuleStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            OrganizationRuleStatus::DeleteSuccessful => "DELETE_SUCCESSFUL",
-            OrganizationRuleStatus::UpdateFailed => "UPDATE_FAILED",
-            OrganizationRuleStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            OrganizationRuleStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
-            OrganizationRuleStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_SUCCESSFUL", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_SUCCESSFUL", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_SUCCESSFUL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OrganizationRuleStatus::CreateFailed => "CREATE_FAILED",
+    OrganizationRuleStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+    OrganizationRuleStatus::CreateSuccessful => "CREATE_SUCCESSFUL",
+    OrganizationRuleStatus::DeleteFailed => "DELETE_FAILED",
+    OrganizationRuleStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    OrganizationRuleStatus::DeleteSuccessful => "DELETE_SUCCESSFUL",
+    OrganizationRuleStatus::UpdateFailed => "UPDATE_FAILED",
+    OrganizationRuleStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    OrganizationRuleStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
+    OrganizationRuleStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_SUCCESSFUL", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_SUCCESSFUL", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_SUCCESSFUL"]
+                }
+            }
 impl AsRef<str> for OrganizationRuleStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An organization Config rule that has information about Config rules that Config creates in member accounts.</p>
 #[non_exhaustive]
@@ -13040,15 +12984,15 @@ pub enum DeliveryStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeliveryStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Failure" => DeliveryStatus::Failure,
-            "Not_Applicable" => DeliveryStatus::NotApplicable,
-            "Success" => DeliveryStatus::Success,
-            other => DeliveryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Failure" => DeliveryStatus::Failure,
+"Not_Applicable" => DeliveryStatus::NotApplicable,
+"Success" => DeliveryStatus::Success,
+other => DeliveryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeliveryStatus {
                 type Err = std::convert::Infallible;
 
@@ -13057,27 +13001,25 @@ impl std::str::FromStr for DeliveryStatus {
                 }
             }
 impl DeliveryStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeliveryStatus::Failure => "Failure",
-            DeliveryStatus::NotApplicable => "Not_Applicable",
-            DeliveryStatus::Success => "Success",
-            DeliveryStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Failure", "Not_Applicable", "Success"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeliveryStatus::Failure => "Failure",
+    DeliveryStatus::NotApplicable => "Not_Applicable",
+    DeliveryStatus::Success => "Success",
+    DeliveryStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Failure", "Not_Applicable", "Success"]
+                }
+            }
 impl AsRef<str> for DeliveryStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic.</p>
 #[non_exhaustive]
@@ -13495,17 +13437,17 @@ pub enum ConformancePackState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConformancePackState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_COMPLETE" => ConformancePackState::CreateComplete,
-            "CREATE_FAILED" => ConformancePackState::CreateFailed,
-            "CREATE_IN_PROGRESS" => ConformancePackState::CreateInProgress,
-            "DELETE_FAILED" => ConformancePackState::DeleteFailed,
-            "DELETE_IN_PROGRESS" => ConformancePackState::DeleteInProgress,
-            other => ConformancePackState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_COMPLETE" => ConformancePackState::CreateComplete,
+"CREATE_FAILED" => ConformancePackState::CreateFailed,
+"CREATE_IN_PROGRESS" => ConformancePackState::CreateInProgress,
+"DELETE_FAILED" => ConformancePackState::DeleteFailed,
+"DELETE_IN_PROGRESS" => ConformancePackState::DeleteInProgress,
+other => ConformancePackState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConformancePackState {
                 type Err = std::convert::Infallible;
 
@@ -13514,29 +13456,27 @@ impl std::str::FromStr for ConformancePackState {
                 }
             }
 impl ConformancePackState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConformancePackState::CreateComplete => "CREATE_COMPLETE",
-            ConformancePackState::CreateFailed => "CREATE_FAILED",
-            ConformancePackState::CreateInProgress => "CREATE_IN_PROGRESS",
-            ConformancePackState::DeleteFailed => "DELETE_FAILED",
-            ConformancePackState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            ConformancePackState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_COMPLETE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETE_FAILED", "DELETE_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConformancePackState::CreateComplete => "CREATE_COMPLETE",
+    ConformancePackState::CreateFailed => "CREATE_FAILED",
+    ConformancePackState::CreateInProgress => "CREATE_IN_PROGRESS",
+    ConformancePackState::DeleteFailed => "DELETE_FAILED",
+    ConformancePackState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    ConformancePackState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_COMPLETE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETE_FAILED", "DELETE_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for ConformancePackState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Returns details of a conformance pack. A conformance pack is a collection of Config rules and remediation actions that can be easily deployed in an account and a region.</p>
 #[non_exhaustive]
@@ -14173,15 +14113,15 @@ pub enum RecorderStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecorderStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Failure" => RecorderStatus::Failure,
-            "Pending" => RecorderStatus::Pending,
-            "Success" => RecorderStatus::Success,
-            other => RecorderStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Failure" => RecorderStatus::Failure,
+"Pending" => RecorderStatus::Pending,
+"Success" => RecorderStatus::Success,
+other => RecorderStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecorderStatus {
                 type Err = std::convert::Infallible;
 
@@ -14190,27 +14130,25 @@ impl std::str::FromStr for RecorderStatus {
                 }
             }
 impl RecorderStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecorderStatus::Failure => "Failure",
-            RecorderStatus::Pending => "Pending",
-            RecorderStatus::Success => "Success",
-            RecorderStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Failure", "Pending", "Success"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecorderStatus::Failure => "Failure",
+    RecorderStatus::Pending => "Pending",
+    RecorderStatus::Success => "Success",
+    RecorderStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Failure", "Pending", "Success"]
+                }
+            }
 impl AsRef<str> for RecorderStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The current sync status between the source and the aggregator account.</p>
 #[non_exhaustive]
@@ -14446,15 +14384,15 @@ pub enum AggregatedSourceStatusType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregatedSourceStatusType {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => AggregatedSourceStatusType::Failed,
-            "OUTDATED" => AggregatedSourceStatusType::Outdated,
-            "SUCCEEDED" => AggregatedSourceStatusType::Succeeded,
-            other => AggregatedSourceStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => AggregatedSourceStatusType::Failed,
+"OUTDATED" => AggregatedSourceStatusType::Outdated,
+"SUCCEEDED" => AggregatedSourceStatusType::Succeeded,
+other => AggregatedSourceStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AggregatedSourceStatusType {
                 type Err = std::convert::Infallible;
 
@@ -14463,27 +14401,25 @@ impl std::str::FromStr for AggregatedSourceStatusType {
                 }
             }
 impl AggregatedSourceStatusType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AggregatedSourceStatusType::Failed => "FAILED",
-            AggregatedSourceStatusType::Outdated => "OUTDATED",
-            AggregatedSourceStatusType::Succeeded => "SUCCEEDED",
-            AggregatedSourceStatusType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "OUTDATED", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AggregatedSourceStatusType::Failed => "FAILED",
+    AggregatedSourceStatusType::Outdated => "OUTDATED",
+    AggregatedSourceStatusType::Succeeded => "SUCCEEDED",
+    AggregatedSourceStatusType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "OUTDATED", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for AggregatedSourceStatusType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AggregatedSourceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -14532,14 +14468,14 @@ pub enum AggregatedSourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregatedSourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT" => AggregatedSourceType::Account,
-            "ORGANIZATION" => AggregatedSourceType::Organization,
-            other => AggregatedSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT" => AggregatedSourceType::Account,
+"ORGANIZATION" => AggregatedSourceType::Organization,
+other => AggregatedSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AggregatedSourceType {
                 type Err = std::convert::Infallible;
 
@@ -14548,26 +14484,24 @@ impl std::str::FromStr for AggregatedSourceType {
                 }
             }
 impl AggregatedSourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AggregatedSourceType::Account => "ACCOUNT",
-            AggregatedSourceType::Organization => "ORGANIZATION",
-            AggregatedSourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT", "ORGANIZATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AggregatedSourceType::Account => "ACCOUNT",
+    AggregatedSourceType::Organization => "ORGANIZATION",
+    AggregatedSourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT", "ORGANIZATION"]
+                }
+            }
 impl AsRef<str> for AggregatedSourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Returns a filtered list of Detective or Proactive Config rules. By default, if the filter is not defined, this API returns an unfiltered list.</p>
 #[non_exhaustive]

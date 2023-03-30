@@ -194,15 +194,15 @@ pub enum ClientMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClientMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALL" => ClientMode::All,
-            "DESTINATION" => ClientMode::Destination,
-            "SOURCE" => ClientMode::Source,
-            other => ClientMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALL" => ClientMode::All,
+"DESTINATION" => ClientMode::Destination,
+"SOURCE" => ClientMode::Source,
+other => ClientMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ClientMode {
                 type Err = std::convert::Infallible;
 
@@ -211,27 +211,25 @@ impl std::str::FromStr for ClientMode {
                 }
             }
 impl ClientMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ClientMode::All => "ALL",
-            ClientMode::Destination => "DESTINATION",
-            ClientMode::Source => "SOURCE",
-            ClientMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL", "DESTINATION", "SOURCE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ClientMode::All => "ALL",
+    ClientMode::Destination => "DESTINATION",
+    ClientMode::Source => "SOURCE",
+    ClientMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALL", "DESTINATION", "SOURCE"]
+                }
+            }
 impl AsRef<str> for ClientMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Tunnel timeout configuration.</p>
 #[non_exhaustive]
@@ -475,14 +473,14 @@ pub enum TunnelStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TunnelStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLOSED" => TunnelStatus::Closed,
-            "OPEN" => TunnelStatus::Open,
-            other => TunnelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLOSED" => TunnelStatus::Closed,
+"OPEN" => TunnelStatus::Open,
+other => TunnelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TunnelStatus {
                 type Err = std::convert::Infallible;
 
@@ -491,26 +489,24 @@ impl std::str::FromStr for TunnelStatus {
                 }
             }
 impl TunnelStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TunnelStatus::Closed => "CLOSED",
-            TunnelStatus::Open => "OPEN",
-            TunnelStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLOSED", "OPEN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TunnelStatus::Closed => "CLOSED",
+    TunnelStatus::Open => "OPEN",
+    TunnelStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLOSED", "OPEN"]
+                }
+            }
 impl AsRef<str> for TunnelStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A connection between a source computer and a destination device.</p>
 #[non_exhaustive]
@@ -874,14 +870,14 @@ pub enum ConnectionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONNECTED" => ConnectionStatus::Connected,
-            "DISCONNECTED" => ConnectionStatus::Disconnected,
-            other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONNECTED" => ConnectionStatus::Connected,
+"DISCONNECTED" => ConnectionStatus::Disconnected,
+other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConnectionStatus {
                 type Err = std::convert::Infallible;
 
@@ -890,24 +886,22 @@ impl std::str::FromStr for ConnectionStatus {
                 }
             }
 impl ConnectionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectionStatus::Connected => "CONNECTED",
-            ConnectionStatus::Disconnected => "DISCONNECTED",
-            ConnectionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONNECTED", "DISCONNECTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectionStatus::Connected => "CONNECTED",
+    ConnectionStatus::Disconnected => "DISCONNECTED",
+    ConnectionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONNECTED", "DISCONNECTED"]
+                }
+            }
 impl AsRef<str> for ConnectionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

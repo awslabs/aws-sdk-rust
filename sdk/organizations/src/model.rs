@@ -125,40 +125,40 @@ pub enum InvalidInputExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvalidInputExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "DUPLICATE_TAG_KEY" => InvalidInputExceptionReason::DuplicateTagKey,
-            "IMMUTABLE_POLICY" => InvalidInputExceptionReason::ImmutablePolicy,
-            "INPUT_REQUIRED" => InvalidInputExceptionReason::InputRequired,
-            "INVALID_EMAIL_ADDRESS_TARGET" => InvalidInputExceptionReason::InvalidEmailAddressTarget,
-            "INVALID_ENUM" => InvalidInputExceptionReason::InvalidEnum,
-            "INVALID_ENUM_POLICY_TYPE" => InvalidInputExceptionReason::InvalidEnumPolicyType,
-            "INVALID_FULL_NAME_TARGET" => InvalidInputExceptionReason::InvalidFullNameTarget,
-            "INVALID_LIST_MEMBER" => InvalidInputExceptionReason::InvalidListMember,
-            "INVALID_NEXT_TOKEN" => InvalidInputExceptionReason::InvalidPaginationToken,
-            "INVALID_PARTY_TYPE_TARGET" => InvalidInputExceptionReason::InvalidPartyTypeTarget,
-            "INVALID_PATTERN" => InvalidInputExceptionReason::InvalidPattern,
-            "INVALID_PATTERN_TARGET_ID" => InvalidInputExceptionReason::InvalidPatternTargetId,
-            "INVALID_RESOURCE_POLICY_JSON" => InvalidInputExceptionReason::InvalidResourcePolicyJson,
-            "INVALID_ROLE_NAME" => InvalidInputExceptionReason::InvalidRoleName,
-            "INVALID_SYNTAX_ORGANIZATION_ARN" => InvalidInputExceptionReason::InvalidSyntaxOrganization,
-            "INVALID_SYNTAX_POLICY_ID" => InvalidInputExceptionReason::InvalidSyntaxPolicy,
-            "INVALID_SYSTEM_TAGS_PARAMETER" => InvalidInputExceptionReason::InvalidSystemTagsParameter,
-            "MAX_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MaxLengthExceeded,
-            "MAX_LIMIT_EXCEEDED_FILTER" => InvalidInputExceptionReason::MaxFilterLimitExceeded,
-            "MAX_VALUE_EXCEEDED" => InvalidInputExceptionReason::MaxValueExceeded,
-            "MIN_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MinLengthExceeded,
-            "MIN_VALUE_EXCEEDED" => InvalidInputExceptionReason::MinValueExceeded,
-            "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS" => InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots,
-            "TARGET_NOT_SUPPORTED" => InvalidInputExceptionReason::TargetNotSupported,
-            "UNRECOGNIZED_SERVICE_PRINCIPAL" => InvalidInputExceptionReason::UnrecognizedServicePrincipal,
-            "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedActionInResourcePolicy,
-            "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy,
-            "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy,
-            other => InvalidInputExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DUPLICATE_TAG_KEY" => InvalidInputExceptionReason::DuplicateTagKey,
+"IMMUTABLE_POLICY" => InvalidInputExceptionReason::ImmutablePolicy,
+"INPUT_REQUIRED" => InvalidInputExceptionReason::InputRequired,
+"INVALID_EMAIL_ADDRESS_TARGET" => InvalidInputExceptionReason::InvalidEmailAddressTarget,
+"INVALID_ENUM" => InvalidInputExceptionReason::InvalidEnum,
+"INVALID_ENUM_POLICY_TYPE" => InvalidInputExceptionReason::InvalidEnumPolicyType,
+"INVALID_FULL_NAME_TARGET" => InvalidInputExceptionReason::InvalidFullNameTarget,
+"INVALID_LIST_MEMBER" => InvalidInputExceptionReason::InvalidListMember,
+"INVALID_NEXT_TOKEN" => InvalidInputExceptionReason::InvalidPaginationToken,
+"INVALID_PARTY_TYPE_TARGET" => InvalidInputExceptionReason::InvalidPartyTypeTarget,
+"INVALID_PATTERN" => InvalidInputExceptionReason::InvalidPattern,
+"INVALID_PATTERN_TARGET_ID" => InvalidInputExceptionReason::InvalidPatternTargetId,
+"INVALID_RESOURCE_POLICY_JSON" => InvalidInputExceptionReason::InvalidResourcePolicyJson,
+"INVALID_ROLE_NAME" => InvalidInputExceptionReason::InvalidRoleName,
+"INVALID_SYNTAX_ORGANIZATION_ARN" => InvalidInputExceptionReason::InvalidSyntaxOrganization,
+"INVALID_SYNTAX_POLICY_ID" => InvalidInputExceptionReason::InvalidSyntaxPolicy,
+"INVALID_SYSTEM_TAGS_PARAMETER" => InvalidInputExceptionReason::InvalidSystemTagsParameter,
+"MAX_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MaxLengthExceeded,
+"MAX_LIMIT_EXCEEDED_FILTER" => InvalidInputExceptionReason::MaxFilterLimitExceeded,
+"MAX_VALUE_EXCEEDED" => InvalidInputExceptionReason::MaxValueExceeded,
+"MIN_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MinLengthExceeded,
+"MIN_VALUE_EXCEEDED" => InvalidInputExceptionReason::MinValueExceeded,
+"MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS" => InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots,
+"TARGET_NOT_SUPPORTED" => InvalidInputExceptionReason::TargetNotSupported,
+"UNRECOGNIZED_SERVICE_PRINCIPAL" => InvalidInputExceptionReason::UnrecognizedServicePrincipal,
+"UNSUPPORTED_ACTION_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedActionInResourcePolicy,
+"UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy,
+"UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy,
+other => InvalidInputExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InvalidInputExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -167,52 +167,50 @@ impl std::str::FromStr for InvalidInputExceptionReason {
                 }
             }
 impl InvalidInputExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InvalidInputExceptionReason::DuplicateTagKey => "DUPLICATE_TAG_KEY",
-            InvalidInputExceptionReason::ImmutablePolicy => "IMMUTABLE_POLICY",
-            InvalidInputExceptionReason::InputRequired => "INPUT_REQUIRED",
-            InvalidInputExceptionReason::InvalidEmailAddressTarget => "INVALID_EMAIL_ADDRESS_TARGET",
-            InvalidInputExceptionReason::InvalidEnum => "INVALID_ENUM",
-            InvalidInputExceptionReason::InvalidEnumPolicyType => "INVALID_ENUM_POLICY_TYPE",
-            InvalidInputExceptionReason::InvalidFullNameTarget => "INVALID_FULL_NAME_TARGET",
-            InvalidInputExceptionReason::InvalidListMember => "INVALID_LIST_MEMBER",
-            InvalidInputExceptionReason::InvalidPaginationToken => "INVALID_NEXT_TOKEN",
-            InvalidInputExceptionReason::InvalidPartyTypeTarget => "INVALID_PARTY_TYPE_TARGET",
-            InvalidInputExceptionReason::InvalidPattern => "INVALID_PATTERN",
-            InvalidInputExceptionReason::InvalidPatternTargetId => "INVALID_PATTERN_TARGET_ID",
-            InvalidInputExceptionReason::InvalidResourcePolicyJson => "INVALID_RESOURCE_POLICY_JSON",
-            InvalidInputExceptionReason::InvalidRoleName => "INVALID_ROLE_NAME",
-            InvalidInputExceptionReason::InvalidSyntaxOrganization => "INVALID_SYNTAX_ORGANIZATION_ARN",
-            InvalidInputExceptionReason::InvalidSyntaxPolicy => "INVALID_SYNTAX_POLICY_ID",
-            InvalidInputExceptionReason::InvalidSystemTagsParameter => "INVALID_SYSTEM_TAGS_PARAMETER",
-            InvalidInputExceptionReason::MaxLengthExceeded => "MAX_LENGTH_EXCEEDED",
-            InvalidInputExceptionReason::MaxFilterLimitExceeded => "MAX_LIMIT_EXCEEDED_FILTER",
-            InvalidInputExceptionReason::MaxValueExceeded => "MAX_VALUE_EXCEEDED",
-            InvalidInputExceptionReason::MinLengthExceeded => "MIN_LENGTH_EXCEEDED",
-            InvalidInputExceptionReason::MinValueExceeded => "MIN_VALUE_EXCEEDED",
-            InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
-            InvalidInputExceptionReason::TargetNotSupported => "TARGET_NOT_SUPPORTED",
-            InvalidInputExceptionReason::UnrecognizedServicePrincipal => "UNRECOGNIZED_SERVICE_PRINCIPAL",
-            InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
-            InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY",
-            InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY",
-            InvalidInputExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DUPLICATE_TAG_KEY", "IMMUTABLE_POLICY", "INPUT_REQUIRED", "INVALID_EMAIL_ADDRESS_TARGET", "INVALID_ENUM", "INVALID_ENUM_POLICY_TYPE", "INVALID_FULL_NAME_TARGET", "INVALID_LIST_MEMBER", "INVALID_NEXT_TOKEN", "INVALID_PARTY_TYPE_TARGET", "INVALID_PATTERN", "INVALID_PATTERN_TARGET_ID", "INVALID_RESOURCE_POLICY_JSON", "INVALID_ROLE_NAME", "INVALID_SYNTAX_ORGANIZATION_ARN", "INVALID_SYNTAX_POLICY_ID", "INVALID_SYSTEM_TAGS_PARAMETER", "MAX_LENGTH_EXCEEDED", "MAX_LIMIT_EXCEEDED_FILTER", "MAX_VALUE_EXCEEDED", "MIN_LENGTH_EXCEEDED", "MIN_VALUE_EXCEEDED", "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS", "TARGET_NOT_SUPPORTED", "UNRECOGNIZED_SERVICE_PRINCIPAL", "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY", "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY", "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InvalidInputExceptionReason::DuplicateTagKey => "DUPLICATE_TAG_KEY",
+    InvalidInputExceptionReason::ImmutablePolicy => "IMMUTABLE_POLICY",
+    InvalidInputExceptionReason::InputRequired => "INPUT_REQUIRED",
+    InvalidInputExceptionReason::InvalidEmailAddressTarget => "INVALID_EMAIL_ADDRESS_TARGET",
+    InvalidInputExceptionReason::InvalidEnum => "INVALID_ENUM",
+    InvalidInputExceptionReason::InvalidEnumPolicyType => "INVALID_ENUM_POLICY_TYPE",
+    InvalidInputExceptionReason::InvalidFullNameTarget => "INVALID_FULL_NAME_TARGET",
+    InvalidInputExceptionReason::InvalidListMember => "INVALID_LIST_MEMBER",
+    InvalidInputExceptionReason::InvalidPaginationToken => "INVALID_NEXT_TOKEN",
+    InvalidInputExceptionReason::InvalidPartyTypeTarget => "INVALID_PARTY_TYPE_TARGET",
+    InvalidInputExceptionReason::InvalidPattern => "INVALID_PATTERN",
+    InvalidInputExceptionReason::InvalidPatternTargetId => "INVALID_PATTERN_TARGET_ID",
+    InvalidInputExceptionReason::InvalidResourcePolicyJson => "INVALID_RESOURCE_POLICY_JSON",
+    InvalidInputExceptionReason::InvalidRoleName => "INVALID_ROLE_NAME",
+    InvalidInputExceptionReason::InvalidSyntaxOrganization => "INVALID_SYNTAX_ORGANIZATION_ARN",
+    InvalidInputExceptionReason::InvalidSyntaxPolicy => "INVALID_SYNTAX_POLICY_ID",
+    InvalidInputExceptionReason::InvalidSystemTagsParameter => "INVALID_SYSTEM_TAGS_PARAMETER",
+    InvalidInputExceptionReason::MaxLengthExceeded => "MAX_LENGTH_EXCEEDED",
+    InvalidInputExceptionReason::MaxFilterLimitExceeded => "MAX_LIMIT_EXCEEDED_FILTER",
+    InvalidInputExceptionReason::MaxValueExceeded => "MAX_VALUE_EXCEEDED",
+    InvalidInputExceptionReason::MinLengthExceeded => "MIN_LENGTH_EXCEEDED",
+    InvalidInputExceptionReason::MinValueExceeded => "MIN_VALUE_EXCEEDED",
+    InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
+    InvalidInputExceptionReason::TargetNotSupported => "TARGET_NOT_SUPPORTED",
+    InvalidInputExceptionReason::UnrecognizedServicePrincipal => "UNRECOGNIZED_SERVICE_PRINCIPAL",
+    InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
+    InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY",
+    InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY",
+    InvalidInputExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DUPLICATE_TAG_KEY", "IMMUTABLE_POLICY", "INPUT_REQUIRED", "INVALID_EMAIL_ADDRESS_TARGET", "INVALID_ENUM", "INVALID_ENUM_POLICY_TYPE", "INVALID_FULL_NAME_TARGET", "INVALID_LIST_MEMBER", "INVALID_NEXT_TOKEN", "INVALID_PARTY_TYPE_TARGET", "INVALID_PATTERN", "INVALID_PATTERN_TARGET_ID", "INVALID_RESOURCE_POLICY_JSON", "INVALID_ROLE_NAME", "INVALID_SYNTAX_ORGANIZATION_ARN", "INVALID_SYNTAX_POLICY_ID", "INVALID_SYSTEM_TAGS_PARAMETER", "MAX_LENGTH_EXCEEDED", "MAX_LIMIT_EXCEEDED_FILTER", "MAX_VALUE_EXCEEDED", "MIN_LENGTH_EXCEEDED", "MIN_VALUE_EXCEEDED", "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS", "TARGET_NOT_SUPPORTED", "UNRECOGNIZED_SERVICE_PRINCIPAL", "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY", "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY", "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY"]
+                }
+            }
 impl AsRef<str> for InvalidInputExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ConstraintViolationExceptionReason`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -354,45 +352,45 @@ pub enum ConstraintViolationExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConstraintViolationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_CANNOT_LEAVE_ORGANIZATION" => ConstraintViolationExceptionReason::AccountCannotLeaveOrganization,
-            "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula,
-            "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification,
-            "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded,
-            "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountNumberLimitExceeded,
-            "CANNOT_CLOSE_MANAGEMENT_ACCOUNT" => ConstraintViolationExceptionReason::CannotCloseManagementAccount,
-            "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR" => ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator,
-            "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG" => ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg,
-            "CLOSE_ACCOUNT_QUOTA_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountQuotaExceeded,
-            "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded,
-            "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION" => ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion,
-            "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE" => ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService,
-            "EMAIL_VERIFICATION_CODE_EXPIRED" => ConstraintViolationExceptionReason::EmailVerificationCodeExpired,
-            "HANDSHAKE_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
-            "INVALID_PAYMENT_INSTRUMENT" => ConstraintViolationExceptionReason::InvalidPaymentInstrument,
-            "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE" => ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace,
-            "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE" => ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense,
-            "MASTER_ACCOUNT_MISSING_CONTACT_INFO" => ConstraintViolationExceptionReason::MasterAccountMissingContactInfo,
-            "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED" => ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled,
-            "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED" => ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired,
-            "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded,
-            "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded,
-            "MAX_TAG_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxTagLimitExceeded,
-            "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED" => ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired,
-            "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded,
-            "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE" => ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode,
-            "OU_DEPTH_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::OuDepthLimitExceeded,
-            "OU_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::OuNumberLimitExceeded,
-            "POLICY_CONTENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyContentLimitExceeded,
-            "POLICY_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyNumberLimitExceeded,
-            "SERVICE_ACCESS_NOT_ENABLED" => ConstraintViolationExceptionReason::ServiceAccessNotEnabled,
-            "TAG_POLICY_VIOLATION" => ConstraintViolationExceptionReason::TagPolicyViolation,
-            "WAIT_PERIOD_ACTIVE" => ConstraintViolationExceptionReason::WaitPeriodActive,
-            other => ConstraintViolationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT_CANNOT_LEAVE_ORGANIZATION" => ConstraintViolationExceptionReason::AccountCannotLeaveOrganization,
+"ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula,
+"ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification,
+"ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded,
+"ACCOUNT_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountNumberLimitExceeded,
+"CANNOT_CLOSE_MANAGEMENT_ACCOUNT" => ConstraintViolationExceptionReason::CannotCloseManagementAccount,
+"CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR" => ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator,
+"CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG" => ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg,
+"CLOSE_ACCOUNT_QUOTA_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountQuotaExceeded,
+"CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded,
+"CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION" => ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion,
+"DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE" => ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService,
+"EMAIL_VERIFICATION_CODE_EXPIRED" => ConstraintViolationExceptionReason::EmailVerificationCodeExpired,
+"HANDSHAKE_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
+"INVALID_PAYMENT_INSTRUMENT" => ConstraintViolationExceptionReason::InvalidPaymentInstrument,
+"MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE" => ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace,
+"MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE" => ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense,
+"MASTER_ACCOUNT_MISSING_CONTACT_INFO" => ConstraintViolationExceptionReason::MasterAccountMissingContactInfo,
+"MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED" => ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled,
+"MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED" => ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired,
+"MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded,
+"MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded,
+"MAX_TAG_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxTagLimitExceeded,
+"MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED" => ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired,
+"MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded,
+"ORGANIZATION_NOT_IN_ALL_FEATURES_MODE" => ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode,
+"OU_DEPTH_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::OuDepthLimitExceeded,
+"OU_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::OuNumberLimitExceeded,
+"POLICY_CONTENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyContentLimitExceeded,
+"POLICY_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyNumberLimitExceeded,
+"SERVICE_ACCESS_NOT_ENABLED" => ConstraintViolationExceptionReason::ServiceAccessNotEnabled,
+"TAG_POLICY_VIOLATION" => ConstraintViolationExceptionReason::TagPolicyViolation,
+"WAIT_PERIOD_ACTIVE" => ConstraintViolationExceptionReason::WaitPeriodActive,
+other => ConstraintViolationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConstraintViolationExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -401,57 +399,55 @@ impl std::str::FromStr for ConstraintViolationExceptionReason {
                 }
             }
 impl ConstraintViolationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConstraintViolationExceptionReason::AccountCannotLeaveOrganization => "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
-            ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula => "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
-            ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
-            ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::CannotCloseManagementAccount => "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
-            ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
-            ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
-            ConstraintViolationExceptionReason::CloseAccountQuotaExceeded => "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
-            ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded => "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion => "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION",
-            ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService => "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
-            ConstraintViolationExceptionReason::EmailVerificationCodeExpired => "EMAIL_VERIFICATION_CODE_EXPIRED",
-            ConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
-            ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace => "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE",
-            ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense => "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE",
-            ConstraintViolationExceptionReason::MasterAccountMissingContactInfo => "MASTER_ACCOUNT_MISSING_CONTACT_INFO",
-            ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled => "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED",
-            ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired => "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
-            ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded => "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded => "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::MaxTagLimitExceeded => "MAX_TAG_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired => "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
-            ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded => "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode => "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE",
-            ConstraintViolationExceptionReason::OuDepthLimitExceeded => "OU_DEPTH_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::OuNumberLimitExceeded => "OU_NUMBER_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::PolicyContentLimitExceeded => "POLICY_CONTENT_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => "POLICY_NUMBER_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::ServiceAccessNotEnabled => "SERVICE_ACCESS_NOT_ENABLED",
-            ConstraintViolationExceptionReason::TagPolicyViolation => "TAG_POLICY_VIOLATION",
-            ConstraintViolationExceptionReason::WaitPeriodActive => "WAIT_PERIOD_ACTIVE",
-            ConstraintViolationExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_CANNOT_LEAVE_ORGANIZATION", "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA", "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION", "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED", "ACCOUNT_NUMBER_LIMIT_EXCEEDED", "CANNOT_CLOSE_MANAGEMENT_ACCOUNT", "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR", "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG", "CLOSE_ACCOUNT_QUOTA_EXCEEDED", "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED", "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION", "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE", "EMAIL_VERIFICATION_CODE_EXPIRED", "HANDSHAKE_RATE_LIMIT_EXCEEDED", "INVALID_PAYMENT_INSTRUMENT", "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE", "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE", "MASTER_ACCOUNT_MISSING_CONTACT_INFO", "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED", "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED", "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED", "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED", "MAX_TAG_LIMIT_EXCEEDED", "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED", "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED", "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE", "OU_DEPTH_LIMIT_EXCEEDED", "OU_NUMBER_LIMIT_EXCEEDED", "POLICY_CONTENT_LIMIT_EXCEEDED", "POLICY_NUMBER_LIMIT_EXCEEDED", "SERVICE_ACCESS_NOT_ENABLED", "TAG_POLICY_VIOLATION", "WAIT_PERIOD_ACTIVE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConstraintViolationExceptionReason::AccountCannotLeaveOrganization => "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
+    ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula => "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
+    ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
+    ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::CannotCloseManagementAccount => "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
+    ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
+    ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
+    ConstraintViolationExceptionReason::CloseAccountQuotaExceeded => "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
+    ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded => "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion => "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION",
+    ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService => "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
+    ConstraintViolationExceptionReason::EmailVerificationCodeExpired => "EMAIL_VERIFICATION_CODE_EXPIRED",
+    ConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
+    ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace => "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE",
+    ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense => "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE",
+    ConstraintViolationExceptionReason::MasterAccountMissingContactInfo => "MASTER_ACCOUNT_MISSING_CONTACT_INFO",
+    ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled => "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED",
+    ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired => "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
+    ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded => "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded => "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::MaxTagLimitExceeded => "MAX_TAG_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired => "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
+    ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded => "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode => "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE",
+    ConstraintViolationExceptionReason::OuDepthLimitExceeded => "OU_DEPTH_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::OuNumberLimitExceeded => "OU_NUMBER_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::PolicyContentLimitExceeded => "POLICY_CONTENT_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => "POLICY_NUMBER_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::ServiceAccessNotEnabled => "SERVICE_ACCESS_NOT_ENABLED",
+    ConstraintViolationExceptionReason::TagPolicyViolation => "TAG_POLICY_VIOLATION",
+    ConstraintViolationExceptionReason::WaitPeriodActive => "WAIT_PERIOD_ACTIVE",
+    ConstraintViolationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_CANNOT_LEAVE_ORGANIZATION", "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA", "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION", "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED", "ACCOUNT_NUMBER_LIMIT_EXCEEDED", "CANNOT_CLOSE_MANAGEMENT_ACCOUNT", "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR", "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG", "CLOSE_ACCOUNT_QUOTA_EXCEEDED", "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED", "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION", "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE", "EMAIL_VERIFICATION_CODE_EXPIRED", "HANDSHAKE_RATE_LIMIT_EXCEEDED", "INVALID_PAYMENT_INSTRUMENT", "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE", "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE", "MASTER_ACCOUNT_MISSING_CONTACT_INFO", "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED", "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED", "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED", "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED", "MAX_TAG_LIMIT_EXCEEDED", "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED", "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED", "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE", "OU_DEPTH_LIMIT_EXCEEDED", "OU_NUMBER_LIMIT_EXCEEDED", "POLICY_CONTENT_LIMIT_EXCEEDED", "POLICY_NUMBER_LIMIT_EXCEEDED", "SERVICE_ACCESS_NOT_ENABLED", "TAG_POLICY_VIOLATION", "WAIT_PERIOD_ACTIVE"]
+                }
+            }
 impl AsRef<str> for ConstraintViolationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies.</p>
 #[non_exhaustive]
@@ -733,16 +729,16 @@ pub enum PolicyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PolicyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AISERVICES_OPT_OUT_POLICY" => PolicyType::AiservicesOptOutPolicy,
-            "BACKUP_POLICY" => PolicyType::BackupPolicy,
-            "SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
-            "TAG_POLICY" => PolicyType::TagPolicy,
-            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AISERVICES_OPT_OUT_POLICY" => PolicyType::AiservicesOptOutPolicy,
+"BACKUP_POLICY" => PolicyType::BackupPolicy,
+"SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
+"TAG_POLICY" => PolicyType::TagPolicy,
+other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PolicyType {
                 type Err = std::convert::Infallible;
 
@@ -751,28 +747,26 @@ impl std::str::FromStr for PolicyType {
                 }
             }
 impl PolicyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PolicyType::AiservicesOptOutPolicy => "AISERVICES_OPT_OUT_POLICY",
-            PolicyType::BackupPolicy => "BACKUP_POLICY",
-            PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
-            PolicyType::TagPolicy => "TAG_POLICY",
-            PolicyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AISERVICES_OPT_OUT_POLICY", "BACKUP_POLICY", "SERVICE_CONTROL_POLICY", "TAG_POLICY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PolicyType::AiservicesOptOutPolicy => "AISERVICES_OPT_OUT_POLICY",
+    PolicyType::BackupPolicy => "BACKUP_POLICY",
+    PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
+    PolicyType::TagPolicy => "TAG_POLICY",
+    PolicyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AISERVICES_OPT_OUT_POLICY", "BACKUP_POLICY", "SERVICE_CONTROL_POLICY", "TAG_POLICY"]
+                }
+            }
 impl AsRef<str> for PolicyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains details about an organizational unit (OU). An OU is a container of Amazon Web Services accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.</p>
 #[non_exhaustive]
@@ -1277,15 +1271,15 @@ pub enum TargetType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT" => TargetType::Account,
-            "ORGANIZATIONAL_UNIT" => TargetType::OrganizationalUnit,
-            "ROOT" => TargetType::Root,
-            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT" => TargetType::Account,
+"ORGANIZATIONAL_UNIT" => TargetType::OrganizationalUnit,
+"ROOT" => TargetType::Root,
+other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TargetType {
                 type Err = std::convert::Infallible;
 
@@ -1294,27 +1288,25 @@ impl std::str::FromStr for TargetType {
                 }
             }
 impl TargetType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TargetType::Account => "ACCOUNT",
-            TargetType::OrganizationalUnit => "ORGANIZATIONAL_UNIT",
-            TargetType::Root => "ROOT",
-            TargetType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT", "ORGANIZATIONAL_UNIT", "ROOT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TargetType::Account => "ACCOUNT",
+    TargetType::OrganizationalUnit => "ORGANIZATIONAL_UNIT",
+    TargetType::Root => "ROOT",
+    TargetType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT", "ORGANIZATIONAL_UNIT", "ROOT"]
+                }
+            }
 impl AsRef<str> for TargetType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. The root contains every Amazon Web Services account in the organization.</p>
 #[non_exhaustive]
@@ -1568,15 +1560,15 @@ pub enum PolicyTypeStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PolicyTypeStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENABLED" => PolicyTypeStatus::Enabled,
-            "PENDING_DISABLE" => PolicyTypeStatus::PendingDisable,
-            "PENDING_ENABLE" => PolicyTypeStatus::PendingEnable,
-            other => PolicyTypeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ENABLED" => PolicyTypeStatus::Enabled,
+"PENDING_DISABLE" => PolicyTypeStatus::PendingDisable,
+"PENDING_ENABLE" => PolicyTypeStatus::PendingEnable,
+other => PolicyTypeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PolicyTypeStatus {
                 type Err = std::convert::Infallible;
 
@@ -1585,27 +1577,25 @@ impl std::str::FromStr for PolicyTypeStatus {
                 }
             }
 impl PolicyTypeStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PolicyTypeStatus::Enabled => "ENABLED",
-            PolicyTypeStatus::PendingDisable => "PENDING_DISABLE",
-            PolicyTypeStatus::PendingEnable => "PENDING_ENABLE",
-            PolicyTypeStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENABLED", "PENDING_DISABLE", "PENDING_ENABLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PolicyTypeStatus::Enabled => "ENABLED",
+    PolicyTypeStatus::PendingDisable => "PENDING_DISABLE",
+    PolicyTypeStatus::PendingEnable => "PENDING_ENABLE",
+    PolicyTypeStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENABLED", "PENDING_DISABLE", "PENDING_ENABLE"]
+                }
+            }
 impl AsRef<str> for PolicyTypeStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about either a root or an organizational unit (OU) that can contain OUs or accounts in an organization.</p>
 #[non_exhaustive]
@@ -1743,14 +1733,14 @@ pub enum ParentType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ORGANIZATIONAL_UNIT" => ParentType::OrganizationalUnit,
-            "ROOT" => ParentType::Root,
-            other => ParentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ORGANIZATIONAL_UNIT" => ParentType::OrganizationalUnit,
+"ROOT" => ParentType::Root,
+other => ParentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ParentType {
                 type Err = std::convert::Infallible;
 
@@ -1759,26 +1749,24 @@ impl std::str::FromStr for ParentType {
                 }
             }
 impl ParentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ParentType::OrganizationalUnit => "ORGANIZATIONAL_UNIT",
-            ParentType::Root => "ROOT",
-            ParentType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ORGANIZATIONAL_UNIT", "ROOT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ParentType::OrganizationalUnit => "ORGANIZATIONAL_UNIT",
+    ParentType::Root => "ROOT",
+    ParentType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ORGANIZATIONAL_UNIT", "ROOT"]
+                }
+            }
 impl AsRef<str> for ParentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a management account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> 
 /// <p> <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>, or <code>EXPIRED</code> show up in lists for only 30 days after entering that state After that they are deleted.</p>
@@ -2245,20 +2233,20 @@ pub enum HandshakeResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HandshakeResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT" => HandshakeResourceType::Account,
-            "EMAIL" => HandshakeResourceType::Email,
-            "MASTER_EMAIL" => HandshakeResourceType::MasterEmail,
-            "MASTER_NAME" => HandshakeResourceType::MasterName,
-            "NOTES" => HandshakeResourceType::Notes,
-            "ORGANIZATION" => HandshakeResourceType::Organization,
-            "ORGANIZATION_FEATURE_SET" => HandshakeResourceType::OrganizationFeatureSet,
-            "PARENT_HANDSHAKE" => HandshakeResourceType::ParentHandshake,
-            other => HandshakeResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT" => HandshakeResourceType::Account,
+"EMAIL" => HandshakeResourceType::Email,
+"MASTER_EMAIL" => HandshakeResourceType::MasterEmail,
+"MASTER_NAME" => HandshakeResourceType::MasterName,
+"NOTES" => HandshakeResourceType::Notes,
+"ORGANIZATION" => HandshakeResourceType::Organization,
+"ORGANIZATION_FEATURE_SET" => HandshakeResourceType::OrganizationFeatureSet,
+"PARENT_HANDSHAKE" => HandshakeResourceType::ParentHandshake,
+other => HandshakeResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HandshakeResourceType {
                 type Err = std::convert::Infallible;
 
@@ -2267,32 +2255,30 @@ impl std::str::FromStr for HandshakeResourceType {
                 }
             }
 impl HandshakeResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HandshakeResourceType::Account => "ACCOUNT",
-            HandshakeResourceType::Email => "EMAIL",
-            HandshakeResourceType::MasterEmail => "MASTER_EMAIL",
-            HandshakeResourceType::MasterName => "MASTER_NAME",
-            HandshakeResourceType::Notes => "NOTES",
-            HandshakeResourceType::Organization => "ORGANIZATION",
-            HandshakeResourceType::OrganizationFeatureSet => "ORGANIZATION_FEATURE_SET",
-            HandshakeResourceType::ParentHandshake => "PARENT_HANDSHAKE",
-            HandshakeResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT", "EMAIL", "MASTER_EMAIL", "MASTER_NAME", "NOTES", "ORGANIZATION", "ORGANIZATION_FEATURE_SET", "PARENT_HANDSHAKE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HandshakeResourceType::Account => "ACCOUNT",
+    HandshakeResourceType::Email => "EMAIL",
+    HandshakeResourceType::MasterEmail => "MASTER_EMAIL",
+    HandshakeResourceType::MasterName => "MASTER_NAME",
+    HandshakeResourceType::Notes => "NOTES",
+    HandshakeResourceType::Organization => "ORGANIZATION",
+    HandshakeResourceType::OrganizationFeatureSet => "ORGANIZATION_FEATURE_SET",
+    HandshakeResourceType::ParentHandshake => "PARENT_HANDSHAKE",
+    HandshakeResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT", "EMAIL", "MASTER_EMAIL", "MASTER_NAME", "NOTES", "ORGANIZATION", "ORGANIZATION_FEATURE_SET", "PARENT_HANDSHAKE"]
+                }
+            }
 impl AsRef<str> for HandshakeResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ActionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2347,16 +2333,16 @@ pub enum ActionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE" => ActionType::AddOrganizationsServiceLinkedRole,
-            "APPROVE_ALL_FEATURES" => ActionType::ApproveAllFeatures,
-            "ENABLE_ALL_FEATURES" => ActionType::EnableAllFeatures,
-            "INVITE" => ActionType::InviteAccountToOrganization,
-            other => ActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE" => ActionType::AddOrganizationsServiceLinkedRole,
+"APPROVE_ALL_FEATURES" => ActionType::ApproveAllFeatures,
+"ENABLE_ALL_FEATURES" => ActionType::EnableAllFeatures,
+"INVITE" => ActionType::InviteAccountToOrganization,
+other => ActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ActionType {
                 type Err = std::convert::Infallible;
 
@@ -2365,28 +2351,26 @@ impl std::str::FromStr for ActionType {
                 }
             }
 impl ActionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ActionType::AddOrganizationsServiceLinkedRole => "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE",
-            ActionType::ApproveAllFeatures => "APPROVE_ALL_FEATURES",
-            ActionType::EnableAllFeatures => "ENABLE_ALL_FEATURES",
-            ActionType::InviteAccountToOrganization => "INVITE",
-            ActionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE", "APPROVE_ALL_FEATURES", "ENABLE_ALL_FEATURES", "INVITE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ActionType::AddOrganizationsServiceLinkedRole => "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE",
+    ActionType::ApproveAllFeatures => "APPROVE_ALL_FEATURES",
+    ActionType::EnableAllFeatures => "ENABLE_ALL_FEATURES",
+    ActionType::InviteAccountToOrganization => "INVITE",
+    ActionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE", "APPROVE_ALL_FEATURES", "ENABLE_ALL_FEATURES", "INVITE"]
+                }
+            }
 impl AsRef<str> for ActionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `HandshakeState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2447,18 +2431,18 @@ pub enum HandshakeState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HandshakeState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCEPTED" => HandshakeState::Accepted,
-            "CANCELED" => HandshakeState::Canceled,
-            "DECLINED" => HandshakeState::Declined,
-            "EXPIRED" => HandshakeState::Expired,
-            "OPEN" => HandshakeState::Open,
-            "REQUESTED" => HandshakeState::Requested,
-            other => HandshakeState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCEPTED" => HandshakeState::Accepted,
+"CANCELED" => HandshakeState::Canceled,
+"DECLINED" => HandshakeState::Declined,
+"EXPIRED" => HandshakeState::Expired,
+"OPEN" => HandshakeState::Open,
+"REQUESTED" => HandshakeState::Requested,
+other => HandshakeState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HandshakeState {
                 type Err = std::convert::Infallible;
 
@@ -2467,30 +2451,28 @@ impl std::str::FromStr for HandshakeState {
                 }
             }
 impl HandshakeState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HandshakeState::Accepted => "ACCEPTED",
-            HandshakeState::Canceled => "CANCELED",
-            HandshakeState::Declined => "DECLINED",
-            HandshakeState::Expired => "EXPIRED",
-            HandshakeState::Open => "OPEN",
-            HandshakeState::Requested => "REQUESTED",
-            HandshakeState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCEPTED", "CANCELED", "DECLINED", "EXPIRED", "OPEN", "REQUESTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HandshakeState::Accepted => "ACCEPTED",
+    HandshakeState::Canceled => "CANCELED",
+    HandshakeState::Declined => "DECLINED",
+    HandshakeState::Expired => "EXPIRED",
+    HandshakeState::Open => "OPEN",
+    HandshakeState::Requested => "REQUESTED",
+    HandshakeState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCEPTED", "CANCELED", "DECLINED", "EXPIRED", "OPEN", "REQUESTED"]
+                }
+            }
 impl AsRef<str> for HandshakeState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Identifies a participant in a handshake.</p>
 #[non_exhaustive]
@@ -2631,15 +2613,15 @@ pub enum HandshakePartyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HandshakePartyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT" => HandshakePartyType::Account,
-            "EMAIL" => HandshakePartyType::Email,
-            "ORGANIZATION" => HandshakePartyType::Organization,
-            other => HandshakePartyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT" => HandshakePartyType::Account,
+"EMAIL" => HandshakePartyType::Email,
+"ORGANIZATION" => HandshakePartyType::Organization,
+other => HandshakePartyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HandshakePartyType {
                 type Err = std::convert::Infallible;
 
@@ -2648,27 +2630,25 @@ impl std::str::FromStr for HandshakePartyType {
                 }
             }
 impl HandshakePartyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HandshakePartyType::Account => "ACCOUNT",
-            HandshakePartyType::Email => "EMAIL",
-            HandshakePartyType::Organization => "ORGANIZATION",
-            HandshakePartyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT", "EMAIL", "ORGANIZATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HandshakePartyType::Account => "ACCOUNT",
+    HandshakePartyType::Email => "EMAIL",
+    HandshakePartyType::Organization => "ORGANIZATION",
+    HandshakePartyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT", "EMAIL", "ORGANIZATION"]
+                }
+            }
 impl AsRef<str> for HandshakePartyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Specifies the criteria that are used to select the handshakes for the operation.</p>
 #[non_exhaustive]
@@ -3078,14 +3058,14 @@ pub enum AccountJoinedMethod {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountJoinedMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED" => AccountJoinedMethod::Created,
-            "INVITED" => AccountJoinedMethod::Invited,
-            other => AccountJoinedMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATED" => AccountJoinedMethod::Created,
+"INVITED" => AccountJoinedMethod::Invited,
+other => AccountJoinedMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AccountJoinedMethod {
                 type Err = std::convert::Infallible;
 
@@ -3094,26 +3074,24 @@ impl std::str::FromStr for AccountJoinedMethod {
                 }
             }
 impl AccountJoinedMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccountJoinedMethod::Created => "CREATED",
-            AccountJoinedMethod::Invited => "INVITED",
-            AccountJoinedMethod::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED", "INVITED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccountJoinedMethod::Created => "CREATED",
+    AccountJoinedMethod::Invited => "INVITED",
+    AccountJoinedMethod::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED", "INVITED"]
+                }
+            }
 impl AsRef<str> for AccountJoinedMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AccountStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3165,15 +3143,15 @@ pub enum AccountStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => AccountStatus::Active,
-            "PENDING_CLOSURE" => AccountStatus::PendingClosure,
-            "SUSPENDED" => AccountStatus::Suspended,
-            other => AccountStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => AccountStatus::Active,
+"PENDING_CLOSURE" => AccountStatus::PendingClosure,
+"SUSPENDED" => AccountStatus::Suspended,
+other => AccountStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AccountStatus {
                 type Err = std::convert::Infallible;
 
@@ -3182,27 +3160,25 @@ impl std::str::FromStr for AccountStatus {
                 }
             }
 impl AccountStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccountStatus::Active => "ACTIVE",
-            AccountStatus::PendingClosure => "PENDING_CLOSURE",
-            AccountStatus::Suspended => "SUSPENDED",
-            AccountStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "PENDING_CLOSURE", "SUSPENDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccountStatus::Active => "ACTIVE",
+    AccountStatus::PendingClosure => "PENDING_CLOSURE",
+    AccountStatus::Suspended => "SUSPENDED",
+    AccountStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "PENDING_CLOSURE", "SUSPENDED"]
+                }
+            }
 impl AsRef<str> for AccountStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
 #[non_exhaustive]
@@ -3573,27 +3549,27 @@ pub enum CreateAccountFailureReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CreateAccountFailureReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_LIMIT_EXCEEDED" => CreateAccountFailureReason::AccountLimitExceeded,
-            "CONCURRENT_ACCOUNT_MODIFICATION" => CreateAccountFailureReason::ConcurrentAccountModification,
-            "EMAIL_ALREADY_EXISTS" => CreateAccountFailureReason::EmailAlreadyExists,
-            "FAILED_BUSINESS_VALIDATION" => CreateAccountFailureReason::FailedBusinessValidation,
-            "GOVCLOUD_ACCOUNT_ALREADY_EXISTS" => CreateAccountFailureReason::GovcloudAccountAlreadyExists,
-            "INTERNAL_FAILURE" => CreateAccountFailureReason::InternalFailure,
-            "INVALID_ADDRESS" => CreateAccountFailureReason::InvalidAddress,
-            "INVALID_EMAIL" => CreateAccountFailureReason::InvalidEmail,
-            "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" => CreateAccountFailureReason::InvalidIdentityForBusinessValidation,
-            "INVALID_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::InvalidPaymentInstrument,
-            "MISSING_BUSINESS_VALIDATION" => CreateAccountFailureReason::MissingBusinessValidation,
-            "MISSING_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::MissingPaymentInstrument,
-            "PENDING_BUSINESS_VALIDATION" => CreateAccountFailureReason::PendingBusinessValidatioNv,
-            "UNKNOWN_BUSINESS_VALIDATION" => CreateAccountFailureReason::UnknownBusinessValidation,
-            "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED" => CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported,
-            other => CreateAccountFailureReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT_LIMIT_EXCEEDED" => CreateAccountFailureReason::AccountLimitExceeded,
+"CONCURRENT_ACCOUNT_MODIFICATION" => CreateAccountFailureReason::ConcurrentAccountModification,
+"EMAIL_ALREADY_EXISTS" => CreateAccountFailureReason::EmailAlreadyExists,
+"FAILED_BUSINESS_VALIDATION" => CreateAccountFailureReason::FailedBusinessValidation,
+"GOVCLOUD_ACCOUNT_ALREADY_EXISTS" => CreateAccountFailureReason::GovcloudAccountAlreadyExists,
+"INTERNAL_FAILURE" => CreateAccountFailureReason::InternalFailure,
+"INVALID_ADDRESS" => CreateAccountFailureReason::InvalidAddress,
+"INVALID_EMAIL" => CreateAccountFailureReason::InvalidEmail,
+"INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" => CreateAccountFailureReason::InvalidIdentityForBusinessValidation,
+"INVALID_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::InvalidPaymentInstrument,
+"MISSING_BUSINESS_VALIDATION" => CreateAccountFailureReason::MissingBusinessValidation,
+"MISSING_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::MissingPaymentInstrument,
+"PENDING_BUSINESS_VALIDATION" => CreateAccountFailureReason::PendingBusinessValidatioNv,
+"UNKNOWN_BUSINESS_VALIDATION" => CreateAccountFailureReason::UnknownBusinessValidation,
+"UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED" => CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported,
+other => CreateAccountFailureReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CreateAccountFailureReason {
                 type Err = std::convert::Infallible;
 
@@ -3602,39 +3578,37 @@ impl std::str::FromStr for CreateAccountFailureReason {
                 }
             }
 impl CreateAccountFailureReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CreateAccountFailureReason::AccountLimitExceeded => "ACCOUNT_LIMIT_EXCEEDED",
-            CreateAccountFailureReason::ConcurrentAccountModification => "CONCURRENT_ACCOUNT_MODIFICATION",
-            CreateAccountFailureReason::EmailAlreadyExists => "EMAIL_ALREADY_EXISTS",
-            CreateAccountFailureReason::FailedBusinessValidation => "FAILED_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::GovcloudAccountAlreadyExists => "GOVCLOUD_ACCOUNT_ALREADY_EXISTS",
-            CreateAccountFailureReason::InternalFailure => "INTERNAL_FAILURE",
-            CreateAccountFailureReason::InvalidAddress => "INVALID_ADDRESS",
-            CreateAccountFailureReason::InvalidEmail => "INVALID_EMAIL",
-            CreateAccountFailureReason::InvalidIdentityForBusinessValidation => "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
-            CreateAccountFailureReason::MissingBusinessValidation => "MISSING_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::MissingPaymentInstrument => "MISSING_PAYMENT_INSTRUMENT",
-            CreateAccountFailureReason::PendingBusinessValidatioNv => "PENDING_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::UnknownBusinessValidation => "UNKNOWN_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED",
-            CreateAccountFailureReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_LIMIT_EXCEEDED", "CONCURRENT_ACCOUNT_MODIFICATION", "EMAIL_ALREADY_EXISTS", "FAILED_BUSINESS_VALIDATION", "GOVCLOUD_ACCOUNT_ALREADY_EXISTS", "INTERNAL_FAILURE", "INVALID_ADDRESS", "INVALID_EMAIL", "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION", "INVALID_PAYMENT_INSTRUMENT", "MISSING_BUSINESS_VALIDATION", "MISSING_PAYMENT_INSTRUMENT", "PENDING_BUSINESS_VALIDATION", "UNKNOWN_BUSINESS_VALIDATION", "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CreateAccountFailureReason::AccountLimitExceeded => "ACCOUNT_LIMIT_EXCEEDED",
+    CreateAccountFailureReason::ConcurrentAccountModification => "CONCURRENT_ACCOUNT_MODIFICATION",
+    CreateAccountFailureReason::EmailAlreadyExists => "EMAIL_ALREADY_EXISTS",
+    CreateAccountFailureReason::FailedBusinessValidation => "FAILED_BUSINESS_VALIDATION",
+    CreateAccountFailureReason::GovcloudAccountAlreadyExists => "GOVCLOUD_ACCOUNT_ALREADY_EXISTS",
+    CreateAccountFailureReason::InternalFailure => "INTERNAL_FAILURE",
+    CreateAccountFailureReason::InvalidAddress => "INVALID_ADDRESS",
+    CreateAccountFailureReason::InvalidEmail => "INVALID_EMAIL",
+    CreateAccountFailureReason::InvalidIdentityForBusinessValidation => "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION",
+    CreateAccountFailureReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
+    CreateAccountFailureReason::MissingBusinessValidation => "MISSING_BUSINESS_VALIDATION",
+    CreateAccountFailureReason::MissingPaymentInstrument => "MISSING_PAYMENT_INSTRUMENT",
+    CreateAccountFailureReason::PendingBusinessValidatioNv => "PENDING_BUSINESS_VALIDATION",
+    CreateAccountFailureReason::UnknownBusinessValidation => "UNKNOWN_BUSINESS_VALIDATION",
+    CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED",
+    CreateAccountFailureReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_LIMIT_EXCEEDED", "CONCURRENT_ACCOUNT_MODIFICATION", "EMAIL_ALREADY_EXISTS", "FAILED_BUSINESS_VALIDATION", "GOVCLOUD_ACCOUNT_ALREADY_EXISTS", "INTERNAL_FAILURE", "INVALID_ADDRESS", "INVALID_EMAIL", "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION", "INVALID_PAYMENT_INSTRUMENT", "MISSING_BUSINESS_VALIDATION", "MISSING_PAYMENT_INSTRUMENT", "PENDING_BUSINESS_VALIDATION", "UNKNOWN_BUSINESS_VALIDATION", "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED"]
+                }
+            }
 impl AsRef<str> for CreateAccountFailureReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CreateAccountState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3686,15 +3660,15 @@ pub enum CreateAccountState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CreateAccountState {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => CreateAccountState::Failed,
-            "IN_PROGRESS" => CreateAccountState::InProgress,
-            "SUCCEEDED" => CreateAccountState::Succeeded,
-            other => CreateAccountState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => CreateAccountState::Failed,
+"IN_PROGRESS" => CreateAccountState::InProgress,
+"SUCCEEDED" => CreateAccountState::Succeeded,
+other => CreateAccountState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CreateAccountState {
                 type Err = std::convert::Infallible;
 
@@ -3703,27 +3677,25 @@ impl std::str::FromStr for CreateAccountState {
                 }
             }
 impl CreateAccountState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CreateAccountState::Failed => "FAILED",
-            CreateAccountState::InProgress => "IN_PROGRESS",
-            CreateAccountState::Succeeded => "SUCCEEDED",
-            CreateAccountState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "IN_PROGRESS", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CreateAccountState::Failed => "FAILED",
+    CreateAccountState::InProgress => "IN_PROGRESS",
+    CreateAccountState::Succeeded => "SUCCEEDED",
+    CreateAccountState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for CreateAccountState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains a list of child entities, either OUs or accounts.</p>
 #[non_exhaustive]
@@ -3861,14 +3833,14 @@ pub enum ChildType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChildType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT" => ChildType::Account,
-            "ORGANIZATIONAL_UNIT" => ChildType::OrganizationalUnit,
-            other => ChildType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT" => ChildType::Account,
+"ORGANIZATIONAL_UNIT" => ChildType::OrganizationalUnit,
+other => ChildType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ChildType {
                 type Err = std::convert::Infallible;
 
@@ -3877,26 +3849,24 @@ impl std::str::FromStr for ChildType {
                 }
             }
 impl ChildType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChildType::Account => "ACCOUNT",
-            ChildType::OrganizationalUnit => "ORGANIZATIONAL_UNIT",
-            ChildType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT", "ORGANIZATIONAL_UNIT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChildType::Account => "ACCOUNT",
+    ChildType::OrganizationalUnit => "ORGANIZATIONAL_UNIT",
+    ChildType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT", "ORGANIZATIONAL_UNIT"]
+                }
+            }
 impl AsRef<str> for ChildType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure that contains details of a service principal that represents an Amazon Web Services service that is enabled to integrate with Organizations.</p>
 #[non_exhaustive]
@@ -4244,22 +4214,22 @@ pub enum HandshakeConstraintViolationExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HandshakeConstraintViolationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::AccountNumberLimitExceeded,
-            "ALREADY_IN_AN_ORGANIZATION" => HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization,
-            "HANDSHAKE_RATE_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
-            "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures,
-            "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED" => HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified,
-            "ORGANIZATION_ALREADY_HAS_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures,
-            "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD" => HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord,
-            "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION" => HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration,
-            "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded,
-            "PAYMENT_INSTRUMENT_REQUIRED" => HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired,
-            other => HandshakeConstraintViolationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::AccountNumberLimitExceeded,
+"ALREADY_IN_AN_ORGANIZATION" => HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization,
+"HANDSHAKE_RATE_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
+"INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures,
+"MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED" => HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified,
+"ORGANIZATION_ALREADY_HAS_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures,
+"ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD" => HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord,
+"ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION" => HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration,
+"ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded,
+"PAYMENT_INSTRUMENT_REQUIRED" => HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired,
+other => HandshakeConstraintViolationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HandshakeConstraintViolationExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -4268,34 +4238,32 @@ impl std::str::FromStr for HandshakeConstraintViolationExceptionReason {
                 }
             }
 impl HandshakeConstraintViolationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HandshakeConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
-            HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization => "ALREADY_IN_AN_ORGANIZATION",
-            HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
-            HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures => "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES",
-            HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified => "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED",
-            HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures => "ORGANIZATION_ALREADY_HAS_ALL_FEATURES",
-            HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord => "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
-            HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration => "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION",
-            HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded => "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED",
-            HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => "PAYMENT_INSTRUMENT_REQUIRED",
-            HandshakeConstraintViolationExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_NUMBER_LIMIT_EXCEEDED", "ALREADY_IN_AN_ORGANIZATION", "HANDSHAKE_RATE_LIMIT_EXCEEDED", "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES", "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED", "ORGANIZATION_ALREADY_HAS_ALL_FEATURES", "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD", "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION", "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED", "PAYMENT_INSTRUMENT_REQUIRED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HandshakeConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+    HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization => "ALREADY_IN_AN_ORGANIZATION",
+    HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
+    HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures => "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES",
+    HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified => "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED",
+    HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures => "ORGANIZATION_ALREADY_HAS_ALL_FEATURES",
+    HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord => "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
+    HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration => "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION",
+    HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded => "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED",
+    HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => "PAYMENT_INSTRUMENT_REQUIRED",
+    HandshakeConstraintViolationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_NUMBER_LIMIT_EXCEEDED", "ALREADY_IN_AN_ORGANIZATION", "HANDSHAKE_RATE_LIMIT_EXCEEDED", "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES", "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED", "ORGANIZATION_ALREADY_HAS_ALL_FEATURES", "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD", "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION", "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED", "PAYMENT_INSTRUMENT_REQUIRED"]
+                }
+            }
 impl AsRef<str> for HandshakeConstraintViolationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies .</p>
 #[non_exhaustive]
@@ -4568,14 +4536,14 @@ pub enum OrganizationFeatureSet {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrganizationFeatureSet {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALL" => OrganizationFeatureSet::All,
-            "CONSOLIDATED_BILLING" => OrganizationFeatureSet::ConsolidatedBilling,
-            other => OrganizationFeatureSet::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALL" => OrganizationFeatureSet::All,
+"CONSOLIDATED_BILLING" => OrganizationFeatureSet::ConsolidatedBilling,
+other => OrganizationFeatureSet::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OrganizationFeatureSet {
                 type Err = std::convert::Infallible;
 
@@ -4584,26 +4552,24 @@ impl std::str::FromStr for OrganizationFeatureSet {
                 }
             }
 impl OrganizationFeatureSet {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OrganizationFeatureSet::All => "ALL",
-            OrganizationFeatureSet::ConsolidatedBilling => "CONSOLIDATED_BILLING",
-            OrganizationFeatureSet::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL", "CONSOLIDATED_BILLING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OrganizationFeatureSet::All => "ALL",
+    OrganizationFeatureSet::ConsolidatedBilling => "CONSOLIDATED_BILLING",
+    OrganizationFeatureSet::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALL", "CONSOLIDATED_BILLING"]
+                }
+            }
 impl AsRef<str> for OrganizationFeatureSet {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account.</p>
 #[non_exhaustive]
@@ -4762,15 +4728,15 @@ pub enum EffectivePolicyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EffectivePolicyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AISERVICES_OPT_OUT_POLICY" => EffectivePolicyType::AiservicesOptOutPolicy,
-            "BACKUP_POLICY" => EffectivePolicyType::BackupPolicy,
-            "TAG_POLICY" => EffectivePolicyType::TagPolicy,
-            other => EffectivePolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AISERVICES_OPT_OUT_POLICY" => EffectivePolicyType::AiservicesOptOutPolicy,
+"BACKUP_POLICY" => EffectivePolicyType::BackupPolicy,
+"TAG_POLICY" => EffectivePolicyType::TagPolicy,
+other => EffectivePolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EffectivePolicyType {
                 type Err = std::convert::Infallible;
 
@@ -4779,27 +4745,25 @@ impl std::str::FromStr for EffectivePolicyType {
                 }
             }
 impl EffectivePolicyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EffectivePolicyType::AiservicesOptOutPolicy => "AISERVICES_OPT_OUT_POLICY",
-            EffectivePolicyType::BackupPolicy => "BACKUP_POLICY",
-            EffectivePolicyType::TagPolicy => "TAG_POLICY",
-            EffectivePolicyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AISERVICES_OPT_OUT_POLICY", "BACKUP_POLICY", "TAG_POLICY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EffectivePolicyType::AiservicesOptOutPolicy => "AISERVICES_OPT_OUT_POLICY",
+    EffectivePolicyType::BackupPolicy => "BACKUP_POLICY",
+    EffectivePolicyType::TagPolicy => "TAG_POLICY",
+    EffectivePolicyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AISERVICES_OPT_OUT_POLICY", "BACKUP_POLICY", "TAG_POLICY"]
+                }
+            }
 impl AsRef<str> for EffectivePolicyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AccessDeniedForDependencyExceptionReason`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4845,13 +4809,13 @@ pub enum AccessDeniedForDependencyExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessDeniedForDependencyExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE" => AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole,
-            other => AccessDeniedForDependencyExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE" => AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole,
+other => AccessDeniedForDependencyExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AccessDeniedForDependencyExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -4860,25 +4824,23 @@ impl std::str::FromStr for AccessDeniedForDependencyExceptionReason {
                 }
             }
 impl AccessDeniedForDependencyExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE",
-            AccessDeniedForDependencyExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE",
+    AccessDeniedForDependencyExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE"]
+                }
+            }
 impl AsRef<str> for AccessDeniedForDependencyExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `IamUserAccessToBilling`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4927,14 +4889,14 @@ pub enum IamUserAccessToBilling {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IamUserAccessToBilling {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALLOW" => IamUserAccessToBilling::Allow,
-            "DENY" => IamUserAccessToBilling::Deny,
-            other => IamUserAccessToBilling::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALLOW" => IamUserAccessToBilling::Allow,
+"DENY" => IamUserAccessToBilling::Deny,
+other => IamUserAccessToBilling::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for IamUserAccessToBilling {
                 type Err = std::convert::Infallible;
 
@@ -4943,24 +4905,22 @@ impl std::str::FromStr for IamUserAccessToBilling {
                 }
             }
 impl IamUserAccessToBilling {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IamUserAccessToBilling::Allow => "ALLOW",
-            IamUserAccessToBilling::Deny => "DENY",
-            IamUserAccessToBilling::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALLOW", "DENY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IamUserAccessToBilling::Allow => "ALLOW",
+    IamUserAccessToBilling::Deny => "DENY",
+    IamUserAccessToBilling::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALLOW", "DENY"]
+                }
+            }
 impl AsRef<str> for IamUserAccessToBilling {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

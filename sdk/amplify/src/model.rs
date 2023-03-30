@@ -600,20 +600,20 @@ pub enum DomainStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => DomainStatus::Available,
-            "CREATING" => DomainStatus::Creating,
-            "FAILED" => DomainStatus::Failed,
-            "IN_PROGRESS" => DomainStatus::InProgress,
-            "PENDING_DEPLOYMENT" => DomainStatus::PendingDeployment,
-            "PENDING_VERIFICATION" => DomainStatus::PendingVerification,
-            "REQUESTING_CERTIFICATE" => DomainStatus::RequestingCertificate,
-            "UPDATING" => DomainStatus::Updating,
-            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => DomainStatus::Available,
+"CREATING" => DomainStatus::Creating,
+"FAILED" => DomainStatus::Failed,
+"IN_PROGRESS" => DomainStatus::InProgress,
+"PENDING_DEPLOYMENT" => DomainStatus::PendingDeployment,
+"PENDING_VERIFICATION" => DomainStatus::PendingVerification,
+"REQUESTING_CERTIFICATE" => DomainStatus::RequestingCertificate,
+"UPDATING" => DomainStatus::Updating,
+other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DomainStatus {
                 type Err = std::convert::Infallible;
 
@@ -622,32 +622,30 @@ impl std::str::FromStr for DomainStatus {
                 }
             }
 impl DomainStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DomainStatus::Available => "AVAILABLE",
-            DomainStatus::Creating => "CREATING",
-            DomainStatus::Failed => "FAILED",
-            DomainStatus::InProgress => "IN_PROGRESS",
-            DomainStatus::PendingDeployment => "PENDING_DEPLOYMENT",
-            DomainStatus::PendingVerification => "PENDING_VERIFICATION",
-            DomainStatus::RequestingCertificate => "REQUESTING_CERTIFICATE",
-            DomainStatus::Updating => "UPDATING",
-            DomainStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "CREATING", "FAILED", "IN_PROGRESS", "PENDING_DEPLOYMENT", "PENDING_VERIFICATION", "REQUESTING_CERTIFICATE", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DomainStatus::Available => "AVAILABLE",
+    DomainStatus::Creating => "CREATING",
+    DomainStatus::Failed => "FAILED",
+    DomainStatus::InProgress => "IN_PROGRESS",
+    DomainStatus::PendingDeployment => "PENDING_DEPLOYMENT",
+    DomainStatus::PendingVerification => "PENDING_VERIFICATION",
+    DomainStatus::RequestingCertificate => "REQUESTING_CERTIFICATE",
+    DomainStatus::Updating => "UPDATING",
+    DomainStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "CREATING", "FAILED", "IN_PROGRESS", "PENDING_DEPLOYMENT", "PENDING_VERIFICATION", "REQUESTING_CERTIFICATE", "UPDATING"]
+                }
+            }
 impl AsRef<str> for DomainStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
 #[non_exhaustive]
@@ -1343,17 +1341,17 @@ pub enum Stage {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Stage {
-    fn from(s: &str) -> Self {
-        match s {
-            "BETA" => Stage::Beta,
-            "DEVELOPMENT" => Stage::Development,
-            "EXPERIMENTAL" => Stage::Experimental,
-            "PRODUCTION" => Stage::Production,
-            "PULL_REQUEST" => Stage::PullRequest,
-            other => Stage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BETA" => Stage::Beta,
+"DEVELOPMENT" => Stage::Development,
+"EXPERIMENTAL" => Stage::Experimental,
+"PRODUCTION" => Stage::Production,
+"PULL_REQUEST" => Stage::PullRequest,
+other => Stage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Stage {
                 type Err = std::convert::Infallible;
 
@@ -1362,29 +1360,27 @@ impl std::str::FromStr for Stage {
                 }
             }
 impl Stage {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Stage::Beta => "BETA",
-            Stage::Development => "DEVELOPMENT",
-            Stage::Experimental => "EXPERIMENTAL",
-            Stage::Production => "PRODUCTION",
-            Stage::PullRequest => "PULL_REQUEST",
-            Stage::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BETA", "DEVELOPMENT", "EXPERIMENTAL", "PRODUCTION", "PULL_REQUEST"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Stage::Beta => "BETA",
+    Stage::Development => "DEVELOPMENT",
+    Stage::Experimental => "EXPERIMENTAL",
+    Stage::Production => "PRODUCTION",
+    Stage::PullRequest => "PULL_REQUEST",
+    Stage::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BETA", "DEVELOPMENT", "EXPERIMENTAL", "PRODUCTION", "PULL_REQUEST"]
+                }
+            }
 impl AsRef<str> for Stage {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
 #[non_exhaustive]
@@ -2019,15 +2015,15 @@ pub enum RepositoryCloneMethod {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RepositoryCloneMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "SIGV4" => RepositoryCloneMethod::Sigv4,
-            "SSH" => RepositoryCloneMethod::Ssh,
-            "TOKEN" => RepositoryCloneMethod::Token,
-            other => RepositoryCloneMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SIGV4" => RepositoryCloneMethod::Sigv4,
+"SSH" => RepositoryCloneMethod::Ssh,
+"TOKEN" => RepositoryCloneMethod::Token,
+other => RepositoryCloneMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RepositoryCloneMethod {
                 type Err = std::convert::Infallible;
 
@@ -2036,27 +2032,25 @@ impl std::str::FromStr for RepositoryCloneMethod {
                 }
             }
 impl RepositoryCloneMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RepositoryCloneMethod::Sigv4 => "SIGV4",
-            RepositoryCloneMethod::Ssh => "SSH",
-            RepositoryCloneMethod::Token => "TOKEN",
-            RepositoryCloneMethod::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SIGV4", "SSH", "TOKEN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RepositoryCloneMethod::Sigv4 => "SIGV4",
+    RepositoryCloneMethod::Ssh => "SSH",
+    RepositoryCloneMethod::Token => "TOKEN",
+    RepositoryCloneMethod::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SIGV4", "SSH", "TOKEN"]
+                }
+            }
 impl AsRef<str> for RepositoryCloneMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes the automated branch creation configuration. </p>
 #[non_exhaustive]
@@ -2713,15 +2707,15 @@ pub enum Platform {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Platform {
-    fn from(s: &str) -> Self {
-        match s {
-            "WEB" => Platform::Web,
-            "WEB_COMPUTE" => Platform::WebCompute,
-            "WEB_DYNAMIC" => Platform::WebDynamic,
-            other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "WEB" => Platform::Web,
+"WEB_COMPUTE" => Platform::WebCompute,
+"WEB_DYNAMIC" => Platform::WebDynamic,
+other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Platform {
                 type Err = std::convert::Infallible;
 
@@ -2730,27 +2724,25 @@ impl std::str::FromStr for Platform {
                 }
             }
 impl Platform {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Platform::Web => "WEB",
-            Platform::WebCompute => "WEB_COMPUTE",
-            Platform::WebDynamic => "WEB_DYNAMIC",
-            Platform::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "WEB", "WEB_COMPUTE", "WEB_DYNAMIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Platform::Web => "WEB",
+    Platform::WebCompute => "WEB_COMPUTE",
+    Platform::WebDynamic => "WEB_DYNAMIC",
+    Platform::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["WEB", "WEB_COMPUTE", "WEB_DYNAMIC"]
+                }
+            }
 impl AsRef<str> for Platform {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes the summary for an execution job for an Amplify app. </p>
 #[non_exhaustive]
@@ -3007,16 +2999,16 @@ pub enum JobType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobType {
-    fn from(s: &str) -> Self {
-        match s {
-            "MANUAL" => JobType::Manual,
-            "RELEASE" => JobType::Release,
-            "RETRY" => JobType::Retry,
-            "WEB_HOOK" => JobType::WebHook,
-            other => JobType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MANUAL" => JobType::Manual,
+"RELEASE" => JobType::Release,
+"RETRY" => JobType::Retry,
+"WEB_HOOK" => JobType::WebHook,
+other => JobType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobType {
                 type Err = std::convert::Infallible;
 
@@ -3025,28 +3017,26 @@ impl std::str::FromStr for JobType {
                 }
             }
 impl JobType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobType::Manual => "MANUAL",
-            JobType::Release => "RELEASE",
-            JobType::Retry => "RETRY",
-            JobType::WebHook => "WEB_HOOK",
-            JobType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MANUAL", "RELEASE", "RETRY", "WEB_HOOK"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobType::Manual => "MANUAL",
+    JobType::Release => "RELEASE",
+    JobType::Retry => "RETRY",
+    JobType::WebHook => "WEB_HOOK",
+    JobType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MANUAL", "RELEASE", "RETRY", "WEB_HOOK"]
+                }
+            }
 impl AsRef<str> for JobType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `JobStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3110,19 +3100,19 @@ pub enum JobStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => JobStatus::Cancelled,
-            "CANCELLING" => JobStatus::Cancelling,
-            "FAILED" => JobStatus::Failed,
-            "PENDING" => JobStatus::Pending,
-            "PROVISIONING" => JobStatus::Provisioning,
-            "RUNNING" => JobStatus::Running,
-            "SUCCEED" => JobStatus::Succeed,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => JobStatus::Cancelled,
+"CANCELLING" => JobStatus::Cancelling,
+"FAILED" => JobStatus::Failed,
+"PENDING" => JobStatus::Pending,
+"PROVISIONING" => JobStatus::Provisioning,
+"RUNNING" => JobStatus::Running,
+"SUCCEED" => JobStatus::Succeed,
+other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobStatus {
                 type Err = std::convert::Infallible;
 
@@ -3131,31 +3121,29 @@ impl std::str::FromStr for JobStatus {
                 }
             }
 impl JobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobStatus::Cancelled => "CANCELLED",
-            JobStatus::Cancelling => "CANCELLING",
-            JobStatus::Failed => "FAILED",
-            JobStatus::Pending => "PENDING",
-            JobStatus::Provisioning => "PROVISIONING",
-            JobStatus::Running => "RUNNING",
-            JobStatus::Succeed => "SUCCEED",
-            JobStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "CANCELLING", "FAILED", "PENDING", "PROVISIONING", "RUNNING", "SUCCEED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobStatus::Cancelled => "CANCELLED",
+    JobStatus::Cancelling => "CANCELLING",
+    JobStatus::Failed => "FAILED",
+    JobStatus::Pending => "PENDING",
+    JobStatus::Provisioning => "PROVISIONING",
+    JobStatus::Running => "RUNNING",
+    JobStatus::Succeed => "SUCCEED",
+    JobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "CANCELLING", "FAILED", "PENDING", "PROVISIONING", "RUNNING", "SUCCEED"]
+                }
+            }
 impl AsRef<str> for JobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes the backend environment for an Amplify app. </p>
 #[non_exhaustive]

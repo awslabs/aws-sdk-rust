@@ -53,16 +53,16 @@ pub enum ParameterExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParameterExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ILLEGAL_ARGUMENT" => ParameterExceptionReason::IllegalArgument,
-            "ILLEGAL_COMBINATION" => ParameterExceptionReason::IllegalCombination,
-            "INVALID_OPTION" => ParameterExceptionReason::InvalidOption,
-            "INVALID_TAG_KEY" => ParameterExceptionReason::InvalidTagKey,
-            other => ParameterExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ILLEGAL_ARGUMENT" => ParameterExceptionReason::IllegalArgument,
+"ILLEGAL_COMBINATION" => ParameterExceptionReason::IllegalCombination,
+"INVALID_OPTION" => ParameterExceptionReason::InvalidOption,
+"INVALID_TAG_KEY" => ParameterExceptionReason::InvalidTagKey,
+other => ParameterExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ParameterExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -71,28 +71,26 @@ impl std::str::FromStr for ParameterExceptionReason {
                 }
             }
 impl ParameterExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ParameterExceptionReason::IllegalArgument => "ILLEGAL_ARGUMENT",
-            ParameterExceptionReason::IllegalCombination => "ILLEGAL_COMBINATION",
-            ParameterExceptionReason::InvalidOption => "INVALID_OPTION",
-            ParameterExceptionReason::InvalidTagKey => "INVALID_TAG_KEY",
-            ParameterExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ILLEGAL_ARGUMENT", "ILLEGAL_COMBINATION", "INVALID_OPTION", "INVALID_TAG_KEY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ParameterExceptionReason::IllegalArgument => "ILLEGAL_ARGUMENT",
+    ParameterExceptionReason::IllegalCombination => "ILLEGAL_COMBINATION",
+    ParameterExceptionReason::InvalidOption => "INVALID_OPTION",
+    ParameterExceptionReason::InvalidTagKey => "INVALID_TAG_KEY",
+    ParameterExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ILLEGAL_ARGUMENT", "ILLEGAL_COMBINATION", "INVALID_OPTION", "INVALID_TAG_KEY"]
+                }
+            }
 impl AsRef<str> for ParameterExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ParameterExceptionField`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -189,30 +187,30 @@ pub enum ParameterExceptionField {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParameterExceptionField {
-    fn from(s: &str) -> Self {
-        match s {
-            "BYTE_MATCH_FIELD_TYPE" => ParameterExceptionField::ByteMatchFieldType,
-            "BYTE_MATCH_POSITIONAL_CONSTRAINT" => ParameterExceptionField::ByteMatchPositionalConstraint,
-            "BYTE_MATCH_TEXT_TRANSFORMATION" => ParameterExceptionField::ByteMatchTextTransformation,
-            "CHANGE_ACTION" => ParameterExceptionField::ChangeAction,
-            "GEO_MATCH_LOCATION_TYPE" => ParameterExceptionField::GeoMatchLocationType,
-            "GEO_MATCH_LOCATION_VALUE" => ParameterExceptionField::GeoMatchLocationValue,
-            "IPSET_TYPE" => ParameterExceptionField::IpsetType,
-            "NEXT_MARKER" => ParameterExceptionField::NextMarker,
-            "PREDICATE_TYPE" => ParameterExceptionField::PredicateType,
-            "RATE_KEY" => ParameterExceptionField::RateKey,
-            "RESOURCE_ARN" => ParameterExceptionField::ResourceArn,
-            "RULE_TYPE" => ParameterExceptionField::RuleType,
-            "SIZE_CONSTRAINT_COMPARISON_OPERATOR" => ParameterExceptionField::SizeConstraintComparisonOperator,
-            "SQL_INJECTION_MATCH_FIELD_TYPE" => ParameterExceptionField::SqlInjectionMatchFieldType,
-            "TAGS" => ParameterExceptionField::Tags,
-            "TAG_KEYS" => ParameterExceptionField::TagKeys,
-            "WAF_ACTION" => ParameterExceptionField::WafAction,
-            "WAF_OVERRIDE_ACTION" => ParameterExceptionField::WafOverrideAction,
-            other => ParameterExceptionField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BYTE_MATCH_FIELD_TYPE" => ParameterExceptionField::ByteMatchFieldType,
+"BYTE_MATCH_POSITIONAL_CONSTRAINT" => ParameterExceptionField::ByteMatchPositionalConstraint,
+"BYTE_MATCH_TEXT_TRANSFORMATION" => ParameterExceptionField::ByteMatchTextTransformation,
+"CHANGE_ACTION" => ParameterExceptionField::ChangeAction,
+"GEO_MATCH_LOCATION_TYPE" => ParameterExceptionField::GeoMatchLocationType,
+"GEO_MATCH_LOCATION_VALUE" => ParameterExceptionField::GeoMatchLocationValue,
+"IPSET_TYPE" => ParameterExceptionField::IpsetType,
+"NEXT_MARKER" => ParameterExceptionField::NextMarker,
+"PREDICATE_TYPE" => ParameterExceptionField::PredicateType,
+"RATE_KEY" => ParameterExceptionField::RateKey,
+"RESOURCE_ARN" => ParameterExceptionField::ResourceArn,
+"RULE_TYPE" => ParameterExceptionField::RuleType,
+"SIZE_CONSTRAINT_COMPARISON_OPERATOR" => ParameterExceptionField::SizeConstraintComparisonOperator,
+"SQL_INJECTION_MATCH_FIELD_TYPE" => ParameterExceptionField::SqlInjectionMatchFieldType,
+"TAGS" => ParameterExceptionField::Tags,
+"TAG_KEYS" => ParameterExceptionField::TagKeys,
+"WAF_ACTION" => ParameterExceptionField::WafAction,
+"WAF_OVERRIDE_ACTION" => ParameterExceptionField::WafOverrideAction,
+other => ParameterExceptionField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ParameterExceptionField {
                 type Err = std::convert::Infallible;
 
@@ -221,42 +219,40 @@ impl std::str::FromStr for ParameterExceptionField {
                 }
             }
 impl ParameterExceptionField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ParameterExceptionField::ByteMatchFieldType => "BYTE_MATCH_FIELD_TYPE",
-            ParameterExceptionField::ByteMatchPositionalConstraint => "BYTE_MATCH_POSITIONAL_CONSTRAINT",
-            ParameterExceptionField::ByteMatchTextTransformation => "BYTE_MATCH_TEXT_TRANSFORMATION",
-            ParameterExceptionField::ChangeAction => "CHANGE_ACTION",
-            ParameterExceptionField::GeoMatchLocationType => "GEO_MATCH_LOCATION_TYPE",
-            ParameterExceptionField::GeoMatchLocationValue => "GEO_MATCH_LOCATION_VALUE",
-            ParameterExceptionField::IpsetType => "IPSET_TYPE",
-            ParameterExceptionField::NextMarker => "NEXT_MARKER",
-            ParameterExceptionField::PredicateType => "PREDICATE_TYPE",
-            ParameterExceptionField::RateKey => "RATE_KEY",
-            ParameterExceptionField::ResourceArn => "RESOURCE_ARN",
-            ParameterExceptionField::RuleType => "RULE_TYPE",
-            ParameterExceptionField::SizeConstraintComparisonOperator => "SIZE_CONSTRAINT_COMPARISON_OPERATOR",
-            ParameterExceptionField::SqlInjectionMatchFieldType => "SQL_INJECTION_MATCH_FIELD_TYPE",
-            ParameterExceptionField::Tags => "TAGS",
-            ParameterExceptionField::TagKeys => "TAG_KEYS",
-            ParameterExceptionField::WafAction => "WAF_ACTION",
-            ParameterExceptionField::WafOverrideAction => "WAF_OVERRIDE_ACTION",
-            ParameterExceptionField::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BYTE_MATCH_FIELD_TYPE", "BYTE_MATCH_POSITIONAL_CONSTRAINT", "BYTE_MATCH_TEXT_TRANSFORMATION", "CHANGE_ACTION", "GEO_MATCH_LOCATION_TYPE", "GEO_MATCH_LOCATION_VALUE", "IPSET_TYPE", "NEXT_MARKER", "PREDICATE_TYPE", "RATE_KEY", "RESOURCE_ARN", "RULE_TYPE", "SIZE_CONSTRAINT_COMPARISON_OPERATOR", "SQL_INJECTION_MATCH_FIELD_TYPE", "TAGS", "TAG_KEYS", "WAF_ACTION", "WAF_OVERRIDE_ACTION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ParameterExceptionField::ByteMatchFieldType => "BYTE_MATCH_FIELD_TYPE",
+    ParameterExceptionField::ByteMatchPositionalConstraint => "BYTE_MATCH_POSITIONAL_CONSTRAINT",
+    ParameterExceptionField::ByteMatchTextTransformation => "BYTE_MATCH_TEXT_TRANSFORMATION",
+    ParameterExceptionField::ChangeAction => "CHANGE_ACTION",
+    ParameterExceptionField::GeoMatchLocationType => "GEO_MATCH_LOCATION_TYPE",
+    ParameterExceptionField::GeoMatchLocationValue => "GEO_MATCH_LOCATION_VALUE",
+    ParameterExceptionField::IpsetType => "IPSET_TYPE",
+    ParameterExceptionField::NextMarker => "NEXT_MARKER",
+    ParameterExceptionField::PredicateType => "PREDICATE_TYPE",
+    ParameterExceptionField::RateKey => "RATE_KEY",
+    ParameterExceptionField::ResourceArn => "RESOURCE_ARN",
+    ParameterExceptionField::RuleType => "RULE_TYPE",
+    ParameterExceptionField::SizeConstraintComparisonOperator => "SIZE_CONSTRAINT_COMPARISON_OPERATOR",
+    ParameterExceptionField::SqlInjectionMatchFieldType => "SQL_INJECTION_MATCH_FIELD_TYPE",
+    ParameterExceptionField::Tags => "TAGS",
+    ParameterExceptionField::TagKeys => "TAG_KEYS",
+    ParameterExceptionField::WafAction => "WAF_ACTION",
+    ParameterExceptionField::WafOverrideAction => "WAF_OVERRIDE_ACTION",
+    ParameterExceptionField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BYTE_MATCH_FIELD_TYPE", "BYTE_MATCH_POSITIONAL_CONSTRAINT", "BYTE_MATCH_TEXT_TRANSFORMATION", "CHANGE_ACTION", "GEO_MATCH_LOCATION_TYPE", "GEO_MATCH_LOCATION_VALUE", "IPSET_TYPE", "NEXT_MARKER", "PREDICATE_TYPE", "RATE_KEY", "RESOURCE_ARN", "RULE_TYPE", "SIZE_CONSTRAINT_COMPARISON_OPERATOR", "SQL_INJECTION_MATCH_FIELD_TYPE", "TAGS", "TAG_KEYS", "WAF_ACTION", "WAF_OVERRIDE_ACTION"]
+                }
+            }
 impl AsRef<str> for ParameterExceptionField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -611,18 +607,18 @@ pub enum TextTransformation {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TextTransformation {
-    fn from(s: &str) -> Self {
-        match s {
-            "CMD_LINE" => TextTransformation::CmdLine,
-            "COMPRESS_WHITE_SPACE" => TextTransformation::CompressWhiteSpace,
-            "HTML_ENTITY_DECODE" => TextTransformation::HtmlEntityDecode,
-            "LOWERCASE" => TextTransformation::Lowercase,
-            "NONE" => TextTransformation::None,
-            "URL_DECODE" => TextTransformation::UrlDecode,
-            other => TextTransformation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CMD_LINE" => TextTransformation::CmdLine,
+"COMPRESS_WHITE_SPACE" => TextTransformation::CompressWhiteSpace,
+"HTML_ENTITY_DECODE" => TextTransformation::HtmlEntityDecode,
+"LOWERCASE" => TextTransformation::Lowercase,
+"NONE" => TextTransformation::None,
+"URL_DECODE" => TextTransformation::UrlDecode,
+other => TextTransformation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TextTransformation {
                 type Err = std::convert::Infallible;
 
@@ -631,30 +627,28 @@ impl std::str::FromStr for TextTransformation {
                 }
             }
 impl TextTransformation {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TextTransformation::CmdLine => "CMD_LINE",
-            TextTransformation::CompressWhiteSpace => "COMPRESS_WHITE_SPACE",
-            TextTransformation::HtmlEntityDecode => "HTML_ENTITY_DECODE",
-            TextTransformation::Lowercase => "LOWERCASE",
-            TextTransformation::None => "NONE",
-            TextTransformation::UrlDecode => "URL_DECODE",
-            TextTransformation::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CMD_LINE", "COMPRESS_WHITE_SPACE", "HTML_ENTITY_DECODE", "LOWERCASE", "NONE", "URL_DECODE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TextTransformation::CmdLine => "CMD_LINE",
+    TextTransformation::CompressWhiteSpace => "COMPRESS_WHITE_SPACE",
+    TextTransformation::HtmlEntityDecode => "HTML_ENTITY_DECODE",
+    TextTransformation::Lowercase => "LOWERCASE",
+    TextTransformation::None => "NONE",
+    TextTransformation::UrlDecode => "URL_DECODE",
+    TextTransformation::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CMD_LINE", "COMPRESS_WHITE_SPACE", "HTML_ENTITY_DECODE", "LOWERCASE", "NONE", "URL_DECODE"]
+                }
+            }
 impl AsRef<str> for TextTransformation {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -835,19 +829,19 @@ pub enum MatchFieldType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MatchFieldType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALL_QUERY_ARGS" => MatchFieldType::AllQueryArgs,
-            "BODY" => MatchFieldType::Body,
-            "HEADER" => MatchFieldType::Header,
-            "METHOD" => MatchFieldType::Method,
-            "QUERY_STRING" => MatchFieldType::QueryString,
-            "SINGLE_QUERY_ARG" => MatchFieldType::SingleQueryArg,
-            "URI" => MatchFieldType::Uri,
-            other => MatchFieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALL_QUERY_ARGS" => MatchFieldType::AllQueryArgs,
+"BODY" => MatchFieldType::Body,
+"HEADER" => MatchFieldType::Header,
+"METHOD" => MatchFieldType::Method,
+"QUERY_STRING" => MatchFieldType::QueryString,
+"SINGLE_QUERY_ARG" => MatchFieldType::SingleQueryArg,
+"URI" => MatchFieldType::Uri,
+other => MatchFieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MatchFieldType {
                 type Err = std::convert::Infallible;
 
@@ -856,31 +850,29 @@ impl std::str::FromStr for MatchFieldType {
                 }
             }
 impl MatchFieldType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MatchFieldType::AllQueryArgs => "ALL_QUERY_ARGS",
-            MatchFieldType::Body => "BODY",
-            MatchFieldType::Header => "HEADER",
-            MatchFieldType::Method => "METHOD",
-            MatchFieldType::QueryString => "QUERY_STRING",
-            MatchFieldType::SingleQueryArg => "SINGLE_QUERY_ARG",
-            MatchFieldType::Uri => "URI",
-            MatchFieldType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL_QUERY_ARGS", "BODY", "HEADER", "METHOD", "QUERY_STRING", "SINGLE_QUERY_ARG", "URI"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MatchFieldType::AllQueryArgs => "ALL_QUERY_ARGS",
+    MatchFieldType::Body => "BODY",
+    MatchFieldType::Header => "HEADER",
+    MatchFieldType::Method => "METHOD",
+    MatchFieldType::QueryString => "QUERY_STRING",
+    MatchFieldType::SingleQueryArg => "SINGLE_QUERY_ARG",
+    MatchFieldType::Uri => "URI",
+    MatchFieldType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALL_QUERY_ARGS", "BODY", "HEADER", "METHOD", "QUERY_STRING", "SINGLE_QUERY_ARG", "URI"]
+                }
+            }
 impl AsRef<str> for MatchFieldType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ChangeAction`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -929,14 +921,14 @@ pub enum ChangeAction {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETE" => ChangeAction::Delete,
-            "INSERT" => ChangeAction::Insert,
-            other => ChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DELETE" => ChangeAction::Delete,
+"INSERT" => ChangeAction::Insert,
+other => ChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ChangeAction {
                 type Err = std::convert::Infallible;
 
@@ -945,26 +937,24 @@ impl std::str::FromStr for ChangeAction {
                 }
             }
 impl ChangeAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChangeAction::Delete => "DELETE",
-            ChangeAction::Insert => "INSERT",
-            ChangeAction::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELETE", "INSERT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChangeAction::Delete => "DELETE",
+    ChangeAction::Insert => "INSERT",
+    ChangeAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELETE", "INSERT"]
+                }
+            }
 impl AsRef<str> for ChangeAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -1090,15 +1080,15 @@ pub enum WafActionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WafActionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALLOW" => WafActionType::Allow,
-            "BLOCK" => WafActionType::Block,
-            "COUNT" => WafActionType::Count,
-            other => WafActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALLOW" => WafActionType::Allow,
+"BLOCK" => WafActionType::Block,
+"COUNT" => WafActionType::Count,
+other => WafActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WafActionType {
                 type Err = std::convert::Infallible;
 
@@ -1107,27 +1097,25 @@ impl std::str::FromStr for WafActionType {
                 }
             }
 impl WafActionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WafActionType::Allow => "ALLOW",
-            WafActionType::Block => "BLOCK",
-            WafActionType::Count => "COUNT",
-            WafActionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALLOW", "BLOCK", "COUNT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WafActionType::Allow => "ALLOW",
+    WafActionType::Block => "BLOCK",
+    WafActionType::Count => "COUNT",
+    WafActionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALLOW", "BLOCK", "COUNT"]
+                }
+            }
 impl AsRef<str> for WafActionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -1542,15 +1530,15 @@ pub enum WafRuleType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WafRuleType {
-    fn from(s: &str) -> Self {
-        match s {
-            "GROUP" => WafRuleType::Group,
-            "RATE_BASED" => WafRuleType::RateBased,
-            "REGULAR" => WafRuleType::Regular,
-            other => WafRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "GROUP" => WafRuleType::Group,
+"RATE_BASED" => WafRuleType::RateBased,
+"REGULAR" => WafRuleType::Regular,
+other => WafRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WafRuleType {
                 type Err = std::convert::Infallible;
 
@@ -1559,27 +1547,25 @@ impl std::str::FromStr for WafRuleType {
                 }
             }
 impl WafRuleType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WafRuleType::Group => "GROUP",
-            WafRuleType::RateBased => "RATE_BASED",
-            WafRuleType::Regular => "REGULAR",
-            WafRuleType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "GROUP", "RATE_BASED", "REGULAR"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WafRuleType::Group => "GROUP",
+    WafRuleType::RateBased => "RATE_BASED",
+    WafRuleType::Regular => "REGULAR",
+    WafRuleType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GROUP", "RATE_BASED", "REGULAR"]
+                }
+            }
 impl AsRef<str> for WafRuleType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -1682,14 +1668,14 @@ pub enum WafOverrideActionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WafOverrideActionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COUNT" => WafOverrideActionType::Count,
-            "NONE" => WafOverrideActionType::None,
-            other => WafOverrideActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COUNT" => WafOverrideActionType::Count,
+"NONE" => WafOverrideActionType::None,
+other => WafOverrideActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WafOverrideActionType {
                 type Err = std::convert::Infallible;
 
@@ -1698,26 +1684,24 @@ impl std::str::FromStr for WafOverrideActionType {
                 }
             }
 impl WafOverrideActionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WafOverrideActionType::Count => "COUNT",
-            WafOverrideActionType::None => "NONE",
-            WafOverrideActionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COUNT", "NONE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WafOverrideActionType::Count => "COUNT",
+    WafOverrideActionType::None => "NONE",
+    WafOverrideActionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COUNT", "NONE"]
+                }
+            }
 impl AsRef<str> for WafOverrideActionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -2441,18 +2425,18 @@ pub enum ComparisonOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComparisonOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "EQ" => ComparisonOperator::Eq,
-            "GE" => ComparisonOperator::Ge,
-            "GT" => ComparisonOperator::Gt,
-            "LE" => ComparisonOperator::Le,
-            "LT" => ComparisonOperator::Lt,
-            "NE" => ComparisonOperator::Ne,
-            other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EQ" => ComparisonOperator::Eq,
+"GE" => ComparisonOperator::Ge,
+"GT" => ComparisonOperator::Gt,
+"LE" => ComparisonOperator::Le,
+"LT" => ComparisonOperator::Lt,
+"NE" => ComparisonOperator::Ne,
+other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ComparisonOperator {
                 type Err = std::convert::Infallible;
 
@@ -2461,30 +2445,28 @@ impl std::str::FromStr for ComparisonOperator {
                 }
             }
 impl ComparisonOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComparisonOperator::Eq => "EQ",
-            ComparisonOperator::Ge => "GE",
-            ComparisonOperator::Gt => "GT",
-            ComparisonOperator::Le => "LE",
-            ComparisonOperator::Lt => "LT",
-            ComparisonOperator::Ne => "NE",
-            ComparisonOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EQ", "GE", "GT", "LE", "LT", "NE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComparisonOperator::Eq => "EQ",
+    ComparisonOperator::Ge => "GE",
+    ComparisonOperator::Gt => "GT",
+    ComparisonOperator::Le => "LE",
+    ComparisonOperator::Lt => "LT",
+    ComparisonOperator::Ne => "NE",
+    ComparisonOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EQ", "GE", "GT", "LE", "LT", "NE"]
+                }
+            }
 impl AsRef<str> for ComparisonOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -2790,19 +2772,19 @@ pub enum PredicateType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PredicateType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ByteMatch" => PredicateType::ByteMatch,
-            "GeoMatch" => PredicateType::GeoMatch,
-            "IPMatch" => PredicateType::IpMatch,
-            "RegexMatch" => PredicateType::RegexMatch,
-            "SizeConstraint" => PredicateType::SizeConstraint,
-            "SqlInjectionMatch" => PredicateType::SqlInjectionMatch,
-            "XssMatch" => PredicateType::XssMatch,
-            other => PredicateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ByteMatch" => PredicateType::ByteMatch,
+"GeoMatch" => PredicateType::GeoMatch,
+"IPMatch" => PredicateType::IpMatch,
+"RegexMatch" => PredicateType::RegexMatch,
+"SizeConstraint" => PredicateType::SizeConstraint,
+"SqlInjectionMatch" => PredicateType::SqlInjectionMatch,
+"XssMatch" => PredicateType::XssMatch,
+other => PredicateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PredicateType {
                 type Err = std::convert::Infallible;
 
@@ -2811,31 +2793,29 @@ impl std::str::FromStr for PredicateType {
                 }
             }
 impl PredicateType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PredicateType::ByteMatch => "ByteMatch",
-            PredicateType::GeoMatch => "GeoMatch",
-            PredicateType::IpMatch => "IPMatch",
-            PredicateType::RegexMatch => "RegexMatch",
-            PredicateType::SizeConstraint => "SizeConstraint",
-            PredicateType::SqlInjectionMatch => "SqlInjectionMatch",
-            PredicateType::XssMatch => "XssMatch",
-            PredicateType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ByteMatch", "GeoMatch", "IPMatch", "RegexMatch", "SizeConstraint", "SqlInjectionMatch", "XssMatch"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PredicateType::ByteMatch => "ByteMatch",
+    PredicateType::GeoMatch => "GeoMatch",
+    PredicateType::IpMatch => "IPMatch",
+    PredicateType::RegexMatch => "RegexMatch",
+    PredicateType::SizeConstraint => "SizeConstraint",
+    PredicateType::SqlInjectionMatch => "SqlInjectionMatch",
+    PredicateType::XssMatch => "XssMatch",
+    PredicateType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ByteMatch", "GeoMatch", "IPMatch", "RegexMatch", "SizeConstraint", "SqlInjectionMatch", "XssMatch"]
+                }
+            }
 impl AsRef<str> for PredicateType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -3465,14 +3445,14 @@ pub enum IpSetDescriptorType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IpSetDescriptorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "IPV4" => IpSetDescriptorType::Ipv4,
-            "IPV6" => IpSetDescriptorType::Ipv6,
-            other => IpSetDescriptorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "IPV4" => IpSetDescriptorType::Ipv4,
+"IPV6" => IpSetDescriptorType::Ipv6,
+other => IpSetDescriptorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for IpSetDescriptorType {
                 type Err = std::convert::Infallible;
 
@@ -3481,26 +3461,24 @@ impl std::str::FromStr for IpSetDescriptorType {
                 }
             }
 impl IpSetDescriptorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IpSetDescriptorType::Ipv4 => "IPV4",
-            IpSetDescriptorType::Ipv6 => "IPV6",
-            IpSetDescriptorType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "IPV4", "IPV6"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IpSetDescriptorType::Ipv4 => "IPV4",
+    IpSetDescriptorType::Ipv6 => "IPV6",
+    IpSetDescriptorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["IPV4", "IPV6"]
+                }
+            }
 impl AsRef<str> for IpSetDescriptorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -4436,261 +4414,261 @@ pub enum GeoMatchConstraintValue {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GeoMatchConstraintValue {
-    fn from(s: &str) -> Self {
-        match s {
-            "AD" => GeoMatchConstraintValue::Ad,
-            "AE" => GeoMatchConstraintValue::Ae,
-            "AF" => GeoMatchConstraintValue::Af,
-            "AG" => GeoMatchConstraintValue::Ag,
-            "AI" => GeoMatchConstraintValue::Ai,
-            "AL" => GeoMatchConstraintValue::Al,
-            "AM" => GeoMatchConstraintValue::Am,
-            "AO" => GeoMatchConstraintValue::Ao,
-            "AQ" => GeoMatchConstraintValue::Aq,
-            "AR" => GeoMatchConstraintValue::Ar,
-            "AS" => GeoMatchConstraintValue::As,
-            "AT" => GeoMatchConstraintValue::At,
-            "AU" => GeoMatchConstraintValue::Au,
-            "AW" => GeoMatchConstraintValue::Aw,
-            "AX" => GeoMatchConstraintValue::Ax,
-            "AZ" => GeoMatchConstraintValue::Az,
-            "BA" => GeoMatchConstraintValue::Ba,
-            "BB" => GeoMatchConstraintValue::Bb,
-            "BD" => GeoMatchConstraintValue::Bd,
-            "BE" => GeoMatchConstraintValue::Be,
-            "BF" => GeoMatchConstraintValue::Bf,
-            "BG" => GeoMatchConstraintValue::Bg,
-            "BH" => GeoMatchConstraintValue::Bh,
-            "BI" => GeoMatchConstraintValue::Bi,
-            "BJ" => GeoMatchConstraintValue::Bj,
-            "BL" => GeoMatchConstraintValue::Bl,
-            "BM" => GeoMatchConstraintValue::Bm,
-            "BN" => GeoMatchConstraintValue::Bn,
-            "BO" => GeoMatchConstraintValue::Bo,
-            "BQ" => GeoMatchConstraintValue::Bq,
-            "BR" => GeoMatchConstraintValue::Br,
-            "BS" => GeoMatchConstraintValue::Bs,
-            "BT" => GeoMatchConstraintValue::Bt,
-            "BV" => GeoMatchConstraintValue::Bv,
-            "BW" => GeoMatchConstraintValue::Bw,
-            "BY" => GeoMatchConstraintValue::By,
-            "BZ" => GeoMatchConstraintValue::Bz,
-            "CA" => GeoMatchConstraintValue::Ca,
-            "CC" => GeoMatchConstraintValue::Cc,
-            "CD" => GeoMatchConstraintValue::Cd,
-            "CF" => GeoMatchConstraintValue::Cf,
-            "CG" => GeoMatchConstraintValue::Cg,
-            "CH" => GeoMatchConstraintValue::Ch,
-            "CI" => GeoMatchConstraintValue::Ci,
-            "CK" => GeoMatchConstraintValue::Ck,
-            "CL" => GeoMatchConstraintValue::Cl,
-            "CM" => GeoMatchConstraintValue::Cm,
-            "CN" => GeoMatchConstraintValue::Cn,
-            "CO" => GeoMatchConstraintValue::Co,
-            "CR" => GeoMatchConstraintValue::Cr,
-            "CU" => GeoMatchConstraintValue::Cu,
-            "CV" => GeoMatchConstraintValue::Cv,
-            "CW" => GeoMatchConstraintValue::Cw,
-            "CX" => GeoMatchConstraintValue::Cx,
-            "CY" => GeoMatchConstraintValue::Cy,
-            "CZ" => GeoMatchConstraintValue::Cz,
-            "DE" => GeoMatchConstraintValue::De,
-            "DJ" => GeoMatchConstraintValue::Dj,
-            "DK" => GeoMatchConstraintValue::Dk,
-            "DM" => GeoMatchConstraintValue::Dm,
-            "DO" => GeoMatchConstraintValue::Do,
-            "DZ" => GeoMatchConstraintValue::Dz,
-            "EC" => GeoMatchConstraintValue::Ec,
-            "EE" => GeoMatchConstraintValue::Ee,
-            "EG" => GeoMatchConstraintValue::Eg,
-            "EH" => GeoMatchConstraintValue::Eh,
-            "ER" => GeoMatchConstraintValue::Er,
-            "ES" => GeoMatchConstraintValue::Es,
-            "ET" => GeoMatchConstraintValue::Et,
-            "FI" => GeoMatchConstraintValue::Fi,
-            "FJ" => GeoMatchConstraintValue::Fj,
-            "FK" => GeoMatchConstraintValue::Fk,
-            "FM" => GeoMatchConstraintValue::Fm,
-            "FO" => GeoMatchConstraintValue::Fo,
-            "FR" => GeoMatchConstraintValue::Fr,
-            "GA" => GeoMatchConstraintValue::Ga,
-            "GB" => GeoMatchConstraintValue::Gb,
-            "GD" => GeoMatchConstraintValue::Gd,
-            "GE" => GeoMatchConstraintValue::Ge,
-            "GF" => GeoMatchConstraintValue::Gf,
-            "GG" => GeoMatchConstraintValue::Gg,
-            "GH" => GeoMatchConstraintValue::Gh,
-            "GI" => GeoMatchConstraintValue::Gi,
-            "GL" => GeoMatchConstraintValue::Gl,
-            "GM" => GeoMatchConstraintValue::Gm,
-            "GN" => GeoMatchConstraintValue::Gn,
-            "GP" => GeoMatchConstraintValue::Gp,
-            "GQ" => GeoMatchConstraintValue::Gq,
-            "GR" => GeoMatchConstraintValue::Gr,
-            "GS" => GeoMatchConstraintValue::Gs,
-            "GT" => GeoMatchConstraintValue::Gt,
-            "GU" => GeoMatchConstraintValue::Gu,
-            "GW" => GeoMatchConstraintValue::Gw,
-            "GY" => GeoMatchConstraintValue::Gy,
-            "HK" => GeoMatchConstraintValue::Hk,
-            "HM" => GeoMatchConstraintValue::Hm,
-            "HN" => GeoMatchConstraintValue::Hn,
-            "HR" => GeoMatchConstraintValue::Hr,
-            "HT" => GeoMatchConstraintValue::Ht,
-            "HU" => GeoMatchConstraintValue::Hu,
-            "ID" => GeoMatchConstraintValue::Id,
-            "IE" => GeoMatchConstraintValue::Ie,
-            "IL" => GeoMatchConstraintValue::Il,
-            "IM" => GeoMatchConstraintValue::Im,
-            "IN" => GeoMatchConstraintValue::In,
-            "IO" => GeoMatchConstraintValue::Io,
-            "IQ" => GeoMatchConstraintValue::Iq,
-            "IR" => GeoMatchConstraintValue::Ir,
-            "IS" => GeoMatchConstraintValue::Is,
-            "IT" => GeoMatchConstraintValue::It,
-            "JE" => GeoMatchConstraintValue::Je,
-            "JM" => GeoMatchConstraintValue::Jm,
-            "JO" => GeoMatchConstraintValue::Jo,
-            "JP" => GeoMatchConstraintValue::Jp,
-            "KE" => GeoMatchConstraintValue::Ke,
-            "KG" => GeoMatchConstraintValue::Kg,
-            "KH" => GeoMatchConstraintValue::Kh,
-            "KI" => GeoMatchConstraintValue::Ki,
-            "KM" => GeoMatchConstraintValue::Km,
-            "KN" => GeoMatchConstraintValue::Kn,
-            "KP" => GeoMatchConstraintValue::Kp,
-            "KR" => GeoMatchConstraintValue::Kr,
-            "KW" => GeoMatchConstraintValue::Kw,
-            "KY" => GeoMatchConstraintValue::Ky,
-            "KZ" => GeoMatchConstraintValue::Kz,
-            "LA" => GeoMatchConstraintValue::La,
-            "LB" => GeoMatchConstraintValue::Lb,
-            "LC" => GeoMatchConstraintValue::Lc,
-            "LI" => GeoMatchConstraintValue::Li,
-            "LK" => GeoMatchConstraintValue::Lk,
-            "LR" => GeoMatchConstraintValue::Lr,
-            "LS" => GeoMatchConstraintValue::Ls,
-            "LT" => GeoMatchConstraintValue::Lt,
-            "LU" => GeoMatchConstraintValue::Lu,
-            "LV" => GeoMatchConstraintValue::Lv,
-            "LY" => GeoMatchConstraintValue::Ly,
-            "MA" => GeoMatchConstraintValue::Ma,
-            "MC" => GeoMatchConstraintValue::Mc,
-            "MD" => GeoMatchConstraintValue::Md,
-            "ME" => GeoMatchConstraintValue::Me,
-            "MF" => GeoMatchConstraintValue::Mf,
-            "MG" => GeoMatchConstraintValue::Mg,
-            "MH" => GeoMatchConstraintValue::Mh,
-            "MK" => GeoMatchConstraintValue::Mk,
-            "ML" => GeoMatchConstraintValue::Ml,
-            "MM" => GeoMatchConstraintValue::Mm,
-            "MN" => GeoMatchConstraintValue::Mn,
-            "MO" => GeoMatchConstraintValue::Mo,
-            "MP" => GeoMatchConstraintValue::Mp,
-            "MQ" => GeoMatchConstraintValue::Mq,
-            "MR" => GeoMatchConstraintValue::Mr,
-            "MS" => GeoMatchConstraintValue::Ms,
-            "MT" => GeoMatchConstraintValue::Mt,
-            "MU" => GeoMatchConstraintValue::Mu,
-            "MV" => GeoMatchConstraintValue::Mv,
-            "MW" => GeoMatchConstraintValue::Mw,
-            "MX" => GeoMatchConstraintValue::Mx,
-            "MY" => GeoMatchConstraintValue::My,
-            "MZ" => GeoMatchConstraintValue::Mz,
-            "NA" => GeoMatchConstraintValue::Na,
-            "NC" => GeoMatchConstraintValue::Nc,
-            "NE" => GeoMatchConstraintValue::Ne,
-            "NF" => GeoMatchConstraintValue::Nf,
-            "NG" => GeoMatchConstraintValue::Ng,
-            "NI" => GeoMatchConstraintValue::Ni,
-            "NL" => GeoMatchConstraintValue::Nl,
-            "NO" => GeoMatchConstraintValue::No,
-            "NP" => GeoMatchConstraintValue::Np,
-            "NR" => GeoMatchConstraintValue::Nr,
-            "NU" => GeoMatchConstraintValue::Nu,
-            "NZ" => GeoMatchConstraintValue::Nz,
-            "OM" => GeoMatchConstraintValue::Om,
-            "PA" => GeoMatchConstraintValue::Pa,
-            "PE" => GeoMatchConstraintValue::Pe,
-            "PF" => GeoMatchConstraintValue::Pf,
-            "PG" => GeoMatchConstraintValue::Pg,
-            "PH" => GeoMatchConstraintValue::Ph,
-            "PK" => GeoMatchConstraintValue::Pk,
-            "PL" => GeoMatchConstraintValue::Pl,
-            "PM" => GeoMatchConstraintValue::Pm,
-            "PN" => GeoMatchConstraintValue::Pn,
-            "PR" => GeoMatchConstraintValue::Pr,
-            "PS" => GeoMatchConstraintValue::Ps,
-            "PT" => GeoMatchConstraintValue::Pt,
-            "PW" => GeoMatchConstraintValue::Pw,
-            "PY" => GeoMatchConstraintValue::Py,
-            "QA" => GeoMatchConstraintValue::Qa,
-            "RE" => GeoMatchConstraintValue::Re,
-            "RO" => GeoMatchConstraintValue::Ro,
-            "RS" => GeoMatchConstraintValue::Rs,
-            "RU" => GeoMatchConstraintValue::Ru,
-            "RW" => GeoMatchConstraintValue::Rw,
-            "SA" => GeoMatchConstraintValue::Sa,
-            "SB" => GeoMatchConstraintValue::Sb,
-            "SC" => GeoMatchConstraintValue::Sc,
-            "SD" => GeoMatchConstraintValue::Sd,
-            "SE" => GeoMatchConstraintValue::Se,
-            "SG" => GeoMatchConstraintValue::Sg,
-            "SH" => GeoMatchConstraintValue::Sh,
-            "SI" => GeoMatchConstraintValue::Si,
-            "SJ" => GeoMatchConstraintValue::Sj,
-            "SK" => GeoMatchConstraintValue::Sk,
-            "SL" => GeoMatchConstraintValue::Sl,
-            "SM" => GeoMatchConstraintValue::Sm,
-            "SN" => GeoMatchConstraintValue::Sn,
-            "SO" => GeoMatchConstraintValue::So,
-            "SR" => GeoMatchConstraintValue::Sr,
-            "SS" => GeoMatchConstraintValue::Ss,
-            "ST" => GeoMatchConstraintValue::St,
-            "SV" => GeoMatchConstraintValue::Sv,
-            "SX" => GeoMatchConstraintValue::Sx,
-            "SY" => GeoMatchConstraintValue::Sy,
-            "SZ" => GeoMatchConstraintValue::Sz,
-            "TC" => GeoMatchConstraintValue::Tc,
-            "TD" => GeoMatchConstraintValue::Td,
-            "TF" => GeoMatchConstraintValue::Tf,
-            "TG" => GeoMatchConstraintValue::Tg,
-            "TH" => GeoMatchConstraintValue::Th,
-            "TJ" => GeoMatchConstraintValue::Tj,
-            "TK" => GeoMatchConstraintValue::Tk,
-            "TL" => GeoMatchConstraintValue::Tl,
-            "TM" => GeoMatchConstraintValue::Tm,
-            "TN" => GeoMatchConstraintValue::Tn,
-            "TO" => GeoMatchConstraintValue::To,
-            "TR" => GeoMatchConstraintValue::Tr,
-            "TT" => GeoMatchConstraintValue::Tt,
-            "TV" => GeoMatchConstraintValue::Tv,
-            "TW" => GeoMatchConstraintValue::Tw,
-            "TZ" => GeoMatchConstraintValue::Tz,
-            "UA" => GeoMatchConstraintValue::Ua,
-            "UG" => GeoMatchConstraintValue::Ug,
-            "UM" => GeoMatchConstraintValue::Um,
-            "US" => GeoMatchConstraintValue::Us,
-            "UY" => GeoMatchConstraintValue::Uy,
-            "UZ" => GeoMatchConstraintValue::Uz,
-            "VA" => GeoMatchConstraintValue::Va,
-            "VC" => GeoMatchConstraintValue::Vc,
-            "VE" => GeoMatchConstraintValue::Ve,
-            "VG" => GeoMatchConstraintValue::Vg,
-            "VI" => GeoMatchConstraintValue::Vi,
-            "VN" => GeoMatchConstraintValue::Vn,
-            "VU" => GeoMatchConstraintValue::Vu,
-            "WF" => GeoMatchConstraintValue::Wf,
-            "WS" => GeoMatchConstraintValue::Ws,
-            "YE" => GeoMatchConstraintValue::Ye,
-            "YT" => GeoMatchConstraintValue::Yt,
-            "ZA" => GeoMatchConstraintValue::Za,
-            "ZM" => GeoMatchConstraintValue::Zm,
-            "ZW" => GeoMatchConstraintValue::Zw,
-            other => GeoMatchConstraintValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AD" => GeoMatchConstraintValue::Ad,
+"AE" => GeoMatchConstraintValue::Ae,
+"AF" => GeoMatchConstraintValue::Af,
+"AG" => GeoMatchConstraintValue::Ag,
+"AI" => GeoMatchConstraintValue::Ai,
+"AL" => GeoMatchConstraintValue::Al,
+"AM" => GeoMatchConstraintValue::Am,
+"AO" => GeoMatchConstraintValue::Ao,
+"AQ" => GeoMatchConstraintValue::Aq,
+"AR" => GeoMatchConstraintValue::Ar,
+"AS" => GeoMatchConstraintValue::As,
+"AT" => GeoMatchConstraintValue::At,
+"AU" => GeoMatchConstraintValue::Au,
+"AW" => GeoMatchConstraintValue::Aw,
+"AX" => GeoMatchConstraintValue::Ax,
+"AZ" => GeoMatchConstraintValue::Az,
+"BA" => GeoMatchConstraintValue::Ba,
+"BB" => GeoMatchConstraintValue::Bb,
+"BD" => GeoMatchConstraintValue::Bd,
+"BE" => GeoMatchConstraintValue::Be,
+"BF" => GeoMatchConstraintValue::Bf,
+"BG" => GeoMatchConstraintValue::Bg,
+"BH" => GeoMatchConstraintValue::Bh,
+"BI" => GeoMatchConstraintValue::Bi,
+"BJ" => GeoMatchConstraintValue::Bj,
+"BL" => GeoMatchConstraintValue::Bl,
+"BM" => GeoMatchConstraintValue::Bm,
+"BN" => GeoMatchConstraintValue::Bn,
+"BO" => GeoMatchConstraintValue::Bo,
+"BQ" => GeoMatchConstraintValue::Bq,
+"BR" => GeoMatchConstraintValue::Br,
+"BS" => GeoMatchConstraintValue::Bs,
+"BT" => GeoMatchConstraintValue::Bt,
+"BV" => GeoMatchConstraintValue::Bv,
+"BW" => GeoMatchConstraintValue::Bw,
+"BY" => GeoMatchConstraintValue::By,
+"BZ" => GeoMatchConstraintValue::Bz,
+"CA" => GeoMatchConstraintValue::Ca,
+"CC" => GeoMatchConstraintValue::Cc,
+"CD" => GeoMatchConstraintValue::Cd,
+"CF" => GeoMatchConstraintValue::Cf,
+"CG" => GeoMatchConstraintValue::Cg,
+"CH" => GeoMatchConstraintValue::Ch,
+"CI" => GeoMatchConstraintValue::Ci,
+"CK" => GeoMatchConstraintValue::Ck,
+"CL" => GeoMatchConstraintValue::Cl,
+"CM" => GeoMatchConstraintValue::Cm,
+"CN" => GeoMatchConstraintValue::Cn,
+"CO" => GeoMatchConstraintValue::Co,
+"CR" => GeoMatchConstraintValue::Cr,
+"CU" => GeoMatchConstraintValue::Cu,
+"CV" => GeoMatchConstraintValue::Cv,
+"CW" => GeoMatchConstraintValue::Cw,
+"CX" => GeoMatchConstraintValue::Cx,
+"CY" => GeoMatchConstraintValue::Cy,
+"CZ" => GeoMatchConstraintValue::Cz,
+"DE" => GeoMatchConstraintValue::De,
+"DJ" => GeoMatchConstraintValue::Dj,
+"DK" => GeoMatchConstraintValue::Dk,
+"DM" => GeoMatchConstraintValue::Dm,
+"DO" => GeoMatchConstraintValue::Do,
+"DZ" => GeoMatchConstraintValue::Dz,
+"EC" => GeoMatchConstraintValue::Ec,
+"EE" => GeoMatchConstraintValue::Ee,
+"EG" => GeoMatchConstraintValue::Eg,
+"EH" => GeoMatchConstraintValue::Eh,
+"ER" => GeoMatchConstraintValue::Er,
+"ES" => GeoMatchConstraintValue::Es,
+"ET" => GeoMatchConstraintValue::Et,
+"FI" => GeoMatchConstraintValue::Fi,
+"FJ" => GeoMatchConstraintValue::Fj,
+"FK" => GeoMatchConstraintValue::Fk,
+"FM" => GeoMatchConstraintValue::Fm,
+"FO" => GeoMatchConstraintValue::Fo,
+"FR" => GeoMatchConstraintValue::Fr,
+"GA" => GeoMatchConstraintValue::Ga,
+"GB" => GeoMatchConstraintValue::Gb,
+"GD" => GeoMatchConstraintValue::Gd,
+"GE" => GeoMatchConstraintValue::Ge,
+"GF" => GeoMatchConstraintValue::Gf,
+"GG" => GeoMatchConstraintValue::Gg,
+"GH" => GeoMatchConstraintValue::Gh,
+"GI" => GeoMatchConstraintValue::Gi,
+"GL" => GeoMatchConstraintValue::Gl,
+"GM" => GeoMatchConstraintValue::Gm,
+"GN" => GeoMatchConstraintValue::Gn,
+"GP" => GeoMatchConstraintValue::Gp,
+"GQ" => GeoMatchConstraintValue::Gq,
+"GR" => GeoMatchConstraintValue::Gr,
+"GS" => GeoMatchConstraintValue::Gs,
+"GT" => GeoMatchConstraintValue::Gt,
+"GU" => GeoMatchConstraintValue::Gu,
+"GW" => GeoMatchConstraintValue::Gw,
+"GY" => GeoMatchConstraintValue::Gy,
+"HK" => GeoMatchConstraintValue::Hk,
+"HM" => GeoMatchConstraintValue::Hm,
+"HN" => GeoMatchConstraintValue::Hn,
+"HR" => GeoMatchConstraintValue::Hr,
+"HT" => GeoMatchConstraintValue::Ht,
+"HU" => GeoMatchConstraintValue::Hu,
+"ID" => GeoMatchConstraintValue::Id,
+"IE" => GeoMatchConstraintValue::Ie,
+"IL" => GeoMatchConstraintValue::Il,
+"IM" => GeoMatchConstraintValue::Im,
+"IN" => GeoMatchConstraintValue::In,
+"IO" => GeoMatchConstraintValue::Io,
+"IQ" => GeoMatchConstraintValue::Iq,
+"IR" => GeoMatchConstraintValue::Ir,
+"IS" => GeoMatchConstraintValue::Is,
+"IT" => GeoMatchConstraintValue::It,
+"JE" => GeoMatchConstraintValue::Je,
+"JM" => GeoMatchConstraintValue::Jm,
+"JO" => GeoMatchConstraintValue::Jo,
+"JP" => GeoMatchConstraintValue::Jp,
+"KE" => GeoMatchConstraintValue::Ke,
+"KG" => GeoMatchConstraintValue::Kg,
+"KH" => GeoMatchConstraintValue::Kh,
+"KI" => GeoMatchConstraintValue::Ki,
+"KM" => GeoMatchConstraintValue::Km,
+"KN" => GeoMatchConstraintValue::Kn,
+"KP" => GeoMatchConstraintValue::Kp,
+"KR" => GeoMatchConstraintValue::Kr,
+"KW" => GeoMatchConstraintValue::Kw,
+"KY" => GeoMatchConstraintValue::Ky,
+"KZ" => GeoMatchConstraintValue::Kz,
+"LA" => GeoMatchConstraintValue::La,
+"LB" => GeoMatchConstraintValue::Lb,
+"LC" => GeoMatchConstraintValue::Lc,
+"LI" => GeoMatchConstraintValue::Li,
+"LK" => GeoMatchConstraintValue::Lk,
+"LR" => GeoMatchConstraintValue::Lr,
+"LS" => GeoMatchConstraintValue::Ls,
+"LT" => GeoMatchConstraintValue::Lt,
+"LU" => GeoMatchConstraintValue::Lu,
+"LV" => GeoMatchConstraintValue::Lv,
+"LY" => GeoMatchConstraintValue::Ly,
+"MA" => GeoMatchConstraintValue::Ma,
+"MC" => GeoMatchConstraintValue::Mc,
+"MD" => GeoMatchConstraintValue::Md,
+"ME" => GeoMatchConstraintValue::Me,
+"MF" => GeoMatchConstraintValue::Mf,
+"MG" => GeoMatchConstraintValue::Mg,
+"MH" => GeoMatchConstraintValue::Mh,
+"MK" => GeoMatchConstraintValue::Mk,
+"ML" => GeoMatchConstraintValue::Ml,
+"MM" => GeoMatchConstraintValue::Mm,
+"MN" => GeoMatchConstraintValue::Mn,
+"MO" => GeoMatchConstraintValue::Mo,
+"MP" => GeoMatchConstraintValue::Mp,
+"MQ" => GeoMatchConstraintValue::Mq,
+"MR" => GeoMatchConstraintValue::Mr,
+"MS" => GeoMatchConstraintValue::Ms,
+"MT" => GeoMatchConstraintValue::Mt,
+"MU" => GeoMatchConstraintValue::Mu,
+"MV" => GeoMatchConstraintValue::Mv,
+"MW" => GeoMatchConstraintValue::Mw,
+"MX" => GeoMatchConstraintValue::Mx,
+"MY" => GeoMatchConstraintValue::My,
+"MZ" => GeoMatchConstraintValue::Mz,
+"NA" => GeoMatchConstraintValue::Na,
+"NC" => GeoMatchConstraintValue::Nc,
+"NE" => GeoMatchConstraintValue::Ne,
+"NF" => GeoMatchConstraintValue::Nf,
+"NG" => GeoMatchConstraintValue::Ng,
+"NI" => GeoMatchConstraintValue::Ni,
+"NL" => GeoMatchConstraintValue::Nl,
+"NO" => GeoMatchConstraintValue::No,
+"NP" => GeoMatchConstraintValue::Np,
+"NR" => GeoMatchConstraintValue::Nr,
+"NU" => GeoMatchConstraintValue::Nu,
+"NZ" => GeoMatchConstraintValue::Nz,
+"OM" => GeoMatchConstraintValue::Om,
+"PA" => GeoMatchConstraintValue::Pa,
+"PE" => GeoMatchConstraintValue::Pe,
+"PF" => GeoMatchConstraintValue::Pf,
+"PG" => GeoMatchConstraintValue::Pg,
+"PH" => GeoMatchConstraintValue::Ph,
+"PK" => GeoMatchConstraintValue::Pk,
+"PL" => GeoMatchConstraintValue::Pl,
+"PM" => GeoMatchConstraintValue::Pm,
+"PN" => GeoMatchConstraintValue::Pn,
+"PR" => GeoMatchConstraintValue::Pr,
+"PS" => GeoMatchConstraintValue::Ps,
+"PT" => GeoMatchConstraintValue::Pt,
+"PW" => GeoMatchConstraintValue::Pw,
+"PY" => GeoMatchConstraintValue::Py,
+"QA" => GeoMatchConstraintValue::Qa,
+"RE" => GeoMatchConstraintValue::Re,
+"RO" => GeoMatchConstraintValue::Ro,
+"RS" => GeoMatchConstraintValue::Rs,
+"RU" => GeoMatchConstraintValue::Ru,
+"RW" => GeoMatchConstraintValue::Rw,
+"SA" => GeoMatchConstraintValue::Sa,
+"SB" => GeoMatchConstraintValue::Sb,
+"SC" => GeoMatchConstraintValue::Sc,
+"SD" => GeoMatchConstraintValue::Sd,
+"SE" => GeoMatchConstraintValue::Se,
+"SG" => GeoMatchConstraintValue::Sg,
+"SH" => GeoMatchConstraintValue::Sh,
+"SI" => GeoMatchConstraintValue::Si,
+"SJ" => GeoMatchConstraintValue::Sj,
+"SK" => GeoMatchConstraintValue::Sk,
+"SL" => GeoMatchConstraintValue::Sl,
+"SM" => GeoMatchConstraintValue::Sm,
+"SN" => GeoMatchConstraintValue::Sn,
+"SO" => GeoMatchConstraintValue::So,
+"SR" => GeoMatchConstraintValue::Sr,
+"SS" => GeoMatchConstraintValue::Ss,
+"ST" => GeoMatchConstraintValue::St,
+"SV" => GeoMatchConstraintValue::Sv,
+"SX" => GeoMatchConstraintValue::Sx,
+"SY" => GeoMatchConstraintValue::Sy,
+"SZ" => GeoMatchConstraintValue::Sz,
+"TC" => GeoMatchConstraintValue::Tc,
+"TD" => GeoMatchConstraintValue::Td,
+"TF" => GeoMatchConstraintValue::Tf,
+"TG" => GeoMatchConstraintValue::Tg,
+"TH" => GeoMatchConstraintValue::Th,
+"TJ" => GeoMatchConstraintValue::Tj,
+"TK" => GeoMatchConstraintValue::Tk,
+"TL" => GeoMatchConstraintValue::Tl,
+"TM" => GeoMatchConstraintValue::Tm,
+"TN" => GeoMatchConstraintValue::Tn,
+"TO" => GeoMatchConstraintValue::To,
+"TR" => GeoMatchConstraintValue::Tr,
+"TT" => GeoMatchConstraintValue::Tt,
+"TV" => GeoMatchConstraintValue::Tv,
+"TW" => GeoMatchConstraintValue::Tw,
+"TZ" => GeoMatchConstraintValue::Tz,
+"UA" => GeoMatchConstraintValue::Ua,
+"UG" => GeoMatchConstraintValue::Ug,
+"UM" => GeoMatchConstraintValue::Um,
+"US" => GeoMatchConstraintValue::Us,
+"UY" => GeoMatchConstraintValue::Uy,
+"UZ" => GeoMatchConstraintValue::Uz,
+"VA" => GeoMatchConstraintValue::Va,
+"VC" => GeoMatchConstraintValue::Vc,
+"VE" => GeoMatchConstraintValue::Ve,
+"VG" => GeoMatchConstraintValue::Vg,
+"VI" => GeoMatchConstraintValue::Vi,
+"VN" => GeoMatchConstraintValue::Vn,
+"VU" => GeoMatchConstraintValue::Vu,
+"WF" => GeoMatchConstraintValue::Wf,
+"WS" => GeoMatchConstraintValue::Ws,
+"YE" => GeoMatchConstraintValue::Ye,
+"YT" => GeoMatchConstraintValue::Yt,
+"ZA" => GeoMatchConstraintValue::Za,
+"ZM" => GeoMatchConstraintValue::Zm,
+"ZW" => GeoMatchConstraintValue::Zw,
+other => GeoMatchConstraintValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GeoMatchConstraintValue {
                 type Err = std::convert::Infallible;
 
@@ -4699,273 +4677,271 @@ impl std::str::FromStr for GeoMatchConstraintValue {
                 }
             }
 impl GeoMatchConstraintValue {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GeoMatchConstraintValue::Ad => "AD",
-            GeoMatchConstraintValue::Ae => "AE",
-            GeoMatchConstraintValue::Af => "AF",
-            GeoMatchConstraintValue::Ag => "AG",
-            GeoMatchConstraintValue::Ai => "AI",
-            GeoMatchConstraintValue::Al => "AL",
-            GeoMatchConstraintValue::Am => "AM",
-            GeoMatchConstraintValue::Ao => "AO",
-            GeoMatchConstraintValue::Aq => "AQ",
-            GeoMatchConstraintValue::Ar => "AR",
-            GeoMatchConstraintValue::As => "AS",
-            GeoMatchConstraintValue::At => "AT",
-            GeoMatchConstraintValue::Au => "AU",
-            GeoMatchConstraintValue::Aw => "AW",
-            GeoMatchConstraintValue::Ax => "AX",
-            GeoMatchConstraintValue::Az => "AZ",
-            GeoMatchConstraintValue::Ba => "BA",
-            GeoMatchConstraintValue::Bb => "BB",
-            GeoMatchConstraintValue::Bd => "BD",
-            GeoMatchConstraintValue::Be => "BE",
-            GeoMatchConstraintValue::Bf => "BF",
-            GeoMatchConstraintValue::Bg => "BG",
-            GeoMatchConstraintValue::Bh => "BH",
-            GeoMatchConstraintValue::Bi => "BI",
-            GeoMatchConstraintValue::Bj => "BJ",
-            GeoMatchConstraintValue::Bl => "BL",
-            GeoMatchConstraintValue::Bm => "BM",
-            GeoMatchConstraintValue::Bn => "BN",
-            GeoMatchConstraintValue::Bo => "BO",
-            GeoMatchConstraintValue::Bq => "BQ",
-            GeoMatchConstraintValue::Br => "BR",
-            GeoMatchConstraintValue::Bs => "BS",
-            GeoMatchConstraintValue::Bt => "BT",
-            GeoMatchConstraintValue::Bv => "BV",
-            GeoMatchConstraintValue::Bw => "BW",
-            GeoMatchConstraintValue::By => "BY",
-            GeoMatchConstraintValue::Bz => "BZ",
-            GeoMatchConstraintValue::Ca => "CA",
-            GeoMatchConstraintValue::Cc => "CC",
-            GeoMatchConstraintValue::Cd => "CD",
-            GeoMatchConstraintValue::Cf => "CF",
-            GeoMatchConstraintValue::Cg => "CG",
-            GeoMatchConstraintValue::Ch => "CH",
-            GeoMatchConstraintValue::Ci => "CI",
-            GeoMatchConstraintValue::Ck => "CK",
-            GeoMatchConstraintValue::Cl => "CL",
-            GeoMatchConstraintValue::Cm => "CM",
-            GeoMatchConstraintValue::Cn => "CN",
-            GeoMatchConstraintValue::Co => "CO",
-            GeoMatchConstraintValue::Cr => "CR",
-            GeoMatchConstraintValue::Cu => "CU",
-            GeoMatchConstraintValue::Cv => "CV",
-            GeoMatchConstraintValue::Cw => "CW",
-            GeoMatchConstraintValue::Cx => "CX",
-            GeoMatchConstraintValue::Cy => "CY",
-            GeoMatchConstraintValue::Cz => "CZ",
-            GeoMatchConstraintValue::De => "DE",
-            GeoMatchConstraintValue::Dj => "DJ",
-            GeoMatchConstraintValue::Dk => "DK",
-            GeoMatchConstraintValue::Dm => "DM",
-            GeoMatchConstraintValue::Do => "DO",
-            GeoMatchConstraintValue::Dz => "DZ",
-            GeoMatchConstraintValue::Ec => "EC",
-            GeoMatchConstraintValue::Ee => "EE",
-            GeoMatchConstraintValue::Eg => "EG",
-            GeoMatchConstraintValue::Eh => "EH",
-            GeoMatchConstraintValue::Er => "ER",
-            GeoMatchConstraintValue::Es => "ES",
-            GeoMatchConstraintValue::Et => "ET",
-            GeoMatchConstraintValue::Fi => "FI",
-            GeoMatchConstraintValue::Fj => "FJ",
-            GeoMatchConstraintValue::Fk => "FK",
-            GeoMatchConstraintValue::Fm => "FM",
-            GeoMatchConstraintValue::Fo => "FO",
-            GeoMatchConstraintValue::Fr => "FR",
-            GeoMatchConstraintValue::Ga => "GA",
-            GeoMatchConstraintValue::Gb => "GB",
-            GeoMatchConstraintValue::Gd => "GD",
-            GeoMatchConstraintValue::Ge => "GE",
-            GeoMatchConstraintValue::Gf => "GF",
-            GeoMatchConstraintValue::Gg => "GG",
-            GeoMatchConstraintValue::Gh => "GH",
-            GeoMatchConstraintValue::Gi => "GI",
-            GeoMatchConstraintValue::Gl => "GL",
-            GeoMatchConstraintValue::Gm => "GM",
-            GeoMatchConstraintValue::Gn => "GN",
-            GeoMatchConstraintValue::Gp => "GP",
-            GeoMatchConstraintValue::Gq => "GQ",
-            GeoMatchConstraintValue::Gr => "GR",
-            GeoMatchConstraintValue::Gs => "GS",
-            GeoMatchConstraintValue::Gt => "GT",
-            GeoMatchConstraintValue::Gu => "GU",
-            GeoMatchConstraintValue::Gw => "GW",
-            GeoMatchConstraintValue::Gy => "GY",
-            GeoMatchConstraintValue::Hk => "HK",
-            GeoMatchConstraintValue::Hm => "HM",
-            GeoMatchConstraintValue::Hn => "HN",
-            GeoMatchConstraintValue::Hr => "HR",
-            GeoMatchConstraintValue::Ht => "HT",
-            GeoMatchConstraintValue::Hu => "HU",
-            GeoMatchConstraintValue::Id => "ID",
-            GeoMatchConstraintValue::Ie => "IE",
-            GeoMatchConstraintValue::Il => "IL",
-            GeoMatchConstraintValue::Im => "IM",
-            GeoMatchConstraintValue::In => "IN",
-            GeoMatchConstraintValue::Io => "IO",
-            GeoMatchConstraintValue::Iq => "IQ",
-            GeoMatchConstraintValue::Ir => "IR",
-            GeoMatchConstraintValue::Is => "IS",
-            GeoMatchConstraintValue::It => "IT",
-            GeoMatchConstraintValue::Je => "JE",
-            GeoMatchConstraintValue::Jm => "JM",
-            GeoMatchConstraintValue::Jo => "JO",
-            GeoMatchConstraintValue::Jp => "JP",
-            GeoMatchConstraintValue::Ke => "KE",
-            GeoMatchConstraintValue::Kg => "KG",
-            GeoMatchConstraintValue::Kh => "KH",
-            GeoMatchConstraintValue::Ki => "KI",
-            GeoMatchConstraintValue::Km => "KM",
-            GeoMatchConstraintValue::Kn => "KN",
-            GeoMatchConstraintValue::Kp => "KP",
-            GeoMatchConstraintValue::Kr => "KR",
-            GeoMatchConstraintValue::Kw => "KW",
-            GeoMatchConstraintValue::Ky => "KY",
-            GeoMatchConstraintValue::Kz => "KZ",
-            GeoMatchConstraintValue::La => "LA",
-            GeoMatchConstraintValue::Lb => "LB",
-            GeoMatchConstraintValue::Lc => "LC",
-            GeoMatchConstraintValue::Li => "LI",
-            GeoMatchConstraintValue::Lk => "LK",
-            GeoMatchConstraintValue::Lr => "LR",
-            GeoMatchConstraintValue::Ls => "LS",
-            GeoMatchConstraintValue::Lt => "LT",
-            GeoMatchConstraintValue::Lu => "LU",
-            GeoMatchConstraintValue::Lv => "LV",
-            GeoMatchConstraintValue::Ly => "LY",
-            GeoMatchConstraintValue::Ma => "MA",
-            GeoMatchConstraintValue::Mc => "MC",
-            GeoMatchConstraintValue::Md => "MD",
-            GeoMatchConstraintValue::Me => "ME",
-            GeoMatchConstraintValue::Mf => "MF",
-            GeoMatchConstraintValue::Mg => "MG",
-            GeoMatchConstraintValue::Mh => "MH",
-            GeoMatchConstraintValue::Mk => "MK",
-            GeoMatchConstraintValue::Ml => "ML",
-            GeoMatchConstraintValue::Mm => "MM",
-            GeoMatchConstraintValue::Mn => "MN",
-            GeoMatchConstraintValue::Mo => "MO",
-            GeoMatchConstraintValue::Mp => "MP",
-            GeoMatchConstraintValue::Mq => "MQ",
-            GeoMatchConstraintValue::Mr => "MR",
-            GeoMatchConstraintValue::Ms => "MS",
-            GeoMatchConstraintValue::Mt => "MT",
-            GeoMatchConstraintValue::Mu => "MU",
-            GeoMatchConstraintValue::Mv => "MV",
-            GeoMatchConstraintValue::Mw => "MW",
-            GeoMatchConstraintValue::Mx => "MX",
-            GeoMatchConstraintValue::My => "MY",
-            GeoMatchConstraintValue::Mz => "MZ",
-            GeoMatchConstraintValue::Na => "NA",
-            GeoMatchConstraintValue::Nc => "NC",
-            GeoMatchConstraintValue::Ne => "NE",
-            GeoMatchConstraintValue::Nf => "NF",
-            GeoMatchConstraintValue::Ng => "NG",
-            GeoMatchConstraintValue::Ni => "NI",
-            GeoMatchConstraintValue::Nl => "NL",
-            GeoMatchConstraintValue::No => "NO",
-            GeoMatchConstraintValue::Np => "NP",
-            GeoMatchConstraintValue::Nr => "NR",
-            GeoMatchConstraintValue::Nu => "NU",
-            GeoMatchConstraintValue::Nz => "NZ",
-            GeoMatchConstraintValue::Om => "OM",
-            GeoMatchConstraintValue::Pa => "PA",
-            GeoMatchConstraintValue::Pe => "PE",
-            GeoMatchConstraintValue::Pf => "PF",
-            GeoMatchConstraintValue::Pg => "PG",
-            GeoMatchConstraintValue::Ph => "PH",
-            GeoMatchConstraintValue::Pk => "PK",
-            GeoMatchConstraintValue::Pl => "PL",
-            GeoMatchConstraintValue::Pm => "PM",
-            GeoMatchConstraintValue::Pn => "PN",
-            GeoMatchConstraintValue::Pr => "PR",
-            GeoMatchConstraintValue::Ps => "PS",
-            GeoMatchConstraintValue::Pt => "PT",
-            GeoMatchConstraintValue::Pw => "PW",
-            GeoMatchConstraintValue::Py => "PY",
-            GeoMatchConstraintValue::Qa => "QA",
-            GeoMatchConstraintValue::Re => "RE",
-            GeoMatchConstraintValue::Ro => "RO",
-            GeoMatchConstraintValue::Rs => "RS",
-            GeoMatchConstraintValue::Ru => "RU",
-            GeoMatchConstraintValue::Rw => "RW",
-            GeoMatchConstraintValue::Sa => "SA",
-            GeoMatchConstraintValue::Sb => "SB",
-            GeoMatchConstraintValue::Sc => "SC",
-            GeoMatchConstraintValue::Sd => "SD",
-            GeoMatchConstraintValue::Se => "SE",
-            GeoMatchConstraintValue::Sg => "SG",
-            GeoMatchConstraintValue::Sh => "SH",
-            GeoMatchConstraintValue::Si => "SI",
-            GeoMatchConstraintValue::Sj => "SJ",
-            GeoMatchConstraintValue::Sk => "SK",
-            GeoMatchConstraintValue::Sl => "SL",
-            GeoMatchConstraintValue::Sm => "SM",
-            GeoMatchConstraintValue::Sn => "SN",
-            GeoMatchConstraintValue::So => "SO",
-            GeoMatchConstraintValue::Sr => "SR",
-            GeoMatchConstraintValue::Ss => "SS",
-            GeoMatchConstraintValue::St => "ST",
-            GeoMatchConstraintValue::Sv => "SV",
-            GeoMatchConstraintValue::Sx => "SX",
-            GeoMatchConstraintValue::Sy => "SY",
-            GeoMatchConstraintValue::Sz => "SZ",
-            GeoMatchConstraintValue::Tc => "TC",
-            GeoMatchConstraintValue::Td => "TD",
-            GeoMatchConstraintValue::Tf => "TF",
-            GeoMatchConstraintValue::Tg => "TG",
-            GeoMatchConstraintValue::Th => "TH",
-            GeoMatchConstraintValue::Tj => "TJ",
-            GeoMatchConstraintValue::Tk => "TK",
-            GeoMatchConstraintValue::Tl => "TL",
-            GeoMatchConstraintValue::Tm => "TM",
-            GeoMatchConstraintValue::Tn => "TN",
-            GeoMatchConstraintValue::To => "TO",
-            GeoMatchConstraintValue::Tr => "TR",
-            GeoMatchConstraintValue::Tt => "TT",
-            GeoMatchConstraintValue::Tv => "TV",
-            GeoMatchConstraintValue::Tw => "TW",
-            GeoMatchConstraintValue::Tz => "TZ",
-            GeoMatchConstraintValue::Ua => "UA",
-            GeoMatchConstraintValue::Ug => "UG",
-            GeoMatchConstraintValue::Um => "UM",
-            GeoMatchConstraintValue::Us => "US",
-            GeoMatchConstraintValue::Uy => "UY",
-            GeoMatchConstraintValue::Uz => "UZ",
-            GeoMatchConstraintValue::Va => "VA",
-            GeoMatchConstraintValue::Vc => "VC",
-            GeoMatchConstraintValue::Ve => "VE",
-            GeoMatchConstraintValue::Vg => "VG",
-            GeoMatchConstraintValue::Vi => "VI",
-            GeoMatchConstraintValue::Vn => "VN",
-            GeoMatchConstraintValue::Vu => "VU",
-            GeoMatchConstraintValue::Wf => "WF",
-            GeoMatchConstraintValue::Ws => "WS",
-            GeoMatchConstraintValue::Ye => "YE",
-            GeoMatchConstraintValue::Yt => "YT",
-            GeoMatchConstraintValue::Za => "ZA",
-            GeoMatchConstraintValue::Zm => "ZM",
-            GeoMatchConstraintValue::Zw => "ZW",
-            GeoMatchConstraintValue::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GeoMatchConstraintValue::Ad => "AD",
+    GeoMatchConstraintValue::Ae => "AE",
+    GeoMatchConstraintValue::Af => "AF",
+    GeoMatchConstraintValue::Ag => "AG",
+    GeoMatchConstraintValue::Ai => "AI",
+    GeoMatchConstraintValue::Al => "AL",
+    GeoMatchConstraintValue::Am => "AM",
+    GeoMatchConstraintValue::Ao => "AO",
+    GeoMatchConstraintValue::Aq => "AQ",
+    GeoMatchConstraintValue::Ar => "AR",
+    GeoMatchConstraintValue::As => "AS",
+    GeoMatchConstraintValue::At => "AT",
+    GeoMatchConstraintValue::Au => "AU",
+    GeoMatchConstraintValue::Aw => "AW",
+    GeoMatchConstraintValue::Ax => "AX",
+    GeoMatchConstraintValue::Az => "AZ",
+    GeoMatchConstraintValue::Ba => "BA",
+    GeoMatchConstraintValue::Bb => "BB",
+    GeoMatchConstraintValue::Bd => "BD",
+    GeoMatchConstraintValue::Be => "BE",
+    GeoMatchConstraintValue::Bf => "BF",
+    GeoMatchConstraintValue::Bg => "BG",
+    GeoMatchConstraintValue::Bh => "BH",
+    GeoMatchConstraintValue::Bi => "BI",
+    GeoMatchConstraintValue::Bj => "BJ",
+    GeoMatchConstraintValue::Bl => "BL",
+    GeoMatchConstraintValue::Bm => "BM",
+    GeoMatchConstraintValue::Bn => "BN",
+    GeoMatchConstraintValue::Bo => "BO",
+    GeoMatchConstraintValue::Bq => "BQ",
+    GeoMatchConstraintValue::Br => "BR",
+    GeoMatchConstraintValue::Bs => "BS",
+    GeoMatchConstraintValue::Bt => "BT",
+    GeoMatchConstraintValue::Bv => "BV",
+    GeoMatchConstraintValue::Bw => "BW",
+    GeoMatchConstraintValue::By => "BY",
+    GeoMatchConstraintValue::Bz => "BZ",
+    GeoMatchConstraintValue::Ca => "CA",
+    GeoMatchConstraintValue::Cc => "CC",
+    GeoMatchConstraintValue::Cd => "CD",
+    GeoMatchConstraintValue::Cf => "CF",
+    GeoMatchConstraintValue::Cg => "CG",
+    GeoMatchConstraintValue::Ch => "CH",
+    GeoMatchConstraintValue::Ci => "CI",
+    GeoMatchConstraintValue::Ck => "CK",
+    GeoMatchConstraintValue::Cl => "CL",
+    GeoMatchConstraintValue::Cm => "CM",
+    GeoMatchConstraintValue::Cn => "CN",
+    GeoMatchConstraintValue::Co => "CO",
+    GeoMatchConstraintValue::Cr => "CR",
+    GeoMatchConstraintValue::Cu => "CU",
+    GeoMatchConstraintValue::Cv => "CV",
+    GeoMatchConstraintValue::Cw => "CW",
+    GeoMatchConstraintValue::Cx => "CX",
+    GeoMatchConstraintValue::Cy => "CY",
+    GeoMatchConstraintValue::Cz => "CZ",
+    GeoMatchConstraintValue::De => "DE",
+    GeoMatchConstraintValue::Dj => "DJ",
+    GeoMatchConstraintValue::Dk => "DK",
+    GeoMatchConstraintValue::Dm => "DM",
+    GeoMatchConstraintValue::Do => "DO",
+    GeoMatchConstraintValue::Dz => "DZ",
+    GeoMatchConstraintValue::Ec => "EC",
+    GeoMatchConstraintValue::Ee => "EE",
+    GeoMatchConstraintValue::Eg => "EG",
+    GeoMatchConstraintValue::Eh => "EH",
+    GeoMatchConstraintValue::Er => "ER",
+    GeoMatchConstraintValue::Es => "ES",
+    GeoMatchConstraintValue::Et => "ET",
+    GeoMatchConstraintValue::Fi => "FI",
+    GeoMatchConstraintValue::Fj => "FJ",
+    GeoMatchConstraintValue::Fk => "FK",
+    GeoMatchConstraintValue::Fm => "FM",
+    GeoMatchConstraintValue::Fo => "FO",
+    GeoMatchConstraintValue::Fr => "FR",
+    GeoMatchConstraintValue::Ga => "GA",
+    GeoMatchConstraintValue::Gb => "GB",
+    GeoMatchConstraintValue::Gd => "GD",
+    GeoMatchConstraintValue::Ge => "GE",
+    GeoMatchConstraintValue::Gf => "GF",
+    GeoMatchConstraintValue::Gg => "GG",
+    GeoMatchConstraintValue::Gh => "GH",
+    GeoMatchConstraintValue::Gi => "GI",
+    GeoMatchConstraintValue::Gl => "GL",
+    GeoMatchConstraintValue::Gm => "GM",
+    GeoMatchConstraintValue::Gn => "GN",
+    GeoMatchConstraintValue::Gp => "GP",
+    GeoMatchConstraintValue::Gq => "GQ",
+    GeoMatchConstraintValue::Gr => "GR",
+    GeoMatchConstraintValue::Gs => "GS",
+    GeoMatchConstraintValue::Gt => "GT",
+    GeoMatchConstraintValue::Gu => "GU",
+    GeoMatchConstraintValue::Gw => "GW",
+    GeoMatchConstraintValue::Gy => "GY",
+    GeoMatchConstraintValue::Hk => "HK",
+    GeoMatchConstraintValue::Hm => "HM",
+    GeoMatchConstraintValue::Hn => "HN",
+    GeoMatchConstraintValue::Hr => "HR",
+    GeoMatchConstraintValue::Ht => "HT",
+    GeoMatchConstraintValue::Hu => "HU",
+    GeoMatchConstraintValue::Id => "ID",
+    GeoMatchConstraintValue::Ie => "IE",
+    GeoMatchConstraintValue::Il => "IL",
+    GeoMatchConstraintValue::Im => "IM",
+    GeoMatchConstraintValue::In => "IN",
+    GeoMatchConstraintValue::Io => "IO",
+    GeoMatchConstraintValue::Iq => "IQ",
+    GeoMatchConstraintValue::Ir => "IR",
+    GeoMatchConstraintValue::Is => "IS",
+    GeoMatchConstraintValue::It => "IT",
+    GeoMatchConstraintValue::Je => "JE",
+    GeoMatchConstraintValue::Jm => "JM",
+    GeoMatchConstraintValue::Jo => "JO",
+    GeoMatchConstraintValue::Jp => "JP",
+    GeoMatchConstraintValue::Ke => "KE",
+    GeoMatchConstraintValue::Kg => "KG",
+    GeoMatchConstraintValue::Kh => "KH",
+    GeoMatchConstraintValue::Ki => "KI",
+    GeoMatchConstraintValue::Km => "KM",
+    GeoMatchConstraintValue::Kn => "KN",
+    GeoMatchConstraintValue::Kp => "KP",
+    GeoMatchConstraintValue::Kr => "KR",
+    GeoMatchConstraintValue::Kw => "KW",
+    GeoMatchConstraintValue::Ky => "KY",
+    GeoMatchConstraintValue::Kz => "KZ",
+    GeoMatchConstraintValue::La => "LA",
+    GeoMatchConstraintValue::Lb => "LB",
+    GeoMatchConstraintValue::Lc => "LC",
+    GeoMatchConstraintValue::Li => "LI",
+    GeoMatchConstraintValue::Lk => "LK",
+    GeoMatchConstraintValue::Lr => "LR",
+    GeoMatchConstraintValue::Ls => "LS",
+    GeoMatchConstraintValue::Lt => "LT",
+    GeoMatchConstraintValue::Lu => "LU",
+    GeoMatchConstraintValue::Lv => "LV",
+    GeoMatchConstraintValue::Ly => "LY",
+    GeoMatchConstraintValue::Ma => "MA",
+    GeoMatchConstraintValue::Mc => "MC",
+    GeoMatchConstraintValue::Md => "MD",
+    GeoMatchConstraintValue::Me => "ME",
+    GeoMatchConstraintValue::Mf => "MF",
+    GeoMatchConstraintValue::Mg => "MG",
+    GeoMatchConstraintValue::Mh => "MH",
+    GeoMatchConstraintValue::Mk => "MK",
+    GeoMatchConstraintValue::Ml => "ML",
+    GeoMatchConstraintValue::Mm => "MM",
+    GeoMatchConstraintValue::Mn => "MN",
+    GeoMatchConstraintValue::Mo => "MO",
+    GeoMatchConstraintValue::Mp => "MP",
+    GeoMatchConstraintValue::Mq => "MQ",
+    GeoMatchConstraintValue::Mr => "MR",
+    GeoMatchConstraintValue::Ms => "MS",
+    GeoMatchConstraintValue::Mt => "MT",
+    GeoMatchConstraintValue::Mu => "MU",
+    GeoMatchConstraintValue::Mv => "MV",
+    GeoMatchConstraintValue::Mw => "MW",
+    GeoMatchConstraintValue::Mx => "MX",
+    GeoMatchConstraintValue::My => "MY",
+    GeoMatchConstraintValue::Mz => "MZ",
+    GeoMatchConstraintValue::Na => "NA",
+    GeoMatchConstraintValue::Nc => "NC",
+    GeoMatchConstraintValue::Ne => "NE",
+    GeoMatchConstraintValue::Nf => "NF",
+    GeoMatchConstraintValue::Ng => "NG",
+    GeoMatchConstraintValue::Ni => "NI",
+    GeoMatchConstraintValue::Nl => "NL",
+    GeoMatchConstraintValue::No => "NO",
+    GeoMatchConstraintValue::Np => "NP",
+    GeoMatchConstraintValue::Nr => "NR",
+    GeoMatchConstraintValue::Nu => "NU",
+    GeoMatchConstraintValue::Nz => "NZ",
+    GeoMatchConstraintValue::Om => "OM",
+    GeoMatchConstraintValue::Pa => "PA",
+    GeoMatchConstraintValue::Pe => "PE",
+    GeoMatchConstraintValue::Pf => "PF",
+    GeoMatchConstraintValue::Pg => "PG",
+    GeoMatchConstraintValue::Ph => "PH",
+    GeoMatchConstraintValue::Pk => "PK",
+    GeoMatchConstraintValue::Pl => "PL",
+    GeoMatchConstraintValue::Pm => "PM",
+    GeoMatchConstraintValue::Pn => "PN",
+    GeoMatchConstraintValue::Pr => "PR",
+    GeoMatchConstraintValue::Ps => "PS",
+    GeoMatchConstraintValue::Pt => "PT",
+    GeoMatchConstraintValue::Pw => "PW",
+    GeoMatchConstraintValue::Py => "PY",
+    GeoMatchConstraintValue::Qa => "QA",
+    GeoMatchConstraintValue::Re => "RE",
+    GeoMatchConstraintValue::Ro => "RO",
+    GeoMatchConstraintValue::Rs => "RS",
+    GeoMatchConstraintValue::Ru => "RU",
+    GeoMatchConstraintValue::Rw => "RW",
+    GeoMatchConstraintValue::Sa => "SA",
+    GeoMatchConstraintValue::Sb => "SB",
+    GeoMatchConstraintValue::Sc => "SC",
+    GeoMatchConstraintValue::Sd => "SD",
+    GeoMatchConstraintValue::Se => "SE",
+    GeoMatchConstraintValue::Sg => "SG",
+    GeoMatchConstraintValue::Sh => "SH",
+    GeoMatchConstraintValue::Si => "SI",
+    GeoMatchConstraintValue::Sj => "SJ",
+    GeoMatchConstraintValue::Sk => "SK",
+    GeoMatchConstraintValue::Sl => "SL",
+    GeoMatchConstraintValue::Sm => "SM",
+    GeoMatchConstraintValue::Sn => "SN",
+    GeoMatchConstraintValue::So => "SO",
+    GeoMatchConstraintValue::Sr => "SR",
+    GeoMatchConstraintValue::Ss => "SS",
+    GeoMatchConstraintValue::St => "ST",
+    GeoMatchConstraintValue::Sv => "SV",
+    GeoMatchConstraintValue::Sx => "SX",
+    GeoMatchConstraintValue::Sy => "SY",
+    GeoMatchConstraintValue::Sz => "SZ",
+    GeoMatchConstraintValue::Tc => "TC",
+    GeoMatchConstraintValue::Td => "TD",
+    GeoMatchConstraintValue::Tf => "TF",
+    GeoMatchConstraintValue::Tg => "TG",
+    GeoMatchConstraintValue::Th => "TH",
+    GeoMatchConstraintValue::Tj => "TJ",
+    GeoMatchConstraintValue::Tk => "TK",
+    GeoMatchConstraintValue::Tl => "TL",
+    GeoMatchConstraintValue::Tm => "TM",
+    GeoMatchConstraintValue::Tn => "TN",
+    GeoMatchConstraintValue::To => "TO",
+    GeoMatchConstraintValue::Tr => "TR",
+    GeoMatchConstraintValue::Tt => "TT",
+    GeoMatchConstraintValue::Tv => "TV",
+    GeoMatchConstraintValue::Tw => "TW",
+    GeoMatchConstraintValue::Tz => "TZ",
+    GeoMatchConstraintValue::Ua => "UA",
+    GeoMatchConstraintValue::Ug => "UG",
+    GeoMatchConstraintValue::Um => "UM",
+    GeoMatchConstraintValue::Us => "US",
+    GeoMatchConstraintValue::Uy => "UY",
+    GeoMatchConstraintValue::Uz => "UZ",
+    GeoMatchConstraintValue::Va => "VA",
+    GeoMatchConstraintValue::Vc => "VC",
+    GeoMatchConstraintValue::Ve => "VE",
+    GeoMatchConstraintValue::Vg => "VG",
+    GeoMatchConstraintValue::Vi => "VI",
+    GeoMatchConstraintValue::Vn => "VN",
+    GeoMatchConstraintValue::Vu => "VU",
+    GeoMatchConstraintValue::Wf => "WF",
+    GeoMatchConstraintValue::Ws => "WS",
+    GeoMatchConstraintValue::Ye => "YE",
+    GeoMatchConstraintValue::Yt => "YT",
+    GeoMatchConstraintValue::Za => "ZA",
+    GeoMatchConstraintValue::Zm => "ZM",
+    GeoMatchConstraintValue::Zw => "ZW",
+    GeoMatchConstraintValue::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"]
+                }
+            }
 impl AsRef<str> for GeoMatchConstraintValue {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `GeoMatchConstraintType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5011,13 +4987,13 @@ pub enum GeoMatchConstraintType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GeoMatchConstraintType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Country" => GeoMatchConstraintType::Country,
-            other => GeoMatchConstraintType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Country" => GeoMatchConstraintType::Country,
+other => GeoMatchConstraintType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GeoMatchConstraintType {
                 type Err = std::convert::Infallible;
 
@@ -5026,25 +5002,23 @@ impl std::str::FromStr for GeoMatchConstraintType {
                 }
             }
 impl GeoMatchConstraintType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GeoMatchConstraintType::Country => "Country",
-            GeoMatchConstraintType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Country"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GeoMatchConstraintType::Country => "Country",
+    GeoMatchConstraintType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Country"]
+                }
+            }
 impl AsRef<str> for GeoMatchConstraintType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -5562,17 +5536,17 @@ pub enum PositionalConstraint {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PositionalConstraint {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONTAINS" => PositionalConstraint::Contains,
-            "CONTAINS_WORD" => PositionalConstraint::ContainsWord,
-            "ENDS_WITH" => PositionalConstraint::EndsWith,
-            "EXACTLY" => PositionalConstraint::Exactly,
-            "STARTS_WITH" => PositionalConstraint::StartsWith,
-            other => PositionalConstraint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONTAINS" => PositionalConstraint::Contains,
+"CONTAINS_WORD" => PositionalConstraint::ContainsWord,
+"ENDS_WITH" => PositionalConstraint::EndsWith,
+"EXACTLY" => PositionalConstraint::Exactly,
+"STARTS_WITH" => PositionalConstraint::StartsWith,
+other => PositionalConstraint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PositionalConstraint {
                 type Err = std::convert::Infallible;
 
@@ -5581,29 +5555,27 @@ impl std::str::FromStr for PositionalConstraint {
                 }
             }
 impl PositionalConstraint {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PositionalConstraint::Contains => "CONTAINS",
-            PositionalConstraint::ContainsWord => "CONTAINS_WORD",
-            PositionalConstraint::EndsWith => "ENDS_WITH",
-            PositionalConstraint::Exactly => "EXACTLY",
-            PositionalConstraint::StartsWith => "STARTS_WITH",
-            PositionalConstraint::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONTAINS", "CONTAINS_WORD", "ENDS_WITH", "EXACTLY", "STARTS_WITH"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PositionalConstraint::Contains => "CONTAINS",
+    PositionalConstraint::ContainsWord => "CONTAINS_WORD",
+    PositionalConstraint::EndsWith => "ENDS_WITH",
+    PositionalConstraint::Exactly => "EXACTLY",
+    PositionalConstraint::StartsWith => "STARTS_WITH",
+    PositionalConstraint::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONTAINS", "CONTAINS_WORD", "ENDS_WITH", "EXACTLY", "STARTS_WITH"]
+                }
+            }
 impl AsRef<str> for PositionalConstraint {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -8368,13 +8340,13 @@ pub enum RateKey {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RateKey {
-    fn from(s: &str) -> Self {
-        match s {
-            "IP" => RateKey::Ip,
-            other => RateKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "IP" => RateKey::Ip,
+other => RateKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RateKey {
                 type Err = std::convert::Infallible;
 
@@ -8383,25 +8355,23 @@ impl std::str::FromStr for RateKey {
                 }
             }
 impl RateKey {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RateKey::Ip => "IP",
-            RateKey::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "IP"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RateKey::Ip => "IP",
+    RateKey::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["IP"]
+                }
+            }
 impl AsRef<str> for RateKey {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -8658,15 +8628,15 @@ pub enum ChangeTokenStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeTokenStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "INSYNC" => ChangeTokenStatus::Insync,
-            "PENDING" => ChangeTokenStatus::Pending,
-            "PROVISIONED" => ChangeTokenStatus::Provisioned,
-            other => ChangeTokenStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "INSYNC" => ChangeTokenStatus::Insync,
+"PENDING" => ChangeTokenStatus::Pending,
+"PROVISIONED" => ChangeTokenStatus::Provisioned,
+other => ChangeTokenStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ChangeTokenStatus {
                 type Err = std::convert::Infallible;
 
@@ -8675,27 +8645,25 @@ impl std::str::FromStr for ChangeTokenStatus {
                 }
             }
 impl ChangeTokenStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChangeTokenStatus::Insync => "INSYNC",
-            ChangeTokenStatus::Pending => "PENDING",
-            ChangeTokenStatus::Provisioned => "PROVISIONED",
-            ChangeTokenStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "INSYNC", "PENDING", "PROVISIONED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChangeTokenStatus::Insync => "INSYNC",
+    ChangeTokenStatus::Pending => "PENDING",
+    ChangeTokenStatus::Provisioned => "PROVISIONED",
+    ChangeTokenStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INSYNC", "PENDING", "PROVISIONED"]
+                }
+            }
 impl AsRef<str> for ChangeTokenStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -8862,19 +8830,19 @@ pub enum MigrationErrorType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MigrationErrorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENTITY_NOT_FOUND" => MigrationErrorType::EntityNotFound,
-            "ENTITY_NOT_SUPPORTED" => MigrationErrorType::EntityNotSupported,
-            "S3_BUCKET_INVALID_REGION" => MigrationErrorType::S3BucketInvalidRegion,
-            "S3_BUCKET_NOT_ACCESSIBLE" => MigrationErrorType::S3BucketNotAccessible,
-            "S3_BUCKET_NOT_FOUND" => MigrationErrorType::S3BucketNotFound,
-            "S3_BUCKET_NO_PERMISSION" => MigrationErrorType::S3BucketNoPermission,
-            "S3_INTERNAL_ERROR" => MigrationErrorType::S3InternalError,
-            other => MigrationErrorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ENTITY_NOT_FOUND" => MigrationErrorType::EntityNotFound,
+"ENTITY_NOT_SUPPORTED" => MigrationErrorType::EntityNotSupported,
+"S3_BUCKET_INVALID_REGION" => MigrationErrorType::S3BucketInvalidRegion,
+"S3_BUCKET_NOT_ACCESSIBLE" => MigrationErrorType::S3BucketNotAccessible,
+"S3_BUCKET_NOT_FOUND" => MigrationErrorType::S3BucketNotFound,
+"S3_BUCKET_NO_PERMISSION" => MigrationErrorType::S3BucketNoPermission,
+"S3_INTERNAL_ERROR" => MigrationErrorType::S3InternalError,
+other => MigrationErrorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MigrationErrorType {
                 type Err = std::convert::Infallible;
 
@@ -8883,29 +8851,27 @@ impl std::str::FromStr for MigrationErrorType {
                 }
             }
 impl MigrationErrorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MigrationErrorType::EntityNotFound => "ENTITY_NOT_FOUND",
-            MigrationErrorType::EntityNotSupported => "ENTITY_NOT_SUPPORTED",
-            MigrationErrorType::S3BucketInvalidRegion => "S3_BUCKET_INVALID_REGION",
-            MigrationErrorType::S3BucketNotAccessible => "S3_BUCKET_NOT_ACCESSIBLE",
-            MigrationErrorType::S3BucketNotFound => "S3_BUCKET_NOT_FOUND",
-            MigrationErrorType::S3BucketNoPermission => "S3_BUCKET_NO_PERMISSION",
-            MigrationErrorType::S3InternalError => "S3_INTERNAL_ERROR",
-            MigrationErrorType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENTITY_NOT_FOUND", "ENTITY_NOT_SUPPORTED", "S3_BUCKET_INVALID_REGION", "S3_BUCKET_NOT_ACCESSIBLE", "S3_BUCKET_NOT_FOUND", "S3_BUCKET_NO_PERMISSION", "S3_INTERNAL_ERROR"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MigrationErrorType::EntityNotFound => "ENTITY_NOT_FOUND",
+    MigrationErrorType::EntityNotSupported => "ENTITY_NOT_SUPPORTED",
+    MigrationErrorType::S3BucketInvalidRegion => "S3_BUCKET_INVALID_REGION",
+    MigrationErrorType::S3BucketNotAccessible => "S3_BUCKET_NOT_ACCESSIBLE",
+    MigrationErrorType::S3BucketNotFound => "S3_BUCKET_NOT_FOUND",
+    MigrationErrorType::S3BucketNoPermission => "S3_BUCKET_NO_PERMISSION",
+    MigrationErrorType::S3InternalError => "S3_INTERNAL_ERROR",
+    MigrationErrorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENTITY_NOT_FOUND", "ENTITY_NOT_SUPPORTED", "S3_BUCKET_INVALID_REGION", "S3_BUCKET_NOT_ACCESSIBLE", "S3_BUCKET_NOT_FOUND", "S3_BUCKET_NO_PERMISSION", "S3_INTERNAL_ERROR"]
+                }
+            }
 impl AsRef<str> for MigrationErrorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

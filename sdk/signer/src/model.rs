@@ -376,15 +376,15 @@ pub enum ImageFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "JSON" => ImageFormat::Json,
-            "JSONDetached" => ImageFormat::JsonDetached,
-            "JSONEmbedded" => ImageFormat::JsonEmbedded,
-            other => ImageFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "JSON" => ImageFormat::Json,
+"JSONDetached" => ImageFormat::JsonDetached,
+"JSONEmbedded" => ImageFormat::JsonEmbedded,
+other => ImageFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ImageFormat {
                 type Err = std::convert::Infallible;
 
@@ -393,27 +393,25 @@ impl std::str::FromStr for ImageFormat {
                 }
             }
 impl ImageFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ImageFormat::Json => "JSON",
-            ImageFormat::JsonDetached => "JSONDetached",
-            ImageFormat::JsonEmbedded => "JSONEmbedded",
-            ImageFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "JSON", "JSONDetached", "JSONEmbedded"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ImageFormat::Json => "JSON",
+    ImageFormat::JsonDetached => "JSONDetached",
+    ImageFormat::JsonEmbedded => "JSONEmbedded",
+    ImageFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["JSON", "JSONDetached", "JSONEmbedded"]
+                }
+            }
 impl AsRef<str> for ImageFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
 #[non_exhaustive]
@@ -531,14 +529,14 @@ pub enum HashAlgorithm {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HashAlgorithm {
-    fn from(s: &str) -> Self {
-        match s {
-            "SHA1" => HashAlgorithm::Sha1,
-            "SHA256" => HashAlgorithm::Sha256,
-            other => HashAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SHA1" => HashAlgorithm::Sha1,
+"SHA256" => HashAlgorithm::Sha256,
+other => HashAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HashAlgorithm {
                 type Err = std::convert::Infallible;
 
@@ -547,26 +545,24 @@ impl std::str::FromStr for HashAlgorithm {
                 }
             }
 impl HashAlgorithm {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HashAlgorithm::Sha1 => "SHA1",
-            HashAlgorithm::Sha256 => "SHA256",
-            HashAlgorithm::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SHA1", "SHA256"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HashAlgorithm::Sha1 => "SHA1",
+    HashAlgorithm::Sha256 => "SHA256",
+    HashAlgorithm::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SHA1", "SHA256"]
+                }
+            }
 impl AsRef<str> for HashAlgorithm {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EncryptionAlgorithm`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -615,14 +611,14 @@ pub enum EncryptionAlgorithm {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionAlgorithm {
-    fn from(s: &str) -> Self {
-        match s {
-            "ECDSA" => EncryptionAlgorithm::Ecdsa,
-            "RSA" => EncryptionAlgorithm::Rsa,
-            other => EncryptionAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ECDSA" => EncryptionAlgorithm::Ecdsa,
+"RSA" => EncryptionAlgorithm::Rsa,
+other => EncryptionAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EncryptionAlgorithm {
                 type Err = std::convert::Infallible;
 
@@ -631,26 +627,24 @@ impl std::str::FromStr for EncryptionAlgorithm {
                 }
             }
 impl EncryptionAlgorithm {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EncryptionAlgorithm::Ecdsa => "ECDSA",
-            EncryptionAlgorithm::Rsa => "RSA",
-            EncryptionAlgorithm::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ECDSA", "RSA"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EncryptionAlgorithm::Ecdsa => "ECDSA",
+    EncryptionAlgorithm::Rsa => "RSA",
+    EncryptionAlgorithm::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ECDSA", "RSA"]
+                }
+            }
 impl AsRef<str> for EncryptionAlgorithm {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The validity period for a signing job.</p>
 #[non_exhaustive]
@@ -772,15 +766,15 @@ pub enum ValidityType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidityType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DAYS" => ValidityType::Days,
-            "MONTHS" => ValidityType::Months,
-            "YEARS" => ValidityType::Years,
-            other => ValidityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DAYS" => ValidityType::Days,
+"MONTHS" => ValidityType::Months,
+"YEARS" => ValidityType::Years,
+other => ValidityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ValidityType {
                 type Err = std::convert::Infallible;
 
@@ -789,27 +783,25 @@ impl std::str::FromStr for ValidityType {
                 }
             }
 impl ValidityType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidityType::Days => "DAYS",
-            ValidityType::Months => "MONTHS",
-            ValidityType::Years => "YEARS",
-            ValidityType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DAYS", "MONTHS", "YEARS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidityType::Days => "DAYS",
+    ValidityType::Months => "MONTHS",
+    ValidityType::Years => "YEARS",
+    ValidityType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DAYS", "MONTHS", "YEARS"]
+                }
+            }
 impl AsRef<str> for ValidityType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The ACM certificate that is used to sign your code.</p>
 #[non_exhaustive]
@@ -1163,15 +1155,15 @@ pub enum SigningProfileStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SigningProfileStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => SigningProfileStatus::Active,
-            "Canceled" => SigningProfileStatus::Canceled,
-            "Revoked" => SigningProfileStatus::Revoked,
-            other => SigningProfileStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => SigningProfileStatus::Active,
+"Canceled" => SigningProfileStatus::Canceled,
+"Revoked" => SigningProfileStatus::Revoked,
+other => SigningProfileStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SigningProfileStatus {
                 type Err = std::convert::Infallible;
 
@@ -1180,27 +1172,25 @@ impl std::str::FromStr for SigningProfileStatus {
                 }
             }
 impl SigningProfileStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SigningProfileStatus::Active => "Active",
-            SigningProfileStatus::Canceled => "Canceled",
-            SigningProfileStatus::Revoked => "Revoked",
-            SigningProfileStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "Canceled", "Revoked"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SigningProfileStatus::Active => "Active",
+    SigningProfileStatus::Canceled => "Canceled",
+    SigningProfileStatus::Revoked => "Revoked",
+    SigningProfileStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Canceled", "Revoked"]
+                }
+            }
 impl AsRef<str> for SigningProfileStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about the signing configurations and parameters that are used to perform a code signing job.</p>
 #[non_exhaustive]
@@ -1744,13 +1734,13 @@ pub enum Category {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Category {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWSIoT" => Category::AwsIoT,
-            other => Category::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWSIoT" => Category::AwsIoT,
+other => Category::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Category {
                 type Err = std::convert::Infallible;
 
@@ -1759,25 +1749,23 @@ impl std::str::FromStr for Category {
                 }
             }
 impl Category {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Category::AwsIoT => "AWSIoT",
-            Category::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWSIoT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Category::AwsIoT => "AWSIoT",
+    Category::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWSIoT"]
+                }
+            }
 impl AsRef<str> for Category {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about a signing job.</p>
 #[non_exhaustive]
@@ -2127,15 +2115,15 @@ pub enum SigningStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SigningStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Failed" => SigningStatus::Failed,
-            "InProgress" => SigningStatus::InProgress,
-            "Succeeded" => SigningStatus::Succeeded,
-            other => SigningStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Failed" => SigningStatus::Failed,
+"InProgress" => SigningStatus::InProgress,
+"Succeeded" => SigningStatus::Succeeded,
+other => SigningStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SigningStatus {
                 type Err = std::convert::Infallible;
 
@@ -2144,27 +2132,25 @@ impl std::str::FromStr for SigningStatus {
                 }
             }
 impl SigningStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SigningStatus::Failed => "Failed",
-            SigningStatus::InProgress => "InProgress",
-            SigningStatus::Succeeded => "Succeeded",
-            SigningStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Failed", "InProgress", "Succeeded"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SigningStatus::Failed => "Failed",
+    SigningStatus::InProgress => "InProgress",
+    SigningStatus::Succeeded => "Succeeded",
+    SigningStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Failed", "InProgress", "Succeeded"]
+                }
+            }
 impl AsRef<str> for SigningStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Points to an <code>S3SignedObject</code> object that contains information about your signed code image.</p>
 #[non_exhaustive]

@@ -387,27 +387,27 @@ pub enum HandlerErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HandlerErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => HandlerErrorCode::AccessDenied,
-            "AlreadyExists" => HandlerErrorCode::AlreadyExists,
-            "GeneralServiceException" => HandlerErrorCode::GeneralServiceException,
-            "InternalFailure" => HandlerErrorCode::InternalFailure,
-            "InvalidCredentials" => HandlerErrorCode::InvalidCredentials,
-            "InvalidRequest" => HandlerErrorCode::InvalidRequest,
-            "NetworkFailure" => HandlerErrorCode::NetworkFailure,
-            "NotFound" => HandlerErrorCode::NotFound,
-            "NotStabilized" => HandlerErrorCode::NotStabilized,
-            "NotUpdatable" => HandlerErrorCode::NotUpdatable,
-            "ResourceConflict" => HandlerErrorCode::ResourceConflict,
-            "ServiceInternalError" => HandlerErrorCode::ServiceInternalError,
-            "ServiceLimitExceeded" => HandlerErrorCode::ServiceLimitExceeded,
-            "ServiceTimeout" => HandlerErrorCode::ServiceTimeout,
-            "Throttling" => HandlerErrorCode::Throttling,
-            other => HandlerErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDenied" => HandlerErrorCode::AccessDenied,
+"AlreadyExists" => HandlerErrorCode::AlreadyExists,
+"GeneralServiceException" => HandlerErrorCode::GeneralServiceException,
+"InternalFailure" => HandlerErrorCode::InternalFailure,
+"InvalidCredentials" => HandlerErrorCode::InvalidCredentials,
+"InvalidRequest" => HandlerErrorCode::InvalidRequest,
+"NetworkFailure" => HandlerErrorCode::NetworkFailure,
+"NotFound" => HandlerErrorCode::NotFound,
+"NotStabilized" => HandlerErrorCode::NotStabilized,
+"NotUpdatable" => HandlerErrorCode::NotUpdatable,
+"ResourceConflict" => HandlerErrorCode::ResourceConflict,
+"ServiceInternalError" => HandlerErrorCode::ServiceInternalError,
+"ServiceLimitExceeded" => HandlerErrorCode::ServiceLimitExceeded,
+"ServiceTimeout" => HandlerErrorCode::ServiceTimeout,
+"Throttling" => HandlerErrorCode::Throttling,
+other => HandlerErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HandlerErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -416,39 +416,37 @@ impl std::str::FromStr for HandlerErrorCode {
                 }
             }
 impl HandlerErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HandlerErrorCode::AccessDenied => "AccessDenied",
-            HandlerErrorCode::AlreadyExists => "AlreadyExists",
-            HandlerErrorCode::GeneralServiceException => "GeneralServiceException",
-            HandlerErrorCode::InternalFailure => "InternalFailure",
-            HandlerErrorCode::InvalidCredentials => "InvalidCredentials",
-            HandlerErrorCode::InvalidRequest => "InvalidRequest",
-            HandlerErrorCode::NetworkFailure => "NetworkFailure",
-            HandlerErrorCode::NotFound => "NotFound",
-            HandlerErrorCode::NotStabilized => "NotStabilized",
-            HandlerErrorCode::NotUpdatable => "NotUpdatable",
-            HandlerErrorCode::ResourceConflict => "ResourceConflict",
-            HandlerErrorCode::ServiceInternalError => "ServiceInternalError",
-            HandlerErrorCode::ServiceLimitExceeded => "ServiceLimitExceeded",
-            HandlerErrorCode::ServiceTimeout => "ServiceTimeout",
-            HandlerErrorCode::Throttling => "Throttling",
-            HandlerErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied", "AlreadyExists", "GeneralServiceException", "InternalFailure", "InvalidCredentials", "InvalidRequest", "NetworkFailure", "NotFound", "NotStabilized", "NotUpdatable", "ResourceConflict", "ServiceInternalError", "ServiceLimitExceeded", "ServiceTimeout", "Throttling"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HandlerErrorCode::AccessDenied => "AccessDenied",
+    HandlerErrorCode::AlreadyExists => "AlreadyExists",
+    HandlerErrorCode::GeneralServiceException => "GeneralServiceException",
+    HandlerErrorCode::InternalFailure => "InternalFailure",
+    HandlerErrorCode::InvalidCredentials => "InvalidCredentials",
+    HandlerErrorCode::InvalidRequest => "InvalidRequest",
+    HandlerErrorCode::NetworkFailure => "NetworkFailure",
+    HandlerErrorCode::NotFound => "NotFound",
+    HandlerErrorCode::NotStabilized => "NotStabilized",
+    HandlerErrorCode::NotUpdatable => "NotUpdatable",
+    HandlerErrorCode::ResourceConflict => "ResourceConflict",
+    HandlerErrorCode::ServiceInternalError => "ServiceInternalError",
+    HandlerErrorCode::ServiceLimitExceeded => "ServiceLimitExceeded",
+    HandlerErrorCode::ServiceTimeout => "ServiceTimeout",
+    HandlerErrorCode::Throttling => "Throttling",
+    HandlerErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "AlreadyExists", "GeneralServiceException", "InternalFailure", "InvalidCredentials", "InvalidRequest", "NetworkFailure", "NotFound", "NotStabilized", "NotUpdatable", "ResourceConflict", "ServiceInternalError", "ServiceLimitExceeded", "ServiceTimeout", "Throttling"]
+                }
+            }
 impl AsRef<str> for HandlerErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `OperationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -509,18 +507,18 @@ pub enum OperationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCEL_COMPLETE" => OperationStatus::CancelComplete,
-            "CANCEL_IN_PROGRESS" => OperationStatus::CancelInProgress,
-            "FAILED" => OperationStatus::Failed,
-            "IN_PROGRESS" => OperationStatus::InProgress,
-            "PENDING" => OperationStatus::Pending,
-            "SUCCESS" => OperationStatus::Success,
-            other => OperationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCEL_COMPLETE" => OperationStatus::CancelComplete,
+"CANCEL_IN_PROGRESS" => OperationStatus::CancelInProgress,
+"FAILED" => OperationStatus::Failed,
+"IN_PROGRESS" => OperationStatus::InProgress,
+"PENDING" => OperationStatus::Pending,
+"SUCCESS" => OperationStatus::Success,
+other => OperationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OperationStatus {
                 type Err = std::convert::Infallible;
 
@@ -529,30 +527,28 @@ impl std::str::FromStr for OperationStatus {
                 }
             }
 impl OperationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OperationStatus::CancelComplete => "CANCEL_COMPLETE",
-            OperationStatus::CancelInProgress => "CANCEL_IN_PROGRESS",
-            OperationStatus::Failed => "FAILED",
-            OperationStatus::InProgress => "IN_PROGRESS",
-            OperationStatus::Pending => "PENDING",
-            OperationStatus::Success => "SUCCESS",
-            OperationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCEL_COMPLETE", "CANCEL_IN_PROGRESS", "FAILED", "IN_PROGRESS", "PENDING", "SUCCESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OperationStatus::CancelComplete => "CANCEL_COMPLETE",
+    OperationStatus::CancelInProgress => "CANCEL_IN_PROGRESS",
+    OperationStatus::Failed => "FAILED",
+    OperationStatus::InProgress => "IN_PROGRESS",
+    OperationStatus::Pending => "PENDING",
+    OperationStatus::Success => "SUCCESS",
+    OperationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCEL_COMPLETE", "CANCEL_IN_PROGRESS", "FAILED", "IN_PROGRESS", "PENDING", "SUCCESS"]
+                }
+            }
 impl AsRef<str> for OperationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Operation`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -604,15 +600,15 @@ pub enum Operation {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Operation {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE" => Operation::Create,
-            "DELETE" => Operation::Delete,
-            "UPDATE" => Operation::Update,
-            other => Operation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE" => Operation::Create,
+"DELETE" => Operation::Delete,
+"UPDATE" => Operation::Update,
+other => Operation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Operation {
                 type Err = std::convert::Infallible;
 
@@ -621,27 +617,25 @@ impl std::str::FromStr for Operation {
                 }
             }
 impl Operation {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Operation::Create => "CREATE",
-            Operation::Delete => "DELETE",
-            Operation::Update => "UPDATE",
-            Operation::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE", "DELETE", "UPDATE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Operation::Create => "CREATE",
+    Operation::Delete => "DELETE",
+    Operation::Update => "UPDATE",
+    Operation::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE", "DELETE", "UPDATE"]
+                }
+            }
 impl AsRef<str> for Operation {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents information about a provisioned resource.</p>
 #[non_exhaustive]

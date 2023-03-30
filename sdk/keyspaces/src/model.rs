@@ -95,13 +95,13 @@ pub enum TimeToLiveStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TimeToLiveStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENABLED" => TimeToLiveStatus::Enabled,
-            other => TimeToLiveStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ENABLED" => TimeToLiveStatus::Enabled,
+other => TimeToLiveStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TimeToLiveStatus {
                 type Err = std::convert::Infallible;
 
@@ -110,25 +110,23 @@ impl std::str::FromStr for TimeToLiveStatus {
                 }
             }
 impl TimeToLiveStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TimeToLiveStatus::Enabled => "ENABLED",
-            TimeToLiveStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TimeToLiveStatus::Enabled => "ENABLED",
+    TimeToLiveStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENABLED"]
+                }
+            }
 impl AsRef<str> for TimeToLiveStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Point-in-time recovery (PITR) helps protect your Amazon Keyspaces tables from accidental write or delete operations by providing you continuous backups of your table data.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -236,14 +234,14 @@ pub enum PointInTimeRecoveryStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PointInTimeRecoveryStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => PointInTimeRecoveryStatus::Disabled,
-            "ENABLED" => PointInTimeRecoveryStatus::Enabled,
-            other => PointInTimeRecoveryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => PointInTimeRecoveryStatus::Disabled,
+"ENABLED" => PointInTimeRecoveryStatus::Enabled,
+other => PointInTimeRecoveryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PointInTimeRecoveryStatus {
                 type Err = std::convert::Infallible;
 
@@ -252,26 +250,24 @@ impl std::str::FromStr for PointInTimeRecoveryStatus {
                 }
             }
 impl PointInTimeRecoveryStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PointInTimeRecoveryStatus::Disabled => "DISABLED",
-            PointInTimeRecoveryStatus::Enabled => "ENABLED",
-            PointInTimeRecoveryStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED", "ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PointInTimeRecoveryStatus::Disabled => "DISABLED",
+    PointInTimeRecoveryStatus::Enabled => "ENABLED",
+    PointInTimeRecoveryStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "ENABLED"]
+                }
+            }
 impl AsRef<str> for PointInTimeRecoveryStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Amazon Keyspaces encrypts and decrypts the table data at rest transparently and integrates with Key Management Service for storing and managing the encryption key. You can choose one of the following KMS keys (KMS keys):</p> 
 /// <p>• Amazon Web Services owned key - This is the default encryption type. The key is owned by Amazon Keyspaces (no additional charge). </p> 
@@ -409,14 +405,14 @@ pub enum EncryptionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS_OWNED_KMS_KEY" => EncryptionType::AwsOwnedKmsKey,
-            "CUSTOMER_MANAGED_KMS_KEY" => EncryptionType::CustomerManagedKmsKey,
-            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS_OWNED_KMS_KEY" => EncryptionType::AwsOwnedKmsKey,
+"CUSTOMER_MANAGED_KMS_KEY" => EncryptionType::CustomerManagedKmsKey,
+other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EncryptionType {
                 type Err = std::convert::Infallible;
 
@@ -425,26 +421,24 @@ impl std::str::FromStr for EncryptionType {
                 }
             }
 impl EncryptionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EncryptionType::AwsOwnedKmsKey => "AWS_OWNED_KMS_KEY",
-            EncryptionType::CustomerManagedKmsKey => "CUSTOMER_MANAGED_KMS_KEY",
-            EncryptionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_OWNED_KMS_KEY", "CUSTOMER_MANAGED_KMS_KEY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EncryptionType::AwsOwnedKmsKey => "AWS_OWNED_KMS_KEY",
+    EncryptionType::CustomerManagedKmsKey => "CUSTOMER_MANAGED_KMS_KEY",
+    EncryptionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS_OWNED_KMS_KEY", "CUSTOMER_MANAGED_KMS_KEY"]
+                }
+            }
 impl AsRef<str> for EncryptionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Amazon Keyspaces has two read/write capacity modes for processing reads and writes on your tables: </p> 
 /// <p>• On-demand (default)</p> 
@@ -601,14 +595,14 @@ pub enum ThroughputMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ThroughputMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "PAY_PER_REQUEST" => ThroughputMode::PayPerRequest,
-            "PROVISIONED" => ThroughputMode::Provisioned,
-            other => ThroughputMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PAY_PER_REQUEST" => ThroughputMode::PayPerRequest,
+"PROVISIONED" => ThroughputMode::Provisioned,
+other => ThroughputMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ThroughputMode {
                 type Err = std::convert::Infallible;
 
@@ -617,26 +611,24 @@ impl std::str::FromStr for ThroughputMode {
                 }
             }
 impl ThroughputMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ThroughputMode::PayPerRequest => "PAY_PER_REQUEST",
-            ThroughputMode::Provisioned => "PROVISIONED",
-            ThroughputMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PAY_PER_REQUEST", "PROVISIONED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ThroughputMode::PayPerRequest => "PAY_PER_REQUEST",
+    ThroughputMode::Provisioned => "PROVISIONED",
+    ThroughputMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PAY_PER_REQUEST", "PROVISIONED"]
+                }
+            }
 impl AsRef<str> for ThroughputMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The names and data types of regular columns.</p>
 #[non_exhaustive]
@@ -1477,14 +1469,14 @@ pub enum SortOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASC" => SortOrder::Asc,
-            "DESC" => SortOrder::Desc,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASC" => SortOrder::Asc,
+"DESC" => SortOrder::Desc,
+other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortOrder {
                 type Err = std::convert::Infallible;
 
@@ -1493,26 +1485,24 @@ impl std::str::FromStr for SortOrder {
                 }
             }
 impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Asc => "ASC",
-            SortOrder::Desc => "DESC",
-            SortOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASC", "DESC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortOrder::Asc => "ASC",
+    SortOrder::Desc => "DESC",
+    SortOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASC", "DESC"]
+                }
+            }
 impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The partition key portion of the primary key is required and determines how Amazon Keyspaces stores the data. The partition key can be a single column, or it can be a compound value composed of two or more columns.</p>
 #[non_exhaustive]
@@ -1626,19 +1616,19 @@ pub enum TableStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TableStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => TableStatus::Active,
-            "CREATING" => TableStatus::Creating,
-            "DELETED" => TableStatus::Deleted,
-            "DELETING" => TableStatus::Deleting,
-            "INACCESSIBLE_ENCRYPTION_CREDENTIALS" => TableStatus::InaccessibleEncryptionCredentials,
-            "RESTORING" => TableStatus::Restoring,
-            "UPDATING" => TableStatus::Updating,
-            other => TableStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => TableStatus::Active,
+"CREATING" => TableStatus::Creating,
+"DELETED" => TableStatus::Deleted,
+"DELETING" => TableStatus::Deleting,
+"INACCESSIBLE_ENCRYPTION_CREDENTIALS" => TableStatus::InaccessibleEncryptionCredentials,
+"RESTORING" => TableStatus::Restoring,
+"UPDATING" => TableStatus::Updating,
+other => TableStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TableStatus {
                 type Err = std::convert::Infallible;
 
@@ -1647,29 +1637,27 @@ impl std::str::FromStr for TableStatus {
                 }
             }
 impl TableStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TableStatus::Active => "ACTIVE",
-            TableStatus::Creating => "CREATING",
-            TableStatus::Deleted => "DELETED",
-            TableStatus::Deleting => "DELETING",
-            TableStatus::InaccessibleEncryptionCredentials => "INACCESSIBLE_ENCRYPTION_CREDENTIALS",
-            TableStatus::Restoring => "RESTORING",
-            TableStatus::Updating => "UPDATING",
-            TableStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETED", "DELETING", "INACCESSIBLE_ENCRYPTION_CREDENTIALS", "RESTORING", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TableStatus::Active => "ACTIVE",
+    TableStatus::Creating => "CREATING",
+    TableStatus::Deleted => "DELETED",
+    TableStatus::Deleting => "DELETING",
+    TableStatus::InaccessibleEncryptionCredentials => "INACCESSIBLE_ENCRYPTION_CREDENTIALS",
+    TableStatus::Restoring => "RESTORING",
+    TableStatus::Updating => "UPDATING",
+    TableStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETED", "DELETING", "INACCESSIBLE_ENCRYPTION_CREDENTIALS", "RESTORING", "UPDATING"]
+                }
+            }
 impl AsRef<str> for TableStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

@@ -610,14 +610,14 @@ pub enum UploadCategory {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UploadCategory {
-    fn from(s: &str) -> Self {
-        match s {
-            "CURATED" => UploadCategory::Curated,
-            "PRIVATE" => UploadCategory::Private,
-            other => UploadCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CURATED" => UploadCategory::Curated,
+"PRIVATE" => UploadCategory::Private,
+other => UploadCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UploadCategory {
                 type Err = std::convert::Infallible;
 
@@ -626,26 +626,24 @@ impl std::str::FromStr for UploadCategory {
                 }
             }
 impl UploadCategory {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UploadCategory::Curated => "CURATED",
-            UploadCategory::Private => "PRIVATE",
-            UploadCategory::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CURATED", "PRIVATE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UploadCategory::Curated => "CURATED",
+    UploadCategory::Private => "PRIVATE",
+    UploadCategory::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CURATED", "PRIVATE"]
+                }
+            }
 impl AsRef<str> for UploadCategory {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `UploadStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -700,16 +698,16 @@ pub enum UploadStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UploadStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => UploadStatus::Failed,
-            "INITIALIZED" => UploadStatus::Initialized,
-            "PROCESSING" => UploadStatus::Processing,
-            "SUCCEEDED" => UploadStatus::Succeeded,
-            other => UploadStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => UploadStatus::Failed,
+"INITIALIZED" => UploadStatus::Initialized,
+"PROCESSING" => UploadStatus::Processing,
+"SUCCEEDED" => UploadStatus::Succeeded,
+other => UploadStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UploadStatus {
                 type Err = std::convert::Infallible;
 
@@ -718,28 +716,26 @@ impl std::str::FromStr for UploadStatus {
                 }
             }
 impl UploadStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UploadStatus::Failed => "FAILED",
-            UploadStatus::Initialized => "INITIALIZED",
-            UploadStatus::Processing => "PROCESSING",
-            UploadStatus::Succeeded => "SUCCEEDED",
-            UploadStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "INITIALIZED", "PROCESSING", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UploadStatus::Failed => "FAILED",
+    UploadStatus::Initialized => "INITIALIZED",
+    UploadStatus::Processing => "PROCESSING",
+    UploadStatus::Succeeded => "SUCCEEDED",
+    UploadStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "INITIALIZED", "PROCESSING", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for UploadStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `UploadType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -878,44 +874,44 @@ pub enum UploadType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UploadType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANDROID_APP" => UploadType::AndroidApp,
-            "APPIUM_JAVA_JUNIT_TEST_PACKAGE" => UploadType::AppiumJavaJunitTestPackage,
-            "APPIUM_JAVA_JUNIT_TEST_SPEC" => UploadType::AppiumJavaJunitTestSpec,
-            "APPIUM_JAVA_TESTNG_TEST_PACKAGE" => UploadType::AppiumJavaTestngTestPackage,
-            "APPIUM_JAVA_TESTNG_TEST_SPEC" => UploadType::AppiumJavaTestngTestSpec,
-            "APPIUM_NODE_TEST_PACKAGE" => UploadType::AppiumNodeTestPackage,
-            "APPIUM_NODE_TEST_SPEC" => UploadType::AppiumNodeTestSpec,
-            "APPIUM_PYTHON_TEST_PACKAGE" => UploadType::AppiumPythonTestPackage,
-            "APPIUM_PYTHON_TEST_SPEC" => UploadType::AppiumPythonTestSpec,
-            "APPIUM_RUBY_TEST_PACKAGE" => UploadType::AppiumRubyTestPackage,
-            "APPIUM_RUBY_TEST_SPEC" => UploadType::AppiumRubyTestSpec,
-            "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE" => UploadType::AppiumWebJavaJunitTestPackage,
-            "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC" => UploadType::AppiumWebJavaJunitTestSpec,
-            "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE" => UploadType::AppiumWebJavaTestngTestPackage,
-            "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC" => UploadType::AppiumWebJavaTestngTestSpec,
-            "APPIUM_WEB_NODE_TEST_PACKAGE" => UploadType::AppiumWebNodeTestPackage,
-            "APPIUM_WEB_NODE_TEST_SPEC" => UploadType::AppiumWebNodeTestSpec,
-            "APPIUM_WEB_PYTHON_TEST_PACKAGE" => UploadType::AppiumWebPythonTestPackage,
-            "APPIUM_WEB_PYTHON_TEST_SPEC" => UploadType::AppiumWebPythonTestSpec,
-            "APPIUM_WEB_RUBY_TEST_PACKAGE" => UploadType::AppiumWebRubyTestPackage,
-            "APPIUM_WEB_RUBY_TEST_SPEC" => UploadType::AppiumWebRubyTestSpec,
-            "CALABASH_TEST_PACKAGE" => UploadType::CalabashTestPackage,
-            "EXTERNAL_DATA" => UploadType::ExternalData,
-            "INSTRUMENTATION_TEST_PACKAGE" => UploadType::InstrumentationTestPackage,
-            "INSTRUMENTATION_TEST_SPEC" => UploadType::InstrumentationTestSpec,
-            "IOS_APP" => UploadType::IosApp,
-            "UIAUTOMATION_TEST_PACKAGE" => UploadType::UiautomationTestPackage,
-            "UIAUTOMATOR_TEST_PACKAGE" => UploadType::UiautomatorTestPackage,
-            "WEB_APP" => UploadType::WebApp,
-            "XCTEST_TEST_PACKAGE" => UploadType::XctestTestPackage,
-            "XCTEST_UI_TEST_PACKAGE" => UploadType::XctestUiTestPackage,
-            "XCTEST_UI_TEST_SPEC" => UploadType::XctestUiTestSpec,
-            other => UploadType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ANDROID_APP" => UploadType::AndroidApp,
+"APPIUM_JAVA_JUNIT_TEST_PACKAGE" => UploadType::AppiumJavaJunitTestPackage,
+"APPIUM_JAVA_JUNIT_TEST_SPEC" => UploadType::AppiumJavaJunitTestSpec,
+"APPIUM_JAVA_TESTNG_TEST_PACKAGE" => UploadType::AppiumJavaTestngTestPackage,
+"APPIUM_JAVA_TESTNG_TEST_SPEC" => UploadType::AppiumJavaTestngTestSpec,
+"APPIUM_NODE_TEST_PACKAGE" => UploadType::AppiumNodeTestPackage,
+"APPIUM_NODE_TEST_SPEC" => UploadType::AppiumNodeTestSpec,
+"APPIUM_PYTHON_TEST_PACKAGE" => UploadType::AppiumPythonTestPackage,
+"APPIUM_PYTHON_TEST_SPEC" => UploadType::AppiumPythonTestSpec,
+"APPIUM_RUBY_TEST_PACKAGE" => UploadType::AppiumRubyTestPackage,
+"APPIUM_RUBY_TEST_SPEC" => UploadType::AppiumRubyTestSpec,
+"APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE" => UploadType::AppiumWebJavaJunitTestPackage,
+"APPIUM_WEB_JAVA_JUNIT_TEST_SPEC" => UploadType::AppiumWebJavaJunitTestSpec,
+"APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE" => UploadType::AppiumWebJavaTestngTestPackage,
+"APPIUM_WEB_JAVA_TESTNG_TEST_SPEC" => UploadType::AppiumWebJavaTestngTestSpec,
+"APPIUM_WEB_NODE_TEST_PACKAGE" => UploadType::AppiumWebNodeTestPackage,
+"APPIUM_WEB_NODE_TEST_SPEC" => UploadType::AppiumWebNodeTestSpec,
+"APPIUM_WEB_PYTHON_TEST_PACKAGE" => UploadType::AppiumWebPythonTestPackage,
+"APPIUM_WEB_PYTHON_TEST_SPEC" => UploadType::AppiumWebPythonTestSpec,
+"APPIUM_WEB_RUBY_TEST_PACKAGE" => UploadType::AppiumWebRubyTestPackage,
+"APPIUM_WEB_RUBY_TEST_SPEC" => UploadType::AppiumWebRubyTestSpec,
+"CALABASH_TEST_PACKAGE" => UploadType::CalabashTestPackage,
+"EXTERNAL_DATA" => UploadType::ExternalData,
+"INSTRUMENTATION_TEST_PACKAGE" => UploadType::InstrumentationTestPackage,
+"INSTRUMENTATION_TEST_SPEC" => UploadType::InstrumentationTestSpec,
+"IOS_APP" => UploadType::IosApp,
+"UIAUTOMATION_TEST_PACKAGE" => UploadType::UiautomationTestPackage,
+"UIAUTOMATOR_TEST_PACKAGE" => UploadType::UiautomatorTestPackage,
+"WEB_APP" => UploadType::WebApp,
+"XCTEST_TEST_PACKAGE" => UploadType::XctestTestPackage,
+"XCTEST_UI_TEST_PACKAGE" => UploadType::XctestUiTestPackage,
+"XCTEST_UI_TEST_SPEC" => UploadType::XctestUiTestSpec,
+other => UploadType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UploadType {
                 type Err = std::convert::Infallible;
 
@@ -924,56 +920,54 @@ impl std::str::FromStr for UploadType {
                 }
             }
 impl UploadType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UploadType::AndroidApp => "ANDROID_APP",
-            UploadType::AppiumJavaJunitTestPackage => "APPIUM_JAVA_JUNIT_TEST_PACKAGE",
-            UploadType::AppiumJavaJunitTestSpec => "APPIUM_JAVA_JUNIT_TEST_SPEC",
-            UploadType::AppiumJavaTestngTestPackage => "APPIUM_JAVA_TESTNG_TEST_PACKAGE",
-            UploadType::AppiumJavaTestngTestSpec => "APPIUM_JAVA_TESTNG_TEST_SPEC",
-            UploadType::AppiumNodeTestPackage => "APPIUM_NODE_TEST_PACKAGE",
-            UploadType::AppiumNodeTestSpec => "APPIUM_NODE_TEST_SPEC",
-            UploadType::AppiumPythonTestPackage => "APPIUM_PYTHON_TEST_PACKAGE",
-            UploadType::AppiumPythonTestSpec => "APPIUM_PYTHON_TEST_SPEC",
-            UploadType::AppiumRubyTestPackage => "APPIUM_RUBY_TEST_PACKAGE",
-            UploadType::AppiumRubyTestSpec => "APPIUM_RUBY_TEST_SPEC",
-            UploadType::AppiumWebJavaJunitTestPackage => "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE",
-            UploadType::AppiumWebJavaJunitTestSpec => "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC",
-            UploadType::AppiumWebJavaTestngTestPackage => "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE",
-            UploadType::AppiumWebJavaTestngTestSpec => "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC",
-            UploadType::AppiumWebNodeTestPackage => "APPIUM_WEB_NODE_TEST_PACKAGE",
-            UploadType::AppiumWebNodeTestSpec => "APPIUM_WEB_NODE_TEST_SPEC",
-            UploadType::AppiumWebPythonTestPackage => "APPIUM_WEB_PYTHON_TEST_PACKAGE",
-            UploadType::AppiumWebPythonTestSpec => "APPIUM_WEB_PYTHON_TEST_SPEC",
-            UploadType::AppiumWebRubyTestPackage => "APPIUM_WEB_RUBY_TEST_PACKAGE",
-            UploadType::AppiumWebRubyTestSpec => "APPIUM_WEB_RUBY_TEST_SPEC",
-            UploadType::CalabashTestPackage => "CALABASH_TEST_PACKAGE",
-            UploadType::ExternalData => "EXTERNAL_DATA",
-            UploadType::InstrumentationTestPackage => "INSTRUMENTATION_TEST_PACKAGE",
-            UploadType::InstrumentationTestSpec => "INSTRUMENTATION_TEST_SPEC",
-            UploadType::IosApp => "IOS_APP",
-            UploadType::UiautomationTestPackage => "UIAUTOMATION_TEST_PACKAGE",
-            UploadType::UiautomatorTestPackage => "UIAUTOMATOR_TEST_PACKAGE",
-            UploadType::WebApp => "WEB_APP",
-            UploadType::XctestTestPackage => "XCTEST_TEST_PACKAGE",
-            UploadType::XctestUiTestPackage => "XCTEST_UI_TEST_PACKAGE",
-            UploadType::XctestUiTestSpec => "XCTEST_UI_TEST_SPEC",
-            UploadType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANDROID_APP", "APPIUM_JAVA_JUNIT_TEST_PACKAGE", "APPIUM_JAVA_JUNIT_TEST_SPEC", "APPIUM_JAVA_TESTNG_TEST_PACKAGE", "APPIUM_JAVA_TESTNG_TEST_SPEC", "APPIUM_NODE_TEST_PACKAGE", "APPIUM_NODE_TEST_SPEC", "APPIUM_PYTHON_TEST_PACKAGE", "APPIUM_PYTHON_TEST_SPEC", "APPIUM_RUBY_TEST_PACKAGE", "APPIUM_RUBY_TEST_SPEC", "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE", "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC", "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE", "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC", "APPIUM_WEB_NODE_TEST_PACKAGE", "APPIUM_WEB_NODE_TEST_SPEC", "APPIUM_WEB_PYTHON_TEST_PACKAGE", "APPIUM_WEB_PYTHON_TEST_SPEC", "APPIUM_WEB_RUBY_TEST_PACKAGE", "APPIUM_WEB_RUBY_TEST_SPEC", "CALABASH_TEST_PACKAGE", "EXTERNAL_DATA", "INSTRUMENTATION_TEST_PACKAGE", "INSTRUMENTATION_TEST_SPEC", "IOS_APP", "UIAUTOMATION_TEST_PACKAGE", "UIAUTOMATOR_TEST_PACKAGE", "WEB_APP", "XCTEST_TEST_PACKAGE", "XCTEST_UI_TEST_PACKAGE", "XCTEST_UI_TEST_SPEC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UploadType::AndroidApp => "ANDROID_APP",
+    UploadType::AppiumJavaJunitTestPackage => "APPIUM_JAVA_JUNIT_TEST_PACKAGE",
+    UploadType::AppiumJavaJunitTestSpec => "APPIUM_JAVA_JUNIT_TEST_SPEC",
+    UploadType::AppiumJavaTestngTestPackage => "APPIUM_JAVA_TESTNG_TEST_PACKAGE",
+    UploadType::AppiumJavaTestngTestSpec => "APPIUM_JAVA_TESTNG_TEST_SPEC",
+    UploadType::AppiumNodeTestPackage => "APPIUM_NODE_TEST_PACKAGE",
+    UploadType::AppiumNodeTestSpec => "APPIUM_NODE_TEST_SPEC",
+    UploadType::AppiumPythonTestPackage => "APPIUM_PYTHON_TEST_PACKAGE",
+    UploadType::AppiumPythonTestSpec => "APPIUM_PYTHON_TEST_SPEC",
+    UploadType::AppiumRubyTestPackage => "APPIUM_RUBY_TEST_PACKAGE",
+    UploadType::AppiumRubyTestSpec => "APPIUM_RUBY_TEST_SPEC",
+    UploadType::AppiumWebJavaJunitTestPackage => "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE",
+    UploadType::AppiumWebJavaJunitTestSpec => "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC",
+    UploadType::AppiumWebJavaTestngTestPackage => "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE",
+    UploadType::AppiumWebJavaTestngTestSpec => "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC",
+    UploadType::AppiumWebNodeTestPackage => "APPIUM_WEB_NODE_TEST_PACKAGE",
+    UploadType::AppiumWebNodeTestSpec => "APPIUM_WEB_NODE_TEST_SPEC",
+    UploadType::AppiumWebPythonTestPackage => "APPIUM_WEB_PYTHON_TEST_PACKAGE",
+    UploadType::AppiumWebPythonTestSpec => "APPIUM_WEB_PYTHON_TEST_SPEC",
+    UploadType::AppiumWebRubyTestPackage => "APPIUM_WEB_RUBY_TEST_PACKAGE",
+    UploadType::AppiumWebRubyTestSpec => "APPIUM_WEB_RUBY_TEST_SPEC",
+    UploadType::CalabashTestPackage => "CALABASH_TEST_PACKAGE",
+    UploadType::ExternalData => "EXTERNAL_DATA",
+    UploadType::InstrumentationTestPackage => "INSTRUMENTATION_TEST_PACKAGE",
+    UploadType::InstrumentationTestSpec => "INSTRUMENTATION_TEST_SPEC",
+    UploadType::IosApp => "IOS_APP",
+    UploadType::UiautomationTestPackage => "UIAUTOMATION_TEST_PACKAGE",
+    UploadType::UiautomatorTestPackage => "UIAUTOMATOR_TEST_PACKAGE",
+    UploadType::WebApp => "WEB_APP",
+    UploadType::XctestTestPackage => "XCTEST_TEST_PACKAGE",
+    UploadType::XctestUiTestPackage => "XCTEST_UI_TEST_PACKAGE",
+    UploadType::XctestUiTestSpec => "XCTEST_UI_TEST_SPEC",
+    UploadType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANDROID_APP", "APPIUM_JAVA_JUNIT_TEST_PACKAGE", "APPIUM_JAVA_JUNIT_TEST_SPEC", "APPIUM_JAVA_TESTNG_TEST_PACKAGE", "APPIUM_JAVA_TESTNG_TEST_SPEC", "APPIUM_NODE_TEST_PACKAGE", "APPIUM_NODE_TEST_SPEC", "APPIUM_PYTHON_TEST_PACKAGE", "APPIUM_PYTHON_TEST_SPEC", "APPIUM_RUBY_TEST_PACKAGE", "APPIUM_RUBY_TEST_SPEC", "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE", "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC", "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE", "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC", "APPIUM_WEB_NODE_TEST_PACKAGE", "APPIUM_WEB_NODE_TEST_SPEC", "APPIUM_WEB_PYTHON_TEST_PACKAGE", "APPIUM_WEB_PYTHON_TEST_SPEC", "APPIUM_WEB_RUBY_TEST_PACKAGE", "APPIUM_WEB_RUBY_TEST_SPEC", "CALABASH_TEST_PACKAGE", "EXTERNAL_DATA", "INSTRUMENTATION_TEST_PACKAGE", "INSTRUMENTATION_TEST_SPEC", "IOS_APP", "UIAUTOMATION_TEST_PACKAGE", "UIAUTOMATOR_TEST_PACKAGE", "WEB_APP", "XCTEST_TEST_PACKAGE", "XCTEST_UI_TEST_PACKAGE", "XCTEST_UI_TEST_SPEC"]
+                }
+            }
 impl AsRef<str> for UploadType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A Selenium testing project. Projects are used to collect and collate sessions.</p>
 #[non_exhaustive]
@@ -1735,14 +1729,14 @@ pub enum NetworkProfileType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkProfileType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CURATED" => NetworkProfileType::Curated,
-            "PRIVATE" => NetworkProfileType::Private,
-            other => NetworkProfileType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CURATED" => NetworkProfileType::Curated,
+"PRIVATE" => NetworkProfileType::Private,
+other => NetworkProfileType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NetworkProfileType {
                 type Err = std::convert::Infallible;
 
@@ -1751,26 +1745,24 @@ impl std::str::FromStr for NetworkProfileType {
                 }
             }
 impl NetworkProfileType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NetworkProfileType::Curated => "CURATED",
-            NetworkProfileType::Private => "PRIVATE",
-            NetworkProfileType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CURATED", "PRIVATE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NetworkProfileType::Curated => "CURATED",
+    NetworkProfileType::Private => "PRIVATE",
+    NetworkProfileType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CURATED", "PRIVATE"]
+                }
+            }
 impl AsRef<str> for NetworkProfileType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents the instance profile.</p>
 #[non_exhaustive]
@@ -2635,20 +2627,20 @@ pub enum RuleOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuleOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONTAINS" => RuleOperator::Contains,
-            "EQUALS" => RuleOperator::Equals,
-            "GREATER_THAN" => RuleOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUALS" => RuleOperator::GreaterThanOrEquals,
-            "IN" => RuleOperator::In,
-            "LESS_THAN" => RuleOperator::LessThan,
-            "LESS_THAN_OR_EQUALS" => RuleOperator::LessThanOrEquals,
-            "NOT_IN" => RuleOperator::NotIn,
-            other => RuleOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONTAINS" => RuleOperator::Contains,
+"EQUALS" => RuleOperator::Equals,
+"GREATER_THAN" => RuleOperator::GreaterThan,
+"GREATER_THAN_OR_EQUALS" => RuleOperator::GreaterThanOrEquals,
+"IN" => RuleOperator::In,
+"LESS_THAN" => RuleOperator::LessThan,
+"LESS_THAN_OR_EQUALS" => RuleOperator::LessThanOrEquals,
+"NOT_IN" => RuleOperator::NotIn,
+other => RuleOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RuleOperator {
                 type Err = std::convert::Infallible;
 
@@ -2657,32 +2649,30 @@ impl std::str::FromStr for RuleOperator {
                 }
             }
 impl RuleOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RuleOperator::Contains => "CONTAINS",
-            RuleOperator::Equals => "EQUALS",
-            RuleOperator::GreaterThan => "GREATER_THAN",
-            RuleOperator::GreaterThanOrEquals => "GREATER_THAN_OR_EQUALS",
-            RuleOperator::In => "IN",
-            RuleOperator::LessThan => "LESS_THAN",
-            RuleOperator::LessThanOrEquals => "LESS_THAN_OR_EQUALS",
-            RuleOperator::NotIn => "NOT_IN",
-            RuleOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONTAINS", "EQUALS", "GREATER_THAN", "GREATER_THAN_OR_EQUALS", "IN", "LESS_THAN", "LESS_THAN_OR_EQUALS", "NOT_IN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RuleOperator::Contains => "CONTAINS",
+    RuleOperator::Equals => "EQUALS",
+    RuleOperator::GreaterThan => "GREATER_THAN",
+    RuleOperator::GreaterThanOrEquals => "GREATER_THAN_OR_EQUALS",
+    RuleOperator::In => "IN",
+    RuleOperator::LessThan => "LESS_THAN",
+    RuleOperator::LessThanOrEquals => "LESS_THAN_OR_EQUALS",
+    RuleOperator::NotIn => "NOT_IN",
+    RuleOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONTAINS", "EQUALS", "GREATER_THAN", "GREATER_THAN_OR_EQUALS", "IN", "LESS_THAN", "LESS_THAN_OR_EQUALS", "NOT_IN"]
+                }
+            }
 impl AsRef<str> for RuleOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DeviceAttribute`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2764,25 +2754,25 @@ pub enum DeviceAttribute {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceAttribute {
-    fn from(s: &str) -> Self {
-        match s {
-            "APPIUM_VERSION" => DeviceAttribute::AppiumVersion,
-            "ARN" => DeviceAttribute::Arn,
-            "AVAILABILITY" => DeviceAttribute::Availability,
-            "FLEET_TYPE" => DeviceAttribute::FleetType,
-            "FORM_FACTOR" => DeviceAttribute::FormFactor,
-            "INSTANCE_ARN" => DeviceAttribute::InstanceArn,
-            "INSTANCE_LABELS" => DeviceAttribute::InstanceLabels,
-            "MANUFACTURER" => DeviceAttribute::Manufacturer,
-            "MODEL" => DeviceAttribute::Model,
-            "OS_VERSION" => DeviceAttribute::OsVersion,
-            "PLATFORM" => DeviceAttribute::Platform,
-            "REMOTE_ACCESS_ENABLED" => DeviceAttribute::RemoteAccessEnabled,
-            "REMOTE_DEBUG_ENABLED" => DeviceAttribute::RemoteDebugEnabled,
-            other => DeviceAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "APPIUM_VERSION" => DeviceAttribute::AppiumVersion,
+"ARN" => DeviceAttribute::Arn,
+"AVAILABILITY" => DeviceAttribute::Availability,
+"FLEET_TYPE" => DeviceAttribute::FleetType,
+"FORM_FACTOR" => DeviceAttribute::FormFactor,
+"INSTANCE_ARN" => DeviceAttribute::InstanceArn,
+"INSTANCE_LABELS" => DeviceAttribute::InstanceLabels,
+"MANUFACTURER" => DeviceAttribute::Manufacturer,
+"MODEL" => DeviceAttribute::Model,
+"OS_VERSION" => DeviceAttribute::OsVersion,
+"PLATFORM" => DeviceAttribute::Platform,
+"REMOTE_ACCESS_ENABLED" => DeviceAttribute::RemoteAccessEnabled,
+"REMOTE_DEBUG_ENABLED" => DeviceAttribute::RemoteDebugEnabled,
+other => DeviceAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeviceAttribute {
                 type Err = std::convert::Infallible;
 
@@ -2791,37 +2781,35 @@ impl std::str::FromStr for DeviceAttribute {
                 }
             }
 impl DeviceAttribute {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeviceAttribute::AppiumVersion => "APPIUM_VERSION",
-            DeviceAttribute::Arn => "ARN",
-            DeviceAttribute::Availability => "AVAILABILITY",
-            DeviceAttribute::FleetType => "FLEET_TYPE",
-            DeviceAttribute::FormFactor => "FORM_FACTOR",
-            DeviceAttribute::InstanceArn => "INSTANCE_ARN",
-            DeviceAttribute::InstanceLabels => "INSTANCE_LABELS",
-            DeviceAttribute::Manufacturer => "MANUFACTURER",
-            DeviceAttribute::Model => "MODEL",
-            DeviceAttribute::OsVersion => "OS_VERSION",
-            DeviceAttribute::Platform => "PLATFORM",
-            DeviceAttribute::RemoteAccessEnabled => "REMOTE_ACCESS_ENABLED",
-            DeviceAttribute::RemoteDebugEnabled => "REMOTE_DEBUG_ENABLED",
-            DeviceAttribute::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPIUM_VERSION", "ARN", "AVAILABILITY", "FLEET_TYPE", "FORM_FACTOR", "INSTANCE_ARN", "INSTANCE_LABELS", "MANUFACTURER", "MODEL", "OS_VERSION", "PLATFORM", "REMOTE_ACCESS_ENABLED", "REMOTE_DEBUG_ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeviceAttribute::AppiumVersion => "APPIUM_VERSION",
+    DeviceAttribute::Arn => "ARN",
+    DeviceAttribute::Availability => "AVAILABILITY",
+    DeviceAttribute::FleetType => "FLEET_TYPE",
+    DeviceAttribute::FormFactor => "FORM_FACTOR",
+    DeviceAttribute::InstanceArn => "INSTANCE_ARN",
+    DeviceAttribute::InstanceLabels => "INSTANCE_LABELS",
+    DeviceAttribute::Manufacturer => "MANUFACTURER",
+    DeviceAttribute::Model => "MODEL",
+    DeviceAttribute::OsVersion => "OS_VERSION",
+    DeviceAttribute::Platform => "PLATFORM",
+    DeviceAttribute::RemoteAccessEnabled => "REMOTE_ACCESS_ENABLED",
+    DeviceAttribute::RemoteDebugEnabled => "REMOTE_DEBUG_ENABLED",
+    DeviceAttribute::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["APPIUM_VERSION", "ARN", "AVAILABILITY", "FLEET_TYPE", "FORM_FACTOR", "INSTANCE_ARN", "INSTANCE_LABELS", "MANUFACTURER", "MODEL", "OS_VERSION", "PLATFORM", "REMOTE_ACCESS_ENABLED", "REMOTE_DEBUG_ENABLED"]
+                }
+            }
 impl AsRef<str> for DeviceAttribute {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DevicePoolType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2870,14 +2858,14 @@ pub enum DevicePoolType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DevicePoolType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CURATED" => DevicePoolType::Curated,
-            "PRIVATE" => DevicePoolType::Private,
-            other => DevicePoolType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CURATED" => DevicePoolType::Curated,
+"PRIVATE" => DevicePoolType::Private,
+other => DevicePoolType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DevicePoolType {
                 type Err = std::convert::Infallible;
 
@@ -2886,26 +2874,24 @@ impl std::str::FromStr for DevicePoolType {
                 }
             }
 impl DevicePoolType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DevicePoolType::Curated => "CURATED",
-            DevicePoolType::Private => "PRIVATE",
-            DevicePoolType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CURATED", "PRIVATE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DevicePoolType::Curated => "CURATED",
+    DevicePoolType::Private => "PRIVATE",
+    DevicePoolType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CURATED", "PRIVATE"]
+                }
+            }
 impl AsRef<str> for DevicePoolType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents the device instance.</p>
 #[non_exhaustive]
@@ -3111,16 +3097,16 @@ pub enum InstanceStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => InstanceStatus::Available,
-            "IN_USE" => InstanceStatus::InUse,
-            "NOT_AVAILABLE" => InstanceStatus::NotAvailable,
-            "PREPARING" => InstanceStatus::Preparing,
-            other => InstanceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => InstanceStatus::Available,
+"IN_USE" => InstanceStatus::InUse,
+"NOT_AVAILABLE" => InstanceStatus::NotAvailable,
+"PREPARING" => InstanceStatus::Preparing,
+other => InstanceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InstanceStatus {
                 type Err = std::convert::Infallible;
 
@@ -3129,28 +3115,26 @@ impl std::str::FromStr for InstanceStatus {
                 }
             }
 impl InstanceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceStatus::Available => "AVAILABLE",
-            InstanceStatus::InUse => "IN_USE",
-            InstanceStatus::NotAvailable => "NOT_AVAILABLE",
-            InstanceStatus::Preparing => "PREPARING",
-            InstanceStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "IN_USE", "NOT_AVAILABLE", "PREPARING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceStatus::Available => "AVAILABLE",
+    InstanceStatus::InUse => "IN_USE",
+    InstanceStatus::NotAvailable => "NOT_AVAILABLE",
+    InstanceStatus::Preparing => "PREPARING",
+    InstanceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "IN_USE", "NOT_AVAILABLE", "PREPARING"]
+                }
+            }
 impl AsRef<str> for InstanceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters. </p>
 #[non_exhaustive]
@@ -4738,24 +4722,24 @@ pub enum DeviceFilterAttribute {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceFilterAttribute {
-    fn from(s: &str) -> Self {
-        match s {
-            "ARN" => DeviceFilterAttribute::Arn,
-            "AVAILABILITY" => DeviceFilterAttribute::Availability,
-            "FLEET_TYPE" => DeviceFilterAttribute::FleetType,
-            "FORM_FACTOR" => DeviceFilterAttribute::FormFactor,
-            "INSTANCE_ARN" => DeviceFilterAttribute::InstanceArn,
-            "INSTANCE_LABELS" => DeviceFilterAttribute::InstanceLabels,
-            "MANUFACTURER" => DeviceFilterAttribute::Manufacturer,
-            "MODEL" => DeviceFilterAttribute::Model,
-            "OS_VERSION" => DeviceFilterAttribute::OsVersion,
-            "PLATFORM" => DeviceFilterAttribute::Platform,
-            "REMOTE_ACCESS_ENABLED" => DeviceFilterAttribute::RemoteAccessEnabled,
-            "REMOTE_DEBUG_ENABLED" => DeviceFilterAttribute::RemoteDebugEnabled,
-            other => DeviceFilterAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ARN" => DeviceFilterAttribute::Arn,
+"AVAILABILITY" => DeviceFilterAttribute::Availability,
+"FLEET_TYPE" => DeviceFilterAttribute::FleetType,
+"FORM_FACTOR" => DeviceFilterAttribute::FormFactor,
+"INSTANCE_ARN" => DeviceFilterAttribute::InstanceArn,
+"INSTANCE_LABELS" => DeviceFilterAttribute::InstanceLabels,
+"MANUFACTURER" => DeviceFilterAttribute::Manufacturer,
+"MODEL" => DeviceFilterAttribute::Model,
+"OS_VERSION" => DeviceFilterAttribute::OsVersion,
+"PLATFORM" => DeviceFilterAttribute::Platform,
+"REMOTE_ACCESS_ENABLED" => DeviceFilterAttribute::RemoteAccessEnabled,
+"REMOTE_DEBUG_ENABLED" => DeviceFilterAttribute::RemoteDebugEnabled,
+other => DeviceFilterAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeviceFilterAttribute {
                 type Err = std::convert::Infallible;
 
@@ -4764,36 +4748,34 @@ impl std::str::FromStr for DeviceFilterAttribute {
                 }
             }
 impl DeviceFilterAttribute {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeviceFilterAttribute::Arn => "ARN",
-            DeviceFilterAttribute::Availability => "AVAILABILITY",
-            DeviceFilterAttribute::FleetType => "FLEET_TYPE",
-            DeviceFilterAttribute::FormFactor => "FORM_FACTOR",
-            DeviceFilterAttribute::InstanceArn => "INSTANCE_ARN",
-            DeviceFilterAttribute::InstanceLabels => "INSTANCE_LABELS",
-            DeviceFilterAttribute::Manufacturer => "MANUFACTURER",
-            DeviceFilterAttribute::Model => "MODEL",
-            DeviceFilterAttribute::OsVersion => "OS_VERSION",
-            DeviceFilterAttribute::Platform => "PLATFORM",
-            DeviceFilterAttribute::RemoteAccessEnabled => "REMOTE_ACCESS_ENABLED",
-            DeviceFilterAttribute::RemoteDebugEnabled => "REMOTE_DEBUG_ENABLED",
-            DeviceFilterAttribute::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ARN", "AVAILABILITY", "FLEET_TYPE", "FORM_FACTOR", "INSTANCE_ARN", "INSTANCE_LABELS", "MANUFACTURER", "MODEL", "OS_VERSION", "PLATFORM", "REMOTE_ACCESS_ENABLED", "REMOTE_DEBUG_ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeviceFilterAttribute::Arn => "ARN",
+    DeviceFilterAttribute::Availability => "AVAILABILITY",
+    DeviceFilterAttribute::FleetType => "FLEET_TYPE",
+    DeviceFilterAttribute::FormFactor => "FORM_FACTOR",
+    DeviceFilterAttribute::InstanceArn => "INSTANCE_ARN",
+    DeviceFilterAttribute::InstanceLabels => "INSTANCE_LABELS",
+    DeviceFilterAttribute::Manufacturer => "MANUFACTURER",
+    DeviceFilterAttribute::Model => "MODEL",
+    DeviceFilterAttribute::OsVersion => "OS_VERSION",
+    DeviceFilterAttribute::Platform => "PLATFORM",
+    DeviceFilterAttribute::RemoteAccessEnabled => "REMOTE_ACCESS_ENABLED",
+    DeviceFilterAttribute::RemoteDebugEnabled => "REMOTE_DEBUG_ENABLED",
+    DeviceFilterAttribute::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ARN", "AVAILABILITY", "FLEET_TYPE", "FORM_FACTOR", "INSTANCE_ARN", "INSTANCE_LABELS", "MANUFACTURER", "MODEL", "OS_VERSION", "PLATFORM", "REMOTE_ACCESS_ENABLED", "REMOTE_DEBUG_ENABLED"]
+                }
+            }
 impl AsRef<str> for DeviceFilterAttribute {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.</p> 
 /// <p>Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.</p> 
@@ -5127,14 +5109,14 @@ pub enum ExecutionResultCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExecutionResultCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "PARSING_FAILED" => ExecutionResultCode::ParsingFailed,
-            "VPC_ENDPOINT_SETUP_FAILED" => ExecutionResultCode::VpcEndpointSetupFailed,
-            other => ExecutionResultCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PARSING_FAILED" => ExecutionResultCode::ParsingFailed,
+"VPC_ENDPOINT_SETUP_FAILED" => ExecutionResultCode::VpcEndpointSetupFailed,
+other => ExecutionResultCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExecutionResultCode {
                 type Err = std::convert::Infallible;
 
@@ -5143,26 +5125,24 @@ impl std::str::FromStr for ExecutionResultCode {
                 }
             }
 impl ExecutionResultCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExecutionResultCode::ParsingFailed => "PARSING_FAILED",
-            ExecutionResultCode::VpcEndpointSetupFailed => "VPC_ENDPOINT_SETUP_FAILED",
-            ExecutionResultCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PARSING_FAILED", "VPC_ENDPOINT_SETUP_FAILED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExecutionResultCode::ParsingFailed => "PARSING_FAILED",
+    ExecutionResultCode::VpcEndpointSetupFailed => "VPC_ENDPOINT_SETUP_FAILED",
+    ExecutionResultCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PARSING_FAILED", "VPC_ENDPOINT_SETUP_FAILED"]
+                }
+            }
 impl AsRef<str> for ExecutionResultCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.</p>
 #[non_exhaustive]
@@ -5299,14 +5279,14 @@ pub enum BillingMethod {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BillingMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "METERED" => BillingMethod::Metered,
-            "UNMETERED" => BillingMethod::Unmetered,
-            other => BillingMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "METERED" => BillingMethod::Metered,
+"UNMETERED" => BillingMethod::Unmetered,
+other => BillingMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BillingMethod {
                 type Err = std::convert::Infallible;
 
@@ -5315,26 +5295,24 @@ impl std::str::FromStr for BillingMethod {
                 }
             }
 impl BillingMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BillingMethod::Metered => "METERED",
-            BillingMethod::Unmetered => "UNMETERED",
-            BillingMethod::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "METERED", "UNMETERED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BillingMethod::Metered => "METERED",
+    BillingMethod::Unmetered => "UNMETERED",
+    BillingMethod::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["METERED", "UNMETERED"]
+                }
+            }
 impl AsRef<str> for BillingMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents entity counters.</p>
 #[non_exhaustive]
@@ -5562,19 +5540,19 @@ pub enum ExecutionResult {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExecutionResult {
-    fn from(s: &str) -> Self {
-        match s {
-            "ERRORED" => ExecutionResult::Errored,
-            "FAILED" => ExecutionResult::Failed,
-            "PASSED" => ExecutionResult::Passed,
-            "PENDING" => ExecutionResult::Pending,
-            "SKIPPED" => ExecutionResult::Skipped,
-            "STOPPED" => ExecutionResult::Stopped,
-            "WARNED" => ExecutionResult::Warned,
-            other => ExecutionResult::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ERRORED" => ExecutionResult::Errored,
+"FAILED" => ExecutionResult::Failed,
+"PASSED" => ExecutionResult::Passed,
+"PENDING" => ExecutionResult::Pending,
+"SKIPPED" => ExecutionResult::Skipped,
+"STOPPED" => ExecutionResult::Stopped,
+"WARNED" => ExecutionResult::Warned,
+other => ExecutionResult::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExecutionResult {
                 type Err = std::convert::Infallible;
 
@@ -5583,31 +5561,29 @@ impl std::str::FromStr for ExecutionResult {
                 }
             }
 impl ExecutionResult {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExecutionResult::Errored => "ERRORED",
-            ExecutionResult::Failed => "FAILED",
-            ExecutionResult::Passed => "PASSED",
-            ExecutionResult::Pending => "PENDING",
-            ExecutionResult::Skipped => "SKIPPED",
-            ExecutionResult::Stopped => "STOPPED",
-            ExecutionResult::Warned => "WARNED",
-            ExecutionResult::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ERRORED", "FAILED", "PASSED", "PENDING", "SKIPPED", "STOPPED", "WARNED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExecutionResult::Errored => "ERRORED",
+    ExecutionResult::Failed => "FAILED",
+    ExecutionResult::Passed => "PASSED",
+    ExecutionResult::Pending => "PENDING",
+    ExecutionResult::Skipped => "SKIPPED",
+    ExecutionResult::Stopped => "STOPPED",
+    ExecutionResult::Warned => "WARNED",
+    ExecutionResult::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ERRORED", "FAILED", "PASSED", "PENDING", "SKIPPED", "STOPPED", "WARNED"]
+                }
+            }
 impl AsRef<str> for ExecutionResult {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ExecutionStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5677,21 +5653,21 @@ pub enum ExecutionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExecutionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => ExecutionStatus::Completed,
-            "PENDING" => ExecutionStatus::Pending,
-            "PENDING_CONCURRENCY" => ExecutionStatus::PendingConcurrnecy,
-            "PENDING_DEVICE" => ExecutionStatus::PendingDevice,
-            "PREPARING" => ExecutionStatus::Preparing,
-            "PROCESSING" => ExecutionStatus::Processing,
-            "RUNNING" => ExecutionStatus::Running,
-            "SCHEDULING" => ExecutionStatus::Scheduling,
-            "STOPPING" => ExecutionStatus::Stopping,
-            other => ExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => ExecutionStatus::Completed,
+"PENDING" => ExecutionStatus::Pending,
+"PENDING_CONCURRENCY" => ExecutionStatus::PendingConcurrnecy,
+"PENDING_DEVICE" => ExecutionStatus::PendingDevice,
+"PREPARING" => ExecutionStatus::Preparing,
+"PROCESSING" => ExecutionStatus::Processing,
+"RUNNING" => ExecutionStatus::Running,
+"SCHEDULING" => ExecutionStatus::Scheduling,
+"STOPPING" => ExecutionStatus::Stopping,
+other => ExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExecutionStatus {
                 type Err = std::convert::Infallible;
 
@@ -5700,33 +5676,31 @@ impl std::str::FromStr for ExecutionStatus {
                 }
             }
 impl ExecutionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExecutionStatus::Completed => "COMPLETED",
-            ExecutionStatus::Pending => "PENDING",
-            ExecutionStatus::PendingConcurrnecy => "PENDING_CONCURRENCY",
-            ExecutionStatus::PendingDevice => "PENDING_DEVICE",
-            ExecutionStatus::Preparing => "PREPARING",
-            ExecutionStatus::Processing => "PROCESSING",
-            ExecutionStatus::Running => "RUNNING",
-            ExecutionStatus::Scheduling => "SCHEDULING",
-            ExecutionStatus::Stopping => "STOPPING",
-            ExecutionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "PENDING", "PENDING_CONCURRENCY", "PENDING_DEVICE", "PREPARING", "PROCESSING", "RUNNING", "SCHEDULING", "STOPPING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExecutionStatus::Completed => "COMPLETED",
+    ExecutionStatus::Pending => "PENDING",
+    ExecutionStatus::PendingConcurrnecy => "PENDING_CONCURRENCY",
+    ExecutionStatus::PendingDevice => "PENDING_DEVICE",
+    ExecutionStatus::Preparing => "PREPARING",
+    ExecutionStatus::Processing => "PROCESSING",
+    ExecutionStatus::Running => "RUNNING",
+    ExecutionStatus::Scheduling => "SCHEDULING",
+    ExecutionStatus::Stopping => "STOPPING",
+    ExecutionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "PENDING", "PENDING_CONCURRENCY", "PENDING_DEVICE", "PREPARING", "PROCESSING", "RUNNING", "SCHEDULING", "STOPPING"]
+                }
+            }
 impl AsRef<str> for ExecutionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DevicePlatform`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5775,14 +5749,14 @@ pub enum DevicePlatform {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DevicePlatform {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANDROID" => DevicePlatform::Android,
-            "IOS" => DevicePlatform::Ios,
-            other => DevicePlatform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ANDROID" => DevicePlatform::Android,
+"IOS" => DevicePlatform::Ios,
+other => DevicePlatform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DevicePlatform {
                 type Err = std::convert::Infallible;
 
@@ -5791,26 +5765,24 @@ impl std::str::FromStr for DevicePlatform {
                 }
             }
 impl DevicePlatform {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DevicePlatform::Android => "ANDROID",
-            DevicePlatform::Ios => "IOS",
-            DevicePlatform::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANDROID", "IOS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DevicePlatform::Android => "ANDROID",
+    DevicePlatform::Ios => "IOS",
+    DevicePlatform::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANDROID", "IOS"]
+                }
+            }
 impl AsRef<str> for DevicePlatform {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TestType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5916,33 +5888,33 @@ pub enum TestType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TestType {
-    fn from(s: &str) -> Self {
-        match s {
-            "APPIUM_JAVA_JUNIT" => TestType::AppiumJavaJunit,
-            "APPIUM_JAVA_TESTNG" => TestType::AppiumJavaTestng,
-            "APPIUM_NODE" => TestType::AppiumNode,
-            "APPIUM_PYTHON" => TestType::AppiumPython,
-            "APPIUM_RUBY" => TestType::AppiumRuby,
-            "APPIUM_WEB_JAVA_JUNIT" => TestType::AppiumWebJavaJunit,
-            "APPIUM_WEB_JAVA_TESTNG" => TestType::AppiumWebJavaTestng,
-            "APPIUM_WEB_NODE" => TestType::AppiumWebNode,
-            "APPIUM_WEB_PYTHON" => TestType::AppiumWebPython,
-            "APPIUM_WEB_RUBY" => TestType::AppiumWebRuby,
-            "BUILTIN_EXPLORER" => TestType::BuiltinExplorer,
-            "BUILTIN_FUZZ" => TestType::BuiltinFuzz,
-            "CALABASH" => TestType::Calabash,
-            "INSTRUMENTATION" => TestType::Instrumentation,
-            "REMOTE_ACCESS_RECORD" => TestType::RemoteAccessRecord,
-            "REMOTE_ACCESS_REPLAY" => TestType::RemoteAccessReplay,
-            "UIAUTOMATION" => TestType::Uiautomation,
-            "UIAUTOMATOR" => TestType::Uiautomator,
-            "WEB_PERFORMANCE_PROFILE" => TestType::WebPerformanceProfile,
-            "XCTEST" => TestType::Xctest,
-            "XCTEST_UI" => TestType::XctestUi,
-            other => TestType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "APPIUM_JAVA_JUNIT" => TestType::AppiumJavaJunit,
+"APPIUM_JAVA_TESTNG" => TestType::AppiumJavaTestng,
+"APPIUM_NODE" => TestType::AppiumNode,
+"APPIUM_PYTHON" => TestType::AppiumPython,
+"APPIUM_RUBY" => TestType::AppiumRuby,
+"APPIUM_WEB_JAVA_JUNIT" => TestType::AppiumWebJavaJunit,
+"APPIUM_WEB_JAVA_TESTNG" => TestType::AppiumWebJavaTestng,
+"APPIUM_WEB_NODE" => TestType::AppiumWebNode,
+"APPIUM_WEB_PYTHON" => TestType::AppiumWebPython,
+"APPIUM_WEB_RUBY" => TestType::AppiumWebRuby,
+"BUILTIN_EXPLORER" => TestType::BuiltinExplorer,
+"BUILTIN_FUZZ" => TestType::BuiltinFuzz,
+"CALABASH" => TestType::Calabash,
+"INSTRUMENTATION" => TestType::Instrumentation,
+"REMOTE_ACCESS_RECORD" => TestType::RemoteAccessRecord,
+"REMOTE_ACCESS_REPLAY" => TestType::RemoteAccessReplay,
+"UIAUTOMATION" => TestType::Uiautomation,
+"UIAUTOMATOR" => TestType::Uiautomator,
+"WEB_PERFORMANCE_PROFILE" => TestType::WebPerformanceProfile,
+"XCTEST" => TestType::Xctest,
+"XCTEST_UI" => TestType::XctestUi,
+other => TestType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TestType {
                 type Err = std::convert::Infallible;
 
@@ -5951,45 +5923,43 @@ impl std::str::FromStr for TestType {
                 }
             }
 impl TestType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TestType::AppiumJavaJunit => "APPIUM_JAVA_JUNIT",
-            TestType::AppiumJavaTestng => "APPIUM_JAVA_TESTNG",
-            TestType::AppiumNode => "APPIUM_NODE",
-            TestType::AppiumPython => "APPIUM_PYTHON",
-            TestType::AppiumRuby => "APPIUM_RUBY",
-            TestType::AppiumWebJavaJunit => "APPIUM_WEB_JAVA_JUNIT",
-            TestType::AppiumWebJavaTestng => "APPIUM_WEB_JAVA_TESTNG",
-            TestType::AppiumWebNode => "APPIUM_WEB_NODE",
-            TestType::AppiumWebPython => "APPIUM_WEB_PYTHON",
-            TestType::AppiumWebRuby => "APPIUM_WEB_RUBY",
-            TestType::BuiltinExplorer => "BUILTIN_EXPLORER",
-            TestType::BuiltinFuzz => "BUILTIN_FUZZ",
-            TestType::Calabash => "CALABASH",
-            TestType::Instrumentation => "INSTRUMENTATION",
-            TestType::RemoteAccessRecord => "REMOTE_ACCESS_RECORD",
-            TestType::RemoteAccessReplay => "REMOTE_ACCESS_REPLAY",
-            TestType::Uiautomation => "UIAUTOMATION",
-            TestType::Uiautomator => "UIAUTOMATOR",
-            TestType::WebPerformanceProfile => "WEB_PERFORMANCE_PROFILE",
-            TestType::Xctest => "XCTEST",
-            TestType::XctestUi => "XCTEST_UI",
-            TestType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPIUM_JAVA_JUNIT", "APPIUM_JAVA_TESTNG", "APPIUM_NODE", "APPIUM_PYTHON", "APPIUM_RUBY", "APPIUM_WEB_JAVA_JUNIT", "APPIUM_WEB_JAVA_TESTNG", "APPIUM_WEB_NODE", "APPIUM_WEB_PYTHON", "APPIUM_WEB_RUBY", "BUILTIN_EXPLORER", "BUILTIN_FUZZ", "CALABASH", "INSTRUMENTATION", "REMOTE_ACCESS_RECORD", "REMOTE_ACCESS_REPLAY", "UIAUTOMATION", "UIAUTOMATOR", "WEB_PERFORMANCE_PROFILE", "XCTEST", "XCTEST_UI"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TestType::AppiumJavaJunit => "APPIUM_JAVA_JUNIT",
+    TestType::AppiumJavaTestng => "APPIUM_JAVA_TESTNG",
+    TestType::AppiumNode => "APPIUM_NODE",
+    TestType::AppiumPython => "APPIUM_PYTHON",
+    TestType::AppiumRuby => "APPIUM_RUBY",
+    TestType::AppiumWebJavaJunit => "APPIUM_WEB_JAVA_JUNIT",
+    TestType::AppiumWebJavaTestng => "APPIUM_WEB_JAVA_TESTNG",
+    TestType::AppiumWebNode => "APPIUM_WEB_NODE",
+    TestType::AppiumWebPython => "APPIUM_WEB_PYTHON",
+    TestType::AppiumWebRuby => "APPIUM_WEB_RUBY",
+    TestType::BuiltinExplorer => "BUILTIN_EXPLORER",
+    TestType::BuiltinFuzz => "BUILTIN_FUZZ",
+    TestType::Calabash => "CALABASH",
+    TestType::Instrumentation => "INSTRUMENTATION",
+    TestType::RemoteAccessRecord => "REMOTE_ACCESS_RECORD",
+    TestType::RemoteAccessReplay => "REMOTE_ACCESS_REPLAY",
+    TestType::Uiautomation => "UIAUTOMATION",
+    TestType::Uiautomator => "UIAUTOMATOR",
+    TestType::WebPerformanceProfile => "WEB_PERFORMANCE_PROFILE",
+    TestType::Xctest => "XCTEST",
+    TestType::XctestUi => "XCTEST_UI",
+    TestType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["APPIUM_JAVA_JUNIT", "APPIUM_JAVA_TESTNG", "APPIUM_NODE", "APPIUM_PYTHON", "APPIUM_RUBY", "APPIUM_WEB_JAVA_JUNIT", "APPIUM_WEB_JAVA_TESTNG", "APPIUM_WEB_NODE", "APPIUM_WEB_PYTHON", "APPIUM_WEB_RUBY", "BUILTIN_EXPLORER", "BUILTIN_FUZZ", "CALABASH", "INSTRUMENTATION", "REMOTE_ACCESS_RECORD", "REMOTE_ACCESS_REPLAY", "UIAUTOMATION", "UIAUTOMATOR", "WEB_PERFORMANCE_PROFILE", "XCTEST", "XCTEST_UI"]
+                }
+            }
 impl AsRef<str> for TestType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents information about the remote access session.</p>
 #[non_exhaustive]
@@ -6610,15 +6580,15 @@ pub enum InteractionMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InteractionMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "INTERACTIVE" => InteractionMode::Interactive,
-            "NO_VIDEO" => InteractionMode::NoVideo,
-            "VIDEO_ONLY" => InteractionMode::VideoOnly,
-            other => InteractionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "INTERACTIVE" => InteractionMode::Interactive,
+"NO_VIDEO" => InteractionMode::NoVideo,
+"VIDEO_ONLY" => InteractionMode::VideoOnly,
+other => InteractionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InteractionMode {
                 type Err = std::convert::Infallible;
 
@@ -6627,27 +6597,25 @@ impl std::str::FromStr for InteractionMode {
                 }
             }
 impl InteractionMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InteractionMode::Interactive => "INTERACTIVE",
-            InteractionMode::NoVideo => "NO_VIDEO",
-            InteractionMode::VideoOnly => "VIDEO_ONLY",
-            InteractionMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "INTERACTIVE", "NO_VIDEO", "VIDEO_ONLY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InteractionMode::Interactive => "INTERACTIVE",
+    InteractionMode::NoVideo => "NO_VIDEO",
+    InteractionMode::VideoOnly => "VIDEO_ONLY",
+    InteractionMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INTERACTIVE", "NO_VIDEO", "VIDEO_ONLY"]
+                }
+            }
 impl AsRef<str> for InteractionMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a device type that an app is tested against.</p>
 #[non_exhaustive]
@@ -7182,16 +7150,16 @@ pub enum DeviceAvailability {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceAvailability {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => DeviceAvailability::Available,
-            "BUSY" => DeviceAvailability::Busy,
-            "HIGHLY_AVAILABLE" => DeviceAvailability::HighlyAvailable,
-            "TEMPORARY_NOT_AVAILABLE" => DeviceAvailability::TemporaryNotAvailable,
-            other => DeviceAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => DeviceAvailability::Available,
+"BUSY" => DeviceAvailability::Busy,
+"HIGHLY_AVAILABLE" => DeviceAvailability::HighlyAvailable,
+"TEMPORARY_NOT_AVAILABLE" => DeviceAvailability::TemporaryNotAvailable,
+other => DeviceAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeviceAvailability {
                 type Err = std::convert::Infallible;
 
@@ -7200,28 +7168,26 @@ impl std::str::FromStr for DeviceAvailability {
                 }
             }
 impl DeviceAvailability {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeviceAvailability::Available => "AVAILABLE",
-            DeviceAvailability::Busy => "BUSY",
-            DeviceAvailability::HighlyAvailable => "HIGHLY_AVAILABLE",
-            DeviceAvailability::TemporaryNotAvailable => "TEMPORARY_NOT_AVAILABLE",
-            DeviceAvailability::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "BUSY", "HIGHLY_AVAILABLE", "TEMPORARY_NOT_AVAILABLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeviceAvailability::Available => "AVAILABLE",
+    DeviceAvailability::Busy => "BUSY",
+    DeviceAvailability::HighlyAvailable => "HIGHLY_AVAILABLE",
+    DeviceAvailability::TemporaryNotAvailable => "TEMPORARY_NOT_AVAILABLE",
+    DeviceAvailability::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "BUSY", "HIGHLY_AVAILABLE", "TEMPORARY_NOT_AVAILABLE"]
+                }
+            }
 impl AsRef<str> for DeviceAvailability {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents the screen resolution of a device in height and width, expressed in pixels.</p>
 #[non_exhaustive]
@@ -7427,14 +7393,14 @@ pub enum DeviceFormFactor {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceFormFactor {
-    fn from(s: &str) -> Self {
-        match s {
-            "PHONE" => DeviceFormFactor::Phone,
-            "TABLET" => DeviceFormFactor::Tablet,
-            other => DeviceFormFactor::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PHONE" => DeviceFormFactor::Phone,
+"TABLET" => DeviceFormFactor::Tablet,
+other => DeviceFormFactor::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeviceFormFactor {
                 type Err = std::convert::Infallible;
 
@@ -7443,26 +7409,24 @@ impl std::str::FromStr for DeviceFormFactor {
                 }
             }
 impl DeviceFormFactor {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeviceFormFactor::Phone => "PHONE",
-            DeviceFormFactor::Tablet => "TABLET",
-            DeviceFormFactor::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PHONE", "TABLET"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeviceFormFactor::Phone => "PHONE",
+    DeviceFormFactor::Tablet => "TABLET",
+    DeviceFormFactor::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PHONE", "TABLET"]
+                }
+            }
 impl AsRef<str> for DeviceFormFactor {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a device.</p>
 #[non_exhaustive]
@@ -9202,13 +9166,13 @@ pub enum CurrencyCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CurrencyCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "USD" => CurrencyCode::Usd,
-            other => CurrencyCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "USD" => CurrencyCode::Usd,
+other => CurrencyCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CurrencyCode {
                 type Err = std::convert::Infallible;
 
@@ -9217,25 +9181,23 @@ impl std::str::FromStr for CurrencyCode {
                 }
             }
 impl CurrencyCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CurrencyCode::Usd => "USD",
-            CurrencyCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "USD"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CurrencyCode::Usd => "USD",
+    CurrencyCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["USD"]
+                }
+            }
 impl AsRef<str> for CurrencyCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The status of the offering.</p>
 #[non_exhaustive]
@@ -9589,13 +9551,13 @@ pub enum RecurringChargeFrequency {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecurringChargeFrequency {
-    fn from(s: &str) -> Self {
-        match s {
-            "MONTHLY" => RecurringChargeFrequency::Monthly,
-            other => RecurringChargeFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MONTHLY" => RecurringChargeFrequency::Monthly,
+other => RecurringChargeFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecurringChargeFrequency {
                 type Err = std::convert::Infallible;
 
@@ -9604,25 +9566,23 @@ impl std::str::FromStr for RecurringChargeFrequency {
                 }
             }
 impl RecurringChargeFrequency {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecurringChargeFrequency::Monthly => "MONTHLY",
-            RecurringChargeFrequency::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MONTHLY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecurringChargeFrequency::Monthly => "MONTHLY",
+    RecurringChargeFrequency::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MONTHLY"]
+                }
+            }
 impl AsRef<str> for RecurringChargeFrequency {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `OfferingType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -9668,13 +9628,13 @@ pub enum OfferingType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OfferingType {
-    fn from(s: &str) -> Self {
-        match s {
-            "RECURRING" => OfferingType::Recurring,
-            other => OfferingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "RECURRING" => OfferingType::Recurring,
+other => OfferingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OfferingType {
                 type Err = std::convert::Infallible;
 
@@ -9683,25 +9643,23 @@ impl std::str::FromStr for OfferingType {
                 }
             }
 impl OfferingType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OfferingType::Recurring => "RECURRING",
-            OfferingType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "RECURRING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OfferingType::Recurring => "RECURRING",
+    OfferingType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["RECURRING"]
+                }
+            }
 impl AsRef<str> for OfferingType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `OfferingTransactionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -9753,15 +9711,15 @@ pub enum OfferingTransactionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OfferingTransactionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PURCHASE" => OfferingTransactionType::Purchase,
-            "RENEW" => OfferingTransactionType::Renew,
-            "SYSTEM" => OfferingTransactionType::System,
-            other => OfferingTransactionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PURCHASE" => OfferingTransactionType::Purchase,
+"RENEW" => OfferingTransactionType::Renew,
+"SYSTEM" => OfferingTransactionType::System,
+other => OfferingTransactionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OfferingTransactionType {
                 type Err = std::convert::Infallible;
 
@@ -9770,27 +9728,25 @@ impl std::str::FromStr for OfferingTransactionType {
                 }
             }
 impl OfferingTransactionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OfferingTransactionType::Purchase => "PURCHASE",
-            OfferingTransactionType::Renew => "RENEW",
-            OfferingTransactionType::System => "SYSTEM",
-            OfferingTransactionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PURCHASE", "RENEW", "SYSTEM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OfferingTransactionType::Purchase => "PURCHASE",
+    OfferingTransactionType::Renew => "RENEW",
+    OfferingTransactionType::System => "SYSTEM",
+    OfferingTransactionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PURCHASE", "RENEW", "SYSTEM"]
+                }
+            }
 impl AsRef<str> for OfferingTransactionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A collection of one or more problems, grouped by their result.</p>
 #[non_exhaustive]
@@ -10755,15 +10711,15 @@ pub enum TestGridSessionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TestGridSessionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => TestGridSessionStatus::Active,
-            "CLOSED" => TestGridSessionStatus::Closed,
-            "ERRORED" => TestGridSessionStatus::Errored,
-            other => TestGridSessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => TestGridSessionStatus::Active,
+"CLOSED" => TestGridSessionStatus::Closed,
+"ERRORED" => TestGridSessionStatus::Errored,
+other => TestGridSessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TestGridSessionStatus {
                 type Err = std::convert::Infallible;
 
@@ -10772,27 +10728,25 @@ impl std::str::FromStr for TestGridSessionStatus {
                 }
             }
 impl TestGridSessionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TestGridSessionStatus::Active => "ACTIVE",
-            TestGridSessionStatus::Closed => "CLOSED",
-            TestGridSessionStatus::Errored => "ERRORED",
-            TestGridSessionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CLOSED", "ERRORED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TestGridSessionStatus::Active => "ACTIVE",
+    TestGridSessionStatus::Closed => "CLOSED",
+    TestGridSessionStatus::Errored => "ERRORED",
+    TestGridSessionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CLOSED", "ERRORED"]
+                }
+            }
 impl AsRef<str> for TestGridSessionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Artifacts are video and other files that are produced in the process of running a browser in an automated context. </p> <note> 
 /// <p>Video elements might be broken up into multiple artifacts as they grow in size during creation. </p> 
@@ -10952,15 +10906,15 @@ pub enum TestGridSessionArtifactType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TestGridSessionArtifactType {
-    fn from(s: &str) -> Self {
-        match s {
-            "SELENIUM_LOG" => TestGridSessionArtifactType::SeleniumLog,
-            "UNKNOWN" => TestGridSessionArtifactType::UnknownValue,
-            "VIDEO" => TestGridSessionArtifactType::Video,
-            other => TestGridSessionArtifactType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SELENIUM_LOG" => TestGridSessionArtifactType::SeleniumLog,
+"UNKNOWN" => TestGridSessionArtifactType::UnknownValue,
+"VIDEO" => TestGridSessionArtifactType::Video,
+other => TestGridSessionArtifactType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TestGridSessionArtifactType {
                 type Err = std::convert::Infallible;
 
@@ -10969,27 +10923,25 @@ impl std::str::FromStr for TestGridSessionArtifactType {
                 }
             }
 impl TestGridSessionArtifactType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TestGridSessionArtifactType::SeleniumLog => "SELENIUM_LOG",
-            TestGridSessionArtifactType::UnknownValue => "UNKNOWN",
-            TestGridSessionArtifactType::Video => "VIDEO",
-            TestGridSessionArtifactType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SELENIUM_LOG", "UNKNOWN", "VIDEO"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TestGridSessionArtifactType::SeleniumLog => "SELENIUM_LOG",
+    TestGridSessionArtifactType::UnknownValue => "UNKNOWN",
+    TestGridSessionArtifactType::Video => "VIDEO",
+    TestGridSessionArtifactType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SELENIUM_LOG", "UNKNOWN", "VIDEO"]
+                }
+            }
 impl AsRef<str> for TestGridSessionArtifactType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TestGridSessionArtifactCategory`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -11038,14 +10990,14 @@ pub enum TestGridSessionArtifactCategory {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TestGridSessionArtifactCategory {
-    fn from(s: &str) -> Self {
-        match s {
-            "LOG" => TestGridSessionArtifactCategory::Log,
-            "VIDEO" => TestGridSessionArtifactCategory::Video,
-            other => TestGridSessionArtifactCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "LOG" => TestGridSessionArtifactCategory::Log,
+"VIDEO" => TestGridSessionArtifactCategory::Video,
+other => TestGridSessionArtifactCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TestGridSessionArtifactCategory {
                 type Err = std::convert::Infallible;
 
@@ -11054,26 +11006,24 @@ impl std::str::FromStr for TestGridSessionArtifactCategory {
                 }
             }
 impl TestGridSessionArtifactCategory {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TestGridSessionArtifactCategory::Log => "LOG",
-            TestGridSessionArtifactCategory::Video => "VIDEO",
-            TestGridSessionArtifactCategory::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LOG", "VIDEO"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TestGridSessionArtifactCategory::Log => "LOG",
+    TestGridSessionArtifactCategory::Video => "VIDEO",
+    TestGridSessionArtifactCategory::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LOG", "VIDEO"]
+                }
+            }
 impl AsRef<str> for TestGridSessionArtifactCategory {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An action taken by a <code>TestGridSession</code> browser instance.</p>
 #[non_exhaustive]
@@ -11881,29 +11831,29 @@ pub enum SampleType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SampleType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CPU" => SampleType::Cpu,
-            "MEMORY" => SampleType::Memory,
-            "NATIVE_AVG_DRAWTIME" => SampleType::NativeAvgDrawtime,
-            "NATIVE_FPS" => SampleType::NativeFps,
-            "NATIVE_FRAMES" => SampleType::NativeFrames,
-            "NATIVE_MAX_DRAWTIME" => SampleType::NativeMaxDrawtime,
-            "NATIVE_MIN_DRAWTIME" => SampleType::NativeMinDrawtime,
-            "OPENGL_AVG_DRAWTIME" => SampleType::OpenglAvgDrawtime,
-            "OPENGL_FPS" => SampleType::OpenglFps,
-            "OPENGL_FRAMES" => SampleType::OpenglFrames,
-            "OPENGL_MAX_DRAWTIME" => SampleType::OpenglMaxDrawtime,
-            "OPENGL_MIN_DRAWTIME" => SampleType::OpenglMinDrawtime,
-            "RX" => SampleType::Rx,
-            "RX_RATE" => SampleType::RxRate,
-            "THREADS" => SampleType::Threads,
-            "TX" => SampleType::Tx,
-            "TX_RATE" => SampleType::TxRate,
-            other => SampleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CPU" => SampleType::Cpu,
+"MEMORY" => SampleType::Memory,
+"NATIVE_AVG_DRAWTIME" => SampleType::NativeAvgDrawtime,
+"NATIVE_FPS" => SampleType::NativeFps,
+"NATIVE_FRAMES" => SampleType::NativeFrames,
+"NATIVE_MAX_DRAWTIME" => SampleType::NativeMaxDrawtime,
+"NATIVE_MIN_DRAWTIME" => SampleType::NativeMinDrawtime,
+"OPENGL_AVG_DRAWTIME" => SampleType::OpenglAvgDrawtime,
+"OPENGL_FPS" => SampleType::OpenglFps,
+"OPENGL_FRAMES" => SampleType::OpenglFrames,
+"OPENGL_MAX_DRAWTIME" => SampleType::OpenglMaxDrawtime,
+"OPENGL_MIN_DRAWTIME" => SampleType::OpenglMinDrawtime,
+"RX" => SampleType::Rx,
+"RX_RATE" => SampleType::RxRate,
+"THREADS" => SampleType::Threads,
+"TX" => SampleType::Tx,
+"TX_RATE" => SampleType::TxRate,
+other => SampleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SampleType {
                 type Err = std::convert::Infallible;
 
@@ -11912,41 +11862,39 @@ impl std::str::FromStr for SampleType {
                 }
             }
 impl SampleType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SampleType::Cpu => "CPU",
-            SampleType::Memory => "MEMORY",
-            SampleType::NativeAvgDrawtime => "NATIVE_AVG_DRAWTIME",
-            SampleType::NativeFps => "NATIVE_FPS",
-            SampleType::NativeFrames => "NATIVE_FRAMES",
-            SampleType::NativeMaxDrawtime => "NATIVE_MAX_DRAWTIME",
-            SampleType::NativeMinDrawtime => "NATIVE_MIN_DRAWTIME",
-            SampleType::OpenglAvgDrawtime => "OPENGL_AVG_DRAWTIME",
-            SampleType::OpenglFps => "OPENGL_FPS",
-            SampleType::OpenglFrames => "OPENGL_FRAMES",
-            SampleType::OpenglMaxDrawtime => "OPENGL_MAX_DRAWTIME",
-            SampleType::OpenglMinDrawtime => "OPENGL_MIN_DRAWTIME",
-            SampleType::Rx => "RX",
-            SampleType::RxRate => "RX_RATE",
-            SampleType::Threads => "THREADS",
-            SampleType::Tx => "TX",
-            SampleType::TxRate => "TX_RATE",
-            SampleType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CPU", "MEMORY", "NATIVE_AVG_DRAWTIME", "NATIVE_FPS", "NATIVE_FRAMES", "NATIVE_MAX_DRAWTIME", "NATIVE_MIN_DRAWTIME", "OPENGL_AVG_DRAWTIME", "OPENGL_FPS", "OPENGL_FRAMES", "OPENGL_MAX_DRAWTIME", "OPENGL_MIN_DRAWTIME", "RX", "RX_RATE", "THREADS", "TX", "TX_RATE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SampleType::Cpu => "CPU",
+    SampleType::Memory => "MEMORY",
+    SampleType::NativeAvgDrawtime => "NATIVE_AVG_DRAWTIME",
+    SampleType::NativeFps => "NATIVE_FPS",
+    SampleType::NativeFrames => "NATIVE_FRAMES",
+    SampleType::NativeMaxDrawtime => "NATIVE_MAX_DRAWTIME",
+    SampleType::NativeMinDrawtime => "NATIVE_MIN_DRAWTIME",
+    SampleType::OpenglAvgDrawtime => "OPENGL_AVG_DRAWTIME",
+    SampleType::OpenglFps => "OPENGL_FPS",
+    SampleType::OpenglFrames => "OPENGL_FRAMES",
+    SampleType::OpenglMaxDrawtime => "OPENGL_MAX_DRAWTIME",
+    SampleType::OpenglMinDrawtime => "OPENGL_MIN_DRAWTIME",
+    SampleType::Rx => "RX",
+    SampleType::RxRate => "RX_RATE",
+    SampleType::Threads => "THREADS",
+    SampleType::Tx => "TX",
+    SampleType::TxRate => "TX_RATE",
+    SampleType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CPU", "MEMORY", "NATIVE_AVG_DRAWTIME", "NATIVE_FPS", "NATIVE_FRAMES", "NATIVE_MAX_DRAWTIME", "NATIVE_MIN_DRAWTIME", "OPENGL_AVG_DRAWTIME", "OPENGL_FPS", "OPENGL_FRAMES", "OPENGL_MAX_DRAWTIME", "OPENGL_MIN_DRAWTIME", "RX", "RX_RATE", "THREADS", "TX", "TX_RATE"]
+                }
+            }
 impl AsRef<str> for SampleType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents information about an offering promotion.</p>
 #[non_exhaustive]
@@ -12392,40 +12340,40 @@ pub enum ArtifactType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ArtifactType {
-    fn from(s: &str) -> Self {
-        match s {
-            "APPIUM_JAVA_OUTPUT" => ArtifactType::AppiumJavaOutput,
-            "APPIUM_JAVA_XML_OUTPUT" => ArtifactType::AppiumJavaXmlOutput,
-            "APPIUM_PYTHON_OUTPUT" => ArtifactType::AppiumPythonOutput,
-            "APPIUM_PYTHON_XML_OUTPUT" => ArtifactType::AppiumPythonXmlOutput,
-            "APPIUM_SERVER_OUTPUT" => ArtifactType::AppiumServerOutput,
-            "APPLICATION_CRASH_REPORT" => ArtifactType::ApplicationCrashReport,
-            "AUTOMATION_OUTPUT" => ArtifactType::AutomationOutput,
-            "CALABASH_JAVA_XML_OUTPUT" => ArtifactType::CalabashJavaXmlOutput,
-            "CALABASH_JSON_OUTPUT" => ArtifactType::CalabashJsonOutput,
-            "CALABASH_PRETTY_OUTPUT" => ArtifactType::CalabashPrettyOutput,
-            "CALABASH_STANDARD_OUTPUT" => ArtifactType::CalabashStandardOutput,
-            "CUSTOMER_ARTIFACT" => ArtifactType::CustomerArtifact,
-            "CUSTOMER_ARTIFACT_LOG" => ArtifactType::CustomerArtifactLog,
-            "DEVICE_LOG" => ArtifactType::DeviceLog,
-            "EXERCISER_MONKEY_OUTPUT" => ArtifactType::ExerciserMonkeyOutput,
-            "EXPLORER_EVENT_LOG" => ArtifactType::ExplorerEventLog,
-            "EXPLORER_SUMMARY_LOG" => ArtifactType::ExplorerSummaryLog,
-            "INSTRUMENTATION_OUTPUT" => ArtifactType::InstrumentationOutput,
-            "MESSAGE_LOG" => ArtifactType::MessageLog,
-            "RESULT_LOG" => ArtifactType::ResultLog,
-            "SCREENSHOT" => ArtifactType::Screenshot,
-            "SERVICE_LOG" => ArtifactType::ServiceLog,
-            "TESTSPEC_OUTPUT" => ArtifactType::TestspecOutput,
-            "UNKNOWN" => ArtifactType::UnknownValue,
-            "VIDEO" => ArtifactType::Video,
-            "VIDEO_LOG" => ArtifactType::VideoLog,
-            "WEBKIT_LOG" => ArtifactType::WebkitLog,
-            "XCTEST_LOG" => ArtifactType::XctestLog,
-            other => ArtifactType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "APPIUM_JAVA_OUTPUT" => ArtifactType::AppiumJavaOutput,
+"APPIUM_JAVA_XML_OUTPUT" => ArtifactType::AppiumJavaXmlOutput,
+"APPIUM_PYTHON_OUTPUT" => ArtifactType::AppiumPythonOutput,
+"APPIUM_PYTHON_XML_OUTPUT" => ArtifactType::AppiumPythonXmlOutput,
+"APPIUM_SERVER_OUTPUT" => ArtifactType::AppiumServerOutput,
+"APPLICATION_CRASH_REPORT" => ArtifactType::ApplicationCrashReport,
+"AUTOMATION_OUTPUT" => ArtifactType::AutomationOutput,
+"CALABASH_JAVA_XML_OUTPUT" => ArtifactType::CalabashJavaXmlOutput,
+"CALABASH_JSON_OUTPUT" => ArtifactType::CalabashJsonOutput,
+"CALABASH_PRETTY_OUTPUT" => ArtifactType::CalabashPrettyOutput,
+"CALABASH_STANDARD_OUTPUT" => ArtifactType::CalabashStandardOutput,
+"CUSTOMER_ARTIFACT" => ArtifactType::CustomerArtifact,
+"CUSTOMER_ARTIFACT_LOG" => ArtifactType::CustomerArtifactLog,
+"DEVICE_LOG" => ArtifactType::DeviceLog,
+"EXERCISER_MONKEY_OUTPUT" => ArtifactType::ExerciserMonkeyOutput,
+"EXPLORER_EVENT_LOG" => ArtifactType::ExplorerEventLog,
+"EXPLORER_SUMMARY_LOG" => ArtifactType::ExplorerSummaryLog,
+"INSTRUMENTATION_OUTPUT" => ArtifactType::InstrumentationOutput,
+"MESSAGE_LOG" => ArtifactType::MessageLog,
+"RESULT_LOG" => ArtifactType::ResultLog,
+"SCREENSHOT" => ArtifactType::Screenshot,
+"SERVICE_LOG" => ArtifactType::ServiceLog,
+"TESTSPEC_OUTPUT" => ArtifactType::TestspecOutput,
+"UNKNOWN" => ArtifactType::UnknownValue,
+"VIDEO" => ArtifactType::Video,
+"VIDEO_LOG" => ArtifactType::VideoLog,
+"WEBKIT_LOG" => ArtifactType::WebkitLog,
+"XCTEST_LOG" => ArtifactType::XctestLog,
+other => ArtifactType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ArtifactType {
                 type Err = std::convert::Infallible;
 
@@ -12434,52 +12382,50 @@ impl std::str::FromStr for ArtifactType {
                 }
             }
 impl ArtifactType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ArtifactType::AppiumJavaOutput => "APPIUM_JAVA_OUTPUT",
-            ArtifactType::AppiumJavaXmlOutput => "APPIUM_JAVA_XML_OUTPUT",
-            ArtifactType::AppiumPythonOutput => "APPIUM_PYTHON_OUTPUT",
-            ArtifactType::AppiumPythonXmlOutput => "APPIUM_PYTHON_XML_OUTPUT",
-            ArtifactType::AppiumServerOutput => "APPIUM_SERVER_OUTPUT",
-            ArtifactType::ApplicationCrashReport => "APPLICATION_CRASH_REPORT",
-            ArtifactType::AutomationOutput => "AUTOMATION_OUTPUT",
-            ArtifactType::CalabashJavaXmlOutput => "CALABASH_JAVA_XML_OUTPUT",
-            ArtifactType::CalabashJsonOutput => "CALABASH_JSON_OUTPUT",
-            ArtifactType::CalabashPrettyOutput => "CALABASH_PRETTY_OUTPUT",
-            ArtifactType::CalabashStandardOutput => "CALABASH_STANDARD_OUTPUT",
-            ArtifactType::CustomerArtifact => "CUSTOMER_ARTIFACT",
-            ArtifactType::CustomerArtifactLog => "CUSTOMER_ARTIFACT_LOG",
-            ArtifactType::DeviceLog => "DEVICE_LOG",
-            ArtifactType::ExerciserMonkeyOutput => "EXERCISER_MONKEY_OUTPUT",
-            ArtifactType::ExplorerEventLog => "EXPLORER_EVENT_LOG",
-            ArtifactType::ExplorerSummaryLog => "EXPLORER_SUMMARY_LOG",
-            ArtifactType::InstrumentationOutput => "INSTRUMENTATION_OUTPUT",
-            ArtifactType::MessageLog => "MESSAGE_LOG",
-            ArtifactType::ResultLog => "RESULT_LOG",
-            ArtifactType::Screenshot => "SCREENSHOT",
-            ArtifactType::ServiceLog => "SERVICE_LOG",
-            ArtifactType::TestspecOutput => "TESTSPEC_OUTPUT",
-            ArtifactType::UnknownValue => "UNKNOWN",
-            ArtifactType::Video => "VIDEO",
-            ArtifactType::VideoLog => "VIDEO_LOG",
-            ArtifactType::WebkitLog => "WEBKIT_LOG",
-            ArtifactType::XctestLog => "XCTEST_LOG",
-            ArtifactType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPIUM_JAVA_OUTPUT", "APPIUM_JAVA_XML_OUTPUT", "APPIUM_PYTHON_OUTPUT", "APPIUM_PYTHON_XML_OUTPUT", "APPIUM_SERVER_OUTPUT", "APPLICATION_CRASH_REPORT", "AUTOMATION_OUTPUT", "CALABASH_JAVA_XML_OUTPUT", "CALABASH_JSON_OUTPUT", "CALABASH_PRETTY_OUTPUT", "CALABASH_STANDARD_OUTPUT", "CUSTOMER_ARTIFACT", "CUSTOMER_ARTIFACT_LOG", "DEVICE_LOG", "EXERCISER_MONKEY_OUTPUT", "EXPLORER_EVENT_LOG", "EXPLORER_SUMMARY_LOG", "INSTRUMENTATION_OUTPUT", "MESSAGE_LOG", "RESULT_LOG", "SCREENSHOT", "SERVICE_LOG", "TESTSPEC_OUTPUT", "UNKNOWN", "VIDEO", "VIDEO_LOG", "WEBKIT_LOG", "XCTEST_LOG"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ArtifactType::AppiumJavaOutput => "APPIUM_JAVA_OUTPUT",
+    ArtifactType::AppiumJavaXmlOutput => "APPIUM_JAVA_XML_OUTPUT",
+    ArtifactType::AppiumPythonOutput => "APPIUM_PYTHON_OUTPUT",
+    ArtifactType::AppiumPythonXmlOutput => "APPIUM_PYTHON_XML_OUTPUT",
+    ArtifactType::AppiumServerOutput => "APPIUM_SERVER_OUTPUT",
+    ArtifactType::ApplicationCrashReport => "APPLICATION_CRASH_REPORT",
+    ArtifactType::AutomationOutput => "AUTOMATION_OUTPUT",
+    ArtifactType::CalabashJavaXmlOutput => "CALABASH_JAVA_XML_OUTPUT",
+    ArtifactType::CalabashJsonOutput => "CALABASH_JSON_OUTPUT",
+    ArtifactType::CalabashPrettyOutput => "CALABASH_PRETTY_OUTPUT",
+    ArtifactType::CalabashStandardOutput => "CALABASH_STANDARD_OUTPUT",
+    ArtifactType::CustomerArtifact => "CUSTOMER_ARTIFACT",
+    ArtifactType::CustomerArtifactLog => "CUSTOMER_ARTIFACT_LOG",
+    ArtifactType::DeviceLog => "DEVICE_LOG",
+    ArtifactType::ExerciserMonkeyOutput => "EXERCISER_MONKEY_OUTPUT",
+    ArtifactType::ExplorerEventLog => "EXPLORER_EVENT_LOG",
+    ArtifactType::ExplorerSummaryLog => "EXPLORER_SUMMARY_LOG",
+    ArtifactType::InstrumentationOutput => "INSTRUMENTATION_OUTPUT",
+    ArtifactType::MessageLog => "MESSAGE_LOG",
+    ArtifactType::ResultLog => "RESULT_LOG",
+    ArtifactType::Screenshot => "SCREENSHOT",
+    ArtifactType::ServiceLog => "SERVICE_LOG",
+    ArtifactType::TestspecOutput => "TESTSPEC_OUTPUT",
+    ArtifactType::UnknownValue => "UNKNOWN",
+    ArtifactType::Video => "VIDEO",
+    ArtifactType::VideoLog => "VIDEO_LOG",
+    ArtifactType::WebkitLog => "WEBKIT_LOG",
+    ArtifactType::XctestLog => "XCTEST_LOG",
+    ArtifactType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["APPIUM_JAVA_OUTPUT", "APPIUM_JAVA_XML_OUTPUT", "APPIUM_PYTHON_OUTPUT", "APPIUM_PYTHON_XML_OUTPUT", "APPIUM_SERVER_OUTPUT", "APPLICATION_CRASH_REPORT", "AUTOMATION_OUTPUT", "CALABASH_JAVA_XML_OUTPUT", "CALABASH_JSON_OUTPUT", "CALABASH_PRETTY_OUTPUT", "CALABASH_STANDARD_OUTPUT", "CUSTOMER_ARTIFACT", "CUSTOMER_ARTIFACT_LOG", "DEVICE_LOG", "EXERCISER_MONKEY_OUTPUT", "EXPLORER_EVENT_LOG", "EXPLORER_SUMMARY_LOG", "INSTRUMENTATION_OUTPUT", "MESSAGE_LOG", "RESULT_LOG", "SCREENSHOT", "SERVICE_LOG", "TESTSPEC_OUTPUT", "UNKNOWN", "VIDEO", "VIDEO_LOG", "WEBKIT_LOG", "XCTEST_LOG"]
+                }
+            }
 impl AsRef<str> for ArtifactType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ArtifactCategory`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -12531,15 +12477,15 @@ pub enum ArtifactCategory {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ArtifactCategory {
-    fn from(s: &str) -> Self {
-        match s {
-            "FILE" => ArtifactCategory::File,
-            "LOG" => ArtifactCategory::Log,
-            "SCREENSHOT" => ArtifactCategory::Screenshot,
-            other => ArtifactCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FILE" => ArtifactCategory::File,
+"LOG" => ArtifactCategory::Log,
+"SCREENSHOT" => ArtifactCategory::Screenshot,
+other => ArtifactCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ArtifactCategory {
                 type Err = std::convert::Infallible;
 
@@ -12548,27 +12494,25 @@ impl std::str::FromStr for ArtifactCategory {
                 }
             }
 impl ArtifactCategory {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ArtifactCategory::File => "FILE",
-            ArtifactCategory::Log => "LOG",
-            ArtifactCategory::Screenshot => "SCREENSHOT",
-            ArtifactCategory::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FILE", "LOG", "SCREENSHOT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ArtifactCategory::File => "FILE",
+    ArtifactCategory::Log => "LOG",
+    ArtifactCategory::Screenshot => "SCREENSHOT",
+    ArtifactCategory::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FILE", "LOG", "SCREENSHOT"]
+                }
+            }
 impl AsRef<str> for ArtifactCategory {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a device pool compatibility result.</p>
 #[non_exhaustive]

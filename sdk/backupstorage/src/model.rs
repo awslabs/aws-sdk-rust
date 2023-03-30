@@ -44,13 +44,13 @@ pub enum SummaryChecksumAlgorithm {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SummaryChecksumAlgorithm {
-    fn from(s: &str) -> Self {
-        match s {
-            "SUMMARY" => SummaryChecksumAlgorithm::Summary,
-            other => SummaryChecksumAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SUMMARY" => SummaryChecksumAlgorithm::Summary,
+other => SummaryChecksumAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SummaryChecksumAlgorithm {
                 type Err = std::convert::Infallible;
 
@@ -59,25 +59,23 @@ impl std::str::FromStr for SummaryChecksumAlgorithm {
                 }
             }
 impl SummaryChecksumAlgorithm {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SummaryChecksumAlgorithm::Summary => "SUMMARY",
-            SummaryChecksumAlgorithm::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SUMMARY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SummaryChecksumAlgorithm::Summary => "SUMMARY",
+    SummaryChecksumAlgorithm::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SUMMARY"]
+                }
+            }
 impl AsRef<str> for SummaryChecksumAlgorithm {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DataChecksumAlgorithm`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -123,13 +121,13 @@ pub enum DataChecksumAlgorithm {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataChecksumAlgorithm {
-    fn from(s: &str) -> Self {
-        match s {
-            "SHA256" => DataChecksumAlgorithm::Sha256,
-            other => DataChecksumAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SHA256" => DataChecksumAlgorithm::Sha256,
+other => DataChecksumAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DataChecksumAlgorithm {
                 type Err = std::convert::Infallible;
 
@@ -138,25 +136,23 @@ impl std::str::FromStr for DataChecksumAlgorithm {
                 }
             }
 impl DataChecksumAlgorithm {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataChecksumAlgorithm::Sha256 => "SHA256",
-            DataChecksumAlgorithm::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SHA256"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataChecksumAlgorithm::Sha256 => "SHA256",
+    DataChecksumAlgorithm::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SHA256"]
+                }
+            }
 impl AsRef<str> for DataChecksumAlgorithm {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Object
 #[non_exhaustive]

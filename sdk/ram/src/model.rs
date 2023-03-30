@@ -297,15 +297,15 @@ pub enum ResourceShareFeatureSet {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareFeatureSet {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED_FROM_POLICY" => ResourceShareFeatureSet::CreatedFromPolicy,
-            "PROMOTING_TO_STANDARD" => ResourceShareFeatureSet::PromotingToStandard,
-            "STANDARD" => ResourceShareFeatureSet::Standard,
-            other => ResourceShareFeatureSet::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATED_FROM_POLICY" => ResourceShareFeatureSet::CreatedFromPolicy,
+"PROMOTING_TO_STANDARD" => ResourceShareFeatureSet::PromotingToStandard,
+"STANDARD" => ResourceShareFeatureSet::Standard,
+other => ResourceShareFeatureSet::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceShareFeatureSet {
                 type Err = std::convert::Infallible;
 
@@ -314,27 +314,25 @@ impl std::str::FromStr for ResourceShareFeatureSet {
                 }
             }
 impl ResourceShareFeatureSet {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceShareFeatureSet::CreatedFromPolicy => "CREATED_FROM_POLICY",
-            ResourceShareFeatureSet::PromotingToStandard => "PROMOTING_TO_STANDARD",
-            ResourceShareFeatureSet::Standard => "STANDARD",
-            ResourceShareFeatureSet::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED_FROM_POLICY", "PROMOTING_TO_STANDARD", "STANDARD"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceShareFeatureSet::CreatedFromPolicy => "CREATED_FROM_POLICY",
+    ResourceShareFeatureSet::PromotingToStandard => "PROMOTING_TO_STANDARD",
+    ResourceShareFeatureSet::Standard => "STANDARD",
+    ResourceShareFeatureSet::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED_FROM_POLICY", "PROMOTING_TO_STANDARD", "STANDARD"]
+                }
+            }
 impl AsRef<str> for ResourceShareFeatureSet {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure containing a tag. A tag is metadata that you can attach to your resources to help organize and categorize them. You can also use them to help you secure your resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p> 
 /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -462,17 +460,17 @@ pub enum ResourceShareStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ResourceShareStatus::Active,
-            "DELETED" => ResourceShareStatus::Deleted,
-            "DELETING" => ResourceShareStatus::Deleting,
-            "FAILED" => ResourceShareStatus::Failed,
-            "PENDING" => ResourceShareStatus::Pending,
-            other => ResourceShareStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ResourceShareStatus::Active,
+"DELETED" => ResourceShareStatus::Deleted,
+"DELETING" => ResourceShareStatus::Deleting,
+"FAILED" => ResourceShareStatus::Failed,
+"PENDING" => ResourceShareStatus::Pending,
+other => ResourceShareStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceShareStatus {
                 type Err = std::convert::Infallible;
 
@@ -481,29 +479,27 @@ impl std::str::FromStr for ResourceShareStatus {
                 }
             }
 impl ResourceShareStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceShareStatus::Active => "ACTIVE",
-            ResourceShareStatus::Deleted => "DELETED",
-            ResourceShareStatus::Deleting => "DELETING",
-            ResourceShareStatus::Failed => "FAILED",
-            ResourceShareStatus::Pending => "PENDING",
-            ResourceShareStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "DELETED", "DELETING", "FAILED", "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceShareStatus::Active => "ACTIVE",
+    ResourceShareStatus::Deleted => "DELETED",
+    ResourceShareStatus::Deleting => "DELETING",
+    ResourceShareStatus::Failed => "FAILED",
+    ResourceShareStatus::Pending => "PENDING",
+    ResourceShareStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "DELETED", "DELETING", "FAILED", "PENDING"]
+                }
+            }
 impl AsRef<str> for ResourceShareStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes an invitation for an Amazon Web Services account to join a resource share.</p>
 #[non_exhaustive]
@@ -1019,17 +1015,17 @@ pub enum ResourceShareAssociationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareAssociationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSOCIATED" => ResourceShareAssociationStatus::Associated,
-            "ASSOCIATING" => ResourceShareAssociationStatus::Associating,
-            "DISASSOCIATED" => ResourceShareAssociationStatus::Disassociated,
-            "DISASSOCIATING" => ResourceShareAssociationStatus::Disassociating,
-            "FAILED" => ResourceShareAssociationStatus::Failed,
-            other => ResourceShareAssociationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSOCIATED" => ResourceShareAssociationStatus::Associated,
+"ASSOCIATING" => ResourceShareAssociationStatus::Associating,
+"DISASSOCIATED" => ResourceShareAssociationStatus::Disassociated,
+"DISASSOCIATING" => ResourceShareAssociationStatus::Disassociating,
+"FAILED" => ResourceShareAssociationStatus::Failed,
+other => ResourceShareAssociationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceShareAssociationStatus {
                 type Err = std::convert::Infallible;
 
@@ -1038,29 +1034,27 @@ impl std::str::FromStr for ResourceShareAssociationStatus {
                 }
             }
 impl ResourceShareAssociationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceShareAssociationStatus::Associated => "ASSOCIATED",
-            ResourceShareAssociationStatus::Associating => "ASSOCIATING",
-            ResourceShareAssociationStatus::Disassociated => "DISASSOCIATED",
-            ResourceShareAssociationStatus::Disassociating => "DISASSOCIATING",
-            ResourceShareAssociationStatus::Failed => "FAILED",
-            ResourceShareAssociationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSOCIATED", "ASSOCIATING", "DISASSOCIATED", "DISASSOCIATING", "FAILED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceShareAssociationStatus::Associated => "ASSOCIATED",
+    ResourceShareAssociationStatus::Associating => "ASSOCIATING",
+    ResourceShareAssociationStatus::Disassociated => "DISASSOCIATED",
+    ResourceShareAssociationStatus::Disassociating => "DISASSOCIATING",
+    ResourceShareAssociationStatus::Failed => "FAILED",
+    ResourceShareAssociationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSOCIATED", "ASSOCIATING", "DISASSOCIATED", "DISASSOCIATING", "FAILED"]
+                }
+            }
 impl AsRef<str> for ResourceShareAssociationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ResourceShareAssociationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1109,14 +1103,14 @@ pub enum ResourceShareAssociationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareAssociationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PRINCIPAL" => ResourceShareAssociationType::Principal,
-            "RESOURCE" => ResourceShareAssociationType::Resource,
-            other => ResourceShareAssociationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PRINCIPAL" => ResourceShareAssociationType::Principal,
+"RESOURCE" => ResourceShareAssociationType::Resource,
+other => ResourceShareAssociationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceShareAssociationType {
                 type Err = std::convert::Infallible;
 
@@ -1125,26 +1119,24 @@ impl std::str::FromStr for ResourceShareAssociationType {
                 }
             }
 impl ResourceShareAssociationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceShareAssociationType::Principal => "PRINCIPAL",
-            ResourceShareAssociationType::Resource => "RESOURCE",
-            ResourceShareAssociationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PRINCIPAL", "RESOURCE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceShareAssociationType::Principal => "PRINCIPAL",
+    ResourceShareAssociationType::Resource => "RESOURCE",
+    ResourceShareAssociationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PRINCIPAL", "RESOURCE"]
+                }
+            }
 impl AsRef<str> for ResourceShareAssociationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ResourceShareInvitationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1199,16 +1191,16 @@ pub enum ResourceShareInvitationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareInvitationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCEPTED" => ResourceShareInvitationStatus::Accepted,
-            "EXPIRED" => ResourceShareInvitationStatus::Expired,
-            "PENDING" => ResourceShareInvitationStatus::Pending,
-            "REJECTED" => ResourceShareInvitationStatus::Rejected,
-            other => ResourceShareInvitationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCEPTED" => ResourceShareInvitationStatus::Accepted,
+"EXPIRED" => ResourceShareInvitationStatus::Expired,
+"PENDING" => ResourceShareInvitationStatus::Pending,
+"REJECTED" => ResourceShareInvitationStatus::Rejected,
+other => ResourceShareInvitationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceShareInvitationStatus {
                 type Err = std::convert::Infallible;
 
@@ -1217,28 +1209,26 @@ impl std::str::FromStr for ResourceShareInvitationStatus {
                 }
             }
 impl ResourceShareInvitationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceShareInvitationStatus::Accepted => "ACCEPTED",
-            ResourceShareInvitationStatus::Expired => "EXPIRED",
-            ResourceShareInvitationStatus::Pending => "PENDING",
-            ResourceShareInvitationStatus::Rejected => "REJECTED",
-            ResourceShareInvitationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCEPTED", "EXPIRED", "PENDING", "REJECTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceShareInvitationStatus::Accepted => "ACCEPTED",
+    ResourceShareInvitationStatus::Expired => "EXPIRED",
+    ResourceShareInvitationStatus::Pending => "PENDING",
+    ResourceShareInvitationStatus::Rejected => "REJECTED",
+    ResourceShareInvitationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCEPTED", "EXPIRED", "PENDING", "REJECTED"]
+                }
+            }
 impl AsRef<str> for ResourceShareInvitationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a shareable resource type and the Amazon Web Services service to which resources of that type belong.</p>
 #[non_exhaustive]
@@ -1391,14 +1381,14 @@ pub enum ResourceRegionScope {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceRegionScope {
-    fn from(s: &str) -> Self {
-        match s {
-            "GLOBAL" => ResourceRegionScope::Global,
-            "REGIONAL" => ResourceRegionScope::Regional,
-            other => ResourceRegionScope::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "GLOBAL" => ResourceRegionScope::Global,
+"REGIONAL" => ResourceRegionScope::Regional,
+other => ResourceRegionScope::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceRegionScope {
                 type Err = std::convert::Infallible;
 
@@ -1407,26 +1397,24 @@ impl std::str::FromStr for ResourceRegionScope {
                 }
             }
 impl ResourceRegionScope {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceRegionScope::Global => "GLOBAL",
-            ResourceRegionScope::Regional => "REGIONAL",
-            ResourceRegionScope::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "GLOBAL", "REGIONAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceRegionScope::Global => "GLOBAL",
+    ResourceRegionScope::Regional => "REGIONAL",
+    ResourceRegionScope::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GLOBAL", "REGIONAL"]
+                }
+            }
 impl AsRef<str> for ResourceRegionScope {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ResourceRegionScopeFilter`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1478,15 +1466,15 @@ pub enum ResourceRegionScopeFilter {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceRegionScopeFilter {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALL" => ResourceRegionScopeFilter::All,
-            "GLOBAL" => ResourceRegionScopeFilter::Global,
-            "REGIONAL" => ResourceRegionScopeFilter::Regional,
-            other => ResourceRegionScopeFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALL" => ResourceRegionScopeFilter::All,
+"GLOBAL" => ResourceRegionScopeFilter::Global,
+"REGIONAL" => ResourceRegionScopeFilter::Regional,
+other => ResourceRegionScopeFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceRegionScopeFilter {
                 type Err = std::convert::Infallible;
 
@@ -1495,27 +1483,25 @@ impl std::str::FromStr for ResourceRegionScopeFilter {
                 }
             }
 impl ResourceRegionScopeFilter {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceRegionScopeFilter::All => "ALL",
-            ResourceRegionScopeFilter::Global => "GLOBAL",
-            ResourceRegionScopeFilter::Regional => "REGIONAL",
-            ResourceRegionScopeFilter::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL", "GLOBAL", "REGIONAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceRegionScopeFilter::All => "ALL",
+    ResourceRegionScopeFilter::Global => "GLOBAL",
+    ResourceRegionScopeFilter::Regional => "REGIONAL",
+    ResourceRegionScopeFilter::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALL", "GLOBAL", "REGIONAL"]
+                }
+            }
 impl AsRef<str> for ResourceRegionScopeFilter {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about an RAM permission that is associated with a resource share and any of its resources of a specified type.</p>
 #[non_exhaustive]
@@ -1993,17 +1979,17 @@ pub enum ResourceStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => ResourceStatus::Available,
-            "LIMIT_EXCEEDED" => ResourceStatus::LimitExceeded,
-            "PENDING" => ResourceStatus::Pending,
-            "UNAVAILABLE" => ResourceStatus::Unavailable,
-            "ZONAL_RESOURCE_INACCESSIBLE" => ResourceStatus::ZonalResourceInaccessible,
-            other => ResourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => ResourceStatus::Available,
+"LIMIT_EXCEEDED" => ResourceStatus::LimitExceeded,
+"PENDING" => ResourceStatus::Pending,
+"UNAVAILABLE" => ResourceStatus::Unavailable,
+"ZONAL_RESOURCE_INACCESSIBLE" => ResourceStatus::ZonalResourceInaccessible,
+other => ResourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceStatus {
                 type Err = std::convert::Infallible;
 
@@ -2012,29 +1998,27 @@ impl std::str::FromStr for ResourceStatus {
                 }
             }
 impl ResourceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceStatus::Available => "AVAILABLE",
-            ResourceStatus::LimitExceeded => "LIMIT_EXCEEDED",
-            ResourceStatus::Pending => "PENDING",
-            ResourceStatus::Unavailable => "UNAVAILABLE",
-            ResourceStatus::ZonalResourceInaccessible => "ZONAL_RESOURCE_INACCESSIBLE",
-            ResourceStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "LIMIT_EXCEEDED", "PENDING", "UNAVAILABLE", "ZONAL_RESOURCE_INACCESSIBLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceStatus::Available => "AVAILABLE",
+    ResourceStatus::LimitExceeded => "LIMIT_EXCEEDED",
+    ResourceStatus::Pending => "PENDING",
+    ResourceStatus::Unavailable => "UNAVAILABLE",
+    ResourceStatus::ZonalResourceInaccessible => "ZONAL_RESOURCE_INACCESSIBLE",
+    ResourceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "LIMIT_EXCEEDED", "PENDING", "UNAVAILABLE", "ZONAL_RESOURCE_INACCESSIBLE"]
+                }
+            }
 impl AsRef<str> for ResourceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ResourceOwner`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2083,14 +2067,14 @@ pub enum ResourceOwner {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceOwner {
-    fn from(s: &str) -> Self {
-        match s {
-            "OTHER-ACCOUNTS" => ResourceOwner::OtherAccounts,
-            "SELF" => ResourceOwner::SelfValue,
-            other => ResourceOwner::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "OTHER-ACCOUNTS" => ResourceOwner::OtherAccounts,
+"SELF" => ResourceOwner::SelfValue,
+other => ResourceOwner::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceOwner {
                 type Err = std::convert::Infallible;
 
@@ -2099,26 +2083,24 @@ impl std::str::FromStr for ResourceOwner {
                 }
             }
 impl ResourceOwner {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceOwner::OtherAccounts => "OTHER-ACCOUNTS",
-            ResourceOwner::SelfValue => "SELF",
-            ResourceOwner::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "OTHER-ACCOUNTS", "SELF"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceOwner::OtherAccounts => "OTHER-ACCOUNTS",
+    ResourceOwner::SelfValue => "SELF",
+    ResourceOwner::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OTHER-ACCOUNTS", "SELF"]
+                }
+            }
 impl AsRef<str> for ResourceOwner {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a principal for use with Resource Access Manager.</p>
 #[non_exhaustive]

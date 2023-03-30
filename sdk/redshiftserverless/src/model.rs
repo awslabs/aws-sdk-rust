@@ -663,16 +663,16 @@ pub enum WorkgroupStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorkgroupStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => WorkgroupStatus::Available,
-            "CREATING" => WorkgroupStatus::Creating,
-            "DELETING" => WorkgroupStatus::Deleting,
-            "MODIFYING" => WorkgroupStatus::Modifying,
-            other => WorkgroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => WorkgroupStatus::Available,
+"CREATING" => WorkgroupStatus::Creating,
+"DELETING" => WorkgroupStatus::Deleting,
+"MODIFYING" => WorkgroupStatus::Modifying,
+other => WorkgroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WorkgroupStatus {
                 type Err = std::convert::Infallible;
 
@@ -681,28 +681,26 @@ impl std::str::FromStr for WorkgroupStatus {
                 }
             }
 impl WorkgroupStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorkgroupStatus::Available => "AVAILABLE",
-            WorkgroupStatus::Creating => "CREATING",
-            WorkgroupStatus::Deleting => "DELETING",
-            WorkgroupStatus::Modifying => "MODIFYING",
-            WorkgroupStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "CREATING", "DELETING", "MODIFYING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorkgroupStatus::Available => "AVAILABLE",
+    WorkgroupStatus::Creating => "CREATING",
+    WorkgroupStatus::Deleting => "DELETING",
+    WorkgroupStatus::Modifying => "MODIFYING",
+    WorkgroupStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "CREATING", "DELETING", "MODIFYING"]
+                }
+            }
 impl AsRef<str> for WorkgroupStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An array of key-value pairs to set for advanced control over Amazon Redshift Serverless.</p>
 #[non_exhaustive]
@@ -1056,15 +1054,15 @@ pub enum UsageLimitBreachAction {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageLimitBreachAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "deactivate" => UsageLimitBreachAction::Deactivate,
-            "emit-metric" => UsageLimitBreachAction::EmitMetric,
-            "log" => UsageLimitBreachAction::Log,
-            other => UsageLimitBreachAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "deactivate" => UsageLimitBreachAction::Deactivate,
+"emit-metric" => UsageLimitBreachAction::EmitMetric,
+"log" => UsageLimitBreachAction::Log,
+other => UsageLimitBreachAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UsageLimitBreachAction {
                 type Err = std::convert::Infallible;
 
@@ -1073,27 +1071,25 @@ impl std::str::FromStr for UsageLimitBreachAction {
                 }
             }
 impl UsageLimitBreachAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UsageLimitBreachAction::Deactivate => "deactivate",
-            UsageLimitBreachAction::EmitMetric => "emit-metric",
-            UsageLimitBreachAction::Log => "log",
-            UsageLimitBreachAction::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "deactivate", "emit-metric", "log"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UsageLimitBreachAction::Deactivate => "deactivate",
+    UsageLimitBreachAction::EmitMetric => "emit-metric",
+    UsageLimitBreachAction::Log => "log",
+    UsageLimitBreachAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["deactivate", "emit-metric", "log"]
+                }
+            }
 impl AsRef<str> for UsageLimitBreachAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `UsageLimitPeriod`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1145,15 +1141,15 @@ pub enum UsageLimitPeriod {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageLimitPeriod {
-    fn from(s: &str) -> Self {
-        match s {
-            "daily" => UsageLimitPeriod::Daily,
-            "monthly" => UsageLimitPeriod::Monthly,
-            "weekly" => UsageLimitPeriod::Weekly,
-            other => UsageLimitPeriod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "daily" => UsageLimitPeriod::Daily,
+"monthly" => UsageLimitPeriod::Monthly,
+"weekly" => UsageLimitPeriod::Weekly,
+other => UsageLimitPeriod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UsageLimitPeriod {
                 type Err = std::convert::Infallible;
 
@@ -1162,27 +1158,25 @@ impl std::str::FromStr for UsageLimitPeriod {
                 }
             }
 impl UsageLimitPeriod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UsageLimitPeriod::Daily => "daily",
-            UsageLimitPeriod::Monthly => "monthly",
-            UsageLimitPeriod::Weekly => "weekly",
-            UsageLimitPeriod::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "daily", "monthly", "weekly"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UsageLimitPeriod::Daily => "daily",
+    UsageLimitPeriod::Monthly => "monthly",
+    UsageLimitPeriod::Weekly => "weekly",
+    UsageLimitPeriod::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["daily", "monthly", "weekly"]
+                }
+            }
 impl AsRef<str> for UsageLimitPeriod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `UsageLimitUsageType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1231,14 +1225,14 @@ pub enum UsageLimitUsageType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageLimitUsageType {
-    fn from(s: &str) -> Self {
-        match s {
-            "cross-region-datasharing" => UsageLimitUsageType::CrossRegionDatasharing,
-            "serverless-compute" => UsageLimitUsageType::ServerlessCompute,
-            other => UsageLimitUsageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "cross-region-datasharing" => UsageLimitUsageType::CrossRegionDatasharing,
+"serverless-compute" => UsageLimitUsageType::ServerlessCompute,
+other => UsageLimitUsageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UsageLimitUsageType {
                 type Err = std::convert::Infallible;
 
@@ -1247,26 +1241,24 @@ impl std::str::FromStr for UsageLimitUsageType {
                 }
             }
 impl UsageLimitUsageType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UsageLimitUsageType::CrossRegionDatasharing => "cross-region-datasharing",
-            UsageLimitUsageType::ServerlessCompute => "serverless-compute",
-            UsageLimitUsageType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "cross-region-datasharing", "serverless-compute"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UsageLimitUsageType::CrossRegionDatasharing => "cross-region-datasharing",
+    UsageLimitUsageType::ServerlessCompute => "serverless-compute",
+    UsageLimitUsageType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["cross-region-datasharing", "serverless-compute"]
+                }
+            }
 impl AsRef<str> for UsageLimitUsageType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A snapshot object that contains databases.</p>
 #[non_exhaustive]
@@ -1750,18 +1742,18 @@ pub enum SnapshotStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnapshotStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => SnapshotStatus::Available,
-            "CANCELLED" => SnapshotStatus::Cancelled,
-            "COPYING" => SnapshotStatus::Copying,
-            "CREATING" => SnapshotStatus::Creating,
-            "DELETED" => SnapshotStatus::Deleted,
-            "FAILED" => SnapshotStatus::Failed,
-            other => SnapshotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => SnapshotStatus::Available,
+"CANCELLED" => SnapshotStatus::Cancelled,
+"COPYING" => SnapshotStatus::Copying,
+"CREATING" => SnapshotStatus::Creating,
+"DELETED" => SnapshotStatus::Deleted,
+"FAILED" => SnapshotStatus::Failed,
+other => SnapshotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SnapshotStatus {
                 type Err = std::convert::Infallible;
 
@@ -1770,30 +1762,28 @@ impl std::str::FromStr for SnapshotStatus {
                 }
             }
 impl SnapshotStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SnapshotStatus::Available => "AVAILABLE",
-            SnapshotStatus::Cancelled => "CANCELLED",
-            SnapshotStatus::Copying => "COPYING",
-            SnapshotStatus::Creating => "CREATING",
-            SnapshotStatus::Deleted => "DELETED",
-            SnapshotStatus::Failed => "FAILED",
-            SnapshotStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "CANCELLED", "COPYING", "CREATING", "DELETED", "FAILED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SnapshotStatus::Available => "AVAILABLE",
+    SnapshotStatus::Cancelled => "CANCELLED",
+    SnapshotStatus::Copying => "COPYING",
+    SnapshotStatus::Creating => "CREATING",
+    SnapshotStatus::Deleted => "DELETED",
+    SnapshotStatus::Failed => "FAILED",
+    SnapshotStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "CANCELLED", "COPYING", "CREATING", "DELETED", "FAILED"]
+                }
+            }
 impl AsRef<str> for SnapshotStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about a table restore request.</p>
 #[non_exhaustive]
@@ -2447,15 +2437,15 @@ pub enum NamespaceStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NamespaceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => NamespaceStatus::Available,
-            "DELETING" => NamespaceStatus::Deleting,
-            "MODIFYING" => NamespaceStatus::Modifying,
-            other => NamespaceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => NamespaceStatus::Available,
+"DELETING" => NamespaceStatus::Deleting,
+"MODIFYING" => NamespaceStatus::Modifying,
+other => NamespaceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NamespaceStatus {
                 type Err = std::convert::Infallible;
 
@@ -2464,27 +2454,25 @@ impl std::str::FromStr for NamespaceStatus {
                 }
             }
 impl NamespaceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NamespaceStatus::Available => "AVAILABLE",
-            NamespaceStatus::Deleting => "DELETING",
-            NamespaceStatus::Modifying => "MODIFYING",
-            NamespaceStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "DELETING", "MODIFYING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NamespaceStatus::Available => "AVAILABLE",
+    NamespaceStatus::Deleting => "DELETING",
+    NamespaceStatus::Modifying => "MODIFYING",
+    NamespaceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "DELETING", "MODIFYING"]
+                }
+            }
 impl AsRef<str> for NamespaceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LogExport`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2536,15 +2524,15 @@ pub enum LogExport {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LogExport {
-    fn from(s: &str) -> Self {
-        match s {
-            "connectionlog" => LogExport::ConnectionLog,
-            "useractivitylog" => LogExport::UserActivityLog,
-            "userlog" => LogExport::UserLog,
-            other => LogExport::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "connectionlog" => LogExport::ConnectionLog,
+"useractivitylog" => LogExport::UserActivityLog,
+"userlog" => LogExport::UserLog,
+other => LogExport::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LogExport {
                 type Err = std::convert::Infallible;
 
@@ -2553,27 +2541,25 @@ impl std::str::FromStr for LogExport {
                 }
             }
 impl LogExport {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LogExport::ConnectionLog => "connectionlog",
-            LogExport::UserActivityLog => "useractivitylog",
-            LogExport::UserLog => "userlog",
-            LogExport::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "connectionlog", "useractivitylog", "userlog"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LogExport::ConnectionLog => "connectionlog",
+    LogExport::UserActivityLog => "useractivitylog",
+    LogExport::UserLog => "userlog",
+    LogExport::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["connectionlog", "useractivitylog", "userlog"]
+                }
+            }
 impl AsRef<str> for LogExport {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The automatically created recovery point of a namespace. Recovery points are created every 30 minutes and kept for 24 hours.</p>
 #[non_exhaustive]

@@ -389,15 +389,15 @@ pub enum BgpStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BgpStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "down" => BgpStatus::Down,
-            "unknown" => BgpStatus::UnknownValue,
-            "up" => BgpStatus::Up,
-            other => BgpStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "down" => BgpStatus::Down,
+"unknown" => BgpStatus::UnknownValue,
+"up" => BgpStatus::Up,
+other => BgpStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BgpStatus {
                 type Err = std::convert::Infallible;
 
@@ -406,27 +406,25 @@ impl std::str::FromStr for BgpStatus {
                 }
             }
 impl BgpStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BgpStatus::Down => "down",
-            BgpStatus::UnknownValue => "unknown",
-            BgpStatus::Up => "up",
-            BgpStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "down", "unknown", "up"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BgpStatus::Down => "down",
+    BgpStatus::UnknownValue => "unknown",
+    BgpStatus::Up => "up",
+    BgpStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["down", "unknown", "up"]
+                }
+            }
 impl AsRef<str> for BgpStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `BgpPeerState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -484,17 +482,17 @@ pub enum BgpPeerState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BgpPeerState {
-    fn from(s: &str) -> Self {
-        match s {
-            "available" => BgpPeerState::Available,
-            "deleted" => BgpPeerState::Deleted,
-            "deleting" => BgpPeerState::Deleting,
-            "pending" => BgpPeerState::Pending,
-            "verifying" => BgpPeerState::Verifying,
-            other => BgpPeerState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "available" => BgpPeerState::Available,
+"deleted" => BgpPeerState::Deleted,
+"deleting" => BgpPeerState::Deleting,
+"pending" => BgpPeerState::Pending,
+"verifying" => BgpPeerState::Verifying,
+other => BgpPeerState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BgpPeerState {
                 type Err = std::convert::Infallible;
 
@@ -503,29 +501,27 @@ impl std::str::FromStr for BgpPeerState {
                 }
             }
 impl BgpPeerState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BgpPeerState::Available => "available",
-            BgpPeerState::Deleted => "deleted",
-            BgpPeerState::Deleting => "deleting",
-            BgpPeerState::Pending => "pending",
-            BgpPeerState::Verifying => "verifying",
-            BgpPeerState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "available", "deleted", "deleting", "pending", "verifying"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BgpPeerState::Available => "available",
+    BgpPeerState::Deleted => "deleted",
+    BgpPeerState::Deleting => "deleting",
+    BgpPeerState::Pending => "pending",
+    BgpPeerState::Verifying => "verifying",
+    BgpPeerState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["available", "deleted", "deleting", "pending", "verifying"]
+                }
+            }
 impl AsRef<str> for BgpPeerState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AddressFamily`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -574,14 +570,14 @@ pub enum AddressFamily {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AddressFamily {
-    fn from(s: &str) -> Self {
-        match s {
-            "ipv4" => AddressFamily::IPv4,
-            "ipv6" => AddressFamily::IPv6,
-            other => AddressFamily::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ipv4" => AddressFamily::IPv4,
+"ipv6" => AddressFamily::IPv6,
+other => AddressFamily::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AddressFamily {
                 type Err = std::convert::Infallible;
 
@@ -590,26 +586,24 @@ impl std::str::FromStr for AddressFamily {
                 }
             }
 impl AddressFamily {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AddressFamily::IPv4 => "ipv4",
-            AddressFamily::IPv6 => "ipv6",
-            AddressFamily::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ipv4", "ipv6"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AddressFamily::IPv4 => "ipv4",
+    AddressFamily::IPv6 => "ipv6",
+    AddressFamily::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ipv4", "ipv6"]
+                }
+            }
 impl AsRef<str> for AddressFamily {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.</p>
 #[non_exhaustive]
@@ -729,21 +723,21 @@ pub enum VirtualInterfaceState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VirtualInterfaceState {
-    fn from(s: &str) -> Self {
-        match s {
-            "available" => VirtualInterfaceState::Available,
-            "confirming" => VirtualInterfaceState::Confirming,
-            "deleted" => VirtualInterfaceState::Deleted,
-            "deleting" => VirtualInterfaceState::Deleting,
-            "down" => VirtualInterfaceState::Down,
-            "pending" => VirtualInterfaceState::Pending,
-            "rejected" => VirtualInterfaceState::Rejected,
-            "unknown" => VirtualInterfaceState::UnknownValue,
-            "verifying" => VirtualInterfaceState::Verifying,
-            other => VirtualInterfaceState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "available" => VirtualInterfaceState::Available,
+"confirming" => VirtualInterfaceState::Confirming,
+"deleted" => VirtualInterfaceState::Deleted,
+"deleting" => VirtualInterfaceState::Deleting,
+"down" => VirtualInterfaceState::Down,
+"pending" => VirtualInterfaceState::Pending,
+"rejected" => VirtualInterfaceState::Rejected,
+"unknown" => VirtualInterfaceState::UnknownValue,
+"verifying" => VirtualInterfaceState::Verifying,
+other => VirtualInterfaceState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for VirtualInterfaceState {
                 type Err = std::convert::Infallible;
 
@@ -752,33 +746,31 @@ impl std::str::FromStr for VirtualInterfaceState {
                 }
             }
 impl VirtualInterfaceState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VirtualInterfaceState::Available => "available",
-            VirtualInterfaceState::Confirming => "confirming",
-            VirtualInterfaceState::Deleted => "deleted",
-            VirtualInterfaceState::Deleting => "deleting",
-            VirtualInterfaceState::Down => "down",
-            VirtualInterfaceState::Pending => "pending",
-            VirtualInterfaceState::Rejected => "rejected",
-            VirtualInterfaceState::UnknownValue => "unknown",
-            VirtualInterfaceState::Verifying => "verifying",
-            VirtualInterfaceState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "available", "confirming", "deleted", "deleting", "down", "pending", "rejected", "unknown", "verifying"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VirtualInterfaceState::Available => "available",
+    VirtualInterfaceState::Confirming => "confirming",
+    VirtualInterfaceState::Deleted => "deleted",
+    VirtualInterfaceState::Deleting => "deleting",
+    VirtualInterfaceState::Down => "down",
+    VirtualInterfaceState::Pending => "pending",
+    VirtualInterfaceState::Rejected => "rejected",
+    VirtualInterfaceState::UnknownValue => "unknown",
+    VirtualInterfaceState::Verifying => "verifying",
+    VirtualInterfaceState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["available", "confirming", "deleted", "deleting", "down", "pending", "rejected", "unknown", "verifying"]
+                }
+            }
 impl AsRef<str> for VirtualInterfaceState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the MAC Security (MACsec) secret key.</p>
 #[non_exhaustive]
@@ -965,15 +957,15 @@ pub enum HasLogicalRedundancy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HasLogicalRedundancy {
-    fn from(s: &str) -> Self {
-        match s {
-            "no" => HasLogicalRedundancy::No,
-            "unknown" => HasLogicalRedundancy::UnknownValue,
-            "yes" => HasLogicalRedundancy::Yes,
-            other => HasLogicalRedundancy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "no" => HasLogicalRedundancy::No,
+"unknown" => HasLogicalRedundancy::UnknownValue,
+"yes" => HasLogicalRedundancy::Yes,
+other => HasLogicalRedundancy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HasLogicalRedundancy {
                 type Err = std::convert::Infallible;
 
@@ -982,27 +974,25 @@ impl std::str::FromStr for HasLogicalRedundancy {
                 }
             }
 impl HasLogicalRedundancy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HasLogicalRedundancy::No => "no",
-            HasLogicalRedundancy::UnknownValue => "unknown",
-            HasLogicalRedundancy::Yes => "yes",
-            HasLogicalRedundancy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "no", "unknown", "yes"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HasLogicalRedundancy::No => "no",
+    HasLogicalRedundancy::UnknownValue => "unknown",
+    HasLogicalRedundancy::Yes => "yes",
+    HasLogicalRedundancy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["no", "unknown", "yes"]
+                }
+            }
 impl AsRef<str> for HasLogicalRedundancy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
@@ -1586,21 +1576,21 @@ pub enum ConnectionState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionState {
-    fn from(s: &str) -> Self {
-        match s {
-            "available" => ConnectionState::Available,
-            "deleted" => ConnectionState::Deleted,
-            "deleting" => ConnectionState::Deleting,
-            "down" => ConnectionState::Down,
-            "ordering" => ConnectionState::Ordering,
-            "pending" => ConnectionState::Pending,
-            "rejected" => ConnectionState::Rejected,
-            "requested" => ConnectionState::Requested,
-            "unknown" => ConnectionState::UnknownValue,
-            other => ConnectionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "available" => ConnectionState::Available,
+"deleted" => ConnectionState::Deleted,
+"deleting" => ConnectionState::Deleting,
+"down" => ConnectionState::Down,
+"ordering" => ConnectionState::Ordering,
+"pending" => ConnectionState::Pending,
+"rejected" => ConnectionState::Rejected,
+"requested" => ConnectionState::Requested,
+"unknown" => ConnectionState::UnknownValue,
+other => ConnectionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConnectionState {
                 type Err = std::convert::Infallible;
 
@@ -1609,33 +1599,31 @@ impl std::str::FromStr for ConnectionState {
                 }
             }
 impl ConnectionState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectionState::Available => "available",
-            ConnectionState::Deleted => "deleted",
-            ConnectionState::Deleting => "deleting",
-            ConnectionState::Down => "down",
-            ConnectionState::Ordering => "ordering",
-            ConnectionState::Pending => "pending",
-            ConnectionState::Rejected => "rejected",
-            ConnectionState::Requested => "requested",
-            ConnectionState::UnknownValue => "unknown",
-            ConnectionState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "available", "deleted", "deleting", "down", "ordering", "pending", "rejected", "requested", "unknown"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectionState::Available => "available",
+    ConnectionState::Deleted => "deleted",
+    ConnectionState::Deleting => "deleting",
+    ConnectionState::Down => "down",
+    ConnectionState::Ordering => "ordering",
+    ConnectionState::Pending => "pending",
+    ConnectionState::Rejected => "rejected",
+    ConnectionState::Requested => "requested",
+    ConnectionState::UnknownValue => "unknown",
+    ConnectionState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["available", "deleted", "deleting", "down", "ordering", "pending", "rejected", "requested", "unknown"]
+                }
+            }
 impl AsRef<str> for ConnectionState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LagState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1699,19 +1687,19 @@ pub enum LagState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LagState {
-    fn from(s: &str) -> Self {
-        match s {
-            "available" => LagState::Available,
-            "deleted" => LagState::Deleted,
-            "deleting" => LagState::Deleting,
-            "down" => LagState::Down,
-            "pending" => LagState::Pending,
-            "requested" => LagState::Requested,
-            "unknown" => LagState::UnknownValue,
-            other => LagState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "available" => LagState::Available,
+"deleted" => LagState::Deleted,
+"deleting" => LagState::Deleting,
+"down" => LagState::Down,
+"pending" => LagState::Pending,
+"requested" => LagState::Requested,
+"unknown" => LagState::UnknownValue,
+other => LagState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LagState {
                 type Err = std::convert::Infallible;
 
@@ -1720,31 +1708,29 @@ impl std::str::FromStr for LagState {
                 }
             }
 impl LagState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LagState::Available => "available",
-            LagState::Deleted => "deleted",
-            LagState::Deleting => "deleting",
-            LagState::Down => "down",
-            LagState::Pending => "pending",
-            LagState::Requested => "requested",
-            LagState::UnknownValue => "unknown",
-            LagState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "available", "deleted", "deleting", "down", "pending", "requested", "unknown"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LagState::Available => "available",
+    LagState::Deleted => "deleted",
+    LagState::Deleting => "deleting",
+    LagState::Down => "down",
+    LagState::Pending => "pending",
+    LagState::Requested => "requested",
+    LagState::UnknownValue => "unknown",
+    LagState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["available", "deleted", "deleting", "down", "pending", "requested", "unknown"]
+                }
+            }
 impl AsRef<str> for LagState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
 #[non_exhaustive]
@@ -2151,14 +2137,14 @@ pub enum GatewayType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GatewayType {
-    fn from(s: &str) -> Self {
-        match s {
-            "transitGateway" => GatewayType::TransitGateway,
-            "virtualPrivateGateway" => GatewayType::VirtualPrivateGateway,
-            other => GatewayType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "transitGateway" => GatewayType::TransitGateway,
+"virtualPrivateGateway" => GatewayType::VirtualPrivateGateway,
+other => GatewayType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GatewayType {
                 type Err = std::convert::Infallible;
 
@@ -2167,26 +2153,24 @@ impl std::str::FromStr for GatewayType {
                 }
             }
 impl GatewayType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GatewayType::TransitGateway => "transitGateway",
-            GatewayType::VirtualPrivateGateway => "virtualPrivateGateway",
-            GatewayType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "transitGateway", "virtualPrivateGateway"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GatewayType::TransitGateway => "transitGateway",
+    GatewayType::VirtualPrivateGateway => "virtualPrivateGateway",
+    GatewayType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["transitGateway", "virtualPrivateGateway"]
+                }
+            }
 impl AsRef<str> for GatewayType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DirectConnectGatewayAssociationState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2244,17 +2228,17 @@ pub enum DirectConnectGatewayAssociationState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectConnectGatewayAssociationState {
-    fn from(s: &str) -> Self {
-        match s {
-            "associated" => DirectConnectGatewayAssociationState::Associated,
-            "associating" => DirectConnectGatewayAssociationState::Associating,
-            "disassociated" => DirectConnectGatewayAssociationState::Disassociated,
-            "disassociating" => DirectConnectGatewayAssociationState::Disassociating,
-            "updating" => DirectConnectGatewayAssociationState::Updating,
-            other => DirectConnectGatewayAssociationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "associated" => DirectConnectGatewayAssociationState::Associated,
+"associating" => DirectConnectGatewayAssociationState::Associating,
+"disassociated" => DirectConnectGatewayAssociationState::Disassociated,
+"disassociating" => DirectConnectGatewayAssociationState::Disassociating,
+"updating" => DirectConnectGatewayAssociationState::Updating,
+other => DirectConnectGatewayAssociationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DirectConnectGatewayAssociationState {
                 type Err = std::convert::Infallible;
 
@@ -2263,29 +2247,27 @@ impl std::str::FromStr for DirectConnectGatewayAssociationState {
                 }
             }
 impl DirectConnectGatewayAssociationState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DirectConnectGatewayAssociationState::Associated => "associated",
-            DirectConnectGatewayAssociationState::Associating => "associating",
-            DirectConnectGatewayAssociationState::Disassociated => "disassociated",
-            DirectConnectGatewayAssociationState::Disassociating => "disassociating",
-            DirectConnectGatewayAssociationState::Updating => "updating",
-            DirectConnectGatewayAssociationState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "associated", "associating", "disassociated", "disassociating", "updating"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DirectConnectGatewayAssociationState::Associated => "associated",
+    DirectConnectGatewayAssociationState::Associating => "associating",
+    DirectConnectGatewayAssociationState::Disassociated => "disassociated",
+    DirectConnectGatewayAssociationState::Disassociating => "disassociating",
+    DirectConnectGatewayAssociationState::Updating => "updating",
+    DirectConnectGatewayAssociationState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["associated", "associating", "disassociated", "disassociating", "updating"]
+                }
+            }
 impl AsRef<str> for DirectConnectGatewayAssociationState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
 #[non_exhaustive]
@@ -2509,16 +2491,16 @@ pub enum DirectConnectGatewayState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectConnectGatewayState {
-    fn from(s: &str) -> Self {
-        match s {
-            "available" => DirectConnectGatewayState::Available,
-            "deleted" => DirectConnectGatewayState::Deleted,
-            "deleting" => DirectConnectGatewayState::Deleting,
-            "pending" => DirectConnectGatewayState::Pending,
-            other => DirectConnectGatewayState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "available" => DirectConnectGatewayState::Available,
+"deleted" => DirectConnectGatewayState::Deleted,
+"deleting" => DirectConnectGatewayState::Deleting,
+"pending" => DirectConnectGatewayState::Pending,
+other => DirectConnectGatewayState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DirectConnectGatewayState {
                 type Err = std::convert::Infallible;
 
@@ -2527,28 +2509,26 @@ impl std::str::FromStr for DirectConnectGatewayState {
                 }
             }
 impl DirectConnectGatewayState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DirectConnectGatewayState::Available => "available",
-            DirectConnectGatewayState::Deleted => "deleted",
-            DirectConnectGatewayState::Deleting => "deleting",
-            DirectConnectGatewayState::Pending => "pending",
-            DirectConnectGatewayState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "available", "deleted", "deleting", "pending"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DirectConnectGatewayState::Available => "available",
+    DirectConnectGatewayState::Deleted => "deleted",
+    DirectConnectGatewayState::Deleting => "deleting",
+    DirectConnectGatewayState::Pending => "pending",
+    DirectConnectGatewayState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["available", "deleted", "deleting", "pending"]
+                }
+            }
 impl AsRef<str> for DirectConnectGatewayState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the virtual interface failover test.</p>
 #[non_exhaustive]
@@ -3852,13 +3832,13 @@ pub enum LoaContentType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LoaContentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "application/pdf" => LoaContentType::Pdf,
-            other => LoaContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "application/pdf" => LoaContentType::Pdf,
+other => LoaContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LoaContentType {
                 type Err = std::convert::Infallible;
 
@@ -3867,25 +3847,23 @@ impl std::str::FromStr for LoaContentType {
                 }
             }
 impl LoaContentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LoaContentType::Pdf => "application/pdf",
-            LoaContentType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "application/pdf"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LoaContentType::Pdf => "application/pdf",
+    LoaContentType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["application/pdf"]
+                }
+            }
 impl AsRef<str> for LoaContentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
@@ -4798,19 +4776,19 @@ pub enum InterconnectState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InterconnectState {
-    fn from(s: &str) -> Self {
-        match s {
-            "available" => InterconnectState::Available,
-            "deleted" => InterconnectState::Deleted,
-            "deleting" => InterconnectState::Deleting,
-            "down" => InterconnectState::Down,
-            "pending" => InterconnectState::Pending,
-            "requested" => InterconnectState::Requested,
-            "unknown" => InterconnectState::UnknownValue,
-            other => InterconnectState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "available" => InterconnectState::Available,
+"deleted" => InterconnectState::Deleted,
+"deleting" => InterconnectState::Deleting,
+"down" => InterconnectState::Down,
+"pending" => InterconnectState::Pending,
+"requested" => InterconnectState::Requested,
+"unknown" => InterconnectState::UnknownValue,
+other => InterconnectState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InterconnectState {
                 type Err = std::convert::Infallible;
 
@@ -4819,31 +4797,29 @@ impl std::str::FromStr for InterconnectState {
                 }
             }
 impl InterconnectState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InterconnectState::Available => "available",
-            InterconnectState::Deleted => "deleted",
-            InterconnectState::Deleting => "deleting",
-            InterconnectState::Down => "down",
-            InterconnectState::Pending => "pending",
-            InterconnectState::Requested => "requested",
-            InterconnectState::UnknownValue => "unknown",
-            InterconnectState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "available", "deleted", "deleting", "down", "pending", "requested", "unknown"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InterconnectState::Available => "available",
+    InterconnectState::Deleted => "deleted",
+    InterconnectState::Deleting => "deleting",
+    InterconnectState::Down => "down",
+    InterconnectState::Pending => "pending",
+    InterconnectState::Requested => "requested",
+    InterconnectState::UnknownValue => "unknown",
+    InterconnectState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["available", "deleted", "deleting", "down", "pending", "requested", "unknown"]
+                }
+            }
 impl AsRef<str> for InterconnectState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.</p>
 #[non_exhaustive]
@@ -5149,14 +5125,14 @@ pub enum DirectConnectGatewayAttachmentType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectConnectGatewayAttachmentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PrivateVirtualInterface" => DirectConnectGatewayAttachmentType::PrivateVirtualInterface,
-            "TransitVirtualInterface" => DirectConnectGatewayAttachmentType::TransitVirtualInterface,
-            other => DirectConnectGatewayAttachmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PrivateVirtualInterface" => DirectConnectGatewayAttachmentType::PrivateVirtualInterface,
+"TransitVirtualInterface" => DirectConnectGatewayAttachmentType::TransitVirtualInterface,
+other => DirectConnectGatewayAttachmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DirectConnectGatewayAttachmentType {
                 type Err = std::convert::Infallible;
 
@@ -5165,26 +5141,24 @@ impl std::str::FromStr for DirectConnectGatewayAttachmentType {
                 }
             }
 impl DirectConnectGatewayAttachmentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DirectConnectGatewayAttachmentType::PrivateVirtualInterface => "PrivateVirtualInterface",
-            DirectConnectGatewayAttachmentType::TransitVirtualInterface => "TransitVirtualInterface",
-            DirectConnectGatewayAttachmentType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PrivateVirtualInterface", "TransitVirtualInterface"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DirectConnectGatewayAttachmentType::PrivateVirtualInterface => "PrivateVirtualInterface",
+    DirectConnectGatewayAttachmentType::TransitVirtualInterface => "TransitVirtualInterface",
+    DirectConnectGatewayAttachmentType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PrivateVirtualInterface", "TransitVirtualInterface"]
+                }
+            }
 impl AsRef<str> for DirectConnectGatewayAttachmentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DirectConnectGatewayAttachmentState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5239,16 +5213,16 @@ pub enum DirectConnectGatewayAttachmentState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectConnectGatewayAttachmentState {
-    fn from(s: &str) -> Self {
-        match s {
-            "attached" => DirectConnectGatewayAttachmentState::Attached,
-            "attaching" => DirectConnectGatewayAttachmentState::Attaching,
-            "detached" => DirectConnectGatewayAttachmentState::Detached,
-            "detaching" => DirectConnectGatewayAttachmentState::Detaching,
-            other => DirectConnectGatewayAttachmentState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "attached" => DirectConnectGatewayAttachmentState::Attached,
+"attaching" => DirectConnectGatewayAttachmentState::Attaching,
+"detached" => DirectConnectGatewayAttachmentState::Detached,
+"detaching" => DirectConnectGatewayAttachmentState::Detaching,
+other => DirectConnectGatewayAttachmentState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DirectConnectGatewayAttachmentState {
                 type Err = std::convert::Infallible;
 
@@ -5257,28 +5231,26 @@ impl std::str::FromStr for DirectConnectGatewayAttachmentState {
                 }
             }
 impl DirectConnectGatewayAttachmentState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DirectConnectGatewayAttachmentState::Attached => "attached",
-            DirectConnectGatewayAttachmentState::Attaching => "attaching",
-            DirectConnectGatewayAttachmentState::Detached => "detached",
-            DirectConnectGatewayAttachmentState::Detaching => "detaching",
-            DirectConnectGatewayAttachmentState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "attached", "attaching", "detached", "detaching"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DirectConnectGatewayAttachmentState::Attached => "attached",
+    DirectConnectGatewayAttachmentState::Attaching => "attaching",
+    DirectConnectGatewayAttachmentState::Detached => "detached",
+    DirectConnectGatewayAttachmentState::Detaching => "detaching",
+    DirectConnectGatewayAttachmentState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["attached", "attaching", "detached", "detaching"]
+                }
+            }
 impl AsRef<str> for DirectConnectGatewayAttachmentState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway. </p>
 #[non_exhaustive]
@@ -5526,15 +5498,15 @@ pub enum DirectConnectGatewayAssociationProposalState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectConnectGatewayAssociationProposalState {
-    fn from(s: &str) -> Self {
-        match s {
-            "accepted" => DirectConnectGatewayAssociationProposalState::Accepted,
-            "deleted" => DirectConnectGatewayAssociationProposalState::Deleted,
-            "requested" => DirectConnectGatewayAssociationProposalState::Requested,
-            other => DirectConnectGatewayAssociationProposalState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "accepted" => DirectConnectGatewayAssociationProposalState::Accepted,
+"deleted" => DirectConnectGatewayAssociationProposalState::Deleted,
+"requested" => DirectConnectGatewayAssociationProposalState::Requested,
+other => DirectConnectGatewayAssociationProposalState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DirectConnectGatewayAssociationProposalState {
                 type Err = std::convert::Infallible;
 
@@ -5543,27 +5515,25 @@ impl std::str::FromStr for DirectConnectGatewayAssociationProposalState {
                 }
             }
 impl DirectConnectGatewayAssociationProposalState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DirectConnectGatewayAssociationProposalState::Accepted => "accepted",
-            DirectConnectGatewayAssociationProposalState::Deleted => "deleted",
-            DirectConnectGatewayAssociationProposalState::Requested => "requested",
-            DirectConnectGatewayAssociationProposalState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "accepted", "deleted", "requested"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DirectConnectGatewayAssociationProposalState::Accepted => "accepted",
+    DirectConnectGatewayAssociationProposalState::Deleted => "deleted",
+    DirectConnectGatewayAssociationProposalState::Requested => "requested",
+    DirectConnectGatewayAssociationProposalState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["accepted", "deleted", "requested"]
+                }
+            }
 impl AsRef<str> for DirectConnectGatewayAssociationProposalState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `NniPartnerType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5615,15 +5585,15 @@ pub enum NniPartnerType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NniPartnerType {
-    fn from(s: &str) -> Self {
-        match s {
-            "nonPartner" => NniPartnerType::NonPartner,
-            "v1" => NniPartnerType::V1,
-            "v2" => NniPartnerType::V2,
-            other => NniPartnerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "nonPartner" => NniPartnerType::NonPartner,
+"v1" => NniPartnerType::V1,
+"v2" => NniPartnerType::V2,
+other => NniPartnerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NniPartnerType {
                 type Err = std::convert::Infallible;
 
@@ -5632,27 +5602,25 @@ impl std::str::FromStr for NniPartnerType {
                 }
             }
 impl NniPartnerType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NniPartnerType::NonPartner => "nonPartner",
-            NniPartnerType::V1 => "v1",
-            NniPartnerType::V2 => "v2",
-            NniPartnerType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "nonPartner", "v1", "v2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NniPartnerType::NonPartner => "nonPartner",
+    NniPartnerType::V1 => "v1",
+    NniPartnerType::V2 => "v2",
+    NniPartnerType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["nonPartner", "v1", "v2"]
+                }
+            }
 impl AsRef<str> for NniPartnerType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The name and status of a customer agreement. </p>
 #[non_exhaustive]

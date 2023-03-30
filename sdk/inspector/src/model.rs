@@ -65,20 +65,20 @@ pub enum NoSuchEntityErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NoSuchEntityErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSESSMENT_RUN_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentRunDoesNotExist,
-            "ASSESSMENT_TARGET_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentTargetDoesNotExist,
-            "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist,
-            "FINDING_DOES_NOT_EXIST" => NoSuchEntityErrorCode::FindingDoesNotExist,
-            "IAM_ROLE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::IamRoleDoesNotExist,
-            "RESOURCE_GROUP_DOES_NOT_EXIST" => NoSuchEntityErrorCode::ResourceGroupDoesNotExist,
-            "RULES_PACKAGE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::RulesPackageDoesNotExist,
-            "SNS_TOPIC_DOES_NOT_EXIST" => NoSuchEntityErrorCode::SnsTopicDoesNotExist,
-            other => NoSuchEntityErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSESSMENT_RUN_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentRunDoesNotExist,
+"ASSESSMENT_TARGET_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentTargetDoesNotExist,
+"ASSESSMENT_TEMPLATE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist,
+"FINDING_DOES_NOT_EXIST" => NoSuchEntityErrorCode::FindingDoesNotExist,
+"IAM_ROLE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::IamRoleDoesNotExist,
+"RESOURCE_GROUP_DOES_NOT_EXIST" => NoSuchEntityErrorCode::ResourceGroupDoesNotExist,
+"RULES_PACKAGE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::RulesPackageDoesNotExist,
+"SNS_TOPIC_DOES_NOT_EXIST" => NoSuchEntityErrorCode::SnsTopicDoesNotExist,
+other => NoSuchEntityErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NoSuchEntityErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -87,32 +87,30 @@ impl std::str::FromStr for NoSuchEntityErrorCode {
                 }
             }
 impl NoSuchEntityErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NoSuchEntityErrorCode::AssessmentRunDoesNotExist => "ASSESSMENT_RUN_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::AssessmentTargetDoesNotExist => "ASSESSMENT_TARGET_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist => "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::FindingDoesNotExist => "FINDING_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::IamRoleDoesNotExist => "IAM_ROLE_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::ResourceGroupDoesNotExist => "RESOURCE_GROUP_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::RulesPackageDoesNotExist => "RULES_PACKAGE_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::SnsTopicDoesNotExist => "SNS_TOPIC_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSESSMENT_RUN_DOES_NOT_EXIST", "ASSESSMENT_TARGET_DOES_NOT_EXIST", "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST", "FINDING_DOES_NOT_EXIST", "IAM_ROLE_DOES_NOT_EXIST", "RESOURCE_GROUP_DOES_NOT_EXIST", "RULES_PACKAGE_DOES_NOT_EXIST", "SNS_TOPIC_DOES_NOT_EXIST"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NoSuchEntityErrorCode::AssessmentRunDoesNotExist => "ASSESSMENT_RUN_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::AssessmentTargetDoesNotExist => "ASSESSMENT_TARGET_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist => "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::FindingDoesNotExist => "FINDING_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::IamRoleDoesNotExist => "IAM_ROLE_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::ResourceGroupDoesNotExist => "RESOURCE_GROUP_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::RulesPackageDoesNotExist => "RULES_PACKAGE_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::SnsTopicDoesNotExist => "SNS_TOPIC_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSESSMENT_RUN_DOES_NOT_EXIST", "ASSESSMENT_TARGET_DOES_NOT_EXIST", "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST", "FINDING_DOES_NOT_EXIST", "IAM_ROLE_DOES_NOT_EXIST", "RESOURCE_GROUP_DOES_NOT_EXIST", "RULES_PACKAGE_DOES_NOT_EXIST", "SNS_TOPIC_DOES_NOT_EXIST"]
+                }
+            }
 impl AsRef<str> for NoSuchEntityErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `InvalidInputErrorCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -317,66 +315,66 @@ pub enum InvalidInputErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvalidInputErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN" => InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken,
-            "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN" => InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken,
-            "INVALID_AGENT_ID" => InvalidInputErrorCode::InvalidAgentId,
-            "INVALID_ASSESSMENT_RUN_ARN" => InvalidInputErrorCode::InvalidAssessmentRunArn,
-            "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange,
-            "INVALID_ASSESSMENT_RUN_DURATION_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunDurationRange,
-            "INVALID_ASSESSMENT_RUN_START_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange,
-            "INVALID_ASSESSMENT_RUN_STATE" => InvalidInputErrorCode::InvalidAssessmentRunState,
-            "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange,
-            "INVALID_ASSESSMENT_TARGET_ARN" => InvalidInputErrorCode::InvalidAssessmentTargetArn,
-            "INVALID_ASSESSMENT_TARGET_NAME" => InvalidInputErrorCode::InvalidAssessmentTargetName,
-            "INVALID_ASSESSMENT_TARGET_NAME_PATTERN" => InvalidInputErrorCode::InvalidAssessmentTargetNamePattern,
-            "INVALID_ASSESSMENT_TEMPLATE_ARN" => InvalidInputErrorCode::InvalidAssessmentTemplateArn,
-            "INVALID_ASSESSMENT_TEMPLATE_DURATION" => InvalidInputErrorCode::InvalidAssessmentTemplateDuration,
-            "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE" => InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange,
-            "INVALID_ASSESSMENT_TEMPLATE_NAME" => InvalidInputErrorCode::InvalidAssessmentTemplateName,
-            "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN" => InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern,
-            "INVALID_ATTRIBUTE" => InvalidInputErrorCode::InvalidAttribute,
-            "INVALID_AUTO_SCALING_GROUP" => InvalidInputErrorCode::InvalidAutoScalingGroup,
-            "INVALID_EVENT" => InvalidInputErrorCode::InvalidEvent,
-            "INVALID_FINDING_ARN" => InvalidInputErrorCode::InvalidFindingArn,
-            "INVALID_IAM_ROLE_ARN" => InvalidInputErrorCode::InvalidIamRoleArn,
-            "INVALID_LOCALE" => InvalidInputErrorCode::InvalidLocale,
-            "INVALID_MAX_RESULTS" => InvalidInputErrorCode::InvalidMaxResults,
-            "INVALID_NUMBER_OF_AGENT_IDS" => InvalidInputErrorCode::InvalidNumberOfAgentIds,
-            "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns,
-            "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES" => InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates,
-            "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns,
-            "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns,
-            "INVALID_NUMBER_OF_ATTRIBUTES" => InvalidInputErrorCode::InvalidNumberOfAttributes,
-            "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS" => InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups,
-            "INVALID_NUMBER_OF_FINDING_ARNS" => InvalidInputErrorCode::InvalidNumberOfFindingArns,
-            "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS" => InvalidInputErrorCode::InvalidNumberOfResourceGroupArns,
-            "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS" => InvalidInputErrorCode::InvalidNumberOfResourceGroupTags,
-            "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS" => InvalidInputErrorCode::InvalidNumberOfRulesPackageArns,
-            "INVALID_NUMBER_OF_RULE_NAMES" => InvalidInputErrorCode::InvalidNumberOfRuleNames,
-            "INVALID_NUMBER_OF_SEVERITIES" => InvalidInputErrorCode::InvalidNumberOfSeverities,
-            "INVALID_NUMBER_OF_TAGS" => InvalidInputErrorCode::InvalidNumberOfTags,
-            "INVALID_NUMBER_OF_USER_ATTRIBUTES" => InvalidInputErrorCode::InvalidNumberOfUserAttributes,
-            "INVALID_PAGINATION_TOKEN" => InvalidInputErrorCode::InvalidPaginationToken,
-            "INVALID_RESOURCE_ARN" => InvalidInputErrorCode::InvalidResourceArn,
-            "INVALID_RESOURCE_GROUP_ARN" => InvalidInputErrorCode::InvalidResourceGroupArn,
-            "INVALID_RESOURCE_GROUP_TAG_KEY" => InvalidInputErrorCode::InvalidResourceGroupTagKey,
-            "INVALID_RESOURCE_GROUP_TAG_VALUE" => InvalidInputErrorCode::InvalidResourceGroupTagValue,
-            "INVALID_RULES_PACKAGE_ARN" => InvalidInputErrorCode::InvalidRulesPackageArn,
-            "INVALID_RULE_NAME" => InvalidInputErrorCode::InvalidRuleName,
-            "INVALID_SEVERITY" => InvalidInputErrorCode::InvalidSeverity,
-            "INVALID_SNS_TOPIC_ARN" => InvalidInputErrorCode::InvalidSnsTopicArn,
-            "INVALID_TAG" => InvalidInputErrorCode::InvalidTag,
-            "INVALID_TAG_KEY" => InvalidInputErrorCode::InvalidTagKey,
-            "INVALID_TAG_VALUE" => InvalidInputErrorCode::InvalidTagValue,
-            "INVALID_USER_ATTRIBUTE" => InvalidInputErrorCode::InvalidUserAttribute,
-            "INVALID_USER_ATTRIBUTE_KEY" => InvalidInputErrorCode::InvalidUserAttributeKey,
-            "INVALID_USER_ATTRIBUTE_VALUE" => InvalidInputErrorCode::InvalidUserAttributeValue,
-            other => InvalidInputErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN" => InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken,
+"ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN" => InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken,
+"INVALID_AGENT_ID" => InvalidInputErrorCode::InvalidAgentId,
+"INVALID_ASSESSMENT_RUN_ARN" => InvalidInputErrorCode::InvalidAssessmentRunArn,
+"INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange,
+"INVALID_ASSESSMENT_RUN_DURATION_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunDurationRange,
+"INVALID_ASSESSMENT_RUN_START_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange,
+"INVALID_ASSESSMENT_RUN_STATE" => InvalidInputErrorCode::InvalidAssessmentRunState,
+"INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange,
+"INVALID_ASSESSMENT_TARGET_ARN" => InvalidInputErrorCode::InvalidAssessmentTargetArn,
+"INVALID_ASSESSMENT_TARGET_NAME" => InvalidInputErrorCode::InvalidAssessmentTargetName,
+"INVALID_ASSESSMENT_TARGET_NAME_PATTERN" => InvalidInputErrorCode::InvalidAssessmentTargetNamePattern,
+"INVALID_ASSESSMENT_TEMPLATE_ARN" => InvalidInputErrorCode::InvalidAssessmentTemplateArn,
+"INVALID_ASSESSMENT_TEMPLATE_DURATION" => InvalidInputErrorCode::InvalidAssessmentTemplateDuration,
+"INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE" => InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange,
+"INVALID_ASSESSMENT_TEMPLATE_NAME" => InvalidInputErrorCode::InvalidAssessmentTemplateName,
+"INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN" => InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern,
+"INVALID_ATTRIBUTE" => InvalidInputErrorCode::InvalidAttribute,
+"INVALID_AUTO_SCALING_GROUP" => InvalidInputErrorCode::InvalidAutoScalingGroup,
+"INVALID_EVENT" => InvalidInputErrorCode::InvalidEvent,
+"INVALID_FINDING_ARN" => InvalidInputErrorCode::InvalidFindingArn,
+"INVALID_IAM_ROLE_ARN" => InvalidInputErrorCode::InvalidIamRoleArn,
+"INVALID_LOCALE" => InvalidInputErrorCode::InvalidLocale,
+"INVALID_MAX_RESULTS" => InvalidInputErrorCode::InvalidMaxResults,
+"INVALID_NUMBER_OF_AGENT_IDS" => InvalidInputErrorCode::InvalidNumberOfAgentIds,
+"INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns,
+"INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES" => InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates,
+"INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns,
+"INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns,
+"INVALID_NUMBER_OF_ATTRIBUTES" => InvalidInputErrorCode::InvalidNumberOfAttributes,
+"INVALID_NUMBER_OF_AUTO_SCALING_GROUPS" => InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups,
+"INVALID_NUMBER_OF_FINDING_ARNS" => InvalidInputErrorCode::InvalidNumberOfFindingArns,
+"INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS" => InvalidInputErrorCode::InvalidNumberOfResourceGroupArns,
+"INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS" => InvalidInputErrorCode::InvalidNumberOfResourceGroupTags,
+"INVALID_NUMBER_OF_RULES_PACKAGE_ARNS" => InvalidInputErrorCode::InvalidNumberOfRulesPackageArns,
+"INVALID_NUMBER_OF_RULE_NAMES" => InvalidInputErrorCode::InvalidNumberOfRuleNames,
+"INVALID_NUMBER_OF_SEVERITIES" => InvalidInputErrorCode::InvalidNumberOfSeverities,
+"INVALID_NUMBER_OF_TAGS" => InvalidInputErrorCode::InvalidNumberOfTags,
+"INVALID_NUMBER_OF_USER_ATTRIBUTES" => InvalidInputErrorCode::InvalidNumberOfUserAttributes,
+"INVALID_PAGINATION_TOKEN" => InvalidInputErrorCode::InvalidPaginationToken,
+"INVALID_RESOURCE_ARN" => InvalidInputErrorCode::InvalidResourceArn,
+"INVALID_RESOURCE_GROUP_ARN" => InvalidInputErrorCode::InvalidResourceGroupArn,
+"INVALID_RESOURCE_GROUP_TAG_KEY" => InvalidInputErrorCode::InvalidResourceGroupTagKey,
+"INVALID_RESOURCE_GROUP_TAG_VALUE" => InvalidInputErrorCode::InvalidResourceGroupTagValue,
+"INVALID_RULES_PACKAGE_ARN" => InvalidInputErrorCode::InvalidRulesPackageArn,
+"INVALID_RULE_NAME" => InvalidInputErrorCode::InvalidRuleName,
+"INVALID_SEVERITY" => InvalidInputErrorCode::InvalidSeverity,
+"INVALID_SNS_TOPIC_ARN" => InvalidInputErrorCode::InvalidSnsTopicArn,
+"INVALID_TAG" => InvalidInputErrorCode::InvalidTag,
+"INVALID_TAG_KEY" => InvalidInputErrorCode::InvalidTagKey,
+"INVALID_TAG_VALUE" => InvalidInputErrorCode::InvalidTagValue,
+"INVALID_USER_ATTRIBUTE" => InvalidInputErrorCode::InvalidUserAttribute,
+"INVALID_USER_ATTRIBUTE_KEY" => InvalidInputErrorCode::InvalidUserAttributeKey,
+"INVALID_USER_ATTRIBUTE_VALUE" => InvalidInputErrorCode::InvalidUserAttributeValue,
+other => InvalidInputErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InvalidInputErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -385,78 +383,76 @@ impl std::str::FromStr for InvalidInputErrorCode {
                 }
             }
 impl InvalidInputErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken => "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN",
-            InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken => "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN",
-            InvalidInputErrorCode::InvalidAgentId => "INVALID_AGENT_ID",
-            InvalidInputErrorCode::InvalidAssessmentRunArn => "INVALID_ASSESSMENT_RUN_ARN",
-            InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange => "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE",
-            InvalidInputErrorCode::InvalidAssessmentRunDurationRange => "INVALID_ASSESSMENT_RUN_DURATION_RANGE",
-            InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange => "INVALID_ASSESSMENT_RUN_START_TIME_RANGE",
-            InvalidInputErrorCode::InvalidAssessmentRunState => "INVALID_ASSESSMENT_RUN_STATE",
-            InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange => "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE",
-            InvalidInputErrorCode::InvalidAssessmentTargetArn => "INVALID_ASSESSMENT_TARGET_ARN",
-            InvalidInputErrorCode::InvalidAssessmentTargetName => "INVALID_ASSESSMENT_TARGET_NAME",
-            InvalidInputErrorCode::InvalidAssessmentTargetNamePattern => "INVALID_ASSESSMENT_TARGET_NAME_PATTERN",
-            InvalidInputErrorCode::InvalidAssessmentTemplateArn => "INVALID_ASSESSMENT_TEMPLATE_ARN",
-            InvalidInputErrorCode::InvalidAssessmentTemplateDuration => "INVALID_ASSESSMENT_TEMPLATE_DURATION",
-            InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange => "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE",
-            InvalidInputErrorCode::InvalidAssessmentTemplateName => "INVALID_ASSESSMENT_TEMPLATE_NAME",
-            InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern => "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN",
-            InvalidInputErrorCode::InvalidAttribute => "INVALID_ATTRIBUTE",
-            InvalidInputErrorCode::InvalidAutoScalingGroup => "INVALID_AUTO_SCALING_GROUP",
-            InvalidInputErrorCode::InvalidEvent => "INVALID_EVENT",
-            InvalidInputErrorCode::InvalidFindingArn => "INVALID_FINDING_ARN",
-            InvalidInputErrorCode::InvalidIamRoleArn => "INVALID_IAM_ROLE_ARN",
-            InvalidInputErrorCode::InvalidLocale => "INVALID_LOCALE",
-            InvalidInputErrorCode::InvalidMaxResults => "INVALID_MAX_RESULTS",
-            InvalidInputErrorCode::InvalidNumberOfAgentIds => "INVALID_NUMBER_OF_AGENT_IDS",
-            InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns => "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates => "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES",
-            InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns => "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns => "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfAttributes => "INVALID_NUMBER_OF_ATTRIBUTES",
-            InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups => "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS",
-            InvalidInputErrorCode::InvalidNumberOfFindingArns => "INVALID_NUMBER_OF_FINDING_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfResourceGroupArns => "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfResourceGroupTags => "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS",
-            InvalidInputErrorCode::InvalidNumberOfRulesPackageArns => "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfRuleNames => "INVALID_NUMBER_OF_RULE_NAMES",
-            InvalidInputErrorCode::InvalidNumberOfSeverities => "INVALID_NUMBER_OF_SEVERITIES",
-            InvalidInputErrorCode::InvalidNumberOfTags => "INVALID_NUMBER_OF_TAGS",
-            InvalidInputErrorCode::InvalidNumberOfUserAttributes => "INVALID_NUMBER_OF_USER_ATTRIBUTES",
-            InvalidInputErrorCode::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
-            InvalidInputErrorCode::InvalidResourceArn => "INVALID_RESOURCE_ARN",
-            InvalidInputErrorCode::InvalidResourceGroupArn => "INVALID_RESOURCE_GROUP_ARN",
-            InvalidInputErrorCode::InvalidResourceGroupTagKey => "INVALID_RESOURCE_GROUP_TAG_KEY",
-            InvalidInputErrorCode::InvalidResourceGroupTagValue => "INVALID_RESOURCE_GROUP_TAG_VALUE",
-            InvalidInputErrorCode::InvalidRulesPackageArn => "INVALID_RULES_PACKAGE_ARN",
-            InvalidInputErrorCode::InvalidRuleName => "INVALID_RULE_NAME",
-            InvalidInputErrorCode::InvalidSeverity => "INVALID_SEVERITY",
-            InvalidInputErrorCode::InvalidSnsTopicArn => "INVALID_SNS_TOPIC_ARN",
-            InvalidInputErrorCode::InvalidTag => "INVALID_TAG",
-            InvalidInputErrorCode::InvalidTagKey => "INVALID_TAG_KEY",
-            InvalidInputErrorCode::InvalidTagValue => "INVALID_TAG_VALUE",
-            InvalidInputErrorCode::InvalidUserAttribute => "INVALID_USER_ATTRIBUTE",
-            InvalidInputErrorCode::InvalidUserAttributeKey => "INVALID_USER_ATTRIBUTE_KEY",
-            InvalidInputErrorCode::InvalidUserAttributeValue => "INVALID_USER_ATTRIBUTE_VALUE",
-            InvalidInputErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN", "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN", "INVALID_AGENT_ID", "INVALID_ASSESSMENT_RUN_ARN", "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE", "INVALID_ASSESSMENT_RUN_DURATION_RANGE", "INVALID_ASSESSMENT_RUN_START_TIME_RANGE", "INVALID_ASSESSMENT_RUN_STATE", "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE", "INVALID_ASSESSMENT_TARGET_ARN", "INVALID_ASSESSMENT_TARGET_NAME", "INVALID_ASSESSMENT_TARGET_NAME_PATTERN", "INVALID_ASSESSMENT_TEMPLATE_ARN", "INVALID_ASSESSMENT_TEMPLATE_DURATION", "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE", "INVALID_ASSESSMENT_TEMPLATE_NAME", "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN", "INVALID_ATTRIBUTE", "INVALID_AUTO_SCALING_GROUP", "INVALID_EVENT", "INVALID_FINDING_ARN", "INVALID_IAM_ROLE_ARN", "INVALID_LOCALE", "INVALID_MAX_RESULTS", "INVALID_NUMBER_OF_AGENT_IDS", "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS", "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES", "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS", "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS", "INVALID_NUMBER_OF_ATTRIBUTES", "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS", "INVALID_NUMBER_OF_FINDING_ARNS", "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS", "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS", "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS", "INVALID_NUMBER_OF_RULE_NAMES", "INVALID_NUMBER_OF_SEVERITIES", "INVALID_NUMBER_OF_TAGS", "INVALID_NUMBER_OF_USER_ATTRIBUTES", "INVALID_PAGINATION_TOKEN", "INVALID_RESOURCE_ARN", "INVALID_RESOURCE_GROUP_ARN", "INVALID_RESOURCE_GROUP_TAG_KEY", "INVALID_RESOURCE_GROUP_TAG_VALUE", "INVALID_RULES_PACKAGE_ARN", "INVALID_RULE_NAME", "INVALID_SEVERITY", "INVALID_SNS_TOPIC_ARN", "INVALID_TAG", "INVALID_TAG_KEY", "INVALID_TAG_VALUE", "INVALID_USER_ATTRIBUTE", "INVALID_USER_ATTRIBUTE_KEY", "INVALID_USER_ATTRIBUTE_VALUE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken => "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN",
+    InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken => "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN",
+    InvalidInputErrorCode::InvalidAgentId => "INVALID_AGENT_ID",
+    InvalidInputErrorCode::InvalidAssessmentRunArn => "INVALID_ASSESSMENT_RUN_ARN",
+    InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange => "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE",
+    InvalidInputErrorCode::InvalidAssessmentRunDurationRange => "INVALID_ASSESSMENT_RUN_DURATION_RANGE",
+    InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange => "INVALID_ASSESSMENT_RUN_START_TIME_RANGE",
+    InvalidInputErrorCode::InvalidAssessmentRunState => "INVALID_ASSESSMENT_RUN_STATE",
+    InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange => "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE",
+    InvalidInputErrorCode::InvalidAssessmentTargetArn => "INVALID_ASSESSMENT_TARGET_ARN",
+    InvalidInputErrorCode::InvalidAssessmentTargetName => "INVALID_ASSESSMENT_TARGET_NAME",
+    InvalidInputErrorCode::InvalidAssessmentTargetNamePattern => "INVALID_ASSESSMENT_TARGET_NAME_PATTERN",
+    InvalidInputErrorCode::InvalidAssessmentTemplateArn => "INVALID_ASSESSMENT_TEMPLATE_ARN",
+    InvalidInputErrorCode::InvalidAssessmentTemplateDuration => "INVALID_ASSESSMENT_TEMPLATE_DURATION",
+    InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange => "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE",
+    InvalidInputErrorCode::InvalidAssessmentTemplateName => "INVALID_ASSESSMENT_TEMPLATE_NAME",
+    InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern => "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN",
+    InvalidInputErrorCode::InvalidAttribute => "INVALID_ATTRIBUTE",
+    InvalidInputErrorCode::InvalidAutoScalingGroup => "INVALID_AUTO_SCALING_GROUP",
+    InvalidInputErrorCode::InvalidEvent => "INVALID_EVENT",
+    InvalidInputErrorCode::InvalidFindingArn => "INVALID_FINDING_ARN",
+    InvalidInputErrorCode::InvalidIamRoleArn => "INVALID_IAM_ROLE_ARN",
+    InvalidInputErrorCode::InvalidLocale => "INVALID_LOCALE",
+    InvalidInputErrorCode::InvalidMaxResults => "INVALID_MAX_RESULTS",
+    InvalidInputErrorCode::InvalidNumberOfAgentIds => "INVALID_NUMBER_OF_AGENT_IDS",
+    InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns => "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates => "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES",
+    InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns => "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns => "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfAttributes => "INVALID_NUMBER_OF_ATTRIBUTES",
+    InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups => "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS",
+    InvalidInputErrorCode::InvalidNumberOfFindingArns => "INVALID_NUMBER_OF_FINDING_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfResourceGroupArns => "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfResourceGroupTags => "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS",
+    InvalidInputErrorCode::InvalidNumberOfRulesPackageArns => "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfRuleNames => "INVALID_NUMBER_OF_RULE_NAMES",
+    InvalidInputErrorCode::InvalidNumberOfSeverities => "INVALID_NUMBER_OF_SEVERITIES",
+    InvalidInputErrorCode::InvalidNumberOfTags => "INVALID_NUMBER_OF_TAGS",
+    InvalidInputErrorCode::InvalidNumberOfUserAttributes => "INVALID_NUMBER_OF_USER_ATTRIBUTES",
+    InvalidInputErrorCode::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
+    InvalidInputErrorCode::InvalidResourceArn => "INVALID_RESOURCE_ARN",
+    InvalidInputErrorCode::InvalidResourceGroupArn => "INVALID_RESOURCE_GROUP_ARN",
+    InvalidInputErrorCode::InvalidResourceGroupTagKey => "INVALID_RESOURCE_GROUP_TAG_KEY",
+    InvalidInputErrorCode::InvalidResourceGroupTagValue => "INVALID_RESOURCE_GROUP_TAG_VALUE",
+    InvalidInputErrorCode::InvalidRulesPackageArn => "INVALID_RULES_PACKAGE_ARN",
+    InvalidInputErrorCode::InvalidRuleName => "INVALID_RULE_NAME",
+    InvalidInputErrorCode::InvalidSeverity => "INVALID_SEVERITY",
+    InvalidInputErrorCode::InvalidSnsTopicArn => "INVALID_SNS_TOPIC_ARN",
+    InvalidInputErrorCode::InvalidTag => "INVALID_TAG",
+    InvalidInputErrorCode::InvalidTagKey => "INVALID_TAG_KEY",
+    InvalidInputErrorCode::InvalidTagValue => "INVALID_TAG_VALUE",
+    InvalidInputErrorCode::InvalidUserAttribute => "INVALID_USER_ATTRIBUTE",
+    InvalidInputErrorCode::InvalidUserAttributeKey => "INVALID_USER_ATTRIBUTE_KEY",
+    InvalidInputErrorCode::InvalidUserAttributeValue => "INVALID_USER_ATTRIBUTE_VALUE",
+    InvalidInputErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSESSMENT_TARGET_NAME_ALREADY_TAKEN", "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN", "INVALID_AGENT_ID", "INVALID_ASSESSMENT_RUN_ARN", "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE", "INVALID_ASSESSMENT_RUN_DURATION_RANGE", "INVALID_ASSESSMENT_RUN_START_TIME_RANGE", "INVALID_ASSESSMENT_RUN_STATE", "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE", "INVALID_ASSESSMENT_TARGET_ARN", "INVALID_ASSESSMENT_TARGET_NAME", "INVALID_ASSESSMENT_TARGET_NAME_PATTERN", "INVALID_ASSESSMENT_TEMPLATE_ARN", "INVALID_ASSESSMENT_TEMPLATE_DURATION", "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE", "INVALID_ASSESSMENT_TEMPLATE_NAME", "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN", "INVALID_ATTRIBUTE", "INVALID_AUTO_SCALING_GROUP", "INVALID_EVENT", "INVALID_FINDING_ARN", "INVALID_IAM_ROLE_ARN", "INVALID_LOCALE", "INVALID_MAX_RESULTS", "INVALID_NUMBER_OF_AGENT_IDS", "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS", "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES", "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS", "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS", "INVALID_NUMBER_OF_ATTRIBUTES", "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS", "INVALID_NUMBER_OF_FINDING_ARNS", "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS", "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS", "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS", "INVALID_NUMBER_OF_RULE_NAMES", "INVALID_NUMBER_OF_SEVERITIES", "INVALID_NUMBER_OF_TAGS", "INVALID_NUMBER_OF_USER_ATTRIBUTES", "INVALID_PAGINATION_TOKEN", "INVALID_RESOURCE_ARN", "INVALID_RESOURCE_GROUP_ARN", "INVALID_RESOURCE_GROUP_TAG_KEY", "INVALID_RESOURCE_GROUP_TAG_VALUE", "INVALID_RULES_PACKAGE_ARN", "INVALID_RULE_NAME", "INVALID_SEVERITY", "INVALID_SNS_TOPIC_ARN", "INVALID_TAG", "INVALID_TAG_KEY", "INVALID_TAG_VALUE", "INVALID_USER_ATTRIBUTE", "INVALID_USER_ATTRIBUTE_KEY", "INVALID_USER_ATTRIBUTE_VALUE"]
+                }
+            }
 impl AsRef<str> for InvalidInputErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AccessDeniedErrorCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -523,20 +519,20 @@ pub enum AccessDeniedErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessDeniedErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED_TO_ASSESSMENT_RUN" => AccessDeniedErrorCode::AccessDeniedToAssessmentRun,
-            "ACCESS_DENIED_TO_ASSESSMENT_TARGET" => AccessDeniedErrorCode::AccessDeniedToAssessmentTarget,
-            "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE" => AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate,
-            "ACCESS_DENIED_TO_FINDING" => AccessDeniedErrorCode::AccessDeniedToFinding,
-            "ACCESS_DENIED_TO_IAM_ROLE" => AccessDeniedErrorCode::AccessDeniedToIamRole,
-            "ACCESS_DENIED_TO_RESOURCE_GROUP" => AccessDeniedErrorCode::AccessDeniedToResourceGroup,
-            "ACCESS_DENIED_TO_RULES_PACKAGE" => AccessDeniedErrorCode::AccessDeniedToRulesPackage,
-            "ACCESS_DENIED_TO_SNS_TOPIC" => AccessDeniedErrorCode::AccessDeniedToSnsTopic,
-            other => AccessDeniedErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED_TO_ASSESSMENT_RUN" => AccessDeniedErrorCode::AccessDeniedToAssessmentRun,
+"ACCESS_DENIED_TO_ASSESSMENT_TARGET" => AccessDeniedErrorCode::AccessDeniedToAssessmentTarget,
+"ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE" => AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate,
+"ACCESS_DENIED_TO_FINDING" => AccessDeniedErrorCode::AccessDeniedToFinding,
+"ACCESS_DENIED_TO_IAM_ROLE" => AccessDeniedErrorCode::AccessDeniedToIamRole,
+"ACCESS_DENIED_TO_RESOURCE_GROUP" => AccessDeniedErrorCode::AccessDeniedToResourceGroup,
+"ACCESS_DENIED_TO_RULES_PACKAGE" => AccessDeniedErrorCode::AccessDeniedToRulesPackage,
+"ACCESS_DENIED_TO_SNS_TOPIC" => AccessDeniedErrorCode::AccessDeniedToSnsTopic,
+other => AccessDeniedErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AccessDeniedErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -545,32 +541,30 @@ impl std::str::FromStr for AccessDeniedErrorCode {
                 }
             }
 impl AccessDeniedErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccessDeniedErrorCode::AccessDeniedToAssessmentRun => "ACCESS_DENIED_TO_ASSESSMENT_RUN",
-            AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => "ACCESS_DENIED_TO_ASSESSMENT_TARGET",
-            AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE",
-            AccessDeniedErrorCode::AccessDeniedToFinding => "ACCESS_DENIED_TO_FINDING",
-            AccessDeniedErrorCode::AccessDeniedToIamRole => "ACCESS_DENIED_TO_IAM_ROLE",
-            AccessDeniedErrorCode::AccessDeniedToResourceGroup => "ACCESS_DENIED_TO_RESOURCE_GROUP",
-            AccessDeniedErrorCode::AccessDeniedToRulesPackage => "ACCESS_DENIED_TO_RULES_PACKAGE",
-            AccessDeniedErrorCode::AccessDeniedToSnsTopic => "ACCESS_DENIED_TO_SNS_TOPIC",
-            AccessDeniedErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED_TO_ASSESSMENT_RUN", "ACCESS_DENIED_TO_ASSESSMENT_TARGET", "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE", "ACCESS_DENIED_TO_FINDING", "ACCESS_DENIED_TO_IAM_ROLE", "ACCESS_DENIED_TO_RESOURCE_GROUP", "ACCESS_DENIED_TO_RULES_PACKAGE", "ACCESS_DENIED_TO_SNS_TOPIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccessDeniedErrorCode::AccessDeniedToAssessmentRun => "ACCESS_DENIED_TO_ASSESSMENT_RUN",
+    AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => "ACCESS_DENIED_TO_ASSESSMENT_TARGET",
+    AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE",
+    AccessDeniedErrorCode::AccessDeniedToFinding => "ACCESS_DENIED_TO_FINDING",
+    AccessDeniedErrorCode::AccessDeniedToIamRole => "ACCESS_DENIED_TO_IAM_ROLE",
+    AccessDeniedErrorCode::AccessDeniedToResourceGroup => "ACCESS_DENIED_TO_RESOURCE_GROUP",
+    AccessDeniedErrorCode::AccessDeniedToRulesPackage => "ACCESS_DENIED_TO_RULES_PACKAGE",
+    AccessDeniedErrorCode::AccessDeniedToSnsTopic => "ACCESS_DENIED_TO_SNS_TOPIC",
+    AccessDeniedErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED_TO_ASSESSMENT_RUN", "ACCESS_DENIED_TO_ASSESSMENT_TARGET", "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE", "ACCESS_DENIED_TO_FINDING", "ACCESS_DENIED_TO_IAM_ROLE", "ACCESS_DENIED_TO_RESOURCE_GROUP", "ACCESS_DENIED_TO_RULES_PACKAGE", "ACCESS_DENIED_TO_SNS_TOPIC"]
+                }
+            }
 impl AsRef<str> for AccessDeniedErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `InspectorEvent`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -628,17 +622,17 @@ pub enum InspectorEvent {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InspectorEvent {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSESSMENT_RUN_COMPLETED" => InspectorEvent::AssessmentRunCompleted,
-            "ASSESSMENT_RUN_STARTED" => InspectorEvent::AssessmentRunStarted,
-            "ASSESSMENT_RUN_STATE_CHANGED" => InspectorEvent::AssessmentRunStateChanged,
-            "FINDING_REPORTED" => InspectorEvent::FindingReported,
-            "OTHER" => InspectorEvent::Other,
-            other => InspectorEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSESSMENT_RUN_COMPLETED" => InspectorEvent::AssessmentRunCompleted,
+"ASSESSMENT_RUN_STARTED" => InspectorEvent::AssessmentRunStarted,
+"ASSESSMENT_RUN_STATE_CHANGED" => InspectorEvent::AssessmentRunStateChanged,
+"FINDING_REPORTED" => InspectorEvent::FindingReported,
+"OTHER" => InspectorEvent::Other,
+other => InspectorEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InspectorEvent {
                 type Err = std::convert::Infallible;
 
@@ -647,29 +641,27 @@ impl std::str::FromStr for InspectorEvent {
                 }
             }
 impl InspectorEvent {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InspectorEvent::AssessmentRunCompleted => "ASSESSMENT_RUN_COMPLETED",
-            InspectorEvent::AssessmentRunStarted => "ASSESSMENT_RUN_STARTED",
-            InspectorEvent::AssessmentRunStateChanged => "ASSESSMENT_RUN_STATE_CHANGED",
-            InspectorEvent::FindingReported => "FINDING_REPORTED",
-            InspectorEvent::Other => "OTHER",
-            InspectorEvent::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSESSMENT_RUN_COMPLETED", "ASSESSMENT_RUN_STARTED", "ASSESSMENT_RUN_STATE_CHANGED", "FINDING_REPORTED", "OTHER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InspectorEvent::AssessmentRunCompleted => "ASSESSMENT_RUN_COMPLETED",
+    InspectorEvent::AssessmentRunStarted => "ASSESSMENT_RUN_STARTED",
+    InspectorEvent::AssessmentRunStateChanged => "ASSESSMENT_RUN_STATE_CHANGED",
+    InspectorEvent::FindingReported => "FINDING_REPORTED",
+    InspectorEvent::Other => "OTHER",
+    InspectorEvent::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSESSMENT_RUN_COMPLETED", "ASSESSMENT_RUN_STARTED", "ASSESSMENT_RUN_STATE_CHANGED", "FINDING_REPORTED", "OTHER"]
+                }
+            }
 impl AsRef<str> for InspectorEvent {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LimitExceededErrorCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -727,17 +719,17 @@ pub enum LimitExceededErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LimitExceededErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSESSMENT_RUN_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentRunLimitExceeded,
-            "ASSESSMENT_TARGET_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentTargetLimitExceeded,
-            "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentTemplateLimitExceeded,
-            "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED" => LimitExceededErrorCode::EventSubscriptionLimitExceeded,
-            "RESOURCE_GROUP_LIMIT_EXCEEDED" => LimitExceededErrorCode::ResourceGroupLimitExceeded,
-            other => LimitExceededErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSESSMENT_RUN_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentRunLimitExceeded,
+"ASSESSMENT_TARGET_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentTargetLimitExceeded,
+"ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentTemplateLimitExceeded,
+"EVENT_SUBSCRIPTION_LIMIT_EXCEEDED" => LimitExceededErrorCode::EventSubscriptionLimitExceeded,
+"RESOURCE_GROUP_LIMIT_EXCEEDED" => LimitExceededErrorCode::ResourceGroupLimitExceeded,
+other => LimitExceededErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LimitExceededErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -746,29 +738,27 @@ impl std::str::FromStr for LimitExceededErrorCode {
                 }
             }
 impl LimitExceededErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LimitExceededErrorCode::AssessmentRunLimitExceeded => "ASSESSMENT_RUN_LIMIT_EXCEEDED",
-            LimitExceededErrorCode::AssessmentTargetLimitExceeded => "ASSESSMENT_TARGET_LIMIT_EXCEEDED",
-            LimitExceededErrorCode::AssessmentTemplateLimitExceeded => "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED",
-            LimitExceededErrorCode::EventSubscriptionLimitExceeded => "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED",
-            LimitExceededErrorCode::ResourceGroupLimitExceeded => "RESOURCE_GROUP_LIMIT_EXCEEDED",
-            LimitExceededErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSESSMENT_RUN_LIMIT_EXCEEDED", "ASSESSMENT_TARGET_LIMIT_EXCEEDED", "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED", "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED", "RESOURCE_GROUP_LIMIT_EXCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LimitExceededErrorCode::AssessmentRunLimitExceeded => "ASSESSMENT_RUN_LIMIT_EXCEEDED",
+    LimitExceededErrorCode::AssessmentTargetLimitExceeded => "ASSESSMENT_TARGET_LIMIT_EXCEEDED",
+    LimitExceededErrorCode::AssessmentTemplateLimitExceeded => "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED",
+    LimitExceededErrorCode::EventSubscriptionLimitExceeded => "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED",
+    LimitExceededErrorCode::ResourceGroupLimitExceeded => "RESOURCE_GROUP_LIMIT_EXCEEDED",
+    LimitExceededErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSESSMENT_RUN_LIMIT_EXCEEDED", "ASSESSMENT_TARGET_LIMIT_EXCEEDED", "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED", "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED", "RESOURCE_GROUP_LIMIT_EXCEEDED"]
+                }
+            }
 impl AsRef<str> for LimitExceededErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StopAction`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -817,14 +807,14 @@ pub enum StopAction {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StopAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "SKIP_EVALUATION" => StopAction::SkipEvaluation,
-            "START_EVALUATION" => StopAction::StartEvaluation,
-            other => StopAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SKIP_EVALUATION" => StopAction::SkipEvaluation,
+"START_EVALUATION" => StopAction::StartEvaluation,
+other => StopAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StopAction {
                 type Err = std::convert::Infallible;
 
@@ -833,26 +823,24 @@ impl std::str::FromStr for StopAction {
                 }
             }
 impl StopAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StopAction::SkipEvaluation => "SKIP_EVALUATION",
-            StopAction::StartEvaluation => "START_EVALUATION",
-            StopAction::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SKIP_EVALUATION", "START_EVALUATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StopAction::SkipEvaluation => "SKIP_EVALUATION",
+    StopAction::StartEvaluation => "START_EVALUATION",
+    StopAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SKIP_EVALUATION", "START_EVALUATION"]
+                }
+            }
 impl AsRef<str> for StopAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `InvalidCrossAccountRoleErrorCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -901,14 +889,14 @@ pub enum InvalidCrossAccountRoleErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvalidCrossAccountRoleErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP" => InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship,
-            "ROLE_DOES_NOT_HAVE_CORRECT_POLICY" => InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy,
-            other => InvalidCrossAccountRoleErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP" => InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship,
+"ROLE_DOES_NOT_HAVE_CORRECT_POLICY" => InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy,
+other => InvalidCrossAccountRoleErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InvalidCrossAccountRoleErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -917,26 +905,24 @@ impl std::str::FromStr for InvalidCrossAccountRoleErrorCode {
                 }
             }
 impl InvalidCrossAccountRoleErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship => "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP",
-            InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy => "ROLE_DOES_NOT_HAVE_CORRECT_POLICY",
-            InvalidCrossAccountRoleErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP", "ROLE_DOES_NOT_HAVE_CORRECT_POLICY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship => "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP",
+    InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy => "ROLE_DOES_NOT_HAVE_CORRECT_POLICY",
+    InvalidCrossAccountRoleErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP", "ROLE_DOES_NOT_HAVE_CORRECT_POLICY"]
+                }
+            }
 impl AsRef<str> for InvalidCrossAccountRoleErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Used in the exception error that is thrown if you start an assessment run for an assessment target that includes an EC2 instance that is already participating in another started assessment run.</p>
 #[non_exhaustive]
@@ -1204,18 +1190,18 @@ pub enum FailedItemErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailedItemErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => FailedItemErrorCode::AccessDenied,
-            "DUPLICATE_ARN" => FailedItemErrorCode::DuplicateArn,
-            "INTERNAL_ERROR" => FailedItemErrorCode::InternalError,
-            "INVALID_ARN" => FailedItemErrorCode::InvalidArn,
-            "ITEM_DOES_NOT_EXIST" => FailedItemErrorCode::ItemDoesNotExist,
-            "LIMIT_EXCEEDED" => FailedItemErrorCode::LimitExceeded,
-            other => FailedItemErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED" => FailedItemErrorCode::AccessDenied,
+"DUPLICATE_ARN" => FailedItemErrorCode::DuplicateArn,
+"INTERNAL_ERROR" => FailedItemErrorCode::InternalError,
+"INVALID_ARN" => FailedItemErrorCode::InvalidArn,
+"ITEM_DOES_NOT_EXIST" => FailedItemErrorCode::ItemDoesNotExist,
+"LIMIT_EXCEEDED" => FailedItemErrorCode::LimitExceeded,
+other => FailedItemErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FailedItemErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -1224,30 +1210,28 @@ impl std::str::FromStr for FailedItemErrorCode {
                 }
             }
 impl FailedItemErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailedItemErrorCode::AccessDenied => "ACCESS_DENIED",
-            FailedItemErrorCode::DuplicateArn => "DUPLICATE_ARN",
-            FailedItemErrorCode::InternalError => "INTERNAL_ERROR",
-            FailedItemErrorCode::InvalidArn => "INVALID_ARN",
-            FailedItemErrorCode::ItemDoesNotExist => "ITEM_DOES_NOT_EXIST",
-            FailedItemErrorCode::LimitExceeded => "LIMIT_EXCEEDED",
-            FailedItemErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED", "DUPLICATE_ARN", "INTERNAL_ERROR", "INVALID_ARN", "ITEM_DOES_NOT_EXIST", "LIMIT_EXCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FailedItemErrorCode::AccessDenied => "ACCESS_DENIED",
+    FailedItemErrorCode::DuplicateArn => "DUPLICATE_ARN",
+    FailedItemErrorCode::InternalError => "INTERNAL_ERROR",
+    FailedItemErrorCode::InvalidArn => "INVALID_ARN",
+    FailedItemErrorCode::ItemDoesNotExist => "ITEM_DOES_NOT_EXIST",
+    FailedItemErrorCode::LimitExceeded => "LIMIT_EXCEEDED",
+    FailedItemErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "DUPLICATE_ARN", "INTERNAL_ERROR", "INVALID_ARN", "ITEM_DOES_NOT_EXIST", "LIMIT_EXCEEDED"]
+                }
+            }
 impl AsRef<str> for FailedItemErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Used as a response element in the <code>PreviewAgents</code> action.</p>
 #[non_exhaustive]
@@ -1482,15 +1466,15 @@ pub enum AgentHealth {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AgentHealth {
-    fn from(s: &str) -> Self {
-        match s {
-            "HEALTHY" => AgentHealth::Healthy,
-            "UNHEALTHY" => AgentHealth::Unhealthy,
-            "UNKNOWN" => AgentHealth::UnknownValue,
-            other => AgentHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "HEALTHY" => AgentHealth::Healthy,
+"UNHEALTHY" => AgentHealth::Unhealthy,
+"UNKNOWN" => AgentHealth::UnknownValue,
+other => AgentHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AgentHealth {
                 type Err = std::convert::Infallible;
 
@@ -1499,27 +1483,25 @@ impl std::str::FromStr for AgentHealth {
                 }
             }
 impl AgentHealth {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AgentHealth::Healthy => "HEALTHY",
-            AgentHealth::Unhealthy => "UNHEALTHY",
-            AgentHealth::UnknownValue => "UNKNOWN",
-            AgentHealth::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "HEALTHY", "UNHEALTHY", "UNKNOWN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AgentHealth::Healthy => "HEALTHY",
+    AgentHealth::Unhealthy => "UNHEALTHY",
+    AgentHealth::UnknownValue => "UNKNOWN",
+    AgentHealth::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["HEALTHY", "UNHEALTHY", "UNKNOWN"]
+                }
+            }
 impl AsRef<str> for AgentHealth {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This data type is used as a request parameter in the <code>ListFindings</code> action.</p>
 #[non_exhaustive]
@@ -1940,17 +1922,17 @@ pub enum Severity {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Severity {
-    fn from(s: &str) -> Self {
-        match s {
-            "High" => Severity::High,
-            "Informational" => Severity::Informational,
-            "Low" => Severity::Low,
-            "Medium" => Severity::Medium,
-            "Undefined" => Severity::Undefined,
-            other => Severity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "High" => Severity::High,
+"Informational" => Severity::Informational,
+"Low" => Severity::Low,
+"Medium" => Severity::Medium,
+"Undefined" => Severity::Undefined,
+other => Severity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Severity {
                 type Err = std::convert::Infallible;
 
@@ -1959,29 +1941,27 @@ impl std::str::FromStr for Severity {
                 }
             }
 impl Severity {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Severity::High => "High",
-            Severity::Informational => "Informational",
-            Severity::Low => "Low",
-            Severity::Medium => "Medium",
-            Severity::Undefined => "Undefined",
-            Severity::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "High", "Informational", "Low", "Medium", "Undefined"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Severity::High => "High",
+    Severity::Informational => "Informational",
+    Severity::Low => "Low",
+    Severity::Medium => "Medium",
+    Severity::Undefined => "Undefined",
+    Severity::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["High", "Informational", "Low", "Medium", "Undefined"]
+                }
+            }
 impl AsRef<str> for Severity {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This data type is used as a response element in the <code>ListEventSubscriptions</code> action.</p>
 #[non_exhaustive]
@@ -2617,25 +2597,25 @@ pub enum AssessmentRunState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssessmentRunState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELED" => AssessmentRunState::Canceled,
-            "COLLECTING_DATA" => AssessmentRunState::CollectingData,
-            "COMPLETED" => AssessmentRunState::Completed,
-            "COMPLETED_WITH_ERRORS" => AssessmentRunState::CompletedWithErrors,
-            "CREATED" => AssessmentRunState::Created,
-            "DATA_COLLECTED" => AssessmentRunState::DataCollected,
-            "ERROR" => AssessmentRunState::Error,
-            "EVALUATING_RULES" => AssessmentRunState::EvaluatingRules,
-            "FAILED" => AssessmentRunState::Failed,
-            "START_DATA_COLLECTION_IN_PROGRESS" => AssessmentRunState::StartDataCollectionInProgress,
-            "START_DATA_COLLECTION_PENDING" => AssessmentRunState::StartDataCollectionPending,
-            "START_EVALUATING_RULES_PENDING" => AssessmentRunState::StartEvaluatingRulesPending,
-            "STOP_DATA_COLLECTION_PENDING" => AssessmentRunState::StopDataCollectionPending,
-            other => AssessmentRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELED" => AssessmentRunState::Canceled,
+"COLLECTING_DATA" => AssessmentRunState::CollectingData,
+"COMPLETED" => AssessmentRunState::Completed,
+"COMPLETED_WITH_ERRORS" => AssessmentRunState::CompletedWithErrors,
+"CREATED" => AssessmentRunState::Created,
+"DATA_COLLECTED" => AssessmentRunState::DataCollected,
+"ERROR" => AssessmentRunState::Error,
+"EVALUATING_RULES" => AssessmentRunState::EvaluatingRules,
+"FAILED" => AssessmentRunState::Failed,
+"START_DATA_COLLECTION_IN_PROGRESS" => AssessmentRunState::StartDataCollectionInProgress,
+"START_DATA_COLLECTION_PENDING" => AssessmentRunState::StartDataCollectionPending,
+"START_EVALUATING_RULES_PENDING" => AssessmentRunState::StartEvaluatingRulesPending,
+"STOP_DATA_COLLECTION_PENDING" => AssessmentRunState::StopDataCollectionPending,
+other => AssessmentRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AssessmentRunState {
                 type Err = std::convert::Infallible;
 
@@ -2644,37 +2624,35 @@ impl std::str::FromStr for AssessmentRunState {
                 }
             }
 impl AssessmentRunState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AssessmentRunState::Canceled => "CANCELED",
-            AssessmentRunState::CollectingData => "COLLECTING_DATA",
-            AssessmentRunState::Completed => "COMPLETED",
-            AssessmentRunState::CompletedWithErrors => "COMPLETED_WITH_ERRORS",
-            AssessmentRunState::Created => "CREATED",
-            AssessmentRunState::DataCollected => "DATA_COLLECTED",
-            AssessmentRunState::Error => "ERROR",
-            AssessmentRunState::EvaluatingRules => "EVALUATING_RULES",
-            AssessmentRunState::Failed => "FAILED",
-            AssessmentRunState::StartDataCollectionInProgress => "START_DATA_COLLECTION_IN_PROGRESS",
-            AssessmentRunState::StartDataCollectionPending => "START_DATA_COLLECTION_PENDING",
-            AssessmentRunState::StartEvaluatingRulesPending => "START_EVALUATING_RULES_PENDING",
-            AssessmentRunState::StopDataCollectionPending => "STOP_DATA_COLLECTION_PENDING",
-            AssessmentRunState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED", "COLLECTING_DATA", "COMPLETED", "COMPLETED_WITH_ERRORS", "CREATED", "DATA_COLLECTED", "ERROR", "EVALUATING_RULES", "FAILED", "START_DATA_COLLECTION_IN_PROGRESS", "START_DATA_COLLECTION_PENDING", "START_EVALUATING_RULES_PENDING", "STOP_DATA_COLLECTION_PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AssessmentRunState::Canceled => "CANCELED",
+    AssessmentRunState::CollectingData => "COLLECTING_DATA",
+    AssessmentRunState::Completed => "COMPLETED",
+    AssessmentRunState::CompletedWithErrors => "COMPLETED_WITH_ERRORS",
+    AssessmentRunState::Created => "CREATED",
+    AssessmentRunState::DataCollected => "DATA_COLLECTED",
+    AssessmentRunState::Error => "ERROR",
+    AssessmentRunState::EvaluatingRules => "EVALUATING_RULES",
+    AssessmentRunState::Failed => "FAILED",
+    AssessmentRunState::StartDataCollectionInProgress => "START_DATA_COLLECTION_IN_PROGRESS",
+    AssessmentRunState::StartDataCollectionPending => "START_DATA_COLLECTION_PENDING",
+    AssessmentRunState::StartEvaluatingRulesPending => "START_EVALUATING_RULES_PENDING",
+    AssessmentRunState::StopDataCollectionPending => "STOP_DATA_COLLECTION_PENDING",
+    AssessmentRunState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELED", "COLLECTING_DATA", "COMPLETED", "COMPLETED_WITH_ERRORS", "CREATED", "DATA_COLLECTED", "ERROR", "EVALUATING_RULES", "FAILED", "START_DATA_COLLECTION_IN_PROGRESS", "START_DATA_COLLECTION_PENDING", "START_EVALUATING_RULES_PENDING", "STOP_DATA_COLLECTION_PENDING"]
+                }
+            }
 impl AsRef<str> for AssessmentRunState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about an Amazon Inspector agent. This data type is used as a response element in the <code>ListAssessmentRunAgents</code> action.</p>
 #[non_exhaustive]
@@ -2993,18 +2971,18 @@ pub enum AgentHealthCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AgentHealthCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "IDLE" => AgentHealthCode::Idle,
-            "RUNNING" => AgentHealthCode::Running,
-            "SHUTDOWN" => AgentHealthCode::Shutdown,
-            "THROTTLED" => AgentHealthCode::Throttled,
-            "UNHEALTHY" => AgentHealthCode::Unhealthy,
-            "UNKNOWN" => AgentHealthCode::UnknownValue,
-            other => AgentHealthCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "IDLE" => AgentHealthCode::Idle,
+"RUNNING" => AgentHealthCode::Running,
+"SHUTDOWN" => AgentHealthCode::Shutdown,
+"THROTTLED" => AgentHealthCode::Throttled,
+"UNHEALTHY" => AgentHealthCode::Unhealthy,
+"UNKNOWN" => AgentHealthCode::UnknownValue,
+other => AgentHealthCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AgentHealthCode {
                 type Err = std::convert::Infallible;
 
@@ -3013,30 +2991,28 @@ impl std::str::FromStr for AgentHealthCode {
                 }
             }
 impl AgentHealthCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AgentHealthCode::Idle => "IDLE",
-            AgentHealthCode::Running => "RUNNING",
-            AgentHealthCode::Shutdown => "SHUTDOWN",
-            AgentHealthCode::Throttled => "THROTTLED",
-            AgentHealthCode::Unhealthy => "UNHEALTHY",
-            AgentHealthCode::UnknownValue => "UNKNOWN",
-            AgentHealthCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "IDLE", "RUNNING", "SHUTDOWN", "THROTTLED", "UNHEALTHY", "UNKNOWN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AgentHealthCode::Idle => "IDLE",
+    AgentHealthCode::Running => "RUNNING",
+    AgentHealthCode::Shutdown => "SHUTDOWN",
+    AgentHealthCode::Throttled => "THROTTLED",
+    AgentHealthCode::Unhealthy => "UNHEALTHY",
+    AgentHealthCode::UnknownValue => "UNKNOWN",
+    AgentHealthCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["IDLE", "RUNNING", "SHUTDOWN", "THROTTLED", "UNHEALTHY", "UNKNOWN"]
+                }
+            }
 impl AsRef<str> for AgentHealthCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the <code>ListAssessmentRunAgents</code> action.</p>
 #[non_exhaustive]
@@ -3373,14 +3349,14 @@ pub enum ScopeType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScopeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "INSTANCE_ID" => ScopeType::InstanceId,
-            "RULES_PACKAGE_ARN" => ScopeType::RulesPackageArn,
-            other => ScopeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "INSTANCE_ID" => ScopeType::InstanceId,
+"RULES_PACKAGE_ARN" => ScopeType::RulesPackageArn,
+other => ScopeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScopeType {
                 type Err = std::convert::Infallible;
 
@@ -3389,26 +3365,24 @@ impl std::str::FromStr for ScopeType {
                 }
             }
 impl ScopeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScopeType::InstanceId => "INSTANCE_ID",
-            ScopeType::RulesPackageArn => "RULES_PACKAGE_ARN",
-            ScopeType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "INSTANCE_ID", "RULES_PACKAGE_ARN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScopeType::InstanceId => "INSTANCE_ID",
+    ScopeType::RulesPackageArn => "RULES_PACKAGE_ARN",
+    ScopeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INSTANCE_ID", "RULES_PACKAGE_ARN"]
+                }
+            }
 impl AsRef<str> for ScopeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PreviewStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3457,14 +3431,14 @@ pub enum PreviewStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PreviewStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => PreviewStatus::Completed,
-            "WORK_IN_PROGRESS" => PreviewStatus::WorkInProgress,
-            other => PreviewStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => PreviewStatus::Completed,
+"WORK_IN_PROGRESS" => PreviewStatus::WorkInProgress,
+other => PreviewStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PreviewStatus {
                 type Err = std::convert::Infallible;
 
@@ -3473,26 +3447,24 @@ impl std::str::FromStr for PreviewStatus {
                 }
             }
 impl PreviewStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PreviewStatus::Completed => "COMPLETED",
-            PreviewStatus::WorkInProgress => "WORK_IN_PROGRESS",
-            PreviewStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "WORK_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PreviewStatus::Completed => "COMPLETED",
+    PreviewStatus::WorkInProgress => "WORK_IN_PROGRESS",
+    PreviewStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "WORK_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for PreviewStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Locale`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3538,13 +3510,13 @@ pub enum Locale {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Locale {
-    fn from(s: &str) -> Self {
-        match s {
-            "EN_US" => Locale::EnUs,
-            other => Locale::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EN_US" => Locale::EnUs,
+other => Locale::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Locale {
                 type Err = std::convert::Infallible;
 
@@ -3553,25 +3525,23 @@ impl std::str::FromStr for Locale {
                 }
             }
 impl Locale {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Locale::EnUs => "EN_US",
-            Locale::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EN_US"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Locale::EnUs => "EN_US",
+    Locale::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EN_US"]
+                }
+            }
 impl AsRef<str> for Locale {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ReportStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3623,15 +3593,15 @@ pub enum ReportStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => ReportStatus::Completed,
-            "FAILED" => ReportStatus::Failed,
-            "WORK_IN_PROGRESS" => ReportStatus::WorkInProgress,
-            other => ReportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => ReportStatus::Completed,
+"FAILED" => ReportStatus::Failed,
+"WORK_IN_PROGRESS" => ReportStatus::WorkInProgress,
+other => ReportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ReportStatus {
                 type Err = std::convert::Infallible;
 
@@ -3640,27 +3610,25 @@ impl std::str::FromStr for ReportStatus {
                 }
             }
 impl ReportStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReportStatus::Completed => "COMPLETED",
-            ReportStatus::Failed => "FAILED",
-            ReportStatus::WorkInProgress => "WORK_IN_PROGRESS",
-            ReportStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "FAILED", "WORK_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ReportStatus::Completed => "COMPLETED",
+    ReportStatus::Failed => "FAILED",
+    ReportStatus::WorkInProgress => "WORK_IN_PROGRESS",
+    ReportStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "FAILED", "WORK_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for ReportStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ReportType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3709,14 +3677,14 @@ pub enum ReportType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportType {
-    fn from(s: &str) -> Self {
-        match s {
-            "FINDING" => ReportType::Finding,
-            "FULL" => ReportType::Full,
-            other => ReportType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FINDING" => ReportType::Finding,
+"FULL" => ReportType::Full,
+other => ReportType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ReportType {
                 type Err = std::convert::Infallible;
 
@@ -3725,26 +3693,24 @@ impl std::str::FromStr for ReportType {
                 }
             }
 impl ReportType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReportType::Finding => "FINDING",
-            ReportType::Full => "FULL",
-            ReportType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FINDING", "FULL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ReportType::Finding => "FINDING",
+    ReportType::Full => "FULL",
+    ReportType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FINDING", "FULL"]
+                }
+            }
 impl AsRef<str> for ReportType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ReportFileFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3793,14 +3759,14 @@ pub enum ReportFileFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportFileFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "HTML" => ReportFileFormat::Html,
-            "PDF" => ReportFileFormat::Pdf,
-            other => ReportFileFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "HTML" => ReportFileFormat::Html,
+"PDF" => ReportFileFormat::Pdf,
+other => ReportFileFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ReportFileFormat {
                 type Err = std::convert::Infallible;
 
@@ -3809,26 +3775,24 @@ impl std::str::FromStr for ReportFileFormat {
                 }
             }
 impl ReportFileFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReportFileFormat::Html => "HTML",
-            ReportFileFormat::Pdf => "PDF",
-            ReportFileFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "HTML", "PDF"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ReportFileFormat::Html => "HTML",
+    ReportFileFormat::Pdf => "PDF",
+    ReportFileFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["HTML", "PDF"]
+                }
+            }
 impl AsRef<str> for ReportFileFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about an Amazon Inspector rules package. This data type is used as the response element in the <code>DescribeRulesPackages</code> action.</p>
 #[non_exhaustive]
@@ -5130,13 +5094,13 @@ pub enum AssetType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssetType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ec2-instance" => AssetType::Ec2Instance,
-            other => AssetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ec2-instance" => AssetType::Ec2Instance,
+other => AssetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AssetType {
                 type Err = std::convert::Infallible;
 
@@ -5145,25 +5109,23 @@ impl std::str::FromStr for AssetType {
                 }
             }
 impl AssetType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AssetType::Ec2Instance => "ec2-instance",
-            AssetType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ec2-instance"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AssetType::Ec2Instance => "ec2-instance",
+    AssetType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ec2-instance"]
+                }
+            }
 impl AsRef<str> for AssetType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This data type is used in the <code>Finding</code> data type.</p>
 #[non_exhaustive]
@@ -6298,16 +6260,16 @@ pub enum AssessmentRunNotificationSnsStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssessmentRunNotificationSnsStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => AssessmentRunNotificationSnsStatusCode::AccessDenied,
-            "INTERNAL_ERROR" => AssessmentRunNotificationSnsStatusCode::InternalError,
-            "SUCCESS" => AssessmentRunNotificationSnsStatusCode::Success,
-            "TOPIC_DOES_NOT_EXIST" => AssessmentRunNotificationSnsStatusCode::TopicDoesNotExist,
-            other => AssessmentRunNotificationSnsStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED" => AssessmentRunNotificationSnsStatusCode::AccessDenied,
+"INTERNAL_ERROR" => AssessmentRunNotificationSnsStatusCode::InternalError,
+"SUCCESS" => AssessmentRunNotificationSnsStatusCode::Success,
+"TOPIC_DOES_NOT_EXIST" => AssessmentRunNotificationSnsStatusCode::TopicDoesNotExist,
+other => AssessmentRunNotificationSnsStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AssessmentRunNotificationSnsStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -6316,28 +6278,26 @@ impl std::str::FromStr for AssessmentRunNotificationSnsStatusCode {
                 }
             }
 impl AssessmentRunNotificationSnsStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AssessmentRunNotificationSnsStatusCode::AccessDenied => "ACCESS_DENIED",
-            AssessmentRunNotificationSnsStatusCode::InternalError => "INTERNAL_ERROR",
-            AssessmentRunNotificationSnsStatusCode::Success => "SUCCESS",
-            AssessmentRunNotificationSnsStatusCode::TopicDoesNotExist => "TOPIC_DOES_NOT_EXIST",
-            AssessmentRunNotificationSnsStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED", "INTERNAL_ERROR", "SUCCESS", "TOPIC_DOES_NOT_EXIST"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AssessmentRunNotificationSnsStatusCode::AccessDenied => "ACCESS_DENIED",
+    AssessmentRunNotificationSnsStatusCode::InternalError => "INTERNAL_ERROR",
+    AssessmentRunNotificationSnsStatusCode::Success => "SUCCESS",
+    AssessmentRunNotificationSnsStatusCode::TopicDoesNotExist => "TOPIC_DOES_NOT_EXIST",
+    AssessmentRunNotificationSnsStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "INTERNAL_ERROR", "SUCCESS", "TOPIC_DOES_NOT_EXIST"]
+                }
+            }
 impl AsRef<str> for AssessmentRunNotificationSnsStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Used as one of the elements of the <code>AssessmentRun</code> data type.</p>
 #[non_exhaustive]

@@ -135,14 +135,14 @@ pub enum ServiceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DOCDB" => ServiceType::Docdb,
-            "RDS" => ServiceType::Rds,
-            other => ServiceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DOCDB" => ServiceType::Docdb,
+"RDS" => ServiceType::Rds,
+other => ServiceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ServiceType {
                 type Err = std::convert::Infallible;
 
@@ -151,26 +151,24 @@ impl std::str::FromStr for ServiceType {
                 }
             }
 impl ServiceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceType::Docdb => "DOCDB",
-            ServiceType::Rds => "RDS",
-            ServiceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DOCDB", "RDS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceType::Docdb => "DOCDB",
+    ServiceType::Rds => "RDS",
+    ServiceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DOCDB", "RDS"]
+                }
+            }
 impl AsRef<str> for ServiceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The available dimension information for a metric type.</p>
 #[non_exhaustive]
@@ -1272,18 +1270,18 @@ pub enum FeatureStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FeatureStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => FeatureStatus::Disabled,
-            "DISABLED_PENDING_REBOOT" => FeatureStatus::DisabledPendingReboot,
-            "ENABLED" => FeatureStatus::Enabled,
-            "ENABLED_PENDING_REBOOT" => FeatureStatus::EnabledPendingReboot,
-            "UNKNOWN" => FeatureStatus::UnknownValue,
-            "UNSUPPORTED" => FeatureStatus::Unsupported,
-            other => FeatureStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => FeatureStatus::Disabled,
+"DISABLED_PENDING_REBOOT" => FeatureStatus::DisabledPendingReboot,
+"ENABLED" => FeatureStatus::Enabled,
+"ENABLED_PENDING_REBOOT" => FeatureStatus::EnabledPendingReboot,
+"UNKNOWN" => FeatureStatus::UnknownValue,
+"UNSUPPORTED" => FeatureStatus::Unsupported,
+other => FeatureStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FeatureStatus {
                 type Err = std::convert::Infallible;
 
@@ -1292,30 +1290,28 @@ impl std::str::FromStr for FeatureStatus {
                 }
             }
 impl FeatureStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FeatureStatus::Disabled => "DISABLED",
-            FeatureStatus::DisabledPendingReboot => "DISABLED_PENDING_REBOOT",
-            FeatureStatus::Enabled => "ENABLED",
-            FeatureStatus::EnabledPendingReboot => "ENABLED_PENDING_REBOOT",
-            FeatureStatus::UnknownValue => "UNKNOWN",
-            FeatureStatus::Unsupported => "UNSUPPORTED",
-            FeatureStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED", "DISABLED_PENDING_REBOOT", "ENABLED", "ENABLED_PENDING_REBOOT", "UNKNOWN", "UNSUPPORTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FeatureStatus::Disabled => "DISABLED",
+    FeatureStatus::DisabledPendingReboot => "DISABLED_PENDING_REBOOT",
+    FeatureStatus::Enabled => "ENABLED",
+    FeatureStatus::EnabledPendingReboot => "ENABLED_PENDING_REBOOT",
+    FeatureStatus::UnknownValue => "UNKNOWN",
+    FeatureStatus::Unsupported => "UNSUPPORTED",
+    FeatureStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "DISABLED_PENDING_REBOOT", "ENABLED", "ENABLED_PENDING_REBOOT", "UNKNOWN", "UNSUPPORTED"]
+                }
+            }
 impl AsRef<str> for FeatureStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object that describes the details for a specified dimension.</p>
 #[non_exhaustive]
@@ -1507,15 +1503,15 @@ pub enum DetailStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DetailStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => DetailStatus::Available,
-            "PROCESSING" => DetailStatus::Processing,
-            "UNAVAILABLE" => DetailStatus::Unavailable,
-            other => DetailStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => DetailStatus::Available,
+"PROCESSING" => DetailStatus::Processing,
+"UNAVAILABLE" => DetailStatus::Unavailable,
+other => DetailStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DetailStatus {
                 type Err = std::convert::Infallible;
 
@@ -1524,27 +1520,25 @@ impl std::str::FromStr for DetailStatus {
                 }
             }
 impl DetailStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DetailStatus::Available => "AVAILABLE",
-            DetailStatus::Processing => "PROCESSING",
-            DetailStatus::Unavailable => "UNAVAILABLE",
-            DetailStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "PROCESSING", "UNAVAILABLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DetailStatus::Available => "AVAILABLE",
+    DetailStatus::Processing => "PROCESSING",
+    DetailStatus::Unavailable => "UNAVAILABLE",
+    DetailStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "PROCESSING", "UNAVAILABLE"]
+                }
+            }
 impl AsRef<str> for DetailStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object that includes the requested dimension key values and aggregated metric values within a dimension group.</p>
 #[non_exhaustive]

@@ -160,20 +160,20 @@ pub enum JobExecutionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobExecutionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELED" => JobExecutionStatus::Canceled,
-            "FAILED" => JobExecutionStatus::Failed,
-            "IN_PROGRESS" => JobExecutionStatus::InProgress,
-            "QUEUED" => JobExecutionStatus::Queued,
-            "REJECTED" => JobExecutionStatus::Rejected,
-            "REMOVED" => JobExecutionStatus::Removed,
-            "SUCCEEDED" => JobExecutionStatus::Succeeded,
-            "TIMED_OUT" => JobExecutionStatus::TimedOut,
-            other => JobExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELED" => JobExecutionStatus::Canceled,
+"FAILED" => JobExecutionStatus::Failed,
+"IN_PROGRESS" => JobExecutionStatus::InProgress,
+"QUEUED" => JobExecutionStatus::Queued,
+"REJECTED" => JobExecutionStatus::Rejected,
+"REMOVED" => JobExecutionStatus::Removed,
+"SUCCEEDED" => JobExecutionStatus::Succeeded,
+"TIMED_OUT" => JobExecutionStatus::TimedOut,
+other => JobExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobExecutionStatus {
                 type Err = std::convert::Infallible;
 
@@ -182,32 +182,30 @@ impl std::str::FromStr for JobExecutionStatus {
                 }
             }
 impl JobExecutionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobExecutionStatus::Canceled => "CANCELED",
-            JobExecutionStatus::Failed => "FAILED",
-            JobExecutionStatus::InProgress => "IN_PROGRESS",
-            JobExecutionStatus::Queued => "QUEUED",
-            JobExecutionStatus::Rejected => "REJECTED",
-            JobExecutionStatus::Removed => "REMOVED",
-            JobExecutionStatus::Succeeded => "SUCCEEDED",
-            JobExecutionStatus::TimedOut => "TIMED_OUT",
-            JobExecutionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED", "FAILED", "IN_PROGRESS", "QUEUED", "REJECTED", "REMOVED", "SUCCEEDED", "TIMED_OUT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobExecutionStatus::Canceled => "CANCELED",
+    JobExecutionStatus::Failed => "FAILED",
+    JobExecutionStatus::InProgress => "IN_PROGRESS",
+    JobExecutionStatus::Queued => "QUEUED",
+    JobExecutionStatus::Rejected => "REJECTED",
+    JobExecutionStatus::Removed => "REMOVED",
+    JobExecutionStatus::Succeeded => "SUCCEEDED",
+    JobExecutionStatus::TimedOut => "TIMED_OUT",
+    JobExecutionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELED", "FAILED", "IN_PROGRESS", "QUEUED", "REJECTED", "REMOVED", "SUCCEEDED", "TIMED_OUT"]
+                }
+            }
 impl AsRef<str> for JobExecutionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains data about a job execution.</p>
 #[non_exhaustive]

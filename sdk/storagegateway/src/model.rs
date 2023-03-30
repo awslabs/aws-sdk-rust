@@ -302,74 +302,74 @@ pub enum ErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ActivationKeyExpired" => ErrorCode::ActivationKeyExpired,
-            "ActivationKeyInvalid" => ErrorCode::ActivationKeyInvalid,
-            "ActivationKeyNotFound" => ErrorCode::ActivationKeyNotFound,
-            "AuthenticationFailure" => ErrorCode::AuthenticationFailure,
-            "BandwidthThrottleScheduleNotFound" => ErrorCode::BandwidthThrottleScheduleNotFound,
-            "Blocked" => ErrorCode::Blocked,
-            "CannotExportSnapshot" => ErrorCode::CannotExportSnapshot,
-            "ChapCredentialNotFound" => ErrorCode::ChapCredentialNotFound,
-            "DiskAlreadyAllocated" => ErrorCode::DiskAlreadyAllocated,
-            "DiskDoesNotExist" => ErrorCode::DiskDoesNotExist,
-            "DiskSizeGreaterThanVolumeMaxSize" => ErrorCode::DiskSizeGreaterThanVolumeMaxSize,
-            "DiskSizeLessThanVolumeSize" => ErrorCode::DiskSizeLessThanVolumeSize,
-            "DiskSizeNotGigAligned" => ErrorCode::DiskSizeNotGigAligned,
-            "DuplicateCertificateInfo" => ErrorCode::DuplicateCertificateInfo,
-            "DuplicateSchedule" => ErrorCode::DuplicateSchedule,
-            "EndpointNotFound" => ErrorCode::EndpointNotFound,
-            "GatewayInternalError" => ErrorCode::GatewayInternalError,
-            "GatewayNotConnected" => ErrorCode::GatewayNotConnected,
-            "GatewayNotFound" => ErrorCode::GatewayNotFound,
-            "GatewayProxyNetworkConnectionBusy" => ErrorCode::GatewayProxyNetworkConnectionBusy,
-            "IAMNotSupported" => ErrorCode::IamNotSupported,
-            "InitiatorInvalid" => ErrorCode::InitiatorInvalid,
-            "InitiatorNotFound" => ErrorCode::InitiatorNotFound,
-            "InternalError" => ErrorCode::InternalError,
-            "InvalidEndpoint" => ErrorCode::InvalidEndpoint,
-            "InvalidGateway" => ErrorCode::InvalidGateway,
-            "InvalidParameters" => ErrorCode::InvalidParameters,
-            "InvalidSchedule" => ErrorCode::InvalidSchedule,
-            "JoinDomainInProgress" => ErrorCode::JoinDomainInProgress,
-            "LocalStorageLimitExceeded" => ErrorCode::LocalStorageLimitExceeded,
-            "LunAlreadyAllocated " => ErrorCode::LunAlreadyAllocated,
-            "LunInvalid" => ErrorCode::LunInvalid,
-            "MaximumContentLengthExceeded" => ErrorCode::MaximumContentLengthExceeded,
-            "MaximumTapeCartridgeCountExceeded" => ErrorCode::MaximumTapeCartridgeCountExceeded,
-            "MaximumVolumeCountExceeded" => ErrorCode::MaximumVolumeCountExceeded,
-            "NetworkConfigurationChanged" => ErrorCode::NetworkConfigurationChanged,
-            "NoDisksAvailable" => ErrorCode::NoDisksAvailable,
-            "NotImplemented" => ErrorCode::NotImplemented,
-            "NotSupported" => ErrorCode::NotSupported,
-            "OperationAborted" => ErrorCode::OperationAborted,
-            "OutdatedGateway" => ErrorCode::OutdatedGateway,
-            "ParametersNotImplemented" => ErrorCode::ParametersNotImplemented,
-            "RegionInvalid" => ErrorCode::RegionInvalid,
-            "RequestTimeout" => ErrorCode::RequestTimeout,
-            "ServiceUnavailable" => ErrorCode::ServiceUnavailable,
-            "SnapshotDeleted" => ErrorCode::SnapshotDeleted,
-            "SnapshotIdInvalid" => ErrorCode::SnapshotIdInvalid,
-            "SnapshotInProgress" => ErrorCode::SnapshotInProgress,
-            "SnapshotNotFound" => ErrorCode::SnapshotNotFound,
-            "SnapshotScheduleNotFound" => ErrorCode::SnapshotScheduleNotFound,
-            "StagingAreaFull" => ErrorCode::StagingAreaFull,
-            "StorageFailure" => ErrorCode::StorageFailure,
-            "TapeCartridgeNotFound" => ErrorCode::TapeCartridgeNotFound,
-            "TargetAlreadyExists" => ErrorCode::TargetAlreadyExists,
-            "TargetInvalid" => ErrorCode::TargetInvalid,
-            "TargetNotFound" => ErrorCode::TargetNotFound,
-            "UnauthorizedOperation" => ErrorCode::UnauthorizedOperation,
-            "VolumeAlreadyExists" => ErrorCode::VolumeAlreadyExists,
-            "VolumeIdInvalid" => ErrorCode::VolumeIdInvalid,
-            "VolumeInUse" => ErrorCode::VolumeInUse,
-            "VolumeNotFound" => ErrorCode::VolumeNotFound,
-            "VolumeNotReady" => ErrorCode::VolumeNotReady,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ActivationKeyExpired" => ErrorCode::ActivationKeyExpired,
+"ActivationKeyInvalid" => ErrorCode::ActivationKeyInvalid,
+"ActivationKeyNotFound" => ErrorCode::ActivationKeyNotFound,
+"AuthenticationFailure" => ErrorCode::AuthenticationFailure,
+"BandwidthThrottleScheduleNotFound" => ErrorCode::BandwidthThrottleScheduleNotFound,
+"Blocked" => ErrorCode::Blocked,
+"CannotExportSnapshot" => ErrorCode::CannotExportSnapshot,
+"ChapCredentialNotFound" => ErrorCode::ChapCredentialNotFound,
+"DiskAlreadyAllocated" => ErrorCode::DiskAlreadyAllocated,
+"DiskDoesNotExist" => ErrorCode::DiskDoesNotExist,
+"DiskSizeGreaterThanVolumeMaxSize" => ErrorCode::DiskSizeGreaterThanVolumeMaxSize,
+"DiskSizeLessThanVolumeSize" => ErrorCode::DiskSizeLessThanVolumeSize,
+"DiskSizeNotGigAligned" => ErrorCode::DiskSizeNotGigAligned,
+"DuplicateCertificateInfo" => ErrorCode::DuplicateCertificateInfo,
+"DuplicateSchedule" => ErrorCode::DuplicateSchedule,
+"EndpointNotFound" => ErrorCode::EndpointNotFound,
+"GatewayInternalError" => ErrorCode::GatewayInternalError,
+"GatewayNotConnected" => ErrorCode::GatewayNotConnected,
+"GatewayNotFound" => ErrorCode::GatewayNotFound,
+"GatewayProxyNetworkConnectionBusy" => ErrorCode::GatewayProxyNetworkConnectionBusy,
+"IAMNotSupported" => ErrorCode::IamNotSupported,
+"InitiatorInvalid" => ErrorCode::InitiatorInvalid,
+"InitiatorNotFound" => ErrorCode::InitiatorNotFound,
+"InternalError" => ErrorCode::InternalError,
+"InvalidEndpoint" => ErrorCode::InvalidEndpoint,
+"InvalidGateway" => ErrorCode::InvalidGateway,
+"InvalidParameters" => ErrorCode::InvalidParameters,
+"InvalidSchedule" => ErrorCode::InvalidSchedule,
+"JoinDomainInProgress" => ErrorCode::JoinDomainInProgress,
+"LocalStorageLimitExceeded" => ErrorCode::LocalStorageLimitExceeded,
+"LunAlreadyAllocated " => ErrorCode::LunAlreadyAllocated,
+"LunInvalid" => ErrorCode::LunInvalid,
+"MaximumContentLengthExceeded" => ErrorCode::MaximumContentLengthExceeded,
+"MaximumTapeCartridgeCountExceeded" => ErrorCode::MaximumTapeCartridgeCountExceeded,
+"MaximumVolumeCountExceeded" => ErrorCode::MaximumVolumeCountExceeded,
+"NetworkConfigurationChanged" => ErrorCode::NetworkConfigurationChanged,
+"NoDisksAvailable" => ErrorCode::NoDisksAvailable,
+"NotImplemented" => ErrorCode::NotImplemented,
+"NotSupported" => ErrorCode::NotSupported,
+"OperationAborted" => ErrorCode::OperationAborted,
+"OutdatedGateway" => ErrorCode::OutdatedGateway,
+"ParametersNotImplemented" => ErrorCode::ParametersNotImplemented,
+"RegionInvalid" => ErrorCode::RegionInvalid,
+"RequestTimeout" => ErrorCode::RequestTimeout,
+"ServiceUnavailable" => ErrorCode::ServiceUnavailable,
+"SnapshotDeleted" => ErrorCode::SnapshotDeleted,
+"SnapshotIdInvalid" => ErrorCode::SnapshotIdInvalid,
+"SnapshotInProgress" => ErrorCode::SnapshotInProgress,
+"SnapshotNotFound" => ErrorCode::SnapshotNotFound,
+"SnapshotScheduleNotFound" => ErrorCode::SnapshotScheduleNotFound,
+"StagingAreaFull" => ErrorCode::StagingAreaFull,
+"StorageFailure" => ErrorCode::StorageFailure,
+"TapeCartridgeNotFound" => ErrorCode::TapeCartridgeNotFound,
+"TargetAlreadyExists" => ErrorCode::TargetAlreadyExists,
+"TargetInvalid" => ErrorCode::TargetInvalid,
+"TargetNotFound" => ErrorCode::TargetNotFound,
+"UnauthorizedOperation" => ErrorCode::UnauthorizedOperation,
+"VolumeAlreadyExists" => ErrorCode::VolumeAlreadyExists,
+"VolumeIdInvalid" => ErrorCode::VolumeIdInvalid,
+"VolumeInUse" => ErrorCode::VolumeInUse,
+"VolumeNotFound" => ErrorCode::VolumeNotFound,
+"VolumeNotReady" => ErrorCode::VolumeNotReady,
+other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -378,86 +378,84 @@ impl std::str::FromStr for ErrorCode {
                 }
             }
 impl ErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ErrorCode::ActivationKeyExpired => "ActivationKeyExpired",
-            ErrorCode::ActivationKeyInvalid => "ActivationKeyInvalid",
-            ErrorCode::ActivationKeyNotFound => "ActivationKeyNotFound",
-            ErrorCode::AuthenticationFailure => "AuthenticationFailure",
-            ErrorCode::BandwidthThrottleScheduleNotFound => "BandwidthThrottleScheduleNotFound",
-            ErrorCode::Blocked => "Blocked",
-            ErrorCode::CannotExportSnapshot => "CannotExportSnapshot",
-            ErrorCode::ChapCredentialNotFound => "ChapCredentialNotFound",
-            ErrorCode::DiskAlreadyAllocated => "DiskAlreadyAllocated",
-            ErrorCode::DiskDoesNotExist => "DiskDoesNotExist",
-            ErrorCode::DiskSizeGreaterThanVolumeMaxSize => "DiskSizeGreaterThanVolumeMaxSize",
-            ErrorCode::DiskSizeLessThanVolumeSize => "DiskSizeLessThanVolumeSize",
-            ErrorCode::DiskSizeNotGigAligned => "DiskSizeNotGigAligned",
-            ErrorCode::DuplicateCertificateInfo => "DuplicateCertificateInfo",
-            ErrorCode::DuplicateSchedule => "DuplicateSchedule",
-            ErrorCode::EndpointNotFound => "EndpointNotFound",
-            ErrorCode::GatewayInternalError => "GatewayInternalError",
-            ErrorCode::GatewayNotConnected => "GatewayNotConnected",
-            ErrorCode::GatewayNotFound => "GatewayNotFound",
-            ErrorCode::GatewayProxyNetworkConnectionBusy => "GatewayProxyNetworkConnectionBusy",
-            ErrorCode::IamNotSupported => "IAMNotSupported",
-            ErrorCode::InitiatorInvalid => "InitiatorInvalid",
-            ErrorCode::InitiatorNotFound => "InitiatorNotFound",
-            ErrorCode::InternalError => "InternalError",
-            ErrorCode::InvalidEndpoint => "InvalidEndpoint",
-            ErrorCode::InvalidGateway => "InvalidGateway",
-            ErrorCode::InvalidParameters => "InvalidParameters",
-            ErrorCode::InvalidSchedule => "InvalidSchedule",
-            ErrorCode::JoinDomainInProgress => "JoinDomainInProgress",
-            ErrorCode::LocalStorageLimitExceeded => "LocalStorageLimitExceeded",
-            ErrorCode::LunAlreadyAllocated => "LunAlreadyAllocated ",
-            ErrorCode::LunInvalid => "LunInvalid",
-            ErrorCode::MaximumContentLengthExceeded => "MaximumContentLengthExceeded",
-            ErrorCode::MaximumTapeCartridgeCountExceeded => "MaximumTapeCartridgeCountExceeded",
-            ErrorCode::MaximumVolumeCountExceeded => "MaximumVolumeCountExceeded",
-            ErrorCode::NetworkConfigurationChanged => "NetworkConfigurationChanged",
-            ErrorCode::NoDisksAvailable => "NoDisksAvailable",
-            ErrorCode::NotImplemented => "NotImplemented",
-            ErrorCode::NotSupported => "NotSupported",
-            ErrorCode::OperationAborted => "OperationAborted",
-            ErrorCode::OutdatedGateway => "OutdatedGateway",
-            ErrorCode::ParametersNotImplemented => "ParametersNotImplemented",
-            ErrorCode::RegionInvalid => "RegionInvalid",
-            ErrorCode::RequestTimeout => "RequestTimeout",
-            ErrorCode::ServiceUnavailable => "ServiceUnavailable",
-            ErrorCode::SnapshotDeleted => "SnapshotDeleted",
-            ErrorCode::SnapshotIdInvalid => "SnapshotIdInvalid",
-            ErrorCode::SnapshotInProgress => "SnapshotInProgress",
-            ErrorCode::SnapshotNotFound => "SnapshotNotFound",
-            ErrorCode::SnapshotScheduleNotFound => "SnapshotScheduleNotFound",
-            ErrorCode::StagingAreaFull => "StagingAreaFull",
-            ErrorCode::StorageFailure => "StorageFailure",
-            ErrorCode::TapeCartridgeNotFound => "TapeCartridgeNotFound",
-            ErrorCode::TargetAlreadyExists => "TargetAlreadyExists",
-            ErrorCode::TargetInvalid => "TargetInvalid",
-            ErrorCode::TargetNotFound => "TargetNotFound",
-            ErrorCode::UnauthorizedOperation => "UnauthorizedOperation",
-            ErrorCode::VolumeAlreadyExists => "VolumeAlreadyExists",
-            ErrorCode::VolumeIdInvalid => "VolumeIdInvalid",
-            ErrorCode::VolumeInUse => "VolumeInUse",
-            ErrorCode::VolumeNotFound => "VolumeNotFound",
-            ErrorCode::VolumeNotReady => "VolumeNotReady",
-            ErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ActivationKeyExpired", "ActivationKeyInvalid", "ActivationKeyNotFound", "AuthenticationFailure", "BandwidthThrottleScheduleNotFound", "Blocked", "CannotExportSnapshot", "ChapCredentialNotFound", "DiskAlreadyAllocated", "DiskDoesNotExist", "DiskSizeGreaterThanVolumeMaxSize", "DiskSizeLessThanVolumeSize", "DiskSizeNotGigAligned", "DuplicateCertificateInfo", "DuplicateSchedule", "EndpointNotFound", "GatewayInternalError", "GatewayNotConnected", "GatewayNotFound", "GatewayProxyNetworkConnectionBusy", "IAMNotSupported", "InitiatorInvalid", "InitiatorNotFound", "InternalError", "InvalidEndpoint", "InvalidGateway", "InvalidParameters", "InvalidSchedule", "JoinDomainInProgress", "LocalStorageLimitExceeded", "LunAlreadyAllocated ", "LunInvalid", "MaximumContentLengthExceeded", "MaximumTapeCartridgeCountExceeded", "MaximumVolumeCountExceeded", "NetworkConfigurationChanged", "NoDisksAvailable", "NotImplemented", "NotSupported", "OperationAborted", "OutdatedGateway", "ParametersNotImplemented", "RegionInvalid", "RequestTimeout", "ServiceUnavailable", "SnapshotDeleted", "SnapshotIdInvalid", "SnapshotInProgress", "SnapshotNotFound", "SnapshotScheduleNotFound", "StagingAreaFull", "StorageFailure", "TapeCartridgeNotFound", "TargetAlreadyExists", "TargetInvalid", "TargetNotFound", "UnauthorizedOperation", "VolumeAlreadyExists", "VolumeIdInvalid", "VolumeInUse", "VolumeNotFound", "VolumeNotReady"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ErrorCode::ActivationKeyExpired => "ActivationKeyExpired",
+    ErrorCode::ActivationKeyInvalid => "ActivationKeyInvalid",
+    ErrorCode::ActivationKeyNotFound => "ActivationKeyNotFound",
+    ErrorCode::AuthenticationFailure => "AuthenticationFailure",
+    ErrorCode::BandwidthThrottleScheduleNotFound => "BandwidthThrottleScheduleNotFound",
+    ErrorCode::Blocked => "Blocked",
+    ErrorCode::CannotExportSnapshot => "CannotExportSnapshot",
+    ErrorCode::ChapCredentialNotFound => "ChapCredentialNotFound",
+    ErrorCode::DiskAlreadyAllocated => "DiskAlreadyAllocated",
+    ErrorCode::DiskDoesNotExist => "DiskDoesNotExist",
+    ErrorCode::DiskSizeGreaterThanVolumeMaxSize => "DiskSizeGreaterThanVolumeMaxSize",
+    ErrorCode::DiskSizeLessThanVolumeSize => "DiskSizeLessThanVolumeSize",
+    ErrorCode::DiskSizeNotGigAligned => "DiskSizeNotGigAligned",
+    ErrorCode::DuplicateCertificateInfo => "DuplicateCertificateInfo",
+    ErrorCode::DuplicateSchedule => "DuplicateSchedule",
+    ErrorCode::EndpointNotFound => "EndpointNotFound",
+    ErrorCode::GatewayInternalError => "GatewayInternalError",
+    ErrorCode::GatewayNotConnected => "GatewayNotConnected",
+    ErrorCode::GatewayNotFound => "GatewayNotFound",
+    ErrorCode::GatewayProxyNetworkConnectionBusy => "GatewayProxyNetworkConnectionBusy",
+    ErrorCode::IamNotSupported => "IAMNotSupported",
+    ErrorCode::InitiatorInvalid => "InitiatorInvalid",
+    ErrorCode::InitiatorNotFound => "InitiatorNotFound",
+    ErrorCode::InternalError => "InternalError",
+    ErrorCode::InvalidEndpoint => "InvalidEndpoint",
+    ErrorCode::InvalidGateway => "InvalidGateway",
+    ErrorCode::InvalidParameters => "InvalidParameters",
+    ErrorCode::InvalidSchedule => "InvalidSchedule",
+    ErrorCode::JoinDomainInProgress => "JoinDomainInProgress",
+    ErrorCode::LocalStorageLimitExceeded => "LocalStorageLimitExceeded",
+    ErrorCode::LunAlreadyAllocated => "LunAlreadyAllocated ",
+    ErrorCode::LunInvalid => "LunInvalid",
+    ErrorCode::MaximumContentLengthExceeded => "MaximumContentLengthExceeded",
+    ErrorCode::MaximumTapeCartridgeCountExceeded => "MaximumTapeCartridgeCountExceeded",
+    ErrorCode::MaximumVolumeCountExceeded => "MaximumVolumeCountExceeded",
+    ErrorCode::NetworkConfigurationChanged => "NetworkConfigurationChanged",
+    ErrorCode::NoDisksAvailable => "NoDisksAvailable",
+    ErrorCode::NotImplemented => "NotImplemented",
+    ErrorCode::NotSupported => "NotSupported",
+    ErrorCode::OperationAborted => "OperationAborted",
+    ErrorCode::OutdatedGateway => "OutdatedGateway",
+    ErrorCode::ParametersNotImplemented => "ParametersNotImplemented",
+    ErrorCode::RegionInvalid => "RegionInvalid",
+    ErrorCode::RequestTimeout => "RequestTimeout",
+    ErrorCode::ServiceUnavailable => "ServiceUnavailable",
+    ErrorCode::SnapshotDeleted => "SnapshotDeleted",
+    ErrorCode::SnapshotIdInvalid => "SnapshotIdInvalid",
+    ErrorCode::SnapshotInProgress => "SnapshotInProgress",
+    ErrorCode::SnapshotNotFound => "SnapshotNotFound",
+    ErrorCode::SnapshotScheduleNotFound => "SnapshotScheduleNotFound",
+    ErrorCode::StagingAreaFull => "StagingAreaFull",
+    ErrorCode::StorageFailure => "StorageFailure",
+    ErrorCode::TapeCartridgeNotFound => "TapeCartridgeNotFound",
+    ErrorCode::TargetAlreadyExists => "TargetAlreadyExists",
+    ErrorCode::TargetInvalid => "TargetInvalid",
+    ErrorCode::TargetNotFound => "TargetNotFound",
+    ErrorCode::UnauthorizedOperation => "UnauthorizedOperation",
+    ErrorCode::VolumeAlreadyExists => "VolumeAlreadyExists",
+    ErrorCode::VolumeIdInvalid => "VolumeIdInvalid",
+    ErrorCode::VolumeInUse => "VolumeInUse",
+    ErrorCode::VolumeNotFound => "VolumeNotFound",
+    ErrorCode::VolumeNotReady => "VolumeNotReady",
+    ErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ActivationKeyExpired", "ActivationKeyInvalid", "ActivationKeyNotFound", "AuthenticationFailure", "BandwidthThrottleScheduleNotFound", "Blocked", "CannotExportSnapshot", "ChapCredentialNotFound", "DiskAlreadyAllocated", "DiskDoesNotExist", "DiskSizeGreaterThanVolumeMaxSize", "DiskSizeLessThanVolumeSize", "DiskSizeNotGigAligned", "DuplicateCertificateInfo", "DuplicateSchedule", "EndpointNotFound", "GatewayInternalError", "GatewayNotConnected", "GatewayNotFound", "GatewayProxyNetworkConnectionBusy", "IAMNotSupported", "InitiatorInvalid", "InitiatorNotFound", "InternalError", "InvalidEndpoint", "InvalidGateway", "InvalidParameters", "InvalidSchedule", "JoinDomainInProgress", "LocalStorageLimitExceeded", "LunAlreadyAllocated ", "LunInvalid", "MaximumContentLengthExceeded", "MaximumTapeCartridgeCountExceeded", "MaximumVolumeCountExceeded", "NetworkConfigurationChanged", "NoDisksAvailable", "NotImplemented", "NotSupported", "OperationAborted", "OutdatedGateway", "ParametersNotImplemented", "RegionInvalid", "RequestTimeout", "ServiceUnavailable", "SnapshotDeleted", "SnapshotIdInvalid", "SnapshotInProgress", "SnapshotNotFound", "SnapshotScheduleNotFound", "StagingAreaFull", "StorageFailure", "TapeCartridgeNotFound", "TargetAlreadyExists", "TargetInvalid", "TargetNotFound", "UnauthorizedOperation", "VolumeAlreadyExists", "VolumeIdInvalid", "VolumeInUse", "VolumeNotFound", "VolumeNotReady"]
+                }
+            }
 impl AsRef<str> for ErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /.</p>
 #[non_exhaustive]
@@ -578,15 +576,15 @@ pub enum SmbSecurityStrategy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SmbSecurityStrategy {
-    fn from(s: &str) -> Self {
-        match s {
-            "ClientSpecified" => SmbSecurityStrategy::ClientSpecified,
-            "MandatoryEncryption" => SmbSecurityStrategy::MandatoryEncryption,
-            "MandatorySigning" => SmbSecurityStrategy::MandatorySigning,
-            other => SmbSecurityStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ClientSpecified" => SmbSecurityStrategy::ClientSpecified,
+"MandatoryEncryption" => SmbSecurityStrategy::MandatoryEncryption,
+"MandatorySigning" => SmbSecurityStrategy::MandatorySigning,
+other => SmbSecurityStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SmbSecurityStrategy {
                 type Err = std::convert::Infallible;
 
@@ -595,27 +593,25 @@ impl std::str::FromStr for SmbSecurityStrategy {
                 }
             }
 impl SmbSecurityStrategy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SmbSecurityStrategy::ClientSpecified => "ClientSpecified",
-            SmbSecurityStrategy::MandatoryEncryption => "MandatoryEncryption",
-            SmbSecurityStrategy::MandatorySigning => "MandatorySigning",
-            SmbSecurityStrategy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ClientSpecified", "MandatoryEncryption", "MandatorySigning"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SmbSecurityStrategy::ClientSpecified => "ClientSpecified",
+    SmbSecurityStrategy::MandatoryEncryption => "MandatoryEncryption",
+    SmbSecurityStrategy::MandatorySigning => "MandatorySigning",
+    SmbSecurityStrategy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ClientSpecified", "MandatoryEncryption", "MandatorySigning"]
+                }
+            }
 impl AsRef<str> for SmbSecurityStrategy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
 #[non_exhaustive]
@@ -778,14 +774,14 @@ pub enum CaseSensitivity {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CaseSensitivity {
-    fn from(s: &str) -> Self {
-        match s {
-            "CaseSensitive" => CaseSensitivity::CaseSensitive,
-            "ClientSpecified" => CaseSensitivity::ClientSpecified,
-            other => CaseSensitivity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CaseSensitive" => CaseSensitivity::CaseSensitive,
+"ClientSpecified" => CaseSensitivity::ClientSpecified,
+other => CaseSensitivity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CaseSensitivity {
                 type Err = std::convert::Infallible;
 
@@ -794,26 +790,24 @@ impl std::str::FromStr for CaseSensitivity {
                 }
             }
 impl CaseSensitivity {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CaseSensitivity::CaseSensitive => "CaseSensitive",
-            CaseSensitivity::ClientSpecified => "ClientSpecified",
-            CaseSensitivity::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CaseSensitive", "ClientSpecified"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CaseSensitivity::CaseSensitive => "CaseSensitive",
+    CaseSensitivity::ClientSpecified => "ClientSpecified",
+    CaseSensitivity::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CaseSensitive", "ClientSpecified"]
+                }
+            }
 impl AsRef<str> for CaseSensitivity {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ObjectAcl`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -879,19 +873,19 @@ pub enum ObjectAcl {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectAcl {
-    fn from(s: &str) -> Self {
-        match s {
-            "authenticated-read" => ObjectAcl::AuthenticatedRead,
-            "aws-exec-read" => ObjectAcl::AwsExecRead,
-            "bucket-owner-full-control" => ObjectAcl::BucketOwnerFullControl,
-            "bucket-owner-read" => ObjectAcl::BucketOwnerRead,
-            "private" => ObjectAcl::Private,
-            "public-read" => ObjectAcl::PublicRead,
-            "public-read-write" => ObjectAcl::PublicReadWrite,
-            other => ObjectAcl::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "authenticated-read" => ObjectAcl::AuthenticatedRead,
+"aws-exec-read" => ObjectAcl::AwsExecRead,
+"bucket-owner-full-control" => ObjectAcl::BucketOwnerFullControl,
+"bucket-owner-read" => ObjectAcl::BucketOwnerRead,
+"private" => ObjectAcl::Private,
+"public-read" => ObjectAcl::PublicRead,
+"public-read-write" => ObjectAcl::PublicReadWrite,
+other => ObjectAcl::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ObjectAcl {
                 type Err = std::convert::Infallible;
 
@@ -900,31 +894,29 @@ impl std::str::FromStr for ObjectAcl {
                 }
             }
 impl ObjectAcl {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ObjectAcl::AuthenticatedRead => "authenticated-read",
-            ObjectAcl::AwsExecRead => "aws-exec-read",
-            ObjectAcl::BucketOwnerFullControl => "bucket-owner-full-control",
-            ObjectAcl::BucketOwnerRead => "bucket-owner-read",
-            ObjectAcl::Private => "private",
-            ObjectAcl::PublicRead => "public-read",
-            ObjectAcl::PublicReadWrite => "public-read-write",
-            ObjectAcl::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "authenticated-read", "aws-exec-read", "bucket-owner-full-control", "bucket-owner-read", "private", "public-read", "public-read-write"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ObjectAcl::AuthenticatedRead => "authenticated-read",
+    ObjectAcl::AwsExecRead => "aws-exec-read",
+    ObjectAcl::BucketOwnerFullControl => "bucket-owner-full-control",
+    ObjectAcl::BucketOwnerRead => "bucket-owner-read",
+    ObjectAcl::Private => "private",
+    ObjectAcl::PublicRead => "public-read",
+    ObjectAcl::PublicReadWrite => "public-read-write",
+    ObjectAcl::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["authenticated-read", "aws-exec-read", "bucket-owner-full-control", "bucket-owner-read", "private", "public-read", "public-read-write"]
+                }
+            }
 impl AsRef<str> for ObjectAcl {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
 #[non_exhaustive]
@@ -1083,15 +1075,15 @@ pub enum GatewayCapacity {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GatewayCapacity {
-    fn from(s: &str) -> Self {
-        match s {
-            "Large" => GatewayCapacity::Large,
-            "Medium" => GatewayCapacity::Medium,
-            "Small" => GatewayCapacity::Small,
-            other => GatewayCapacity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Large" => GatewayCapacity::Large,
+"Medium" => GatewayCapacity::Medium,
+"Small" => GatewayCapacity::Small,
+other => GatewayCapacity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GatewayCapacity {
                 type Err = std::convert::Infallible;
 
@@ -1100,27 +1092,25 @@ impl std::str::FromStr for GatewayCapacity {
                 }
             }
 impl GatewayCapacity {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GatewayCapacity::Large => "Large",
-            GatewayCapacity::Medium => "Medium",
-            GatewayCapacity::Small => "Small",
-            GatewayCapacity::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Large", "Medium", "Small"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GatewayCapacity::Large => "Large",
+    GatewayCapacity::Medium => "Medium",
+    GatewayCapacity::Small => "Small",
+    GatewayCapacity::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Large", "Medium", "Small"]
+                }
+            }
 impl AsRef<str> for GatewayCapacity {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes a bandwidth rate limit interval for a gateway. A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period of time on one or more days of the week, during which bandwidth rate limits are specified for uploading, downloading, or both. </p>
 #[non_exhaustive]
@@ -2112,14 +2102,14 @@ pub enum PoolStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PoolStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => PoolStatus::Active,
-            "DELETED" => PoolStatus::Deleted,
-            other => PoolStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => PoolStatus::Active,
+"DELETED" => PoolStatus::Deleted,
+other => PoolStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PoolStatus {
                 type Err = std::convert::Infallible;
 
@@ -2128,26 +2118,24 @@ impl std::str::FromStr for PoolStatus {
                 }
             }
 impl PoolStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PoolStatus::Active => "ACTIVE",
-            PoolStatus::Deleted => "DELETED",
-            PoolStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "DELETED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PoolStatus::Active => "ACTIVE",
+    PoolStatus::Deleted => "DELETED",
+    PoolStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "DELETED"]
+                }
+            }
 impl AsRef<str> for PoolStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RetentionLockType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2199,15 +2187,15 @@ pub enum RetentionLockType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RetentionLockType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLIANCE" => RetentionLockType::Compliance,
-            "GOVERNANCE" => RetentionLockType::Governance,
-            "NONE" => RetentionLockType::None,
-            other => RetentionLockType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLIANCE" => RetentionLockType::Compliance,
+"GOVERNANCE" => RetentionLockType::Governance,
+"NONE" => RetentionLockType::None,
+other => RetentionLockType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RetentionLockType {
                 type Err = std::convert::Infallible;
 
@@ -2216,27 +2204,25 @@ impl std::str::FromStr for RetentionLockType {
                 }
             }
 impl RetentionLockType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RetentionLockType::Compliance => "COMPLIANCE",
-            RetentionLockType::Governance => "GOVERNANCE",
-            RetentionLockType::None => "NONE",
-            RetentionLockType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLIANCE", "GOVERNANCE", "NONE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RetentionLockType::Compliance => "COMPLIANCE",
+    RetentionLockType::Governance => "GOVERNANCE",
+    RetentionLockType::None => "NONE",
+    RetentionLockType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLIANCE", "GOVERNANCE", "NONE"]
+                }
+            }
 impl AsRef<str> for RetentionLockType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TapeStorageClass`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2285,14 +2271,14 @@ pub enum TapeStorageClass {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TapeStorageClass {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEEP_ARCHIVE" => TapeStorageClass::DeepArchive,
-            "GLACIER" => TapeStorageClass::Glacier,
-            other => TapeStorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DEEP_ARCHIVE" => TapeStorageClass::DeepArchive,
+"GLACIER" => TapeStorageClass::Glacier,
+other => TapeStorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TapeStorageClass {
                 type Err = std::convert::Infallible;
 
@@ -2301,26 +2287,24 @@ impl std::str::FromStr for TapeStorageClass {
                 }
             }
 impl TapeStorageClass {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TapeStorageClass::DeepArchive => "DEEP_ARCHIVE",
-            TapeStorageClass::Glacier => "GLACIER",
-            TapeStorageClass::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEEP_ARCHIVE", "GLACIER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TapeStorageClass::DeepArchive => "DEEP_ARCHIVE",
+    TapeStorageClass::Glacier => "GLACIER",
+    TapeStorageClass::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEEP_ARCHIVE", "GLACIER"]
+                }
+            }
 impl AsRef<str> for TapeStorageClass {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a gateway's local disk.</p>
 #[non_exhaustive]
@@ -2781,18 +2765,18 @@ pub enum HostEnvironment {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HostEnvironment {
-    fn from(s: &str) -> Self {
-        match s {
-            "EC2" => HostEnvironment::Ec2,
-            "HYPER-V" => HostEnvironment::HyperV,
-            "KVM" => HostEnvironment::Kvm,
-            "OTHER" => HostEnvironment::Other,
-            "SNOWBALL" => HostEnvironment::Snowball,
-            "VMWARE" => HostEnvironment::Vmware,
-            other => HostEnvironment::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EC2" => HostEnvironment::Ec2,
+"HYPER-V" => HostEnvironment::HyperV,
+"KVM" => HostEnvironment::Kvm,
+"OTHER" => HostEnvironment::Other,
+"SNOWBALL" => HostEnvironment::Snowball,
+"VMWARE" => HostEnvironment::Vmware,
+other => HostEnvironment::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HostEnvironment {
                 type Err = std::convert::Infallible;
 
@@ -2801,30 +2785,28 @@ impl std::str::FromStr for HostEnvironment {
                 }
             }
 impl HostEnvironment {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HostEnvironment::Ec2 => "EC2",
-            HostEnvironment::HyperV => "HYPER-V",
-            HostEnvironment::Kvm => "KVM",
-            HostEnvironment::Other => "OTHER",
-            HostEnvironment::Snowball => "SNOWBALL",
-            HostEnvironment::Vmware => "VMWARE",
-            HostEnvironment::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EC2", "HYPER-V", "KVM", "OTHER", "SNOWBALL", "VMWARE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HostEnvironment::Ec2 => "EC2",
+    HostEnvironment::HyperV => "HYPER-V",
+    HostEnvironment::Kvm => "KVM",
+    HostEnvironment::Other => "OTHER",
+    HostEnvironment::Snowball => "SNOWBALL",
+    HostEnvironment::Vmware => "VMWARE",
+    HostEnvironment::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EC2", "HYPER-V", "KVM", "OTHER", "SNOWBALL", "VMWARE"]
+                }
+            }
 impl AsRef<str> for HostEnvironment {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Gets the summary returned by <code>ListFileSystemAssociation</code>, which is a summary of a created file system association.</p>
 #[non_exhaustive]
@@ -3110,14 +3092,14 @@ pub enum FileShareType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FileShareType {
-    fn from(s: &str) -> Self {
-        match s {
-            "NFS" => FileShareType::Nfs,
-            "SMB" => FileShareType::Smb,
-            other => FileShareType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NFS" => FileShareType::Nfs,
+"SMB" => FileShareType::Smb,
+other => FileShareType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FileShareType {
                 type Err = std::convert::Infallible;
 
@@ -3126,26 +3108,24 @@ impl std::str::FromStr for FileShareType {
                 }
             }
 impl FileShareType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FileShareType::Nfs => "NFS",
-            FileShareType::Smb => "SMB",
-            FileShareType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NFS", "SMB"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FileShareType::Nfs => "NFS",
+    FileShareType::Smb => "SMB",
+    FileShareType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NFS", "SMB"]
+                }
+            }
 impl AsRef<str> for FileShareType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
 #[non_exhaustive]
@@ -3284,19 +3264,19 @@ pub enum ActiveDirectoryStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActiveDirectoryStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => ActiveDirectoryStatus::AccessDenied,
-            "DETACHED" => ActiveDirectoryStatus::Detached,
-            "JOINED" => ActiveDirectoryStatus::Joined,
-            "JOINING" => ActiveDirectoryStatus::Joining,
-            "NETWORK_ERROR" => ActiveDirectoryStatus::NetworkError,
-            "TIMEOUT" => ActiveDirectoryStatus::Timeout,
-            "UNKNOWN_ERROR" => ActiveDirectoryStatus::UnknownError,
-            other => ActiveDirectoryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED" => ActiveDirectoryStatus::AccessDenied,
+"DETACHED" => ActiveDirectoryStatus::Detached,
+"JOINED" => ActiveDirectoryStatus::Joined,
+"JOINING" => ActiveDirectoryStatus::Joining,
+"NETWORK_ERROR" => ActiveDirectoryStatus::NetworkError,
+"TIMEOUT" => ActiveDirectoryStatus::Timeout,
+"UNKNOWN_ERROR" => ActiveDirectoryStatus::UnknownError,
+other => ActiveDirectoryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ActiveDirectoryStatus {
                 type Err = std::convert::Infallible;
 
@@ -3305,31 +3285,29 @@ impl std::str::FromStr for ActiveDirectoryStatus {
                 }
             }
 impl ActiveDirectoryStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ActiveDirectoryStatus::AccessDenied => "ACCESS_DENIED",
-            ActiveDirectoryStatus::Detached => "DETACHED",
-            ActiveDirectoryStatus::Joined => "JOINED",
-            ActiveDirectoryStatus::Joining => "JOINING",
-            ActiveDirectoryStatus::NetworkError => "NETWORK_ERROR",
-            ActiveDirectoryStatus::Timeout => "TIMEOUT",
-            ActiveDirectoryStatus::UnknownError => "UNKNOWN_ERROR",
-            ActiveDirectoryStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED", "DETACHED", "JOINED", "JOINING", "NETWORK_ERROR", "TIMEOUT", "UNKNOWN_ERROR"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ActiveDirectoryStatus::AccessDenied => "ACCESS_DENIED",
+    ActiveDirectoryStatus::Detached => "DETACHED",
+    ActiveDirectoryStatus::Joined => "JOINED",
+    ActiveDirectoryStatus::Joining => "JOINING",
+    ActiveDirectoryStatus::NetworkError => "NETWORK_ERROR",
+    ActiveDirectoryStatus::Timeout => "TIMEOUT",
+    ActiveDirectoryStatus::UnknownError => "UNKNOWN_ERROR",
+    ActiveDirectoryStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "DETACHED", "JOINED", "JOINING", "NETWORK_ERROR", "TIMEOUT", "UNKNOWN_ERROR"]
+                }
+            }
 impl AsRef<str> for ActiveDirectoryStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Represents a device object associated with a tape gateway.</p>
 #[non_exhaustive]
@@ -7016,15 +6994,15 @@ pub enum AvailabilityMonitorTestStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AvailabilityMonitorTestStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETE" => AvailabilityMonitorTestStatus::Complete,
-            "FAILED" => AvailabilityMonitorTestStatus::Failed,
-            "PENDING" => AvailabilityMonitorTestStatus::Pending,
-            other => AvailabilityMonitorTestStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETE" => AvailabilityMonitorTestStatus::Complete,
+"FAILED" => AvailabilityMonitorTestStatus::Failed,
+"PENDING" => AvailabilityMonitorTestStatus::Pending,
+other => AvailabilityMonitorTestStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AvailabilityMonitorTestStatus {
                 type Err = std::convert::Infallible;
 
@@ -7033,25 +7011,23 @@ impl std::str::FromStr for AvailabilityMonitorTestStatus {
                 }
             }
 impl AvailabilityMonitorTestStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AvailabilityMonitorTestStatus::Complete => "COMPLETE",
-            AvailabilityMonitorTestStatus::Failed => "FAILED",
-            AvailabilityMonitorTestStatus::Pending => "PENDING",
-            AvailabilityMonitorTestStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETE", "FAILED", "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AvailabilityMonitorTestStatus::Complete => "COMPLETE",
+    AvailabilityMonitorTestStatus::Failed => "FAILED",
+    AvailabilityMonitorTestStatus::Pending => "PENDING",
+    AvailabilityMonitorTestStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETE", "FAILED", "PENDING"]
+                }
+            }
 impl AsRef<str> for AvailabilityMonitorTestStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

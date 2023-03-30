@@ -535,14 +535,14 @@ pub enum SortOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASCENDING" => SortOrder::Ascending,
-            "DESCENDING" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASCENDING" => SortOrder::Ascending,
+"DESCENDING" => SortOrder::Descending,
+other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortOrder {
                 type Err = std::convert::Infallible;
 
@@ -551,26 +551,24 @@ impl std::str::FromStr for SortOrder {
                 }
             }
 impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Ascending => "ASCENDING",
-            SortOrder::Descending => "DESCENDING",
-            SortOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASCENDING", "DESCENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortOrder::Ascending => "ASCENDING",
+    SortOrder::Descending => "DESCENDING",
+    SortOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASCENDING", "DESCENDING"]
+                }
+            }
 impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A filter object, used to optionally filter results from calls to the <code>ListEntities</code> and <code>ListChangeSets</code> actions.</p>
 #[non_exhaustive]
@@ -927,14 +925,14 @@ pub enum FailureCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailureCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLIENT_ERROR" => FailureCode::ClientError,
-            "SERVER_FAULT" => FailureCode::ServerFault,
-            other => FailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLIENT_ERROR" => FailureCode::ClientError,
+"SERVER_FAULT" => FailureCode::ServerFault,
+other => FailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FailureCode {
                 type Err = std::convert::Infallible;
 
@@ -943,26 +941,24 @@ impl std::str::FromStr for FailureCode {
                 }
             }
 impl FailureCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailureCode::ClientError => "CLIENT_ERROR",
-            FailureCode::ServerFault => "SERVER_FAULT",
-            FailureCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLIENT_ERROR", "SERVER_FAULT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FailureCode::ClientError => "CLIENT_ERROR",
+    FailureCode::ServerFault => "SERVER_FAULT",
+    FailureCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLIENT_ERROR", "SERVER_FAULT"]
+                }
+            }
 impl AsRef<str> for FailureCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ChangeStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1020,17 +1016,17 @@ pub enum ChangeStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "APPLYING" => ChangeStatus::Applying,
-            "CANCELLED" => ChangeStatus::Cancelled,
-            "FAILED" => ChangeStatus::Failed,
-            "PREPARING" => ChangeStatus::Preparing,
-            "SUCCEEDED" => ChangeStatus::Succeeded,
-            other => ChangeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "APPLYING" => ChangeStatus::Applying,
+"CANCELLED" => ChangeStatus::Cancelled,
+"FAILED" => ChangeStatus::Failed,
+"PREPARING" => ChangeStatus::Preparing,
+"SUCCEEDED" => ChangeStatus::Succeeded,
+other => ChangeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ChangeStatus {
                 type Err = std::convert::Infallible;
 
@@ -1039,29 +1035,27 @@ impl std::str::FromStr for ChangeStatus {
                 }
             }
 impl ChangeStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChangeStatus::Applying => "APPLYING",
-            ChangeStatus::Cancelled => "CANCELLED",
-            ChangeStatus::Failed => "FAILED",
-            ChangeStatus::Preparing => "PREPARING",
-            ChangeStatus::Succeeded => "SUCCEEDED",
-            ChangeStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPLYING", "CANCELLED", "FAILED", "PREPARING", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChangeStatus::Applying => "APPLYING",
+    ChangeStatus::Cancelled => "CANCELLED",
+    ChangeStatus::Failed => "FAILED",
+    ChangeStatus::Preparing => "PREPARING",
+    ChangeStatus::Succeeded => "SUCCEEDED",
+    ChangeStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["APPLYING", "CANCELLED", "FAILED", "PREPARING", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for ChangeStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This object is a container for common summary information about the change. The summary doesn't contain the whole change structure.</p>
 #[non_exhaustive]

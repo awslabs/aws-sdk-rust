@@ -1696,14 +1696,14 @@ pub enum ApplyMethod {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplyMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "immediate" => ApplyMethod::Immediate,
-            "pending-reboot" => ApplyMethod::PendingReboot,
-            other => ApplyMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "immediate" => ApplyMethod::Immediate,
+"pending-reboot" => ApplyMethod::PendingReboot,
+other => ApplyMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ApplyMethod {
                 type Err = std::convert::Infallible;
 
@@ -1712,26 +1712,24 @@ impl std::str::FromStr for ApplyMethod {
                 }
             }
 impl ApplyMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ApplyMethod::Immediate => "immediate",
-            ApplyMethod::PendingReboot => "pending-reboot",
-            ApplyMethod::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "immediate", "pending-reboot"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ApplyMethod::Immediate => "immediate",
+    ApplyMethod::PendingReboot => "pending-reboot",
+    ApplyMethod::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["immediate", "pending-reboot"]
+                }
+            }
 impl AsRef<str> for ApplyMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
 #[non_exhaustive]
@@ -6113,18 +6111,18 @@ pub enum SourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "db-cluster" => SourceType::DbCluster,
-            "db-cluster-snapshot" => SourceType::DbClusterSnapshot,
-            "db-instance" => SourceType::DbInstance,
-            "db-parameter-group" => SourceType::DbParameterGroup,
-            "db-security-group" => SourceType::DbSecurityGroup,
-            "db-snapshot" => SourceType::DbSnapshot,
-            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "db-cluster" => SourceType::DbCluster,
+"db-cluster-snapshot" => SourceType::DbClusterSnapshot,
+"db-instance" => SourceType::DbInstance,
+"db-parameter-group" => SourceType::DbParameterGroup,
+"db-security-group" => SourceType::DbSecurityGroup,
+"db-snapshot" => SourceType::DbSnapshot,
+other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SourceType {
                 type Err = std::convert::Infallible;
 
@@ -6133,30 +6131,28 @@ impl std::str::FromStr for SourceType {
                 }
             }
 impl SourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SourceType::DbCluster => "db-cluster",
-            SourceType::DbClusterSnapshot => "db-cluster-snapshot",
-            SourceType::DbInstance => "db-instance",
-            SourceType::DbParameterGroup => "db-parameter-group",
-            SourceType::DbSecurityGroup => "db-security-group",
-            SourceType::DbSnapshot => "db-snapshot",
-            SourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "db-cluster", "db-cluster-snapshot", "db-instance", "db-parameter-group", "db-security-group", "db-snapshot"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SourceType::DbCluster => "db-cluster",
+    SourceType::DbClusterSnapshot => "db-cluster-snapshot",
+    SourceType::DbInstance => "db-instance",
+    SourceType::DbParameterGroup => "db-parameter-group",
+    SourceType::DbSecurityGroup => "db-security-group",
+    SourceType::DbSnapshot => "db-snapshot",
+    SourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["db-cluster", "db-cluster-snapshot", "db-instance", "db-parameter-group", "db-security-group", "db-snapshot"]
+                }
+            }
 impl AsRef<str> for SourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains the results of a successful invocation of the <code>DescribeEventCategories</code> action.</p>
 #[non_exhaustive]

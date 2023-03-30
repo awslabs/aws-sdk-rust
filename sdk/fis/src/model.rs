@@ -2468,20 +2468,20 @@ pub enum ExperimentActionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExperimentActionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "cancelled" => ExperimentActionStatus::Cancelled,
-            "completed" => ExperimentActionStatus::Completed,
-            "failed" => ExperimentActionStatus::Failed,
-            "initiating" => ExperimentActionStatus::Initiating,
-            "pending" => ExperimentActionStatus::Pending,
-            "running" => ExperimentActionStatus::Running,
-            "stopped" => ExperimentActionStatus::Stopped,
-            "stopping" => ExperimentActionStatus::Stopping,
-            other => ExperimentActionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "cancelled" => ExperimentActionStatus::Cancelled,
+"completed" => ExperimentActionStatus::Completed,
+"failed" => ExperimentActionStatus::Failed,
+"initiating" => ExperimentActionStatus::Initiating,
+"pending" => ExperimentActionStatus::Pending,
+"running" => ExperimentActionStatus::Running,
+"stopped" => ExperimentActionStatus::Stopped,
+"stopping" => ExperimentActionStatus::Stopping,
+other => ExperimentActionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExperimentActionStatus {
                 type Err = std::convert::Infallible;
 
@@ -2490,32 +2490,30 @@ impl std::str::FromStr for ExperimentActionStatus {
                 }
             }
 impl ExperimentActionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExperimentActionStatus::Cancelled => "cancelled",
-            ExperimentActionStatus::Completed => "completed",
-            ExperimentActionStatus::Failed => "failed",
-            ExperimentActionStatus::Initiating => "initiating",
-            ExperimentActionStatus::Pending => "pending",
-            ExperimentActionStatus::Running => "running",
-            ExperimentActionStatus::Stopped => "stopped",
-            ExperimentActionStatus::Stopping => "stopping",
-            ExperimentActionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "cancelled", "completed", "failed", "initiating", "pending", "running", "stopped", "stopping"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExperimentActionStatus::Cancelled => "cancelled",
+    ExperimentActionStatus::Completed => "completed",
+    ExperimentActionStatus::Failed => "failed",
+    ExperimentActionStatus::Initiating => "initiating",
+    ExperimentActionStatus::Pending => "pending",
+    ExperimentActionStatus::Running => "running",
+    ExperimentActionStatus::Stopped => "stopped",
+    ExperimentActionStatus::Stopping => "stopping",
+    ExperimentActionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["cancelled", "completed", "failed", "initiating", "pending", "running", "stopped", "stopping"]
+                }
+            }
 impl AsRef<str> for ExperimentActionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a target for an experiment.</p>
 #[non_exhaustive]
@@ -2892,19 +2890,19 @@ pub enum ExperimentStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExperimentStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "completed" => ExperimentStatus::Completed,
-            "failed" => ExperimentStatus::Failed,
-            "initiating" => ExperimentStatus::Initiating,
-            "pending" => ExperimentStatus::Pending,
-            "running" => ExperimentStatus::Running,
-            "stopped" => ExperimentStatus::Stopped,
-            "stopping" => ExperimentStatus::Stopping,
-            other => ExperimentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "completed" => ExperimentStatus::Completed,
+"failed" => ExperimentStatus::Failed,
+"initiating" => ExperimentStatus::Initiating,
+"pending" => ExperimentStatus::Pending,
+"running" => ExperimentStatus::Running,
+"stopped" => ExperimentStatus::Stopped,
+"stopping" => ExperimentStatus::Stopping,
+other => ExperimentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExperimentStatus {
                 type Err = std::convert::Infallible;
 
@@ -2913,31 +2911,29 @@ impl std::str::FromStr for ExperimentStatus {
                 }
             }
 impl ExperimentStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExperimentStatus::Completed => "completed",
-            ExperimentStatus::Failed => "failed",
-            ExperimentStatus::Initiating => "initiating",
-            ExperimentStatus::Pending => "pending",
-            ExperimentStatus::Running => "running",
-            ExperimentStatus::Stopped => "stopped",
-            ExperimentStatus::Stopping => "stopping",
-            ExperimentStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "completed", "failed", "initiating", "pending", "running", "stopped", "stopping"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExperimentStatus::Completed => "completed",
+    ExperimentStatus::Failed => "failed",
+    ExperimentStatus::Initiating => "initiating",
+    ExperimentStatus::Pending => "pending",
+    ExperimentStatus::Running => "running",
+    ExperimentStatus::Stopped => "stopped",
+    ExperimentStatus::Stopping => "stopping",
+    ExperimentStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["completed", "failed", "initiating", "pending", "running", "stopped", "stopping"]
+                }
+            }
 impl AsRef<str> for ExperimentStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a resource type.</p>
 #[non_exhaustive]

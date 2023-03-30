@@ -59,18 +59,18 @@ pub enum FlowStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FlowStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => FlowStatus::Active,
-            "Deleted" => FlowStatus::Deleted,
-            "Deprecated" => FlowStatus::Deprecated,
-            "Draft" => FlowStatus::Draft,
-            "Errored" => FlowStatus::Errored,
-            "Suspended" => FlowStatus::Suspended,
-            other => FlowStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => FlowStatus::Active,
+"Deleted" => FlowStatus::Deleted,
+"Deprecated" => FlowStatus::Deprecated,
+"Draft" => FlowStatus::Draft,
+"Errored" => FlowStatus::Errored,
+"Suspended" => FlowStatus::Suspended,
+other => FlowStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FlowStatus {
                 type Err = std::convert::Infallible;
 
@@ -79,30 +79,28 @@ impl std::str::FromStr for FlowStatus {
                 }
             }
 impl FlowStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FlowStatus::Active => "Active",
-            FlowStatus::Deleted => "Deleted",
-            FlowStatus::Deprecated => "Deprecated",
-            FlowStatus::Draft => "Draft",
-            FlowStatus::Errored => "Errored",
-            FlowStatus::Suspended => "Suspended",
-            FlowStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "Deleted", "Deprecated", "Draft", "Errored", "Suspended"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FlowStatus::Active => "Active",
+    FlowStatus::Deleted => "Deleted",
+    FlowStatus::Deprecated => "Deprecated",
+    FlowStatus::Draft => "Draft",
+    FlowStatus::Errored => "Errored",
+    FlowStatus::Suspended => "Suspended",
+    FlowStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Deleted", "Deprecated", "Draft", "Errored", "Suspended"]
+                }
+            }
 impl AsRef<str> for FlowStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data. When Amazon AppFlow catalogs your data, it stores metadata in a data catalog.</p>
 #[non_exhaustive]
@@ -486,29 +484,29 @@ pub enum OperatorPropertiesKeys {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperatorPropertiesKeys {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONCAT_FORMAT" => OperatorPropertiesKeys::ConcatFormat,
-            "DATA_TYPE" => OperatorPropertiesKeys::DataType,
-            "DESTINATION_DATA_TYPE" => OperatorPropertiesKeys::DestinationDataType,
-            "EXCLUDE_SOURCE_FIELDS_LIST" => OperatorPropertiesKeys::ExcludeSourceFieldsList,
-            "INCLUDE_NEW_FIELDS" => OperatorPropertiesKeys::IncludeNewFields,
-            "LOWER_BOUND" => OperatorPropertiesKeys::LowerBound,
-            "MASK_LENGTH" => OperatorPropertiesKeys::MaskLength,
-            "MASK_VALUE" => OperatorPropertiesKeys::MaskValue,
-            "MATH_OPERATION_FIELDS_ORDER" => OperatorPropertiesKeys::MathOperationFieldsOrder,
-            "ORDERED_PARTITION_KEYS_LIST" => OperatorPropertiesKeys::OrderedPartitionKeysList,
-            "SOURCE_DATA_TYPE" => OperatorPropertiesKeys::SourceDataType,
-            "SUBFIELD_CATEGORY_MAP" => OperatorPropertiesKeys::SubfieldCategoryMap,
-            "TRUNCATE_LENGTH" => OperatorPropertiesKeys::TruncateLength,
-            "UPPER_BOUND" => OperatorPropertiesKeys::UpperBound,
-            "VALIDATION_ACTION" => OperatorPropertiesKeys::ValidationAction,
-            "VALUE" => OperatorPropertiesKeys::Value,
-            "VALUES" => OperatorPropertiesKeys::Values,
-            other => OperatorPropertiesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONCAT_FORMAT" => OperatorPropertiesKeys::ConcatFormat,
+"DATA_TYPE" => OperatorPropertiesKeys::DataType,
+"DESTINATION_DATA_TYPE" => OperatorPropertiesKeys::DestinationDataType,
+"EXCLUDE_SOURCE_FIELDS_LIST" => OperatorPropertiesKeys::ExcludeSourceFieldsList,
+"INCLUDE_NEW_FIELDS" => OperatorPropertiesKeys::IncludeNewFields,
+"LOWER_BOUND" => OperatorPropertiesKeys::LowerBound,
+"MASK_LENGTH" => OperatorPropertiesKeys::MaskLength,
+"MASK_VALUE" => OperatorPropertiesKeys::MaskValue,
+"MATH_OPERATION_FIELDS_ORDER" => OperatorPropertiesKeys::MathOperationFieldsOrder,
+"ORDERED_PARTITION_KEYS_LIST" => OperatorPropertiesKeys::OrderedPartitionKeysList,
+"SOURCE_DATA_TYPE" => OperatorPropertiesKeys::SourceDataType,
+"SUBFIELD_CATEGORY_MAP" => OperatorPropertiesKeys::SubfieldCategoryMap,
+"TRUNCATE_LENGTH" => OperatorPropertiesKeys::TruncateLength,
+"UPPER_BOUND" => OperatorPropertiesKeys::UpperBound,
+"VALIDATION_ACTION" => OperatorPropertiesKeys::ValidationAction,
+"VALUE" => OperatorPropertiesKeys::Value,
+"VALUES" => OperatorPropertiesKeys::Values,
+other => OperatorPropertiesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OperatorPropertiesKeys {
                 type Err = std::convert::Infallible;
 
@@ -517,41 +515,39 @@ impl std::str::FromStr for OperatorPropertiesKeys {
                 }
             }
 impl OperatorPropertiesKeys {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OperatorPropertiesKeys::ConcatFormat => "CONCAT_FORMAT",
-            OperatorPropertiesKeys::DataType => "DATA_TYPE",
-            OperatorPropertiesKeys::DestinationDataType => "DESTINATION_DATA_TYPE",
-            OperatorPropertiesKeys::ExcludeSourceFieldsList => "EXCLUDE_SOURCE_FIELDS_LIST",
-            OperatorPropertiesKeys::IncludeNewFields => "INCLUDE_NEW_FIELDS",
-            OperatorPropertiesKeys::LowerBound => "LOWER_BOUND",
-            OperatorPropertiesKeys::MaskLength => "MASK_LENGTH",
-            OperatorPropertiesKeys::MaskValue => "MASK_VALUE",
-            OperatorPropertiesKeys::MathOperationFieldsOrder => "MATH_OPERATION_FIELDS_ORDER",
-            OperatorPropertiesKeys::OrderedPartitionKeysList => "ORDERED_PARTITION_KEYS_LIST",
-            OperatorPropertiesKeys::SourceDataType => "SOURCE_DATA_TYPE",
-            OperatorPropertiesKeys::SubfieldCategoryMap => "SUBFIELD_CATEGORY_MAP",
-            OperatorPropertiesKeys::TruncateLength => "TRUNCATE_LENGTH",
-            OperatorPropertiesKeys::UpperBound => "UPPER_BOUND",
-            OperatorPropertiesKeys::ValidationAction => "VALIDATION_ACTION",
-            OperatorPropertiesKeys::Value => "VALUE",
-            OperatorPropertiesKeys::Values => "VALUES",
-            OperatorPropertiesKeys::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONCAT_FORMAT", "DATA_TYPE", "DESTINATION_DATA_TYPE", "EXCLUDE_SOURCE_FIELDS_LIST", "INCLUDE_NEW_FIELDS", "LOWER_BOUND", "MASK_LENGTH", "MASK_VALUE", "MATH_OPERATION_FIELDS_ORDER", "ORDERED_PARTITION_KEYS_LIST", "SOURCE_DATA_TYPE", "SUBFIELD_CATEGORY_MAP", "TRUNCATE_LENGTH", "UPPER_BOUND", "VALIDATION_ACTION", "VALUE", "VALUES"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OperatorPropertiesKeys::ConcatFormat => "CONCAT_FORMAT",
+    OperatorPropertiesKeys::DataType => "DATA_TYPE",
+    OperatorPropertiesKeys::DestinationDataType => "DESTINATION_DATA_TYPE",
+    OperatorPropertiesKeys::ExcludeSourceFieldsList => "EXCLUDE_SOURCE_FIELDS_LIST",
+    OperatorPropertiesKeys::IncludeNewFields => "INCLUDE_NEW_FIELDS",
+    OperatorPropertiesKeys::LowerBound => "LOWER_BOUND",
+    OperatorPropertiesKeys::MaskLength => "MASK_LENGTH",
+    OperatorPropertiesKeys::MaskValue => "MASK_VALUE",
+    OperatorPropertiesKeys::MathOperationFieldsOrder => "MATH_OPERATION_FIELDS_ORDER",
+    OperatorPropertiesKeys::OrderedPartitionKeysList => "ORDERED_PARTITION_KEYS_LIST",
+    OperatorPropertiesKeys::SourceDataType => "SOURCE_DATA_TYPE",
+    OperatorPropertiesKeys::SubfieldCategoryMap => "SUBFIELD_CATEGORY_MAP",
+    OperatorPropertiesKeys::TruncateLength => "TRUNCATE_LENGTH",
+    OperatorPropertiesKeys::UpperBound => "UPPER_BOUND",
+    OperatorPropertiesKeys::ValidationAction => "VALIDATION_ACTION",
+    OperatorPropertiesKeys::Value => "VALUE",
+    OperatorPropertiesKeys::Values => "VALUES",
+    OperatorPropertiesKeys::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONCAT_FORMAT", "DATA_TYPE", "DESTINATION_DATA_TYPE", "EXCLUDE_SOURCE_FIELDS_LIST", "INCLUDE_NEW_FIELDS", "LOWER_BOUND", "MASK_LENGTH", "MASK_VALUE", "MATH_OPERATION_FIELDS_ORDER", "ORDERED_PARTITION_KEYS_LIST", "SOURCE_DATA_TYPE", "SUBFIELD_CATEGORY_MAP", "TRUNCATE_LENGTH", "UPPER_BOUND", "VALIDATION_ACTION", "VALUE", "VALUES"]
+                }
+            }
 impl AsRef<str> for OperatorPropertiesKeys {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TaskType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -624,22 +620,22 @@ pub enum TaskType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TaskType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Arithmetic" => TaskType::Arithmetic,
-            "Filter" => TaskType::Filter,
-            "Map" => TaskType::Map,
-            "Map_all" => TaskType::MapAll,
-            "Mask" => TaskType::Mask,
-            "Merge" => TaskType::Merge,
-            "Partition" => TaskType::Partition,
-            "Passthrough" => TaskType::Passthrough,
-            "Truncate" => TaskType::Truncate,
-            "Validate" => TaskType::Validate,
-            other => TaskType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Arithmetic" => TaskType::Arithmetic,
+"Filter" => TaskType::Filter,
+"Map" => TaskType::Map,
+"Map_all" => TaskType::MapAll,
+"Mask" => TaskType::Mask,
+"Merge" => TaskType::Merge,
+"Partition" => TaskType::Partition,
+"Passthrough" => TaskType::Passthrough,
+"Truncate" => TaskType::Truncate,
+"Validate" => TaskType::Validate,
+other => TaskType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TaskType {
                 type Err = std::convert::Infallible;
 
@@ -648,34 +644,32 @@ impl std::str::FromStr for TaskType {
                 }
             }
 impl TaskType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TaskType::Arithmetic => "Arithmetic",
-            TaskType::Filter => "Filter",
-            TaskType::Map => "Map",
-            TaskType::MapAll => "Map_all",
-            TaskType::Mask => "Mask",
-            TaskType::Merge => "Merge",
-            TaskType::Partition => "Partition",
-            TaskType::Passthrough => "Passthrough",
-            TaskType::Truncate => "Truncate",
-            TaskType::Validate => "Validate",
-            TaskType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Arithmetic", "Filter", "Map", "Map_all", "Mask", "Merge", "Partition", "Passthrough", "Truncate", "Validate"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TaskType::Arithmetic => "Arithmetic",
+    TaskType::Filter => "Filter",
+    TaskType::Map => "Map",
+    TaskType::MapAll => "Map_all",
+    TaskType::Mask => "Mask",
+    TaskType::Merge => "Merge",
+    TaskType::Partition => "Partition",
+    TaskType::Passthrough => "Passthrough",
+    TaskType::Truncate => "Truncate",
+    TaskType::Validate => "Validate",
+    TaskType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Arithmetic", "Filter", "Map", "Map_all", "Mask", "Merge", "Partition", "Passthrough", "Truncate", "Validate"]
+                }
+            }
 impl AsRef<str> for TaskType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The operation to be performed on the provided source fields. </p>
 #[non_exhaustive]
@@ -1114,26 +1108,26 @@ pub enum PardotConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PardotConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => PardotConnectorOperator::Addition,
-            "DIVISION" => PardotConnectorOperator::Division,
-            "EQUAL_TO" => PardotConnectorOperator::EqualTo,
-            "MASK_ALL" => PardotConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => PardotConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => PardotConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => PardotConnectorOperator::Multiplication,
-            "NO_OP" => PardotConnectorOperator::NoOp,
-            "PROJECTION" => PardotConnectorOperator::Projection,
-            "SUBTRACTION" => PardotConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => PardotConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => PardotConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => PardotConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => PardotConnectorOperator::ValidateNumeric,
-            other => PardotConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => PardotConnectorOperator::Addition,
+"DIVISION" => PardotConnectorOperator::Division,
+"EQUAL_TO" => PardotConnectorOperator::EqualTo,
+"MASK_ALL" => PardotConnectorOperator::MaskAll,
+"MASK_FIRST_N" => PardotConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => PardotConnectorOperator::MaskLastN,
+"MULTIPLICATION" => PardotConnectorOperator::Multiplication,
+"NO_OP" => PardotConnectorOperator::NoOp,
+"PROJECTION" => PardotConnectorOperator::Projection,
+"SUBTRACTION" => PardotConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => PardotConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => PardotConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => PardotConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => PardotConnectorOperator::ValidateNumeric,
+other => PardotConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PardotConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -1142,38 +1136,36 @@ impl std::str::FromStr for PardotConnectorOperator {
                 }
             }
 impl PardotConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PardotConnectorOperator::Addition => "ADDITION",
-            PardotConnectorOperator::Division => "DIVISION",
-            PardotConnectorOperator::EqualTo => "EQUAL_TO",
-            PardotConnectorOperator::MaskAll => "MASK_ALL",
-            PardotConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            PardotConnectorOperator::MaskLastN => "MASK_LAST_N",
-            PardotConnectorOperator::Multiplication => "MULTIPLICATION",
-            PardotConnectorOperator::NoOp => "NO_OP",
-            PardotConnectorOperator::Projection => "PROJECTION",
-            PardotConnectorOperator::Subtraction => "SUBTRACTION",
-            PardotConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            PardotConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            PardotConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            PardotConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            PardotConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PardotConnectorOperator::Addition => "ADDITION",
+    PardotConnectorOperator::Division => "DIVISION",
+    PardotConnectorOperator::EqualTo => "EQUAL_TO",
+    PardotConnectorOperator::MaskAll => "MASK_ALL",
+    PardotConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    PardotConnectorOperator::MaskLastN => "MASK_LAST_N",
+    PardotConnectorOperator::Multiplication => "MULTIPLICATION",
+    PardotConnectorOperator::NoOp => "NO_OP",
+    PardotConnectorOperator::Projection => "PROJECTION",
+    PardotConnectorOperator::Subtraction => "SUBTRACTION",
+    PardotConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    PardotConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    PardotConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    PardotConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    PardotConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for PardotConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Operator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1279,33 +1271,33 @@ pub enum Operator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Operator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => Operator::Addition,
-            "BETWEEN" => Operator::Between,
-            "CONTAINS" => Operator::Contains,
-            "DIVISION" => Operator::Division,
-            "EQUAL_TO" => Operator::EqualTo,
-            "GREATER_THAN" => Operator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => Operator::GreaterThanOrEqualTo,
-            "LESS_THAN" => Operator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => Operator::LessThanOrEqualTo,
-            "MASK_ALL" => Operator::MaskAll,
-            "MASK_FIRST_N" => Operator::MaskFirstN,
-            "MASK_LAST_N" => Operator::MaskLastN,
-            "MULTIPLICATION" => Operator::Multiplication,
-            "NOT_EQUAL_TO" => Operator::NotEqualTo,
-            "NO_OP" => Operator::NoOp,
-            "PROJECTION" => Operator::Projection,
-            "SUBTRACTION" => Operator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => Operator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => Operator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => Operator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => Operator::ValidateNumeric,
-            other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => Operator::Addition,
+"BETWEEN" => Operator::Between,
+"CONTAINS" => Operator::Contains,
+"DIVISION" => Operator::Division,
+"EQUAL_TO" => Operator::EqualTo,
+"GREATER_THAN" => Operator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => Operator::GreaterThanOrEqualTo,
+"LESS_THAN" => Operator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => Operator::LessThanOrEqualTo,
+"MASK_ALL" => Operator::MaskAll,
+"MASK_FIRST_N" => Operator::MaskFirstN,
+"MASK_LAST_N" => Operator::MaskLastN,
+"MULTIPLICATION" => Operator::Multiplication,
+"NOT_EQUAL_TO" => Operator::NotEqualTo,
+"NO_OP" => Operator::NoOp,
+"PROJECTION" => Operator::Projection,
+"SUBTRACTION" => Operator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => Operator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => Operator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => Operator::ValidateNonZero,
+"VALIDATE_NUMERIC" => Operator::ValidateNumeric,
+other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Operator {
                 type Err = std::convert::Infallible;
 
@@ -1314,45 +1306,43 @@ impl std::str::FromStr for Operator {
                 }
             }
 impl Operator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Operator::Addition => "ADDITION",
-            Operator::Between => "BETWEEN",
-            Operator::Contains => "CONTAINS",
-            Operator::Division => "DIVISION",
-            Operator::EqualTo => "EQUAL_TO",
-            Operator::GreaterThan => "GREATER_THAN",
-            Operator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            Operator::LessThan => "LESS_THAN",
-            Operator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            Operator::MaskAll => "MASK_ALL",
-            Operator::MaskFirstN => "MASK_FIRST_N",
-            Operator::MaskLastN => "MASK_LAST_N",
-            Operator::Multiplication => "MULTIPLICATION",
-            Operator::NotEqualTo => "NOT_EQUAL_TO",
-            Operator::NoOp => "NO_OP",
-            Operator::Projection => "PROJECTION",
-            Operator::Subtraction => "SUBTRACTION",
-            Operator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            Operator::ValidateNonNull => "VALIDATE_NON_NULL",
-            Operator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            Operator::ValidateNumeric => "VALIDATE_NUMERIC",
-            Operator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Operator::Addition => "ADDITION",
+    Operator::Between => "BETWEEN",
+    Operator::Contains => "CONTAINS",
+    Operator::Division => "DIVISION",
+    Operator::EqualTo => "EQUAL_TO",
+    Operator::GreaterThan => "GREATER_THAN",
+    Operator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    Operator::LessThan => "LESS_THAN",
+    Operator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    Operator::MaskAll => "MASK_ALL",
+    Operator::MaskFirstN => "MASK_FIRST_N",
+    Operator::MaskLastN => "MASK_LAST_N",
+    Operator::Multiplication => "MULTIPLICATION",
+    Operator::NotEqualTo => "NOT_EQUAL_TO",
+    Operator::NoOp => "NO_OP",
+    Operator::Projection => "PROJECTION",
+    Operator::Subtraction => "SUBTRACTION",
+    Operator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    Operator::ValidateNonNull => "VALIDATE_NON_NULL",
+    Operator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    Operator::ValidateNumeric => "VALIDATE_NUMERIC",
+    Operator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for Operator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SapoDataConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1458,33 +1448,33 @@ pub enum SapoDataConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SapoDataConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => SapoDataConnectorOperator::Addition,
-            "BETWEEN" => SapoDataConnectorOperator::Between,
-            "CONTAINS" => SapoDataConnectorOperator::Contains,
-            "DIVISION" => SapoDataConnectorOperator::Division,
-            "EQUAL_TO" => SapoDataConnectorOperator::EqualTo,
-            "GREATER_THAN" => SapoDataConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => SapoDataConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => SapoDataConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => SapoDataConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => SapoDataConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => SapoDataConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => SapoDataConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => SapoDataConnectorOperator::Multiplication,
-            "NOT_EQUAL_TO" => SapoDataConnectorOperator::NotEqualTo,
-            "NO_OP" => SapoDataConnectorOperator::NoOp,
-            "PROJECTION" => SapoDataConnectorOperator::Projection,
-            "SUBTRACTION" => SapoDataConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => SapoDataConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => SapoDataConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => SapoDataConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => SapoDataConnectorOperator::ValidateNumeric,
-            other => SapoDataConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => SapoDataConnectorOperator::Addition,
+"BETWEEN" => SapoDataConnectorOperator::Between,
+"CONTAINS" => SapoDataConnectorOperator::Contains,
+"DIVISION" => SapoDataConnectorOperator::Division,
+"EQUAL_TO" => SapoDataConnectorOperator::EqualTo,
+"GREATER_THAN" => SapoDataConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => SapoDataConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => SapoDataConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => SapoDataConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => SapoDataConnectorOperator::MaskAll,
+"MASK_FIRST_N" => SapoDataConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => SapoDataConnectorOperator::MaskLastN,
+"MULTIPLICATION" => SapoDataConnectorOperator::Multiplication,
+"NOT_EQUAL_TO" => SapoDataConnectorOperator::NotEqualTo,
+"NO_OP" => SapoDataConnectorOperator::NoOp,
+"PROJECTION" => SapoDataConnectorOperator::Projection,
+"SUBTRACTION" => SapoDataConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => SapoDataConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => SapoDataConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => SapoDataConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => SapoDataConnectorOperator::ValidateNumeric,
+other => SapoDataConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SapoDataConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -1493,45 +1483,43 @@ impl std::str::FromStr for SapoDataConnectorOperator {
                 }
             }
 impl SapoDataConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SapoDataConnectorOperator::Addition => "ADDITION",
-            SapoDataConnectorOperator::Between => "BETWEEN",
-            SapoDataConnectorOperator::Contains => "CONTAINS",
-            SapoDataConnectorOperator::Division => "DIVISION",
-            SapoDataConnectorOperator::EqualTo => "EQUAL_TO",
-            SapoDataConnectorOperator::GreaterThan => "GREATER_THAN",
-            SapoDataConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            SapoDataConnectorOperator::LessThan => "LESS_THAN",
-            SapoDataConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            SapoDataConnectorOperator::MaskAll => "MASK_ALL",
-            SapoDataConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            SapoDataConnectorOperator::MaskLastN => "MASK_LAST_N",
-            SapoDataConnectorOperator::Multiplication => "MULTIPLICATION",
-            SapoDataConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
-            SapoDataConnectorOperator::NoOp => "NO_OP",
-            SapoDataConnectorOperator::Projection => "PROJECTION",
-            SapoDataConnectorOperator::Subtraction => "SUBTRACTION",
-            SapoDataConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            SapoDataConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            SapoDataConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            SapoDataConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            SapoDataConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SapoDataConnectorOperator::Addition => "ADDITION",
+    SapoDataConnectorOperator::Between => "BETWEEN",
+    SapoDataConnectorOperator::Contains => "CONTAINS",
+    SapoDataConnectorOperator::Division => "DIVISION",
+    SapoDataConnectorOperator::EqualTo => "EQUAL_TO",
+    SapoDataConnectorOperator::GreaterThan => "GREATER_THAN",
+    SapoDataConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    SapoDataConnectorOperator::LessThan => "LESS_THAN",
+    SapoDataConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    SapoDataConnectorOperator::MaskAll => "MASK_ALL",
+    SapoDataConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    SapoDataConnectorOperator::MaskLastN => "MASK_LAST_N",
+    SapoDataConnectorOperator::Multiplication => "MULTIPLICATION",
+    SapoDataConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
+    SapoDataConnectorOperator::NoOp => "NO_OP",
+    SapoDataConnectorOperator::Projection => "PROJECTION",
+    SapoDataConnectorOperator::Subtraction => "SUBTRACTION",
+    SapoDataConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    SapoDataConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    SapoDataConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    SapoDataConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    SapoDataConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for SapoDataConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ZendeskConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1616,26 +1604,26 @@ pub enum ZendeskConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ZendeskConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => ZendeskConnectorOperator::Addition,
-            "DIVISION" => ZendeskConnectorOperator::Division,
-            "GREATER_THAN" => ZendeskConnectorOperator::GreaterThan,
-            "MASK_ALL" => ZendeskConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => ZendeskConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => ZendeskConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => ZendeskConnectorOperator::Multiplication,
-            "NO_OP" => ZendeskConnectorOperator::NoOp,
-            "PROJECTION" => ZendeskConnectorOperator::Projection,
-            "SUBTRACTION" => ZendeskConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => ZendeskConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => ZendeskConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => ZendeskConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => ZendeskConnectorOperator::ValidateNumeric,
-            other => ZendeskConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => ZendeskConnectorOperator::Addition,
+"DIVISION" => ZendeskConnectorOperator::Division,
+"GREATER_THAN" => ZendeskConnectorOperator::GreaterThan,
+"MASK_ALL" => ZendeskConnectorOperator::MaskAll,
+"MASK_FIRST_N" => ZendeskConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => ZendeskConnectorOperator::MaskLastN,
+"MULTIPLICATION" => ZendeskConnectorOperator::Multiplication,
+"NO_OP" => ZendeskConnectorOperator::NoOp,
+"PROJECTION" => ZendeskConnectorOperator::Projection,
+"SUBTRACTION" => ZendeskConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => ZendeskConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => ZendeskConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => ZendeskConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => ZendeskConnectorOperator::ValidateNumeric,
+other => ZendeskConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ZendeskConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -1644,38 +1632,36 @@ impl std::str::FromStr for ZendeskConnectorOperator {
                 }
             }
 impl ZendeskConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ZendeskConnectorOperator::Addition => "ADDITION",
-            ZendeskConnectorOperator::Division => "DIVISION",
-            ZendeskConnectorOperator::GreaterThan => "GREATER_THAN",
-            ZendeskConnectorOperator::MaskAll => "MASK_ALL",
-            ZendeskConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            ZendeskConnectorOperator::MaskLastN => "MASK_LAST_N",
-            ZendeskConnectorOperator::Multiplication => "MULTIPLICATION",
-            ZendeskConnectorOperator::NoOp => "NO_OP",
-            ZendeskConnectorOperator::Projection => "PROJECTION",
-            ZendeskConnectorOperator::Subtraction => "SUBTRACTION",
-            ZendeskConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            ZendeskConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            ZendeskConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            ZendeskConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            ZendeskConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "DIVISION", "GREATER_THAN", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ZendeskConnectorOperator::Addition => "ADDITION",
+    ZendeskConnectorOperator::Division => "DIVISION",
+    ZendeskConnectorOperator::GreaterThan => "GREATER_THAN",
+    ZendeskConnectorOperator::MaskAll => "MASK_ALL",
+    ZendeskConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    ZendeskConnectorOperator::MaskLastN => "MASK_LAST_N",
+    ZendeskConnectorOperator::Multiplication => "MULTIPLICATION",
+    ZendeskConnectorOperator::NoOp => "NO_OP",
+    ZendeskConnectorOperator::Projection => "PROJECTION",
+    ZendeskConnectorOperator::Subtraction => "SUBTRACTION",
+    ZendeskConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    ZendeskConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    ZendeskConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    ZendeskConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    ZendeskConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "DIVISION", "GREATER_THAN", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for ZendeskConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `VeevaConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1781,33 +1767,33 @@ pub enum VeevaConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VeevaConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => VeevaConnectorOperator::Addition,
-            "BETWEEN" => VeevaConnectorOperator::Between,
-            "CONTAINS" => VeevaConnectorOperator::Contains,
-            "DIVISION" => VeevaConnectorOperator::Division,
-            "EQUAL_TO" => VeevaConnectorOperator::EqualTo,
-            "GREATER_THAN" => VeevaConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => VeevaConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => VeevaConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => VeevaConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => VeevaConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => VeevaConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => VeevaConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => VeevaConnectorOperator::Multiplication,
-            "NOT_EQUAL_TO" => VeevaConnectorOperator::NotEqualTo,
-            "NO_OP" => VeevaConnectorOperator::NoOp,
-            "PROJECTION" => VeevaConnectorOperator::Projection,
-            "SUBTRACTION" => VeevaConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => VeevaConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => VeevaConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => VeevaConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => VeevaConnectorOperator::ValidateNumeric,
-            other => VeevaConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => VeevaConnectorOperator::Addition,
+"BETWEEN" => VeevaConnectorOperator::Between,
+"CONTAINS" => VeevaConnectorOperator::Contains,
+"DIVISION" => VeevaConnectorOperator::Division,
+"EQUAL_TO" => VeevaConnectorOperator::EqualTo,
+"GREATER_THAN" => VeevaConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => VeevaConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => VeevaConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => VeevaConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => VeevaConnectorOperator::MaskAll,
+"MASK_FIRST_N" => VeevaConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => VeevaConnectorOperator::MaskLastN,
+"MULTIPLICATION" => VeevaConnectorOperator::Multiplication,
+"NOT_EQUAL_TO" => VeevaConnectorOperator::NotEqualTo,
+"NO_OP" => VeevaConnectorOperator::NoOp,
+"PROJECTION" => VeevaConnectorOperator::Projection,
+"SUBTRACTION" => VeevaConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => VeevaConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => VeevaConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => VeevaConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => VeevaConnectorOperator::ValidateNumeric,
+other => VeevaConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for VeevaConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -1816,45 +1802,43 @@ impl std::str::FromStr for VeevaConnectorOperator {
                 }
             }
 impl VeevaConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VeevaConnectorOperator::Addition => "ADDITION",
-            VeevaConnectorOperator::Between => "BETWEEN",
-            VeevaConnectorOperator::Contains => "CONTAINS",
-            VeevaConnectorOperator::Division => "DIVISION",
-            VeevaConnectorOperator::EqualTo => "EQUAL_TO",
-            VeevaConnectorOperator::GreaterThan => "GREATER_THAN",
-            VeevaConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            VeevaConnectorOperator::LessThan => "LESS_THAN",
-            VeevaConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            VeevaConnectorOperator::MaskAll => "MASK_ALL",
-            VeevaConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            VeevaConnectorOperator::MaskLastN => "MASK_LAST_N",
-            VeevaConnectorOperator::Multiplication => "MULTIPLICATION",
-            VeevaConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
-            VeevaConnectorOperator::NoOp => "NO_OP",
-            VeevaConnectorOperator::Projection => "PROJECTION",
-            VeevaConnectorOperator::Subtraction => "SUBTRACTION",
-            VeevaConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            VeevaConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            VeevaConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            VeevaConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            VeevaConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VeevaConnectorOperator::Addition => "ADDITION",
+    VeevaConnectorOperator::Between => "BETWEEN",
+    VeevaConnectorOperator::Contains => "CONTAINS",
+    VeevaConnectorOperator::Division => "DIVISION",
+    VeevaConnectorOperator::EqualTo => "EQUAL_TO",
+    VeevaConnectorOperator::GreaterThan => "GREATER_THAN",
+    VeevaConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    VeevaConnectorOperator::LessThan => "LESS_THAN",
+    VeevaConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    VeevaConnectorOperator::MaskAll => "MASK_ALL",
+    VeevaConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    VeevaConnectorOperator::MaskLastN => "MASK_LAST_N",
+    VeevaConnectorOperator::Multiplication => "MULTIPLICATION",
+    VeevaConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
+    VeevaConnectorOperator::NoOp => "NO_OP",
+    VeevaConnectorOperator::Projection => "PROJECTION",
+    VeevaConnectorOperator::Subtraction => "SUBTRACTION",
+    VeevaConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    VeevaConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    VeevaConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    VeevaConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    VeevaConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for VeevaConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TrendmicroConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1939,26 +1923,26 @@ pub enum TrendmicroConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TrendmicroConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => TrendmicroConnectorOperator::Addition,
-            "DIVISION" => TrendmicroConnectorOperator::Division,
-            "EQUAL_TO" => TrendmicroConnectorOperator::EqualTo,
-            "MASK_ALL" => TrendmicroConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => TrendmicroConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => TrendmicroConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => TrendmicroConnectorOperator::Multiplication,
-            "NO_OP" => TrendmicroConnectorOperator::NoOp,
-            "PROJECTION" => TrendmicroConnectorOperator::Projection,
-            "SUBTRACTION" => TrendmicroConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => TrendmicroConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => TrendmicroConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => TrendmicroConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => TrendmicroConnectorOperator::ValidateNumeric,
-            other => TrendmicroConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => TrendmicroConnectorOperator::Addition,
+"DIVISION" => TrendmicroConnectorOperator::Division,
+"EQUAL_TO" => TrendmicroConnectorOperator::EqualTo,
+"MASK_ALL" => TrendmicroConnectorOperator::MaskAll,
+"MASK_FIRST_N" => TrendmicroConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => TrendmicroConnectorOperator::MaskLastN,
+"MULTIPLICATION" => TrendmicroConnectorOperator::Multiplication,
+"NO_OP" => TrendmicroConnectorOperator::NoOp,
+"PROJECTION" => TrendmicroConnectorOperator::Projection,
+"SUBTRACTION" => TrendmicroConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => TrendmicroConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => TrendmicroConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => TrendmicroConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => TrendmicroConnectorOperator::ValidateNumeric,
+other => TrendmicroConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TrendmicroConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -1967,38 +1951,36 @@ impl std::str::FromStr for TrendmicroConnectorOperator {
                 }
             }
 impl TrendmicroConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TrendmicroConnectorOperator::Addition => "ADDITION",
-            TrendmicroConnectorOperator::Division => "DIVISION",
-            TrendmicroConnectorOperator::EqualTo => "EQUAL_TO",
-            TrendmicroConnectorOperator::MaskAll => "MASK_ALL",
-            TrendmicroConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            TrendmicroConnectorOperator::MaskLastN => "MASK_LAST_N",
-            TrendmicroConnectorOperator::Multiplication => "MULTIPLICATION",
-            TrendmicroConnectorOperator::NoOp => "NO_OP",
-            TrendmicroConnectorOperator::Projection => "PROJECTION",
-            TrendmicroConnectorOperator::Subtraction => "SUBTRACTION",
-            TrendmicroConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            TrendmicroConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            TrendmicroConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            TrendmicroConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            TrendmicroConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TrendmicroConnectorOperator::Addition => "ADDITION",
+    TrendmicroConnectorOperator::Division => "DIVISION",
+    TrendmicroConnectorOperator::EqualTo => "EQUAL_TO",
+    TrendmicroConnectorOperator::MaskAll => "MASK_ALL",
+    TrendmicroConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    TrendmicroConnectorOperator::MaskLastN => "MASK_LAST_N",
+    TrendmicroConnectorOperator::Multiplication => "MULTIPLICATION",
+    TrendmicroConnectorOperator::NoOp => "NO_OP",
+    TrendmicroConnectorOperator::Projection => "PROJECTION",
+    TrendmicroConnectorOperator::Subtraction => "SUBTRACTION",
+    TrendmicroConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    TrendmicroConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    TrendmicroConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    TrendmicroConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    TrendmicroConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for TrendmicroConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SlackConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2098,31 +2080,31 @@ pub enum SlackConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlackConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => SlackConnectorOperator::Addition,
-            "BETWEEN" => SlackConnectorOperator::Between,
-            "DIVISION" => SlackConnectorOperator::Division,
-            "EQUAL_TO" => SlackConnectorOperator::EqualTo,
-            "GREATER_THAN" => SlackConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => SlackConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => SlackConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => SlackConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => SlackConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => SlackConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => SlackConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => SlackConnectorOperator::Multiplication,
-            "NO_OP" => SlackConnectorOperator::NoOp,
-            "PROJECTION" => SlackConnectorOperator::Projection,
-            "SUBTRACTION" => SlackConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => SlackConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => SlackConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => SlackConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => SlackConnectorOperator::ValidateNumeric,
-            other => SlackConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => SlackConnectorOperator::Addition,
+"BETWEEN" => SlackConnectorOperator::Between,
+"DIVISION" => SlackConnectorOperator::Division,
+"EQUAL_TO" => SlackConnectorOperator::EqualTo,
+"GREATER_THAN" => SlackConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => SlackConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => SlackConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => SlackConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => SlackConnectorOperator::MaskAll,
+"MASK_FIRST_N" => SlackConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => SlackConnectorOperator::MaskLastN,
+"MULTIPLICATION" => SlackConnectorOperator::Multiplication,
+"NO_OP" => SlackConnectorOperator::NoOp,
+"PROJECTION" => SlackConnectorOperator::Projection,
+"SUBTRACTION" => SlackConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => SlackConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => SlackConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => SlackConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => SlackConnectorOperator::ValidateNumeric,
+other => SlackConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SlackConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -2131,43 +2113,41 @@ impl std::str::FromStr for SlackConnectorOperator {
                 }
             }
 impl SlackConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SlackConnectorOperator::Addition => "ADDITION",
-            SlackConnectorOperator::Between => "BETWEEN",
-            SlackConnectorOperator::Division => "DIVISION",
-            SlackConnectorOperator::EqualTo => "EQUAL_TO",
-            SlackConnectorOperator::GreaterThan => "GREATER_THAN",
-            SlackConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            SlackConnectorOperator::LessThan => "LESS_THAN",
-            SlackConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            SlackConnectorOperator::MaskAll => "MASK_ALL",
-            SlackConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            SlackConnectorOperator::MaskLastN => "MASK_LAST_N",
-            SlackConnectorOperator::Multiplication => "MULTIPLICATION",
-            SlackConnectorOperator::NoOp => "NO_OP",
-            SlackConnectorOperator::Projection => "PROJECTION",
-            SlackConnectorOperator::Subtraction => "SUBTRACTION",
-            SlackConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            SlackConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            SlackConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            SlackConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            SlackConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SlackConnectorOperator::Addition => "ADDITION",
+    SlackConnectorOperator::Between => "BETWEEN",
+    SlackConnectorOperator::Division => "DIVISION",
+    SlackConnectorOperator::EqualTo => "EQUAL_TO",
+    SlackConnectorOperator::GreaterThan => "GREATER_THAN",
+    SlackConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    SlackConnectorOperator::LessThan => "LESS_THAN",
+    SlackConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    SlackConnectorOperator::MaskAll => "MASK_ALL",
+    SlackConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    SlackConnectorOperator::MaskLastN => "MASK_LAST_N",
+    SlackConnectorOperator::Multiplication => "MULTIPLICATION",
+    SlackConnectorOperator::NoOp => "NO_OP",
+    SlackConnectorOperator::Projection => "PROJECTION",
+    SlackConnectorOperator::Subtraction => "SUBTRACTION",
+    SlackConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    SlackConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    SlackConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    SlackConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    SlackConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for SlackConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SingularConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2252,26 +2232,26 @@ pub enum SingularConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SingularConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => SingularConnectorOperator::Addition,
-            "DIVISION" => SingularConnectorOperator::Division,
-            "EQUAL_TO" => SingularConnectorOperator::EqualTo,
-            "MASK_ALL" => SingularConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => SingularConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => SingularConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => SingularConnectorOperator::Multiplication,
-            "NO_OP" => SingularConnectorOperator::NoOp,
-            "PROJECTION" => SingularConnectorOperator::Projection,
-            "SUBTRACTION" => SingularConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => SingularConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => SingularConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => SingularConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => SingularConnectorOperator::ValidateNumeric,
-            other => SingularConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => SingularConnectorOperator::Addition,
+"DIVISION" => SingularConnectorOperator::Division,
+"EQUAL_TO" => SingularConnectorOperator::EqualTo,
+"MASK_ALL" => SingularConnectorOperator::MaskAll,
+"MASK_FIRST_N" => SingularConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => SingularConnectorOperator::MaskLastN,
+"MULTIPLICATION" => SingularConnectorOperator::Multiplication,
+"NO_OP" => SingularConnectorOperator::NoOp,
+"PROJECTION" => SingularConnectorOperator::Projection,
+"SUBTRACTION" => SingularConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => SingularConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => SingularConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => SingularConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => SingularConnectorOperator::ValidateNumeric,
+other => SingularConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SingularConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -2280,38 +2260,36 @@ impl std::str::FromStr for SingularConnectorOperator {
                 }
             }
 impl SingularConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SingularConnectorOperator::Addition => "ADDITION",
-            SingularConnectorOperator::Division => "DIVISION",
-            SingularConnectorOperator::EqualTo => "EQUAL_TO",
-            SingularConnectorOperator::MaskAll => "MASK_ALL",
-            SingularConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            SingularConnectorOperator::MaskLastN => "MASK_LAST_N",
-            SingularConnectorOperator::Multiplication => "MULTIPLICATION",
-            SingularConnectorOperator::NoOp => "NO_OP",
-            SingularConnectorOperator::Projection => "PROJECTION",
-            SingularConnectorOperator::Subtraction => "SUBTRACTION",
-            SingularConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            SingularConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            SingularConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            SingularConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            SingularConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SingularConnectorOperator::Addition => "ADDITION",
+    SingularConnectorOperator::Division => "DIVISION",
+    SingularConnectorOperator::EqualTo => "EQUAL_TO",
+    SingularConnectorOperator::MaskAll => "MASK_ALL",
+    SingularConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    SingularConnectorOperator::MaskLastN => "MASK_LAST_N",
+    SingularConnectorOperator::Multiplication => "MULTIPLICATION",
+    SingularConnectorOperator::NoOp => "NO_OP",
+    SingularConnectorOperator::Projection => "PROJECTION",
+    SingularConnectorOperator::Subtraction => "SUBTRACTION",
+    SingularConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    SingularConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    SingularConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    SingularConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    SingularConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for SingularConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ServiceNowConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2417,33 +2395,33 @@ pub enum ServiceNowConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceNowConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => ServiceNowConnectorOperator::Addition,
-            "BETWEEN" => ServiceNowConnectorOperator::Between,
-            "CONTAINS" => ServiceNowConnectorOperator::Contains,
-            "DIVISION" => ServiceNowConnectorOperator::Division,
-            "EQUAL_TO" => ServiceNowConnectorOperator::EqualTo,
-            "GREATER_THAN" => ServiceNowConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => ServiceNowConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => ServiceNowConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => ServiceNowConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => ServiceNowConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => ServiceNowConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => ServiceNowConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => ServiceNowConnectorOperator::Multiplication,
-            "NOT_EQUAL_TO" => ServiceNowConnectorOperator::NotEqualTo,
-            "NO_OP" => ServiceNowConnectorOperator::NoOp,
-            "PROJECTION" => ServiceNowConnectorOperator::Projection,
-            "SUBTRACTION" => ServiceNowConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => ServiceNowConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => ServiceNowConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => ServiceNowConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => ServiceNowConnectorOperator::ValidateNumeric,
-            other => ServiceNowConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => ServiceNowConnectorOperator::Addition,
+"BETWEEN" => ServiceNowConnectorOperator::Between,
+"CONTAINS" => ServiceNowConnectorOperator::Contains,
+"DIVISION" => ServiceNowConnectorOperator::Division,
+"EQUAL_TO" => ServiceNowConnectorOperator::EqualTo,
+"GREATER_THAN" => ServiceNowConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => ServiceNowConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => ServiceNowConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => ServiceNowConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => ServiceNowConnectorOperator::MaskAll,
+"MASK_FIRST_N" => ServiceNowConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => ServiceNowConnectorOperator::MaskLastN,
+"MULTIPLICATION" => ServiceNowConnectorOperator::Multiplication,
+"NOT_EQUAL_TO" => ServiceNowConnectorOperator::NotEqualTo,
+"NO_OP" => ServiceNowConnectorOperator::NoOp,
+"PROJECTION" => ServiceNowConnectorOperator::Projection,
+"SUBTRACTION" => ServiceNowConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => ServiceNowConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => ServiceNowConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => ServiceNowConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => ServiceNowConnectorOperator::ValidateNumeric,
+other => ServiceNowConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ServiceNowConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -2452,45 +2430,43 @@ impl std::str::FromStr for ServiceNowConnectorOperator {
                 }
             }
 impl ServiceNowConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceNowConnectorOperator::Addition => "ADDITION",
-            ServiceNowConnectorOperator::Between => "BETWEEN",
-            ServiceNowConnectorOperator::Contains => "CONTAINS",
-            ServiceNowConnectorOperator::Division => "DIVISION",
-            ServiceNowConnectorOperator::EqualTo => "EQUAL_TO",
-            ServiceNowConnectorOperator::GreaterThan => "GREATER_THAN",
-            ServiceNowConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            ServiceNowConnectorOperator::LessThan => "LESS_THAN",
-            ServiceNowConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            ServiceNowConnectorOperator::MaskAll => "MASK_ALL",
-            ServiceNowConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            ServiceNowConnectorOperator::MaskLastN => "MASK_LAST_N",
-            ServiceNowConnectorOperator::Multiplication => "MULTIPLICATION",
-            ServiceNowConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
-            ServiceNowConnectorOperator::NoOp => "NO_OP",
-            ServiceNowConnectorOperator::Projection => "PROJECTION",
-            ServiceNowConnectorOperator::Subtraction => "SUBTRACTION",
-            ServiceNowConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            ServiceNowConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            ServiceNowConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            ServiceNowConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            ServiceNowConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceNowConnectorOperator::Addition => "ADDITION",
+    ServiceNowConnectorOperator::Between => "BETWEEN",
+    ServiceNowConnectorOperator::Contains => "CONTAINS",
+    ServiceNowConnectorOperator::Division => "DIVISION",
+    ServiceNowConnectorOperator::EqualTo => "EQUAL_TO",
+    ServiceNowConnectorOperator::GreaterThan => "GREATER_THAN",
+    ServiceNowConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    ServiceNowConnectorOperator::LessThan => "LESS_THAN",
+    ServiceNowConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    ServiceNowConnectorOperator::MaskAll => "MASK_ALL",
+    ServiceNowConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    ServiceNowConnectorOperator::MaskLastN => "MASK_LAST_N",
+    ServiceNowConnectorOperator::Multiplication => "MULTIPLICATION",
+    ServiceNowConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
+    ServiceNowConnectorOperator::NoOp => "NO_OP",
+    ServiceNowConnectorOperator::Projection => "PROJECTION",
+    ServiceNowConnectorOperator::Subtraction => "SUBTRACTION",
+    ServiceNowConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    ServiceNowConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    ServiceNowConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    ServiceNowConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    ServiceNowConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for ServiceNowConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SalesforceConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2596,33 +2572,33 @@ pub enum SalesforceConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SalesforceConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => SalesforceConnectorOperator::Addition,
-            "BETWEEN" => SalesforceConnectorOperator::Between,
-            "CONTAINS" => SalesforceConnectorOperator::Contains,
-            "DIVISION" => SalesforceConnectorOperator::Division,
-            "EQUAL_TO" => SalesforceConnectorOperator::EqualTo,
-            "GREATER_THAN" => SalesforceConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => SalesforceConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => SalesforceConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => SalesforceConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => SalesforceConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => SalesforceConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => SalesforceConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => SalesforceConnectorOperator::Multiplication,
-            "NOT_EQUAL_TO" => SalesforceConnectorOperator::NotEqualTo,
-            "NO_OP" => SalesforceConnectorOperator::NoOp,
-            "PROJECTION" => SalesforceConnectorOperator::Projection,
-            "SUBTRACTION" => SalesforceConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => SalesforceConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => SalesforceConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => SalesforceConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => SalesforceConnectorOperator::ValidateNumeric,
-            other => SalesforceConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => SalesforceConnectorOperator::Addition,
+"BETWEEN" => SalesforceConnectorOperator::Between,
+"CONTAINS" => SalesforceConnectorOperator::Contains,
+"DIVISION" => SalesforceConnectorOperator::Division,
+"EQUAL_TO" => SalesforceConnectorOperator::EqualTo,
+"GREATER_THAN" => SalesforceConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => SalesforceConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => SalesforceConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => SalesforceConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => SalesforceConnectorOperator::MaskAll,
+"MASK_FIRST_N" => SalesforceConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => SalesforceConnectorOperator::MaskLastN,
+"MULTIPLICATION" => SalesforceConnectorOperator::Multiplication,
+"NOT_EQUAL_TO" => SalesforceConnectorOperator::NotEqualTo,
+"NO_OP" => SalesforceConnectorOperator::NoOp,
+"PROJECTION" => SalesforceConnectorOperator::Projection,
+"SUBTRACTION" => SalesforceConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => SalesforceConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => SalesforceConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => SalesforceConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => SalesforceConnectorOperator::ValidateNumeric,
+other => SalesforceConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SalesforceConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -2631,45 +2607,43 @@ impl std::str::FromStr for SalesforceConnectorOperator {
                 }
             }
 impl SalesforceConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SalesforceConnectorOperator::Addition => "ADDITION",
-            SalesforceConnectorOperator::Between => "BETWEEN",
-            SalesforceConnectorOperator::Contains => "CONTAINS",
-            SalesforceConnectorOperator::Division => "DIVISION",
-            SalesforceConnectorOperator::EqualTo => "EQUAL_TO",
-            SalesforceConnectorOperator::GreaterThan => "GREATER_THAN",
-            SalesforceConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            SalesforceConnectorOperator::LessThan => "LESS_THAN",
-            SalesforceConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            SalesforceConnectorOperator::MaskAll => "MASK_ALL",
-            SalesforceConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            SalesforceConnectorOperator::MaskLastN => "MASK_LAST_N",
-            SalesforceConnectorOperator::Multiplication => "MULTIPLICATION",
-            SalesforceConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
-            SalesforceConnectorOperator::NoOp => "NO_OP",
-            SalesforceConnectorOperator::Projection => "PROJECTION",
-            SalesforceConnectorOperator::Subtraction => "SUBTRACTION",
-            SalesforceConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            SalesforceConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            SalesforceConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            SalesforceConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            SalesforceConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SalesforceConnectorOperator::Addition => "ADDITION",
+    SalesforceConnectorOperator::Between => "BETWEEN",
+    SalesforceConnectorOperator::Contains => "CONTAINS",
+    SalesforceConnectorOperator::Division => "DIVISION",
+    SalesforceConnectorOperator::EqualTo => "EQUAL_TO",
+    SalesforceConnectorOperator::GreaterThan => "GREATER_THAN",
+    SalesforceConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    SalesforceConnectorOperator::LessThan => "LESS_THAN",
+    SalesforceConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    SalesforceConnectorOperator::MaskAll => "MASK_ALL",
+    SalesforceConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    SalesforceConnectorOperator::MaskLastN => "MASK_LAST_N",
+    SalesforceConnectorOperator::Multiplication => "MULTIPLICATION",
+    SalesforceConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
+    SalesforceConnectorOperator::NoOp => "NO_OP",
+    SalesforceConnectorOperator::Projection => "PROJECTION",
+    SalesforceConnectorOperator::Subtraction => "SUBTRACTION",
+    SalesforceConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    SalesforceConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    SalesforceConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    SalesforceConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    SalesforceConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for SalesforceConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `S3ConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2772,32 +2746,32 @@ pub enum S3ConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3ConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => S3ConnectorOperator::Addition,
-            "BETWEEN" => S3ConnectorOperator::Between,
-            "DIVISION" => S3ConnectorOperator::Division,
-            "EQUAL_TO" => S3ConnectorOperator::EqualTo,
-            "GREATER_THAN" => S3ConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => S3ConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => S3ConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => S3ConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => S3ConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => S3ConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => S3ConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => S3ConnectorOperator::Multiplication,
-            "NOT_EQUAL_TO" => S3ConnectorOperator::NotEqualTo,
-            "NO_OP" => S3ConnectorOperator::NoOp,
-            "PROJECTION" => S3ConnectorOperator::Projection,
-            "SUBTRACTION" => S3ConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => S3ConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => S3ConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => S3ConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => S3ConnectorOperator::ValidateNumeric,
-            other => S3ConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => S3ConnectorOperator::Addition,
+"BETWEEN" => S3ConnectorOperator::Between,
+"DIVISION" => S3ConnectorOperator::Division,
+"EQUAL_TO" => S3ConnectorOperator::EqualTo,
+"GREATER_THAN" => S3ConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => S3ConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => S3ConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => S3ConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => S3ConnectorOperator::MaskAll,
+"MASK_FIRST_N" => S3ConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => S3ConnectorOperator::MaskLastN,
+"MULTIPLICATION" => S3ConnectorOperator::Multiplication,
+"NOT_EQUAL_TO" => S3ConnectorOperator::NotEqualTo,
+"NO_OP" => S3ConnectorOperator::NoOp,
+"PROJECTION" => S3ConnectorOperator::Projection,
+"SUBTRACTION" => S3ConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => S3ConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => S3ConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => S3ConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => S3ConnectorOperator::ValidateNumeric,
+other => S3ConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for S3ConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -2806,44 +2780,42 @@ impl std::str::FromStr for S3ConnectorOperator {
                 }
             }
 impl S3ConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            S3ConnectorOperator::Addition => "ADDITION",
-            S3ConnectorOperator::Between => "BETWEEN",
-            S3ConnectorOperator::Division => "DIVISION",
-            S3ConnectorOperator::EqualTo => "EQUAL_TO",
-            S3ConnectorOperator::GreaterThan => "GREATER_THAN",
-            S3ConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            S3ConnectorOperator::LessThan => "LESS_THAN",
-            S3ConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            S3ConnectorOperator::MaskAll => "MASK_ALL",
-            S3ConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            S3ConnectorOperator::MaskLastN => "MASK_LAST_N",
-            S3ConnectorOperator::Multiplication => "MULTIPLICATION",
-            S3ConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
-            S3ConnectorOperator::NoOp => "NO_OP",
-            S3ConnectorOperator::Projection => "PROJECTION",
-            S3ConnectorOperator::Subtraction => "SUBTRACTION",
-            S3ConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            S3ConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            S3ConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            S3ConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            S3ConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    S3ConnectorOperator::Addition => "ADDITION",
+    S3ConnectorOperator::Between => "BETWEEN",
+    S3ConnectorOperator::Division => "DIVISION",
+    S3ConnectorOperator::EqualTo => "EQUAL_TO",
+    S3ConnectorOperator::GreaterThan => "GREATER_THAN",
+    S3ConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    S3ConnectorOperator::LessThan => "LESS_THAN",
+    S3ConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    S3ConnectorOperator::MaskAll => "MASK_ALL",
+    S3ConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    S3ConnectorOperator::MaskLastN => "MASK_LAST_N",
+    S3ConnectorOperator::Multiplication => "MULTIPLICATION",
+    S3ConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
+    S3ConnectorOperator::NoOp => "NO_OP",
+    S3ConnectorOperator::Projection => "PROJECTION",
+    S3ConnectorOperator::Subtraction => "SUBTRACTION",
+    S3ConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    S3ConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    S3ConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    S3ConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    S3ConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for S3ConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `MarketoConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2934,28 +2906,28 @@ pub enum MarketoConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MarketoConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => MarketoConnectorOperator::Addition,
-            "BETWEEN" => MarketoConnectorOperator::Between,
-            "DIVISION" => MarketoConnectorOperator::Division,
-            "GREATER_THAN" => MarketoConnectorOperator::GreaterThan,
-            "LESS_THAN" => MarketoConnectorOperator::LessThan,
-            "MASK_ALL" => MarketoConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => MarketoConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => MarketoConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => MarketoConnectorOperator::Multiplication,
-            "NO_OP" => MarketoConnectorOperator::NoOp,
-            "PROJECTION" => MarketoConnectorOperator::Projection,
-            "SUBTRACTION" => MarketoConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => MarketoConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => MarketoConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => MarketoConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => MarketoConnectorOperator::ValidateNumeric,
-            other => MarketoConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => MarketoConnectorOperator::Addition,
+"BETWEEN" => MarketoConnectorOperator::Between,
+"DIVISION" => MarketoConnectorOperator::Division,
+"GREATER_THAN" => MarketoConnectorOperator::GreaterThan,
+"LESS_THAN" => MarketoConnectorOperator::LessThan,
+"MASK_ALL" => MarketoConnectorOperator::MaskAll,
+"MASK_FIRST_N" => MarketoConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => MarketoConnectorOperator::MaskLastN,
+"MULTIPLICATION" => MarketoConnectorOperator::Multiplication,
+"NO_OP" => MarketoConnectorOperator::NoOp,
+"PROJECTION" => MarketoConnectorOperator::Projection,
+"SUBTRACTION" => MarketoConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => MarketoConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => MarketoConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => MarketoConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => MarketoConnectorOperator::ValidateNumeric,
+other => MarketoConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MarketoConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -2964,40 +2936,38 @@ impl std::str::FromStr for MarketoConnectorOperator {
                 }
             }
 impl MarketoConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MarketoConnectorOperator::Addition => "ADDITION",
-            MarketoConnectorOperator::Between => "BETWEEN",
-            MarketoConnectorOperator::Division => "DIVISION",
-            MarketoConnectorOperator::GreaterThan => "GREATER_THAN",
-            MarketoConnectorOperator::LessThan => "LESS_THAN",
-            MarketoConnectorOperator::MaskAll => "MASK_ALL",
-            MarketoConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            MarketoConnectorOperator::MaskLastN => "MASK_LAST_N",
-            MarketoConnectorOperator::Multiplication => "MULTIPLICATION",
-            MarketoConnectorOperator::NoOp => "NO_OP",
-            MarketoConnectorOperator::Projection => "PROJECTION",
-            MarketoConnectorOperator::Subtraction => "SUBTRACTION",
-            MarketoConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            MarketoConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            MarketoConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            MarketoConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            MarketoConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "DIVISION", "GREATER_THAN", "LESS_THAN", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MarketoConnectorOperator::Addition => "ADDITION",
+    MarketoConnectorOperator::Between => "BETWEEN",
+    MarketoConnectorOperator::Division => "DIVISION",
+    MarketoConnectorOperator::GreaterThan => "GREATER_THAN",
+    MarketoConnectorOperator::LessThan => "LESS_THAN",
+    MarketoConnectorOperator::MaskAll => "MASK_ALL",
+    MarketoConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    MarketoConnectorOperator::MaskLastN => "MASK_LAST_N",
+    MarketoConnectorOperator::Multiplication => "MULTIPLICATION",
+    MarketoConnectorOperator::NoOp => "NO_OP",
+    MarketoConnectorOperator::Projection => "PROJECTION",
+    MarketoConnectorOperator::Subtraction => "SUBTRACTION",
+    MarketoConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    MarketoConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    MarketoConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    MarketoConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    MarketoConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "DIVISION", "GREATER_THAN", "LESS_THAN", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for MarketoConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `InforNexusConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3085,27 +3055,27 @@ pub enum InforNexusConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InforNexusConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => InforNexusConnectorOperator::Addition,
-            "BETWEEN" => InforNexusConnectorOperator::Between,
-            "DIVISION" => InforNexusConnectorOperator::Division,
-            "EQUAL_TO" => InforNexusConnectorOperator::EqualTo,
-            "MASK_ALL" => InforNexusConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => InforNexusConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => InforNexusConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => InforNexusConnectorOperator::Multiplication,
-            "NO_OP" => InforNexusConnectorOperator::NoOp,
-            "PROJECTION" => InforNexusConnectorOperator::Projection,
-            "SUBTRACTION" => InforNexusConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => InforNexusConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => InforNexusConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => InforNexusConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => InforNexusConnectorOperator::ValidateNumeric,
-            other => InforNexusConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => InforNexusConnectorOperator::Addition,
+"BETWEEN" => InforNexusConnectorOperator::Between,
+"DIVISION" => InforNexusConnectorOperator::Division,
+"EQUAL_TO" => InforNexusConnectorOperator::EqualTo,
+"MASK_ALL" => InforNexusConnectorOperator::MaskAll,
+"MASK_FIRST_N" => InforNexusConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => InforNexusConnectorOperator::MaskLastN,
+"MULTIPLICATION" => InforNexusConnectorOperator::Multiplication,
+"NO_OP" => InforNexusConnectorOperator::NoOp,
+"PROJECTION" => InforNexusConnectorOperator::Projection,
+"SUBTRACTION" => InforNexusConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => InforNexusConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => InforNexusConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => InforNexusConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => InforNexusConnectorOperator::ValidateNumeric,
+other => InforNexusConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InforNexusConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -3114,39 +3084,37 @@ impl std::str::FromStr for InforNexusConnectorOperator {
                 }
             }
 impl InforNexusConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InforNexusConnectorOperator::Addition => "ADDITION",
-            InforNexusConnectorOperator::Between => "BETWEEN",
-            InforNexusConnectorOperator::Division => "DIVISION",
-            InforNexusConnectorOperator::EqualTo => "EQUAL_TO",
-            InforNexusConnectorOperator::MaskAll => "MASK_ALL",
-            InforNexusConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            InforNexusConnectorOperator::MaskLastN => "MASK_LAST_N",
-            InforNexusConnectorOperator::Multiplication => "MULTIPLICATION",
-            InforNexusConnectorOperator::NoOp => "NO_OP",
-            InforNexusConnectorOperator::Projection => "PROJECTION",
-            InforNexusConnectorOperator::Subtraction => "SUBTRACTION",
-            InforNexusConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            InforNexusConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            InforNexusConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            InforNexusConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            InforNexusConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InforNexusConnectorOperator::Addition => "ADDITION",
+    InforNexusConnectorOperator::Between => "BETWEEN",
+    InforNexusConnectorOperator::Division => "DIVISION",
+    InforNexusConnectorOperator::EqualTo => "EQUAL_TO",
+    InforNexusConnectorOperator::MaskAll => "MASK_ALL",
+    InforNexusConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    InforNexusConnectorOperator::MaskLastN => "MASK_LAST_N",
+    InforNexusConnectorOperator::Multiplication => "MULTIPLICATION",
+    InforNexusConnectorOperator::NoOp => "NO_OP",
+    InforNexusConnectorOperator::Projection => "PROJECTION",
+    InforNexusConnectorOperator::Subtraction => "SUBTRACTION",
+    InforNexusConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    InforNexusConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    InforNexusConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    InforNexusConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    InforNexusConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for InforNexusConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `GoogleAnalyticsConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3195,14 +3163,14 @@ pub enum GoogleAnalyticsConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GoogleAnalyticsConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "BETWEEN" => GoogleAnalyticsConnectorOperator::Between,
-            "PROJECTION" => GoogleAnalyticsConnectorOperator::Projection,
-            other => GoogleAnalyticsConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BETWEEN" => GoogleAnalyticsConnectorOperator::Between,
+"PROJECTION" => GoogleAnalyticsConnectorOperator::Projection,
+other => GoogleAnalyticsConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GoogleAnalyticsConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -3211,26 +3179,24 @@ impl std::str::FromStr for GoogleAnalyticsConnectorOperator {
                 }
             }
 impl GoogleAnalyticsConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GoogleAnalyticsConnectorOperator::Between => "BETWEEN",
-            GoogleAnalyticsConnectorOperator::Projection => "PROJECTION",
-            GoogleAnalyticsConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BETWEEN", "PROJECTION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GoogleAnalyticsConnectorOperator::Between => "BETWEEN",
+    GoogleAnalyticsConnectorOperator::Projection => "PROJECTION",
+    GoogleAnalyticsConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BETWEEN", "PROJECTION"]
+                }
+            }
 impl AsRef<str> for GoogleAnalyticsConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DynatraceConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3318,27 +3284,27 @@ pub enum DynatraceConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DynatraceConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => DynatraceConnectorOperator::Addition,
-            "BETWEEN" => DynatraceConnectorOperator::Between,
-            "DIVISION" => DynatraceConnectorOperator::Division,
-            "EQUAL_TO" => DynatraceConnectorOperator::EqualTo,
-            "MASK_ALL" => DynatraceConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => DynatraceConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => DynatraceConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => DynatraceConnectorOperator::Multiplication,
-            "NO_OP" => DynatraceConnectorOperator::NoOp,
-            "PROJECTION" => DynatraceConnectorOperator::Projection,
-            "SUBTRACTION" => DynatraceConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => DynatraceConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => DynatraceConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => DynatraceConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => DynatraceConnectorOperator::ValidateNumeric,
-            other => DynatraceConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => DynatraceConnectorOperator::Addition,
+"BETWEEN" => DynatraceConnectorOperator::Between,
+"DIVISION" => DynatraceConnectorOperator::Division,
+"EQUAL_TO" => DynatraceConnectorOperator::EqualTo,
+"MASK_ALL" => DynatraceConnectorOperator::MaskAll,
+"MASK_FIRST_N" => DynatraceConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => DynatraceConnectorOperator::MaskLastN,
+"MULTIPLICATION" => DynatraceConnectorOperator::Multiplication,
+"NO_OP" => DynatraceConnectorOperator::NoOp,
+"PROJECTION" => DynatraceConnectorOperator::Projection,
+"SUBTRACTION" => DynatraceConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => DynatraceConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => DynatraceConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => DynatraceConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => DynatraceConnectorOperator::ValidateNumeric,
+other => DynatraceConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DynatraceConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -3347,39 +3313,37 @@ impl std::str::FromStr for DynatraceConnectorOperator {
                 }
             }
 impl DynatraceConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DynatraceConnectorOperator::Addition => "ADDITION",
-            DynatraceConnectorOperator::Between => "BETWEEN",
-            DynatraceConnectorOperator::Division => "DIVISION",
-            DynatraceConnectorOperator::EqualTo => "EQUAL_TO",
-            DynatraceConnectorOperator::MaskAll => "MASK_ALL",
-            DynatraceConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            DynatraceConnectorOperator::MaskLastN => "MASK_LAST_N",
-            DynatraceConnectorOperator::Multiplication => "MULTIPLICATION",
-            DynatraceConnectorOperator::NoOp => "NO_OP",
-            DynatraceConnectorOperator::Projection => "PROJECTION",
-            DynatraceConnectorOperator::Subtraction => "SUBTRACTION",
-            DynatraceConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            DynatraceConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            DynatraceConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            DynatraceConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            DynatraceConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DynatraceConnectorOperator::Addition => "ADDITION",
+    DynatraceConnectorOperator::Between => "BETWEEN",
+    DynatraceConnectorOperator::Division => "DIVISION",
+    DynatraceConnectorOperator::EqualTo => "EQUAL_TO",
+    DynatraceConnectorOperator::MaskAll => "MASK_ALL",
+    DynatraceConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    DynatraceConnectorOperator::MaskLastN => "MASK_LAST_N",
+    DynatraceConnectorOperator::Multiplication => "MULTIPLICATION",
+    DynatraceConnectorOperator::NoOp => "NO_OP",
+    DynatraceConnectorOperator::Projection => "PROJECTION",
+    DynatraceConnectorOperator::Subtraction => "SUBTRACTION",
+    DynatraceConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    DynatraceConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    DynatraceConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    DynatraceConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    DynatraceConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for DynatraceConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DatadogConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3467,27 +3431,27 @@ pub enum DatadogConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatadogConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => DatadogConnectorOperator::Addition,
-            "BETWEEN" => DatadogConnectorOperator::Between,
-            "DIVISION" => DatadogConnectorOperator::Division,
-            "EQUAL_TO" => DatadogConnectorOperator::EqualTo,
-            "MASK_ALL" => DatadogConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => DatadogConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => DatadogConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => DatadogConnectorOperator::Multiplication,
-            "NO_OP" => DatadogConnectorOperator::NoOp,
-            "PROJECTION" => DatadogConnectorOperator::Projection,
-            "SUBTRACTION" => DatadogConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => DatadogConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => DatadogConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => DatadogConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => DatadogConnectorOperator::ValidateNumeric,
-            other => DatadogConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => DatadogConnectorOperator::Addition,
+"BETWEEN" => DatadogConnectorOperator::Between,
+"DIVISION" => DatadogConnectorOperator::Division,
+"EQUAL_TO" => DatadogConnectorOperator::EqualTo,
+"MASK_ALL" => DatadogConnectorOperator::MaskAll,
+"MASK_FIRST_N" => DatadogConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => DatadogConnectorOperator::MaskLastN,
+"MULTIPLICATION" => DatadogConnectorOperator::Multiplication,
+"NO_OP" => DatadogConnectorOperator::NoOp,
+"PROJECTION" => DatadogConnectorOperator::Projection,
+"SUBTRACTION" => DatadogConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => DatadogConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => DatadogConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => DatadogConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => DatadogConnectorOperator::ValidateNumeric,
+other => DatadogConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DatadogConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -3496,39 +3460,37 @@ impl std::str::FromStr for DatadogConnectorOperator {
                 }
             }
 impl DatadogConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DatadogConnectorOperator::Addition => "ADDITION",
-            DatadogConnectorOperator::Between => "BETWEEN",
-            DatadogConnectorOperator::Division => "DIVISION",
-            DatadogConnectorOperator::EqualTo => "EQUAL_TO",
-            DatadogConnectorOperator::MaskAll => "MASK_ALL",
-            DatadogConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            DatadogConnectorOperator::MaskLastN => "MASK_LAST_N",
-            DatadogConnectorOperator::Multiplication => "MULTIPLICATION",
-            DatadogConnectorOperator::NoOp => "NO_OP",
-            DatadogConnectorOperator::Projection => "PROJECTION",
-            DatadogConnectorOperator::Subtraction => "SUBTRACTION",
-            DatadogConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            DatadogConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            DatadogConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            DatadogConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            DatadogConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DatadogConnectorOperator::Addition => "ADDITION",
+    DatadogConnectorOperator::Between => "BETWEEN",
+    DatadogConnectorOperator::Division => "DIVISION",
+    DatadogConnectorOperator::EqualTo => "EQUAL_TO",
+    DatadogConnectorOperator::MaskAll => "MASK_ALL",
+    DatadogConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    DatadogConnectorOperator::MaskLastN => "MASK_LAST_N",
+    DatadogConnectorOperator::Multiplication => "MULTIPLICATION",
+    DatadogConnectorOperator::NoOp => "NO_OP",
+    DatadogConnectorOperator::Projection => "PROJECTION",
+    DatadogConnectorOperator::Subtraction => "SUBTRACTION",
+    DatadogConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    DatadogConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    DatadogConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    DatadogConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    DatadogConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for DatadogConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AmplitudeConnectorOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3574,13 +3536,13 @@ pub enum AmplitudeConnectorOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AmplitudeConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "BETWEEN" => AmplitudeConnectorOperator::Between,
-            other => AmplitudeConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BETWEEN" => AmplitudeConnectorOperator::Between,
+other => AmplitudeConnectorOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AmplitudeConnectorOperator {
                 type Err = std::convert::Infallible;
 
@@ -3589,25 +3551,23 @@ impl std::str::FromStr for AmplitudeConnectorOperator {
                 }
             }
 impl AmplitudeConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AmplitudeConnectorOperator::Between => "BETWEEN",
-            AmplitudeConnectorOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BETWEEN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AmplitudeConnectorOperator::Between => "BETWEEN",
+    AmplitudeConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BETWEEN"]
+                }
+            }
 impl AsRef<str> for AmplitudeConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Contains information about the configuration of destination connectors present in the flow. </p>
 #[non_exhaustive]
@@ -4184,16 +4144,16 @@ pub enum WriteOperationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WriteOperationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETE" => WriteOperationType::Delete,
-            "INSERT" => WriteOperationType::Insert,
-            "UPDATE" => WriteOperationType::Update,
-            "UPSERT" => WriteOperationType::Upsert,
-            other => WriteOperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DELETE" => WriteOperationType::Delete,
+"INSERT" => WriteOperationType::Insert,
+"UPDATE" => WriteOperationType::Update,
+"UPSERT" => WriteOperationType::Upsert,
+other => WriteOperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WriteOperationType {
                 type Err = std::convert::Infallible;
 
@@ -4202,28 +4162,26 @@ impl std::str::FromStr for WriteOperationType {
                 }
             }
 impl WriteOperationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WriteOperationType::Delete => "DELETE",
-            WriteOperationType::Insert => "INSERT",
-            WriteOperationType::Update => "UPDATE",
-            WriteOperationType::Upsert => "UPSERT",
-            WriteOperationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELETE", "INSERT", "UPDATE", "UPSERT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WriteOperationType::Delete => "DELETE",
+    WriteOperationType::Insert => "INSERT",
+    WriteOperationType::Update => "UPDATE",
+    WriteOperationType::Upsert => "UPSERT",
+    WriteOperationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELETE", "INSERT", "UPDATE", "UPSERT"]
+                }
+            }
 impl AsRef<str> for WriteOperationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
 #[non_exhaustive]
@@ -5134,14 +5092,14 @@ pub enum AggregationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "None" => AggregationType::None,
-            "SingleFile" => AggregationType::SingleFile,
-            other => AggregationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "None" => AggregationType::None,
+"SingleFile" => AggregationType::SingleFile,
+other => AggregationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AggregationType {
                 type Err = std::convert::Infallible;
 
@@ -5150,26 +5108,24 @@ impl std::str::FromStr for AggregationType {
                 }
             }
 impl AggregationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AggregationType::None => "None",
-            AggregationType::SingleFile => "SingleFile",
-            AggregationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "None", "SingleFile"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AggregationType::None => "None",
+    AggregationType::SingleFile => "SingleFile",
+    AggregationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["None", "SingleFile"]
+                }
+            }
 impl AsRef<str> for AggregationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
 #[non_exhaustive]
@@ -5388,14 +5344,14 @@ pub enum PathPrefix {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PathPrefix {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXECUTION_ID" => PathPrefix::ExecutionId,
-            "SCHEMA_VERSION" => PathPrefix::SchemaVersion,
-            other => PathPrefix::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EXECUTION_ID" => PathPrefix::ExecutionId,
+"SCHEMA_VERSION" => PathPrefix::SchemaVersion,
+other => PathPrefix::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PathPrefix {
                 type Err = std::convert::Infallible;
 
@@ -5404,26 +5360,24 @@ impl std::str::FromStr for PathPrefix {
                 }
             }
 impl PathPrefix {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PathPrefix::ExecutionId => "EXECUTION_ID",
-            PathPrefix::SchemaVersion => "SCHEMA_VERSION",
-            PathPrefix::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EXECUTION_ID", "SCHEMA_VERSION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PathPrefix::ExecutionId => "EXECUTION_ID",
+    PathPrefix::SchemaVersion => "SCHEMA_VERSION",
+    PathPrefix::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXECUTION_ID", "SCHEMA_VERSION"]
+                }
+            }
 impl AsRef<str> for PathPrefix {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PrefixFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5481,17 +5435,17 @@ pub enum PrefixFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PrefixFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "DAY" => PrefixFormat::Day,
-            "HOUR" => PrefixFormat::Hour,
-            "MINUTE" => PrefixFormat::Minute,
-            "MONTH" => PrefixFormat::Month,
-            "YEAR" => PrefixFormat::Year,
-            other => PrefixFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DAY" => PrefixFormat::Day,
+"HOUR" => PrefixFormat::Hour,
+"MINUTE" => PrefixFormat::Minute,
+"MONTH" => PrefixFormat::Month,
+"YEAR" => PrefixFormat::Year,
+other => PrefixFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PrefixFormat {
                 type Err = std::convert::Infallible;
 
@@ -5500,29 +5454,27 @@ impl std::str::FromStr for PrefixFormat {
                 }
             }
 impl PrefixFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PrefixFormat::Day => "DAY",
-            PrefixFormat::Hour => "HOUR",
-            PrefixFormat::Minute => "MINUTE",
-            PrefixFormat::Month => "MONTH",
-            PrefixFormat::Year => "YEAR",
-            PrefixFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DAY", "HOUR", "MINUTE", "MONTH", "YEAR"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PrefixFormat::Day => "DAY",
+    PrefixFormat::Hour => "HOUR",
+    PrefixFormat::Minute => "MINUTE",
+    PrefixFormat::Month => "MONTH",
+    PrefixFormat::Year => "YEAR",
+    PrefixFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DAY", "HOUR", "MINUTE", "MONTH", "YEAR"]
+                }
+            }
 impl AsRef<str> for PrefixFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PrefixType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5574,15 +5526,15 @@ pub enum PrefixType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PrefixType {
-    fn from(s: &str) -> Self {
-        match s {
-            "FILENAME" => PrefixType::Filename,
-            "PATH" => PrefixType::Path,
-            "PATH_AND_FILENAME" => PrefixType::PathAndFilename,
-            other => PrefixType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FILENAME" => PrefixType::Filename,
+"PATH" => PrefixType::Path,
+"PATH_AND_FILENAME" => PrefixType::PathAndFilename,
+other => PrefixType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PrefixType {
                 type Err = std::convert::Infallible;
 
@@ -5591,27 +5543,25 @@ impl std::str::FromStr for PrefixType {
                 }
             }
 impl PrefixType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PrefixType::Filename => "FILENAME",
-            PrefixType::Path => "PATH",
-            PrefixType::PathAndFilename => "PATH_AND_FILENAME",
-            PrefixType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FILENAME", "PATH", "PATH_AND_FILENAME"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PrefixType::Filename => "FILENAME",
+    PrefixType::Path => "PATH",
+    PrefixType::PathAndFilename => "PATH_AND_FILENAME",
+    PrefixType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FILENAME", "PATH", "PATH_AND_FILENAME"]
+                }
+            }
 impl AsRef<str> for PrefixType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `FileType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5663,15 +5613,15 @@ pub enum FileType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FileType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CSV" => FileType::Csv,
-            "JSON" => FileType::Json,
-            "PARQUET" => FileType::Parquet,
-            other => FileType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CSV" => FileType::Csv,
+"JSON" => FileType::Json,
+"PARQUET" => FileType::Parquet,
+other => FileType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FileType {
                 type Err = std::convert::Infallible;
 
@@ -5680,27 +5630,25 @@ impl std::str::FromStr for FileType {
                 }
             }
 impl FileType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FileType::Csv => "CSV",
-            FileType::Json => "JSON",
-            FileType::Parquet => "PARQUET",
-            FileType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CSV", "JSON", "PARQUET"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FileType::Csv => "CSV",
+    FileType::Json => "JSON",
+    FileType::Parquet => "PARQUET",
+    FileType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CSV", "JSON", "PARQUET"]
+                }
+            }
 impl AsRef<str> for FileType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The properties that are applied when Amazon Lookout for Metrics is used as a destination. </p>
 #[non_exhaustive]
@@ -6181,15 +6129,15 @@ pub enum SalesforceDataTransferApi {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SalesforceDataTransferApi {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTOMATIC" => SalesforceDataTransferApi::Automatic,
-            "BULKV2" => SalesforceDataTransferApi::Bulkv2,
-            "REST_SYNC" => SalesforceDataTransferApi::RestSync,
-            other => SalesforceDataTransferApi::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUTOMATIC" => SalesforceDataTransferApi::Automatic,
+"BULKV2" => SalesforceDataTransferApi::Bulkv2,
+"REST_SYNC" => SalesforceDataTransferApi::RestSync,
+other => SalesforceDataTransferApi::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SalesforceDataTransferApi {
                 type Err = std::convert::Infallible;
 
@@ -6198,27 +6146,25 @@ impl std::str::FromStr for SalesforceDataTransferApi {
                 }
             }
 impl SalesforceDataTransferApi {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SalesforceDataTransferApi::Automatic => "AUTOMATIC",
-            SalesforceDataTransferApi::Bulkv2 => "BULKV2",
-            SalesforceDataTransferApi::RestSync => "REST_SYNC",
-            SalesforceDataTransferApi::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTOMATIC", "BULKV2", "REST_SYNC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SalesforceDataTransferApi::Automatic => "AUTOMATIC",
+    SalesforceDataTransferApi::Bulkv2 => "BULKV2",
+    SalesforceDataTransferApi::RestSync => "REST_SYNC",
+    SalesforceDataTransferApi::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTOMATIC", "BULKV2", "REST_SYNC"]
+                }
+            }
 impl AsRef<str> for SalesforceDataTransferApi {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The properties that are applied when Amazon S3 is used as a destination. </p>
 #[non_exhaustive]
@@ -6651,36 +6597,36 @@ pub enum ConnectorType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Amplitude" => ConnectorType::Amplitude,
-            "CustomConnector" => ConnectorType::Customconnector,
-            "CustomerProfiles" => ConnectorType::Customerprofiles,
-            "Datadog" => ConnectorType::Datadog,
-            "Dynatrace" => ConnectorType::Dynatrace,
-            "EventBridge" => ConnectorType::Eventbridge,
-            "Googleanalytics" => ConnectorType::Googleanalytics,
-            "Honeycode" => ConnectorType::Honeycode,
-            "Infornexus" => ConnectorType::Infornexus,
-            "LookoutMetrics" => ConnectorType::Lookoutmetrics,
-            "Marketo" => ConnectorType::Marketo,
-            "Pardot" => ConnectorType::Pardot,
-            "Redshift" => ConnectorType::Redshift,
-            "S3" => ConnectorType::S3,
-            "SAPOData" => ConnectorType::Sapodata,
-            "Salesforce" => ConnectorType::Salesforce,
-            "Servicenow" => ConnectorType::Servicenow,
-            "Singular" => ConnectorType::Singular,
-            "Slack" => ConnectorType::Slack,
-            "Snowflake" => ConnectorType::Snowflake,
-            "Trendmicro" => ConnectorType::Trendmicro,
-            "Upsolver" => ConnectorType::Upsolver,
-            "Veeva" => ConnectorType::Veeva,
-            "Zendesk" => ConnectorType::Zendesk,
-            other => ConnectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Amplitude" => ConnectorType::Amplitude,
+"CustomConnector" => ConnectorType::Customconnector,
+"CustomerProfiles" => ConnectorType::Customerprofiles,
+"Datadog" => ConnectorType::Datadog,
+"Dynatrace" => ConnectorType::Dynatrace,
+"EventBridge" => ConnectorType::Eventbridge,
+"Googleanalytics" => ConnectorType::Googleanalytics,
+"Honeycode" => ConnectorType::Honeycode,
+"Infornexus" => ConnectorType::Infornexus,
+"LookoutMetrics" => ConnectorType::Lookoutmetrics,
+"Marketo" => ConnectorType::Marketo,
+"Pardot" => ConnectorType::Pardot,
+"Redshift" => ConnectorType::Redshift,
+"S3" => ConnectorType::S3,
+"SAPOData" => ConnectorType::Sapodata,
+"Salesforce" => ConnectorType::Salesforce,
+"Servicenow" => ConnectorType::Servicenow,
+"Singular" => ConnectorType::Singular,
+"Slack" => ConnectorType::Slack,
+"Snowflake" => ConnectorType::Snowflake,
+"Trendmicro" => ConnectorType::Trendmicro,
+"Upsolver" => ConnectorType::Upsolver,
+"Veeva" => ConnectorType::Veeva,
+"Zendesk" => ConnectorType::Zendesk,
+other => ConnectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConnectorType {
                 type Err = std::convert::Infallible;
 
@@ -6689,48 +6635,46 @@ impl std::str::FromStr for ConnectorType {
                 }
             }
 impl ConnectorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectorType::Amplitude => "Amplitude",
-            ConnectorType::Customconnector => "CustomConnector",
-            ConnectorType::Customerprofiles => "CustomerProfiles",
-            ConnectorType::Datadog => "Datadog",
-            ConnectorType::Dynatrace => "Dynatrace",
-            ConnectorType::Eventbridge => "EventBridge",
-            ConnectorType::Googleanalytics => "Googleanalytics",
-            ConnectorType::Honeycode => "Honeycode",
-            ConnectorType::Infornexus => "Infornexus",
-            ConnectorType::Lookoutmetrics => "LookoutMetrics",
-            ConnectorType::Marketo => "Marketo",
-            ConnectorType::Pardot => "Pardot",
-            ConnectorType::Redshift => "Redshift",
-            ConnectorType::S3 => "S3",
-            ConnectorType::Sapodata => "SAPOData",
-            ConnectorType::Salesforce => "Salesforce",
-            ConnectorType::Servicenow => "Servicenow",
-            ConnectorType::Singular => "Singular",
-            ConnectorType::Slack => "Slack",
-            ConnectorType::Snowflake => "Snowflake",
-            ConnectorType::Trendmicro => "Trendmicro",
-            ConnectorType::Upsolver => "Upsolver",
-            ConnectorType::Veeva => "Veeva",
-            ConnectorType::Zendesk => "Zendesk",
-            ConnectorType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Amplitude", "CustomConnector", "CustomerProfiles", "Datadog", "Dynatrace", "EventBridge", "Googleanalytics", "Honeycode", "Infornexus", "LookoutMetrics", "Marketo", "Pardot", "Redshift", "S3", "SAPOData", "Salesforce", "Servicenow", "Singular", "Slack", "Snowflake", "Trendmicro", "Upsolver", "Veeva", "Zendesk"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectorType::Amplitude => "Amplitude",
+    ConnectorType::Customconnector => "CustomConnector",
+    ConnectorType::Customerprofiles => "CustomerProfiles",
+    ConnectorType::Datadog => "Datadog",
+    ConnectorType::Dynatrace => "Dynatrace",
+    ConnectorType::Eventbridge => "EventBridge",
+    ConnectorType::Googleanalytics => "Googleanalytics",
+    ConnectorType::Honeycode => "Honeycode",
+    ConnectorType::Infornexus => "Infornexus",
+    ConnectorType::Lookoutmetrics => "LookoutMetrics",
+    ConnectorType::Marketo => "Marketo",
+    ConnectorType::Pardot => "Pardot",
+    ConnectorType::Redshift => "Redshift",
+    ConnectorType::S3 => "S3",
+    ConnectorType::Sapodata => "SAPOData",
+    ConnectorType::Salesforce => "Salesforce",
+    ConnectorType::Servicenow => "Servicenow",
+    ConnectorType::Singular => "Singular",
+    ConnectorType::Slack => "Slack",
+    ConnectorType::Snowflake => "Snowflake",
+    ConnectorType::Trendmicro => "Trendmicro",
+    ConnectorType::Upsolver => "Upsolver",
+    ConnectorType::Veeva => "Veeva",
+    ConnectorType::Zendesk => "Zendesk",
+    ConnectorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Amplitude", "CustomConnector", "CustomerProfiles", "Datadog", "Dynatrace", "EventBridge", "Googleanalytics", "Honeycode", "Infornexus", "LookoutMetrics", "Marketo", "Pardot", "Redshift", "S3", "SAPOData", "Salesforce", "Servicenow", "Singular", "Slack", "Snowflake", "Trendmicro", "Upsolver", "Veeva", "Zendesk"]
+                }
+            }
 impl AsRef<str> for ConnectorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Contains information about the configuration of the source connector used in the flow. </p>
 #[non_exhaustive]
@@ -8202,14 +8146,14 @@ pub enum S3InputFileType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3InputFileType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CSV" => S3InputFileType::Csv,
-            "JSON" => S3InputFileType::Json,
-            other => S3InputFileType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CSV" => S3InputFileType::Csv,
+"JSON" => S3InputFileType::Json,
+other => S3InputFileType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for S3InputFileType {
                 type Err = std::convert::Infallible;
 
@@ -8218,26 +8162,24 @@ impl std::str::FromStr for S3InputFileType {
                 }
             }
 impl S3InputFileType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            S3InputFileType::Csv => "CSV",
-            S3InputFileType::Json => "JSON",
-            S3InputFileType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CSV", "JSON"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    S3InputFileType::Csv => "CSV",
+    S3InputFileType::Json => "JSON",
+    S3InputFileType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CSV", "JSON"]
+                }
+            }
 impl AsRef<str> for S3InputFileType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The properties that are applied when Marketo is being used as a source. </p>
 #[non_exhaustive]
@@ -8892,14 +8834,14 @@ pub enum DataPullMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataPullMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "Complete" => DataPullMode::Complete,
-            "Incremental" => DataPullMode::Incremental,
-            other => DataPullMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Complete" => DataPullMode::Complete,
+"Incremental" => DataPullMode::Incremental,
+other => DataPullMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DataPullMode {
                 type Err = std::convert::Infallible;
 
@@ -8908,26 +8850,24 @@ impl std::str::FromStr for DataPullMode {
                 }
             }
 impl DataPullMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataPullMode::Complete => "Complete",
-            DataPullMode::Incremental => "Incremental",
-            DataPullMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Complete", "Incremental"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataPullMode::Complete => "Complete",
+    DataPullMode::Incremental => "Incremental",
+    DataPullMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Complete", "Incremental"]
+                }
+            }
 impl AsRef<str> for DataPullMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TriggerType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8979,15 +8919,15 @@ pub enum TriggerType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TriggerType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Event" => TriggerType::Event,
-            "OnDemand" => TriggerType::Ondemand,
-            "Scheduled" => TriggerType::Scheduled,
-            other => TriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Event" => TriggerType::Event,
+"OnDemand" => TriggerType::Ondemand,
+"Scheduled" => TriggerType::Scheduled,
+other => TriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TriggerType {
                 type Err = std::convert::Infallible;
 
@@ -8996,27 +8936,25 @@ impl std::str::FromStr for TriggerType {
                 }
             }
 impl TriggerType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TriggerType::Event => "Event",
-            TriggerType::Ondemand => "OnDemand",
-            TriggerType::Scheduled => "Scheduled",
-            TriggerType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Event", "OnDemand", "Scheduled"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TriggerType::Event => "Event",
+    TriggerType::Ondemand => "OnDemand",
+    TriggerType::Scheduled => "Scheduled",
+    TriggerType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Event", "OnDemand", "Scheduled"]
+                }
+            }
 impl AsRef<str> for TriggerType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about the configuration of the connector being registered.</p>
 #[non_exhaustive]
@@ -10347,16 +10285,16 @@ pub enum AuthenticationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthenticationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "APIKEY" => AuthenticationType::Apikey,
-            "BASIC" => AuthenticationType::Basic,
-            "CUSTOM" => AuthenticationType::Custom,
-            "OAUTH2" => AuthenticationType::Oauth2,
-            other => AuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "APIKEY" => AuthenticationType::Apikey,
+"BASIC" => AuthenticationType::Basic,
+"CUSTOM" => AuthenticationType::Custom,
+"OAUTH2" => AuthenticationType::Oauth2,
+other => AuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AuthenticationType {
                 type Err = std::convert::Infallible;
 
@@ -10365,28 +10303,26 @@ impl std::str::FromStr for AuthenticationType {
                 }
             }
 impl AuthenticationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AuthenticationType::Apikey => "APIKEY",
-            AuthenticationType::Basic => "BASIC",
-            AuthenticationType::Custom => "CUSTOM",
-            AuthenticationType::Oauth2 => "OAUTH2",
-            AuthenticationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "APIKEY", "BASIC", "CUSTOM", "OAUTH2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AuthenticationType::Apikey => "APIKEY",
+    AuthenticationType::Basic => "BASIC",
+    AuthenticationType::Custom => "CUSTOM",
+    AuthenticationType::Oauth2 => "OAUTH2",
+    AuthenticationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["APIKEY", "BASIC", "CUSTOM", "OAUTH2"]
+                }
+            }
 impl AsRef<str> for AuthenticationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The connector-specific profile credentials required when using SAPOData. </p>
 #[non_exhaustive]
@@ -12879,14 +12815,14 @@ pub enum OAuth2GrantType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OAuth2GrantType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTHORIZATION_CODE" => OAuth2GrantType::AuthorizationCode,
-            "CLIENT_CREDENTIALS" => OAuth2GrantType::ClientCredentials,
-            other => OAuth2GrantType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUTHORIZATION_CODE" => OAuth2GrantType::AuthorizationCode,
+"CLIENT_CREDENTIALS" => OAuth2GrantType::ClientCredentials,
+other => OAuth2GrantType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OAuth2GrantType {
                 type Err = std::convert::Infallible;
 
@@ -12895,26 +12831,24 @@ impl std::str::FromStr for OAuth2GrantType {
                 }
             }
 impl OAuth2GrantType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OAuth2GrantType::AuthorizationCode => "AUTHORIZATION_CODE",
-            OAuth2GrantType::ClientCredentials => "CLIENT_CREDENTIALS",
-            OAuth2GrantType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTHORIZATION_CODE", "CLIENT_CREDENTIALS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OAuth2GrantType::AuthorizationCode => "AUTHORIZATION_CODE",
+    OAuth2GrantType::ClientCredentials => "CLIENT_CREDENTIALS",
+    OAuth2GrantType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTHORIZATION_CODE", "CLIENT_CREDENTIALS"]
+                }
+            }
 impl AsRef<str> for OAuth2GrantType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The connector-specific profile properties required when using SAPOData. </p>
 #[non_exhaustive]
@@ -14211,14 +14145,14 @@ pub enum ConnectionMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "Private" => ConnectionMode::Private,
-            "Public" => ConnectionMode::Public,
-            other => ConnectionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Private" => ConnectionMode::Private,
+"Public" => ConnectionMode::Public,
+other => ConnectionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConnectionMode {
                 type Err = std::convert::Infallible;
 
@@ -14227,26 +14161,24 @@ impl std::str::FromStr for ConnectionMode {
                 }
             }
 impl ConnectionMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectionMode::Private => "Private",
-            ConnectionMode::Public => "Public",
-            ConnectionMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Private", "Public"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectionMode::Private => "Private",
+    ConnectionMode::Public => "Public",
+    ConnectionMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Private", "Public"]
+                }
+            }
 impl AsRef<str> for ConnectionMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ConnectorProvisioningType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -14292,13 +14224,13 @@ pub enum ConnectorProvisioningType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectorProvisioningType {
-    fn from(s: &str) -> Self {
-        match s {
-            "LAMBDA" => ConnectorProvisioningType::Lambda,
-            other => ConnectorProvisioningType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "LAMBDA" => ConnectorProvisioningType::Lambda,
+other => ConnectorProvisioningType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConnectorProvisioningType {
                 type Err = std::convert::Infallible;
 
@@ -14307,25 +14239,23 @@ impl std::str::FromStr for ConnectorProvisioningType {
                 }
             }
 impl ConnectorProvisioningType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectorProvisioningType::Lambda => "LAMBDA",
-            ConnectorProvisioningType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LAMBDA"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectorProvisioningType::Lambda => "LAMBDA",
+    ConnectorProvisioningType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LAMBDA"]
+                }
+            }
 impl AsRef<str> for ConnectorProvisioningType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The properties of the flow, such as its source, destination, trigger type, and so on. </p>
 #[non_exhaustive]
@@ -14787,15 +14717,15 @@ pub enum ExecutionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExecutionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Error" => ExecutionStatus::Error,
-            "InProgress" => ExecutionStatus::Inprogress,
-            "Successful" => ExecutionStatus::Successful,
-            other => ExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Error" => ExecutionStatus::Error,
+"InProgress" => ExecutionStatus::Inprogress,
+"Successful" => ExecutionStatus::Successful,
+other => ExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExecutionStatus {
                 type Err = std::convert::Infallible;
 
@@ -14804,27 +14734,25 @@ impl std::str::FromStr for ExecutionStatus {
                 }
             }
 impl ExecutionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExecutionStatus::Error => "Error",
-            ExecutionStatus::Inprogress => "InProgress",
-            ExecutionStatus::Successful => "Successful",
-            ExecutionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Error", "InProgress", "Successful"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExecutionStatus::Error => "Error",
+    ExecutionStatus::Inprogress => "InProgress",
+    ExecutionStatus::Successful => "Successful",
+    ExecutionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Error", "InProgress", "Successful"]
+                }
+            }
 impl AsRef<str> for ExecutionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the registered connector.</p>
 #[non_exhaustive]
@@ -15622,13 +15550,13 @@ pub enum CatalogType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CatalogType {
-    fn from(s: &str) -> Self {
-        match s {
-            "GLUE" => CatalogType::Glue,
-            other => CatalogType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "GLUE" => CatalogType::Glue,
+other => CatalogType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CatalogType {
                 type Err = std::convert::Infallible;
 
@@ -15637,25 +15565,23 @@ impl std::str::FromStr for CatalogType {
                 }
             }
 impl CatalogType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CatalogType::Glue => "GLUE",
-            CatalogType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "GLUE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CatalogType::Glue => "GLUE",
+    CatalogType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GLUE"]
+                }
+            }
 impl AsRef<str> for CatalogType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Specifies the end result of the flow run. </p>
 #[non_exhaustive]
@@ -16514,33 +16440,33 @@ pub enum Operators {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Operators {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => Operators::Addition,
-            "BETWEEN" => Operators::Between,
-            "CONTAINS" => Operators::Contains,
-            "DIVISION" => Operators::Division,
-            "EQUAL_TO" => Operators::EqualTo,
-            "GREATER_THAN" => Operators::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => Operators::GreaterThanOrEqualTo,
-            "LESS_THAN" => Operators::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => Operators::LessThanOrEqualTo,
-            "MASK_ALL" => Operators::MaskAll,
-            "MASK_FIRST_N" => Operators::MaskFirstN,
-            "MASK_LAST_N" => Operators::MaskLastN,
-            "MULTIPLICATION" => Operators::Multiplication,
-            "NOT_EQUAL_TO" => Operators::NotEqualTo,
-            "NO_OP" => Operators::NoOp,
-            "PROJECTION" => Operators::Projection,
-            "SUBTRACTION" => Operators::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => Operators::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => Operators::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => Operators::ValidateNonZero,
-            "VALIDATE_NUMERIC" => Operators::ValidateNumeric,
-            other => Operators::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => Operators::Addition,
+"BETWEEN" => Operators::Between,
+"CONTAINS" => Operators::Contains,
+"DIVISION" => Operators::Division,
+"EQUAL_TO" => Operators::EqualTo,
+"GREATER_THAN" => Operators::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => Operators::GreaterThanOrEqualTo,
+"LESS_THAN" => Operators::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => Operators::LessThanOrEqualTo,
+"MASK_ALL" => Operators::MaskAll,
+"MASK_FIRST_N" => Operators::MaskFirstN,
+"MASK_LAST_N" => Operators::MaskLastN,
+"MULTIPLICATION" => Operators::Multiplication,
+"NOT_EQUAL_TO" => Operators::NotEqualTo,
+"NO_OP" => Operators::NoOp,
+"PROJECTION" => Operators::Projection,
+"SUBTRACTION" => Operators::Subtraction,
+"VALIDATE_NON_NEGATIVE" => Operators::ValidateNonNegative,
+"VALIDATE_NON_NULL" => Operators::ValidateNonNull,
+"VALIDATE_NON_ZERO" => Operators::ValidateNonZero,
+"VALIDATE_NUMERIC" => Operators::ValidateNumeric,
+other => Operators::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Operators {
                 type Err = std::convert::Infallible;
 
@@ -16549,45 +16475,43 @@ impl std::str::FromStr for Operators {
                 }
             }
 impl Operators {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Operators::Addition => "ADDITION",
-            Operators::Between => "BETWEEN",
-            Operators::Contains => "CONTAINS",
-            Operators::Division => "DIVISION",
-            Operators::EqualTo => "EQUAL_TO",
-            Operators::GreaterThan => "GREATER_THAN",
-            Operators::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            Operators::LessThan => "LESS_THAN",
-            Operators::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            Operators::MaskAll => "MASK_ALL",
-            Operators::MaskFirstN => "MASK_FIRST_N",
-            Operators::MaskLastN => "MASK_LAST_N",
-            Operators::Multiplication => "MULTIPLICATION",
-            Operators::NotEqualTo => "NOT_EQUAL_TO",
-            Operators::NoOp => "NO_OP",
-            Operators::Projection => "PROJECTION",
-            Operators::Subtraction => "SUBTRACTION",
-            Operators::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            Operators::ValidateNonNull => "VALIDATE_NON_NULL",
-            Operators::ValidateNonZero => "VALIDATE_NON_ZERO",
-            Operators::ValidateNumeric => "VALIDATE_NUMERIC",
-            Operators::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Operators::Addition => "ADDITION",
+    Operators::Between => "BETWEEN",
+    Operators::Contains => "CONTAINS",
+    Operators::Division => "DIVISION",
+    Operators::EqualTo => "EQUAL_TO",
+    Operators::GreaterThan => "GREATER_THAN",
+    Operators::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    Operators::LessThan => "LESS_THAN",
+    Operators::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    Operators::MaskAll => "MASK_ALL",
+    Operators::MaskFirstN => "MASK_FIRST_N",
+    Operators::MaskLastN => "MASK_LAST_N",
+    Operators::Multiplication => "MULTIPLICATION",
+    Operators::NotEqualTo => "NOT_EQUAL_TO",
+    Operators::NoOp => "NO_OP",
+    Operators::Projection => "PROJECTION",
+    Operators::Subtraction => "SUBTRACTION",
+    Operators::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    Operators::ValidateNonNull => "VALIDATE_NON_NULL",
+    Operators::ValidateNonZero => "VALIDATE_NON_ZERO",
+    Operators::ValidateNumeric => "VALIDATE_NUMERIC",
+    Operators::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for Operators {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about the connector runtime settings that are required for flow execution.</p>
 #[non_exhaustive]
@@ -17518,14 +17442,14 @@ pub enum OAuth2CustomPropType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OAuth2CustomPropType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTH_URL" => OAuth2CustomPropType::AuthUrl,
-            "TOKEN_URL" => OAuth2CustomPropType::TokenUrl,
-            other => OAuth2CustomPropType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUTH_URL" => OAuth2CustomPropType::AuthUrl,
+"TOKEN_URL" => OAuth2CustomPropType::TokenUrl,
+other => OAuth2CustomPropType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OAuth2CustomPropType {
                 type Err = std::convert::Infallible;
 
@@ -17534,26 +17458,24 @@ impl std::str::FromStr for OAuth2CustomPropType {
                 }
             }
 impl OAuth2CustomPropType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OAuth2CustomPropType::AuthUrl => "AUTH_URL",
-            OAuth2CustomPropType::TokenUrl => "TOKEN_URL",
-            OAuth2CustomPropType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTH_URL", "TOKEN_URL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OAuth2CustomPropType::AuthUrl => "AUTH_URL",
+    OAuth2CustomPropType::TokenUrl => "TOKEN_URL",
+    OAuth2CustomPropType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTH_URL", "TOKEN_URL"]
+                }
+            }
 impl AsRef<str> for OAuth2CustomPropType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> A structure to specify connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
 #[non_exhaustive]
@@ -18888,18 +18810,18 @@ pub enum ScheduleFrequencyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScheduleFrequencyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BYMINUTE" => ScheduleFrequencyType::Byminute,
-            "DAILY" => ScheduleFrequencyType::Daily,
-            "HOURLY" => ScheduleFrequencyType::Hourly,
-            "MONTHLY" => ScheduleFrequencyType::Monthly,
-            "ONCE" => ScheduleFrequencyType::Once,
-            "WEEKLY" => ScheduleFrequencyType::Weekly,
-            other => ScheduleFrequencyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BYMINUTE" => ScheduleFrequencyType::Byminute,
+"DAILY" => ScheduleFrequencyType::Daily,
+"HOURLY" => ScheduleFrequencyType::Hourly,
+"MONTHLY" => ScheduleFrequencyType::Monthly,
+"ONCE" => ScheduleFrequencyType::Once,
+"WEEKLY" => ScheduleFrequencyType::Weekly,
+other => ScheduleFrequencyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScheduleFrequencyType {
                 type Err = std::convert::Infallible;
 
@@ -18908,30 +18830,28 @@ impl std::str::FromStr for ScheduleFrequencyType {
                 }
             }
 impl ScheduleFrequencyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScheduleFrequencyType::Byminute => "BYMINUTE",
-            ScheduleFrequencyType::Daily => "DAILY",
-            ScheduleFrequencyType::Hourly => "HOURLY",
-            ScheduleFrequencyType::Monthly => "MONTHLY",
-            ScheduleFrequencyType::Once => "ONCE",
-            ScheduleFrequencyType::Weekly => "WEEKLY",
-            ScheduleFrequencyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BYMINUTE", "DAILY", "HOURLY", "MONTHLY", "ONCE", "WEEKLY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScheduleFrequencyType::Byminute => "BYMINUTE",
+    ScheduleFrequencyType::Daily => "DAILY",
+    ScheduleFrequencyType::Hourly => "HOURLY",
+    ScheduleFrequencyType::Monthly => "MONTHLY",
+    ScheduleFrequencyType::Once => "ONCE",
+    ScheduleFrequencyType::Weekly => "WEEKLY",
+    ScheduleFrequencyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BYMINUTE", "DAILY", "HOURLY", "MONTHLY", "ONCE", "WEEKLY"]
+                }
+            }
 impl AsRef<str> for ScheduleFrequencyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes an instance of a connector. This includes the provided name, credentials ARN, connection-mode, and so on. To keep the API intuitive and extensible, the fields that are common to all types of connector profiles are explicitly specified at the top level. The rest of the connector-specific properties are available via the <code>connectorProfileProperties</code> field. </p>
 #[non_exhaustive]
@@ -19298,17 +19218,17 @@ pub enum PrivateConnectionProvisioningFailureCause {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PrivateConnectionProvisioningFailureCause {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => PrivateConnectionProvisioningFailureCause::AccessDenied,
-            "CONNECTOR_AUTHENTICATION" => PrivateConnectionProvisioningFailureCause::ConnectorAuthentication,
-            "CONNECTOR_SERVER" => PrivateConnectionProvisioningFailureCause::ConnectorServer,
-            "INTERNAL_SERVER" => PrivateConnectionProvisioningFailureCause::InternalServer,
-            "VALIDATION" => PrivateConnectionProvisioningFailureCause::Validation,
-            other => PrivateConnectionProvisioningFailureCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED" => PrivateConnectionProvisioningFailureCause::AccessDenied,
+"CONNECTOR_AUTHENTICATION" => PrivateConnectionProvisioningFailureCause::ConnectorAuthentication,
+"CONNECTOR_SERVER" => PrivateConnectionProvisioningFailureCause::ConnectorServer,
+"INTERNAL_SERVER" => PrivateConnectionProvisioningFailureCause::InternalServer,
+"VALIDATION" => PrivateConnectionProvisioningFailureCause::Validation,
+other => PrivateConnectionProvisioningFailureCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PrivateConnectionProvisioningFailureCause {
                 type Err = std::convert::Infallible;
 
@@ -19317,29 +19237,27 @@ impl std::str::FromStr for PrivateConnectionProvisioningFailureCause {
                 }
             }
 impl PrivateConnectionProvisioningFailureCause {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PrivateConnectionProvisioningFailureCause::AccessDenied => "ACCESS_DENIED",
-            PrivateConnectionProvisioningFailureCause::ConnectorAuthentication => "CONNECTOR_AUTHENTICATION",
-            PrivateConnectionProvisioningFailureCause::ConnectorServer => "CONNECTOR_SERVER",
-            PrivateConnectionProvisioningFailureCause::InternalServer => "INTERNAL_SERVER",
-            PrivateConnectionProvisioningFailureCause::Validation => "VALIDATION",
-            PrivateConnectionProvisioningFailureCause::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED", "CONNECTOR_AUTHENTICATION", "CONNECTOR_SERVER", "INTERNAL_SERVER", "VALIDATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PrivateConnectionProvisioningFailureCause::AccessDenied => "ACCESS_DENIED",
+    PrivateConnectionProvisioningFailureCause::ConnectorAuthentication => "CONNECTOR_AUTHENTICATION",
+    PrivateConnectionProvisioningFailureCause::ConnectorServer => "CONNECTOR_SERVER",
+    PrivateConnectionProvisioningFailureCause::InternalServer => "INTERNAL_SERVER",
+    PrivateConnectionProvisioningFailureCause::Validation => "VALIDATION",
+    PrivateConnectionProvisioningFailureCause::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "CONNECTOR_AUTHENTICATION", "CONNECTOR_SERVER", "INTERNAL_SERVER", "VALIDATION"]
+                }
+            }
 impl AsRef<str> for PrivateConnectionProvisioningFailureCause {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PrivateConnectionProvisioningStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -19391,15 +19309,15 @@ pub enum PrivateConnectionProvisioningStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PrivateConnectionProvisioningStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED" => PrivateConnectionProvisioningStatus::Created,
-            "FAILED" => PrivateConnectionProvisioningStatus::Failed,
-            "PENDING" => PrivateConnectionProvisioningStatus::Pending,
-            other => PrivateConnectionProvisioningStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATED" => PrivateConnectionProvisioningStatus::Created,
+"FAILED" => PrivateConnectionProvisioningStatus::Failed,
+"PENDING" => PrivateConnectionProvisioningStatus::Pending,
+other => PrivateConnectionProvisioningStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PrivateConnectionProvisioningStatus {
                 type Err = std::convert::Infallible;
 
@@ -19408,27 +19326,25 @@ impl std::str::FromStr for PrivateConnectionProvisioningStatus {
                 }
             }
 impl PrivateConnectionProvisioningStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PrivateConnectionProvisioningStatus::Created => "CREATED",
-            PrivateConnectionProvisioningStatus::Failed => "FAILED",
-            PrivateConnectionProvisioningStatus::Pending => "PENDING",
-            PrivateConnectionProvisioningStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED", "FAILED", "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PrivateConnectionProvisioningStatus::Created => "CREATED",
+    PrivateConnectionProvisioningStatus::Failed => "FAILED",
+    PrivateConnectionProvisioningStatus::Pending => "PENDING",
+    PrivateConnectionProvisioningStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED", "FAILED", "PENDING"]
+                }
+            }
 impl AsRef<str> for PrivateConnectionProvisioningStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes the data model of a connector field. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
 #[non_exhaustive]

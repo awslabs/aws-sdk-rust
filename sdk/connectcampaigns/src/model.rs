@@ -249,17 +249,17 @@ pub enum CampaignState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CampaignState {
-    fn from(s: &str) -> Self {
-        match s {
-            "Failed" => CampaignState::Failed,
-            "Initialized" => CampaignState::Initialized,
-            "Paused" => CampaignState::Paused,
-            "Running" => CampaignState::Running,
-            "Stopped" => CampaignState::Stopped,
-            other => CampaignState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Failed" => CampaignState::Failed,
+"Initialized" => CampaignState::Initialized,
+"Paused" => CampaignState::Paused,
+"Running" => CampaignState::Running,
+"Stopped" => CampaignState::Stopped,
+other => CampaignState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CampaignState {
                 type Err = std::convert::Infallible;
 
@@ -268,29 +268,27 @@ impl std::str::FromStr for CampaignState {
                 }
             }
 impl CampaignState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CampaignState::Failed => "Failed",
-            CampaignState::Initialized => "Initialized",
-            CampaignState::Paused => "Paused",
-            CampaignState::Running => "Running",
-            CampaignState::Stopped => "Stopped",
-            CampaignState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Failed", "Initialized", "Paused", "Running", "Stopped"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CampaignState::Failed => "Failed",
+    CampaignState::Initialized => "Initialized",
+    CampaignState::Paused => "Paused",
+    CampaignState::Running => "Running",
+    CampaignState::Stopped => "Stopped",
+    CampaignState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Failed", "Initialized", "Paused", "Running", "Stopped"]
+                }
+            }
 impl AsRef<str> for CampaignState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Instance onboarding job status object
 #[non_exhaustive]
@@ -439,18 +437,18 @@ pub enum InstanceOnboardingJobFailureCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceOnboardingJobFailureCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "EVENT_BRIDGE_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::EventBridgeAccessDenied,
-            "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED" => InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded,
-            "IAM_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::IamAccessDenied,
-            "INTERNAL_FAILURE" => InstanceOnboardingJobFailureCode::InternalFailure,
-            "KMS_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::KmsAccessDenied,
-            "KMS_KEY_NOT_FOUND" => InstanceOnboardingJobFailureCode::KmsKeyNotFound,
-            other => InstanceOnboardingJobFailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EVENT_BRIDGE_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::EventBridgeAccessDenied,
+"EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED" => InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded,
+"IAM_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::IamAccessDenied,
+"INTERNAL_FAILURE" => InstanceOnboardingJobFailureCode::InternalFailure,
+"KMS_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::KmsAccessDenied,
+"KMS_KEY_NOT_FOUND" => InstanceOnboardingJobFailureCode::KmsKeyNotFound,
+other => InstanceOnboardingJobFailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InstanceOnboardingJobFailureCode {
                 type Err = std::convert::Infallible;
 
@@ -459,30 +457,28 @@ impl std::str::FromStr for InstanceOnboardingJobFailureCode {
                 }
             }
 impl InstanceOnboardingJobFailureCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceOnboardingJobFailureCode::EventBridgeAccessDenied => "EVENT_BRIDGE_ACCESS_DENIED",
-            InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded => "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED",
-            InstanceOnboardingJobFailureCode::IamAccessDenied => "IAM_ACCESS_DENIED",
-            InstanceOnboardingJobFailureCode::InternalFailure => "INTERNAL_FAILURE",
-            InstanceOnboardingJobFailureCode::KmsAccessDenied => "KMS_ACCESS_DENIED",
-            InstanceOnboardingJobFailureCode::KmsKeyNotFound => "KMS_KEY_NOT_FOUND",
-            InstanceOnboardingJobFailureCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EVENT_BRIDGE_ACCESS_DENIED", "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED", "IAM_ACCESS_DENIED", "INTERNAL_FAILURE", "KMS_ACCESS_DENIED", "KMS_KEY_NOT_FOUND"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceOnboardingJobFailureCode::EventBridgeAccessDenied => "EVENT_BRIDGE_ACCESS_DENIED",
+    InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded => "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED",
+    InstanceOnboardingJobFailureCode::IamAccessDenied => "IAM_ACCESS_DENIED",
+    InstanceOnboardingJobFailureCode::InternalFailure => "INTERNAL_FAILURE",
+    InstanceOnboardingJobFailureCode::KmsAccessDenied => "KMS_ACCESS_DENIED",
+    InstanceOnboardingJobFailureCode::KmsKeyNotFound => "KMS_KEY_NOT_FOUND",
+    InstanceOnboardingJobFailureCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EVENT_BRIDGE_ACCESS_DENIED", "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED", "IAM_ACCESS_DENIED", "INTERNAL_FAILURE", "KMS_ACCESS_DENIED", "KMS_KEY_NOT_FOUND"]
+                }
+            }
 impl AsRef<str> for InstanceOnboardingJobFailureCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `InstanceOnboardingJobStatusCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -534,15 +530,15 @@ pub enum InstanceOnboardingJobStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceOnboardingJobStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => InstanceOnboardingJobStatusCode::Failed,
-            "IN_PROGRESS" => InstanceOnboardingJobStatusCode::InProgress,
-            "SUCCEEDED" => InstanceOnboardingJobStatusCode::Succeeded,
-            other => InstanceOnboardingJobStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => InstanceOnboardingJobStatusCode::Failed,
+"IN_PROGRESS" => InstanceOnboardingJobStatusCode::InProgress,
+"SUCCEEDED" => InstanceOnboardingJobStatusCode::Succeeded,
+other => InstanceOnboardingJobStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InstanceOnboardingJobStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -551,27 +547,25 @@ impl std::str::FromStr for InstanceOnboardingJobStatusCode {
                 }
             }
 impl InstanceOnboardingJobStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceOnboardingJobStatusCode::Failed => "FAILED",
-            InstanceOnboardingJobStatusCode::InProgress => "IN_PROGRESS",
-            InstanceOnboardingJobStatusCode::Succeeded => "SUCCEEDED",
-            InstanceOnboardingJobStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "IN_PROGRESS", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceOnboardingJobStatusCode::Failed => "FAILED",
+    InstanceOnboardingJobStatusCode::InProgress => "IN_PROGRESS",
+    InstanceOnboardingJobStatusCode::Succeeded => "SUCCEEDED",
+    InstanceOnboardingJobStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for InstanceOnboardingJobStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
 #[non_exhaustive]
@@ -706,13 +700,13 @@ pub enum EncryptionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "KMS" => EncryptionType::Kms,
-            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "KMS" => EncryptionType::Kms,
+other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EncryptionType {
                 type Err = std::convert::Infallible;
 
@@ -721,25 +715,23 @@ impl std::str::FromStr for EncryptionType {
                 }
             }
 impl EncryptionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EncryptionType::Kms => "KMS",
-            EncryptionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "KMS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EncryptionType::Kms => "KMS",
+    EncryptionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["KMS"]
+                }
+            }
 impl AsRef<str> for EncryptionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// A failed request identified by the unique client token.
 #[non_exhaustive]
@@ -879,15 +871,15 @@ pub enum FailureCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailureCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "InvalidInput" => FailureCode::InvalidInput,
-            "RequestThrottled" => FailureCode::RequestThrottled,
-            "UnknownError" => FailureCode::UnknownError,
-            other => FailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "InvalidInput" => FailureCode::InvalidInput,
+"RequestThrottled" => FailureCode::RequestThrottled,
+"UnknownError" => FailureCode::UnknownError,
+other => FailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FailureCode {
                 type Err = std::convert::Infallible;
 
@@ -896,27 +888,25 @@ impl std::str::FromStr for FailureCode {
                 }
             }
 impl FailureCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailureCode::InvalidInput => "InvalidInput",
-            FailureCode::RequestThrottled => "RequestThrottled",
-            FailureCode::UnknownError => "UnknownError",
-            FailureCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "InvalidInput", "RequestThrottled", "UnknownError"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FailureCode::InvalidInput => "InvalidInput",
+    FailureCode::RequestThrottled => "RequestThrottled",
+    FailureCode::UnknownError => "UnknownError",
+    FailureCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["InvalidInput", "RequestThrottled", "UnknownError"]
+                }
+            }
 impl AsRef<str> for FailureCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// A successful request identified by the unique client token.
 #[non_exhaustive]
@@ -1390,13 +1380,13 @@ pub enum InstanceIdFilterOperator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceIdFilterOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "Eq" => InstanceIdFilterOperator::Eq,
-            other => InstanceIdFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Eq" => InstanceIdFilterOperator::Eq,
+other => InstanceIdFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InstanceIdFilterOperator {
                 type Err = std::convert::Infallible;
 
@@ -1405,25 +1395,23 @@ impl std::str::FromStr for InstanceIdFilterOperator {
                 }
             }
 impl InstanceIdFilterOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceIdFilterOperator::Eq => "Eq",
-            InstanceIdFilterOperator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Eq"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceIdFilterOperator::Eq => "Eq",
+    InstanceIdFilterOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Eq"]
+                }
+            }
 impl AsRef<str> for InstanceIdFilterOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Instance config object
 #[non_exhaustive]
@@ -1629,14 +1617,14 @@ pub enum GetCampaignStateBatchFailureCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GetCampaignStateBatchFailureCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ResourceNotFound" => GetCampaignStateBatchFailureCode::ResourceNotFound,
-            "UnknownError" => GetCampaignStateBatchFailureCode::UnknownError,
-            other => GetCampaignStateBatchFailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ResourceNotFound" => GetCampaignStateBatchFailureCode::ResourceNotFound,
+"UnknownError" => GetCampaignStateBatchFailureCode::UnknownError,
+other => GetCampaignStateBatchFailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GetCampaignStateBatchFailureCode {
                 type Err = std::convert::Infallible;
 
@@ -1645,26 +1633,24 @@ impl std::str::FromStr for GetCampaignStateBatchFailureCode {
                 }
             }
 impl GetCampaignStateBatchFailureCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GetCampaignStateBatchFailureCode::ResourceNotFound => "ResourceNotFound",
-            GetCampaignStateBatchFailureCode::UnknownError => "UnknownError",
-            GetCampaignStateBatchFailureCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ResourceNotFound", "UnknownError"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GetCampaignStateBatchFailureCode::ResourceNotFound => "ResourceNotFound",
+    GetCampaignStateBatchFailureCode::UnknownError => "UnknownError",
+    GetCampaignStateBatchFailureCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ResourceNotFound", "UnknownError"]
+                }
+            }
 impl AsRef<str> for GetCampaignStateBatchFailureCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Successful response of campaign state
 #[non_exhaustive]

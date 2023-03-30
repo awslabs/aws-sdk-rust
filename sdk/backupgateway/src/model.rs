@@ -584,16 +584,16 @@ pub enum HypervisorState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HypervisorState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ERROR" => HypervisorState::Error,
-            "OFFLINE" => HypervisorState::Offline,
-            "ONLINE" => HypervisorState::Online,
-            "PENDING" => HypervisorState::Pending,
-            other => HypervisorState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ERROR" => HypervisorState::Error,
+"OFFLINE" => HypervisorState::Offline,
+"ONLINE" => HypervisorState::Online,
+"PENDING" => HypervisorState::Pending,
+other => HypervisorState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HypervisorState {
                 type Err = std::convert::Infallible;
 
@@ -602,28 +602,26 @@ impl std::str::FromStr for HypervisorState {
                 }
             }
 impl HypervisorState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HypervisorState::Error => "ERROR",
-            HypervisorState::Offline => "OFFLINE",
-            HypervisorState::Online => "ONLINE",
-            HypervisorState::Pending => "PENDING",
-            HypervisorState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ERROR", "OFFLINE", "ONLINE", "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HypervisorState::Error => "ERROR",
+    HypervisorState::Offline => "OFFLINE",
+    HypervisorState::Online => "ONLINE",
+    HypervisorState::Pending => "PENDING",
+    HypervisorState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ERROR", "OFFLINE", "ONLINE", "PENDING"]
+                }
+            }
 impl AsRef<str> for HypervisorState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /.</p>
 #[non_exhaustive]
@@ -956,17 +954,17 @@ pub enum SyncMetadataStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SyncMetadataStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED" => SyncMetadataStatus::Created,
-            "FAILED" => SyncMetadataStatus::Failed,
-            "PARTIALLY_FAILED" => SyncMetadataStatus::PartiallyFailed,
-            "RUNNING" => SyncMetadataStatus::Running,
-            "SUCCEEDED" => SyncMetadataStatus::Succeeded,
-            other => SyncMetadataStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATED" => SyncMetadataStatus::Created,
+"FAILED" => SyncMetadataStatus::Failed,
+"PARTIALLY_FAILED" => SyncMetadataStatus::PartiallyFailed,
+"RUNNING" => SyncMetadataStatus::Running,
+"SUCCEEDED" => SyncMetadataStatus::Succeeded,
+other => SyncMetadataStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SyncMetadataStatus {
                 type Err = std::convert::Infallible;
 
@@ -975,29 +973,27 @@ impl std::str::FromStr for SyncMetadataStatus {
                 }
             }
 impl SyncMetadataStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SyncMetadataStatus::Created => "CREATED",
-            SyncMetadataStatus::Failed => "FAILED",
-            SyncMetadataStatus::PartiallyFailed => "PARTIALLY_FAILED",
-            SyncMetadataStatus::Running => "RUNNING",
-            SyncMetadataStatus::Succeeded => "SUCCEEDED",
-            SyncMetadataStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED", "FAILED", "PARTIALLY_FAILED", "RUNNING", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SyncMetadataStatus::Created => "CREATED",
+    SyncMetadataStatus::Failed => "FAILED",
+    SyncMetadataStatus::PartiallyFailed => "PARTIALLY_FAILED",
+    SyncMetadataStatus::Running => "RUNNING",
+    SyncMetadataStatus::Succeeded => "SUCCEEDED",
+    SyncMetadataStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED", "FAILED", "PARTIALLY_FAILED", "RUNNING", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for SyncMetadataStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This displays the mapping of on-premises VMware tags to the corresponding Amazon Web Services tags.</p>
 #[non_exhaustive]
@@ -1276,13 +1272,13 @@ pub enum GatewayType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GatewayType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BACKUP_VM" => GatewayType::BackupVm,
-            other => GatewayType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BACKUP_VM" => GatewayType::BackupVm,
+other => GatewayType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GatewayType {
                 type Err = std::convert::Infallible;
 
@@ -1291,25 +1287,23 @@ impl std::str::FromStr for GatewayType {
                 }
             }
 impl GatewayType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GatewayType::BackupVm => "BACKUP_VM",
-            GatewayType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BACKUP_VM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GatewayType::BackupVm => "BACKUP_VM",
+    GatewayType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BACKUP_VM"]
+                }
+            }
 impl AsRef<str> for GatewayType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The details of gateway.</p>
 #[non_exhaustive]

@@ -47,14 +47,14 @@ pub enum PermissionsMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PermissionsMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALLOW_ALL" => PermissionsMode::AllowAll,
-            "STANDARD" => PermissionsMode::Standard,
-            other => PermissionsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALLOW_ALL" => PermissionsMode::AllowAll,
+"STANDARD" => PermissionsMode::Standard,
+other => PermissionsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PermissionsMode {
                 type Err = std::convert::Infallible;
 
@@ -63,26 +63,24 @@ impl std::str::FromStr for PermissionsMode {
                 }
             }
 impl PermissionsMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PermissionsMode::AllowAll => "ALLOW_ALL",
-            PermissionsMode::Standard => "STANDARD",
-            PermissionsMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALLOW_ALL", "STANDARD"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PermissionsMode::AllowAll => "ALLOW_ALL",
+    PermissionsMode::Standard => "STANDARD",
+    PermissionsMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALLOW_ALL", "STANDARD"]
+                }
+            }
 impl AsRef<str> for PermissionsMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the encryption of data at rest in an Amazon QLDB ledger. This includes the current status, the key in Key Management Service (KMS), and when the key became inaccessible (in the case of an error).</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
@@ -247,15 +245,15 @@ pub enum EncryptionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENABLED" => EncryptionStatus::Enabled,
-            "KMS_KEY_INACCESSIBLE" => EncryptionStatus::KmsKeyInaccessible,
-            "UPDATING" => EncryptionStatus::Updating,
-            other => EncryptionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ENABLED" => EncryptionStatus::Enabled,
+"KMS_KEY_INACCESSIBLE" => EncryptionStatus::KmsKeyInaccessible,
+"UPDATING" => EncryptionStatus::Updating,
+other => EncryptionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EncryptionStatus {
                 type Err = std::convert::Infallible;
 
@@ -264,27 +262,25 @@ impl std::str::FromStr for EncryptionStatus {
                 }
             }
 impl EncryptionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EncryptionStatus::Enabled => "ENABLED",
-            EncryptionStatus::KmsKeyInaccessible => "KMS_KEY_INACCESSIBLE",
-            EncryptionStatus::Updating => "UPDATING",
-            EncryptionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENABLED", "KMS_KEY_INACCESSIBLE", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EncryptionStatus::Enabled => "ENABLED",
+    EncryptionStatus::KmsKeyInaccessible => "KMS_KEY_INACCESSIBLE",
+    EncryptionStatus::Updating => "UPDATING",
+    EncryptionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENABLED", "KMS_KEY_INACCESSIBLE", "UPDATING"]
+                }
+            }
 impl AsRef<str> for EncryptionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LedgerState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -339,16 +335,16 @@ pub enum LedgerState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LedgerState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => LedgerState::Active,
-            "CREATING" => LedgerState::Creating,
-            "DELETED" => LedgerState::Deleted,
-            "DELETING" => LedgerState::Deleting,
-            other => LedgerState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => LedgerState::Active,
+"CREATING" => LedgerState::Creating,
+"DELETED" => LedgerState::Deleted,
+"DELETING" => LedgerState::Deleting,
+other => LedgerState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LedgerState {
                 type Err = std::convert::Infallible;
 
@@ -357,28 +353,26 @@ impl std::str::FromStr for LedgerState {
                 }
             }
 impl LedgerState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LedgerState::Active => "ACTIVE",
-            LedgerState::Creating => "CREATING",
-            LedgerState::Deleted => "DELETED",
-            LedgerState::Deleting => "DELETING",
-            LedgerState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETED", "DELETING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LedgerState::Active => "ACTIVE",
+    LedgerState::Creating => "CREATING",
+    LedgerState::Deleted => "DELETED",
+    LedgerState::Deleting => "DELETING",
+    LedgerState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETED", "DELETING"]
+                }
+            }
 impl AsRef<str> for LedgerState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for an Amazon QLDB journal stream.</p>
 #[non_exhaustive]
@@ -809,15 +803,15 @@ pub enum OutputFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OutputFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "ION_BINARY" => OutputFormat::IonBinary,
-            "ION_TEXT" => OutputFormat::IonText,
-            "JSON" => OutputFormat::Json,
-            other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ION_BINARY" => OutputFormat::IonBinary,
+"ION_TEXT" => OutputFormat::IonText,
+"JSON" => OutputFormat::Json,
+other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OutputFormat {
                 type Err = std::convert::Infallible;
 
@@ -826,27 +820,25 @@ impl std::str::FromStr for OutputFormat {
                 }
             }
 impl OutputFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OutputFormat::IonBinary => "ION_BINARY",
-            OutputFormat::IonText => "ION_TEXT",
-            OutputFormat::Json => "JSON",
-            OutputFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ION_BINARY", "ION_TEXT", "JSON"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OutputFormat::IonBinary => "ION_BINARY",
+    OutputFormat::IonText => "ION_TEXT",
+    OutputFormat::Json => "JSON",
+    OutputFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ION_BINARY", "ION_TEXT", "JSON"]
+                }
+            }
 impl AsRef<str> for OutputFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
 #[non_exhaustive]
@@ -1099,15 +1091,15 @@ pub enum S3ObjectEncryptionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3ObjectEncryptionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "NO_ENCRYPTION" => S3ObjectEncryptionType::NoEncryption,
-            "SSE_KMS" => S3ObjectEncryptionType::SseKms,
-            "SSE_S3" => S3ObjectEncryptionType::SseS3,
-            other => S3ObjectEncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NO_ENCRYPTION" => S3ObjectEncryptionType::NoEncryption,
+"SSE_KMS" => S3ObjectEncryptionType::SseKms,
+"SSE_S3" => S3ObjectEncryptionType::SseS3,
+other => S3ObjectEncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for S3ObjectEncryptionType {
                 type Err = std::convert::Infallible;
 
@@ -1116,27 +1108,25 @@ impl std::str::FromStr for S3ObjectEncryptionType {
                 }
             }
 impl S3ObjectEncryptionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            S3ObjectEncryptionType::NoEncryption => "NO_ENCRYPTION",
-            S3ObjectEncryptionType::SseKms => "SSE_KMS",
-            S3ObjectEncryptionType::SseS3 => "SSE_S3",
-            S3ObjectEncryptionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NO_ENCRYPTION", "SSE_KMS", "SSE_S3"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    S3ObjectEncryptionType::NoEncryption => "NO_ENCRYPTION",
+    S3ObjectEncryptionType::SseKms => "SSE_KMS",
+    S3ObjectEncryptionType::SseS3 => "SSE_S3",
+    S3ObjectEncryptionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NO_ENCRYPTION", "SSE_KMS", "SSE_S3"]
+                }
+            }
 impl AsRef<str> for S3ObjectEncryptionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ExportStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1188,15 +1178,15 @@ pub enum ExportStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => ExportStatus::Cancelled,
-            "COMPLETED" => ExportStatus::Completed,
-            "IN_PROGRESS" => ExportStatus::InProgress,
-            other => ExportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => ExportStatus::Cancelled,
+"COMPLETED" => ExportStatus::Completed,
+"IN_PROGRESS" => ExportStatus::InProgress,
+other => ExportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExportStatus {
                 type Err = std::convert::Infallible;
 
@@ -1205,27 +1195,25 @@ impl std::str::FromStr for ExportStatus {
                 }
             }
 impl ExportStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExportStatus::Cancelled => "CANCELLED",
-            ExportStatus::Completed => "COMPLETED",
-            ExportStatus::InProgress => "IN_PROGRESS",
-            ExportStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "COMPLETED", "IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExportStatus::Cancelled => "CANCELLED",
+    ExportStatus::Completed => "COMPLETED",
+    ExportStatus::InProgress => "IN_PROGRESS",
+    ExportStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "COMPLETED", "IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for ExportStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of the original stream creation request.</p>
 #[non_exhaustive]
@@ -1514,14 +1502,14 @@ pub enum ErrorCause {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCause {
-    fn from(s: &str) -> Self {
-        match s {
-            "IAM_PERMISSION_REVOKED" => ErrorCause::IamPermissionRevoked,
-            "KINESIS_STREAM_NOT_FOUND" => ErrorCause::KinesisStreamNotFound,
-            other => ErrorCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "IAM_PERMISSION_REVOKED" => ErrorCause::IamPermissionRevoked,
+"KINESIS_STREAM_NOT_FOUND" => ErrorCause::KinesisStreamNotFound,
+other => ErrorCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ErrorCause {
                 type Err = std::convert::Infallible;
 
@@ -1530,26 +1518,24 @@ impl std::str::FromStr for ErrorCause {
                 }
             }
 impl ErrorCause {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ErrorCause::IamPermissionRevoked => "IAM_PERMISSION_REVOKED",
-            ErrorCause::KinesisStreamNotFound => "KINESIS_STREAM_NOT_FOUND",
-            ErrorCause::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "IAM_PERMISSION_REVOKED", "KINESIS_STREAM_NOT_FOUND"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ErrorCause::IamPermissionRevoked => "IAM_PERMISSION_REVOKED",
+    ErrorCause::KinesisStreamNotFound => "KINESIS_STREAM_NOT_FOUND",
+    ErrorCause::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["IAM_PERMISSION_REVOKED", "KINESIS_STREAM_NOT_FOUND"]
+                }
+            }
 impl AsRef<str> for ErrorCause {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StreamStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1607,17 +1593,17 @@ pub enum StreamStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => StreamStatus::Active,
-            "CANCELED" => StreamStatus::Canceled,
-            "COMPLETED" => StreamStatus::Completed,
-            "FAILED" => StreamStatus::Failed,
-            "IMPAIRED" => StreamStatus::Impaired,
-            other => StreamStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => StreamStatus::Active,
+"CANCELED" => StreamStatus::Canceled,
+"COMPLETED" => StreamStatus::Completed,
+"FAILED" => StreamStatus::Failed,
+"IMPAIRED" => StreamStatus::Impaired,
+other => StreamStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StreamStatus {
                 type Err = std::convert::Infallible;
 
@@ -1626,29 +1612,27 @@ impl std::str::FromStr for StreamStatus {
                 }
             }
 impl StreamStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StreamStatus::Active => "ACTIVE",
-            StreamStatus::Canceled => "CANCELED",
-            StreamStatus::Completed => "COMPLETED",
-            StreamStatus::Failed => "FAILED",
-            StreamStatus::Impaired => "IMPAIRED",
-            StreamStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CANCELED", "COMPLETED", "FAILED", "IMPAIRED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StreamStatus::Active => "ACTIVE",
+    StreamStatus::Canceled => "CANCELED",
+    StreamStatus::Completed => "COMPLETED",
+    StreamStatus::Failed => "FAILED",
+    StreamStatus::Impaired => "IMPAIRED",
+    StreamStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CANCELED", "COMPLETED", "FAILED", "IMPAIRED"]
+                }
+            }
 impl AsRef<str> for StreamStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure that can contain a value in multiple encoding formats.</p>
 #[non_exhaustive]

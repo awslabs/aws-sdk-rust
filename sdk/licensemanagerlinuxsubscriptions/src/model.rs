@@ -53,16 +53,16 @@ pub enum Status {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
-    fn from(s: &str) -> Self {
-        match s {
-            "Completed" => Status::Completed,
-            "Failed" => Status::Failed,
-            "InProgress" => Status::InProgress,
-            "Successful" => Status::Successful,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Completed" => Status::Completed,
+"Failed" => Status::Failed,
+"InProgress" => Status::InProgress,
+"Successful" => Status::Successful,
+other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Status {
                 type Err = std::convert::Infallible;
 
@@ -71,28 +71,26 @@ impl std::str::FromStr for Status {
                 }
             }
 impl Status {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Status::Completed => "Completed",
-            Status::Failed => "Failed",
-            Status::InProgress => "InProgress",
-            Status::Successful => "Successful",
-            Status::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Completed", "Failed", "InProgress", "Successful"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Status::Completed => "Completed",
+    Status::Failed => "Failed",
+    Status::InProgress => "InProgress",
+    Status::Successful => "Successful",
+    Status::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Completed", "Failed", "InProgress", "Successful"]
+                }
+            }
 impl AsRef<str> for Status {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Lists the settings defined for discovering Linux subscriptions.</p>
 #[non_exhaustive]
@@ -216,14 +214,14 @@ pub enum OrganizationIntegration {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrganizationIntegration {
-    fn from(s: &str) -> Self {
-        match s {
-            "Disabled" => OrganizationIntegration::Disabled,
-            "Enabled" => OrganizationIntegration::Enabled,
-            other => OrganizationIntegration::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Disabled" => OrganizationIntegration::Disabled,
+"Enabled" => OrganizationIntegration::Enabled,
+other => OrganizationIntegration::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OrganizationIntegration {
                 type Err = std::convert::Infallible;
 
@@ -232,26 +230,24 @@ impl std::str::FromStr for OrganizationIntegration {
                 }
             }
 impl OrganizationIntegration {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OrganizationIntegration::Disabled => "Disabled",
-            OrganizationIntegration::Enabled => "Enabled",
-            OrganizationIntegration::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Disabled", "Enabled"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OrganizationIntegration::Disabled => "Disabled",
+    OrganizationIntegration::Enabled => "Enabled",
+    OrganizationIntegration::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Disabled", "Enabled"]
+                }
+            }
 impl AsRef<str> for OrganizationIntegration {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LinuxSubscriptionsDiscovery`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -300,14 +296,14 @@ pub enum LinuxSubscriptionsDiscovery {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LinuxSubscriptionsDiscovery {
-    fn from(s: &str) -> Self {
-        match s {
-            "Disabled" => LinuxSubscriptionsDiscovery::Disabled,
-            "Enabled" => LinuxSubscriptionsDiscovery::Enabled,
-            other => LinuxSubscriptionsDiscovery::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Disabled" => LinuxSubscriptionsDiscovery::Disabled,
+"Enabled" => LinuxSubscriptionsDiscovery::Enabled,
+other => LinuxSubscriptionsDiscovery::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LinuxSubscriptionsDiscovery {
                 type Err = std::convert::Infallible;
 
@@ -316,26 +312,24 @@ impl std::str::FromStr for LinuxSubscriptionsDiscovery {
                 }
             }
 impl LinuxSubscriptionsDiscovery {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LinuxSubscriptionsDiscovery::Disabled => "Disabled",
-            LinuxSubscriptionsDiscovery::Enabled => "Enabled",
-            LinuxSubscriptionsDiscovery::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Disabled", "Enabled"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LinuxSubscriptionsDiscovery::Disabled => "Disabled",
+    LinuxSubscriptionsDiscovery::Enabled => "Enabled",
+    LinuxSubscriptionsDiscovery::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Disabled", "Enabled"]
+                }
+            }
 impl AsRef<str> for LinuxSubscriptionsDiscovery {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object which details a discovered Linux subscription.</p>
 #[non_exhaustive]
@@ -569,15 +563,15 @@ pub enum Operator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Operator {
-    fn from(s: &str) -> Self {
-        match s {
-            "Contains" => Operator::Contains,
-            "Equal" => Operator::Equal,
-            "NotEqual" => Operator::NotEqual,
-            other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Contains" => Operator::Contains,
+"Equal" => Operator::Equal,
+"NotEqual" => Operator::NotEqual,
+other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Operator {
                 type Err = std::convert::Infallible;
 
@@ -586,27 +580,25 @@ impl std::str::FromStr for Operator {
                 }
             }
 impl Operator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Operator::Contains => "Contains",
-            Operator::Equal => "Equal",
-            Operator::NotEqual => "NotEqual",
-            Operator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Contains", "Equal", "NotEqual"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Operator::Contains => "Contains",
+    Operator::Equal => "Equal",
+    Operator::NotEqual => "NotEqual",
+    Operator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Contains", "Equal", "NotEqual"]
+                }
+            }
 impl AsRef<str> for Operator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details discovered information about a running instance using Linux subscriptions.</p>
 #[non_exhaustive]

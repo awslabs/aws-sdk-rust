@@ -182,14 +182,14 @@ pub enum DetailsAttributes {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DetailsAttributes {
-    fn from(s: &str) -> Self {
-        match s {
-            "Algorithm" => DetailsAttributes::Algorithm,
-            "PredictiveModelType" => DetailsAttributes::PredictiveModelType,
-            other => DetailsAttributes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Algorithm" => DetailsAttributes::Algorithm,
+"PredictiveModelType" => DetailsAttributes::PredictiveModelType,
+other => DetailsAttributes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DetailsAttributes {
                 type Err = std::convert::Infallible;
 
@@ -198,26 +198,24 @@ impl std::str::FromStr for DetailsAttributes {
                 }
             }
 impl DetailsAttributes {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DetailsAttributes::Algorithm => "Algorithm",
-            DetailsAttributes::PredictiveModelType => "PredictiveModelType",
-            DetailsAttributes::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Algorithm", "PredictiveModelType"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DetailsAttributes::Algorithm => "Algorithm",
+    DetailsAttributes::PredictiveModelType => "PredictiveModelType",
+    DetailsAttributes::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Algorithm", "PredictiveModelType"]
+                }
+            }
 impl AsRef<str> for DetailsAttributes {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `MlModelType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -269,15 +267,15 @@ pub enum MlModelType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MlModelType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BINARY" => MlModelType::Binary,
-            "MULTICLASS" => MlModelType::Multiclass,
-            "REGRESSION" => MlModelType::Regression,
-            other => MlModelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BINARY" => MlModelType::Binary,
+"MULTICLASS" => MlModelType::Multiclass,
+"REGRESSION" => MlModelType::Regression,
+other => MlModelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MlModelType {
                 type Err = std::convert::Infallible;
 
@@ -286,27 +284,25 @@ impl std::str::FromStr for MlModelType {
                 }
             }
 impl MlModelType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MlModelType::Binary => "BINARY",
-            MlModelType::Multiclass => "MULTICLASS",
-            MlModelType::Regression => "REGRESSION",
-            MlModelType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BINARY", "MULTICLASS", "REGRESSION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MlModelType::Binary => "BINARY",
+    MlModelType::Multiclass => "MULTICLASS",
+    MlModelType::Regression => "REGRESSION",
+    MlModelType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BINARY", "MULTICLASS", "REGRESSION"]
+                }
+            }
 impl AsRef<str> for MlModelType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes the real-time endpoint information for an <code>MLModel</code>.</p>
 #[non_exhaustive]
@@ -493,16 +489,16 @@ pub enum RealtimeEndpointStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RealtimeEndpointStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => RealtimeEndpointStatus::Failed,
-            "NONE" => RealtimeEndpointStatus::None,
-            "READY" => RealtimeEndpointStatus::Ready,
-            "UPDATING" => RealtimeEndpointStatus::Updating,
-            other => RealtimeEndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => RealtimeEndpointStatus::Failed,
+"NONE" => RealtimeEndpointStatus::None,
+"READY" => RealtimeEndpointStatus::Ready,
+"UPDATING" => RealtimeEndpointStatus::Updating,
+other => RealtimeEndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RealtimeEndpointStatus {
                 type Err = std::convert::Infallible;
 
@@ -511,28 +507,26 @@ impl std::str::FromStr for RealtimeEndpointStatus {
                 }
             }
 impl RealtimeEndpointStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RealtimeEndpointStatus::Failed => "FAILED",
-            RealtimeEndpointStatus::None => "NONE",
-            RealtimeEndpointStatus::Ready => "READY",
-            RealtimeEndpointStatus::Updating => "UPDATING",
-            RealtimeEndpointStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "NONE", "READY", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RealtimeEndpointStatus::Failed => "FAILED",
+    RealtimeEndpointStatus::None => "NONE",
+    RealtimeEndpointStatus::Ready => "READY",
+    RealtimeEndpointStatus::Updating => "UPDATING",
+    RealtimeEndpointStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "NONE", "READY", "UPDATING"]
+                }
+            }
 impl AsRef<str> for RealtimeEndpointStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EntityStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -617,17 +611,17 @@ pub enum EntityStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntityStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => EntityStatus::Completed,
-            "DELETED" => EntityStatus::Deleted,
-            "FAILED" => EntityStatus::Failed,
-            "INPROGRESS" => EntityStatus::Inprogress,
-            "PENDING" => EntityStatus::Pending,
-            other => EntityStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => EntityStatus::Completed,
+"DELETED" => EntityStatus::Deleted,
+"FAILED" => EntityStatus::Failed,
+"INPROGRESS" => EntityStatus::Inprogress,
+"PENDING" => EntityStatus::Pending,
+other => EntityStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EntityStatus {
                 type Err = std::convert::Infallible;
 
@@ -636,29 +630,27 @@ impl std::str::FromStr for EntityStatus {
                 }
             }
 impl EntityStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EntityStatus::Completed => "COMPLETED",
-            EntityStatus::Deleted => "DELETED",
-            EntityStatus::Failed => "FAILED",
-            EntityStatus::Inprogress => "INPROGRESS",
-            EntityStatus::Pending => "PENDING",
-            EntityStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "DELETED", "FAILED", "INPROGRESS", "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EntityStatus::Completed => "COMPLETED",
+    EntityStatus::Deleted => "DELETED",
+    EntityStatus::Failed => "FAILED",
+    EntityStatus::Inprogress => "INPROGRESS",
+    EntityStatus::Pending => "PENDING",
+    EntityStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "DELETED", "FAILED", "INPROGRESS", "PENDING"]
+                }
+            }
 impl AsRef<str> for EntityStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p> 
 /// <ul> 
@@ -1214,16 +1206,16 @@ pub enum TaggableResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TaggableResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BatchPrediction" => TaggableResourceType::BatchPrediction,
-            "DataSource" => TaggableResourceType::Datasource,
-            "Evaluation" => TaggableResourceType::Evaluation,
-            "MLModel" => TaggableResourceType::MlModel,
-            other => TaggableResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BatchPrediction" => TaggableResourceType::BatchPrediction,
+"DataSource" => TaggableResourceType::Datasource,
+"Evaluation" => TaggableResourceType::Evaluation,
+"MLModel" => TaggableResourceType::MlModel,
+other => TaggableResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TaggableResourceType {
                 type Err = std::convert::Infallible;
 
@@ -1232,28 +1224,26 @@ impl std::str::FromStr for TaggableResourceType {
                 }
             }
 impl TaggableResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TaggableResourceType::BatchPrediction => "BatchPrediction",
-            TaggableResourceType::Datasource => "DataSource",
-            TaggableResourceType::Evaluation => "Evaluation",
-            TaggableResourceType::MlModel => "MLModel",
-            TaggableResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BatchPrediction", "DataSource", "Evaluation", "MLModel"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TaggableResourceType::BatchPrediction => "BatchPrediction",
+    TaggableResourceType::Datasource => "DataSource",
+    TaggableResourceType::Evaluation => "Evaluation",
+    TaggableResourceType::MlModel => "MLModel",
+    TaggableResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BatchPrediction", "DataSource", "Evaluation", "MLModel"]
+                }
+            }
 impl AsRef<str> for TaggableResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Represents the output of a <code>GetMLModel</code> operation. </p> 
 /// <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p>
@@ -1800,13 +1790,13 @@ pub enum Algorithm {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Algorithm {
-    fn from(s: &str) -> Self {
-        match s {
-            "sgd" => Algorithm::Sgd,
-            other => Algorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "sgd" => Algorithm::Sgd,
+other => Algorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Algorithm {
                 type Err = std::convert::Infallible;
 
@@ -1815,25 +1805,23 @@ impl std::str::FromStr for Algorithm {
                 }
             }
 impl Algorithm {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Algorithm::Sgd => "sgd",
-            Algorithm::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "sgd"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Algorithm::Sgd => "sgd",
+    Algorithm::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["sgd"]
+                }
+            }
 impl AsRef<str> for Algorithm {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1892,14 +1880,14 @@ pub enum SortOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "asc" => SortOrder::Asc,
-            "dsc" => SortOrder::Dsc,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "asc" => SortOrder::Asc,
+"dsc" => SortOrder::Dsc,
+other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortOrder {
                 type Err = std::convert::Infallible;
 
@@ -1908,26 +1896,24 @@ impl std::str::FromStr for SortOrder {
                 }
             }
 impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Asc => "asc",
-            SortOrder::Dsc => "dsc",
-            SortOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "asc", "dsc"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortOrder::Asc => "asc",
+    SortOrder::Dsc => "dsc",
+    SortOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["asc", "dsc"]
+                }
+            }
 impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `MlModelFilterVariable`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2000,22 +1986,22 @@ pub enum MlModelFilterVariable {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MlModelFilterVariable {
-    fn from(s: &str) -> Self {
-        match s {
-            "Algorithm" => MlModelFilterVariable::Algorithm,
-            "CreatedAt" => MlModelFilterVariable::CreatedAt,
-            "IAMUser" => MlModelFilterVariable::IamUser,
-            "LastUpdatedAt" => MlModelFilterVariable::LastUpdatedAt,
-            "MLModelType" => MlModelFilterVariable::MlModelType,
-            "Name" => MlModelFilterVariable::Name,
-            "RealtimeEndpointStatus" => MlModelFilterVariable::RealTimeEndpointStatus,
-            "Status" => MlModelFilterVariable::Status,
-            "TrainingDataSourceId" => MlModelFilterVariable::TrainingDatasourceId,
-            "TrainingDataURI" => MlModelFilterVariable::TrainingDataUri,
-            other => MlModelFilterVariable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Algorithm" => MlModelFilterVariable::Algorithm,
+"CreatedAt" => MlModelFilterVariable::CreatedAt,
+"IAMUser" => MlModelFilterVariable::IamUser,
+"LastUpdatedAt" => MlModelFilterVariable::LastUpdatedAt,
+"MLModelType" => MlModelFilterVariable::MlModelType,
+"Name" => MlModelFilterVariable::Name,
+"RealtimeEndpointStatus" => MlModelFilterVariable::RealTimeEndpointStatus,
+"Status" => MlModelFilterVariable::Status,
+"TrainingDataSourceId" => MlModelFilterVariable::TrainingDatasourceId,
+"TrainingDataURI" => MlModelFilterVariable::TrainingDataUri,
+other => MlModelFilterVariable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MlModelFilterVariable {
                 type Err = std::convert::Infallible;
 
@@ -2024,34 +2010,32 @@ impl std::str::FromStr for MlModelFilterVariable {
                 }
             }
 impl MlModelFilterVariable {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MlModelFilterVariable::Algorithm => "Algorithm",
-            MlModelFilterVariable::CreatedAt => "CreatedAt",
-            MlModelFilterVariable::IamUser => "IAMUser",
-            MlModelFilterVariable::LastUpdatedAt => "LastUpdatedAt",
-            MlModelFilterVariable::MlModelType => "MLModelType",
-            MlModelFilterVariable::Name => "Name",
-            MlModelFilterVariable::RealTimeEndpointStatus => "RealtimeEndpointStatus",
-            MlModelFilterVariable::Status => "Status",
-            MlModelFilterVariable::TrainingDatasourceId => "TrainingDataSourceId",
-            MlModelFilterVariable::TrainingDataUri => "TrainingDataURI",
-            MlModelFilterVariable::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Algorithm", "CreatedAt", "IAMUser", "LastUpdatedAt", "MLModelType", "Name", "RealtimeEndpointStatus", "Status", "TrainingDataSourceId", "TrainingDataURI"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MlModelFilterVariable::Algorithm => "Algorithm",
+    MlModelFilterVariable::CreatedAt => "CreatedAt",
+    MlModelFilterVariable::IamUser => "IAMUser",
+    MlModelFilterVariable::LastUpdatedAt => "LastUpdatedAt",
+    MlModelFilterVariable::MlModelType => "MLModelType",
+    MlModelFilterVariable::Name => "Name",
+    MlModelFilterVariable::RealTimeEndpointStatus => "RealtimeEndpointStatus",
+    MlModelFilterVariable::Status => "Status",
+    MlModelFilterVariable::TrainingDatasourceId => "TrainingDataSourceId",
+    MlModelFilterVariable::TrainingDataUri => "TrainingDataURI",
+    MlModelFilterVariable::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Algorithm", "CreatedAt", "IAMUser", "LastUpdatedAt", "MLModelType", "Name", "RealtimeEndpointStatus", "Status", "TrainingDataSourceId", "TrainingDataURI"]
+                }
+            }
 impl AsRef<str> for MlModelFilterVariable {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Represents the output of <code>GetEvaluation</code> operation. </p> 
 /// <p>The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.</p>
@@ -2500,20 +2484,20 @@ pub enum EvaluationFilterVariable {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EvaluationFilterVariable {
-    fn from(s: &str) -> Self {
-        match s {
-            "CreatedAt" => EvaluationFilterVariable::CreatedAt,
-            "DataSourceId" => EvaluationFilterVariable::DatasourceId,
-            "DataURI" => EvaluationFilterVariable::DataUri,
-            "IAMUser" => EvaluationFilterVariable::IamUser,
-            "LastUpdatedAt" => EvaluationFilterVariable::LastUpdatedAt,
-            "MLModelId" => EvaluationFilterVariable::MlModelId,
-            "Name" => EvaluationFilterVariable::Name,
-            "Status" => EvaluationFilterVariable::Status,
-            other => EvaluationFilterVariable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CreatedAt" => EvaluationFilterVariable::CreatedAt,
+"DataSourceId" => EvaluationFilterVariable::DatasourceId,
+"DataURI" => EvaluationFilterVariable::DataUri,
+"IAMUser" => EvaluationFilterVariable::IamUser,
+"LastUpdatedAt" => EvaluationFilterVariable::LastUpdatedAt,
+"MLModelId" => EvaluationFilterVariable::MlModelId,
+"Name" => EvaluationFilterVariable::Name,
+"Status" => EvaluationFilterVariable::Status,
+other => EvaluationFilterVariable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EvaluationFilterVariable {
                 type Err = std::convert::Infallible;
 
@@ -2522,32 +2506,30 @@ impl std::str::FromStr for EvaluationFilterVariable {
                 }
             }
 impl EvaluationFilterVariable {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EvaluationFilterVariable::CreatedAt => "CreatedAt",
-            EvaluationFilterVariable::DatasourceId => "DataSourceId",
-            EvaluationFilterVariable::DataUri => "DataURI",
-            EvaluationFilterVariable::IamUser => "IAMUser",
-            EvaluationFilterVariable::LastUpdatedAt => "LastUpdatedAt",
-            EvaluationFilterVariable::MlModelId => "MLModelId",
-            EvaluationFilterVariable::Name => "Name",
-            EvaluationFilterVariable::Status => "Status",
-            EvaluationFilterVariable::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CreatedAt", "DataSourceId", "DataURI", "IAMUser", "LastUpdatedAt", "MLModelId", "Name", "Status"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EvaluationFilterVariable::CreatedAt => "CreatedAt",
+    EvaluationFilterVariable::DatasourceId => "DataSourceId",
+    EvaluationFilterVariable::DataUri => "DataURI",
+    EvaluationFilterVariable::IamUser => "IAMUser",
+    EvaluationFilterVariable::LastUpdatedAt => "LastUpdatedAt",
+    EvaluationFilterVariable::MlModelId => "MLModelId",
+    EvaluationFilterVariable::Name => "Name",
+    EvaluationFilterVariable::Status => "Status",
+    EvaluationFilterVariable::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CreatedAt", "DataSourceId", "DataURI", "IAMUser", "LastUpdatedAt", "MLModelId", "Name", "Status"]
+                }
+            }
 impl AsRef<str> for EvaluationFilterVariable {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Represents the output of the <code>GetDataSource</code> operation. </p> 
 /// <p> The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>. </p>
@@ -3038,18 +3020,18 @@ pub enum DataSourceFilterVariable {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataSourceFilterVariable {
-    fn from(s: &str) -> Self {
-        match s {
-            "CreatedAt" => DataSourceFilterVariable::CreatedAt,
-            "DataLocationS3" => DataSourceFilterVariable::DataUri,
-            "IAMUser" => DataSourceFilterVariable::IamUser,
-            "LastUpdatedAt" => DataSourceFilterVariable::LastUpdatedAt,
-            "Name" => DataSourceFilterVariable::Name,
-            "Status" => DataSourceFilterVariable::Status,
-            other => DataSourceFilterVariable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CreatedAt" => DataSourceFilterVariable::CreatedAt,
+"DataLocationS3" => DataSourceFilterVariable::DataUri,
+"IAMUser" => DataSourceFilterVariable::IamUser,
+"LastUpdatedAt" => DataSourceFilterVariable::LastUpdatedAt,
+"Name" => DataSourceFilterVariable::Name,
+"Status" => DataSourceFilterVariable::Status,
+other => DataSourceFilterVariable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DataSourceFilterVariable {
                 type Err = std::convert::Infallible;
 
@@ -3058,30 +3040,28 @@ impl std::str::FromStr for DataSourceFilterVariable {
                 }
             }
 impl DataSourceFilterVariable {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataSourceFilterVariable::CreatedAt => "CreatedAt",
-            DataSourceFilterVariable::DataUri => "DataLocationS3",
-            DataSourceFilterVariable::IamUser => "IAMUser",
-            DataSourceFilterVariable::LastUpdatedAt => "LastUpdatedAt",
-            DataSourceFilterVariable::Name => "Name",
-            DataSourceFilterVariable::Status => "Status",
-            DataSourceFilterVariable::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CreatedAt", "DataLocationS3", "IAMUser", "LastUpdatedAt", "Name", "Status"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataSourceFilterVariable::CreatedAt => "CreatedAt",
+    DataSourceFilterVariable::DataUri => "DataLocationS3",
+    DataSourceFilterVariable::IamUser => "IAMUser",
+    DataSourceFilterVariable::LastUpdatedAt => "LastUpdatedAt",
+    DataSourceFilterVariable::Name => "Name",
+    DataSourceFilterVariable::Status => "Status",
+    DataSourceFilterVariable::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CreatedAt", "DataLocationS3", "IAMUser", "LastUpdatedAt", "Name", "Status"]
+                }
+            }
 impl AsRef<str> for DataSourceFilterVariable {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Represents the output of a <code>GetBatchPrediction</code> operation.</p> 
 /// <p> The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.</p>
@@ -3544,20 +3524,20 @@ pub enum BatchPredictionFilterVariable {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchPredictionFilterVariable {
-    fn from(s: &str) -> Self {
-        match s {
-            "CreatedAt" => BatchPredictionFilterVariable::CreatedAt,
-            "DataSourceId" => BatchPredictionFilterVariable::DatasourceId,
-            "DataURI" => BatchPredictionFilterVariable::DataUri,
-            "IAMUser" => BatchPredictionFilterVariable::IamUser,
-            "LastUpdatedAt" => BatchPredictionFilterVariable::LastUpdatedAt,
-            "MLModelId" => BatchPredictionFilterVariable::MlModelId,
-            "Name" => BatchPredictionFilterVariable::Name,
-            "Status" => BatchPredictionFilterVariable::Status,
-            other => BatchPredictionFilterVariable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CreatedAt" => BatchPredictionFilterVariable::CreatedAt,
+"DataSourceId" => BatchPredictionFilterVariable::DatasourceId,
+"DataURI" => BatchPredictionFilterVariable::DataUri,
+"IAMUser" => BatchPredictionFilterVariable::IamUser,
+"LastUpdatedAt" => BatchPredictionFilterVariable::LastUpdatedAt,
+"MLModelId" => BatchPredictionFilterVariable::MlModelId,
+"Name" => BatchPredictionFilterVariable::Name,
+"Status" => BatchPredictionFilterVariable::Status,
+other => BatchPredictionFilterVariable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BatchPredictionFilterVariable {
                 type Err = std::convert::Infallible;
 
@@ -3566,32 +3546,30 @@ impl std::str::FromStr for BatchPredictionFilterVariable {
                 }
             }
 impl BatchPredictionFilterVariable {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BatchPredictionFilterVariable::CreatedAt => "CreatedAt",
-            BatchPredictionFilterVariable::DatasourceId => "DataSourceId",
-            BatchPredictionFilterVariable::DataUri => "DataURI",
-            BatchPredictionFilterVariable::IamUser => "IAMUser",
-            BatchPredictionFilterVariable::LastUpdatedAt => "LastUpdatedAt",
-            BatchPredictionFilterVariable::MlModelId => "MLModelId",
-            BatchPredictionFilterVariable::Name => "Name",
-            BatchPredictionFilterVariable::Status => "Status",
-            BatchPredictionFilterVariable::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CreatedAt", "DataSourceId", "DataURI", "IAMUser", "LastUpdatedAt", "MLModelId", "Name", "Status"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BatchPredictionFilterVariable::CreatedAt => "CreatedAt",
+    BatchPredictionFilterVariable::DatasourceId => "DataSourceId",
+    BatchPredictionFilterVariable::DataUri => "DataURI",
+    BatchPredictionFilterVariable::IamUser => "IAMUser",
+    BatchPredictionFilterVariable::LastUpdatedAt => "LastUpdatedAt",
+    BatchPredictionFilterVariable::MlModelId => "MLModelId",
+    BatchPredictionFilterVariable::Name => "Name",
+    BatchPredictionFilterVariable::Status => "Status",
+    BatchPredictionFilterVariable::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CreatedAt", "DataSourceId", "DataURI", "IAMUser", "LastUpdatedAt", "MLModelId", "Name", "Status"]
+                }
+            }
 impl AsRef<str> for BatchPredictionFilterVariable {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes the data specification of a <code>DataSource</code>.</p>
 #[non_exhaustive]

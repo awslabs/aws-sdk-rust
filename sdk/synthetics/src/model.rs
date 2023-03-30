@@ -171,14 +171,14 @@ pub enum EncryptionMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "SSE_KMS" => EncryptionMode::SseKms,
-            "SSE_S3" => EncryptionMode::SseS3,
-            other => EncryptionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SSE_KMS" => EncryptionMode::SseKms,
+"SSE_S3" => EncryptionMode::SseS3,
+other => EncryptionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EncryptionMode {
                 type Err = std::convert::Infallible;
 
@@ -187,26 +187,24 @@ impl std::str::FromStr for EncryptionMode {
                 }
             }
 impl EncryptionMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EncryptionMode::SseKms => "SSE_KMS",
-            EncryptionMode::SseS3 => "SSE_S3",
-            EncryptionMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SSE_KMS", "SSE_S3"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EncryptionMode::SseKms => "SSE_KMS",
+    EncryptionMode::SseS3 => "SSE_S3",
+    EncryptionMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SSE_KMS", "SSE_S3"]
+                }
+            }
 impl AsRef<str> for EncryptionMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object that specifies what screenshots to use as a baseline for visual monitoring by this canary. It can optionally also specify parts of the screenshots to ignore during the visual monitoring comparison.</p> 
 /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
@@ -1361,14 +1359,14 @@ pub enum CanaryRunStateReasonCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CanaryRunStateReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANARY_FAILURE" => CanaryRunStateReasonCode::CanaryFailure,
-            "EXECUTION_FAILURE" => CanaryRunStateReasonCode::ExecutionFailure,
-            other => CanaryRunStateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANARY_FAILURE" => CanaryRunStateReasonCode::CanaryFailure,
+"EXECUTION_FAILURE" => CanaryRunStateReasonCode::ExecutionFailure,
+other => CanaryRunStateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CanaryRunStateReasonCode {
                 type Err = std::convert::Infallible;
 
@@ -1377,26 +1375,24 @@ impl std::str::FromStr for CanaryRunStateReasonCode {
                 }
             }
 impl CanaryRunStateReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CanaryRunStateReasonCode::CanaryFailure => "CANARY_FAILURE",
-            CanaryRunStateReasonCode::ExecutionFailure => "EXECUTION_FAILURE",
-            CanaryRunStateReasonCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANARY_FAILURE", "EXECUTION_FAILURE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CanaryRunStateReasonCode::CanaryFailure => "CANARY_FAILURE",
+    CanaryRunStateReasonCode::ExecutionFailure => "EXECUTION_FAILURE",
+    CanaryRunStateReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANARY_FAILURE", "EXECUTION_FAILURE"]
+                }
+            }
 impl AsRef<str> for CanaryRunStateReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CanaryRunState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1448,15 +1444,15 @@ pub enum CanaryRunState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CanaryRunState {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => CanaryRunState::Failed,
-            "PASSED" => CanaryRunState::Passed,
-            "RUNNING" => CanaryRunState::Running,
-            other => CanaryRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => CanaryRunState::Failed,
+"PASSED" => CanaryRunState::Passed,
+"RUNNING" => CanaryRunState::Running,
+other => CanaryRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CanaryRunState {
                 type Err = std::convert::Infallible;
 
@@ -1465,27 +1461,25 @@ impl std::str::FromStr for CanaryRunState {
                 }
             }
 impl CanaryRunState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CanaryRunState::Failed => "FAILED",
-            CanaryRunState::Passed => "PASSED",
-            CanaryRunState::Running => "RUNNING",
-            CanaryRunState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "PASSED", "RUNNING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CanaryRunState::Failed => "FAILED",
+    CanaryRunState::Passed => "PASSED",
+    CanaryRunState::Running => "RUNNING",
+    CanaryRunState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "PASSED", "RUNNING"]
+                }
+            }
 impl AsRef<str> for CanaryRunState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This structure contains all information about one canary in your account.</p>
 #[non_exhaustive]
@@ -2345,24 +2339,24 @@ pub enum CanaryStateReasonCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CanaryStateReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => CanaryStateReasonCode::CreateFailed,
-            "CREATE_IN_PROGRESS" => CanaryStateReasonCode::CreateInProgress,
-            "CREATE_PENDING" => CanaryStateReasonCode::CreatePending,
-            "DELETE_FAILED" => CanaryStateReasonCode::DeleteFailed,
-            "DELETE_IN_PROGRESS" => CanaryStateReasonCode::DeleteInProgress,
-            "INVALID_PERMISSIONS" => CanaryStateReasonCode::InvalidPermissions,
-            "ROLLBACK_COMPLETE" => CanaryStateReasonCode::RollbackComplete,
-            "ROLLBACK_FAILED" => CanaryStateReasonCode::RollbackFailed,
-            "SYNC_DELETE_IN_PROGRESS" => CanaryStateReasonCode::SyncDeleteInProgress,
-            "UPDATE_COMPLETE" => CanaryStateReasonCode::UpdateComplete,
-            "UPDATE_IN_PROGRESS" => CanaryStateReasonCode::UpdateInProgress,
-            "UPDATE_PENDING" => CanaryStateReasonCode::UpdatePending,
-            other => CanaryStateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => CanaryStateReasonCode::CreateFailed,
+"CREATE_IN_PROGRESS" => CanaryStateReasonCode::CreateInProgress,
+"CREATE_PENDING" => CanaryStateReasonCode::CreatePending,
+"DELETE_FAILED" => CanaryStateReasonCode::DeleteFailed,
+"DELETE_IN_PROGRESS" => CanaryStateReasonCode::DeleteInProgress,
+"INVALID_PERMISSIONS" => CanaryStateReasonCode::InvalidPermissions,
+"ROLLBACK_COMPLETE" => CanaryStateReasonCode::RollbackComplete,
+"ROLLBACK_FAILED" => CanaryStateReasonCode::RollbackFailed,
+"SYNC_DELETE_IN_PROGRESS" => CanaryStateReasonCode::SyncDeleteInProgress,
+"UPDATE_COMPLETE" => CanaryStateReasonCode::UpdateComplete,
+"UPDATE_IN_PROGRESS" => CanaryStateReasonCode::UpdateInProgress,
+"UPDATE_PENDING" => CanaryStateReasonCode::UpdatePending,
+other => CanaryStateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CanaryStateReasonCode {
                 type Err = std::convert::Infallible;
 
@@ -2371,36 +2365,34 @@ impl std::str::FromStr for CanaryStateReasonCode {
                 }
             }
 impl CanaryStateReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CanaryStateReasonCode::CreateFailed => "CREATE_FAILED",
-            CanaryStateReasonCode::CreateInProgress => "CREATE_IN_PROGRESS",
-            CanaryStateReasonCode::CreatePending => "CREATE_PENDING",
-            CanaryStateReasonCode::DeleteFailed => "DELETE_FAILED",
-            CanaryStateReasonCode::DeleteInProgress => "DELETE_IN_PROGRESS",
-            CanaryStateReasonCode::InvalidPermissions => "INVALID_PERMISSIONS",
-            CanaryStateReasonCode::RollbackComplete => "ROLLBACK_COMPLETE",
-            CanaryStateReasonCode::RollbackFailed => "ROLLBACK_FAILED",
-            CanaryStateReasonCode::SyncDeleteInProgress => "SYNC_DELETE_IN_PROGRESS",
-            CanaryStateReasonCode::UpdateComplete => "UPDATE_COMPLETE",
-            CanaryStateReasonCode::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            CanaryStateReasonCode::UpdatePending => "UPDATE_PENDING",
-            CanaryStateReasonCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_PENDING", "DELETE_FAILED", "DELETE_IN_PROGRESS", "INVALID_PERMISSIONS", "ROLLBACK_COMPLETE", "ROLLBACK_FAILED", "SYNC_DELETE_IN_PROGRESS", "UPDATE_COMPLETE", "UPDATE_IN_PROGRESS", "UPDATE_PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CanaryStateReasonCode::CreateFailed => "CREATE_FAILED",
+    CanaryStateReasonCode::CreateInProgress => "CREATE_IN_PROGRESS",
+    CanaryStateReasonCode::CreatePending => "CREATE_PENDING",
+    CanaryStateReasonCode::DeleteFailed => "DELETE_FAILED",
+    CanaryStateReasonCode::DeleteInProgress => "DELETE_IN_PROGRESS",
+    CanaryStateReasonCode::InvalidPermissions => "INVALID_PERMISSIONS",
+    CanaryStateReasonCode::RollbackComplete => "ROLLBACK_COMPLETE",
+    CanaryStateReasonCode::RollbackFailed => "ROLLBACK_FAILED",
+    CanaryStateReasonCode::SyncDeleteInProgress => "SYNC_DELETE_IN_PROGRESS",
+    CanaryStateReasonCode::UpdateComplete => "UPDATE_COMPLETE",
+    CanaryStateReasonCode::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    CanaryStateReasonCode::UpdatePending => "UPDATE_PENDING",
+    CanaryStateReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_PENDING", "DELETE_FAILED", "DELETE_IN_PROGRESS", "INVALID_PERMISSIONS", "ROLLBACK_COMPLETE", "ROLLBACK_FAILED", "SYNC_DELETE_IN_PROGRESS", "UPDATE_COMPLETE", "UPDATE_IN_PROGRESS", "UPDATE_PENDING"]
+                }
+            }
 impl AsRef<str> for CanaryStateReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CanaryState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2470,21 +2462,21 @@ pub enum CanaryState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CanaryState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATING" => CanaryState::Creating,
-            "DELETING" => CanaryState::Deleting,
-            "ERROR" => CanaryState::Error,
-            "READY" => CanaryState::Ready,
-            "RUNNING" => CanaryState::Running,
-            "STARTING" => CanaryState::Starting,
-            "STOPPED" => CanaryState::Stopped,
-            "STOPPING" => CanaryState::Stopping,
-            "UPDATING" => CanaryState::Updating,
-            other => CanaryState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATING" => CanaryState::Creating,
+"DELETING" => CanaryState::Deleting,
+"ERROR" => CanaryState::Error,
+"READY" => CanaryState::Ready,
+"RUNNING" => CanaryState::Running,
+"STARTING" => CanaryState::Starting,
+"STOPPED" => CanaryState::Stopped,
+"STOPPING" => CanaryState::Stopping,
+"UPDATING" => CanaryState::Updating,
+other => CanaryState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CanaryState {
                 type Err = std::convert::Infallible;
 
@@ -2493,33 +2485,31 @@ impl std::str::FromStr for CanaryState {
                 }
             }
 impl CanaryState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CanaryState::Creating => "CREATING",
-            CanaryState::Deleting => "DELETING",
-            CanaryState::Error => "ERROR",
-            CanaryState::Ready => "READY",
-            CanaryState::Running => "RUNNING",
-            CanaryState::Starting => "STARTING",
-            CanaryState::Stopped => "STOPPED",
-            CanaryState::Stopping => "STOPPING",
-            CanaryState::Updating => "UPDATING",
-            CanaryState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATING", "DELETING", "ERROR", "READY", "RUNNING", "STARTING", "STOPPED", "STOPPING", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CanaryState::Creating => "CREATING",
+    CanaryState::Deleting => "DELETING",
+    CanaryState::Error => "ERROR",
+    CanaryState::Ready => "READY",
+    CanaryState::Running => "RUNNING",
+    CanaryState::Starting => "STARTING",
+    CanaryState::Stopped => "STOPPED",
+    CanaryState::Stopping => "STOPPING",
+    CanaryState::Updating => "UPDATING",
+    CanaryState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATING", "DELETING", "ERROR", "READY", "RUNNING", "STARTING", "STOPPED", "STOPPING", "UPDATING"]
+                }
+            }
 impl AsRef<str> for CanaryState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure that contains information about a canary run.</p>
 #[non_exhaustive]

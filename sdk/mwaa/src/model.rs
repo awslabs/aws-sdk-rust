@@ -47,14 +47,14 @@ pub enum WebserverAccessMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WebserverAccessMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "PRIVATE_ONLY" => WebserverAccessMode::PrivateOnly,
-            "PUBLIC_ONLY" => WebserverAccessMode::PublicOnly,
-            other => WebserverAccessMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PRIVATE_ONLY" => WebserverAccessMode::PrivateOnly,
+"PUBLIC_ONLY" => WebserverAccessMode::PublicOnly,
+other => WebserverAccessMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WebserverAccessMode {
                 type Err = std::convert::Infallible;
 
@@ -63,26 +63,24 @@ impl std::str::FromStr for WebserverAccessMode {
                 }
             }
 impl WebserverAccessMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WebserverAccessMode::PrivateOnly => "PRIVATE_ONLY",
-            WebserverAccessMode::PublicOnly => "PUBLIC_ONLY",
-            WebserverAccessMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PRIVATE_ONLY", "PUBLIC_ONLY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WebserverAccessMode::PrivateOnly => "PRIVATE_ONLY",
+    WebserverAccessMode::PublicOnly => "PUBLIC_ONLY",
+    WebserverAccessMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PRIVATE_ONLY", "PUBLIC_ONLY"]
+                }
+            }
 impl AsRef<str> for WebserverAccessMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Defines the Apache Airflow log types to send to CloudWatch Logs.</p>
 #[non_exhaustive]
@@ -335,17 +333,17 @@ pub enum LoggingLevel {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LoggingLevel {
-    fn from(s: &str) -> Self {
-        match s {
-            "CRITICAL" => LoggingLevel::Critical,
-            "DEBUG" => LoggingLevel::Debug,
-            "ERROR" => LoggingLevel::Error,
-            "INFO" => LoggingLevel::Info,
-            "WARNING" => LoggingLevel::Warning,
-            other => LoggingLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CRITICAL" => LoggingLevel::Critical,
+"DEBUG" => LoggingLevel::Debug,
+"ERROR" => LoggingLevel::Error,
+"INFO" => LoggingLevel::Info,
+"WARNING" => LoggingLevel::Warning,
+other => LoggingLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LoggingLevel {
                 type Err = std::convert::Infallible;
 
@@ -354,29 +352,27 @@ impl std::str::FromStr for LoggingLevel {
                 }
             }
 impl LoggingLevel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LoggingLevel::Critical => "CRITICAL",
-            LoggingLevel::Debug => "DEBUG",
-            LoggingLevel::Error => "ERROR",
-            LoggingLevel::Info => "INFO",
-            LoggingLevel::Warning => "WARNING",
-            LoggingLevel::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CRITICAL", "DEBUG", "ERROR", "INFO", "WARNING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LoggingLevel::Critical => "CRITICAL",
+    LoggingLevel::Debug => "DEBUG",
+    LoggingLevel::Error => "ERROR",
+    LoggingLevel::Info => "INFO",
+    LoggingLevel::Warning => "WARNING",
+    LoggingLevel::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CRITICAL", "DEBUG", "ERROR", "INFO", "WARNING"]
+                }
+            }
 impl AsRef<str> for LoggingLevel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Defines the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
 #[non_exhaustive]
@@ -814,39 +810,39 @@ pub enum Unit {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Unit {
-    fn from(s: &str) -> Self {
-        match s {
-            "Bits" => Unit::Bits,
-            "Bits/Second" => Unit::BitsPerSecond,
-            "Bytes" => Unit::Bytes,
-            "Bytes/Second" => Unit::BytesPerSecond,
-            "Count" => Unit::Count,
-            "Count/Second" => Unit::CountPerSecond,
-            "Gigabits" => Unit::Gigabits,
-            "Gigabits/Second" => Unit::GigabitsPerSecond,
-            "Gigabytes" => Unit::Gigabytes,
-            "Gigabytes/Second" => Unit::GigabytesPerSecond,
-            "Kilobits" => Unit::Kilobits,
-            "Kilobits/Second" => Unit::KilobitsPerSecond,
-            "Kilobytes" => Unit::Kilobytes,
-            "Kilobytes/Second" => Unit::KilobytesPerSecond,
-            "Megabits" => Unit::Megabits,
-            "Megabits/Second" => Unit::MegabitsPerSecond,
-            "Megabytes" => Unit::Megabytes,
-            "Megabytes/Second" => Unit::MegabytesPerSecond,
-            "Microseconds" => Unit::Microseconds,
-            "Milliseconds" => Unit::Milliseconds,
-            "None" => Unit::None,
-            "Percent" => Unit::Percent,
-            "Seconds" => Unit::Seconds,
-            "Terabits" => Unit::Terabits,
-            "Terabits/Second" => Unit::TerabitsPerSecond,
-            "Terabytes" => Unit::Terabytes,
-            "Terabytes/Second" => Unit::TerabytesPerSecond,
-            other => Unit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Bits" => Unit::Bits,
+"Bits/Second" => Unit::BitsPerSecond,
+"Bytes" => Unit::Bytes,
+"Bytes/Second" => Unit::BytesPerSecond,
+"Count" => Unit::Count,
+"Count/Second" => Unit::CountPerSecond,
+"Gigabits" => Unit::Gigabits,
+"Gigabits/Second" => Unit::GigabitsPerSecond,
+"Gigabytes" => Unit::Gigabytes,
+"Gigabytes/Second" => Unit::GigabytesPerSecond,
+"Kilobits" => Unit::Kilobits,
+"Kilobits/Second" => Unit::KilobitsPerSecond,
+"Kilobytes" => Unit::Kilobytes,
+"Kilobytes/Second" => Unit::KilobytesPerSecond,
+"Megabits" => Unit::Megabits,
+"Megabits/Second" => Unit::MegabitsPerSecond,
+"Megabytes" => Unit::Megabytes,
+"Megabytes/Second" => Unit::MegabytesPerSecond,
+"Microseconds" => Unit::Microseconds,
+"Milliseconds" => Unit::Milliseconds,
+"None" => Unit::None,
+"Percent" => Unit::Percent,
+"Seconds" => Unit::Seconds,
+"Terabits" => Unit::Terabits,
+"Terabits/Second" => Unit::TerabitsPerSecond,
+"Terabytes" => Unit::Terabytes,
+"Terabytes/Second" => Unit::TerabytesPerSecond,
+other => Unit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Unit {
                 type Err = std::convert::Infallible;
 
@@ -855,51 +851,49 @@ impl std::str::FromStr for Unit {
                 }
             }
 impl Unit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Unit::Bits => "Bits",
-            Unit::BitsPerSecond => "Bits/Second",
-            Unit::Bytes => "Bytes",
-            Unit::BytesPerSecond => "Bytes/Second",
-            Unit::Count => "Count",
-            Unit::CountPerSecond => "Count/Second",
-            Unit::Gigabits => "Gigabits",
-            Unit::GigabitsPerSecond => "Gigabits/Second",
-            Unit::Gigabytes => "Gigabytes",
-            Unit::GigabytesPerSecond => "Gigabytes/Second",
-            Unit::Kilobits => "Kilobits",
-            Unit::KilobitsPerSecond => "Kilobits/Second",
-            Unit::Kilobytes => "Kilobytes",
-            Unit::KilobytesPerSecond => "Kilobytes/Second",
-            Unit::Megabits => "Megabits",
-            Unit::MegabitsPerSecond => "Megabits/Second",
-            Unit::Megabytes => "Megabytes",
-            Unit::MegabytesPerSecond => "Megabytes/Second",
-            Unit::Microseconds => "Microseconds",
-            Unit::Milliseconds => "Milliseconds",
-            Unit::None => "None",
-            Unit::Percent => "Percent",
-            Unit::Seconds => "Seconds",
-            Unit::Terabits => "Terabits",
-            Unit::TerabitsPerSecond => "Terabits/Second",
-            Unit::Terabytes => "Terabytes",
-            Unit::TerabytesPerSecond => "Terabytes/Second",
-            Unit::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Bits", "Bits/Second", "Bytes", "Bytes/Second", "Count", "Count/Second", "Gigabits", "Gigabits/Second", "Gigabytes", "Gigabytes/Second", "Kilobits", "Kilobits/Second", "Kilobytes", "Kilobytes/Second", "Megabits", "Megabits/Second", "Megabytes", "Megabytes/Second", "Microseconds", "Milliseconds", "None", "Percent", "Seconds", "Terabits", "Terabits/Second", "Terabytes", "Terabytes/Second"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Unit::Bits => "Bits",
+    Unit::BitsPerSecond => "Bits/Second",
+    Unit::Bytes => "Bytes",
+    Unit::BytesPerSecond => "Bytes/Second",
+    Unit::Count => "Count",
+    Unit::CountPerSecond => "Count/Second",
+    Unit::Gigabits => "Gigabits",
+    Unit::GigabitsPerSecond => "Gigabits/Second",
+    Unit::Gigabytes => "Gigabytes",
+    Unit::GigabytesPerSecond => "Gigabytes/Second",
+    Unit::Kilobits => "Kilobits",
+    Unit::KilobitsPerSecond => "Kilobits/Second",
+    Unit::Kilobytes => "Kilobytes",
+    Unit::KilobytesPerSecond => "Kilobytes/Second",
+    Unit::Megabits => "Megabits",
+    Unit::MegabitsPerSecond => "Megabits/Second",
+    Unit::Megabytes => "Megabytes",
+    Unit::MegabytesPerSecond => "Megabytes/Second",
+    Unit::Microseconds => "Microseconds",
+    Unit::Milliseconds => "Milliseconds",
+    Unit::None => "None",
+    Unit::Percent => "Percent",
+    Unit::Seconds => "Seconds",
+    Unit::Terabits => "Terabits",
+    Unit::TerabitsPerSecond => "Terabits/Second",
+    Unit::Terabytes => "Terabytes",
+    Unit::TerabytesPerSecond => "Terabytes/Second",
+    Unit::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Bits", "Bits/Second", "Bytes", "Bytes/Second", "Count", "Count/Second", "Gigabits", "Gigabits/Second", "Gigabytes", "Gigabytes/Second", "Kilobits", "Kilobits/Second", "Kilobytes", "Kilobytes/Second", "Megabits", "Megabits/Second", "Megabytes", "Megabytes/Second", "Microseconds", "Milliseconds", "None", "Percent", "Seconds", "Terabits", "Terabits/Second", "Terabytes", "Terabytes/Second"]
+                }
+            }
 impl AsRef<str> for Unit {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> <b>Internal only</b>. Represents the dimensions of a metric. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
@@ -1841,15 +1835,15 @@ pub enum UpdateStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => UpdateStatus::Failed,
-            "PENDING" => UpdateStatus::Pending,
-            "SUCCESS" => UpdateStatus::Success,
-            other => UpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => UpdateStatus::Failed,
+"PENDING" => UpdateStatus::Pending,
+"SUCCESS" => UpdateStatus::Success,
+other => UpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UpdateStatus {
                 type Err = std::convert::Infallible;
 
@@ -1858,27 +1852,25 @@ impl std::str::FromStr for UpdateStatus {
                 }
             }
 impl UpdateStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateStatus::Failed => "FAILED",
-            UpdateStatus::Pending => "PENDING",
-            UpdateStatus::Success => "SUCCESS",
-            UpdateStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "PENDING", "SUCCESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UpdateStatus::Failed => "FAILED",
+    UpdateStatus::Pending => "PENDING",
+    UpdateStatus::Success => "SUCCESS",
+    UpdateStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "PENDING", "SUCCESS"]
+                }
+            }
 impl AsRef<str> for UpdateStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the Apache Airflow log types that are published to CloudWatch Logs.</p>
 #[non_exhaustive]
@@ -2240,20 +2232,20 @@ pub enum EnvironmentStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => EnvironmentStatus::Available,
-            "CREATE_FAILED" => EnvironmentStatus::CreateFailed,
-            "CREATING" => EnvironmentStatus::Creating,
-            "DELETED" => EnvironmentStatus::Deleted,
-            "DELETING" => EnvironmentStatus::Deleting,
-            "UNAVAILABLE" => EnvironmentStatus::Unavailable,
-            "UPDATE_FAILED" => EnvironmentStatus::UpdateFailed,
-            "UPDATING" => EnvironmentStatus::Updating,
-            other => EnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => EnvironmentStatus::Available,
+"CREATE_FAILED" => EnvironmentStatus::CreateFailed,
+"CREATING" => EnvironmentStatus::Creating,
+"DELETED" => EnvironmentStatus::Deleted,
+"DELETING" => EnvironmentStatus::Deleting,
+"UNAVAILABLE" => EnvironmentStatus::Unavailable,
+"UPDATE_FAILED" => EnvironmentStatus::UpdateFailed,
+"UPDATING" => EnvironmentStatus::Updating,
+other => EnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EnvironmentStatus {
                 type Err = std::convert::Infallible;
 
@@ -2262,30 +2254,28 @@ impl std::str::FromStr for EnvironmentStatus {
                 }
             }
 impl EnvironmentStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnvironmentStatus::Available => "AVAILABLE",
-            EnvironmentStatus::CreateFailed => "CREATE_FAILED",
-            EnvironmentStatus::Creating => "CREATING",
-            EnvironmentStatus::Deleted => "DELETED",
-            EnvironmentStatus::Deleting => "DELETING",
-            EnvironmentStatus::Unavailable => "UNAVAILABLE",
-            EnvironmentStatus::UpdateFailed => "UPDATE_FAILED",
-            EnvironmentStatus::Updating => "UPDATING",
-            EnvironmentStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE", "CREATE_FAILED", "CREATING", "DELETED", "DELETING", "UNAVAILABLE", "UPDATE_FAILED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnvironmentStatus::Available => "AVAILABLE",
+    EnvironmentStatus::CreateFailed => "CREATE_FAILED",
+    EnvironmentStatus::Creating => "CREATING",
+    EnvironmentStatus::Deleted => "DELETED",
+    EnvironmentStatus::Deleting => "DELETING",
+    EnvironmentStatus::Unavailable => "UNAVAILABLE",
+    EnvironmentStatus::UpdateFailed => "UPDATE_FAILED",
+    EnvironmentStatus::Updating => "UPDATING",
+    EnvironmentStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "CREATE_FAILED", "CREATING", "DELETED", "DELETING", "UNAVAILABLE", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for EnvironmentStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

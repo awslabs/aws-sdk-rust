@@ -107,34 +107,34 @@ pub enum QueueAttributeName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueueAttributeName {
-    fn from(s: &str) -> Self {
-        match s {
-            "All" => QueueAttributeName::All,
-            "ApproximateNumberOfMessages" => QueueAttributeName::ApproximateNumberOfMessages,
-            "ApproximateNumberOfMessagesDelayed" => QueueAttributeName::ApproximateNumberOfMessagesDelayed,
-            "ApproximateNumberOfMessagesNotVisible" => QueueAttributeName::ApproximateNumberOfMessagesNotVisible,
-            "ContentBasedDeduplication" => QueueAttributeName::ContentBasedDeduplication,
-            "CreatedTimestamp" => QueueAttributeName::CreatedTimestamp,
-            "DeduplicationScope" => QueueAttributeName::DeduplicationScope,
-            "DelaySeconds" => QueueAttributeName::DelaySeconds,
-            "FifoQueue" => QueueAttributeName::FifoQueue,
-            "FifoThroughputLimit" => QueueAttributeName::FifoThroughputLimit,
-            "KmsDataKeyReusePeriodSeconds" => QueueAttributeName::KmsDataKeyReusePeriodSeconds,
-            "KmsMasterKeyId" => QueueAttributeName::KmsMasterKeyId,
-            "LastModifiedTimestamp" => QueueAttributeName::LastModifiedTimestamp,
-            "MaximumMessageSize" => QueueAttributeName::MaximumMessageSize,
-            "MessageRetentionPeriod" => QueueAttributeName::MessageRetentionPeriod,
-            "Policy" => QueueAttributeName::Policy,
-            "QueueArn" => QueueAttributeName::QueueArn,
-            "ReceiveMessageWaitTimeSeconds" => QueueAttributeName::ReceiveMessageWaitTimeSeconds,
-            "RedriveAllowPolicy" => QueueAttributeName::RedriveAllowPolicy,
-            "RedrivePolicy" => QueueAttributeName::RedrivePolicy,
-            "SqsManagedSseEnabled" => QueueAttributeName::SqsManagedSseEnabled,
-            "VisibilityTimeout" => QueueAttributeName::VisibilityTimeout,
-            other => QueueAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "All" => QueueAttributeName::All,
+"ApproximateNumberOfMessages" => QueueAttributeName::ApproximateNumberOfMessages,
+"ApproximateNumberOfMessagesDelayed" => QueueAttributeName::ApproximateNumberOfMessagesDelayed,
+"ApproximateNumberOfMessagesNotVisible" => QueueAttributeName::ApproximateNumberOfMessagesNotVisible,
+"ContentBasedDeduplication" => QueueAttributeName::ContentBasedDeduplication,
+"CreatedTimestamp" => QueueAttributeName::CreatedTimestamp,
+"DeduplicationScope" => QueueAttributeName::DeduplicationScope,
+"DelaySeconds" => QueueAttributeName::DelaySeconds,
+"FifoQueue" => QueueAttributeName::FifoQueue,
+"FifoThroughputLimit" => QueueAttributeName::FifoThroughputLimit,
+"KmsDataKeyReusePeriodSeconds" => QueueAttributeName::KmsDataKeyReusePeriodSeconds,
+"KmsMasterKeyId" => QueueAttributeName::KmsMasterKeyId,
+"LastModifiedTimestamp" => QueueAttributeName::LastModifiedTimestamp,
+"MaximumMessageSize" => QueueAttributeName::MaximumMessageSize,
+"MessageRetentionPeriod" => QueueAttributeName::MessageRetentionPeriod,
+"Policy" => QueueAttributeName::Policy,
+"QueueArn" => QueueAttributeName::QueueArn,
+"ReceiveMessageWaitTimeSeconds" => QueueAttributeName::ReceiveMessageWaitTimeSeconds,
+"RedriveAllowPolicy" => QueueAttributeName::RedriveAllowPolicy,
+"RedrivePolicy" => QueueAttributeName::RedrivePolicy,
+"SqsManagedSseEnabled" => QueueAttributeName::SqsManagedSseEnabled,
+"VisibilityTimeout" => QueueAttributeName::VisibilityTimeout,
+other => QueueAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for QueueAttributeName {
                 type Err = std::convert::Infallible;
 
@@ -143,46 +143,44 @@ impl std::str::FromStr for QueueAttributeName {
                 }
             }
 impl QueueAttributeName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            QueueAttributeName::All => "All",
-            QueueAttributeName::ApproximateNumberOfMessages => "ApproximateNumberOfMessages",
-            QueueAttributeName::ApproximateNumberOfMessagesDelayed => "ApproximateNumberOfMessagesDelayed",
-            QueueAttributeName::ApproximateNumberOfMessagesNotVisible => "ApproximateNumberOfMessagesNotVisible",
-            QueueAttributeName::ContentBasedDeduplication => "ContentBasedDeduplication",
-            QueueAttributeName::CreatedTimestamp => "CreatedTimestamp",
-            QueueAttributeName::DeduplicationScope => "DeduplicationScope",
-            QueueAttributeName::DelaySeconds => "DelaySeconds",
-            QueueAttributeName::FifoQueue => "FifoQueue",
-            QueueAttributeName::FifoThroughputLimit => "FifoThroughputLimit",
-            QueueAttributeName::KmsDataKeyReusePeriodSeconds => "KmsDataKeyReusePeriodSeconds",
-            QueueAttributeName::KmsMasterKeyId => "KmsMasterKeyId",
-            QueueAttributeName::LastModifiedTimestamp => "LastModifiedTimestamp",
-            QueueAttributeName::MaximumMessageSize => "MaximumMessageSize",
-            QueueAttributeName::MessageRetentionPeriod => "MessageRetentionPeriod",
-            QueueAttributeName::Policy => "Policy",
-            QueueAttributeName::QueueArn => "QueueArn",
-            QueueAttributeName::ReceiveMessageWaitTimeSeconds => "ReceiveMessageWaitTimeSeconds",
-            QueueAttributeName::RedriveAllowPolicy => "RedriveAllowPolicy",
-            QueueAttributeName::RedrivePolicy => "RedrivePolicy",
-            QueueAttributeName::SqsManagedSseEnabled => "SqsManagedSseEnabled",
-            QueueAttributeName::VisibilityTimeout => "VisibilityTimeout",
-            QueueAttributeName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "All", "ApproximateNumberOfMessages", "ApproximateNumberOfMessagesDelayed", "ApproximateNumberOfMessagesNotVisible", "ContentBasedDeduplication", "CreatedTimestamp", "DeduplicationScope", "DelaySeconds", "FifoQueue", "FifoThroughputLimit", "KmsDataKeyReusePeriodSeconds", "KmsMasterKeyId", "LastModifiedTimestamp", "MaximumMessageSize", "MessageRetentionPeriod", "Policy", "QueueArn", "ReceiveMessageWaitTimeSeconds", "RedriveAllowPolicy", "RedrivePolicy", "SqsManagedSseEnabled", "VisibilityTimeout"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    QueueAttributeName::All => "All",
+    QueueAttributeName::ApproximateNumberOfMessages => "ApproximateNumberOfMessages",
+    QueueAttributeName::ApproximateNumberOfMessagesDelayed => "ApproximateNumberOfMessagesDelayed",
+    QueueAttributeName::ApproximateNumberOfMessagesNotVisible => "ApproximateNumberOfMessagesNotVisible",
+    QueueAttributeName::ContentBasedDeduplication => "ContentBasedDeduplication",
+    QueueAttributeName::CreatedTimestamp => "CreatedTimestamp",
+    QueueAttributeName::DeduplicationScope => "DeduplicationScope",
+    QueueAttributeName::DelaySeconds => "DelaySeconds",
+    QueueAttributeName::FifoQueue => "FifoQueue",
+    QueueAttributeName::FifoThroughputLimit => "FifoThroughputLimit",
+    QueueAttributeName::KmsDataKeyReusePeriodSeconds => "KmsDataKeyReusePeriodSeconds",
+    QueueAttributeName::KmsMasterKeyId => "KmsMasterKeyId",
+    QueueAttributeName::LastModifiedTimestamp => "LastModifiedTimestamp",
+    QueueAttributeName::MaximumMessageSize => "MaximumMessageSize",
+    QueueAttributeName::MessageRetentionPeriod => "MessageRetentionPeriod",
+    QueueAttributeName::Policy => "Policy",
+    QueueAttributeName::QueueArn => "QueueArn",
+    QueueAttributeName::ReceiveMessageWaitTimeSeconds => "ReceiveMessageWaitTimeSeconds",
+    QueueAttributeName::RedriveAllowPolicy => "RedriveAllowPolicy",
+    QueueAttributeName::RedrivePolicy => "RedrivePolicy",
+    QueueAttributeName::SqsManagedSseEnabled => "SqsManagedSseEnabled",
+    QueueAttributeName::VisibilityTimeout => "VisibilityTimeout",
+    QueueAttributeName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["All", "ApproximateNumberOfMessages", "ApproximateNumberOfMessagesDelayed", "ApproximateNumberOfMessagesNotVisible", "ContentBasedDeduplication", "CreatedTimestamp", "DeduplicationScope", "DelaySeconds", "FifoQueue", "FifoThroughputLimit", "KmsDataKeyReusePeriodSeconds", "KmsMasterKeyId", "LastModifiedTimestamp", "MaximumMessageSize", "MessageRetentionPeriod", "Policy", "QueueArn", "ReceiveMessageWaitTimeSeconds", "RedriveAllowPolicy", "RedrivePolicy", "SqsManagedSseEnabled", "VisibilityTimeout"]
+                }
+            }
 impl AsRef<str> for QueueAttributeName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Gives a detailed description of the result of an action on each entry in the request.</p>
 #[non_exhaustive]
@@ -957,13 +955,13 @@ pub enum MessageSystemAttributeNameForSends {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MessageSystemAttributeNameForSends {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWSTraceHeader" => MessageSystemAttributeNameForSends::AwsTraceHeader,
-            other => MessageSystemAttributeNameForSends::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWSTraceHeader" => MessageSystemAttributeNameForSends::AwsTraceHeader,
+other => MessageSystemAttributeNameForSends::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MessageSystemAttributeNameForSends {
                 type Err = std::convert::Infallible;
 
@@ -972,25 +970,23 @@ impl std::str::FromStr for MessageSystemAttributeNameForSends {
                 }
             }
 impl MessageSystemAttributeNameForSends {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MessageSystemAttributeNameForSends::AwsTraceHeader => "AWSTraceHeader",
-            MessageSystemAttributeNameForSends::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWSTraceHeader"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MessageSystemAttributeNameForSends::AwsTraceHeader => "AWSTraceHeader",
+    MessageSystemAttributeNameForSends::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWSTraceHeader"]
+                }
+            }
 impl AsRef<str> for MessageSystemAttributeNameForSends {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <code>SendMessage</code>.</code> </p> 
 /// <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).</p>
@@ -1416,20 +1412,20 @@ pub enum MessageSystemAttributeName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MessageSystemAttributeName {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWSTraceHeader" => MessageSystemAttributeName::AwsTraceHeader,
-            "ApproximateFirstReceiveTimestamp" => MessageSystemAttributeName::ApproximateFirstReceiveTimestamp,
-            "ApproximateReceiveCount" => MessageSystemAttributeName::ApproximateReceiveCount,
-            "MessageDeduplicationId" => MessageSystemAttributeName::MessageDeduplicationId,
-            "MessageGroupId" => MessageSystemAttributeName::MessageGroupId,
-            "SenderId" => MessageSystemAttributeName::SenderId,
-            "SentTimestamp" => MessageSystemAttributeName::SentTimestamp,
-            "SequenceNumber" => MessageSystemAttributeName::SequenceNumber,
-            other => MessageSystemAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWSTraceHeader" => MessageSystemAttributeName::AwsTraceHeader,
+"ApproximateFirstReceiveTimestamp" => MessageSystemAttributeName::ApproximateFirstReceiveTimestamp,
+"ApproximateReceiveCount" => MessageSystemAttributeName::ApproximateReceiveCount,
+"MessageDeduplicationId" => MessageSystemAttributeName::MessageDeduplicationId,
+"MessageGroupId" => MessageSystemAttributeName::MessageGroupId,
+"SenderId" => MessageSystemAttributeName::SenderId,
+"SentTimestamp" => MessageSystemAttributeName::SentTimestamp,
+"SequenceNumber" => MessageSystemAttributeName::SequenceNumber,
+other => MessageSystemAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MessageSystemAttributeName {
                 type Err = std::convert::Infallible;
 
@@ -1438,32 +1434,30 @@ impl std::str::FromStr for MessageSystemAttributeName {
                 }
             }
 impl MessageSystemAttributeName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MessageSystemAttributeName::AwsTraceHeader => "AWSTraceHeader",
-            MessageSystemAttributeName::ApproximateFirstReceiveTimestamp => "ApproximateFirstReceiveTimestamp",
-            MessageSystemAttributeName::ApproximateReceiveCount => "ApproximateReceiveCount",
-            MessageSystemAttributeName::MessageDeduplicationId => "MessageDeduplicationId",
-            MessageSystemAttributeName::MessageGroupId => "MessageGroupId",
-            MessageSystemAttributeName::SenderId => "SenderId",
-            MessageSystemAttributeName::SentTimestamp => "SentTimestamp",
-            MessageSystemAttributeName::SequenceNumber => "SequenceNumber",
-            MessageSystemAttributeName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWSTraceHeader", "ApproximateFirstReceiveTimestamp", "ApproximateReceiveCount", "MessageDeduplicationId", "MessageGroupId", "SenderId", "SentTimestamp", "SequenceNumber"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MessageSystemAttributeName::AwsTraceHeader => "AWSTraceHeader",
+    MessageSystemAttributeName::ApproximateFirstReceiveTimestamp => "ApproximateFirstReceiveTimestamp",
+    MessageSystemAttributeName::ApproximateReceiveCount => "ApproximateReceiveCount",
+    MessageSystemAttributeName::MessageDeduplicationId => "MessageDeduplicationId",
+    MessageSystemAttributeName::MessageGroupId => "MessageGroupId",
+    MessageSystemAttributeName::SenderId => "SenderId",
+    MessageSystemAttributeName::SentTimestamp => "SentTimestamp",
+    MessageSystemAttributeName::SequenceNumber => "SequenceNumber",
+    MessageSystemAttributeName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWSTraceHeader", "ApproximateFirstReceiveTimestamp", "ApproximateReceiveCount", "MessageDeduplicationId", "MessageGroupId", "SenderId", "SentTimestamp", "SequenceNumber"]
+                }
+            }
 impl AsRef<str> for MessageSystemAttributeName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Encloses the <code>Id</code> of an entry in <code> <code>DeleteMessageBatch</code>.</code> </p>
 #[non_exhaustive]

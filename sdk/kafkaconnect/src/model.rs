@@ -56,17 +56,17 @@ pub enum ConnectorState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectorState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATING" => ConnectorState::Creating,
-            "DELETING" => ConnectorState::Deleting,
-            "FAILED" => ConnectorState::Failed,
-            "RUNNING" => ConnectorState::Running,
-            "UPDATING" => ConnectorState::Updating,
-            other => ConnectorState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATING" => ConnectorState::Creating,
+"DELETING" => ConnectorState::Deleting,
+"FAILED" => ConnectorState::Failed,
+"RUNNING" => ConnectorState::Running,
+"UPDATING" => ConnectorState::Updating,
+other => ConnectorState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConnectorState {
                 type Err = std::convert::Infallible;
 
@@ -75,29 +75,27 @@ impl std::str::FromStr for ConnectorState {
                 }
             }
 impl ConnectorState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectorState::Creating => "CREATING",
-            ConnectorState::Deleting => "DELETING",
-            ConnectorState::Failed => "FAILED",
-            ConnectorState::Running => "RUNNING",
-            ConnectorState::Updating => "UPDATING",
-            ConnectorState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATING", "DELETING", "FAILED", "RUNNING", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectorState::Creating => "CREATING",
+    ConnectorState::Deleting => "DELETING",
+    ConnectorState::Failed => "FAILED",
+    ConnectorState::Running => "RUNNING",
+    ConnectorState::Updating => "UPDATING",
+    ConnectorState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATING", "DELETING", "FAILED", "RUNNING", "UPDATING"]
+                }
+            }
 impl AsRef<str> for ConnectorState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The target capacity for the connector. The capacity can be auto scaled or provisioned.</p>
 #[non_exhaustive]
@@ -1231,14 +1229,14 @@ pub enum CustomPluginContentType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomPluginContentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "JAR" => CustomPluginContentType::Jar,
-            "ZIP" => CustomPluginContentType::Zip,
-            other => CustomPluginContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "JAR" => CustomPluginContentType::Jar,
+"ZIP" => CustomPluginContentType::Zip,
+other => CustomPluginContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CustomPluginContentType {
                 type Err = std::convert::Infallible;
 
@@ -1247,26 +1245,24 @@ impl std::str::FromStr for CustomPluginContentType {
                 }
             }
 impl CustomPluginContentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CustomPluginContentType::Jar => "JAR",
-            CustomPluginContentType::Zip => "ZIP",
-            CustomPluginContentType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "JAR", "ZIP"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CustomPluginContentType::Jar => "JAR",
+    CustomPluginContentType::Zip => "ZIP",
+    CustomPluginContentType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["JAR", "ZIP"]
+                }
+            }
 impl AsRef<str> for CustomPluginContentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CustomPluginState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1327,18 +1323,18 @@ pub enum CustomPluginState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomPluginState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => CustomPluginState::Active,
-            "CREATE_FAILED" => CustomPluginState::CreateFailed,
-            "CREATING" => CustomPluginState::Creating,
-            "DELETING" => CustomPluginState::Deleting,
-            "UPDATE_FAILED" => CustomPluginState::UpdateFailed,
-            "UPDATING" => CustomPluginState::Updating,
-            other => CustomPluginState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => CustomPluginState::Active,
+"CREATE_FAILED" => CustomPluginState::CreateFailed,
+"CREATING" => CustomPluginState::Creating,
+"DELETING" => CustomPluginState::Deleting,
+"UPDATE_FAILED" => CustomPluginState::UpdateFailed,
+"UPDATING" => CustomPluginState::Updating,
+other => CustomPluginState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CustomPluginState {
                 type Err = std::convert::Infallible;
 
@@ -1347,30 +1343,28 @@ impl std::str::FromStr for CustomPluginState {
                 }
             }
 impl CustomPluginState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CustomPluginState::Active => "ACTIVE",
-            CustomPluginState::CreateFailed => "CREATE_FAILED",
-            CustomPluginState::Creating => "CREATING",
-            CustomPluginState::Deleting => "DELETING",
-            CustomPluginState::UpdateFailed => "UPDATE_FAILED",
-            CustomPluginState::Updating => "UPDATING",
-            CustomPluginState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATE_FAILED", "CREATING", "DELETING", "UPDATE_FAILED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CustomPluginState::Active => "ACTIVE",
+    CustomPluginState::CreateFailed => "CREATE_FAILED",
+    CustomPluginState::Creating => "CREATING",
+    CustomPluginState::Deleting => "DELETING",
+    CustomPluginState::UpdateFailed => "UPDATE_FAILED",
+    CustomPluginState::Updating => "UPDATING",
+    CustomPluginState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_FAILED", "CREATING", "DELETING", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for CustomPluginState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summary of a connector.</p>
 #[non_exhaustive]
@@ -2348,14 +2342,14 @@ pub enum KafkaClusterEncryptionInTransitType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KafkaClusterEncryptionInTransitType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PLAINTEXT" => KafkaClusterEncryptionInTransitType::Plaintext,
-            "TLS" => KafkaClusterEncryptionInTransitType::Tls,
-            other => KafkaClusterEncryptionInTransitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PLAINTEXT" => KafkaClusterEncryptionInTransitType::Plaintext,
+"TLS" => KafkaClusterEncryptionInTransitType::Tls,
+other => KafkaClusterEncryptionInTransitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for KafkaClusterEncryptionInTransitType {
                 type Err = std::convert::Infallible;
 
@@ -2364,26 +2358,24 @@ impl std::str::FromStr for KafkaClusterEncryptionInTransitType {
                 }
             }
 impl KafkaClusterEncryptionInTransitType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KafkaClusterEncryptionInTransitType::Plaintext => "PLAINTEXT",
-            KafkaClusterEncryptionInTransitType::Tls => "TLS",
-            KafkaClusterEncryptionInTransitType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PLAINTEXT", "TLS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KafkaClusterEncryptionInTransitType::Plaintext => "PLAINTEXT",
+    KafkaClusterEncryptionInTransitType::Tls => "TLS",
+    KafkaClusterEncryptionInTransitType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PLAINTEXT", "TLS"]
+                }
+            }
 impl AsRef<str> for KafkaClusterEncryptionInTransitType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The client authentication information used in order to authenticate with the Apache Kafka cluster.</p>
 #[non_exhaustive]
@@ -2482,14 +2474,14 @@ pub enum KafkaClusterClientAuthenticationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KafkaClusterClientAuthenticationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "IAM" => KafkaClusterClientAuthenticationType::Iam,
-            "NONE" => KafkaClusterClientAuthenticationType::None,
-            other => KafkaClusterClientAuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "IAM" => KafkaClusterClientAuthenticationType::Iam,
+"NONE" => KafkaClusterClientAuthenticationType::None,
+other => KafkaClusterClientAuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for KafkaClusterClientAuthenticationType {
                 type Err = std::convert::Infallible;
 
@@ -2498,26 +2490,24 @@ impl std::str::FromStr for KafkaClusterClientAuthenticationType {
                 }
             }
 impl KafkaClusterClientAuthenticationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KafkaClusterClientAuthenticationType::Iam => "IAM",
-            KafkaClusterClientAuthenticationType::None => "NONE",
-            KafkaClusterClientAuthenticationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "IAM", "NONE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KafkaClusterClientAuthenticationType::Iam => "IAM",
+    KafkaClusterClientAuthenticationType::None => "NONE",
+    KafkaClusterClientAuthenticationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["IAM", "NONE"]
+                }
+            }
 impl AsRef<str> for KafkaClusterClientAuthenticationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details of how to connect to the Apache Kafka cluster.</p>
 #[non_exhaustive]

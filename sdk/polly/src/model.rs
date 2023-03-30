@@ -278,91 +278,91 @@ pub enum VoiceId {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VoiceId {
-    fn from(s: &str) -> Self {
-        match s {
-            "Aditi" => VoiceId::Aditi,
-            "Amy" => VoiceId::Amy,
-            "Aria" => VoiceId::Aria,
-            "Arlet" => VoiceId::Arlet,
-            "Arthur" => VoiceId::Arthur,
-            "Astrid" => VoiceId::Astrid,
-            "Ayanda" => VoiceId::Ayanda,
-            "Bianca" => VoiceId::Bianca,
-            "Brian" => VoiceId::Brian,
-            "Camila" => VoiceId::Camila,
-            "Carla" => VoiceId::Carla,
-            "Carmen" => VoiceId::Carmen,
-            "Celine" => VoiceId::Celine,
-            "Chantal" => VoiceId::Chantal,
-            "Conchita" => VoiceId::Conchita,
-            "Cristiano" => VoiceId::Cristiano,
-            "Daniel" => VoiceId::Daniel,
-            "Dora" => VoiceId::Dora,
-            "Elin" => VoiceId::Elin,
-            "Emma" => VoiceId::Emma,
-            "Enrique" => VoiceId::Enrique,
-            "Ewa" => VoiceId::Ewa,
-            "Filiz" => VoiceId::Filiz,
-            "Gabrielle" => VoiceId::Gabrielle,
-            "Geraint" => VoiceId::Geraint,
-            "Giorgio" => VoiceId::Giorgio,
-            "Gwyneth" => VoiceId::Gwyneth,
-            "Hala" => VoiceId::Hala,
-            "Hannah" => VoiceId::Hannah,
-            "Hans" => VoiceId::Hans,
-            "Hiujin" => VoiceId::Hiujin,
-            "Ida" => VoiceId::Ida,
-            "Ines" => VoiceId::Ines,
-            "Ivy" => VoiceId::Ivy,
-            "Jacek" => VoiceId::Jacek,
-            "Jan" => VoiceId::Jan,
-            "Joanna" => VoiceId::Joanna,
-            "Joey" => VoiceId::Joey,
-            "Justin" => VoiceId::Justin,
-            "Kajal" => VoiceId::Kajal,
-            "Karl" => VoiceId::Karl,
-            "Kendra" => VoiceId::Kendra,
-            "Kevin" => VoiceId::Kevin,
-            "Kimberly" => VoiceId::Kimberly,
-            "Laura" => VoiceId::Laura,
-            "Lea" => VoiceId::Lea,
-            "Liam" => VoiceId::Liam,
-            "Liv" => VoiceId::Liv,
-            "Lotte" => VoiceId::Lotte,
-            "Lucia" => VoiceId::Lucia,
-            "Lupe" => VoiceId::Lupe,
-            "Mads" => VoiceId::Mads,
-            "Maja" => VoiceId::Maja,
-            "Marlene" => VoiceId::Marlene,
-            "Mathieu" => VoiceId::Mathieu,
-            "Matthew" => VoiceId::Matthew,
-            "Maxim" => VoiceId::Maxim,
-            "Mia" => VoiceId::Mia,
-            "Miguel" => VoiceId::Miguel,
-            "Mizuki" => VoiceId::Mizuki,
-            "Naja" => VoiceId::Naja,
-            "Nicole" => VoiceId::Nicole,
-            "Ola" => VoiceId::Ola,
-            "Olivia" => VoiceId::Olivia,
-            "Pedro" => VoiceId::Pedro,
-            "Penelope" => VoiceId::Penelope,
-            "Raveena" => VoiceId::Raveena,
-            "Ricardo" => VoiceId::Ricardo,
-            "Ruben" => VoiceId::Ruben,
-            "Russell" => VoiceId::Russell,
-            "Salli" => VoiceId::Salli,
-            "Seoyeon" => VoiceId::Seoyeon,
-            "Suvi" => VoiceId::Suvi,
-            "Takumi" => VoiceId::Takumi,
-            "Tatyana" => VoiceId::Tatyana,
-            "Vicki" => VoiceId::Vicki,
-            "Vitoria" => VoiceId::Vitoria,
-            "Zeina" => VoiceId::Zeina,
-            "Zhiyu" => VoiceId::Zhiyu,
-            other => VoiceId::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Aditi" => VoiceId::Aditi,
+"Amy" => VoiceId::Amy,
+"Aria" => VoiceId::Aria,
+"Arlet" => VoiceId::Arlet,
+"Arthur" => VoiceId::Arthur,
+"Astrid" => VoiceId::Astrid,
+"Ayanda" => VoiceId::Ayanda,
+"Bianca" => VoiceId::Bianca,
+"Brian" => VoiceId::Brian,
+"Camila" => VoiceId::Camila,
+"Carla" => VoiceId::Carla,
+"Carmen" => VoiceId::Carmen,
+"Celine" => VoiceId::Celine,
+"Chantal" => VoiceId::Chantal,
+"Conchita" => VoiceId::Conchita,
+"Cristiano" => VoiceId::Cristiano,
+"Daniel" => VoiceId::Daniel,
+"Dora" => VoiceId::Dora,
+"Elin" => VoiceId::Elin,
+"Emma" => VoiceId::Emma,
+"Enrique" => VoiceId::Enrique,
+"Ewa" => VoiceId::Ewa,
+"Filiz" => VoiceId::Filiz,
+"Gabrielle" => VoiceId::Gabrielle,
+"Geraint" => VoiceId::Geraint,
+"Giorgio" => VoiceId::Giorgio,
+"Gwyneth" => VoiceId::Gwyneth,
+"Hala" => VoiceId::Hala,
+"Hannah" => VoiceId::Hannah,
+"Hans" => VoiceId::Hans,
+"Hiujin" => VoiceId::Hiujin,
+"Ida" => VoiceId::Ida,
+"Ines" => VoiceId::Ines,
+"Ivy" => VoiceId::Ivy,
+"Jacek" => VoiceId::Jacek,
+"Jan" => VoiceId::Jan,
+"Joanna" => VoiceId::Joanna,
+"Joey" => VoiceId::Joey,
+"Justin" => VoiceId::Justin,
+"Kajal" => VoiceId::Kajal,
+"Karl" => VoiceId::Karl,
+"Kendra" => VoiceId::Kendra,
+"Kevin" => VoiceId::Kevin,
+"Kimberly" => VoiceId::Kimberly,
+"Laura" => VoiceId::Laura,
+"Lea" => VoiceId::Lea,
+"Liam" => VoiceId::Liam,
+"Liv" => VoiceId::Liv,
+"Lotte" => VoiceId::Lotte,
+"Lucia" => VoiceId::Lucia,
+"Lupe" => VoiceId::Lupe,
+"Mads" => VoiceId::Mads,
+"Maja" => VoiceId::Maja,
+"Marlene" => VoiceId::Marlene,
+"Mathieu" => VoiceId::Mathieu,
+"Matthew" => VoiceId::Matthew,
+"Maxim" => VoiceId::Maxim,
+"Mia" => VoiceId::Mia,
+"Miguel" => VoiceId::Miguel,
+"Mizuki" => VoiceId::Mizuki,
+"Naja" => VoiceId::Naja,
+"Nicole" => VoiceId::Nicole,
+"Ola" => VoiceId::Ola,
+"Olivia" => VoiceId::Olivia,
+"Pedro" => VoiceId::Pedro,
+"Penelope" => VoiceId::Penelope,
+"Raveena" => VoiceId::Raveena,
+"Ricardo" => VoiceId::Ricardo,
+"Ruben" => VoiceId::Ruben,
+"Russell" => VoiceId::Russell,
+"Salli" => VoiceId::Salli,
+"Seoyeon" => VoiceId::Seoyeon,
+"Suvi" => VoiceId::Suvi,
+"Takumi" => VoiceId::Takumi,
+"Tatyana" => VoiceId::Tatyana,
+"Vicki" => VoiceId::Vicki,
+"Vitoria" => VoiceId::Vitoria,
+"Zeina" => VoiceId::Zeina,
+"Zhiyu" => VoiceId::Zhiyu,
+other => VoiceId::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for VoiceId {
                 type Err = std::convert::Infallible;
 
@@ -371,103 +371,101 @@ impl std::str::FromStr for VoiceId {
                 }
             }
 impl VoiceId {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VoiceId::Aditi => "Aditi",
-            VoiceId::Amy => "Amy",
-            VoiceId::Aria => "Aria",
-            VoiceId::Arlet => "Arlet",
-            VoiceId::Arthur => "Arthur",
-            VoiceId::Astrid => "Astrid",
-            VoiceId::Ayanda => "Ayanda",
-            VoiceId::Bianca => "Bianca",
-            VoiceId::Brian => "Brian",
-            VoiceId::Camila => "Camila",
-            VoiceId::Carla => "Carla",
-            VoiceId::Carmen => "Carmen",
-            VoiceId::Celine => "Celine",
-            VoiceId::Chantal => "Chantal",
-            VoiceId::Conchita => "Conchita",
-            VoiceId::Cristiano => "Cristiano",
-            VoiceId::Daniel => "Daniel",
-            VoiceId::Dora => "Dora",
-            VoiceId::Elin => "Elin",
-            VoiceId::Emma => "Emma",
-            VoiceId::Enrique => "Enrique",
-            VoiceId::Ewa => "Ewa",
-            VoiceId::Filiz => "Filiz",
-            VoiceId::Gabrielle => "Gabrielle",
-            VoiceId::Geraint => "Geraint",
-            VoiceId::Giorgio => "Giorgio",
-            VoiceId::Gwyneth => "Gwyneth",
-            VoiceId::Hala => "Hala",
-            VoiceId::Hannah => "Hannah",
-            VoiceId::Hans => "Hans",
-            VoiceId::Hiujin => "Hiujin",
-            VoiceId::Ida => "Ida",
-            VoiceId::Ines => "Ines",
-            VoiceId::Ivy => "Ivy",
-            VoiceId::Jacek => "Jacek",
-            VoiceId::Jan => "Jan",
-            VoiceId::Joanna => "Joanna",
-            VoiceId::Joey => "Joey",
-            VoiceId::Justin => "Justin",
-            VoiceId::Kajal => "Kajal",
-            VoiceId::Karl => "Karl",
-            VoiceId::Kendra => "Kendra",
-            VoiceId::Kevin => "Kevin",
-            VoiceId::Kimberly => "Kimberly",
-            VoiceId::Laura => "Laura",
-            VoiceId::Lea => "Lea",
-            VoiceId::Liam => "Liam",
-            VoiceId::Liv => "Liv",
-            VoiceId::Lotte => "Lotte",
-            VoiceId::Lucia => "Lucia",
-            VoiceId::Lupe => "Lupe",
-            VoiceId::Mads => "Mads",
-            VoiceId::Maja => "Maja",
-            VoiceId::Marlene => "Marlene",
-            VoiceId::Mathieu => "Mathieu",
-            VoiceId::Matthew => "Matthew",
-            VoiceId::Maxim => "Maxim",
-            VoiceId::Mia => "Mia",
-            VoiceId::Miguel => "Miguel",
-            VoiceId::Mizuki => "Mizuki",
-            VoiceId::Naja => "Naja",
-            VoiceId::Nicole => "Nicole",
-            VoiceId::Ola => "Ola",
-            VoiceId::Olivia => "Olivia",
-            VoiceId::Pedro => "Pedro",
-            VoiceId::Penelope => "Penelope",
-            VoiceId::Raveena => "Raveena",
-            VoiceId::Ricardo => "Ricardo",
-            VoiceId::Ruben => "Ruben",
-            VoiceId::Russell => "Russell",
-            VoiceId::Salli => "Salli",
-            VoiceId::Seoyeon => "Seoyeon",
-            VoiceId::Suvi => "Suvi",
-            VoiceId::Takumi => "Takumi",
-            VoiceId::Tatyana => "Tatyana",
-            VoiceId::Vicki => "Vicki",
-            VoiceId::Vitoria => "Vitoria",
-            VoiceId::Zeina => "Zeina",
-            VoiceId::Zhiyu => "Zhiyu",
-            VoiceId::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Aditi", "Amy", "Aria", "Arlet", "Arthur", "Astrid", "Ayanda", "Bianca", "Brian", "Camila", "Carla", "Carmen", "Celine", "Chantal", "Conchita", "Cristiano", "Daniel", "Dora", "Elin", "Emma", "Enrique", "Ewa", "Filiz", "Gabrielle", "Geraint", "Giorgio", "Gwyneth", "Hala", "Hannah", "Hans", "Hiujin", "Ida", "Ines", "Ivy", "Jacek", "Jan", "Joanna", "Joey", "Justin", "Kajal", "Karl", "Kendra", "Kevin", "Kimberly", "Laura", "Lea", "Liam", "Liv", "Lotte", "Lucia", "Lupe", "Mads", "Maja", "Marlene", "Mathieu", "Matthew", "Maxim", "Mia", "Miguel", "Mizuki", "Naja", "Nicole", "Ola", "Olivia", "Pedro", "Penelope", "Raveena", "Ricardo", "Ruben", "Russell", "Salli", "Seoyeon", "Suvi", "Takumi", "Tatyana", "Vicki", "Vitoria", "Zeina", "Zhiyu"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VoiceId::Aditi => "Aditi",
+    VoiceId::Amy => "Amy",
+    VoiceId::Aria => "Aria",
+    VoiceId::Arlet => "Arlet",
+    VoiceId::Arthur => "Arthur",
+    VoiceId::Astrid => "Astrid",
+    VoiceId::Ayanda => "Ayanda",
+    VoiceId::Bianca => "Bianca",
+    VoiceId::Brian => "Brian",
+    VoiceId::Camila => "Camila",
+    VoiceId::Carla => "Carla",
+    VoiceId::Carmen => "Carmen",
+    VoiceId::Celine => "Celine",
+    VoiceId::Chantal => "Chantal",
+    VoiceId::Conchita => "Conchita",
+    VoiceId::Cristiano => "Cristiano",
+    VoiceId::Daniel => "Daniel",
+    VoiceId::Dora => "Dora",
+    VoiceId::Elin => "Elin",
+    VoiceId::Emma => "Emma",
+    VoiceId::Enrique => "Enrique",
+    VoiceId::Ewa => "Ewa",
+    VoiceId::Filiz => "Filiz",
+    VoiceId::Gabrielle => "Gabrielle",
+    VoiceId::Geraint => "Geraint",
+    VoiceId::Giorgio => "Giorgio",
+    VoiceId::Gwyneth => "Gwyneth",
+    VoiceId::Hala => "Hala",
+    VoiceId::Hannah => "Hannah",
+    VoiceId::Hans => "Hans",
+    VoiceId::Hiujin => "Hiujin",
+    VoiceId::Ida => "Ida",
+    VoiceId::Ines => "Ines",
+    VoiceId::Ivy => "Ivy",
+    VoiceId::Jacek => "Jacek",
+    VoiceId::Jan => "Jan",
+    VoiceId::Joanna => "Joanna",
+    VoiceId::Joey => "Joey",
+    VoiceId::Justin => "Justin",
+    VoiceId::Kajal => "Kajal",
+    VoiceId::Karl => "Karl",
+    VoiceId::Kendra => "Kendra",
+    VoiceId::Kevin => "Kevin",
+    VoiceId::Kimberly => "Kimberly",
+    VoiceId::Laura => "Laura",
+    VoiceId::Lea => "Lea",
+    VoiceId::Liam => "Liam",
+    VoiceId::Liv => "Liv",
+    VoiceId::Lotte => "Lotte",
+    VoiceId::Lucia => "Lucia",
+    VoiceId::Lupe => "Lupe",
+    VoiceId::Mads => "Mads",
+    VoiceId::Maja => "Maja",
+    VoiceId::Marlene => "Marlene",
+    VoiceId::Mathieu => "Mathieu",
+    VoiceId::Matthew => "Matthew",
+    VoiceId::Maxim => "Maxim",
+    VoiceId::Mia => "Mia",
+    VoiceId::Miguel => "Miguel",
+    VoiceId::Mizuki => "Mizuki",
+    VoiceId::Naja => "Naja",
+    VoiceId::Nicole => "Nicole",
+    VoiceId::Ola => "Ola",
+    VoiceId::Olivia => "Olivia",
+    VoiceId::Pedro => "Pedro",
+    VoiceId::Penelope => "Penelope",
+    VoiceId::Raveena => "Raveena",
+    VoiceId::Ricardo => "Ricardo",
+    VoiceId::Ruben => "Ruben",
+    VoiceId::Russell => "Russell",
+    VoiceId::Salli => "Salli",
+    VoiceId::Seoyeon => "Seoyeon",
+    VoiceId::Suvi => "Suvi",
+    VoiceId::Takumi => "Takumi",
+    VoiceId::Tatyana => "Tatyana",
+    VoiceId::Vicki => "Vicki",
+    VoiceId::Vitoria => "Vitoria",
+    VoiceId::Zeina => "Zeina",
+    VoiceId::Zhiyu => "Zhiyu",
+    VoiceId::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Aditi", "Amy", "Aria", "Arlet", "Arthur", "Astrid", "Ayanda", "Bianca", "Brian", "Camila", "Carla", "Carmen", "Celine", "Chantal", "Conchita", "Cristiano", "Daniel", "Dora", "Elin", "Emma", "Enrique", "Ewa", "Filiz", "Gabrielle", "Geraint", "Giorgio", "Gwyneth", "Hala", "Hannah", "Hans", "Hiujin", "Ida", "Ines", "Ivy", "Jacek", "Jan", "Joanna", "Joey", "Justin", "Kajal", "Karl", "Kendra", "Kevin", "Kimberly", "Laura", "Lea", "Liam", "Liv", "Lotte", "Lucia", "Lupe", "Mads", "Maja", "Marlene", "Mathieu", "Matthew", "Maxim", "Mia", "Miguel", "Mizuki", "Naja", "Nicole", "Ola", "Olivia", "Pedro", "Penelope", "Raveena", "Ricardo", "Ruben", "Russell", "Salli", "Seoyeon", "Suvi", "Takumi", "Tatyana", "Vicki", "Vitoria", "Zeina", "Zhiyu"]
+                }
+            }
 impl AsRef<str> for VoiceId {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TextType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -516,14 +514,14 @@ pub enum TextType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TextType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ssml" => TextType::Ssml,
-            "text" => TextType::Text,
-            other => TextType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ssml" => TextType::Ssml,
+"text" => TextType::Text,
+other => TextType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TextType {
                 type Err = std::convert::Infallible;
 
@@ -532,26 +530,24 @@ impl std::str::FromStr for TextType {
                 }
             }
 impl TextType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TextType::Ssml => "ssml",
-            TextType::Text => "text",
-            TextType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ssml", "text"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TextType::Ssml => "ssml",
+    TextType::Text => "text",
+    TextType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ssml", "text"]
+                }
+            }
 impl AsRef<str> for TextType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SpeechMarkType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -606,16 +602,16 @@ pub enum SpeechMarkType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SpeechMarkType {
-    fn from(s: &str) -> Self {
-        match s {
-            "sentence" => SpeechMarkType::Sentence,
-            "ssml" => SpeechMarkType::Ssml,
-            "viseme" => SpeechMarkType::Viseme,
-            "word" => SpeechMarkType::Word,
-            other => SpeechMarkType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "sentence" => SpeechMarkType::Sentence,
+"ssml" => SpeechMarkType::Ssml,
+"viseme" => SpeechMarkType::Viseme,
+"word" => SpeechMarkType::Word,
+other => SpeechMarkType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SpeechMarkType {
                 type Err = std::convert::Infallible;
 
@@ -624,28 +620,26 @@ impl std::str::FromStr for SpeechMarkType {
                 }
             }
 impl SpeechMarkType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SpeechMarkType::Sentence => "sentence",
-            SpeechMarkType::Ssml => "ssml",
-            SpeechMarkType::Viseme => "viseme",
-            SpeechMarkType::Word => "word",
-            SpeechMarkType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "sentence", "ssml", "viseme", "word"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SpeechMarkType::Sentence => "sentence",
+    SpeechMarkType::Ssml => "ssml",
+    SpeechMarkType::Viseme => "viseme",
+    SpeechMarkType::Word => "word",
+    SpeechMarkType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["sentence", "ssml", "viseme", "word"]
+                }
+            }
 impl AsRef<str> for SpeechMarkType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `OutputFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -700,16 +694,16 @@ pub enum OutputFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OutputFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "json" => OutputFormat::Json,
-            "mp3" => OutputFormat::Mp3,
-            "ogg_vorbis" => OutputFormat::OggVorbis,
-            "pcm" => OutputFormat::Pcm,
-            other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "json" => OutputFormat::Json,
+"mp3" => OutputFormat::Mp3,
+"ogg_vorbis" => OutputFormat::OggVorbis,
+"pcm" => OutputFormat::Pcm,
+other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for OutputFormat {
                 type Err = std::convert::Infallible;
 
@@ -718,28 +712,26 @@ impl std::str::FromStr for OutputFormat {
                 }
             }
 impl OutputFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OutputFormat::Json => "json",
-            OutputFormat::Mp3 => "mp3",
-            OutputFormat::OggVorbis => "ogg_vorbis",
-            OutputFormat::Pcm => "pcm",
-            OutputFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "json", "mp3", "ogg_vorbis", "pcm"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OutputFormat::Json => "json",
+    OutputFormat::Mp3 => "mp3",
+    OutputFormat::OggVorbis => "ogg_vorbis",
+    OutputFormat::Pcm => "pcm",
+    OutputFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["json", "mp3", "ogg_vorbis", "pcm"]
+                }
+            }
 impl AsRef<str> for OutputFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LanguageCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -890,48 +882,48 @@ pub enum LanguageCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LanguageCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ar-AE" => LanguageCode::ArAe,
-            "arb" => LanguageCode::Arb,
-            "ca-ES" => LanguageCode::CaEs,
-            "cmn-CN" => LanguageCode::CmnCn,
-            "cy-GB" => LanguageCode::CyGb,
-            "da-DK" => LanguageCode::DaDk,
-            "de-AT" => LanguageCode::DeAt,
-            "de-DE" => LanguageCode::DeDe,
-            "en-AU" => LanguageCode::EnAu,
-            "en-GB" => LanguageCode::EnGb,
-            "en-GB-WLS" => LanguageCode::EnGbWls,
-            "en-IN" => LanguageCode::EnIn,
-            "en-NZ" => LanguageCode::EnNz,
-            "en-US" => LanguageCode::EnUs,
-            "en-ZA" => LanguageCode::EnZa,
-            "es-ES" => LanguageCode::EsEs,
-            "es-MX" => LanguageCode::EsMx,
-            "es-US" => LanguageCode::EsUs,
-            "fi-FI" => LanguageCode::FiFi,
-            "fr-CA" => LanguageCode::FrCa,
-            "fr-FR" => LanguageCode::FrFr,
-            "hi-IN" => LanguageCode::HiIn,
-            "is-IS" => LanguageCode::IsIs,
-            "it-IT" => LanguageCode::ItIt,
-            "ja-JP" => LanguageCode::JaJp,
-            "ko-KR" => LanguageCode::KoKr,
-            "nb-NO" => LanguageCode::NbNo,
-            "nl-NL" => LanguageCode::NlNl,
-            "pl-PL" => LanguageCode::PlPl,
-            "pt-BR" => LanguageCode::PtBr,
-            "pt-PT" => LanguageCode::PtPt,
-            "ro-RO" => LanguageCode::RoRo,
-            "ru-RU" => LanguageCode::RuRu,
-            "sv-SE" => LanguageCode::SvSe,
-            "tr-TR" => LanguageCode::TrTr,
-            "yue-CN" => LanguageCode::YueCn,
-            other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ar-AE" => LanguageCode::ArAe,
+"arb" => LanguageCode::Arb,
+"ca-ES" => LanguageCode::CaEs,
+"cmn-CN" => LanguageCode::CmnCn,
+"cy-GB" => LanguageCode::CyGb,
+"da-DK" => LanguageCode::DaDk,
+"de-AT" => LanguageCode::DeAt,
+"de-DE" => LanguageCode::DeDe,
+"en-AU" => LanguageCode::EnAu,
+"en-GB" => LanguageCode::EnGb,
+"en-GB-WLS" => LanguageCode::EnGbWls,
+"en-IN" => LanguageCode::EnIn,
+"en-NZ" => LanguageCode::EnNz,
+"en-US" => LanguageCode::EnUs,
+"en-ZA" => LanguageCode::EnZa,
+"es-ES" => LanguageCode::EsEs,
+"es-MX" => LanguageCode::EsMx,
+"es-US" => LanguageCode::EsUs,
+"fi-FI" => LanguageCode::FiFi,
+"fr-CA" => LanguageCode::FrCa,
+"fr-FR" => LanguageCode::FrFr,
+"hi-IN" => LanguageCode::HiIn,
+"is-IS" => LanguageCode::IsIs,
+"it-IT" => LanguageCode::ItIt,
+"ja-JP" => LanguageCode::JaJp,
+"ko-KR" => LanguageCode::KoKr,
+"nb-NO" => LanguageCode::NbNo,
+"nl-NL" => LanguageCode::NlNl,
+"pl-PL" => LanguageCode::PlPl,
+"pt-BR" => LanguageCode::PtBr,
+"pt-PT" => LanguageCode::PtPt,
+"ro-RO" => LanguageCode::RoRo,
+"ru-RU" => LanguageCode::RuRu,
+"sv-SE" => LanguageCode::SvSe,
+"tr-TR" => LanguageCode::TrTr,
+"yue-CN" => LanguageCode::YueCn,
+other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LanguageCode {
                 type Err = std::convert::Infallible;
 
@@ -940,60 +932,58 @@ impl std::str::FromStr for LanguageCode {
                 }
             }
 impl LanguageCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LanguageCode::ArAe => "ar-AE",
-            LanguageCode::Arb => "arb",
-            LanguageCode::CaEs => "ca-ES",
-            LanguageCode::CmnCn => "cmn-CN",
-            LanguageCode::CyGb => "cy-GB",
-            LanguageCode::DaDk => "da-DK",
-            LanguageCode::DeAt => "de-AT",
-            LanguageCode::DeDe => "de-DE",
-            LanguageCode::EnAu => "en-AU",
-            LanguageCode::EnGb => "en-GB",
-            LanguageCode::EnGbWls => "en-GB-WLS",
-            LanguageCode::EnIn => "en-IN",
-            LanguageCode::EnNz => "en-NZ",
-            LanguageCode::EnUs => "en-US",
-            LanguageCode::EnZa => "en-ZA",
-            LanguageCode::EsEs => "es-ES",
-            LanguageCode::EsMx => "es-MX",
-            LanguageCode::EsUs => "es-US",
-            LanguageCode::FiFi => "fi-FI",
-            LanguageCode::FrCa => "fr-CA",
-            LanguageCode::FrFr => "fr-FR",
-            LanguageCode::HiIn => "hi-IN",
-            LanguageCode::IsIs => "is-IS",
-            LanguageCode::ItIt => "it-IT",
-            LanguageCode::JaJp => "ja-JP",
-            LanguageCode::KoKr => "ko-KR",
-            LanguageCode::NbNo => "nb-NO",
-            LanguageCode::NlNl => "nl-NL",
-            LanguageCode::PlPl => "pl-PL",
-            LanguageCode::PtBr => "pt-BR",
-            LanguageCode::PtPt => "pt-PT",
-            LanguageCode::RoRo => "ro-RO",
-            LanguageCode::RuRu => "ru-RU",
-            LanguageCode::SvSe => "sv-SE",
-            LanguageCode::TrTr => "tr-TR",
-            LanguageCode::YueCn => "yue-CN",
-            LanguageCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ar-AE", "arb", "ca-ES", "cmn-CN", "cy-GB", "da-DK", "de-AT", "de-DE", "en-AU", "en-GB", "en-GB-WLS", "en-IN", "en-NZ", "en-US", "en-ZA", "es-ES", "es-MX", "es-US", "fi-FI", "fr-CA", "fr-FR", "hi-IN", "is-IS", "it-IT", "ja-JP", "ko-KR", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sv-SE", "tr-TR", "yue-CN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LanguageCode::ArAe => "ar-AE",
+    LanguageCode::Arb => "arb",
+    LanguageCode::CaEs => "ca-ES",
+    LanguageCode::CmnCn => "cmn-CN",
+    LanguageCode::CyGb => "cy-GB",
+    LanguageCode::DaDk => "da-DK",
+    LanguageCode::DeAt => "de-AT",
+    LanguageCode::DeDe => "de-DE",
+    LanguageCode::EnAu => "en-AU",
+    LanguageCode::EnGb => "en-GB",
+    LanguageCode::EnGbWls => "en-GB-WLS",
+    LanguageCode::EnIn => "en-IN",
+    LanguageCode::EnNz => "en-NZ",
+    LanguageCode::EnUs => "en-US",
+    LanguageCode::EnZa => "en-ZA",
+    LanguageCode::EsEs => "es-ES",
+    LanguageCode::EsMx => "es-MX",
+    LanguageCode::EsUs => "es-US",
+    LanguageCode::FiFi => "fi-FI",
+    LanguageCode::FrCa => "fr-CA",
+    LanguageCode::FrFr => "fr-FR",
+    LanguageCode::HiIn => "hi-IN",
+    LanguageCode::IsIs => "is-IS",
+    LanguageCode::ItIt => "it-IT",
+    LanguageCode::JaJp => "ja-JP",
+    LanguageCode::KoKr => "ko-KR",
+    LanguageCode::NbNo => "nb-NO",
+    LanguageCode::NlNl => "nl-NL",
+    LanguageCode::PlPl => "pl-PL",
+    LanguageCode::PtBr => "pt-BR",
+    LanguageCode::PtPt => "pt-PT",
+    LanguageCode::RoRo => "ro-RO",
+    LanguageCode::RuRu => "ru-RU",
+    LanguageCode::SvSe => "sv-SE",
+    LanguageCode::TrTr => "tr-TR",
+    LanguageCode::YueCn => "yue-CN",
+    LanguageCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ar-AE", "arb", "ca-ES", "cmn-CN", "cy-GB", "da-DK", "de-AT", "de-DE", "en-AU", "en-GB", "en-GB-WLS", "en-IN", "en-NZ", "en-US", "en-ZA", "es-ES", "es-MX", "es-US", "fi-FI", "fr-CA", "fr-FR", "hi-IN", "is-IS", "it-IT", "ja-JP", "ko-KR", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "sv-SE", "tr-TR", "yue-CN"]
+                }
+            }
 impl AsRef<str> for LanguageCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Engine`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1042,14 +1032,14 @@ pub enum Engine {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Engine {
-    fn from(s: &str) -> Self {
-        match s {
-            "neural" => Engine::Neural,
-            "standard" => Engine::Standard,
-            other => Engine::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "neural" => Engine::Neural,
+"standard" => Engine::Standard,
+other => Engine::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Engine {
                 type Err = std::convert::Infallible;
 
@@ -1058,26 +1048,24 @@ impl std::str::FromStr for Engine {
                 }
             }
 impl Engine {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Engine::Neural => "neural",
-            Engine::Standard => "standard",
-            Engine::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "neural", "standard"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Engine::Neural => "neural",
+    Engine::Standard => "standard",
+    Engine::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["neural", "standard"]
+                }
+            }
 impl AsRef<str> for Engine {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>SynthesisTask object that provides information about a speech synthesis task.</p>
 #[non_exhaustive]
@@ -1473,16 +1461,16 @@ pub enum TaskStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TaskStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "completed" => TaskStatus::Completed,
-            "failed" => TaskStatus::Failed,
-            "inProgress" => TaskStatus::InProgress,
-            "scheduled" => TaskStatus::Scheduled,
-            other => TaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "completed" => TaskStatus::Completed,
+"failed" => TaskStatus::Failed,
+"inProgress" => TaskStatus::InProgress,
+"scheduled" => TaskStatus::Scheduled,
+other => TaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TaskStatus {
                 type Err = std::convert::Infallible;
 
@@ -1491,28 +1479,26 @@ impl std::str::FromStr for TaskStatus {
                 }
             }
 impl TaskStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TaskStatus::Completed => "completed",
-            TaskStatus::Failed => "failed",
-            TaskStatus::InProgress => "inProgress",
-            TaskStatus::Scheduled => "scheduled",
-            TaskStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "completed", "failed", "inProgress", "scheduled"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TaskStatus::Completed => "completed",
+    TaskStatus::Failed => "failed",
+    TaskStatus::InProgress => "inProgress",
+    TaskStatus::Scheduled => "scheduled",
+    TaskStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["completed", "failed", "inProgress", "scheduled"]
+                }
+            }
 impl AsRef<str> for TaskStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the content of the lexicon.</p>
 #[non_exhaustive]
@@ -2042,14 +2028,14 @@ pub enum Gender {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Gender {
-    fn from(s: &str) -> Self {
-        match s {
-            "Female" => Gender::Female,
-            "Male" => Gender::Male,
-            other => Gender::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Female" => Gender::Female,
+"Male" => Gender::Male,
+other => Gender::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Gender {
                 type Err = std::convert::Infallible;
 
@@ -2058,24 +2044,22 @@ impl std::str::FromStr for Gender {
                 }
             }
 impl Gender {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Gender::Female => "Female",
-            Gender::Male => "Male",
-            Gender::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Female", "Male"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Gender::Female => "Female",
+    Gender::Male => "Male",
+    Gender::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Female", "Male"]
+                }
+            }
 impl AsRef<str> for Gender {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

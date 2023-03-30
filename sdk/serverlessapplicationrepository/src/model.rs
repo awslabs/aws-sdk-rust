@@ -296,16 +296,16 @@ pub enum Capability {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Capability {
-    fn from(s: &str) -> Self {
-        match s {
-            "CAPABILITY_AUTO_EXPAND" => Capability::CapabilityAutoExpand,
-            "CAPABILITY_IAM" => Capability::CapabilityIam,
-            "CAPABILITY_NAMED_IAM" => Capability::CapabilityNamedIam,
-            "CAPABILITY_RESOURCE_POLICY" => Capability::CapabilityResourcePolicy,
-            other => Capability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CAPABILITY_AUTO_EXPAND" => Capability::CapabilityAutoExpand,
+"CAPABILITY_IAM" => Capability::CapabilityIam,
+"CAPABILITY_NAMED_IAM" => Capability::CapabilityNamedIam,
+"CAPABILITY_RESOURCE_POLICY" => Capability::CapabilityResourcePolicy,
+other => Capability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Capability {
                 type Err = std::convert::Infallible;
 
@@ -314,28 +314,26 @@ impl std::str::FromStr for Capability {
                 }
             }
 impl Capability {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Capability::CapabilityAutoExpand => "CAPABILITY_AUTO_EXPAND",
-            Capability::CapabilityIam => "CAPABILITY_IAM",
-            Capability::CapabilityNamedIam => "CAPABILITY_NAMED_IAM",
-            Capability::CapabilityResourcePolicy => "CAPABILITY_RESOURCE_POLICY",
-            Capability::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CAPABILITY_AUTO_EXPAND", "CAPABILITY_IAM", "CAPABILITY_NAMED_IAM", "CAPABILITY_RESOURCE_POLICY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Capability::CapabilityAutoExpand => "CAPABILITY_AUTO_EXPAND",
+    Capability::CapabilityIam => "CAPABILITY_IAM",
+    Capability::CapabilityNamedIam => "CAPABILITY_NAMED_IAM",
+    Capability::CapabilityResourcePolicy => "CAPABILITY_RESOURCE_POLICY",
+    Capability::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CAPABILITY_AUTO_EXPAND", "CAPABILITY_IAM", "CAPABILITY_NAMED_IAM", "CAPABILITY_RESOURCE_POLICY"]
+                }
+            }
 impl AsRef<str> for Capability {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Parameters supported by the application.</p>
 #[non_exhaustive]
@@ -1252,15 +1250,15 @@ pub enum Status {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => Status::Active,
-            "EXPIRED" => Status::Expired,
-            "PREPARING" => Status::Preparing,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => Status::Active,
+"EXPIRED" => Status::Expired,
+"PREPARING" => Status::Preparing,
+other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Status {
                 type Err = std::convert::Infallible;
 
@@ -1269,27 +1267,25 @@ impl std::str::FromStr for Status {
                 }
             }
 impl Status {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Status::Active => "ACTIVE",
-            Status::Expired => "EXPIRED",
-            Status::Preparing => "PREPARING",
-            Status::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "EXPIRED", "PREPARING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Status::Active => "ACTIVE",
+    Status::Expired => "EXPIRED",
+    Status::Preparing => "PREPARING",
+    Status::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "EXPIRED", "PREPARING"]
+                }
+            }
 impl AsRef<str> for Status {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a> </i> Data Type.</p>
 #[non_exhaustive]

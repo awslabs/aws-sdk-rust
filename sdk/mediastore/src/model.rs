@@ -261,14 +261,14 @@ pub enum ContainerLevelMetrics {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContainerLevelMetrics {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => ContainerLevelMetrics::Disabled,
-            "ENABLED" => ContainerLevelMetrics::Enabled,
-            other => ContainerLevelMetrics::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => ContainerLevelMetrics::Disabled,
+"ENABLED" => ContainerLevelMetrics::Enabled,
+other => ContainerLevelMetrics::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ContainerLevelMetrics {
                 type Err = std::convert::Infallible;
 
@@ -277,26 +277,24 @@ impl std::str::FromStr for ContainerLevelMetrics {
                 }
             }
 impl ContainerLevelMetrics {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ContainerLevelMetrics::Disabled => "DISABLED",
-            ContainerLevelMetrics::Enabled => "ENABLED",
-            ContainerLevelMetrics::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED", "ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ContainerLevelMetrics::Disabled => "DISABLED",
+    ContainerLevelMetrics::Enabled => "ENABLED",
+    ContainerLevelMetrics::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "ENABLED"]
+                }
+            }
 impl AsRef<str> for ContainerLevelMetrics {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.</p>
 #[non_exhaustive]
@@ -522,16 +520,16 @@ pub enum MethodName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MethodName {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETE" => MethodName::Delete,
-            "GET" => MethodName::Get,
-            "HEAD" => MethodName::Head,
-            "PUT" => MethodName::Put,
-            other => MethodName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DELETE" => MethodName::Delete,
+"GET" => MethodName::Get,
+"HEAD" => MethodName::Head,
+"PUT" => MethodName::Put,
+other => MethodName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MethodName {
                 type Err = std::convert::Infallible;
 
@@ -540,28 +538,26 @@ impl std::str::FromStr for MethodName {
                 }
             }
 impl MethodName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MethodName::Delete => "DELETE",
-            MethodName::Get => "GET",
-            MethodName::Head => "HEAD",
-            MethodName::Put => "PUT",
-            MethodName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELETE", "GET", "HEAD", "PUT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MethodName::Delete => "DELETE",
+    MethodName::Get => "GET",
+    MethodName::Head => "HEAD",
+    MethodName::Put => "PUT",
+    MethodName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELETE", "GET", "HEAD", "PUT"]
+                }
+            }
 impl AsRef<str> for MethodName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This section describes operations that you can perform on an AWS Elemental MediaStore container.</p>
 #[non_exhaustive]
@@ -794,15 +790,15 @@ pub enum ContainerStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContainerStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ContainerStatus::Active,
-            "CREATING" => ContainerStatus::Creating,
-            "DELETING" => ContainerStatus::Deleting,
-            other => ContainerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ContainerStatus::Active,
+"CREATING" => ContainerStatus::Creating,
+"DELETING" => ContainerStatus::Deleting,
+other => ContainerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ContainerStatus {
                 type Err = std::convert::Infallible;
 
@@ -811,25 +807,23 @@ impl std::str::FromStr for ContainerStatus {
                 }
             }
 impl ContainerStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ContainerStatus::Active => "ACTIVE",
-            ContainerStatus::Creating => "CREATING",
-            ContainerStatus::Deleting => "DELETING",
-            ContainerStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ContainerStatus::Active => "ACTIVE",
+    ContainerStatus::Creating => "CREATING",
+    ContainerStatus::Deleting => "DELETING",
+    ContainerStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETING"]
+                }
+            }
 impl AsRef<str> for ContainerStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

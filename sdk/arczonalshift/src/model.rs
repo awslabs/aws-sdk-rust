@@ -62,19 +62,19 @@ pub enum ValidationExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "InvalidAz" => ValidationExceptionReason::InvalidAz,
-            "InvalidExpiresIn" => ValidationExceptionReason::InvalidExpiresIn,
-            "InvalidResourceIdentifier" => ValidationExceptionReason::InvalidResourceIdentifier,
-            "InvalidStatus" => ValidationExceptionReason::InvalidStatus,
-            "InvalidToken" => ValidationExceptionReason::InvalidToken,
-            "MissingValue" => ValidationExceptionReason::MissingValue,
-            "UnsupportedAz" => ValidationExceptionReason::UnsupportedAz,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "InvalidAz" => ValidationExceptionReason::InvalidAz,
+"InvalidExpiresIn" => ValidationExceptionReason::InvalidExpiresIn,
+"InvalidResourceIdentifier" => ValidationExceptionReason::InvalidResourceIdentifier,
+"InvalidStatus" => ValidationExceptionReason::InvalidStatus,
+"InvalidToken" => ValidationExceptionReason::InvalidToken,
+"MissingValue" => ValidationExceptionReason::MissingValue,
+"UnsupportedAz" => ValidationExceptionReason::UnsupportedAz,
+other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ValidationExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -83,31 +83,29 @@ impl std::str::FromStr for ValidationExceptionReason {
                 }
             }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::InvalidAz => "InvalidAz",
-            ValidationExceptionReason::InvalidExpiresIn => "InvalidExpiresIn",
-            ValidationExceptionReason::InvalidResourceIdentifier => "InvalidResourceIdentifier",
-            ValidationExceptionReason::InvalidStatus => "InvalidStatus",
-            ValidationExceptionReason::InvalidToken => "InvalidToken",
-            ValidationExceptionReason::MissingValue => "MissingValue",
-            ValidationExceptionReason::UnsupportedAz => "UnsupportedAz",
-            ValidationExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "InvalidAz", "InvalidExpiresIn", "InvalidResourceIdentifier", "InvalidStatus", "InvalidToken", "MissingValue", "UnsupportedAz"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::InvalidAz => "InvalidAz",
+    ValidationExceptionReason::InvalidExpiresIn => "InvalidExpiresIn",
+    ValidationExceptionReason::InvalidResourceIdentifier => "InvalidResourceIdentifier",
+    ValidationExceptionReason::InvalidStatus => "InvalidStatus",
+    ValidationExceptionReason::InvalidToken => "InvalidToken",
+    ValidationExceptionReason::MissingValue => "MissingValue",
+    ValidationExceptionReason::UnsupportedAz => "UnsupportedAz",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["InvalidAz", "InvalidExpiresIn", "InvalidResourceIdentifier", "InvalidStatus", "InvalidToken", "MissingValue", "UnsupportedAz"]
+                }
+            }
 impl AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ConflictExceptionReason`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -159,15 +157,15 @@ pub enum ConflictExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "SimultaneousZonalShiftsConflict" => ConflictExceptionReason::SimultaneousZonalShiftsConflict,
-            "ZonalShiftAlreadyExists" => ConflictExceptionReason::ZonalShiftAlreadyExists,
-            "ZonalShiftStatusNotActive" => ConflictExceptionReason::ZonalShiftStatusNotActive,
-            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SimultaneousZonalShiftsConflict" => ConflictExceptionReason::SimultaneousZonalShiftsConflict,
+"ZonalShiftAlreadyExists" => ConflictExceptionReason::ZonalShiftAlreadyExists,
+"ZonalShiftStatusNotActive" => ConflictExceptionReason::ZonalShiftStatusNotActive,
+other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConflictExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -176,27 +174,25 @@ impl std::str::FromStr for ConflictExceptionReason {
                 }
             }
 impl ConflictExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConflictExceptionReason::SimultaneousZonalShiftsConflict => "SimultaneousZonalShiftsConflict",
-            ConflictExceptionReason::ZonalShiftAlreadyExists => "ZonalShiftAlreadyExists",
-            ConflictExceptionReason::ZonalShiftStatusNotActive => "ZonalShiftStatusNotActive",
-            ConflictExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SimultaneousZonalShiftsConflict", "ZonalShiftAlreadyExists", "ZonalShiftStatusNotActive"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConflictExceptionReason::SimultaneousZonalShiftsConflict => "SimultaneousZonalShiftsConflict",
+    ConflictExceptionReason::ZonalShiftAlreadyExists => "ZonalShiftAlreadyExists",
+    ConflictExceptionReason::ZonalShiftStatusNotActive => "ZonalShiftStatusNotActive",
+    ConflictExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SimultaneousZonalShiftsConflict", "ZonalShiftAlreadyExists", "ZonalShiftStatusNotActive"]
+                }
+            }
 impl AsRef<str> for ConflictExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ZonalShiftStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -248,15 +244,15 @@ pub enum ZonalShiftStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ZonalShiftStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ZonalShiftStatus::Active,
-            "CANCELED" => ZonalShiftStatus::Canceled,
-            "EXPIRED" => ZonalShiftStatus::Expired,
-            other => ZonalShiftStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ZonalShiftStatus::Active,
+"CANCELED" => ZonalShiftStatus::Canceled,
+"EXPIRED" => ZonalShiftStatus::Expired,
+other => ZonalShiftStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ZonalShiftStatus {
                 type Err = std::convert::Infallible;
 
@@ -265,27 +261,25 @@ impl std::str::FromStr for ZonalShiftStatus {
                 }
             }
 impl ZonalShiftStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ZonalShiftStatus::Active => "ACTIVE",
-            ZonalShiftStatus::Canceled => "CANCELED",
-            ZonalShiftStatus::Expired => "EXPIRED",
-            ZonalShiftStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CANCELED", "EXPIRED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ZonalShiftStatus::Active => "ACTIVE",
+    ZonalShiftStatus::Canceled => "CANCELED",
+    ZonalShiftStatus::Expired => "EXPIRED",
+    ZonalShiftStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CANCELED", "EXPIRED"]
+                }
+            }
 impl AsRef<str> for ZonalShiftStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>You start a zonal shift to temporarily move load balancer traffic away from an Availability Zone in a AWS Region. A zonal shift helps your application recover immediately, for example, from a developer's bad code deployment or from an AWS infrastructure failure in a single Availability Zone. You can start a zonal shift in Route 53 ARC only for managed resources in your account in an AWS Region. Supported AWS resources are automatically registered with Route 53 ARC.</p> 
 /// <p>Zonal shifts are temporary. A zonal shift can be active for up to three days (72 hours).</p> 
@@ -801,14 +795,14 @@ pub enum AppliedStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppliedStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "APPLIED" => AppliedStatus::Applied,
-            "NOT_APPLIED" => AppliedStatus::NotApplied,
-            other => AppliedStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "APPLIED" => AppliedStatus::Applied,
+"NOT_APPLIED" => AppliedStatus::NotApplied,
+other => AppliedStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AppliedStatus {
                 type Err = std::convert::Infallible;
 
@@ -817,24 +811,22 @@ impl std::str::FromStr for AppliedStatus {
                 }
             }
 impl AppliedStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AppliedStatus::Applied => "APPLIED",
-            AppliedStatus::NotApplied => "NOT_APPLIED",
-            AppliedStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPLIED", "NOT_APPLIED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AppliedStatus::Applied => "APPLIED",
+    AppliedStatus::NotApplied => "NOT_APPLIED",
+    AppliedStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["APPLIED", "NOT_APPLIED"]
+                }
+            }
 impl AsRef<str> for AppliedStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

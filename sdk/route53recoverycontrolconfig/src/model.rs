@@ -247,15 +247,15 @@ pub enum Status {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEPLOYED" => Status::Deployed,
-            "PENDING" => Status::Pending,
-            "PENDING_DELETION" => Status::PendingDeletion,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DEPLOYED" => Status::Deployed,
+"PENDING" => Status::Pending,
+"PENDING_DELETION" => Status::PendingDeletion,
+other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Status {
                 type Err = std::convert::Infallible;
 
@@ -264,27 +264,25 @@ impl std::str::FromStr for Status {
                 }
             }
 impl Status {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Status::Deployed => "DEPLOYED",
-            Status::Pending => "PENDING",
-            Status::PendingDeletion => "PENDING_DELETION",
-            Status::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEPLOYED", "PENDING", "PENDING_DELETION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Status::Deployed => "DEPLOYED",
+    Status::Pending => "PENDING",
+    Status::PendingDeletion => "PENDING_DELETION",
+    Status::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEPLOYED", "PENDING", "PENDING_DELETION"]
+                }
+            }
 impl AsRef<str> for Status {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The rule configuration for an assertion rule. That is, the criteria that you set for specific assertion controls (routing controls) that specify how many control states must be ON after a transaction completes.</p>
 #[non_exhaustive]
@@ -426,15 +424,15 @@ pub enum RuleType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuleType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AND" => RuleType::And,
-            "ATLEAST" => RuleType::Atleast,
-            "OR" => RuleType::Or,
-            other => RuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AND" => RuleType::And,
+"ATLEAST" => RuleType::Atleast,
+"OR" => RuleType::Or,
+other => RuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RuleType {
                 type Err = std::convert::Infallible;
 
@@ -443,27 +441,25 @@ impl std::str::FromStr for RuleType {
                 }
             }
 impl RuleType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RuleType::And => "AND",
-            RuleType::Atleast => "ATLEAST",
-            RuleType::Or => "OR",
-            RuleType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AND", "ATLEAST", "OR"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RuleType::And => "AND",
+    RuleType::Atleast => "ATLEAST",
+    RuleType::Or => "OR",
+    RuleType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AND", "ATLEAST", "OR"]
+                }
+            }
 impl AsRef<str> for RuleType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An assertion rule enforces that, when you change a routing control state, that the criteria that you set in the rule configuration is met. Otherwise, the change to the routing control is not accepted. For example, the criteria might be that at least one routing control state is On after the transaction so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
 #[non_exhaustive]

@@ -56,17 +56,17 @@ pub enum ValidationExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
-            "ENCRYPTION_KEY_ERROR" => ValidationExceptionReason::EncryptionKeyError,
-            "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
-            "OTHER" => ValidationExceptionReason::Other,
-            "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
+"ENCRYPTION_KEY_ERROR" => ValidationExceptionReason::EncryptionKeyError,
+"FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
+"OTHER" => ValidationExceptionReason::Other,
+"UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
+other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ValidationExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -75,29 +75,27 @@ impl std::str::FromStr for ValidationExceptionReason {
                 }
             }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
-            ValidationExceptionReason::EncryptionKeyError => "ENCRYPTION_KEY_ERROR",
-            ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
-            ValidationExceptionReason::Other => "OTHER",
-            ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANNOT_PARSE", "ENCRYPTION_KEY_ERROR", "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
+    ValidationExceptionReason::EncryptionKeyError => "ENCRYPTION_KEY_ERROR",
+    ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
+    ValidationExceptionReason::Other => "OTHER",
+    ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANNOT_PARSE", "ENCRYPTION_KEY_ERROR", "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"]
+                }
+            }
 impl AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ResourceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -155,17 +153,17 @@ pub enum ResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "asset" => ResourceType::Asset,
-            "domain" => ResourceType::Domain,
-            "package" => ResourceType::Package,
-            "package-version" => ResourceType::PackageVersion,
-            "repository" => ResourceType::Repository,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "asset" => ResourceType::Asset,
+"domain" => ResourceType::Domain,
+"package" => ResourceType::Package,
+"package-version" => ResourceType::PackageVersion,
+"repository" => ResourceType::Repository,
+other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceType {
                 type Err = std::convert::Infallible;
 
@@ -174,29 +172,27 @@ impl std::str::FromStr for ResourceType {
                 }
             }
 impl ResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceType::Asset => "asset",
-            ResourceType::Domain => "domain",
-            ResourceType::Package => "package",
-            ResourceType::PackageVersion => "package-version",
-            ResourceType::Repository => "repository",
-            ResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "asset", "domain", "package", "package-version", "repository"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceType::Asset => "asset",
+    ResourceType::Domain => "domain",
+    ResourceType::Package => "package",
+    ResourceType::PackageVersion => "package-version",
+    ResourceType::Repository => "repository",
+    ResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["asset", "domain", "package", "package-version", "repository"]
+                }
+            }
 impl AsRef<str> for ResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> The details of a repository stored in CodeArtifact. A CodeArtifact repository contains a set of package versions, each of which maps to a set of assets. Repositories are polyglot—a single repository can contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using tools like the <code>npm</code> CLI, the Maven CLI (<code>mvn</code>), and <code>pip</code>. You can create up to 100 repositories per Amazon Web Services account. </p>
 #[non_exhaustive]
@@ -549,13 +545,13 @@ pub enum ExternalConnectionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExternalConnectionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Available" => ExternalConnectionStatus::Available,
-            other => ExternalConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Available" => ExternalConnectionStatus::Available,
+other => ExternalConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExternalConnectionStatus {
                 type Err = std::convert::Infallible;
 
@@ -564,25 +560,23 @@ impl std::str::FromStr for ExternalConnectionStatus {
                 }
             }
 impl ExternalConnectionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExternalConnectionStatus::Available => "Available",
-            ExternalConnectionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Available"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExternalConnectionStatus::Available => "Available",
+    ExternalConnectionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Available"]
+                }
+            }
 impl AsRef<str> for ExternalConnectionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PackageFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -637,16 +631,16 @@ pub enum PackageFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "maven" => PackageFormat::Maven,
-            "npm" => PackageFormat::Npm,
-            "nuget" => PackageFormat::Nuget,
-            "pypi" => PackageFormat::Pypi,
-            other => PackageFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "maven" => PackageFormat::Maven,
+"npm" => PackageFormat::Npm,
+"nuget" => PackageFormat::Nuget,
+"pypi" => PackageFormat::Pypi,
+other => PackageFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PackageFormat {
                 type Err = std::convert::Infallible;
 
@@ -655,28 +649,26 @@ impl std::str::FromStr for PackageFormat {
                 }
             }
 impl PackageFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PackageFormat::Maven => "maven",
-            PackageFormat::Npm => "npm",
-            PackageFormat::Nuget => "nuget",
-            PackageFormat::Pypi => "pypi",
-            PackageFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "maven", "npm", "nuget", "pypi"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PackageFormat::Maven => "maven",
+    PackageFormat::Npm => "npm",
+    PackageFormat::Nuget => "nuget",
+    PackageFormat::Pypi => "pypi",
+    PackageFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["maven", "npm", "nuget", "pypi"]
+                }
+            }
 impl AsRef<str> for PackageFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Information about an upstream repository. </p>
 #[non_exhaustive]
@@ -938,18 +930,18 @@ pub enum PackageVersionErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageVersionErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALREADY_EXISTS" => PackageVersionErrorCode::AlreadyExists,
-            "MISMATCHED_REVISION" => PackageVersionErrorCode::MismatchedRevision,
-            "MISMATCHED_STATUS" => PackageVersionErrorCode::MismatchedStatus,
-            "NOT_ALLOWED" => PackageVersionErrorCode::NotAllowed,
-            "NOT_FOUND" => PackageVersionErrorCode::NotFound,
-            "SKIPPED" => PackageVersionErrorCode::Skipped,
-            other => PackageVersionErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALREADY_EXISTS" => PackageVersionErrorCode::AlreadyExists,
+"MISMATCHED_REVISION" => PackageVersionErrorCode::MismatchedRevision,
+"MISMATCHED_STATUS" => PackageVersionErrorCode::MismatchedStatus,
+"NOT_ALLOWED" => PackageVersionErrorCode::NotAllowed,
+"NOT_FOUND" => PackageVersionErrorCode::NotFound,
+"SKIPPED" => PackageVersionErrorCode::Skipped,
+other => PackageVersionErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PackageVersionErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -958,30 +950,28 @@ impl std::str::FromStr for PackageVersionErrorCode {
                 }
             }
 impl PackageVersionErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PackageVersionErrorCode::AlreadyExists => "ALREADY_EXISTS",
-            PackageVersionErrorCode::MismatchedRevision => "MISMATCHED_REVISION",
-            PackageVersionErrorCode::MismatchedStatus => "MISMATCHED_STATUS",
-            PackageVersionErrorCode::NotAllowed => "NOT_ALLOWED",
-            PackageVersionErrorCode::NotFound => "NOT_FOUND",
-            PackageVersionErrorCode::Skipped => "SKIPPED",
-            PackageVersionErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALREADY_EXISTS", "MISMATCHED_REVISION", "MISMATCHED_STATUS", "NOT_ALLOWED", "NOT_FOUND", "SKIPPED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PackageVersionErrorCode::AlreadyExists => "ALREADY_EXISTS",
+    PackageVersionErrorCode::MismatchedRevision => "MISMATCHED_REVISION",
+    PackageVersionErrorCode::MismatchedStatus => "MISMATCHED_STATUS",
+    PackageVersionErrorCode::NotAllowed => "NOT_ALLOWED",
+    PackageVersionErrorCode::NotFound => "NOT_FOUND",
+    PackageVersionErrorCode::Skipped => "SKIPPED",
+    PackageVersionErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALREADY_EXISTS", "MISMATCHED_REVISION", "MISMATCHED_STATUS", "NOT_ALLOWED", "NOT_FOUND", "SKIPPED"]
+                }
+            }
 impl AsRef<str> for PackageVersionErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Contains the revision and status of a package version. </p>
 #[non_exhaustive]
@@ -1111,18 +1101,18 @@ pub enum PackageVersionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageVersionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Archived" => PackageVersionStatus::Archived,
-            "Deleted" => PackageVersionStatus::Deleted,
-            "Disposed" => PackageVersionStatus::Disposed,
-            "Published" => PackageVersionStatus::Published,
-            "Unfinished" => PackageVersionStatus::Unfinished,
-            "Unlisted" => PackageVersionStatus::Unlisted,
-            other => PackageVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Archived" => PackageVersionStatus::Archived,
+"Deleted" => PackageVersionStatus::Deleted,
+"Disposed" => PackageVersionStatus::Disposed,
+"Published" => PackageVersionStatus::Published,
+"Unfinished" => PackageVersionStatus::Unfinished,
+"Unlisted" => PackageVersionStatus::Unlisted,
+other => PackageVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PackageVersionStatus {
                 type Err = std::convert::Infallible;
 
@@ -1131,30 +1121,28 @@ impl std::str::FromStr for PackageVersionStatus {
                 }
             }
 impl PackageVersionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PackageVersionStatus::Archived => "Archived",
-            PackageVersionStatus::Deleted => "Deleted",
-            PackageVersionStatus::Disposed => "Disposed",
-            PackageVersionStatus::Published => "Published",
-            PackageVersionStatus::Unfinished => "Unfinished",
-            PackageVersionStatus::Unlisted => "Unlisted",
-            PackageVersionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Archived", "Deleted", "Disposed", "Published", "Unfinished", "Unlisted"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PackageVersionStatus::Archived => "Archived",
+    PackageVersionStatus::Deleted => "Deleted",
+    PackageVersionStatus::Disposed => "Disposed",
+    PackageVersionStatus::Published => "Published",
+    PackageVersionStatus::Unfinished => "Unfinished",
+    PackageVersionStatus::Unlisted => "Unlisted",
+    PackageVersionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Archived", "Deleted", "Disposed", "Published", "Unfinished", "Unlisted"]
+                }
+            }
 impl AsRef<str> for PackageVersionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A tag is a key-value pair that can be used to manage, search for, or filter resources in CodeArtifact.</p>
 #[non_exhaustive]
@@ -1479,14 +1467,14 @@ pub enum AllowUpstream {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AllowUpstream {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALLOW" => AllowUpstream::Allow,
-            "BLOCK" => AllowUpstream::Block,
-            other => AllowUpstream::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALLOW" => AllowUpstream::Allow,
+"BLOCK" => AllowUpstream::Block,
+other => AllowUpstream::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AllowUpstream {
                 type Err = std::convert::Infallible;
 
@@ -1495,26 +1483,24 @@ impl std::str::FromStr for AllowUpstream {
                 }
             }
 impl AllowUpstream {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AllowUpstream::Allow => "ALLOW",
-            AllowUpstream::Block => "BLOCK",
-            AllowUpstream::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALLOW", "BLOCK"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AllowUpstream::Allow => "ALLOW",
+    AllowUpstream::Block => "BLOCK",
+    AllowUpstream::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALLOW", "BLOCK"]
+                }
+            }
 impl AsRef<str> for AllowUpstream {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AllowPublish`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1563,14 +1549,14 @@ pub enum AllowPublish {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AllowPublish {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALLOW" => AllowPublish::Allow,
-            "BLOCK" => AllowPublish::Block,
-            other => AllowPublish::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALLOW" => AllowPublish::Allow,
+"BLOCK" => AllowPublish::Block,
+other => AllowPublish::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AllowPublish {
                 type Err = std::convert::Infallible;
 
@@ -1579,26 +1565,24 @@ impl std::str::FromStr for AllowPublish {
                 }
             }
 impl AllowPublish {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AllowPublish::Allow => "ALLOW",
-            AllowPublish::Block => "BLOCK",
-            AllowPublish::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALLOW", "BLOCK"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AllowPublish::Allow => "ALLOW",
+    AllowPublish::Block => "BLOCK",
+    AllowPublish::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALLOW", "BLOCK"]
+                }
+            }
 impl AsRef<str> for AllowPublish {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html">ListRepositories</a> operation returns a list of <code>RepositorySummary</code> objects. </p>
 #[non_exhaustive]
@@ -1971,15 +1955,15 @@ pub enum PackageVersionOriginType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageVersionOriginType {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXTERNAL" => PackageVersionOriginType::External,
-            "INTERNAL" => PackageVersionOriginType::Internal,
-            "UNKNOWN" => PackageVersionOriginType::UnknownValue,
-            other => PackageVersionOriginType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EXTERNAL" => PackageVersionOriginType::External,
+"INTERNAL" => PackageVersionOriginType::Internal,
+"UNKNOWN" => PackageVersionOriginType::UnknownValue,
+other => PackageVersionOriginType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PackageVersionOriginType {
                 type Err = std::convert::Infallible;
 
@@ -1988,27 +1972,25 @@ impl std::str::FromStr for PackageVersionOriginType {
                 }
             }
 impl PackageVersionOriginType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PackageVersionOriginType::External => "EXTERNAL",
-            PackageVersionOriginType::Internal => "INTERNAL",
-            PackageVersionOriginType::UnknownValue => "UNKNOWN",
-            PackageVersionOriginType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EXTERNAL", "INTERNAL", "UNKNOWN"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PackageVersionOriginType::External => "EXTERNAL",
+    PackageVersionOriginType::Internal => "INTERNAL",
+    PackageVersionOriginType::UnknownValue => "UNKNOWN",
+    PackageVersionOriginType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXTERNAL", "INTERNAL", "UNKNOWN"]
+                }
+            }
 impl AsRef<str> for PackageVersionOriginType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about how a package originally entered the CodeArtifact domain. For packages published directly to CodeArtifact, the entry point is the repository it was published to. For packages ingested from an external repository, the entry point is the external connection that it was ingested from. An external connection is a CodeArtifact repository that is connected to an external repository such as the npm registry or NuGet gallery.</p>
 #[non_exhaustive]
@@ -2123,13 +2105,13 @@ pub enum PackageVersionSortType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageVersionSortType {
-    fn from(s: &str) -> Self {
-        match s {
-            "PUBLISHED_TIME" => PackageVersionSortType::PublishedTime,
-            other => PackageVersionSortType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PUBLISHED_TIME" => PackageVersionSortType::PublishedTime,
+other => PackageVersionSortType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PackageVersionSortType {
                 type Err = std::convert::Infallible;
 
@@ -2138,25 +2120,23 @@ impl std::str::FromStr for PackageVersionSortType {
                 }
             }
 impl PackageVersionSortType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PackageVersionSortType::PublishedTime => "PUBLISHED_TIME",
-            PackageVersionSortType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PUBLISHED_TIME"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PackageVersionSortType::PublishedTime => "PUBLISHED_TIME",
+    PackageVersionSortType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PUBLISHED_TIME"]
+                }
+            }
 impl AsRef<str> for PackageVersionSortType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Details about a package dependency. </p>
 #[non_exhaustive]
@@ -2468,16 +2448,16 @@ pub enum HashAlgorithm {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HashAlgorithm {
-    fn from(s: &str) -> Self {
-        match s {
-            "MD5" => HashAlgorithm::Md5,
-            "SHA-1" => HashAlgorithm::Sha1,
-            "SHA-256" => HashAlgorithm::Sha256,
-            "SHA-512" => HashAlgorithm::Sha512,
-            other => HashAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MD5" => HashAlgorithm::Md5,
+"SHA-1" => HashAlgorithm::Sha1,
+"SHA-256" => HashAlgorithm::Sha256,
+"SHA-512" => HashAlgorithm::Sha512,
+other => HashAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HashAlgorithm {
                 type Err = std::convert::Infallible;
 
@@ -2486,28 +2466,26 @@ impl std::str::FromStr for HashAlgorithm {
                 }
             }
 impl HashAlgorithm {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HashAlgorithm::Md5 => "MD5",
-            HashAlgorithm::Sha1 => "SHA-1",
-            HashAlgorithm::Sha256 => "SHA-256",
-            HashAlgorithm::Sha512 => "SHA-512",
-            HashAlgorithm::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MD5", "SHA-1", "SHA-256", "SHA-512"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HashAlgorithm::Md5 => "MD5",
+    HashAlgorithm::Sha1 => "SHA-1",
+    HashAlgorithm::Sha256 => "SHA-256",
+    HashAlgorithm::Sha512 => "SHA-512",
+    HashAlgorithm::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MD5", "SHA-1", "SHA-256", "SHA-512"]
+                }
+            }
 impl AsRef<str> for HashAlgorithm {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Details about a package, including its format, namespace, and name. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html">ListPackages</a> operation returns a list of <code>PackageSummary</code> objects. </p>
 #[non_exhaustive]
@@ -2828,14 +2806,14 @@ pub enum DomainStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => DomainStatus::Active,
-            "Deleted" => DomainStatus::Deleted,
-            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => DomainStatus::Active,
+"Deleted" => DomainStatus::Deleted,
+other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DomainStatus {
                 type Err = std::convert::Infallible;
 
@@ -2844,26 +2822,24 @@ impl std::str::FromStr for DomainStatus {
                 }
             }
 impl DomainStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DomainStatus::Active => "Active",
-            DomainStatus::Deleted => "Deleted",
-            DomainStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "Deleted"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DomainStatus::Active => "Active",
+    DomainStatus::Deleted => "Deleted",
+    DomainStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Deleted"]
+                }
+            }
 impl AsRef<str> for DomainStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Details about a package version. </p>
 #[non_exhaustive]

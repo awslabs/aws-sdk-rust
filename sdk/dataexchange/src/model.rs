@@ -47,14 +47,14 @@ pub enum ExceptionCause {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExceptionCause {
-    fn from(s: &str) -> Self {
-        match s {
-            "InsufficientS3BucketPolicy" => ExceptionCause::InsufficientS3BucketPolicy,
-            "S3AccessDenied" => ExceptionCause::S3AccessDenied,
-            other => ExceptionCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "InsufficientS3BucketPolicy" => ExceptionCause::InsufficientS3BucketPolicy,
+"S3AccessDenied" => ExceptionCause::S3AccessDenied,
+other => ExceptionCause::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExceptionCause {
                 type Err = std::convert::Infallible;
 
@@ -63,26 +63,24 @@ impl std::str::FromStr for ExceptionCause {
                 }
             }
 impl ExceptionCause {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExceptionCause::InsufficientS3BucketPolicy => "InsufficientS3BucketPolicy",
-            ExceptionCause::S3AccessDenied => "S3AccessDenied",
-            ExceptionCause::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "InsufficientS3BucketPolicy", "S3AccessDenied"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExceptionCause::InsufficientS3BucketPolicy => "InsufficientS3BucketPolicy",
+    ExceptionCause::S3AccessDenied => "S3AccessDenied",
+    ExceptionCause::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["InsufficientS3BucketPolicy", "S3AccessDenied"]
+                }
+            }
 impl AsRef<str> for ExceptionCause {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ResourceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -140,17 +138,17 @@ pub enum ResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSET" => ResourceType::Asset,
-            "DATA_SET" => ResourceType::DataSet,
-            "EVENT_ACTION" => ResourceType::EventAction,
-            "JOB" => ResourceType::Job,
-            "REVISION" => ResourceType::Revision,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSET" => ResourceType::Asset,
+"DATA_SET" => ResourceType::DataSet,
+"EVENT_ACTION" => ResourceType::EventAction,
+"JOB" => ResourceType::Job,
+"REVISION" => ResourceType::Revision,
+other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceType {
                 type Err = std::convert::Infallible;
 
@@ -159,29 +157,27 @@ impl std::str::FromStr for ResourceType {
                 }
             }
 impl ResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceType::Asset => "ASSET",
-            ResourceType::DataSet => "DATA_SET",
-            ResourceType::EventAction => "EVENT_ACTION",
-            ResourceType::Job => "JOB",
-            ResourceType::Revision => "REVISION",
-            ResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSET", "DATA_SET", "EVENT_ACTION", "JOB", "REVISION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceType::Asset => "ASSET",
+    ResourceType::DataSet => "DATA_SET",
+    ResourceType::EventAction => "EVENT_ACTION",
+    ResourceType::Job => "JOB",
+    ResourceType::Revision => "REVISION",
+    ResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSET", "DATA_SET", "EVENT_ACTION", "JOB", "REVISION"]
+                }
+            }
 impl AsRef<str> for ResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>What occurs to start an action.</p>
 #[non_exhaustive]
@@ -587,14 +583,14 @@ pub enum ServerSideEncryptionTypes {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServerSideEncryptionTypes {
-    fn from(s: &str) -> Self {
-        match s {
-            "AES256" => ServerSideEncryptionTypes::Aes256,
-            "aws:kms" => ServerSideEncryptionTypes::AwsKms,
-            other => ServerSideEncryptionTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AES256" => ServerSideEncryptionTypes::Aes256,
+"aws:kms" => ServerSideEncryptionTypes::AwsKms,
+other => ServerSideEncryptionTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ServerSideEncryptionTypes {
                 type Err = std::convert::Infallible;
 
@@ -603,26 +599,24 @@ impl std::str::FromStr for ServerSideEncryptionTypes {
                 }
             }
 impl ServerSideEncryptionTypes {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServerSideEncryptionTypes::Aes256 => "AES256",
-            ServerSideEncryptionTypes::AwsKms => "aws:kms",
-            ServerSideEncryptionTypes::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AES256", "aws:kms"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServerSideEncryptionTypes::Aes256 => "AES256",
+    ServerSideEncryptionTypes::AwsKms => "aws:kms",
+    ServerSideEncryptionTypes::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AES256", "aws:kms"]
+                }
+            }
 impl AsRef<str> for ServerSideEncryptionTypes {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details about the origin of the data set.</p>
 #[non_exhaustive]
@@ -721,14 +715,14 @@ pub enum Origin {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Origin {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENTITLED" => Origin::Entitled,
-            "OWNED" => Origin::Owned,
-            other => Origin::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ENTITLED" => Origin::Entitled,
+"OWNED" => Origin::Owned,
+other => Origin::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Origin {
                 type Err = std::convert::Infallible;
 
@@ -737,26 +731,24 @@ impl std::str::FromStr for Origin {
                 }
             }
 impl Origin {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Origin::Entitled => "ENTITLED",
-            Origin::Owned => "OWNED",
-            Origin::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENTITLED", "OWNED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Origin::Entitled => "ENTITLED",
+    Origin::Owned => "OWNED",
+    Origin::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENTITLED", "OWNED"]
+                }
+            }
 impl AsRef<str> for Origin {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AssetType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -814,17 +806,17 @@ pub enum AssetType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssetType {
-    fn from(s: &str) -> Self {
-        match s {
-            "API_GATEWAY_API" => AssetType::ApiGatewayApi,
-            "LAKE_FORMATION_DATA_PERMISSION" => AssetType::LakeFormationDataPermission,
-            "REDSHIFT_DATA_SHARE" => AssetType::RedshiftDataShare,
-            "S3_DATA_ACCESS" => AssetType::S3DataAccess,
-            "S3_SNAPSHOT" => AssetType::S3Snapshot,
-            other => AssetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "API_GATEWAY_API" => AssetType::ApiGatewayApi,
+"LAKE_FORMATION_DATA_PERMISSION" => AssetType::LakeFormationDataPermission,
+"REDSHIFT_DATA_SHARE" => AssetType::RedshiftDataShare,
+"S3_DATA_ACCESS" => AssetType::S3DataAccess,
+"S3_SNAPSHOT" => AssetType::S3Snapshot,
+other => AssetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AssetType {
                 type Err = std::convert::Infallible;
 
@@ -833,29 +825,27 @@ impl std::str::FromStr for AssetType {
                 }
             }
 impl AssetType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AssetType::ApiGatewayApi => "API_GATEWAY_API",
-            AssetType::LakeFormationDataPermission => "LAKE_FORMATION_DATA_PERMISSION",
-            AssetType::RedshiftDataShare => "REDSHIFT_DATA_SHARE",
-            AssetType::S3DataAccess => "S3_DATA_ACCESS",
-            AssetType::S3Snapshot => "S3_SNAPSHOT",
-            AssetType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "API_GATEWAY_API", "LAKE_FORMATION_DATA_PERMISSION", "REDSHIFT_DATA_SHARE", "S3_DATA_ACCESS", "S3_SNAPSHOT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AssetType::ApiGatewayApi => "API_GATEWAY_API",
+    AssetType::LakeFormationDataPermission => "LAKE_FORMATION_DATA_PERMISSION",
+    AssetType::RedshiftDataShare => "REDSHIFT_DATA_SHARE",
+    AssetType::S3DataAccess => "S3_DATA_ACCESS",
+    AssetType::S3Snapshot => "S3_SNAPSHOT",
+    AssetType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["API_GATEWAY_API", "LAKE_FORMATION_DATA_PERMISSION", "REDSHIFT_DATA_SHARE", "S3_DATA_ACCESS", "S3_SNAPSHOT"]
+                }
+            }
 impl AsRef<str> for AssetType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details about the asset.</p>
 #[non_exhaustive]
@@ -1143,14 +1133,14 @@ pub enum LfPermission {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LfPermission {
-    fn from(s: &str) -> Self {
-        match s {
-            "DESCRIBE" => LfPermission::Describe,
-            "SELECT" => LfPermission::Select,
-            other => LfPermission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DESCRIBE" => LfPermission::Describe,
+"SELECT" => LfPermission::Select,
+other => LfPermission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LfPermission {
                 type Err = std::convert::Infallible;
 
@@ -1159,26 +1149,24 @@ impl std::str::FromStr for LfPermission {
                 }
             }
 impl LfPermission {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LfPermission::Describe => "DESCRIBE",
-            LfPermission::Select => "SELECT",
-            LfPermission::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DESCRIBE", "SELECT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LfPermission::Describe => "DESCRIBE",
+    LfPermission::Select => "SELECT",
+    LfPermission::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DESCRIBE", "SELECT"]
+                }
+            }
 impl AsRef<str> for LfPermission {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LakeFormationDataPermissionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1224,13 +1212,13 @@ pub enum LakeFormationDataPermissionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LakeFormationDataPermissionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "LFTagPolicy" => LakeFormationDataPermissionType::LfTagPolicy,
-            other => LakeFormationDataPermissionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "LFTagPolicy" => LakeFormationDataPermissionType::LfTagPolicy,
+other => LakeFormationDataPermissionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LakeFormationDataPermissionType {
                 type Err = std::convert::Infallible;
 
@@ -1239,25 +1227,23 @@ impl std::str::FromStr for LakeFormationDataPermissionType {
                 }
             }
 impl LakeFormationDataPermissionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LakeFormationDataPermissionType::LfTagPolicy => "LFTagPolicy",
-            LakeFormationDataPermissionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LFTagPolicy"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LakeFormationDataPermissionType::LfTagPolicy => "LFTagPolicy",
+    LakeFormationDataPermissionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LFTagPolicy"]
+                }
+            }
 impl AsRef<str> for LakeFormationDataPermissionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details about the AWS Lake Formation data permission.</p>
 #[non_exhaustive]
@@ -1700,14 +1686,14 @@ pub enum LfResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LfResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DATABASE" => LfResourceType::Database,
-            "TABLE" => LfResourceType::Table,
-            other => LfResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DATABASE" => LfResourceType::Database,
+"TABLE" => LfResourceType::Table,
+other => LfResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LfResourceType {
                 type Err = std::convert::Infallible;
 
@@ -1716,26 +1702,24 @@ impl std::str::FromStr for LfResourceType {
                 }
             }
 impl LfResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LfResourceType::Database => "DATABASE",
-            LfResourceType::Table => "TABLE",
-            LfResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DATABASE", "TABLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LfResourceType::Database => "DATABASE",
+    LfResourceType::Table => "TABLE",
+    LfResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DATABASE", "TABLE"]
+                }
+            }
 impl AsRef<str> for LfResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The Amazon S3 data access that is the asset.</p>
 #[non_exhaustive]
@@ -2121,13 +2105,13 @@ pub enum ProtocolType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProtocolType {
-    fn from(s: &str) -> Self {
-        match s {
-            "REST" => ProtocolType::Rest,
-            other => ProtocolType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "REST" => ProtocolType::Rest,
+other => ProtocolType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ProtocolType {
                 type Err = std::convert::Infallible;
 
@@ -2136,25 +2120,23 @@ impl std::str::FromStr for ProtocolType {
                 }
             }
 impl ProtocolType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProtocolType::Rest => "REST",
-            ProtocolType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "REST"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ProtocolType::Rest => "REST",
+    ProtocolType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["REST"]
+                }
+            }
 impl AsRef<str> for ProtocolType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The Amazon Redshift datashare asset.</p>
 #[non_exhaustive]
@@ -2735,21 +2717,21 @@ pub enum Type {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Type {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET" => Type::CreateS3DataAccessFromS3Bucket,
-            "EXPORT_ASSETS_TO_S3" => Type::ExportAssetsToS3,
-            "EXPORT_ASSET_TO_SIGNED_URL" => Type::ExportAssetToSignedUrl,
-            "EXPORT_REVISIONS_TO_S3" => Type::ExportRevisionsToS3,
-            "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY" => Type::ImportAssetsFromLakeFormationTagPolicy,
-            "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES" => Type::ImportAssetsFromRedshiftDataShares,
-            "IMPORT_ASSETS_FROM_S3" => Type::ImportAssetsFromS3,
-            "IMPORT_ASSET_FROM_API_GATEWAY_API" => Type::ImportAssetFromApiGatewayApi,
-            "IMPORT_ASSET_FROM_SIGNED_URL" => Type::ImportAssetFromSignedUrl,
-            other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET" => Type::CreateS3DataAccessFromS3Bucket,
+"EXPORT_ASSETS_TO_S3" => Type::ExportAssetsToS3,
+"EXPORT_ASSET_TO_SIGNED_URL" => Type::ExportAssetToSignedUrl,
+"EXPORT_REVISIONS_TO_S3" => Type::ExportRevisionsToS3,
+"IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY" => Type::ImportAssetsFromLakeFormationTagPolicy,
+"IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES" => Type::ImportAssetsFromRedshiftDataShares,
+"IMPORT_ASSETS_FROM_S3" => Type::ImportAssetsFromS3,
+"IMPORT_ASSET_FROM_API_GATEWAY_API" => Type::ImportAssetFromApiGatewayApi,
+"IMPORT_ASSET_FROM_SIGNED_URL" => Type::ImportAssetFromSignedUrl,
+other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Type {
                 type Err = std::convert::Infallible;
 
@@ -2758,33 +2740,31 @@ impl std::str::FromStr for Type {
                 }
             }
 impl Type {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Type::CreateS3DataAccessFromS3Bucket => "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET",
-            Type::ExportAssetsToS3 => "EXPORT_ASSETS_TO_S3",
-            Type::ExportAssetToSignedUrl => "EXPORT_ASSET_TO_SIGNED_URL",
-            Type::ExportRevisionsToS3 => "EXPORT_REVISIONS_TO_S3",
-            Type::ImportAssetsFromLakeFormationTagPolicy => "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY",
-            Type::ImportAssetsFromRedshiftDataShares => "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
-            Type::ImportAssetsFromS3 => "IMPORT_ASSETS_FROM_S3",
-            Type::ImportAssetFromApiGatewayApi => "IMPORT_ASSET_FROM_API_GATEWAY_API",
-            Type::ImportAssetFromSignedUrl => "IMPORT_ASSET_FROM_SIGNED_URL",
-            Type::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET", "EXPORT_ASSETS_TO_S3", "EXPORT_ASSET_TO_SIGNED_URL", "EXPORT_REVISIONS_TO_S3", "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY", "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES", "IMPORT_ASSETS_FROM_S3", "IMPORT_ASSET_FROM_API_GATEWAY_API", "IMPORT_ASSET_FROM_SIGNED_URL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Type::CreateS3DataAccessFromS3Bucket => "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET",
+    Type::ExportAssetsToS3 => "EXPORT_ASSETS_TO_S3",
+    Type::ExportAssetToSignedUrl => "EXPORT_ASSET_TO_SIGNED_URL",
+    Type::ExportRevisionsToS3 => "EXPORT_REVISIONS_TO_S3",
+    Type::ImportAssetsFromLakeFormationTagPolicy => "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY",
+    Type::ImportAssetsFromRedshiftDataShares => "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
+    Type::ImportAssetsFromS3 => "IMPORT_ASSETS_FROM_S3",
+    Type::ImportAssetFromApiGatewayApi => "IMPORT_ASSET_FROM_API_GATEWAY_API",
+    Type::ImportAssetFromSignedUrl => "IMPORT_ASSET_FROM_SIGNED_URL",
+    Type::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET", "EXPORT_ASSETS_TO_S3", "EXPORT_ASSET_TO_SIGNED_URL", "EXPORT_REVISIONS_TO_S3", "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY", "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES", "IMPORT_ASSETS_FROM_S3", "IMPORT_ASSET_FROM_API_GATEWAY_API", "IMPORT_ASSET_FROM_SIGNED_URL"]
+                }
+            }
 impl AsRef<str> for Type {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `State`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2845,18 +2825,18 @@ pub enum State {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for State {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => State::Cancelled,
-            "COMPLETED" => State::Completed,
-            "ERROR" => State::Error,
-            "IN_PROGRESS" => State::InProgress,
-            "TIMED_OUT" => State::TimedOut,
-            "WAITING" => State::Waiting,
-            other => State::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => State::Cancelled,
+"COMPLETED" => State::Completed,
+"ERROR" => State::Error,
+"IN_PROGRESS" => State::InProgress,
+"TIMED_OUT" => State::TimedOut,
+"WAITING" => State::Waiting,
+other => State::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for State {
                 type Err = std::convert::Infallible;
 
@@ -2865,30 +2845,28 @@ impl std::str::FromStr for State {
                 }
             }
 impl State {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            State::Cancelled => "CANCELLED",
-            State::Completed => "COMPLETED",
-            State::Error => "ERROR",
-            State::InProgress => "IN_PROGRESS",
-            State::TimedOut => "TIMED_OUT",
-            State::Waiting => "WAITING",
-            State::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "COMPLETED", "ERROR", "IN_PROGRESS", "TIMED_OUT", "WAITING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    State::Cancelled => "CANCELLED",
+    State::Completed => "COMPLETED",
+    State::Error => "ERROR",
+    State::InProgress => "IN_PROGRESS",
+    State::TimedOut => "TIMED_OUT",
+    State::Waiting => "WAITING",
+    State::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "COMPLETED", "ERROR", "IN_PROGRESS", "TIMED_OUT", "WAITING"]
+                }
+            }
 impl AsRef<str> for State {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An error that occurred with the job request.</p>
 #[non_exhaustive]
@@ -3105,15 +3083,15 @@ pub enum JobErrorResourceTypes {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobErrorResourceTypes {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSET" => JobErrorResourceTypes::Asset,
-            "DATA_SET" => JobErrorResourceTypes::DataSet,
-            "REVISION" => JobErrorResourceTypes::Revision,
-            other => JobErrorResourceTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSET" => JobErrorResourceTypes::Asset,
+"DATA_SET" => JobErrorResourceTypes::DataSet,
+"REVISION" => JobErrorResourceTypes::Revision,
+other => JobErrorResourceTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobErrorResourceTypes {
                 type Err = std::convert::Infallible;
 
@@ -3122,27 +3100,25 @@ impl std::str::FromStr for JobErrorResourceTypes {
                 }
             }
 impl JobErrorResourceTypes {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobErrorResourceTypes::Asset => "ASSET",
-            JobErrorResourceTypes::DataSet => "DATA_SET",
-            JobErrorResourceTypes::Revision => "REVISION",
-            JobErrorResourceTypes::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSET", "DATA_SET", "REVISION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobErrorResourceTypes::Asset => "ASSET",
+    JobErrorResourceTypes::DataSet => "DATA_SET",
+    JobErrorResourceTypes::Revision => "REVISION",
+    JobErrorResourceTypes::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSET", "DATA_SET", "REVISION"]
+                }
+            }
 impl AsRef<str> for JobErrorResourceTypes {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `JobErrorLimitName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3200,17 +3176,17 @@ pub enum JobErrorLimitName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobErrorLimitName {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS Lake Formation data permission assets per revision" => JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
-            "Amazon Redshift datashare assets per revision" => JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision,
-            "Amazon S3 data access assets per revision" => JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision,
-            "Asset size in GB" => JobErrorLimitName::AssetSizeInGb,
-            "Assets per revision" => JobErrorLimitName::AssetsPerRevision,
-            other => JobErrorLimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS Lake Formation data permission assets per revision" => JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
+"Amazon Redshift datashare assets per revision" => JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision,
+"Amazon S3 data access assets per revision" => JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision,
+"Asset size in GB" => JobErrorLimitName::AssetSizeInGb,
+"Assets per revision" => JobErrorLimitName::AssetsPerRevision,
+other => JobErrorLimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobErrorLimitName {
                 type Err = std::convert::Infallible;
 
@@ -3219,29 +3195,27 @@ impl std::str::FromStr for JobErrorLimitName {
                 }
             }
 impl JobErrorLimitName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision => "AWS Lake Formation data permission assets per revision",
-            JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision => "Amazon Redshift datashare assets per revision",
-            JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision => "Amazon S3 data access assets per revision",
-            JobErrorLimitName::AssetSizeInGb => "Asset size in GB",
-            JobErrorLimitName::AssetsPerRevision => "Assets per revision",
-            JobErrorLimitName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS Lake Formation data permission assets per revision", "Amazon Redshift datashare assets per revision", "Amazon S3 data access assets per revision", "Asset size in GB", "Assets per revision"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision => "AWS Lake Formation data permission assets per revision",
+    JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision => "Amazon Redshift datashare assets per revision",
+    JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision => "Amazon S3 data access assets per revision",
+    JobErrorLimitName::AssetSizeInGb => "Asset size in GB",
+    JobErrorLimitName::AssetsPerRevision => "Assets per revision",
+    JobErrorLimitName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS Lake Formation data permission assets per revision", "Amazon Redshift datashare assets per revision", "Amazon S3 data access assets per revision", "Asset size in GB", "Assets per revision"]
+                }
+            }
 impl AsRef<str> for JobErrorLimitName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the job error.</p>
 #[non_exhaustive]
@@ -3499,19 +3473,19 @@ pub enum Code {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Code {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED_EXCEPTION" => Code::AccessDeniedException,
-            "INTERNAL_SERVER_EXCEPTION" => Code::InternalServerException,
-            "MALWARE_DETECTED" => Code::MalwareDetected,
-            "MALWARE_SCAN_ENCRYPTED_FILE" => Code::MalwareScanEncryptedFile,
-            "RESOURCE_NOT_FOUND_EXCEPTION" => Code::ResourceNotFoundException,
-            "SERVICE_QUOTA_EXCEEDED_EXCEPTION" => Code::ServiceQuotaExceededException,
-            "VALIDATION_EXCEPTION" => Code::ValidationException,
-            other => Code::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED_EXCEPTION" => Code::AccessDeniedException,
+"INTERNAL_SERVER_EXCEPTION" => Code::InternalServerException,
+"MALWARE_DETECTED" => Code::MalwareDetected,
+"MALWARE_SCAN_ENCRYPTED_FILE" => Code::MalwareScanEncryptedFile,
+"RESOURCE_NOT_FOUND_EXCEPTION" => Code::ResourceNotFoundException,
+"SERVICE_QUOTA_EXCEEDED_EXCEPTION" => Code::ServiceQuotaExceededException,
+"VALIDATION_EXCEPTION" => Code::ValidationException,
+other => Code::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Code {
                 type Err = std::convert::Infallible;
 
@@ -3520,31 +3494,29 @@ impl std::str::FromStr for Code {
                 }
             }
 impl Code {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Code::AccessDeniedException => "ACCESS_DENIED_EXCEPTION",
-            Code::InternalServerException => "INTERNAL_SERVER_EXCEPTION",
-            Code::MalwareDetected => "MALWARE_DETECTED",
-            Code::MalwareScanEncryptedFile => "MALWARE_SCAN_ENCRYPTED_FILE",
-            Code::ResourceNotFoundException => "RESOURCE_NOT_FOUND_EXCEPTION",
-            Code::ServiceQuotaExceededException => "SERVICE_QUOTA_EXCEEDED_EXCEPTION",
-            Code::ValidationException => "VALIDATION_EXCEPTION",
-            Code::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED_EXCEPTION", "INTERNAL_SERVER_EXCEPTION", "MALWARE_DETECTED", "MALWARE_SCAN_ENCRYPTED_FILE", "RESOURCE_NOT_FOUND_EXCEPTION", "SERVICE_QUOTA_EXCEEDED_EXCEPTION", "VALIDATION_EXCEPTION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Code::AccessDeniedException => "ACCESS_DENIED_EXCEPTION",
+    Code::InternalServerException => "INTERNAL_SERVER_EXCEPTION",
+    Code::MalwareDetected => "MALWARE_DETECTED",
+    Code::MalwareScanEncryptedFile => "MALWARE_SCAN_ENCRYPTED_FILE",
+    Code::ResourceNotFoundException => "RESOURCE_NOT_FOUND_EXCEPTION",
+    Code::ServiceQuotaExceededException => "SERVICE_QUOTA_EXCEEDED_EXCEPTION",
+    Code::ValidationException => "VALIDATION_EXCEPTION",
+    Code::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED_EXCEPTION", "INTERNAL_SERVER_EXCEPTION", "MALWARE_DETECTED", "MALWARE_SCAN_ENCRYPTED_FILE", "RESOURCE_NOT_FOUND_EXCEPTION", "SERVICE_QUOTA_EXCEEDED_EXCEPTION", "VALIDATION_EXCEPTION"]
+                }
+            }
 impl AsRef<str> for Code {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details for the response.</p>
 #[non_exhaustive]
@@ -4021,14 +3993,14 @@ pub enum TableTagPolicyLfPermission {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TableTagPolicyLfPermission {
-    fn from(s: &str) -> Self {
-        match s {
-            "DESCRIBE" => TableTagPolicyLfPermission::Describe,
-            "SELECT" => TableTagPolicyLfPermission::Select,
-            other => TableTagPolicyLfPermission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DESCRIBE" => TableTagPolicyLfPermission::Describe,
+"SELECT" => TableTagPolicyLfPermission::Select,
+other => TableTagPolicyLfPermission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TableTagPolicyLfPermission {
                 type Err = std::convert::Infallible;
 
@@ -4037,26 +4009,24 @@ impl std::str::FromStr for TableTagPolicyLfPermission {
                 }
             }
 impl TableTagPolicyLfPermission {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TableTagPolicyLfPermission::Describe => "DESCRIBE",
-            TableTagPolicyLfPermission::Select => "SELECT",
-            TableTagPolicyLfPermission::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DESCRIBE", "SELECT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TableTagPolicyLfPermission::Describe => "DESCRIBE",
+    TableTagPolicyLfPermission::Select => "SELECT",
+    TableTagPolicyLfPermission::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DESCRIBE", "SELECT"]
+                }
+            }
 impl AsRef<str> for TableTagPolicyLfPermission {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The LF-tag policy and permissions for database resources.</p>
 #[non_exhaustive]
@@ -4183,13 +4153,13 @@ pub enum DatabaseLfTagPolicyPermission {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatabaseLfTagPolicyPermission {
-    fn from(s: &str) -> Self {
-        match s {
-            "DESCRIBE" => DatabaseLfTagPolicyPermission::Describe,
-            other => DatabaseLfTagPolicyPermission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DESCRIBE" => DatabaseLfTagPolicyPermission::Describe,
+other => DatabaseLfTagPolicyPermission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DatabaseLfTagPolicyPermission {
                 type Err = std::convert::Infallible;
 
@@ -4198,25 +4168,23 @@ impl std::str::FromStr for DatabaseLfTagPolicyPermission {
                 }
             }
 impl DatabaseLfTagPolicyPermission {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DatabaseLfTagPolicyPermission::Describe => "DESCRIBE",
-            DatabaseLfTagPolicyPermission::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DESCRIBE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DatabaseLfTagPolicyPermission::Describe => "DESCRIBE",
+    DatabaseLfTagPolicyPermission::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DESCRIBE"]
+                }
+            }
 impl AsRef<str> for DatabaseLfTagPolicyPermission {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details about the response of the operation to create an S3 data access from an S3 bucket.</p>
 #[non_exhaustive]
@@ -7517,40 +7485,40 @@ pub enum LimitName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LimitName {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS Lake Formation data permission assets per revision" => LimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
-            "Amazon API Gateway API assets per revision" => LimitName::AmazonApiGatewayApiAssetsPerRevision,
-            "Amazon Redshift datashare assets per import job from Redshift" => LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
-            "Amazon Redshift datashare assets per revision" => LimitName::AmazonRedshiftDatashareAssetsPerRevision,
-            "Amazon S3 data access assets per revision" => LimitName::AmazonS3DataAccessAssetsPerRevision,
-            "Asset per export job from Amazon S3" => LimitName::AssetPerExportJobFromAmazonS3,
-            "Asset size in GB" => LimitName::AssetSizeInGb,
-            "Assets per import job from Amazon S3" => LimitName::AssetsPerImportJobFromAmazonS3,
-            "Assets per revision" => LimitName::AssetsPerRevision,
-            "Auto export event actions per data set" => LimitName::AutoExportEventActionsPerDataSet,
-            "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets" => LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets,
-            "Concurrent in progress jobs to export assets to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3,
-            "Concurrent in progress jobs to export assets to a signed URL" => LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl,
-            "Concurrent in progress jobs to export revisions to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3,
-            "Concurrent in progress jobs to import assets from Amazon Redshift datashares" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares,
-            "Concurrent in progress jobs to import assets from Amazon S3" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3,
-            "Concurrent in progress jobs to import assets from a signed URL" => LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl,
-            "Concurrent in progress jobs to import assets from an API Gateway API" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi,
-            "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy,
-            "Data sets per account" => LimitName::DataSetsPerAccount,
-            "Data sets per product" => LimitName::DataSetsPerProduct,
-            "Event actions per account" => LimitName::EventActionsPerAccount,
-            "Products per account" => LimitName::ProductsPerAccount,
-            "Revisions per AWS Lake Formation data permission data set" => LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet,
-            "Revisions per Amazon API Gateway API data set" => LimitName::RevisionsPerAmazonApiGatewayApiDataSet,
-            "Revisions per Amazon Redshift datashare data set" => LimitName::RevisionsPerAmazonRedshiftDatashareDataSet,
-            "Revisions per Amazon S3 data access data set" => LimitName::RevisionsPerAmazonS3DataAccessDataSet,
-            "Revisions per data set" => LimitName::RevisionsPerDataSet,
-            other => LimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS Lake Formation data permission assets per revision" => LimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
+"Amazon API Gateway API assets per revision" => LimitName::AmazonApiGatewayApiAssetsPerRevision,
+"Amazon Redshift datashare assets per import job from Redshift" => LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
+"Amazon Redshift datashare assets per revision" => LimitName::AmazonRedshiftDatashareAssetsPerRevision,
+"Amazon S3 data access assets per revision" => LimitName::AmazonS3DataAccessAssetsPerRevision,
+"Asset per export job from Amazon S3" => LimitName::AssetPerExportJobFromAmazonS3,
+"Asset size in GB" => LimitName::AssetSizeInGb,
+"Assets per import job from Amazon S3" => LimitName::AssetsPerImportJobFromAmazonS3,
+"Assets per revision" => LimitName::AssetsPerRevision,
+"Auto export event actions per data set" => LimitName::AutoExportEventActionsPerDataSet,
+"Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets" => LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets,
+"Concurrent in progress jobs to export assets to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3,
+"Concurrent in progress jobs to export assets to a signed URL" => LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl,
+"Concurrent in progress jobs to export revisions to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3,
+"Concurrent in progress jobs to import assets from Amazon Redshift datashares" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares,
+"Concurrent in progress jobs to import assets from Amazon S3" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3,
+"Concurrent in progress jobs to import assets from a signed URL" => LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl,
+"Concurrent in progress jobs to import assets from an API Gateway API" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi,
+"Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy,
+"Data sets per account" => LimitName::DataSetsPerAccount,
+"Data sets per product" => LimitName::DataSetsPerProduct,
+"Event actions per account" => LimitName::EventActionsPerAccount,
+"Products per account" => LimitName::ProductsPerAccount,
+"Revisions per AWS Lake Formation data permission data set" => LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet,
+"Revisions per Amazon API Gateway API data set" => LimitName::RevisionsPerAmazonApiGatewayApiDataSet,
+"Revisions per Amazon Redshift datashare data set" => LimitName::RevisionsPerAmazonRedshiftDatashareDataSet,
+"Revisions per Amazon S3 data access data set" => LimitName::RevisionsPerAmazonS3DataAccessDataSet,
+"Revisions per data set" => LimitName::RevisionsPerDataSet,
+other => LimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LimitName {
                 type Err = std::convert::Infallible;
 
@@ -7559,50 +7527,48 @@ impl std::str::FromStr for LimitName {
                 }
             }
 impl LimitName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => "AWS Lake Formation data permission assets per revision",
-            LimitName::AmazonApiGatewayApiAssetsPerRevision => "Amazon API Gateway API assets per revision",
-            LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => "Amazon Redshift datashare assets per import job from Redshift",
-            LimitName::AmazonRedshiftDatashareAssetsPerRevision => "Amazon Redshift datashare assets per revision",
-            LimitName::AmazonS3DataAccessAssetsPerRevision => "Amazon S3 data access assets per revision",
-            LimitName::AssetPerExportJobFromAmazonS3 => "Asset per export job from Amazon S3",
-            LimitName::AssetSizeInGb => "Asset size in GB",
-            LimitName::AssetsPerImportJobFromAmazonS3 => "Assets per import job from Amazon S3",
-            LimitName::AssetsPerRevision => "Assets per revision",
-            LimitName::AutoExportEventActionsPerDataSet => "Auto export event actions per data set",
-            LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets => "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets",
-            LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3 => "Concurrent in progress jobs to export assets to Amazon S3",
-            LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl => "Concurrent in progress jobs to export assets to a signed URL",
-            LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3 => "Concurrent in progress jobs to export revisions to Amazon S3",
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares => "Concurrent in progress jobs to import assets from Amazon Redshift datashares",
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3 => "Concurrent in progress jobs to import assets from Amazon S3",
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl => "Concurrent in progress jobs to import assets from a signed URL",
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi => "Concurrent in progress jobs to import assets from an API Gateway API",
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy => "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy",
-            LimitName::DataSetsPerAccount => "Data sets per account",
-            LimitName::DataSetsPerProduct => "Data sets per product",
-            LimitName::EventActionsPerAccount => "Event actions per account",
-            LimitName::ProductsPerAccount => "Products per account",
-            LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => "Revisions per AWS Lake Formation data permission data set",
-            LimitName::RevisionsPerAmazonApiGatewayApiDataSet => "Revisions per Amazon API Gateway API data set",
-            LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => "Revisions per Amazon Redshift datashare data set",
-            LimitName::RevisionsPerAmazonS3DataAccessDataSet => "Revisions per Amazon S3 data access data set",
-            LimitName::RevisionsPerDataSet => "Revisions per data set",
-            LimitName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS Lake Formation data permission assets per revision", "Amazon API Gateway API assets per revision", "Amazon Redshift datashare assets per import job from Redshift", "Amazon Redshift datashare assets per revision", "Amazon S3 data access assets per revision", "Asset per export job from Amazon S3", "Asset size in GB", "Assets per import job from Amazon S3", "Assets per revision", "Auto export event actions per data set", "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets", "Concurrent in progress jobs to export assets to Amazon S3", "Concurrent in progress jobs to export assets to a signed URL", "Concurrent in progress jobs to export revisions to Amazon S3", "Concurrent in progress jobs to import assets from Amazon Redshift datashares", "Concurrent in progress jobs to import assets from Amazon S3", "Concurrent in progress jobs to import assets from a signed URL", "Concurrent in progress jobs to import assets from an API Gateway API", "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy", "Data sets per account", "Data sets per product", "Event actions per account", "Products per account", "Revisions per AWS Lake Formation data permission data set", "Revisions per Amazon API Gateway API data set", "Revisions per Amazon Redshift datashare data set", "Revisions per Amazon S3 data access data set", "Revisions per data set"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => "AWS Lake Formation data permission assets per revision",
+    LimitName::AmazonApiGatewayApiAssetsPerRevision => "Amazon API Gateway API assets per revision",
+    LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => "Amazon Redshift datashare assets per import job from Redshift",
+    LimitName::AmazonRedshiftDatashareAssetsPerRevision => "Amazon Redshift datashare assets per revision",
+    LimitName::AmazonS3DataAccessAssetsPerRevision => "Amazon S3 data access assets per revision",
+    LimitName::AssetPerExportJobFromAmazonS3 => "Asset per export job from Amazon S3",
+    LimitName::AssetSizeInGb => "Asset size in GB",
+    LimitName::AssetsPerImportJobFromAmazonS3 => "Assets per import job from Amazon S3",
+    LimitName::AssetsPerRevision => "Assets per revision",
+    LimitName::AutoExportEventActionsPerDataSet => "Auto export event actions per data set",
+    LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets => "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets",
+    LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3 => "Concurrent in progress jobs to export assets to Amazon S3",
+    LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl => "Concurrent in progress jobs to export assets to a signed URL",
+    LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3 => "Concurrent in progress jobs to export revisions to Amazon S3",
+    LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares => "Concurrent in progress jobs to import assets from Amazon Redshift datashares",
+    LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3 => "Concurrent in progress jobs to import assets from Amazon S3",
+    LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl => "Concurrent in progress jobs to import assets from a signed URL",
+    LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi => "Concurrent in progress jobs to import assets from an API Gateway API",
+    LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy => "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy",
+    LimitName::DataSetsPerAccount => "Data sets per account",
+    LimitName::DataSetsPerProduct => "Data sets per product",
+    LimitName::EventActionsPerAccount => "Event actions per account",
+    LimitName::ProductsPerAccount => "Products per account",
+    LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => "Revisions per AWS Lake Formation data permission data set",
+    LimitName::RevisionsPerAmazonApiGatewayApiDataSet => "Revisions per Amazon API Gateway API data set",
+    LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => "Revisions per Amazon Redshift datashare data set",
+    LimitName::RevisionsPerAmazonS3DataAccessDataSet => "Revisions per Amazon S3 data access data set",
+    LimitName::RevisionsPerDataSet => "Revisions per data set",
+    LimitName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS Lake Formation data permission assets per revision", "Amazon API Gateway API assets per revision", "Amazon Redshift datashare assets per import job from Redshift", "Amazon Redshift datashare assets per revision", "Amazon S3 data access assets per revision", "Asset per export job from Amazon S3", "Asset size in GB", "Assets per import job from Amazon S3", "Assets per revision", "Auto export event actions per data set", "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets", "Concurrent in progress jobs to export assets to Amazon S3", "Concurrent in progress jobs to export assets to a signed URL", "Concurrent in progress jobs to export revisions to Amazon S3", "Concurrent in progress jobs to import assets from Amazon Redshift datashares", "Concurrent in progress jobs to import assets from Amazon S3", "Concurrent in progress jobs to import assets from a signed URL", "Concurrent in progress jobs to import assets from an API Gateway API", "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy", "Data sets per account", "Data sets per product", "Event actions per account", "Products per account", "Revisions per AWS Lake Formation data permission data set", "Revisions per Amazon API Gateway API data set", "Revisions per Amazon Redshift datashare data set", "Revisions per Amazon S3 data access data set", "Revisions per data set"]
+                }
+            }
 impl AsRef<str> for LimitName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

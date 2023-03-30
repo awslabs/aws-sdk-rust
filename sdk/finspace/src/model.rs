@@ -457,14 +457,14 @@ pub enum FederationMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FederationMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "FEDERATED" => FederationMode::Federated,
-            "LOCAL" => FederationMode::Local,
-            other => FederationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FEDERATED" => FederationMode::Federated,
+"LOCAL" => FederationMode::Local,
+other => FederationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FederationMode {
                 type Err = std::convert::Infallible;
 
@@ -473,26 +473,24 @@ impl std::str::FromStr for FederationMode {
                 }
             }
 impl FederationMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FederationMode::Federated => "FEDERATED",
-            FederationMode::Local => "LOCAL",
-            FederationMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FEDERATED", "LOCAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FederationMode::Federated => "FEDERATED",
+    FederationMode::Local => "LOCAL",
+    FederationMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FEDERATED", "LOCAL"]
+                }
+            }
 impl AsRef<str> for FederationMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EnvironmentStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -565,22 +563,22 @@ pub enum EnvironmentStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED" => EnvironmentStatus::Created,
-            "CREATE_REQUESTED" => EnvironmentStatus::CreateRequested,
-            "CREATING" => EnvironmentStatus::Creating,
-            "DELETED" => EnvironmentStatus::Deleted,
-            "DELETE_REQUESTED" => EnvironmentStatus::DeleteRequested,
-            "DELETING" => EnvironmentStatus::Deleting,
-            "FAILED_CREATION" => EnvironmentStatus::FailedCreation,
-            "FAILED_DELETION" => EnvironmentStatus::FailedDeletion,
-            "RETRY_DELETION" => EnvironmentStatus::RetryDeletion,
-            "SUSPENDED" => EnvironmentStatus::Suspended,
-            other => EnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATED" => EnvironmentStatus::Created,
+"CREATE_REQUESTED" => EnvironmentStatus::CreateRequested,
+"CREATING" => EnvironmentStatus::Creating,
+"DELETED" => EnvironmentStatus::Deleted,
+"DELETE_REQUESTED" => EnvironmentStatus::DeleteRequested,
+"DELETING" => EnvironmentStatus::Deleting,
+"FAILED_CREATION" => EnvironmentStatus::FailedCreation,
+"FAILED_DELETION" => EnvironmentStatus::FailedDeletion,
+"RETRY_DELETION" => EnvironmentStatus::RetryDeletion,
+"SUSPENDED" => EnvironmentStatus::Suspended,
+other => EnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EnvironmentStatus {
                 type Err = std::convert::Infallible;
 
@@ -589,34 +587,32 @@ impl std::str::FromStr for EnvironmentStatus {
                 }
             }
 impl EnvironmentStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnvironmentStatus::Created => "CREATED",
-            EnvironmentStatus::CreateRequested => "CREATE_REQUESTED",
-            EnvironmentStatus::Creating => "CREATING",
-            EnvironmentStatus::Deleted => "DELETED",
-            EnvironmentStatus::DeleteRequested => "DELETE_REQUESTED",
-            EnvironmentStatus::Deleting => "DELETING",
-            EnvironmentStatus::FailedCreation => "FAILED_CREATION",
-            EnvironmentStatus::FailedDeletion => "FAILED_DELETION",
-            EnvironmentStatus::RetryDeletion => "RETRY_DELETION",
-            EnvironmentStatus::Suspended => "SUSPENDED",
-            EnvironmentStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED", "CREATE_REQUESTED", "CREATING", "DELETED", "DELETE_REQUESTED", "DELETING", "FAILED_CREATION", "FAILED_DELETION", "RETRY_DELETION", "SUSPENDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnvironmentStatus::Created => "CREATED",
+    EnvironmentStatus::CreateRequested => "CREATE_REQUESTED",
+    EnvironmentStatus::Creating => "CREATING",
+    EnvironmentStatus::Deleted => "DELETED",
+    EnvironmentStatus::DeleteRequested => "DELETE_REQUESTED",
+    EnvironmentStatus::Deleting => "DELETING",
+    EnvironmentStatus::FailedCreation => "FAILED_CREATION",
+    EnvironmentStatus::FailedDeletion => "FAILED_DELETION",
+    EnvironmentStatus::RetryDeletion => "RETRY_DELETION",
+    EnvironmentStatus::Suspended => "SUSPENDED",
+    EnvironmentStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED", "CREATE_REQUESTED", "CREATING", "DELETED", "DELETE_REQUESTED", "DELETING", "FAILED_CREATION", "FAILED_DELETION", "RETRY_DELETION", "SUSPENDED"]
+                }
+            }
 impl AsRef<str> for EnvironmentStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Configuration information for the superuser.</p>
 #[non_exhaustive]

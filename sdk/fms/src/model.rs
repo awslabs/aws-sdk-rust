@@ -849,14 +849,14 @@ pub enum CustomerPolicyScopeIdType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomerPolicyScopeIdType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT" => CustomerPolicyScopeIdType::Account,
-            "ORG_UNIT" => CustomerPolicyScopeIdType::OrgUnit,
-            other => CustomerPolicyScopeIdType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT" => CustomerPolicyScopeIdType::Account,
+"ORG_UNIT" => CustomerPolicyScopeIdType::OrgUnit,
+other => CustomerPolicyScopeIdType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CustomerPolicyScopeIdType {
                 type Err = std::convert::Infallible;
 
@@ -865,26 +865,24 @@ impl std::str::FromStr for CustomerPolicyScopeIdType {
                 }
             }
 impl CustomerPolicyScopeIdType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CustomerPolicyScopeIdType::Account => "ACCOUNT",
-            CustomerPolicyScopeIdType::OrgUnit => "ORG_UNIT",
-            CustomerPolicyScopeIdType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT", "ORG_UNIT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CustomerPolicyScopeIdType::Account => "ACCOUNT",
+    CustomerPolicyScopeIdType::OrgUnit => "ORG_UNIT",
+    CustomerPolicyScopeIdType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT", "ORG_UNIT"]
+                }
+            }
 impl AsRef<str> for CustomerPolicyScopeIdType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The resource tags that Firewall Manager uses to determine if a particular resource should be included or excluded from the Firewall Manager policy. Tags enable you to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>.</p>
 #[non_exhaustive]
@@ -1289,14 +1287,14 @@ pub enum FirewallDeploymentModel {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FirewallDeploymentModel {
-    fn from(s: &str) -> Self {
-        match s {
-            "CENTRALIZED" => FirewallDeploymentModel::Centralized,
-            "DISTRIBUTED" => FirewallDeploymentModel::Distributed,
-            other => FirewallDeploymentModel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CENTRALIZED" => FirewallDeploymentModel::Centralized,
+"DISTRIBUTED" => FirewallDeploymentModel::Distributed,
+other => FirewallDeploymentModel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FirewallDeploymentModel {
                 type Err = std::convert::Infallible;
 
@@ -1305,26 +1303,24 @@ impl std::str::FromStr for FirewallDeploymentModel {
                 }
             }
 impl FirewallDeploymentModel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FirewallDeploymentModel::Centralized => "CENTRALIZED",
-            FirewallDeploymentModel::Distributed => "DISTRIBUTED",
-            FirewallDeploymentModel::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CENTRALIZED", "DISTRIBUTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FirewallDeploymentModel::Centralized => "CENTRALIZED",
+    FirewallDeploymentModel::Distributed => "DISTRIBUTED",
+    FirewallDeploymentModel::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CENTRALIZED", "DISTRIBUTED"]
+                }
+            }
 impl AsRef<str> for FirewallDeploymentModel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Configures the firewall policy deployment model of Network Firewall. For information about Network Firewall deployment models, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/architectures.html">Network Firewall example architectures with routing</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -1447,22 +1443,22 @@ pub enum SecurityServiceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SecurityServiceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DNS_FIREWALL" => SecurityServiceType::DnsFirewall,
-            "IMPORT_NETWORK_FIREWALL" => SecurityServiceType::ImportNetworkFirewall,
-            "NETWORK_FIREWALL" => SecurityServiceType::NetworkFirewall,
-            "SECURITY_GROUPS_COMMON" => SecurityServiceType::SecurityGroupsCommon,
-            "SECURITY_GROUPS_CONTENT_AUDIT" => SecurityServiceType::SecurityGroupsContentAudit,
-            "SECURITY_GROUPS_USAGE_AUDIT" => SecurityServiceType::SecurityGroupsUsageAudit,
-            "SHIELD_ADVANCED" => SecurityServiceType::ShieldAdvanced,
-            "THIRD_PARTY_FIREWALL" => SecurityServiceType::ThirdPartyFirewall,
-            "WAF" => SecurityServiceType::Waf,
-            "WAFV2" => SecurityServiceType::Wafv2,
-            other => SecurityServiceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DNS_FIREWALL" => SecurityServiceType::DnsFirewall,
+"IMPORT_NETWORK_FIREWALL" => SecurityServiceType::ImportNetworkFirewall,
+"NETWORK_FIREWALL" => SecurityServiceType::NetworkFirewall,
+"SECURITY_GROUPS_COMMON" => SecurityServiceType::SecurityGroupsCommon,
+"SECURITY_GROUPS_CONTENT_AUDIT" => SecurityServiceType::SecurityGroupsContentAudit,
+"SECURITY_GROUPS_USAGE_AUDIT" => SecurityServiceType::SecurityGroupsUsageAudit,
+"SHIELD_ADVANCED" => SecurityServiceType::ShieldAdvanced,
+"THIRD_PARTY_FIREWALL" => SecurityServiceType::ThirdPartyFirewall,
+"WAF" => SecurityServiceType::Waf,
+"WAFV2" => SecurityServiceType::Wafv2,
+other => SecurityServiceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SecurityServiceType {
                 type Err = std::convert::Infallible;
 
@@ -1471,34 +1467,32 @@ impl std::str::FromStr for SecurityServiceType {
                 }
             }
 impl SecurityServiceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SecurityServiceType::DnsFirewall => "DNS_FIREWALL",
-            SecurityServiceType::ImportNetworkFirewall => "IMPORT_NETWORK_FIREWALL",
-            SecurityServiceType::NetworkFirewall => "NETWORK_FIREWALL",
-            SecurityServiceType::SecurityGroupsCommon => "SECURITY_GROUPS_COMMON",
-            SecurityServiceType::SecurityGroupsContentAudit => "SECURITY_GROUPS_CONTENT_AUDIT",
-            SecurityServiceType::SecurityGroupsUsageAudit => "SECURITY_GROUPS_USAGE_AUDIT",
-            SecurityServiceType::ShieldAdvanced => "SHIELD_ADVANCED",
-            SecurityServiceType::ThirdPartyFirewall => "THIRD_PARTY_FIREWALL",
-            SecurityServiceType::Waf => "WAF",
-            SecurityServiceType::Wafv2 => "WAFV2",
-            SecurityServiceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DNS_FIREWALL", "IMPORT_NETWORK_FIREWALL", "NETWORK_FIREWALL", "SECURITY_GROUPS_COMMON", "SECURITY_GROUPS_CONTENT_AUDIT", "SECURITY_GROUPS_USAGE_AUDIT", "SHIELD_ADVANCED", "THIRD_PARTY_FIREWALL", "WAF", "WAFV2"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SecurityServiceType::DnsFirewall => "DNS_FIREWALL",
+    SecurityServiceType::ImportNetworkFirewall => "IMPORT_NETWORK_FIREWALL",
+    SecurityServiceType::NetworkFirewall => "NETWORK_FIREWALL",
+    SecurityServiceType::SecurityGroupsCommon => "SECURITY_GROUPS_COMMON",
+    SecurityServiceType::SecurityGroupsContentAudit => "SECURITY_GROUPS_CONTENT_AUDIT",
+    SecurityServiceType::SecurityGroupsUsageAudit => "SECURITY_GROUPS_USAGE_AUDIT",
+    SecurityServiceType::ShieldAdvanced => "SHIELD_ADVANCED",
+    SecurityServiceType::ThirdPartyFirewall => "THIRD_PARTY_FIREWALL",
+    SecurityServiceType::Waf => "WAF",
+    SecurityServiceType::Wafv2 => "WAFV2",
+    SecurityServiceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DNS_FIREWALL", "IMPORT_NETWORK_FIREWALL", "NETWORK_FIREWALL", "SECURITY_GROUPS_COMMON", "SECURITY_GROUPS_CONTENT_AUDIT", "SECURITY_GROUPS_USAGE_AUDIT", "SHIELD_ADVANCED", "THIRD_PARTY_FIREWALL", "WAF", "WAFV2"]
+                }
+            }
 impl AsRef<str> for SecurityServiceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An Firewall Manager applications list.</p>
 #[non_exhaustive]
@@ -1880,14 +1874,14 @@ pub enum ThirdPartyFirewall {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ThirdPartyFirewall {
-    fn from(s: &str) -> Self {
-        match s {
-            "FORTIGATE_CLOUD_NATIVE_FIREWALL" => ThirdPartyFirewall::FortigateCloudNativeFirewall,
-            "PALO_ALTO_NETWORKS_CLOUD_NGFW" => ThirdPartyFirewall::PaloAltoNetworksCloudNgfw,
-            other => ThirdPartyFirewall::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FORTIGATE_CLOUD_NATIVE_FIREWALL" => ThirdPartyFirewall::FortigateCloudNativeFirewall,
+"PALO_ALTO_NETWORKS_CLOUD_NGFW" => ThirdPartyFirewall::PaloAltoNetworksCloudNgfw,
+other => ThirdPartyFirewall::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ThirdPartyFirewall {
                 type Err = std::convert::Infallible;
 
@@ -1896,26 +1890,24 @@ impl std::str::FromStr for ThirdPartyFirewall {
                 }
             }
 impl ThirdPartyFirewall {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ThirdPartyFirewall::FortigateCloudNativeFirewall => "FORTIGATE_CLOUD_NATIVE_FIREWALL",
-            ThirdPartyFirewall::PaloAltoNetworksCloudNgfw => "PALO_ALTO_NETWORKS_CLOUD_NGFW",
-            ThirdPartyFirewall::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FORTIGATE_CLOUD_NATIVE_FIREWALL", "PALO_ALTO_NETWORKS_CLOUD_NGFW"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ThirdPartyFirewall::FortigateCloudNativeFirewall => "FORTIGATE_CLOUD_NATIVE_FIREWALL",
+    ThirdPartyFirewall::PaloAltoNetworksCloudNgfw => "PALO_ALTO_NETWORKS_CLOUD_NGFW",
+    ThirdPartyFirewall::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FORTIGATE_CLOUD_NATIVE_FIREWALL", "PALO_ALTO_NETWORKS_CLOUD_NGFW"]
+                }
+            }
 impl AsRef<str> for ThirdPartyFirewall {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summarizes the resource sets used in a policy.</p>
 #[non_exhaustive]
@@ -2716,16 +2708,16 @@ pub enum DependentServiceName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DependentServiceName {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWSCONFIG" => DependentServiceName::AwsConfig,
-            "AWSSHIELD_ADVANCED" => DependentServiceName::AwsShieldAdvanced,
-            "AWSVPC" => DependentServiceName::AwsVirtualPrivateCloud,
-            "AWSWAF" => DependentServiceName::Awswaf,
-            other => DependentServiceName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWSCONFIG" => DependentServiceName::AwsConfig,
+"AWSSHIELD_ADVANCED" => DependentServiceName::AwsShieldAdvanced,
+"AWSVPC" => DependentServiceName::AwsVirtualPrivateCloud,
+"AWSWAF" => DependentServiceName::Awswaf,
+other => DependentServiceName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DependentServiceName {
                 type Err = std::convert::Infallible;
 
@@ -2734,28 +2726,26 @@ impl std::str::FromStr for DependentServiceName {
                 }
             }
 impl DependentServiceName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DependentServiceName::AwsConfig => "AWSCONFIG",
-            DependentServiceName::AwsShieldAdvanced => "AWSSHIELD_ADVANCED",
-            DependentServiceName::AwsVirtualPrivateCloud => "AWSVPC",
-            DependentServiceName::Awswaf => "AWSWAF",
-            DependentServiceName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWSCONFIG", "AWSSHIELD_ADVANCED", "AWSVPC", "AWSWAF"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DependentServiceName::AwsConfig => "AWSCONFIG",
+    DependentServiceName::AwsShieldAdvanced => "AWSSHIELD_ADVANCED",
+    DependentServiceName::AwsVirtualPrivateCloud => "AWSVPC",
+    DependentServiceName::Awswaf => "AWSWAF",
+    DependentServiceName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWSCONFIG", "AWSSHIELD_ADVANCED", "AWSVPC", "AWSWAF"]
+                }
+            }
 impl AsRef<str> for DependentServiceName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.</p>
 #[non_exhaustive]
@@ -2894,14 +2884,14 @@ pub enum PolicyComplianceStatusType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PolicyComplianceStatusType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLIANT" => PolicyComplianceStatusType::Compliant,
-            "NON_COMPLIANT" => PolicyComplianceStatusType::NonCompliant,
-            other => PolicyComplianceStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLIANT" => PolicyComplianceStatusType::Compliant,
+"NON_COMPLIANT" => PolicyComplianceStatusType::NonCompliant,
+other => PolicyComplianceStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PolicyComplianceStatusType {
                 type Err = std::convert::Infallible;
 
@@ -2910,26 +2900,24 @@ impl std::str::FromStr for PolicyComplianceStatusType {
                 }
             }
 impl PolicyComplianceStatusType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PolicyComplianceStatusType::Compliant => "COMPLIANT",
-            PolicyComplianceStatusType::NonCompliant => "NON_COMPLIANT",
-            PolicyComplianceStatusType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLIANT", "NON_COMPLIANT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PolicyComplianceStatusType::Compliant => "COMPLIANT",
+    PolicyComplianceStatusType::NonCompliant => "NON_COMPLIANT",
+    PolicyComplianceStatusType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLIANT", "NON_COMPLIANT"]
+                }
+            }
 impl AsRef<str> for PolicyComplianceStatusType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details of the Firewall Manager applications list.</p>
 #[non_exhaustive]
@@ -4590,22 +4578,22 @@ pub enum TargetType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CARRIER_GATEWAY" => TargetType::CarrierGateway,
-            "EGRESS_ONLY_INTERNET_GATEWAY" => TargetType::EgressOnlyInternetGateway,
-            "GATEWAY" => TargetType::Gateway,
-            "INSTANCE" => TargetType::Instance,
-            "LOCAL_GATEWAY" => TargetType::LocalGateway,
-            "NAT_GATEWAY" => TargetType::NatGateway,
-            "NETWORK_INTERFACE" => TargetType::NetworkInterface,
-            "TRANSIT_GATEWAY" => TargetType::TransitGateway,
-            "VPC_ENDPOINT" => TargetType::VpcEndpoint,
-            "VPC_PEERING_CONNECTION" => TargetType::VpcPeeringConnection,
-            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CARRIER_GATEWAY" => TargetType::CarrierGateway,
+"EGRESS_ONLY_INTERNET_GATEWAY" => TargetType::EgressOnlyInternetGateway,
+"GATEWAY" => TargetType::Gateway,
+"INSTANCE" => TargetType::Instance,
+"LOCAL_GATEWAY" => TargetType::LocalGateway,
+"NAT_GATEWAY" => TargetType::NatGateway,
+"NETWORK_INTERFACE" => TargetType::NetworkInterface,
+"TRANSIT_GATEWAY" => TargetType::TransitGateway,
+"VPC_ENDPOINT" => TargetType::VpcEndpoint,
+"VPC_PEERING_CONNECTION" => TargetType::VpcPeeringConnection,
+other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TargetType {
                 type Err = std::convert::Infallible;
 
@@ -4614,34 +4602,32 @@ impl std::str::FromStr for TargetType {
                 }
             }
 impl TargetType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TargetType::CarrierGateway => "CARRIER_GATEWAY",
-            TargetType::EgressOnlyInternetGateway => "EGRESS_ONLY_INTERNET_GATEWAY",
-            TargetType::Gateway => "GATEWAY",
-            TargetType::Instance => "INSTANCE",
-            TargetType::LocalGateway => "LOCAL_GATEWAY",
-            TargetType::NatGateway => "NAT_GATEWAY",
-            TargetType::NetworkInterface => "NETWORK_INTERFACE",
-            TargetType::TransitGateway => "TRANSIT_GATEWAY",
-            TargetType::VpcEndpoint => "VPC_ENDPOINT",
-            TargetType::VpcPeeringConnection => "VPC_PEERING_CONNECTION",
-            TargetType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CARRIER_GATEWAY", "EGRESS_ONLY_INTERNET_GATEWAY", "GATEWAY", "INSTANCE", "LOCAL_GATEWAY", "NAT_GATEWAY", "NETWORK_INTERFACE", "TRANSIT_GATEWAY", "VPC_ENDPOINT", "VPC_PEERING_CONNECTION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TargetType::CarrierGateway => "CARRIER_GATEWAY",
+    TargetType::EgressOnlyInternetGateway => "EGRESS_ONLY_INTERNET_GATEWAY",
+    TargetType::Gateway => "GATEWAY",
+    TargetType::Instance => "INSTANCE",
+    TargetType::LocalGateway => "LOCAL_GATEWAY",
+    TargetType::NatGateway => "NAT_GATEWAY",
+    TargetType::NetworkInterface => "NETWORK_INTERFACE",
+    TargetType::TransitGateway => "TRANSIT_GATEWAY",
+    TargetType::VpcEndpoint => "VPC_ENDPOINT",
+    TargetType::VpcPeeringConnection => "VPC_PEERING_CONNECTION",
+    TargetType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CARRIER_GATEWAY", "EGRESS_ONLY_INTERNET_GATEWAY", "GATEWAY", "INSTANCE", "LOCAL_GATEWAY", "NAT_GATEWAY", "NETWORK_INTERFACE", "TRANSIT_GATEWAY", "VPC_ENDPOINT", "VPC_PEERING_CONNECTION"]
+                }
+            }
 impl AsRef<str> for TargetType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DestinationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4693,15 +4679,15 @@ pub enum DestinationType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DestinationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "IPV4" => DestinationType::Ipv4,
-            "IPV6" => DestinationType::Ipv6,
-            "PREFIX_LIST" => DestinationType::PrefixList,
-            other => DestinationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "IPV4" => DestinationType::Ipv4,
+"IPV6" => DestinationType::Ipv6,
+"PREFIX_LIST" => DestinationType::PrefixList,
+other => DestinationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DestinationType {
                 type Err = std::convert::Infallible;
 
@@ -4710,27 +4696,25 @@ impl std::str::FromStr for DestinationType {
                 }
             }
 impl DestinationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DestinationType::Ipv4 => "IPV4",
-            DestinationType::Ipv6 => "IPV6",
-            DestinationType::PrefixList => "PREFIX_LIST",
-            DestinationType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "IPV4", "IPV6", "PREFIX_LIST"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DestinationType::Ipv4 => "IPV4",
+    DestinationType::Ipv6 => "IPV6",
+    DestinationType::PrefixList => "PREFIX_LIST",
+    DestinationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["IPV4", "IPV6", "PREFIX_LIST"]
+                }
+            }
 impl AsRef<str> for DestinationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
 #[non_exhaustive]
@@ -8251,14 +8235,14 @@ pub enum RuleOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuleOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEFAULT_ACTION_ORDER" => RuleOrder::DefaultActionOrder,
-            "STRICT_ORDER" => RuleOrder::StrictOrder,
-            other => RuleOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DEFAULT_ACTION_ORDER" => RuleOrder::DefaultActionOrder,
+"STRICT_ORDER" => RuleOrder::StrictOrder,
+other => RuleOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RuleOrder {
                 type Err = std::convert::Infallible;
 
@@ -8267,26 +8251,24 @@ impl std::str::FromStr for RuleOrder {
                 }
             }
 impl RuleOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RuleOrder::DefaultActionOrder => "DEFAULT_ACTION_ORDER",
-            RuleOrder::StrictOrder => "STRICT_ORDER",
-            RuleOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEFAULT_ACTION_ORDER", "STRICT_ORDER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RuleOrder::DefaultActionOrder => "DEFAULT_ACTION_ORDER",
+    RuleOrder::StrictOrder => "STRICT_ORDER",
+    RuleOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEFAULT_ACTION_ORDER", "STRICT_ORDER"]
+                }
+            }
 impl AsRef<str> for RuleOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Network Firewall stateful rule group, used in a <code>NetworkFirewallPolicyDescription</code>. </p>
 #[non_exhaustive]
@@ -8497,13 +8479,13 @@ pub enum NetworkFirewallOverrideAction {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkFirewallOverrideAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "DROP_TO_ALERT" => NetworkFirewallOverrideAction::DropToAlert,
-            other => NetworkFirewallOverrideAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DROP_TO_ALERT" => NetworkFirewallOverrideAction::DropToAlert,
+other => NetworkFirewallOverrideAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NetworkFirewallOverrideAction {
                 type Err = std::convert::Infallible;
 
@@ -8512,25 +8494,23 @@ impl std::str::FromStr for NetworkFirewallOverrideAction {
                 }
             }
 impl NetworkFirewallOverrideAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NetworkFirewallOverrideAction::DropToAlert => "DROP_TO_ALERT",
-            NetworkFirewallOverrideAction::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DROP_TO_ALERT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NetworkFirewallOverrideAction::DropToAlert => "DROP_TO_ALERT",
+    NetworkFirewallOverrideAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DROP_TO_ALERT"]
+                }
+            }
 impl AsRef<str> for NetworkFirewallOverrideAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Network Firewall stateless rule group, used in a <code>NetworkFirewallPolicyDescription</code>. </p>
 #[non_exhaustive]
@@ -9530,14 +9510,14 @@ pub enum RemediationActionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RemediationActionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "MODIFY" => RemediationActionType::Modify,
-            "REMOVE" => RemediationActionType::Remove,
-            other => RemediationActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MODIFY" => RemediationActionType::Modify,
+"REMOVE" => RemediationActionType::Remove,
+other => RemediationActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RemediationActionType {
                 type Err = std::convert::Infallible;
 
@@ -9546,26 +9526,24 @@ impl std::str::FromStr for RemediationActionType {
                 }
             }
 impl RemediationActionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RemediationActionType::Modify => "MODIFY",
-            RemediationActionType::Remove => "REMOVE",
-            RemediationActionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MODIFY", "REMOVE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RemediationActionType::Modify => "MODIFY",
+    RemediationActionType::Remove => "REMOVE",
+    RemediationActionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MODIFY", "REMOVE"]
+                }
+            }
 impl AsRef<str> for RemediationActionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.</p>
 #[non_exhaustive]
@@ -9692,15 +9670,15 @@ pub enum MarketplaceSubscriptionOnboardingStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MarketplaceSubscriptionOnboardingStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETE" => MarketplaceSubscriptionOnboardingStatus::Complete,
-            "NOT_COMPLETE" => MarketplaceSubscriptionOnboardingStatus::NotComplete,
-            "NO_SUBSCRIPTION" => MarketplaceSubscriptionOnboardingStatus::NoSubscription,
-            other => MarketplaceSubscriptionOnboardingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETE" => MarketplaceSubscriptionOnboardingStatus::Complete,
+"NOT_COMPLETE" => MarketplaceSubscriptionOnboardingStatus::NotComplete,
+"NO_SUBSCRIPTION" => MarketplaceSubscriptionOnboardingStatus::NoSubscription,
+other => MarketplaceSubscriptionOnboardingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MarketplaceSubscriptionOnboardingStatus {
                 type Err = std::convert::Infallible;
 
@@ -9709,27 +9687,25 @@ impl std::str::FromStr for MarketplaceSubscriptionOnboardingStatus {
                 }
             }
 impl MarketplaceSubscriptionOnboardingStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MarketplaceSubscriptionOnboardingStatus::Complete => "COMPLETE",
-            MarketplaceSubscriptionOnboardingStatus::NotComplete => "NOT_COMPLETE",
-            MarketplaceSubscriptionOnboardingStatus::NoSubscription => "NO_SUBSCRIPTION",
-            MarketplaceSubscriptionOnboardingStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETE", "NOT_COMPLETE", "NO_SUBSCRIPTION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MarketplaceSubscriptionOnboardingStatus::Complete => "COMPLETE",
+    MarketplaceSubscriptionOnboardingStatus::NotComplete => "NOT_COMPLETE",
+    MarketplaceSubscriptionOnboardingStatus::NoSubscription => "NO_SUBSCRIPTION",
+    MarketplaceSubscriptionOnboardingStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETE", "NOT_COMPLETE", "NO_SUBSCRIPTION"]
+                }
+            }
 impl AsRef<str> for MarketplaceSubscriptionOnboardingStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ThirdPartyFirewallAssociationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -9787,17 +9763,17 @@ pub enum ThirdPartyFirewallAssociationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ThirdPartyFirewallAssociationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "NOT_EXIST" => ThirdPartyFirewallAssociationStatus::NotExist,
-            "OFFBOARDING" => ThirdPartyFirewallAssociationStatus::Offboarding,
-            "OFFBOARD_COMPLETE" => ThirdPartyFirewallAssociationStatus::OffboardComplete,
-            "ONBOARDING" => ThirdPartyFirewallAssociationStatus::Onboarding,
-            "ONBOARD_COMPLETE" => ThirdPartyFirewallAssociationStatus::OnboardComplete,
-            other => ThirdPartyFirewallAssociationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NOT_EXIST" => ThirdPartyFirewallAssociationStatus::NotExist,
+"OFFBOARDING" => ThirdPartyFirewallAssociationStatus::Offboarding,
+"OFFBOARD_COMPLETE" => ThirdPartyFirewallAssociationStatus::OffboardComplete,
+"ONBOARDING" => ThirdPartyFirewallAssociationStatus::Onboarding,
+"ONBOARD_COMPLETE" => ThirdPartyFirewallAssociationStatus::OnboardComplete,
+other => ThirdPartyFirewallAssociationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ThirdPartyFirewallAssociationStatus {
                 type Err = std::convert::Infallible;
 
@@ -9806,29 +9782,27 @@ impl std::str::FromStr for ThirdPartyFirewallAssociationStatus {
                 }
             }
 impl ThirdPartyFirewallAssociationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ThirdPartyFirewallAssociationStatus::NotExist => "NOT_EXIST",
-            ThirdPartyFirewallAssociationStatus::Offboarding => "OFFBOARDING",
-            ThirdPartyFirewallAssociationStatus::OffboardComplete => "OFFBOARD_COMPLETE",
-            ThirdPartyFirewallAssociationStatus::Onboarding => "ONBOARDING",
-            ThirdPartyFirewallAssociationStatus::OnboardComplete => "ONBOARD_COMPLETE",
-            ThirdPartyFirewallAssociationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NOT_EXIST", "OFFBOARDING", "OFFBOARD_COMPLETE", "ONBOARDING", "ONBOARD_COMPLETE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ThirdPartyFirewallAssociationStatus::NotExist => "NOT_EXIST",
+    ThirdPartyFirewallAssociationStatus::Offboarding => "OFFBOARDING",
+    ThirdPartyFirewallAssociationStatus::OffboardComplete => "OFFBOARD_COMPLETE",
+    ThirdPartyFirewallAssociationStatus::Onboarding => "ONBOARDING",
+    ThirdPartyFirewallAssociationStatus::OnboardComplete => "ONBOARD_COMPLETE",
+    ThirdPartyFirewallAssociationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NOT_EXIST", "OFFBOARDING", "OFFBOARD_COMPLETE", "ONBOARDING", "ONBOARD_COMPLETE"]
+                }
+            }
 impl AsRef<str> for ThirdPartyFirewallAssociationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the noncompliant resources in a member account for a specific Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.</p>
 #[non_exhaustive]
@@ -10245,40 +10219,40 @@ pub enum ViolationReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ViolationReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "BLACK_HOLE_ROUTE_DETECTED" => ViolationReason::BlackHoleRouteDetected,
-            "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET" => ViolationReason::BlackHoleRouteDetectedInFirewallSubnet,
-            "FIREWALL_SUBNET_IS_OUT_OF_SCOPE" => ViolationReason::FirewallSubnetIsOutOfScope,
-            "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE" => ViolationReason::FirewallSubnetMissingExpectedRoute,
-            "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT" => ViolationReason::FirewallSubnetMissingVpcEndpoint,
-            "FMS_CREATED_SECURITY_GROUP_EDITED" => ViolationReason::FmsCreatedSecurityGroupEdited,
-            "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE" => ViolationReason::InternetGatewayMissingExpectedRoute,
-            "INTERNET_TRAFFIC_NOT_INSPECTED" => ViolationReason::InternetTrafficNotInspected,
-            "INVALID_ROUTE_CONFIGURATION" => ViolationReason::InvalidRouteConfiguration,
-            "MISSING_EXPECTED_ROUTE_TABLE" => ViolationReason::MissingExpectedRouteTable,
-            "MISSING_FIREWALL" => ViolationReason::MissingFirewall,
-            "MISSING_FIREWALL_SUBNET_IN_AZ" => ViolationReason::MissingFirewallSubnetInAz,
-            "MISSING_TARGET_GATEWAY" => ViolationReason::MissingTargetGateway,
-            "NETWORK_FIREWALL_POLICY_MODIFIED" => ViolationReason::NetworkFirewallPolicyModified,
-            "RESOURCE_INCORRECT_WEB_ACL" => ViolationReason::ResourceIncorrectWebAcl,
-            "RESOURCE_MISSING_DNS_FIREWALL" => ViolationReason::ResourceMissingDnsFirewall,
-            "RESOURCE_MISSING_SECURITY_GROUP" => ViolationReason::ResourceMissingSecurityGroup,
-            "RESOURCE_MISSING_SHIELD_PROTECTION" => ViolationReason::ResourceMissingShieldProtection,
-            "RESOURCE_MISSING_WEB_ACL" => ViolationReason::ResourceMissingWebAcl,
-            "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION" => ViolationReason::ResourceMissingWebaclOrShieldProtection,
-            "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP" => ViolationReason::ResourceViolatesAuditSecurityGroup,
-            "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT" => ViolationReason::RouteHasOutOfScopeEndpoint,
-            "SECURITY_GROUP_REDUNDANT" => ViolationReason::SecurityGroupRedundant,
-            "SECURITY_GROUP_UNUSED" => ViolationReason::SecurityGroupUnused,
-            "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY" => ViolationReason::TrafficInspectionCrossesAzBoundary,
-            "UNEXPECTED_FIREWALL_ROUTES" => ViolationReason::UnexpectedFirewallRoutes,
-            "UNEXPECTED_TARGET_GATEWAY_ROUTES" => ViolationReason::UnexpectedTargetGatewayRoutes,
-            "WEB_ACL_MISSING_RULE_GROUP" => ViolationReason::WebAclMissingRuleGroup,
-            other => ViolationReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BLACK_HOLE_ROUTE_DETECTED" => ViolationReason::BlackHoleRouteDetected,
+"BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET" => ViolationReason::BlackHoleRouteDetectedInFirewallSubnet,
+"FIREWALL_SUBNET_IS_OUT_OF_SCOPE" => ViolationReason::FirewallSubnetIsOutOfScope,
+"FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE" => ViolationReason::FirewallSubnetMissingExpectedRoute,
+"FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT" => ViolationReason::FirewallSubnetMissingVpcEndpoint,
+"FMS_CREATED_SECURITY_GROUP_EDITED" => ViolationReason::FmsCreatedSecurityGroupEdited,
+"INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE" => ViolationReason::InternetGatewayMissingExpectedRoute,
+"INTERNET_TRAFFIC_NOT_INSPECTED" => ViolationReason::InternetTrafficNotInspected,
+"INVALID_ROUTE_CONFIGURATION" => ViolationReason::InvalidRouteConfiguration,
+"MISSING_EXPECTED_ROUTE_TABLE" => ViolationReason::MissingExpectedRouteTable,
+"MISSING_FIREWALL" => ViolationReason::MissingFirewall,
+"MISSING_FIREWALL_SUBNET_IN_AZ" => ViolationReason::MissingFirewallSubnetInAz,
+"MISSING_TARGET_GATEWAY" => ViolationReason::MissingTargetGateway,
+"NETWORK_FIREWALL_POLICY_MODIFIED" => ViolationReason::NetworkFirewallPolicyModified,
+"RESOURCE_INCORRECT_WEB_ACL" => ViolationReason::ResourceIncorrectWebAcl,
+"RESOURCE_MISSING_DNS_FIREWALL" => ViolationReason::ResourceMissingDnsFirewall,
+"RESOURCE_MISSING_SECURITY_GROUP" => ViolationReason::ResourceMissingSecurityGroup,
+"RESOURCE_MISSING_SHIELD_PROTECTION" => ViolationReason::ResourceMissingShieldProtection,
+"RESOURCE_MISSING_WEB_ACL" => ViolationReason::ResourceMissingWebAcl,
+"RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION" => ViolationReason::ResourceMissingWebaclOrShieldProtection,
+"RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP" => ViolationReason::ResourceViolatesAuditSecurityGroup,
+"ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT" => ViolationReason::RouteHasOutOfScopeEndpoint,
+"SECURITY_GROUP_REDUNDANT" => ViolationReason::SecurityGroupRedundant,
+"SECURITY_GROUP_UNUSED" => ViolationReason::SecurityGroupUnused,
+"TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY" => ViolationReason::TrafficInspectionCrossesAzBoundary,
+"UNEXPECTED_FIREWALL_ROUTES" => ViolationReason::UnexpectedFirewallRoutes,
+"UNEXPECTED_TARGET_GATEWAY_ROUTES" => ViolationReason::UnexpectedTargetGatewayRoutes,
+"WEB_ACL_MISSING_RULE_GROUP" => ViolationReason::WebAclMissingRuleGroup,
+other => ViolationReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ViolationReason {
                 type Err = std::convert::Infallible;
 
@@ -10287,52 +10261,50 @@ impl std::str::FromStr for ViolationReason {
                 }
             }
 impl ViolationReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ViolationReason::BlackHoleRouteDetected => "BLACK_HOLE_ROUTE_DETECTED",
-            ViolationReason::BlackHoleRouteDetectedInFirewallSubnet => "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET",
-            ViolationReason::FirewallSubnetIsOutOfScope => "FIREWALL_SUBNET_IS_OUT_OF_SCOPE",
-            ViolationReason::FirewallSubnetMissingExpectedRoute => "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE",
-            ViolationReason::FirewallSubnetMissingVpcEndpoint => "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT",
-            ViolationReason::FmsCreatedSecurityGroupEdited => "FMS_CREATED_SECURITY_GROUP_EDITED",
-            ViolationReason::InternetGatewayMissingExpectedRoute => "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE",
-            ViolationReason::InternetTrafficNotInspected => "INTERNET_TRAFFIC_NOT_INSPECTED",
-            ViolationReason::InvalidRouteConfiguration => "INVALID_ROUTE_CONFIGURATION",
-            ViolationReason::MissingExpectedRouteTable => "MISSING_EXPECTED_ROUTE_TABLE",
-            ViolationReason::MissingFirewall => "MISSING_FIREWALL",
-            ViolationReason::MissingFirewallSubnetInAz => "MISSING_FIREWALL_SUBNET_IN_AZ",
-            ViolationReason::MissingTargetGateway => "MISSING_TARGET_GATEWAY",
-            ViolationReason::NetworkFirewallPolicyModified => "NETWORK_FIREWALL_POLICY_MODIFIED",
-            ViolationReason::ResourceIncorrectWebAcl => "RESOURCE_INCORRECT_WEB_ACL",
-            ViolationReason::ResourceMissingDnsFirewall => "RESOURCE_MISSING_DNS_FIREWALL",
-            ViolationReason::ResourceMissingSecurityGroup => "RESOURCE_MISSING_SECURITY_GROUP",
-            ViolationReason::ResourceMissingShieldProtection => "RESOURCE_MISSING_SHIELD_PROTECTION",
-            ViolationReason::ResourceMissingWebAcl => "RESOURCE_MISSING_WEB_ACL",
-            ViolationReason::ResourceMissingWebaclOrShieldProtection => "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION",
-            ViolationReason::ResourceViolatesAuditSecurityGroup => "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP",
-            ViolationReason::RouteHasOutOfScopeEndpoint => "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT",
-            ViolationReason::SecurityGroupRedundant => "SECURITY_GROUP_REDUNDANT",
-            ViolationReason::SecurityGroupUnused => "SECURITY_GROUP_UNUSED",
-            ViolationReason::TrafficInspectionCrossesAzBoundary => "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY",
-            ViolationReason::UnexpectedFirewallRoutes => "UNEXPECTED_FIREWALL_ROUTES",
-            ViolationReason::UnexpectedTargetGatewayRoutes => "UNEXPECTED_TARGET_GATEWAY_ROUTES",
-            ViolationReason::WebAclMissingRuleGroup => "WEB_ACL_MISSING_RULE_GROUP",
-            ViolationReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BLACK_HOLE_ROUTE_DETECTED", "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET", "FIREWALL_SUBNET_IS_OUT_OF_SCOPE", "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE", "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT", "FMS_CREATED_SECURITY_GROUP_EDITED", "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE", "INTERNET_TRAFFIC_NOT_INSPECTED", "INVALID_ROUTE_CONFIGURATION", "MISSING_EXPECTED_ROUTE_TABLE", "MISSING_FIREWALL", "MISSING_FIREWALL_SUBNET_IN_AZ", "MISSING_TARGET_GATEWAY", "NETWORK_FIREWALL_POLICY_MODIFIED", "RESOURCE_INCORRECT_WEB_ACL", "RESOURCE_MISSING_DNS_FIREWALL", "RESOURCE_MISSING_SECURITY_GROUP", "RESOURCE_MISSING_SHIELD_PROTECTION", "RESOURCE_MISSING_WEB_ACL", "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION", "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP", "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT", "SECURITY_GROUP_REDUNDANT", "SECURITY_GROUP_UNUSED", "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY", "UNEXPECTED_FIREWALL_ROUTES", "UNEXPECTED_TARGET_GATEWAY_ROUTES", "WEB_ACL_MISSING_RULE_GROUP"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ViolationReason::BlackHoleRouteDetected => "BLACK_HOLE_ROUTE_DETECTED",
+    ViolationReason::BlackHoleRouteDetectedInFirewallSubnet => "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET",
+    ViolationReason::FirewallSubnetIsOutOfScope => "FIREWALL_SUBNET_IS_OUT_OF_SCOPE",
+    ViolationReason::FirewallSubnetMissingExpectedRoute => "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE",
+    ViolationReason::FirewallSubnetMissingVpcEndpoint => "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT",
+    ViolationReason::FmsCreatedSecurityGroupEdited => "FMS_CREATED_SECURITY_GROUP_EDITED",
+    ViolationReason::InternetGatewayMissingExpectedRoute => "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE",
+    ViolationReason::InternetTrafficNotInspected => "INTERNET_TRAFFIC_NOT_INSPECTED",
+    ViolationReason::InvalidRouteConfiguration => "INVALID_ROUTE_CONFIGURATION",
+    ViolationReason::MissingExpectedRouteTable => "MISSING_EXPECTED_ROUTE_TABLE",
+    ViolationReason::MissingFirewall => "MISSING_FIREWALL",
+    ViolationReason::MissingFirewallSubnetInAz => "MISSING_FIREWALL_SUBNET_IN_AZ",
+    ViolationReason::MissingTargetGateway => "MISSING_TARGET_GATEWAY",
+    ViolationReason::NetworkFirewallPolicyModified => "NETWORK_FIREWALL_POLICY_MODIFIED",
+    ViolationReason::ResourceIncorrectWebAcl => "RESOURCE_INCORRECT_WEB_ACL",
+    ViolationReason::ResourceMissingDnsFirewall => "RESOURCE_MISSING_DNS_FIREWALL",
+    ViolationReason::ResourceMissingSecurityGroup => "RESOURCE_MISSING_SECURITY_GROUP",
+    ViolationReason::ResourceMissingShieldProtection => "RESOURCE_MISSING_SHIELD_PROTECTION",
+    ViolationReason::ResourceMissingWebAcl => "RESOURCE_MISSING_WEB_ACL",
+    ViolationReason::ResourceMissingWebaclOrShieldProtection => "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION",
+    ViolationReason::ResourceViolatesAuditSecurityGroup => "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP",
+    ViolationReason::RouteHasOutOfScopeEndpoint => "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT",
+    ViolationReason::SecurityGroupRedundant => "SECURITY_GROUP_REDUNDANT",
+    ViolationReason::SecurityGroupUnused => "SECURITY_GROUP_UNUSED",
+    ViolationReason::TrafficInspectionCrossesAzBoundary => "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY",
+    ViolationReason::UnexpectedFirewallRoutes => "UNEXPECTED_FIREWALL_ROUTES",
+    ViolationReason::UnexpectedTargetGatewayRoutes => "UNEXPECTED_TARGET_GATEWAY_ROUTES",
+    ViolationReason::WebAclMissingRuleGroup => "WEB_ACL_MISSING_RULE_GROUP",
+    ViolationReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BLACK_HOLE_ROUTE_DETECTED", "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET", "FIREWALL_SUBNET_IS_OUT_OF_SCOPE", "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE", "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT", "FMS_CREATED_SECURITY_GROUP_EDITED", "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE", "INTERNET_TRAFFIC_NOT_INSPECTED", "INVALID_ROUTE_CONFIGURATION", "MISSING_EXPECTED_ROUTE_TABLE", "MISSING_FIREWALL", "MISSING_FIREWALL_SUBNET_IN_AZ", "MISSING_TARGET_GATEWAY", "NETWORK_FIREWALL_POLICY_MODIFIED", "RESOURCE_INCORRECT_WEB_ACL", "RESOURCE_MISSING_DNS_FIREWALL", "RESOURCE_MISSING_SECURITY_GROUP", "RESOURCE_MISSING_SHIELD_PROTECTION", "RESOURCE_MISSING_WEB_ACL", "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION", "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP", "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT", "SECURITY_GROUP_REDUNDANT", "SECURITY_GROUP_UNUSED", "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY", "UNEXPECTED_FIREWALL_ROUTES", "UNEXPECTED_TARGET_GATEWAY_ROUTES", "WEB_ACL_MISSING_RULE_GROUP"]
+                }
+            }
 impl AsRef<str> for ViolationReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AccountRoleStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -10390,17 +10362,17 @@ pub enum AccountRoleStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountRoleStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATING" => AccountRoleStatus::Creating,
-            "DELETED" => AccountRoleStatus::Deleted,
-            "DELETING" => AccountRoleStatus::Deleting,
-            "PENDING_DELETION" => AccountRoleStatus::PendingDeletion,
-            "READY" => AccountRoleStatus::Ready,
-            other => AccountRoleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATING" => AccountRoleStatus::Creating,
+"DELETED" => AccountRoleStatus::Deleted,
+"DELETING" => AccountRoleStatus::Deleting,
+"PENDING_DELETION" => AccountRoleStatus::PendingDeletion,
+"READY" => AccountRoleStatus::Ready,
+other => AccountRoleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AccountRoleStatus {
                 type Err = std::convert::Infallible;
 
@@ -10409,29 +10381,27 @@ impl std::str::FromStr for AccountRoleStatus {
                 }
             }
 impl AccountRoleStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccountRoleStatus::Creating => "CREATING",
-            AccountRoleStatus::Deleted => "DELETED",
-            AccountRoleStatus::Deleting => "DELETING",
-            AccountRoleStatus::PendingDeletion => "PENDING_DELETION",
-            AccountRoleStatus::Ready => "READY",
-            AccountRoleStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATING", "DELETED", "DELETING", "PENDING_DELETION", "READY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccountRoleStatus::Creating => "CREATING",
+    AccountRoleStatus::Deleted => "DELETED",
+    AccountRoleStatus::Deleting => "DELETING",
+    AccountRoleStatus::PendingDeletion => "PENDING_DELETION",
+    AccountRoleStatus::Ready => "READY",
+    AccountRoleStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATING", "DELETED", "DELETING", "PENDING_DELETION", "READY"]
+                }
+            }
 impl AsRef<str> for AccountRoleStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details of a resource that failed when trying to update it's association to a resource set.</p>
 #[non_exhaustive]
@@ -10561,18 +10531,18 @@ pub enum FailedItemReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailedItemReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "NOT_VALID_ACCOUNT_ID" => FailedItemReason::NotValidAccountId,
-            "NOT_VALID_ARN" => FailedItemReason::NotValidArn,
-            "NOT_VALID_PARTITION" => FailedItemReason::NotValidPartition,
-            "NOT_VALID_REGION" => FailedItemReason::NotValidRegion,
-            "NOT_VALID_RESOURCE_TYPE" => FailedItemReason::NotValidResourceType,
-            "NOT_VALID_SERVICE" => FailedItemReason::NotValidService,
-            other => FailedItemReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NOT_VALID_ACCOUNT_ID" => FailedItemReason::NotValidAccountId,
+"NOT_VALID_ARN" => FailedItemReason::NotValidArn,
+"NOT_VALID_PARTITION" => FailedItemReason::NotValidPartition,
+"NOT_VALID_REGION" => FailedItemReason::NotValidRegion,
+"NOT_VALID_RESOURCE_TYPE" => FailedItemReason::NotValidResourceType,
+"NOT_VALID_SERVICE" => FailedItemReason::NotValidService,
+other => FailedItemReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FailedItemReason {
                 type Err = std::convert::Infallible;
 
@@ -10581,28 +10551,26 @@ impl std::str::FromStr for FailedItemReason {
                 }
             }
 impl FailedItemReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailedItemReason::NotValidAccountId => "NOT_VALID_ACCOUNT_ID",
-            FailedItemReason::NotValidArn => "NOT_VALID_ARN",
-            FailedItemReason::NotValidPartition => "NOT_VALID_PARTITION",
-            FailedItemReason::NotValidRegion => "NOT_VALID_REGION",
-            FailedItemReason::NotValidResourceType => "NOT_VALID_RESOURCE_TYPE",
-            FailedItemReason::NotValidService => "NOT_VALID_SERVICE",
-            FailedItemReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NOT_VALID_ACCOUNT_ID", "NOT_VALID_ARN", "NOT_VALID_PARTITION", "NOT_VALID_REGION", "NOT_VALID_RESOURCE_TYPE", "NOT_VALID_SERVICE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FailedItemReason::NotValidAccountId => "NOT_VALID_ACCOUNT_ID",
+    FailedItemReason::NotValidArn => "NOT_VALID_ARN",
+    FailedItemReason::NotValidPartition => "NOT_VALID_PARTITION",
+    FailedItemReason::NotValidRegion => "NOT_VALID_REGION",
+    FailedItemReason::NotValidResourceType => "NOT_VALID_RESOURCE_TYPE",
+    FailedItemReason::NotValidService => "NOT_VALID_SERVICE",
+    FailedItemReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NOT_VALID_ACCOUNT_ID", "NOT_VALID_ARN", "NOT_VALID_PARTITION", "NOT_VALID_REGION", "NOT_VALID_RESOURCE_TYPE", "NOT_VALID_SERVICE"]
+                }
+            }
 impl AsRef<str> for FailedItemReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

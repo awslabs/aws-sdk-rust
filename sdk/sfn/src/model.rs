@@ -50,15 +50,15 @@ pub enum ValidationExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "API_DOES_NOT_SUPPORT_LABELED_ARNS" => ValidationExceptionReason::ApiDoesNotSupportLabeledArns,
-            "CANNOT_UPDATE_COMPLETED_MAP_RUN" => ValidationExceptionReason::CannotUpdateCompletedMapRun,
-            "MISSING_REQUIRED_PARAMETER" => ValidationExceptionReason::MissingRequiredParameter,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "API_DOES_NOT_SUPPORT_LABELED_ARNS" => ValidationExceptionReason::ApiDoesNotSupportLabeledArns,
+"CANNOT_UPDATE_COMPLETED_MAP_RUN" => ValidationExceptionReason::CannotUpdateCompletedMapRun,
+"MISSING_REQUIRED_PARAMETER" => ValidationExceptionReason::MissingRequiredParameter,
+other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ValidationExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -67,27 +67,25 @@ impl std::str::FromStr for ValidationExceptionReason {
                 }
             }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::ApiDoesNotSupportLabeledArns => "API_DOES_NOT_SUPPORT_LABELED_ARNS",
-            ValidationExceptionReason::CannotUpdateCompletedMapRun => "CANNOT_UPDATE_COMPLETED_MAP_RUN",
-            ValidationExceptionReason::MissingRequiredParameter => "MISSING_REQUIRED_PARAMETER",
-            ValidationExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "API_DOES_NOT_SUPPORT_LABELED_ARNS", "CANNOT_UPDATE_COMPLETED_MAP_RUN", "MISSING_REQUIRED_PARAMETER"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::ApiDoesNotSupportLabeledArns => "API_DOES_NOT_SUPPORT_LABELED_ARNS",
+    ValidationExceptionReason::CannotUpdateCompletedMapRun => "CANNOT_UPDATE_COMPLETED_MAP_RUN",
+    ValidationExceptionReason::MissingRequiredParameter => "MISSING_REQUIRED_PARAMETER",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["API_DOES_NOT_SUPPORT_LABELED_ARNS", "CANNOT_UPDATE_COMPLETED_MAP_RUN", "MISSING_REQUIRED_PARAMETER"]
+                }
+            }
 impl AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Selects whether or not the state machine's X-Ray tracing is enabled. Default is <code>false</code> </p>
 #[non_exhaustive]
@@ -388,16 +386,16 @@ pub enum LogLevel {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LogLevel {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALL" => LogLevel::All,
-            "ERROR" => LogLevel::Error,
-            "FATAL" => LogLevel::Fatal,
-            "OFF" => LogLevel::Off,
-            other => LogLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALL" => LogLevel::All,
+"ERROR" => LogLevel::Error,
+"FATAL" => LogLevel::Fatal,
+"OFF" => LogLevel::Off,
+other => LogLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LogLevel {
                 type Err = std::convert::Infallible;
 
@@ -406,28 +404,26 @@ impl std::str::FromStr for LogLevel {
                 }
             }
 impl LogLevel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LogLevel::All => "ALL",
-            LogLevel::Error => "ERROR",
-            LogLevel::Fatal => "FATAL",
-            LogLevel::Off => "OFF",
-            LogLevel::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL", "ERROR", "FATAL", "OFF"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LogLevel::All => "ALL",
+    LogLevel::Error => "ERROR",
+    LogLevel::Fatal => "FATAL",
+    LogLevel::Off => "OFF",
+    LogLevel::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALL", "ERROR", "FATAL", "OFF"]
+                }
+            }
 impl AsRef<str> for LogLevel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Tags are key-value pairs that can be associated with Step Functions state machines and activities.</p> 
 /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p> 
@@ -672,15 +668,15 @@ pub enum SyncExecutionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SyncExecutionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => SyncExecutionStatus::Failed,
-            "SUCCEEDED" => SyncExecutionStatus::Succeeded,
-            "TIMED_OUT" => SyncExecutionStatus::TimedOut,
-            other => SyncExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => SyncExecutionStatus::Failed,
+"SUCCEEDED" => SyncExecutionStatus::Succeeded,
+"TIMED_OUT" => SyncExecutionStatus::TimedOut,
+other => SyncExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SyncExecutionStatus {
                 type Err = std::convert::Infallible;
 
@@ -689,27 +685,25 @@ impl std::str::FromStr for SyncExecutionStatus {
                 }
             }
 impl SyncExecutionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SyncExecutionStatus::Failed => "FAILED",
-            SyncExecutionStatus::Succeeded => "SUCCEEDED",
-            SyncExecutionStatus::TimedOut => "TIMED_OUT",
-            SyncExecutionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "SUCCEEDED", "TIMED_OUT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SyncExecutionStatus::Failed => "FAILED",
+    SyncExecutionStatus::Succeeded => "SUCCEEDED",
+    SyncExecutionStatus::TimedOut => "TIMED_OUT",
+    SyncExecutionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "SUCCEEDED", "TIMED_OUT"]
+                }
+            }
 impl AsRef<str> for SyncExecutionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains details about the state machine.</p>
 #[non_exhaustive]
@@ -901,14 +895,14 @@ pub enum StateMachineType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StateMachineType {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXPRESS" => StateMachineType::Express,
-            "STANDARD" => StateMachineType::Standard,
-            other => StateMachineType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EXPRESS" => StateMachineType::Express,
+"STANDARD" => StateMachineType::Standard,
+other => StateMachineType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StateMachineType {
                 type Err = std::convert::Infallible;
 
@@ -917,26 +911,24 @@ impl std::str::FromStr for StateMachineType {
                 }
             }
 impl StateMachineType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StateMachineType::Express => "EXPRESS",
-            StateMachineType::Standard => "STANDARD",
-            StateMachineType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EXPRESS", "STANDARD"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StateMachineType::Express => "EXPRESS",
+    StateMachineType::Standard => "STANDARD",
+    StateMachineType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXPRESS", "STANDARD"]
+                }
+            }
 impl AsRef<str> for StateMachineType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains details about a specific Map Run.</p>
 #[non_exhaustive]
@@ -1339,17 +1331,17 @@ pub enum ExecutionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExecutionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ABORTED" => ExecutionStatus::Aborted,
-            "FAILED" => ExecutionStatus::Failed,
-            "RUNNING" => ExecutionStatus::Running,
-            "SUCCEEDED" => ExecutionStatus::Succeeded,
-            "TIMED_OUT" => ExecutionStatus::TimedOut,
-            other => ExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ABORTED" => ExecutionStatus::Aborted,
+"FAILED" => ExecutionStatus::Failed,
+"RUNNING" => ExecutionStatus::Running,
+"SUCCEEDED" => ExecutionStatus::Succeeded,
+"TIMED_OUT" => ExecutionStatus::TimedOut,
+other => ExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExecutionStatus {
                 type Err = std::convert::Infallible;
 
@@ -1358,29 +1350,27 @@ impl std::str::FromStr for ExecutionStatus {
                 }
             }
 impl ExecutionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExecutionStatus::Aborted => "ABORTED",
-            ExecutionStatus::Failed => "FAILED",
-            ExecutionStatus::Running => "RUNNING",
-            ExecutionStatus::Succeeded => "SUCCEEDED",
-            ExecutionStatus::TimedOut => "TIMED_OUT",
-            ExecutionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ABORTED", "FAILED", "RUNNING", "SUCCEEDED", "TIMED_OUT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExecutionStatus::Aborted => "ABORTED",
+    ExecutionStatus::Failed => "FAILED",
+    ExecutionStatus::Running => "RUNNING",
+    ExecutionStatus::Succeeded => "SUCCEEDED",
+    ExecutionStatus::TimedOut => "TIMED_OUT",
+    ExecutionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ABORTED", "FAILED", "RUNNING", "SUCCEEDED", "TIMED_OUT"]
+                }
+            }
 impl AsRef<str> for ExecutionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains details about an activity.</p>
 #[non_exhaustive]
@@ -5662,71 +5652,71 @@ pub enum HistoryEventType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HistoryEventType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ActivityFailed" => HistoryEventType::ActivityFailed,
-            "ActivityScheduleFailed" => HistoryEventType::ActivityScheduleFailed,
-            "ActivityScheduled" => HistoryEventType::ActivityScheduled,
-            "ActivityStarted" => HistoryEventType::ActivityStarted,
-            "ActivitySucceeded" => HistoryEventType::ActivitySucceeded,
-            "ActivityTimedOut" => HistoryEventType::ActivityTimedOut,
-            "ChoiceStateEntered" => HistoryEventType::ChoiceStateEntered,
-            "ChoiceStateExited" => HistoryEventType::ChoiceStateExited,
-            "ExecutionAborted" => HistoryEventType::ExecutionAborted,
-            "ExecutionFailed" => HistoryEventType::ExecutionFailed,
-            "ExecutionStarted" => HistoryEventType::ExecutionStarted,
-            "ExecutionSucceeded" => HistoryEventType::ExecutionSucceeded,
-            "ExecutionTimedOut" => HistoryEventType::ExecutionTimedOut,
-            "FailStateEntered" => HistoryEventType::FailStateEntered,
-            "LambdaFunctionFailed" => HistoryEventType::LambdaFunctionFailed,
-            "LambdaFunctionScheduleFailed" => HistoryEventType::LambdaFunctionScheduleFailed,
-            "LambdaFunctionScheduled" => HistoryEventType::LambdaFunctionScheduled,
-            "LambdaFunctionStartFailed" => HistoryEventType::LambdaFunctionStartFailed,
-            "LambdaFunctionStarted" => HistoryEventType::LambdaFunctionStarted,
-            "LambdaFunctionSucceeded" => HistoryEventType::LambdaFunctionSucceeded,
-            "LambdaFunctionTimedOut" => HistoryEventType::LambdaFunctionTimedOut,
-            "MapIterationAborted" => HistoryEventType::MapIterationAborted,
-            "MapIterationFailed" => HistoryEventType::MapIterationFailed,
-            "MapIterationStarted" => HistoryEventType::MapIterationStarted,
-            "MapIterationSucceeded" => HistoryEventType::MapIterationSucceeded,
-            "MapRunAborted" => HistoryEventType::MapRunAborted,
-            "MapRunFailed" => HistoryEventType::MapRunFailed,
-            "MapRunStarted" => HistoryEventType::MapRunStarted,
-            "MapRunSucceeded" => HistoryEventType::MapRunSucceeded,
-            "MapStateAborted" => HistoryEventType::MapStateAborted,
-            "MapStateEntered" => HistoryEventType::MapStateEntered,
-            "MapStateExited" => HistoryEventType::MapStateExited,
-            "MapStateFailed" => HistoryEventType::MapStateFailed,
-            "MapStateStarted" => HistoryEventType::MapStateStarted,
-            "MapStateSucceeded" => HistoryEventType::MapStateSucceeded,
-            "ParallelStateAborted" => HistoryEventType::ParallelStateAborted,
-            "ParallelStateEntered" => HistoryEventType::ParallelStateEntered,
-            "ParallelStateExited" => HistoryEventType::ParallelStateExited,
-            "ParallelStateFailed" => HistoryEventType::ParallelStateFailed,
-            "ParallelStateStarted" => HistoryEventType::ParallelStateStarted,
-            "ParallelStateSucceeded" => HistoryEventType::ParallelStateSucceeded,
-            "PassStateEntered" => HistoryEventType::PassStateEntered,
-            "PassStateExited" => HistoryEventType::PassStateExited,
-            "SucceedStateEntered" => HistoryEventType::SucceedStateEntered,
-            "SucceedStateExited" => HistoryEventType::SucceedStateExited,
-            "TaskFailed" => HistoryEventType::TaskFailed,
-            "TaskScheduled" => HistoryEventType::TaskScheduled,
-            "TaskStartFailed" => HistoryEventType::TaskStartFailed,
-            "TaskStarted" => HistoryEventType::TaskStarted,
-            "TaskStateAborted" => HistoryEventType::TaskStateAborted,
-            "TaskStateEntered" => HistoryEventType::TaskStateEntered,
-            "TaskStateExited" => HistoryEventType::TaskStateExited,
-            "TaskSubmitFailed" => HistoryEventType::TaskSubmitFailed,
-            "TaskSubmitted" => HistoryEventType::TaskSubmitted,
-            "TaskSucceeded" => HistoryEventType::TaskSucceeded,
-            "TaskTimedOut" => HistoryEventType::TaskTimedOut,
-            "WaitStateAborted" => HistoryEventType::WaitStateAborted,
-            "WaitStateEntered" => HistoryEventType::WaitStateEntered,
-            "WaitStateExited" => HistoryEventType::WaitStateExited,
-            other => HistoryEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ActivityFailed" => HistoryEventType::ActivityFailed,
+"ActivityScheduleFailed" => HistoryEventType::ActivityScheduleFailed,
+"ActivityScheduled" => HistoryEventType::ActivityScheduled,
+"ActivityStarted" => HistoryEventType::ActivityStarted,
+"ActivitySucceeded" => HistoryEventType::ActivitySucceeded,
+"ActivityTimedOut" => HistoryEventType::ActivityTimedOut,
+"ChoiceStateEntered" => HistoryEventType::ChoiceStateEntered,
+"ChoiceStateExited" => HistoryEventType::ChoiceStateExited,
+"ExecutionAborted" => HistoryEventType::ExecutionAborted,
+"ExecutionFailed" => HistoryEventType::ExecutionFailed,
+"ExecutionStarted" => HistoryEventType::ExecutionStarted,
+"ExecutionSucceeded" => HistoryEventType::ExecutionSucceeded,
+"ExecutionTimedOut" => HistoryEventType::ExecutionTimedOut,
+"FailStateEntered" => HistoryEventType::FailStateEntered,
+"LambdaFunctionFailed" => HistoryEventType::LambdaFunctionFailed,
+"LambdaFunctionScheduleFailed" => HistoryEventType::LambdaFunctionScheduleFailed,
+"LambdaFunctionScheduled" => HistoryEventType::LambdaFunctionScheduled,
+"LambdaFunctionStartFailed" => HistoryEventType::LambdaFunctionStartFailed,
+"LambdaFunctionStarted" => HistoryEventType::LambdaFunctionStarted,
+"LambdaFunctionSucceeded" => HistoryEventType::LambdaFunctionSucceeded,
+"LambdaFunctionTimedOut" => HistoryEventType::LambdaFunctionTimedOut,
+"MapIterationAborted" => HistoryEventType::MapIterationAborted,
+"MapIterationFailed" => HistoryEventType::MapIterationFailed,
+"MapIterationStarted" => HistoryEventType::MapIterationStarted,
+"MapIterationSucceeded" => HistoryEventType::MapIterationSucceeded,
+"MapRunAborted" => HistoryEventType::MapRunAborted,
+"MapRunFailed" => HistoryEventType::MapRunFailed,
+"MapRunStarted" => HistoryEventType::MapRunStarted,
+"MapRunSucceeded" => HistoryEventType::MapRunSucceeded,
+"MapStateAborted" => HistoryEventType::MapStateAborted,
+"MapStateEntered" => HistoryEventType::MapStateEntered,
+"MapStateExited" => HistoryEventType::MapStateExited,
+"MapStateFailed" => HistoryEventType::MapStateFailed,
+"MapStateStarted" => HistoryEventType::MapStateStarted,
+"MapStateSucceeded" => HistoryEventType::MapStateSucceeded,
+"ParallelStateAborted" => HistoryEventType::ParallelStateAborted,
+"ParallelStateEntered" => HistoryEventType::ParallelStateEntered,
+"ParallelStateExited" => HistoryEventType::ParallelStateExited,
+"ParallelStateFailed" => HistoryEventType::ParallelStateFailed,
+"ParallelStateStarted" => HistoryEventType::ParallelStateStarted,
+"ParallelStateSucceeded" => HistoryEventType::ParallelStateSucceeded,
+"PassStateEntered" => HistoryEventType::PassStateEntered,
+"PassStateExited" => HistoryEventType::PassStateExited,
+"SucceedStateEntered" => HistoryEventType::SucceedStateEntered,
+"SucceedStateExited" => HistoryEventType::SucceedStateExited,
+"TaskFailed" => HistoryEventType::TaskFailed,
+"TaskScheduled" => HistoryEventType::TaskScheduled,
+"TaskStartFailed" => HistoryEventType::TaskStartFailed,
+"TaskStarted" => HistoryEventType::TaskStarted,
+"TaskStateAborted" => HistoryEventType::TaskStateAborted,
+"TaskStateEntered" => HistoryEventType::TaskStateEntered,
+"TaskStateExited" => HistoryEventType::TaskStateExited,
+"TaskSubmitFailed" => HistoryEventType::TaskSubmitFailed,
+"TaskSubmitted" => HistoryEventType::TaskSubmitted,
+"TaskSucceeded" => HistoryEventType::TaskSucceeded,
+"TaskTimedOut" => HistoryEventType::TaskTimedOut,
+"WaitStateAborted" => HistoryEventType::WaitStateAborted,
+"WaitStateEntered" => HistoryEventType::WaitStateEntered,
+"WaitStateExited" => HistoryEventType::WaitStateExited,
+other => HistoryEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HistoryEventType {
                 type Err = std::convert::Infallible;
 
@@ -5735,83 +5725,81 @@ impl std::str::FromStr for HistoryEventType {
                 }
             }
 impl HistoryEventType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HistoryEventType::ActivityFailed => "ActivityFailed",
-            HistoryEventType::ActivityScheduleFailed => "ActivityScheduleFailed",
-            HistoryEventType::ActivityScheduled => "ActivityScheduled",
-            HistoryEventType::ActivityStarted => "ActivityStarted",
-            HistoryEventType::ActivitySucceeded => "ActivitySucceeded",
-            HistoryEventType::ActivityTimedOut => "ActivityTimedOut",
-            HistoryEventType::ChoiceStateEntered => "ChoiceStateEntered",
-            HistoryEventType::ChoiceStateExited => "ChoiceStateExited",
-            HistoryEventType::ExecutionAborted => "ExecutionAborted",
-            HistoryEventType::ExecutionFailed => "ExecutionFailed",
-            HistoryEventType::ExecutionStarted => "ExecutionStarted",
-            HistoryEventType::ExecutionSucceeded => "ExecutionSucceeded",
-            HistoryEventType::ExecutionTimedOut => "ExecutionTimedOut",
-            HistoryEventType::FailStateEntered => "FailStateEntered",
-            HistoryEventType::LambdaFunctionFailed => "LambdaFunctionFailed",
-            HistoryEventType::LambdaFunctionScheduleFailed => "LambdaFunctionScheduleFailed",
-            HistoryEventType::LambdaFunctionScheduled => "LambdaFunctionScheduled",
-            HistoryEventType::LambdaFunctionStartFailed => "LambdaFunctionStartFailed",
-            HistoryEventType::LambdaFunctionStarted => "LambdaFunctionStarted",
-            HistoryEventType::LambdaFunctionSucceeded => "LambdaFunctionSucceeded",
-            HistoryEventType::LambdaFunctionTimedOut => "LambdaFunctionTimedOut",
-            HistoryEventType::MapIterationAborted => "MapIterationAborted",
-            HistoryEventType::MapIterationFailed => "MapIterationFailed",
-            HistoryEventType::MapIterationStarted => "MapIterationStarted",
-            HistoryEventType::MapIterationSucceeded => "MapIterationSucceeded",
-            HistoryEventType::MapRunAborted => "MapRunAborted",
-            HistoryEventType::MapRunFailed => "MapRunFailed",
-            HistoryEventType::MapRunStarted => "MapRunStarted",
-            HistoryEventType::MapRunSucceeded => "MapRunSucceeded",
-            HistoryEventType::MapStateAborted => "MapStateAborted",
-            HistoryEventType::MapStateEntered => "MapStateEntered",
-            HistoryEventType::MapStateExited => "MapStateExited",
-            HistoryEventType::MapStateFailed => "MapStateFailed",
-            HistoryEventType::MapStateStarted => "MapStateStarted",
-            HistoryEventType::MapStateSucceeded => "MapStateSucceeded",
-            HistoryEventType::ParallelStateAborted => "ParallelStateAborted",
-            HistoryEventType::ParallelStateEntered => "ParallelStateEntered",
-            HistoryEventType::ParallelStateExited => "ParallelStateExited",
-            HistoryEventType::ParallelStateFailed => "ParallelStateFailed",
-            HistoryEventType::ParallelStateStarted => "ParallelStateStarted",
-            HistoryEventType::ParallelStateSucceeded => "ParallelStateSucceeded",
-            HistoryEventType::PassStateEntered => "PassStateEntered",
-            HistoryEventType::PassStateExited => "PassStateExited",
-            HistoryEventType::SucceedStateEntered => "SucceedStateEntered",
-            HistoryEventType::SucceedStateExited => "SucceedStateExited",
-            HistoryEventType::TaskFailed => "TaskFailed",
-            HistoryEventType::TaskScheduled => "TaskScheduled",
-            HistoryEventType::TaskStartFailed => "TaskStartFailed",
-            HistoryEventType::TaskStarted => "TaskStarted",
-            HistoryEventType::TaskStateAborted => "TaskStateAborted",
-            HistoryEventType::TaskStateEntered => "TaskStateEntered",
-            HistoryEventType::TaskStateExited => "TaskStateExited",
-            HistoryEventType::TaskSubmitFailed => "TaskSubmitFailed",
-            HistoryEventType::TaskSubmitted => "TaskSubmitted",
-            HistoryEventType::TaskSucceeded => "TaskSucceeded",
-            HistoryEventType::TaskTimedOut => "TaskTimedOut",
-            HistoryEventType::WaitStateAborted => "WaitStateAborted",
-            HistoryEventType::WaitStateEntered => "WaitStateEntered",
-            HistoryEventType::WaitStateExited => "WaitStateExited",
-            HistoryEventType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ActivityFailed", "ActivityScheduleFailed", "ActivityScheduled", "ActivityStarted", "ActivitySucceeded", "ActivityTimedOut", "ChoiceStateEntered", "ChoiceStateExited", "ExecutionAborted", "ExecutionFailed", "ExecutionStarted", "ExecutionSucceeded", "ExecutionTimedOut", "FailStateEntered", "LambdaFunctionFailed", "LambdaFunctionScheduleFailed", "LambdaFunctionScheduled", "LambdaFunctionStartFailed", "LambdaFunctionStarted", "LambdaFunctionSucceeded", "LambdaFunctionTimedOut", "MapIterationAborted", "MapIterationFailed", "MapIterationStarted", "MapIterationSucceeded", "MapRunAborted", "MapRunFailed", "MapRunStarted", "MapRunSucceeded", "MapStateAborted", "MapStateEntered", "MapStateExited", "MapStateFailed", "MapStateStarted", "MapStateSucceeded", "ParallelStateAborted", "ParallelStateEntered", "ParallelStateExited", "ParallelStateFailed", "ParallelStateStarted", "ParallelStateSucceeded", "PassStateEntered", "PassStateExited", "SucceedStateEntered", "SucceedStateExited", "TaskFailed", "TaskScheduled", "TaskStartFailed", "TaskStarted", "TaskStateAborted", "TaskStateEntered", "TaskStateExited", "TaskSubmitFailed", "TaskSubmitted", "TaskSucceeded", "TaskTimedOut", "WaitStateAborted", "WaitStateEntered", "WaitStateExited"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HistoryEventType::ActivityFailed => "ActivityFailed",
+    HistoryEventType::ActivityScheduleFailed => "ActivityScheduleFailed",
+    HistoryEventType::ActivityScheduled => "ActivityScheduled",
+    HistoryEventType::ActivityStarted => "ActivityStarted",
+    HistoryEventType::ActivitySucceeded => "ActivitySucceeded",
+    HistoryEventType::ActivityTimedOut => "ActivityTimedOut",
+    HistoryEventType::ChoiceStateEntered => "ChoiceStateEntered",
+    HistoryEventType::ChoiceStateExited => "ChoiceStateExited",
+    HistoryEventType::ExecutionAborted => "ExecutionAborted",
+    HistoryEventType::ExecutionFailed => "ExecutionFailed",
+    HistoryEventType::ExecutionStarted => "ExecutionStarted",
+    HistoryEventType::ExecutionSucceeded => "ExecutionSucceeded",
+    HistoryEventType::ExecutionTimedOut => "ExecutionTimedOut",
+    HistoryEventType::FailStateEntered => "FailStateEntered",
+    HistoryEventType::LambdaFunctionFailed => "LambdaFunctionFailed",
+    HistoryEventType::LambdaFunctionScheduleFailed => "LambdaFunctionScheduleFailed",
+    HistoryEventType::LambdaFunctionScheduled => "LambdaFunctionScheduled",
+    HistoryEventType::LambdaFunctionStartFailed => "LambdaFunctionStartFailed",
+    HistoryEventType::LambdaFunctionStarted => "LambdaFunctionStarted",
+    HistoryEventType::LambdaFunctionSucceeded => "LambdaFunctionSucceeded",
+    HistoryEventType::LambdaFunctionTimedOut => "LambdaFunctionTimedOut",
+    HistoryEventType::MapIterationAborted => "MapIterationAborted",
+    HistoryEventType::MapIterationFailed => "MapIterationFailed",
+    HistoryEventType::MapIterationStarted => "MapIterationStarted",
+    HistoryEventType::MapIterationSucceeded => "MapIterationSucceeded",
+    HistoryEventType::MapRunAborted => "MapRunAborted",
+    HistoryEventType::MapRunFailed => "MapRunFailed",
+    HistoryEventType::MapRunStarted => "MapRunStarted",
+    HistoryEventType::MapRunSucceeded => "MapRunSucceeded",
+    HistoryEventType::MapStateAborted => "MapStateAborted",
+    HistoryEventType::MapStateEntered => "MapStateEntered",
+    HistoryEventType::MapStateExited => "MapStateExited",
+    HistoryEventType::MapStateFailed => "MapStateFailed",
+    HistoryEventType::MapStateStarted => "MapStateStarted",
+    HistoryEventType::MapStateSucceeded => "MapStateSucceeded",
+    HistoryEventType::ParallelStateAborted => "ParallelStateAborted",
+    HistoryEventType::ParallelStateEntered => "ParallelStateEntered",
+    HistoryEventType::ParallelStateExited => "ParallelStateExited",
+    HistoryEventType::ParallelStateFailed => "ParallelStateFailed",
+    HistoryEventType::ParallelStateStarted => "ParallelStateStarted",
+    HistoryEventType::ParallelStateSucceeded => "ParallelStateSucceeded",
+    HistoryEventType::PassStateEntered => "PassStateEntered",
+    HistoryEventType::PassStateExited => "PassStateExited",
+    HistoryEventType::SucceedStateEntered => "SucceedStateEntered",
+    HistoryEventType::SucceedStateExited => "SucceedStateExited",
+    HistoryEventType::TaskFailed => "TaskFailed",
+    HistoryEventType::TaskScheduled => "TaskScheduled",
+    HistoryEventType::TaskStartFailed => "TaskStartFailed",
+    HistoryEventType::TaskStarted => "TaskStarted",
+    HistoryEventType::TaskStateAborted => "TaskStateAborted",
+    HistoryEventType::TaskStateEntered => "TaskStateEntered",
+    HistoryEventType::TaskStateExited => "TaskStateExited",
+    HistoryEventType::TaskSubmitFailed => "TaskSubmitFailed",
+    HistoryEventType::TaskSubmitted => "TaskSubmitted",
+    HistoryEventType::TaskSucceeded => "TaskSucceeded",
+    HistoryEventType::TaskTimedOut => "TaskTimedOut",
+    HistoryEventType::WaitStateAborted => "WaitStateAborted",
+    HistoryEventType::WaitStateEntered => "WaitStateEntered",
+    HistoryEventType::WaitStateExited => "WaitStateExited",
+    HistoryEventType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ActivityFailed", "ActivityScheduleFailed", "ActivityScheduled", "ActivityStarted", "ActivitySucceeded", "ActivityTimedOut", "ChoiceStateEntered", "ChoiceStateExited", "ExecutionAborted", "ExecutionFailed", "ExecutionStarted", "ExecutionSucceeded", "ExecutionTimedOut", "FailStateEntered", "LambdaFunctionFailed", "LambdaFunctionScheduleFailed", "LambdaFunctionScheduled", "LambdaFunctionStartFailed", "LambdaFunctionStarted", "LambdaFunctionSucceeded", "LambdaFunctionTimedOut", "MapIterationAborted", "MapIterationFailed", "MapIterationStarted", "MapIterationSucceeded", "MapRunAborted", "MapRunFailed", "MapRunStarted", "MapRunSucceeded", "MapStateAborted", "MapStateEntered", "MapStateExited", "MapStateFailed", "MapStateStarted", "MapStateSucceeded", "ParallelStateAborted", "ParallelStateEntered", "ParallelStateExited", "ParallelStateFailed", "ParallelStateStarted", "ParallelStateSucceeded", "PassStateEntered", "PassStateExited", "SucceedStateEntered", "SucceedStateExited", "TaskFailed", "TaskScheduled", "TaskStartFailed", "TaskStarted", "TaskStateAborted", "TaskStateEntered", "TaskStateExited", "TaskSubmitFailed", "TaskSubmitted", "TaskSucceeded", "TaskTimedOut", "WaitStateAborted", "WaitStateEntered", "WaitStateExited"]
+                }
+            }
 impl AsRef<str> for HistoryEventType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `StateMachineStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5860,14 +5848,14 @@ pub enum StateMachineStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StateMachineStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => StateMachineStatus::Active,
-            "DELETING" => StateMachineStatus::Deleting,
-            other => StateMachineStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => StateMachineStatus::Active,
+"DELETING" => StateMachineStatus::Deleting,
+other => StateMachineStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StateMachineStatus {
                 type Err = std::convert::Infallible;
 
@@ -5876,26 +5864,24 @@ impl std::str::FromStr for StateMachineStatus {
                 }
             }
 impl StateMachineStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StateMachineStatus::Active => "ACTIVE",
-            StateMachineStatus::Deleting => "DELETING",
-            StateMachineStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "DELETING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StateMachineStatus::Active => "ACTIVE",
+    StateMachineStatus::Deleting => "DELETING",
+    StateMachineStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "DELETING"]
+                }
+            }
 impl AsRef<str> for StateMachineStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains details about all of the child workflow executions started by a Map Run.</p>
 #[non_exhaustive]
@@ -6332,16 +6318,16 @@ pub enum MapRunStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MapRunStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ABORTED" => MapRunStatus::Aborted,
-            "FAILED" => MapRunStatus::Failed,
-            "RUNNING" => MapRunStatus::Running,
-            "SUCCEEDED" => MapRunStatus::Succeeded,
-            other => MapRunStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ABORTED" => MapRunStatus::Aborted,
+"FAILED" => MapRunStatus::Failed,
+"RUNNING" => MapRunStatus::Running,
+"SUCCEEDED" => MapRunStatus::Succeeded,
+other => MapRunStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MapRunStatus {
                 type Err = std::convert::Infallible;
 
@@ -6350,26 +6336,24 @@ impl std::str::FromStr for MapRunStatus {
                 }
             }
 impl MapRunStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MapRunStatus::Aborted => "ABORTED",
-            MapRunStatus::Failed => "FAILED",
-            MapRunStatus::Running => "RUNNING",
-            MapRunStatus::Succeeded => "SUCCEEDED",
-            MapRunStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ABORTED", "FAILED", "RUNNING", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MapRunStatus::Aborted => "ABORTED",
+    MapRunStatus::Failed => "FAILED",
+    MapRunStatus::Running => "RUNNING",
+    MapRunStatus::Succeeded => "SUCCEEDED",
+    MapRunStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ABORTED", "FAILED", "RUNNING", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for MapRunStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

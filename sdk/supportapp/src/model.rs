@@ -50,15 +50,15 @@ pub enum NotificationSeverityLevel {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NotificationSeverityLevel {
-    fn from(s: &str) -> Self {
-        match s {
-            "all" => NotificationSeverityLevel::All,
-            "high" => NotificationSeverityLevel::High,
-            "none" => NotificationSeverityLevel::None,
-            other => NotificationSeverityLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "all" => NotificationSeverityLevel::All,
+"high" => NotificationSeverityLevel::High,
+"none" => NotificationSeverityLevel::None,
+other => NotificationSeverityLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NotificationSeverityLevel {
                 type Err = std::convert::Infallible;
 
@@ -67,27 +67,25 @@ impl std::str::FromStr for NotificationSeverityLevel {
                 }
             }
 impl NotificationSeverityLevel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NotificationSeverityLevel::All => "all",
-            NotificationSeverityLevel::High => "high",
-            NotificationSeverityLevel::None => "none",
-            NotificationSeverityLevel::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "all", "high", "none"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NotificationSeverityLevel::All => "all",
+    NotificationSeverityLevel::High => "high",
+    NotificationSeverityLevel::None => "none",
+    NotificationSeverityLevel::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["all", "high", "none"]
+                }
+            }
 impl AsRef<str> for NotificationSeverityLevel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AccountType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -136,14 +134,14 @@ pub enum AccountType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountType {
-    fn from(s: &str) -> Self {
-        match s {
-            "management" => AccountType::Management,
-            "member" => AccountType::Member,
-            other => AccountType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "management" => AccountType::Management,
+"member" => AccountType::Member,
+other => AccountType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AccountType {
                 type Err = std::convert::Infallible;
 
@@ -152,26 +150,24 @@ impl std::str::FromStr for AccountType {
                 }
             }
 impl AccountType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccountType::Management => "management",
-            AccountType::Member => "member",
-            AccountType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "management", "member"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccountType::Management => "management",
+    AccountType::Member => "member",
+    AccountType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["management", "member"]
+                }
+            }
 impl AsRef<str> for AccountType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The configuration for a Slack workspace that you added to an Amazon Web Services account.</p>
 #[non_exhaustive]

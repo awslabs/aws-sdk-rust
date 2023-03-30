@@ -379,29 +379,29 @@ pub enum ErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => ErrorCode::AccessDenied,
-            "AdmissionRequestDenied" => ErrorCode::AdmissionRequestDenied,
-            "ClusterUnreachable" => ErrorCode::ClusterUnreachable,
-            "ConfigurationConflict" => ErrorCode::ConfigurationConflict,
-            "EniLimitReached" => ErrorCode::EniLimitReached,
-            "InsufficientFreeAddresses" => ErrorCode::InsufficientFreeAddresses,
-            "InsufficientNumberOfReplicas" => ErrorCode::InsufficientNumberOfReplicas,
-            "IpNotAvailable" => ErrorCode::IpNotAvailable,
-            "K8sResourceNotFound" => ErrorCode::K8SResourceNotFound,
-            "NodeCreationFailure" => ErrorCode::NodeCreationFailure,
-            "OperationNotPermitted" => ErrorCode::OperationNotPermitted,
-            "PodEvictionFailure" => ErrorCode::PodEvictionFailure,
-            "SecurityGroupNotFound" => ErrorCode::SecurityGroupNotFound,
-            "SubnetNotFound" => ErrorCode::SubnetNotFound,
-            "Unknown" => ErrorCode::UnknownValue,
-            "UnsupportedAddonModification" => ErrorCode::UnsupportedAddonModification,
-            "VpcIdNotFound" => ErrorCode::VpcIdNotFound,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDenied" => ErrorCode::AccessDenied,
+"AdmissionRequestDenied" => ErrorCode::AdmissionRequestDenied,
+"ClusterUnreachable" => ErrorCode::ClusterUnreachable,
+"ConfigurationConflict" => ErrorCode::ConfigurationConflict,
+"EniLimitReached" => ErrorCode::EniLimitReached,
+"InsufficientFreeAddresses" => ErrorCode::InsufficientFreeAddresses,
+"InsufficientNumberOfReplicas" => ErrorCode::InsufficientNumberOfReplicas,
+"IpNotAvailable" => ErrorCode::IpNotAvailable,
+"K8sResourceNotFound" => ErrorCode::K8SResourceNotFound,
+"NodeCreationFailure" => ErrorCode::NodeCreationFailure,
+"OperationNotPermitted" => ErrorCode::OperationNotPermitted,
+"PodEvictionFailure" => ErrorCode::PodEvictionFailure,
+"SecurityGroupNotFound" => ErrorCode::SecurityGroupNotFound,
+"SubnetNotFound" => ErrorCode::SubnetNotFound,
+"Unknown" => ErrorCode::UnknownValue,
+"UnsupportedAddonModification" => ErrorCode::UnsupportedAddonModification,
+"VpcIdNotFound" => ErrorCode::VpcIdNotFound,
+other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -410,41 +410,39 @@ impl std::str::FromStr for ErrorCode {
                 }
             }
 impl ErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ErrorCode::AccessDenied => "AccessDenied",
-            ErrorCode::AdmissionRequestDenied => "AdmissionRequestDenied",
-            ErrorCode::ClusterUnreachable => "ClusterUnreachable",
-            ErrorCode::ConfigurationConflict => "ConfigurationConflict",
-            ErrorCode::EniLimitReached => "EniLimitReached",
-            ErrorCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
-            ErrorCode::InsufficientNumberOfReplicas => "InsufficientNumberOfReplicas",
-            ErrorCode::IpNotAvailable => "IpNotAvailable",
-            ErrorCode::K8SResourceNotFound => "K8sResourceNotFound",
-            ErrorCode::NodeCreationFailure => "NodeCreationFailure",
-            ErrorCode::OperationNotPermitted => "OperationNotPermitted",
-            ErrorCode::PodEvictionFailure => "PodEvictionFailure",
-            ErrorCode::SecurityGroupNotFound => "SecurityGroupNotFound",
-            ErrorCode::SubnetNotFound => "SubnetNotFound",
-            ErrorCode::UnknownValue => "Unknown",
-            ErrorCode::UnsupportedAddonModification => "UnsupportedAddonModification",
-            ErrorCode::VpcIdNotFound => "VpcIdNotFound",
-            ErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied", "AdmissionRequestDenied", "ClusterUnreachable", "ConfigurationConflict", "EniLimitReached", "InsufficientFreeAddresses", "InsufficientNumberOfReplicas", "IpNotAvailable", "K8sResourceNotFound", "NodeCreationFailure", "OperationNotPermitted", "PodEvictionFailure", "SecurityGroupNotFound", "SubnetNotFound", "Unknown", "UnsupportedAddonModification", "VpcIdNotFound"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ErrorCode::AccessDenied => "AccessDenied",
+    ErrorCode::AdmissionRequestDenied => "AdmissionRequestDenied",
+    ErrorCode::ClusterUnreachable => "ClusterUnreachable",
+    ErrorCode::ConfigurationConflict => "ConfigurationConflict",
+    ErrorCode::EniLimitReached => "EniLimitReached",
+    ErrorCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
+    ErrorCode::InsufficientNumberOfReplicas => "InsufficientNumberOfReplicas",
+    ErrorCode::IpNotAvailable => "IpNotAvailable",
+    ErrorCode::K8SResourceNotFound => "K8sResourceNotFound",
+    ErrorCode::NodeCreationFailure => "NodeCreationFailure",
+    ErrorCode::OperationNotPermitted => "OperationNotPermitted",
+    ErrorCode::PodEvictionFailure => "PodEvictionFailure",
+    ErrorCode::SecurityGroupNotFound => "SecurityGroupNotFound",
+    ErrorCode::SubnetNotFound => "SubnetNotFound",
+    ErrorCode::UnknownValue => "Unknown",
+    ErrorCode::UnsupportedAddonModification => "UnsupportedAddonModification",
+    ErrorCode::VpcIdNotFound => "VpcIdNotFound",
+    ErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "AdmissionRequestDenied", "ClusterUnreachable", "ConfigurationConflict", "EniLimitReached", "InsufficientFreeAddresses", "InsufficientNumberOfReplicas", "IpNotAvailable", "K8sResourceNotFound", "NodeCreationFailure", "OperationNotPermitted", "PodEvictionFailure", "SecurityGroupNotFound", "SubnetNotFound", "Unknown", "UnsupportedAddonModification", "VpcIdNotFound"]
+                }
+            }
 impl AsRef<str> for ErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing the details of an update request.</p>
 #[non_exhaustive]
@@ -625,35 +623,35 @@ pub enum UpdateParamType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateParamType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AddonVersion" => UpdateParamType::AddonVersion,
-            "ClusterLogging" => UpdateParamType::ClusterLogging,
-            "DesiredSize" => UpdateParamType::DesiredSize,
-            "EncryptionConfig" => UpdateParamType::EncryptionConfig,
-            "EndpointPrivateAccess" => UpdateParamType::EndpointPrivateAccess,
-            "EndpointPublicAccess" => UpdateParamType::EndpointPublicAccess,
-            "IdentityProviderConfig" => UpdateParamType::IdentityProviderConfig,
-            "LabelsToAdd" => UpdateParamType::LabelsToAdd,
-            "LabelsToRemove" => UpdateParamType::LabelsToRemove,
-            "LaunchTemplateName" => UpdateParamType::LaunchTemplateName,
-            "LaunchTemplateVersion" => UpdateParamType::LaunchTemplateVersion,
-            "MaxSize" => UpdateParamType::MaxSize,
-            "MaxUnavailable" => UpdateParamType::MaxUnavailable,
-            "MaxUnavailablePercentage" => UpdateParamType::MaxUnavailablePercentage,
-            "MinSize" => UpdateParamType::MinSize,
-            "PlatformVersion" => UpdateParamType::PlatformVersion,
-            "PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
-            "ReleaseVersion" => UpdateParamType::ReleaseVersion,
-            "ResolveConflicts" => UpdateParamType::ResolveConflicts,
-            "ServiceAccountRoleArn" => UpdateParamType::ServiceAccountRoleArn,
-            "TaintsToAdd" => UpdateParamType::TaintsToAdd,
-            "TaintsToRemove" => UpdateParamType::TaintsToRemove,
-            "Version" => UpdateParamType::Version,
-            other => UpdateParamType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AddonVersion" => UpdateParamType::AddonVersion,
+"ClusterLogging" => UpdateParamType::ClusterLogging,
+"DesiredSize" => UpdateParamType::DesiredSize,
+"EncryptionConfig" => UpdateParamType::EncryptionConfig,
+"EndpointPrivateAccess" => UpdateParamType::EndpointPrivateAccess,
+"EndpointPublicAccess" => UpdateParamType::EndpointPublicAccess,
+"IdentityProviderConfig" => UpdateParamType::IdentityProviderConfig,
+"LabelsToAdd" => UpdateParamType::LabelsToAdd,
+"LabelsToRemove" => UpdateParamType::LabelsToRemove,
+"LaunchTemplateName" => UpdateParamType::LaunchTemplateName,
+"LaunchTemplateVersion" => UpdateParamType::LaunchTemplateVersion,
+"MaxSize" => UpdateParamType::MaxSize,
+"MaxUnavailable" => UpdateParamType::MaxUnavailable,
+"MaxUnavailablePercentage" => UpdateParamType::MaxUnavailablePercentage,
+"MinSize" => UpdateParamType::MinSize,
+"PlatformVersion" => UpdateParamType::PlatformVersion,
+"PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
+"ReleaseVersion" => UpdateParamType::ReleaseVersion,
+"ResolveConflicts" => UpdateParamType::ResolveConflicts,
+"ServiceAccountRoleArn" => UpdateParamType::ServiceAccountRoleArn,
+"TaintsToAdd" => UpdateParamType::TaintsToAdd,
+"TaintsToRemove" => UpdateParamType::TaintsToRemove,
+"Version" => UpdateParamType::Version,
+other => UpdateParamType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UpdateParamType {
                 type Err = std::convert::Infallible;
 
@@ -662,47 +660,45 @@ impl std::str::FromStr for UpdateParamType {
                 }
             }
 impl UpdateParamType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateParamType::AddonVersion => "AddonVersion",
-            UpdateParamType::ClusterLogging => "ClusterLogging",
-            UpdateParamType::DesiredSize => "DesiredSize",
-            UpdateParamType::EncryptionConfig => "EncryptionConfig",
-            UpdateParamType::EndpointPrivateAccess => "EndpointPrivateAccess",
-            UpdateParamType::EndpointPublicAccess => "EndpointPublicAccess",
-            UpdateParamType::IdentityProviderConfig => "IdentityProviderConfig",
-            UpdateParamType::LabelsToAdd => "LabelsToAdd",
-            UpdateParamType::LabelsToRemove => "LabelsToRemove",
-            UpdateParamType::LaunchTemplateName => "LaunchTemplateName",
-            UpdateParamType::LaunchTemplateVersion => "LaunchTemplateVersion",
-            UpdateParamType::MaxSize => "MaxSize",
-            UpdateParamType::MaxUnavailable => "MaxUnavailable",
-            UpdateParamType::MaxUnavailablePercentage => "MaxUnavailablePercentage",
-            UpdateParamType::MinSize => "MinSize",
-            UpdateParamType::PlatformVersion => "PlatformVersion",
-            UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
-            UpdateParamType::ReleaseVersion => "ReleaseVersion",
-            UpdateParamType::ResolveConflicts => "ResolveConflicts",
-            UpdateParamType::ServiceAccountRoleArn => "ServiceAccountRoleArn",
-            UpdateParamType::TaintsToAdd => "TaintsToAdd",
-            UpdateParamType::TaintsToRemove => "TaintsToRemove",
-            UpdateParamType::Version => "Version",
-            UpdateParamType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AddonVersion", "ClusterLogging", "DesiredSize", "EncryptionConfig", "EndpointPrivateAccess", "EndpointPublicAccess", "IdentityProviderConfig", "LabelsToAdd", "LabelsToRemove", "LaunchTemplateName", "LaunchTemplateVersion", "MaxSize", "MaxUnavailable", "MaxUnavailablePercentage", "MinSize", "PlatformVersion", "PublicAccessCidrs", "ReleaseVersion", "ResolveConflicts", "ServiceAccountRoleArn", "TaintsToAdd", "TaintsToRemove", "Version"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UpdateParamType::AddonVersion => "AddonVersion",
+    UpdateParamType::ClusterLogging => "ClusterLogging",
+    UpdateParamType::DesiredSize => "DesiredSize",
+    UpdateParamType::EncryptionConfig => "EncryptionConfig",
+    UpdateParamType::EndpointPrivateAccess => "EndpointPrivateAccess",
+    UpdateParamType::EndpointPublicAccess => "EndpointPublicAccess",
+    UpdateParamType::IdentityProviderConfig => "IdentityProviderConfig",
+    UpdateParamType::LabelsToAdd => "LabelsToAdd",
+    UpdateParamType::LabelsToRemove => "LabelsToRemove",
+    UpdateParamType::LaunchTemplateName => "LaunchTemplateName",
+    UpdateParamType::LaunchTemplateVersion => "LaunchTemplateVersion",
+    UpdateParamType::MaxSize => "MaxSize",
+    UpdateParamType::MaxUnavailable => "MaxUnavailable",
+    UpdateParamType::MaxUnavailablePercentage => "MaxUnavailablePercentage",
+    UpdateParamType::MinSize => "MinSize",
+    UpdateParamType::PlatformVersion => "PlatformVersion",
+    UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
+    UpdateParamType::ReleaseVersion => "ReleaseVersion",
+    UpdateParamType::ResolveConflicts => "ResolveConflicts",
+    UpdateParamType::ServiceAccountRoleArn => "ServiceAccountRoleArn",
+    UpdateParamType::TaintsToAdd => "TaintsToAdd",
+    UpdateParamType::TaintsToRemove => "TaintsToRemove",
+    UpdateParamType::Version => "Version",
+    UpdateParamType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AddonVersion", "ClusterLogging", "DesiredSize", "EncryptionConfig", "EndpointPrivateAccess", "EndpointPublicAccess", "IdentityProviderConfig", "LabelsToAdd", "LabelsToRemove", "LaunchTemplateName", "LaunchTemplateVersion", "MaxSize", "MaxUnavailable", "MaxUnavailablePercentage", "MinSize", "PlatformVersion", "PublicAccessCidrs", "ReleaseVersion", "ResolveConflicts", "ServiceAccountRoleArn", "TaintsToAdd", "TaintsToRemove", "Version"]
+                }
+            }
 impl AsRef<str> for UpdateParamType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `UpdateType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -769,20 +765,20 @@ pub enum UpdateType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AddonUpdate" => UpdateType::AddonUpdate,
-            "AssociateEncryptionConfig" => UpdateType::AssociateEncryptionConfig,
-            "AssociateIdentityProviderConfig" => UpdateType::AssociateIdentityProviderConfig,
-            "ConfigUpdate" => UpdateType::ConfigUpdate,
-            "DisassociateIdentityProviderConfig" => UpdateType::DisassociateIdentityProviderConfig,
-            "EndpointAccessUpdate" => UpdateType::EndpointAccessUpdate,
-            "LoggingUpdate" => UpdateType::LoggingUpdate,
-            "VersionUpdate" => UpdateType::VersionUpdate,
-            other => UpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AddonUpdate" => UpdateType::AddonUpdate,
+"AssociateEncryptionConfig" => UpdateType::AssociateEncryptionConfig,
+"AssociateIdentityProviderConfig" => UpdateType::AssociateIdentityProviderConfig,
+"ConfigUpdate" => UpdateType::ConfigUpdate,
+"DisassociateIdentityProviderConfig" => UpdateType::DisassociateIdentityProviderConfig,
+"EndpointAccessUpdate" => UpdateType::EndpointAccessUpdate,
+"LoggingUpdate" => UpdateType::LoggingUpdate,
+"VersionUpdate" => UpdateType::VersionUpdate,
+other => UpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UpdateType {
                 type Err = std::convert::Infallible;
 
@@ -791,32 +787,30 @@ impl std::str::FromStr for UpdateType {
                 }
             }
 impl UpdateType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateType::AddonUpdate => "AddonUpdate",
-            UpdateType::AssociateEncryptionConfig => "AssociateEncryptionConfig",
-            UpdateType::AssociateIdentityProviderConfig => "AssociateIdentityProviderConfig",
-            UpdateType::ConfigUpdate => "ConfigUpdate",
-            UpdateType::DisassociateIdentityProviderConfig => "DisassociateIdentityProviderConfig",
-            UpdateType::EndpointAccessUpdate => "EndpointAccessUpdate",
-            UpdateType::LoggingUpdate => "LoggingUpdate",
-            UpdateType::VersionUpdate => "VersionUpdate",
-            UpdateType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AddonUpdate", "AssociateEncryptionConfig", "AssociateIdentityProviderConfig", "ConfigUpdate", "DisassociateIdentityProviderConfig", "EndpointAccessUpdate", "LoggingUpdate", "VersionUpdate"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UpdateType::AddonUpdate => "AddonUpdate",
+    UpdateType::AssociateEncryptionConfig => "AssociateEncryptionConfig",
+    UpdateType::AssociateIdentityProviderConfig => "AssociateIdentityProviderConfig",
+    UpdateType::ConfigUpdate => "ConfigUpdate",
+    UpdateType::DisassociateIdentityProviderConfig => "DisassociateIdentityProviderConfig",
+    UpdateType::EndpointAccessUpdate => "EndpointAccessUpdate",
+    UpdateType::LoggingUpdate => "LoggingUpdate",
+    UpdateType::VersionUpdate => "VersionUpdate",
+    UpdateType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AddonUpdate", "AssociateEncryptionConfig", "AssociateIdentityProviderConfig", "ConfigUpdate", "DisassociateIdentityProviderConfig", "EndpointAccessUpdate", "LoggingUpdate", "VersionUpdate"]
+                }
+            }
 impl AsRef<str> for UpdateType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `UpdateStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -871,16 +865,16 @@ pub enum UpdateStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Cancelled" => UpdateStatus::Cancelled,
-            "Failed" => UpdateStatus::Failed,
-            "InProgress" => UpdateStatus::InProgress,
-            "Successful" => UpdateStatus::Successful,
-            other => UpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Cancelled" => UpdateStatus::Cancelled,
+"Failed" => UpdateStatus::Failed,
+"InProgress" => UpdateStatus::InProgress,
+"Successful" => UpdateStatus::Successful,
+other => UpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UpdateStatus {
                 type Err = std::convert::Infallible;
 
@@ -889,28 +883,26 @@ impl std::str::FromStr for UpdateStatus {
                 }
             }
 impl UpdateStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateStatus::Cancelled => "Cancelled",
-            UpdateStatus::Failed => "Failed",
-            UpdateStatus::InProgress => "InProgress",
-            UpdateStatus::Successful => "Successful",
-            UpdateStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Cancelled", "Failed", "InProgress", "Successful"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UpdateStatus::Cancelled => "Cancelled",
+    UpdateStatus::Failed => "Failed",
+    UpdateStatus::InProgress => "InProgress",
+    UpdateStatus::Successful => "Successful",
+    UpdateStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Cancelled", "Failed", "InProgress", "Successful"]
+                }
+            }
 impl AsRef<str> for UpdateStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing a node group launch template specification. The launch template can't include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html"> <code>RequestSpotInstances</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html"> <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p> 
 /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
@@ -1401,15 +1393,15 @@ pub enum TaintEffect {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TaintEffect {
-    fn from(s: &str) -> Self {
-        match s {
-            "NO_EXECUTE" => TaintEffect::NoExecute,
-            "NO_SCHEDULE" => TaintEffect::NoSchedule,
-            "PREFER_NO_SCHEDULE" => TaintEffect::PreferNoSchedule,
-            other => TaintEffect::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NO_EXECUTE" => TaintEffect::NoExecute,
+"NO_SCHEDULE" => TaintEffect::NoSchedule,
+"PREFER_NO_SCHEDULE" => TaintEffect::PreferNoSchedule,
+other => TaintEffect::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TaintEffect {
                 type Err = std::convert::Infallible;
 
@@ -1418,27 +1410,25 @@ impl std::str::FromStr for TaintEffect {
                 }
             }
 impl TaintEffect {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TaintEffect::NoExecute => "NO_EXECUTE",
-            TaintEffect::NoSchedule => "NO_SCHEDULE",
-            TaintEffect::PreferNoSchedule => "PREFER_NO_SCHEDULE",
-            TaintEffect::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NO_EXECUTE", "NO_SCHEDULE", "PREFER_NO_SCHEDULE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TaintEffect::NoExecute => "NO_EXECUTE",
+    TaintEffect::NoSchedule => "NO_SCHEDULE",
+    TaintEffect::PreferNoSchedule => "PREFER_NO_SCHEDULE",
+    TaintEffect::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NO_EXECUTE", "NO_SCHEDULE", "PREFER_NO_SCHEDULE"]
+                }
+            }
 impl AsRef<str> for TaintEffect {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing a Kubernetes label change for a managed node group.</p>
 #[non_exhaustive]
@@ -1708,17 +1698,17 @@ pub enum LogType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LogType {
-    fn from(s: &str) -> Self {
-        match s {
-            "api" => LogType::Api,
-            "audit" => LogType::Audit,
-            "authenticator" => LogType::Authenticator,
-            "controllerManager" => LogType::ControllerManager,
-            "scheduler" => LogType::Scheduler,
-            other => LogType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "api" => LogType::Api,
+"audit" => LogType::Audit,
+"authenticator" => LogType::Authenticator,
+"controllerManager" => LogType::ControllerManager,
+"scheduler" => LogType::Scheduler,
+other => LogType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LogType {
                 type Err = std::convert::Infallible;
 
@@ -1727,29 +1717,27 @@ impl std::str::FromStr for LogType {
                 }
             }
 impl LogType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LogType::Api => "api",
-            LogType::Audit => "audit",
-            LogType::Authenticator => "authenticator",
-            LogType::ControllerManager => "controllerManager",
-            LogType::Scheduler => "scheduler",
-            LogType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "api", "audit", "authenticator", "controllerManager", "scheduler"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LogType::Api => "api",
+    LogType::Audit => "audit",
+    LogType::Authenticator => "authenticator",
+    LogType::ControllerManager => "controllerManager",
+    LogType::Scheduler => "scheduler",
+    LogType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["api", "audit", "authenticator", "controllerManager", "scheduler"]
+                }
+            }
 impl AsRef<str> for LogType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
 #[non_exhaustive]
@@ -1945,15 +1933,15 @@ pub enum ResolveConflicts {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResolveConflicts {
-    fn from(s: &str) -> Self {
-        match s {
-            "NONE" => ResolveConflicts::None,
-            "OVERWRITE" => ResolveConflicts::Overwrite,
-            "PRESERVE" => ResolveConflicts::Preserve,
-            other => ResolveConflicts::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NONE" => ResolveConflicts::None,
+"OVERWRITE" => ResolveConflicts::Overwrite,
+"PRESERVE" => ResolveConflicts::Preserve,
+other => ResolveConflicts::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResolveConflicts {
                 type Err = std::convert::Infallible;
 
@@ -1962,27 +1950,25 @@ impl std::str::FromStr for ResolveConflicts {
                 }
             }
 impl ResolveConflicts {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResolveConflicts::None => "NONE",
-            ResolveConflicts::Overwrite => "OVERWRITE",
-            ResolveConflicts::Preserve => "PRESERVE",
-            ResolveConflicts::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NONE", "OVERWRITE", "PRESERVE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResolveConflicts::None => "NONE",
+    ResolveConflicts::Overwrite => "OVERWRITE",
+    ResolveConflicts::Preserve => "PRESERVE",
+    ResolveConflicts::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NONE", "OVERWRITE", "PRESERVE"]
+                }
+            }
 impl AsRef<str> for ResolveConflicts {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing an Amazon EKS cluster.</p>
 #[non_exhaustive]
@@ -2760,18 +2746,18 @@ pub enum ClusterIssueCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClusterIssueCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => ClusterIssueCode::AccessDenied,
-            "ClusterUnreachable" => ClusterIssueCode::ClusterUnreachable,
-            "ConfigurationConflict" => ClusterIssueCode::ConfigurationConflict,
-            "InternalFailure" => ClusterIssueCode::InternalFailure,
-            "ResourceLimitExceeded" => ClusterIssueCode::ResourceLimitExceeded,
-            "ResourceNotFound" => ClusterIssueCode::ResourceNotFound,
-            other => ClusterIssueCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDenied" => ClusterIssueCode::AccessDenied,
+"ClusterUnreachable" => ClusterIssueCode::ClusterUnreachable,
+"ConfigurationConflict" => ClusterIssueCode::ConfigurationConflict,
+"InternalFailure" => ClusterIssueCode::InternalFailure,
+"ResourceLimitExceeded" => ClusterIssueCode::ResourceLimitExceeded,
+"ResourceNotFound" => ClusterIssueCode::ResourceNotFound,
+other => ClusterIssueCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ClusterIssueCode {
                 type Err = std::convert::Infallible;
 
@@ -2780,30 +2766,28 @@ impl std::str::FromStr for ClusterIssueCode {
                 }
             }
 impl ClusterIssueCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ClusterIssueCode::AccessDenied => "AccessDenied",
-            ClusterIssueCode::ClusterUnreachable => "ClusterUnreachable",
-            ClusterIssueCode::ConfigurationConflict => "ConfigurationConflict",
-            ClusterIssueCode::InternalFailure => "InternalFailure",
-            ClusterIssueCode::ResourceLimitExceeded => "ResourceLimitExceeded",
-            ClusterIssueCode::ResourceNotFound => "ResourceNotFound",
-            ClusterIssueCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied", "ClusterUnreachable", "ConfigurationConflict", "InternalFailure", "ResourceLimitExceeded", "ResourceNotFound"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ClusterIssueCode::AccessDenied => "AccessDenied",
+    ClusterIssueCode::ClusterUnreachable => "ClusterUnreachable",
+    ClusterIssueCode::ConfigurationConflict => "ConfigurationConflict",
+    ClusterIssueCode::InternalFailure => "InternalFailure",
+    ClusterIssueCode::ResourceLimitExceeded => "ResourceLimitExceeded",
+    ClusterIssueCode::ResourceNotFound => "ResourceNotFound",
+    ClusterIssueCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "ClusterUnreachable", "ConfigurationConflict", "InternalFailure", "ResourceLimitExceeded", "ResourceNotFound"]
+                }
+            }
 impl AsRef<str> for ClusterIssueCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The full description of your connected cluster.</p>
 #[non_exhaustive]
@@ -3165,18 +3149,18 @@ pub enum ClusterStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClusterStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ClusterStatus::Active,
-            "CREATING" => ClusterStatus::Creating,
-            "DELETING" => ClusterStatus::Deleting,
-            "FAILED" => ClusterStatus::Failed,
-            "PENDING" => ClusterStatus::Pending,
-            "UPDATING" => ClusterStatus::Updating,
-            other => ClusterStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ClusterStatus::Active,
+"CREATING" => ClusterStatus::Creating,
+"DELETING" => ClusterStatus::Deleting,
+"FAILED" => ClusterStatus::Failed,
+"PENDING" => ClusterStatus::Pending,
+"UPDATING" => ClusterStatus::Updating,
+other => ClusterStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ClusterStatus {
                 type Err = std::convert::Infallible;
 
@@ -3185,30 +3169,28 @@ impl std::str::FromStr for ClusterStatus {
                 }
             }
 impl ClusterStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ClusterStatus::Active => "ACTIVE",
-            ClusterStatus::Creating => "CREATING",
-            ClusterStatus::Deleting => "DELETING",
-            ClusterStatus::Failed => "FAILED",
-            ClusterStatus::Pending => "PENDING",
-            ClusterStatus::Updating => "UPDATING",
-            ClusterStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETING", "FAILED", "PENDING", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ClusterStatus::Active => "ACTIVE",
+    ClusterStatus::Creating => "CREATING",
+    ClusterStatus::Deleting => "DELETING",
+    ClusterStatus::Failed => "FAILED",
+    ClusterStatus::Pending => "PENDING",
+    ClusterStatus::Updating => "UPDATING",
+    ClusterStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETING", "FAILED", "PENDING", "UPDATING"]
+                }
+            }
 impl AsRef<str> for ClusterStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing an identity provider.</p>
 #[non_exhaustive]
@@ -3445,14 +3427,14 @@ pub enum IpFamily {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IpFamily {
-    fn from(s: &str) -> Self {
-        match s {
-            "ipv4" => IpFamily::Ipv4,
-            "ipv6" => IpFamily::Ipv6,
-            other => IpFamily::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ipv4" => IpFamily::Ipv4,
+"ipv6" => IpFamily::Ipv6,
+other => IpFamily::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for IpFamily {
                 type Err = std::convert::Infallible;
 
@@ -3461,26 +3443,24 @@ impl std::str::FromStr for IpFamily {
                 }
             }
 impl IpFamily {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IpFamily::Ipv4 => "ipv4",
-            IpFamily::Ipv6 => "ipv6",
-            IpFamily::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ipv4", "ipv6"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IpFamily::Ipv4 => "ipv4",
+    IpFamily::Ipv6 => "ipv6",
+    IpFamily::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ipv4", "ipv6"]
+                }
+            }
 impl AsRef<str> for IpFamily {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing an Amazon EKS cluster VPC configuration response.</p>
 #[non_exhaustive]
@@ -3803,21 +3783,21 @@ pub enum ConnectorConfigProvider {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectorConfigProvider {
-    fn from(s: &str) -> Self {
-        match s {
-            "AKS" => ConnectorConfigProvider::Aks,
-            "ANTHOS" => ConnectorConfigProvider::Anthos,
-            "EC2" => ConnectorConfigProvider::Ec2,
-            "EKS_ANYWHERE" => ConnectorConfigProvider::EksAnywhere,
-            "GKE" => ConnectorConfigProvider::Gke,
-            "OPENSHIFT" => ConnectorConfigProvider::Openshift,
-            "OTHER" => ConnectorConfigProvider::Other,
-            "RANCHER" => ConnectorConfigProvider::Rancher,
-            "TANZU" => ConnectorConfigProvider::Tanzu,
-            other => ConnectorConfigProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AKS" => ConnectorConfigProvider::Aks,
+"ANTHOS" => ConnectorConfigProvider::Anthos,
+"EC2" => ConnectorConfigProvider::Ec2,
+"EKS_ANYWHERE" => ConnectorConfigProvider::EksAnywhere,
+"GKE" => ConnectorConfigProvider::Gke,
+"OPENSHIFT" => ConnectorConfigProvider::Openshift,
+"OTHER" => ConnectorConfigProvider::Other,
+"RANCHER" => ConnectorConfigProvider::Rancher,
+"TANZU" => ConnectorConfigProvider::Tanzu,
+other => ConnectorConfigProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConnectorConfigProvider {
                 type Err = std::convert::Infallible;
 
@@ -3826,33 +3806,31 @@ impl std::str::FromStr for ConnectorConfigProvider {
                 }
             }
 impl ConnectorConfigProvider {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectorConfigProvider::Aks => "AKS",
-            ConnectorConfigProvider::Anthos => "ANTHOS",
-            ConnectorConfigProvider::Ec2 => "EC2",
-            ConnectorConfigProvider::EksAnywhere => "EKS_ANYWHERE",
-            ConnectorConfigProvider::Gke => "GKE",
-            ConnectorConfigProvider::Openshift => "OPENSHIFT",
-            ConnectorConfigProvider::Other => "OTHER",
-            ConnectorConfigProvider::Rancher => "RANCHER",
-            ConnectorConfigProvider::Tanzu => "TANZU",
-            ConnectorConfigProvider::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AKS", "ANTHOS", "EC2", "EKS_ANYWHERE", "GKE", "OPENSHIFT", "OTHER", "RANCHER", "TANZU"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectorConfigProvider::Aks => "AKS",
+    ConnectorConfigProvider::Anthos => "ANTHOS",
+    ConnectorConfigProvider::Ec2 => "EC2",
+    ConnectorConfigProvider::EksAnywhere => "EKS_ANYWHERE",
+    ConnectorConfigProvider::Gke => "GKE",
+    ConnectorConfigProvider::Openshift => "OPENSHIFT",
+    ConnectorConfigProvider::Other => "OTHER",
+    ConnectorConfigProvider::Rancher => "RANCHER",
+    ConnectorConfigProvider::Tanzu => "TANZU",
+    ConnectorConfigProvider::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AKS", "ANTHOS", "EC2", "EKS_ANYWHERE", "GKE", "OPENSHIFT", "OTHER", "RANCHER", "TANZU"]
+                }
+            }
 impl AsRef<str> for ConnectorConfigProvider {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing an identity provider configuration.</p>
 #[non_exhaustive]
@@ -4745,31 +4723,31 @@ pub enum NodegroupIssueCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NodegroupIssueCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => NodegroupIssueCode::AccessDenied,
-            "AsgInstanceLaunchFailures" => NodegroupIssueCode::AsgInstanceLaunchFailures,
-            "AutoScalingGroupInvalidConfiguration" => NodegroupIssueCode::AutoScalingGroupInvalidConfiguration,
-            "AutoScalingGroupNotFound" => NodegroupIssueCode::AutoScalingGroupNotFound,
-            "ClusterUnreachable" => NodegroupIssueCode::ClusterUnreachable,
-            "Ec2LaunchTemplateNotFound" => NodegroupIssueCode::Ec2LaunchTemplateNotFound,
-            "Ec2LaunchTemplateVersionMismatch" => NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch,
-            "Ec2SecurityGroupDeletionFailure" => NodegroupIssueCode::Ec2SecurityGroupDeletionFailure,
-            "Ec2SecurityGroupNotFound" => NodegroupIssueCode::Ec2SecurityGroupNotFound,
-            "Ec2SubnetInvalidConfiguration" => NodegroupIssueCode::Ec2SubnetInvalidConfiguration,
-            "Ec2SubnetMissingIpv6Assignment" => NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment,
-            "Ec2SubnetNotFound" => NodegroupIssueCode::Ec2SubnetNotFound,
-            "IamInstanceProfileNotFound" => NodegroupIssueCode::IamInstanceProfileNotFound,
-            "IamLimitExceeded" => NodegroupIssueCode::IamLimitExceeded,
-            "IamNodeRoleNotFound" => NodegroupIssueCode::IamNodeRoleNotFound,
-            "InstanceLimitExceeded" => NodegroupIssueCode::InstanceLimitExceeded,
-            "InsufficientFreeAddresses" => NodegroupIssueCode::InsufficientFreeAddresses,
-            "InternalFailure" => NodegroupIssueCode::InternalFailure,
-            "NodeCreationFailure" => NodegroupIssueCode::NodeCreationFailure,
-            other => NodegroupIssueCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDenied" => NodegroupIssueCode::AccessDenied,
+"AsgInstanceLaunchFailures" => NodegroupIssueCode::AsgInstanceLaunchFailures,
+"AutoScalingGroupInvalidConfiguration" => NodegroupIssueCode::AutoScalingGroupInvalidConfiguration,
+"AutoScalingGroupNotFound" => NodegroupIssueCode::AutoScalingGroupNotFound,
+"ClusterUnreachable" => NodegroupIssueCode::ClusterUnreachable,
+"Ec2LaunchTemplateNotFound" => NodegroupIssueCode::Ec2LaunchTemplateNotFound,
+"Ec2LaunchTemplateVersionMismatch" => NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch,
+"Ec2SecurityGroupDeletionFailure" => NodegroupIssueCode::Ec2SecurityGroupDeletionFailure,
+"Ec2SecurityGroupNotFound" => NodegroupIssueCode::Ec2SecurityGroupNotFound,
+"Ec2SubnetInvalidConfiguration" => NodegroupIssueCode::Ec2SubnetInvalidConfiguration,
+"Ec2SubnetMissingIpv6Assignment" => NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment,
+"Ec2SubnetNotFound" => NodegroupIssueCode::Ec2SubnetNotFound,
+"IamInstanceProfileNotFound" => NodegroupIssueCode::IamInstanceProfileNotFound,
+"IamLimitExceeded" => NodegroupIssueCode::IamLimitExceeded,
+"IamNodeRoleNotFound" => NodegroupIssueCode::IamNodeRoleNotFound,
+"InstanceLimitExceeded" => NodegroupIssueCode::InstanceLimitExceeded,
+"InsufficientFreeAddresses" => NodegroupIssueCode::InsufficientFreeAddresses,
+"InternalFailure" => NodegroupIssueCode::InternalFailure,
+"NodeCreationFailure" => NodegroupIssueCode::NodeCreationFailure,
+other => NodegroupIssueCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NodegroupIssueCode {
                 type Err = std::convert::Infallible;
 
@@ -4778,43 +4756,41 @@ impl std::str::FromStr for NodegroupIssueCode {
                 }
             }
 impl NodegroupIssueCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NodegroupIssueCode::AccessDenied => "AccessDenied",
-            NodegroupIssueCode::AsgInstanceLaunchFailures => "AsgInstanceLaunchFailures",
-            NodegroupIssueCode::AutoScalingGroupInvalidConfiguration => "AutoScalingGroupInvalidConfiguration",
-            NodegroupIssueCode::AutoScalingGroupNotFound => "AutoScalingGroupNotFound",
-            NodegroupIssueCode::ClusterUnreachable => "ClusterUnreachable",
-            NodegroupIssueCode::Ec2LaunchTemplateNotFound => "Ec2LaunchTemplateNotFound",
-            NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => "Ec2LaunchTemplateVersionMismatch",
-            NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => "Ec2SecurityGroupDeletionFailure",
-            NodegroupIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
-            NodegroupIssueCode::Ec2SubnetInvalidConfiguration => "Ec2SubnetInvalidConfiguration",
-            NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment => "Ec2SubnetMissingIpv6Assignment",
-            NodegroupIssueCode::Ec2SubnetNotFound => "Ec2SubnetNotFound",
-            NodegroupIssueCode::IamInstanceProfileNotFound => "IamInstanceProfileNotFound",
-            NodegroupIssueCode::IamLimitExceeded => "IamLimitExceeded",
-            NodegroupIssueCode::IamNodeRoleNotFound => "IamNodeRoleNotFound",
-            NodegroupIssueCode::InstanceLimitExceeded => "InstanceLimitExceeded",
-            NodegroupIssueCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
-            NodegroupIssueCode::InternalFailure => "InternalFailure",
-            NodegroupIssueCode::NodeCreationFailure => "NodeCreationFailure",
-            NodegroupIssueCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied", "AsgInstanceLaunchFailures", "AutoScalingGroupInvalidConfiguration", "AutoScalingGroupNotFound", "ClusterUnreachable", "Ec2LaunchTemplateNotFound", "Ec2LaunchTemplateVersionMismatch", "Ec2SecurityGroupDeletionFailure", "Ec2SecurityGroupNotFound", "Ec2SubnetInvalidConfiguration", "Ec2SubnetMissingIpv6Assignment", "Ec2SubnetNotFound", "IamInstanceProfileNotFound", "IamLimitExceeded", "IamNodeRoleNotFound", "InstanceLimitExceeded", "InsufficientFreeAddresses", "InternalFailure", "NodeCreationFailure"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NodegroupIssueCode::AccessDenied => "AccessDenied",
+    NodegroupIssueCode::AsgInstanceLaunchFailures => "AsgInstanceLaunchFailures",
+    NodegroupIssueCode::AutoScalingGroupInvalidConfiguration => "AutoScalingGroupInvalidConfiguration",
+    NodegroupIssueCode::AutoScalingGroupNotFound => "AutoScalingGroupNotFound",
+    NodegroupIssueCode::ClusterUnreachable => "ClusterUnreachable",
+    NodegroupIssueCode::Ec2LaunchTemplateNotFound => "Ec2LaunchTemplateNotFound",
+    NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => "Ec2LaunchTemplateVersionMismatch",
+    NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => "Ec2SecurityGroupDeletionFailure",
+    NodegroupIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
+    NodegroupIssueCode::Ec2SubnetInvalidConfiguration => "Ec2SubnetInvalidConfiguration",
+    NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment => "Ec2SubnetMissingIpv6Assignment",
+    NodegroupIssueCode::Ec2SubnetNotFound => "Ec2SubnetNotFound",
+    NodegroupIssueCode::IamInstanceProfileNotFound => "IamInstanceProfileNotFound",
+    NodegroupIssueCode::IamLimitExceeded => "IamLimitExceeded",
+    NodegroupIssueCode::IamNodeRoleNotFound => "IamNodeRoleNotFound",
+    NodegroupIssueCode::InstanceLimitExceeded => "InstanceLimitExceeded",
+    NodegroupIssueCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
+    NodegroupIssueCode::InternalFailure => "InternalFailure",
+    NodegroupIssueCode::NodeCreationFailure => "NodeCreationFailure",
+    NodegroupIssueCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "AsgInstanceLaunchFailures", "AutoScalingGroupInvalidConfiguration", "AutoScalingGroupNotFound", "ClusterUnreachable", "Ec2LaunchTemplateNotFound", "Ec2LaunchTemplateVersionMismatch", "Ec2SecurityGroupDeletionFailure", "Ec2SecurityGroupNotFound", "Ec2SubnetInvalidConfiguration", "Ec2SubnetMissingIpv6Assignment", "Ec2SubnetNotFound", "IamInstanceProfileNotFound", "IamLimitExceeded", "IamNodeRoleNotFound", "InstanceLimitExceeded", "InsufficientFreeAddresses", "InternalFailure", "NodeCreationFailure"]
+                }
+            }
 impl AsRef<str> for NodegroupIssueCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access.</p>
 #[non_exhaustive]
@@ -5018,24 +4994,24 @@ pub enum AmiTypes {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AmiTypes {
-    fn from(s: &str) -> Self {
-        match s {
-            "AL2_ARM_64" => AmiTypes::Al2Arm64,
-            "AL2_x86_64" => AmiTypes::Al2X8664,
-            "AL2_x86_64_GPU" => AmiTypes::Al2X8664Gpu,
-            "BOTTLEROCKET_ARM_64" => AmiTypes::BottlerocketArm64,
-            "BOTTLEROCKET_ARM_64_NVIDIA" => AmiTypes::BottlerocketArm64Nvidia,
-            "BOTTLEROCKET_x86_64" => AmiTypes::BottlerocketX8664,
-            "BOTTLEROCKET_x86_64_NVIDIA" => AmiTypes::BottlerocketX8664Nvidia,
-            "CUSTOM" => AmiTypes::Custom,
-            "WINDOWS_CORE_2019_x86_64" => AmiTypes::WindowsCore2019X8664,
-            "WINDOWS_CORE_2022_x86_64" => AmiTypes::WindowsCore2022X8664,
-            "WINDOWS_FULL_2019_x86_64" => AmiTypes::WindowsFull2019X8664,
-            "WINDOWS_FULL_2022_x86_64" => AmiTypes::WindowsFull2022X8664,
-            other => AmiTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AL2_ARM_64" => AmiTypes::Al2Arm64,
+"AL2_x86_64" => AmiTypes::Al2X8664,
+"AL2_x86_64_GPU" => AmiTypes::Al2X8664Gpu,
+"BOTTLEROCKET_ARM_64" => AmiTypes::BottlerocketArm64,
+"BOTTLEROCKET_ARM_64_NVIDIA" => AmiTypes::BottlerocketArm64Nvidia,
+"BOTTLEROCKET_x86_64" => AmiTypes::BottlerocketX8664,
+"BOTTLEROCKET_x86_64_NVIDIA" => AmiTypes::BottlerocketX8664Nvidia,
+"CUSTOM" => AmiTypes::Custom,
+"WINDOWS_CORE_2019_x86_64" => AmiTypes::WindowsCore2019X8664,
+"WINDOWS_CORE_2022_x86_64" => AmiTypes::WindowsCore2022X8664,
+"WINDOWS_FULL_2019_x86_64" => AmiTypes::WindowsFull2019X8664,
+"WINDOWS_FULL_2022_x86_64" => AmiTypes::WindowsFull2022X8664,
+other => AmiTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AmiTypes {
                 type Err = std::convert::Infallible;
 
@@ -5044,36 +5020,34 @@ impl std::str::FromStr for AmiTypes {
                 }
             }
 impl AmiTypes {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AmiTypes::Al2Arm64 => "AL2_ARM_64",
-            AmiTypes::Al2X8664 => "AL2_x86_64",
-            AmiTypes::Al2X8664Gpu => "AL2_x86_64_GPU",
-            AmiTypes::BottlerocketArm64 => "BOTTLEROCKET_ARM_64",
-            AmiTypes::BottlerocketArm64Nvidia => "BOTTLEROCKET_ARM_64_NVIDIA",
-            AmiTypes::BottlerocketX8664 => "BOTTLEROCKET_x86_64",
-            AmiTypes::BottlerocketX8664Nvidia => "BOTTLEROCKET_x86_64_NVIDIA",
-            AmiTypes::Custom => "CUSTOM",
-            AmiTypes::WindowsCore2019X8664 => "WINDOWS_CORE_2019_x86_64",
-            AmiTypes::WindowsCore2022X8664 => "WINDOWS_CORE_2022_x86_64",
-            AmiTypes::WindowsFull2019X8664 => "WINDOWS_FULL_2019_x86_64",
-            AmiTypes::WindowsFull2022X8664 => "WINDOWS_FULL_2022_x86_64",
-            AmiTypes::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AL2_ARM_64", "AL2_x86_64", "AL2_x86_64_GPU", "BOTTLEROCKET_ARM_64", "BOTTLEROCKET_ARM_64_NVIDIA", "BOTTLEROCKET_x86_64", "BOTTLEROCKET_x86_64_NVIDIA", "CUSTOM", "WINDOWS_CORE_2019_x86_64", "WINDOWS_CORE_2022_x86_64", "WINDOWS_FULL_2019_x86_64", "WINDOWS_FULL_2022_x86_64"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AmiTypes::Al2Arm64 => "AL2_ARM_64",
+    AmiTypes::Al2X8664 => "AL2_x86_64",
+    AmiTypes::Al2X8664Gpu => "AL2_x86_64_GPU",
+    AmiTypes::BottlerocketArm64 => "BOTTLEROCKET_ARM_64",
+    AmiTypes::BottlerocketArm64Nvidia => "BOTTLEROCKET_ARM_64_NVIDIA",
+    AmiTypes::BottlerocketX8664 => "BOTTLEROCKET_x86_64",
+    AmiTypes::BottlerocketX8664Nvidia => "BOTTLEROCKET_x86_64_NVIDIA",
+    AmiTypes::Custom => "CUSTOM",
+    AmiTypes::WindowsCore2019X8664 => "WINDOWS_CORE_2019_x86_64",
+    AmiTypes::WindowsCore2022X8664 => "WINDOWS_CORE_2022_x86_64",
+    AmiTypes::WindowsFull2019X8664 => "WINDOWS_FULL_2019_x86_64",
+    AmiTypes::WindowsFull2022X8664 => "WINDOWS_FULL_2022_x86_64",
+    AmiTypes::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AL2_ARM_64", "AL2_x86_64", "AL2_x86_64_GPU", "BOTTLEROCKET_ARM_64", "BOTTLEROCKET_ARM_64_NVIDIA", "BOTTLEROCKET_x86_64", "BOTTLEROCKET_x86_64_NVIDIA", "CUSTOM", "WINDOWS_CORE_2019_x86_64", "WINDOWS_CORE_2022_x86_64", "WINDOWS_FULL_2019_x86_64", "WINDOWS_FULL_2022_x86_64"]
+                }
+            }
 impl AsRef<str> for AmiTypes {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing the remote access configuration for the managed node group.</p>
 #[non_exhaustive]
@@ -5197,14 +5171,14 @@ pub enum CapacityTypes {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CapacityTypes {
-    fn from(s: &str) -> Self {
-        match s {
-            "ON_DEMAND" => CapacityTypes::OnDemand,
-            "SPOT" => CapacityTypes::Spot,
-            other => CapacityTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ON_DEMAND" => CapacityTypes::OnDemand,
+"SPOT" => CapacityTypes::Spot,
+other => CapacityTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CapacityTypes {
                 type Err = std::convert::Infallible;
 
@@ -5213,26 +5187,24 @@ impl std::str::FromStr for CapacityTypes {
                 }
             }
 impl CapacityTypes {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CapacityTypes::OnDemand => "ON_DEMAND",
-            CapacityTypes::Spot => "SPOT",
-            CapacityTypes::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ON_DEMAND", "SPOT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CapacityTypes::OnDemand => "ON_DEMAND",
+    CapacityTypes::Spot => "SPOT",
+    CapacityTypes::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ON_DEMAND", "SPOT"]
+                }
+            }
 impl AsRef<str> for CapacityTypes {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `NodegroupStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5296,19 +5268,19 @@ pub enum NodegroupStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NodegroupStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => NodegroupStatus::Active,
-            "CREATE_FAILED" => NodegroupStatus::CreateFailed,
-            "CREATING" => NodegroupStatus::Creating,
-            "DEGRADED" => NodegroupStatus::Degraded,
-            "DELETE_FAILED" => NodegroupStatus::DeleteFailed,
-            "DELETING" => NodegroupStatus::Deleting,
-            "UPDATING" => NodegroupStatus::Updating,
-            other => NodegroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => NodegroupStatus::Active,
+"CREATE_FAILED" => NodegroupStatus::CreateFailed,
+"CREATING" => NodegroupStatus::Creating,
+"DEGRADED" => NodegroupStatus::Degraded,
+"DELETE_FAILED" => NodegroupStatus::DeleteFailed,
+"DELETING" => NodegroupStatus::Deleting,
+"UPDATING" => NodegroupStatus::Updating,
+other => NodegroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NodegroupStatus {
                 type Err = std::convert::Infallible;
 
@@ -5317,31 +5289,29 @@ impl std::str::FromStr for NodegroupStatus {
                 }
             }
 impl NodegroupStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NodegroupStatus::Active => "ACTIVE",
-            NodegroupStatus::CreateFailed => "CREATE_FAILED",
-            NodegroupStatus::Creating => "CREATING",
-            NodegroupStatus::Degraded => "DEGRADED",
-            NodegroupStatus::DeleteFailed => "DELETE_FAILED",
-            NodegroupStatus::Deleting => "DELETING",
-            NodegroupStatus::Updating => "UPDATING",
-            NodegroupStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATE_FAILED", "CREATING", "DEGRADED", "DELETE_FAILED", "DELETING", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NodegroupStatus::Active => "ACTIVE",
+    NodegroupStatus::CreateFailed => "CREATE_FAILED",
+    NodegroupStatus::Creating => "CREATING",
+    NodegroupStatus::Degraded => "DEGRADED",
+    NodegroupStatus::DeleteFailed => "DELETE_FAILED",
+    NodegroupStatus::Deleting => "DELETING",
+    NodegroupStatus::Updating => "UPDATING",
+    NodegroupStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_FAILED", "CREATING", "DEGRADED", "DELETE_FAILED", "DELETING", "UPDATING"]
+                }
+            }
 impl AsRef<str> for NodegroupStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The full description of your identity configuration.</p>
 #[non_exhaustive]
@@ -5714,15 +5684,15 @@ pub enum ConfigStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ConfigStatus::Active,
-            "CREATING" => ConfigStatus::Creating,
-            "DELETING" => ConfigStatus::Deleting,
-            other => ConfigStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ConfigStatus::Active,
+"CREATING" => ConfigStatus::Creating,
+"DELETING" => ConfigStatus::Deleting,
+other => ConfigStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConfigStatus {
                 type Err = std::convert::Infallible;
 
@@ -5731,27 +5701,25 @@ impl std::str::FromStr for ConfigStatus {
                 }
             }
 impl ConfigStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConfigStatus::Active => "ACTIVE",
-            ConfigStatus::Creating => "CREATING",
-            ConfigStatus::Deleting => "DELETING",
-            ConfigStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConfigStatus::Active => "ACTIVE",
+    ConfigStatus::Creating => "CREATING",
+    ConfigStatus::Deleting => "DELETING",
+    ConfigStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETING"]
+                }
+            }
 impl AsRef<str> for ConfigStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing an Fargate profile.</p>
 #[non_exhaustive]
@@ -6029,17 +5997,17 @@ pub enum FargateProfileStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FargateProfileStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => FargateProfileStatus::Active,
-            "CREATE_FAILED" => FargateProfileStatus::CreateFailed,
-            "CREATING" => FargateProfileStatus::Creating,
-            "DELETE_FAILED" => FargateProfileStatus::DeleteFailed,
-            "DELETING" => FargateProfileStatus::Deleting,
-            other => FargateProfileStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => FargateProfileStatus::Active,
+"CREATE_FAILED" => FargateProfileStatus::CreateFailed,
+"CREATING" => FargateProfileStatus::Creating,
+"DELETE_FAILED" => FargateProfileStatus::DeleteFailed,
+"DELETING" => FargateProfileStatus::Deleting,
+other => FargateProfileStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FargateProfileStatus {
                 type Err = std::convert::Infallible;
 
@@ -6048,29 +6016,27 @@ impl std::str::FromStr for FargateProfileStatus {
                 }
             }
 impl FargateProfileStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FargateProfileStatus::Active => "ACTIVE",
-            FargateProfileStatus::CreateFailed => "CREATE_FAILED",
-            FargateProfileStatus::Creating => "CREATING",
-            FargateProfileStatus::DeleteFailed => "DELETE_FAILED",
-            FargateProfileStatus::Deleting => "DELETING",
-            FargateProfileStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATE_FAILED", "CREATING", "DELETE_FAILED", "DELETING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FargateProfileStatus::Active => "ACTIVE",
+    FargateProfileStatus::CreateFailed => "CREATE_FAILED",
+    FargateProfileStatus::Creating => "CREATING",
+    FargateProfileStatus::DeleteFailed => "DELETE_FAILED",
+    FargateProfileStatus::Deleting => "DELETING",
+    FargateProfileStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_FAILED", "CREATING", "DELETE_FAILED", "DELETING"]
+                }
+            }
 impl AsRef<str> for FargateProfileStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object representing an Fargate profile selector.</p>
 #[non_exhaustive]
@@ -7100,20 +7066,20 @@ pub enum AddonIssueCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AddonIssueCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => AddonIssueCode::AccessDenied,
-            "AdmissionRequestDenied" => AddonIssueCode::AdmissionRequestDenied,
-            "ClusterUnreachable" => AddonIssueCode::ClusterUnreachable,
-            "ConfigurationConflict" => AddonIssueCode::ConfigurationConflict,
-            "InsufficientNumberOfReplicas" => AddonIssueCode::InsufficientNumberOfReplicas,
-            "InternalFailure" => AddonIssueCode::InternalFailure,
-            "K8sResourceNotFound" => AddonIssueCode::K8SResourceNotFound,
-            "UnsupportedAddonModification" => AddonIssueCode::UnsupportedAddonModification,
-            other => AddonIssueCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDenied" => AddonIssueCode::AccessDenied,
+"AdmissionRequestDenied" => AddonIssueCode::AdmissionRequestDenied,
+"ClusterUnreachable" => AddonIssueCode::ClusterUnreachable,
+"ConfigurationConflict" => AddonIssueCode::ConfigurationConflict,
+"InsufficientNumberOfReplicas" => AddonIssueCode::InsufficientNumberOfReplicas,
+"InternalFailure" => AddonIssueCode::InternalFailure,
+"K8sResourceNotFound" => AddonIssueCode::K8SResourceNotFound,
+"UnsupportedAddonModification" => AddonIssueCode::UnsupportedAddonModification,
+other => AddonIssueCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AddonIssueCode {
                 type Err = std::convert::Infallible;
 
@@ -7122,32 +7088,30 @@ impl std::str::FromStr for AddonIssueCode {
                 }
             }
 impl AddonIssueCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AddonIssueCode::AccessDenied => "AccessDenied",
-            AddonIssueCode::AdmissionRequestDenied => "AdmissionRequestDenied",
-            AddonIssueCode::ClusterUnreachable => "ClusterUnreachable",
-            AddonIssueCode::ConfigurationConflict => "ConfigurationConflict",
-            AddonIssueCode::InsufficientNumberOfReplicas => "InsufficientNumberOfReplicas",
-            AddonIssueCode::InternalFailure => "InternalFailure",
-            AddonIssueCode::K8SResourceNotFound => "K8sResourceNotFound",
-            AddonIssueCode::UnsupportedAddonModification => "UnsupportedAddonModification",
-            AddonIssueCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied", "AdmissionRequestDenied", "ClusterUnreachable", "ConfigurationConflict", "InsufficientNumberOfReplicas", "InternalFailure", "K8sResourceNotFound", "UnsupportedAddonModification"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AddonIssueCode::AccessDenied => "AccessDenied",
+    AddonIssueCode::AdmissionRequestDenied => "AdmissionRequestDenied",
+    AddonIssueCode::ClusterUnreachable => "ClusterUnreachable",
+    AddonIssueCode::ConfigurationConflict => "ConfigurationConflict",
+    AddonIssueCode::InsufficientNumberOfReplicas => "InsufficientNumberOfReplicas",
+    AddonIssueCode::InternalFailure => "InternalFailure",
+    AddonIssueCode::K8SResourceNotFound => "K8sResourceNotFound",
+    AddonIssueCode::UnsupportedAddonModification => "UnsupportedAddonModification",
+    AddonIssueCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "AdmissionRequestDenied", "ClusterUnreachable", "ConfigurationConflict", "InsufficientNumberOfReplicas", "InternalFailure", "K8sResourceNotFound", "UnsupportedAddonModification"]
+                }
+            }
 impl AsRef<str> for AddonIssueCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `AddonStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7214,20 +7178,20 @@ pub enum AddonStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AddonStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => AddonStatus::Active,
-            "CREATE_FAILED" => AddonStatus::CreateFailed,
-            "CREATING" => AddonStatus::Creating,
-            "DEGRADED" => AddonStatus::Degraded,
-            "DELETE_FAILED" => AddonStatus::DeleteFailed,
-            "DELETING" => AddonStatus::Deleting,
-            "UPDATE_FAILED" => AddonStatus::UpdateFailed,
-            "UPDATING" => AddonStatus::Updating,
-            other => AddonStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => AddonStatus::Active,
+"CREATE_FAILED" => AddonStatus::CreateFailed,
+"CREATING" => AddonStatus::Creating,
+"DEGRADED" => AddonStatus::Degraded,
+"DELETE_FAILED" => AddonStatus::DeleteFailed,
+"DELETING" => AddonStatus::Deleting,
+"UPDATE_FAILED" => AddonStatus::UpdateFailed,
+"UPDATING" => AddonStatus::Updating,
+other => AddonStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AddonStatus {
                 type Err = std::convert::Infallible;
 
@@ -7236,32 +7200,30 @@ impl std::str::FromStr for AddonStatus {
                 }
             }
 impl AddonStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AddonStatus::Active => "ACTIVE",
-            AddonStatus::CreateFailed => "CREATE_FAILED",
-            AddonStatus::Creating => "CREATING",
-            AddonStatus::Degraded => "DEGRADED",
-            AddonStatus::DeleteFailed => "DELETE_FAILED",
-            AddonStatus::Deleting => "DELETING",
-            AddonStatus::UpdateFailed => "UPDATE_FAILED",
-            AddonStatus::Updating => "UPDATING",
-            AddonStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATE_FAILED", "CREATING", "DEGRADED", "DELETE_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AddonStatus::Active => "ACTIVE",
+    AddonStatus::CreateFailed => "CREATE_FAILED",
+    AddonStatus::Creating => "CREATING",
+    AddonStatus::Degraded => "DEGRADED",
+    AddonStatus::DeleteFailed => "DELETE_FAILED",
+    AddonStatus::Deleting => "DELETING",
+    AddonStatus::UpdateFailed => "UPDATE_FAILED",
+    AddonStatus::Updating => "UPDATING",
+    AddonStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_FAILED", "CREATING", "DEGRADED", "DELETE_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for AddonStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-create.html">Creating a local cluster on an Outpost</a> in the <i>Amazon EKS User Guide</i>. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>
 #[non_exhaustive]

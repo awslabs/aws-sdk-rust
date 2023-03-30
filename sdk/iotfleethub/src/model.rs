@@ -224,17 +224,17 @@ pub enum ApplicationState {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ApplicationState::Active,
-            "CREATE_FAILED" => ApplicationState::CreateFailed,
-            "CREATING" => ApplicationState::Creating,
-            "DELETE_FAILED" => ApplicationState::DeleteFailed,
-            "DELETING" => ApplicationState::Deleting,
-            other => ApplicationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ApplicationState::Active,
+"CREATE_FAILED" => ApplicationState::CreateFailed,
+"CREATING" => ApplicationState::Creating,
+"DELETE_FAILED" => ApplicationState::DeleteFailed,
+"DELETING" => ApplicationState::Deleting,
+other => ApplicationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ApplicationState {
                 type Err = std::convert::Infallible;
 
@@ -243,27 +243,25 @@ impl std::str::FromStr for ApplicationState {
                 }
             }
 impl ApplicationState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ApplicationState::Active => "ACTIVE",
-            ApplicationState::CreateFailed => "CREATE_FAILED",
-            ApplicationState::Creating => "CREATING",
-            ApplicationState::DeleteFailed => "DELETE_FAILED",
-            ApplicationState::Deleting => "DELETING",
-            ApplicationState::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATE_FAILED", "CREATING", "DELETE_FAILED", "DELETING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ApplicationState::Active => "ACTIVE",
+    ApplicationState::CreateFailed => "CREATE_FAILED",
+    ApplicationState::Creating => "CREATING",
+    ApplicationState::DeleteFailed => "DELETE_FAILED",
+    ApplicationState::Deleting => "DELETING",
+    ApplicationState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_FAILED", "CREATING", "DELETE_FAILED", "DELETING"]
+                }
+            }
 impl AsRef<str> for ApplicationState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

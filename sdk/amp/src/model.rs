@@ -122,16 +122,16 @@ pub enum ValidationExceptionReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
-            "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
-            "OTHER" => ValidationExceptionReason::Other,
-            "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
+"FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
+"OTHER" => ValidationExceptionReason::Other,
+"UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
+other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ValidationExceptionReason {
                 type Err = std::convert::Infallible;
 
@@ -140,28 +140,26 @@ impl std::str::FromStr for ValidationExceptionReason {
                 }
             }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
-            ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
-            ValidationExceptionReason::Other => "OTHER",
-            ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANNOT_PARSE", "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
+    ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
+    ValidationExceptionReason::Other => "OTHER",
+    ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANNOT_PARSE", "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"]
+                }
+            }
 impl AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Represents a summary of the properties of a workspace.
 #[non_exhaustive]
@@ -420,17 +418,17 @@ pub enum WorkspaceStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorkspaceStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => WorkspaceStatusCode::Active,
-            "CREATING" => WorkspaceStatusCode::Creating,
-            "CREATION_FAILED" => WorkspaceStatusCode::CreationFailed,
-            "DELETING" => WorkspaceStatusCode::Deleting,
-            "UPDATING" => WorkspaceStatusCode::Updating,
-            other => WorkspaceStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => WorkspaceStatusCode::Active,
+"CREATING" => WorkspaceStatusCode::Creating,
+"CREATION_FAILED" => WorkspaceStatusCode::CreationFailed,
+"DELETING" => WorkspaceStatusCode::Deleting,
+"UPDATING" => WorkspaceStatusCode::Updating,
+other => WorkspaceStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WorkspaceStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -439,29 +437,27 @@ impl std::str::FromStr for WorkspaceStatusCode {
                 }
             }
 impl WorkspaceStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorkspaceStatusCode::Active => "ACTIVE",
-            WorkspaceStatusCode::Creating => "CREATING",
-            WorkspaceStatusCode::CreationFailed => "CREATION_FAILED",
-            WorkspaceStatusCode::Deleting => "DELETING",
-            WorkspaceStatusCode::Updating => "UPDATING",
-            WorkspaceStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorkspaceStatusCode::Active => "ACTIVE",
+    WorkspaceStatusCode::Creating => "CREATING",
+    WorkspaceStatusCode::CreationFailed => "CREATION_FAILED",
+    WorkspaceStatusCode::Deleting => "DELETING",
+    WorkspaceStatusCode::Updating => "UPDATING",
+    WorkspaceStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATING"]
+                }
+            }
 impl AsRef<str> for WorkspaceStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Represents the properties of a workspace.
 #[non_exhaustive]
@@ -912,18 +908,18 @@ pub enum RuleGroupsNamespaceStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuleGroupsNamespaceStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => RuleGroupsNamespaceStatusCode::Active,
-            "CREATING" => RuleGroupsNamespaceStatusCode::Creating,
-            "CREATION_FAILED" => RuleGroupsNamespaceStatusCode::CreationFailed,
-            "DELETING" => RuleGroupsNamespaceStatusCode::Deleting,
-            "UPDATE_FAILED" => RuleGroupsNamespaceStatusCode::UpdateFailed,
-            "UPDATING" => RuleGroupsNamespaceStatusCode::Updating,
-            other => RuleGroupsNamespaceStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => RuleGroupsNamespaceStatusCode::Active,
+"CREATING" => RuleGroupsNamespaceStatusCode::Creating,
+"CREATION_FAILED" => RuleGroupsNamespaceStatusCode::CreationFailed,
+"DELETING" => RuleGroupsNamespaceStatusCode::Deleting,
+"UPDATE_FAILED" => RuleGroupsNamespaceStatusCode::UpdateFailed,
+"UPDATING" => RuleGroupsNamespaceStatusCode::Updating,
+other => RuleGroupsNamespaceStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RuleGroupsNamespaceStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -932,30 +928,28 @@ impl std::str::FromStr for RuleGroupsNamespaceStatusCode {
                 }
             }
 impl RuleGroupsNamespaceStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RuleGroupsNamespaceStatusCode::Active => "ACTIVE",
-            RuleGroupsNamespaceStatusCode::Creating => "CREATING",
-            RuleGroupsNamespaceStatusCode::CreationFailed => "CREATION_FAILED",
-            RuleGroupsNamespaceStatusCode::Deleting => "DELETING",
-            RuleGroupsNamespaceStatusCode::UpdateFailed => "UPDATE_FAILED",
-            RuleGroupsNamespaceStatusCode::Updating => "UPDATING",
-            RuleGroupsNamespaceStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RuleGroupsNamespaceStatusCode::Active => "ACTIVE",
+    RuleGroupsNamespaceStatusCode::Creating => "CREATING",
+    RuleGroupsNamespaceStatusCode::CreationFailed => "CREATION_FAILED",
+    RuleGroupsNamespaceStatusCode::Deleting => "DELETING",
+    RuleGroupsNamespaceStatusCode::UpdateFailed => "UPDATE_FAILED",
+    RuleGroupsNamespaceStatusCode::Updating => "UPDATING",
+    RuleGroupsNamespaceStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for RuleGroupsNamespaceStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Represents a description of the rule groups namespace.
 #[non_exhaustive]
@@ -1255,18 +1249,18 @@ pub enum LoggingConfigurationStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LoggingConfigurationStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => LoggingConfigurationStatusCode::Active,
-            "CREATING" => LoggingConfigurationStatusCode::Creating,
-            "CREATION_FAILED" => LoggingConfigurationStatusCode::CreationFailed,
-            "DELETING" => LoggingConfigurationStatusCode::Deleting,
-            "UPDATE_FAILED" => LoggingConfigurationStatusCode::UpdateFailed,
-            "UPDATING" => LoggingConfigurationStatusCode::Updating,
-            other => LoggingConfigurationStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => LoggingConfigurationStatusCode::Active,
+"CREATING" => LoggingConfigurationStatusCode::Creating,
+"CREATION_FAILED" => LoggingConfigurationStatusCode::CreationFailed,
+"DELETING" => LoggingConfigurationStatusCode::Deleting,
+"UPDATE_FAILED" => LoggingConfigurationStatusCode::UpdateFailed,
+"UPDATING" => LoggingConfigurationStatusCode::Updating,
+other => LoggingConfigurationStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LoggingConfigurationStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -1275,30 +1269,28 @@ impl std::str::FromStr for LoggingConfigurationStatusCode {
                 }
             }
 impl LoggingConfigurationStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LoggingConfigurationStatusCode::Active => "ACTIVE",
-            LoggingConfigurationStatusCode::Creating => "CREATING",
-            LoggingConfigurationStatusCode::CreationFailed => "CREATION_FAILED",
-            LoggingConfigurationStatusCode::Deleting => "DELETING",
-            LoggingConfigurationStatusCode::UpdateFailed => "UPDATE_FAILED",
-            LoggingConfigurationStatusCode::Updating => "UPDATING",
-            LoggingConfigurationStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LoggingConfigurationStatusCode::Active => "ACTIVE",
+    LoggingConfigurationStatusCode::Creating => "CREATING",
+    LoggingConfigurationStatusCode::CreationFailed => "CREATION_FAILED",
+    LoggingConfigurationStatusCode::Deleting => "DELETING",
+    LoggingConfigurationStatusCode::UpdateFailed => "UPDATE_FAILED",
+    LoggingConfigurationStatusCode::Updating => "UPDATING",
+    LoggingConfigurationStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for LoggingConfigurationStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Represents the properties of a logging configuration metadata.
 #[non_exhaustive]
@@ -1554,18 +1546,18 @@ pub enum AlertManagerDefinitionStatusCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlertManagerDefinitionStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => AlertManagerDefinitionStatusCode::Active,
-            "CREATING" => AlertManagerDefinitionStatusCode::Creating,
-            "CREATION_FAILED" => AlertManagerDefinitionStatusCode::CreationFailed,
-            "DELETING" => AlertManagerDefinitionStatusCode::Deleting,
-            "UPDATE_FAILED" => AlertManagerDefinitionStatusCode::UpdateFailed,
-            "UPDATING" => AlertManagerDefinitionStatusCode::Updating,
-            other => AlertManagerDefinitionStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => AlertManagerDefinitionStatusCode::Active,
+"CREATING" => AlertManagerDefinitionStatusCode::Creating,
+"CREATION_FAILED" => AlertManagerDefinitionStatusCode::CreationFailed,
+"DELETING" => AlertManagerDefinitionStatusCode::Deleting,
+"UPDATE_FAILED" => AlertManagerDefinitionStatusCode::UpdateFailed,
+"UPDATING" => AlertManagerDefinitionStatusCode::Updating,
+other => AlertManagerDefinitionStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AlertManagerDefinitionStatusCode {
                 type Err = std::convert::Infallible;
 
@@ -1574,30 +1566,28 @@ impl std::str::FromStr for AlertManagerDefinitionStatusCode {
                 }
             }
 impl AlertManagerDefinitionStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AlertManagerDefinitionStatusCode::Active => "ACTIVE",
-            AlertManagerDefinitionStatusCode::Creating => "CREATING",
-            AlertManagerDefinitionStatusCode::CreationFailed => "CREATION_FAILED",
-            AlertManagerDefinitionStatusCode::Deleting => "DELETING",
-            AlertManagerDefinitionStatusCode::UpdateFailed => "UPDATE_FAILED",
-            AlertManagerDefinitionStatusCode::Updating => "UPDATING",
-            AlertManagerDefinitionStatusCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AlertManagerDefinitionStatusCode::Active => "ACTIVE",
+    AlertManagerDefinitionStatusCode::Creating => "CREATING",
+    AlertManagerDefinitionStatusCode::CreationFailed => "CREATION_FAILED",
+    AlertManagerDefinitionStatusCode::Deleting => "DELETING",
+    AlertManagerDefinitionStatusCode::UpdateFailed => "UPDATE_FAILED",
+    AlertManagerDefinitionStatusCode::Updating => "UPDATING",
+    AlertManagerDefinitionStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for AlertManagerDefinitionStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// Represents the properties of an alert manager definition.
 #[non_exhaustive]

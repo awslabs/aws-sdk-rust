@@ -116,14 +116,14 @@ pub enum Format {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Format {
-    fn from(s: &str) -> Self {
-        match s {
-            "CSV" => Format::Csv,
-            "PARQUET" => Format::Parquet,
-            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CSV" => Format::Csv,
+"PARQUET" => Format::Parquet,
+other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Format {
                 type Err = std::convert::Infallible;
 
@@ -132,26 +132,24 @@ impl std::str::FromStr for Format {
                 }
             }
 impl Format {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Format::Csv => "CSV",
-            Format::Parquet => "PARQUET",
-            Format::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CSV", "PARQUET"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Format::Csv => "CSV",
+    Format::Parquet => "PARQUET",
+    Format::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CSV", "PARQUET"]
+                }
+            }
 impl AsRef<str> for Format {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ReportFrequency`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -203,15 +201,15 @@ pub enum ReportFrequency {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportFrequency {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALL" => ReportFrequency::All,
-            "DAILY" => ReportFrequency::Daily,
-            "MONTHLY" => ReportFrequency::Monthly,
-            other => ReportFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALL" => ReportFrequency::All,
+"DAILY" => ReportFrequency::Daily,
+"MONTHLY" => ReportFrequency::Monthly,
+other => ReportFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ReportFrequency {
                 type Err = std::convert::Infallible;
 
@@ -220,27 +218,25 @@ impl std::str::FromStr for ReportFrequency {
                 }
             }
 impl ReportFrequency {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReportFrequency::All => "ALL",
-            ReportFrequency::Daily => "DAILY",
-            ReportFrequency::Monthly => "MONTHLY",
-            ReportFrequency::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL", "DAILY", "MONTHLY"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ReportFrequency::All => "ALL",
+    ReportFrequency::Daily => "DAILY",
+    ReportFrequency::Monthly => "MONTHLY",
+    ReportFrequency::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALL", "DAILY", "MONTHLY"]
+                }
+            }
 impl AsRef<str> for ReportFrequency {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The configuration of a report in AWS Application Cost Profiler.</p>
 #[non_exhaustive]
@@ -547,16 +543,16 @@ pub enum S3BucketRegion {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3BucketRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "af-south-1" => S3BucketRegion::AfSouth1,
-            "ap-east-1" => S3BucketRegion::ApEast1,
-            "eu-south-1" => S3BucketRegion::EuSouth1,
-            "me-south-1" => S3BucketRegion::MeSouth1,
-            other => S3BucketRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "af-south-1" => S3BucketRegion::AfSouth1,
+"ap-east-1" => S3BucketRegion::ApEast1,
+"eu-south-1" => S3BucketRegion::EuSouth1,
+"me-south-1" => S3BucketRegion::MeSouth1,
+other => S3BucketRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for S3BucketRegion {
                 type Err = std::convert::Infallible;
 
@@ -565,26 +561,24 @@ impl std::str::FromStr for S3BucketRegion {
                 }
             }
 impl S3BucketRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            S3BucketRegion::AfSouth1 => "af-south-1",
-            S3BucketRegion::ApEast1 => "ap-east-1",
-            S3BucketRegion::EuSouth1 => "eu-south-1",
-            S3BucketRegion::MeSouth1 => "me-south-1",
-            S3BucketRegion::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "af-south-1", "ap-east-1", "eu-south-1", "me-south-1"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    S3BucketRegion::AfSouth1 => "af-south-1",
+    S3BucketRegion::ApEast1 => "ap-east-1",
+    S3BucketRegion::EuSouth1 => "eu-south-1",
+    S3BucketRegion::MeSouth1 => "me-south-1",
+    S3BucketRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["af-south-1", "ap-east-1", "eu-south-1", "me-south-1"]
+                }
+            }
 impl AsRef<str> for S3BucketRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

@@ -141,16 +141,16 @@ pub enum VpcEndpointStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VpcEndpointStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => VpcEndpointStatus::Active,
-            "DELETING" => VpcEndpointStatus::Deleting,
-            "FAILED" => VpcEndpointStatus::Failed,
-            "PENDING" => VpcEndpointStatus::Pending,
-            other => VpcEndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => VpcEndpointStatus::Active,
+"DELETING" => VpcEndpointStatus::Deleting,
+"FAILED" => VpcEndpointStatus::Failed,
+"PENDING" => VpcEndpointStatus::Pending,
+other => VpcEndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for VpcEndpointStatus {
                 type Err = std::convert::Infallible;
 
@@ -159,28 +159,26 @@ impl std::str::FromStr for VpcEndpointStatus {
                 }
             }
 impl VpcEndpointStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VpcEndpointStatus::Active => "ACTIVE",
-            VpcEndpointStatus::Deleting => "DELETING",
-            VpcEndpointStatus::Failed => "FAILED",
-            VpcEndpointStatus::Pending => "PENDING",
-            VpcEndpointStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "DELETING", "FAILED", "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VpcEndpointStatus::Active => "ACTIVE",
+    VpcEndpointStatus::Deleting => "DELETING",
+    VpcEndpointStatus::Failed => "FAILED",
+    VpcEndpointStatus::Pending => "PENDING",
+    VpcEndpointStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "DELETING", "FAILED", "PENDING"]
+                }
+            }
 impl AsRef<str> for VpcEndpointStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Filter the results of a <code>ListVpcEndpoints</code> request.</p>
 #[non_exhaustive]
@@ -600,14 +598,14 @@ pub enum SecurityPolicyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SecurityPolicyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "encryption" => SecurityPolicyType::Encryption,
-            "network" => SecurityPolicyType::Network,
-            other => SecurityPolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "encryption" => SecurityPolicyType::Encryption,
+"network" => SecurityPolicyType::Network,
+other => SecurityPolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SecurityPolicyType {
                 type Err = std::convert::Infallible;
 
@@ -616,26 +614,24 @@ impl std::str::FromStr for SecurityPolicyType {
                 }
             }
 impl SecurityPolicyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SecurityPolicyType::Encryption => "encryption",
-            SecurityPolicyType::Network => "network",
-            SecurityPolicyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "encryption", "network"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SecurityPolicyType::Encryption => "encryption",
+    SecurityPolicyType::Network => "network",
+    SecurityPolicyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["encryption", "network"]
+                }
+            }
 impl AsRef<str> for SecurityPolicyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details about an OpenSearch Serverless security policy.</p>
 #[non_exhaustive]
@@ -990,13 +986,13 @@ pub enum SecurityConfigType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SecurityConfigType {
-    fn from(s: &str) -> Self {
-        match s {
-            "saml" => SecurityConfigType::Saml,
-            other => SecurityConfigType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "saml" => SecurityConfigType::Saml,
+other => SecurityConfigType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SecurityConfigType {
                 type Err = std::convert::Infallible;
 
@@ -1005,25 +1001,23 @@ impl std::str::FromStr for SecurityConfigType {
                 }
             }
 impl SecurityConfigType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SecurityConfigType::Saml => "saml",
-            SecurityConfigType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "saml"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SecurityConfigType::Saml => "saml",
+    SecurityConfigType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["saml"]
+                }
+            }
 impl AsRef<str> for SecurityConfigType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details about a security configuration for OpenSearch Serverless. </p>
 #[non_exhaustive]
@@ -1456,16 +1450,16 @@ pub enum CollectionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CollectionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => CollectionStatus::Active,
-            "CREATING" => CollectionStatus::Creating,
-            "DELETING" => CollectionStatus::Deleting,
-            "FAILED" => CollectionStatus::Failed,
-            other => CollectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => CollectionStatus::Active,
+"CREATING" => CollectionStatus::Creating,
+"DELETING" => CollectionStatus::Deleting,
+"FAILED" => CollectionStatus::Failed,
+other => CollectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CollectionStatus {
                 type Err = std::convert::Infallible;
 
@@ -1474,28 +1468,26 @@ impl std::str::FromStr for CollectionStatus {
                 }
             }
 impl CollectionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CollectionStatus::Active => "ACTIVE",
-            CollectionStatus::Creating => "CREATING",
-            CollectionStatus::Deleting => "DELETING",
-            CollectionStatus::Failed => "FAILED",
-            CollectionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATING", "DELETING", "FAILED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CollectionStatus::Active => "ACTIVE",
+    CollectionStatus::Creating => "CREATING",
+    CollectionStatus::Deleting => "DELETING",
+    CollectionStatus::Failed => "FAILED",
+    CollectionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETING", "FAILED"]
+                }
+            }
 impl AsRef<str> for CollectionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>List of filter keys that you can use for LIST, UPDATE, and DELETE requests to OpenSearch Serverless collections.</p>
 #[non_exhaustive]
@@ -1815,14 +1807,14 @@ pub enum CollectionType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CollectionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "SEARCH" => CollectionType::Search,
-            "TIMESERIES" => CollectionType::Timeseries,
-            other => CollectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SEARCH" => CollectionType::Search,
+"TIMESERIES" => CollectionType::Timeseries,
+other => CollectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CollectionType {
                 type Err = std::convert::Infallible;
 
@@ -1831,26 +1823,24 @@ impl std::str::FromStr for CollectionType {
                 }
             }
 impl CollectionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CollectionType::Search => "SEARCH",
-            CollectionType::Timeseries => "TIMESERIES",
-            CollectionType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SEARCH", "TIMESERIES"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CollectionType::Search => "SEARCH",
+    CollectionType::Timeseries => "TIMESERIES",
+    CollectionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SEARCH", "TIMESERIES"]
+                }
+            }
 impl AsRef<str> for CollectionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A map of key-value pairs associated to an OpenSearch Serverless resource.</p>
 #[non_exhaustive]
@@ -2381,13 +2371,13 @@ pub enum AccessPolicyType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessPolicyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "data" => AccessPolicyType::Data,
-            other => AccessPolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "data" => AccessPolicyType::Data,
+other => AccessPolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AccessPolicyType {
                 type Err = std::convert::Infallible;
 
@@ -2396,25 +2386,23 @@ impl std::str::FromStr for AccessPolicyType {
                 }
             }
 impl AccessPolicyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccessPolicyType::Data => "data",
-            AccessPolicyType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "data"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccessPolicyType::Data => "data",
+    AccessPolicyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["data"]
+                }
+            }
 impl AsRef<str> for AccessPolicyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Details about an OpenSearch Serverless access policy.</p>
 #[non_exhaustive]

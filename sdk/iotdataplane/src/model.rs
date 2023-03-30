@@ -47,14 +47,14 @@ pub enum PayloadFormatIndicator {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PayloadFormatIndicator {
-    fn from(s: &str) -> Self {
-        match s {
-            "UNSPECIFIED_BYTES" => PayloadFormatIndicator::UnspecifiedBytes,
-            "UTF8_DATA" => PayloadFormatIndicator::Utf8Data,
-            other => PayloadFormatIndicator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "UNSPECIFIED_BYTES" => PayloadFormatIndicator::UnspecifiedBytes,
+"UTF8_DATA" => PayloadFormatIndicator::Utf8Data,
+other => PayloadFormatIndicator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PayloadFormatIndicator {
                 type Err = std::convert::Infallible;
 
@@ -63,26 +63,24 @@ impl std::str::FromStr for PayloadFormatIndicator {
                 }
             }
 impl PayloadFormatIndicator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PayloadFormatIndicator::UnspecifiedBytes => "UNSPECIFIED_BYTES",
-            PayloadFormatIndicator::Utf8Data => "UTF8_DATA",
-            PayloadFormatIndicator::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "UNSPECIFIED_BYTES", "UTF8_DATA"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PayloadFormatIndicator::UnspecifiedBytes => "UNSPECIFIED_BYTES",
+    PayloadFormatIndicator::Utf8Data => "UTF8_DATA",
+    PayloadFormatIndicator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["UNSPECIFIED_BYTES", "UTF8_DATA"]
+                }
+            }
 impl AsRef<str> for PayloadFormatIndicator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about a single retained message.</p>
 #[non_exhaustive]

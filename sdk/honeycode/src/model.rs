@@ -53,16 +53,16 @@ pub enum TableDataImportJobStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TableDataImportJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => TableDataImportJobStatus::Completed,
-            "FAILED" => TableDataImportJobStatus::Failed,
-            "IN_PROGRESS" => TableDataImportJobStatus::InProgress,
-            "SUBMITTED" => TableDataImportJobStatus::Submitted,
-            other => TableDataImportJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => TableDataImportJobStatus::Completed,
+"FAILED" => TableDataImportJobStatus::Failed,
+"IN_PROGRESS" => TableDataImportJobStatus::InProgress,
+"SUBMITTED" => TableDataImportJobStatus::Submitted,
+other => TableDataImportJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TableDataImportJobStatus {
                 type Err = std::convert::Infallible;
 
@@ -71,28 +71,26 @@ impl std::str::FromStr for TableDataImportJobStatus {
                 }
             }
 impl TableDataImportJobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TableDataImportJobStatus::Completed => "COMPLETED",
-            TableDataImportJobStatus::Failed => "FAILED",
-            TableDataImportJobStatus::InProgress => "IN_PROGRESS",
-            TableDataImportJobStatus::Submitted => "SUBMITTED",
-            TableDataImportJobStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED", "FAILED", "IN_PROGRESS", "SUBMITTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TableDataImportJobStatus::Completed => "COMPLETED",
+    TableDataImportJobStatus::Failed => "FAILED",
+    TableDataImportJobStatus::InProgress => "IN_PROGRESS",
+    TableDataImportJobStatus::Submitted => "SUBMITTED",
+    TableDataImportJobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "FAILED", "IN_PROGRESS", "SUBMITTED"]
+                }
+            }
 impl AsRef<str> for TableDataImportJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object that contains the options specified by the sumitter of the import request.</p>
 #[non_exhaustive]
@@ -331,18 +329,18 @@ pub enum ImportDataCharacterEncoding {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportDataCharacterEncoding {
-    fn from(s: &str) -> Self {
-        match s {
-            "ISO-8859-1" => ImportDataCharacterEncoding::Iso88591,
-            "US-ASCII" => ImportDataCharacterEncoding::UsAscii,
-            "UTF-16" => ImportDataCharacterEncoding::Utf16,
-            "UTF-16BE" => ImportDataCharacterEncoding::Utf16Be,
-            "UTF-16LE" => ImportDataCharacterEncoding::Utf16Le,
-            "UTF-8" => ImportDataCharacterEncoding::Utf8,
-            other => ImportDataCharacterEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ISO-8859-1" => ImportDataCharacterEncoding::Iso88591,
+"US-ASCII" => ImportDataCharacterEncoding::UsAscii,
+"UTF-16" => ImportDataCharacterEncoding::Utf16,
+"UTF-16BE" => ImportDataCharacterEncoding::Utf16Be,
+"UTF-16LE" => ImportDataCharacterEncoding::Utf16Le,
+"UTF-8" => ImportDataCharacterEncoding::Utf8,
+other => ImportDataCharacterEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ImportDataCharacterEncoding {
                 type Err = std::convert::Infallible;
 
@@ -351,30 +349,28 @@ impl std::str::FromStr for ImportDataCharacterEncoding {
                 }
             }
 impl ImportDataCharacterEncoding {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ImportDataCharacterEncoding::Iso88591 => "ISO-8859-1",
-            ImportDataCharacterEncoding::UsAscii => "US-ASCII",
-            ImportDataCharacterEncoding::Utf16 => "UTF-16",
-            ImportDataCharacterEncoding::Utf16Be => "UTF-16BE",
-            ImportDataCharacterEncoding::Utf16Le => "UTF-16LE",
-            ImportDataCharacterEncoding::Utf8 => "UTF-8",
-            ImportDataCharacterEncoding::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ISO-8859-1", "US-ASCII", "UTF-16", "UTF-16BE", "UTF-16LE", "UTF-8"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ImportDataCharacterEncoding::Iso88591 => "ISO-8859-1",
+    ImportDataCharacterEncoding::UsAscii => "US-ASCII",
+    ImportDataCharacterEncoding::Utf16 => "UTF-16",
+    ImportDataCharacterEncoding::Utf16Be => "UTF-16BE",
+    ImportDataCharacterEncoding::Utf16Le => "UTF-16LE",
+    ImportDataCharacterEncoding::Utf8 => "UTF-8",
+    ImportDataCharacterEncoding::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ISO-8859-1", "US-ASCII", "UTF-16", "UTF-16BE", "UTF-16LE", "UTF-8"]
+                }
+            }
 impl AsRef<str> for ImportDataCharacterEncoding {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object that contains the options relating to the destination of the import request.</p>
 #[non_exhaustive]
@@ -527,13 +523,13 @@ pub enum ImportSourceDataFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportSourceDataFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELIMITED_TEXT" => ImportSourceDataFormat::DelimitedText,
-            other => ImportSourceDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DELIMITED_TEXT" => ImportSourceDataFormat::DelimitedText,
+other => ImportSourceDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ImportSourceDataFormat {
                 type Err = std::convert::Infallible;
 
@@ -542,25 +538,23 @@ impl std::str::FromStr for ImportSourceDataFormat {
                 }
             }
 impl ImportSourceDataFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ImportSourceDataFormat::DelimitedText => "DELIMITED_TEXT",
-            ImportSourceDataFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELIMITED_TEXT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ImportSourceDataFormat::DelimitedText => "DELIMITED_TEXT",
+    ImportSourceDataFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELIMITED_TEXT"]
+                }
+            }
 impl AsRef<str> for ImportSourceDataFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An object that has details about the source of the data that was submitted for import.</p>
 #[non_exhaustive]
@@ -1018,24 +1012,24 @@ pub enum Format {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Format {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNTING" => Format::Accounting,
-            "AUTO" => Format::Auto,
-            "CONTACT" => Format::Contact,
-            "CURRENCY" => Format::Currency,
-            "DATE" => Format::Date,
-            "DATE_TIME" => Format::DateTime,
-            "NUMBER" => Format::Number,
-            "PERCENTAGE" => Format::Percentage,
-            "ROWLINK" => Format::Rowlink,
-            "ROWSET" => Format::Rowset,
-            "TEXT" => Format::Text,
-            "TIME" => Format::Time,
-            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNTING" => Format::Accounting,
+"AUTO" => Format::Auto,
+"CONTACT" => Format::Contact,
+"CURRENCY" => Format::Currency,
+"DATE" => Format::Date,
+"DATE_TIME" => Format::DateTime,
+"NUMBER" => Format::Number,
+"PERCENTAGE" => Format::Percentage,
+"ROWLINK" => Format::Rowlink,
+"ROWSET" => Format::Rowset,
+"TEXT" => Format::Text,
+"TIME" => Format::Time,
+other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Format {
                 type Err = std::convert::Infallible;
 
@@ -1044,36 +1038,34 @@ impl std::str::FromStr for Format {
                 }
             }
 impl Format {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Format::Accounting => "ACCOUNTING",
-            Format::Auto => "AUTO",
-            Format::Contact => "CONTACT",
-            Format::Currency => "CURRENCY",
-            Format::Date => "DATE",
-            Format::DateTime => "DATE_TIME",
-            Format::Number => "NUMBER",
-            Format::Percentage => "PERCENTAGE",
-            Format::Rowlink => "ROWLINK",
-            Format::Rowset => "ROWSET",
-            Format::Text => "TEXT",
-            Format::Time => "TIME",
-            Format::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNTING", "AUTO", "CONTACT", "CURRENCY", "DATE", "DATE_TIME", "NUMBER", "PERCENTAGE", "ROWLINK", "ROWSET", "TEXT", "TIME"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Format::Accounting => "ACCOUNTING",
+    Format::Auto => "AUTO",
+    Format::Contact => "CONTACT",
+    Format::Currency => "CURRENCY",
+    Format::Date => "DATE",
+    Format::DateTime => "DATE_TIME",
+    Format::Number => "NUMBER",
+    Format::Percentage => "PERCENTAGE",
+    Format::Rowlink => "ROWLINK",
+    Format::Rowset => "ROWSET",
+    Format::Text => "TEXT",
+    Format::Time => "TIME",
+    Format::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNTING", "AUTO", "CONTACT", "CURRENCY", "DATE", "DATE_TIME", "NUMBER", "PERCENTAGE", "ROWLINK", "ROWSET", "TEXT", "TIME"]
+                }
+            }
 impl AsRef<str> for Format {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate. </p>
 #[non_exhaustive]
@@ -1815,26 +1807,26 @@ pub enum ErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => ErrorCode::AccessDenied,
-            "FILE_EMPTY_ERROR" => ErrorCode::FileEmptyError,
-            "FILE_NOT_FOUND_ERROR" => ErrorCode::FileNotFoundError,
-            "FILE_PARSING_ERROR" => ErrorCode::FileParsingError,
-            "FILE_SIZE_LIMIT_ERROR" => ErrorCode::FileSizeLimitError,
-            "INVALID_FILE_TYPE_ERROR" => ErrorCode::InvalidFileTypeError,
-            "INVALID_IMPORT_OPTIONS_ERROR" => ErrorCode::InvalidImportOptionsError,
-            "INVALID_TABLE_COLUMN_ID_ERROR" => ErrorCode::InvalidTableColumnIdError,
-            "INVALID_TABLE_ID_ERROR" => ErrorCode::InvalidTableIdError,
-            "INVALID_URL_ERROR" => ErrorCode::InvalidUrlError,
-            "RESOURCE_NOT_FOUND_ERROR" => ErrorCode::ResourceNotFoundError,
-            "SYSTEM_LIMIT_ERROR" => ErrorCode::SystemLimitError,
-            "TABLE_NOT_FOUND_ERROR" => ErrorCode::TableNotFoundError,
-            "UNKNOWN_ERROR" => ErrorCode::UnknownError,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED" => ErrorCode::AccessDenied,
+"FILE_EMPTY_ERROR" => ErrorCode::FileEmptyError,
+"FILE_NOT_FOUND_ERROR" => ErrorCode::FileNotFoundError,
+"FILE_PARSING_ERROR" => ErrorCode::FileParsingError,
+"FILE_SIZE_LIMIT_ERROR" => ErrorCode::FileSizeLimitError,
+"INVALID_FILE_TYPE_ERROR" => ErrorCode::InvalidFileTypeError,
+"INVALID_IMPORT_OPTIONS_ERROR" => ErrorCode::InvalidImportOptionsError,
+"INVALID_TABLE_COLUMN_ID_ERROR" => ErrorCode::InvalidTableColumnIdError,
+"INVALID_TABLE_ID_ERROR" => ErrorCode::InvalidTableIdError,
+"INVALID_URL_ERROR" => ErrorCode::InvalidUrlError,
+"RESOURCE_NOT_FOUND_ERROR" => ErrorCode::ResourceNotFoundError,
+"SYSTEM_LIMIT_ERROR" => ErrorCode::SystemLimitError,
+"TABLE_NOT_FOUND_ERROR" => ErrorCode::TableNotFoundError,
+"UNKNOWN_ERROR" => ErrorCode::UnknownError,
+other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -1843,38 +1835,36 @@ impl std::str::FromStr for ErrorCode {
                 }
             }
 impl ErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ErrorCode::AccessDenied => "ACCESS_DENIED",
-            ErrorCode::FileEmptyError => "FILE_EMPTY_ERROR",
-            ErrorCode::FileNotFoundError => "FILE_NOT_FOUND_ERROR",
-            ErrorCode::FileParsingError => "FILE_PARSING_ERROR",
-            ErrorCode::FileSizeLimitError => "FILE_SIZE_LIMIT_ERROR",
-            ErrorCode::InvalidFileTypeError => "INVALID_FILE_TYPE_ERROR",
-            ErrorCode::InvalidImportOptionsError => "INVALID_IMPORT_OPTIONS_ERROR",
-            ErrorCode::InvalidTableColumnIdError => "INVALID_TABLE_COLUMN_ID_ERROR",
-            ErrorCode::InvalidTableIdError => "INVALID_TABLE_ID_ERROR",
-            ErrorCode::InvalidUrlError => "INVALID_URL_ERROR",
-            ErrorCode::ResourceNotFoundError => "RESOURCE_NOT_FOUND_ERROR",
-            ErrorCode::SystemLimitError => "SYSTEM_LIMIT_ERROR",
-            ErrorCode::TableNotFoundError => "TABLE_NOT_FOUND_ERROR",
-            ErrorCode::UnknownError => "UNKNOWN_ERROR",
-            ErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED", "FILE_EMPTY_ERROR", "FILE_NOT_FOUND_ERROR", "FILE_PARSING_ERROR", "FILE_SIZE_LIMIT_ERROR", "INVALID_FILE_TYPE_ERROR", "INVALID_IMPORT_OPTIONS_ERROR", "INVALID_TABLE_COLUMN_ID_ERROR", "INVALID_TABLE_ID_ERROR", "INVALID_URL_ERROR", "RESOURCE_NOT_FOUND_ERROR", "SYSTEM_LIMIT_ERROR", "TABLE_NOT_FOUND_ERROR", "UNKNOWN_ERROR"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ErrorCode::AccessDenied => "ACCESS_DENIED",
+    ErrorCode::FileEmptyError => "FILE_EMPTY_ERROR",
+    ErrorCode::FileNotFoundError => "FILE_NOT_FOUND_ERROR",
+    ErrorCode::FileParsingError => "FILE_PARSING_ERROR",
+    ErrorCode::FileSizeLimitError => "FILE_SIZE_LIMIT_ERROR",
+    ErrorCode::InvalidFileTypeError => "INVALID_FILE_TYPE_ERROR",
+    ErrorCode::InvalidImportOptionsError => "INVALID_IMPORT_OPTIONS_ERROR",
+    ErrorCode::InvalidTableColumnIdError => "INVALID_TABLE_COLUMN_ID_ERROR",
+    ErrorCode::InvalidTableIdError => "INVALID_TABLE_ID_ERROR",
+    ErrorCode::InvalidUrlError => "INVALID_URL_ERROR",
+    ErrorCode::ResourceNotFoundError => "RESOURCE_NOT_FOUND_ERROR",
+    ErrorCode::SystemLimitError => "SYSTEM_LIMIT_ERROR",
+    ErrorCode::TableNotFoundError => "TABLE_NOT_FOUND_ERROR",
+    ErrorCode::UnknownError => "UNKNOWN_ERROR",
+    ErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "FILE_EMPTY_ERROR", "FILE_NOT_FOUND_ERROR", "FILE_PARSING_ERROR", "FILE_SIZE_LIMIT_ERROR", "INVALID_FILE_TYPE_ERROR", "INVALID_IMPORT_OPTIONS_ERROR", "INVALID_TABLE_COLUMN_ID_ERROR", "INVALID_TABLE_ID_ERROR", "INVALID_URL_ERROR", "RESOURCE_NOT_FOUND_ERROR", "SYSTEM_LIMIT_ERROR", "TABLE_NOT_FOUND_ERROR", "UNKNOWN_ERROR"]
+                }
+            }
 impl AsRef<str> for ErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The metadata associated with the table data import job that was submitted.</p>
 #[non_exhaustive]
@@ -2259,14 +2249,14 @@ pub enum UpsertAction {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpsertAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "APPENDED" => UpsertAction::Appended,
-            "UPDATED" => UpsertAction::Updated,
-            other => UpsertAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "APPENDED" => UpsertAction::Appended,
+"UPDATED" => UpsertAction::Updated,
+other => UpsertAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UpsertAction {
                 type Err = std::convert::Infallible;
 
@@ -2275,26 +2265,24 @@ impl std::str::FromStr for UpsertAction {
                 }
             }
 impl UpsertAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpsertAction::Appended => "APPENDED",
-            UpsertAction::Updated => "UPDATED",
-            UpsertAction::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPENDED", "UPDATED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UpsertAction::Appended => "APPENDED",
+    UpsertAction::Updated => "UPDATED",
+    UpsertAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["APPENDED", "UPDATED"]
+                }
+            }
 impl AsRef<str> for UpsertAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Data needed to upsert rows in a table as part of a single item in the BatchUpsertTableRows request. </p>
 #[non_exhaustive]

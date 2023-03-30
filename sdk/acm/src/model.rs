@@ -97,14 +97,14 @@ pub enum CertificateTransparencyLoggingPreference {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CertificateTransparencyLoggingPreference {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => CertificateTransparencyLoggingPreference::Disabled,
-            "ENABLED" => CertificateTransparencyLoggingPreference::Enabled,
-            other => CertificateTransparencyLoggingPreference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => CertificateTransparencyLoggingPreference::Disabled,
+"ENABLED" => CertificateTransparencyLoggingPreference::Enabled,
+other => CertificateTransparencyLoggingPreference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CertificateTransparencyLoggingPreference {
                 type Err = std::convert::Infallible;
 
@@ -113,26 +113,24 @@ impl std::str::FromStr for CertificateTransparencyLoggingPreference {
                 }
             }
 impl CertificateTransparencyLoggingPreference {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CertificateTransparencyLoggingPreference::Disabled => "DISABLED",
-            CertificateTransparencyLoggingPreference::Enabled => "ENABLED",
-            CertificateTransparencyLoggingPreference::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED", "ENABLED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CertificateTransparencyLoggingPreference::Disabled => "DISABLED",
+    CertificateTransparencyLoggingPreference::Enabled => "ENABLED",
+    CertificateTransparencyLoggingPreference::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "ENABLED"]
+                }
+            }
 impl AsRef<str> for CertificateTransparencyLoggingPreference {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `KeyAlgorithm`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -196,19 +194,19 @@ pub enum KeyAlgorithm {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeyAlgorithm {
-    fn from(s: &str) -> Self {
-        match s {
-            "EC_prime256v1" => KeyAlgorithm::EcPrime256v1,
-            "EC_secp384r1" => KeyAlgorithm::EcSecp384r1,
-            "EC_secp521r1" => KeyAlgorithm::EcSecp521r1,
-            "RSA_1024" => KeyAlgorithm::Rsa1024,
-            "RSA_2048" => KeyAlgorithm::Rsa2048,
-            "RSA_3072" => KeyAlgorithm::Rsa3072,
-            "RSA_4096" => KeyAlgorithm::Rsa4096,
-            other => KeyAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EC_prime256v1" => KeyAlgorithm::EcPrime256v1,
+"EC_secp384r1" => KeyAlgorithm::EcSecp384r1,
+"EC_secp521r1" => KeyAlgorithm::EcSecp521r1,
+"RSA_1024" => KeyAlgorithm::Rsa1024,
+"RSA_2048" => KeyAlgorithm::Rsa2048,
+"RSA_3072" => KeyAlgorithm::Rsa3072,
+"RSA_4096" => KeyAlgorithm::Rsa4096,
+other => KeyAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for KeyAlgorithm {
                 type Err = std::convert::Infallible;
 
@@ -217,31 +215,29 @@ impl std::str::FromStr for KeyAlgorithm {
                 }
             }
 impl KeyAlgorithm {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyAlgorithm::EcPrime256v1 => "EC_prime256v1",
-            KeyAlgorithm::EcSecp384r1 => "EC_secp384r1",
-            KeyAlgorithm::EcSecp521r1 => "EC_secp521r1",
-            KeyAlgorithm::Rsa1024 => "RSA_1024",
-            KeyAlgorithm::Rsa2048 => "RSA_2048",
-            KeyAlgorithm::Rsa3072 => "RSA_3072",
-            KeyAlgorithm::Rsa4096 => "RSA_4096",
-            KeyAlgorithm::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EC_prime256v1", "EC_secp384r1", "EC_secp521r1", "RSA_1024", "RSA_2048", "RSA_3072", "RSA_4096"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeyAlgorithm::EcPrime256v1 => "EC_prime256v1",
+    KeyAlgorithm::EcSecp384r1 => "EC_secp384r1",
+    KeyAlgorithm::EcSecp521r1 => "EC_secp521r1",
+    KeyAlgorithm::Rsa1024 => "RSA_1024",
+    KeyAlgorithm::Rsa2048 => "RSA_2048",
+    KeyAlgorithm::Rsa3072 => "RSA_3072",
+    KeyAlgorithm::Rsa4096 => "RSA_4096",
+    KeyAlgorithm::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EC_prime256v1", "EC_secp384r1", "EC_secp521r1", "RSA_1024", "RSA_2048", "RSA_3072", "RSA_4096"]
+                }
+            }
 impl AsRef<str> for KeyAlgorithm {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A key-value pair that identifies or specifies metadata about an ACM resource.</p>
 #[non_exhaustive]
@@ -456,14 +452,14 @@ pub enum ValidationMethod {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "DNS" => ValidationMethod::Dns,
-            "EMAIL" => ValidationMethod::Email,
-            other => ValidationMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DNS" => ValidationMethod::Dns,
+"EMAIL" => ValidationMethod::Email,
+other => ValidationMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ValidationMethod {
                 type Err = std::convert::Infallible;
 
@@ -472,26 +468,24 @@ impl std::str::FromStr for ValidationMethod {
                 }
             }
 impl ValidationMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationMethod::Dns => "DNS",
-            ValidationMethod::Email => "EMAIL",
-            ValidationMethod::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DNS", "EMAIL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationMethod::Dns => "DNS",
+    ValidationMethod::Email => "EMAIL",
+    ValidationMethod::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DNS", "EMAIL"]
+                }
+            }
 impl AsRef<str> for ValidationMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Object containing expiration events options associated with an Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -997,14 +991,14 @@ pub enum RenewalEligibility {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RenewalEligibility {
-    fn from(s: &str) -> Self {
-        match s {
-            "ELIGIBLE" => RenewalEligibility::Eligible,
-            "INELIGIBLE" => RenewalEligibility::Ineligible,
-            other => RenewalEligibility::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ELIGIBLE" => RenewalEligibility::Eligible,
+"INELIGIBLE" => RenewalEligibility::Ineligible,
+other => RenewalEligibility::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RenewalEligibility {
                 type Err = std::convert::Infallible;
 
@@ -1013,26 +1007,24 @@ impl std::str::FromStr for RenewalEligibility {
                 }
             }
 impl RenewalEligibility {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RenewalEligibility::Eligible => "ELIGIBLE",
-            RenewalEligibility::Ineligible => "INELIGIBLE",
-            RenewalEligibility::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ELIGIBLE", "INELIGIBLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RenewalEligibility::Eligible => "ELIGIBLE",
+    RenewalEligibility::Ineligible => "INELIGIBLE",
+    RenewalEligibility::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ELIGIBLE", "INELIGIBLE"]
+                }
+            }
 impl AsRef<str> for RenewalEligibility {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ExtendedKeyUsageName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1111,24 +1103,24 @@ pub enum ExtendedKeyUsageName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExtendedKeyUsageName {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANY" => ExtendedKeyUsageName::Any,
-            "CODE_SIGNING" => ExtendedKeyUsageName::CodeSigning,
-            "CUSTOM" => ExtendedKeyUsageName::Custom,
-            "EMAIL_PROTECTION" => ExtendedKeyUsageName::EmailProtection,
-            "IPSEC_END_SYSTEM" => ExtendedKeyUsageName::IpsecEndSystem,
-            "IPSEC_TUNNEL" => ExtendedKeyUsageName::IpsecTunnel,
-            "IPSEC_USER" => ExtendedKeyUsageName::IpsecUser,
-            "NONE" => ExtendedKeyUsageName::None,
-            "OCSP_SIGNING" => ExtendedKeyUsageName::OcspSigning,
-            "TIME_STAMPING" => ExtendedKeyUsageName::TimeStamping,
-            "TLS_WEB_CLIENT_AUTHENTICATION" => ExtendedKeyUsageName::TlsWebClientAuthentication,
-            "TLS_WEB_SERVER_AUTHENTICATION" => ExtendedKeyUsageName::TlsWebServerAuthentication,
-            other => ExtendedKeyUsageName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ANY" => ExtendedKeyUsageName::Any,
+"CODE_SIGNING" => ExtendedKeyUsageName::CodeSigning,
+"CUSTOM" => ExtendedKeyUsageName::Custom,
+"EMAIL_PROTECTION" => ExtendedKeyUsageName::EmailProtection,
+"IPSEC_END_SYSTEM" => ExtendedKeyUsageName::IpsecEndSystem,
+"IPSEC_TUNNEL" => ExtendedKeyUsageName::IpsecTunnel,
+"IPSEC_USER" => ExtendedKeyUsageName::IpsecUser,
+"NONE" => ExtendedKeyUsageName::None,
+"OCSP_SIGNING" => ExtendedKeyUsageName::OcspSigning,
+"TIME_STAMPING" => ExtendedKeyUsageName::TimeStamping,
+"TLS_WEB_CLIENT_AUTHENTICATION" => ExtendedKeyUsageName::TlsWebClientAuthentication,
+"TLS_WEB_SERVER_AUTHENTICATION" => ExtendedKeyUsageName::TlsWebServerAuthentication,
+other => ExtendedKeyUsageName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExtendedKeyUsageName {
                 type Err = std::convert::Infallible;
 
@@ -1137,36 +1129,34 @@ impl std::str::FromStr for ExtendedKeyUsageName {
                 }
             }
 impl ExtendedKeyUsageName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExtendedKeyUsageName::Any => "ANY",
-            ExtendedKeyUsageName::CodeSigning => "CODE_SIGNING",
-            ExtendedKeyUsageName::Custom => "CUSTOM",
-            ExtendedKeyUsageName::EmailProtection => "EMAIL_PROTECTION",
-            ExtendedKeyUsageName::IpsecEndSystem => "IPSEC_END_SYSTEM",
-            ExtendedKeyUsageName::IpsecTunnel => "IPSEC_TUNNEL",
-            ExtendedKeyUsageName::IpsecUser => "IPSEC_USER",
-            ExtendedKeyUsageName::None => "NONE",
-            ExtendedKeyUsageName::OcspSigning => "OCSP_SIGNING",
-            ExtendedKeyUsageName::TimeStamping => "TIME_STAMPING",
-            ExtendedKeyUsageName::TlsWebClientAuthentication => "TLS_WEB_CLIENT_AUTHENTICATION",
-            ExtendedKeyUsageName::TlsWebServerAuthentication => "TLS_WEB_SERVER_AUTHENTICATION",
-            ExtendedKeyUsageName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANY", "CODE_SIGNING", "CUSTOM", "EMAIL_PROTECTION", "IPSEC_END_SYSTEM", "IPSEC_TUNNEL", "IPSEC_USER", "NONE", "OCSP_SIGNING", "TIME_STAMPING", "TLS_WEB_CLIENT_AUTHENTICATION", "TLS_WEB_SERVER_AUTHENTICATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExtendedKeyUsageName::Any => "ANY",
+    ExtendedKeyUsageName::CodeSigning => "CODE_SIGNING",
+    ExtendedKeyUsageName::Custom => "CUSTOM",
+    ExtendedKeyUsageName::EmailProtection => "EMAIL_PROTECTION",
+    ExtendedKeyUsageName::IpsecEndSystem => "IPSEC_END_SYSTEM",
+    ExtendedKeyUsageName::IpsecTunnel => "IPSEC_TUNNEL",
+    ExtendedKeyUsageName::IpsecUser => "IPSEC_USER",
+    ExtendedKeyUsageName::None => "NONE",
+    ExtendedKeyUsageName::OcspSigning => "OCSP_SIGNING",
+    ExtendedKeyUsageName::TimeStamping => "TIME_STAMPING",
+    ExtendedKeyUsageName::TlsWebClientAuthentication => "TLS_WEB_CLIENT_AUTHENTICATION",
+    ExtendedKeyUsageName::TlsWebServerAuthentication => "TLS_WEB_SERVER_AUTHENTICATION",
+    ExtendedKeyUsageName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANY", "CODE_SIGNING", "CUSTOM", "EMAIL_PROTECTION", "IPSEC_END_SYSTEM", "IPSEC_TUNNEL", "IPSEC_USER", "NONE", "OCSP_SIGNING", "TIME_STAMPING", "TLS_WEB_CLIENT_AUTHENTICATION", "TLS_WEB_SERVER_AUTHENTICATION"]
+                }
+            }
 impl AsRef<str> for ExtendedKeyUsageName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `KeyUsageName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1242,23 +1232,23 @@ pub enum KeyUsageName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeyUsageName {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANY" => KeyUsageName::Any,
-            "CERTIFICATE_SIGNING" => KeyUsageName::CertificateSigning,
-            "CRL_SIGNING" => KeyUsageName::CrlSigning,
-            "CUSTOM" => KeyUsageName::Custom,
-            "DATA_ENCIPHERMENT" => KeyUsageName::DataEncipherment,
-            "DECIPHER_ONLY" => KeyUsageName::DecipherOnly,
-            "DIGITAL_SIGNATURE" => KeyUsageName::DigitalSignature,
-            "ENCIPHER_ONLY" => KeyUsageName::EnchiperOnly,
-            "KEY_AGREEMENT" => KeyUsageName::KeyAgreement,
-            "KEY_ENCIPHERMENT" => KeyUsageName::KeyEncipherment,
-            "NON_REPUDIATION" => KeyUsageName::NonRepudation,
-            other => KeyUsageName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ANY" => KeyUsageName::Any,
+"CERTIFICATE_SIGNING" => KeyUsageName::CertificateSigning,
+"CRL_SIGNING" => KeyUsageName::CrlSigning,
+"CUSTOM" => KeyUsageName::Custom,
+"DATA_ENCIPHERMENT" => KeyUsageName::DataEncipherment,
+"DECIPHER_ONLY" => KeyUsageName::DecipherOnly,
+"DIGITAL_SIGNATURE" => KeyUsageName::DigitalSignature,
+"ENCIPHER_ONLY" => KeyUsageName::EnchiperOnly,
+"KEY_AGREEMENT" => KeyUsageName::KeyAgreement,
+"KEY_ENCIPHERMENT" => KeyUsageName::KeyEncipherment,
+"NON_REPUDIATION" => KeyUsageName::NonRepudation,
+other => KeyUsageName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for KeyUsageName {
                 type Err = std::convert::Infallible;
 
@@ -1267,35 +1257,33 @@ impl std::str::FromStr for KeyUsageName {
                 }
             }
 impl KeyUsageName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyUsageName::Any => "ANY",
-            KeyUsageName::CertificateSigning => "CERTIFICATE_SIGNING",
-            KeyUsageName::CrlSigning => "CRL_SIGNING",
-            KeyUsageName::Custom => "CUSTOM",
-            KeyUsageName::DataEncipherment => "DATA_ENCIPHERMENT",
-            KeyUsageName::DecipherOnly => "DECIPHER_ONLY",
-            KeyUsageName::DigitalSignature => "DIGITAL_SIGNATURE",
-            KeyUsageName::EnchiperOnly => "ENCIPHER_ONLY",
-            KeyUsageName::KeyAgreement => "KEY_AGREEMENT",
-            KeyUsageName::KeyEncipherment => "KEY_ENCIPHERMENT",
-            KeyUsageName::NonRepudation => "NON_REPUDIATION",
-            KeyUsageName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANY", "CERTIFICATE_SIGNING", "CRL_SIGNING", "CUSTOM", "DATA_ENCIPHERMENT", "DECIPHER_ONLY", "DIGITAL_SIGNATURE", "ENCIPHER_ONLY", "KEY_AGREEMENT", "KEY_ENCIPHERMENT", "NON_REPUDIATION"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeyUsageName::Any => "ANY",
+    KeyUsageName::CertificateSigning => "CERTIFICATE_SIGNING",
+    KeyUsageName::CrlSigning => "CRL_SIGNING",
+    KeyUsageName::Custom => "CUSTOM",
+    KeyUsageName::DataEncipherment => "DATA_ENCIPHERMENT",
+    KeyUsageName::DecipherOnly => "DECIPHER_ONLY",
+    KeyUsageName::DigitalSignature => "DIGITAL_SIGNATURE",
+    KeyUsageName::EnchiperOnly => "ENCIPHER_ONLY",
+    KeyUsageName::KeyAgreement => "KEY_AGREEMENT",
+    KeyUsageName::KeyEncipherment => "KEY_ENCIPHERMENT",
+    KeyUsageName::NonRepudation => "NON_REPUDIATION",
+    KeyUsageName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANY", "CERTIFICATE_SIGNING", "CRL_SIGNING", "CUSTOM", "DATA_ENCIPHERMENT", "DECIPHER_ONLY", "DIGITAL_SIGNATURE", "ENCIPHER_ONLY", "KEY_AGREEMENT", "KEY_ENCIPHERMENT", "NON_REPUDIATION"]
+                }
+            }
 impl AsRef<str> for KeyUsageName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CertificateType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1347,15 +1335,15 @@ pub enum CertificateType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CertificateType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AMAZON_ISSUED" => CertificateType::AmazonIssued,
-            "IMPORTED" => CertificateType::Imported,
-            "PRIVATE" => CertificateType::Private,
-            other => CertificateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AMAZON_ISSUED" => CertificateType::AmazonIssued,
+"IMPORTED" => CertificateType::Imported,
+"PRIVATE" => CertificateType::Private,
+other => CertificateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CertificateType {
                 type Err = std::convert::Infallible;
 
@@ -1364,27 +1352,25 @@ impl std::str::FromStr for CertificateType {
                 }
             }
 impl CertificateType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CertificateType::AmazonIssued => "AMAZON_ISSUED",
-            CertificateType::Imported => "IMPORTED",
-            CertificateType::Private => "PRIVATE",
-            CertificateType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AMAZON_ISSUED", "IMPORTED", "PRIVATE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CertificateType::AmazonIssued => "AMAZON_ISSUED",
+    CertificateType::Imported => "IMPORTED",
+    CertificateType::Private => "PRIVATE",
+    CertificateType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AMAZON_ISSUED", "IMPORTED", "PRIVATE"]
+                }
+            }
 impl AsRef<str> for CertificateType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `CertificateStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1448,19 +1434,19 @@ pub enum CertificateStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CertificateStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXPIRED" => CertificateStatus::Expired,
-            "FAILED" => CertificateStatus::Failed,
-            "INACTIVE" => CertificateStatus::Inactive,
-            "ISSUED" => CertificateStatus::Issued,
-            "PENDING_VALIDATION" => CertificateStatus::PendingValidation,
-            "REVOKED" => CertificateStatus::Revoked,
-            "VALIDATION_TIMED_OUT" => CertificateStatus::ValidationTimedOut,
-            other => CertificateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EXPIRED" => CertificateStatus::Expired,
+"FAILED" => CertificateStatus::Failed,
+"INACTIVE" => CertificateStatus::Inactive,
+"ISSUED" => CertificateStatus::Issued,
+"PENDING_VALIDATION" => CertificateStatus::PendingValidation,
+"REVOKED" => CertificateStatus::Revoked,
+"VALIDATION_TIMED_OUT" => CertificateStatus::ValidationTimedOut,
+other => CertificateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CertificateStatus {
                 type Err = std::convert::Infallible;
 
@@ -1469,31 +1455,29 @@ impl std::str::FromStr for CertificateStatus {
                 }
             }
 impl CertificateStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CertificateStatus::Expired => "EXPIRED",
-            CertificateStatus::Failed => "FAILED",
-            CertificateStatus::Inactive => "INACTIVE",
-            CertificateStatus::Issued => "ISSUED",
-            CertificateStatus::PendingValidation => "PENDING_VALIDATION",
-            CertificateStatus::Revoked => "REVOKED",
-            CertificateStatus::ValidationTimedOut => "VALIDATION_TIMED_OUT",
-            CertificateStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EXPIRED", "FAILED", "INACTIVE", "ISSUED", "PENDING_VALIDATION", "REVOKED", "VALIDATION_TIMED_OUT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CertificateStatus::Expired => "EXPIRED",
+    CertificateStatus::Failed => "FAILED",
+    CertificateStatus::Inactive => "INACTIVE",
+    CertificateStatus::Issued => "ISSUED",
+    CertificateStatus::PendingValidation => "PENDING_VALIDATION",
+    CertificateStatus::Revoked => "REVOKED",
+    CertificateStatus::ValidationTimedOut => "VALIDATION_TIMED_OUT",
+    CertificateStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXPIRED", "FAILED", "INACTIVE", "ISSUED", "PENDING_VALIDATION", "REVOKED", "VALIDATION_TIMED_OUT"]
+                }
+            }
 impl AsRef<str> for CertificateStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1542,14 +1526,14 @@ pub enum SortOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASCENDING" => SortOrder::Ascending,
-            "DESCENDING" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASCENDING" => SortOrder::Ascending,
+"DESCENDING" => SortOrder::Descending,
+other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortOrder {
                 type Err = std::convert::Infallible;
 
@@ -1558,26 +1542,24 @@ impl std::str::FromStr for SortOrder {
                 }
             }
 impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Ascending => "ASCENDING",
-            SortOrder::Descending => "DESCENDING",
-            SortOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASCENDING", "DESCENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortOrder::Ascending => "ASCENDING",
+    SortOrder::Descending => "DESCENDING",
+    SortOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASCENDING", "DESCENDING"]
+                }
+            }
 impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `SortBy`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1623,13 +1605,13 @@ pub enum SortBy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortBy {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED_AT" => SortBy::CreatedAt,
-            other => SortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATED_AT" => SortBy::CreatedAt,
+other => SortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortBy {
                 type Err = std::convert::Infallible;
 
@@ -1638,25 +1620,23 @@ impl std::str::FromStr for SortBy {
                 }
             }
 impl SortBy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortBy::CreatedAt => "CREATED_AT",
-            SortBy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED_AT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortBy::CreatedAt => "CREATED_AT",
+    SortBy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED_AT"]
+                }
+            }
 impl AsRef<str> for SortBy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>This structure can be used in the <code>ListCertificates</code> action to filter the output of the certificate list. </p>
 #[non_exhaustive]
@@ -2699,29 +2679,29 @@ pub enum FailureReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailureReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITIONAL_VERIFICATION_REQUIRED" => FailureReason::AdditionalVerificationRequired,
-            "CAA_ERROR" => FailureReason::CaaError,
-            "DOMAIN_NOT_ALLOWED" => FailureReason::DomainNotAllowed,
-            "DOMAIN_VALIDATION_DENIED" => FailureReason::DomainValidationDenied,
-            "INVALID_PUBLIC_DOMAIN" => FailureReason::InvalidPublicDomain,
-            "NO_AVAILABLE_CONTACTS" => FailureReason::NoAvailableContacts,
-            "OTHER" => FailureReason::Other,
-            "PCA_ACCESS_DENIED" => FailureReason::PcaAccessDenied,
-            "PCA_INVALID_ARGS" => FailureReason::PcaInvalidArgs,
-            "PCA_INVALID_ARN" => FailureReason::PcaInvalidArn,
-            "PCA_INVALID_DURATION" => FailureReason::PcaInvalidDuration,
-            "PCA_INVALID_STATE" => FailureReason::PcaInvalidState,
-            "PCA_LIMIT_EXCEEDED" => FailureReason::PcaLimitExceeded,
-            "PCA_NAME_CONSTRAINTS_VALIDATION" => FailureReason::PcaNameConstraintsValidation,
-            "PCA_REQUEST_FAILED" => FailureReason::PcaRequestFailed,
-            "PCA_RESOURCE_NOT_FOUND" => FailureReason::PcaResourceNotFound,
-            "SLR_NOT_FOUND" => FailureReason::SlrNotFound,
-            other => FailureReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITIONAL_VERIFICATION_REQUIRED" => FailureReason::AdditionalVerificationRequired,
+"CAA_ERROR" => FailureReason::CaaError,
+"DOMAIN_NOT_ALLOWED" => FailureReason::DomainNotAllowed,
+"DOMAIN_VALIDATION_DENIED" => FailureReason::DomainValidationDenied,
+"INVALID_PUBLIC_DOMAIN" => FailureReason::InvalidPublicDomain,
+"NO_AVAILABLE_CONTACTS" => FailureReason::NoAvailableContacts,
+"OTHER" => FailureReason::Other,
+"PCA_ACCESS_DENIED" => FailureReason::PcaAccessDenied,
+"PCA_INVALID_ARGS" => FailureReason::PcaInvalidArgs,
+"PCA_INVALID_ARN" => FailureReason::PcaInvalidArn,
+"PCA_INVALID_DURATION" => FailureReason::PcaInvalidDuration,
+"PCA_INVALID_STATE" => FailureReason::PcaInvalidState,
+"PCA_LIMIT_EXCEEDED" => FailureReason::PcaLimitExceeded,
+"PCA_NAME_CONSTRAINTS_VALIDATION" => FailureReason::PcaNameConstraintsValidation,
+"PCA_REQUEST_FAILED" => FailureReason::PcaRequestFailed,
+"PCA_RESOURCE_NOT_FOUND" => FailureReason::PcaResourceNotFound,
+"SLR_NOT_FOUND" => FailureReason::SlrNotFound,
+other => FailureReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FailureReason {
                 type Err = std::convert::Infallible;
 
@@ -2730,41 +2710,39 @@ impl std::str::FromStr for FailureReason {
                 }
             }
 impl FailureReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailureReason::AdditionalVerificationRequired => "ADDITIONAL_VERIFICATION_REQUIRED",
-            FailureReason::CaaError => "CAA_ERROR",
-            FailureReason::DomainNotAllowed => "DOMAIN_NOT_ALLOWED",
-            FailureReason::DomainValidationDenied => "DOMAIN_VALIDATION_DENIED",
-            FailureReason::InvalidPublicDomain => "INVALID_PUBLIC_DOMAIN",
-            FailureReason::NoAvailableContacts => "NO_AVAILABLE_CONTACTS",
-            FailureReason::Other => "OTHER",
-            FailureReason::PcaAccessDenied => "PCA_ACCESS_DENIED",
-            FailureReason::PcaInvalidArgs => "PCA_INVALID_ARGS",
-            FailureReason::PcaInvalidArn => "PCA_INVALID_ARN",
-            FailureReason::PcaInvalidDuration => "PCA_INVALID_DURATION",
-            FailureReason::PcaInvalidState => "PCA_INVALID_STATE",
-            FailureReason::PcaLimitExceeded => "PCA_LIMIT_EXCEEDED",
-            FailureReason::PcaNameConstraintsValidation => "PCA_NAME_CONSTRAINTS_VALIDATION",
-            FailureReason::PcaRequestFailed => "PCA_REQUEST_FAILED",
-            FailureReason::PcaResourceNotFound => "PCA_RESOURCE_NOT_FOUND",
-            FailureReason::SlrNotFound => "SLR_NOT_FOUND",
-            FailureReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITIONAL_VERIFICATION_REQUIRED", "CAA_ERROR", "DOMAIN_NOT_ALLOWED", "DOMAIN_VALIDATION_DENIED", "INVALID_PUBLIC_DOMAIN", "NO_AVAILABLE_CONTACTS", "OTHER", "PCA_ACCESS_DENIED", "PCA_INVALID_ARGS", "PCA_INVALID_ARN", "PCA_INVALID_DURATION", "PCA_INVALID_STATE", "PCA_LIMIT_EXCEEDED", "PCA_NAME_CONSTRAINTS_VALIDATION", "PCA_REQUEST_FAILED", "PCA_RESOURCE_NOT_FOUND", "SLR_NOT_FOUND"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FailureReason::AdditionalVerificationRequired => "ADDITIONAL_VERIFICATION_REQUIRED",
+    FailureReason::CaaError => "CAA_ERROR",
+    FailureReason::DomainNotAllowed => "DOMAIN_NOT_ALLOWED",
+    FailureReason::DomainValidationDenied => "DOMAIN_VALIDATION_DENIED",
+    FailureReason::InvalidPublicDomain => "INVALID_PUBLIC_DOMAIN",
+    FailureReason::NoAvailableContacts => "NO_AVAILABLE_CONTACTS",
+    FailureReason::Other => "OTHER",
+    FailureReason::PcaAccessDenied => "PCA_ACCESS_DENIED",
+    FailureReason::PcaInvalidArgs => "PCA_INVALID_ARGS",
+    FailureReason::PcaInvalidArn => "PCA_INVALID_ARN",
+    FailureReason::PcaInvalidDuration => "PCA_INVALID_DURATION",
+    FailureReason::PcaInvalidState => "PCA_INVALID_STATE",
+    FailureReason::PcaLimitExceeded => "PCA_LIMIT_EXCEEDED",
+    FailureReason::PcaNameConstraintsValidation => "PCA_NAME_CONSTRAINTS_VALIDATION",
+    FailureReason::PcaRequestFailed => "PCA_REQUEST_FAILED",
+    FailureReason::PcaResourceNotFound => "PCA_RESOURCE_NOT_FOUND",
+    FailureReason::SlrNotFound => "SLR_NOT_FOUND",
+    FailureReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITIONAL_VERIFICATION_REQUIRED", "CAA_ERROR", "DOMAIN_NOT_ALLOWED", "DOMAIN_VALIDATION_DENIED", "INVALID_PUBLIC_DOMAIN", "NO_AVAILABLE_CONTACTS", "OTHER", "PCA_ACCESS_DENIED", "PCA_INVALID_ARGS", "PCA_INVALID_ARN", "PCA_INVALID_DURATION", "PCA_INVALID_STATE", "PCA_LIMIT_EXCEEDED", "PCA_NAME_CONSTRAINTS_VALIDATION", "PCA_REQUEST_FAILED", "PCA_RESOURCE_NOT_FOUND", "SLR_NOT_FOUND"]
+                }
+            }
 impl AsRef<str> for FailureReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Contains information about the validation of each domain name in the certificate.</p>
 #[non_exhaustive]
@@ -3073,13 +3051,13 @@ pub enum RecordType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecordType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CNAME" => RecordType::Cname,
-            other => RecordType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CNAME" => RecordType::Cname,
+other => RecordType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecordType {
                 type Err = std::convert::Infallible;
 
@@ -3088,25 +3066,23 @@ impl std::str::FromStr for RecordType {
                 }
             }
 impl RecordType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecordType::Cname => "CNAME",
-            RecordType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CNAME"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecordType::Cname => "CNAME",
+    RecordType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CNAME"]
+                }
+            }
 impl AsRef<str> for RecordType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DomainStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3158,15 +3134,15 @@ pub enum DomainStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => DomainStatus::Failed,
-            "PENDING_VALIDATION" => DomainStatus::PendingValidation,
-            "SUCCESS" => DomainStatus::Success,
-            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => DomainStatus::Failed,
+"PENDING_VALIDATION" => DomainStatus::PendingValidation,
+"SUCCESS" => DomainStatus::Success,
+other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DomainStatus {
                 type Err = std::convert::Infallible;
 
@@ -3175,27 +3151,25 @@ impl std::str::FromStr for DomainStatus {
                 }
             }
 impl DomainStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DomainStatus::Failed => "FAILED",
-            DomainStatus::PendingValidation => "PENDING_VALIDATION",
-            DomainStatus::Success => "SUCCESS",
-            DomainStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "PENDING_VALIDATION", "SUCCESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DomainStatus::Failed => "FAILED",
+    DomainStatus::PendingValidation => "PENDING_VALIDATION",
+    DomainStatus::Success => "SUCCESS",
+    DomainStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "PENDING_VALIDATION", "SUCCESS"]
+                }
+            }
 impl AsRef<str> for DomainStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RenewalStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3250,16 +3224,16 @@ pub enum RenewalStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RenewalStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => RenewalStatus::Failed,
-            "PENDING_AUTO_RENEWAL" => RenewalStatus::PendingAutoRenewal,
-            "PENDING_VALIDATION" => RenewalStatus::PendingValidation,
-            "SUCCESS" => RenewalStatus::Success,
-            other => RenewalStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => RenewalStatus::Failed,
+"PENDING_AUTO_RENEWAL" => RenewalStatus::PendingAutoRenewal,
+"PENDING_VALIDATION" => RenewalStatus::PendingValidation,
+"SUCCESS" => RenewalStatus::Success,
+other => RenewalStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RenewalStatus {
                 type Err = std::convert::Infallible;
 
@@ -3268,28 +3242,26 @@ impl std::str::FromStr for RenewalStatus {
                 }
             }
 impl RenewalStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RenewalStatus::Failed => "FAILED",
-            RenewalStatus::PendingAutoRenewal => "PENDING_AUTO_RENEWAL",
-            RenewalStatus::PendingValidation => "PENDING_VALIDATION",
-            RenewalStatus::Success => "SUCCESS",
-            RenewalStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "PENDING_AUTO_RENEWAL", "PENDING_VALIDATION", "SUCCESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RenewalStatus::Failed => "FAILED",
+    RenewalStatus::PendingAutoRenewal => "PENDING_AUTO_RENEWAL",
+    RenewalStatus::PendingValidation => "PENDING_VALIDATION",
+    RenewalStatus::Success => "SUCCESS",
+    RenewalStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "PENDING_AUTO_RENEWAL", "PENDING_VALIDATION", "SUCCESS"]
+                }
+            }
 impl AsRef<str> for RenewalStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RevocationReason`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3362,22 +3334,22 @@ pub enum RevocationReason {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RevocationReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "AFFILIATION_CHANGED" => RevocationReason::AffiliationChanged,
-            "A_A_COMPROMISE" => RevocationReason::AACompromise,
-            "CA_COMPROMISE" => RevocationReason::CaCompromise,
-            "CERTIFICATE_HOLD" => RevocationReason::CertificateHold,
-            "CESSATION_OF_OPERATION" => RevocationReason::CessationOfOperation,
-            "KEY_COMPROMISE" => RevocationReason::KeyCompromise,
-            "PRIVILEGE_WITHDRAWN" => RevocationReason::PrivilegeWithdrawn,
-            "REMOVE_FROM_CRL" => RevocationReason::RemoveFromCrl,
-            "SUPERCEDED" => RevocationReason::Superceded,
-            "UNSPECIFIED" => RevocationReason::Unspecified,
-            other => RevocationReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AFFILIATION_CHANGED" => RevocationReason::AffiliationChanged,
+"A_A_COMPROMISE" => RevocationReason::AACompromise,
+"CA_COMPROMISE" => RevocationReason::CaCompromise,
+"CERTIFICATE_HOLD" => RevocationReason::CertificateHold,
+"CESSATION_OF_OPERATION" => RevocationReason::CessationOfOperation,
+"KEY_COMPROMISE" => RevocationReason::KeyCompromise,
+"PRIVILEGE_WITHDRAWN" => RevocationReason::PrivilegeWithdrawn,
+"REMOVE_FROM_CRL" => RevocationReason::RemoveFromCrl,
+"SUPERCEDED" => RevocationReason::Superceded,
+"UNSPECIFIED" => RevocationReason::Unspecified,
+other => RevocationReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RevocationReason {
                 type Err = std::convert::Infallible;
 
@@ -3386,32 +3358,30 @@ impl std::str::FromStr for RevocationReason {
                 }
             }
 impl RevocationReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RevocationReason::AffiliationChanged => "AFFILIATION_CHANGED",
-            RevocationReason::AACompromise => "A_A_COMPROMISE",
-            RevocationReason::CaCompromise => "CA_COMPROMISE",
-            RevocationReason::CertificateHold => "CERTIFICATE_HOLD",
-            RevocationReason::CessationOfOperation => "CESSATION_OF_OPERATION",
-            RevocationReason::KeyCompromise => "KEY_COMPROMISE",
-            RevocationReason::PrivilegeWithdrawn => "PRIVILEGE_WITHDRAWN",
-            RevocationReason::RemoveFromCrl => "REMOVE_FROM_CRL",
-            RevocationReason::Superceded => "SUPERCEDED",
-            RevocationReason::Unspecified => "UNSPECIFIED",
-            RevocationReason::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AFFILIATION_CHANGED", "A_A_COMPROMISE", "CA_COMPROMISE", "CERTIFICATE_HOLD", "CESSATION_OF_OPERATION", "KEY_COMPROMISE", "PRIVILEGE_WITHDRAWN", "REMOVE_FROM_CRL", "SUPERCEDED", "UNSPECIFIED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RevocationReason::AffiliationChanged => "AFFILIATION_CHANGED",
+    RevocationReason::AACompromise => "A_A_COMPROMISE",
+    RevocationReason::CaCompromise => "CA_COMPROMISE",
+    RevocationReason::CertificateHold => "CERTIFICATE_HOLD",
+    RevocationReason::CessationOfOperation => "CESSATION_OF_OPERATION",
+    RevocationReason::KeyCompromise => "KEY_COMPROMISE",
+    RevocationReason::PrivilegeWithdrawn => "PRIVILEGE_WITHDRAWN",
+    RevocationReason::RemoveFromCrl => "REMOVE_FROM_CRL",
+    RevocationReason::Superceded => "SUPERCEDED",
+    RevocationReason::Unspecified => "UNSPECIFIED",
+    RevocationReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AFFILIATION_CHANGED", "A_A_COMPROMISE", "CA_COMPROMISE", "CERTIFICATE_HOLD", "CESSATION_OF_OPERATION", "KEY_COMPROMISE", "PRIVILEGE_WITHDRAWN", "REMOVE_FROM_CRL", "SUPERCEDED", "UNSPECIFIED"]
+                }
+            }
 impl AsRef<str> for RevocationReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

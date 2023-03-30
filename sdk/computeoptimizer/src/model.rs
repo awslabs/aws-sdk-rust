@@ -53,16 +53,16 @@ pub enum Status {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => Status::Active,
-            "Failed" => Status::Failed,
-            "Inactive" => Status::Inactive,
-            "Pending" => Status::Pending,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => Status::Active,
+"Failed" => Status::Failed,
+"Inactive" => Status::Inactive,
+"Pending" => Status::Pending,
+other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Status {
                 type Err = std::convert::Infallible;
 
@@ -71,28 +71,26 @@ impl std::str::FromStr for Status {
                 }
             }
 impl Status {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Status::Active => "Active",
-            Status::Failed => "Failed",
-            Status::Inactive => "Inactive",
-            Status::Pending => "Pending",
-            Status::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "Failed", "Inactive", "Pending"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Status::Active => "Active",
+    Status::Failed => "Failed",
+    Status::Inactive => "Inactive",
+    Status::Pending => "Pending",
+    Status::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Failed", "Inactive", "Pending"]
+                }
+            }
 impl AsRef<str> for Status {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes the external metrics preferences for EC2 rightsizing recommendations. </p>
 #[non_exhaustive]
@@ -197,16 +195,16 @@ pub enum ExternalMetricsSource {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExternalMetricsSource {
-    fn from(s: &str) -> Self {
-        match s {
-            "Datadog" => ExternalMetricsSource::Datadog,
-            "Dynatrace" => ExternalMetricsSource::Dynatrace,
-            "Instana" => ExternalMetricsSource::Instana,
-            "NewRelic" => ExternalMetricsSource::Newrelic,
-            other => ExternalMetricsSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Datadog" => ExternalMetricsSource::Datadog,
+"Dynatrace" => ExternalMetricsSource::Dynatrace,
+"Instana" => ExternalMetricsSource::Instana,
+"NewRelic" => ExternalMetricsSource::Newrelic,
+other => ExternalMetricsSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExternalMetricsSource {
                 type Err = std::convert::Infallible;
 
@@ -215,28 +213,26 @@ impl std::str::FromStr for ExternalMetricsSource {
                 }
             }
 impl ExternalMetricsSource {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExternalMetricsSource::Datadog => "Datadog",
-            ExternalMetricsSource::Dynatrace => "Dynatrace",
-            ExternalMetricsSource::Instana => "Instana",
-            ExternalMetricsSource::Newrelic => "NewRelic",
-            ExternalMetricsSource::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Datadog", "Dynatrace", "Instana", "NewRelic"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExternalMetricsSource::Datadog => "Datadog",
+    ExternalMetricsSource::Dynatrace => "Dynatrace",
+    ExternalMetricsSource::Instana => "Instana",
+    ExternalMetricsSource::Newrelic => "NewRelic",
+    ExternalMetricsSource::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Datadog", "Dynatrace", "Instana", "NewRelic"]
+                }
+            }
 impl AsRef<str> for ExternalMetricsSource {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `InferredWorkloadTypesPreference`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -285,14 +281,14 @@ pub enum InferredWorkloadTypesPreference {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InferredWorkloadTypesPreference {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => InferredWorkloadTypesPreference::Active,
-            "Inactive" => InferredWorkloadTypesPreference::Inactive,
-            other => InferredWorkloadTypesPreference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => InferredWorkloadTypesPreference::Active,
+"Inactive" => InferredWorkloadTypesPreference::Inactive,
+other => InferredWorkloadTypesPreference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InferredWorkloadTypesPreference {
                 type Err = std::convert::Infallible;
 
@@ -301,26 +297,24 @@ impl std::str::FromStr for InferredWorkloadTypesPreference {
                 }
             }
 impl InferredWorkloadTypesPreference {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InferredWorkloadTypesPreference::Active => "Active",
-            InferredWorkloadTypesPreference::Inactive => "Inactive",
-            InferredWorkloadTypesPreference::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "Inactive"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InferredWorkloadTypesPreference::Active => "Active",
+    InferredWorkloadTypesPreference::Inactive => "Inactive",
+    InferredWorkloadTypesPreference::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Inactive"]
+                }
+            }
 impl AsRef<str> for InferredWorkloadTypesPreference {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EnhancedInfrastructureMetrics`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -369,14 +363,14 @@ pub enum EnhancedInfrastructureMetrics {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnhancedInfrastructureMetrics {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => EnhancedInfrastructureMetrics::Active,
-            "Inactive" => EnhancedInfrastructureMetrics::Inactive,
-            other => EnhancedInfrastructureMetrics::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => EnhancedInfrastructureMetrics::Active,
+"Inactive" => EnhancedInfrastructureMetrics::Inactive,
+other => EnhancedInfrastructureMetrics::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EnhancedInfrastructureMetrics {
                 type Err = std::convert::Infallible;
 
@@ -385,26 +379,24 @@ impl std::str::FromStr for EnhancedInfrastructureMetrics {
                 }
             }
 impl EnhancedInfrastructureMetrics {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnhancedInfrastructureMetrics::Active => "Active",
-            EnhancedInfrastructureMetrics::Inactive => "Inactive",
-            EnhancedInfrastructureMetrics::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active", "Inactive"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnhancedInfrastructureMetrics::Active => "Active",
+    EnhancedInfrastructureMetrics::Inactive => "Inactive",
+    EnhancedInfrastructureMetrics::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Inactive"]
+                }
+            }
 impl AsRef<str> for EnhancedInfrastructureMetrics {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the scope of a recommendation preference.</p> 
 /// <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note> 
@@ -580,15 +572,15 @@ pub enum ScopeName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScopeName {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccountId" => ScopeName::AccountId,
-            "Organization" => ScopeName::Organization,
-            "ResourceArn" => ScopeName::ResourceArn,
-            other => ScopeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccountId" => ScopeName::AccountId,
+"Organization" => ScopeName::Organization,
+"ResourceArn" => ScopeName::ResourceArn,
+other => ScopeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ScopeName {
                 type Err = std::convert::Infallible;
 
@@ -597,27 +589,25 @@ impl std::str::FromStr for ScopeName {
                 }
             }
 impl ScopeName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScopeName::AccountId => "AccountId",
-            ScopeName::Organization => "Organization",
-            ScopeName::ResourceArn => "ResourceArn",
-            ScopeName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccountId", "Organization", "ResourceArn"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScopeName::AccountId => "AccountId",
+    ScopeName::Organization => "Organization",
+    ScopeName::ResourceArn => "ResourceArn",
+    ScopeName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccountId", "Organization", "ResourceArn"]
+                }
+            }
 impl AsRef<str> for ScopeName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ResourceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -678,18 +668,18 @@ pub enum ResourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AutoScalingGroup" => ResourceType::AutoScalingGroup,
-            "EbsVolume" => ResourceType::EbsVolume,
-            "Ec2Instance" => ResourceType::Ec2Instance,
-            "EcsService" => ResourceType::EcsService,
-            "LambdaFunction" => ResourceType::LambdaFunction,
-            "NotApplicable" => ResourceType::NotApplicable,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AutoScalingGroup" => ResourceType::AutoScalingGroup,
+"EbsVolume" => ResourceType::EbsVolume,
+"Ec2Instance" => ResourceType::Ec2Instance,
+"EcsService" => ResourceType::EcsService,
+"LambdaFunction" => ResourceType::LambdaFunction,
+"NotApplicable" => ResourceType::NotApplicable,
+other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceType {
                 type Err = std::convert::Infallible;
 
@@ -698,30 +688,28 @@ impl std::str::FromStr for ResourceType {
                 }
             }
 impl ResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceType::AutoScalingGroup => "AutoScalingGroup",
-            ResourceType::EbsVolume => "EbsVolume",
-            ResourceType::Ec2Instance => "Ec2Instance",
-            ResourceType::EcsService => "EcsService",
-            ResourceType::LambdaFunction => "LambdaFunction",
-            ResourceType::NotApplicable => "NotApplicable",
-            ResourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AutoScalingGroup", "EbsVolume", "Ec2Instance", "EcsService", "LambdaFunction", "NotApplicable"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceType::AutoScalingGroup => "AutoScalingGroup",
+    ResourceType::EbsVolume => "EbsVolume",
+    ResourceType::Ec2Instance => "Ec2Instance",
+    ResourceType::EcsService => "EcsService",
+    ResourceType::LambdaFunction => "LambdaFunction",
+    ResourceType::NotApplicable => "NotApplicable",
+    ResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AutoScalingGroup", "EbsVolume", "Ec2Instance", "EcsService", "LambdaFunction", "NotApplicable"]
+                }
+            }
 impl AsRef<str> for ResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A summary of a recommendation.</p>
 #[non_exhaustive]
@@ -1158,14 +1146,14 @@ pub enum Currency {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Currency {
-    fn from(s: &str) -> Self {
-        match s {
-            "CNY" => Currency::Cny,
-            "USD" => Currency::Usd,
-            other => Currency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CNY" => Currency::Cny,
+"USD" => Currency::Usd,
+other => Currency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Currency {
                 type Err = std::convert::Infallible;
 
@@ -1174,26 +1162,24 @@ impl std::str::FromStr for Currency {
                 }
             }
 impl Currency {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Currency::Cny => "CNY",
-            Currency::Usd => "USD",
-            Currency::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CNY", "USD"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Currency::Cny => "CNY",
+    Currency::Usd => "USD",
+    Currency::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CNY", "USD"]
+                }
+            }
 impl AsRef<str> for Currency {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RecommendationSourceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1251,17 +1237,17 @@ pub enum RecommendationSourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecommendationSourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AutoScalingGroup" => RecommendationSourceType::AutoScalingGroup,
-            "EbsVolume" => RecommendationSourceType::EbsVolume,
-            "Ec2Instance" => RecommendationSourceType::Ec2Instance,
-            "EcsService" => RecommendationSourceType::EcsService,
-            "LambdaFunction" => RecommendationSourceType::LambdaFunction,
-            other => RecommendationSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AutoScalingGroup" => RecommendationSourceType::AutoScalingGroup,
+"EbsVolume" => RecommendationSourceType::EbsVolume,
+"Ec2Instance" => RecommendationSourceType::Ec2Instance,
+"EcsService" => RecommendationSourceType::EcsService,
+"LambdaFunction" => RecommendationSourceType::LambdaFunction,
+other => RecommendationSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecommendationSourceType {
                 type Err = std::convert::Infallible;
 
@@ -1270,29 +1256,27 @@ impl std::str::FromStr for RecommendationSourceType {
                 }
             }
 impl RecommendationSourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecommendationSourceType::AutoScalingGroup => "AutoScalingGroup",
-            RecommendationSourceType::EbsVolume => "EbsVolume",
-            RecommendationSourceType::Ec2Instance => "Ec2Instance",
-            RecommendationSourceType::EcsService => "EcsService",
-            RecommendationSourceType::LambdaFunction => "LambdaFunction",
-            RecommendationSourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AutoScalingGroup", "EbsVolume", "Ec2Instance", "EcsService", "LambdaFunction"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecommendationSourceType::AutoScalingGroup => "AutoScalingGroup",
+    RecommendationSourceType::EbsVolume => "EbsVolume",
+    RecommendationSourceType::Ec2Instance => "Ec2Instance",
+    RecommendationSourceType::EcsService => "EcsService",
+    RecommendationSourceType::LambdaFunction => "LambdaFunction",
+    RecommendationSourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AutoScalingGroup", "EbsVolume", "Ec2Instance", "EcsService", "LambdaFunction"]
+                }
+            }
 impl AsRef<str> for RecommendationSourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The summary of a recommendation.</p>
 #[non_exhaustive]
@@ -1506,14 +1490,14 @@ pub enum FindingReasonCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FindingReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "MemoryOverprovisioned" => FindingReasonCode::MemoryOverProvisioned,
-            "MemoryUnderprovisioned" => FindingReasonCode::MemoryUnderProvisioned,
-            other => FindingReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MemoryOverprovisioned" => FindingReasonCode::MemoryOverProvisioned,
+"MemoryUnderprovisioned" => FindingReasonCode::MemoryUnderProvisioned,
+other => FindingReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FindingReasonCode {
                 type Err = std::convert::Infallible;
 
@@ -1522,26 +1506,24 @@ impl std::str::FromStr for FindingReasonCode {
                 }
             }
 impl FindingReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
-            FindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
-            FindingReasonCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MemoryOverprovisioned", "MemoryUnderprovisioned"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
+    FindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
+    FindingReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MemoryOverprovisioned", "MemoryUnderprovisioned"]
+                }
+            }
 impl AsRef<str> for FindingReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Finding`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1596,16 +1578,16 @@ pub enum Finding {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Finding {
-    fn from(s: &str) -> Self {
-        match s {
-            "NotOptimized" => Finding::NotOptimized,
-            "Optimized" => Finding::Optimized,
-            "Overprovisioned" => Finding::OverProvisioned,
-            "Underprovisioned" => Finding::UnderProvisioned,
-            other => Finding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NotOptimized" => Finding::NotOptimized,
+"Optimized" => Finding::Optimized,
+"Overprovisioned" => Finding::OverProvisioned,
+"Underprovisioned" => Finding::UnderProvisioned,
+other => Finding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Finding {
                 type Err = std::convert::Infallible;
 
@@ -1614,28 +1596,26 @@ impl std::str::FromStr for Finding {
                 }
             }
 impl Finding {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Finding::NotOptimized => "NotOptimized",
-            Finding::Optimized => "Optimized",
-            Finding::OverProvisioned => "Overprovisioned",
-            Finding::UnderProvisioned => "Underprovisioned",
-            Finding::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NotOptimized", "Optimized", "Overprovisioned", "Underprovisioned"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Finding::NotOptimized => "NotOptimized",
+    Finding::Optimized => "Optimized",
+    Finding::OverProvisioned => "Overprovisioned",
+    Finding::UnderProvisioned => "Underprovisioned",
+    Finding::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NotOptimized", "Optimized", "Overprovisioned", "Underprovisioned"]
+                }
+            }
 impl AsRef<str> for Finding {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a recommendation preference.</p>
 #[non_exhaustive]
@@ -2188,16 +2168,16 @@ pub enum CurrentPerformanceRisk {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CurrentPerformanceRisk {
-    fn from(s: &str) -> Self {
-        match s {
-            "High" => CurrentPerformanceRisk::High,
-            "Low" => CurrentPerformanceRisk::Low,
-            "Medium" => CurrentPerformanceRisk::Medium,
-            "VeryLow" => CurrentPerformanceRisk::VeryLow,
-            other => CurrentPerformanceRisk::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "High" => CurrentPerformanceRisk::High,
+"Low" => CurrentPerformanceRisk::Low,
+"Medium" => CurrentPerformanceRisk::Medium,
+"VeryLow" => CurrentPerformanceRisk::VeryLow,
+other => CurrentPerformanceRisk::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CurrentPerformanceRisk {
                 type Err = std::convert::Infallible;
 
@@ -2206,28 +2186,26 @@ impl std::str::FromStr for CurrentPerformanceRisk {
                 }
             }
 impl CurrentPerformanceRisk {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CurrentPerformanceRisk::High => "High",
-            CurrentPerformanceRisk::Low => "Low",
-            CurrentPerformanceRisk::Medium => "Medium",
-            CurrentPerformanceRisk::VeryLow => "VeryLow",
-            CurrentPerformanceRisk::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "High", "Low", "Medium", "VeryLow"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CurrentPerformanceRisk::High => "High",
+    CurrentPerformanceRisk::Low => "Low",
+    CurrentPerformanceRisk::Medium => "Medium",
+    CurrentPerformanceRisk::VeryLow => "VeryLow",
+    CurrentPerformanceRisk::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["High", "Low", "Medium", "VeryLow"]
+                }
+            }
 impl AsRef<str> for CurrentPerformanceRisk {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a recommendation option for an Lambda function.</p>
 #[non_exhaustive]
@@ -2487,15 +2465,15 @@ pub enum LambdaFunctionMemoryMetricStatistic {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LambdaFunctionMemoryMetricStatistic {
-    fn from(s: &str) -> Self {
-        match s {
-            "Expected" => LambdaFunctionMemoryMetricStatistic::Expected,
-            "LowerBound" => LambdaFunctionMemoryMetricStatistic::LowerBound,
-            "UpperBound" => LambdaFunctionMemoryMetricStatistic::UpperBound,
-            other => LambdaFunctionMemoryMetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Expected" => LambdaFunctionMemoryMetricStatistic::Expected,
+"LowerBound" => LambdaFunctionMemoryMetricStatistic::LowerBound,
+"UpperBound" => LambdaFunctionMemoryMetricStatistic::UpperBound,
+other => LambdaFunctionMemoryMetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LambdaFunctionMemoryMetricStatistic {
                 type Err = std::convert::Infallible;
 
@@ -2504,27 +2482,25 @@ impl std::str::FromStr for LambdaFunctionMemoryMetricStatistic {
                 }
             }
 impl LambdaFunctionMemoryMetricStatistic {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LambdaFunctionMemoryMetricStatistic::Expected => "Expected",
-            LambdaFunctionMemoryMetricStatistic::LowerBound => "LowerBound",
-            LambdaFunctionMemoryMetricStatistic::UpperBound => "UpperBound",
-            LambdaFunctionMemoryMetricStatistic::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Expected", "LowerBound", "UpperBound"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LambdaFunctionMemoryMetricStatistic::Expected => "Expected",
+    LambdaFunctionMemoryMetricStatistic::LowerBound => "LowerBound",
+    LambdaFunctionMemoryMetricStatistic::UpperBound => "UpperBound",
+    LambdaFunctionMemoryMetricStatistic::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Expected", "LowerBound", "UpperBound"]
+                }
+            }
 impl AsRef<str> for LambdaFunctionMemoryMetricStatistic {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LambdaFunctionMemoryMetricName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2570,13 +2546,13 @@ pub enum LambdaFunctionMemoryMetricName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LambdaFunctionMemoryMetricName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Duration" => LambdaFunctionMemoryMetricName::Duration,
-            other => LambdaFunctionMemoryMetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Duration" => LambdaFunctionMemoryMetricName::Duration,
+other => LambdaFunctionMemoryMetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LambdaFunctionMemoryMetricName {
                 type Err = std::convert::Infallible;
 
@@ -2585,25 +2561,23 @@ impl std::str::FromStr for LambdaFunctionMemoryMetricName {
                 }
             }
 impl LambdaFunctionMemoryMetricName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LambdaFunctionMemoryMetricName::Duration => "Duration",
-            LambdaFunctionMemoryMetricName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Duration"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LambdaFunctionMemoryMetricName::Duration => "Duration",
+    LambdaFunctionMemoryMetricName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Duration"]
+                }
+            }
 impl AsRef<str> for LambdaFunctionMemoryMetricName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LambdaFunctionRecommendationFindingReasonCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2658,16 +2632,16 @@ pub enum LambdaFunctionRecommendationFindingReasonCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LambdaFunctionRecommendationFindingReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "Inconclusive" => LambdaFunctionRecommendationFindingReasonCode::Inconclusive,
-            "InsufficientData" => LambdaFunctionRecommendationFindingReasonCode::InsufficientData,
-            "MemoryOverprovisioned" => LambdaFunctionRecommendationFindingReasonCode::MemoryOverProvisioned,
-            "MemoryUnderprovisioned" => LambdaFunctionRecommendationFindingReasonCode::MemoryUnderProvisioned,
-            other => LambdaFunctionRecommendationFindingReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Inconclusive" => LambdaFunctionRecommendationFindingReasonCode::Inconclusive,
+"InsufficientData" => LambdaFunctionRecommendationFindingReasonCode::InsufficientData,
+"MemoryOverprovisioned" => LambdaFunctionRecommendationFindingReasonCode::MemoryOverProvisioned,
+"MemoryUnderprovisioned" => LambdaFunctionRecommendationFindingReasonCode::MemoryUnderProvisioned,
+other => LambdaFunctionRecommendationFindingReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LambdaFunctionRecommendationFindingReasonCode {
                 type Err = std::convert::Infallible;
 
@@ -2676,28 +2650,26 @@ impl std::str::FromStr for LambdaFunctionRecommendationFindingReasonCode {
                 }
             }
 impl LambdaFunctionRecommendationFindingReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LambdaFunctionRecommendationFindingReasonCode::Inconclusive => "Inconclusive",
-            LambdaFunctionRecommendationFindingReasonCode::InsufficientData => "InsufficientData",
-            LambdaFunctionRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
-            LambdaFunctionRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
-            LambdaFunctionRecommendationFindingReasonCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Inconclusive", "InsufficientData", "MemoryOverprovisioned", "MemoryUnderprovisioned"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LambdaFunctionRecommendationFindingReasonCode::Inconclusive => "Inconclusive",
+    LambdaFunctionRecommendationFindingReasonCode::InsufficientData => "InsufficientData",
+    LambdaFunctionRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
+    LambdaFunctionRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
+    LambdaFunctionRecommendationFindingReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Inconclusive", "InsufficientData", "MemoryOverprovisioned", "MemoryUnderprovisioned"]
+                }
+            }
 impl AsRef<str> for LambdaFunctionRecommendationFindingReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LambdaFunctionRecommendationFinding`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2749,15 +2721,15 @@ pub enum LambdaFunctionRecommendationFinding {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LambdaFunctionRecommendationFinding {
-    fn from(s: &str) -> Self {
-        match s {
-            "NotOptimized" => LambdaFunctionRecommendationFinding::NotOptimized,
-            "Optimized" => LambdaFunctionRecommendationFinding::Optimized,
-            "Unavailable" => LambdaFunctionRecommendationFinding::Unavailable,
-            other => LambdaFunctionRecommendationFinding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NotOptimized" => LambdaFunctionRecommendationFinding::NotOptimized,
+"Optimized" => LambdaFunctionRecommendationFinding::Optimized,
+"Unavailable" => LambdaFunctionRecommendationFinding::Unavailable,
+other => LambdaFunctionRecommendationFinding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LambdaFunctionRecommendationFinding {
                 type Err = std::convert::Infallible;
 
@@ -2766,27 +2738,25 @@ impl std::str::FromStr for LambdaFunctionRecommendationFinding {
                 }
             }
 impl LambdaFunctionRecommendationFinding {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LambdaFunctionRecommendationFinding::NotOptimized => "NotOptimized",
-            LambdaFunctionRecommendationFinding::Optimized => "Optimized",
-            LambdaFunctionRecommendationFinding::Unavailable => "Unavailable",
-            LambdaFunctionRecommendationFinding::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NotOptimized", "Optimized", "Unavailable"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LambdaFunctionRecommendationFinding::NotOptimized => "NotOptimized",
+    LambdaFunctionRecommendationFinding::Optimized => "Optimized",
+    LambdaFunctionRecommendationFinding::Unavailable => "Unavailable",
+    LambdaFunctionRecommendationFinding::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NotOptimized", "Optimized", "Unavailable"]
+                }
+            }
 impl AsRef<str> for LambdaFunctionRecommendationFinding {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a utilization metric of an Lambda function.</p>
 #[non_exhaustive]
@@ -2952,14 +2922,14 @@ pub enum LambdaFunctionMetricStatistic {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LambdaFunctionMetricStatistic {
-    fn from(s: &str) -> Self {
-        match s {
-            "Average" => LambdaFunctionMetricStatistic::Average,
-            "Maximum" => LambdaFunctionMetricStatistic::Maximum,
-            other => LambdaFunctionMetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Average" => LambdaFunctionMetricStatistic::Average,
+"Maximum" => LambdaFunctionMetricStatistic::Maximum,
+other => LambdaFunctionMetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LambdaFunctionMetricStatistic {
                 type Err = std::convert::Infallible;
 
@@ -2968,26 +2938,24 @@ impl std::str::FromStr for LambdaFunctionMetricStatistic {
                 }
             }
 impl LambdaFunctionMetricStatistic {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LambdaFunctionMetricStatistic::Average => "Average",
-            LambdaFunctionMetricStatistic::Maximum => "Maximum",
-            LambdaFunctionMetricStatistic::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Average", "Maximum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LambdaFunctionMetricStatistic::Average => "Average",
+    LambdaFunctionMetricStatistic::Maximum => "Maximum",
+    LambdaFunctionMetricStatistic::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Average", "Maximum"]
+                }
+            }
 impl AsRef<str> for LambdaFunctionMetricStatistic {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `LambdaFunctionMetricName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3036,14 +3004,14 @@ pub enum LambdaFunctionMetricName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LambdaFunctionMetricName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Duration" => LambdaFunctionMetricName::Duration,
-            "Memory" => LambdaFunctionMetricName::Memory,
-            other => LambdaFunctionMetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Duration" => LambdaFunctionMetricName::Duration,
+"Memory" => LambdaFunctionMetricName::Memory,
+other => LambdaFunctionMetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LambdaFunctionMetricName {
                 type Err = std::convert::Infallible;
 
@@ -3052,26 +3020,24 @@ impl std::str::FromStr for LambdaFunctionMetricName {
                 }
             }
 impl LambdaFunctionMetricName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LambdaFunctionMetricName::Duration => "Duration",
-            LambdaFunctionMetricName::Memory => "Memory",
-            LambdaFunctionMetricName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Duration", "Memory"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LambdaFunctionMetricName::Duration => "Duration",
+    LambdaFunctionMetricName::Memory => "Memory",
+    LambdaFunctionMetricName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Duration", "Memory"]
+                }
+            }
 impl AsRef<str> for LambdaFunctionMetricName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a filter that returns a more specific list of Lambda function recommendations. Use this filter with the <code>GetLambdaFunctionRecommendations</code> action.</p> 
 /// <p>You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action, <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code> action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
@@ -3224,14 +3190,14 @@ pub enum LambdaFunctionRecommendationFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LambdaFunctionRecommendationFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Finding" => LambdaFunctionRecommendationFilterName::Finding,
-            "FindingReasonCode" => LambdaFunctionRecommendationFilterName::FindingReasonCode,
-            other => LambdaFunctionRecommendationFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Finding" => LambdaFunctionRecommendationFilterName::Finding,
+"FindingReasonCode" => LambdaFunctionRecommendationFilterName::FindingReasonCode,
+other => LambdaFunctionRecommendationFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LambdaFunctionRecommendationFilterName {
                 type Err = std::convert::Infallible;
 
@@ -3240,26 +3206,24 @@ impl std::str::FromStr for LambdaFunctionRecommendationFilterName {
                 }
             }
 impl LambdaFunctionRecommendationFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LambdaFunctionRecommendationFilterName::Finding => "Finding",
-            LambdaFunctionRecommendationFilterName::FindingReasonCode => "FindingReasonCode",
-            LambdaFunctionRecommendationFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Finding", "FindingReasonCode"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LambdaFunctionRecommendationFilterName::Finding => "Finding",
+    LambdaFunctionRecommendationFilterName::FindingReasonCode => "FindingReasonCode",
+    LambdaFunctionRecommendationFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Finding", "FindingReasonCode"]
+                }
+            }
 impl AsRef<str> for LambdaFunctionRecommendationFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the enrollment status of an organization's member accounts in Compute Optimizer.</p>
 #[non_exhaustive]
@@ -3499,13 +3463,13 @@ pub enum EnrollmentFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnrollmentFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Status" => EnrollmentFilterName::Status,
-            other => EnrollmentFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Status" => EnrollmentFilterName::Status,
+other => EnrollmentFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EnrollmentFilterName {
                 type Err = std::convert::Infallible;
 
@@ -3514,25 +3478,23 @@ impl std::str::FromStr for EnrollmentFilterName {
                 }
             }
 impl EnrollmentFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnrollmentFilterName::Status => "Status",
-            EnrollmentFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Status"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnrollmentFilterName::Status => "Status",
+    EnrollmentFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Status"]
+                }
+            }
 impl AsRef<str> for EnrollmentFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes an error experienced when getting recommendations.</p> 
 /// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.</p>
@@ -4442,14 +4404,14 @@ pub enum EcsServiceMetricStatistic {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EcsServiceMetricStatistic {
-    fn from(s: &str) -> Self {
-        match s {
-            "Average" => EcsServiceMetricStatistic::Average,
-            "Maximum" => EcsServiceMetricStatistic::Maximum,
-            other => EcsServiceMetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Average" => EcsServiceMetricStatistic::Average,
+"Maximum" => EcsServiceMetricStatistic::Maximum,
+other => EcsServiceMetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EcsServiceMetricStatistic {
                 type Err = std::convert::Infallible;
 
@@ -4458,26 +4420,24 @@ impl std::str::FromStr for EcsServiceMetricStatistic {
                 }
             }
 impl EcsServiceMetricStatistic {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EcsServiceMetricStatistic::Average => "Average",
-            EcsServiceMetricStatistic::Maximum => "Maximum",
-            EcsServiceMetricStatistic::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Average", "Maximum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EcsServiceMetricStatistic::Average => "Average",
+    EcsServiceMetricStatistic::Maximum => "Maximum",
+    EcsServiceMetricStatistic::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Average", "Maximum"]
+                }
+            }
 impl AsRef<str> for EcsServiceMetricStatistic {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EcsServiceMetricName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4526,14 +4486,14 @@ pub enum EcsServiceMetricName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EcsServiceMetricName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Cpu" => EcsServiceMetricName::Cpu,
-            "Memory" => EcsServiceMetricName::Memory,
-            other => EcsServiceMetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Cpu" => EcsServiceMetricName::Cpu,
+"Memory" => EcsServiceMetricName::Memory,
+other => EcsServiceMetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EcsServiceMetricName {
                 type Err = std::convert::Infallible;
 
@@ -4542,26 +4502,24 @@ impl std::str::FromStr for EcsServiceMetricName {
                 }
             }
 impl EcsServiceMetricName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EcsServiceMetricName::Cpu => "Cpu",
-            EcsServiceMetricName::Memory => "Memory",
-            EcsServiceMetricName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Cpu", "Memory"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EcsServiceMetricName::Cpu => "Cpu",
+    EcsServiceMetricName::Memory => "Memory",
+    EcsServiceMetricName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Cpu", "Memory"]
+                }
+            }
 impl AsRef<str> for EcsServiceMetricName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EcsServiceRecommendationFindingReasonCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4616,16 +4574,16 @@ pub enum EcsServiceRecommendationFindingReasonCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EcsServiceRecommendationFindingReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CPUOverprovisioned" => EcsServiceRecommendationFindingReasonCode::CpuOverProvisioned,
-            "CPUUnderprovisioned" => EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned,
-            "MemoryOverprovisioned" => EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned,
-            "MemoryUnderprovisioned" => EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned,
-            other => EcsServiceRecommendationFindingReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CPUOverprovisioned" => EcsServiceRecommendationFindingReasonCode::CpuOverProvisioned,
+"CPUUnderprovisioned" => EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned,
+"MemoryOverprovisioned" => EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned,
+"MemoryUnderprovisioned" => EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned,
+other => EcsServiceRecommendationFindingReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EcsServiceRecommendationFindingReasonCode {
                 type Err = std::convert::Infallible;
 
@@ -4634,28 +4592,26 @@ impl std::str::FromStr for EcsServiceRecommendationFindingReasonCode {
                 }
             }
 impl EcsServiceRecommendationFindingReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EcsServiceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
-            EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
-            EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
-            EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
-            EcsServiceRecommendationFindingReasonCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CPUOverprovisioned", "CPUUnderprovisioned", "MemoryOverprovisioned", "MemoryUnderprovisioned"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EcsServiceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
+    EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
+    EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
+    EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
+    EcsServiceRecommendationFindingReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CPUOverprovisioned", "CPUUnderprovisioned", "MemoryOverprovisioned", "MemoryUnderprovisioned"]
+                }
+            }
 impl AsRef<str> for EcsServiceRecommendationFindingReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EcsServiceRecommendationFinding`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4707,15 +4663,15 @@ pub enum EcsServiceRecommendationFinding {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EcsServiceRecommendationFinding {
-    fn from(s: &str) -> Self {
-        match s {
-            "Optimized" => EcsServiceRecommendationFinding::Optimized,
-            "Overprovisioned" => EcsServiceRecommendationFinding::OverProvisioned,
-            "Underprovisioned" => EcsServiceRecommendationFinding::UnderProvisioned,
-            other => EcsServiceRecommendationFinding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Optimized" => EcsServiceRecommendationFinding::Optimized,
+"Overprovisioned" => EcsServiceRecommendationFinding::OverProvisioned,
+"Underprovisioned" => EcsServiceRecommendationFinding::UnderProvisioned,
+other => EcsServiceRecommendationFinding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EcsServiceRecommendationFinding {
                 type Err = std::convert::Infallible;
 
@@ -4724,27 +4680,25 @@ impl std::str::FromStr for EcsServiceRecommendationFinding {
                 }
             }
 impl EcsServiceRecommendationFinding {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EcsServiceRecommendationFinding::Optimized => "Optimized",
-            EcsServiceRecommendationFinding::OverProvisioned => "Overprovisioned",
-            EcsServiceRecommendationFinding::UnderProvisioned => "Underprovisioned",
-            EcsServiceRecommendationFinding::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Optimized", "Overprovisioned", "Underprovisioned"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EcsServiceRecommendationFinding::Optimized => "Optimized",
+    EcsServiceRecommendationFinding::OverProvisioned => "Overprovisioned",
+    EcsServiceRecommendationFinding::UnderProvisioned => "Underprovisioned",
+    EcsServiceRecommendationFinding::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Optimized", "Overprovisioned", "Underprovisioned"]
+                }
+            }
 impl AsRef<str> for EcsServiceRecommendationFinding {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EcsServiceLaunchType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4793,14 +4747,14 @@ pub enum EcsServiceLaunchType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EcsServiceLaunchType {
-    fn from(s: &str) -> Self {
-        match s {
-            "EC2" => EcsServiceLaunchType::Ec2,
-            "Fargate" => EcsServiceLaunchType::Fargate,
-            other => EcsServiceLaunchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EC2" => EcsServiceLaunchType::Ec2,
+"Fargate" => EcsServiceLaunchType::Fargate,
+other => EcsServiceLaunchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EcsServiceLaunchType {
                 type Err = std::convert::Infallible;
 
@@ -4809,26 +4763,24 @@ impl std::str::FromStr for EcsServiceLaunchType {
                 }
             }
 impl EcsServiceLaunchType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EcsServiceLaunchType::Ec2 => "EC2",
-            EcsServiceLaunchType::Fargate => "Fargate",
-            EcsServiceLaunchType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EC2", "Fargate"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EcsServiceLaunchType::Ec2 => "EC2",
+    EcsServiceLaunchType::Fargate => "Fargate",
+    EcsServiceLaunchType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EC2", "Fargate"]
+                }
+            }
 impl AsRef<str> for EcsServiceLaunchType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes the utilization metric of an Amazon ECS service. </p> 
 /// <p>To determine the performance difference between your current ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>
@@ -5151,14 +5103,14 @@ pub enum AutoScalingConfiguration {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AutoScalingConfiguration {
-    fn from(s: &str) -> Self {
-        match s {
-            "TargetTrackingScalingCpu" => AutoScalingConfiguration::TargetTrackingScalingCpu,
-            "TargetTrackingScalingMemory" => AutoScalingConfiguration::TargetTrackingScalingMemory,
-            other => AutoScalingConfiguration::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "TargetTrackingScalingCpu" => AutoScalingConfiguration::TargetTrackingScalingCpu,
+"TargetTrackingScalingMemory" => AutoScalingConfiguration::TargetTrackingScalingMemory,
+other => AutoScalingConfiguration::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AutoScalingConfiguration {
                 type Err = std::convert::Infallible;
 
@@ -5167,26 +5119,24 @@ impl std::str::FromStr for AutoScalingConfiguration {
                 }
             }
 impl AutoScalingConfiguration {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AutoScalingConfiguration::TargetTrackingScalingCpu => "TargetTrackingScalingCpu",
-            AutoScalingConfiguration::TargetTrackingScalingMemory => "TargetTrackingScalingMemory",
-            AutoScalingConfiguration::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "TargetTrackingScalingCpu", "TargetTrackingScalingMemory"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AutoScalingConfiguration::TargetTrackingScalingCpu => "TargetTrackingScalingCpu",
+    AutoScalingConfiguration::TargetTrackingScalingMemory => "TargetTrackingScalingMemory",
+    AutoScalingConfiguration::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["TargetTrackingScalingCpu", "TargetTrackingScalingMemory"]
+                }
+            }
 impl AsRef<str> for AutoScalingConfiguration {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes the container configurations within the tasks of your Amazon ECS service. </p>
 #[non_exhaustive]
@@ -5426,14 +5376,14 @@ pub enum EcsServiceRecommendationFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EcsServiceRecommendationFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Finding" => EcsServiceRecommendationFilterName::Finding,
-            "FindingReasonCode" => EcsServiceRecommendationFilterName::FindingReasonCode,
-            other => EcsServiceRecommendationFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Finding" => EcsServiceRecommendationFilterName::Finding,
+"FindingReasonCode" => EcsServiceRecommendationFilterName::FindingReasonCode,
+other => EcsServiceRecommendationFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EcsServiceRecommendationFilterName {
                 type Err = std::convert::Infallible;
 
@@ -5442,26 +5392,24 @@ impl std::str::FromStr for EcsServiceRecommendationFilterName {
                 }
             }
 impl EcsServiceRecommendationFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EcsServiceRecommendationFilterName::Finding => "Finding",
-            EcsServiceRecommendationFilterName::FindingReasonCode => "FindingReasonCode",
-            EcsServiceRecommendationFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Finding", "FindingReasonCode"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EcsServiceRecommendationFilterName::Finding => "Finding",
+    EcsServiceRecommendationFilterName::FindingReasonCode => "FindingReasonCode",
+    EcsServiceRecommendationFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Finding", "FindingReasonCode"]
+                }
+            }
 impl AsRef<str> for EcsServiceRecommendationFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p> Describes the projected metrics of an Amazon ECS service recommendation option. </p> 
 /// <p>To determine the performance difference between your current ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>
@@ -5753,14 +5701,14 @@ pub enum MetricStatistic {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricStatistic {
-    fn from(s: &str) -> Self {
-        match s {
-            "Average" => MetricStatistic::Average,
-            "Maximum" => MetricStatistic::Maximum,
-            other => MetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Average" => MetricStatistic::Average,
+"Maximum" => MetricStatistic::Maximum,
+other => MetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricStatistic {
                 type Err = std::convert::Infallible;
 
@@ -5769,26 +5717,24 @@ impl std::str::FromStr for MetricStatistic {
                 }
             }
 impl MetricStatistic {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricStatistic::Average => "Average",
-            MetricStatistic::Maximum => "Maximum",
-            MetricStatistic::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Average", "Maximum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricStatistic::Average => "Average",
+    MetricStatistic::Maximum => "Maximum",
+    MetricStatistic::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Average", "Maximum"]
+                }
+            }
 impl AsRef<str> for MetricStatistic {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a projected utilization metric of a recommendation option.</p> <note> 
 /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> 
@@ -6109,26 +6055,26 @@ pub enum MetricName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Cpu" => MetricName::Cpu,
-            "DISK_READ_BYTES_PER_SECOND" => MetricName::DiskReadBytesPerSecond,
-            "DISK_READ_OPS_PER_SECOND" => MetricName::DiskReadOpsPerSecond,
-            "DISK_WRITE_BYTES_PER_SECOND" => MetricName::DiskWriteBytesPerSecond,
-            "DISK_WRITE_OPS_PER_SECOND" => MetricName::DiskWriteOpsPerSecond,
-            "EBS_READ_BYTES_PER_SECOND" => MetricName::EbsReadBytesPerSecond,
-            "EBS_READ_OPS_PER_SECOND" => MetricName::EbsReadOpsPerSecond,
-            "EBS_WRITE_BYTES_PER_SECOND" => MetricName::EbsWriteBytesPerSecond,
-            "EBS_WRITE_OPS_PER_SECOND" => MetricName::EbsWriteOpsPerSecond,
-            "Memory" => MetricName::Memory,
-            "NETWORK_IN_BYTES_PER_SECOND" => MetricName::NetworkInBytesPerSecond,
-            "NETWORK_OUT_BYTES_PER_SECOND" => MetricName::NetworkOutBytesPerSecond,
-            "NETWORK_PACKETS_IN_PER_SECOND" => MetricName::NetworkPacketsInPerSecond,
-            "NETWORK_PACKETS_OUT_PER_SECOND" => MetricName::NetworkPacketsOutPerSecond,
-            other => MetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Cpu" => MetricName::Cpu,
+"DISK_READ_BYTES_PER_SECOND" => MetricName::DiskReadBytesPerSecond,
+"DISK_READ_OPS_PER_SECOND" => MetricName::DiskReadOpsPerSecond,
+"DISK_WRITE_BYTES_PER_SECOND" => MetricName::DiskWriteBytesPerSecond,
+"DISK_WRITE_OPS_PER_SECOND" => MetricName::DiskWriteOpsPerSecond,
+"EBS_READ_BYTES_PER_SECOND" => MetricName::EbsReadBytesPerSecond,
+"EBS_READ_OPS_PER_SECOND" => MetricName::EbsReadOpsPerSecond,
+"EBS_WRITE_BYTES_PER_SECOND" => MetricName::EbsWriteBytesPerSecond,
+"EBS_WRITE_OPS_PER_SECOND" => MetricName::EbsWriteOpsPerSecond,
+"Memory" => MetricName::Memory,
+"NETWORK_IN_BYTES_PER_SECOND" => MetricName::NetworkInBytesPerSecond,
+"NETWORK_OUT_BYTES_PER_SECOND" => MetricName::NetworkOutBytesPerSecond,
+"NETWORK_PACKETS_IN_PER_SECOND" => MetricName::NetworkPacketsInPerSecond,
+"NETWORK_PACKETS_OUT_PER_SECOND" => MetricName::NetworkPacketsOutPerSecond,
+other => MetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricName {
                 type Err = std::convert::Infallible;
 
@@ -6137,38 +6083,36 @@ impl std::str::FromStr for MetricName {
                 }
             }
 impl MetricName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricName::Cpu => "Cpu",
-            MetricName::DiskReadBytesPerSecond => "DISK_READ_BYTES_PER_SECOND",
-            MetricName::DiskReadOpsPerSecond => "DISK_READ_OPS_PER_SECOND",
-            MetricName::DiskWriteBytesPerSecond => "DISK_WRITE_BYTES_PER_SECOND",
-            MetricName::DiskWriteOpsPerSecond => "DISK_WRITE_OPS_PER_SECOND",
-            MetricName::EbsReadBytesPerSecond => "EBS_READ_BYTES_PER_SECOND",
-            MetricName::EbsReadOpsPerSecond => "EBS_READ_OPS_PER_SECOND",
-            MetricName::EbsWriteBytesPerSecond => "EBS_WRITE_BYTES_PER_SECOND",
-            MetricName::EbsWriteOpsPerSecond => "EBS_WRITE_OPS_PER_SECOND",
-            MetricName::Memory => "Memory",
-            MetricName::NetworkInBytesPerSecond => "NETWORK_IN_BYTES_PER_SECOND",
-            MetricName::NetworkOutBytesPerSecond => "NETWORK_OUT_BYTES_PER_SECOND",
-            MetricName::NetworkPacketsInPerSecond => "NETWORK_PACKETS_IN_PER_SECOND",
-            MetricName::NetworkPacketsOutPerSecond => "NETWORK_PACKETS_OUT_PER_SECOND",
-            MetricName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Cpu", "DISK_READ_BYTES_PER_SECOND", "DISK_READ_OPS_PER_SECOND", "DISK_WRITE_BYTES_PER_SECOND", "DISK_WRITE_OPS_PER_SECOND", "EBS_READ_BYTES_PER_SECOND", "EBS_READ_OPS_PER_SECOND", "EBS_WRITE_BYTES_PER_SECOND", "EBS_WRITE_OPS_PER_SECOND", "Memory", "NETWORK_IN_BYTES_PER_SECOND", "NETWORK_OUT_BYTES_PER_SECOND", "NETWORK_PACKETS_IN_PER_SECOND", "NETWORK_PACKETS_OUT_PER_SECOND"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricName::Cpu => "Cpu",
+    MetricName::DiskReadBytesPerSecond => "DISK_READ_BYTES_PER_SECOND",
+    MetricName::DiskReadOpsPerSecond => "DISK_READ_OPS_PER_SECOND",
+    MetricName::DiskWriteBytesPerSecond => "DISK_WRITE_BYTES_PER_SECOND",
+    MetricName::DiskWriteOpsPerSecond => "DISK_WRITE_OPS_PER_SECOND",
+    MetricName::EbsReadBytesPerSecond => "EBS_READ_BYTES_PER_SECOND",
+    MetricName::EbsReadOpsPerSecond => "EBS_READ_OPS_PER_SECOND",
+    MetricName::EbsWriteBytesPerSecond => "EBS_WRITE_BYTES_PER_SECOND",
+    MetricName::EbsWriteOpsPerSecond => "EBS_WRITE_OPS_PER_SECOND",
+    MetricName::Memory => "Memory",
+    MetricName::NetworkInBytesPerSecond => "NETWORK_IN_BYTES_PER_SECOND",
+    MetricName::NetworkOutBytesPerSecond => "NETWORK_OUT_BYTES_PER_SECOND",
+    MetricName::NetworkPacketsInPerSecond => "NETWORK_PACKETS_IN_PER_SECOND",
+    MetricName::NetworkPacketsOutPerSecond => "NETWORK_PACKETS_OUT_PER_SECOND",
+    MetricName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Cpu", "DISK_READ_BYTES_PER_SECOND", "DISK_READ_OPS_PER_SECOND", "DISK_WRITE_BYTES_PER_SECOND", "DISK_WRITE_OPS_PER_SECOND", "EBS_READ_BYTES_PER_SECOND", "EBS_READ_OPS_PER_SECOND", "EBS_WRITE_BYTES_PER_SECOND", "EBS_WRITE_OPS_PER_SECOND", "Memory", "NETWORK_IN_BYTES_PER_SECOND", "NETWORK_OUT_BYTES_PER_SECOND", "NETWORK_PACKETS_IN_PER_SECOND", "NETWORK_PACKETS_OUT_PER_SECOND"]
+                }
+            }
 impl AsRef<str> for MetricName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the recommendation preferences to return in the response of a <code>GetAutoScalingGroupRecommendations</code>, <code>GetEC2InstanceRecommendations</code>, and <code>GetEC2RecommendationProjectedMetrics</code> request.</p>
 #[non_exhaustive]
@@ -6297,14 +6241,14 @@ pub enum CpuVendorArchitecture {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CpuVendorArchitecture {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS_ARM64" => CpuVendorArchitecture::AwsArm64,
-            "CURRENT" => CpuVendorArchitecture::Current,
-            other => CpuVendorArchitecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AWS_ARM64" => CpuVendorArchitecture::AwsArm64,
+"CURRENT" => CpuVendorArchitecture::Current,
+other => CpuVendorArchitecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CpuVendorArchitecture {
                 type Err = std::convert::Infallible;
 
@@ -6313,26 +6257,24 @@ impl std::str::FromStr for CpuVendorArchitecture {
                 }
             }
 impl CpuVendorArchitecture {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CpuVendorArchitecture::AwsArm64 => "AWS_ARM64",
-            CpuVendorArchitecture::Current => "CURRENT",
-            CpuVendorArchitecture::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_ARM64", "CURRENT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CpuVendorArchitecture::AwsArm64 => "AWS_ARM64",
+    CpuVendorArchitecture::Current => "CURRENT",
+    CpuVendorArchitecture::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS_ARM64", "CURRENT"]
+                }
+            }
 impl AsRef<str> for CpuVendorArchitecture {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes an Amazon EC2 instance recommendation.</p>
 #[non_exhaustive]
@@ -6880,19 +6822,19 @@ pub enum InferredWorkloadType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InferredWorkloadType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AmazonEmr" => InferredWorkloadType::AmazonEmr,
-            "ApacheCassandra" => InferredWorkloadType::ApacheCassandra,
-            "ApacheHadoop" => InferredWorkloadType::ApacheHadoop,
-            "Memcached" => InferredWorkloadType::Memcached,
-            "Nginx" => InferredWorkloadType::Nginx,
-            "PostgreSql" => InferredWorkloadType::PostgreSql,
-            "Redis" => InferredWorkloadType::Redis,
-            other => InferredWorkloadType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AmazonEmr" => InferredWorkloadType::AmazonEmr,
+"ApacheCassandra" => InferredWorkloadType::ApacheCassandra,
+"ApacheHadoop" => InferredWorkloadType::ApacheHadoop,
+"Memcached" => InferredWorkloadType::Memcached,
+"Nginx" => InferredWorkloadType::Nginx,
+"PostgreSql" => InferredWorkloadType::PostgreSql,
+"Redis" => InferredWorkloadType::Redis,
+other => InferredWorkloadType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InferredWorkloadType {
                 type Err = std::convert::Infallible;
 
@@ -6901,31 +6843,29 @@ impl std::str::FromStr for InferredWorkloadType {
                 }
             }
 impl InferredWorkloadType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InferredWorkloadType::AmazonEmr => "AmazonEmr",
-            InferredWorkloadType::ApacheCassandra => "ApacheCassandra",
-            InferredWorkloadType::ApacheHadoop => "ApacheHadoop",
-            InferredWorkloadType::Memcached => "Memcached",
-            InferredWorkloadType::Nginx => "Nginx",
-            InferredWorkloadType::PostgreSql => "PostgreSql",
-            InferredWorkloadType::Redis => "Redis",
-            InferredWorkloadType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AmazonEmr", "ApacheCassandra", "ApacheHadoop", "Memcached", "Nginx", "PostgreSql", "Redis"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InferredWorkloadType::AmazonEmr => "AmazonEmr",
+    InferredWorkloadType::ApacheCassandra => "ApacheCassandra",
+    InferredWorkloadType::ApacheHadoop => "ApacheHadoop",
+    InferredWorkloadType::Memcached => "Memcached",
+    InferredWorkloadType::Nginx => "Nginx",
+    InferredWorkloadType::PostgreSql => "PostgreSql",
+    InferredWorkloadType::Redis => "Redis",
+    InferredWorkloadType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AmazonEmr", "ApacheCassandra", "ApacheHadoop", "Memcached", "Nginx", "PostgreSql", "Redis"]
+                }
+            }
 impl AsRef<str> for InferredWorkloadType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the effective recommendation preferences for a resource.</p>
 #[non_exhaustive]
@@ -7440,16 +7380,16 @@ pub enum MigrationEffort {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MigrationEffort {
-    fn from(s: &str) -> Self {
-        match s {
-            "High" => MigrationEffort::High,
-            "Low" => MigrationEffort::Low,
-            "Medium" => MigrationEffort::Medium,
-            "VeryLow" => MigrationEffort::VeryLow,
-            other => MigrationEffort::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "High" => MigrationEffort::High,
+"Low" => MigrationEffort::Low,
+"Medium" => MigrationEffort::Medium,
+"VeryLow" => MigrationEffort::VeryLow,
+other => MigrationEffort::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MigrationEffort {
                 type Err = std::convert::Infallible;
 
@@ -7458,28 +7398,26 @@ impl std::str::FromStr for MigrationEffort {
                 }
             }
 impl MigrationEffort {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MigrationEffort::High => "High",
-            MigrationEffort::Low => "Low",
-            MigrationEffort::Medium => "Medium",
-            MigrationEffort::VeryLow => "VeryLow",
-            MigrationEffort::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "High", "Low", "Medium", "VeryLow"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MigrationEffort::High => "High",
+    MigrationEffort::Low => "Low",
+    MigrationEffort::Medium => "Medium",
+    MigrationEffort::VeryLow => "VeryLow",
+    MigrationEffort::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["High", "Low", "Medium", "VeryLow"]
+                }
+            }
 impl AsRef<str> for MigrationEffort {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `PlatformDifference`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7540,18 +7478,18 @@ pub enum PlatformDifference {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlatformDifference {
-    fn from(s: &str) -> Self {
-        match s {
-            "Architecture" => PlatformDifference::Architecture,
-            "Hypervisor" => PlatformDifference::Hypervisor,
-            "InstanceStoreAvailability" => PlatformDifference::InstanceStoreAvailability,
-            "NetworkInterface" => PlatformDifference::NetworkInterface,
-            "StorageInterface" => PlatformDifference::StorageInterface,
-            "VirtualizationType" => PlatformDifference::VirtualizationType,
-            other => PlatformDifference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Architecture" => PlatformDifference::Architecture,
+"Hypervisor" => PlatformDifference::Hypervisor,
+"InstanceStoreAvailability" => PlatformDifference::InstanceStoreAvailability,
+"NetworkInterface" => PlatformDifference::NetworkInterface,
+"StorageInterface" => PlatformDifference::StorageInterface,
+"VirtualizationType" => PlatformDifference::VirtualizationType,
+other => PlatformDifference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PlatformDifference {
                 type Err = std::convert::Infallible;
 
@@ -7560,30 +7498,28 @@ impl std::str::FromStr for PlatformDifference {
                 }
             }
 impl PlatformDifference {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PlatformDifference::Architecture => "Architecture",
-            PlatformDifference::Hypervisor => "Hypervisor",
-            PlatformDifference::InstanceStoreAvailability => "InstanceStoreAvailability",
-            PlatformDifference::NetworkInterface => "NetworkInterface",
-            PlatformDifference::StorageInterface => "StorageInterface",
-            PlatformDifference::VirtualizationType => "VirtualizationType",
-            PlatformDifference::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Architecture", "Hypervisor", "InstanceStoreAvailability", "NetworkInterface", "StorageInterface", "VirtualizationType"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PlatformDifference::Architecture => "Architecture",
+    PlatformDifference::Hypervisor => "Hypervisor",
+    PlatformDifference::InstanceStoreAvailability => "InstanceStoreAvailability",
+    PlatformDifference::NetworkInterface => "NetworkInterface",
+    PlatformDifference::StorageInterface => "StorageInterface",
+    PlatformDifference::VirtualizationType => "VirtualizationType",
+    PlatformDifference::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Architecture", "Hypervisor", "InstanceStoreAvailability", "NetworkInterface", "StorageInterface", "VirtualizationType"]
+                }
+            }
 impl AsRef<str> for PlatformDifference {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a utilization metric of a resource, such as an Amazon EC2 instance.</p> 
 /// <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p>
@@ -7848,28 +7784,28 @@ pub enum InstanceRecommendationFindingReasonCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceRecommendationFindingReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CPUOverprovisioned" => InstanceRecommendationFindingReasonCode::CpuOverProvisioned,
-            "CPUUnderprovisioned" => InstanceRecommendationFindingReasonCode::CpuUnderProvisioned,
-            "DiskIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned,
-            "DiskIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned,
-            "DiskThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned,
-            "DiskThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned,
-            "EBSIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned,
-            "EBSIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned,
-            "EBSThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned,
-            "EBSThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned,
-            "MemoryOverprovisioned" => InstanceRecommendationFindingReasonCode::MemoryOverProvisioned,
-            "MemoryUnderprovisioned" => InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned,
-            "NetworkBandwidthOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned,
-            "NetworkBandwidthUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned,
-            "NetworkPPSOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned,
-            "NetworkPPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned,
-            other => InstanceRecommendationFindingReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CPUOverprovisioned" => InstanceRecommendationFindingReasonCode::CpuOverProvisioned,
+"CPUUnderprovisioned" => InstanceRecommendationFindingReasonCode::CpuUnderProvisioned,
+"DiskIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned,
+"DiskIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned,
+"DiskThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned,
+"DiskThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned,
+"EBSIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned,
+"EBSIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned,
+"EBSThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned,
+"EBSThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned,
+"MemoryOverprovisioned" => InstanceRecommendationFindingReasonCode::MemoryOverProvisioned,
+"MemoryUnderprovisioned" => InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned,
+"NetworkBandwidthOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned,
+"NetworkBandwidthUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned,
+"NetworkPPSOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned,
+"NetworkPPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned,
+other => InstanceRecommendationFindingReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InstanceRecommendationFindingReasonCode {
                 type Err = std::convert::Infallible;
 
@@ -7878,40 +7814,38 @@ impl std::str::FromStr for InstanceRecommendationFindingReasonCode {
                 }
             }
 impl InstanceRecommendationFindingReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
-            InstanceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => "DiskIOPSOverprovisioned",
-            InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => "DiskIOPSUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => "DiskThroughputOverprovisioned",
-            InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => "DiskThroughputUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => "EBSIOPSOverprovisioned",
-            InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => "EBSIOPSUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => "EBSThroughputOverprovisioned",
-            InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => "EBSThroughputUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
-            InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => "NetworkBandwidthOverprovisioned",
-            InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => "NetworkBandwidthUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => "NetworkPPSOverprovisioned",
-            InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => "NetworkPPSUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CPUOverprovisioned", "CPUUnderprovisioned", "DiskIOPSOverprovisioned", "DiskIOPSUnderprovisioned", "DiskThroughputOverprovisioned", "DiskThroughputUnderprovisioned", "EBSIOPSOverprovisioned", "EBSIOPSUnderprovisioned", "EBSThroughputOverprovisioned", "EBSThroughputUnderprovisioned", "MemoryOverprovisioned", "MemoryUnderprovisioned", "NetworkBandwidthOverprovisioned", "NetworkBandwidthUnderprovisioned", "NetworkPPSOverprovisioned", "NetworkPPSUnderprovisioned"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
+    InstanceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => "DiskIOPSOverprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => "DiskIOPSUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => "DiskThroughputOverprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => "DiskThroughputUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => "EBSIOPSOverprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => "EBSIOPSUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => "EBSThroughputOverprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => "EBSThroughputUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
+    InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => "NetworkBandwidthOverprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => "NetworkBandwidthUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => "NetworkPPSOverprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => "NetworkPPSUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CPUOverprovisioned", "CPUUnderprovisioned", "DiskIOPSOverprovisioned", "DiskIOPSUnderprovisioned", "DiskThroughputOverprovisioned", "DiskThroughputUnderprovisioned", "EBSIOPSOverprovisioned", "EBSIOPSUnderprovisioned", "EBSThroughputOverprovisioned", "EBSThroughputUnderprovisioned", "MemoryOverprovisioned", "MemoryUnderprovisioned", "NetworkBandwidthOverprovisioned", "NetworkBandwidthUnderprovisioned", "NetworkPPSOverprovisioned", "NetworkPPSUnderprovisioned"]
+                }
+            }
 impl AsRef<str> for InstanceRecommendationFindingReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a filter that returns a more specific list of recommendations. Use this filter with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p> 
 /// <p>You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action, <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code> action, and <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code> action.</p>
@@ -8151,15 +8085,15 @@ pub enum FilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Finding" => FilterName::Finding,
-            "FindingReasonCodes" => FilterName::FindingReasonCodes,
-            "RecommendationSourceType" => FilterName::RecommendationSourceType,
-            other => FilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Finding" => FilterName::Finding,
+"FindingReasonCodes" => FilterName::FindingReasonCodes,
+"RecommendationSourceType" => FilterName::RecommendationSourceType,
+other => FilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FilterName {
                 type Err = std::convert::Infallible;
 
@@ -8168,27 +8102,25 @@ impl std::str::FromStr for FilterName {
                 }
             }
 impl FilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FilterName::Finding => "Finding",
-            FilterName::FindingReasonCodes => "FindingReasonCodes",
-            FilterName::RecommendationSourceType => "RecommendationSourceType",
-            FilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Finding", "FindingReasonCodes", "RecommendationSourceType"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FilterName::Finding => "Finding",
+    FilterName::FindingReasonCodes => "FindingReasonCodes",
+    FilterName::RecommendationSourceType => "RecommendationSourceType",
+    FilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Finding", "FindingReasonCodes", "RecommendationSourceType"]
+                }
+            }
 impl AsRef<str> for FilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes an Amazon Elastic Block Store (Amazon EBS) volume recommendation.</p>
 #[non_exhaustive]
@@ -8879,16 +8811,16 @@ pub enum EbsMetricName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EbsMetricName {
-    fn from(s: &str) -> Self {
-        match s {
-            "VolumeReadBytesPerSecond" => EbsMetricName::VolumeReadBytesPerSecond,
-            "VolumeReadOpsPerSecond" => EbsMetricName::VolumeReadOpsPerSecond,
-            "VolumeWriteBytesPerSecond" => EbsMetricName::VolumeWriteBytesPerSecond,
-            "VolumeWriteOpsPerSecond" => EbsMetricName::VolumeWriteOpsPerSecond,
-            other => EbsMetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "VolumeReadBytesPerSecond" => EbsMetricName::VolumeReadBytesPerSecond,
+"VolumeReadOpsPerSecond" => EbsMetricName::VolumeReadOpsPerSecond,
+"VolumeWriteBytesPerSecond" => EbsMetricName::VolumeWriteBytesPerSecond,
+"VolumeWriteOpsPerSecond" => EbsMetricName::VolumeWriteOpsPerSecond,
+other => EbsMetricName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EbsMetricName {
                 type Err = std::convert::Infallible;
 
@@ -8897,28 +8829,26 @@ impl std::str::FromStr for EbsMetricName {
                 }
             }
 impl EbsMetricName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EbsMetricName::VolumeReadBytesPerSecond => "VolumeReadBytesPerSecond",
-            EbsMetricName::VolumeReadOpsPerSecond => "VolumeReadOpsPerSecond",
-            EbsMetricName::VolumeWriteBytesPerSecond => "VolumeWriteBytesPerSecond",
-            EbsMetricName::VolumeWriteOpsPerSecond => "VolumeWriteOpsPerSecond",
-            EbsMetricName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "VolumeReadBytesPerSecond", "VolumeReadOpsPerSecond", "VolumeWriteBytesPerSecond", "VolumeWriteOpsPerSecond"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EbsMetricName::VolumeReadBytesPerSecond => "VolumeReadBytesPerSecond",
+    EbsMetricName::VolumeReadOpsPerSecond => "VolumeReadOpsPerSecond",
+    EbsMetricName::VolumeWriteBytesPerSecond => "VolumeWriteBytesPerSecond",
+    EbsMetricName::VolumeWriteOpsPerSecond => "VolumeWriteOpsPerSecond",
+    EbsMetricName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["VolumeReadBytesPerSecond", "VolumeReadOpsPerSecond", "VolumeWriteBytesPerSecond", "VolumeWriteOpsPerSecond"]
+                }
+            }
 impl AsRef<str> for EbsMetricName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `EbsFinding`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8967,14 +8897,14 @@ pub enum EbsFinding {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EbsFinding {
-    fn from(s: &str) -> Self {
-        match s {
-            "NotOptimized" => EbsFinding::NotOptimized,
-            "Optimized" => EbsFinding::Optimized,
-            other => EbsFinding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "NotOptimized" => EbsFinding::NotOptimized,
+"Optimized" => EbsFinding::Optimized,
+other => EbsFinding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EbsFinding {
                 type Err = std::convert::Infallible;
 
@@ -8983,26 +8913,24 @@ impl std::str::FromStr for EbsFinding {
                 }
             }
 impl EbsFinding {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EbsFinding::NotOptimized => "NotOptimized",
-            EbsFinding::Optimized => "Optimized",
-            EbsFinding::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "NotOptimized", "Optimized"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EbsFinding::NotOptimized => "NotOptimized",
+    EbsFinding::Optimized => "Optimized",
+    EbsFinding::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["NotOptimized", "Optimized"]
+                }
+            }
 impl AsRef<str> for EbsFinding {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a filter that returns a more specific list of Amazon Elastic Block Store (Amazon EBS) volume recommendations. Use this filter with the <code>GetEBSVolumeRecommendations</code> action.</p> 
 /// <p>You can use <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code> action, <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code> action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
@@ -9132,13 +9060,13 @@ pub enum EbsFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EbsFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Finding" => EbsFilterName::Finding,
-            other => EbsFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Finding" => EbsFilterName::Finding,
+other => EbsFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EbsFilterName {
                 type Err = std::convert::Infallible;
 
@@ -9147,25 +9075,23 @@ impl std::str::FromStr for EbsFilterName {
                 }
             }
 impl EbsFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EbsFilterName::Finding => "Finding",
-            EbsFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Finding"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EbsFilterName::Finding => "Finding",
+    EbsFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Finding"]
+                }
+            }
 impl AsRef<str> for EbsFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes an Auto Scaling group recommendation.</p>
 #[non_exhaustive]
@@ -9932,13 +9858,13 @@ pub enum FileFormat {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FileFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "Csv" => FileFormat::Csv,
-            other => FileFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Csv" => FileFormat::Csv,
+other => FileFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FileFormat {
                 type Err = std::convert::Infallible;
 
@@ -9947,25 +9873,23 @@ impl std::str::FromStr for FileFormat {
                 }
             }
 impl FileFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FileFormat::Csv => "Csv",
-            FileFormat::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Csv"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FileFormat::Csv => "Csv",
+    FileFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Csv"]
+                }
+            }
 impl AsRef<str> for FileFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p> 
 /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -10156,38 +10080,38 @@ pub enum ExportableLambdaFunctionField {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportableLambdaFunctionField {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccountId" => ExportableLambdaFunctionField::AccountId,
-            "CurrentConfigurationMemorySize" => ExportableLambdaFunctionField::CurrentConfigurationMemorySize,
-            "CurrentConfigurationTimeout" => ExportableLambdaFunctionField::CurrentConfigurationTimeout,
-            "CurrentCostAverage" => ExportableLambdaFunctionField::CurrentCostAverage,
-            "CurrentCostTotal" => ExportableLambdaFunctionField::CurrentCostTotal,
-            "CurrentPerformanceRisk" => ExportableLambdaFunctionField::CurrentPerformanceRisk,
-            "Finding" => ExportableLambdaFunctionField::Finding,
-            "FindingReasonCodes" => ExportableLambdaFunctionField::FindingReasonCodes,
-            "FunctionArn" => ExportableLambdaFunctionField::FunctionArn,
-            "FunctionVersion" => ExportableLambdaFunctionField::FunctionVersion,
-            "LastRefreshTimestamp" => ExportableLambdaFunctionField::LastRefreshTimestamp,
-            "LookbackPeriodInDays" => ExportableLambdaFunctionField::LookbackPeriodInDays,
-            "NumberOfInvocations" => ExportableLambdaFunctionField::NumberOfInvocations,
-            "RecommendationOptionsConfigurationMemorySize" => ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize,
-            "RecommendationOptionsCostHigh" => ExportableLambdaFunctionField::RecommendationOptionsCostHigh,
-            "RecommendationOptionsCostLow" => ExportableLambdaFunctionField::RecommendationOptionsCostLow,
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
-            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue,
-            "RecommendationOptionsProjectedUtilizationMetricsDurationExpected" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected,
-            "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound,
-            "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound,
-            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage,
-            "UtilizationMetricsDurationAverage" => ExportableLambdaFunctionField::UtilizationMetricsDurationAverage,
-            "UtilizationMetricsDurationMaximum" => ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum,
-            "UtilizationMetricsMemoryAverage" => ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage,
-            "UtilizationMetricsMemoryMaximum" => ExportableLambdaFunctionField::UtilizationMetricsMemoryMaximum,
-            other => ExportableLambdaFunctionField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccountId" => ExportableLambdaFunctionField::AccountId,
+"CurrentConfigurationMemorySize" => ExportableLambdaFunctionField::CurrentConfigurationMemorySize,
+"CurrentConfigurationTimeout" => ExportableLambdaFunctionField::CurrentConfigurationTimeout,
+"CurrentCostAverage" => ExportableLambdaFunctionField::CurrentCostAverage,
+"CurrentCostTotal" => ExportableLambdaFunctionField::CurrentCostTotal,
+"CurrentPerformanceRisk" => ExportableLambdaFunctionField::CurrentPerformanceRisk,
+"Finding" => ExportableLambdaFunctionField::Finding,
+"FindingReasonCodes" => ExportableLambdaFunctionField::FindingReasonCodes,
+"FunctionArn" => ExportableLambdaFunctionField::FunctionArn,
+"FunctionVersion" => ExportableLambdaFunctionField::FunctionVersion,
+"LastRefreshTimestamp" => ExportableLambdaFunctionField::LastRefreshTimestamp,
+"LookbackPeriodInDays" => ExportableLambdaFunctionField::LookbackPeriodInDays,
+"NumberOfInvocations" => ExportableLambdaFunctionField::NumberOfInvocations,
+"RecommendationOptionsConfigurationMemorySize" => ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize,
+"RecommendationOptionsCostHigh" => ExportableLambdaFunctionField::RecommendationOptionsCostHigh,
+"RecommendationOptionsCostLow" => ExportableLambdaFunctionField::RecommendationOptionsCostLow,
+"RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+"RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue,
+"RecommendationOptionsProjectedUtilizationMetricsDurationExpected" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected,
+"RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound,
+"RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound,
+"RecommendationOptionsSavingsOpportunityPercentage" => ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage,
+"UtilizationMetricsDurationAverage" => ExportableLambdaFunctionField::UtilizationMetricsDurationAverage,
+"UtilizationMetricsDurationMaximum" => ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum,
+"UtilizationMetricsMemoryAverage" => ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage,
+"UtilizationMetricsMemoryMaximum" => ExportableLambdaFunctionField::UtilizationMetricsMemoryMaximum,
+other => ExportableLambdaFunctionField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExportableLambdaFunctionField {
                 type Err = std::convert::Infallible;
 
@@ -10196,50 +10120,48 @@ impl std::str::FromStr for ExportableLambdaFunctionField {
                 }
             }
 impl ExportableLambdaFunctionField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExportableLambdaFunctionField::AccountId => "AccountId",
-            ExportableLambdaFunctionField::CurrentConfigurationMemorySize => "CurrentConfigurationMemorySize",
-            ExportableLambdaFunctionField::CurrentConfigurationTimeout => "CurrentConfigurationTimeout",
-            ExportableLambdaFunctionField::CurrentCostAverage => "CurrentCostAverage",
-            ExportableLambdaFunctionField::CurrentCostTotal => "CurrentCostTotal",
-            ExportableLambdaFunctionField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
-            ExportableLambdaFunctionField::Finding => "Finding",
-            ExportableLambdaFunctionField::FindingReasonCodes => "FindingReasonCodes",
-            ExportableLambdaFunctionField::FunctionArn => "FunctionArn",
-            ExportableLambdaFunctionField::FunctionVersion => "FunctionVersion",
-            ExportableLambdaFunctionField::LastRefreshTimestamp => "LastRefreshTimestamp",
-            ExportableLambdaFunctionField::LookbackPeriodInDays => "LookbackPeriodInDays",
-            ExportableLambdaFunctionField::NumberOfInvocations => "NumberOfInvocations",
-            ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize => "RecommendationOptionsConfigurationMemorySize",
-            ExportableLambdaFunctionField::RecommendationOptionsCostHigh => "RecommendationOptionsCostHigh",
-            ExportableLambdaFunctionField::RecommendationOptionsCostLow => "RecommendationOptionsCostLow",
-            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
-            ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected => "RecommendationOptionsProjectedUtilizationMetricsDurationExpected",
-            ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound => "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound",
-            ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound => "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound",
-            ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
-            ExportableLambdaFunctionField::UtilizationMetricsDurationAverage => "UtilizationMetricsDurationAverage",
-            ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum => "UtilizationMetricsDurationMaximum",
-            ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage => "UtilizationMetricsMemoryAverage",
-            ExportableLambdaFunctionField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
-            ExportableLambdaFunctionField::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccountId", "CurrentConfigurationMemorySize", "CurrentConfigurationTimeout", "CurrentCostAverage", "CurrentCostTotal", "CurrentPerformanceRisk", "Finding", "FindingReasonCodes", "FunctionArn", "FunctionVersion", "LastRefreshTimestamp", "LookbackPeriodInDays", "NumberOfInvocations", "RecommendationOptionsConfigurationMemorySize", "RecommendationOptionsCostHigh", "RecommendationOptionsCostLow", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsProjectedUtilizationMetricsDurationExpected", "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound", "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound", "RecommendationOptionsSavingsOpportunityPercentage", "UtilizationMetricsDurationAverage", "UtilizationMetricsDurationMaximum", "UtilizationMetricsMemoryAverage", "UtilizationMetricsMemoryMaximum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExportableLambdaFunctionField::AccountId => "AccountId",
+    ExportableLambdaFunctionField::CurrentConfigurationMemorySize => "CurrentConfigurationMemorySize",
+    ExportableLambdaFunctionField::CurrentConfigurationTimeout => "CurrentConfigurationTimeout",
+    ExportableLambdaFunctionField::CurrentCostAverage => "CurrentCostAverage",
+    ExportableLambdaFunctionField::CurrentCostTotal => "CurrentCostTotal",
+    ExportableLambdaFunctionField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+    ExportableLambdaFunctionField::Finding => "Finding",
+    ExportableLambdaFunctionField::FindingReasonCodes => "FindingReasonCodes",
+    ExportableLambdaFunctionField::FunctionArn => "FunctionArn",
+    ExportableLambdaFunctionField::FunctionVersion => "FunctionVersion",
+    ExportableLambdaFunctionField::LastRefreshTimestamp => "LastRefreshTimestamp",
+    ExportableLambdaFunctionField::LookbackPeriodInDays => "LookbackPeriodInDays",
+    ExportableLambdaFunctionField::NumberOfInvocations => "NumberOfInvocations",
+    ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize => "RecommendationOptionsConfigurationMemorySize",
+    ExportableLambdaFunctionField::RecommendationOptionsCostHigh => "RecommendationOptionsCostHigh",
+    ExportableLambdaFunctionField::RecommendationOptionsCostLow => "RecommendationOptionsCostLow",
+    ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+    ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+    ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected => "RecommendationOptionsProjectedUtilizationMetricsDurationExpected",
+    ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound => "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound",
+    ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound => "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound",
+    ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+    ExportableLambdaFunctionField::UtilizationMetricsDurationAverage => "UtilizationMetricsDurationAverage",
+    ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum => "UtilizationMetricsDurationMaximum",
+    ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage => "UtilizationMetricsMemoryAverage",
+    ExportableLambdaFunctionField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
+    ExportableLambdaFunctionField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccountId", "CurrentConfigurationMemorySize", "CurrentConfigurationTimeout", "CurrentCostAverage", "CurrentCostTotal", "CurrentPerformanceRisk", "Finding", "FindingReasonCodes", "FunctionArn", "FunctionVersion", "LastRefreshTimestamp", "LookbackPeriodInDays", "NumberOfInvocations", "RecommendationOptionsConfigurationMemorySize", "RecommendationOptionsCostHigh", "RecommendationOptionsCostLow", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsProjectedUtilizationMetricsDurationExpected", "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound", "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound", "RecommendationOptionsSavingsOpportunityPercentage", "UtilizationMetricsDurationAverage", "UtilizationMetricsDurationMaximum", "UtilizationMetricsMemoryAverage", "UtilizationMetricsMemoryMaximum"]
+                }
+            }
 impl AsRef<str> for ExportableLambdaFunctionField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ExportableEcsServiceField`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -10351,35 +10273,35 @@ pub enum ExportableEcsServiceField {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportableEcsServiceField {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccountId" => ExportableEcsServiceField::AccountId,
-            "CurrentPerformanceRisk" => ExportableEcsServiceField::CurrentPerformanceRisk,
-            "CurrentServiceConfigurationAutoScalingConfiguration" => ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration,
-            "CurrentServiceConfigurationCpu" => ExportableEcsServiceField::CurrentServiceConfigurationCpu,
-            "CurrentServiceConfigurationMemory" => ExportableEcsServiceField::CurrentServiceConfigurationMemory,
-            "CurrentServiceConfigurationTaskDefinitionArn" => ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn,
-            "CurrentServiceContainerConfigurations" => ExportableEcsServiceField::CurrentServiceContainerConfigurations,
-            "Finding" => ExportableEcsServiceField::Finding,
-            "FindingReasonCodes" => ExportableEcsServiceField::FindingReasonCodes,
-            "LastRefreshTimestamp" => ExportableEcsServiceField::LastRefreshTimestamp,
-            "LaunchType" => ExportableEcsServiceField::LaunchType,
-            "LookbackPeriodInDays" => ExportableEcsServiceField::LookbackPeriodInDays,
-            "RecommendationOptionsContainerRecommendations" => ExportableEcsServiceField::RecommendationOptionsContainerRecommendations,
-            "RecommendationOptionsCpu" => ExportableEcsServiceField::RecommendationOptionsCpu,
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
-            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue,
-            "RecommendationOptionsMemory" => ExportableEcsServiceField::RecommendationOptionsMemory,
-            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage,
-            "ServiceArn" => ExportableEcsServiceField::ServiceArn,
-            "UtilizationMetricsCpuMaximum" => ExportableEcsServiceField::UtilizationMetricsCpuMaximum,
-            "UtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::UtilizationMetricsMemoryMaximum,
-            other => ExportableEcsServiceField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccountId" => ExportableEcsServiceField::AccountId,
+"CurrentPerformanceRisk" => ExportableEcsServiceField::CurrentPerformanceRisk,
+"CurrentServiceConfigurationAutoScalingConfiguration" => ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration,
+"CurrentServiceConfigurationCpu" => ExportableEcsServiceField::CurrentServiceConfigurationCpu,
+"CurrentServiceConfigurationMemory" => ExportableEcsServiceField::CurrentServiceConfigurationMemory,
+"CurrentServiceConfigurationTaskDefinitionArn" => ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn,
+"CurrentServiceContainerConfigurations" => ExportableEcsServiceField::CurrentServiceContainerConfigurations,
+"Finding" => ExportableEcsServiceField::Finding,
+"FindingReasonCodes" => ExportableEcsServiceField::FindingReasonCodes,
+"LastRefreshTimestamp" => ExportableEcsServiceField::LastRefreshTimestamp,
+"LaunchType" => ExportableEcsServiceField::LaunchType,
+"LookbackPeriodInDays" => ExportableEcsServiceField::LookbackPeriodInDays,
+"RecommendationOptionsContainerRecommendations" => ExportableEcsServiceField::RecommendationOptionsContainerRecommendations,
+"RecommendationOptionsCpu" => ExportableEcsServiceField::RecommendationOptionsCpu,
+"RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+"RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue,
+"RecommendationOptionsMemory" => ExportableEcsServiceField::RecommendationOptionsMemory,
+"RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+"RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+"RecommendationOptionsSavingsOpportunityPercentage" => ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage,
+"ServiceArn" => ExportableEcsServiceField::ServiceArn,
+"UtilizationMetricsCpuMaximum" => ExportableEcsServiceField::UtilizationMetricsCpuMaximum,
+"UtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::UtilizationMetricsMemoryMaximum,
+other => ExportableEcsServiceField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExportableEcsServiceField {
                 type Err = std::convert::Infallible;
 
@@ -10388,47 +10310,45 @@ impl std::str::FromStr for ExportableEcsServiceField {
                 }
             }
 impl ExportableEcsServiceField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExportableEcsServiceField::AccountId => "AccountId",
-            ExportableEcsServiceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
-            ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => "CurrentServiceConfigurationAutoScalingConfiguration",
-            ExportableEcsServiceField::CurrentServiceConfigurationCpu => "CurrentServiceConfigurationCpu",
-            ExportableEcsServiceField::CurrentServiceConfigurationMemory => "CurrentServiceConfigurationMemory",
-            ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => "CurrentServiceConfigurationTaskDefinitionArn",
-            ExportableEcsServiceField::CurrentServiceContainerConfigurations => "CurrentServiceContainerConfigurations",
-            ExportableEcsServiceField::Finding => "Finding",
-            ExportableEcsServiceField::FindingReasonCodes => "FindingReasonCodes",
-            ExportableEcsServiceField::LastRefreshTimestamp => "LastRefreshTimestamp",
-            ExportableEcsServiceField::LaunchType => "LaunchType",
-            ExportableEcsServiceField::LookbackPeriodInDays => "LookbackPeriodInDays",
-            ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => "RecommendationOptionsContainerRecommendations",
-            ExportableEcsServiceField::RecommendationOptionsCpu => "RecommendationOptionsCpu",
-            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
-            ExportableEcsServiceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
-            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
-            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
-            ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
-            ExportableEcsServiceField::ServiceArn => "ServiceArn",
-            ExportableEcsServiceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
-            ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
-            ExportableEcsServiceField::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccountId", "CurrentPerformanceRisk", "CurrentServiceConfigurationAutoScalingConfiguration", "CurrentServiceConfigurationCpu", "CurrentServiceConfigurationMemory", "CurrentServiceConfigurationTaskDefinitionArn", "CurrentServiceContainerConfigurations", "Finding", "FindingReasonCodes", "LastRefreshTimestamp", "LaunchType", "LookbackPeriodInDays", "RecommendationOptionsContainerRecommendations", "RecommendationOptionsCpu", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsMemory", "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum", "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum", "RecommendationOptionsSavingsOpportunityPercentage", "ServiceArn", "UtilizationMetricsCpuMaximum", "UtilizationMetricsMemoryMaximum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExportableEcsServiceField::AccountId => "AccountId",
+    ExportableEcsServiceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+    ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => "CurrentServiceConfigurationAutoScalingConfiguration",
+    ExportableEcsServiceField::CurrentServiceConfigurationCpu => "CurrentServiceConfigurationCpu",
+    ExportableEcsServiceField::CurrentServiceConfigurationMemory => "CurrentServiceConfigurationMemory",
+    ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => "CurrentServiceConfigurationTaskDefinitionArn",
+    ExportableEcsServiceField::CurrentServiceContainerConfigurations => "CurrentServiceContainerConfigurations",
+    ExportableEcsServiceField::Finding => "Finding",
+    ExportableEcsServiceField::FindingReasonCodes => "FindingReasonCodes",
+    ExportableEcsServiceField::LastRefreshTimestamp => "LastRefreshTimestamp",
+    ExportableEcsServiceField::LaunchType => "LaunchType",
+    ExportableEcsServiceField::LookbackPeriodInDays => "LookbackPeriodInDays",
+    ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => "RecommendationOptionsContainerRecommendations",
+    ExportableEcsServiceField::RecommendationOptionsCpu => "RecommendationOptionsCpu",
+    ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+    ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+    ExportableEcsServiceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
+    ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
+    ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+    ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+    ExportableEcsServiceField::ServiceArn => "ServiceArn",
+    ExportableEcsServiceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
+    ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
+    ExportableEcsServiceField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccountId", "CurrentPerformanceRisk", "CurrentServiceConfigurationAutoScalingConfiguration", "CurrentServiceConfigurationCpu", "CurrentServiceConfigurationMemory", "CurrentServiceConfigurationTaskDefinitionArn", "CurrentServiceContainerConfigurations", "Finding", "FindingReasonCodes", "LastRefreshTimestamp", "LaunchType", "LookbackPeriodInDays", "RecommendationOptionsContainerRecommendations", "RecommendationOptionsCpu", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsMemory", "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum", "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum", "RecommendationOptionsSavingsOpportunityPercentage", "ServiceArn", "UtilizationMetricsCpuMaximum", "UtilizationMetricsMemoryMaximum"]
+                }
+            }
 impl AsRef<str> for ExportableEcsServiceField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ExportableInstanceField`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -10630,65 +10550,65 @@ pub enum ExportableInstanceField {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportableInstanceField {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccountId" => ExportableInstanceField::AccountId,
-            "CurrentInstanceType" => ExportableInstanceField::CurrentInstanceType,
-            "CurrentMemory" => ExportableInstanceField::CurrentMemory,
-            "CurrentNetwork" => ExportableInstanceField::CurrentNetwork,
-            "CurrentOnDemandPrice" => ExportableInstanceField::CurrentOnDemandPrice,
-            "CurrentPerformanceRisk" => ExportableInstanceField::CurrentPerformanceRisk,
-            "CurrentStandardOneYearNoUpfrontReservedPrice" => ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice,
-            "CurrentStandardThreeYearNoUpfrontReservedPrice" => ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice,
-            "CurrentStorage" => ExportableInstanceField::CurrentStorage,
-            "CurrentVCpus" => ExportableInstanceField::CurrentVcpus,
-            "EffectiveRecommendationPreferencesCpuVendorArchitectures" => ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures,
-            "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
-            "EffectiveRecommendationPreferencesExternalMetricsSource" => ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource,
-            "EffectiveRecommendationPreferencesInferredWorkloadTypes" => ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes,
-            "Finding" => ExportableInstanceField::Finding,
-            "FindingReasonCodes" => ExportableInstanceField::FindingReasonCodes,
-            "InferredWorkloadTypes" => ExportableInstanceField::InferredWorkloadTypes,
-            "InstanceArn" => ExportableInstanceField::InstanceArn,
-            "InstanceName" => ExportableInstanceField::InstanceName,
-            "LastRefreshTimestamp" => ExportableInstanceField::LastRefreshTimestamp,
-            "LookbackPeriodInDays" => ExportableInstanceField::LookbackPeriodInDays,
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
-            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue,
-            "RecommendationOptionsInstanceType" => ExportableInstanceField::RecommendationOptionsInstanceType,
-            "RecommendationOptionsMemory" => ExportableInstanceField::RecommendationOptionsMemory,
-            "RecommendationOptionsMigrationEffort" => ExportableInstanceField::RecommendationOptionsMigrationEffort,
-            "RecommendationOptionsNetwork" => ExportableInstanceField::RecommendationOptionsNetwork,
-            "RecommendationOptionsOnDemandPrice" => ExportableInstanceField::RecommendationOptionsOnDemandPrice,
-            "RecommendationOptionsPerformanceRisk" => ExportableInstanceField::RecommendationOptionsPerformanceRisk,
-            "RecommendationOptionsPlatformDifferences" => ExportableInstanceField::RecommendationOptionsPlatformDifferences,
-            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage,
-            "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" => ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
-            "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" => ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
-            "RecommendationOptionsStorage" => ExportableInstanceField::RecommendationOptionsStorage,
-            "RecommendationOptionsVcpus" => ExportableInstanceField::RecommendationOptionsVcpus,
-            "RecommendationsSourcesRecommendationSourceArn" => ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn,
-            "RecommendationsSourcesRecommendationSourceType" => ExportableInstanceField::RecommendationsSourcesRecommendationSourceType,
-            "UtilizationMetricsCpuMaximum" => ExportableInstanceField::UtilizationMetricsCpuMaximum,
-            "UtilizationMetricsDiskReadBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum,
-            "UtilizationMetricsDiskReadOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum,
-            "UtilizationMetricsDiskWriteBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum,
-            "UtilizationMetricsDiskWriteOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum,
-            "UtilizationMetricsEbsReadBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum,
-            "UtilizationMetricsEbsReadOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum,
-            "UtilizationMetricsEbsWriteBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum,
-            "UtilizationMetricsEbsWriteOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum,
-            "UtilizationMetricsMemoryMaximum" => ExportableInstanceField::UtilizationMetricsMemoryMaximum,
-            "UtilizationMetricsNetworkInBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum,
-            "UtilizationMetricsNetworkOutBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum,
-            "UtilizationMetricsNetworkPacketsInPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum,
-            "UtilizationMetricsNetworkPacketsOutPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
-            other => ExportableInstanceField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccountId" => ExportableInstanceField::AccountId,
+"CurrentInstanceType" => ExportableInstanceField::CurrentInstanceType,
+"CurrentMemory" => ExportableInstanceField::CurrentMemory,
+"CurrentNetwork" => ExportableInstanceField::CurrentNetwork,
+"CurrentOnDemandPrice" => ExportableInstanceField::CurrentOnDemandPrice,
+"CurrentPerformanceRisk" => ExportableInstanceField::CurrentPerformanceRisk,
+"CurrentStandardOneYearNoUpfrontReservedPrice" => ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice,
+"CurrentStandardThreeYearNoUpfrontReservedPrice" => ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice,
+"CurrentStorage" => ExportableInstanceField::CurrentStorage,
+"CurrentVCpus" => ExportableInstanceField::CurrentVcpus,
+"EffectiveRecommendationPreferencesCpuVendorArchitectures" => ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures,
+"EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+"EffectiveRecommendationPreferencesExternalMetricsSource" => ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource,
+"EffectiveRecommendationPreferencesInferredWorkloadTypes" => ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes,
+"Finding" => ExportableInstanceField::Finding,
+"FindingReasonCodes" => ExportableInstanceField::FindingReasonCodes,
+"InferredWorkloadTypes" => ExportableInstanceField::InferredWorkloadTypes,
+"InstanceArn" => ExportableInstanceField::InstanceArn,
+"InstanceName" => ExportableInstanceField::InstanceName,
+"LastRefreshTimestamp" => ExportableInstanceField::LastRefreshTimestamp,
+"LookbackPeriodInDays" => ExportableInstanceField::LookbackPeriodInDays,
+"RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+"RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue,
+"RecommendationOptionsInstanceType" => ExportableInstanceField::RecommendationOptionsInstanceType,
+"RecommendationOptionsMemory" => ExportableInstanceField::RecommendationOptionsMemory,
+"RecommendationOptionsMigrationEffort" => ExportableInstanceField::RecommendationOptionsMigrationEffort,
+"RecommendationOptionsNetwork" => ExportableInstanceField::RecommendationOptionsNetwork,
+"RecommendationOptionsOnDemandPrice" => ExportableInstanceField::RecommendationOptionsOnDemandPrice,
+"RecommendationOptionsPerformanceRisk" => ExportableInstanceField::RecommendationOptionsPerformanceRisk,
+"RecommendationOptionsPlatformDifferences" => ExportableInstanceField::RecommendationOptionsPlatformDifferences,
+"RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+"RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+"RecommendationOptionsSavingsOpportunityPercentage" => ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage,
+"RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" => ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+"RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" => ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+"RecommendationOptionsStorage" => ExportableInstanceField::RecommendationOptionsStorage,
+"RecommendationOptionsVcpus" => ExportableInstanceField::RecommendationOptionsVcpus,
+"RecommendationsSourcesRecommendationSourceArn" => ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn,
+"RecommendationsSourcesRecommendationSourceType" => ExportableInstanceField::RecommendationsSourcesRecommendationSourceType,
+"UtilizationMetricsCpuMaximum" => ExportableInstanceField::UtilizationMetricsCpuMaximum,
+"UtilizationMetricsDiskReadBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum,
+"UtilizationMetricsDiskReadOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum,
+"UtilizationMetricsDiskWriteBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum,
+"UtilizationMetricsDiskWriteOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum,
+"UtilizationMetricsEbsReadBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum,
+"UtilizationMetricsEbsReadOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum,
+"UtilizationMetricsEbsWriteBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum,
+"UtilizationMetricsEbsWriteOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum,
+"UtilizationMetricsMemoryMaximum" => ExportableInstanceField::UtilizationMetricsMemoryMaximum,
+"UtilizationMetricsNetworkInBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum,
+"UtilizationMetricsNetworkOutBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum,
+"UtilizationMetricsNetworkPacketsInPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum,
+"UtilizationMetricsNetworkPacketsOutPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
+other => ExportableInstanceField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExportableInstanceField {
                 type Err = std::convert::Infallible;
 
@@ -10697,77 +10617,75 @@ impl std::str::FromStr for ExportableInstanceField {
                 }
             }
 impl ExportableInstanceField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExportableInstanceField::AccountId => "AccountId",
-            ExportableInstanceField::CurrentInstanceType => "CurrentInstanceType",
-            ExportableInstanceField::CurrentMemory => "CurrentMemory",
-            ExportableInstanceField::CurrentNetwork => "CurrentNetwork",
-            ExportableInstanceField::CurrentOnDemandPrice => "CurrentOnDemandPrice",
-            ExportableInstanceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
-            ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice => "CurrentStandardOneYearNoUpfrontReservedPrice",
-            ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice => "CurrentStandardThreeYearNoUpfrontReservedPrice",
-            ExportableInstanceField::CurrentStorage => "CurrentStorage",
-            ExportableInstanceField::CurrentVcpus => "CurrentVCpus",
-            ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => "EffectiveRecommendationPreferencesCpuVendorArchitectures",
-            ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
-            ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => "EffectiveRecommendationPreferencesExternalMetricsSource",
-            ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => "EffectiveRecommendationPreferencesInferredWorkloadTypes",
-            ExportableInstanceField::Finding => "Finding",
-            ExportableInstanceField::FindingReasonCodes => "FindingReasonCodes",
-            ExportableInstanceField::InferredWorkloadTypes => "InferredWorkloadTypes",
-            ExportableInstanceField::InstanceArn => "InstanceArn",
-            ExportableInstanceField::InstanceName => "InstanceName",
-            ExportableInstanceField::LastRefreshTimestamp => "LastRefreshTimestamp",
-            ExportableInstanceField::LookbackPeriodInDays => "LookbackPeriodInDays",
-            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
-            ExportableInstanceField::RecommendationOptionsInstanceType => "RecommendationOptionsInstanceType",
-            ExportableInstanceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
-            ExportableInstanceField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
-            ExportableInstanceField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
-            ExportableInstanceField::RecommendationOptionsOnDemandPrice => "RecommendationOptionsOnDemandPrice",
-            ExportableInstanceField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
-            ExportableInstanceField::RecommendationOptionsPlatformDifferences => "RecommendationOptionsPlatformDifferences",
-            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
-            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
-            ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
-            ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
-            ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
-            ExportableInstanceField::RecommendationOptionsStorage => "RecommendationOptionsStorage",
-            ExportableInstanceField::RecommendationOptionsVcpus => "RecommendationOptionsVcpus",
-            ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn => "RecommendationsSourcesRecommendationSourceArn",
-            ExportableInstanceField::RecommendationsSourcesRecommendationSourceType => "RecommendationsSourcesRecommendationSourceType",
-            ExportableInstanceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
-            ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum => "UtilizationMetricsDiskReadBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum => "UtilizationMetricsDiskReadOpsPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum => "UtilizationMetricsDiskWriteBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum => "UtilizationMetricsDiskWriteOpsPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum => "UtilizationMetricsEbsReadBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum => "UtilizationMetricsEbsReadOpsPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
-            ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum => "UtilizationMetricsNetworkInBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum => "UtilizationMetricsNetworkPacketsInPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => "UtilizationMetricsNetworkPacketsOutPerSecondMaximum",
-            ExportableInstanceField::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccountId", "CurrentInstanceType", "CurrentMemory", "CurrentNetwork", "CurrentOnDemandPrice", "CurrentPerformanceRisk", "CurrentStandardOneYearNoUpfrontReservedPrice", "CurrentStandardThreeYearNoUpfrontReservedPrice", "CurrentStorage", "CurrentVCpus", "EffectiveRecommendationPreferencesCpuVendorArchitectures", "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics", "EffectiveRecommendationPreferencesExternalMetricsSource", "EffectiveRecommendationPreferencesInferredWorkloadTypes", "Finding", "FindingReasonCodes", "InferredWorkloadTypes", "InstanceArn", "InstanceName", "LastRefreshTimestamp", "LookbackPeriodInDays", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsInstanceType", "RecommendationOptionsMemory", "RecommendationOptionsMigrationEffort", "RecommendationOptionsNetwork", "RecommendationOptionsOnDemandPrice", "RecommendationOptionsPerformanceRisk", "RecommendationOptionsPlatformDifferences", "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum", "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum", "RecommendationOptionsSavingsOpportunityPercentage", "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice", "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice", "RecommendationOptionsStorage", "RecommendationOptionsVcpus", "RecommendationsSourcesRecommendationSourceArn", "RecommendationsSourcesRecommendationSourceType", "UtilizationMetricsCpuMaximum", "UtilizationMetricsDiskReadBytesPerSecondMaximum", "UtilizationMetricsDiskReadOpsPerSecondMaximum", "UtilizationMetricsDiskWriteBytesPerSecondMaximum", "UtilizationMetricsDiskWriteOpsPerSecondMaximum", "UtilizationMetricsEbsReadBytesPerSecondMaximum", "UtilizationMetricsEbsReadOpsPerSecondMaximum", "UtilizationMetricsEbsWriteBytesPerSecondMaximum", "UtilizationMetricsEbsWriteOpsPerSecondMaximum", "UtilizationMetricsMemoryMaximum", "UtilizationMetricsNetworkInBytesPerSecondMaximum", "UtilizationMetricsNetworkOutBytesPerSecondMaximum", "UtilizationMetricsNetworkPacketsInPerSecondMaximum", "UtilizationMetricsNetworkPacketsOutPerSecondMaximum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExportableInstanceField::AccountId => "AccountId",
+    ExportableInstanceField::CurrentInstanceType => "CurrentInstanceType",
+    ExportableInstanceField::CurrentMemory => "CurrentMemory",
+    ExportableInstanceField::CurrentNetwork => "CurrentNetwork",
+    ExportableInstanceField::CurrentOnDemandPrice => "CurrentOnDemandPrice",
+    ExportableInstanceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+    ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice => "CurrentStandardOneYearNoUpfrontReservedPrice",
+    ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice => "CurrentStandardThreeYearNoUpfrontReservedPrice",
+    ExportableInstanceField::CurrentStorage => "CurrentStorage",
+    ExportableInstanceField::CurrentVcpus => "CurrentVCpus",
+    ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => "EffectiveRecommendationPreferencesCpuVendorArchitectures",
+    ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
+    ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => "EffectiveRecommendationPreferencesExternalMetricsSource",
+    ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => "EffectiveRecommendationPreferencesInferredWorkloadTypes",
+    ExportableInstanceField::Finding => "Finding",
+    ExportableInstanceField::FindingReasonCodes => "FindingReasonCodes",
+    ExportableInstanceField::InferredWorkloadTypes => "InferredWorkloadTypes",
+    ExportableInstanceField::InstanceArn => "InstanceArn",
+    ExportableInstanceField::InstanceName => "InstanceName",
+    ExportableInstanceField::LastRefreshTimestamp => "LastRefreshTimestamp",
+    ExportableInstanceField::LookbackPeriodInDays => "LookbackPeriodInDays",
+    ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+    ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+    ExportableInstanceField::RecommendationOptionsInstanceType => "RecommendationOptionsInstanceType",
+    ExportableInstanceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
+    ExportableInstanceField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
+    ExportableInstanceField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
+    ExportableInstanceField::RecommendationOptionsOnDemandPrice => "RecommendationOptionsOnDemandPrice",
+    ExportableInstanceField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
+    ExportableInstanceField::RecommendationOptionsPlatformDifferences => "RecommendationOptionsPlatformDifferences",
+    ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
+    ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+    ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+    ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
+    ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
+    ExportableInstanceField::RecommendationOptionsStorage => "RecommendationOptionsStorage",
+    ExportableInstanceField::RecommendationOptionsVcpus => "RecommendationOptionsVcpus",
+    ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn => "RecommendationsSourcesRecommendationSourceArn",
+    ExportableInstanceField::RecommendationsSourcesRecommendationSourceType => "RecommendationsSourcesRecommendationSourceType",
+    ExportableInstanceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
+    ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum => "UtilizationMetricsDiskReadBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum => "UtilizationMetricsDiskReadOpsPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum => "UtilizationMetricsDiskWriteBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum => "UtilizationMetricsDiskWriteOpsPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum => "UtilizationMetricsEbsReadBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum => "UtilizationMetricsEbsReadOpsPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
+    ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum => "UtilizationMetricsNetworkInBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum => "UtilizationMetricsNetworkPacketsInPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => "UtilizationMetricsNetworkPacketsOutPerSecondMaximum",
+    ExportableInstanceField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccountId", "CurrentInstanceType", "CurrentMemory", "CurrentNetwork", "CurrentOnDemandPrice", "CurrentPerformanceRisk", "CurrentStandardOneYearNoUpfrontReservedPrice", "CurrentStandardThreeYearNoUpfrontReservedPrice", "CurrentStorage", "CurrentVCpus", "EffectiveRecommendationPreferencesCpuVendorArchitectures", "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics", "EffectiveRecommendationPreferencesExternalMetricsSource", "EffectiveRecommendationPreferencesInferredWorkloadTypes", "Finding", "FindingReasonCodes", "InferredWorkloadTypes", "InstanceArn", "InstanceName", "LastRefreshTimestamp", "LookbackPeriodInDays", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsInstanceType", "RecommendationOptionsMemory", "RecommendationOptionsMigrationEffort", "RecommendationOptionsNetwork", "RecommendationOptionsOnDemandPrice", "RecommendationOptionsPerformanceRisk", "RecommendationOptionsPlatformDifferences", "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum", "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum", "RecommendationOptionsSavingsOpportunityPercentage", "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice", "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice", "RecommendationOptionsStorage", "RecommendationOptionsVcpus", "RecommendationsSourcesRecommendationSourceArn", "RecommendationsSourcesRecommendationSourceType", "UtilizationMetricsCpuMaximum", "UtilizationMetricsDiskReadBytesPerSecondMaximum", "UtilizationMetricsDiskReadOpsPerSecondMaximum", "UtilizationMetricsDiskWriteBytesPerSecondMaximum", "UtilizationMetricsDiskWriteOpsPerSecondMaximum", "UtilizationMetricsEbsReadBytesPerSecondMaximum", "UtilizationMetricsEbsReadOpsPerSecondMaximum", "UtilizationMetricsEbsWriteBytesPerSecondMaximum", "UtilizationMetricsEbsWriteOpsPerSecondMaximum", "UtilizationMetricsMemoryMaximum", "UtilizationMetricsNetworkInBytesPerSecondMaximum", "UtilizationMetricsNetworkOutBytesPerSecondMaximum", "UtilizationMetricsNetworkPacketsInPerSecondMaximum", "UtilizationMetricsNetworkPacketsOutPerSecondMaximum"]
+                }
+            }
 impl AsRef<str> for ExportableInstanceField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ExportableVolumeField`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -10894,40 +10812,40 @@ pub enum ExportableVolumeField {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportableVolumeField {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccountId" => ExportableVolumeField::AccountId,
-            "CurrentConfigurationVolumeBaselineIOPS" => ExportableVolumeField::CurrentConfigurationVolumeBaselineIops,
-            "CurrentConfigurationVolumeBaselineThroughput" => ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput,
-            "CurrentConfigurationVolumeBurstIOPS" => ExportableVolumeField::CurrentConfigurationVolumeBurstIops,
-            "CurrentConfigurationVolumeBurstThroughput" => ExportableVolumeField::CurrentConfigurationVolumeBurstThroughput,
-            "CurrentConfigurationVolumeSize" => ExportableVolumeField::CurrentConfigurationVolumeSize,
-            "CurrentConfigurationVolumeType" => ExportableVolumeField::CurrentConfigurationVolumeType,
-            "CurrentMonthlyPrice" => ExportableVolumeField::CurrentMonthlyPrice,
-            "CurrentPerformanceRisk" => ExportableVolumeField::CurrentPerformanceRisk,
-            "Finding" => ExportableVolumeField::Finding,
-            "LastRefreshTimestamp" => ExportableVolumeField::LastRefreshTimestamp,
-            "LookbackPeriodInDays" => ExportableVolumeField::LookbackPeriodInDays,
-            "RecommendationOptionsConfigurationVolumeBaselineIOPS" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineIops,
-            "RecommendationOptionsConfigurationVolumeBaselineThroughput" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineThroughput,
-            "RecommendationOptionsConfigurationVolumeBurstIOPS" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstIops,
-            "RecommendationOptionsConfigurationVolumeBurstThroughput" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstThroughput,
-            "RecommendationOptionsConfigurationVolumeSize" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize,
-            "RecommendationOptionsConfigurationVolumeType" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeType,
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
-            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue,
-            "RecommendationOptionsMonthlyPrice" => ExportableVolumeField::RecommendationOptionsMonthlyPrice,
-            "RecommendationOptionsPerformanceRisk" => ExportableVolumeField::RecommendationOptionsPerformanceRisk,
-            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage,
-            "UtilizationMetricsVolumeReadBytesPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum,
-            "UtilizationMetricsVolumeReadOpsPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum,
-            "UtilizationMetricsVolumeWriteBytesPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum,
-            "UtilizationMetricsVolumeWriteOpsPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum,
-            "VolumeArn" => ExportableVolumeField::VolumeArn,
-            other => ExportableVolumeField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccountId" => ExportableVolumeField::AccountId,
+"CurrentConfigurationVolumeBaselineIOPS" => ExportableVolumeField::CurrentConfigurationVolumeBaselineIops,
+"CurrentConfigurationVolumeBaselineThroughput" => ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput,
+"CurrentConfigurationVolumeBurstIOPS" => ExportableVolumeField::CurrentConfigurationVolumeBurstIops,
+"CurrentConfigurationVolumeBurstThroughput" => ExportableVolumeField::CurrentConfigurationVolumeBurstThroughput,
+"CurrentConfigurationVolumeSize" => ExportableVolumeField::CurrentConfigurationVolumeSize,
+"CurrentConfigurationVolumeType" => ExportableVolumeField::CurrentConfigurationVolumeType,
+"CurrentMonthlyPrice" => ExportableVolumeField::CurrentMonthlyPrice,
+"CurrentPerformanceRisk" => ExportableVolumeField::CurrentPerformanceRisk,
+"Finding" => ExportableVolumeField::Finding,
+"LastRefreshTimestamp" => ExportableVolumeField::LastRefreshTimestamp,
+"LookbackPeriodInDays" => ExportableVolumeField::LookbackPeriodInDays,
+"RecommendationOptionsConfigurationVolumeBaselineIOPS" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineIops,
+"RecommendationOptionsConfigurationVolumeBaselineThroughput" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineThroughput,
+"RecommendationOptionsConfigurationVolumeBurstIOPS" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstIops,
+"RecommendationOptionsConfigurationVolumeBurstThroughput" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstThroughput,
+"RecommendationOptionsConfigurationVolumeSize" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize,
+"RecommendationOptionsConfigurationVolumeType" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeType,
+"RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+"RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue,
+"RecommendationOptionsMonthlyPrice" => ExportableVolumeField::RecommendationOptionsMonthlyPrice,
+"RecommendationOptionsPerformanceRisk" => ExportableVolumeField::RecommendationOptionsPerformanceRisk,
+"RecommendationOptionsSavingsOpportunityPercentage" => ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage,
+"UtilizationMetricsVolumeReadBytesPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum,
+"UtilizationMetricsVolumeReadOpsPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum,
+"UtilizationMetricsVolumeWriteBytesPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum,
+"UtilizationMetricsVolumeWriteOpsPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum,
+"VolumeArn" => ExportableVolumeField::VolumeArn,
+other => ExportableVolumeField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExportableVolumeField {
                 type Err = std::convert::Infallible;
 
@@ -10936,52 +10854,50 @@ impl std::str::FromStr for ExportableVolumeField {
                 }
             }
 impl ExportableVolumeField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExportableVolumeField::AccountId => "AccountId",
-            ExportableVolumeField::CurrentConfigurationVolumeBaselineIops => "CurrentConfigurationVolumeBaselineIOPS",
-            ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput => "CurrentConfigurationVolumeBaselineThroughput",
-            ExportableVolumeField::CurrentConfigurationVolumeBurstIops => "CurrentConfigurationVolumeBurstIOPS",
-            ExportableVolumeField::CurrentConfigurationVolumeBurstThroughput => "CurrentConfigurationVolumeBurstThroughput",
-            ExportableVolumeField::CurrentConfigurationVolumeSize => "CurrentConfigurationVolumeSize",
-            ExportableVolumeField::CurrentConfigurationVolumeType => "CurrentConfigurationVolumeType",
-            ExportableVolumeField::CurrentMonthlyPrice => "CurrentMonthlyPrice",
-            ExportableVolumeField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
-            ExportableVolumeField::Finding => "Finding",
-            ExportableVolumeField::LastRefreshTimestamp => "LastRefreshTimestamp",
-            ExportableVolumeField::LookbackPeriodInDays => "LookbackPeriodInDays",
-            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineIops => "RecommendationOptionsConfigurationVolumeBaselineIOPS",
-            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineThroughput => "RecommendationOptionsConfigurationVolumeBaselineThroughput",
-            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstIops => "RecommendationOptionsConfigurationVolumeBurstIOPS",
-            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstThroughput => "RecommendationOptionsConfigurationVolumeBurstThroughput",
-            ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize => "RecommendationOptionsConfigurationVolumeSize",
-            ExportableVolumeField::RecommendationOptionsConfigurationVolumeType => "RecommendationOptionsConfigurationVolumeType",
-            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
-            ExportableVolumeField::RecommendationOptionsMonthlyPrice => "RecommendationOptionsMonthlyPrice",
-            ExportableVolumeField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
-            ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
-            ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => "UtilizationMetricsVolumeReadBytesPerSecondMaximum",
-            ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => "UtilizationMetricsVolumeReadOpsPerSecondMaximum",
-            ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum => "UtilizationMetricsVolumeWriteBytesPerSecondMaximum",
-            ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => "UtilizationMetricsVolumeWriteOpsPerSecondMaximum",
-            ExportableVolumeField::VolumeArn => "VolumeArn",
-            ExportableVolumeField::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccountId", "CurrentConfigurationVolumeBaselineIOPS", "CurrentConfigurationVolumeBaselineThroughput", "CurrentConfigurationVolumeBurstIOPS", "CurrentConfigurationVolumeBurstThroughput", "CurrentConfigurationVolumeSize", "CurrentConfigurationVolumeType", "CurrentMonthlyPrice", "CurrentPerformanceRisk", "Finding", "LastRefreshTimestamp", "LookbackPeriodInDays", "RecommendationOptionsConfigurationVolumeBaselineIOPS", "RecommendationOptionsConfigurationVolumeBaselineThroughput", "RecommendationOptionsConfigurationVolumeBurstIOPS", "RecommendationOptionsConfigurationVolumeBurstThroughput", "RecommendationOptionsConfigurationVolumeSize", "RecommendationOptionsConfigurationVolumeType", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsMonthlyPrice", "RecommendationOptionsPerformanceRisk", "RecommendationOptionsSavingsOpportunityPercentage", "UtilizationMetricsVolumeReadBytesPerSecondMaximum", "UtilizationMetricsVolumeReadOpsPerSecondMaximum", "UtilizationMetricsVolumeWriteBytesPerSecondMaximum", "UtilizationMetricsVolumeWriteOpsPerSecondMaximum", "VolumeArn"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExportableVolumeField::AccountId => "AccountId",
+    ExportableVolumeField::CurrentConfigurationVolumeBaselineIops => "CurrentConfigurationVolumeBaselineIOPS",
+    ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput => "CurrentConfigurationVolumeBaselineThroughput",
+    ExportableVolumeField::CurrentConfigurationVolumeBurstIops => "CurrentConfigurationVolumeBurstIOPS",
+    ExportableVolumeField::CurrentConfigurationVolumeBurstThroughput => "CurrentConfigurationVolumeBurstThroughput",
+    ExportableVolumeField::CurrentConfigurationVolumeSize => "CurrentConfigurationVolumeSize",
+    ExportableVolumeField::CurrentConfigurationVolumeType => "CurrentConfigurationVolumeType",
+    ExportableVolumeField::CurrentMonthlyPrice => "CurrentMonthlyPrice",
+    ExportableVolumeField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+    ExportableVolumeField::Finding => "Finding",
+    ExportableVolumeField::LastRefreshTimestamp => "LastRefreshTimestamp",
+    ExportableVolumeField::LookbackPeriodInDays => "LookbackPeriodInDays",
+    ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineIops => "RecommendationOptionsConfigurationVolumeBaselineIOPS",
+    ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineThroughput => "RecommendationOptionsConfigurationVolumeBaselineThroughput",
+    ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstIops => "RecommendationOptionsConfigurationVolumeBurstIOPS",
+    ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstThroughput => "RecommendationOptionsConfigurationVolumeBurstThroughput",
+    ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize => "RecommendationOptionsConfigurationVolumeSize",
+    ExportableVolumeField::RecommendationOptionsConfigurationVolumeType => "RecommendationOptionsConfigurationVolumeType",
+    ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+    ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+    ExportableVolumeField::RecommendationOptionsMonthlyPrice => "RecommendationOptionsMonthlyPrice",
+    ExportableVolumeField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
+    ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+    ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => "UtilizationMetricsVolumeReadBytesPerSecondMaximum",
+    ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => "UtilizationMetricsVolumeReadOpsPerSecondMaximum",
+    ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum => "UtilizationMetricsVolumeWriteBytesPerSecondMaximum",
+    ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => "UtilizationMetricsVolumeWriteOpsPerSecondMaximum",
+    ExportableVolumeField::VolumeArn => "VolumeArn",
+    ExportableVolumeField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccountId", "CurrentConfigurationVolumeBaselineIOPS", "CurrentConfigurationVolumeBaselineThroughput", "CurrentConfigurationVolumeBurstIOPS", "CurrentConfigurationVolumeBurstThroughput", "CurrentConfigurationVolumeSize", "CurrentConfigurationVolumeType", "CurrentMonthlyPrice", "CurrentPerformanceRisk", "Finding", "LastRefreshTimestamp", "LookbackPeriodInDays", "RecommendationOptionsConfigurationVolumeBaselineIOPS", "RecommendationOptionsConfigurationVolumeBaselineThroughput", "RecommendationOptionsConfigurationVolumeBurstIOPS", "RecommendationOptionsConfigurationVolumeBurstThroughput", "RecommendationOptionsConfigurationVolumeSize", "RecommendationOptionsConfigurationVolumeType", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsMonthlyPrice", "RecommendationOptionsPerformanceRisk", "RecommendationOptionsSavingsOpportunityPercentage", "UtilizationMetricsVolumeReadBytesPerSecondMaximum", "UtilizationMetricsVolumeReadOpsPerSecondMaximum", "UtilizationMetricsVolumeWriteBytesPerSecondMaximum", "UtilizationMetricsVolumeWriteOpsPerSecondMaximum", "VolumeArn"]
+                }
+            }
 impl AsRef<str> for ExportableVolumeField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ExportableAutoScalingGroupField`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -11186,66 +11102,66 @@ pub enum ExportableAutoScalingGroupField {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportableAutoScalingGroupField {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccountId" => ExportableAutoScalingGroupField::AccountId,
-            "AutoScalingGroupArn" => ExportableAutoScalingGroupField::AutoScalingGroupArn,
-            "AutoScalingGroupName" => ExportableAutoScalingGroupField::AutoScalingGroupName,
-            "CurrentConfigurationDesiredCapacity" => ExportableAutoScalingGroupField::CurrentConfigurationDesiredCapacity,
-            "CurrentConfigurationInstanceType" => ExportableAutoScalingGroupField::CurrentConfigurationInstanceType,
-            "CurrentConfigurationMaxSize" => ExportableAutoScalingGroupField::CurrentConfigurationMaxSize,
-            "CurrentConfigurationMinSize" => ExportableAutoScalingGroupField::CurrentConfigurationMinSize,
-            "CurrentMemory" => ExportableAutoScalingGroupField::CurrentMemory,
-            "CurrentNetwork" => ExportableAutoScalingGroupField::CurrentNetwork,
-            "CurrentOnDemandPrice" => ExportableAutoScalingGroupField::CurrentOnDemandPrice,
-            "CurrentPerformanceRisk" => ExportableAutoScalingGroupField::CurrentPerformanceRisk,
-            "CurrentStandardOneYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::CurrentStandardOneYearNoUpfrontReservedPrice,
-            "CurrentStandardThreeYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::CurrentStandardThreeYearNoUpfrontReservedPrice,
-            "CurrentStorage" => ExportableAutoScalingGroupField::CurrentStorage,
-            "CurrentVCpus" => ExportableAutoScalingGroupField::CurrentVcpus,
-            "EffectiveRecommendationPreferencesCpuVendorArchitectures" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures,
-            "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
-            "EffectiveRecommendationPreferencesInferredWorkloadTypes" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes,
-            "Finding" => ExportableAutoScalingGroupField::Finding,
-            "InferredWorkloadTypes" => ExportableAutoScalingGroupField::InferredWorkloadTypes,
-            "LastRefreshTimestamp" => ExportableAutoScalingGroupField::LastRefreshTimestamp,
-            "LookbackPeriodInDays" => ExportableAutoScalingGroupField::LookbackPeriodInDays,
-            "RecommendationOptionsConfigurationDesiredCapacity" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity,
-            "RecommendationOptionsConfigurationInstanceType" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType,
-            "RecommendationOptionsConfigurationMaxSize" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize,
-            "RecommendationOptionsConfigurationMinSize" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize,
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
-            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue,
-            "RecommendationOptionsMemory" => ExportableAutoScalingGroupField::RecommendationOptionsMemory,
-            "RecommendationOptionsMigrationEffort" => ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort,
-            "RecommendationOptionsNetwork" => ExportableAutoScalingGroupField::RecommendationOptionsNetwork,
-            "RecommendationOptionsOnDemandPrice" => ExportableAutoScalingGroupField::RecommendationOptionsOnDemandPrice,
-            "RecommendationOptionsPerformanceRisk" => ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk,
-            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage,
-            "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
-            "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
-            "RecommendationOptionsStorage" => ExportableAutoScalingGroupField::RecommendationOptionsStorage,
-            "RecommendationOptionsVcpus" => ExportableAutoScalingGroupField::RecommendationOptionsVcpus,
-            "UtilizationMetricsCpuMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsCpuMaximum,
-            "UtilizationMetricsDiskReadBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsDiskReadBytesPerSecondMaximum,
-            "UtilizationMetricsDiskReadOpsPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsDiskReadOpsPerSecondMaximum,
-            "UtilizationMetricsDiskWriteBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteBytesPerSecondMaximum,
-            "UtilizationMetricsDiskWriteOpsPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteOpsPerSecondMaximum,
-            "UtilizationMetricsEbsReadBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsReadBytesPerSecondMaximum,
-            "UtilizationMetricsEbsReadOpsPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsReadOpsPerSecondMaximum,
-            "UtilizationMetricsEbsWriteBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum,
-            "UtilizationMetricsEbsWriteOpsPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteOpsPerSecondMaximum,
-            "UtilizationMetricsMemoryMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsMemoryMaximum,
-            "UtilizationMetricsNetworkInBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum,
-            "UtilizationMetricsNetworkOutBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum,
-            "UtilizationMetricsNetworkPacketsInPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsInPerSecondMaximum,
-            "UtilizationMetricsNetworkPacketsOutPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
-            other => ExportableAutoScalingGroupField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccountId" => ExportableAutoScalingGroupField::AccountId,
+"AutoScalingGroupArn" => ExportableAutoScalingGroupField::AutoScalingGroupArn,
+"AutoScalingGroupName" => ExportableAutoScalingGroupField::AutoScalingGroupName,
+"CurrentConfigurationDesiredCapacity" => ExportableAutoScalingGroupField::CurrentConfigurationDesiredCapacity,
+"CurrentConfigurationInstanceType" => ExportableAutoScalingGroupField::CurrentConfigurationInstanceType,
+"CurrentConfigurationMaxSize" => ExportableAutoScalingGroupField::CurrentConfigurationMaxSize,
+"CurrentConfigurationMinSize" => ExportableAutoScalingGroupField::CurrentConfigurationMinSize,
+"CurrentMemory" => ExportableAutoScalingGroupField::CurrentMemory,
+"CurrentNetwork" => ExportableAutoScalingGroupField::CurrentNetwork,
+"CurrentOnDemandPrice" => ExportableAutoScalingGroupField::CurrentOnDemandPrice,
+"CurrentPerformanceRisk" => ExportableAutoScalingGroupField::CurrentPerformanceRisk,
+"CurrentStandardOneYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::CurrentStandardOneYearNoUpfrontReservedPrice,
+"CurrentStandardThreeYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::CurrentStandardThreeYearNoUpfrontReservedPrice,
+"CurrentStorage" => ExportableAutoScalingGroupField::CurrentStorage,
+"CurrentVCpus" => ExportableAutoScalingGroupField::CurrentVcpus,
+"EffectiveRecommendationPreferencesCpuVendorArchitectures" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures,
+"EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+"EffectiveRecommendationPreferencesInferredWorkloadTypes" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes,
+"Finding" => ExportableAutoScalingGroupField::Finding,
+"InferredWorkloadTypes" => ExportableAutoScalingGroupField::InferredWorkloadTypes,
+"LastRefreshTimestamp" => ExportableAutoScalingGroupField::LastRefreshTimestamp,
+"LookbackPeriodInDays" => ExportableAutoScalingGroupField::LookbackPeriodInDays,
+"RecommendationOptionsConfigurationDesiredCapacity" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity,
+"RecommendationOptionsConfigurationInstanceType" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType,
+"RecommendationOptionsConfigurationMaxSize" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize,
+"RecommendationOptionsConfigurationMinSize" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize,
+"RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+"RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue,
+"RecommendationOptionsMemory" => ExportableAutoScalingGroupField::RecommendationOptionsMemory,
+"RecommendationOptionsMigrationEffort" => ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort,
+"RecommendationOptionsNetwork" => ExportableAutoScalingGroupField::RecommendationOptionsNetwork,
+"RecommendationOptionsOnDemandPrice" => ExportableAutoScalingGroupField::RecommendationOptionsOnDemandPrice,
+"RecommendationOptionsPerformanceRisk" => ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk,
+"RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+"RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+"RecommendationOptionsSavingsOpportunityPercentage" => ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage,
+"RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+"RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" => ExportableAutoScalingGroupField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+"RecommendationOptionsStorage" => ExportableAutoScalingGroupField::RecommendationOptionsStorage,
+"RecommendationOptionsVcpus" => ExportableAutoScalingGroupField::RecommendationOptionsVcpus,
+"UtilizationMetricsCpuMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsCpuMaximum,
+"UtilizationMetricsDiskReadBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsDiskReadBytesPerSecondMaximum,
+"UtilizationMetricsDiskReadOpsPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsDiskReadOpsPerSecondMaximum,
+"UtilizationMetricsDiskWriteBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteBytesPerSecondMaximum,
+"UtilizationMetricsDiskWriteOpsPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteOpsPerSecondMaximum,
+"UtilizationMetricsEbsReadBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsReadBytesPerSecondMaximum,
+"UtilizationMetricsEbsReadOpsPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsReadOpsPerSecondMaximum,
+"UtilizationMetricsEbsWriteBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum,
+"UtilizationMetricsEbsWriteOpsPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteOpsPerSecondMaximum,
+"UtilizationMetricsMemoryMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsMemoryMaximum,
+"UtilizationMetricsNetworkInBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum,
+"UtilizationMetricsNetworkOutBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum,
+"UtilizationMetricsNetworkPacketsInPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsInPerSecondMaximum,
+"UtilizationMetricsNetworkPacketsOutPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
+other => ExportableAutoScalingGroupField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExportableAutoScalingGroupField {
                 type Err = std::convert::Infallible;
 
@@ -11254,78 +11170,76 @@ impl std::str::FromStr for ExportableAutoScalingGroupField {
                 }
             }
 impl ExportableAutoScalingGroupField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExportableAutoScalingGroupField::AccountId => "AccountId",
-            ExportableAutoScalingGroupField::AutoScalingGroupArn => "AutoScalingGroupArn",
-            ExportableAutoScalingGroupField::AutoScalingGroupName => "AutoScalingGroupName",
-            ExportableAutoScalingGroupField::CurrentConfigurationDesiredCapacity => "CurrentConfigurationDesiredCapacity",
-            ExportableAutoScalingGroupField::CurrentConfigurationInstanceType => "CurrentConfigurationInstanceType",
-            ExportableAutoScalingGroupField::CurrentConfigurationMaxSize => "CurrentConfigurationMaxSize",
-            ExportableAutoScalingGroupField::CurrentConfigurationMinSize => "CurrentConfigurationMinSize",
-            ExportableAutoScalingGroupField::CurrentMemory => "CurrentMemory",
-            ExportableAutoScalingGroupField::CurrentNetwork => "CurrentNetwork",
-            ExportableAutoScalingGroupField::CurrentOnDemandPrice => "CurrentOnDemandPrice",
-            ExportableAutoScalingGroupField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
-            ExportableAutoScalingGroupField::CurrentStandardOneYearNoUpfrontReservedPrice => "CurrentStandardOneYearNoUpfrontReservedPrice",
-            ExportableAutoScalingGroupField::CurrentStandardThreeYearNoUpfrontReservedPrice => "CurrentStandardThreeYearNoUpfrontReservedPrice",
-            ExportableAutoScalingGroupField::CurrentStorage => "CurrentStorage",
-            ExportableAutoScalingGroupField::CurrentVcpus => "CurrentVCpus",
-            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures => "EffectiveRecommendationPreferencesCpuVendorArchitectures",
-            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
-            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes => "EffectiveRecommendationPreferencesInferredWorkloadTypes",
-            ExportableAutoScalingGroupField::Finding => "Finding",
-            ExportableAutoScalingGroupField::InferredWorkloadTypes => "InferredWorkloadTypes",
-            ExportableAutoScalingGroupField::LastRefreshTimestamp => "LastRefreshTimestamp",
-            ExportableAutoScalingGroupField::LookbackPeriodInDays => "LookbackPeriodInDays",
-            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity => "RecommendationOptionsConfigurationDesiredCapacity",
-            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType => "RecommendationOptionsConfigurationInstanceType",
-            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize => "RecommendationOptionsConfigurationMaxSize",
-            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize => "RecommendationOptionsConfigurationMinSize",
-            ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
-            ExportableAutoScalingGroupField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
-            ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
-            ExportableAutoScalingGroupField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
-            ExportableAutoScalingGroupField::RecommendationOptionsOnDemandPrice => "RecommendationOptionsOnDemandPrice",
-            ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
-            ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
-            ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
-            ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
-            ExportableAutoScalingGroupField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
-            ExportableAutoScalingGroupField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
-            ExportableAutoScalingGroupField::RecommendationOptionsStorage => "RecommendationOptionsStorage",
-            ExportableAutoScalingGroupField::RecommendationOptionsVcpus => "RecommendationOptionsVcpus",
-            ExportableAutoScalingGroupField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsDiskReadBytesPerSecondMaximum => "UtilizationMetricsDiskReadBytesPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsDiskReadOpsPerSecondMaximum => "UtilizationMetricsDiskReadOpsPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteBytesPerSecondMaximum => "UtilizationMetricsDiskWriteBytesPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteOpsPerSecondMaximum => "UtilizationMetricsDiskWriteOpsPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsEbsReadBytesPerSecondMaximum => "UtilizationMetricsEbsReadBytesPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsEbsReadOpsPerSecondMaximum => "UtilizationMetricsEbsReadOpsPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum => "UtilizationMetricsNetworkInBytesPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsInPerSecondMaximum => "UtilizationMetricsNetworkPacketsInPerSecondMaximum",
-            ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => "UtilizationMetricsNetworkPacketsOutPerSecondMaximum",
-            ExportableAutoScalingGroupField::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccountId", "AutoScalingGroupArn", "AutoScalingGroupName", "CurrentConfigurationDesiredCapacity", "CurrentConfigurationInstanceType", "CurrentConfigurationMaxSize", "CurrentConfigurationMinSize", "CurrentMemory", "CurrentNetwork", "CurrentOnDemandPrice", "CurrentPerformanceRisk", "CurrentStandardOneYearNoUpfrontReservedPrice", "CurrentStandardThreeYearNoUpfrontReservedPrice", "CurrentStorage", "CurrentVCpus", "EffectiveRecommendationPreferencesCpuVendorArchitectures", "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics", "EffectiveRecommendationPreferencesInferredWorkloadTypes", "Finding", "InferredWorkloadTypes", "LastRefreshTimestamp", "LookbackPeriodInDays", "RecommendationOptionsConfigurationDesiredCapacity", "RecommendationOptionsConfigurationInstanceType", "RecommendationOptionsConfigurationMaxSize", "RecommendationOptionsConfigurationMinSize", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsMemory", "RecommendationOptionsMigrationEffort", "RecommendationOptionsNetwork", "RecommendationOptionsOnDemandPrice", "RecommendationOptionsPerformanceRisk", "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum", "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum", "RecommendationOptionsSavingsOpportunityPercentage", "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice", "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice", "RecommendationOptionsStorage", "RecommendationOptionsVcpus", "UtilizationMetricsCpuMaximum", "UtilizationMetricsDiskReadBytesPerSecondMaximum", "UtilizationMetricsDiskReadOpsPerSecondMaximum", "UtilizationMetricsDiskWriteBytesPerSecondMaximum", "UtilizationMetricsDiskWriteOpsPerSecondMaximum", "UtilizationMetricsEbsReadBytesPerSecondMaximum", "UtilizationMetricsEbsReadOpsPerSecondMaximum", "UtilizationMetricsEbsWriteBytesPerSecondMaximum", "UtilizationMetricsEbsWriteOpsPerSecondMaximum", "UtilizationMetricsMemoryMaximum", "UtilizationMetricsNetworkInBytesPerSecondMaximum", "UtilizationMetricsNetworkOutBytesPerSecondMaximum", "UtilizationMetricsNetworkPacketsInPerSecondMaximum", "UtilizationMetricsNetworkPacketsOutPerSecondMaximum"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExportableAutoScalingGroupField::AccountId => "AccountId",
+    ExportableAutoScalingGroupField::AutoScalingGroupArn => "AutoScalingGroupArn",
+    ExportableAutoScalingGroupField::AutoScalingGroupName => "AutoScalingGroupName",
+    ExportableAutoScalingGroupField::CurrentConfigurationDesiredCapacity => "CurrentConfigurationDesiredCapacity",
+    ExportableAutoScalingGroupField::CurrentConfigurationInstanceType => "CurrentConfigurationInstanceType",
+    ExportableAutoScalingGroupField::CurrentConfigurationMaxSize => "CurrentConfigurationMaxSize",
+    ExportableAutoScalingGroupField::CurrentConfigurationMinSize => "CurrentConfigurationMinSize",
+    ExportableAutoScalingGroupField::CurrentMemory => "CurrentMemory",
+    ExportableAutoScalingGroupField::CurrentNetwork => "CurrentNetwork",
+    ExportableAutoScalingGroupField::CurrentOnDemandPrice => "CurrentOnDemandPrice",
+    ExportableAutoScalingGroupField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+    ExportableAutoScalingGroupField::CurrentStandardOneYearNoUpfrontReservedPrice => "CurrentStandardOneYearNoUpfrontReservedPrice",
+    ExportableAutoScalingGroupField::CurrentStandardThreeYearNoUpfrontReservedPrice => "CurrentStandardThreeYearNoUpfrontReservedPrice",
+    ExportableAutoScalingGroupField::CurrentStorage => "CurrentStorage",
+    ExportableAutoScalingGroupField::CurrentVcpus => "CurrentVCpus",
+    ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures => "EffectiveRecommendationPreferencesCpuVendorArchitectures",
+    ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
+    ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes => "EffectiveRecommendationPreferencesInferredWorkloadTypes",
+    ExportableAutoScalingGroupField::Finding => "Finding",
+    ExportableAutoScalingGroupField::InferredWorkloadTypes => "InferredWorkloadTypes",
+    ExportableAutoScalingGroupField::LastRefreshTimestamp => "LastRefreshTimestamp",
+    ExportableAutoScalingGroupField::LookbackPeriodInDays => "LookbackPeriodInDays",
+    ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity => "RecommendationOptionsConfigurationDesiredCapacity",
+    ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType => "RecommendationOptionsConfigurationInstanceType",
+    ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize => "RecommendationOptionsConfigurationMaxSize",
+    ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize => "RecommendationOptionsConfigurationMinSize",
+    ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+    ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+    ExportableAutoScalingGroupField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
+    ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
+    ExportableAutoScalingGroupField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
+    ExportableAutoScalingGroupField::RecommendationOptionsOnDemandPrice => "RecommendationOptionsOnDemandPrice",
+    ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
+    ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
+    ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+    ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+    ExportableAutoScalingGroupField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
+    ExportableAutoScalingGroupField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
+    ExportableAutoScalingGroupField::RecommendationOptionsStorage => "RecommendationOptionsStorage",
+    ExportableAutoScalingGroupField::RecommendationOptionsVcpus => "RecommendationOptionsVcpus",
+    ExportableAutoScalingGroupField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsDiskReadBytesPerSecondMaximum => "UtilizationMetricsDiskReadBytesPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsDiskReadOpsPerSecondMaximum => "UtilizationMetricsDiskReadOpsPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteBytesPerSecondMaximum => "UtilizationMetricsDiskWriteBytesPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteOpsPerSecondMaximum => "UtilizationMetricsDiskWriteOpsPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsEbsReadBytesPerSecondMaximum => "UtilizationMetricsEbsReadBytesPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsEbsReadOpsPerSecondMaximum => "UtilizationMetricsEbsReadOpsPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum => "UtilizationMetricsNetworkInBytesPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsInPerSecondMaximum => "UtilizationMetricsNetworkPacketsInPerSecondMaximum",
+    ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => "UtilizationMetricsNetworkPacketsOutPerSecondMaximum",
+    ExportableAutoScalingGroupField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccountId", "AutoScalingGroupArn", "AutoScalingGroupName", "CurrentConfigurationDesiredCapacity", "CurrentConfigurationInstanceType", "CurrentConfigurationMaxSize", "CurrentConfigurationMinSize", "CurrentMemory", "CurrentNetwork", "CurrentOnDemandPrice", "CurrentPerformanceRisk", "CurrentStandardOneYearNoUpfrontReservedPrice", "CurrentStandardThreeYearNoUpfrontReservedPrice", "CurrentStorage", "CurrentVCpus", "EffectiveRecommendationPreferencesCpuVendorArchitectures", "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics", "EffectiveRecommendationPreferencesInferredWorkloadTypes", "Finding", "InferredWorkloadTypes", "LastRefreshTimestamp", "LookbackPeriodInDays", "RecommendationOptionsConfigurationDesiredCapacity", "RecommendationOptionsConfigurationInstanceType", "RecommendationOptionsConfigurationMaxSize", "RecommendationOptionsConfigurationMinSize", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsMemory", "RecommendationOptionsMigrationEffort", "RecommendationOptionsNetwork", "RecommendationOptionsOnDemandPrice", "RecommendationOptionsPerformanceRisk", "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum", "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum", "RecommendationOptionsSavingsOpportunityPercentage", "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice", "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice", "RecommendationOptionsStorage", "RecommendationOptionsVcpus", "UtilizationMetricsCpuMaximum", "UtilizationMetricsDiskReadBytesPerSecondMaximum", "UtilizationMetricsDiskReadOpsPerSecondMaximum", "UtilizationMetricsDiskWriteBytesPerSecondMaximum", "UtilizationMetricsDiskWriteOpsPerSecondMaximum", "UtilizationMetricsEbsReadBytesPerSecondMaximum", "UtilizationMetricsEbsReadOpsPerSecondMaximum", "UtilizationMetricsEbsWriteBytesPerSecondMaximum", "UtilizationMetricsEbsWriteOpsPerSecondMaximum", "UtilizationMetricsMemoryMaximum", "UtilizationMetricsNetworkInBytesPerSecondMaximum", "UtilizationMetricsNetworkOutBytesPerSecondMaximum", "UtilizationMetricsNetworkPacketsInPerSecondMaximum", "UtilizationMetricsNetworkPacketsOutPerSecondMaximum"]
+                }
+            }
 impl AsRef<str> for ExportableAutoScalingGroupField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes a recommendation export job.</p> 
 /// <p>Use the <code>DescribeRecommendationExportJobs</code> action to view your recommendation export jobs.</p> 
@@ -11546,16 +11460,16 @@ pub enum JobStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Complete" => JobStatus::Complete,
-            "Failed" => JobStatus::Failed,
-            "InProgress" => JobStatus::InProgress,
-            "Queued" => JobStatus::Queued,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Complete" => JobStatus::Complete,
+"Failed" => JobStatus::Failed,
+"InProgress" => JobStatus::InProgress,
+"Queued" => JobStatus::Queued,
+other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobStatus {
                 type Err = std::convert::Infallible;
 
@@ -11564,28 +11478,26 @@ impl std::str::FromStr for JobStatus {
                 }
             }
 impl JobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobStatus::Complete => "Complete",
-            JobStatus::Failed => "Failed",
-            JobStatus::InProgress => "InProgress",
-            JobStatus::Queued => "Queued",
-            JobStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Complete", "Failed", "InProgress", "Queued"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobStatus::Complete => "Complete",
+    JobStatus::Failed => "Failed",
+    JobStatus::InProgress => "InProgress",
+    JobStatus::Queued => "Queued",
+    JobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Complete", "Failed", "InProgress", "Queued"]
+                }
+            }
 impl AsRef<str> for JobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the destination of the recommendations export and metadata files.</p>
 #[non_exhaustive]
@@ -11788,14 +11700,14 @@ pub enum JobFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "JobStatus" => JobFilterName::JobStatus,
-            "ResourceType" => JobFilterName::ResourceType,
-            other => JobFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "JobStatus" => JobFilterName::JobStatus,
+"ResourceType" => JobFilterName::ResourceType,
+other => JobFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobFilterName {
                 type Err = std::convert::Infallible;
 
@@ -11804,26 +11716,24 @@ impl std::str::FromStr for JobFilterName {
                 }
             }
 impl JobFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobFilterName::JobStatus => "JobStatus",
-            JobFilterName::ResourceType => "ResourceType",
-            JobFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "JobStatus", "ResourceType"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobFilterName::JobStatus => "JobStatus",
+    JobFilterName::ResourceType => "ResourceType",
+    JobFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["JobStatus", "ResourceType"]
+                }
+            }
 impl AsRef<str> for JobFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `RecommendationPreferenceName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -11875,15 +11785,15 @@ pub enum RecommendationPreferenceName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecommendationPreferenceName {
-    fn from(s: &str) -> Self {
-        match s {
-            "EnhancedInfrastructureMetrics" => RecommendationPreferenceName::EnhancedInfrastructureMetrics,
-            "ExternalMetricsPreference" => RecommendationPreferenceName::ExternalMetricsPreference,
-            "InferredWorkloadTypes" => RecommendationPreferenceName::InferredWorkloadTypes,
-            other => RecommendationPreferenceName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EnhancedInfrastructureMetrics" => RecommendationPreferenceName::EnhancedInfrastructureMetrics,
+"ExternalMetricsPreference" => RecommendationPreferenceName::ExternalMetricsPreference,
+"InferredWorkloadTypes" => RecommendationPreferenceName::InferredWorkloadTypes,
+other => RecommendationPreferenceName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecommendationPreferenceName {
                 type Err = std::convert::Infallible;
 
@@ -11892,25 +11802,23 @@ impl std::str::FromStr for RecommendationPreferenceName {
                 }
             }
 impl RecommendationPreferenceName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecommendationPreferenceName::EnhancedInfrastructureMetrics => "EnhancedInfrastructureMetrics",
-            RecommendationPreferenceName::ExternalMetricsPreference => "ExternalMetricsPreference",
-            RecommendationPreferenceName::InferredWorkloadTypes => "InferredWorkloadTypes",
-            RecommendationPreferenceName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EnhancedInfrastructureMetrics", "ExternalMetricsPreference", "InferredWorkloadTypes"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecommendationPreferenceName::EnhancedInfrastructureMetrics => "EnhancedInfrastructureMetrics",
+    RecommendationPreferenceName::ExternalMetricsPreference => "ExternalMetricsPreference",
+    RecommendationPreferenceName::InferredWorkloadTypes => "InferredWorkloadTypes",
+    RecommendationPreferenceName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EnhancedInfrastructureMetrics", "ExternalMetricsPreference", "InferredWorkloadTypes"]
+                }
+            }
 impl AsRef<str> for RecommendationPreferenceName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

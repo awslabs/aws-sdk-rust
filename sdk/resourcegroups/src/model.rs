@@ -274,14 +274,14 @@ pub enum QueryType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueryType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLOUDFORMATION_STACK_1_0" => QueryType::CloudformationStack10,
-            "TAG_FILTERS_1_0" => QueryType::TagFilters10,
-            other => QueryType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLOUDFORMATION_STACK_1_0" => QueryType::CloudformationStack10,
+"TAG_FILTERS_1_0" => QueryType::TagFilters10,
+other => QueryType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for QueryType {
                 type Err = std::convert::Infallible;
 
@@ -290,26 +290,24 @@ impl std::str::FromStr for QueryType {
                 }
             }
 impl QueryType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            QueryType::CloudformationStack10 => "CLOUDFORMATION_STACK_1_0",
-            QueryType::TagFilters10 => "TAG_FILTERS_1_0",
-            QueryType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLOUDFORMATION_STACK_1_0", "TAG_FILTERS_1_0"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    QueryType::CloudformationStack10 => "CLOUDFORMATION_STACK_1_0",
+    QueryType::TagFilters10 => "TAG_FILTERS_1_0",
+    QueryType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLOUDFORMATION_STACK_1_0", "TAG_FILTERS_1_0"]
+                }
+            }
 impl AsRef<str> for QueryType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A resource group that contains Amazon Web Services resources. You can assign resources to the group by associating either of the following elements with the group:</p> 
 /// <ul> 
@@ -544,16 +542,16 @@ pub enum GroupLifecycleEventsStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GroupLifecycleEventsStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => GroupLifecycleEventsStatus::Active,
-            "ERROR" => GroupLifecycleEventsStatus::Error,
-            "INACTIVE" => GroupLifecycleEventsStatus::Inactive,
-            "IN_PROGRESS" => GroupLifecycleEventsStatus::InProgress,
-            other => GroupLifecycleEventsStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => GroupLifecycleEventsStatus::Active,
+"ERROR" => GroupLifecycleEventsStatus::Error,
+"INACTIVE" => GroupLifecycleEventsStatus::Inactive,
+"IN_PROGRESS" => GroupLifecycleEventsStatus::InProgress,
+other => GroupLifecycleEventsStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GroupLifecycleEventsStatus {
                 type Err = std::convert::Infallible;
 
@@ -562,28 +560,26 @@ impl std::str::FromStr for GroupLifecycleEventsStatus {
                 }
             }
 impl GroupLifecycleEventsStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GroupLifecycleEventsStatus::Active => "ACTIVE",
-            GroupLifecycleEventsStatus::Error => "ERROR",
-            GroupLifecycleEventsStatus::Inactive => "INACTIVE",
-            GroupLifecycleEventsStatus::InProgress => "IN_PROGRESS",
-            GroupLifecycleEventsStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "ERROR", "INACTIVE", "IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GroupLifecycleEventsStatus::Active => "ACTIVE",
+    GroupLifecycleEventsStatus::Error => "ERROR",
+    GroupLifecycleEventsStatus::Inactive => "INACTIVE",
+    GroupLifecycleEventsStatus::InProgress => "IN_PROGRESS",
+    GroupLifecycleEventsStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "ERROR", "INACTIVE", "IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for GroupLifecycleEventsStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `GroupLifecycleEventsDesiredStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -632,14 +628,14 @@ pub enum GroupLifecycleEventsDesiredStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GroupLifecycleEventsDesiredStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => GroupLifecycleEventsDesiredStatus::Active,
-            "INACTIVE" => GroupLifecycleEventsDesiredStatus::Inactive,
-            other => GroupLifecycleEventsDesiredStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => GroupLifecycleEventsDesiredStatus::Active,
+"INACTIVE" => GroupLifecycleEventsDesiredStatus::Inactive,
+other => GroupLifecycleEventsDesiredStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GroupLifecycleEventsDesiredStatus {
                 type Err = std::convert::Infallible;
 
@@ -648,26 +644,24 @@ impl std::str::FromStr for GroupLifecycleEventsDesiredStatus {
                 }
             }
 impl GroupLifecycleEventsDesiredStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GroupLifecycleEventsDesiredStatus::Active => "ACTIVE",
-            GroupLifecycleEventsDesiredStatus::Inactive => "INACTIVE",
-            GroupLifecycleEventsDesiredStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "INACTIVE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GroupLifecycleEventsDesiredStatus::Active => "ACTIVE",
+    GroupLifecycleEventsDesiredStatus::Inactive => "INACTIVE",
+    GroupLifecycleEventsDesiredStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "INACTIVE"]
+                }
+            }
 impl AsRef<str> for GroupLifecycleEventsDesiredStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure that identifies a resource that is currently pending addition to the group as a member. Adding a resource to a resource group happens asynchronously as a background task and this one isn't completed yet.</p>
 #[non_exhaustive]
@@ -926,15 +920,15 @@ pub enum QueryErrorCode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueryErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLOUDFORMATION_STACK_INACTIVE" => QueryErrorCode::CloudformationStackInactive,
-            "CLOUDFORMATION_STACK_NOT_EXISTING" => QueryErrorCode::CloudformationStackNotExisting,
-            "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE" => QueryErrorCode::CloudformationStackUnassumableRole,
-            other => QueryErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLOUDFORMATION_STACK_INACTIVE" => QueryErrorCode::CloudformationStackInactive,
+"CLOUDFORMATION_STACK_NOT_EXISTING" => QueryErrorCode::CloudformationStackNotExisting,
+"CLOUDFORMATION_STACK_UNASSUMABLE_ROLE" => QueryErrorCode::CloudformationStackUnassumableRole,
+other => QueryErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for QueryErrorCode {
                 type Err = std::convert::Infallible;
 
@@ -943,27 +937,25 @@ impl std::str::FromStr for QueryErrorCode {
                 }
             }
 impl QueryErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            QueryErrorCode::CloudformationStackInactive => "CLOUDFORMATION_STACK_INACTIVE",
-            QueryErrorCode::CloudformationStackNotExisting => "CLOUDFORMATION_STACK_NOT_EXISTING",
-            QueryErrorCode::CloudformationStackUnassumableRole => "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE",
-            QueryErrorCode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLOUDFORMATION_STACK_INACTIVE", "CLOUDFORMATION_STACK_NOT_EXISTING", "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    QueryErrorCode::CloudformationStackInactive => "CLOUDFORMATION_STACK_INACTIVE",
+    QueryErrorCode::CloudformationStackNotExisting => "CLOUDFORMATION_STACK_NOT_EXISTING",
+    QueryErrorCode::CloudformationStackUnassumableRole => "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE",
+    QueryErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLOUDFORMATION_STACK_INACTIVE", "CLOUDFORMATION_STACK_NOT_EXISTING", "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE"]
+                }
+            }
 impl AsRef<str> for QueryErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure that contains the ARN of a resource and its resource type.</p>
 #[non_exhaustive]
@@ -1375,14 +1367,14 @@ pub enum GroupFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GroupFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "configuration-type" => GroupFilterName::ConfigurationType,
-            "resource-type" => GroupFilterName::ResourceType,
-            other => GroupFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "configuration-type" => GroupFilterName::ConfigurationType,
+"resource-type" => GroupFilterName::ResourceType,
+other => GroupFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GroupFilterName {
                 type Err = std::convert::Infallible;
 
@@ -1391,26 +1383,24 @@ impl std::str::FromStr for GroupFilterName {
                 }
             }
 impl GroupFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GroupFilterName::ConfigurationType => "configuration-type",
-            GroupFilterName::ResourceType => "resource-type",
-            GroupFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "configuration-type", "resource-type"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GroupFilterName::ConfigurationType => "configuration-type",
+    GroupFilterName::ResourceType => "resource-type",
+    GroupFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["configuration-type", "resource-type"]
+                }
+            }
 impl AsRef<str> for GroupFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A structure returned by the <code>ListGroupResources</code> operation that contains identity and group membership status information for one of the resources in the group.</p>
 #[non_exhaustive]
@@ -1583,13 +1573,13 @@ pub enum ResourceStatusValue {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceStatusValue {
-    fn from(s: &str) -> Self {
-        match s {
-            "PENDING" => ResourceStatusValue::Pending,
-            other => ResourceStatusValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PENDING" => ResourceStatusValue::Pending,
+other => ResourceStatusValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceStatusValue {
                 type Err = std::convert::Infallible;
 
@@ -1598,25 +1588,23 @@ impl std::str::FromStr for ResourceStatusValue {
                 }
             }
 impl ResourceStatusValue {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceStatusValue::Pending => "PENDING",
-            ResourceStatusValue::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceStatusValue::Pending => "PENDING",
+    ResourceStatusValue::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PENDING"]
+                }
+            }
 impl AsRef<str> for ResourceStatusValue {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A filter name and value pair that is used to obtain more specific results from a list of resources.</p>
 #[non_exhaustive]
@@ -1737,13 +1725,13 @@ pub enum ResourceFilterName {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "resource-type" => ResourceFilterName::ResourceType,
-            other => ResourceFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "resource-type" => ResourceFilterName::ResourceType,
+other => ResourceFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceFilterName {
                 type Err = std::convert::Infallible;
 
@@ -1752,25 +1740,23 @@ impl std::str::FromStr for ResourceFilterName {
                 }
             }
 impl ResourceFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceFilterName::ResourceType => "resource-type",
-            ResourceFilterName::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "resource-type"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceFilterName::ResourceType => "resource-type",
+    ResourceFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["resource-type"]
+                }
+            }
 impl AsRef<str> for ResourceFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A service configuration associated with a resource group. The configuration options are determined by the Amazon Web Services service that defines the <code>Type</code>, and specifies which resources can be included in the group. You can add a service configuration when you create the group by using <code>CreateGroup</code>, or later by using the <code>PutGroupConfiguration</code> operation. For details about group service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
 #[non_exhaustive]
@@ -1941,15 +1927,15 @@ pub enum GroupConfigurationStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GroupConfigurationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "UPDATE_COMPLETE" => GroupConfigurationStatus::UpdateComplete,
-            "UPDATE_FAILED" => GroupConfigurationStatus::UpdateFailed,
-            "UPDATING" => GroupConfigurationStatus::Updating,
-            other => GroupConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "UPDATE_COMPLETE" => GroupConfigurationStatus::UpdateComplete,
+"UPDATE_FAILED" => GroupConfigurationStatus::UpdateFailed,
+"UPDATING" => GroupConfigurationStatus::Updating,
+other => GroupConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for GroupConfigurationStatus {
                 type Err = std::convert::Infallible;
 
@@ -1958,25 +1944,23 @@ impl std::str::FromStr for GroupConfigurationStatus {
                 }
             }
 impl GroupConfigurationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GroupConfigurationStatus::UpdateComplete => "UPDATE_COMPLETE",
-            GroupConfigurationStatus::UpdateFailed => "UPDATE_FAILED",
-            GroupConfigurationStatus::Updating => "UPDATING",
-            GroupConfigurationStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GroupConfigurationStatus::UpdateComplete => "UPDATE_COMPLETE",
+    GroupConfigurationStatus::UpdateFailed => "UPDATE_FAILED",
+    GroupConfigurationStatus::Updating => "UPDATING",
+    GroupConfigurationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for GroupConfigurationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

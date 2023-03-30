@@ -414,15 +414,15 @@ pub enum StatusType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StatusType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Failed" => StatusType::Failed,
-            "InProgress" => StatusType::InProgress,
-            "InSync" => StatusType::InSync,
-            other => StatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Failed" => StatusType::Failed,
+"InProgress" => StatusType::InProgress,
+"InSync" => StatusType::InSync,
+other => StatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StatusType {
                 type Err = std::convert::Infallible;
 
@@ -431,27 +431,25 @@ impl std::str::FromStr for StatusType {
                 }
             }
 impl StatusType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StatusType::Failed => "Failed",
-            StatusType::InProgress => "InProgress",
-            StatusType::InSync => "InSync",
-            StatusType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Failed", "InProgress", "InSync"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StatusType::Failed => "Failed",
+    StatusType::InProgress => "InProgress",
+    StatusType::InSync => "InSync",
+    StatusType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Failed", "InProgress", "InSync"]
+                }
+            }
 impl AsRef<str> for StatusType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A custom type that specifies a <code>Region</code> and the <code>KmsKeyId</code> for a replica secret.</p>
 #[non_exhaustive]
@@ -1081,14 +1079,14 @@ pub enum SortOrderType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrderType {
-    fn from(s: &str) -> Self {
-        match s {
-            "asc" => SortOrderType::Asc,
-            "desc" => SortOrderType::Desc,
-            other => SortOrderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "asc" => SortOrderType::Asc,
+"desc" => SortOrderType::Desc,
+other => SortOrderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortOrderType {
                 type Err = std::convert::Infallible;
 
@@ -1097,26 +1095,24 @@ impl std::str::FromStr for SortOrderType {
                 }
             }
 impl SortOrderType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrderType::Asc => "asc",
-            SortOrderType::Desc => "desc",
-            SortOrderType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "asc", "desc"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortOrderType::Asc => "asc",
+    SortOrderType::Desc => "desc",
+    SortOrderType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["asc", "desc"]
+                }
+            }
 impl AsRef<str> for SortOrderType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Allows you to add filters when you use the search function in Secrets Manager. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find secrets in Secrets Manager</a>.</p>
 #[non_exhaustive]
@@ -1295,19 +1291,19 @@ pub enum FilterNameStringType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FilterNameStringType {
-    fn from(s: &str) -> Self {
-        match s {
-            "all" => FilterNameStringType::All,
-            "description" => FilterNameStringType::Description,
-            "name" => FilterNameStringType::Name,
-            "owning-service" => FilterNameStringType::OwningService,
-            "primary-region" => FilterNameStringType::PrimaryRegion,
-            "tag-key" => FilterNameStringType::TagKey,
-            "tag-value" => FilterNameStringType::TagValue,
-            other => FilterNameStringType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "all" => FilterNameStringType::All,
+"description" => FilterNameStringType::Description,
+"name" => FilterNameStringType::Name,
+"owning-service" => FilterNameStringType::OwningService,
+"primary-region" => FilterNameStringType::PrimaryRegion,
+"tag-key" => FilterNameStringType::TagKey,
+"tag-value" => FilterNameStringType::TagValue,
+other => FilterNameStringType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FilterNameStringType {
                 type Err = std::convert::Infallible;
 
@@ -1316,29 +1312,27 @@ impl std::str::FromStr for FilterNameStringType {
                 }
             }
 impl FilterNameStringType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FilterNameStringType::All => "all",
-            FilterNameStringType::Description => "description",
-            FilterNameStringType::Name => "name",
-            FilterNameStringType::OwningService => "owning-service",
-            FilterNameStringType::PrimaryRegion => "primary-region",
-            FilterNameStringType::TagKey => "tag-key",
-            FilterNameStringType::TagValue => "tag-value",
-            FilterNameStringType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "all", "description", "name", "owning-service", "primary-region", "tag-key", "tag-value"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FilterNameStringType::All => "all",
+    FilterNameStringType::Description => "description",
+    FilterNameStringType::Name => "name",
+    FilterNameStringType::OwningService => "owning-service",
+    FilterNameStringType::PrimaryRegion => "primary-region",
+    FilterNameStringType::TagKey => "tag-key",
+    FilterNameStringType::TagValue => "tag-value",
+    FilterNameStringType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["all", "description", "name", "owning-service", "primary-region", "tag-key", "tag-value"]
+                }
+            }
 impl AsRef<str> for FilterNameStringType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

@@ -219,14 +219,14 @@ pub enum Protocol {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Protocol {
-    fn from(s: &str) -> Self {
-        match s {
-            "MqttV3_1_1" => Protocol::MqttV311,
-            "MqttV5" => Protocol::MqttV5,
-            other => Protocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MqttV3_1_1" => Protocol::MqttV311,
+"MqttV5" => Protocol::MqttV5,
+other => Protocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Protocol {
                 type Err = std::convert::Infallible;
 
@@ -235,26 +235,24 @@ impl std::str::FromStr for Protocol {
                 }
             }
 impl Protocol {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Protocol::MqttV311 => "MqttV3_1_1",
-            Protocol::MqttV5 => "MqttV5",
-            Protocol::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MqttV3_1_1", "MqttV5"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Protocol::MqttV311 => "MqttV3_1_1",
+    Protocol::MqttV5 => "MqttV5",
+    Protocol::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MqttV3_1_1", "MqttV5"]
+                }
+            }
 impl AsRef<str> for Protocol {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information of a test device. A thing ARN or a certificate ARN is required.</p>
 #[non_exhaustive]
@@ -712,21 +710,21 @@ pub enum SuiteRunStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SuiteRunStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELED" => SuiteRunStatus::Canceled,
-            "ERROR" => SuiteRunStatus::Error,
-            "FAIL" => SuiteRunStatus::Fail,
-            "PASS" => SuiteRunStatus::Pass,
-            "PASS_WITH_WARNINGS" => SuiteRunStatus::PassWithWarnings,
-            "PENDING" => SuiteRunStatus::Pending,
-            "RUNNING" => SuiteRunStatus::Running,
-            "STOPPED" => SuiteRunStatus::Stopped,
-            "STOPPING" => SuiteRunStatus::Stopping,
-            other => SuiteRunStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELED" => SuiteRunStatus::Canceled,
+"ERROR" => SuiteRunStatus::Error,
+"FAIL" => SuiteRunStatus::Fail,
+"PASS" => SuiteRunStatus::Pass,
+"PASS_WITH_WARNINGS" => SuiteRunStatus::PassWithWarnings,
+"PENDING" => SuiteRunStatus::Pending,
+"RUNNING" => SuiteRunStatus::Running,
+"STOPPED" => SuiteRunStatus::Stopped,
+"STOPPING" => SuiteRunStatus::Stopping,
+other => SuiteRunStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SuiteRunStatus {
                 type Err = std::convert::Infallible;
 
@@ -735,33 +733,31 @@ impl std::str::FromStr for SuiteRunStatus {
                 }
             }
 impl SuiteRunStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SuiteRunStatus::Canceled => "CANCELED",
-            SuiteRunStatus::Error => "ERROR",
-            SuiteRunStatus::Fail => "FAIL",
-            SuiteRunStatus::Pass => "PASS",
-            SuiteRunStatus::PassWithWarnings => "PASS_WITH_WARNINGS",
-            SuiteRunStatus::Pending => "PENDING",
-            SuiteRunStatus::Running => "RUNNING",
-            SuiteRunStatus::Stopped => "STOPPED",
-            SuiteRunStatus::Stopping => "STOPPING",
-            SuiteRunStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED", "ERROR", "FAIL", "PASS", "PASS_WITH_WARNINGS", "PENDING", "RUNNING", "STOPPED", "STOPPING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SuiteRunStatus::Canceled => "CANCELED",
+    SuiteRunStatus::Error => "ERROR",
+    SuiteRunStatus::Fail => "FAIL",
+    SuiteRunStatus::Pass => "PASS",
+    SuiteRunStatus::PassWithWarnings => "PASS_WITH_WARNINGS",
+    SuiteRunStatus::Pending => "PENDING",
+    SuiteRunStatus::Running => "RUNNING",
+    SuiteRunStatus::Stopped => "STOPPED",
+    SuiteRunStatus::Stopping => "STOPPING",
+    SuiteRunStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELED", "ERROR", "FAIL", "PASS", "PASS_WITH_WARNINGS", "PENDING", "RUNNING", "STOPPED", "STOPPING"]
+                }
+            }
 impl AsRef<str> for SuiteRunStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Information about the suite definition.</p>
 #[non_exhaustive]
@@ -1602,21 +1598,21 @@ pub enum TestCaseScenarioStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TestCaseScenarioStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELED" => TestCaseScenarioStatus::Canceled,
-            "ERROR" => TestCaseScenarioStatus::Error,
-            "FAIL" => TestCaseScenarioStatus::Fail,
-            "PASS" => TestCaseScenarioStatus::Pass,
-            "PASS_WITH_WARNINGS" => TestCaseScenarioStatus::PassWithWarnings,
-            "PENDING" => TestCaseScenarioStatus::Pending,
-            "RUNNING" => TestCaseScenarioStatus::Running,
-            "STOPPED" => TestCaseScenarioStatus::Stopped,
-            "STOPPING" => TestCaseScenarioStatus::Stopping,
-            other => TestCaseScenarioStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELED" => TestCaseScenarioStatus::Canceled,
+"ERROR" => TestCaseScenarioStatus::Error,
+"FAIL" => TestCaseScenarioStatus::Fail,
+"PASS" => TestCaseScenarioStatus::Pass,
+"PASS_WITH_WARNINGS" => TestCaseScenarioStatus::PassWithWarnings,
+"PENDING" => TestCaseScenarioStatus::Pending,
+"RUNNING" => TestCaseScenarioStatus::Running,
+"STOPPED" => TestCaseScenarioStatus::Stopped,
+"STOPPING" => TestCaseScenarioStatus::Stopping,
+other => TestCaseScenarioStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TestCaseScenarioStatus {
                 type Err = std::convert::Infallible;
 
@@ -1625,33 +1621,31 @@ impl std::str::FromStr for TestCaseScenarioStatus {
                 }
             }
 impl TestCaseScenarioStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TestCaseScenarioStatus::Canceled => "CANCELED",
-            TestCaseScenarioStatus::Error => "ERROR",
-            TestCaseScenarioStatus::Fail => "FAIL",
-            TestCaseScenarioStatus::Pass => "PASS",
-            TestCaseScenarioStatus::PassWithWarnings => "PASS_WITH_WARNINGS",
-            TestCaseScenarioStatus::Pending => "PENDING",
-            TestCaseScenarioStatus::Running => "RUNNING",
-            TestCaseScenarioStatus::Stopped => "STOPPED",
-            TestCaseScenarioStatus::Stopping => "STOPPING",
-            TestCaseScenarioStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED", "ERROR", "FAIL", "PASS", "PASS_WITH_WARNINGS", "PENDING", "RUNNING", "STOPPED", "STOPPING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TestCaseScenarioStatus::Canceled => "CANCELED",
+    TestCaseScenarioStatus::Error => "ERROR",
+    TestCaseScenarioStatus::Fail => "FAIL",
+    TestCaseScenarioStatus::Pass => "PASS",
+    TestCaseScenarioStatus::PassWithWarnings => "PASS_WITH_WARNINGS",
+    TestCaseScenarioStatus::Pending => "PENDING",
+    TestCaseScenarioStatus::Running => "RUNNING",
+    TestCaseScenarioStatus::Stopped => "STOPPED",
+    TestCaseScenarioStatus::Stopping => "STOPPING",
+    TestCaseScenarioStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELED", "ERROR", "FAIL", "PASS", "PASS_WITH_WARNINGS", "PENDING", "RUNNING", "STOPPED", "STOPPING"]
+                }
+            }
 impl AsRef<str> for TestCaseScenarioStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TestCaseScenarioType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1700,14 +1694,14 @@ pub enum TestCaseScenarioType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TestCaseScenarioType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Advanced" => TestCaseScenarioType::Advanced,
-            "Basic" => TestCaseScenarioType::Basic,
-            other => TestCaseScenarioType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Advanced" => TestCaseScenarioType::Advanced,
+"Basic" => TestCaseScenarioType::Basic,
+other => TestCaseScenarioType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TestCaseScenarioType {
                 type Err = std::convert::Infallible;
 
@@ -1716,26 +1710,24 @@ impl std::str::FromStr for TestCaseScenarioType {
                 }
             }
 impl TestCaseScenarioType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TestCaseScenarioType::Advanced => "Advanced",
-            TestCaseScenarioType::Basic => "Basic",
-            TestCaseScenarioType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Advanced", "Basic"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TestCaseScenarioType::Advanced => "Advanced",
+    TestCaseScenarioType::Basic => "Basic",
+    TestCaseScenarioType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Advanced", "Basic"]
+                }
+            }
 impl AsRef<str> for TestCaseScenarioType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `Status`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1805,21 +1797,21 @@ pub enum Status {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELED" => Status::Canceled,
-            "ERROR" => Status::Error,
-            "FAIL" => Status::Fail,
-            "PASS" => Status::Pass,
-            "PASS_WITH_WARNINGS" => Status::PassWithWarnings,
-            "PENDING" => Status::Pending,
-            "RUNNING" => Status::Running,
-            "STOPPED" => Status::Stopped,
-            "STOPPING" => Status::Stopping,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELED" => Status::Canceled,
+"ERROR" => Status::Error,
+"FAIL" => Status::Fail,
+"PASS" => Status::Pass,
+"PASS_WITH_WARNINGS" => Status::PassWithWarnings,
+"PENDING" => Status::Pending,
+"RUNNING" => Status::Running,
+"STOPPED" => Status::Stopped,
+"STOPPING" => Status::Stopping,
+other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Status {
                 type Err = std::convert::Infallible;
 
@@ -1828,31 +1820,29 @@ impl std::str::FromStr for Status {
                 }
             }
 impl Status {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Status::Canceled => "CANCELED",
-            Status::Error => "ERROR",
-            Status::Fail => "FAIL",
-            Status::Pass => "PASS",
-            Status::PassWithWarnings => "PASS_WITH_WARNINGS",
-            Status::Pending => "PENDING",
-            Status::Running => "RUNNING",
-            Status::Stopped => "STOPPED",
-            Status::Stopping => "STOPPING",
-            Status::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED", "ERROR", "FAIL", "PASS", "PASS_WITH_WARNINGS", "PENDING", "RUNNING", "STOPPED", "STOPPING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Status::Canceled => "CANCELED",
+    Status::Error => "ERROR",
+    Status::Fail => "FAIL",
+    Status::Pass => "PASS",
+    Status::PassWithWarnings => "PASS_WITH_WARNINGS",
+    Status::Pending => "PENDING",
+    Status::Running => "RUNNING",
+    Status::Stopped => "STOPPED",
+    Status::Stopping => "STOPPING",
+    Status::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELED", "ERROR", "FAIL", "PASS", "PASS_WITH_WARNINGS", "PENDING", "RUNNING", "STOPPED", "STOPPING"]
+                }
+            }
 impl AsRef<str> for Status {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

@@ -195,15 +195,15 @@ pub enum RepositoryProvider {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RepositoryProvider {
-    fn from(s: &str) -> Self {
-        match s {
-            "BITBUCKET" => RepositoryProvider::Bitbucket,
-            "GITHUB" => RepositoryProvider::Github,
-            "GITHUB_ENTERPRISE" => RepositoryProvider::GithubEnterprise,
-            other => RepositoryProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BITBUCKET" => RepositoryProvider::Bitbucket,
+"GITHUB" => RepositoryProvider::Github,
+"GITHUB_ENTERPRISE" => RepositoryProvider::GithubEnterprise,
+other => RepositoryProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RepositoryProvider {
                 type Err = std::convert::Infallible;
 
@@ -212,27 +212,25 @@ impl std::str::FromStr for RepositoryProvider {
                 }
             }
 impl RepositoryProvider {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RepositoryProvider::Bitbucket => "BITBUCKET",
-            RepositoryProvider::Github => "GITHUB",
-            RepositoryProvider::GithubEnterprise => "GITHUB_ENTERPRISE",
-            RepositoryProvider::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RepositoryProvider::Bitbucket => "BITBUCKET",
+    RepositoryProvider::Github => "GITHUB",
+    RepositoryProvider::GithubEnterprise => "GITHUB_ENTERPRISE",
+    RepositoryProvider::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE"]
+                }
+            }
 impl AsRef<str> for RepositoryProvider {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `TemplateType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -281,14 +279,14 @@ pub enum TemplateType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TemplateType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENVIRONMENT" => TemplateType::Environment,
-            "SERVICE" => TemplateType::Service,
-            other => TemplateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ENVIRONMENT" => TemplateType::Environment,
+"SERVICE" => TemplateType::Service,
+other => TemplateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TemplateType {
                 type Err = std::convert::Infallible;
 
@@ -297,26 +295,24 @@ impl std::str::FromStr for TemplateType {
                 }
             }
 impl TemplateType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TemplateType::Environment => "ENVIRONMENT",
-            TemplateType::Service => "SERVICE",
-            TemplateType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENVIRONMENT", "SERVICE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TemplateType::Environment => "ENVIRONMENT",
+    TemplateType::Service => "SERVICE",
+    TemplateType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENVIRONMENT", "SERVICE"]
+                }
+            }
 impl AsRef<str> for TemplateType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summary data of an Proton service template version resource.</p>
 #[non_exhaustive]
@@ -624,16 +620,16 @@ pub enum TemplateVersionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TemplateVersionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DRAFT" => TemplateVersionStatus::Draft,
-            "PUBLISHED" => TemplateVersionStatus::Published,
-            "REGISTRATION_FAILED" => TemplateVersionStatus::RegistrationFailed,
-            "REGISTRATION_IN_PROGRESS" => TemplateVersionStatus::RegistrationInProgress,
-            other => TemplateVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DRAFT" => TemplateVersionStatus::Draft,
+"PUBLISHED" => TemplateVersionStatus::Published,
+"REGISTRATION_FAILED" => TemplateVersionStatus::RegistrationFailed,
+"REGISTRATION_IN_PROGRESS" => TemplateVersionStatus::RegistrationInProgress,
+other => TemplateVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TemplateVersionStatus {
                 type Err = std::convert::Infallible;
 
@@ -642,28 +638,26 @@ impl std::str::FromStr for TemplateVersionStatus {
                 }
             }
 impl TemplateVersionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TemplateVersionStatus::Draft => "DRAFT",
-            TemplateVersionStatus::Published => "PUBLISHED",
-            TemplateVersionStatus::RegistrationFailed => "REGISTRATION_FAILED",
-            TemplateVersionStatus::RegistrationInProgress => "REGISTRATION_IN_PROGRESS",
-            TemplateVersionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DRAFT", "PUBLISHED", "REGISTRATION_FAILED", "REGISTRATION_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TemplateVersionStatus::Draft => "DRAFT",
+    TemplateVersionStatus::Published => "PUBLISHED",
+    TemplateVersionStatus::RegistrationFailed => "REGISTRATION_FAILED",
+    TemplateVersionStatus::RegistrationInProgress => "REGISTRATION_IN_PROGRESS",
+    TemplateVersionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DRAFT", "PUBLISHED", "REGISTRATION_FAILED", "REGISTRATION_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for TemplateVersionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Detailed data of an Proton service template version resource.</p>
 #[non_exhaustive]
@@ -1041,13 +1035,13 @@ pub enum ServiceTemplateSupportedComponentSourceType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceTemplateSupportedComponentSourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DIRECTLY_DEFINED" => ServiceTemplateSupportedComponentSourceType::DirectlyDefined,
-            other => ServiceTemplateSupportedComponentSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DIRECTLY_DEFINED" => ServiceTemplateSupportedComponentSourceType::DirectlyDefined,
+other => ServiceTemplateSupportedComponentSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ServiceTemplateSupportedComponentSourceType {
                 type Err = std::convert::Infallible;
 
@@ -1056,25 +1050,23 @@ impl std::str::FromStr for ServiceTemplateSupportedComponentSourceType {
                 }
             }
 impl ServiceTemplateSupportedComponentSourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceTemplateSupportedComponentSourceType::DirectlyDefined => "DIRECTLY_DEFINED",
-            ServiceTemplateSupportedComponentSourceType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DIRECTLY_DEFINED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceTemplateSupportedComponentSourceType::DirectlyDefined => "DIRECTLY_DEFINED",
+    ServiceTemplateSupportedComponentSourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DIRECTLY_DEFINED"]
+                }
+            }
 impl AsRef<str> for ServiceTemplateSupportedComponentSourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Compatible environment template data.</p>
 #[non_exhaustive]
@@ -1640,13 +1632,13 @@ pub enum Provisioning {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Provisioning {
-    fn from(s: &str) -> Self {
-        match s {
-            "CUSTOMER_MANAGED" => Provisioning::CustomerManaged,
-            other => Provisioning::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CUSTOMER_MANAGED" => Provisioning::CustomerManaged,
+other => Provisioning::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Provisioning {
                 type Err = std::convert::Infallible;
 
@@ -1655,25 +1647,23 @@ impl std::str::FromStr for Provisioning {
                 }
             }
 impl Provisioning {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Provisioning::CustomerManaged => "CUSTOMER_MANAGED",
-            Provisioning::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CUSTOMER_MANAGED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Provisioning::CustomerManaged => "CUSTOMER_MANAGED",
+    Provisioning::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CUSTOMER_MANAGED"]
+                }
+            }
 impl AsRef<str> for Provisioning {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Detailed data of an Proton service template resource.</p>
 #[non_exhaustive]
@@ -2201,26 +2191,26 @@ pub enum ServiceStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ServiceStatus::Active,
-            "CREATE_FAILED" => ServiceStatus::CreateFailed,
-            "CREATE_FAILED_CLEANUP_COMPLETE" => ServiceStatus::CreateFailedCleanupComplete,
-            "CREATE_FAILED_CLEANUP_FAILED" => ServiceStatus::CreateFailedCleanupFailed,
-            "CREATE_FAILED_CLEANUP_IN_PROGRESS" => ServiceStatus::CreateFailedCleanupInProgress,
-            "CREATE_IN_PROGRESS" => ServiceStatus::CreateInProgress,
-            "DELETE_FAILED" => ServiceStatus::DeleteFailed,
-            "DELETE_IN_PROGRESS" => ServiceStatus::DeleteInProgress,
-            "UPDATE_COMPLETE_CLEANUP_FAILED" => ServiceStatus::UpdateCompleteCleanupFailed,
-            "UPDATE_FAILED" => ServiceStatus::UpdateFailed,
-            "UPDATE_FAILED_CLEANUP_COMPLETE" => ServiceStatus::UpdateFailedCleanupComplete,
-            "UPDATE_FAILED_CLEANUP_FAILED" => ServiceStatus::UpdateFailedCleanupFailed,
-            "UPDATE_FAILED_CLEANUP_IN_PROGRESS" => ServiceStatus::UpdateFailedCleanupInProgress,
-            "UPDATE_IN_PROGRESS" => ServiceStatus::UpdateInProgress,
-            other => ServiceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => ServiceStatus::Active,
+"CREATE_FAILED" => ServiceStatus::CreateFailed,
+"CREATE_FAILED_CLEANUP_COMPLETE" => ServiceStatus::CreateFailedCleanupComplete,
+"CREATE_FAILED_CLEANUP_FAILED" => ServiceStatus::CreateFailedCleanupFailed,
+"CREATE_FAILED_CLEANUP_IN_PROGRESS" => ServiceStatus::CreateFailedCleanupInProgress,
+"CREATE_IN_PROGRESS" => ServiceStatus::CreateInProgress,
+"DELETE_FAILED" => ServiceStatus::DeleteFailed,
+"DELETE_IN_PROGRESS" => ServiceStatus::DeleteInProgress,
+"UPDATE_COMPLETE_CLEANUP_FAILED" => ServiceStatus::UpdateCompleteCleanupFailed,
+"UPDATE_FAILED" => ServiceStatus::UpdateFailed,
+"UPDATE_FAILED_CLEANUP_COMPLETE" => ServiceStatus::UpdateFailedCleanupComplete,
+"UPDATE_FAILED_CLEANUP_FAILED" => ServiceStatus::UpdateFailedCleanupFailed,
+"UPDATE_FAILED_CLEANUP_IN_PROGRESS" => ServiceStatus::UpdateFailedCleanupInProgress,
+"UPDATE_IN_PROGRESS" => ServiceStatus::UpdateInProgress,
+other => ServiceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ServiceStatus {
                 type Err = std::convert::Infallible;
 
@@ -2229,38 +2219,36 @@ impl std::str::FromStr for ServiceStatus {
                 }
             }
 impl ServiceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceStatus::Active => "ACTIVE",
-            ServiceStatus::CreateFailed => "CREATE_FAILED",
-            ServiceStatus::CreateFailedCleanupComplete => "CREATE_FAILED_CLEANUP_COMPLETE",
-            ServiceStatus::CreateFailedCleanupFailed => "CREATE_FAILED_CLEANUP_FAILED",
-            ServiceStatus::CreateFailedCleanupInProgress => "CREATE_FAILED_CLEANUP_IN_PROGRESS",
-            ServiceStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-            ServiceStatus::DeleteFailed => "DELETE_FAILED",
-            ServiceStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            ServiceStatus::UpdateCompleteCleanupFailed => "UPDATE_COMPLETE_CLEANUP_FAILED",
-            ServiceStatus::UpdateFailed => "UPDATE_FAILED",
-            ServiceStatus::UpdateFailedCleanupComplete => "UPDATE_FAILED_CLEANUP_COMPLETE",
-            ServiceStatus::UpdateFailedCleanupFailed => "UPDATE_FAILED_CLEANUP_FAILED",
-            ServiceStatus::UpdateFailedCleanupInProgress => "UPDATE_FAILED_CLEANUP_IN_PROGRESS",
-            ServiceStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            ServiceStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE", "CREATE_FAILED", "CREATE_FAILED_CLEANUP_COMPLETE", "CREATE_FAILED_CLEANUP_FAILED", "CREATE_FAILED_CLEANUP_IN_PROGRESS", "CREATE_IN_PROGRESS", "DELETE_FAILED", "DELETE_IN_PROGRESS", "UPDATE_COMPLETE_CLEANUP_FAILED", "UPDATE_FAILED", "UPDATE_FAILED_CLEANUP_COMPLETE", "UPDATE_FAILED_CLEANUP_FAILED", "UPDATE_FAILED_CLEANUP_IN_PROGRESS", "UPDATE_IN_PROGRESS"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceStatus::Active => "ACTIVE",
+    ServiceStatus::CreateFailed => "CREATE_FAILED",
+    ServiceStatus::CreateFailedCleanupComplete => "CREATE_FAILED_CLEANUP_COMPLETE",
+    ServiceStatus::CreateFailedCleanupFailed => "CREATE_FAILED_CLEANUP_FAILED",
+    ServiceStatus::CreateFailedCleanupInProgress => "CREATE_FAILED_CLEANUP_IN_PROGRESS",
+    ServiceStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+    ServiceStatus::DeleteFailed => "DELETE_FAILED",
+    ServiceStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    ServiceStatus::UpdateCompleteCleanupFailed => "UPDATE_COMPLETE_CLEANUP_FAILED",
+    ServiceStatus::UpdateFailed => "UPDATE_FAILED",
+    ServiceStatus::UpdateFailedCleanupComplete => "UPDATE_FAILED_CLEANUP_COMPLETE",
+    ServiceStatus::UpdateFailedCleanupFailed => "UPDATE_FAILED_CLEANUP_FAILED",
+    ServiceStatus::UpdateFailedCleanupInProgress => "UPDATE_FAILED_CLEANUP_IN_PROGRESS",
+    ServiceStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    ServiceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_FAILED", "CREATE_FAILED_CLEANUP_COMPLETE", "CREATE_FAILED_CLEANUP_FAILED", "CREATE_FAILED_CLEANUP_IN_PROGRESS", "CREATE_IN_PROGRESS", "DELETE_FAILED", "DELETE_IN_PROGRESS", "UPDATE_COMPLETE_CLEANUP_FAILED", "UPDATE_FAILED", "UPDATE_FAILED_CLEANUP_COMPLETE", "UPDATE_FAILED_CLEANUP_FAILED", "UPDATE_FAILED_CLEANUP_IN_PROGRESS", "UPDATE_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for ServiceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Detailed data of an Proton service resource.</p>
 #[non_exhaustive]
@@ -2896,20 +2884,20 @@ pub enum DeploymentStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => DeploymentStatus::Cancelled,
-            "CANCELLING" => DeploymentStatus::Cancelling,
-            "DELETE_COMPLETE" => DeploymentStatus::DeleteComplete,
-            "DELETE_FAILED" => DeploymentStatus::DeleteFailed,
-            "DELETE_IN_PROGRESS" => DeploymentStatus::DeleteInProgress,
-            "FAILED" => DeploymentStatus::Failed,
-            "IN_PROGRESS" => DeploymentStatus::InProgress,
-            "SUCCEEDED" => DeploymentStatus::Succeeded,
-            other => DeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => DeploymentStatus::Cancelled,
+"CANCELLING" => DeploymentStatus::Cancelling,
+"DELETE_COMPLETE" => DeploymentStatus::DeleteComplete,
+"DELETE_FAILED" => DeploymentStatus::DeleteFailed,
+"DELETE_IN_PROGRESS" => DeploymentStatus::DeleteInProgress,
+"FAILED" => DeploymentStatus::Failed,
+"IN_PROGRESS" => DeploymentStatus::InProgress,
+"SUCCEEDED" => DeploymentStatus::Succeeded,
+other => DeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeploymentStatus {
                 type Err = std::convert::Infallible;
 
@@ -2918,32 +2906,30 @@ impl std::str::FromStr for DeploymentStatus {
                 }
             }
 impl DeploymentStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeploymentStatus::Cancelled => "CANCELLED",
-            DeploymentStatus::Cancelling => "CANCELLING",
-            DeploymentStatus::DeleteComplete => "DELETE_COMPLETE",
-            DeploymentStatus::DeleteFailed => "DELETE_FAILED",
-            DeploymentStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            DeploymentStatus::Failed => "FAILED",
-            DeploymentStatus::InProgress => "IN_PROGRESS",
-            DeploymentStatus::Succeeded => "SUCCEEDED",
-            DeploymentStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED", "CANCELLING", "DELETE_COMPLETE", "DELETE_FAILED", "DELETE_IN_PROGRESS", "FAILED", "IN_PROGRESS", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeploymentStatus::Cancelled => "CANCELLED",
+    DeploymentStatus::Cancelling => "CANCELLING",
+    DeploymentStatus::DeleteComplete => "DELETE_COMPLETE",
+    DeploymentStatus::DeleteFailed => "DELETE_FAILED",
+    DeploymentStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    DeploymentStatus::Failed => "FAILED",
+    DeploymentStatus::InProgress => "IN_PROGRESS",
+    DeploymentStatus::Succeeded => "SUCCEEDED",
+    DeploymentStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "CANCELLING", "DELETE_COMPLETE", "DELETE_FAILED", "DELETE_IN_PROGRESS", "FAILED", "IN_PROGRESS", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for DeploymentStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `DeploymentUpdateType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2998,16 +2984,16 @@ pub enum DeploymentUpdateType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentUpdateType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CURRENT_VERSION" => DeploymentUpdateType::CurrentVersion,
-            "MAJOR_VERSION" => DeploymentUpdateType::MajorVersion,
-            "MINOR_VERSION" => DeploymentUpdateType::MinorVersion,
-            "NONE" => DeploymentUpdateType::None,
-            other => DeploymentUpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CURRENT_VERSION" => DeploymentUpdateType::CurrentVersion,
+"MAJOR_VERSION" => DeploymentUpdateType::MajorVersion,
+"MINOR_VERSION" => DeploymentUpdateType::MinorVersion,
+"NONE" => DeploymentUpdateType::None,
+other => DeploymentUpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DeploymentUpdateType {
                 type Err = std::convert::Infallible;
 
@@ -3016,28 +3002,26 @@ impl std::str::FromStr for DeploymentUpdateType {
                 }
             }
 impl DeploymentUpdateType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeploymentUpdateType::CurrentVersion => "CURRENT_VERSION",
-            DeploymentUpdateType::MajorVersion => "MAJOR_VERSION",
-            DeploymentUpdateType::MinorVersion => "MINOR_VERSION",
-            DeploymentUpdateType::None => "NONE",
-            DeploymentUpdateType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CURRENT_VERSION", "MAJOR_VERSION", "MINOR_VERSION", "NONE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeploymentUpdateType::CurrentVersion => "CURRENT_VERSION",
+    DeploymentUpdateType::MajorVersion => "MAJOR_VERSION",
+    DeploymentUpdateType::MinorVersion => "MINOR_VERSION",
+    DeploymentUpdateType::None => "NONE",
+    DeploymentUpdateType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CURRENT_VERSION", "MAJOR_VERSION", "MINOR_VERSION", "NONE"]
+                }
+            }
 impl AsRef<str> for DeploymentUpdateType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Detail data for a provisioned resource.</p>
 #[non_exhaustive]
@@ -3178,14 +3162,14 @@ pub enum ProvisionedResourceEngine {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProvisionedResourceEngine {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLOUDFORMATION" => ProvisionedResourceEngine::Cloudformation,
-            "TERRAFORM" => ProvisionedResourceEngine::Terraform,
-            other => ProvisionedResourceEngine::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLOUDFORMATION" => ProvisionedResourceEngine::Cloudformation,
+"TERRAFORM" => ProvisionedResourceEngine::Terraform,
+other => ProvisionedResourceEngine::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ProvisionedResourceEngine {
                 type Err = std::convert::Infallible;
 
@@ -3194,26 +3178,24 @@ impl std::str::FromStr for ProvisionedResourceEngine {
                 }
             }
 impl ProvisionedResourceEngine {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProvisionedResourceEngine::Cloudformation => "CLOUDFORMATION",
-            ProvisionedResourceEngine::Terraform => "TERRAFORM",
-            ProvisionedResourceEngine::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLOUDFORMATION", "TERRAFORM"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ProvisionedResourceEngine::Cloudformation => "CLOUDFORMATION",
+    ProvisionedResourceEngine::Terraform => "TERRAFORM",
+    ProvisionedResourceEngine::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLOUDFORMATION", "TERRAFORM"]
+                }
+            }
 impl AsRef<str> for ProvisionedResourceEngine {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>An infrastructure as code defined resource output.</p>
 #[non_exhaustive]
@@ -3642,14 +3624,14 @@ pub enum SortOrder {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASCENDING" => SortOrder::Ascending,
-            "DESCENDING" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASCENDING" => SortOrder::Ascending,
+"DESCENDING" => SortOrder::Descending,
+other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SortOrder {
                 type Err = std::convert::Infallible;
 
@@ -3658,26 +3640,24 @@ impl std::str::FromStr for SortOrder {
                 }
             }
 impl SortOrder {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortOrder::Ascending => "ASCENDING",
-            SortOrder::Descending => "DESCENDING",
-            SortOrder::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASCENDING", "DESCENDING"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortOrder::Ascending => "ASCENDING",
+    SortOrder::Descending => "DESCENDING",
+    SortOrder::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASCENDING", "DESCENDING"]
+                }
+            }
 impl AsRef<str> for SortOrder {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// When writing a match expression against `ListServiceInstancesSortBy`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3741,19 +3721,19 @@ pub enum ListServiceInstancesSortBy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListServiceInstancesSortBy {
-    fn from(s: &str) -> Self {
-        match s {
-            "createdAt" => ListServiceInstancesSortBy::CreatedAt,
-            "deploymentStatus" => ListServiceInstancesSortBy::DeploymentStatus,
-            "environmentName" => ListServiceInstancesSortBy::EnvironmentName,
-            "lastDeploymentAttemptedAt" => ListServiceInstancesSortBy::LastDeploymentAttemptedAt,
-            "name" => ListServiceInstancesSortBy::Name,
-            "serviceName" => ListServiceInstancesSortBy::ServiceName,
-            "templateName" => ListServiceInstancesSortBy::TemplateName,
-            other => ListServiceInstancesSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "createdAt" => ListServiceInstancesSortBy::CreatedAt,
+"deploymentStatus" => ListServiceInstancesSortBy::DeploymentStatus,
+"environmentName" => ListServiceInstancesSortBy::EnvironmentName,
+"lastDeploymentAttemptedAt" => ListServiceInstancesSortBy::LastDeploymentAttemptedAt,
+"name" => ListServiceInstancesSortBy::Name,
+"serviceName" => ListServiceInstancesSortBy::ServiceName,
+"templateName" => ListServiceInstancesSortBy::TemplateName,
+other => ListServiceInstancesSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ListServiceInstancesSortBy {
                 type Err = std::convert::Infallible;
 
@@ -3762,31 +3742,29 @@ impl std::str::FromStr for ListServiceInstancesSortBy {
                 }
             }
 impl ListServiceInstancesSortBy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ListServiceInstancesSortBy::CreatedAt => "createdAt",
-            ListServiceInstancesSortBy::DeploymentStatus => "deploymentStatus",
-            ListServiceInstancesSortBy::EnvironmentName => "environmentName",
-            ListServiceInstancesSortBy::LastDeploymentAttemptedAt => "lastDeploymentAttemptedAt",
-            ListServiceInstancesSortBy::Name => "name",
-            ListServiceInstancesSortBy::ServiceName => "serviceName",
-            ListServiceInstancesSortBy::TemplateName => "templateName",
-            ListServiceInstancesSortBy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "createdAt", "deploymentStatus", "environmentName", "lastDeploymentAttemptedAt", "name", "serviceName", "templateName"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ListServiceInstancesSortBy::CreatedAt => "createdAt",
+    ListServiceInstancesSortBy::DeploymentStatus => "deploymentStatus",
+    ListServiceInstancesSortBy::EnvironmentName => "environmentName",
+    ListServiceInstancesSortBy::LastDeploymentAttemptedAt => "lastDeploymentAttemptedAt",
+    ListServiceInstancesSortBy::Name => "name",
+    ListServiceInstancesSortBy::ServiceName => "serviceName",
+    ListServiceInstancesSortBy::TemplateName => "templateName",
+    ListServiceInstancesSortBy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["createdAt", "deploymentStatus", "environmentName", "lastDeploymentAttemptedAt", "name", "serviceName", "templateName"]
+                }
+            }
 impl AsRef<str> for ListServiceInstancesSortBy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A filtering criterion to scope down the result list of the <code>ListServiceInstances</code> action.</p>
 #[non_exhaustive]
@@ -3932,22 +3910,22 @@ pub enum ListServiceInstancesFilterBy {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListServiceInstancesFilterBy {
-    fn from(s: &str) -> Self {
-        match s {
-            "createdAtAfter" => ListServiceInstancesFilterBy::CreatedAtAfter,
-            "createdAtBefore" => ListServiceInstancesFilterBy::CreatedAtBefore,
-            "deployedTemplateVersionStatus" => ListServiceInstancesFilterBy::DeployedTemplateVersionStatus,
-            "deploymentStatus" => ListServiceInstancesFilterBy::DeploymentStatus,
-            "environmentName" => ListServiceInstancesFilterBy::EnvironmentName,
-            "lastDeploymentAttemptedAtAfter" => ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter,
-            "lastDeploymentAttemptedAtBefore" => ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore,
-            "name" => ListServiceInstancesFilterBy::Name,
-            "serviceName" => ListServiceInstancesFilterBy::ServiceName,
-            "templateName" => ListServiceInstancesFilterBy::TemplateName,
-            other => ListServiceInstancesFilterBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "createdAtAfter" => ListServiceInstancesFilterBy::CreatedAtAfter,
+"createdAtBefore" => ListServiceInstancesFilterBy::CreatedAtBefore,
+"deployedTemplateVersionStatus" => ListServiceInstancesFilterBy::DeployedTemplateVersionStatus,
+"deploymentStatus" => ListServiceInstancesFilterBy::DeploymentStatus,
+"environmentName" => ListServiceInstancesFilterBy::EnvironmentName,
+"lastDeploymentAttemptedAtAfter" => ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter,
+"lastDeploymentAttemptedAtBefore" => ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore,
+"name" => ListServiceInstancesFilterBy::Name,
+"serviceName" => ListServiceInstancesFilterBy::ServiceName,
+"templateName" => ListServiceInstancesFilterBy::TemplateName,
+other => ListServiceInstancesFilterBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ListServiceInstancesFilterBy {
                 type Err = std::convert::Infallible;
 
@@ -3956,34 +3934,32 @@ impl std::str::FromStr for ListServiceInstancesFilterBy {
                 }
             }
 impl ListServiceInstancesFilterBy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ListServiceInstancesFilterBy::CreatedAtAfter => "createdAtAfter",
-            ListServiceInstancesFilterBy::CreatedAtBefore => "createdAtBefore",
-            ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => "deployedTemplateVersionStatus",
-            ListServiceInstancesFilterBy::DeploymentStatus => "deploymentStatus",
-            ListServiceInstancesFilterBy::EnvironmentName => "environmentName",
-            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => "lastDeploymentAttemptedAtAfter",
-            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => "lastDeploymentAttemptedAtBefore",
-            ListServiceInstancesFilterBy::Name => "name",
-            ListServiceInstancesFilterBy::ServiceName => "serviceName",
-            ListServiceInstancesFilterBy::TemplateName => "templateName",
-            ListServiceInstancesFilterBy::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "createdAtAfter", "createdAtBefore", "deployedTemplateVersionStatus", "deploymentStatus", "environmentName", "lastDeploymentAttemptedAtAfter", "lastDeploymentAttemptedAtBefore", "name", "serviceName", "templateName"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ListServiceInstancesFilterBy::CreatedAtAfter => "createdAtAfter",
+    ListServiceInstancesFilterBy::CreatedAtBefore => "createdAtBefore",
+    ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => "deployedTemplateVersionStatus",
+    ListServiceInstancesFilterBy::DeploymentStatus => "deploymentStatus",
+    ListServiceInstancesFilterBy::EnvironmentName => "environmentName",
+    ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => "lastDeploymentAttemptedAtAfter",
+    ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => "lastDeploymentAttemptedAtBefore",
+    ListServiceInstancesFilterBy::Name => "name",
+    ListServiceInstancesFilterBy::ServiceName => "serviceName",
+    ListServiceInstancesFilterBy::TemplateName => "templateName",
+    ListServiceInstancesFilterBy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["createdAtAfter", "createdAtBefore", "deployedTemplateVersionStatus", "deploymentStatus", "environmentName", "lastDeploymentAttemptedAtAfter", "lastDeploymentAttemptedAtBefore", "name", "serviceName", "templateName"]
+                }
+            }
 impl AsRef<str> for ListServiceInstancesFilterBy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Detailed data of an Proton service instance resource.</p>
 #[non_exhaustive]
@@ -6884,15 +6860,15 @@ pub enum EnvironmentAccountConnectionStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentAccountConnectionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONNECTED" => EnvironmentAccountConnectionStatus::Connected,
-            "PENDING" => EnvironmentAccountConnectionStatus::Pending,
-            "REJECTED" => EnvironmentAccountConnectionStatus::Rejected,
-            other => EnvironmentAccountConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONNECTED" => EnvironmentAccountConnectionStatus::Connected,
+"PENDING" => EnvironmentAccountConnectionStatus::Pending,
+"REJECTED" => EnvironmentAccountConnectionStatus::Rejected,
+other => EnvironmentAccountConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EnvironmentAccountConnectionStatus {
                 type Err = std::convert::Infallible;
 
@@ -6901,27 +6877,25 @@ impl std::str::FromStr for EnvironmentAccountConnectionStatus {
                 }
             }
 impl EnvironmentAccountConnectionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnvironmentAccountConnectionStatus::Connected => "CONNECTED",
-            EnvironmentAccountConnectionStatus::Pending => "PENDING",
-            EnvironmentAccountConnectionStatus::Rejected => "REJECTED",
-            EnvironmentAccountConnectionStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONNECTED", "PENDING", "REJECTED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnvironmentAccountConnectionStatus::Connected => "CONNECTED",
+    EnvironmentAccountConnectionStatus::Pending => "PENDING",
+    EnvironmentAccountConnectionStatus::Rejected => "REJECTED",
+    EnvironmentAccountConnectionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONNECTED", "PENDING", "REJECTED"]
+                }
+            }
 impl AsRef<str> for EnvironmentAccountConnectionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summary data of an Proton environment account connection resource.</p>
 #[non_exhaustive]
@@ -7199,14 +7173,14 @@ pub enum EnvironmentAccountConnectionRequesterAccountType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentAccountConnectionRequesterAccountType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENVIRONMENT_ACCOUNT" => EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount,
-            "MANAGEMENT_ACCOUNT" => EnvironmentAccountConnectionRequesterAccountType::ManagementAccount,
-            other => EnvironmentAccountConnectionRequesterAccountType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ENVIRONMENT_ACCOUNT" => EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount,
+"MANAGEMENT_ACCOUNT" => EnvironmentAccountConnectionRequesterAccountType::ManagementAccount,
+other => EnvironmentAccountConnectionRequesterAccountType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for EnvironmentAccountConnectionRequesterAccountType {
                 type Err = std::convert::Infallible;
 
@@ -7215,26 +7189,24 @@ impl std::str::FromStr for EnvironmentAccountConnectionRequesterAccountType {
                 }
             }
 impl EnvironmentAccountConnectionRequesterAccountType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount => "ENVIRONMENT_ACCOUNT",
-            EnvironmentAccountConnectionRequesterAccountType::ManagementAccount => "MANAGEMENT_ACCOUNT",
-            EnvironmentAccountConnectionRequesterAccountType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENVIRONMENT_ACCOUNT", "MANAGEMENT_ACCOUNT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount => "ENVIRONMENT_ACCOUNT",
+    EnvironmentAccountConnectionRequesterAccountType::ManagementAccount => "MANAGEMENT_ACCOUNT",
+    EnvironmentAccountConnectionRequesterAccountType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENVIRONMENT_ACCOUNT", "MANAGEMENT_ACCOUNT"]
+                }
+            }
 impl AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Summary data of an Proton component resource.</p> 
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
@@ -7875,14 +7847,14 @@ pub enum ComponentDeploymentUpdateType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComponentDeploymentUpdateType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CURRENT_VERSION" => ComponentDeploymentUpdateType::CurrentVersion,
-            "NONE" => ComponentDeploymentUpdateType::None,
-            other => ComponentDeploymentUpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CURRENT_VERSION" => ComponentDeploymentUpdateType::CurrentVersion,
+"NONE" => ComponentDeploymentUpdateType::None,
+other => ComponentDeploymentUpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ComponentDeploymentUpdateType {
                 type Err = std::convert::Infallible;
 
@@ -7891,26 +7863,24 @@ impl std::str::FromStr for ComponentDeploymentUpdateType {
                 }
             }
 impl ComponentDeploymentUpdateType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComponentDeploymentUpdateType::CurrentVersion => "CURRENT_VERSION",
-            ComponentDeploymentUpdateType::None => "NONE",
-            ComponentDeploymentUpdateType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CURRENT_VERSION", "NONE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComponentDeploymentUpdateType::CurrentVersion => "CURRENT_VERSION",
+    ComponentDeploymentUpdateType::None => "NONE",
+    ComponentDeploymentUpdateType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CURRENT_VERSION", "NONE"]
+                }
+            }
 impl AsRef<str> for ComponentDeploymentUpdateType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Proton settings that are used for multiple services in the Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -8050,15 +8020,15 @@ pub enum ResourceDeploymentStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceDeploymentStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => ResourceDeploymentStatus::Failed,
-            "IN_PROGRESS" => ResourceDeploymentStatus::InProgress,
-            "SUCCEEDED" => ResourceDeploymentStatus::Succeeded,
-            other => ResourceDeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => ResourceDeploymentStatus::Failed,
+"IN_PROGRESS" => ResourceDeploymentStatus::InProgress,
+"SUCCEEDED" => ResourceDeploymentStatus::Succeeded,
+other => ResourceDeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceDeploymentStatus {
                 type Err = std::convert::Infallible;
 
@@ -8067,27 +8037,25 @@ impl std::str::FromStr for ResourceDeploymentStatus {
                 }
             }
 impl ResourceDeploymentStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceDeploymentStatus::Failed => "FAILED",
-            ResourceDeploymentStatus::InProgress => "IN_PROGRESS",
-            ResourceDeploymentStatus::Succeeded => "SUCCEEDED",
-            ResourceDeploymentStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "IN_PROGRESS", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceDeploymentStatus::Failed => "FAILED",
+    ResourceDeploymentStatus::InProgress => "IN_PROGRESS",
+    ResourceDeploymentStatus::Succeeded => "SUCCEEDED",
+    ResourceDeploymentStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for ResourceDeploymentStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>A repository sync definition.</p>
 #[non_exhaustive]
@@ -8240,13 +8208,13 @@ pub enum SyncType {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SyncType {
-    fn from(s: &str) -> Self {
-        match s {
-            "TEMPLATE_SYNC" => SyncType::TemplateSync,
-            other => SyncType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "TEMPLATE_SYNC" => SyncType::TemplateSync,
+other => SyncType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SyncType {
                 type Err = std::convert::Infallible;
 
@@ -8255,25 +8223,23 @@ impl std::str::FromStr for SyncType {
                 }
             }
 impl SyncType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SyncType::TemplateSync => "TEMPLATE_SYNC",
-            SyncType::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "TEMPLATE_SYNC"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SyncType::TemplateSync => "TEMPLATE_SYNC",
+    SyncType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["TEMPLATE_SYNC"]
+                }
+            }
 impl AsRef<str> for SyncType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Revision detail data for a commit and push that activates a sync attempt</p>
 #[non_exhaustive]
@@ -8716,16 +8682,16 @@ pub enum ResourceSyncStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceSyncStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => ResourceSyncStatus::Failed,
-            "INITIATED" => ResourceSyncStatus::Initiated,
-            "IN_PROGRESS" => ResourceSyncStatus::InProgress,
-            "SUCCEEDED" => ResourceSyncStatus::Succeeded,
-            other => ResourceSyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => ResourceSyncStatus::Failed,
+"INITIATED" => ResourceSyncStatus::Initiated,
+"IN_PROGRESS" => ResourceSyncStatus::InProgress,
+"SUCCEEDED" => ResourceSyncStatus::Succeeded,
+other => ResourceSyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ResourceSyncStatus {
                 type Err = std::convert::Infallible;
 
@@ -8734,28 +8700,26 @@ impl std::str::FromStr for ResourceSyncStatus {
                 }
             }
 impl ResourceSyncStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceSyncStatus::Failed => "FAILED",
-            ResourceSyncStatus::Initiated => "INITIATED",
-            ResourceSyncStatus::InProgress => "IN_PROGRESS",
-            ResourceSyncStatus::Succeeded => "SUCCEEDED",
-            ResourceSyncStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "INITIATED", "IN_PROGRESS", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceSyncStatus::Failed => "FAILED",
+    ResourceSyncStatus::Initiated => "INITIATED",
+    ResourceSyncStatus::InProgress => "IN_PROGRESS",
+    ResourceSyncStatus::Succeeded => "SUCCEEDED",
+    ResourceSyncStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "INITIATED", "IN_PROGRESS", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for ResourceSyncStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Detail data for a repository sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
@@ -9019,17 +8983,17 @@ pub enum RepositorySyncStatus {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RepositorySyncStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => RepositorySyncStatus::Failed,
-            "INITIATED" => RepositorySyncStatus::Initiated,
-            "IN_PROGRESS" => RepositorySyncStatus::InProgress,
-            "QUEUED" => RepositorySyncStatus::Queued,
-            "SUCCEEDED" => RepositorySyncStatus::Succeeded,
-            other => RepositorySyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => RepositorySyncStatus::Failed,
+"INITIATED" => RepositorySyncStatus::Initiated,
+"IN_PROGRESS" => RepositorySyncStatus::InProgress,
+"QUEUED" => RepositorySyncStatus::Queued,
+"SUCCEEDED" => RepositorySyncStatus::Succeeded,
+other => RepositorySyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RepositorySyncStatus {
                 type Err = std::convert::Infallible;
 
@@ -9038,27 +9002,25 @@ impl std::str::FromStr for RepositorySyncStatus {
                 }
             }
 impl RepositorySyncStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RepositorySyncStatus::Failed => "FAILED",
-            RepositorySyncStatus::Initiated => "INITIATED",
-            RepositorySyncStatus::InProgress => "IN_PROGRESS",
-            RepositorySyncStatus::Queued => "QUEUED",
-            RepositorySyncStatus::Succeeded => "SUCCEEDED",
-            RepositorySyncStatus::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "INITIATED", "IN_PROGRESS", "QUEUED", "SUCCEEDED"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RepositorySyncStatus::Failed => "FAILED",
+    RepositorySyncStatus::Initiated => "INITIATED",
+    RepositorySyncStatus::InProgress => "IN_PROGRESS",
+    RepositorySyncStatus::Queued => "QUEUED",
+    RepositorySyncStatus::Succeeded => "SUCCEEDED",
+    RepositorySyncStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "INITIATED", "IN_PROGRESS", "QUEUED", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for RepositorySyncStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 

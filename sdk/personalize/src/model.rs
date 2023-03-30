@@ -906,14 +906,14 @@ pub enum Domain {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Domain {
-    fn from(s: &str) -> Self {
-        match s {
-            "ECOMMERCE" => Domain::Ecommerce,
-            "VIDEO_ON_DEMAND" => Domain::VideoOnDemand,
-            other => Domain::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ECOMMERCE" => Domain::Ecommerce,
+"VIDEO_ON_DEMAND" => Domain::VideoOnDemand,
+other => Domain::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Domain {
                 type Err = std::convert::Infallible;
 
@@ -922,26 +922,24 @@ impl std::str::FromStr for Domain {
                 }
             }
 impl Domain {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Domain::Ecommerce => "ECOMMERCE",
-            Domain::VideoOnDemand => "VIDEO_ON_DEMAND",
-            Domain::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ECOMMERCE", "VIDEO_ON_DEMAND"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Domain::Ecommerce => "ECOMMERCE",
+    Domain::VideoOnDemand => "VIDEO_ON_DEMAND",
+    Domain::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ECOMMERCE", "VIDEO_ON_DEMAND"]
+                }
+            }
 impl AsRef<str> for Domain {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Provides a summary of the properties of the recommender.</p>
 #[non_exhaustive]
@@ -1335,13 +1333,13 @@ pub enum RecipeProvider {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecipeProvider {
-    fn from(s: &str) -> Self {
-        match s {
-            "SERVICE" => RecipeProvider::Service,
-            other => RecipeProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SERVICE" => RecipeProvider::Service,
+other => RecipeProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RecipeProvider {
                 type Err = std::convert::Infallible;
 
@@ -1350,25 +1348,23 @@ impl std::str::FromStr for RecipeProvider {
                 }
             }
 impl RecipeProvider {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecipeProvider::Service => "SERVICE",
-            RecipeProvider::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SERVICE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecipeProvider::Service => "SERVICE",
+    RecipeProvider::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SERVICE"]
+                }
+            }
 impl AsRef<str> for RecipeProvider {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Provides a summary of the properties of a metric attribution. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeMetricAttribution.html">DescribeMetricAttribution</a>.</p>
 #[non_exhaustive]
@@ -2241,14 +2237,14 @@ pub enum ImportMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "FULL" => ImportMode::Full,
-            "INCREMENTAL" => ImportMode::Incremental,
-            other => ImportMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FULL" => ImportMode::Full,
+"INCREMENTAL" => ImportMode::Incremental,
+other => ImportMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ImportMode {
                 type Err = std::convert::Infallible;
 
@@ -2257,26 +2253,24 @@ impl std::str::FromStr for ImportMode {
                 }
             }
 impl ImportMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ImportMode::Full => "FULL",
-            ImportMode::Incremental => "INCREMENTAL",
-            ImportMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FULL", "INCREMENTAL"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ImportMode::Full => "FULL",
+    ImportMode::Incremental => "INCREMENTAL",
+    ImportMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FULL", "INCREMENTAL"]
+                }
+            }
 impl AsRef<str> for ImportMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Provides a summary of the properties of a dataset group. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> API.</p>
 #[non_exhaustive]
@@ -3648,14 +3642,14 @@ pub enum TrainingMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TrainingMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "FULL" => TrainingMode::Full,
-            "UPDATE" => TrainingMode::Update,
-            other => TrainingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FULL" => TrainingMode::Full,
+"UPDATE" => TrainingMode::Update,
+other => TrainingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TrainingMode {
                 type Err = std::convert::Infallible;
 
@@ -3664,26 +3658,24 @@ impl std::str::FromStr for TrainingMode {
                 }
             }
 impl TrainingMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TrainingMode::Full => "FULL",
-            TrainingMode::Update => "UPDATE",
-            TrainingMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FULL", "UPDATE"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TrainingMode::Full => "FULL",
+    TrainingMode::Update => "UPDATE",
+    TrainingMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FULL", "UPDATE"]
+                }
+            }
 impl AsRef<str> for TrainingMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Describes the configuration properties for the solution.</p>
 #[non_exhaustive]
@@ -3964,16 +3956,16 @@ pub enum ObjectiveSensitivity {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectiveSensitivity {
-    fn from(s: &str) -> Self {
-        match s {
-            "HIGH" => ObjectiveSensitivity::High,
-            "LOW" => ObjectiveSensitivity::Low,
-            "MEDIUM" => ObjectiveSensitivity::Medium,
-            "OFF" => ObjectiveSensitivity::Off,
-            other => ObjectiveSensitivity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "HIGH" => ObjectiveSensitivity::High,
+"LOW" => ObjectiveSensitivity::Low,
+"MEDIUM" => ObjectiveSensitivity::Medium,
+"OFF" => ObjectiveSensitivity::Off,
+other => ObjectiveSensitivity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ObjectiveSensitivity {
                 type Err = std::convert::Infallible;
 
@@ -3982,28 +3974,26 @@ impl std::str::FromStr for ObjectiveSensitivity {
                 }
             }
 impl ObjectiveSensitivity {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ObjectiveSensitivity::High => "HIGH",
-            ObjectiveSensitivity::Low => "LOW",
-            ObjectiveSensitivity::Medium => "MEDIUM",
-            ObjectiveSensitivity::Off => "OFF",
-            ObjectiveSensitivity::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "HIGH", "LOW", "MEDIUM", "OFF"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ObjectiveSensitivity::High => "HIGH",
+    ObjectiveSensitivity::Low => "LOW",
+    ObjectiveSensitivity::Medium => "MEDIUM",
+    ObjectiveSensitivity::Off => "OFF",
+    ObjectiveSensitivity::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["HIGH", "LOW", "MEDIUM", "OFF"]
+                }
+            }
 impl AsRef<str> for ObjectiveSensitivity {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.</p>
 #[non_exhaustive]
@@ -7479,15 +7469,15 @@ pub enum IngestionMode {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IngestionMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALL" => IngestionMode::All,
-            "BULK" => IngestionMode::Bulk,
-            "PUT" => IngestionMode::Put,
-            other => IngestionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALL" => IngestionMode::All,
+"BULK" => IngestionMode::Bulk,
+"PUT" => IngestionMode::Put,
+other => IngestionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for IngestionMode {
                 type Err = std::convert::Infallible;
 
@@ -7496,27 +7486,25 @@ impl std::str::FromStr for IngestionMode {
                 }
             }
 impl IngestionMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IngestionMode::All => "ALL",
-            IngestionMode::Bulk => "BULK",
-            IngestionMode::Put => "PUT",
-            IngestionMode::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL", "BULK", "PUT"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IngestionMode::All => "ALL",
+    IngestionMode::Bulk => "BULK",
+    IngestionMode::Put => "PUT",
+    IngestionMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALL", "BULK", "PUT"]
+                }
+            }
 impl AsRef<str> for IngestionMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>Provides metadata for a dataset.</p>
 #[non_exhaustive]

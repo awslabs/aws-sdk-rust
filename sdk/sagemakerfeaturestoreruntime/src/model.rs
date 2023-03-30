@@ -47,14 +47,14 @@ pub enum TargetStore {
     Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetStore {
-    fn from(s: &str) -> Self {
-        match s {
-            "OfflineStore" => TargetStore::OfflineStore,
-            "OnlineStore" => TargetStore::OnlineStore,
-            other => TargetStore::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "OfflineStore" => TargetStore::OfflineStore,
+"OnlineStore" => TargetStore::OnlineStore,
+other => TargetStore::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TargetStore {
                 type Err = std::convert::Infallible;
 
@@ -63,26 +63,24 @@ impl std::str::FromStr for TargetStore {
                 }
             }
 impl TargetStore {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TargetStore::OfflineStore => "OfflineStore",
-            TargetStore::OnlineStore => "OnlineStore",
-            TargetStore::Unknown(value) => value.as_str()
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "OfflineStore", "OnlineStore"
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TargetStore::OfflineStore => "OfflineStore",
+    TargetStore::OnlineStore => "OnlineStore",
+    TargetStore::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OfflineStore", "OnlineStore"]
+                }
+            }
 impl AsRef<str> for TargetStore {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 
 /// <p>The value associated with a feature.</p>
 #[non_exhaustive]
