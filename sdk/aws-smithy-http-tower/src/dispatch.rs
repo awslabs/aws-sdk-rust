@@ -5,6 +5,7 @@
 
 use crate::SendOperationError;
 use aws_smithy_http::body::SdkBody;
+use aws_smithy_http::connection::CaptureSmithyConnection;
 use aws_smithy_http::operation;
 use aws_smithy_http::result::ConnectorError;
 use std::future::Future;
@@ -41,7 +42,13 @@ where
     }
 
     fn call(&mut self, req: operation::Request) -> Self::Future {
-        let (req, property_bag) = req.into_parts();
+        let (mut req, property_bag) = req.into_parts();
+        // copy the smithy connection
+        if let Some(smithy_conn) = property_bag.acquire().get::<CaptureSmithyConnection>() {
+            req.extensions_mut().insert(smithy_conn.clone());
+        } else {
+            println!("nothing to copy!");
+        }
         let mut inner = self.inner.clone();
         let future = async move {
             trace!(request = ?req, "dispatching request");

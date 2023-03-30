@@ -26,6 +26,7 @@ pub mod bounds;
 pub mod erase;
 pub mod http_connector;
 pub mod never;
+mod poison;
 pub mod retry;
 pub mod timeout;
 
@@ -50,14 +51,17 @@ pub mod hyper_ext;
 #[doc(hidden)]
 pub mod static_tests;
 
+use crate::poison::PoisonLayer;
 use aws_smithy_async::rt::sleep::AsyncSleep;
+
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::response::ParseHttpResponse;
 pub use aws_smithy_http::result::{SdkError, SdkSuccess};
+use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_http_tower::dispatch::DispatchLayer;
 use aws_smithy_http_tower::parse_response::ParseResponseLayer;
 use aws_smithy_types::error::display::DisplayErrorContext;
-use aws_smithy_types::retry::ProvideErrorKind;
+use aws_smithy_types::retry::{ProvideErrorKind, ReconnectMode};
 use aws_smithy_types::timeout::OperationTimeoutConfig;
 use std::sync::Arc;
 use timeout::ClientTimeoutParams;
@@ -93,6 +97,7 @@ pub struct Client<
     connector: Connector,
     middleware: Middleware,
     retry_policy: RetryPolicy,
+    reconnect_mode: ReconnectMode,
     operation_timeout_config: OperationTimeoutConfig,
     sleep_impl: Option<Arc<dyn AsyncSleep>>,
 }
@@ -140,6 +145,7 @@ where
         E: std::error::Error + Send + Sync + 'static,
         Retry: Send + Sync,
         R::Policy: bounds::SmithyRetryPolicy<O, T, E, Retry>,
+        Retry: ClassifyRetry<SdkSuccess<T>, SdkError<E>>,
         bounds::Parsed<<M as bounds::SmithyMiddleware<C>>::Service, O, Retry>:
             Service<Operation<O, Retry>, Response = SdkSuccess<T>, Error = SdkError<E>> + Clone,
     {
@@ -159,6 +165,7 @@ where
         E: std::error::Error + Send + Sync + 'static,
         Retry: Send + Sync,
         R::Policy: bounds::SmithyRetryPolicy<O, T, E, Retry>,
+        Retry: ClassifyRetry<SdkSuccess<T>, SdkError<E>>,
         // This bound is not _technically_ inferred by all the previous bounds, but in practice it
         // is because _we_ know that there is only implementation of Service for Parsed
         // (ParsedResponseService), and it will apply as long as the bounds on C, M, and R hold,
@@ -179,6 +186,7 @@ where
                 self.retry_policy
                     .new_request_policy(self.sleep_impl.clone()),
             )
+            .layer(PoisonLayer::new(self.reconnect_mode))
             .layer(TimeoutLayer::new(timeout_params.operation_attempt_timeout))
             .layer(ParseResponseLayer::<O, Retry>::new())
             // These layers can be considered as occurring in order. That is, first invoke the

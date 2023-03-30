@@ -74,7 +74,7 @@ impl<O, Retry> CustomizableOperation<O, Retry>
             where
                 E: std::error::Error + Send + Sync + 'static,
                 O: aws_smithy_http::response::ParseHttpResponse<Output = Result<T, E>> + Send + Sync + Clone + 'static,
-                Retry: aws_smithy_http::retry::ClassifyRetry<aws_smithy_http::result::SdkSuccess<T>, SdkError<E>> + Send + Sync + Clone,
+                Retry: aws_smithy_http::retry::ClassifyRetry<aws_smithy_http::result::SdkSuccess<T>, aws_smithy_http::result::SdkError<E>> + Send + Sync + Clone,
             {
                 self.handle.client.call(self.operation).await
             }

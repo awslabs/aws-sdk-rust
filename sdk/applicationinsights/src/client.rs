@@ -167,6 +167,7 @@ impl Client {
                         };
                         let mut builder = builder
                             .middleware(aws_smithy_client::erase::DynMiddleware::new(crate::middleware::DefaultMiddleware::new()))
+                            .reconnect_mode(retry_config.reconnect_mode())
                             .retry_config(retry_config.into())
                             .operation_timeout_config(timeout_config.into());
                         builder.set_sleep_impl(sleep_impl);

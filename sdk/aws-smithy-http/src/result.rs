@@ -12,6 +12,7 @@
 
 //! `Result` wrapper types for [success](SdkSuccess) and [failure](SdkError) responses.
 
+use crate::connection::ConnectionMetadata;
 use crate::operation;
 use aws_smithy_types::error::metadata::{ProvideErrorMetadata, EMPTY_ERROR_METADATA};
 use aws_smithy_types::error::ErrorMetadata;
@@ -239,6 +240,11 @@ impl DispatchFailure {
     /// Returns the optional error kind associated with an unclassified error
     pub fn is_other(&self) -> Option<ErrorKind> {
         self.source.is_other()
+    }
+
+    /// Returns the inner error if it is a connector error
+    pub fn as_connector_error(&self) -> Option<&ConnectorError> {
+        Some(&self.source)
     }
 }
 
@@ -505,6 +511,22 @@ enum ConnectorErrorKind {
 pub struct ConnectorError {
     kind: ConnectorErrorKind,
     source: BoxError,
+    connection: ConnectionStatus,
+}
+
+#[non_exhaustive]
+#[derive(Debug)]
+pub(crate) enum ConnectionStatus {
+    /// This request was never connected to the remote
+    ///
+    /// This indicates the failure was during connection establishment
+    NeverConnected,
+
+    /// It is unknown whether a connection was established
+    Unknown,
+
+    /// The request connected to the remote prior to failure
+    Connected(ConnectionMetadata),
 }
 
 impl Display for ConnectorError {
@@ -532,7 +554,20 @@ impl ConnectorError {
         Self {
             kind: ConnectorErrorKind::Timeout,
             source,
+            connection: ConnectionStatus::Unknown,
         }
+    }
+
+    /// Include connection information along with this error
+    pub fn with_connection(mut self, info: ConnectionMetadata) -> Self {
+        self.connection = ConnectionStatus::Connected(info);
+        self
+    }
+
+    /// Set the connection status on this error to report that a connection was never established
+    pub fn never_connected(mut self) -> Self {
+        self.connection = ConnectionStatus::NeverConnected;
+        self
     }
 
     /// Construct a [`ConnectorError`] from an error caused by the user (e.g. invalid HTTP request)
@@ -540,6 +575,7 @@ impl ConnectorError {
         Self {
             kind: ConnectorErrorKind::User,
             source,
+            connection: ConnectionStatus::Unknown,
         }
     }
 
@@ -548,6 +584,7 @@ impl ConnectorError {
         Self {
             kind: ConnectorErrorKind::Io,
             source,
+            connection: ConnectionStatus::Unknown,
         }
     }
 
@@ -558,6 +595,7 @@ impl ConnectorError {
         Self {
             source,
             kind: ConnectorErrorKind::Other(kind),
+            connection: ConnectionStatus::Unknown,
         }
     }
 
@@ -581,6 +619,18 @@ impl ConnectorError {
         match &self.kind {
             ConnectorErrorKind::Other(ek) => *ek,
             _ => None,
+        }
+    }
+
+    /// Returns metadata about the connection
+    ///
+    /// If a connection was established and provided by the internal connector, a connection will
+    /// be returned.
+    pub fn connection_metadata(&self) -> Option<&ConnectionMetadata> {
+        match &self.connection {
+            ConnectionStatus::NeverConnected => None,
+            ConnectionStatus::Unknown => None,
+            ConnectionStatus::Connected(conn) => Some(conn),
         }
     }
 }
