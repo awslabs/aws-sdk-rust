@@ -13,19 +13,19 @@ http-body = "0.4.5"
 [dependencies.aws-credential-types]
 path = "../../sdk/aws-credential-types"
 features = ["test-util"]
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.aws-http]
 path = "../../sdk/aws-http"
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.aws-sigv4]
 path = "../../sdk/aws-sigv4"
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
@@ -34,31 +34,31 @@ version = "0.25.0"
 [dependencies.aws-smithy-async]
 path = "../../sdk/aws-smithy-async"
 features = ["rt-tokio"]
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.aws-smithy-client]
 path = "../../sdk/aws-smithy-client"
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.aws-smithy-types]
 path = "../../sdk/aws-smithy-types"
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.aws-smithy-http]
 path = "../../sdk/aws-smithy-http"
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.aws-smithy-runtime]
 path = "../../sdk/aws-smithy-runtime"
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../../sdk/aws-smithy-runtime-api"
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.0.0-smithy-rs-head"
+version = "0.55.0"
 
 [dependencies.tokio]
 version = "1.23.1"

@@ -18,12 +18,12 @@ serde_json = "1"
 tracing = "0.1"
 thiserror = "1.0"
 tokio-stream = "0.1.8"
-aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
+aws-config= { version = "0.55.0", path = "../../sdk/aws-config" }
 aws-sdk-dynamodb= { version = "0.25.0", path = "../../sdk/dynamodb" }
-aws-http= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-http" }
-aws-smithy-client= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-client", features = ["client-hyper", "rustls", "rt-tokio"] }
-aws-smithy-http= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-http", features = ["rt-tokio"] }
-aws-smithy-types= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-types" }
+aws-http= { version = "0.55.0", path = "../../sdk/aws-http" }
+aws-smithy-client= { version = "0.55.0", path = "../../sdk/aws-smithy-client", features = ["client-hyper", "rustls", "rt-tokio"] }
+aws-smithy-http= { version = "0.55.0", path = "../../sdk/aws-smithy-http", features = ["rt-tokio"] }
+aws-smithy-types= { version = "0.55.0", path = "../../sdk/aws-smithy-types" }
 
 [dependencies.sdk-examples-test-utils]
 path = "../test-utils"

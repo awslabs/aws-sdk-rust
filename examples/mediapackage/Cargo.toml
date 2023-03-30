@@ -7,7 +7,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
+aws-config= { version = "0.55.0", path = "../../sdk/aws-config" }
 aws-sdk-mediapackage= { version = "0.25.0", path = "../../sdk/mediapackage" }
 
 [workspace]

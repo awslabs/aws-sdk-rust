@@ -20,15 +20,15 @@ path = "src/iam-service-lib.rs"
 [dependencies]
 tower-service = "0.3.2"
 http = "0.2.8"
-aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
-aws-credential-types= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
-aws-hyper= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-hyper" }
+aws-config= { version = "0.55.0", path = "../../sdk/aws-config" }
+aws-credential-types= { version = "0.55.0", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
+aws-hyper= { version = "0.55.0", path = "../../sdk/aws-hyper" }
 aws-sdk-iam= { version = "0.25.0", path = "../../sdk/iam" }
 aws-sdk-s3= { version = "0.25.0", path = "../../sdk/s3" }
 aws-sdk-sts= { version = "0.25.0", path = "../../sdk/sts" }
-aws-smithy-client= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-client", features = ["test-util"] }
-aws-smithy-http= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-http" }
-aws-types= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-types" }
+aws-smithy-client= { version = "0.55.0", path = "../../sdk/aws-smithy-client", features = ["test-util"] }
+aws-smithy-http= { version = "0.55.0", path = "../../sdk/aws-smithy-http" }
+aws-types= { version = "0.55.0", path = "../../sdk/aws-types" }
 
 [dependencies.sdk-examples-test-utils]
 path = "../test-utils"
