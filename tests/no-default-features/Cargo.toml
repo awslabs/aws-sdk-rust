@@ -15,7 +15,7 @@ futures = "0.3.25"
 [dev-dependencies.aws-config]
 path = "../../sdk/aws-config"
 default-features = false
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"

@@ -7,9 +7,9 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.54.1", path = "../../sdk/aws-config" }
+aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
 aws-sdk-greengrassv2= { version = "0.25.0", path = "../../sdk/greengrassv2" }
-aws-types= { version = "0.54.1", path = "../../sdk/aws-types" }
+aws-types= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-types" }
 
 [dependencies.tokio]
 version = "1"

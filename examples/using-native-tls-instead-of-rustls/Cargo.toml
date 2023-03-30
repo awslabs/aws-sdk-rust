@@ -7,7 +7,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.54.1", path = "../../sdk/aws-config", features = ["native-tls", "rt-tokio"], default-features = false }
+aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config", features = ["native-tls", "rt-tokio"], default-features = false }
 aws-sdk-s3= { version = "0.25.0", path = "../../sdk/s3", features = ["native-tls"], default-features = false }
 aws-sdk-sts= { version = "0.25.0", path = "../../sdk/sts", features = ["native-tls"], default-features = false }
 

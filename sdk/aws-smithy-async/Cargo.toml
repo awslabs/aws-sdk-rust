@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-async"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "John DiSanti <jdisanti@amazon.com>"]
 description = "Async runtime agnostic abstractions for smithy-rs."
 edition = "2021"
