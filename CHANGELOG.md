@@ -1,4 +1,94 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+March 30th, 2023
+================
+**Breaking Changes:**
+- ⚠🎉 ([smithy-rs#2467](https://github.com/awslabs/smithy-rs/issues/2467)) Update MSRV to 1.66.1
+- ⚠ ([smithy-rs#76](https://github.com/awslabs/smithy-rs/issues/76), [smithy-rs#2129](https://github.com/awslabs/smithy-rs/issues/2129)) Request IDs can now be easily retrieved on successful responses. For example, with S3:
+    ```rust
+    // Import the trait to get the `request_id` method on outputs
+    use aws_sdk_s3::types::RequestId;
+    let output = client.list_buckets().send().await?;
+    println!("Request ID: {:?}", output.request_id());
+    ```
+- ⚠ ([smithy-rs#76](https://github.com/awslabs/smithy-rs/issues/76), [smithy-rs#2129](https://github.com/awslabs/smithy-rs/issues/2129)) Retrieving a request ID from errors now requires importing the `RequestId` trait. For example, with S3:
+    ```rust
+    use aws_sdk_s3::types::RequestId;
+    println!("Request ID: {:?}", error.request_id());
+    ```
+- ⚠ ([smithy-rs#76](https://github.com/awslabs/smithy-rs/issues/76), [smithy-rs#2129](https://github.com/awslabs/smithy-rs/issues/2129)) The `message()` and `code()` methods on errors have been moved into `ProvideErrorMetadata` trait. This trait will need to be imported to continue calling these.
+- ⚠ ([smithy-rs#76](https://github.com/awslabs/smithy-rs/issues/76), [smithy-rs#2129](https://github.com/awslabs/smithy-rs/issues/2129), [smithy-rs#2075](https://github.com/awslabs/smithy-rs/issues/2075)) The `*Error` and `*ErrorKind` types have been combined to make error matching simpler.
+    <details>
+    <summary>Example with S3</summary>
+    **Before:**
+    ```rust
+    let result = client
+        .get_object()
+        .bucket(BUCKET_NAME)
+        .key("some-key")
+        .send()
+        .await;
+    match result {
+        Ok(_output) => { /* Do something with the output */ }
+        Err(err) => match err.into_service_error() {
+            GetObjectError { kind, .. } => match kind {
+                GetObjectErrorKind::InvalidObjectState(value) => println!("invalid object state: {:?}", value),
+                GetObjectErrorKind::NoSuchKey(_) => println!("object didn't exist"),
+            }
+            err @ GetObjectError { .. } if err.code() == Some("SomeUnmodeledError") => {}
+            err @ _ => return Err(err.into()),
+        },
+    }
+    ```
+    **After:**
+    ```rust
+    // Needed to access the `.code()` function on the error type:
+    use aws_sdk_s3::types::ProvideErrorMetadata;
+    let result = client
+        .get_object()
+        .bucket(BUCKET_NAME)
+        .key("some-key")
+        .send()
+        .await;
+    match result {
+        Ok(_output) => { /* Do something with the output */ }
+        Err(err) => match err.into_service_error() {
+            GetObjectError::InvalidObjectState(value) => {
+                println!("invalid object state: {:?}", value);
+            }
+            GetObjectError::NoSuchKey(_) => {
+                println!("object didn't exist");
+            }
+            err if err.code() == Some("SomeUnmodeledError") => {}
+            err @ _ => return Err(err.into()),
+        },
+    }
+    ```
+    </details>
+- ⚠ ([smithy-rs#76](https://github.com/awslabs/smithy-rs/issues/76), [smithy-rs#2129](https://github.com/awslabs/smithy-rs/issues/2129)) `aws_smithy_types::Error` has been renamed to `aws_smithy_types::error::ErrorMetadata`.
+- ⚠ ([smithy-rs#2433](https://github.com/awslabs/smithy-rs/issues/2433)) The modules in the SDK crates have been reorganized. See the [SDK Crate Reorganization Upgrade Guidance](https://github.com/awslabs/aws-sdk-rust/discussions/752) to see how to fix your code after this change.
+- ⚠ ([aws-sdk-rust#160](https://github.com/awslabs/aws-sdk-rust/issues/160), [smithy-rs#2445](https://github.com/awslabs/smithy-rs/issues/2445)) Reconnect on transient errors.
+
+    If a transient error (timeout, 500, 503, 503) is encountered, the connection will be evicted from the pool and will not
+    be reused. This is enabled by default for all AWS services. It can be disabled by setting `RetryConfig::with_reconnect_mode`
+
+    Although there is no API breakage from this change, it alters the client behavior in a way that may cause breakage for customers.
+- ⚠ ([smithy-rs#2390](https://github.com/awslabs/smithy-rs/issues/2390), [smithy-rs#1784](https://github.com/awslabs/smithy-rs/issues/1784)) Remove deprecated `ResolveAwsEndpoint` interfaces.
+    [For details see the longform changelog entry](https://github.com/awslabs/aws-sdk-rust/discussions/755).
+
+**New this release:**
+- 🐛🎉 ([aws-sdk-rust#740](https://github.com/awslabs/aws-sdk-rust/issues/740)) Fluent builder methods on the client are now marked as deprecated when the related operation is deprecated.
+- 🎉 ([smithy-rs#2428](https://github.com/awslabs/smithy-rs/issues/2428), [smithy-rs#2208](https://github.com/awslabs/smithy-rs/issues/2208)) `SdkError` variants can now be constructed for easier unit testing.
+- 🎉 ([aws-sdk-rust#753](https://github.com/awslabs/aws-sdk-rust/issues/753), [smithy-rs#2451](https://github.com/awslabs/smithy-rs/issues/2451)) Enable presigning for S3's `HeadObject` operation.
+- ([smithy-rs#2437](https://github.com/awslabs/smithy-rs/issues/2437), [aws-sdk-rust#600](https://github.com/awslabs/aws-sdk-rust/issues/600)) Add more client re-exports. Specifically, it re-exports `aws_smithy_http::body::SdkBody`, `aws_smithy_http::byte_stream::error::Error`, and `aws_smithy_http::operation::{Request, Response}`.
+- 🐛 ([smithy-rs#2471](https://github.com/awslabs/smithy-rs/issues/2471), [smithy-rs#2333](https://github.com/awslabs/smithy-rs/issues/2333), [smithy-rs#2151](https://github.com/awslabs/smithy-rs/issues/2151)) Default connector provided by `aws-config` now respects `ConnectorSettings`.
+
+    Previously, it used the timeout settings provided by aws-config. A test from @Oliboy50 has been incorporated to verify this behavior.
+
+    **Behavior Change**: Prior to this change, the Hyper client would be shared between all service clients. After this change, each service client will use its own Hyper Client.
+    To revert to the previous behavior, set `HttpConnector::Prebuilt` on `SdkConfig::http_connector`.
+- ([smithy-rs#2474](https://github.com/awslabs/smithy-rs/issues/2474)) Increase Tokio version to 1.23.1 for all crates. This is to address [RUSTSEC-2023-0001](https://rustsec.org/advisories/RUSTSEC-2023-0001)
+
+
 January 26th, 2023
 ==================
 **Breaking Changes:**
