@@ -19,13 +19,34 @@ pub type NativeTls = hyper_tls::HttpsConnector<hyper::client::HttpConnector>;
 /// A smithy connector that uses the `rustls` crate for TLS.
 pub type Rustls = crate::hyper_ext::Adapter<Https>;
 
+#[cfg(feature = "rustls")]
+use hyper_rustls::ConfigBuilderExt;
+
 // Creating a `with_native_roots` HTTP client takes 300ms on OS X. Cache this so that we
 // don't need to repeatedly incur that cost.
 #[cfg(feature = "rustls")]
 lazy_static::lazy_static! {
     static ref HTTPS_NATIVE_ROOTS: Https = {
         hyper_rustls::HttpsConnectorBuilder::new()
-            .with_native_roots()
+            .with_tls_config(
+                rustls::ClientConfig::builder()
+                    .with_cipher_suites(&[
+                        // TLS1.3 suites
+                        rustls::cipher_suite::TLS13_AES_256_GCM_SHA384,
+                        rustls::cipher_suite::TLS13_AES_128_GCM_SHA256,
+                        // TLS1.2 suites
+                        rustls::cipher_suite::TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                        rustls::cipher_suite::TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        rustls::cipher_suite::TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                        rustls::cipher_suite::TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        rustls::cipher_suite::TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+                    ])
+                    .with_safe_default_kx_groups()
+                    .with_safe_default_protocol_versions()
+                    .expect("Error with the TLS configuration. Please file a bug report under https://github.com/awslabs/smithy-rs/issues.")
+                    .with_native_roots()
+                    .with_no_client_auth()
+            )
             .https_or_http()
             .enable_http1()
             .enable_http2()
