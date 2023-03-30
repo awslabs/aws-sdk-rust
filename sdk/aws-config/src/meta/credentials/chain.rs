@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
+use aws_credential_types::{
+    provider::{self, error::CredentialsError, future, ProvideCredentials},
+    Credentials,
+};
 use aws_smithy_types::error::display::DisplayErrorContext;
 use std::borrow::Cow;
 use tracing::Instrument;
@@ -103,5 +106,116 @@ impl ProvideCredentials for CredentialsProviderChain {
         Self: 'a,
     {
         future::ProvideCredentials::new(self.credentials())
+    }
+
+    fn fallback_on_interrupt(&self) -> Option<Credentials> {
+        for (_, provider) in &self.providers {
+            match provider.fallback_on_interrupt() {
+                creds @ Some(_) => return creds,
+                None => {}
+            }
+        }
+        None
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use std::time::Duration;
+
+    use aws_credential_types::{
+        credential_fn::provide_credentials_fn,
+        provider::{error::CredentialsError, future, ProvideCredentials},
+        Credentials,
+    };
+    use aws_smithy_async::future::timeout::Timeout;
+
+    use crate::meta::credentials::CredentialsProviderChain;
+
+    #[derive(Debug)]
+    struct FallbackCredentials(Credentials);
+
+    impl ProvideCredentials for FallbackCredentials {
+        fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
+        where
+            Self: 'a,
+        {
+            future::ProvideCredentials::new(async {
+                tokio::time::sleep(Duration::from_millis(200)).await;
+                Ok(self.0.clone())
+            })
+        }
+
+        fn fallback_on_interrupt(&self) -> Option<Credentials> {
+            Some(self.0.clone())
+        }
+    }
+
+    #[tokio::test]
+    async fn fallback_credentials_should_be_returned_from_provider2_on_timeout_while_provider2_was_providing_credentials(
+    ) {
+        let chain = CredentialsProviderChain::first_try(
+            "provider1",
+            provide_credentials_fn(|| async {
+                tokio::time::sleep(Duration::from_millis(200)).await;
+                Err(CredentialsError::not_loaded(
+                    "no providers in chain provided credentials",
+                ))
+            }),
+        )
+        .or_else("provider2", FallbackCredentials(Credentials::for_tests()));
+
+        // Let the first call to `provide_credentials` succeed.
+        let expected = chain.provide_credentials().await.unwrap();
+
+        // Let the second call fail with an external timeout.
+        let timeout = Timeout::new(
+            chain.provide_credentials(),
+            tokio::time::sleep(Duration::from_millis(300)),
+        );
+        match timeout.await {
+            Ok(_) => assert!(false, "provide_credentials completed before timeout future"),
+            Err(_err) => match chain.fallback_on_interrupt() {
+                Some(actual) => assert_eq!(actual, expected),
+                None => assert!(
+                    false,
+                    "provide_credentials timed out and no credentials returned from fallback_on_interrupt"
+                ),
+            },
+        };
+    }
+
+    #[tokio::test]
+    async fn fallback_credentials_should_be_returned_from_provider2_on_timeout_while_provider1_was_providing_credentials(
+    ) {
+        let chain = CredentialsProviderChain::first_try(
+            "provider1",
+            provide_credentials_fn(|| async {
+                tokio::time::sleep(Duration::from_millis(200)).await;
+                Err(CredentialsError::not_loaded(
+                    "no providers in chain provided credentials",
+                ))
+            }),
+        )
+        .or_else("provider2", FallbackCredentials(Credentials::for_tests()));
+
+        // Let the first call to `provide_credentials` succeed.
+        let expected = chain.provide_credentials().await.unwrap();
+
+        // Let the second call fail with an external timeout.
+        let timeout = Timeout::new(
+            chain.provide_credentials(),
+            tokio::time::sleep(Duration::from_millis(100)),
+        );
+        match timeout.await {
+            Ok(_) => assert!(false, "provide_credentials completed before timeout future"),
+            Err(_err) => match chain.fallback_on_interrupt() {
+                Some(actual) => assert_eq!(actual, expected),
+                None => assert!(
+                    false,
+                    "provide_credentials timed out and no credentials returned from fallback_on_interrupt"
+                ),
+            },
+        };
     }
 }

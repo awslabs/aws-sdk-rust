@@ -249,7 +249,7 @@ pub mod future {
 
     type BoxFuture<'a, T> = Pin<Box<dyn Future<Output = T> + Send + 'a>>;
 
-    /// Future new-type that the `ProvideCredentials` trait must return.
+    /// Future new-type that `ProvideCredentials::provide_credentials` must return.
     #[derive(Debug)]
     pub struct ProvideCredentials<'a>(NowOrLater<super::Result, BoxFuture<'a, super::Result>>);
 
@@ -280,6 +280,19 @@ pub trait ProvideCredentials: Send + Sync + std::fmt::Debug {
     fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
     where
         Self: 'a;
+
+    /// Returns fallback credentials.
+    ///
+    /// This method should be used as a fallback plan, i.e., when
+    /// a call to `provide_credentials` is interrupted and its future
+    /// fails to complete.
+    ///
+    /// The fallback credentials should be set aside and ready to be returned
+    /// immediately. Therefore, the user should NOT go fetch new credentials
+    /// within this method, which might cause a long-running operation.
+    fn fallback_on_interrupt(&self) -> Option<Credentials> {
+        None
+    }
 }
 
 impl ProvideCredentials for Credentials {
